@@ -1,0 +1,1140 @@
+{
+  "conditionName": "Sickle cell disorders",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:53:18.079Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZNSaO-QGEEhxBQAqKTI1Q6M9xsmFMHmbIgSxh3QHQqqAsLUviozW5RPW83biQ5et4yMOslD_GXlLaD_5Ui9MCE8qfxWoQKJFvPVUXilarkFoWIzo3Vs5XUM5wkxeL7COZ6QfTCrpFHhvp0k3B"
+        },
+        {
+          "title": "fortunejournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbfSP5fu8XEjTvIOD7TbS2MERadEUu4N3yLu7kTsMZV3NxUTSALYdAjuCHi-xMqBoX9vIlEaAeSQ-vzNUjv7EW3WB63utIFe7qYbZUmXN3kzL4iOvH1SdIDFhNAXvqcWKPAE4b3LV8twQ3eOLtK-osZ1qFUnUEm6BPUbFMYd1LfMzD7-5sJx_Lq6YuetpeU2cczy1JSHT-jWno66Xue3_yjWXOz93Vzhi3-pwGI6R7ow=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFauYTgpakmB-riDcX4fL1A0Mim_uX8pTlaFDkHyiTkLezDE_kv3epXDOy2iI8ZYn2rtnKgg6pUiS9o7SKneXxO8xVKHfNWghG0oDlO7IdLMcwcEGLPxKE_DSJ96Qft9-mgFqMF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwbUs6ndHRMfto9VOVzGJAbxbB_o7JXoL80JSgTLaB26zNLeDl20hgkmiwsj1V6zq_BHWpN_I1QGO4NlZz5xSMz0NQZHLIvvQ3m1mwvW28Me6Y2TNCaYlop7TeQZAeJ5AObj1Y"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZnKYTwv-NKaHR1IX76OWfc1XXynce1gHQDb3oibngRsj_3vJ4s8b4s-Mfd0otmrPfoqM4jBtyWlo2gLIU9UgZnfuar7fsjWDZRgJ-Hf-7qVmaSpn9VgHJaJrKdYYa8gtSgCwLYzDibeczorM="
+        },
+        {
+          "title": "scilit.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRt2lMyDUwuBvvM6hMmrg_9Uz_cXMUGF_v9wuZ0yxx_I2QISk8SjwdYmVa_h1Rs1734JM8rTstLZcowAInUbbq_ADW7DptNqyUyP8nN2XvMV-umiG2Y8z5dtr1PSLYV5x1NOkRacRP5FdVsBhaXhvFXNmD_DGtskY-Wg-IVBQ4"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmEez_0AEO1X-Vdiiz0DbZl0zDfxPt8_pNrY3Xo-9K3BHHS_j2B6Jz8K5BOB03caj4FFbcjFK5Vul_V9QBIu4j6mJuuKlts1J2qflJa9ZtSiDJupYuOMw2L-sdfIUFPoAsNXoh3F2_iIbzFb5BQ7JnhPWa0g0i7YPps18RHQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Hematopoietic Stem Cell Transplantation (HSCT) trials for Sickle cell disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sickle%20cell%20disorders&intr=Hematopoietic%20Stem%20Cell%20Transplantation%20(HSCT)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Conditioning regimens vary (chemotherapy/radiation)",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 42500,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 57500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 65341,
+        "costPerResponder": 63889,
+        "icer": 90000,
+        "qalysGained": 18,
+        "vsComparator": {
+          "comparatorName": "Standard medical management (e.g., hydroxyurea)",
+          "costDifference": -17500,
+          "dominates": true,
+          "qalysGainedDifference": 12
+        }
+      },
+      "name": "Hematopoietic Stem Cell Transplantation (HSCT)",
+      "nnh": 7,
+      "nnt": 1,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.6 crises/year",
+          "baseline": "4 crises/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Vaso-occlusive Crisis Rate",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-80% of total hemoglobin",
+          "baseline": "85%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin S Percentage of Total Hemoglobin",
+          "percentageChange": -94.1
+        },
+        {
+          "absoluteChange": "+5.5 g/dL",
+          "baseline": "7.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Concentration",
+          "percentageChange": 73.3
+        }
+      ],
+      "remissionRate": 88,
+      "responseRate": 90,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "50/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life (PedsQL) Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "6/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Chronic Pain Severity (Visual Analog Scale)",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-5 days/year",
+          "baseline": "6 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Hospitalization Days for Sickle Cell Complications",
+          "percentageChange": -83.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Graft-versus-host disease (acute/chronic)",
+          "percentage": 50
+        },
+        {
+          "name": "Infection (bacterial, viral, fungal)",
+          "percentage": 65
+        },
+        {
+          "name": "Organ toxicity (renal, hepatic, pulmonary)",
+          "percentage": 30
+        },
+        {
+          "name": "Transplant-related mortality",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "6-12 months for engraftment and recovery",
+      "treatmentDuration": "Single procedure, but long recovery and follow-up",
+      "trials": 94
+    },
+    {
+      "citations": [
+        {
+          "title": "sicklecellanemianews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUHAd4ePRWCTbjrtLSgWoRMhFtj9nk-3doRb5JQsFHmAuG0cc0ZgHXvbPI0GH0oO8TZS6OSMNS16buUfHf1aKNi7W5lnvC2p9wXPU6ONEMfT9foFPPwriBwtM8yz-F3g1xs64FHOiUnuNtRKcdmPRhK0ksDvNF121_xaaJuF6EoRkDdOlofh8-2UfxTppZFK4KLizcyVX92oXeRT3GsVbHCT8eSPf65Mcsxa7xlbs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgcs4Sro2aBdE0tEXPBQyPZOJU0lVwf4goSUrm5LrZyGKGZqj4JABbh-0T4qBpmWTaYDtraLwBtQZYK6mp94eeVn4rkmkUEcXEb_XeRClRt3NChGxwNMaFz0fFnKpBplqmeDi9NQSQlg=="
+        },
+        {
+          "title": "middleeasthealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUvmKOAOumWH1LIHPrMyWdmnhhZtRqYJMJLtElbTC3765Hm6V2Ulq7122GnLkT2IsUGjRoQUDG8gCmoO0I9IHk-k2cggo56q4cucmXSlmhmSu-xSkBGAPugNG_3b2nOYc5_DcQ2w8ywRdeESBTb21R5Y4eL919HDe0eo7Wt8_O8FKSc5vskIcRvvm0EdycYeYlAbgobOtx4ofnhzQ_ImrKS0t9mu8USXgUmvUzQq6QwHclH4waJLosJG3VPsMj89NpN806X5lPZORTX8wMFziG4NcVMA=="
+        },
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-lczuZB4OwxPPMB40F7fwvtPg7Zd5zxW6--c5voQk5cRYTnmzQHjNgQiAfVyS3F4HKRoOazB5f2yZsCK5fL_5R1apaWqA1ss0w0urS7V18A38_Nah37ZYSUKBC4B-2KMcENzQ6FfLtZ9Shhq2LyWef_thkeRgqdJn7CQ09uQu52nww9cWKuIgxv_wGd1_J3W7Ky56pIJhrkwKEVCz5Xg0OtRHiLgoQWOwFq1fSt3tAcQUiw=="
+        },
+        {
+          "title": "yalemedicine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHonb6puzvDBmuvVZ9Lxz2t2bAm283ZqzJEYpb_nFeh42CtJ_tUQnvBG0rLSG8EvqcO_lxk2qzdTewCRfvQ3swQs54p5kIBu1sU-kZP5DdMTc_zNPyLiC7mivALAcztZiYZ_-M2_bAfq1cOCOZ0dCb2A_1Y6LxjJoLAihyruWjM"
+        },
+        {
+          "title": "chop.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPlNhX2Vh-maePI-MrwS4RcKxs0r8fqWCxRkeSQqHLvNM-QyJR4F3Yvq4AJohAvP8k16MmZfySylY9e7s-cDJv10JFmZH9YDsee8M8WAYxbB3DKXgl0rbhvSwweNtU-N61fiTEpJBHcbjUusKD69V7tTFchahsV2iT4JhppJzIQbzEZtsuke8dBOWamA0tvdViIv005ETzO9tLGamIMhwQDJ1g-_z55aFwHg=="
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrUrAsLP3PHhoh37xv1TTARH857BJ9txbexLSTZdtb4JO9EJqHza6DYaMHMpEJfbo_isUVMzHoKWq7VETdFVEckc_tQfRfaVBpdQuHQ18NYMmHIUJteI8BtUkR9ysR6bxW1swDAtUqrEn7pR5pbfAleTqvNFQUtN9rHP7VQyiWBbCShvoivAoXbJVRRftRAi2dGV1SJp9NfjpeXzIoiXEFFi2dRPCuOCQ="
+        },
+        {
+          "title": "casgevy.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiD0XMKfHsr02qTWpEwYDbi0kmBqO_JYuF5PziqBzNYJlr3ULvnVJi-AUlqJhvvJDqippHvcaJPf0v5oDAdvMNqjaGlE5qD4RwJSRmTqyNHN4U-yjSHjbz1LhSHYfwxfo0wzHwQ1ZRyV1IzvfYtD_e4KVmJK4zPVE="
+        },
+        {
+          "title": "childrenshospital.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHI6aHS7JTcGtRHlAxiOs6o82b2qOgC8sKNs6r7PlXahrQU_DLHJEpQu9oJIHbaGR7IFsIWrvx8vtmlFweHDmdm0Q8qyOljNVAw5TpYznvTCjB83zvW6O-Il27-h5uuyAhISlXVYokW1qtFig8hoIo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyOYmj0A7BmB6GQIuPpVo8d6x8kkNYCCtPZ8KzUwgH7LqhIem1XeY9DA_nPIG0OMgGTooasrCXzGXGFpLNog5DFhyM2hvFvrmFfcXJmgymKX7e7YLuSr-ZLKZygU8y7vGvBh5BO2s1JTKAkDqV"
+        },
+        {
+          "title": "patsnap.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv6hUFCtqaOHDT4MBFE6mjUSkvF74BHc-wOxWKXpkXWEJaCKAnO4rYZQTiKBIY1-ikoN7wDrEjuTDSfjaMepc9cYRWKeICGmssrL4YdEscBkAjCZoaxZNp5eCitmEpv3ejL1zURoDNiHvIrFDGNKU3lM3RNh-F_xYkBmO5ewBNC1-yXr85qzhL7i0iZ4dpcRQsAS58dfmloNgBwgCxeZzu5xFNOTpQxIwnjKlb"
+        },
+        {
+          "title": "ijbm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg5I1vSpyTFcjMCWblJMKupJFe3JkcmPForV0q69nWIDXGSD3EKAtEBA_3anBXvF0wQdP28KUq_DNlnQJgyJxezINdxEnqbLSxYvhRb6_Mhj1jgN39tK-DogHf"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzmq6r7FcnQH6ZL6b4Uw7Id4zaC1czBODv98PXOLJgXY_2OzRIMzDV_qXBQlGfy0j6x9RyHtCSwoFVQtpm7nYShdMzkW3qG1ppFfvfu4EhSKZoz4-YlUSNFj91OpbK1q0k1pGo729_vpdPqPeEvdM6jZEpx1ehC8eTVIJqDN-8pBiaLF0MxCv0ug2SSVJjrMlCr-T9RrsLLFqrMCL-DB8Yc5ljpLnBjhI_PLOsRBRbBMzfnhVt7VpUXBjkKZ162AVnpLhnD7RKTsTiWtTbPgnC-EQWDA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Exagamglogene autotemcel (Casgevy) trials for Sickle cell disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sickle%20cell%20disorders&intr=Exagamglogene%20autotemcel%20(Casgevy)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Single infusion of modified cells after myeloablative conditioning",
+      "effectiveness": 93,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 110000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 130000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 144444,
+        "costPerResponder": 141304,
+        "icer": 4500000,
+        "qalysGained": 18,
+        "vsComparator": {
+          "comparatorName": "Standard medical management (e.g., hydroxyurea)",
+          "costDifference": 55000,
+          "dominates": false,
+          "qalysGainedDifference": 13
+        }
+      },
+      "name": "Exagamglogene autotemcel (Casgevy)",
+      "nnh": 4,
+      "nnt": 1,
+      "participants": 150,
+      "phase": [
+        "Phase 3"
+      ],
+      "remissionRate": 90,
+      "responseRate": 92,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Myelosuppression/Febrile neutropenia (from conditioning)",
+          "percentage": 90
+        },
+        {
+          "name": "Infection",
+          "percentage": 70
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 60
+        },
+        {
+          "name": "Veno-occlusive disease",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "6-12 months for engraftment and recovery",
+      "treatmentDuration": "Single procedure, but long recovery and follow-up",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "childrensnational.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0gCEHuLypSRsQby3LKJvH3F-TBR0-65y1h-ivk6PydUF7UZlEI1yVIfuKrVhuElqe5s9k2S8KALj5XnTPD3RW5u3ifXThXgij7_HVkbBPsUW5ZXXvDqFlFqszzmHUKq4pMlewaasX4j_J1u6ECCssxw-LfrzVnVbzOAMnzX3Nw6E4wVM0F2ePt5Nlcmc347JJseSrlreHnZWb--otRiS3SgLwB2-xOSfaE4KTCYjLtmhnTSzR22wp_arfXTuxfh7rfXfv6IxDSVu-2m7OSmMr1TorMVWpv8YmWTV3"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvRwjmu_kIkg_tbJlURSx_w7gkQuhSjDrDPuHREo1UU7kUWJK4kG-YrMfSheaEAAVBR9NIj-CPKq7yz2GDcXmMnTWPLAlto0waAHJDgbWReJQT7CV9HZ--sPdcpT0q6RVtOcdQmukfF4Lm"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjVWqA-vgfg81-RoivXEiAe-MPnP2eI8-QEjIur5ZCyku7OPrjkyDI47Yc0RuopidjeN2IdElRWxZcadpgpdg67x0xewDZ3hGvn9XxbyVtc5a4AYRqrs1fY0QnmBA0g1YclYW8etp3S_MBSZjtbgFuUdbD3ObM-Tm4rY6MMDcUmKdI_WVM9npxA0DGEXozWJHGiwf3OHQHsyDSWCvsNj2bZq-FdgOOluaS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqtX_h2iCxYHGqXYbxKsisF0VBYitDuCV0KkeDf-wlqXhDLsHI2tbDC8b6WZRcXjKygrujxf_p6MaaAHADw-I05GGZyoWULxHEWvILZw5jST3rwjoW2N-cZZz7olRVjhyIXApdbwgJUCc5tA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn1SG4jE7pNYreJOn78rFkuHQp2MvsdIkiak4daTDryOhCK2j1wB3zDxmd1Pm2VyfC4-Uo2_n0aiW_weryVJnlqCNAvrLuldt5YadGPUrhMD_YZILPHIpSK1fNECOHz4q9K9pPdOCvREWScw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc9Vy_FUF7XOQNLk4lARuQz6F8K3EYEhRO3i6NcAhn8qR5-8kqMMH4IIaI15bbdJcjdGjqzTFNz_ad6sWD52P3WNSbk7kcLSVqz7AxW-qnkefTomLFXzMaw0iSzKOUzDtcwSyHb9npFa5hF48="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIywL5O5VCyX19eHuvCc1JDogQV7xLi2JKc0uKSToRMKwbftBdJYzxGnjCZtJk1z3I-1DYgUnzD2I2cRO0syxbm0wvP_Ob24fqDBX42xCqbmMEOqKXe-BSGZ9OccMcoQ-jJR1IKhNP46hhvt27KGvByBDTqiHNLc5KPHzAnTnM5tQ1udVggxSPQ5sFCMsYfPCux6wcm4zI9BbL1QpWUIV8LAamVT5vEn5toqwt8dcfO8b0lB08sA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Chronic Blood Transfusion Therapy trials for Sickle cell disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sickle%20cell%20disorders&intr=Chronic%20Blood%20Transfusion%20Therapy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Typically 10-20 mL/kg every 3-4 weeks",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 58000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 64444,
+        "icer": 80000,
+        "qalysGained": 0.7
+      },
+      "name": "Chronic Blood Transfusion Therapy",
+      "nnh": 2,
+      "nnt": 4,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-50 cm/s",
+          "baseline": "200 cm/s",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Transcranial Doppler (TCD) Velocity",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2.45 crises/year",
+          "baseline": "3.5 crises/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Rate of Vaso-occlusive Crises",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-55%",
+          "baseline": "80%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin S (HbS) Percentage",
+          "percentageChange": -69
+        },
+        {
+          "absoluteChange": "-0.4 episodes/year",
+          "baseline": "0.5 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Rate of Acute Chest Syndrome Episodes",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "PedsQL Sickle Cell Module Score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (PedsQL Sickle Cell Module)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-9 days/year",
+          "baseline": "15 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization Days per Year",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Pain Intensity (VAS): 5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (Visual Analog Scale)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Iron overload (requiring chelation)",
+          "percentage": 85
+        },
+        {
+          "name": "Alloimmunization",
+          "percentage": 25
+        },
+        {
+          "name": "Delayed hemolytic transfusion reactions",
+          "percentage": 7
+        },
+        {
+          "name": "Immediate transfusion reactions",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate for anemia correction, within weeks for clinical stabilization",
+      "treatmentDuration": "Lifetime",
+      "trials": 16
+    },
+    {
+      "citations": [
+        {
+          "title": "narrax.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmni4EGWjnQB0FO3PA5EuPnCOpcCPb6OkJJ8D4_o24inVD_sDGVDhmb-YJ13fXqC8P85NxGvMo8kkJ5HePBedTGOBabse303AT7FIVrW266hHZgN_FXWeZlYn5K_9QX1goabahimFqWmo5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhwm2iXzmzdjTqjNHFSJpJsVnNIDNhKe1pZTvlLcBJotRmOEx3jfIqFg0Mv0rmSG0mWNDmea_tZkIFlMTQTLrnFEi8SViH4iAqaDKbkM1o4PvkdTsgxDGaRDEmY9mx4QsDslKKLCq1kwcUU8A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaqBvNM6-xT1FSilGZ97g4LhXy-sn7P2TjaJooU6I3Dm1PDjTkGNBXNTMlP-0Qa3k1hfTyvv3pS_zXOTUdR0PA0HlX-KLfm_uPvNes5NKHzXujB69HiT0eN-RB4zUqKMqGlVrejs0MJewR47g="
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1lR3m1PizbAgLmyvaTSkgkVW7UVBTeCa0hVms1ZvsRwDY59rSH3vj4ESi9aTprORz849D1-jEVrHXCHmadQ6xUPD64An95ZmjAQKd2ev2V5HzfX8Bug4wucfH4LWkSqlGMbTmt8w1TFieO0YUuDvo06iShpV9dvecfkMW61JU07F26xskMxEk8k92igz_hHBtyX-hDCJo3LG7K8XJn1mwUw7XBR6sfnOGnaId"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK2W7NtMoT0rqBUBxFwPAwAaFRf8TaesY8zgtOlud0c5qEBECSVc94Ebx1A3Uve-1PyMapR0f3_ggoc7fy7cJcKKikibomg_AOFBRmLnrlHfySBjf3BggegSJRWbPD-rJAGnFW"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY7YXySM9VPCTsw3H61irGiAN6oyYp8tXed3isHmlzSNVhZiTMgCQxAIqlIawEz0HKyPIK9nim7xxLnaB8Ns6oUctSVEvKZzU5Fn85NXMb2DH2Rurszn9Dh9P4O-RWWEvRnWuy"
+        },
+        {
+          "title": "pharmacytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2xb62HlgtIXe38AV9xcOvWFHGTxKVzAlW_OotAc5EArjsU4IasQowbFUAIDHfdXsD-HttIBnvSMsernbWy48nrt_IUmCxRj2eMgLwABOhSKIpOI7RQ09TF0CORMJGNgjVAXZgD60XZJ4-xz7j78LHzxhOIKiuM9qGoEBRd4gcu6dpeaGhCxTHnHtjbso-mcGx3vKmZS7lpzwC8cOsbHAEEMkAhD2Dlq5DB-Bq6O-GQ5pCUd4="
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdES_De23k7GikEWl8X43S5MYrSGc-mSYUdhg-6Crkkwkz_qIjrRIVvoScLaAEn2jTf2RXPbf1YEagIAEvSTs4kgXNf8ds13K8UtTvC_G1fvENL-40qp4zHVcgfKFw5LqHR92VdbaX_lSm6A2fCHY9etnBDMudHOWTk0_RB7FXpB4vn4szRIACYhttjp8KiSLMKYV1UFzbo7OjrmH4nElBUUygco9cmC0NKcqnOYD3gtL7zmPtxJ2zpGe6U0WKqqJwrkli"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmyY5Ys-10KBJ0IUd4S3_py8mjWEZjo9cwUzatH8cZgQA11iJAyt0IA4p9L-VleJrjbEOyd9bJBWcHmkIQaApAqZkhqdEyDZNjpIclX15NSypD93PHgfsVjYc3Tv7XQmxKThYUI4c6F7qHufzdGD-Vb74Us0Moqfk6azZSHSogywqaeMndc2Ug0iYohCmffITv7F42nuNXl6wY5z8xFQ9CsSom1qe5FN7LVWide_axcxmwRElQ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Hydroxyurea trials for Sickle cell disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sickle%20cell%20disorders&intr=Hydroxyurea"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "15-35 mg/kg/day, titrated",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 750,
+          "sideEffectManagement": 350,
+          "totalAnnual": 1400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2000,
+        "icer": 15000,
+        "qalysGained": 0.3
+      },
+      "name": "Hydroxyurea",
+      "nnh": 8,
+      "nnt": 2,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 episodes/year",
+          "baseline": "5 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vaso-occlusive Crises (VOCs) Frequency",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.4 episodes/year",
+          "baseline": "0.8 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Chest Syndrome Frequency",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+24% (to 32%)",
+          "baseline": "8%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin F Percentage",
+          "percentageChange": 300
+        },
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "8.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Levels",
+          "percentageChange": 12.5
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 days/year",
+          "baseline": "18 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization Days per Year",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.2 units/year",
+          "baseline": "3 units/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood Transfusion Frequency",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (PedsQL SCD Module)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (neutropenia, anemia, thrombocytopenia)",
+          "percentage": 25
+        },
+        {
+          "name": "Gastrointestinal upset (nausea, vomiting, diarrhea)",
+          "percentage": 15
+        },
+        {
+          "name": "Skin hyperpigmentation",
+          "percentage": 12
+        },
+        {
+          "name": "Leg ulcers",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8at5a-3KO5NP9xF2dY7ImgoU323XrPYIc1wwb71BGW6PheCXmEwFvugsXbbLdfwvLlABwggh_B0S27VWbZDR1zxH9BpNesOY8BDpGOzf-6kXfoPJ6rj00gMt62PyIu_-ui8nBld1SelxXil2jWMAySH4WrVlFFmWqrWZ5Dx5LnUeoGHcauqdEKS6NoyLuLl5EPbGzacIydEAGSXeAuWBofQp_TPQgtxJZ_0nQva4OddLTtiq-NGrQrg=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUrd5wS1kCU2muFKPZmXLez__MKdYAHFBeylJWeAuYEyV3fDzJjroIzEf9fxCEll92bP80FGrbU610xxLSVV9RwgB_QVNRVKPireTBuqQ6VaNzfWTnrToSaaS4ZgzC_FAY4YGeaEU5agVjFRTrPJAwNGURBXBu-D81-0dwk4gV0KB4nQKDxL4uEQik0R3AnYmWSGyTob7Y2XB1xbAREkI_3ATYo45wzp0Q4sf6eMgVFIw="
+        },
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs4QYlPsxcNImIaM3nQfmCNmLkKPv0L5wjX2RFnCJ6CRjCjebXUMHZNY8hrZplp4GAPKmzcyU94F9upxYdTaf5rUeAeHUIzDN2L8eq0jVHp8P6HEi3QpGYQWOKiSinDJI0fo7hojrhDxovo03VA85r2s2CM9nbE-oVFgQMpSbE6omXECMchT-uRgdeCF0EBBdDtp4-5d3SLu_MPiWmvcIpzEZyjQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpHIKFHVZ7iSnqgX8vI8jt8hQjIfdmfs47m2muK4xjg3WsFUeGyzfyTJRsYEqqmspple7lrQh6lozUX0qJyG_wvqcdxiLMCH5zEFZRVOW5FtoCZngapL-0a96IH8PLg_hZzy0X"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRGKa2cSEjSE88DYQVmivKeYY4r32vxnTcFiqPPRbtOegYOABWrwk0agOnGS4PTsMkC4rIIPs7J55dRuFwhVKw8LsS2X7OfoqeSQUdFcSrwTzt9603WVB6xyF3oUaQzT3wtIBw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFCByh0H3_vIW7WVT1406hBBQbS5YZWcva_cYaM3JM_HDs08clIWwxYT2rakcne3RbhDOEJVatlyuSdtdY4A6-ajC4SvxeENXjo-tOLA2cQSW5MOooHZzrxjraOGkBXcLcWkb0"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoOCyhSTT9PTCT4RMMcBdDD-OKUo731bOpb0q0fDzW6buoaRGGXJjh0xD6zLxUjkf-SqbKhu1aRF3BJkF9WaYQOoCzcrnwcEi10C8LdiwmZj5__pj2vPBIt0I3iRrpooVvNQ=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1mLzET1CSlBOj1i1hwyPWexwVABASiOFerjza4AWZD8t74dok0NL0vOTWRD2tNMtEysVgo7qUGL3HNjtZhsdtTk9Vzj_LMi09B11TqIbPlGXWGAc2rsOga0VxUXRUbGzH6acxN_YkKCSqbd-O8wXO7EoazaBPi9ApW4pSdtw1gcoDSMy1Ir896E5QHCFSP2qNkbTW8L9RoceUgjnH81SrPGhi-ZoT2CarbidBDQ=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQJr6KVaF34LH_x4CWM4tG_AtQLBcOQRwXLUId_0N8dOLAmGeWV2-WJNi-n3kAUvM3vLwjpmXN9oh2TwOphJN5LIur6s54GCv18ccAyMpfHut_G_-GZBoIwRPHaFhDaUeCM1ib-MSO0fBxxv2jdX8LCMRRxjbOOk0AGb_ky3ghk9qDuEZz192JBtJzTGFHTpadcyXL8q8cvogN-5GzIKXTU1Sra6WbgzP6otGoNAdXYiaYX3Da85qFqxuyy4bXEQ=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_NSGnRWkUbK2sh9tH6ClNSfMyYX1Vaaho71hjp60Ez8r_WoWJbBk-pD-bw6UTN1fPOF11iq6sL2WQlF3qZTgcU4kf7q6a9xf7u1UhkTmhJ9iZm5bDE2cCsFHKRy7ALM02UTpqjhwJem0HBImtz2WKOBrFMz7MGjDLwjpKaw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkNSL4iwbiqT8YkyzhlUsWoUAASaYbiEE_EE6tH11rhbq8u5p8V6C9ihNMcL2XlUpnonpsChIo9bZsZoWojBqGXvXB9hj98QDlOq8PsDdaGOIJOOkrWb8FYI0vy-p4jBRhrGWD"
+        },
+        {
+          "title": "ClinicalTrials.gov: Voxelotor trials for Sickle cell disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sickle%20cell%20disorders&intr=Voxelotor"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1500 mg daily",
+      "effectiveness": 68,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 125000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 125700
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 359143,
+        "icer": 750000,
+        "qalysGained": 0.18,
+        "vsComparator": {
+          "comparatorName": "Hydroxyurea (and standard supportive care)",
+          "costDifference": 125000,
+          "dominates": false,
+          "qalysGainedDifference": 0.18
+        }
+      },
+      "name": "Voxelotor",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 1500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+1.1 g/dL",
+          "baseline": "8.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin (Hb) concentration",
+          "percentageChange": 12.9
+        },
+        {
+          "absoluteChange": "-0.9 mg/dL",
+          "baseline": "2.8 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Indirect Bilirubin",
+          "percentageChange": -32.1
+        },
+        {
+          "absoluteChange": "-50 x10^9/L",
+          "baseline": "200 x10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Absolute Reticulocyte Count",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 35,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+40 meters",
+          "baseline": "350 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT) Distance",
+          "percentageChange": 11.4
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "FACIT-Fatigue score: 30/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Scale Score",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "-100 U/L",
+          "baseline": "500 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lactate Dehydrogenase (LDH)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 weeks for Hb, 3-6 months for VOCs",
+      "treatmentDuration": "Lifetime",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "sicklecellanemianews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdEo9W5xnNrDtLcHmuQMCyclXEGjmsNAcGMEOZwqK-WBHRmWbRyxJk7eUvule5RIi0j-Nu_-41UbICypkRnInfWBfdCHv2Ekatky7rSdcceX1LVjMlw5RFZ_qMXhO1Zi_rzd-Yr83UFH3cdmTq5-pkYoS71n4HuJA--ECFLkXh5w6ZzFykuYtRwOiv6EDb0qqmXJa8qXwP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkuRaDIMDWBLW3CvrlH8HYh9zRrv4xx8tZuUYBVyGRxXuHnbwR0TnvOehaTTisLtyAl_S7A6Q-t65eIUAz0kAXNTGtyYihYDi4NXqLpBiOVGrMRSWKKgODHJutcvU8AFv48p1gqJ7kw4nqYU4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH94k6ehClEMmyTTOEB68ehirusogGK3k0P6fWh7KclPBPnaVJg8NXY1JKNvEvEhcpagW_uF78qc8tCapsKeOTecZW1Qb03Ba7wdJ13633M7puN518AJqW0zXfwwGOYrkzpNk4mYNPKlvRuYWY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1PMA3ZxuU7LJN4nQOl8x67c749EnGFJBX_oNXnPmpuAO6aMhTMdD7-kzihz3_LD87hV2DcjHl2DYh3Jokw3ApSu8LeNNu8geB0_DyrKQ_fRIEXc6Hq091se91wT-0CGnS-r9z"
+        },
+        {
+          "title": "onescdvoice.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHN10ZojUVKN8zy5a-EvxcgaOgPKtB22CRlCL3naNG79kL-i2icYTt5ZUBb5bu7TmmNUkLqYgJnbA7evIOTvSi68_WiDT-A3N1pp_HjGA9sFClvrS94xcvLHFlUxRThj911MgkQn09JNt2lfvNQkRWVM48JLsoj70szVhMv5pbAmGoSUKV6jGgIC-QdbuJpl75rckdmf-KN5CL-0_j1vWUcBJIoBwx7pDyGdQaXiOXTHkN_8KytEcpuwWVacyodg=="
+        },
+        {
+          "title": "novartis.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzPYMAAA_HV9p6r5uOMQAqYezqsdZboVWjpiPSXk3dPWlIpmccAIQPlK23HBW_s30--xulBXqsBM0Jom5ywPwAXlctS4YX9NieQrivVp7GeN2pBstDuzIG68BYhu1rrOpegwQ9Qwgt2yu6AqD-wdUKz5pFIdnYkLX0n836kXwIv9bZrCojeqregI-dqr3ykKnriBswEjUT4Gv8JHjmIJfpcciBQE6F9OCtV_mubP0JWuTgaRotX-YCSYfXFbyB1X5sDrjJFZ51wpuA_PZBEMuUD0MZdBgcQ0S83m82VM0L5HeuQRiJKK2asWLkzQ=="
+        },
+        {
+          "title": "sicklecellanemianews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIc9MSOCmmGeSxndRCu48oi9YpPEBjuroQrUL-DtTwU2OwX4hHUiAsF82MI39GIlG-yRcSFIQ6MMKzdcnPnR7GmEmJQ3ZnlA8vVQGiQKIrb_RDwevLcGWqtVUIKmKC_Icz-3VEwxgdqlBn_tI4BqxLKQ9jmA7Gwg6lpXR4V2oT71aVZBAe3kRzeBBZY-n-JT9WJDVBcUPpufeMi1C4OADnpSgR2ilxyTsCKsklErB4NEkW9rKwi2Q8wcCyyA=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnh_gF_C-Swk8W4b2zO18EHizW5sBUZ-YeydnZyDhcH3JSMuWkJp1YZZ59dyA_B6QGjlUiwnYEdD2ByFU56_08sYX7G_EniXT3VTzXbqWfR1Zu2RhfINgqjVKm5yeL-ubz_VZfbf2qRMvIHa1zO2iKcVo6rfAIEMj-gig1wTaAQbVXDL2zDskOZw1T8vFzK5w_nXM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGClBXel77BYbs2v4mRgQ_AflRyzpABWjRxGZ5zJLGfsUgjHtiKUbuuUNPXXpoGODdnd-sMRzBx1XxR6dkQx9Q41NHGWy2ia4foJNTK2S9i_t00-ScSe70wCrXOY43UeqHelI_Vx4dtL_SAq4Fv7LjvLz_-eOVhf0fafCMErbrqnKxFBd8otkuwLuIG9NXdYUk6JQEjSHQSKhcAfs_dVPT6kpoImPnqxIeal6vKC10Xyfzbu6rCXPGsDI2QridXBOawpD_uXJPAzVybRIAgUNBUFPVCCJ20C0LeOKA_L4Q="
+        },
+        {
+          "title": "duke.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDLMFtcSYvsh0QZ2iXW6AE3vw9ejiShurti064S4D7n2GF0F-ow_I3pkFlDxn0Vt2XTiXSbtscRH8T-ZNXyxGC2emaKdhytxjnKwfE3hz0UBToy6CP-I4AtsgiwWol2n7cS7e25zgLnQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFby1QdMGtpXMkN8kMxt8SaQWbqM4kJmpCT1CzNIyh5hnyKGRA80OZxcj-4R_ADfVpS_MWGyGrr5gt7kb-Re0s3tenuEi2go6ikuO2ujxTB532EjR3Na7aaaCweY_aAbvR0tefTjlGf"
+        },
+        {
+          "title": "scilit.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJE0qLCTGa1OJ5TtW1_T4o5qBoCmBM80yJANJoyVncPm7S_WH1tARgsV88cRsgmSweaz1rf4d5RCG09-XR2uW1Bk4uv0rzPoslNzXYrt5XOr8VXSQ8neFIfJMm5R1H01z4YAa47zevzD9qen0Myfldn4jGuQIroBENe8Cg7QGV"
+        },
+        {
+          "title": "docwirenews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNnw35Rw6FFp6yjflce9bYWlNK-qYCbmuBmnP-AzVOUNN1aT5RCgyNcO8ajbOmobzK3kRYo6zHKq4JfY0EY8RdowJkZsNPYtXQIN1o2XA01yBHQcOtqu4uJC_kM12_I_KGxUhi42ZhrysOD54NipNhg36sRXiMRCFh4X4dverp4sHMINUami3fMz7CJeNvdFYxzk48gJQnXt3B9tbekwR17peD1zOTDki_w5Pw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp6TkjDMxpa6FOPnuSsms_V8kj3S25rYEBMEsACPaPY2JqHazIoFyknm2MtM9Pts1FHVlkZuM2IsnNfv05aIK-KWUCeFGFSPyamBseZpztzEGl5hEGneIolOEXn8c2nCmvR1nm"
+        },
+        {
+          "title": "medpagetoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEATOrWXgA0epjGwT7oBrLIO5KGqwqCzTeD7LDHB-CXdtnRi20AODdBrn2pgU_hv0pa9-WsGuEDWUQzlAOCTB8W7G1tbnOn-lV7nhnRcqO6-q6pH8uxcc0-_-CIY3czNmOtlvUR1avYtCM0GDLCsODRcnkPuOJPVZrSxaR"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFodHy-ZxXe_rdKDjXklo34BctJFDRpaQvZDGqSvDxLlxo8xqucG5YENMazDTxZhUQ-jPK5MGKPCNIan7gxaTBlWUw3yHU1-3kbF-s_HZrjljpXpE5vVtRsKItgdveOa9UW7sQ_PLNqT2ivUpv8545J_ak44Qpf3PaLor3paM3YsQPK38Lbdugn8NoMqJvwMoF-jITl6qrb59YZ_-mc3riX98P4apVMCaMHvuE7TsNOXhBEqsaAEQm_G6tQdM1mEvQuDtsHiDSAElF4qi-vCo4wKKIX3AFLRgbd2We_aUjcuaUy9RNMwcv-vAhoME0MKnkvtAc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Crizanlizumab trials for Sickle cell disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sickle%20cell%20disorders&intr=Crizanlizumab"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "5 mg/kg IV infusion monthly",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 300,
+          "totalAnnual": 102300
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 365357,
+        "icer": 550000,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Hydroxyurea (and standard supportive care)",
+          "costDifference": 102000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Crizanlizumab",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 750,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.35 events/year",
+          "baseline": "2.98 events/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Rate of Vaso-occlusive Crises",
+          "percentageChange": -45.3
+        },
+        {
+          "absoluteChange": "+3.14 months",
+          "baseline": "4.07 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Time to First Vaso-occlusive Crisis",
+          "percentageChange": 77.1
+        },
+        {
+          "absoluteChange": "-0.68 events/year",
+          "baseline": "2.01 events/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Rate of Hospitalization for Vaso-occlusive Crises",
+          "percentageChange": -33.8
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 28,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.80 events/year",
+          "baseline": "2.00 events/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Rate of VOCs Requiring ED Visit or IV Opioids",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-112.5 ng/mL",
+          "baseline": "150 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Plasma Soluble P-selectin Level",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 15
+        },
+        {
+          "name": "Back pain",
+          "percentage": 10
+        },
+        {
+          "name": "Fever",
+          "percentage": 10
+        },
+        {
+          "name": "Infusion-related reactions",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Within weeks to 3 months",
+      "treatmentDuration": "Lifetime (monthly infusions)",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "sicklecellanemianews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESR0XWopvcPbXhmhEO2wqLP2qhjarRGIAAx83IPw9BvZUepT3sp6lwXxE-SjlhUjCJ6rdeqlmTGZiSPM7FIC6PXCCNVpsU2BgmygA4ICfYTKbRNjpzOeIFrT3xf-0cqOMVgK3G-iQTVe723VUZ3sw="
+        },
+        {
+          "title": "checkrare.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhkYb2ohmA68hK8BCMXyARfXPiRt1oihb0aUl-xj_T8BM9YmVJrkAKI7iNoJqtcOhNQ6-UvsTvqQiYsAbRpzl-3jb8wJcALyo2AbzCHmGSQRoi_L5PqoUFHh0jrqb86BZFThzuDTS1gjmfeuMfY9pKsAYEUe5gPgRjP8MZ0J6Qy6XFOmEzEud4VaC9qcqQaA-PsHdTtUA6782rgFoKiJgiH7gZ3YD3iBdyot7kAXIAvzbnoSUM30umIQyy2TY-Wn8hKfCVIMXxENDR93Ntt_mtYR1BKx9-9NBZLA3OR56gdX0I6OngEhAn1_7XIb6Rwv_x2zNYQ6k="
+        },
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv8rIRlv9Ua6veF9HHB__hYWiXUs2uucdknv7tvSVA2Q1it4UJ64ClqYjx_6_H5eEoqngZHehYq2NMyAO9rBvkVKV3chyzopmyeSeP-En5XgevIwZMwN_7vrJm2H20w1b-PPtLsNKSoLm7k9Zq9Sh2AdbdKZxrEIpUmbaXb3fmQP25Mj5Ko0sErfFF8CWRKUwc8LRQvcvSszGzuzTXT-a7BxI8hOdm-hJDgm5QH9pAyyqDx4jJJ3w="
+        },
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi1X-LWMI802h37b1TngFtZkYgzY-8vrhVATRkxRf-tUsktv05JVJ9OgEPBOX-gPb40CVTelR-CHzkkvvdN5326ds00HGju8fNrlWeJT66BWC_FgGWurcurOGHTE9rTC49c3hm6IdWiG_sPP3NAgtjXkewT12Y_abj-0ypqhM7irTtttO2SQ=="
+        },
+        {
+          "title": "onescdvoice.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjG1LhiH6RZDE8yMbgkbfG_asAXKL7-TW6GYlMPPp86Vv4SfiIIQ_ohnrbSCjh-jZ79YT7uhbRvbnxOzD22-5RM_vEdqFco7zm5aQp8jt04FqHYt3yijb5_4UxZskFUWRzeOD4jkL0wKBEGyFNDWp8MUviMDKuB8ecadwVML7N4kbZbNJKeIuQy_LcWLBbbouchsFAMGtxxiMHZBYCZwt2nwdleP0GUWDE9ooPXXsIqeVW-Upwc2_y9Q=="
+        },
+        {
+          "title": "firstwordpharma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4gVwSGOVeZVxOcnzped5ok_dh9OVg77X3wDdaQNL6GSSbhWD8tZ-qwGCRf-o4deZfI8dObbycyUwHXIV3Q8FM-uRiEqgNnkp9hSTeUfuEKLQW_eXX1A-29XmPnCKrND-oU-Yh"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgKnsxwi9WSMpmpi42V7px5KZ32toflCOQd1xYZetQSBdY2Jv5Td-97TS4s2bZVbPxEYJc0glVzmSaLZOKTjqlt3aeQe15m5YQKNVoqPlnExsJSMrf7B-vnW9e3trNBM-42mXmb3lJZqNUVD4xXOuKshvi6EwrGqjqGltjrXjOx_U3fxCLnwwzc7pfgZUv1wge3bd-yo-beUWVt0ZtHi7tP9kjdzpFQGhu3p-kqjmmSwzaZpPAJGazubEsS2CMurspTO9uAR2dMao5kiGv3yb9YfEdejXPeyW-SeLcwUBG8n9mTYvsSJ-WSSvYb5uLVNMmzvtjSzpd28ilL8rbnwYHrdmaunqP8eMFyrCVfMJF6aFVFwyDTOPKDjgkLA=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhFfGpsDD-EvXUk8pHEuPYZuEqAbUSKJisqAWvFFb80u2khjfavps-0pdAlFUuu7HrTDoDXn0mIcCBnrgOjMfhbIlZuRaoYLbCdBG9L_GphgEpLXyuRg2V1Pba6FLsmBHgSLHhE58a_Pk38yYoMcV1ZuslNOlv5MskY-KlD1ju4AD41b0gXwroJlI_Rq6hik0EqvRpP0Hx7iWRn2FVd_jkyL5JshVza3fHPBjDbMi6"
+        },
+        {
+          "title": "onescdvoice.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5RE8z5oY33DEKiILvoOsHdCE7Ju3e_4w9IyP84XJcQ-wWnBxoy8uQN5D66zoFWvZUJkIx1fa7FmEUtn3ygXpii1Zzfsp90Uu0WRUVd53fKN9L_ygmm3W1VU44ivonfE2phx_uKBieQVNdi43DdsAx523vIjgAXo3m9d48bcZWwxpRb_Z2svC2Xc3gqssPknulF43HehnhBl-YFJtVbzi833a6pXb7opWHOEg4U3Vvv4ri3PzzRLqCQ08="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHO7zrek2dM8PJL1xBfAW58c5b7Os_V8iGtdkZl7beINM84uPGq9u8GGht6bicD5GTEpUB-Cwjye9HkktQaFT60IdDlCig1y10joEEeZpgaULBUkllwDf9wqTk_8OhDg5mlq_kB5yMmzkEC9c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaL_8nzMwMZQ5xGidMHc9lApCrZXGLVF6saBL0lCvCvQemr0AhiykWKq9UOFJkpc2e2mobrjXk5IFZoKcqqOQJqBl1e4XdlOzX8cVx07mONlajEeE9RpNjpY7c9zw2MVBHafJy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi03RWL9gzIV6kWIAGGzHNAIV1L3Co89luoop2uq2RXRqhN2qWQwNtdmggl-K14lYBZMXB-U0Id7CG_APQ3PlvgEk0ueJtwwCbr_90zcNAOykTh36eL4jW5bBxv-Yv2lQtQxC02ZOSgwAptdJH92qyomuOypkpx8yjwulstePt2yZYf9BSPM8DR6sFmkyQmIiEOaMiPpdMr7G3H1APzoQjHmvZ5eCQaB19TFlYfxqS_ysWwJSOZCi658OtCFfE7THSJqstprzOw4ef-kmHfw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiYhIKoevVBOTdPpr-JBE64dPpP80qGrRlooR1zXdEpt9EYQTJuydvj23cc3iWa-q7fTxusBaQkzFA6TXulwb89Hw2cRZKb43ufvbiE1uGyps3SVerX9roqqwTMW-erdKGX3zM_B93gPKv3IQ="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcc5nG-_AQZ4ksjc7xJc9JIUQFmAeVtfiZmF4zcyQmwxMOrB-zmjXmsqqC54hKm20sHYJKmJ-E3nWZF8iCpoHpR_4l1qkLYrAYKeaZ-6OZW7WEPtwx39Z9Kedxx8ut0ksltH4yQGBXWaCdWafev6TySRLTsLlDPLJA5TMzBoAf32vftIkDGZKi5wFuPZWxdA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: L-Glutamine (Endari) trials for Sickle cell disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sickle%20cell%20disorders&intr=L-Glutamine%20(Endari)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "10-30 g daily, based on weight",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 35000,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 35300
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 141200,
+        "icer": 400000,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "L-Glutamine (Endari)",
+      "nnh": null,
+      "nnt": 9,
+      "participants": 400,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 crises/year",
+          "baseline": "4.0 crises/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Sickle Cell Crisis (VOCs)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.0 hospitalizations/year",
+          "baseline": "3.0 hospitalizations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations for Sickle Cell Crisis",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "+23 days",
+          "baseline": "84 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to First Sickle Cell Crisis",
+          "percentageChange": 27.4
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 25,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4.5 days/year",
+          "baseline": "11.0 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cumulative Days Hospitalized for Sickle Cell Crisis",
+          "percentageChange": -41
+        },
+        {
+          "absoluteChange": "-0.09 events/year",
+          "baseline": "0.17 events/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Rate of Acute Chest Syndrome (ACS)",
+          "percentageChange": -52.9
+        },
+        {
+          "absoluteChange": "-10.0 days/year",
+          "baseline": "25.0 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cumulative Days of Sickle Cell Crisis",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 7
+    }
+  ]
+}

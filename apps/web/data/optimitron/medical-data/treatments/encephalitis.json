@@ -1,0 +1,726 @@
+{
+  "conditionName": "Encephalitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:10:11.856Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuRHo9CYhTAzmg2jnu45n4qOJXylNG5x1INs2DvwIRKgX0wVzRZAeFQMqAcCTFu7uleZi-aVqsoihEwax8qtbGc7HPKx4-zdOb0xjlD53JJ8Yx5tfkMxNpqsblGsTrxgbr8AFeEN6fdmih-q0UrJnqvzfKcM9vxRDQqtX0TC6lezfnD6cNxV1C4vXFF0YMlHCcDApMUQlBe9KTX3iBuGzqxtWKZ7s81sBRApUVQBISzt6m3fZUBsdAY67Pgww2kyAFTUupgbfoskCCK_YA_CaSi3V1sXGfTiKCKQR7LqhigQ8qgznosw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzfMCbfZmJk9Tf2w7zoi_5Yihpk_QHPVeoNohj96-SmfvOqwTnj8_L90ENbazJFjtLUP96ax_6fdErw3uyfGyGL-LaYuFQ4AzFBpRze1d0wYOlhMEutVSQBCfxBXplCuAI9MZK58cUxv82hw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMA9iFpMUXGwEro9i54isVnaJoq41ScSZ2mKT7l6hX6t5QuSBYmKL9oS6qzzHCR00-B-XyLRORHZ8EkdGo07ygIo6T8Zcyu71h3_GM5Jy8hgpUfih9pcqV89GJnWFd8F4U95LB0iNdhF4UMftLlr1nT2ndiP0zFz9o9FwMS8M7CVbQD2Fjtg-0W_bvGPUi9YQhaTDXnzt0U7-DhFZ9QaIK9Ed2gaFzW_YATLCp_uF4_fXM2nhCH-I4Ms_mDTtLK3wJMRD_XybXCiyAv4f3Wo_K6c09TMDNDFbQnqJoRdhqZKzlHTMA"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOOVg9ZAvUqc_LaHCr5Huf49k7or4O_5Jv79Heo5xzCFKW76nl5e8ueUmsRPwbYOyKoXTMRmSjsE4-TWkYKxhucj--T4cB0O99BxT6YmGIrLdLULXq3sEp2rpG4Ts2QdQ6kRoKS1m2UO90phe_PTnR6v4="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFGaMHh46zFi_CWtcY69eTRMc0JGNts5MfOU-lbBnIBz7Cz4Q5ALcKTdnszKROo9rBCQOCrgpmOggdSFFbntuMkt_3nub2LxvnCuTBVSKndPKBBRPl-A-aEMejuNLxDlA56UQjNQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLnIW5bCnSQoF_zwytDqNXvFXr4Ed3m3rdZza6pJ5xBNNl-r_r5R6_DsHo7J_sfjnPXYTO2UvWYKspsAtWct8t5wyfRLlqoSqp4_9D0GHe-bqG2fGzPdL-_v3O_GIlKxIoq4M="
+        },
+        {
+          "title": "ClinicalTrials.gov: Acyclovir trials for Encephalitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Encephalitis&intr=Acyclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10 mg/kg IV every 8 hours",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 11000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 36667,
+        "costPerResponder": 15714,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 8,
+        "vsComparator": null
+      },
+      "name": "Acyclovir",
+      "nnh": 50,
+      "nnt": 2,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-50 percentage points",
+          "baseline": "70% (untreated/delayed treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mortality Rate at 6 months",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "mRS score: 4/6 (severe disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) Score at 6 months",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-15 days",
+          "baseline": "25 days (for severe cases)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Hospital Stay",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 70,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-30 percentage points",
+          "baseline": "60% (untreated/delayed treatment survivors)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Cognitive Impairment at 12 months (among survivors)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2 seizures/day",
+          "baseline": "3 seizures/day (during acute phase for affected patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Seizure Frequency",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "+0.2 points",
+          "baseline": "EQ-5D-5L score: 0.4 (low quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D-5L score at 6 months)",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Headache",
+          "percentage": 3
+        },
+        {
+          "name": "Renal impairment",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Days",
+      "treatmentDuration": "14-21 days intravenously",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "houstonmethodist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWdp0xdVVoCuPDKd7XT220okRC4dHZKyU1UQrFwR7PDwmL4M44zbFVGzdg-xLKWmrv9QHMXHf-2K8im6HvszKr_5rYILnDvUcWnb3lTywBEhO3mXvYsgKp6yg2hqEkT_6tLEmByGdTX937GO_lC5yv94DlSiFxj6BgOE4fuYXfTHnSZsRKDE4q9sJnxiuzR0cSuFZUERnUbEUoS3qHVfYme8c1F_Xvtfoq8tXFVfmx1mv9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUgOFbvGvL3qVGJlN_txHJBKs7J-cwTp5fp5JSazIFK3u6vSG-F-rhihe0ezc6G5I2ieBchH8bgUYoZw5yc9VDDgUjuUnAGwBhZG3CMSA4Hqdp53aCB-T5TRgqobuqFMBTgOJGo2Ddq7NJ5bXT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4DRFImY-y5eeJUStntJQ2ceJfxOq8NRVyMIyf8G3PootTQcCQix6p2Rh4djTo6grO1Gy56UHSMCI7ghIU7ZAn_kB4tuD_buH2yQuoXtcICvVE6lUxq3dx8OCkhV_0JIGezug5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIRHgOBAfAZhW8TzSWNNuS6h0hg9qLcG3qFeEhLCVHBONgJ32cEjibgcrc9tvx2sxZArlp6aepO4kC0FodtOX3jjk3clZ8C1ANb6THUocE92nB6x8bs9CaGqy3sEjHhIwkaExFMrIJ_y33V9y4Q992Y-0Dase20fVtE-_Lsdd4nswQnDl8pk1pXN3_FFlnULoBPPVX3MtdknsnHh-dZGQ_K2PR_2le4fffJqOWYdhnEPi6pVnDhOkmI5RWLc56YAQ8lzBZBezKNZrNUV8b9tzc"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvHkk42cnfYXGBnN6FlFxkzt3K67hxClOLSaEnR4mHAZ0bn-Oj05ctUyBP5b62TZL_Gt24hpwTkwJD7e6A0-RXaUaniR3NUufJKfHh2M7NqI2cH6aDZzqKlEmuKTO2n6FrcWQss9Vnc4xadMNPf-vzInmkdIDYjdipIhYthV_0pjktIwxUXYBs9-3Im3-QfA22MFdNqqk6HL3SB9cbwoc86Z6T7upICttXCTNvAaBf9unWNfu-dHvW4nzanPBpJis7vWiSJDkngC2fyZXkQbQZT9AnCXCaFOM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYLs3gDSsmVgcBpVqe6A_HOi8aJhcj3cjE3Rpso3IUasdKc57TTK_lmrXebWgN_X16UT7xs0vDxTgHk2UeJfaTQztXElABI99r76iFRDtONW_7_lw_e_NcYDrohRb-lGaJyNZ9717jLvQ_ZL_d2CrbsI7KnXAlW9JuzBUbR09a4ggCnXUnlkKAJeXS77ux-2L8_QSDEwVV-DduBGQ8yUQbodiKl6Ah79A302XrQh8B2Uzo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7EtEJdu05T0UncUIUAB7W8ojswOQv7G8Tim95wbjV8Wjc6hyoIUlP4nZ1LqbpLUkpLWjAQBfqauzHj7bti2mI6_3VNhAjr-YXz0f2W2vpe6DXaKFCJbmGSo2qn2Homz1QSA2UarmbgBMyUt5YuQH8aPl95RTu0sIXc7dumDR-4qit8zUrbHa2dSARbprWIZ9hL9BKAmhXEYwcUKbQiA7uy785uMEvP_W0rrHDCp99f_Hin1ISpMZYKa0m-TG8lzcLfSJrHKMq8-wS8xvFkAdN3vOhj1GS8WSNr7AAJp_Thje31NsjDHKEbht-cfMc"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmIq6tEMHE067PjxfCCl_WPG3PdIkN_dJCHyHXRjF5IQZbmQW4glBFtFPgoix_EM273oLgR9l1YYRqlwyN9IPsrogkD9wutLQvOmIGLtL2DMbl4n7c_DWySpr-PxBj0uV3ygsOgcp5VCTRnTcFG8jIW6Xr9qSIMMbr-8jLSz9dxfKelSwQ00_4XNm1ep2F_baZhuw="
+        },
+        {
+          "title": "apjpch.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECvP-Gb4Wh2rvmag0KR-XX7Vj09VjCxMrrcppCJbg29Lb-G6N3BqSBqg7F3XvQviAbGRyHPlnlsmhGPp1TJ_-oakc848jm7sMi0snEhuqSKbIopUaBVo6BCSlDpf7tbo0Dpetei3rBv3zpnEvnj5LUVSEitZnvvuTRnNCuWx_ctjUbOaxmk8cmy0WyVkUY7Ow15566lZ8l7cHP8WIhM7pOQbjbZcz9fo3eEdD-9_Ftgqh_-Rd2SqGjJFDygzFKp-sLOQ4j8FLyjhQEbBXy5yM0DL09avM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7RzASe63SyNqBvGnrqQjbjNHJsJWDYa3ZHlQKri5NdYp0emn_hq7wiFQzDd7G9Y7Y4m1vs2N2Jm0lWEcZoQH6evOuciYfkowWjN10QZr54hsq5YNMEbcqfVmsQ8IFZYU18D9k"
+        },
+        {
+          "title": "ClinicalTrials.gov: Methylprednisolone trials for Encephalitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Encephalitis&intr=Methylprednisolone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1g IV daily for 3-5 days",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 11200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 24889,
+        "costPerResponder": 18667,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 7,
+        "vsComparator": null
+      },
+      "name": "Methylprednisolone",
+      "nnh": 10,
+      "nnt": 3,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-40 cells/uL",
+          "baseline": "50 cells/uL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "mRS score: 4/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-7.5 cm³",
+          "baseline": "15 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cerebral Edema Volume on MRI",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3.5 °F",
+          "baseline": "102.5 °F",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.4
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 60,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 seizures/day",
+          "baseline": "5 seizures/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure Frequency",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "MoCA score: 18/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Montreal Cognitive Assessment (MoCA) score",
+          "percentageChange": 22.2
+        },
+        {
+          "absoluteChange": "-5.25 days",
+          "baseline": "21 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Length of Stay",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hyperglycemia",
+          "percentage": 40
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 15
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "3-7 days",
+      "treatmentDuration": "3-5 days IV, then oral taper for weeks-months",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRL784voI6ihnyTZwVAoC3C3jn9h-798M9j-2l3eJW7i-dbw5UKPjKanfVdeWLKXtSOwYIADXn2UPbW9EOSkRALGB0UexaY9Z2JqzRp41nhsHyGicQUWiSPfBENuSgrAHGNTGOlWC8haj8-NwLv6zilCGfRJkK8yvyLHQ-iEEYvF5nTWUSatcWOv3ddQ5Hyy9MZiMnMyvalLipyZEOpeFaKcEuME8KYeuwe8f1JU93bfFAo_7jCoavufx1dibWwX3vES7Ify0AC4UvCfjUSDCtyFYhwOCeKDKrtlBMWVlSkv7of_E9kKzs53-Foos="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGPlTE9o3nAOdcnGizzBpU4ToJkcBkN_57-Rg92s9myG1fnC7T9jWSsDHcy1jQAs2XTSnkxQJ9rZ7xwie3DQkYLzK4-7QpAH35umbXeth-LjwikO2EYmd18_ZVd6dG3WUfE-wFGQSYDr3DMvs="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQytCNWe9NThpgFdVZjUQyky3z5EBdG4aRHoBZaH_WIGneqtyInKVPzlhx1bPf6RgnWKw5uzuCmfOdPvfmliZgKl-PVC_Ar-u96jd0J3K0Bq8CTp88mIYfUUJhP_DlipB9Qs_IlCZDxzjIS_KJFUxZ--ZX5j2mUpk3OmoDVImuliwfBbVTe_EV1x8rIOUskHUoWvjOVvWjxrTaY1wiShea9Nib-UclzKw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGETTDzVPtZZAHM5FUak53MClGhZYjAuMNqOp4VADzSlEvroZOgnceJf_Ghk7TG5FDs1LSlLMlfXaXBAIIX2PtR4hEOefQxMsw_VI5aJKXvk4wPsWpwI-ngw5p-0dv61GlyqcEExNxee9_-Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLhuc7ElSWPj-LFyQ-hwhAvLG4bRGOGpog7cvhCOF1A0DDfxq7jcwBB0mKANRnV54xH692_u_5lNIuTY7sku3X47Hd8RHaXN8gagOG3K5cBXk6jlGpHb2ClNxU6dDbZxIf5AmGPH5x9K7UJhE="
+        },
+        {
+          "title": "d-nb.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFr-3bg_7jOkxOIFuIPCEqepfriqaBN-vfUQ9Qn_8jiG8R3NCU7twjOPYSQ9ZElvzDs6tWATIOe8kCf7EEjBmavpdYeBop8ufMsk-fHFAZZ7GQBZ-akbISQbA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjv1obKR8t-1cTxV8hhvsvCTwV3vT26cYNjhLhZHK1H3zGRoXWWIcsZmuIQ0KvHZbHn_tnHo4kB0lkshLDRgPwJT53aQCtHBiygeH2ZUOJ5ovEgK2GKgKT3GV4hrfjzKvNzZUgk5qZQ9hiOA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4R5qIsdR4-EMyPvtMRcQgrqiCzOOv4KSULXadgb2Vva6cUm9hCxQgPxAzuNe63ZXwYDm9C-X5ay4prKMjLZTRKFgpCr3S4VtBtFizURgsf-WDPl-RKk0Ka-_L2-CzYXMKw3s="
+        },
+        {
+          "title": "caf-dcf.be",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe8drQdtha7nJlfpej8wJ98dNKKrfxCTzuPFdXi6oiIzdoopejK5Q1FAecjLV8v44nnfmtrrIzxLfjM7NCIcMh_joofKDXv4qfJrLf1BTkIz7YFa0uV4EtCYOSozR6W0L4GbQmMhOmWiUkoMQM2BORKkg_EeTEeHA6REHnDlUvkh40cTINn8UBoDGO2NUmqn0XfyKmkQZggbmGZHbh2YZroLrbloj5gllq-w-T51lDMMYcYo4uxF_iBr8kUsJ2SiCOVnfVPOx3szDchv4ZxhSdwCDeujwAm7xsR74="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv_4O468h0BWTx-Nihsf1A8Nw8Df92FODxYbxCCATjGgg8iOEm1Zm1YgA7UeL6CLnO5Nf_8CjORv0GGSkvuLdd3FbvaviSDYJ6S3Draf45xoh8N9j5AJByBYSdk7ewUEFVUFw4QzZo"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGt7977d52AexJuPNDp4SN3jKIdv6iqKC1KPBMzr-id7uMyNIkY2WpPVBwp7gxpt57KQJlrgkDDDCxssTSEiLTOlUiRuBN3V6kePB4tQqTtfaAacbOTIXCIo6YsfCu2ev_GsRa3QTc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHizilHfPiQGyF1JD2S7bo6kBmU0BOM7xm-zJrmpf6lE6o2iEVAye5ujh5ZRXHuBObdHK8wD3SzjQAzBWtLPYvRpjxwEzpEfuu1eiWW7xqx0WcedIOIirp1oe2rQ0z2CyqE_nE="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOX6-YIKtfcQVPWTbpaltCIZTT_nNn0-zSK2dzWh4DCTLbGke7szr2HyTFEMyMOjwd1eenjX3OEfAOShcsPNXYf5pJ7mY4wIHZw3J1_oHFE1awHRsrekCCHozpgtfPt_8lrbm7QgCz"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravenous Immunoglobulin (IVIG) trials for Encephalitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Encephalitis&intr=Intravenous%20Immunoglobulin%20(IVIG)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "0.4g/kg IV daily for 5 days",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 30500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 67778,
+        "costPerResponder": 50833,
+        "icer": 95000,
+        "prescriptionAccess": null,
+        "qalysGained": 7,
+        "vsComparator": null
+      },
+      "name": "Intravenous Immunoglobulin (IVIG)",
+      "nnh": 50,
+      "nnt": 4,
+      "participants": 2500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "4/6 (severe disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4 seizures/week",
+          "baseline": "5 seizures/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure frequency",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "10/15 (moderate coma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glasgow Coma Scale (GCS) score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-15 cells/uL",
+          "baseline": "20 cells/uL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell (WBC) count",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 60,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "20/30 (mild cognitive impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Montreal Cognitive Assessment (MoCA) score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-15 days",
+          "baseline": "30 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Hospital Stay",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+0.3 index points",
+          "baseline": "0.4 (on a 0-1 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D Health Utility Index",
+          "percentageChange": 75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Fever/Chills",
+          "percentage": 10
+        },
+        {
+          "name": "Aseptic meningitis",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "5-10 days",
+      "treatmentDuration": "5 days, may repeat",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFa5tbNrbslq99kdDchXx5X3XDnYoLwtHVJoqLGpENT-nPrzg-7jkkwMNsLWf-bgbrtkwfY2nEOrRlaDQ28pFZvO_0jWTTnjilW9KDmYL0YBABccc6bjHi16FnisxNHPYM7FT-7PGwjTgu3OKT0erUiii25B2kE_U0iA0wdNtN6cCJHkAoAFAgEIJ84EVmQi7iTV0umPFqRwQSVvIsQclI-y0_Sglnu2VQqFRPwv1HxCWpWo7b"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNExYaA_ZW1StIHS0cf37IRAZtt3gPfmDS2UTPdK6ALm1cA3MN1B1eFItw87LKrm_FGHiB352HcByqwwdZM_ZFMcoicgnR0gtVprY1RvjIVTr-6owVhWD6fCQgvYxUFh0VysN_OQxge0vWNg=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTI9b6Vhkun_lItfe3BK2oY1gd__IAz7j_70EZF4wVixdBxsI0ZsXkoKHr0KFgXfW9AxGbtx7RJ0FY1c5pOE68N2MYCeJlac6EfBihzv-GpOIv3FXevYAv0U4QqYbRndepvT0th5TG8Xk-FWBT9rkjaeK0i2ZeDklhiFRyEELEUcGa6eEDL2Ueo4VpZyxBqvE5nRDt1ZQLIP4a"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrR5KSKD2XtqokzbfEq5FiTDykm_ZTwHx41L2CLkHcGHOollHn1zezMtAYVAs8ummA_BJwhWwHK79PgassyCFW71hh4dEBIijeHEc6OJZWBlf3JzRCqJB_bKhnJYHLgpq999Q2gRW5qzy4oW-tfDFBoUsCDkhmwxxrcI5YJn1rNwKWd2aMuJ6yF9Kz5XBtTClZQCzKz6QM1hBZ2QSG21bmU4KQw1fvb5yqOZwceP89chHPfWvUyWYqFdp8"
+        },
+        {
+          "title": "article2submit.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5WzsxH58sXWlmut4BiBfnHTWEOaGo9za7OHbpdHNw_8mj5FdYnSe1UBgIaP4MGnYR6L6Nzw1TeBdvwZd1w_ZuOXA82zo6JxxMJH9TFqsZv7j5Mh4Wa8TjoXR3nYP9NjO1JL7wR7UjYq__eYy9_diaGuoo9w94wr7nfw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMF0eOfMtyvVDFi8aKS6TdhEvZl-CqFbkg_ADBfBjXWQ80FDchOukDYUwnjrFsk0jbs3-FJUYLz5BsTxppEBPoOsYfe0Tbgaki3xY_N3fJ2g-1Ee0s_jQl4yoew1ZUiAHF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr_y03oZWnH57yoCtnN-0N5u9EjufvP4YkV08M9zymYzB6r5e3dNbjfPDq5SwQp79qeowO1H0p0wo7DVU_TlCtqKw5ctepgYdOtqmmILaV1fAQPrj4XATG1khY8PWh3eTCR2s8b3wuVuSPzQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHLHM9G9z5eM2O397mQ7hEJ-i6t13I-mvvS_Rt1uqKUdwEUAStzgY_bWRoJnMKtyv_i8yhAPl7NhbldljnEl4gqxnp0jiuVS01GNYuFKk7i0DUok7maiz-2bfEOlll7xxOMqdZ7eD3kdMzeA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcQBigICk6kLMxteEHZM50HL7S55zpuZmxvkYfjj5iGWkP6JpPR-rStPIpRfKTDjM0sE0v_790jtFhlAYCPBlONT6jllH8IwaWzf7ZllfQa1FB88Wa1WtsR-EzuEJXOQlwgmg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Plasma Exchange (PLEX) trials for Encephalitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Encephalitis&intr=Plasma%20Exchange%20(PLEX)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-1.5 plasma volumes exchanged per session",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 35000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 36500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 81111,
+        "costPerResponder": 60833,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 7,
+        "vsComparator": null
+      },
+      "name": "Plasma Exchange (PLEX)",
+      "nnh": 10,
+      "nnt": 4,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 45,
+      "responseRate": 60,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 15
+        },
+        {
+          "name": "Citrate toxicity",
+          "percentage": 10
+        },
+        {
+          "name": "Catheter-related infection",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "5-10 days",
+      "treatmentDuration": "5-7 exchanges over 1-2 weeks",
+      "trials": 70
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiimgLUkMdAgbqmn_nPh3zkD-R0ksU1YhtKsOkNXOWdRzC-ugvB4-YrgmQzGrKvRh4fLdl5D_zsDxF7U4N53XoLCVVzUOspEPMyZe8F_JPHl495hHa82NQ-1osdaE_qzGbQb86"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGD8NvewjtavlbBdU8KqLMAtRTuP-KUQ_a9FHnFHc3RAl4-XKrAWR01J5_wozAQxCRczDGIpaAwi4RxI7A_VVxNR-0P6oEB3DXcYmjI6Vahy1LVP2kNL17FUxoyv2sVJjDRHty1N9FVchiV-T3Brz94otAzU5VlTys6dKt9zH87xKwnTjj2L8p9quVaFTTywu8eU9WwLlcd31VF9JMDJPS0XeLsbKfwuqkKkiba5uhYrPprslGDz8ieel3qO86tI42mrRERoiYkxEjz1dENgAkwdJ9tawojUws94ZYBw6CcHyhyFvPqmryFWbA8XeucPYecu5w2infhORH17vysq8JLBDjrqWtHfL3uPlQfPfdEsKcHUZ0PRg6ITBpO01fzo_4Q7aYAIApG1uShVa8KBiUPYFtQReU9Giyccxjy77w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmZqC8YJKmB5s9sVcvy3waGVmn-YoXVYVrC7Dm-AvdzeyzNcMpfaCiW2Ov7RB-A9I_w16s-SdAJ19JHnqBfK0ZwDqUidRGVFKW8A0OZm7SFxrEQ-ZtXArYJrwtGLSznKo3RCKj"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJy_B56FDSjhaaZW77lsv1BOpX90Infz3hBaULtmPMK_NUg5upwszFZY8skZu5Qjq2QwaXhfxyXPa0PMWgsjdETzx7LhwK2llRWqEIQ7dze2kaQRYm9dYjbi7qKsFyX9t2JppZkLdf91uLl8cjZRDQ3fQ1dB8siX4X_CRZlHkgVuYMaEH6mlKB4XO-qZr_l2weVTCNNQNh7vtHzDEUBJIkVdFdrsiYCLDxQxqGCdc0HU9wpocT-2B39f1aq8l731o4kUKL4607DfMcDk2uRQ3SSXXmD07jgtjxLRAPoA=="
+        },
+        {
+          "title": "england.nhs.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-tj5w5PW9cBLly5fn6Jyh248kh5gBwkAtheEXjJQkcp17su0Ha6QNu3kNXGZHyE6-U2RI7Ozoul_jHFSYeQHL2FsyY1y3KxKzOQSLOs6zHv7zT6uoHdQLJHsfEgOphqtI4aV3WFjUYddm6HRkq3rM9oR3rEJXJbrgnWsQNIAC3SR5Sz4T3w7jX4R8qBLjfZSPqvAHXxmC97UOVhy8e0_QNsFbSqr7nAixDP0ha_KGBNZW_aaG1OZ3vGsLy4Fl0SkFE-pBz72_mgpMtl_vQCn-AiDyzLJeeYC7nN5TGCuX5EBTk5Er-o8="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF79vwSqNPzm3BuTfGiG8bteCeSYTIjZ_PV3TQQnLtv1InYh0GA3fZ45CFBDs2zC6nNo9HO7Hw1a61JcniyD7zcPpxEbj8SWIc9TbWCDzb19-o_Xz5IFwy_xz4rzyXYW8Q6QMih1RAY3E3-ITPC0K6MQi7ANTo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rituximab trials for Encephalitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Encephalitis&intr=Rituximab"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "375 mg/m2 weekly for 4 doses",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 26000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 43333,
+        "costPerResponder": 37143,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 8,
+        "vsComparator": null
+      },
+      "name": "Rituximab",
+      "nnh": 1000,
+      "nnt": 4,
+      "participants": 1000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "mRS Score: 4/6 (severe disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4 seizures/week",
+          "baseline": "5 seizures/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure Frequency",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-45 cells/uL",
+          "baseline": "50 cells/uL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "MMSE Score: 20/30 (mild-moderate cognitive impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mini-Mental State Examination (MMSE) Score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+0.20",
+          "baseline": "0.45 (poor quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D Utility Score",
+          "percentageChange": 44.4
+        },
+        {
+          "absoluteChange": "-15 days",
+          "baseline": "30 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Length of Stay",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 40
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 8
+        },
+        {
+          "name": "PML (Progressive multifocal leukoencephalopathy)",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "Weeks to 1-2 months",
+      "treatmentDuration": "Initial course, then maintenance every 6-12 months",
+      "trials": 6
+    }
+  ]
+}

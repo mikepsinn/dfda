@@ -1,0 +1,1244 @@
+{
+  "conditionName": "Lupus",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:54:19.626Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHU1IAizfxOKH_Nchn5HZi9QGNKlpVGCRTtCmxkJlLRzxUZXR2MSQD0f5JJAkO9yknFOg--Ew-jgZqwvw5EhFkYy3aYFwnpGQ8PX_Kg6Mln9w_k36y9yE9vIYnEuboVfEFJLIaP"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGED2cCXc6f2TjgLOEQ-CFvBj_POAiXXXqLxnw7PU8QzznSGfsKIf_vAy6DnPtrrjMvWqlzDFgI78e_J0_DDjvDWfZSvyKkCYoJkYpWoCvQqwFRI4gVURnYiW9PVAEo4FaTI2kWyTOxGT1w0gw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiq4IFNbRhxihzEuoXoZW4SRGpiuiyGnwm5W966KytOVHWvml3QUvef9uVGb2LY9k43ikNzmAC6GsNM_3d5uLg0C2sID5aZxEFywHqGyMfo3q4k1BJAZ4EpAXCpB2joZKC37bT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEv9PoqDDmT7BSLR9jIzmBFriWNWwi1EzeOWr92xysH37LF8F1OhHaW_7hN3p5lclqzfLQbvaNgLa6QFgsVlBE5S6KQzFyiMIQytN6iQEB3FUE2lgTdldZ6LbDU5U1hmK0tcKENPRcFnv4MUk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhXf15F42jv5imO6OX8efRi7SNh67zGgjrdK6HenCgvxrvWqJpLwtqafHnuyV5mzikT-HeyyRyNZ882G1Dz3DBYLrXmzgOaE8EB4ziBnDicsQOBjoCjcl3KjBMpt9EmaDdHR5NQ6xof6EXeabB"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWRHKDp0w6cV-06vnESgHWuHKjAWEyGOdkfD1nykqKe4XSBScquq5kngAyV9YvV7bpoGP8U-mTkIWElTg3cqFZ8Tf_2EfOomwHL4s38M1B06HAEIJzMMUOXjkR1TogL0LuKoL8S-CPVGIBpp2i0q-QjcgS0TC7x7ms3sq6jlKbfZc5XDJB-tANsD_VEezIcHNgvE6riIFXIrSyLCkAkHm7CSZRN4rm1k5ES5tyYqUcC4gFW_qoF5nTAJbiG68VYjAdXJBez1XUutlIq9o03iOgd5S3YihT_QO5fPVlYIrdUAsoc2y5wuCNDjBW9UQ3DOp2ciYA6wvZV1TXU2q9N10="
+        },
+        {
+          "title": "lupus.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7HUMH0wQ31OghMQ0iWJr1eVL4gZSel6C91WuYMQHBLciBwsDd5uwWH-CsblWNMspy9Qckb3N3SibjYTCWo6aW-FzFD4P9GVku9jZ9wxTawiqKrhJaXJWMzXjMECLPpB7A605eDq3S3ZkgwtVUvvoHoyClRrutLmYthak4LprmYrpoPeFEUCuQmWhlWWljm17z2eqpnvtQo3O3ezzJ3DCowkI6jSwAEQ3ltXQ="
+        },
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn4UrESlgLizORMFy3CPqIyKqt-sw2_G1ZeDTpfQQRqgNPxC0-yhKjhhxMtXScZymq0Ewr2zEFow1cnUkZK_gUASh6sz8DEWX6hzlfbqHAmHA43ecFT59xZ6Abji0VXslF2pditWQkavBSI8mFthQoqb0lRbZ1Y3jD"
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGK5SEesprAkDDAlAJnkX05wTFaRDUDcwbGybzjJdckGSgzyGHRuGBkTCBt-6nom8X34HvpmTR33PuQqoOpaM6mIE24v1ln9z7ntxO7RbEAbKtziZZJyJVFT-HaKIBwmlwoq-eQ1Fia7_sC8WghULZR8sWMCpjIi8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9bRBiOcC2QIFngEzINz751EDNEJ7GfPjvEj05en12JJTxT7HLg1I3YRQ2AEHV2g7IbDpVj4kkPaHPeJgIpuMSuu3Z_G7eQpmKJr8vIzIa2eJw9bDjebtP4UOuZHl1q_oiHySAalZ51dQoJPo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNUVau2HBAceDxmCqHPfoLrySYOKgjJeWs_5B_OvQr076xe7ueAy5YUNFhDoc6p27qhc7U91D62f2OzRS2qMZju0f3F_rHkK13SLAt0vCIEOsQZa_nzsrJAlId04omu7cIHXn9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-zoj3p4GrZseA_2OjCAif8CINwLf8pkl7bZ8V49p5mJEGJtt_v5fVRjG-weEMagAV_EKzRwFxym5T381Sw9BNldQMYTMOtepXISBiAOBl7pvctbYf6uo2oAg7wqbqOTALWrkq1naJOImWX_xNyF13G0Lh2UjvpN2YrUU4Ww-RxYtaLc9lTp7FlK6cAtHPqOz4z0jChgPvBbMd7ArrPBAwJmfBbnwKl4HMNUGhh_0Zf51_WHDQ0QXDk2R4G0vXltC69pbG998oeOjxxsfkLmKNuCgvp8rxxz9tRVzN4KzgIdOIRGhPT1eUlyRMYSLZtSGoCoLTVMWmkalVJr_e_wK1MAR4M_zUf3kfBZiCRLEQrg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Prednisone trials for Lupus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lupus&intr=Prednisone"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "5-60 mg daily, tapering",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 600,
+          "sideEffectManagement": 750,
+          "totalAnnual": 1425
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1676,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Prednisone",
+      "nnh": 8,
+      "nnt": 4,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "10 points (0-105 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SLEDAI-2K Score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-80 IU/mL",
+          "baseline": "200 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-dsDNA Antibody Levels",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-16 mm/hr",
+          "baseline": "40 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-9 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "7/10 on VAS Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Joint Pain (VAS Scale)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "20/52 points (lower score = more fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue Scale)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "35 points (0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 14
+        },
+        {
+          "absoluteChange": "+17.5 mg/dL",
+          "baseline": "70 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complement C3 Levels",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-0.75 g/g",
+          "baseline": "1.5 g/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Protein-Creatinine Ratio (UPCR)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Weight gain, fluid retention",
+          "percentage": 60
+        },
+        {
+          "name": "Mood changes, insomnia",
+          "percentage": 40
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 30
+        },
+        {
+          "name": "Osteoporosis, diabetes, hypertension (long-term)",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "Hours to days",
+      "treatmentDuration": "Weeks for acute flares, lifetime for chronic low-dose",
+      "trials": 56
+    },
+    {
+      "citations": [
+        {
+          "title": "suny.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-GTO63p9bc9--9uM5UTAY1V1ACFa13LMNYdrIsoJ4-9OSlw7UKuw5zD1UTcErrAbmifL8WdTj0Ms3WNNWKj6hWXQGddkd4v5btFKGVjH3Cafy_p-F_MgFuTQgnalHGIORZM6nElfalWhXc4VDcObYOF5qipxuamGLXJCikiGMDI57ptNp0PvRsD6URflKafNek2OBEmGjKq7qhmsMUM8dlYWY0o1Zfzx4DMh1dijpdVlRbmlzFK3p8JkYrAi4QRRgqm1m4K2nUatHX2CPdhn10j-XgLtQ4GqqiDDL18paFE408spRJosMlo_qLqqMDsgOMt5J90INCKl_YuULoxKcLjk6aTDVMEcQjWgqqTTifDHuHuxk2XftphmgtuY3ft5K94ZyMA9gji4ODo11"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEovw0fJcMl67SBDqWGnzBZ2TTdHFeZnSWeFOqvAYmRIEAto6NV1H9IiRnS8zmljbwV-pnmYyHs74Jx1DJU6T61Mr9KZYPXYlfUQVIepmgF-QqOhrn0XhKOvpHB4dOvkpCTOdgALD7aSoMePgOj5MQ4lRIthwCp6Gy8cTd47a3QQGYrRxOWDhstrXKLOvO3eoMf5pXByrUDhVv7rsHj7ZSKmq6Q4B2RwSDNUn9IF5oHIJYOg_i9GSmB39nE"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWKz2BkIOfz349AJiqBe20t66RlI4K31LpsoCDBelre6DCX_3IU4rzG3PPz_kHAYldno4y7KJ15UzNAeaohzNnn6BI7V0Eny5m8xOWYfWa8RRfuIcveDOcgAa-Iit1sOrAllR_tywBJmm5tPOjvVVSYaca7nqJbCaimZc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdUadFQW0GGKrSwu5me-BDuYHSItNizSEnolN4nI8ZjJV4E-_dAiaptM_j4w0KmHoUiwlnmO9MMtGTM2dneo3-EJ7BrOn2SsDvtRjuaTbcKRYzKjZ6qZ01DIVnYwyhq-WtU4I="
+        },
+        {
+          "title": "themednet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1KsKCwGsBEgp_BJmOTipo3xDh8y0sY6JnssKIWzctocfOcWWpMcK116wuOhwNVZUcOBwRSPFMQne_uxP3vd58uZJSCrOyPLIiTilaKP7i4iptSekg8oabWMq4vRa506eTo9Tok6C9xW_s6giS4Qs4Dclh3vpo_hvTAjy9yW3S0PzRVMcCCqeZhRjY1hIZAgCP9mYkJWN00d6O8TeRPAZGT783F0NYnSw-ngdNpJS31yumMS_PfeSQHghXNHaqGRHvcWLG_7xI6R_apXGoDNjr8V0JCiSOKI6Z-I2ax0tUjva_hxbw1ttfucgI82wCpFIN_jdal3o-CGJ_lY_XAsZbj7pMjvVIxsdYa8YoMw95oN9RYbomHA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbdHKsfEow-pM1VuLLG6texnE4YYZYJ0a50drI5QzHLEunEoy5DoDIk1cSIPtkbobI8oVrlXtospxOeo4fR64b2GJ3G-4m-D9Ij6Zz0YR0GD20GnIz_9gZvFy5Et80gse2k9Q="
+        },
+        {
+          "title": "hmpgloballearningnetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFurJTziGBJuJE1EWk4iz5F_yn8Qdd_pwymfOBKceEZ49HdQO8tf_3Ab7nqntfJAom2vVHG4Q1U3-m2Eyd3u2lpGhLKWpuEtH2k2zQU-Goay58AnV2wiytq4xKXYMSzz7nNF8vhgLIn2cJheELMqJgYfbIhqY2TMGpxiTBdRdR0GvBxBjSH0vB3vTR7qOB8Pia6-fIO2BIhyC4wgqO46OGZ9qPvMlt0PVTjV-EShtSrKoWO4qYeJRgAOYthryJDwA=="
+        },
+        {
+          "title": "the-rheumatologist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJb1c8TeNPZuxAYNW823LjodFGeW192M8YlvhiN9XwZJ0dbUApikkGFthIZmAITi4ZvBh69G2a9GnbqKRS9_VNbKmxqawHt8lZDTyQiHNmfZ0J1EkFmaX4PyvLDUwN1J9UQFIqb3bI1kFr4V0mpSWqbcU6iZEJ4CcmmcqQNcTIKdGV3aL-G5Z2VXqLfC-ZiKiIruJzx1xUiUZkw0tihW-ScnGuv9FSjWK6jsB0lmNT6pSn"
+        },
+        {
+          "title": "acrabstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTDvTYVQHx6vm-f_yXBG7ph7-DzdEecQM9aL_PeY5vGf1fAgEPTE5v1HMK8rSKBQVvoSylpYQXuBonlHy5CLRbpype5nF9s6D6neszpRwcEkeEpZ5Y8sptC35NfpzOHg-ZRZ9MOPAvwMEU-9mNmNrB-L9NcAP7RpTcVQBn0JfK-xBY92MY_4iXuvVGRSuIXGd86_hlZDLaD5LgkdZhKSG2M94mwGhxRHk0tcVmHW2u6c4Uuq0F7tp1cSFdu0GuxAGA3QOijg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaQw70cmBMTko7LWqddyAakreOpbvxPgg__lT-eabRtwCPi4ICrnWCkS-39H61fjk3j1EMMUHMzflhKC5jJ6t6lRtP5Zrf_zpWoEdJIFl9vOzyYDRIfvKTGaD1GMiDnybJLMU0fKs79qIo65M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLztEvBK6kcTXCWy6f5VmtGfuDpT3Ju4bFWmDN7u03nJS9vnEd9OCJvnhaKmcYPzMzDgGiSo7jBSRwvrVHbw4Ohv-FEhPBrWBYj6WzUentPxEoEFeMC3U3Jkp4k7pkaZqPhxU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm9eq6ygbBaJ6D9O69TgJOZs-uIvYxNJa4iqvndsRHx7vTj6OLKLudZQdp80bPsQeGh6NwPao40p2CXjuN3fzdRtaTEdzgGgEIjXDeXkyQeraG0dAdzQrQEZfK_LX1zzbUjJmfzzdeERP0SeDg5rmNMlN_1UvdExEaYhk9lxLYHZgTAP7KkI_IGS0BKtZRpiQDmzJnGrqgyW7FSDpHYyBDuaPBdgZ9MN9CT8TqMumOXsGvf6GGWwN1D9DTtaanGUb69KfsiMlFXP0Isp32UBQ9-rYEZ-7baPWNk5cdMR4As9UpDW-Jhfgm787HCZNq3w=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiNxKA-sZnFthGmd5RIvC8r9A_3-g3zDczUyE483wap6OgziZV_SSSxynAfNxF8ZDJ72rjoQxOb7wS0gvZ-PPmwaY-OPDpaG6trB4bVCe4nCe423B6STHAz4WBwa8m_fCZuQ_xPw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Voclosporin trials for Lupus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lupus&intr=Voclosporin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "23.7 mg twice daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 90000,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 700,
+          "totalAnnual": 91900
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 204222,
+        "icer": 255000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Mycophenolate Mofetil + low-dose corticosteroids",
+          "costDifference": 113010,
+          "dominates": false,
+          "qalysGainedDifference": 0.44
+        }
+      },
+      "name": "Voclosporin",
+      "nnh": 8,
+      "nnt": 5,
+      "participants": 1200,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.1 mg/mg",
+          "baseline": "2.5 mg/mg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Protein Creatinine Ratio (UPCR)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "+18.3% (absolute difference in response rate)",
+          "baseline": "22.5% (Placebo Response Rate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Renal Response Rate (vs. Placebo)",
+          "percentageChange": 80
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SLE Disease Activity Index 2K (SLEDAI-2K)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-7.5 mg Prednisone equivalent",
+          "baseline": "15 mg Prednisone equivalent",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Oral Corticosteroid Dose",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 45,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-75 IU/mL",
+          "baseline": "250 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-dsDNA Antibodies",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+0.15 g/L",
+          "baseline": "0.6 g/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complement C3 Levels",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "20/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Assessment Scale (FAS) Score",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+7.5 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lupus Quality of Life (LupusQoL) Score",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypertension",
+          "percentage": 40
+        },
+        {
+          "name": "Kidney function impairment (elevated creatinine)",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "1-2 years induction, then maintenance",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbd8xOdTvAhAw3qptnwnpUDtr2lA1mFSitazmzXq-kFG39OgkhzGP0asXYFHtKdvZNO_X9jUtJql1oO31ouPmtoH0Fbzy1byfG1m7Wq9dIkqe3bk6cIISAIK-y-Z4Uokcd2TwaX2iyoBFCisg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH09cZRXeyfQswEozzYyBCA4dLBPJspWGsSOIDmFv7Sa0Mn8U3LPjE5mAzbYxMFY5Fb1McpBh1ZCt129fhC6Gu9UOIXrdM6-_gFssR6Z3DPZpDtrgOOCYgLVuhYpRmg0BEiolqfPklg1qvBnjpuqj27BOHTbSKsB-nwFlZvHx65_dbWSo16m6v28RYcRZqu7n_-jc1_L57-K_wm2ImvlsH-YKki_33lv568lsaRaLnoXe9lVndELS-nLTtNHka2U6mFL7OfRp8mdjFZGkkrfyN1n5cFbD69XroiQX5xZq2q9UQGjNVy7q55ayuo8Vq1wkFm0Sby"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUZ_AD2kz4ga5pP0nx7ZMD2nW2K4CrfFH7Q-0WfiOVDBOi2B8LwyXrGdls5LiGN7PGA3415xppo0_bzl97Mgi5m1X0lSO-mfsMAuVNMuBt8mpgjSVak6_963dq_cDgvsSCT9Aw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeTSDzp5PpHrVxQLTlTU4jlOhjGlS6n_WtLPIgndaAEF8811MSfP8k-K2_cM294xIYOUYKPZ7NPB_iYDKElGbBX0w5adH2ew1MQjKt0QOGBTo3jYgQpbbsAF0ffnaQ-wfubltB"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd29HX2xmAU0Ci3hn_U3CllhXThw4FGeU5myIN6rqbzUNtIqeQdXkPGLHpHnaWgWhdeM7k7nwDPHXPC39jgBYaSrJQqilvBYpAZUkiEaGNeL7NJfOhWE9zHOvn3Pngx22ZP_NAAg=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtKFQjVNrqs7uadOVom1z487V_Aa0xxvhsGFfv7z3raAa3U-b8ijfvOaElHAY86fcrCOllYBTlIqT0hasCF47vf25RVyiwntsyXJpg-Q7JbLvizluMh7KVHofnIEzEziiSo1P2MtSTX6O1O-p6GuXIecHuVgO3NTlH2bS8ztRmodXdzzM="
+        },
+        {
+          "title": "doaj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwGDextTBgslkJIDA3AZuJ3gYGgedExefPs3B1Pfn1yFAxdo76H_n0w4NN3-4AeIaRUongQxx7jSGKYalJAZ0z-6AULR_5Pbi787Tp8XWD8OwZaLR4bhwJvPW5wB7Hvpp3b8vudPgIDgMmXB6_lSfDLHj9XA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe-ZmU_3ly42gwc494DAWwXI6iLGbgBA6UHNf2s8S21bOIzgNI0KbVn347Ke65TbLyaEPkgh1oKhD_dnjVImN_dvvq1Glyw1YQmgN_ZSmCaSr33pQboyc5ozLP5lQkP8wV40MGaIVelGgCa7WF20LE2bb-pfc7C8LH2h0Mfip1Wyj0ImVpIJhqEWs589O8PrgjyEBZAaveTK6OzMA3TXkHLks9BsgqqHnhH_ShIQ7Yb6JbUM9Cx4ktzeiw5hJKNCEid3KxaSz6zqS-NkhKHM8rMQdEA6WqCEXHg7a5YGaSULzAlb_P514v75KQF5RYiTYeY2JeGy35coQ-z0gSwHc6dGAEgBITu5w6qWC5rw=="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE25H_nzVvcqaz8rQBwvRoBn9Rst-2bdY54pgAz-FCkTLk25C9s5wpCtQDkB8vaAkuRqWo3fXAr5rIzNrVYODql9-FzVWWksAitSZHMI6q3Il5hEinIQ-RAgePgQx9qaMf5KKH3b2c1KM0PAoo5WS4BlPe8msM-umWQG5nrcF1Sv_WI50m52PGEk43ELXaMaeUVPGI2XNoIOIiPFXHAAeVVRT7rBQ9Rdm8-x4UYNsp4EMShZ-VVWvByBohKdi7GKZfGLC1MS4zMNJ3LsclK-ybu2nwYFu5VJRSc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1thqwC4a7cwpoAIrIcQCBTMClCyZXhumRuD7d1z2sflOcJTR_XYntpCTPVj4uVIhGHlqJFuPZLFn9stlHAhleQG12KVIT7RUcrEZw7WSS4qenEU-Z7H4IoHjTTeQ9QGsWUlE2"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLsMNaxPdmUfX4HlSJo7K5QNcDASNuqxMjEui02sCjZm45P1cmWf8kPMw3PR58KUy5O-QosyavzVL5_pRVuCV-3klAhdh_XGu-PCU5ZdQs8WdCuAB9qnkjV-dIGE3RLkPQ3lVFvHuz09HgHbqZjqt3SW03_4-3R08GNfAr38MNi79LQIghMdxo-4KNQLN26ZnAhjYZHs_AAgF75JhX1zxpn8ICQ9b_rgpO8pUYng3d8819LFsuesQjBnLWtnWfSQDuRSHgl4ZiGNKyveOejuYBxKGNzzi9f55LldCaaK2-V-d5n2DrSGO7ze-b7PLHXriFSwp71XdhA9b_WPmOlFLO"
+        },
+        {
+          "title": "ClinicalTrials.gov: Hydroxychloroquine trials for Lupus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lupus&intr=Hydroxychloroquine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "200-400 mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2800,
+        "costPerResponder": 1167,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Hydroxychloroquine",
+      "nnh": 2500,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "8/105 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SLEDAI-2K Score (Systemic Lupus Erythematosus Disease Activity Index 2000)",
+          "percentageChange": -31.25
+        },
+        {
+          "absoluteChange": "-2.5 mg/day",
+          "baseline": "10 mg/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Oral Corticosteroid Dose (Prednisone equivalent)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "25/52 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Score (Functional Assessment of Chronic Illness Therapy - Fatigue)",
+          "percentageChange": 20
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 60,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "40/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "-10 mm/hr",
+          "baseline": "35 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -28.57
+        },
+        {
+          "absoluteChange": "-30 IU/mL",
+          "baseline": "150 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-dsDNA Antibody Titer",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea, diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Skin rash",
+          "percentage": 7
+        },
+        {
+          "name": "Retinal toxicity (rare)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 38
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqa-BKun7X3MiILADOYmwd8MrvNZjVUsBpXKwq4Ki3OTI8xkGZMscNx1RyioLhrD0enpUGV_oi4ZmOPker8MnOurwXjOgjvxLQRAL6eYgMaJ1rAO1vVALd4kPz7l-keWgKESw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8JgISvRU9OFosGP_f-WepgTvwzNLmLqwb4xGAylodzJSzyShWfW1sCwYVS0DTy8ER_1CoSRe3RF73f1jBt5HwDBFfAV179b9iFDVbDTF6ivp18LF2MLPztAKB11o3co8OA2Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf6k9oyGWW19FxL5ObnqzEPysheIHCjTIVr93_kuLE_KBCkKpy4haSj9LfbW_eKb7k-Mw_TnpGds7RY_CpCcaiRXGHvjtwWRgkMS2fUFZ4KNUE0_i6HkQRa0oe-qBJNQ2u0ZxH0iUmKkzJWA=="
+        },
+        {
+          "title": "acrabstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlfr_bHVD--1EJO3tMUdP_yxzIKK9PV8Adb75ToOaWIMhOL6YsCppW-hneUaFZoOtB10hBrfx16E_rxyGEc3eSc6vF8qyo-lWdv-MrA5avUHyI6VdoiAYno2uPzAWx82mzZLPJTvIkFdOIdOky-B3iPnF62vw1Om6zm7-JhZWinMB-jLHwTnYt9jrDlY0e7OY77kjcvlo85fhNuQqQnHHrzFth8mcbNHallw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc2FczgLWe23LOxsXHUbPTHqdipW84q3c-OH4wUqTDTf8B4mWpA4lLBYEvX8awS0mzjN7Mrf5rhf88KR9mYHdHfEiMo7-cEKowVDQbeP3Tkh4w5e5nA4p9kt2NNrVifoel9WVVdV2R_BCPBHji3IQqZIvpa1ZeMzgD2Lq0hGPce89qzx9EvUPgqiEuUaoHO-tGbuHby0JmoL6ljUJW3n-hUO_fHJwdh4Dp20h285zWbp31A8z6nyIScWjl"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnvmvDg3_G1Pl3k3LnypVUWndH5Mac7gXeVRY589sgU6XKCk0ZSDNn6VCn7k9kBv7UNHTJ0Y2fAPIlaq6D5DisyRmH_yYviCWcHC4R89u6WxK2eLY7u1dzW68NL3jZUpm1z98ArkNCr3c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3COdXFw_soHlSaPBbIt-X4l2S9DhzxqE6DMijjoz-wEjRb9xXybSm_f-oMaaOw5VfJRfkWwEfBmNk5ftvGN_PrMy-IUuNylTtHNdR9gwGVPwIJu23F2ypqvDzFstfSMRgNC4="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWjQkiOWD0mfKnjtNRUeTCjn-uDQOsU64q9zV8grzkDF8fnhXQ7pOj06S5sUnHwpBIyx94czEZMv3pmXj2hy9RiykM6d_3VSijEMi1Yl9K_cMbm8BY9dUPcgnwkyHXIOFDgR64GPno5BNuLWSHOt9weTQLx3Bd2SffDRitvdYkTjXNBSdXry1q9R2JuGlykZ5NYU_7myjoON6hnxKwHf5lpb1FADDO8orOk63lag8O"
+        },
+        {
+          "title": "rheumatv.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR6FHwAy6KbBWDo9elBXfNxdgW0IuxClmuLsnmZo2jb5sLaDS-EEis8iicH2Z_iFRUilGDu6CkC3E33YJ3xZ4g88xCn6GR-TZhaGk5gWENz0NtiwfI_0gxhVujy3RbBzUPLDUyliidFjosonJIY3E5nvK0pvGep2Xk86zV73Q-hPRUIx7Uj7fRM35vMG17qxKga1vV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUY8MVTFdD0ScAP0WX3Mrr4YJwUDhnaChYANXxxt8kEhpwcDFztSaV8BWOWSGG_3qzbqv0FRXX4IvUj-iUhQa0GLnj0rhTLhMM3An82NVpnbZTPnKvVZnCzuZlEjIGVyT7eqA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mycophenolate Mofetil trials for Lupus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lupus&intr=Mycophenolate%20Mofetil"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-3g daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 800,
+          "sideEffectManagement": 400,
+          "totalAnnual": 2200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5500,
+        "costPerResponder": 3667,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Mycophenolate Mofetil",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.1 g/24h",
+          "baseline": "3.5 g/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "24-hour Urine Protein",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "SLEDAI-2K score: 10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SLEDAI-2K Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+24 mg/dL",
+          "baseline": "C3: 60 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum C3 Complement Level",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-200 IU/mL",
+          "baseline": "Anti-dsDNA: 400 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-dsDNA Antibody Titer",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7.5 mg/day",
+          "baseline": "Prednisone: 15 mg/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prednisone Equivalent Daily Dose",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "SF-36 PCS: 35 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "FSS: 5.0/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea, diarrhea, abdominal pain",
+          "percentage": 40
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 30
+        },
+        {
+          "name": "Leukopenia",
+          "percentage": 15
+        },
+        {
+          "name": "Teratogenic",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "6-24 months induction, then maintenance (often lifetime)",
+      "trials": 81
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPVZZOkqai-4vuJ1Bb0XmyYubsdngCbpIvmU_SvyJPYMGniOSHt9zbaggzYc2a7zap0Ea2fRuHQhS7PeR3yZxE-EZdiqTxo_DJJZpmW5scendiyM0HjZYsAkjbJdbU3jm1XPk="
+        },
+        {
+          "title": "rowan.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlWrmR8leAyve8246RxNO3iHSlnw8R728zugl_ANtDiZlrNoCFISjnIJneKDmZ_suLb6Bf9Em97_KVqfcBcAPLBGe70-JQ9es7X2ONawVLS4ypIBkjnxQuunjtVwn_j0JoMLH2AufQpzqPb7iBOCxN34VonrVT7RMbhocU-yA7yJAeTp30RM22xCrFXkZz3Nsce7_SiKvaT4w_vq6yykBfaBEOIKA59AnH08lPv27fq61SAFk2tUCyXls-gNCJvCWsVTv4WR1PbTtkEFWuBHelf5GIYs9f5hwikxAM4bGikPDFNO_jn64THVTLyORcMdFzF3Zxh71_5cezZB8yxM6huoEehjbYP5EMlMXzBsqdrw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSi1UPLIz9IFsqzMj0VTsYZlqgG5utt9aah3_fV69W4DlpbE83o20EEcXdlU64fALrfPp26rWJL9h7kCSrb7EYSJ-vVOioSA-5AUvCY3R8UVxJ0tgxpxW3K4rSVCMZW9KD1E3kz2c-6NRBIBz5_6Zlfy9srnFaYGJDlXyZFY1MejFDJXcL5hfqaPswCHpP4eo3Cm0Zn-wJySzEJF01kXRJi5c1sCP5eHCe2wzLC-J14um7XAzuA2tu9ou4_taUYoGDq9hwJZ4ofp9z9n_hwcPkAPSB0G7m7DAkQquDayFxm2YZjd0a3F9FWoGIarQNJFC8eCLghgsroSv9pR37pQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5TCsO9zRJznH4g7S5dTIjr908bMFZX-Z5EndhIG6QUSb08X69Seha0oJxWRfSY_3nkHKusrJvmFr9jCldP98c128PcjcSb-22XormvgOzyyywkT0yES-vGj43zwsbOtt17EvQG0fu2w3JglPYDpdaEBCxB6XoYK55xWqkc1uxg86svuXWs-AAg7Sg0fkNMCxGOQv4E77jsujOxJes1n_OpA1eVG0swFUWCxF4Ecgkf0dBGz11CnheISpygWxvDtpu14GtSrwz57beyKpjiVUGOXqbOONbDsyHdmo3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOpTk2Ltql7bww5XGwfXk0v2a76A42nONBDnpNZgGPN8LGlWCRRWqFZ81HvnGNRj_Q-tICBVzbRentNsNakqMmmhlc1ZLV4OEz0m354l0MHTK-S84vHZQis19kmaTwCDe07yw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMXzivlCAiM1XVptEbWRKADltMl9njBF3wsFXSFNQfolqw7c93WA-hY3yCWM8XH2ZV9HKwLIcIjny_TwI30Hxkfv1Swcupp7V9gH-96K3yVktahu2Ce5BERzi93ZKzTjO-GDaxCXBzgf4z3A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLc4tg3onzCzc3OV8dPz1qkMPJ8dNTZ2_bouzd0OWw7F4DuwDD7MBrHoI31tISd7E_RUG9tN5lyrwYFyXj0s4oMUgnCk0tEvJRo76h6WWjgeZQXLZRQ4HFBfxCEAR4l0paL4Q6cdMeDC9as77-2UL2nMmQ_Ruq3kCD_aywVy6Zk1hQTXkEs2ZKVUWFtpAgjltOSO1m_74EfoQoHKzYBknzIcKhZeswRSXVJCSZTh58m9yxsWUDzHcPfiJqFPpLrl2IHCQUGvN2VakY4beT_er0aBA="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb_eYhRN9UlkEc_ZfaofyZflyKGevMcl1ZwgPI8WbxohT2LLz-VkyQMQ4CY2AOPOvz1oRmws4Ngfc_hiGGLHm-syOE7__MDJW8l9FyFk5ybZcASkoOUNpkIUnKIaE_3VU-fkRHs8AxCAjHDXlpUBBvRt8S5aUPfVXF8fWQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtmjlbkw6bY4VQipRouIh_jO4jm70LCMBebF_K6wYb6J5qiwEHGDwfkvPzg86rJb7WjPRnkM0dLL3Wil4jf3vPggoOsdc79gyrMZxBcS-_y38Hv3xa38K3TcFvVizxsJ7c8f4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Belimumab trials for Lupus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lupus&intr=Belimumab"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "10 mg/kg IV every 4 weeks or 200 mg SC weekly",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 35000,
+          "monitoringCost": 700,
+          "sideEffectManagement": 400,
+          "totalAnnual": 36100
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 144400,
+        "costPerResponder": 80222,
+        "icer": 130000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Belimumab",
+      "nnh": 75,
+      "nnt": 8,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "11 points (0-105 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SLEDAI-2K Score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-3.5 mg/day",
+          "baseline": "10 mg/day prednisone equivalent",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Corticosteroid Dosage",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-60 IU/mL",
+          "baseline": "150 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-dsDNA Antibody Levels",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+15 mg/dL",
+          "baseline": "60 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complement C3 Levels",
+          "percentageChange": 25
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 45,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "28 points (0-52 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue Scale)",
+          "percentageChange": 18
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "35 points (0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 9
+        },
+        {
+          "absoluteChange": "-18 mm",
+          "baseline": "60 mm (0-100 mm scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Joint Pain (VAS Score)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea, diarrhea",
+          "percentage": 12
+        },
+        {
+          "name": "Infusion reactions",
+          "percentage": 12
+        },
+        {
+          "name": "Infections (URI, UTI)",
+          "percentage": 18
+        },
+        {
+          "name": "Depression, insomnia",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 63
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuGGdIp3hc4qZAwAqu3xQwrNdBrva26mxb_vxhNe0qfWE76vAo6SDA0io1dwZT9qB-HRbbpdjUYfNu-5hMPBcJWOTp8A5S3rbcYZsYbti0W-NTzNlVS9HnaDZKoSH5PTpeenyfFL7chwjNyoSv00r0Ip3Evxk8qe_6"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuySGN_VszPeBQFALmHzQVCjdW5srhGPG0D8Z2EX4X0r9PBp1E4gUrgNUBqFwYE-gs1cI1gx64xgnlxNoQNa-8du9eR1lq-7tdIwYcN5utqnXIlxHRE2X_pVXKj4a9-3bKEZFFPGgc35i4VjF1RlNNoCyi1XYjzC1y_GObeLWdLPkn0tcHQ9YDUg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_dzUvPASg6sOsACB5qGcRzCE2JO4coCtJSq10A9ZHWluJTzPaC19QXEgIC7QiWMwXRYjlX4_fLYU_qCK6u9eAiEB6dt9F_Jufh9qspCONN6TJW_dYMD_LeXgnfGtUBvQexCFWC257uUvelitsbWabHKi8QZW7Tvfb"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFffOUQABFh_cpGlDzdthS6fyQj9B1RL2S3yKctf_9Zv5Rhm-SLJ6ZCGsRPSVyNv5qgJ-jN3CQMuT_HcbDR-WMgTC5KRnnro9pSwkrWzKHEy8v3uJmGIgjLrvknFJIJs3Po9xmQDjPS8KnlwcqhfxwVfwKqxc4v1-LnD7X87Q-ElAN4Lk1LXbzll4ynhQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYQ7AthXKhNa0N3csB99hBxQkNJfvhtDl940qKy3i-3VqXdXbo1UKg5RigyG-thbtB_Pxcb1MOlrq1zFPxSs7PwAyp6ATftoOarQxlPQpn9MxE5hON4nsGJV5py2V20XhG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwfOyotu6DHG44KAGBMiGnm7fy9q4jyZZpB_ACJ4Hf8-ApT0OagpEkwgyT83jpFP469UrJhZGcj_vwrzWad5wcVe1OQcQQTmLjEOuMEpe8CSSYp2Dlcx0NtkXnCGITi0RVk1fu"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR5EFsGCKySO5S2-FhuR3fvxva80AZQbbYNDkSNFHnRysKa2cSliHlLVq0ZoPB3p7LJQXFBFS-SXFDaeV-nWGx9xbpGScX1UDD7TBPKSOzIgEjunlzkneSJvyfNCSSAv0wxgpF3GOcMnrcW8vYEHR_8OEavy3SKmoSsziaPoNjnA52KrBo5aJ0Jm_DCFJcnhKe153CDzE8WZsVvdM5tRhQJ7EV-J_41HKlUwmkOalrhw=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-_JzomlmfWATMmCXuYJgKp1oiDVKDD-CXP4CIRLvGxz2MJmRX4viNFJ30VbDO7S-3ldNxUm_8JelYBVjwBXLU6CekWooDvqIJawPwnxTQHNn71SjfApHtfYwisV4GWFFu"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbrMzhnt8Y2EVUFhFpqLldqVUqGVcDs5lvFThQfjButxUyT4keKKlzTAeUhULVFHzcVH9XZ9aTj06c5GIQXYU7z6IuP9tc0XDTxF6LOSYnuQo2wKeubNP0aTzHjQWqcjhx6DLH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiNXZglNuMqgQj6gNzQBJprC-c7nvmM9p56O3VjmnLolL-T5Xp-rgqUB9JS_Ge9sontAMc-iUXYD6AScEMlpQW25w_X-uAhrtuVWgPg3P_BSlec1NEWOqxGsuTDNQntNJjhuI9cZ6hY5_YUPw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2-CmYjms3mv10Gcz0z-EB_u3ykXzV3ohM-fw--DIVwjXoWOZOI2nRYBSIg6yjmOLke-87DxGJxr7XSd-KKumMA6Eu22kPz-Z-fVtFlz0RZMsBe6I7xmRBYN50x56YTiNEnzk91vY7JAc-Fus="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyOC5xC_9kicFgxWQ0wEhCF-YOO0iJIjvgQsWCMdg0B7hDhjxo3LVqt_heBHJ4cS-A5Hisbv7jaGa5cTZM_RZoGODelkzIZd_vgZSalJnJbffqrYKYrHyXmWPzSF2f3NiWsFRu4ME="
+        },
+        {
+          "title": "ClinicalTrials.gov: Azathioprine trials for Lupus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lupus&intr=Azathioprine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-3 mg/kg daily",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 700,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4800,
+        "costPerResponder": 2400,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Azathioprine",
+      "nnh": 15,
+      "nnt": 8,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "10/105",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Lupus Erythematosus Disease Activity Index (SLEDAI) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-12 mg/day",
+          "baseline": "20 mg/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Corticosteroid (Prednisone Equivalent) Dose",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.0 g/24 hours",
+          "baseline": "2.5 g/24 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proteinuria (in Lupus Nephritis)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-60 IU/mL",
+          "baseline": "200 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-dsDNA Antibody Titer",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 50,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3.75 points",
+          "baseline": "25/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue Scale)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-1.8 flares/year",
+          "baseline": "3 flares/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Lupus Flares",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-6 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea, vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Leukopenia, thrombocytopenia",
+          "percentage": 15
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 20
+        },
+        {
+          "name": "Hepatotoxicity (rare)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime for maintenance",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBJLzhfg3E1thywM_T7J3CUiNU0AHPRCVYcSnCDcU6h5g4C-lFJheZaqX3soA4caQNa08W8mg-zMwR6ygZ4OitWdId_mMlQ9-nUDD_poRWNDiBpm6l9Z_FCsTT3U-whUEVWmF_NOmYxLn_qWE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElX7qUP9khgM5lW_IfgwEnJhvrUi5cxwPNsDOc4HnQKT62rjvzSMLgFuGs6GcQWf_p7EvNv9-CA85OyxJ15NZxcignE1CwTEoRFK1G7Ift44Npi8OgDadWYAFlhIOuQSrG9kcS"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj3yViNy_XPDFuyYZy0Gb6_9L0m-6vgkE9L20HbiFXywcHfbBP04Tv8vbhEYc6ZoHVG5IexbEKc912b9RyiOByHtagdDT3DtcanFrWYaoqGGRg5-Q_1yEmez8KPGvmmoTm2ZaYdin50-hwZ-ok-jkWQzOmqHEbiGRI4al96fgumM-wfHxAm5XMKOE1aLOH8NZazXl879FUHpRiPuQHPA=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_QgiMiSRYi1t5UM8b7eLe3DbfJpX-UWp5DHIL8x-nwufrjYJowJ74gCUquFXhdcZi7_eUBoxnzRwGvX-UoBMa4rAHXPHDw-hhIgBIGxVYlsRCegUo_l79q9uCJtKMPTiUqJcnfPk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5Yke4HBuxL5bWlue8HYzDACGDsozDPmEl2V2odr5tUpmIlwZNEEiWJwoSqASmZgtaflDwgBBswPOVQktV2SAEoP7xORsIgfN1HFDlKEUelCLtr8_4GEF1wj5eFm-ZGO4aeJD85JhVLEoJIXd_du-EP7vmds93b0W9gTeBsyl7_eL4HWMsyAHoKgUteD0ChogbWGme27lXomBy4TC4Ann0o5Ko9R39rNrcxxxEWXrPOwXtM8o820cfNVDCUy4LqqdHR7RTpcdYSz2YQ4k_IybynbdcXPjLmDTSoG2qNRM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkYYetUjrPG750XLEowqhpyWI0vqG09iZXDCYVtPhB1zHzhwoHWdFW3RFuZZKlN6dGHsHyaDj6aXpJrbVXtsQ1UPUmaYOshAW4V2mN6TjYMQqV5cTodpY2Y_lfE5gLtcENLs9_JF7sARyw7hs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9LC-J4GOQXgb0DCaB_5KkJXk-Phqu_0PMrOMVYR-S58LsDfkMtCYqoJAWDtN09QqJi9F9uHsUvDmBGaSur16nnWz5I57tBRMUFkWHA4-yQrQGKuwtpKlajxQ-icl8lAAHTeOUB1Htn9wDwnw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf04MaUdRXSI7zd5EGuziuwEviNn8YgtWlmgccLfNcICxzqo6OPIV5FiRl9DkI_kPyuCztsCFRccxiMRr7A5tGp7vomKu61zNLX09xnNBb8MAtoisOON8YwrmVYKEgpqzki2v6"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKxdYU8jrCErovGL9D8xA4ExwQSrUSmyFzdT3WXseTZmXwn50K_HFNyTuVS4yEDfuHX5DzXFt9EabCRumtXg_f8fDFD1BsDWMMPOrmSwUPdO0kLfRaf_Nq7LSSLUVHBgr4ejHLwfikHA=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLnxTkR3FJRYKgZ3zX2h4T1ueFN5PJo1HhhFb8sM7A-kJobOCBBUnW5F01olrh-yRGHIkZ4s1LgwayL1toORQB0jEhqzSY5ocIpInQiQATgslAcKp7LFcq7-qETp7x2_h0Ao1lKv1m8Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rituximab trials for Lupus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lupus&intr=Rituximab"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "1000 mg IV on days 1 and 15, repeated every 6-12 months",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 800,
+          "sideEffectManagement": 700,
+          "totalAnnual": 16500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 66000,
+        "costPerResponder": 33000,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Rituximab",
+      "nnh": 30,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "SLEDAI-2K score: 9/105",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SLEDAI-2K Score",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-50 IU/mL",
+          "baseline": "Anti-dsDNA antibodies: 200 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-dsDNA Antibodies",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4 mg",
+          "baseline": "Daily prednisone equivalent: 10 mg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Prednisone Equivalent",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+15 mg/dL",
+          "baseline": "C3 complement: 75 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C3 Complement Level",
+          "percentageChange": 20
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 50,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "FACIT-Fatigue score: 25/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Score",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "+2.7 points",
+          "baseline": "SF-36 PCS score: 38/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 7
+        },
+        {
+          "absoluteChange": "-0.5 g/day",
+          "baseline": "24-hour proteinuria: 2.5 g/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "24-hour Proteinuria",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Infections",
+          "percentage": 20
+        },
+        {
+          "name": "Progressive multifocal leukoencephalopathy (PML - very rare)",
+          "percentage": 0.01
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Cycles (e.g., 2 infusions every 6-12 months), potentially lifetime",
+      "trials": 36
+    }
+  ]
+}

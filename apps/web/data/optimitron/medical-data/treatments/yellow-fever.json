@@ -1,0 +1,297 @@
+{
+  "conditionName": "Yellow fever",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:08:39.329Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOI-iZIwkCq3iFTXtRERmH8vf1iSqEU0KZI3Wrl6i73nU1H56PdM1wD7_SX45qHD5ZQJPlP2t9FrsgPDkBLyf-IXIXobC1oiqiFivElm3nv3D836d1xsmhpjFlAogUvQBSi1TSw89NiuSNcQQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6bxiSrojAxapUZGFSUds1fn98ZHzPPJAg0QpYDlniFRoxycsYS9H7uGRdu8Q8hEgO2MYTU8etWa__cnY64Q9zSwRvckYtu0FrD4SSYViIKXwGuKRaDuTl4SfDAZiKiUEhJk_rDKySUr0K8NE="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJukgH9Ih9AVhH_MamdHi2diDnfjUmfyIt2Y9ROsvFoAEjo304QDwudKDQuJ09zNF_ri-hSOysgxMuRM3yH3lFtXUmS8n-HubC1-UVYLmAswhF8RpthKg2fdYnv4n08lCU54MkuRF8gC5SurbxEJYA63nRaUCUYI85k6tv9g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrwLDLKuT07keNEIbAGBWed7cBdrBZa2hjosZesfeYtaYP5P-pVfMkYs07sKSQ0dx4x5SSQ-sYwyp7BhwUyB9KP4nEOhbIVXLm-bExxj6xv4oheHn1YuYmbWu3-Bvn3GK4ocVgNfeSHgLBKuOfqrIqA7WK37bhcc021SftsPAQfrrYgiIy04CZxmdc1iAC-BNW6i7xiu6LqFM_YU3BNKuOIZjITjxj4ThVMe1kY1XWikwapIvj0KNih3k0O5_ht1HclmWc21L_A2mhljy7KUJlO_FdFVeSzIKPvVmnzES6ltNqxdWmmIxuvtKtoGZ5680="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEebtoneVEKLujMH_Vwj8Y2XpephRcDwUnOVyG4S_x7BE16Gj2WGMAZcrCdqTpnvsHKEd4F9FVdITXXZmCzwQTcurUOSbe4t0OtbLLNXVHkA4H3yZAN1D5JtHS6PdcM4A3dw60kOIp5pEF_H41l5VNFn2RX4kVx2TDuWA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaQBYfKDr61YsYKPPIXNmJEe3lFsrLWCPq9YUqBL34ngEnjhEN2UBXtNrWXSznaCh5r-bSWHAR-fiYBLqVZLbKQPv5Jsk8gzFu_YHN3W39U0x8LDUKbI6nBsfH6yFtNPuQxZxR6Ey2cKdptGY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT4eoFVwI2Ynv5hrif7tiyhd3nMxXteghbNlZNFxUjAQJEitvpnwx2vlj9D7EhiuzDBqE9jbjR8rZ7eFbHbmHs_f-MdMEHNZ7OsD2ltxopcO0QQdWDXBR5X1k2bq_hj1LQerkq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCvclMHbcZjPXYrTbdOEjHhmIRkeibuwN9PIDcvVf3oYhmNdsR8XQg1mhZc3JLDLe7xYHPADWLyuOz9BpI8kXZlK2C2j5maDW7hlR5_fC-Fm5IciEykKrmL1DYZX60vqPZdhB2mUS-7ygO9P4RjcIsLOVaa4b8OmRvlCnEHfhasMWSfnOXMewOoLukcsYBSRAK2KKeP_qCY_v5tngQI4fHarrTd18PhzHdpAANt_Mn8lNOAFLGNtyJuuSklLBE8Y1MD0eDPT-E8VjUW8Q="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXtkrmNHR6osRDR2DDhPwOHBOri523jVWY86hasE-OxOnjxFygH4PQaSM2h6r2iFvCbvjRsbYRaZ_CI4SE043IM-chSG3bBB2ICTWzrfe8WM7eIaGJ5w8FutY6kujyE05NMoK4FiqrVZuij21hRSf9l7KChue03Bc="
+        },
+        {
+          "title": "nitag-resource.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgkUnoTaT7OZ4w3ESC37MJaK3varv835mjalSZgZzB0DuNSXz9X8ho3VvBtemF7YVjWQ4fiQfpzh9Q4lyCihku2AOSOrbLNI3sIim99ygh5z1QjzdIRUasFMoPoAJ2QpvIneWpaVUn9h2d89P8WV5XVM7CaTlunS0tUUlz-jn7YY2JzlQ2IKYpYgjM5FuouzWQYjcikqJnZglT6QMsG6Y5YbJG0UMkqTnina5QZzC-"
+        },
+        {
+          "title": "ClinicalTrials.gov: Yellow Fever Vaccine (Live Attenuated) trials for Yellow fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Yellow%20fever&intr=Yellow%20Fever%20Vaccine%20(Live%20Attenuated)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "0.5 mL subcutaneous injection",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 20,
+          "sideEffectManagement": 5,
+          "totalAnnual": 225
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 207,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 75,
+          "annualPrescriptionCost": 200,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Yellow Fever Vaccine (Live Attenuated)",
+      "nnh": 100000,
+      "nnt": 118,
+      "participants": 100000000,
+      "phase": [
+        "Phase 4",
+        "Post-marketing surveillance"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-49.5 cases per 100,000 person-years",
+          "baseline": "Unvaccinated population in endemic area (e.g., 50 cases per 100,000 person-years)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Incidence of Yellow Fever Disease",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "+95% of vaccinated individuals",
+          "baseline": "Pre-vaccination (0% of individuals)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Individuals Achieving Protective Neutralizing Antibody Titers",
+          "percentageChange": 95
+        },
+        {
+          "absoluteChange": "-9.9 deaths per 100,000 person-years",
+          "baseline": "Unvaccinated population in endemic area (e.g., 10 deaths per 100,000 person-years)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Yellow Fever-Related Mortality Rate",
+          "percentageChange": -99
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 98,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "Increase to >1:1000 dilution",
+          "baseline": "Pre-vaccination GMT <1:10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Geometric Mean Titer (GMT) of Neutralizing Antibodies",
+          "percentageChange": 9900
+        },
+        {
+          "absoluteChange": "-19.8 hospitalizations per 100,000 person-years",
+          "baseline": "Unvaccinated population in endemic area (e.g., 20 hospitalizations per 100,000 person-years)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Yellow Fever-Related Hospitalization Rate",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "Increase to >0.5% of CD8+ T-cells (IFN-γ+)",
+          "baseline": "Pre-vaccination (<0.05% of CD8+ T-cells)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Yellow Fever-Specific CD8+ T-cells",
+          "percentageChange": 900
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain/tenderness",
+          "percentage": 20
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Muscle aches",
+          "percentage": 7
+        },
+        {
+          "name": "Low-grade fever",
+          "percentage": 3
+        },
+        {
+          "name": "Hypersensitivity/allergic reaction (rare)",
+          "percentage": 0.05
+        },
+        {
+          "name": "Viscerotropic disease (YEL-AVD, very rare, serious)",
+          "percentage": 0.0001
+        },
+        {
+          "name": "Neurotropic disease (YEL-AND, very rare, serious)",
+          "percentage": 0.0001
+        }
+      ],
+      "timeToEffect": "10 days",
+      "treatmentDuration": "Single dose (lifelong immunity)",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp1PDIjilJIwZAXpoB7-RYWrfkClWUaTEP_Tk2PAa7zOCF_ykZBE3XioEe0mUwo-6f9L5GOg4R5jLFoAkq6_E5_Jldn6FBjeeYNOqqCVa_nJUc02hF73SY9W1yHKuzPe1rSl_18s7SY_8pn_YqgHXmCnc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCkqdpSsSwqAhVXC0bfS57mS4bIhUHbKtljAWVAX12pKpyliH2pz8X1d1VG7MNtBpgMymusvXcZhH5SsLtRCJXYR1Cm2Om6zPD_HLKc2lQkccxQtc1JymI0dx86XyYbSR1zzRjmMN19A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRjPmN5Lljih5G7WD0XXzCtNF1AP0ziroeSIVACjLqShG29-KlB3kG4vTLejMBHs7RU0DOKl0idnu61Rms6lElt8hZKrCzCuNi5deeVCCcHm_suHYvw7nCbcm-HZDew8QfIKQEK_vDp9N5vPY="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQDCrMJURg7gDPN7_vnMNqSUDFsnIWh_Y-dbtVY6XVyBMqyGLVItTxG9ndeUSW84diodDJZlzkAEMWN0pJBL4IfrBxpanAjNxCgFpDqwH7ybAZbLyA6u6GUHMM3w9tXMOn2DFj8ogJokYkq0kQwwej113fPLyj-cPupkbn9Jgb7_pS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB0-IdI26OpwSM4V0X63_dSMYDkvALDpvP4EQPH_ElP0cemynzEhZm5N3vlxjLQ_N7VBama9HjNY7FIjA3j3aYx3eGYgi1AusxaL4JEkcilZfcAODYVDFTaTKiwKbeoH_ku6_wsz9rVRfBlDW8KgljNViH6lQaibaCQx_R-gyQiPAqmxnybIQAHKTRY_6Wi9GRCcmOkTroZDcWEOm4CzuSNrf9V4S_oAE-zLru70mJztH_qCYYlyExzvlyJEet0ptP-FxFD_DSqxXZLRY="
+        },
+        {
+          "title": "nitag-resource.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkFL7EaB6Ykuct_0WsB4_nD2bfFgEYV0OK5ZAvsmLr1BosjLvcYUzStOvln4UvpkONFmO0ubXMC5nuL1-R0NfcIojmpv7zR6pGPFw-fp7eK4F1i4I4kwLrAlC13Pa-1Chzbt-uRsg0xhDZDoLPRx9uOev53sO1g-0LfMHyesqeUuDzngG48D0h9tg24ICNHLeao6TZBXPbOKLPAfs9Fl_cwVrlqF5yAh4tJG27J5BF"
+        },
+        {
+          "title": "slu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrl1xT7rREHUbSnVSskCrUwqN0TxQqUb8NyEaAf0_mA_Zw9nMp86-tuoXkrwf-vCXzZoqJOwN6y3QkUWN3gbeRDxd9o0tBbfXPFhDmjDU2PVuByTm-BemV9XfOy1PepUMdliDDDY7S8_uTZpV_OEOmNPAHYg=="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC-qOEbthOiH_es_ra2Dky98CSCFg8eZVzATovzllAW2kKi2oBNBFPPIve2lPIyQqBzNsTApBAiyA2rSxk-O4YoSCxPqKyT7bo46YEZedyF4UZBJPANQBOIxAFjJ6Ga_de1QFgO1Ub"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEr-ZUu3uWxlz9506tKPi-eRa3fzLemqxgqh08C0OGXVjNZWI9Udka-oE2lBvDrLAa2chLz-jqlHPI_ND2U57ow-eAiKejygt-y-sgqlPssbAmEgSGkHl_eIfc_D8FYBWgxgmPkJ8xTPUz9zZounyD_gfeClbAI9jRaQGj-VgO05a4Ub0bDj52Hy-T7xWzVLYyXePjwoBjoB-AsolqS1NVo-O8KrZOR3Y="
+        },
+        {
+          "title": "ClinicalTrials.gov: Supportive Care (for active infection) trials for Yellow fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Yellow%20fever&intr=Supportive%20Care%20(for%20active%20infection)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Varies (e.g., IV fluids, paracetamol, oxygen support)",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 45000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 48000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 80000,
+        "icer": 3333,
+        "prescriptionAccess": null,
+        "qalysGained": 15,
+        "vsComparator": null
+      },
+      "name": "Supportive Care (for active infection)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Fluid overload",
+          "percentage": 1
+        },
+        {
+          "name": "Electrolyte imbalance",
+          "percentage": 2
+        },
+        {
+          "name": "Adverse drug reactions (e.g., from antipyretics, antibiotics)",
+          "percentage": 5
+        },
+        {
+          "name": "Complications from organ support (e.g., dialysis, intubation)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate for symptom relief",
+      "treatmentDuration": "1-2 weeks (duration of acute illness)",
+      "trials": 1000
+    }
+  ]
+}

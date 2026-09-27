@@ -1,0 +1,1228 @@
+{
+  "conditionName": "COVID-19",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:31:36.857Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEo_7Ly7SJB848YBFjR5UY2lQcN2qldNj8avleHv5OqWh5Y1-5gblWdHu9AqJJ8Rfg6o8IFjBcsY6jKZnY56C5SMP6_qpDI4RaoDnZ_swDBI8wVSapBgQHh1lasKuY9vmz6ZWx2JeK9_3Ll8lDcIwSDBhywJ0chslLEe1SXJITaGT4D_oFox9xo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJL_j29DVC3EaXXubgEPfs3ysUzJx9M0KIUbtHTS7mCDzRnyrPeXruyXEY-ZWS6iczVjuDmc5fBzYBMOuF4TfO2TjUiV2yEoqXy4MHXuEUMeid2jWtq3vEirOc__HOQony-RIO_vzDyS0IzkMehfLelmDwfj1h7xXxYU83lN3Ij8nh4fujhANddn_8ITXQjvf0T2CjP0KQvtchrclx3vce5A5ptJ7O4FoH9y3BE_ihNlKn01SwHxuSoAw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7hrJRXhcd23DNWcatzC1bAPdobpiArQwy8zLQOZhZ-7ExKQ2a7iDEo1CWr_bsWoV4CC2jhhMO9_30abD_3r9BwbmVoXup9K6qgtGJJwstWy2lS2Xe2w7FxJn64o_WtWItGJKt"
+        },
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2fJ4-SSkwVeXm9rG6JJKym94Ch9ftQF2sHXkVX8qglVAdiLEFovFfjRaEjr3Rrcx_8WMJSjCD1GvVUboPWCgASwVP47hJr0IYH7o2iy-cz1Y50a_RYDrQrG2HFi5BzIbRj5iWHjZP_TKZEG4HAK4s-jBkemktXsONv7GeJsrrc3ys-H1fub4IJ3ONTUPpbpIf8moRSX0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6NN8A6S7j3aXtFgWZrxr8zBBPY_depG1QA4ZxHefCuTvFwv2OyUusIjS6uOT8YbLQwIOWhCtcw2_8w2fdjKW-It5IFJOX6iKEer5l50pRe4u86VNKIZq8dl1u_K597gpOoG3TKsu4efrx6pU="
+        },
+        {
+          "title": "pfizer.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBkumB5WqJU7LK8PVNrj_UJQRnR3I6m1DMHbsIEH2toKVogbiXJLjLxy-7SVpcqvzD3ZYunuQkDcHOgANl2taBZodEPOwSk80lYMXZ29uqG7F5CMhOGXlik4dHp7offmWfUl97C2AXodt0r4l3Q2L-KiS1E5sOtGSGuJMM4FmfbIvlb71e9yMfYDdKJ6G7fLKEo9HNSf-ky-PZ8Atp9Zot5kD8Oz4KqxwRBhOUUxl8IC4bIQ=="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgH-A75GmVUKvXwLwT7_kjNc__ap3ivu5uwtDFpnPaJFT3DDMg8XE2yzHMlKlUNglELNIr8nJNeRIDO4Ir523UC_OHcSynSDU_ZZvtM0EwWh0JME7TQaf1pWv9tmbCKAUPJLz3vH7jVdinYR3pJLDYCpzs-_4ypPDtHK7tY_MdtpVATrvk_ezu7cOUf98OfduMS_rxA0V0jAz3V634R7e9jqBTnSpZP0jeE-p8-M67F4k6nRc="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiczgRjgST0-Z7pas_474ns9yvXpPjpWeoUAMKgBLBruMmqbTdew0jA8FbbvY8rqaqdi2A_iLm9QI4wV_qWNmolIrKU0Cn4F5iIWqyGQF4uwXVnqsEQEE6LGuh0Mh8vsqJ08FzToyQ_5i7ZjXje0R-pZchmSL4OQ-KcPRohglJ6ZrnOP7vkh8hoIc7hyXYFBqjsRn-ClHNMeyayT_qAxM1WaN2zb2cNm4DtuAnOYdBlhpudYhCmXzrGc_CuOoCfLtCFCs_5Qn9Cg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBgjAUFvKhL87pclBJZF0Q5Sg8ehni3H6uOgSHYEStG8e7f9LScjmq5bPMZglZDZi07oqh1Nd0-M4HlTl2neC3h3-ULKAGfwPyM5gxXlTs9ZVz0Z2AmBUVj_ulArJZZcOn15udM6FhqDbfP34s"
+        },
+        {
+          "title": "ClinicalTrials.gov: Nirmatrelvir/Ritonavir (Paxlovid) trials for COVID-19",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COVID-19&intr=Nirmatrelvir%2FRitonavir%20(Paxlovid)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Nirmatrelvir 300 mg / Ritonavir 100 mg orally twice daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 530,
+          "monitoringCost": 20,
+          "sideEffectManagement": 30,
+          "totalAnnual": 580
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 682.35,
+        "icer": 14000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": {
+          "comparatorName": "No treatment / Supportive care",
+          "costDifference": 300,
+          "dominates": false,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "Nirmatrelvir/Ritonavir (Paxlovid)",
+      "nnh": 500,
+      "nnt": 19,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-31.0 Participants",
+          "baseline": "32 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Classified According to Education Level at Index Date",
+          "percentageChange": -97
+        },
+        {
+          "absoluteChange": "-40.0 Participants",
+          "baseline": "41 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Classified According to Employment Status at Index Date",
+          "percentageChange": -98
+        },
+        {
+          "name": "Height at Index Date"
+        },
+        {
+          "name": "Weight at Index Date"
+        },
+        {
+          "name": "Body Mass Index (BMI) at Index Date"
+        },
+        {
+          "absoluteChange": "-1.0 Participants",
+          "baseline": "8 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Classified According to Smoking Status at Index Date",
+          "percentageChange": -12
+        },
+        {
+          "name": "Number of Participants Who Had at Least 1 Pre-existing Comorbidity at Index Date"
+        },
+        {
+          "name": "Number of Participants Who Had at Least 1 Concomitant Medication for Comorbidities at Index Date"
+        },
+        {
+          "name": "Number of Participants With COVID-19 Infection During the Last 6 Months Prior to Index Date"
+        },
+        {
+          "name": "Duration Between Last COVID-19 Infection and Index Date"
+        },
+        {
+          "name": "Number of Participants Who Had Previously Received at Least 1 Dose of Any COVID-19 Vaccine"
+        },
+        {
+          "name": "Number of Participants Classified According to the Type of COVID-19 Vaccine Received Previously"
+        },
+        {
+          "name": "Duration Between Previous COVID-19 Vaccination Date and Index Date"
+        },
+        {
+          "absoluteChange": "+35.0 Participants",
+          "baseline": "10 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Classified According to Total Number of Previous COVID-19 Vaccine Doses Taken",
+          "percentageChange": 350
+        },
+        {
+          "absoluteChange": "-210.0 Participants",
+          "baseline": "229 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Classified According to Dose of Nirmatrelvir/Ritonavir Received at Index Date",
+          "percentageChange": -92
+        },
+        {
+          "absoluteChange": "-243.0 Participants",
+          "baseline": "245 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Classified According to Frequency of Dosing of Nirmatrelvir/Ritonavir (PAXLOVIDTM) at Index Date",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-225.0 Participants",
+          "baseline": "236 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Classified According to Dispensed Type of Nirmatrelvir/Ritonavir (PAXLOVIDTM) at Index Date",
+          "percentageChange": -95
+        },
+        {
+          "name": "Number of Participants Classified According to Medications Used to Treat COVID-19 Infection at Index Date"
+        },
+        {
+          "name": "Number of Participants Who Were Hospitalized at Index Date"
+        },
+        {
+          "name": "Number of Participants Who Were Hospitalized Due to COVID-19 at Index Date"
+        },
+        {
+          "name": "Length of Hospitalization Stay Due to COVID-19 at Index Date"
+        },
+        {
+          "name": "Number of Participants With Intensive Care Unit (ICU) Admission at Index Date"
+        },
+        {
+          "name": "Length of ICU Stay Due to COVID-19 at Index Date"
+        },
+        {
+          "name": "Number of Participants Who Were on Supplemental Oxygen Use at Index Date"
+        },
+        {
+          "name": "Number of Participants Who Were on Vasopressor Use at Index Date"
+        },
+        {
+          "name": "Number of Participants With Intubation at Index Date"
+        },
+        {
+          "name": "Number of Participants With Outpatient Visits at Index Date"
+        },
+        {
+          "name": "Number of Participants Who Had Emergency Room (ER) Visits Due to COVID-19 at Index Date"
+        },
+        {
+          "name": "Percentage of Participants With Sustained Nasopharyngeal (NP) Swab Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) Ribonucleic Acid (RNA) < Lower Limit of Quantitation (LLOQ) From Day 15 to Day 44"
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "name": "Number of Participants Who Were Hospitalized During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Were Hospitalized Due to COVID-19 During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Length of Hospitalization Stay Due to COVID-19 During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Number of Participants With ICU Admission During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Length of ICU Stay Due to COVID-19 During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Were on Supplemental Oxygen Use During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Were on Vasopressor Use During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Number of Participants With Intubation During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Had Outpatient Visits During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Had ER Visits Due to COVID-19 During the 30-day Post-Index Period"
+        },
+        {
+          "absoluteChange": "-3.0 Participants",
+          "baseline": "4 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Classified According to COVID-19 Polymerase Chain Reaction (PCR) and Antigen Test Results During the 30-day Post-Index Period",
+          "percentageChange": -75
+        },
+        {
+          "name": "Time to Negative COVID-19 Test During the 30-day Post-Index Period"
+        },
+        {
+          "name": "Time to First NP Swab SARS-Cov-2 RNA <LLOQ for Participants With NP Swab SARS-CoV-2 RNA >= LLOQ at Baseline"
+        },
+        {
+          "name": "Time to First Sustained NP Swab SARS-CoV-2 RNA < LLOQ for Participants Through Day 44 With NP Swab SARS-CoV-2 RNA >= LLOQ at Baseline"
+        },
+        {
+          "name": "Percentage of Participants With SARS-CoV-2 RNA < LLOQ in Plasma Over Time at Each Visit Through Week 24"
+        },
+        {
+          "name": "Percentage of Participants With SARS-CoV-2 RNA <LLOQ in NP Swabs at Each Study Visit Through Day 44"
+        },
+        {
+          "name": "Change From Baseline in SARS-CoV-2 RNA Level in NP Swabs at Days 5, 10, 15, 21, 28, 35 and 44"
+        },
+        {
+          "name": "Change From Baseline in SARS-CoV-2 RNA Level in Plasma at Days 5, 10, 15, 21, 28, 35 and 44"
+        },
+        {
+          "name": "Number of Participants With Rebound in SARS-CoV-2 RNA Level in NP Swabs at Follow up"
+        },
+        {
+          "name": "Number of Participants With Treatment Emergent Adverse Events (TEAEs), Serious Adverse Events (SAEs) and Adverse Events (AEs) Leading to Treatment Discontinuation"
+        },
+        {
+          "name": "Percentage of Participants With COVID-19-Related Hospitalization >24 Hours (h) or Death Through Day 28"
+        },
+        {
+          "name": "Percentage of Participants With Death Through Week 24"
+        },
+        {
+          "name": "Percentage of Participants With COVID-19-Related Hospitalization Through Day 44 and Week 24"
+        },
+        {
+          "name": "Percentage of Participants With COVID-19-Related Intensive Care Unit (ICU) Admission Through Day 44 and Week 24"
+        },
+        {
+          "name": "Percentage of Participants With Invasive Mechanical Ventilation or Extracorporeal Membrane Oxygenation (ECMO) Through Day 44 and Week 24"
+        },
+        {
+          "name": "Mean Number of Days in Hospital and ICU Stay Through Day 44 and Through Week 24"
+        },
+        {
+          "name": "Mean Number of COVID-19-Related Medical Visits Through Day 44 and Through Week 24"
+        },
+        {
+          "name": "Time to First Alleviation of Each Targeted Signs and Symptoms Through Day 44"
+        },
+        {
+          "name": "Time to First Resolution of Each Targeted Signs and Symptoms Through Day 44"
+        },
+        {
+          "name": "Percentage of Participants With Any Severe Targeted Signs and Symptoms Attributed to COVID-19 Through Day 44"
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dysgeusia (altered taste)",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 6
+        },
+        {
+          "name": "Drug-drug interactions",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Within 3-5 days of symptom onset (when taken early)",
+      "treatmentDuration": "5 days",
+      "trials": 45
+    },
+    {
+      "citations": [
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtL9Dv0XNJuErVJ1CzvIPvBKKMoJy-Truq7KVVqP4zLymztIg60eGC8n_SMkUVHNJt60UaI5l5woN1dm0btwhOD6f4-asiN_3qaSluXx2qRuF-AN_5hORl-se-FsBPuThyJbu3D0UDDCR-ydWxBE8r7A=="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_oiK9mTIWK7URIiTTPXJNkgKL58n5Qe8j0yQI6aNh6EXsc60t0vxavtEUUNSa5jMNpKhegDfOYBdDm6ACEbl2wHP4rYrpWRmM5dpjk05wft_KQ82GUg1jJ-JIYXEB36iz7DTUz9ygcLho1xlW-mY_3QcHqEt1vqfg4kJeHdKjCgE2-Hl1lzaPR5ujFxuWXtueA6hHjgo2her-Yb28"
+        },
+        {
+          "title": "livescience.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmBBMbr_XU6MOsr5NWy9WT1mephghFzOV8832uKakjzV6q8N_zuR1FlAAISr_toF3EnLArelEfvyLoHmvhcBXI8lJl6jQL9Ei9_fwxB91Rpn5c_qvd2ZitU5Y0DZvCJRJBFLbhCDbZxrx-UsE9lIEQ_cjH5YrnDkMpJrqQfd4-DZGgdAE="
+        },
+        {
+          "title": "cbsnews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUIHzwIinap3ddud7DeDjlI59YAanygMID0SO9wlAJBTYYjsm2Wl5efM1kF96INtyoJYBaIXwqYqO7UfqMk44O5HzVCXADe--KNdwjp3NgvdYYvrEZ2FIN2ce8FiNtOSFolb8VUDOg8oFCm1LwD4gPH5p8byCKwj6mzMzQT5-xA04W1GdCRMlvYuvILi80Lw=="
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu92bWhHWhvJAKFkvPPKnPpkKUrRI6OSTOPUQOuhjR48GjCbFuuO7uLM2LWbI9xutY-2msKvgMysl9Qoz3RDFeWoWIWMVFPyeclam9hmJLB8mziHEqTShGyIrhnLhlStL1xIC0UgSG1yMpRb94RM3bDoPpnTNTMSggQuzmSw_WWW2EpuR3gc2sZW0U6_tfwMqzXijpsknu7G0JZFZHdtofBXLZFldaEaCJuJ864zYEfwc="
+        },
+        {
+          "title": "oamjms.eu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCPCg_ZQLoyORJN3gdcGewcIyySETfrypeilaI6YPOe9z_KCgEL3yeoGrutfFY_9zE5xyT41nw4KGFi2xF62YPEC9XndeG_sjWw4MHbXD3Cr8Ox7tLxLmx-a6Xob0yiCeMEAYFwqmusX2sfSA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM-J9RsGKS4-RDxc7g-5xk63YK5C8bZX5A5fbWH5X6idg_w7H7bRMgxHCXBFcOoSB_DVr2Q3LRyORiP9bpqAUaJ7q55eZ2TcJaHIsJiPPqMpeSrBzA2j5ZjeSaq4WCRe4vZeMx8kAgfyax2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqRLsJbQD7AHYu7o-hTFnC_G4yHT55sAbixgw1dsFnMQa9jPSBq13OsSM3R74ZcSxu4pE_Gpn_PLCZ-mnhcqP1zBlR_Md5Uv0bR3eFeJCxdWd1LsT334QXnbNLTJPnjpjO6UqMbIcjPzinpxs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_kCeN48Qy9EfWyCJBL4zpk_KP_XCn3FnScrNfXUIuvTqZizDNGkEwXd7C-vLvOnTcKtCsPMtaEPooXfIWUvCLo-HETrAGYRlTs3ztnzS53AZkRhTtP_kQJ6a5aoCF1EPk7aSRASHly_qrHaI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dexamethasone trials for COVID-19",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COVID-19&intr=Dexamethasone"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "6 mg orally or IV once daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 50,
+          "sideEffectManagement": 100,
+          "totalAnnual": 170
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 485.71,
+        "icer": 1757,
+        "prescriptionAccess": null,
+        "qalysGained": 0.046,
+        "vsComparator": {
+          "comparatorName": "Supportive care",
+          "costDifference": -500,
+          "dominates": true,
+          "qalysGainedDifference": 0.046
+        }
+      },
+      "name": "Dexamethasone",
+      "nnh": 75,
+      "nnt": 25,
+      "participants": 100000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12.1% (absolute risk reduction)",
+          "baseline": "41.4% (risk in usual care group)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "28-day all-cause mortality (patients on invasive mechanical ventilation)",
+          "percentageChange": -29.2
+        },
+        {
+          "absoluteChange": "-2.9% (absolute risk reduction)",
+          "baseline": "26.2% (risk in usual care group)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "28-day all-cause mortality (patients on oxygen, not invasive ventilation)",
+          "percentageChange": -11.1
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "15 days (usual care for patients requiring oxygen/IMV)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median duration of hospital stay",
+          "percentageChange": -13.3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 35,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8% (absolute increase)",
+          "baseline": "60% (usual care group, patients requiring oxygen/IMV)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of patients discharged alive within 28 days",
+          "percentageChange": 13.3
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "Median 14 days (usual care, patients on oxygen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to clinical recovery",
+          "percentageChange": -14.3
+        },
+        {
+          "absoluteChange": "-48 mg/L",
+          "baseline": "80 mg/L (typical baseline in severe COVID-19)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hyperglycemia",
+          "percentage": 15
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 10
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 7
+        },
+        {
+          "name": "Fluid retention",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "2-3 days",
+      "treatmentDuration": "7-10 days",
+      "trials": 109
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMXBksXnEEpOuaEGYpsL8f1Kbxv4L5De_Zgo3QkOjoYT5xuZltQ2jmPskn_Jh-w_qMt29uVNiK_AlWIP938IaXB3W1irCwrGkiH2P_W81GTch9rK6WIJbAp8pkeoC5VczooLEK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCykmFp9Dbw9RSnZp1mnewPMvXKXKWB5Qjo_ELaBblaFEYE1QyqJ-bGfnRNWZRsBc4im-uLnQx6GnPwf0ldESllIkMJey0Fg3DZbhyokMTEka-x6Z6jD1ghSGrpz9RuCfxUmCS"
+        },
+        {
+          "title": "nihr.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDdEC-4-JHwm3fsrUG3k7IKSNVP57qPtyFj1zvFA_lL41CJmEIJsBa6dQSfC9VBrKGVcD65WiKj3umisLHteUWiyD5UsJRwWtqlk6GtAFeClEe10O1UUT2s5EBAIF_NJNRKT0uN9bAEcsMkswZYYrIXyXUkexg2QSRYfjMZ3MwpsxMhoM-TqcUPVrb4JIlEnOLbOoaBlVFL7FGl51WfDU4RsMBJwE="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElWjDat_CZs4Ru4d4F1-V60N83c8qjHTBO8-UNUuJ-jYBpgkLyRquczKuvJOBYN0cGq8SE6cw-kx9hhjuSeZnvXsZatPTKdqH4j4VZDYO8txvh4ducEhS10TTgV_YG_7co1fCJA0pEhbG8Hp763gR8T6gETqsT4QlCJeM042mNZ8D9DxaHI9_AmnCfIVo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjCLBdMZ-aLi2ukLmj4yrmxGepMlJwCo1kcFLjhFv6MqlGoK2BiXzsC-o3e4seoWUgnDVaN2lNGsajhbRjTRTL9W3eW9wLIfusxFMYbWxVSNhyxfL_Yiblm_N6EbbK2pipBQOll8bBj7xMrGQ="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVoKEAWJvh8PEQMzPbLroxcvOVBEvx_ozYWF2pQRz9VU4u6ynR-DHg46ARgWQdIU22TI8OtXfDj3TO6XWalAX7jq-CUq8Sz7Ln-jYBQRxqCs6bDJ4mXAIkQrLn9zhBVuCoNg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-KjAzfzFQlm3Zepa0HXNXs3Mdl1Pfm1-1wdBSAi2M_eUYSUZ_oSKk5mttnMKRumnDIVEw3uWwDVuMgyyj-91p3Y6Sqot39WAv74nFIZ3Vl9WveJTpAH7i8Jr_gRCbMNHjmmoe"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMdvJws2ePvko7VZlf0F_FkarN4w6O6E2EXMzH4E2i-YP83ITZMU_pjWcWv0s07adt5gSsafv7feeG_yf4iSvmdaLv5oipZFxM3C-qdR0WM0jl2_ctOQkA-HNyswd024mtBh-mjkc_FkZo1FPFk3qFoSGv1Z_JdyyFvW3IbTmWzVi5eceZkA2aAUKjPxo1qG87GL9DiHyL9BbYcjXs9tRoQE2r8YVLkeYNIyxaKG-4iwIoDaH17VHGLZQRIZFatZNis_HwHvSg99P6ws7U"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTlYiZZBKEjtgAlQwQMh3aKiOQctg1aHnghQuDvGwOFbvK5HYoRBRU2AWok9YJ90OLlmBHUWKwuxXaCmeDE7dOMLpRiJ2I2gLmedBLc-BtLmWLOz6bB3_BUFhGH4aV3nPCOtcO"
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAeaulI7yL6SzadmLcYPEukw-l7fxcW1jTlUV6l_geyAvUGUSuc7LiVzagNiSXCdGjuI5P1VIkexPlV118bU2ixI2VyiD0tuaQhR70Ew6djUKmauAy1Mbg7AcqddJVwOtkuBnk96uthxfw0-PENN02A-Yey2ozB-MJ9joOT8au2vdq"
+        },
+        {
+          "title": "ClinicalTrials.gov: Tocilizumab trials for COVID-19",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COVID-19&intr=Tocilizumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "8 mg/kg IV (max 800 mg)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 100,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 2769.23,
+        "icer": 12000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": {
+          "comparatorName": "Dexamethasone",
+          "costDifference": 1500,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Tocilizumab",
+      "nnh": 75,
+      "nnt": 28,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.0%",
+          "baseline": "29.3%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "28-day Mortality",
+          "percentageChange": -14
+        },
+        {
+          "absoluteChange": "-16%",
+          "baseline": "28%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression to Mechanical Ventilation or Death (composite)",
+          "percentageChange": -57
+        },
+        {
+          "absoluteChange": "-1 day",
+          "baseline": "Median 13 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Hospital Discharge",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-90 mg/L",
+          "baseline": "120 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "Median 7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Oxygen Support",
+          "percentageChange": -29
+        },
+        {
+          "absoluteChange": "-0.5 mcg/mL (FEU)",
+          "baseline": "1.5 mcg/mL (FEU)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "D-dimer (Fibrinogen Equivalent Units)",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-300 ng/mL",
+          "baseline": "800 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ferritin",
+          "percentageChange": -38
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Serious infections",
+          "percentage": 8
+        },
+        {
+          "name": "Neutropenia",
+          "percentage": 7
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 6
+        },
+        {
+          "name": "GI perforation",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-5 days",
+      "treatmentDuration": "Single dose or two doses",
+      "trials": 86
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnsfllbUz3o8gKjsaiGpTbC69yHS-QLnkd3afR7QWQSwReTcR0EIJgbRtHteNN8dFdXrOAmcV7tpApmn41KJrwYm3zmpnkSytYSc9ySAOzVvwYb2iYrmhaHLiAwt363QUp1D0a9yv87jz6gng="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlWi077ya0KJSg2FI6QZLsHUsOt2IKwd9jEpTc0z04XdtrHKzW18zY8Ee-LAv1PpkgGn7snVM6E374dcxXIA_IMzfBNlN5r--aKWyFKy4q0W5CVn9kvRijPyHWiQMFqVh_mKToUvlxBb4hnoAVOvKdD79h3mNZMnbcDFPtzJfw9D4papuwE6KtjQbeUrdhtbDRTbOIkeWrxbzmploq11kSluSQ1GUgYQk1WV_M9UkiaRqc84A5ztO0OIuY3nyGZFnZBIDojEQ6"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG88I4ozpkZFWFP-SvSW9skg3LJ6RfpJpDcencHvGBMB9XiT3wT5Og8g6ZhHgwDALtHsNr5PW3AwDOC-G-uiu1tJaFZ_0jWgiUYrfPMeKf53KGJXxfexxwMsEW0GmekRTg1z13-nxAGXdQvRA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERPR33sedolrKHJjgCkhZYwt5y5kex5z519VPFDZsYNAjW_GbCTzK8zkWWuiBrih6mllbrMXT_199g4KSLRHtRTAK6g44bCA0erjxuwgoqOrAC8NhdG14Fa9qAYsaF2xZ7xu3TyiOALunWT_JCMra9BBvoLw24frE4bA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE54NGb6l-70QTupNV3bqD_DuArF7bRJ9k7UO6ynsoPY40w4Bxo3gOlGidHM0OmhpC1HiXti45MTU6pRPF9-HSVzLJrq3cCyYPS7UnyoinbLJtj_bumhKoUQNFAGhMvYNtIA4n2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAnTotpXENCvts0AQldU6g1Xp9-gQRvqmkPCk15S8vnChrH8a3O2dHE_WPrUWLHGZZhjpbHqdQSdXYC8hUDF_bWHdAgyILM0wb6ef08lX5aoDQ0NDh8dm4DgRmcragg6eIVq4bCvLmvg5Xyvo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQq1UKqxASVRSchLjxDIoaRAePEvfGoHpUZ_18bB1p-O4ugbljeli7fVmOJy6sen7o632SoVXPgsbZtunL1SC8QLOF_tSucaUkopnVG_U9uSKtt0IbzLUtH53jNuojbaG3mJ55f7h_y3ge8y5RY-D58nw0u_p5Cd2GaVEfBMRn32JIAegY8VGqcUpRLa-Afq90MvCFIdrTpdUH-pZy8pqJ3JbUqndfY_cNNLVFLYiLuaHgsB3GGXqBwidi5qXoKghwixNBNw6b9LXDprdTiLdWinDt9gVx1cRWBy8ueMD6p29gkxv57FFUlxYGX0KYUuw0VHCto1XCST25pmD0vx7WwQlsxUYz9i4rzRx9c7gCbDpP3wpJC9meZVQznz-H"
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqJyAr5XbJ5wn4-A8SFwakiCDP1XAiqQlhyrteV3hHURn6sIdHfCZT_Eb6RQMuletePMAaWPnd6R3X_YfGqXC0-3CeViYD48NT7LM1gPdIzzovCX2CU-QcPWnHpEmKE2fSzo9ioZb4vNEcIwORkjq7FhfV-UehZtZbEsE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Baricitinib trials for COVID-19",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COVID-19&intr=Baricitinib"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "4 mg orally once daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1200,
+          "monitoringCost": 100,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1450
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 2230.77,
+        "icer": 33000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.02,
+        "vsComparator": {
+          "comparatorName": "Remdesivir + Dexamethasone",
+          "costDifference": 1000,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Baricitinib",
+      "nnh": 150,
+      "nnt": 25,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1 day",
+          "baseline": "12 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Recovery (median days to hospital discharge or sustained clinical improvement)",
+          "percentageChange": -8.3
+        },
+        {
+          "absoluteChange": "-4.9 percentage points",
+          "baseline": "17.7%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression to mechanical ventilation or death (by Day 29)",
+          "percentageChange": -27.7
+        },
+        {
+          "absoluteChange": "-5.0 percentage points",
+          "baseline": "17.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "All-cause mortality (60-day, in patients receiving oxygen support)",
+          "percentageChange": -28.6
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 percentage points",
+          "baseline": "70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of patients with clinical improvement (by Day 15, on 7-point ordinal scale)",
+          "percentageChange": 8.6
+        },
+        {
+          "absoluteChange": "-30 mg/L",
+          "baseline": "80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP) levels",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-1 day",
+          "baseline": "7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of oxygen support (median days for patients receiving it)",
+          "percentageChange": -14.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infections",
+          "percentage": 8
+        },
+        {
+          "name": "Thromboembolism",
+          "percentage": 3
+        },
+        {
+          "name": "Elevated cholesterol/lipids",
+          "percentage": 7
+        },
+        {
+          "name": "Anemia/neutropenia",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "7-14 days",
+      "treatmentDuration": "14 days or until hospital discharge",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "vekluryhcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCNbskZdmJiadaFKFTQLC-XMcbwP78ZvonfaKKupjcJZKKOnG9QMvMcgBI4zqotmmMc-8HNVqCASEC8i0Ldyq2a4Wnq2S4ayf5q7dQoI3FUO2IjCFJVrg6zxiOBxozFg=="
+        },
+        {
+          "title": "gilead.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJqq-OfGAu_KFgBP12YxsEfT3lufF9k--Uddw1K5eIcRZlzndzv8Mp5J4m6RYxLS447a1EcSUhJbCkEeFrxkd8j4FKlWHhlcqqNo0qJS77Y5RmuKsOGgV7LvAKgjJqPWfmCPv9TgP3T_JWcdjbR253iIM82NY5az5lWrUrkieag-Kt-iQWurc0shQXjNCEWfxwuWKnBwWWDGUZN30F0pYvrXmaI8JBq43f-lVUPkj1-m1DqWykaJUoikzHX9LcA_PNPyw-3j0gvaZ1vrpL6GlWdl39o3W4EbnxhC8R9cINDKdGXRltZObXTRmFE2ykJtDERTNE6rzB4eW_4WDBrx-jRTwZI58sEWOCd6CFnswwDgtX6L-2umpCGoYOxKhs76WVMACLDr5cug=="
+        },
+        {
+          "title": "massgeneral.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWJz6RuX0kdVcAeXZLRbtAx9nNofHzGp2c-Io3PqFk_WWKHiGBtVqjca5mtVe9HqEfLbNBde0GHkCkR_ecgeT7T0m74sW9CFhzKwEz5QY8gAYL-cVmRmCXZIFU1Q4Ut9XzlFZPqSgz4cVrnjfm7sIGv9Gske98mN08BODwyvDQEH7vOyzO99Zh"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfPeabMNi0RrpoUlWFL9DlW-UFmnVEFd1n1dqyluxtoR3JW4hOmz-9I6X4VtkY-RCVIWdyrw_vx0ehPpqRKigIYi2jkKsn7FJ-sbHO8d3kaIPnVZQNxLZRRBo69oK6bY6mtGMeA-npPOdlIEqa_8aNbw0ksd8KRB84jj1HGw7MFMnZQO8="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_Y3y2p2girBRKAvaGqPazE_t4TUTCQV8WapkakkZR-2D0pl3ygy2lPakEN_YQivKED2Nd1GmunW-kv2URVfFLDIO8ydF3NJaP9P3phNv-Muyc_gaKR1TGserifSc_tqScet5SjrFXWN4tQKYM3UptKjdSdzr3BCTT4gOSax5Nzu2et0t-H2hPzD24xXx_C561Mp1VrUjmRNDv1E8nEROmkGS9gE2io6D9cAlfWItfx6kZ-YVEHT93rwDGGPqKu-AJ5YrRNXgX_H89kFA0KIxuW0L33R4pye1mbMx7grqdD0h034g="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP7Can4EW6Wn-Du3sNTd5Pcs3ILcHvJRdY2Cs2xhCnoty3f3D2j4WY1zyrOc0Rv3OAHGgwzD838mSD-_y9_E9nH1pfmPP8cgj5nFrJeWFjSb3BxoReBvQUmYSlfpSGZ2FyLIWhIVujACYG31I9HUPbEhpqcn-rTm0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgXLUmQ9ldBOz8Ycy01f9J9WR6uFbkE3R6jL5_9ZRHncakok1bfwKdsNCI96pP-SoD3HRR681fD79c0mk85fXr5boAO3U1JPmm4vJrq_Q0bbSQzSnw9Hri7wX9GZC9zQ_XE1SA"
+        },
+        {
+          "title": "bris.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE1T0Q74_tWvZ7F8YSiv1o0X4WgZl1mzvbxXRATa3pyKQXoVXEqmGTCm4JFFcGLmKXFLurJaImSJeYSHoSNoMSseK91VA7-oqbtsxB-SXm18RBbFJ0HTwTdUkhZVkfYUMRQRuxv4Es0GTrHG4qLL9WqLu40yk8A-2zN9l3NCwijSOLxnLAe6GGdX5dUXckhF7fVhxoSxTyOz87pZKRg7HXQ4zO2opt3lptsVUFuc2TGfg5ACI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVfwQiY2L4qX23w8ZVtUI7KTlKVNU8J3ccbi2gQsbLBUsc7HQuRA_qiwVFbEE8lCgrOOH1XXUKU01QiYo--QNdY9zFd70N0HH9lwdh0MlaRXvCtpMF4Us5nLEf8r24O5sw8mGrQHvLvOZW0i4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYZFRrCd6KyNl0Df-YEQrapg_X2q7weShYYeLmAoBMRjxQEl2d7im4OxweWg2P4qKgIvVaO1mjVWTwIQjInVl2JnqZKl1OUT752zAoSblLdK83gWOqCeK5JvUBIALzP0S9MdZB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaEhgxB9NpAvfIYuY9uz8XJIAx9m3jhfW6tl6_DaNAFKSfhMBdS1AkEN8YLfj2sgg4T0zzCf4VRhm1Rq6EDhdytb9iUiJzfrfjIvvwvie1liaP9Qw6WR_9adhDECP4qa7u4HeQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0nn_rAS5K0GRniBkjNGDYjvyVh24KkJtpbTbzhTaIDU0IzXvJvFpx9lnXnIlkx8g4lWRecgV44TJneUMksonXJY3WgtHLJCxeDBI4iSaBRBfi6bBbvOvECrb_qjAlYW0FeLOQ8_GkI2AHbVM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMdZFNu6uqCRU6RMRi4UObfF4kwsP4I4-ioriqgR5w8kAGlIGkLk46GPvbrvLzi88MdTRNaVtZXpNpnFHPgxt_73tm3k68rO68lUM1EWB7-jKUUqfbydkwJwurrQjuaJ8AYsUbhnnZ4IK3FSpes8acb6JTs7dHMZKs3DlrzL7sAKPwCIv-50YavQDtKceaalD-vOepWe90w0YvtrLDpn2mUJyJ2kAl3WVfUTRRbkemRg8cRdpSXbUN4QhO1W-2B_M="
+        },
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFibrcTBSaYO1UDiPjaGH3OV_nZ6FC3jbB247O0Xd4grIqTS0CC3eOKSJzD8oeAt06ykrFfh1RHRjZoz_120V5owpXhDwCVWJM7sc5SkqjQ1YgDhnWj5W9B9adVEpvfOxokPXPhEB05fOACkxFlx9a710uGNvV1rly67eio57hG75451RYlp86bZ45NMYHpA4-tz4RHp5daBTkSkGMRxwsH_w4Bcru-cQM3x9XwRSMIob848W-TcaYPb4kflXx_sq8C"
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH65pUXmLDV7MZZTBUZUbrhRC8UV-ndgYJmhqaJloRL2bZqa54PhgsgGJ4ujYrdxRP2BeUzbc1dyhJ4suEuDEUhyVk6aqKP26Jb6OUaNI7AOWvMCdutB2TNlNCdYPF1X3egMqS5t6TLxmp3qvRw5KQ3Aw27lQ54j6dp1-bNP1TSuozH5fFHjTjFYsNCZBVzolp59d50yPPVGYvUrRiOEnAVmcxkkhqAMgTzSw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQX5i2-FrQHFF3aF3SFbPJOqdbqdInAAeP_OsQG3wCBLR-JPHcmsRVFZ4f9wA60nu75gkry7RgCPg2RR3ny3k_58wc96wFk3a0PBGk97wwsfySTXQMkVMhpo0_BEoZU3xoXaU6KFxRUl0l5QbZ"
+        },
+        {
+          "title": "acc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFc-S-dPG6wUtRVjSwgGkxWkkVhQF35uJR736B9ojkEmGYkfbaegjPlJbW4Gw59dsMoCGIO-a3wWhRb3rp5TXsJuvcZExsI-FZ3sJZAbUq4ZIC7ZfhwINXlCMNEeGFd_Zgula6dq1RyNUt41iRib72ErV3b8ZML0HBrXKl7aEivrhQ1AxX6UXQ4HVIXy0rS-A=="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_UaoQKL7cLs_nV_2TLDFruWfY50RWkDgpB_sWB2yffTL_qICGMbx4e3x4NawHmwBUDzRXt0XKXBfix4MO49KiQnDpPoF7RtVw2uC-oVsw5-4ByCeKwGh0v2WJ5DomYQRLYRXhutkWdy8Dhk_NMKRM6BQKW7pfnnXSr2DE5SRRFvTXxkFuNwQe5RMnFRc6LmnT8eGnGcD4jg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8n-xhjYE786CkyIF9Q3zVURUK-PFhhgf51UH-iLf4Nhzz8ZAwkH82nVetk_r2tIIgcddxxkkh6z89mohqgDWBVoK_CfM_tUrB1Iu25WhojYVFuuBGIIBvyJtF6aIriaPIEDESQIlDYDATG-k="
+        },
+        {
+          "title": "ClinicalTrials.gov: Remdesivir trials for COVID-19",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COVID-19&intr=Remdesivir"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "200 mg IV on Day 1, then 100 mg IV daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2300,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 2450
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 4454.55,
+        "icer": 19500,
+        "prescriptionAccess": null,
+        "qalysGained": 0.01,
+        "vsComparator": {
+          "comparatorName": "Supportive care",
+          "costDifference": 1500,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Remdesivir",
+      "nnh": 200,
+      "nnt": 11,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "Median 15 days (placebo group)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Recovery",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Median 12 days (untreated hospitalized patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Hospital Discharge",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4.6 percentage points",
+          "baseline": "17.4% (placebo group for hospitalized patients requiring oxygen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Progression to Mechanical Ventilation or ECMO",
+          "percentageChange": -26.4
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "Median 10 days (untreated severe COVID-19)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Supplemental Oxygen",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-900,000 copies/mL",
+          "baseline": "1,000,000 copies/mL (high viral load)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasopharyngeal Viral Load (copies/mL)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-10 mg/L",
+          "baseline": "50 mg/L (elevated in moderate-severe COVID-19)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Elevated liver enzymes (ALT/AST)",
+          "percentage": 7
+        },
+        {
+          "name": "Infusion-related reactions",
+          "percentage": 2
+        },
+        {
+          "name": "Renal impairment",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "5-10 days",
+      "treatmentDuration": "3-5 days",
+      "trials": 123
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzHpgDk8TLxagrddzpszz_2bckIQ92J3fc2g65WvmIxSleznerh074z--5QEJvihTwFjE3T2otII8NqCzOsmkuLpdbTvW7UYCJfO3MZ5TVVU9UPiOuTuf3XGcwUiCiMIXcrQ9U"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF_OigEQziDAjUoMUx0Q1Bspqq8ig1-TmAcdEPdKsyEOVlut_rFM-QPIH13TfwVsKeYRquynn3HV9FUJl0-hpIC_p-yfB5wDwjx7up81MREqNHUng8zBgOrEH1qTfgBbI-0a9u"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENx2IAsQjCteLRtTiKi1HPY5fGNXPHOu49vpDMM9zqXszqmykA68PeIC92-KwCxQ1S3ySbpPdQC4NDxXYXn8LBR7q_qJ4CYczwiZAbGhu0Ar7BWl43U8TZ3A-cws2RsbypesjdNi_hx9JHo_RI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5mhIXxqvRCjopl63vBZScv-B3BxC4pXfeT7ufk7PBjwnXWxG8bI-NawGWfDdbUIrqIXE2RWlIgmXmWph1SlUogj8RVf9Nu_mnhwAy_8N2J2885WmzY61yRTxJtHSxp7SjHc_c"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPAa_wuC_AKWzHjZtJyS7kDl2oFjlxrKLlUCY-5igeIfRGyUyLlxlwidLeJM1PxKYDPNtxR8gUPM2_5BBziCVKGXrqkbYtU8wEdwIdYEnharufaRUvDZJkG-3MMxmysEh1_Wr0nw3T_VnB3dxCMCq7OvXlSuZmJmZszUHKzEugzAl_y_Z6StTKHGYlMkffHSgJMJaBzy8srFyoRWfwik3kdRr7T02ezrmhHkiLY4yiEaHwSEfKeDB4rB8C5vps"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJgSoSgGNsmmYrZiygWpNGu_0d7NCgxamp7ng1m4ltxZIcMM0SF6_D-8ZuYtDRozREKYyeWNzB6LCYzX-ORW7Y6Abshbb3vuUk062Pygm18Ok_Ib1rKvqYHpGfx7qFVSznm56f"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7r0u-sBkD2HBxzuhiLUKsxxCBpus_viDgA4G7sU2fjBp1xOmPMx1ruH5eEeEM1qrixoWc-AApUqKSqRO1-M1Oqx1AEg4MiU1YV3kkXjpLSy29uOBD7x3VTLk5DgQ7pyrP7f_cfd82pqAjUzf8"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP5zFYwHYEDTCsJDZkY-D-sw-VlBh_-Ew5K7oOADq0KTIdZ2m8KcEvraopwq6Iwu1YHP3q-GKNgHWo5lVvOFe9rtrlNCKWXeLrKcy5e6mNj7mHT9azrKcOJyt-J_1KIGtacmwb9RUZEC7PFz8MDizlB6wUYl3Q"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8ka28Z_IK9lKT15ZuxH-1Au4jHXr70YcLC-N-GmcCrQk7j69KzG_8nkIebS5bJ42cNoVLv7CA5UknMhgE9ZvAxyk4Oxn1Darkyy-H3cUBfABrLB_s52CZ5ZO1BUHrYFqLYguPS-YZ-oW8g0WTToBAqj8H"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuiyPDoXf5vFMY9JnTKY9wSANp2G0IUQyJP9npY6GCvWwopQUeJ0COLpKdF3nGIYgaDFpvU_wt--Clq8Vrb15Pu8qznqBeBEB5UUhFghMVwDtXfxynrQ4znDT6XObDOLXN5oTy"
+        },
+        {
+          "title": "c19early.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfCRZT-KDqqjOc6ckVNfMOkI1K369NI8m2ps72tMUgjgGb-kJ_VkgJTRLwQAZ0GqIUQC37D59ZbKNVPMfSoew2YvyTwf_WxifVKrP9VMViEHXoDfI8OCztjZ5MWhs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaF9MgqxIWpcFKSG07daT-Xcobuf2l301kj4ZssSVmgKPf0tIwn3nJHF3yqHhcCJoPmtAk2HyxojBOoLrZh91oQm0-S3woJ8pvADT1zWAlhxU1D0zSrF2yndt-VezK8AbmaQQs"
+        },
+        {
+          "title": "tropmedres.ac",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa2OLG66DcfHsiXgkSPZ2esvVP--RQlMZ5wnJPS00ZJEJ_qEfPRdCEyB-7d3KiUP6KL1jGmH4GemDJZMc1rSSfa4L1dmv67mTfTfatOUx-9FWr0CJDDT_7-3l-gsl5oUtwBGG9rCzHm8H_7HP-E1w0P5bkCtGCueyy2PnTLIV0Vv6qkJLm2wWGskDHi3TCQZUhZS5qhTcfxBxAdKlqquyDkM5LhyCNBZbmHw=="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJth6ljhQc47x63_QDbHJQoQa5ReaBd4ugO07jWVCmbigHoirMgcYCrc5BFSWzuSVStBDbqas6nRqhBWnZWFq2jP4KhUOQYedDVRIKLYs6A9v4pFvo7BgvDnseHObssCvY7GvaJf2cV7hZTgo1Ptk1lLAcnTGMRwstzcBrJxSggFI8RsRcN4k-laMKtM4OMZWYDj3MNvp8h6O498F7NstGtSNvp7JJHqYT47-sMqkF"
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXf7YyF5XABrF92evMdPLZEk55i8p9Gh_f--v-e63z3tyaPZft9Wd4gTauGCCX0L4f7-bJ1lgyF328PplJQglRTgvCuzu5jsIOt3nNKrlotgYOlyHiQjKMNexPCnVeNZYqUHUh_sMOhpDZebfaoQpJN8woNcY1hsd_aHXwMXndb3_Ylgi-K35NTnQxaxj3pqkTEg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Molnupiravir trials for COVID-19",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COVID-19&intr=Molnupiravir"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "800 mg orally twice daily",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 700,
+          "monitoringCost": 20,
+          "sideEffectManagement": 10,
+          "totalAnnual": 730
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 2085.71,
+        "icer": 140000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.008,
+        "vsComparator": {
+          "comparatorName": "No treatment / Supportive care",
+          "costDifference": 600,
+          "dominates": false,
+          "qalysGainedDifference": 0.008
+        }
+      },
+      "name": "Molnupiravir",
+      "nnh": null,
+      "nnt": 45,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.9 percentage points (from 9.7% to 6.8%)",
+          "baseline": "9.7% (placebo group incidence)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of COVID-19-related Hospitalization or Death (up to Day 29)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Median 14 days (placebo)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Symptom Resolution",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "-2.0 Log10 copies/mL (at Day 5 vs. placebo)",
+          "baseline": "High viral load (e.g., 6.0 Log10 copies/mL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SARS-CoV-2 Viral Load Reduction (nasopharyngeal swab)",
+          "percentageChange": -99
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 35,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "Median 28 days (placebo)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of SARS-CoV-2 RNA Detectability",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "Moderate symptoms (e.g., 5.0 points)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "COVID-19 Symptom Severity Score (e.g., 0-10 scale)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+10 percentage points (from 70% to 80%)",
+          "baseline": "70% (placebo group by Day 29)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Patients Achieving Full Symptom Resolution/Return to Usual Health",
+          "percentageChange": 14.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 2
+        },
+        {
+          "name": "Potential for viral mutation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Within 5 days of symptom onset",
+      "treatmentDuration": "5 days",
+      "trials": 22
+    }
+  ]
+}

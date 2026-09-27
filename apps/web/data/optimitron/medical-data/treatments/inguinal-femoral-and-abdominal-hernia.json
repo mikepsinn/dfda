@@ -1,0 +1,931 @@
+{
+  "conditionName": "Inguinal, femoral, and abdominal hernia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:35:21.238Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "healthcare-bulletin.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_gAXwxGq1462pMX9A8tUtSkBtlPb4EoM1WXsIuNVEN2xy25bX30kWBUDuduyV1-_NlCRIkykFxandfNwKWmCwHT6LjGQ8wErZsGcpIttWuj83QHultu7PFFr57kdk4cfaEmjXX9GQfWHN7a_DBe9feg11t0Gr8HRCSsXjogHrgeTL8AXvOVwPhFzXA-BBZgKmNJNzXKIjCQ5UrF9GCY_70LY7pJVvex45X45HdIfRwmBkl7wS0v-NSlFHRljScd6RkL9PKLrd3muIeGdbO1luDdLn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2hnHagevWckZ7UC14GYyWQZbiwJZ5rZplOLJJ1OcOg-Si8zpoGuTI2IeQnTVoiwcWSYRUY9Z_ag1o-YCOmT7SNQ0HpEmxC3KTnvQYhcQebumj5Cp3pz684HAjyU_e-xOmIz6s"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ3XLmRukvRm--GwOIM0-Ymg85MO3_PF5rxR_L2Qz7pUQiG5z_3QQhlW6oKjXfgGqOxMtb-WJ_FnEQPIIn8na89_WlW6zuTt8ba8r47wB0dKMU4DBiA7u3c4tKEYIFroSPtp395AP_AHIOb0ay_ljz8E61mrQ4O-O_BlV3eye2Q2d7JtatgNlUdJd1_uqIMgdzIUK13z4QzCIZgTbfZ8iGh2IHVJQ4o1FJhnB9Ejx2_QCWpgKONIGJe3R5z5n0OmcctOBK4fHghcJpuaeiTeh_aaKzHblLUm0Oy6gEiuSSuQjW4_BEo6g7j9pAIjS13ScUI4FFNBZBPv5sb5wW6sKh"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2SuYNF4r0sw0_dk72F0FN4C7wujB51JfwCyYMwTumbQUy6kmKCqewztTsnlYLvuAHjsxtVGK4BF42ki6joAjkdHDx-f7bT_gFzr1App3dOsvUNWez_y9Bt24mxXXleZXXuQ=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx_LCU3G6_IWGifDr4-tHaNHmJhTHL09ZJTg_AAfPtvN5IYfV-8cNUZquRQC6JMjUON1VzDHmAsYikcUWJug9tmzGgzaAdIjk2rLysjzGxE_qeKI1t6R1K8QjHP6KC1frwOCbf6FkYnCBLXgoFlVpjxHO8oPm1UfHJ_HUZm6qxxuBPj-SJUtaxgdl2YPzxzA=="
+        },
+        {
+          "title": "jarem.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsSOjC1ZIK1cY14DK5QX8FARmHStDn_EKExZps8c4YQVvwi2K4xgP3Q-ZngupBuxTxH_dDBKV-zyuWZUEO8CteAlyq2kpjpWREd1V-UJowSirDLKizNz2XJx8iDZHT3NZTegLNsDizQPp6xsqZqRk5dkPb_fgnarFDpFw89wTUyEX7fg-eChrH3__7ELjAaWrhgiFQP4Po7jRFOu9V6odzrLnbDUFo4QA9ZH8Y7zzNp1UzuUoRH-FUcIyqN9xSqzgvYwfDp_u-pj5xm0_JJC-BZmahp-D07BYBLe6MR188ucQpoiaYA0eUDokv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtoDi9I0YUr-aMEvZGZ-vKpiDuqVY9iFVX930a9FlL_Ymz42KX6Rdhs_xLv9SGccui-RTMP5uQ3qv6I4fSHqSYxggZIt-49EVYA2kyHwM_W6cHGBG9WMVmdflSn2nLJusOjkn3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVNyJczxmkEkiRy0piL8Zv7UrFvOPnXMhneSv6wtvfqFO-6CPrGkIGFr3v3NbI2qcj2aOyaQLJkbhIKsnSGeCD54u185FzMHWa-D6roKbu6xLanD5qGKYjbb5Ob3umjTJyIYHA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiul52DZX2Y5APqCZAeoLk8g6u0bsdVQEQtVV8XxpVcoMQuTwCQAuhN7uQssUyt_JTgO3u7uN442NHlKX2QOYcj6ZWkhf1XyDwUXq9kLWFi3qCcEHE5dlNi5T5AQrvAn3tdGU6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVHGubU78yr6VPG-asOnADqX16DTYPE9shf9u2lMNN8bIVRBQ_PWba5rxztb_mNL-67CyzlSWNXujbVRpaJ-rE1sIo2IJIZ7148ap0_dHMmONNhNooV2biERS4s6AFdxJHy0-r4wlP7KBSe3ViZ6NWvh3yz01y0XYLIfVRMiA5zPws2c8MKo48dwGNx6arB-dk9hbsUGN4tB9SWR1Wc7MRUFNAmz7GDdJTXNdSOEyO8vDlfql8CqFjmvw5fesWcC5B0JchxBBbN0b5wtYta2nfWUmYcgrRPdU2bpVjtOMBTniZGwIAmhkCtgOhAaBOUeIIDxMj4g6aSalLlY9930Xcp0s8kMvZjtyop9Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnwKRJHzg-133E0n2MQ2H50HCRIvKee_5XhuuhiFh4nT_rTmhzXTJuOJvcOrTQwLxnnWVB2V7CPMO1MzelfznpT8ZitxOm1WN9dlthC-dXqDZTU120vRGC_fNMGl_VvBk7OipdRaOV8W-4bZw="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFZN0sv_RZT8N0lwgl77qCUuMINHfNCvh5A85BHwnttkzjSq08QsXezWP-oLOLbkHim9u4_drl7YHWCg6LGwmN3mtOpmxVRtGs2-6O-CTYFtbhFlYt8KRt_RkNn1CRyqEOyA8-w4A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnFIPUy25DpJ7K2IeViGlg-kHgxuRhaOvZYhveLOWz3YnqNly0qCxDNVTdaDDg2vyjrofOihvU66pDGC-l90k2r_3shReLBXGFzpfG7P65uU-3fhCgIGGiuhuBpJTkZYqyf_AvSabK1w8mnqg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSi_DE7gT8lLwch8ZxjTqHCPR-97jjGJK6vi73v_pMw_qy2PAl5fiEhQeEQOyfw83xmATEL1qO9EeQIg4NsAaO0NJfMKzWhzeC9Rm7lKcAGGpJY-UaxopNuajyeat9FgeLXzk7s7e2HVplgv9KhKkQDYkU1R06MpgU9aYrwVcKzsFUWHR742KupOt1HV5pwpBD0d8ty8WCix9v5ruyMLPJKBf8iP9zsVH-CMFn_hdS84FLUdWZ4kNI-Aj0kk7zttjIYQ3E6ITxUR6p4kXRuYy8I6uZYqyyjpEPmooFZGNW43a7qv6_5NIAGMTAzzke5Xb0yt749Oix_WFg-0gbGAOTO5EXp93Gg-kVzj4HLPclfConinzy_Dwu2LthWCNqBQaR54phruzR78-bU0hbsoYOb4XCVPOZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwfvzDd8E6n_gpK8-1ricow3BWSafN-FgP86olfb51V5n0-Ip9v055JT0NOq4lBskshGFtAQ5G45TqcdY0B9Xjncpevd7EaHT-sTMiSAvk8WiC1zRMIeNyEo1yVUpu4GNTmM0xMFFZzMSFbQU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEss5dOzYEA_6JSPCq9scXvZQ-iVnJozXFlu7tZOiFy7Z-dazxROUhEBjZBeUj8jxIpZaUM66T4ro614YTmRf0rXrb9fsLHlaPYRVUX2BCeNdF2MANOi4ZsV_0lIzVOt72YidkBaJ9A8ftaPNx9dRQiB0AS41h-HVCjbwD6_Nwe9y9O1koFqx-jkn5XkXm1zwqSxgvvCQNgQYeF_cwMWI93lXoueGG7AhtiZLDxYpf_vtZ0HCPP4y71DkzHaABMpqN7azUJQX6uPPUMfpzJqqMKQ3M_VNhh8Rn8FX4ZxMjnsdnWAD5Wz1S4PXdWwyBsTBUKlaIT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE81wcOWPvYEa5t0AZV1MNwbJHwqyWkyQVGyZIfbq3k-CeyQveufIGk4zSAzf_FxnygWttInk3TycX4UP8vt7dj_4PzCVhrQQikLfNHH4DsRl3gNAfepGXKaImNZtVOzxhPpETR"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4Ln5Dl3adH_VYSVuAdAFtSCqtNS5YUdH0sYBXSboTAac7g5aUMIh7y7tfVjRJOvxqMnCjwx4_zDrC3aOO1ZB3mcvfpRv7Da4y0vICvuuy1I7lp2U1metxx6GFxzHevy-23kDLkKe3pqHJlkz2MbHIealegcOdZL9c-vhm-DUcRWfbhGTsP2TjVQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Laparoscopic Transabdominal Preperitoneal (TAPP) or Totally Extraperitoneal (TEP) Mesh Repair trials for Inguinal, femoral, and abdominal hernia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inguinal%2C%20femoral%2C%20and%20abdominal%20hernia&intr=Laparoscopic%20Transabdominal%20Preperitoneal%20(TAPP)%20or%20Totally%20Extraperitoneal%20(TEP)%20Mesh%20Repair"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 300,
+          "sideEffectManagement": 400,
+          "totalAnnual": 7300
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 7934.78,
+        "costPerResponder": 7604.17,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Open Tension-Free Mesh Repair (Lichtenstein)",
+          "costDifference": 1500,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Laparoscopic Transabdominal Preperitoneal (TAPP) or Totally Extraperitoneal (TEP) Mesh Repair",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 75000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+98.5 percentage points",
+          "baseline": "0% (pre-operation, patient has a hernia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Freedom from Hernia Recurrence (1-year follow-up)",
+          "percentageChange": 98.5
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "VAS Score: 6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hernia-Related Pain Severity (VAS 0-10)",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-25 points",
+          "baseline": "CCS Score: 30/50 (higher score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hernia-Specific Quality of Life Score (Carolinas Comfort Scale)",
+          "percentageChange": -83.3
+        }
+      ],
+      "remissionRate": 92,
+      "responseRate": 96,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "SF-36 PF Score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning Score (SF-36 PF Subscale 0-100)",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "-99 percentage points",
+          "baseline": "100% (patient has a visible bulge)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hernia Bulge Presence",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-20 MME",
+          "baseline": "50 MME (Morphine Milligram Equivalents)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Postoperative Opioid Consumption (first 48h)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain (initial)",
+          "percentage": 70
+        },
+        {
+          "name": "Seroma/Hematoma",
+          "percentage": 5
+        },
+        {
+          "name": "Chronic mild to moderate pain",
+          "percentage": 8
+        },
+        {
+          "name": "Surgical site infection",
+          "percentage": 1
+        },
+        {
+          "name": "Recurrence",
+          "percentage": 2
+        },
+        {
+          "name": "Visceral/Vascular injury",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single surgical event",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAb2EUrUqI69qzyVXderDnZ1n-RX1QErkcZ_-TqfYwUAfcttnwizFl7r078WWXzZtRp-1EH2NTG9MKjDgBYy8xOC7AnH1T2FgoF0wsF1i6kYf7Kf0q-Qax2pZLa8JIXg4XgSBJ2dGivs5MuRNENDSyYqbCUuPp8-0zvvacqJHP8pdFgkIcZMmpbBropZkn0vlkWvlJGj1GV7EHwwCQOiHesQSHcFFetxgQMvM9mE10nA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBWYO2VH1oddV34T6mEdO-q9t3Ehng7GeZfxFvg7HDCZ5oAof0LLI-wBrCW34CK0E0pTywN9EQgPphQNSlUbG_TRctN36NhkR6VdBQeouTsLF0u_LsF3KclDT6wD1ZliMJQHkP-DxYEkqK12mVKfYEII-DzwZ63lMMTh8RoOMTIiLhzE6veByBuGjGh7Rbjks38_hpd0J3kczEK_6ENcjWISyNXwXQyZ_Y_n1Atw_CMVB6CQPkUUXl04jYs6xBup1WRyG1drxKh7R8QROlC6j9tyqgqit8dft-n8VPwmtr6Irc7rAhBfZhUslZNQ1He5JxuQi11bQqLTSBGd0nP2nFBxENmS0xvnDgmFDTj1_EneEdJzWwgI9FVpjusjmIhw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkM1TBBMn00A5BPKiTJ5srP9JaGAAnoH0GCUj3zdDw05cw6FNknhGOXwlSfQ-wgNpWYlumRzr178QRPflptcA3hurAONfRIjnuMtBZg7vOdTxlI0TzB7q95R7pav4gPtcbgYZ-Q_4yYfcC_A=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8iuDg5UApjXpeOpB3l5LKoabPnPc1Ot7-fUIdIXM91e21BUzaRf1ZzL5QdHWzpoI9JCdZutMJfcfMOzlbR6K688HGLPEBN0QCytQe0wnPlmmP9K7-yTBC7-KeY0QDMLw36WRt1kuJb4YhEQefeXHAEWt2Si49ol7926dIdnufGqwabA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjINZUdpFwjpMlhKZMhG788Vfa4nmn7SCHm_BjC2w48-CQfumiXMBdGAFTSWAhMkTdTEwODckd4qSZMhCZ6aB1Qaht85cdDlXAjnF9ZukGxtN-_vvxSP40M8mepe_WzeiDUZyl2TiocNT-uQf6VA89kR_2-8AIQm56l6-7j_FkwZeHUQTqpHL6OaEm5_cvsRlWlCdRi1EI89jbRop26oQFtplfFjT2tJ4SuZvd9vViD2IP3Ce84OtkT0iBBIpa3GWgBvbxCkO6Cuny47wBagn7Rpn187eliFt1zUONJ-NmAmHS-az7Pe0b81mqLtb9ZH8nmZ9ff7E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDGLVJ5fXEmFIFn11ZvZzsIcCmAOL94X9RzKrJpD7-vfTfTLSRb9qGP0K-yNkBrP9RwdxBVBOEjmHgMu8uCqoMl4eGrhWl9BxVhe3uRRmzeOafXSASDxu40JVILjlF-4Ku8JE="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHMJPryq6O6chqVn0RnDszQRQBD1TBY2kZZxKDmh2F3FdFUehNgz0Ya9m-q6z6LN7K1Rl4FRVDNhgnqJ2qmAYFcXBFPqcmgLfJ3jkgPkPYZIw1VXIUG2p8DMv58lYyCIPaDPJ-zOYSxjYaCMYYdYXNSOrOVw33mJs2CScB95ArXatKYuAnpNDc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsUg_pfONOvd8Cq97VQr0x4Lt_xpwVTXPiPLgntEeaEgIiSq8gmpf-7Z2cj8ikUqpSRRdG-Ix_sYqkTwxPdka--K1JwFs7iyHMEX9IUg92q-esdG-nJMlSly7RCPYbcEhAKyY="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgjY99LuSPIRvSXkJyeVjP8F-sjUhqJlEEHOsTm09nf6KSYl2hyzX2E8Hpk4KEQ9nG7AcmLrkLJ2VEr3duGP0abLh6-USEIoLTRwRJCjbxRR0tNeKulxI_Py1EL6jap51LWKqmfWTcYhFeTy6RsPEmS1k975O96lBuVk6dO1MpjfNDsGM3OSCu-ks_3CNNU3MB9T-8mK5JfGjnKhgRWBIzMpSq0X_1s2NxuxYcxWuUgsBQIPi4mZv3OLNIbX0ovCd7WlgMAiQeOwXdylwUNe_KnBgg-TkknkQq_FblRVPEPbsgjKfYuUnXQMD1ZCm4LJIfXA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEc-gDnzj1Gjmjh-kbUCOLcu0hTYMBmDz_FbSdVUbTxxRP01u5-uKrgGKVirzj8gICvhaPZnMi2K3Lxc-6Nhc4VgfPtayziKuzXaq8sm9f48eCW-2zytZRYp7E_Ddow84yucRffN5vXAsLd_lwNVcwi53hmECUbxWKb6Np6VVVL4lowwheDgUib1c4VPpv4AhRTlqVdNyc3oLjdBUUJORu1TuSlrU_vgFEA4BLp8olxf9zbbXFrbunZhqYe_wb2NNXoepRctT53N0gY8hGITtxKRYsJJcM0FArem_yfh-EdA7VH4yZG4fsfqW_w78FqvxsEBpoNA_IPLoZFcv50w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0i-Fgxf9HaLoPGVOvYw75RUJfoGdSTfpGcd9kTot_KWPbCh9ywnSWkxd67eLWUJoQg_m-LXFSGAv0OwjJdLK_g34qCy5wZJxgIe_7Q62xmGU-y20JhDdYo2pVxyho-X2X6N5aqUhYTPKnODQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhikhHSbAGs0ehBtWsSwk6-nmusWwtIZ2A4DmygeHjLHL0ztAQ2QVsqHceKoYpVYOytOMLc6chIvj6XqJ8fBtXkVRHLESYqEEJAoR8P1iLYSezUsSTsGZ6u0xs3mm2dKclWc99Ws2uc3sf6o8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_uF2a-KmTgNUfUrn31YmfQh7AW26IQNQf61Wy78u8dxBXEZwFl8hEI8WrknA7V0TXAMQQk02Hbxhx1PQp_c477i40M4Q2Yd93gt0q-bt2OqkOmZO7TXU_ScouYm1xxW7Dn4L7MeT2lj1rghs="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUg0Jnd2XvqWgPlwu3l4DYcZXhpz3XoTutKow9qBGlQ71rlBX4XSW7gj5NqkmJINUvQQFkkgn46nd3ck2SHBmhW294IcJed1qL0uYRFGweacBD2GRA3nmoMsPHZt_eh48HExDi1eIW9iGtyIJUwv1JT0jvXbm9oMpigqRalJZ3f50JQDND0w6l"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVVPTPm_Mf7jb1TPBwTCrA_T16fsLU9TqlZVkM9OCNHS2paPWkuEQQNnG_V14C-JWKFpFEOw6xRCkIAr6f1TRlSQTNANmw54oj5pCIzzHibqWfkVoIpVNGWMe7mLvsNblukYZ_TFTU6--SbZSuy0zgjUG2HxHIyzXTitXGCita1ZFg2rRrZQ5A_6OdfWhD4P78a87hAyOJnOVlZyyY7Q7ZaOAAfOSplaFb5gUyu_ZJIW8AXz0ILmnUXEX8n98QmzeCTmkTve4ZgUuZxY9Ez95aS8uRtPI6_rhEl67XD-ikMA5a"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLshmM_34AGXL20g2mlqczpHGVb-wp9ycO9sXZbB7Lz5W1RLOtXvPOrck_PChVW1IvY8DpsY955LlYtB12TP56kTiW64BOa8QdThUU4t3SaoszSG6RtxgOG58LTnw84_LjGwL_KCdSLZomWsev1KOcICgDPnws6lEhiUmVmQuiqTO1hM9nYl7c1CMeuiGVm2Uq9sLgt-KissdQE0yhpz4xARqlrrBbJpMoCyDmx-UW8K1KhFd-wJzrxaqhleZmobdXzMMMw-9NUXEBgeseeYExtcRvwlVhhYc-fDtiIbxoA1GdEJ-8NP85W0tfYRH9-w=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-zb3u8jRihN6go1rdtfwrf9h2O0b9C90Mrw4GKj1RpyH5yO2IGy8GRbueEZtEd0BpwW8D74YF-ArWWzg31pxQQlsJJvKOYfUy8iFcw6H2hAxaGqZW-l95TDbUazucsjhmml0FWA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH--cxB4nsW-KpzZqjsmBLYAg3IsbFqrWhZaBo_kkamR3hv5SH_GfiXNVlBEs_Lt1YR2RN_4m-YWGPZWcYTXvyRkH0HZlq_FKI2sGO9wnO7NU2um75DegAJ1FDPjws_JfyqmJJyY_tGLYOoaQ1-7wJAPeJLAajs0r-P83mkX8wJAgyqmLS537nCsnAUTQz2_rEfCuu1D1wbTBpdjhIJV1Y9xvpomj2r3pVwL597u9-6znnKVUJcqMfji8HHdZkX6Y3xefjdIcAkxmWi3XdNbb0h3hi2_S68Cw1JBZ7JrMv4Df30uA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Open Tension-Free Mesh Repair (Lichtenstein Technique) trials for Inguinal, femoral, and abdominal hernia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inguinal%2C%20femoral%2C%20and%20abdominal%20hernia&intr=Open%20Tension-Free%20Mesh%20Repair%20(Lichtenstein%20Technique)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 93,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 300,
+          "sideEffectManagement": 500,
+          "totalAnnual": 5900
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6555.56,
+        "costPerResponder": 6210.53,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.75,
+        "vsComparator": {
+          "comparatorName": "Laparoscopic TEP/TAPP Mesh Repair",
+          "costDifference": -1500,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Open Tension-Free Mesh Repair (Lichtenstein Technique)",
+      "nnh": 15,
+      "nnt": 8,
+      "participants": 200000,
+      "phase": [],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Post-operative pain (initial)",
+          "percentage": 80
+        },
+        {
+          "name": "Seroma/Hematoma",
+          "percentage": 8
+        },
+        {
+          "name": "Chronic mild to moderate pain",
+          "percentage": 12
+        },
+        {
+          "name": "Surgical site infection",
+          "percentage": 3
+        },
+        {
+          "name": "Numbness/Neuralgia",
+          "percentage": 7
+        },
+        {
+          "name": "Recurrence",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single surgical event",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRwpEczA6W-Dobn3tw3XI2PS8z6YFaP_q8J4Qlsp3b9gs2xr7AcOYZbZzHdcXePqoZqkbdYisP81GP2zLt8iVBsvHk2_rcSuITqNoWFERIJvOr7QbA5qYbP5no63j1tcEL0iV7-LAMrIx421s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVtWX9uzw1yoBwDM-kPhyfHcYzvDpdpuPVDb07dBFEz53fjbA8-jnbTQg_9iOx_D7XYSQKGa0TebqZx2pKMuTJvZSnisCtHNAKpqQRbqcwY7iBo7jObd4PRqBA-BMRWYVJv1mw"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvifp8ePBIQu04sdiTgv8quf_VSB0CimLlx0wPzxv15X4--iYQsgLPl8gj8tAsHNfcz74ebdUdf_LRjwp02ItqQAk9ODUObxOPHSBmHGYWH20_5ryEKNxrw--7IvyqbAl5CpRYPeuiQQZXJmGe9qhCNEWkU_Q89QAudHQiwpvUV6DqrK3jzYPuusBmyknVOYzJLmnDb-jnmKdAJJg-0VsfuVMyfec0cV7fEM_Mq4ET"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE82RbTLBTYwGb4QCJ2d7Dcr2RRdTWPN-sRcvuaNdomH2CGhmJHjgHOExB3U7sVSWeGuJ_LC6iIlj_h5SPYqJJKvxJbuRy-7c2gScJRFTooGlU3ZSNo6bVZyQmcBsMMyoRTJWsgqOKmoLnYkFFV4_6EMNfErY9Jc5bPoVcvV0oTuLrjoKJ5mTIQDkdpLjDC-S0b9tkjQ9sMej9CVYFgIKlC5fCVf9_4HUhPZleVlXrNFxtapz59WeEI8Ge2AIFty-rmCqAFtBC9nhVtK_jn-S9MZO-kUDv0mBp7WwgFbcKFMbmO6FBfYh_fjt1YrSHSvtQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXG8PwpIBsmYbZE_dVVmRLktXFuucM_sxRZOOFnDmfTZFDKWNX3UU7Xpev9k6moyYsbjx1iBmJJ7uPCstpKbI3u3xuhoomDPcOfVadYsay9ei8dA4WOY3pXATH8rjkklBnax8HqdTFKbPlQ0cjd7Cq8VKghbpbbHXw3zJCBjMYZaBpPGZy0IObSUGoY5z5FbR7oDJq5eOzMX8ImCisctODJwUh7mbt3tGDOZWYLsWOd1TiqLDmqB9hJqeG4Ce0rgrqsiC9d0jyunj6EjjSp67JkLFJmFC7LglPMTlnk-zmZkeVTjA="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEukBp8kptnIRJa1hdi3UP91rUKP0QeW5ThPWiVtHpZNZj2ASeHRAjmZ8PxifHh9ZZ32WJwj_18VZnQTaodRezMjHRZGnMZS7XONauO5I9Qj7aRXRL4qxBN-fWo7Ssew6L0bdsgrYB7B_bJuOiiBuwSIpHo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEr3DyyRrQrE_WYx8p_0_whn96AvA85ofNcUVIV1dSjfCLLg8Q8WQ6HwyUIKPXdIanJAMTE2nCdstPwV6dg7fYqJKdb175O0HCYT37opfXuXjfbqqUbPe3gm7KZToIjpphIV6aa_Ec5lOl32I4GQrOg3F8Y56_FHOyRyIHtwYLG3Q-yVfI5_MDxdBqCyfVazuzM7fesS0L9Ubx23FrFqRYz9ZrR_5q9my9uZ7sHedIJaOByt6eXgwE6CVvcS1jw84TY4gnF3rRctpm4IS2-lvG-ESLdCSXcwlf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAAWHO9ODgWgjSkdDhpCzGW0jt6upzIpb3i9Y478m81spBtPo5UZjOJMfAzUsaUFhbzlAOEufgy32FwpO-TzqfeJI6z1omj9CXWn_ZUJ-NrdqttIpL-7KrnerEfQ-BgGB88--hriVJ54YkdyQ="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHhQo9xB5185aJKtQjzf3yPCbF7Q7Bn8ckk3W0UOFmDj83CbeTLxc3ywfuVYDU8HhUj2GblmQeEm9idlxmCjZj0-diwoTSqZUeVDxebNibSDyBlkAAQJbqDNhiBE6JKiRGL-6khVQ58_JnXjlMjP9e6HQVbEqeeuXpoe47yyi6td-440nqV1KM3U_67g=="
+        },
+        {
+          "title": "healthcare-bulletin.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-NmnNh1R8XFpCcMVXeS0VBNLdIaMlc53sAciV-gLYLjpm84rVqxHlJ3dk03vfH-8rE6LID3eHLAOKkHnZzZpgx446oTQ8vtRiBmPpcKfwkk7s3fjEyDdfPcAhKH1eamzr8QVhoOZBPbQ72eKKc-6MKdmvSCnaxR1AhC4VxgC52qHGMR8jMHB1-PWIZlSJoX9JWWfjxq0AR6VL9vQracrbqY22tMWb5VfrgYbcWCUo2qpZoUJv7wupwVUHdr60KyfOXaIgi1zSwRfXpy2LudFBu7UxABHj70vVRA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpJUiXnC31ltAD1V7DZuDl4qf6l_mzVT_PfIQb3RVXxhsbH0g5rAeYSXhNc8JiVgX1EJ9DoBATerkjSu9uOE2ur_7_sBxs-sd47oPuHA8iUEFqliHgGVpnuBcC8HQS83J0j_fyy_vX1ZogHkc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQaxVmoBQnxDPJX1WItUflLYgHYeOeyQghrMYMUJjnmhic6IQecXMkAzgEteeWHCkUUjxw_DVCR6Tky2S8Q_0bWly2VxmREJMwqrzWaOz7baILHPEa_xGpPLYLabVAkgqhap0G0XUfYWg3IFw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkt65e6d_tvxu5PFStfSA_daNARk5KInBEDqTM1bIPohyVN1k-g3x99D_PsuWcvOZpq64EBwWbZ0zZ7UpE8L8-3DxJuUpzEHXMngZZMoqLLGD_XhbVqoLB1BdJV6nj9VJdmRib"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhc9nx-cu-eXNeLqobtLI7StdRTquj5abXMTsEvr9LpmR6k-B0QRfkbJrBqFMsn76Ejki-mmu0nlZF8qbESqnPawuoJizK_4oOamr_c7Vu9fDlq-Z9TvEgPkEwzcdqnva3PbjkJ4SuloATt2nSwy4HP6OIkA-PnvgSJmn9gaqSVeVq17qHA9nzTmvaNq0EymEGoUuanE_asZw8wtuzv7FX5CAD9j3-FP_wMxoxARicHfn4SbNRH8T76R-escKLemY96D_LQYi32imQCPZrN1uyxwnUixo1ryTdcmVBBht_i6mRCMuYhJxnw0XEp3M="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQswQ3OLI-mpaMLvRNqB0WdLAtD8JPIq4mauTTkPIUEC9qwsuKGaPj_RvVffkexgIAY8_prZ-hDxl7Fh5BYhh1fsYkSeXvwgHIcQ1Ivu5R2G-Km0xLOhpdmLKpFIbf5XI6IGm1WeHlxfVuLX9xbJ8gzINxl3OV-kRRWrtfdxkVKv8tTHInl1ufLx3FwU2ytzt3s2kdEgWoHaSJyPZbZdYh_djTcAVJh4ijWxzEcs4FQwJIZGPcrEoYQD2AdxYloBX8in5DVTKdDgLycOjfQrfEkiwWkYFIVsPWrb_-UswtYAA="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqYeepGXZej9-D863GIiYGgOpd5AaCW5P5N9ZHRjwtyFA3Z6rHtHPCJWPbSH6CnKJI4dWbhB81E37g7zvnCQki4kYC6m_PPW_rHzt3VkHzCIczba4KUXEiGI50pUoCrqTTFOn8-sBQoaFrato="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkM5nLuXTuAX7LIhn-selYN37U4MUlw5XR2mKS_yv622bEnDAvO3flSmRmPwxYRcUqrM6M3zJqv1okaav1G0mjJTCja5NQH6-zuGYkWYRZwLj6z-bIi2zX4Vdwh2QA9KKGFTz-gyPzx1wcH84="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHsTnmmUq5IVx62jbgUdafL9dd0p3WKhQSWv8XF9c1y-m4ojPgKlQKW8ziUt2BaKa2RWbzRIwlV459IeQd0F7-3c3AxTlu3_D44baqXHdZ9qYY4qTb1RJ3IQcwvkQcztQcOwF3teAlUNJji737ZDgipY-kfkDWECjT2eIa_uKQGaJ2RMV1xTdlbA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGcLmuvzzN1T0ZMQzRnn4Yd9nZfGVXZ-jKI9kSju0xJwMuQ1GlJ2PrJN0bmirQQeq1jePeMKHCbGwCzxvhZk7hZ2jrOeet-SvWDmBqXcyvjP-p-hrocGrBNSLnqmpZfnN5lIR-"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGht9BJsev4LVGKbec0RnnhFbAX97aruUY_SGp7w9Ls_DmlbRolSfbkGWWx6olQbPxsh4vSNnDNSTJkpY8-cJNMN-LueyCF21_G8nhJDpmTC1Q59_aJX0SC-FLUuupEiBusied3IlYDkuPaB3bz0uU0wASIcCdOGZ5JzBsLmwp0q7Xx1A40mnu037DLc0xz9nWPC-e9tcejFAGjb_s2EAGXyTRmNsust29NzTS-CwqNf5tOhAUovPRCXDYLGDxWG-cfsRFKd-4yzy9UtJKALIfTlCSnWys97f1SY7UfdRWsmcqJZwvIRLhzZCofAlpE5Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVPBJGUwGiggxqlyYDf4pAV24zriZlsnbwM9fIGdqTTcSAtXdrJosJ-yFVVGI-F6kzT3KDxzeDkRQNdy6zg7rKng_jDi1BGdcuhm8cNbYagSsLFZiobFWwSIKgIe_RCtEWtSDr"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-BYoQIWBBZl9krtYssMZ0bVNrKLr8PIhOleT5EFmtrdRSJ5ydOjdEohVNKyQ6Lb1x5kS9VeSs4ZIBIViNZgLwSQr5hjNWBULZIKsR2paLshf32CLBwkaGqFJHoPSXP2r84FA48fBRO9cSPkZ3Q7r9rCrylOy3K72wYjSyX0vbvjhNyUkYdRY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK6HdGClMh1IteWZrLDUNAdPctj4psvKHOLPbbv1L7TuyIrNMNHhR3JTDKkGyvS3fDhphe0tbdH1xTuCQj8siMjUoJhPOLBzFEHzaiR8wlKYOKkgQChB1suhx-u4EoTC_vmGl7BTj7_uDLLrV6VWbWMBv0MaI5jYhdtJZQEVxOR5NY1Rrt4eQwlzhQ_LM-5U5agyOn69dLOwIJew0GxWdM1NrJMVSbErgsw2SkZE7AB75Upws6AlxGK7RCM-baPn5XiQ0opcp0lbMeV7nngbAuWG75TcgQhznstcWzXl-0QiKKSvHbY65XDU9aWEDdPhJOVOUPY1riqw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJJfZMsW-oPlJyMTC28KmpkBeEYHki8KHsy-EHPf6MNXoxPcE235ZXSoZXv2p4mmC3qNJh4tK7p0-hnfHs8dzxmDxWZpJFzyqnjO5Ok5lJnxHMYwTgrbXRc-V-g-rIeCRQougxq8THtibDWPME"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHL7ZfRogmVGBssnZfhm9n8bjuVOlMnCALZU8RoQv22b1erBxjEk-2I5eEptOL1-z4dT7u3u0gWy_aXdj7ReyPeI3zpst7sW6WDsk7GPo5m5IIBgTkUpdRUpyMHJ8vtcnJ0BB0P-lvirzQ0LyBV"
+        },
+        {
+          "title": "ClinicalTrials.gov: Open Repair for Umbilical or Epigastric Hernia (Mesh or Suture) trials for Inguinal, femoral, and abdominal hernia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inguinal%2C%20femoral%2C%20and%20abdominal%20hernia&intr=Open%20Repair%20for%20Umbilical%20or%20Epigastric%20Hernia%20(Mesh%20or%20Suture)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 92,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 300,
+          "sideEffectManagement": 500,
+          "totalAnnual": 5400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6000,
+        "costPerResponder": 5684.21,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Suture Repair (for larger defects)",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Open Repair for Umbilical or Epigastric Hernia (Mesh or Suture)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 60000,
+      "phase": [],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Post-operative pain (initial)",
+          "percentage": 75
+        },
+        {
+          "name": "Seroma/Hematoma",
+          "percentage": 8
+        },
+        {
+          "name": "Surgical site infection",
+          "percentage": 5
+        },
+        {
+          "name": "Recurrence (with mesh)",
+          "percentage": 3
+        },
+        {
+          "name": "Recurrence (with suture for larger defects)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single surgical event",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF5SzWY_GuaIe09hGSiLK8VXYeSGQaHiNXAExbYTj0gOXDC5BQaPtl4fLEOCfpLd8jKvcOTrlJMrFuP6KGiIcqsb-WUkPYaTp_llo5n6iuSO_tgZK0oiWEbMfQhAugtHnKRi-j"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8no41_bC4U-qOv3huWnvWU2FeMDLrEWcfo5FBP9bGg9Xoa0S3yhvQUOVdYhILrmTetXndGmaJKMQHauaMhtZs0L705bXn-4xmquV7J3YbthE6BMP2ukSiGzroWW0iMzCIJ8_Y"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIUbh5PWmgR78luZokj9e6hM-Zhf6iUoivOpJyHzrEtMb5unIhtrqO_fESZcrb3Ko8VKSEViIhd1sVq2kPBH_oB90pC8gXfjmTdj5en71X6QSMxr6wMOi6J0PlOXyKODS2zYZc"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8iqeRNrvvF9RN54BiRn2lSStvwY6M7NMMhEwz9Ixa46l_WUFGbgWS4fJiBYei_PFwqpwLKsJf0DdfqrtgjEbTZyq-XIlvzxVyWdENE_vlBDLQoWnoUMKxJ8JOA2RGWzViw_Qlbj27EhFvPp0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3go1QEtiGdyzClPlaNHNUKotzXufLZa6RctFz2-hpsSaKYmrwt96SK63aVt2WxSlr9DmK4Hz9hAH35gQQ3pZRvBCVPqLNSbfJwG5gKkoPsvcLLaRbLLnxegPAfPhHMbzK1kaGyK8LNbFw0QkSgxXqZu2RXF2d9wYbwo9zygPxxdFA90ZklDP7gP2cCWr4-d4lkLm5Bw38VYrvq1Kh3t6tD27RjNZYbWdc_UlcPFyPB-DqUgODUGvuJuhbNMcYIKGaNacEfRL-sfh0wHpRmB3v4tdqilScq2pqla2fMrQjHnZygWWrP_equ4ecBCrlDBX1CEpHkw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Laparoscopic Ventral/Incisional Hernia Repair (with Mesh) trials for Inguinal, femoral, and abdominal hernia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inguinal%2C%20femoral%2C%20and%20abdominal%20hernia&intr=Laparoscopic%20Ventral%2FIncisional%20Hernia%20Repair%20(with%20Mesh)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 400,
+          "sideEffectManagement": 700,
+          "totalAnnual": 9250
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 10882.35,
+        "costPerResponder": 10277.78,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Open Incisional Hernia Repair",
+          "costDifference": 1000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Laparoscopic Ventral/Incisional Hernia Repair (with Mesh)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 40000,
+      "phase": [],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 58,
+      "sideEffects": [
+        {
+          "name": "Post-operative pain (initial)",
+          "percentage": 75
+        },
+        {
+          "name": "Seroma",
+          "percentage": 15
+        },
+        {
+          "name": "Chronic pain",
+          "percentage": 8
+        },
+        {
+          "name": "Surgical site infection",
+          "percentage": 3
+        },
+        {
+          "name": "Recurrence",
+          "percentage": 10
+        },
+        {
+          "name": "Visceral injury",
+          "percentage": 0.8
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single surgical event",
+      "trials": 250
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8Kj7ifenJdxUJbAQIGgOFqaWhe_3bPT4-O0TUU5ZC2jJRUR5jaBpbr5x-8uApMZUMZkvPY-RsHtZJBLz1Q2PRYGaLrAskVvU3N4Gxsc_5evOAfXhxiLz9XGnjRw9IfVNlHHK9AqXIXBThKT4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELU8CpphB8pjOEnFWUxnGZXMLN4f6UubwrRD4KDgEEBXAF5q0kn5keu_YE3DvWZD6Hk8zGj-btFkkar-ezGxCypRkaukPdRsUyETF8b3wWjv7cdvDuztW4HYPhi5HRJ540x4Q="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTK40SR7F_rMbrFr2pDo82NcAdkB07RlqQjpkYrKMLANzye1V-4NPp9UM3_cyOvvE63h_-01PGAY-IxEk4S8njaHqiJ--SDVUf5Z1wCmTxqx0uC4GJG0YK7Pfh_jfDOeBFhG7nrGjNxND2fF_u8sAKMh0mPtFRSceXDrNehyL1wvdKedvhZ0AROrH1PrFsBOzov1R-7Dz-b0k4TvTOSTypLGp-7LhdC2vBT53H7hyyRo7WlxWFAr4UB_dykf8cqg317paD34HuNoYlZb-Gir1M51io"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLEi8jTiQjjYAdT8vBWyvGVr2UOh34TWVPrhzbMd936oUd6WYpRDomn6liROOdD-aXysOZdnwuZ7F_FnFicmNp4LwUbZ4qy0c5UeK_vPVnsDrJE38Uel3nFZ-heyJfysQs1UiCtgAn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3xISFxstZrO8Bi0YBHXoKdO67biq9HbV3bRVaun_ZJqVDOFWbk2dVMGU8akcOHcZEiHN659lI08JxhsmvZPD8A-WevTJlZIYOLjEhjr1xW0uQ2kC8WtEyYRGC_dRasRFZcldQ"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDj2r3k-fqWRddIYT1-vYndyW_VVogjVYtqRMuzuFLbWRy1ahgjt8FIDK4Sm1rLUhhoTabKYfFaxRQNGq3lg3TsuzjVGv4OtSYde83JmKEsuBLpsdxQ5yGhPj2YPOxskcEsJXWTZtaCfiH3PbMno0jn_xM3kUdGhZv0TXGxKW4ufhr8V1g-bcTFnYZFOgxjVd19vlDeMxftoFqLcNGA8s_Tp4EuV7MCSCQQqcRLXJ8-6xRQqzoWqmdYVWXhMDXIcRutiGrjAzGAZy3lZ15SK8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFLypmJTKYgYQ3mqr3YcR71S1JvDClA9_JrWF0NsNP_RxSVO4lOpLB8O2zRw00CV0Loa5yPzsJVELHwcwlhzXhlZR_YPgZjWdfbaIebObBMQ-_3EfPiikSRQwKOLvZHUS_zULfs5qx7co3-E51T7_XHxAkR1mmMUuQ8ynNaN45kNZ6O6REDBe-zDL7Tm34oLuSrLpRaO7VL-OK68KfHvQaunxLtHrot3opp_7jEzqYO0h63la9brSZIM6UV9R2tLTGfyO8yX3FSBQ3j5IUuHawT9FCEQ86sLNwufVMUqYYLqHvxK24nABmguKSjTSOIuXyGnSSHuompDvGR_SwpZ9JNB-BLgUCbap9hA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYeSc-SyJXPuK2vDVVjtNyTkyehmixZaTsRmo30-1AQaoJwCBW0GB5fCA8iqnNIqtoZCZtaSEQ8s1GShW5iUFOjnRV3SV9dEp3hW5AMCys3oy0VFmNnH9UjTUkwCCP4Q8tSLCko56Emf4e9ndqBIOFokCB-GhSd4RF2bzdnBBK3PPzwFi7NQ2DlTy1vkFIukoQYw=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1EpsbY-tS7q-B6NcOUEqIZg3-9kbY1umr10sNuhOzqNUkA_9gWE7BeSDhDXw0ZBWr3UXUyR7YyUgj2Cw5-Z-NJysDhUSqCCwfYi5Ng6rj99RnlTCSGmFzWXXVSqGw3NUkGshK0Ws="
+        },
+        {
+          "title": "ClinicalTrials.gov: Shouldice Repair (Open Tissue Repair) trials for Inguinal, femoral, and abdominal hernia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inguinal%2C%20femoral%2C%20and%20abdominal%20hernia&intr=Shouldice%20Repair%20(Open%20Tissue%20Repair)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 88,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 300,
+          "sideEffectManagement": 600,
+          "totalAnnual": 5800
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 6823.53,
+        "costPerResponder": 6444.44,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.65,
+        "vsComparator": {
+          "comparatorName": "Open Tension-Free Mesh Repair (Lichtenstein)",
+          "costDifference": -100,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Shouldice Repair (Open Tissue Repair)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.8 percentage points",
+          "baseline": "Average recurrence rate for comparable non-mesh tissue repairs: 8%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hernia Recurrence Rate (5-year)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-7.5 percentage points",
+          "baseline": "Average incidence of chronic pain after comparable open tissue repairs: 15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chronic Post-operative Pain Incidence (1 year)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+40 points on EuraHS-QoL (0-100 scale)",
+          "baseline": "Pre-operative physical function impairment (EuraHS-QoL score: 40/100, lower is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Function Score (EuraHS-QoL, at 3 months)",
+          "percentageChange": 100
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.15 points on EQ-5D Index (0-1 scale)",
+          "baseline": "Pre-operative health state (EQ-5D Index: 0.65, lower is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life (EQ-5D Index, at 6 months)",
+          "percentageChange": 23.1
+        },
+        {
+          "absoluteChange": "+3 points on Likert scale (1-5)",
+          "baseline": "Pre-operative dissatisfaction due to symptoms (2/5, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Patient Satisfaction (Likert scale 1-5, at 1 year)",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Average time for general population for similar open abdominal surgeries: 14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Return to Light Activities/Work",
+          "percentageChange": -21.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain (initial)",
+          "percentage": 85
+        },
+        {
+          "name": "Chronic pain",
+          "percentage": 18
+        },
+        {
+          "name": "Seroma/Hematoma",
+          "percentage": 8
+        },
+        {
+          "name": "Surgical site infection",
+          "percentage": 3
+        },
+        {
+          "name": "Recurrence",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single surgical event",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHq3UQkQXCKAmdM3lNK3ACqR0mn3oWVLD2fewox7x_mcgyAfJkhah1VILCGNcpIoKmzqf8P7qHT7XKgHJR5G4sUkQozR6esD6O6K7IpYGOpB8c50BueXS6dTUetvMk51L_KvmSd"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxC5sJw5eUAxiBmiiJLNBtr7zt8Uf1m4yKppwCia8gM5p9c6ep7iCYyEaTjjadNfeXi5L7hWjot3jQ8P5bSsHFyaQY4s-7PO_36ffDtfGEFqAhBcNKL58CtvkIne_I73sxPA2dRIUbd-M8P-ZI4WOFjYKI_UMUYlERXOklOPMpI-W2cEx5c8a5JwcAb6CozPU-9LwLwefMiPxWGIVQxuKacQ=="
+        },
+        {
+          "title": "oaepublish.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQq9_0RAN0Qqs8CjR_GuoiDoJExZnCVpPTy8yxT3GlHJkK79E3h5BLw3kHH-cWvAczE-BBN2uCwz7hBGq9JmJ6Vq56kaZwHmrjaDMZcTk05-FPUXRZnlPZQnb01qhTxffXdCtpsmq6Pqz6tb8b8t26"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWh7FmYYGIrJog2F_jCo4Uie3RXkjdiaw6XZzzL_Sd03fcOtLhZA_A5Ok_pR0DtYJ1hjDOTlC9jgdAu0xgwXyS2LuvGEqzEeuU4Q6oVgyxTUkjumIGag8QovPG2pfzxJORjRy76DRac_1QLonb9bDvFtJv-iJs6-j3HSj0jBvsBh4iWDJBiDeGoyjQa0ros_A2EZnFtVAweZtYtcOxaY_a8rtCHMPpJSGBUUnqaOPz4_Ylo7zmsZvNfaRupExxmIPc5w9BXrf38gx7Ym8KWyOrLKLr_bCYRoeNX6Cp8mU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn6OTsquh19vqJwgNrmGLaOTjLiK1aJS7WLMKXriSIbpXI1pd4PJyhlJAXd8cKdEysiBgQ3aIflHyPx5T7XET46esXAO_zo3VAg3ZDX7CCJNEZu6el_NAusP2g0sEz2qkvsPAU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGLgRjU7OtyIyhoTkLjM-AooK89g4RjH6ulWKontieLvXsdJi9azVcDskiUsGghBx2RgNRUzTf__hN8NEHj_WhZnYoaMVSnUaCS5G-k-OQ4wnGjjUymS9FzQXQM3kFrfJI0Y_x"
+        },
+        {
+          "title": "springermedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbg1eusiCHsH-lgwKh0M3OpTbPykRHa8nRMDQMewXjc_PyR2TTCsJc7GXYMg5wilM48S_n_j7oYCsee3pla1ERpGXd6XeYq-MrM2H9cKIv4vpKAvILdTcW0C_6HcVi-Cgd0JZXjtmCTE5NmlpN8m4zXF8TIRX8NLKrkpmRnDx_AG2zv8OFmoIWnaicr5UzMP2GS9m49DOVgYWs9RRf5IpB0OXq6FdWqkOTUs21fAsv0E1zgyF8"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJsquL9j1SrV7jqd9rCyY5BNDr5nylaVJ9qsmsJeiTEmTpB67D90bp1SbwbKqkf_iI64D7ntWjUWlPtqiF0pypMtEP-wn7Tut2QBrzF2-aLzDUOyLS9OCJEjUKhmYUg9HpeZC-DLQ="
+        },
+        {
+          "title": "canjsurg.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9paDO2p6ARXclC-2IF8CEwtqUYAN-RATpd36Sfh_yam2el_fYVQebhPVOgCEplGxWHN4PUiqb0gZYOoiUyQpK2F2Adlbxpu71jgB8lSwvMSgzWyU-qK9L48nhquNL6EEfRqA6IHACoVKbPkqBJ0wS"
+        },
+        {
+          "title": "ClinicalTrials.gov: Watchful Waiting (for Asymptomatic Inguinal Hernia in Men) trials for Inguinal, femoral, and abdominal hernia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inguinal%2C%20femoral%2C%20and%20abdominal%20hernia&intr=Watchful%20Waiting%20(for%20Asymptomatic%20Inguinal%20Hernia%20in%20Men)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Regular self-monitoring, occasional physician check-ups",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Elective Open Mesh Repair",
+          "costDifference": -5700,
+          "dominates": true,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Watchful Waiting (for Asymptomatic Inguinal Hernia in Men)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [],
+      "remissionRate": 0,
+      "responseRate": 65,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Hernia progression/symptom increase",
+          "percentage": 35
+        },
+        {
+          "name": "Hernia incarceration/strangulation (requiring emergency surgery)",
+          "percentage": 2
+        },
+        {
+          "name": "Discomfort/pain (worsening)",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "Ongoing",
+      "treatmentDuration": "Lifetime or until surgery becomes necessary",
+      "trials": 7
+    }
+  ]
+}

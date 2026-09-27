@@ -1,0 +1,468 @@
+{
+  "conditionName": "Measles",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:16:29.022Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG37JRLqJmNZ_r4e-0YJ1_oyOPr-SXjK_-UEDgjSNxEuEdQy6bIdUxBNSBsm3N8BGJ1YLmnMhD0yiiuY13lB1Av79RIq2HlHsoUgGCGBbhXxXY6dlNB0pHPK_-zcFCZjXTjIl5_L1WIzji59yvyvIc7_MAySFmOd7ppLzSR69cW0PKcVEVpU28Z5E1JWLrI_KfXIilDHg=="
+        },
+        {
+          "title": "ourworldindata.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0uuG9F8JxPXxSGIPwbhdumg6Jvftu4k4SuGAGtBDMLvNT4dzbfIwVYyUKi3bDfsSyoslsW5Y5bB7Bx8E0nrYbHsJ2E9_CfGcFXO-8DYAHYhbbi3SWhGZBdKSbLTV7b2iRqUMwsWuxW7knBqMY1zNKrVsiRSShPYL_1Q=="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfGSmcsCfxvckSC1TftonJdc95WtLu9ME6Y3IgGoCPweiAPGoZ0B5l7NiEHSPw691soLJWwxY_vSWLB8q7qV-3YwZNA4mYCsGWre6BPC7n-2obNh7Znje8zOhqbo7CPjmnGt8l1hEOA6IhYqA499yPlUbshX80jskuJIorNycxk0JVcE_EvpKWUBa_gLeYMGOZ3U7MWR2-4cVeJXb9PwBLniA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFydosTWg5Fk6c1xTAxJkSXdxT9WRdn5AIv3Tt2BqJugzrTCY1GXZ0ntUHsLFrqptoSjWXlobQDiYWwU3DvIPZW-jjso_zWNXxdkx5kRC7FEXBtr21KrqG_TONQKKU3iGwwtUOF5Q3m6g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHVjQigEWanEdKdRH3ns8VWf8_CelFYLJEUIxxRXtHe7cKD1e0OLdWzj9b0fJSbh5-fiIlhk6xMl88uvQk_Gsd8ugqJch9oPn4MizjT1dozo6ysLJCkjCoXzOzNOaubf72bPY4_p75h91ihQc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMFWvO45DaUtOLFEYM4dsAUOnWEogUwp2_izwsK7dBjK6mcAnwSXpTIIk3ESlgg7r7kgoPmCbBOnyaDz5P-CmYN0Qb8rS7422ZcxPnpx2Upj4scuPs__k-e-p9Xjs66hrtNLUrw2HaBIZnkk0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Measles, Mumps, and Rubella (MMR) Vaccine trials for Measles",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Measles&intr=Measles%2C%20Mumps%2C%20and%20Rubella%20(MMR)%20Vaccine"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "0.5 mL subcutaneous injection",
+      "effectiveness": 97,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 70,
+          "monitoringCost": 5,
+          "sideEffectManagement": 1,
+          "totalAnnual": 76
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 1000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Measles, Mumps, and Rubella (MMR) Vaccine",
+      "nnh": 1000000,
+      "nnt": null,
+      "participants": 10000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-87.3 percentage points (reduction in infection probability)",
+          "baseline": "90% probability of infection upon exposure (unvaccinated, susceptible)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Measles Infection",
+          "percentageChange": -97
+        },
+        {
+          "absoluteChange": "-70.4 percentage points (reduction in infection probability)",
+          "baseline": "80% probability of infection upon exposure (unvaccinated, susceptible)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Mumps Infection",
+          "percentageChange": -88
+        },
+        {
+          "absoluteChange": "-67.9 percentage points (reduction in infection probability)",
+          "baseline": "70% probability of infection upon exposure (unvaccinated, susceptible)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Rubella Infection",
+          "percentageChange": -97
+        },
+        {
+          "absoluteChange": "-24.75 hospitalizations per 1,000 Measles cases",
+          "baseline": "25 hospitalizations per 1,000 Measles cases (among unvaccinated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Measles-Related Hospitalization Rate",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-0.999 deaths per 1,000 Measles cases",
+          "baseline": "1.0 death per 1,000 Measles cases (among unvaccinated in developed countries)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Measles-Related Mortality Rate",
+          "percentageChange": -99.9
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.999 cases per 4,000 live births",
+          "baseline": "1 case per 4,000 live births (pre-vaccine era annual incidence)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Congenital Rubella Syndrome (CRS)",
+          "percentageChange": -99.9
+        },
+        {
+          "absoluteChange": "-0.95 complications per 1,000 population per year",
+          "baseline": "1.0 complication per 1,000 population per year (in unvaccinated populations)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Mumps-Related Complications",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-$495,000,000 per year",
+          "baseline": "$500,000,000 per year (estimated pre-vaccine era total costs in a large developed country)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Healthcare Costs for MMR Diseases",
+          "percentageChange": -99
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fever",
+          "percentage": 15
+        },
+        {
+          "name": "Mild rash",
+          "percentage": 5
+        },
+        {
+          "name": "Temporary joint pain (adult women)",
+          "percentage": 25
+        },
+        {
+          "name": "Swelling of glands in cheeks or neck",
+          "percentage": 1
+        },
+        {
+          "name": "Serious allergic reaction",
+          "percentage": 0.0001
+        }
+      ],
+      "timeToEffect": "2-4 weeks for immunity",
+      "treatmentDuration": "Two doses in childhood for long-term immunity",
+      "trials": 69
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi7e-soSJeE64I6__niBuKRz32mdDpIaPOdSvOgbuFd8PLDMyThf6AUui9SWYwwAdxE08JEO8Tld-E8lC0_R9cBQvs2hwBPGh5e2BCyK3-4xTlREL3pjzF-0I2SZCfxCHAuASWjI9_tgSK6Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzQ3DPXMOhTMTgnhYkI6W9rQPH4_2ehtcl9zc0HXxHTFoPp9wXwtFbzMWVmPw-YWx3hC7ib6DI2vxSdJ4QDNOjzvxRvvtXuepmoNxR5c2QevbQnUsREQScGRnR8P45UxPHhbxqDiQl3T2LR4dnVkyKElQh161TImgnOFOkgKgu-I-59T9K5PK5R6nAzbKfmr-G3mvv4anyuftpjsMdbUSmBLpJLEy6CR4="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKKiXxN7uuxiQK3pDBaaWNPgSyGwn1enuhU8P0j35A9x5Cc7pmCQUTVfkutQMIIXatfp6Wg6_hZdQSKDCKMltSfh1dM4q0cPty5QH_qLHhWkZI1ZH4c93cuc-Fy9Lgd9c1L2u-IyUGD6OrPPGk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMtmpxWaobgIeyAg11RfrBrz4bLdG8oFJ7iI6ZqIGV3b3322uUJakpVBvYr1bDiWr6xkFR5EObEIkUmFA7VaLuNb0ac6WZeMXLFJ2Aq6zWYV4hsfcy26ylrgM5c3QnyXlXaef0Rbz5p3_ZgQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqWjbhUA8Mp4P1OzdkIZKueAuWFly5HofqishQER4ubOiR7s6YhckklFUjeBk5JGFAhd86LxthytAmATOwAm9Ip6F5a4O4L-sNt_1OLgOy9_lm179H5a4kHaoSVpMZQrMBrOowKdFIGs-h1gH5MLQ6gWAlEtWeby7mNaMkwy2Tpcc="
+        },
+        {
+          "title": "harvard.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTnyDfhKwRiKEeLUj3XsV-BfmZFodUOcTKRcule_-2ehCyZOJrFGDz03Y_6MetcNHj7GAjWjipNMM9woFdrjPWgY6W7GSkv33nxbDeEpcC5mMPXpzYPI13S-J_aSwBsAI1dtF2G_KmzDkOGD5Ig_8q5FdOdNWWK230nV_6sMfrebLMxo6GhnfrohjYHYGtYc-hS33A"
+        },
+        {
+          "title": "nfid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9K2SOMUGs1fNdA2jqdfvd2tI_vYQeQyJv31_3xAxqfXm8jLP7k0gLLhR33aCuQmJAM37w5bkkrZh-lY4d1J0jZgIoySVKjza-9hRZs69PO19bA5_kSkR8akRmd1hfw9bdTCMogE3pBvJOVdg5OO9VM1i3clFIo9MuRaDGOMUfBbWvYxR_WrzAesrFjGlJGTUz53KWVZTqUw2u5R8ZUMRoMyp9hxeAudavwKrI9-oM_6z2Iik="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET3xSRM7NZ_rQ2hD4_Ecfe4QoJnvM_NExI9SOHO8Qc7iQGU-UWq3apzFiJ_VCQjJ8wac-BSbNypfSqwn4qBPNkLZsR4xL2HZNDer8dUoMAcE6bc1EhaxIX67SF7LkXmw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vitamin A Supplementation trials for Measles",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Measles&intr=Vitamin%20A%20Supplementation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Oral; 50,000 IU (<6 mos), 100,000 IU (6-11 mos), 200,000 IU (>=1 year)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0.1,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 600.1
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 0.12,
+        "icer": 500,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Vitamin A Supplementation",
+      "nnh": 100,
+      "nnt": 180,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.75 percentage points",
+          "baseline": "3.5% (mortality rate in untreated measles patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Measles-related Mortality",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-9 percentage points",
+          "baseline": "30% (of measles patients developing pneumonia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Pneumonia",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-11.25 percentage points",
+          "baseline": "45% (of measles patients experiencing severe diarrhea)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Severe Diarrhea",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.4 percentage points",
+          "baseline": "2% (of measles patients developing corneal ulceration)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Ocular Complications (Corneal Ulceration)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.6 days",
+          "baseline": "4.0 days (average duration)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Fever",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.4 days",
+          "baseline": "7.0 days (average duration)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospital Stay",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary headache",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "Bulging fontanelle (infants)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Within days",
+      "treatmentDuration": "2 days (two doses)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2ZhA7NYhEVyFBllGDX8teSD3B2pSDXolg6js7qIys2amue7qeBaiId9TCKGNbhgK0ECS_-T6vxEdKKQuNmsiLhpwz6gbSqnMLSCe3fpGWWnw2gz9VLEVTu_u-fDUmCKAUofU_ZuCaxUByodoD8-jm_Dg="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkslBFPZuoeA7l9BdPNrzGiLprlaY2k4U_12UzVjLbmmamj0Lsuy_jg4Qdyl-dXV9EU2XGmTBTSNejS_ZOqBGjfLzoGbKSdBjKX4zzpZgY-nqkXAz5e36OQO0ttuBlBHq-10ujbJcV5irlpBqmwaE4SOwwYtWxkg=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMJfYS1glxIAeGy0y6NZumoBRIiiYre8bMwpPnl0_wPNmbKbrutsg8EifmcJb1kZ2PMvUHMW_SDdml-bSdyqjFH5dnnYIfqs2q1Q9neT_TkgPqng8n_sdDWNeLjZkdNbFn12zPxIcXmjyJynSVcoFs9LHDFw2eFbhSQeJT9l3Weodc_7vMefBkw3I1mdITg0wJ10D9O7FMtw=="
+        },
+        {
+          "title": "preprints.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiqTpyCJUy4aiMTJs8xYcoKBfuMejkLK2BYs4j69qLcC2MpVLssEVGKlh-vsmNanQgCq8PNxt7w5op3B6hauggpXU_iHf2GlKOKEed8L5mGHaQIcs8BARwfQ-Y1LXG7UHndP-IdoO66m0ELGIuFtC8q6SXS0cNNJeZEj7ROTflzDEYLGx6YldPQm8zDvIV5T7xRfewvAw="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG06OgA7G4t0CQdfKxy26XFBN7xyh8wlHvbn9qcH1bxWg5TJoP_fRx4tYzjhQcSxmiF6qohZBrTtThSYIvRBhl_hIo6Gs2pIdHHFFhSdol4PJ68u4NizOZ0YFckF3hc4ZJSdDRbe25rcyLinIyjiGJsiKX9VXEhgDT8tiK6FukOVL6046rrYVsJrA=="
+        },
+        {
+          "title": "childrensmn.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0ncnpE0majiVKC4O2ZMJPgCDPOZpHQ2dZX0n8SiysUBZL6ZxktxvG-LBHBxjb1CsoeeZuuNJKFo0eBG3YUknYjJ2OO_-5ePme-RlGgM4GDlFKBvfDx7zDq54qvjKWx6LB2Da2xVul-p4nY3r_1MBTnSwSqDnSWLLjTqTBo4aC3lueXJ6R"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEybxsRAJ7jlfLk2aWL1YfYqLmRrFhafrkkOxuKi7bjTKRYrn1YcobtsdiJgKCcZnSBSbXYW6FBE4WKzvKz8rZj-uenXae6LzscJs0hrKEXPHs5_Uhxe4b7s1Q5tk-BjW0BEulAlTniLMaLnOI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf_qnWIvtVnKEHBJmvAafHk3k7Efio3pGYm3Ta445cluyGKWvQoglmcAUQR--p1UIq_io0HX2w4nYM-RjhvhGnYNuouBNL0UwY7wELZSPwJKm-AqTq4taFcbdQhpbTRCMVWnZRXarWSheECsFHVLbL5sXYVu-lEVyoSZ_eNVUWZldc6tiYV5TawKnMIuSQ9JkU_DmHg9TwamxQinhTFVvpQQpAlkikWaOoGhIOL1SgE8MITfumu23_9RS09STbs_QACoTQGNBNVb-yR8mpxJ5eqi7agLF0UHCuIvo2g0Y="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL-Kz1jAsnXtzqUDGNhOtNd1HKjrJMTg2cZ_DhTWQtLKOZmrsiB4VvYQibHMxTPZoVDAYfFLBhujA09Buq3TLhaAOHh3bE3HzchoinW8JmkDU2Wi0nJnEX18dQzCEBoxZUavyOHuJmM8iF9cQ29zNuBv1aBmqTLdSYntya2frN6SyJ68UeWrK9doDIiB5p4N9xFB8jpWAv9IRUGF5r5b3DYggfDJvDkrBbX1Bvmq49mL0Er_vQhpBDkcLC-SedCXTfKNtVut1KRElORQ0E"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgZOjdBwwmVzeHfygLXvR5Kxok0FjJCpH3LIUPQrL6Rox4nQGCK-XIh2-P_GOZ1loQXvG1cdi9TEOiFOcc9EgyY_lbHboAOY62yKzu5usK6a8Ndbx3Lm8soUSBiIUH1t7Pm3Vk"
+        },
+        {
+          "title": "ClinicalTrials.gov: Supportive Care (Fluid Management, Antipyretics, Nutritional Support) trials for Measles",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Measles&intr=Supportive%20Care%20(Fluid%20Management%2C%20Antipyretics%2C%20Nutritional%20Support)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Individualized based on patient needs and symptoms",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 200,
+          "sideEffectManagement": 10,
+          "totalAnnual": 225
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 236.84,
+        "costPerResponder": 236.84,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Supportive Care (Fluid Management, Antipyretics, Nutritional Support)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Over-hydration",
+          "percentage": 0.1
+        },
+        {
+          "name": "Electrolyte imbalance",
+          "percentage": 0.1
+        },
+        {
+          "name": "Gastrointestinal upset (antipyretics)",
+          "percentage": 5
+        },
+        {
+          "name": "Liver toxicity (antipyretic overdose)",
+          "percentage": 0.01
+        }
+      ],
+      "timeToEffect": "Immediate symptom relief/stabilization",
+      "treatmentDuration": "7-14 days (duration of acute illness)",
+      "trials": 0
+    }
+  ]
+}

@@ -1,0 +1,1141 @@
+{
+  "conditionName": "Long COVID",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:37:03.523Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaAyErHnq4e2_f4dtqDRpNKrEuW5z4k-mLU8QD1a8POnKH6q_NiqMRHX9J8jf-5fIqbWWtEvKDoLv_YYKLPdHfkQznXffjh_oxdqWwkPbRw2dXhVHX32pgJqDg0-IMYpqjYXB5ihibUQkR62Du"
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyoqF3liXVXZbDyKFoCO9l3Q3LQhovpFEdQRPyK63J8GeMPC19wRGl1Z-pJDgJiBo7zQkPxRaDgzUq-C7wm2V-Dz5nk1KFW9ByW-VUa3EOoSA3wM0GuwGjNx7ikPcsPMf00DEHZPTgifZeN10tMLIq3bmtY6vBeeU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbP96hkMT2Gyv4J7IdHaz5VcjX5bJoMmHOTnI2_O796SMq-6Y-NviHs37PvrJdnVP6-5mLkFPyTaPghSI9oj8HOFXvEIUD0ji8SwVanZfwqNJYz9Vvb4dILY7t9qh8rCH58lPHmfAeRXP1856KL-sipwWRehDyGp-qCjB9vSVgUYOSO7YXHdcG_qq6u-SiW_rtC8JIYyjwFUKL3PkjEWrF0tNKri7KndklD2NvsNPSp2I1YJuswPb_py92-MbzubceQgq-5n1NKNT_0eL-xP1xeYl0GG1PsizqNznMfAV4a9CN5xtw68Pe1KN_2yZeyJg_PYFuAjFyNI7PnKoH08CY_w=="
+        },
+        {
+          "title": "pnas.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG64wi5fJasGG41tzWDgK21YY5EqWxeX2Zzd3WoV1UDkeFZOQsgplMIhQR9rwH_0M98XkyCFTuslk-h5f1emqfCjD_G-FD5Q-yqaq7bLM_G6x1b5Va0x6NoEmJESrtd3ZtQ6BJFCQnxZ6ZX9w=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESniAJvK7l-oR1UwnUzBLpuHw9QqUfbUdS3pWLSJJJdb25unoNxruCHeWfcxp-SvlBCBLVT48M5oEBhIS6C0-7w43RguqxodlK68g9NPnpFt3zjpc1uEMeWRqyYOYvzKqyThMHbPEOeijnDP3Kho-ahmzYflQuyqQbISrO"
+        },
+        {
+          "title": "s4me.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA7wN8L_7KiZrQXZthFhOWjkcsJRSBYa8trbDSm93iCT2MgQgAOlYq1oz6GTTYkrMgLjG-FDpsoW1h9hZvaRZ3XmHR-dvKMKstzwbNy7X2rbQzBrKGS-8tkynwddntiQw9kLKx1DfaMD3j7ybJPHj-tg8Ypi4R_1AJVf2pk_8IAPrpb_KyKKSipQRuN4WZJ3umv2gTnyAnpnhL5DDEOfAr0gEnMF3KJyFTHNlMYsLZ3lJrKLROwtSL-cM0xkgKDOi25nhrbb6Ymdzo_h6boyREcZsZS53B_uchXFcUO5FiCb5Yr6HjpbZ0ep61OuZ1R4UmCuBeFMQzLqlzfY8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGG6CYK-oTCCCDZLaqIMHiUw3Ew48Nv5zxOhAxn2k8U3FKgOjdu2qqe83XCKTrOXhCyr_ODCZ7_A19X0nuG5wiHLEGJKqwvueWD3Wl59laiuoJzQwRfvVPwJVtTTGcSHPO-UP8bf3d1n-EloBm1"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkkPa5vWltyjwrFPOcIarSuoLPPtH0_o98o3Bj1rg4jbEegC8JZSwqUMNw1W7ebnPVBxJZgO4MdLq2YeFlq13jcK0ehjQ3E0VE9XO5EMB35BCb1G-1ljDJxJXbI_O6mhEHEpo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDNm61hqnUXRy6qQGLRL0fo5zY6pNdUlA8zX_SfvLe3WPXLr3XqDxXD87QA0KJb3fj5sc0aoHo2W6-nWMtsWUS_7S7afu-1QaKBoZF4IPOmXB8lpUFJ1tGHUHKsgBiwZlVCmFz"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIztUpdXtNaN_h41TZbT-r2v5D5ipz1Eq2-7YAR983Iwnvmn2ydSpJFfz7HvLF8IDcQrHcgufUyOj0EXn6yyJkaw-mg5dHBKEROUC3FYV1WmK3oghFDWdM_OgPyd8JaC047GuEfgJk1SAlYF1QK8ivLVZ1vpRqT264hbgPqB3Y1PR9q4R_SxwmMZgehNHFcUE7OuCDJ5vYqyPZg6EMZ4iApsVsxpRJZZjP1RGFntCWWdldr87FZHb54_27yNFMZl-L0ZMONJQhMd7-pQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1YeOYgTOmKlbmjUrgi5yDuDFfkTJO791HRyPftCj2qfsBrN_47xpJWi46aRPs8X97iqTHl-dmtCyVYyH9SnCt9ks4vOyeGntwIRpS2LLasFx-AxFRaKXRhSWadPvCgzSoHDhS3Eldi_prXb3O"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcsEegX1GFiLhmxtpWdwR51oz8mgnFhHJYRI5gVMcutCAuTuEt-blqgMzRNVvBmCYR6yPRK5Vh_yS3G2O_s1TIDLGB48ZExKXEGBCPEU5Y1l1JLMqTrtbDUXjAt29yjYdlUFxNseQs0XiADdLZ"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSX0DCo27F7pQOxY6hSp1_o1Ik_xH9_UaoOZ1ZxqREqMs3UrxtzbZJ5Z34JXZsGQHr-LynEh3Ol-Qr5RMuhNBeGlYnEqGUDDjVC-DxviE7rqGetFFpRccigVZ722Kb8LjfkSDacHH8jcOsf5psT3k5HNXkXwHVCqufBq7DSIsIYLRCbF8PtEQ4cQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Structured Rehabilitation & Pacing trials for Long COVID",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Long%20COVID&intr=Structured%20Rehabilitation%20%26%20Pacing"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "Individualized activity planning, energy envelope management",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 769.23,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Structured Rehabilitation & Pacing",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "N/A"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "Fatigue Severity Scale (FSS) score: 5.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity",
+          "percentageChange": -18.2
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "PEM Severity Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Exertional Malaise (PEM) Severity",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "PROMIS Physical Function T-score: 35",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Status",
+          "percentageChange": 14.3
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 65,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "EQ-5D VAS score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life",
+          "percentageChange": 24
+        },
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "MoCA score: 22/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Function",
+          "percentageChange": 9.1
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "GAD-7 score: 12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms",
+          "percentageChange": -29.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Worsening of Post-Exertional Malaise (PEM) due to improper pacing",
+          "percentage": 15
+        },
+        {
+          "name": "Frustration/Mental strain",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "2-4 weeks for initial symptom stability, 3-6 months for sustained improvement",
+      "treatmentDuration": "6-12 months initially, often lifelong for management",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4osqqg3XdfUVnpOqjjXbwaLtkd4e2fy2GoeD89ECXmh7CtmQnc5qsHsPa950mUsgtdsUbHCKgrmsmNit9tWDHHu2Nsk2m2O9rVg9BCh6a_Om3XGFYeurhLEFziuTRSysItxJk9SEO-TWvBnJpkBIhMps0IcVITa8gmZIoqNIILAPm"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7v2liJrNv2DNwin9uKkk_UTL2IpxkQnTV1flfMb_F8itUib-fqXe4RtKBh-2sFiwo0gYhqPEzhdZMyQ5JmbPzWptt2EzGLVBThbzkiURtpkJvdjZcV636AAtypJ1MAvlXW03EgkrLld5qPOWlHByRyy__FTJsMM-Ru25DAiVIh06i3l3gytkjmixclLDGy53dEuW_10le5cd0RH1t16fJEDc0ohV5joyWL8WShEE="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZIwswE0MO1ofNqIFKuF0lkFezp2n2Fe9GnXi9jVds2uYRZnNhhINNc8gJCjSAbOyE20nJNi667AMFIgD-4Ji8ZpzlTNDX7YOVhrEi4cWudNKz-c3jxkHr-Cwdxx2f5Ang_QX--4stI5u8iLWMNn6Q3iD41CpQrsoSYngHw-HFI4o="
+        },
+        {
+          "title": "sciety.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxJ7-Dme29Fo3zNUDOyNiHbOu4hrJ3oJAQ0s2h8fvHyQh8lYuKQH3Fck7U4Y-WXvrtg-VL1nnEWowo0s6wvr40gDVdzaAb28578BYr-01AHU39ZXTYTfp6SPWpsgwb9qKQyeTHmqutvocJYBuPuzHOzC0P-cwgvhW5ayk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfn2P6ZsWDLrZz2twTj7fNpRsEvjfwTwp2mK-c73aUxpALXlQ6TeFOfDUiabuth1dJiTr_ehGkuwuQXqRcRZlof7N5zHIgbrodKCavzrciYTp-sybu5NLX-QXjYEdVRSTHg1ZhNd_HKo77Z7I="
+        },
+        {
+          "title": "health.state.mn.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz8EGRPLs4PDIHcqWT4a_rUrdjdDhZZ5_CHZOGFlWbtc_IdPPYY4N7o2kULkqjJ7DZTdmUqHVyRDn0ztl3O5dBYMYlL0iGEza9JgqMbzi8SDK8BknahYixisxwVRYo1C6vI2IvJnrEZQTishOVXJfNpTADkOpz0rQMpvU-GzfPM6tF0YGHilkR"
+        },
+        {
+          "title": "thesicktimes.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMdl4U37IgHQumfo8KgDZ4iBtcl07Jr8_dwR82w5UimnX3pnyqJx9CfqEF1R8F5KnQBQJWEinLb73ckYQ1mjkIvzGp4XhlAxou4KUbN4KqhWVTyOUrZvGK8nGQrZ31J6zQaEZBDidoPNiMEHbEFpbWXaOQySa07RO5LI2JLj_PpJlz4ZhoKaMQjS7dhwXbcdn33Qwyup2JFjMZWfskNATlo5cjK9EMH_gtEebJjXhwsqs="
+        },
+        {
+          "title": "cancovid.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB7zAl27WHMKCb7G2u4GFbfGsIH8tXeh6xZqfAsEGXqlro-tPi1tFkUCD9FrZ3IBuZ2FYJ8Q4-muHcex4RUEHOcDL8wWEKakvg9vvEDGc2RdwoJ-rh0eAUW-sU-VGmfASGOyjJDqLqsaE7Xy5eDAvmx1ui_yWkL3QqO9zUtx0oSBQ6zzHXDNLHo92_lq5_zAQHSABCRXhK9jLLX8BLzCojRH8TibJQj5EAR7tJ"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUFn_Yxxpb2MDD-Rq1SWbjxqOy1Sy22q4fZ4d7o3st18wCw_LUXBHncQInpqcr3DFJH8SU3Ny8asZV6wIXAt9vVVnvpo_d3OjwhN0jT-hLbHCJM5GdTCx6Rrb5AgA-VYcd-oCxy_wM0JSZvg=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwVGfFMq8j482n8qjLhs2Zxx8ncjA00HdncLl4iedIEcq86qcFlfBRbkeLtbiofCLWA9zXG36S3lwGYW_KQ4Nne4Wj7YwS0W4ObYSMsSgMbDbVg0KuEaVFJlFgZa_b8dByQP3sRTTN"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5aJJkCDAH4W2zn_YQOizmgcQ210JCWkJd6Iv82PV51XJlrP97goITqChXya0gVArSpgemIbVNmrfWi-wHXTX-SuEvbz1aib3Whh4HI7EKE0vU6_Df4jcLZ7qar1ZTcMCjpfYSc5IdtbuI3_Q-M-gnBWZ5Bx3zXUa8uduXm2n_LJeAng=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Naltrexone (Low-Dose) trials for Long COVID",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Long%20COVID&intr=Naltrexone%20(Low-Dose)"
+        }
+      ],
+      "confidenceScore": 50,
+      "dosageRange": "0.5mg to 4.5mg daily at bedtime",
+      "effectiveness": 60,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 360,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 510
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1133.33,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 100,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 360,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 195,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Naltrexone (Low-Dose)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 750,
+      "phase": [
+        "Phase 2",
+        "Phase 3 (ongoing)"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "5.8/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS)",
+          "percentageChange": -20.7
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (Numeric Rating Scale)",
+          "percentageChange": -23.1
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "22/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Symptom Score",
+          "percentageChange": -18.2
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "35/60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Acute Sequelae of COVID-19 (PASC) Symptom Score",
+          "percentageChange": -17.1
+        }
+      ],
+      "remissionRate": 7,
+      "responseRate": 45,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "38/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 13.2
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "13/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI)",
+          "percentageChange": -15.4
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder-7 (GAD-7)",
+          "percentageChange": -16.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Vivid dreams/Insomnia",
+          "percentage": 18
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "6-12 months, potentially longer",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl7Huiti91MZ1DWevhMy2K4bjb6CGfQf_5id08V1XCBB0uXnno2FCDoVjsI1W37y0ROz0gVisSmgCRkBI-pZxfOcZ6YCxtK17mqkjcvx4FmGZP7I04OCjTKivhGlm4Ik6OTBgK"
+        },
+        {
+          "title": "utmb.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFKDeH1evoevpGlIHk_5NqqRYZ3F1HpstMfgZtzl3kRLrgNqmnI4QCVztNoew-jo27R5kFXG1EwPtupe-V_U2qFoaRZqWre71mXdMRuLSX7pAlRgY4zIAyJ0DTPLw4RprAtMAVvn0N_7Y3JslTdarY7EbeWPB090qVvY7F_hmjik3CfnRIvJ4bgs6jqBS8Vj7O5OubgTHAvXN-EhXbTRtOnuZStVp5HxtljCLNx7E="
+        },
+        {
+          "title": "sciprofiles.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1aGNFHUDrHMbeERBbL03UAm9FHf4NNEascEMPx0AnXDEyN_N6obbGda55eeB4EsJ4k_QA5aGIcAED-n-tbzQbBaF5pKwGYCaKelnbuUQPC-_qC_1-TQikpTL3foCIGXxE8LPlE8sC2HEmAweCvEk94T4HNkNGar_WWUnhevqKTX_SeJM="
+        },
+        {
+          "title": "jogh.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRy52nKuLhp1drewAQLohVByvNcKRYRUST0zwwWbhXeHdRIPwQjLS6BV6O3U4fA1W8lkY01L7XFtJDadQvtNfnpJTphD7y9EBDCA_YpgVzW8Z77Axm5719TqusLIFblw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh357txUee0zpOdukB2G9kPJfD2A2JLUYhzCxXGxxkbpXiKto_EyyS4yyATu4B3TAb845kwY-P2xUGnsF2j9Pufz_DCr8KdqEFh9MnEhnQU1rD6wYjzAbOBg8CKkGpN8VnQ6kuluIVPfucibqqDGDvj59uK1mD2FZsjz4HA_jkYHaFDSWsGp3qU4P_gztuLhdjzbNwAdhqV5AEIBpT0QRBvkCUiFFHNixWDyYOEXBI8dmunGY34KGOI8NXso9wy85Nss6DUQd6rOf1F3YKiCxTzPyat2o3wCFDWneeQrqit7YGM7j7BD1FgHaA3WofD4-u0Jbn"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc53zpY2Jnqa77yEEOYueyO2_uhZ_EFfi55D2KY_2wP9WoDewrFFLxMeIuBhcW4AiSH1bCqCxkPabCINwVckslyD557QFkb5TBrevLSVU7ERbMAfeGyrS1gjL-VVQKV8_4461_0caUQiRV6P2F4LOoKcIkRyGSZci2BnBp4iWqpmSm28tSQ7z86gttZvPaLcejmOTOBK_ArFwUo8bt1SaAMfIghfCsFk3adc5RskOd8yIHuZnE0zbRhKLyJtCO_UE7PnpsUVC-Lb3yNakiSsn9XVAs0Js6echjbBX4PaCW3fqEQ1IC2no9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjDbaqqWwRubF48MC7Iol1uf8Lke_TujeDMdFySNp_YGyaRFFZ40Q8vmmabjcSXABJjiG5yWqdbUPjMlOGIJrxxSUNZo3vfUq1EL_Cl9ys4f56bf93a6_bfyk4UsWNTeN5czJiZCbwajTwHIGN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO0av9QKDInzcypAOMucsDcGeofBSCp8eYtvWG3Bsgotg-OPo-Rp8Q8ms1RA-A_K0PA6hxkQ45pFl6NmljDZoGUK129JYCnVEwxcTfx7QHnE9sgHqdoqqCiSa7uoi0wu-isqIq6PHucwIFpCNU"
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGD3_iG4I-VKHet_-So93H5dWrDxCM-SJVfFyRwZZbcjUSsgCsEPHdOaMG97os-fTtxR5JkGlFCt_BkQ8vU3YpIlz-I_w2u_hLItDg6AVqoPb81SwE1v99jI06_KYIy93exXdFXU-Bh-1xWdB9Mf-2vbQMoxwukaYs="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbqrdCHqcfKxGhCC9AtFV_yygfwiEWjv6xyrxw5kbwVu2QQNEGOELq3gt5AJsLy-4gkp205pfiPwPphxqfwuzJHKDcaFGGrh_5_YJCGfHkBH3NzPNOkIm0c1Seo5m-dL5MXk2IkZqKxU9-alf8j2NP1_DupCYpQZjaJClin1SYXwQK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa-tyL4hCqp86X30LJhU81Vwl06OYQ9fAQ3iPHzC7YRQ91RSdroiaeIkFof4GFkKM8wy1ejrS8igCsmiVEFxsT6yxFqtnF5KldwauqH_iLuePPoI2oPCMgD35vc9riNjbcbQvzrS_FWaDCTvAc"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Rehabilitation Therapy trials for Long COVID",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Long%20COVID&intr=Cognitive%20Rehabilitation%20Therapy"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "Individualized sessions, home exercises, 30-60 minutes daily",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 0,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 3636.36,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Cognitive Rehabilitation Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "N/A"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.3 points",
+          "baseline": "23/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MoCA Score",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5.5/7 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) Score",
+          "percentageChange": -27
+        },
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "48/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Failures Questionnaire (CFQ) Score",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 12,
+      "responseRate": 55,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "42/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PROMIS Global Health - Mental Component Score",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "11/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder (GAD-7) Score",
+          "percentageChange": -31.8
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "38/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Function Score",
+          "percentageChange": 13.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Frustration/Mental fatigue",
+          "percentage": 12
+        },
+        {
+          "name": "Limited improvement in severe cases",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "8-16 weeks, or ongoing as needed",
+      "trials": 29
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJFcdsP3rZS9OPIg5e-h7lkEx_uE1I3MW1cPRtokYvbM-oYLgXNEeWWkAFLoeqAqSNQD7x44pn2Qwn8xA-UjQne7ZAwGMfKi8DXuqAym8N6GAia9O6swKlVC_oM6OUYhGEE8eEFR4SZvFaM96FLKMboTuQAGuS-tNJfu6h2CrQc0G2dL-P44Zx2RnhiwhN-kIdBbAZDOygkqHkORhddPg8XjgkDukAfoAlPRG6ZlwuNtuQtvig08ruEyV_FRjNc_NABMPF0RIxRMeIlSalwKTLzMhqvB27lc25tw7gVESUD-OP5TfIyjNhDJN1ZpaGLULMSsyH99n4J6S18DyD8DWMGw=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWaGr83bWxKq_bDtYML22NSSONCtiAXgwABQKl6HV6U8VvVCLDhjTJilaB1Y3ollMvSgik63T3Gb87mLxCsO5YEaqA-h-oVUtEZy7AGTVwO5Hiavt0Uu7lkvf4iZ3z-4FtQCxnZsk2fQcAEcZ2GJXprT8W88oexNisiAdNUA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAZnadHkU0wg4NrzaRZZtJSwB2manNvHlvp-apXzdiW5YdAQKFW5ih3Xhp3nMD-O8mSWBpRvdb0bap007EEJ8Qd_EeBvIwrlA2oJAdpUJHK56PQiKB5subYqYcVIjIlLpazE__SDIGUm7XChFP0uX-ABqggQTz6YrmsEKfzLxkNGW26ircQaL4ay0O0y1Icwmx6TElqLlHTna8NbfUeFdDqucZWzzvsnYyKOXi-5KYK1l5rS-4hGpI-WcaUvCRD4MLiZynh7K08Gs-hg_rZrBZhZml"
+        },
+        {
+          "title": "longcovid.physio",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrr7bP2EIpkhkPm_fztwwP6GnG0lD8Xd9cmGwijV5kaz4qOexg-jIfGUrBcBsLi4tYu33wNmKaLUhh03RR8Ra7729OHnZ43uHs6wa2Gy8XK9vt9CMYlqYN79A="
+        },
+        {
+          "title": "washingtonpost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuRVj9THy5SoMXC7EgY24DPENV6LWfahJmycon2IS_jaCNyCS88baH669mzux7MyQuTKPkvh9IXQs9tIoUpMFN5n-ZQonULnNEMwO4rQTtEuHjCDOhYkbD10uA9r5A7yKG68PK_gcKQBUSyX-bKHHv1TdD55_Zlo-LeMbThjnO7xSd2IF9_msB"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWq1CgOLa5IKznZl4iDDM-_qGVvVzZ-YSzwnLCktouOqhpjbtwK7nTZ1af6nWrByjJTPJbp71W8M5rSxB6nBK9Px6_bigfxxeWjZl1g5jDdx1QAQz5F4kqE2RH6jomLLxWmWbG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFajAli_G3tuRT0pe8jtzDb-Icp7QKH03seh_CVr9uHoQmu5H6S906X9EONTPFb8StzfJDCDWKJWpft01UztRR6QKnGDVRZct1vnph6oaSQk9yczFwCk4Eej8J3VfRm1eqsE6QhFsm1OeQ4xWjJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExVgJ5v_6znjxzUZMAbzH339rDMjtXXCY8wIp828483ibZKRZ2PpEr1KdiIyK7ZDiVAifjwim4oyAl7RPwTasULYaOnoJcMJFXboBQxw_L2UxqEBGd9aYms7XbnCY5iRCtHKU1msFf2bcHl7qv"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU-QrmUAkKU41Y0f2Mxs7MxbA8kDyDPLNIrQCJ9IPlkXn5DHo6L0TPMiRbmjKDRl8yzEVC6UFPKHFDzDN-bHWC8cOtJ-iAcoIqCQedKHm0b0Epyau3nXBR1OS5TOBE5eDQrmM8Id98D3K3GAwx_ZcrEYmj_g5Z8iVxEIAUCx1Kt4YrXqQZqlWjBqzA7ygJG49pkmzV6WQh65o0C_Jy7KQbadSspQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5iCrISugX2RSCV2POovzc2yzdQLgPwlbXHh1RyeTuC553b0XcuA4i98nwEkDBLHNNLx0Z6TOByXxxh_7zYcvWaE4cf9DSoTyPSueESgLVHWv-xYY4RM1L-Lurx4hhgJmnRF5u"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESaa7sVODhZELqXlSnvkjfxhVVbTCKpbqKYwqYxnBYRFkaJnicl8PKOQUE_uXP35aWjnl53PlT7FTNtmqdpLAqcuKZGtZzee9_PwVAs1mGKwYEuuLJRKr-pMSWIR0XhsJmj9UPWr8GsjHHzhp9UoV96ThEWaqiKhMZ4EMBw3Kh-HMCmjoL9ej5qAmRHXSyc18wP4XOuWKAJi9XdhdksvCkOSN6OviZgV4QLkeCgvP-ucYp4ted2aNv1TojJZAeFiu8rzjBQMjHHmLzBwnvonI6eInb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRwOdnV6dv2nn9_Tj2AxQMEpCHKo4Kyt1N4AGVFmWRVoCID9m4C070a9GLLUgsAOCs06oedGrgr6GybW_NbK3fcKDq0reG_rlCZIXMHCoWgAPEHq3dRd6TmshN3Nqd0hN9qmseAsdLYT-NKVCI"
+        },
+        {
+          "title": "physiology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeoEBdRp5GLRb1PO10zdB2tm0RA4T3NGMeA_sF5hYwFKJ5uXdQmXhrqZpucXVMJN2BpJhs9BI-eiAFcD_z92dLE5tB_3YHQJrA5TsxNuST2XyMaygC_YNV0kQDe1P710LfTlDWJG5ST2UuMmQ-BgeLpHreSPpEUFjx8KSDkgFafYX1p6LqITCXSvN4K_55qh0q9fLStYAIyB5czbuWbdxVNuzLbEsqKQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3iwpfMr9VJftF2eXPtEeqPpg1dhDBRDfEQU18BR_2HyS5CQCJiX7ppo1wUUtm51KY0A525E5OB0zsUlxo4FNhsbeVqY77nDeRaq0dSRbrW8W1zRCaXZbj-lXkVNa-4zRZAwm3mnUx1YGzgq-k"
+        },
+        {
+          "title": "ClinicalTrials.gov: Tailored Exercise Rehabilitation with Pacing trials for Long COVID",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Long%20COVID&intr=Tailored%20Exercise%20Rehabilitation%20with%20Pacing"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "Very low intensity, short durations, gradual increase based on individual tolerance and strict pacing",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 2000,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.13,
+        "vsComparator": null
+      },
+      "name": "Tailored Exercise Rehabilitation with Pacing",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1200,
+      "phase": [
+        "N/A"
+      ],
+      "remissionRate": 8,
+      "responseRate": 50,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Post-Exertional Malaise (PEM) if overdone",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "6-12 months initially, ongoing for maintenance",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXuIz8pfbp1Kj_aJDut413TuO_7rfPcD4gkBlSDmjd7GY_c-U07JDhne_IpGBjU0Nik2QWZcFYZQFnfr0aBBEkA1jDB-R1hxtUJq_ADcJABDpOlfEpYmAjTqlmmhLhWLcx9mKx9Sf3rzLJnkwkQw57yOLiNehIeSQy6yKd1gU8oyik7tP0dwNPfVM2toWbGpRBl3qHGSkYcBkV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLEIYA6ZQ_uARGUigFbQjbabIqtmXpY6CfGsTONHok3QV9MdKLdxSmSgmx5dm0Scddeh63_VlvE2tQ-QPdNGoGL0tG9Z-vCRfoW1Uv1jPPlB0f9imNXMLg6xIMTShZ6RuI2rAWQZD07CWRmw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGYpsmeDKSuEYHeZopcIC5K291bri6LXri9HJ4btBsuICmCmxmkAcbzeAmVFNGcOeEkNdLINAkq0WdlM1ucMDUHIi6FAd-CVPr9t84BLBHB1E6Uwt7zy0vHrSe6x0jhSCI5ZWRPkhI0haNftY="
+        },
+        {
+          "title": "gsdinternational.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXGvvHQ0BYkwTWIyVEYQCpuXifdSh6seVN4LYjl6PyeGRPKm5U0nmRpxfbx1F3GqRTErQ8IrSQrkgoC6G57fHpCAY4p_UB33agChgaR43jQwzIcuUcWysZDewoosnuEuDrH98BA5Z-TIjZ4Zgz5b3DEc-25g7YSuaKfA4WkmwElDlPEyqtyEy7OMCf7kIg1-E_5CI51SJEjszcrIoZm2rgFSs="
+        },
+        {
+          "title": "metapreg.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwneIJOcLxrZ2YxqdElNSrpf_8DBSdga6uBBSgNVROXestLMyj-hyn6j4wuw1UbuwkK8Nq-WzFcp36UJPuZtP34DQg-Tbth0MIz670O-MF-awuWcZYC59BYs_KO0ljw3fgpKMbk8hPFT4h6il-RD0FbCTsJKDv3tr68gMb1YFWVkgepSpcPhymX0rOwuX9IEVtr0m3APeHeDAdtLDCHq56vg=="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH743p7TjWEbReMO9k_uGVU6-U6HNPmQ9_HhFDtYASxl7q9Krmu04g1EkxEPYR-JavbRv-63ONywg7DPRtUZSmOa1lb5LLnGI8zONtd7TNLyG_XAGLB3A3gqj2orsjtAzzOLJFJ858xAFkpRk60zURhsnW1O_YCfw=="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTqn3N9JdVijajMTCr7PyqGEV_zhe0USfF5L6P464xVbXSNroyOf2dd7sxSV3gujjTcJ6eSF-kKh_Sr3rvi_xsYvVTkAwGnAPNh7CMZ_PLepGyjeMbicGFtdtu9gQnm8RAFDMpZfLkB9BKq5QcyM29xsDVnzu2zQ=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsUDFMAIp7gYh8riYwfZf3YCdWbJ0BeNqiwdrkjSYuE6AevLVIN4TN5shVNBmxij3gQreOqCawjm-6dOYALNuY0SRRWfMzdD2deqK-1vQQrICukJEEImehwJn9kkOBQce0ukUkgufZ5YS28wqMrDJCD_XH-UmqARDBEYtt7aT1ZDA3IA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdgYvFnuwMTO84a5ojjysxv116nlr9qN104-ydfci-YnJ3kQnQa4vqcswj8rBoJtGK2Q6QEh6EfsVemc-mSdBZkehMS0NBfVrgXD5o_xrU0U6cfPkHoDhFNkTtA0g-jldAgHv7SsF8VDCazg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfNnRMSm8FVqCX3eo82BIF5CQj3GqFJeWB-LPXt7MhXjNMUvDN99fSFw1oLT1eGOBrSciWXRGLlRbsjzVb1I66JAYng9QP88zf5BJHASXa6q57q0otDP_ejS0UASPJMQygmNz4Y7Ce6vDdORGnQB3AgZ7_67JBamD0vuz63LTFIXQvtZ9fRDxRCojusMJu7GbohdpQBvF3Sm1VnGJFrIPikvcCV6mgpePZtX1pM9EPksGG_pk5RjxnyGFdYkrahnTMWVV-pnBWdwv6bBnfH5ZCosomaBTmMA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw2PK2h1y41Est8G_pXIqClFZ4xI2Ah3kaJwlOdkBbCBTI8LZ_5ihmlmE9X9zmcw0R1RDS1HPCaLoQ5pkoXlSbmf4mejvT9zbM9AuSQV1fyfBETS54ZczpBSgfNtEu1NSzQjcX6tTawiBTpsA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUG6RgrEjTU0_Z1RHac_5s4-2QvQsCXWpIbJRb7koAOflht32qVtoSsyH6XlP22-zStQrNV6R1lKoaGhi9-vuXcwgl2JTx28pM10IHoicpjm4nz3CVh68qKHPFvgoskZDYOdaN9u7jgQJHXUh0QaYKr8htj7zbVnPZ_pvDjMbcYnzDpBcbaATo6Er64PTXA-K32kbz186O2Ci-BvjL3i1LRR630jDr7orwS3auuBgUd4EjoQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: H1 and H2 Antihistamines (e.g., Fexofenadine, Famotidine) trials for Long COVID",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Long%20COVID&intr=H1%20and%20H2%20Antihistamines%20(e.g.%2C%20Fexofenadine%2C%20Famotidine)"
+        }
+      ],
+      "confidenceScore": 40,
+      "dosageRange": "Standard OTC doses (e.g., Fexofenadine 180mg daily, Famotidine 20-40mg twice daily)",
+      "effectiveness": 50,
+      "evidenceQuality": "very-low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120,
+          "monitoringCost": 50,
+          "sideEffectManagement": 0,
+          "totalAnnual": 170
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 485.71,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "H1 and H2 Antihistamines (e.g., Fexofenadine, Famotidine)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 350,
+      "phase": [
+        "N/A",
+        "Phase 4 (off-label use)"
+      ],
+      "remissionRate": null,
+      "responseRate": 35,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Drowsiness (H1)",
+          "percentage": 15
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "Days to 2 weeks",
+      "treatmentDuration": "Months to years, as needed",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "yale.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEZ53jBAAtWKGo35Wpyku7Fzxl0Q1QtKA7q5Wqa0R9Ydg_9LPR2HFcP9ua0rqehXOJ6h4PzePmTqRY0WRPk3QC-3lUQ8G1d7lY51ZKgqyq5oECs-Cm1ZzEDHePwVtpXBMjYE0O3_po123uYMDXWjHGjlpY45SJRkzlTKI6Lk4TNHapGt7JOfT0PjcD23Xk3InTH90H6-ylQni8rS5EriYYsMxKQw=="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_19gMxWgX04_teR3q11FNRSK5w_L1aBq5alAEvfVITSKmm2xx1P1rmZbgamYABN7YkWjXCRJvnh7UEZrU9kQonv7o_IqpE_aUEAWSXQ4ngrlnlPnQIfWO0Ld4EwLhM756AKbhiBcu-ugpfbWCy3Er3Vhwhm6XcUt6C1eV83RiMhY9tjUS8Mo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED0Zj-QtebhWdD4asyoBMFUli4CYULfP0MTyicAY-VmNx6j-_ed9UhFDaygJv-sxhL3t0BpNtpOd7immKAQssukIUplRVAypBpQPzAFUjUFQ6h4CzQuJVMCTKTUOGkdU61K35mpBNK2NlyrNEu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxTg3NeyMTzupkXAd2UU1jNF4lDlmgg_RcFj2rDd_P_odfqydbA1ovNCA_m4CU-M-zeXhSDKYb2qAldF2DsZI7rG4V-s4dQtgQVx6A3ynpVUd7Zojst3rHrkg-ihJMUwsOvFC6jSMlsPDIelJo"
+        },
+        {
+          "title": "yubanet.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbKKHBepoOBQotVcJkueDynR0IKO48B3y1dGRnZOwHepyJZsinEBj6rAmGc_cBMByU7wzFZOIp0vwGCCZhZp22DLuYMk4eRF1By7vvul1359xxYZ1hDtop49V_LAUQC3wRfp-gQN3Fy3xlbKglhQ_ZMOWSgH_PMlkmsvEFLj_xvN5kq-pHR9Jp9RKxabLf5X7_bLc09Ic34KM="
+        },
+        {
+          "title": "technologynetworks.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4CthYlLvpXugiDUjF2-XlRK8HcNz5CuzL_HjdfvePIelL4Cn5U2pbF6LAmbRnmzOVUsGLL4WqAbL546D6es2NCsi23rvJnVxghbEtppQuD-hGlH85VaLoNvAMv-nrVMx6FeiTCO8IU-rCwVHQNDq6rMjlB3BtnvDcIydQba1Ac6lXCv2Q-gSpsHZLaljcb5xoJc9vYFZZyoEfCs298wMAR8I3jydPXSdYhqsTgrJYswxT_MYt3PUX-piYdv7M7Q=="
+        },
+        {
+          "title": "yaledailynews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJaYl53_aazyXtaJNsz-rB2ovE4wNWAPw7Ek53agRl5OTZCizbiL5L9AJh_s1ot7ccBoIhDsZzqEbviLkZ-MzjB7Njx8YRPA7io_LHr7kNe0iRLB2oe7TeEgc9lwFDetLH35ZWbou5iqzxLaNkmxzqaPkMH4It9dNf-zPaWSZFsnuEBo-FOWIjv1egeJWpEjyTPvU6C_G-pvznV5uDTPkGZg=="
+        },
+        {
+          "title": "stanford.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkiUCLUZEXXcKBCGn4gvJKBHSm4kpZ3DzvFe24nxjqWSnkfohgWuNkafeABQEhJSq77o9aYJZ7zEhoXI25M1ZoOWRzVJ3xYEasQ2aeiiCzmsWWrImHzjap_t7WmdqsbcZ74eAbBkGQg_iob9E1q3i27bNaaOaK-pYoesMJDw=="
+        },
+        {
+          "title": "substack.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_773rb5RUdi7AQHOg2m54X00_bqWyn3US8YB48VLTbow5RCZqVW2hRC_xkeO0Uh1YCIJVMw-VI3256wjU8jbC3AAF0b_a2rXorj2wyXkY-c_MmwGTJqe7eztP11080ryhu1aq1z3seikqAgR0t6zCz4jVfLA4EP_-2FzPFJ2ZtFLePw=="
+        },
+        {
+          "title": "first10em.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHwHJ3KBiPmsqzDPXOKxwjcJbL6ISeDqTdMaHVatA7paHxW6d9I4CNnXUNHADfXAqkgs0gG_bIkiE-NSQUizfw612zkemRox6f4KpRHTlTP46J9-aCgNVCWLAA6Vep88OBvZWwsaaD40vuWOMLzr2hXpX8oRaj5GPCmvcJlrFoRoGv_h3iEMTtinvUFnR_SNc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdmu6qGQsj1poP6JhUtSIFfryI3Fi3PAK17rA2L6JPXI-eydyN4POdAja1zsnH-iXZv3fF6xD70gVJV1Z68FrMZ47FN7ggLpMpwY32GtY3Vy1OC5aLE3Brol2xK1ktbKZRuDStQtB32ihqqBb3"
+        },
+        {
+          "title": "jidc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9mZDDjB7j0pTBbPTAAA2h_uzvkcUGDt33BuWHs9FttBu73TY5VzmCuLjrkD6Q4ufn3lvh8dG9nWNPv7k6Bft0G-lrz2TGvkFROT6L-dFlyrX6VOCuDj7ZQUhLy7z5WUGdqmJFfwBrMtV2uTPn0nxOo5mG"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1fZCqzoVyKpg2bYoEnUGyraJKGTqWrPftHfbZ3vDNzGZ1R8caHltHpXHuw-l5OyV09ggxteGIlPJpSBz-vOhM1N9URHHQEnCBp6LhEwzCwJElsow5mXX4VHUbHhCd3BcD0yrnXXlaYMaPtkSxlk1vDcL8l_4vUMgWiBNWXFVAyA9X07S9betoZYFaY7t7dFjpeQPrWiCM3ZKVmE-MZnlOuybINVCZki55sZcUrkCsWpnyFMblZoNbSYE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nirmatrelvir/Ritonavir (Paxlovid) trials for Long COVID",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Long%20COVID&intr=Nirmatrelvir%2FRitonavir%20(Paxlovid)"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "300mg nirmatrelvir / 100mg ritonavir twice daily for 5 days",
+      "effectiveness": 50,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 530,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 680
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1700,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 10,
+          "annualOtcCost": 150,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 530,
+          "annualTimeCost": 25,
+          "earlyTreatmentBenefit": 0.08,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 160,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 750,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Nirmatrelvir/Ritonavir (Paxlovid)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 7500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.2 T-score points",
+          "baseline": "Moderate to severe fatigue (e.g., PROMIS Fatigue T-score 60/100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (PROMIS Fatigue T-score)",
+          "percentageChange": -2
+        },
+        {
+          "absoluteChange": "+0.4 T-score points",
+          "baseline": "Mild-to-moderate cognitive impairment (e.g., PROMIS Cognitive Function T-score 40/100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Function (PROMIS Cognitive Function T-score)",
+          "percentageChange": 1
+        },
+        {
+          "absoluteChange": "-0.04 points",
+          "baseline": "Significant PEM (e.g., 4.0/5.0)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Exertional Malaise (PEM severity on 0-5 scale)",
+          "percentageChange": -1
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 40,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.003 units",
+          "baseline": "Reduced quality of life (e.g., EQ-5D-5L Index 0.65/1.0)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life (EQ-5D-5L Health State Index)",
+          "percentageChange": 0.5
+        },
+        {
+          "absoluteChange": "-0.3 points",
+          "baseline": "Moderate disability (e.g., WHODAS 2.0 score 30/100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Capacity (WHO Disability Assessment Schedule 2.0 (WHODAS 2.0))",
+          "percentageChange": -1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dysgeusia (altered taste)",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 12
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Days (acute prevention), weeks to months (existing Long COVID)",
+      "treatmentDuration": "5 days (acute), potentially longer if used off-label for Long COVID",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGe9DZH5gFV-BoR8i4pbdr0X7HIQLU9EfduCI_5lO2T9dewqEq2tgpd53p4CVLnzqyOZh9dq9Fh9-2Af1zMFMH8rsrIWGRdKYpgR9abIXAbuxFSq9MVbCimuNx40Q7ifsFzyVt0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGktW_NVQJ5jEKk1Y_9bjPbhQPXCebI-gPxqw799wQ0_sDSmE7qEUKFS8kTwmC0j-9eeuX3fvsvr1i4AXFucnik2A60GexYSMVPEsAjpEp9JKkLIY_D8f6C0_zjs0K-lEAB2o0xCp2NKgXHBoBV"
+        },
+        {
+          "title": "unchealthcare.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1Wj2xpkegpG_UzsIdseyRcsJY2sBunOlCc4BSvO029ujzHMTXCbiuROAd2cfOjtIMbgb3ygfP_R4StgFe60x1G4Fo4dzD1eovlAwjF4a5NPXrMWmM8aOZs1DwLH1RDXxgdr7XVUUKqUTiU_RSjl0e2x2vUFW9O4GIPkNnXumJ5BbaNsFf3d73WyppggkWZg=="
+        },
+        {
+          "title": "forbes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn0edFA4AKaqOaYnx75XATOrnnvLoQvKO47weT6NkNTZJtFT4CkFOS8-8K8laj6GH7iYO-5iHAUiFYAxbmcOuF-7friX-JnVqXp_15Cxku_GSb5vdzYIPjOBsXPJHOr2Xiie5fqgAb-6IeI9koPFtMp9ba1GOuVv0cBrvS60NqptTVQunusEr8LtZTRz-ZZweue4OD5NXG4_pzTzZfOoHRcXKRvm0YfgxX04wiYC3GyjXYne4jKLIpabxqSQ=="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9pTUp6rOt9N6ZyHPtkKFqKhnKOqIrF3AUy_llu_ZSenqp3xL9B1T7WPDiB-S8QGE0a6abDI4EGGpYXMR7tn8pCGrmHkImdSq0Hkn3jAgH43Eq7IjTwGITYKq2judZKnAFCB41anstndsFeYh87I0owOGZr4RlCWUTHbntOBV31sCycfmRQ8vZ2uWCcQAPi0dcBBufXAqeCeMZ3M29h8TzKA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH258sh7GMWg0CuCN-pI5jlQM_V9mkp4I_leF0EOs7uGCaKUoFiAKksrYqat9-o6LML1kmoDXTOEWA_qKlvsxtdOexMfO7qkNXfTjbRAObnuwtN_7AP1kAQ33A38_ySEWJK2MOH1CNuGNv9ccefffD0roQcJM9A5dYkOBYMwLnC5g9dQH3uL8_hYlUzLWmLp0Fpx4lQbrY7lPEqgnfRasUPrtJX"
+        },
+        {
+          "title": "unmc.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkf6Ysku5_vBJHSTs9lZd00ik6brsxFo4OeLtaVDhI9RgIpv2G4kf6jTmlshh7wbq_HnKyKt4NXe-A11GuAa9jtmn1VgWbcO8ZqgYc05EPEhU0I12ufoKUcFZ9X0C88lwZnnJDPAlvUG1H1e68iizZIiAy3Ts2ouk6coOI9iuK3OF_rIJnD-GUI9xnSD-uPJaL6_9guEqpKfgvOyICpiK7YTIqfkjRtOgX_AfpGOc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Metformin trials for Long COVID",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Long%20COVID&intr=Metformin"
+        }
+      ],
+      "confidenceScore": 55,
+      "dosageRange": "500mg twice daily for 10-14 days (acute), or 500-1000mg daily for Long COVID",
+      "effectiveness": 45,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 270
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 900,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Metformin",
+      "nnh": null,
+      "nnt": 18,
+      "participants": 3500,
+      "phase": [
+        "Phase 3",
+        "Phase 4 (off-label use)"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.1 points",
+          "baseline": "5.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.75 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Impairment (Brain Fog) Symptom Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.45 points",
+          "baseline": "3/4 (moderate impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-COVID-19 Functional Status (PCFS) Scale",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.5 mg/L",
+          "baseline": "5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 30,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D-5L VAS score)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-2.16 points",
+          "baseline": "12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (Pittsburgh Sleep Quality Index (PSQI) score)",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-8.4 mg/dL",
+          "baseline": "105 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Glucose",
+          "percentageChange": -8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 12
+        },
+        {
+          "name": "Abdominal discomfort",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "10-14 days (acute prevention), several months (for existing Long COVID)",
+      "trials": 2
+    }
+  ]
+}

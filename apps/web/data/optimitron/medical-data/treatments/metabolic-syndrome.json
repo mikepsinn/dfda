@@ -1,0 +1,1022 @@
+{
+  "conditionName": "Metabolic Syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:33:38.475Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk20GgxqWxBURBo2aGkVGWaHQbsCFcshkDOtoOUIMer_Y5jj1Dz576iVaAfW1No_QyCSMWOrUcWI2fSkour4kQp6zwhnvRAFVE5HG2MfylCcTRleSm16zGzwUliudvlIZa4hrci-9pBUb4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXSCrCAxojBsCra6RX5wrJdqeHlUDbMhCu9fO1Skfga8BeE1TuSWma8qyNF7LY8k1Gf4SQi4zClLopBe6zADBZTwtWknYh2Ka2Y4ZOlsTJWxQAG_jue9Rp20t2y9e71hRf30QuVgdUuj5lkdU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfwxPOlbPZKtS8kEleUpEIJmZcMmDSKFK6tDQhzMOsvmDR1dlcunqbbrujxTKTAXRxpKhc5DJHkaVXymijh3fOcDj_Y62FLnRr18ny0hJo8xmuMFGN6ZOl4tBTiq5eerQbtHCiGcPqYaGUHPA="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhiZVeZoy3ys2E2v2VTh4Ifbpox_RfA1yyYJ-F_SYbDgWk6Uhjmm9ymPcEtqw9Vf5Cu21GhEmIEd7yuq21yI4YZfl6gtdnd4TyjLtXbIPHRA4VeEaHQyno2ENUovSjghueIgGHfKS_BQlLAdG0dnYgG3lyWjB_T2Css9yACawFiPJvYtu1qzlAU_-jwa58I539zm21jyWcQdH2tb0nYuiu3vx7mT5V"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZIpiBIcNCY8sEcwZhSkcGXoWV5UmJVktdAPJuBtx9ydMxbla1bjh9tFDTJnGpn2hJMrrsQ6OoGMiCUK_jKUzfSRmX_5-DVKa28hGZVPuyclz4LbFpYIx0Ua_4c2-GLG0EVx_EJqEOWm7cj7dA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6pMM2fOX9yqGdmkjH4bbEdqtTd-yqvAJnLVRPKUiczsUO9EbwPRjA9N4aY8LrInA5M34Qkc65AeaIe83jb7_--Km7Qyp9YM_mSXjaj85jhHq5eWv1p0GRaMnS3EcT2FP-U5vm6sTDNUusR4epHd2HXDptciu06ZDnLx53wopKl1mFYaR9yC0KmUV0hhyi7V3J3wLNx4sUecRdmAZ__936fS2i6kuz7fysbEmfHtJZEbOMYbrStwPfZgSaiXq21AkSHHpT_6AaGzRB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER_LI7Upc9zqjJ34HPUfWlFD0AmbGsAwM_1j7Lc1l7J0T5h7zuI2pWKkomVbbDaiOaQ1mew2jdeS-eVNt1ZcULxSfwM5jze8CuRvayd20DqOKhxrO18X-g7Tj9_AyLaBoSDfI-"
+        },
+        {
+          "title": "ClinicalTrials.gov: Bariatric Surgery (e.g., Gastric Bypass) trials for Metabolic Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Metabolic%20Syndrome&intr=Bariatric%20Surgery%20(e.g.%2C%20Gastric%20Bypass)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Surgical procedure, followed by specialized diet and vitamin supplementation",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 800,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2143,
+        "costPerResponder": 1613,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.8,
+        "vsComparator": {
+          "comparatorName": "Intensive Medical Therapy",
+          "costDifference": 20000,
+          "dominates": false,
+          "qalysGainedDifference": 1.8
+        }
+      },
+      "name": "Bariatric Surgery (e.g., Gastric Bypass)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-40 kg",
+          "baseline": "120 kg (BMI 42 kg/m^2)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-2.7%",
+          "baseline": "8.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -31.76
+        },
+        {
+          "absoluteChange": "-20 mmHg",
+          "baseline": "145 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -13.79
+        },
+        {
+          "absoluteChange": "-150 mg/dL",
+          "baseline": "250 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-25 events/hour",
+          "baseline": "35 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Apnea-Hypopnea Index (AHI)",
+          "percentageChange": -71.43
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 93,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "35 points (scale 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 42.86
+        },
+        {
+          "absoluteChange": "-4 medications",
+          "baseline": "5 medications",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Medications for Metabolic Conditions",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-4 mg/L",
+          "baseline": "6 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -66.67
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nutrient deficiencies",
+          "percentage": 30
+        },
+        {
+          "name": "Dumping syndrome",
+          "percentage": 15
+        },
+        {
+          "name": "Surgical complications (e.g., infection, leak)",
+          "percentage": 3
+        },
+        {
+          "name": "Bowel obstruction",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate for metabolic changes, 6-12 months for maximal weight loss",
+      "treatmentDuration": "lifetime (with follow-up)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGMetWFdNZW0-6nKwZa1RNvUyzg-aaUScfPaabR53XHya1cnJ9cT4Y7ad453Hfbn-8nC7tIwyadaMPeim9pJswjtE_fc_KIDeDCm41BSNiW_-SBeWq1tX5cm9dnPAhQs7-s27mMHN_bH2dFVSAnnoPjGWrYzQW-pp0R_XU_iq2ZCQGNEcJZj4hZO27d4_nvH3g7QPlBOolo5WRPzSBcZrXG5w4QTpak7xC_ui2S5tIohskH0uMWuFlpTojHu9iu5PKGYdQ70K6cz5b53TTLaLWvl0RS-_K8f9is8qyFk9cOwKG8muqHJvSPEFgxKYAvsFjlyJvkwAcblM_5U2myumgsxfqG5smZVWU_j3KYQ2Bb5aa7tzjNVCCJhD5u655xw4vkcNxhw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFv076Z_iqCh3EkaHKKoqCBfpi8hdAfH-stccQRvBB2uXisFDDZd-xvnQCMDtwFicqqjEX6qLdwVmnU5pUeXPm2qO0fPrYQjc9-w7PA3yyaPWuBqATvatPUkwr45VBDnfrErZp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEndKNx6bnQHnKPyVXt9sJm9v7eP-jO026NQwDlv5yz71TSs_HpIOps9BoGnx_Y-Orne61qgzXzhVjAuoRCq1dvGJj-zaXvIfX_1Ped7YRNlKixN4mB7JZGe_wv1B69G91LIxJdep9BDnQsWhM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcb_Jvs37ogwWtRffEzufWE1IOqPFYBbqB007UifsvcSzWhGZL4IE1c5gabWV6oQPa5n3dRqIpTuMXFrBfx4iEaOdx3guxruQegqV5uMr1OMGxp8rz2y88Aa2Rx_AhUDcjlrKoF9PJUTbfgRf5-Y3Txhq5CI6D37dpqcdUe6IkUhF5qdYf6EuZvbKaEDqaSsWXnXC-JgCvAGuDJrTDxsJTEuTXrWQCk_YVpIs66TMuFoP_NpiYJvUVgywmUCIo6I3pOjLBJuyxKYBybiI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnkui5T-e88PVqD_qeb9BjY5G6_SiLA0YSz1eQWY5-yiuL7VVhqRCUlO4FkFy23gGnF_utCC8JI8wN3zJrbI6kE7SRyLyosFLgaUDALpCI4PCb91bZyZY3DDGUhfOuhzxDFChz"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWDsTu5cOXpvN8VXNSKCcoAXLzTOoxaLGlg_SMFE3ord0yanDwjbnLvGCD2GG7Gu5yv4x8Q2zhouBjmVUfNgaZ2XqTnVJdGSFECxaZrSXGGNhLLarB7JAGJMPLEpH1Hk95YQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeRRv5UFDtTCWb5LQW1zJQY3As-2lvEsCbYiYXY5VCE8XRF5gJv7YUlkCdbMy_TCtA3wvn2yQdyy88RAsu3kVaA24-lCN3s3lZLjHHlxfouZWUYE8IfRh5iK1t6gff4Hc3td0FnTm0qiayZ7s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHRvch3Kxarers0u0kGA71VJIuLJiDpB1Gh6Np_tEd-AvnpLEFA2KXMl5-WvR2D7WHlJCgtJD5H93RWH3NLko-nE-bz_HY0mj7py0s7_ccUruAdsNZXlneHJwI4jMGnhXN7NkClM-2SolAnwE="
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlBNJzmpAgwhmm7VUeIY7N67LTOkLGutoc6a0mYkx7yM1jZflnd-Eglvwq5BawgA4aJYg58OvcnjV_El4lXn2PwMRIsM6eTtwas0giIIS06VCPe9g7ZqD15D2Y5YvylcDwhZ8OI0aruKV0gDG7hW_mcCwGIcDCc3irkHbNJqImEr6J"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiroglIKup1fPJgvAxjaWGO4ycjlId9Ue7_7YN0J_bNZLlmF_sx2Q9C7wS765q7XGn0s6zpJgJAND5bbgfAFI8l-9k_QPKjgXWeihxS2xMXOOgNxJJryAbQTYXlC4x46WRg1DoXwjFE1-R"
+        },
+        {
+          "title": "jkan.or.kr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj5twumBoDQaMRbj1XYAuIyyBpMZ-j_IougUaaKpD0IU93-SiwrYSlQRjGd-_AM1T6wZLBqcS8YgOaTDNvZTL71pSMsGQBq7_x7eIiAdVXYRQ3ydd7M6Xk27aPojOIMQAAyjJnHjaNjl_dMTUxOs1R11IDI13H6AEsQ-Vh0RTmgpI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAzcjWm-Nvmc2ykYH2qjhFKwd2EDFX4aWML8PoTbn2lK2QkJ2OUSyhSaiBYNnh-NKG_CAHmnFnKLv0SNjAndftAw_pNRjybABHKNHnlqSRYsOTpo8p3k5r6ZcDVo9yoY2H3d8FZyBcmKPYpPM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Therapeutic Lifestyle Changes (Diet and Exercise) trials for Metabolic Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Metabolic%20Syndrome&intr=Therapeutic%20Lifestyle%20Changes%20(Diet%20and%20Exercise)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "150-300 minutes moderate-intensity exercise weekly, balanced hypocaloric diet",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 500,
+        "costPerResponder": 333,
+        "icer": -5000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": null
+      },
+      "name": "Therapeutic Lifestyle Changes (Diet and Exercise)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8.4 cm",
+          "baseline": "105 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Waist Circumference",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-50 mg/dL",
+          "baseline": "200 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+3.8 mg/dL",
+          "baseline": "38 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HDL Cholesterol",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-11.5 mg/dL",
+          "baseline": "115 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Blood Glucose",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-10/5 mmHg",
+          "baseline": "140/90 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood Pressure",
+          "percentageChange": -7
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 75,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 kg",
+          "baseline": "100 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-0.4%",
+          "baseline": "6.2%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -6.5
+        },
+        {
+          "absoluteChange": "+3.75 mL/kg/min",
+          "baseline": "25 mL/kg/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "VO2 max",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "40 points (SF-36 PCS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle soreness (exercise)",
+          "percentage": 30
+        },
+        {
+          "name": "Fatigue (initial phase)",
+          "percentage": 20
+        },
+        {
+          "name": "Hunger/cravings (diet)",
+          "percentage": 40
+        }
+      ],
+      "timeToEffect": "3-6 months for significant changes",
+      "treatmentDuration": "lifetime",
+      "trials": 38
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDcPKSJkwxhgI5EudYtG76d44veEJPJbfrvMto2htgtWun1wmRJHafnzsTCVw8OB1zef0UErg0CUHecnbuJbCNehe8vZKtYT4oICsv-6ejxW6Wa92dK0G2L95vVSmsJDTrZTUvMr7Kk7jiQOw="
+        },
+        {
+          "title": "eurekalert.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5LYgkJYx-kAFXxBXVEgny0Bq6C9cKNlAvf1jAujzoxlj0vNYvxU4umd6wXGb3fGSjA2-Q5OyNNqMLlB-N55INRV8X7iUAav17C3dSy0p34CPycZe-NO12bt5MXhYvRD0vzWqLFsbH0axr6A=="
+        },
+        {
+          "title": "cmegeriatricmed.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL_sv9Utjk6udXgA96YZtPrAoEdY29mJD12JDQGkvzU1YQOS7sVBlCM7c5-pv-EfZjFOwC37IS-dfGuWhpAp7lrLDlLjI2VCVj5k2hgl4pHn5uojCfB4Vj1qNVmrW-l7LPphvEIvi3wBoT-_b3fP8FQMbT_vGVG3ItLaO-RmU_-sW2EfdZmr_BI9diRM8A27C19da39yOtf3Z1kT74iWFkD4E6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvHOq20ZeEKOxxYB54fQghnY8e-qikDkSAzyLz1nHgcTeO6Xb4P_0gaD4KgyTFDI5bsh3B3-XZZQ0Ym4E3aJRLcCTqVczNUHYBrPj4Awx4sWAagenl2w2DIDobj103lrXjasrP"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIb7_x28Qwld2WxFG4kgSiU9-IUfop03SQDpdqPDhx-yYxSBuUfqyVc38TqPj3jFrPLVJ0teSbPqwmPnhCnRtYA_C04RrlplK1gQ0NOaeQGLyaM0gKrJMXq3YQePnwbGET3BfA6ikgZJr8NjKopxHAGQu-f9Cs6rerLIP1eCneqx5IwAIcO0PqF8vqfkkfWTLqC0eM6nMJYcvrDEvlEKez-g0PxKfY1ubvkyMJLz68BM5xe81eMNLJeM_OyTzwaKucJzjeWa6PVyMG3c20s0adhF3oqPeKpy9Hh7jZMTj6BrW5bDoRKv1SNGUG5KqtatwqSgHqvhLBxcYVJrFjLAv0NQRhBPOpH2f3pK1mUljfS2IGhlNkoy0ldl22knjN5FtRzMXP7YLSTNcaykDExaqXvSDR9FqXnQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgBPygOMKLInp_l9tCIAF9pi3diCjStie6UlwK_YYZadwc8iqOUUuS42ysSbiUMQIbvTnkdQ2BRjNjsT8O6UAA--EkvIauwTnMPcNPAQYGzOsB1RFwTKoII-3iJDo9-zWFaw4zKTeER0jhURqX"
+        },
+        {
+          "title": "explorationpub.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlW7jdOBDs7_5dQXo9-8lFhZB3lnQJG8SVj2eAZvSQCBcY0JywIGCoxpsH0OcUFI1SvTCo7vSjZ7wAv974GBSlSiLORnfx1s_HgiPDPkBqLx8JPmp5GZe-Mhb5CBky_3CixZoTiAKoDgsKrWnNXK8dHLwLCQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcCZ1-7oF9e2Le4QO3Y7MOMbtXBTVP40DJYhintCd-ur36ObixfKttAO5InCsVGNECqKps7-aBbPHP19ObzmxNN9NppFxIx9EzNduMeEM4ODIbpG6c_JYNlw7hmx-Sx-BawJZziTWRyZpC20ojz4Em54PnlL0rUHs6PobXErKTPRi3Tz5x1GvMY1MZmp0GT-O6l7iX1UVPiiy0jqehRC_jRYrYy6brp_52Wqfwh8CpC1HZCdW3LSOarZ41iRex4mscDo8uHgylqseoqC04W7dq0TS3RXQ7vqWv5tWy8EJehXIJ4EC0tDDL"
+        },
+        {
+          "title": "ClinicalTrials.gov: Semaglutide trials for Metabolic Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Metabolic%20Syndrome&intr=Semaglutide"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "0.25mg-2.4mg weekly subcutaneous injection",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 13500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 150,
+          "totalAnnual": 13950
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 34875,
+        "costPerResponder": 16412,
+        "icer": 150000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.1,
+        "vsComparator": {
+          "comparatorName": "Metformin",
+          "costDifference": 13450,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Semaglutide",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15.75 kg",
+          "baseline": "105 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.0 percentage point",
+          "baseline": "8.1%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glycated Hemoglobin (HbA1c)",
+          "percentageChange": -12.3
+        },
+        {
+          "absoluteChange": "-10 mmHg",
+          "baseline": "135 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -7.4
+        },
+        {
+          "absoluteChange": "-33 mg/dL",
+          "baseline": "220 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-28 mg/dL",
+          "baseline": "140 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-11 cm",
+          "baseline": "110 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Waist Circumference",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+2 mg/dL",
+          "baseline": "40 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HDL Cholesterol",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-18 U/L",
+          "baseline": "60 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.1 mg/L",
+          "baseline": "4.5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "High-sensitivity C-reactive protein (hsCRP)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 45
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea/Constipation",
+          "percentage": 25
+        },
+        {
+          "name": "Pancreatitis (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "4-8 weeks for initial effects, 6-12 months for maximal weight loss",
+      "treatmentDuration": "lifetime",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvP-3cx-ocZ5jz45FpHCiuXurSUzTa5niEh7TXHYPmSND0YseXk7ejFG842Pgj7CbV78QAIp8z0QiMbPG_xF9fpAT4KgW9ofwyH68ubqH89PIgIJy6Z5rHSKGrlQqGOO_fUewEk83ll1wA5bv0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu7tHaCz3pXFvzb9W2f6jwZQ_lhGyfTBUIot70Z33GYQX7U1QrE2-MC_HcGdapl9lSlA6L-2tSbHnbDwwz38cZane4uAK7NqpYxssZA_zO_5zRyNXFCQAn-khm4NL0c9VKZm6C8GCPWJSCmcA="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFevofaKJjTQMYv6QEZRMfGGddpD0L7YwFV7EJ3V-744w3UWjJfm7qbhep8_fEJfPy8fHtN7-bd9NkKOkJiFF8VKZpneR2T3ilSomHCbT3VhAd9WMTf8BDdZBPDzBfTDPj0Vw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfYuCbu5cVqJQAHOp2ZRTDRgXE03yFxaMdeYnwJYG3vWoBfg6D3Evf13p44N6ZpNYe6p2mKO1mYKwp2my36iG9hP2svSUGqDRjH1DFBtacTkuZVUuE62gyh4EBe6h8LK-e8zb_"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd_fytubuLu4dtX-TKTwIfWP9ZnsO-Uc8ZAmB5FOuObXvq8EUoExui1MV8yEKNN8bRL-KY9sm0Bv_ET6xkEmS8bisBS171-DH7Utinh60nx7OaA10Tk3WZLYGNTE8dRrA_39uCGS_4n4QcgfWcWlJIpw06gb245bSEHGjIAli95-rSGglGs_miVb5NkkLv0Et4lib6tn3zix302rNoglw_PTDxNhPRlHgCSjAdUMB1fXafS1FFgheff10lB_lwbmFZg7fyYWe6OV6dJUqpyy7C841tRuBVxX4ibeI5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHziCJG7RqliJVwJX10yRb-PBBd_P6vUr0T2nAtwJIu1B4H06LEAKinbyJ5kKoVa6rOoVv6PxcuGJmazseq9m2kKVibESFzXkNYdgxbh_zzW8VUuhnXhRNFIl1UqdBezscrkYTmiD3eqw24g5V-21VVyodqLmW8BSEkGd75Y3dZggx-wYGc3T61usDIqt-o8pdgFNyD_tU2hrHksPGsR1bSxKFFRK6-SJfIz7LJBUbHZPAtYXaUnEJ-zFrm-dcgH_gpXvU_QJdsSNkHyG7pNcHRd4jvcQEQ3T4VHQrbFvdDpQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv3DRM3lRMY8MUYQN-GJFSfHENav8QHFEP1INqksXU3T2tnSjGF1TXMIbkyMpPftzW3eDuEE0lgHYI6YOnwgOjwWL5p1StVOy39cioUhEJu_HexhltM1WT3jrcOtBwdVlFC_nwkO5nl8MRPRjN9fo_SopwdD320089N32ERc4NtBf2bxDk6Ccu5q21CAcmbjK0WqKZBXlmrjOTvaWgZYKPePx7xYusABK-N5cTAqRHgVoitSh_LtYo2jFoZ7OhKuIk_3lTdf_9-zwdLtlGHsgSY6mIwRTN-u5tkAkpHiJZr11XYJgCSEq0vomlVTOYC20fWw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKZuOPJiV98XMr90tCp-SZ3wLGJVpNNEw8aL48mM5RUFsPGEVwjvEaZN5sbB6NG7DD6hyIR15jzok5MJ1UNsE_Lzj7ZDDWJ7h6xzfKVjCv3Fysq4_XOJUVN8-0fITgnfOY3PA4"
+        },
+        {
+          "title": "mcgill.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPSMBGLanoj3Iu510KvXS-aD2nyaK1MXGVQcGodTeLphFsue8sguH_iQM552q3NH3Ww1qi4mK0M5s_G-9RwFRTX1Kibu0vKUtYDsQZLNDhZSuZLL8RQanKGxy_Cfxa9oPwM0jB5IaeFZvUT1-O"
+        },
+        {
+          "title": "ClinicalTrials.gov: Metformin trials for Metabolic Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Metabolic%20Syndrome&intr=Metformin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500-2000mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 300,
+          "sideEffectManagement": 75,
+          "totalAnnual": 425
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1700,
+        "costPerResponder": 567,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Metformin",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 400000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-17 mg/dL",
+          "baseline": "115 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-0.4 percentage points",
+          "baseline": "6.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -6.7
+        },
+        {
+          "absoluteChange": "-0.9 units",
+          "baseline": "3.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insulin Resistance (HOMA-IR)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-22 mg/dL",
+          "baseline": "180 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -12
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.7 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -3
+        },
+        {
+          "absoluteChange": "-3 cm",
+          "baseline": "100 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Waist Circumference",
+          "percentageChange": -3
+        },
+        {
+          "absoluteChange": "-5 mmHg",
+          "baseline": "135 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset (nausea, diarrhea)",
+          "percentage": 25
+        },
+        {
+          "name": "Vitamin B12 deficiency (long-term)",
+          "percentage": 7
+        },
+        {
+          "name": "Lactic acidosis (rare)",
+          "percentage": 0.01
+        }
+      ],
+      "timeToEffect": "2-4 weeks for glucose lowering",
+      "treatmentDuration": "lifetime",
+      "trials": 173
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9P5i7d0NWHB-Hl87LX_S55OqEdFHGI18xoBHEZLiPLf7yLfR90cdURPqrS5-BhbRZHV8dQkcbCS5ba1XpNqQRT9Uh0tZhpAVurkX2Pg69LMLL3Vcwoymy5UiIIyCqCCV5Eh0VdEPiNZ32mq4="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5iQxt25jy7a19KDwSu3zMdMGWrhWsBWb9BXzcr3hl0XgJfUlfautNIvGf1WLBGkY8CzP_BBOz0jR_JXKEiMeo3kjL2gMMH4MzTVr7ucNQuxEcyXCXmQshue5Yco_y2z-HE1Jp6NGcTr7I-bKnNJ-34ctMd89iuA=="
+        },
+        {
+          "title": "biomedpharmajournal.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXB9Y0PxYxP0whH_30ToxtuIwJVBaIf8ilyDnd5HvfCBz_QWtauhtb60iy9nImVCN8xTF63tj3eQzOxk8fsr7GWx8gX8Ak7vOoeXNM4UfRmB9rhJz5T10PvCn93gQZHefXJynuRuTXgo50Cvb6dBeWChJGhEKzYzhksk6wI5pfI2zWzR8O6nKTaz-M44LmQ-xYZdz6gWuoKIW9Gj4xWESDftUj5_uN5AJ8SIdvHpERDXsucpmzr0BQ6IqW90WO0sj25ZLcXtDbxlaFXDtNqwHBx_vVoH9gB_jT6mgPIPSxRhMuPYpx6hMqbOA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcl4kaccBBFP5stSfQeDz55-vkGRo6L2iJvMC1HG2CJukervNUw6IGe4ESLLQ_CvWekrXiT8WKt1tBH3j21UfgrfsTRpU2tQbafQgLQtabOyTbi1G1KiaK9kPiBX-TAfzaU60k"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwuLmzGGIPgTaMCO31Iv0CSPgy6mjq9ITfnT6zxu1jtpVBkr-JTaD-qcb3583aHb7i7iisaqZCJdOiAZwuC3Oup1D7zj7LCmhyUot2FqKJjGYHk37Gw5Rp14Cqdqpubt6bA7AQ8bw-Z8D6FsC2SE3znL3rYnHeIluPDwZxrtLYL0QmyYSBDFk8KbvdeAqLJFM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-in7I4_twDuUVH81kEuaCDpXMjl_uOuQjX8QUX_GYTNVahe_pj0oT06tPmONN9TFFPltubUb92TPS7zTRXL_FAxML5V_3rMwuS43JETQxTC4FB9BP1rAwUo8tpBAQ9bhAd2eV7lyFUiEOVUpV"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0tpwICku7gGVXRZkTJ0IhmRr4oTEwQwO8ItA4tylzjdMai6UZmUHwChJbzG7BqRH8iVo--p3iTS7AZPtLoSIoWCtYEnIV5Yc1iRW_3cjsW2FBFxgAqEwZZvRnxalMXrVdUp9nzyx6cOEiq3JcgLLnFFgtC_U="
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5KAXNC6N65AvPcvKsyGb9v8CZnKds7lEUVnYsyh4tPH8U0upZXmV2f0GuemAqiajaJZEQ7LO2yAogtv79snf2OEbQebHH9Rt76bxvgyPPG7PqFVkmf2rHjFMDRNqNkWBtLlJEldUul6Ibqb8hwQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJ5BjxS84cCPyeZ2qXnQ5tKe5g6yFk4ET8ZziVEfWkPW9MaxRWVhk-vcQHcI7rAiefOzm3QnpaJGSAZXI_KNRrps1kN6Sre121l8lEwcQChWcLvhFb-xBCAX9Xz_UyBVWFJxE-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXl8EexI7WWR6dQNys7QIPsYMvIJraCN2dczUJd4Jxr2_AM_KeAH947R5WKO_imw9UE3JuDryrH4Ims5rzm6N9BPlv6wrbpUWT0TLc8_f66Tk7HaUxdxMvRjODgcWgAcqcb4Ll"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVU7elK_jGwkDtWuhqcbu3KgSaul0Xuua6_-z_bW8Iz-vsy2Xg_huiZNO9jzbs3CSJ9dh11mlFr4vypwXg0kD72kJtQYJJjV_J1M7_sQPu6sLbb2iO3RRoR2UcGbLT_OAr3LK_HIBBodW0DwQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyW_ttDebquowR0HeDGJzdL3Kp-dFNxYq32ekudK90dzEolMmVm4PqxFWDx-9tv9rkp0h2-1XR7woDUaJjhE8ma1um-_Cu319w1AdCgG9pxTnVZUgMTzLtKfZZPq-4dyc07teVVwrbeT_35Q4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Atorvastatin trials for Metabolic Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Metabolic%20Syndrome&intr=Atorvastatin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10-80mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 200,
+          "sideEffectManagement": 75,
+          "totalAnnual": 325
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 382,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Atorvastatin",
+      "nnh": null,
+      "nnt": 35,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-64 mg/dL",
+          "baseline": "160 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "LDL Cholesterol",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-50 mg/dL",
+          "baseline": "200 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-66.5 mg/dL",
+          "baseline": "190 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-HDL Cholesterol",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2.8 mg/dL",
+          "baseline": "40 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HDL Cholesterol",
+          "percentageChange": 7
+        },
+        {
+          "absoluteChange": "-0.7 mg/L",
+          "baseline": "3.5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "hs-CRP",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-45.6 mg/dL",
+          "baseline": "120 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Apolipoprotein B",
+          "percentageChange": -38
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle pain (myalgia)",
+          "percentage": 7
+        },
+        {
+          "name": "Liver enzyme elevation",
+          "percentage": 2
+        },
+        {
+          "name": "New-onset diabetes",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-4 weeks for lipid lowering",
+      "treatmentDuration": "lifetime",
+      "trials": 37
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLceC_3iTrnTNicyoMukzWsKVOe57kHq1Sk0IB-C2sHhMl1yJOLd56ZTUtD1ANufxBSVEgtjO_yBUdaqBo98kKW9sJWj6Dw7W22vBh-HfLzmgDaZx24PeXn5T1CpyFYoBTys-1wfZ7uKY-cQ=="
+        },
+        {
+          "title": "jcrpe.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrh9QPS8A0yqXx2aI9cgsonL4Jolmb1AUGnRvtIKRDIz2eYTKv9dFn6SGRl9vJBWXBkLiiqUacuTWY4SptAKpEtYMX7e2VFCsv9xQHmTab787KlNJLA9MRm7GwASZoV2xJu6VTZjKoZQs2X81G1b5OAaugJR4wQUHm-Lv0IHJwHA7VA6xkZqhfuIKrXYZrFRtDxwZf4-gGtkBPjY74OomnApLMeZ6ZP8py27BNpziTPcImQYeuZpNvAqq2qpNQnVrh5ztWc3E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMIrCLVHZWapulXQQ-fOtnWha4L5h4Bf9tsLhIa21rE4V77eYZDD0PJ0yec8JNu1Ee7mEtN1rJRQ4YVjIXDheCmGsYR-J29-ML4kY5ePryYS18rd3xTxj8u0a4Cc1-I0iP9VA="
+        },
+        {
+          "title": "gpnotebook.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-nhNtvW5zfH0PI0nsPZAimsqm_fIiveulEyHuVjnFOfizdgOwnuKvbLRqvhpXCh5UnjchoNDAUh3i2UHQSIVdbuWnD5MAtAh0eUiuGvDOSNwg0fg1GPl3v4cN1JtPfBQk2PCcNFP0bl8XI14t6xBOSBU6U-hbb7Q-gtptgaoxfyrerJOoH10DILOTm1roskVoKL0qM2uXx6qoLAjpWi5JB3FwqCCUMmtf8DwcNZ5L97OeXTQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAUBzh3pI1lOIu5r9OK5z-wY6IDvdy6Mo3lqjNn_7o4n2YBNcUlUtnlUq9VsAvQpfqs4rbmGzBd8XiySGMNbEHgyZD_Pn5Bj69jsmdmZNulO_AhmKj5XDTn-FoZROvV_eAawk="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLaNVa0M5pAmIgBoTvaKy6Mpd8QvGTYgNCIf-xMnuUF2hBE2oBwvgf7z8rAP86aD2KeqjeU4mNAyPHMIX9-1WSHe8gXQs9x9TUuM8jRmjp3zIpu8Zka5FZmWO8_bdtmE45-WBZlidcY66REOiK00jNIlwJ7QAFkGfWP6h7cBtAFrMwFQC6bPZpQBrGTC7PciRRRCtbxlsIovpSM_vMuchqkw=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh5eL8v0CHHeuo3TIeAxwqlfFNKqxZvtnYr4dWiFZpFrLBOC-jWBTkTLhV3nDes6s6t8orw-FAxLiNUR2eL8QV2EbX4Up_j2_4Ataxnt9kqN3O9Ba0QbGMv49J4I401kJCe999NY4DffFHOSLqCp1wkg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1YaCq5ljkpAXvMn7xBLzrBofC0jLVECNtyOImG61xvVPemuR-3BT03D2EZILoYCaqLvyT-TX-1Tf4mWZeRiKmJtU2iVOz0zjVcXIbqqOGtEW9NOu78SMYGwg_Sb-OcYQKnEeRciXCZG6Imw=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE38APClylOzvOSllBn0KIOFNqMbQTYbNAyrPeAK6dM3eiHzZyb6noKB9qXJZPGC-WOhH3TdJRtIWewSyCAk92pD0_3d9fwLK97V_kXyxe9eT2OTjCSsu2oE4S20By4CjOtcgncMw=="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0fSc63GXLeopsNsNxR0wM09mepF8V5WfhKzs1IobqrkxULnlfgYz_vBNuIEGHXtsX3v4PRAQpb3c4xIv9grdFWexNJs8JtgziVG5dnbTgkJg7dNBg471VoN9S_w35l0iTwDbiIV1_rTsxBww9cfoEew=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDRwJ6Nka1iM2GZTRsAe1eMVTyJqK68zrFyiKvwgLRKtdMggAgYXShTg-lNNNWvanEev0J4Hfprui11U0JMtSxJsgX-6sUpcogKl25k_IoU4GqZdRi6Zbo6enjapsVJjmYjtWcCdydNgPvXPfxcy8hANLiPhL2iLc7ZTU68w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiL7z2BTo8-IBxWKyEZ6nmtStq0FtSW1S8bcxbNixpZeffq7z1NTEuP6pJiUadzoGoilUgRGoQIDQT9BdxYu7N6jTdDrOY_a8A1kpMwH1P707MTmxuAqnpy9dbrB9bi1bRTQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr7xq7Ndg9IfCWD8mp7VAeKQdGUcS7UG2LNH7eQgXjBxOw4XQv2qqQ6dknD1-Rq1wz55PIFcB9l-aPGSf-ZIjEGXXkR8R-fDslF5vptX13Pf-42lXU2j0EHvHiqplkLFmw3w=="
+        },
+        {
+          "title": "ijbcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqwWXT0VmCDxJNYkWc6rXfTj5KXS-wTOzgFrhKuJuhQGUJ6py_KBvpGN5pojdFS5QKVqPMOkPXW1T5PuhIVo5SeN1QNHca374xOuMT14_63KiYHEo7NXYaf06WcOdVrbX2F5bBzIDFUtZFEg5kr5pxVw=="
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0xj864TfH4Mi8fERouOEL3mM9kPlwgxBEz9LOqER6SQfhr8nCQdsD0yXb9L7Vj6U7iIiuiniMJ2CcrU1r21UikMHRLvDDmTThLe3tr705ybTvJaf3BKdQTzknqqQt8ho18g4iVL9zcWsEUZoUN1WQRG0j5tFoCXYX3oiaaNCgKD7koKSlnHSnykf0dCWvOJN5I8tG9nJWWrcbOdsHaWwcQQs3pS6xhcMuK94lKDH_cx8OOdVK7LOqU9tzmg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw-b8Ormz-BsfisN5iHlOqd0boGB04orpsRbhusEbi2aWeBAzi7v-OBL1f9L-PVPmEllgDNFEe8VbknVTNgJA9cfA5-aoaLYFwmJqRNESGjsPpIguBJYrLiFPZvO5CIvz0d7U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsRxAnU1WkgRp0kUT4k0gA-4riTSkB3b4n9I5ke4eKqh--KUx5qC_EiyOfsDxuV4d5f1OxbDD0nJjyUa9-ezbATCJX_zUTGoP5YIhpMk1rES1BRXAOhrEWfrbuUTUk8BhuKwSv3QlC"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDoXCPbzbu2XyWcZS9D_y_Gb5OQAdfnHtRpSOXed6bMQ_evqdPROr0C8iCbJf8xVVNcFPeIaKVVdgV9EbEWXZ-e-bd3JNDY8QqMc9AsPIUUQ-Ru-zZbdAcO8srmD3va7lAvmF_vaIN4B-y8vlFBLQrwlrv6al7dDpX0vUhL7tKERVXLzz5ilcQdb5MY6I="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lisinopril trials for Metabolic Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Metabolic%20Syndrome&intr=Lisinopril"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5-40mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 200,
+          "sideEffectManagement": 75,
+          "totalAnnual": 325
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 433,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Lisinopril",
+      "nnh": null,
+      "nnt": 15,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Cough",
+          "percentage": 8
+        },
+        {
+          "name": "Dizziness/lightheadedness",
+          "percentage": 7
+        },
+        {
+          "name": "Angioedema (rare)",
+          "percentage": 0.1
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 weeks for full blood pressure effect",
+      "treatmentDuration": "lifetime",
+      "trials": 1000
+    }
+  ]
+}

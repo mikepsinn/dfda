@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "sourceUrl": "https://clinicaltrials.gov/api/v2/studies/NCT01097616",
+  "retrievedAt": "2026-09-27T17:44:33.438Z",
+  "sourceSha256": "d757363ab08a0d7385d5ebd68adfa936e6f6df91be4fa92dffb80d7096223ccc",
+  "source": {
+    "nctId": "NCT01097616",
+    "studyTitle": "Safety and Efficacy Study of Suvorexant in Participants With Primary Insomnia - Study A (MK-4305-028)",
+    "lastUpdatePosted": "2018-09-21",
+    "design": {
+      "studyType": "INTERVENTIONAL",
+      "phases": [
+        "PHASE3"
+      ],
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "primaryPurpose": "TREATMENT",
+        "maskingInfo": {
+          "masking": "DOUBLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR"
+          ]
+        }
+      },
+      "enrollmentInfo": {
+        "count": 1023,
+        "type": "ACTUAL"
+      }
+    },
+    "outcome": {
+      "title": "Suvorexant LD Versus Placebo: Change From Baseline in sTSTm at Month 3",
+      "type": "SECONDARY",
+      "description": "sTSTm is the average over a defined day range of the participant's report of the total amount of time spent asleep before waking for the day, as recorded in a daily e-diary. Averages were derived by taking the mean of all available daily measurements (excluding the mornings following any PSG nights) falling within the day range; Month 3 range is Days 76-90 (Day 1 is day of first double-blind dose). A participant must have at least 3 days of data during the defined day range to calculate an average for the day range; otherwise, the mean value was considered missing for that day range. The baseline value is the mean of the last 7 daily measurements obtained during the placebo Run-in period.",
+      "populationDescription": "Randomized participants with ≥1 post-randomization e-diary observation after ≥1 dose of study drug, and baseline data were included in this analysis. Only suvorexant LD-placebo comparison included, as suvorexant HD-placebo comparison is included in Primary hypothesis.",
+      "reportingStatus": "POSTED",
+      "paramType": "LEAST_SQUARES_MEAN",
+      "dispersionType": "95% Confidence Interval",
+      "unitOfMeasure": "minutes",
+      "timeFrame": "Baseline and Month 3",
+      "groups": [
+        {
+          "id": "OG000",
+          "title": "Suvorexant LD",
+          "description": "After a 2-week single-blind placebo Run-in, participants received suvorexant LD (20 mg for participants aged 18 to \\<65 years; and 15 mg for participants aged ≥65 years) daily before bedtime during the 3-month DB TRT Phase."
+        },
+        {
+          "id": "OG001",
+          "title": "Placebo",
+          "description": "After a 2-week single-blind placebo Run-in, participants received placebo to suvorexant daily before bedtime during the 3-month DB TRT Phase."
+        }
+      ],
+      "denoms": [
+        {
+          "units": "Participants",
+          "counts": [
+            {
+              "groupId": "OG000",
+              "value": "228"
+            },
+            {
+              "groupId": "OG001",
+              "value": "339"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "categories": [
+            {
+              "measurements": [
+                {
+                  "groupId": "OG000",
+                  "value": "51.2",
+                  "lowerLimit": "44.4",
+                  "upperLimit": "58.1"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "40.6",
+                  "lowerLimit": "35.0",
+                  "upperLimit": "46.1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "analyses": [
+        {
+          "groupIds": [
+            "OG000",
+            "OG001"
+          ],
+          "groupDescription": "Sleep maintenance (sTSTm, WASO) and sleep onset (sTSOm, LPS) endpoints were tested at two-sided 2.5% significance level. Both Month 1 endpoints for sleep maintenance must be significant to test Month 3 endpoints. A sleep maintenance LD endpoint was tested if ≥1 HD Month 3 endpoint for sleep maintenance and corresponding HD endpoint were significant. The same approach was used for sleep onset endpoints.",
+          "nonInferiorityType": "SUPERIORITY_OR_OTHER",
+          "pValue": "0.01711",
+          "statisticalMethod": "Longitudinal Data Analysis",
+          "statisticalComment": "Model terms: baseline value, age group, region, gender, treatment, time, and time by treatment interaction.",
+          "paramType": "Difference in Least Squares Means",
+          "paramValue": "10.7",
+          "ciPctValue": "95",
+          "ciNumSides": "TWO_SIDED",
+          "ciLowerLimit": "1.9",
+          "ciUpperLimit": "19.5"
+        }
+      ]
+    }
+  }
+}

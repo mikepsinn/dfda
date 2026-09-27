@@ -1,0 +1,641 @@
+{
+  "conditionName": "Chronic kidney disease due to hypertension",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:26:49.349Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPLZRayx34bTjpz2Axt3PtxEqu-irSOlQ_bb1e_zSJfqyOIfINjAF7j53qb65GHJkcPRsq5Y7DfUXQobHaRkSQZJD2iFffppEKwkKGO8Ok-h-L1Nc66jRuPkC8qC1goNatee1XnNuSh_wBwTl1Wv8y8yDCTWSLh1pDrUfVXJqzsF1wlKbtHL9Fvi_lgRttHOJPXWuZhv43d3LO_0awbXq-_fjqo13ippW-t0Z_sYkOSi_nlDXfbvp3kB8IpuxiwfZqp62lBvDRGsFtKBkNGf7tEcrXblp-E0ad3lQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR-mIN7rZFhRaVYowmvmQUbA9OE1vXrdzzN0mjHLV5xxKEzEMGCsHlSKdWRE28_ccbHQOCUnE_gGrZQeUgk473llvh0EO4b1nXwGQfCsf81XoQRujwhWH74pyKp6kl-Z6BG1Y="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjIarSAcv-V6dlCRySqpsQxLgRNNiEbW5UlKVawGJRs7KZedBlBBe7MP4sNZzba9hbhpFpNgWozbn7sHxPAcVCSJfwRg9y4rXZANPpNS8AHEKdmDx0UKpv0T9j1FK3iOOmGLTkD35GVqfzyW7X8FaKoQvi1wxrA5cfWFrkewvKSOJ3IRGHug=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkdBY_hvm6dwPkVlow9lRx8f-CGaDBxXPsps58AEisFS3IHypO5u9CqI6EVQswE8Ch9b6oCRdV9IMykG7QFxQX7XGSgSBbXjsDkeb1w932ghsoyBHjuKySTmqItIKDosxlsAQAYFeZE9HT0iFObkxsmBAZzOMLN-vPJ2D0FeOY"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_qrSgBle_JKAc9bTmcDz9Wt9H3y3RNdwyMWZyjSPWM3Y0R5IIge5JxDSNEuIn8pm6P3x66pTcv3tKu0q2CUbfFkEgrjf8QDn0cZm6qpcOtT7bUJwI333kqbwkM1l8CiAoAeTikQ=="
+        },
+        {
+          "title": "regionh.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCeMUVWYLzY7oU7m6Ot2O-NIuLfon7sNANbxBxoMFJpl31RusGi2JiFwQiaipEZ1ScAD2DB7ne6QcnE9rdfP8WXzPyQTmXGq4J7exM5fdXJLeK9d4UEFDxZnbHNTjVOEofSrngNRPQpgSOT7fm2hg_eNuRP8RWwtCAC-J9xNiwJkXyfhQuVhLX2-j94hVR0tn-OTaMrNqpoTMcFqBtuDwXcRDqBnWiz5M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqbQ5c2DVnX4HncRs9cVWkHcFuX2zj8TZXFlMdvhiAvzBJFaLyTOw0ASm82aZfCBMw0gyHA6pIfVKPX1sceZKilxLWWwmBW-2TZzxCliN_ewklbs0ryWdDhFsUjfxid1Hi32Q="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH64Xtg6pF0zYZ2RAKV9G83gyfcEt9BWet__42KZXsxmF0Febr3P_3TL0yS4XWU52vPer9-VZxoJXd6dVsvk250dkfwNfVBbictONMcESc6AByfFRbVfcgFp4r-izxBMxmH9bI3Q4ZeBui6IjW-N5rHNA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVlkyMnQeWc5-sCSVXLkqGCKK297ukl7JHvLvbpD4HJ_JS49YwBplnzMqo56fWDOV9bBIR6VXyPIZiPW0aScaGNDQH-lfhT7BfOn_vzk1ZImmXsdwH2B9_bSB2tzTaa7pdtc4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW3MPLnVFpUq5sVYGWp4H-JkdIm0pVTsVmTqFpNPNsbBULDj6BuMQt4fF_wq2BF8VCobHBynM8J7S5TPc3wojR8e_zyvy2ACKM-voAdqPTeveeNxV2SOUgmBqGAMcoGYV3fQvzpI9XHnZVvZi9bXK7QIj-ZsTIdYwk2EZTtcB69IyoY3CwEJFea0gczTo5_qgIzCopqS6LNESjt0zevMI_0hGwQ1ZkSfQzIDQw-377_92cugqjOf8XoJ7Oi1yK8UzVDZVBlDfhiZZwpsxXeLlcPI9A-Iy3czLS0OEAaVuXS20vsCNTZ828limQoiYqBNXWZCpSHR9-OSv7vFrQyJZ2MW8L3uJse5GlRA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL2o69LQOCLJfDfFhmAw8-H-JI-0owwdBziroIPUxjlq-qzkD31W9590UF3lYTnZvUVfTK9TQLZYInaQsY5tQ-OEzvNr7rHSPTqJM4vgP7tn9uAAtFYjlwqLsB1UW1LW7EtEy0049I8mhiW9w="
+        },
+        {
+          "title": "ClinicalTrials.gov: SGLT2 Inhibitors (e.g., Dapagliflozin) trials for Chronic kidney disease due to hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20hypertension&intr=SGLT2%20Inhibitors%20(e.g.%2C%20Dapagliflozin)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Dapagliflozin 10mg daily",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5500,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 150,
+          "totalAnnual": 6650
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 14778,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Standard care (ACEi/ARB)",
+          "costDifference": 6650,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "SGLT2 Inhibitors (e.g., Dapagliflozin)",
+      "nnh": 15,
+      "nnt": 19,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 45,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Genital mycotic infections",
+          "percentage": 8
+        },
+        {
+          "name": "Urinary tract infections",
+          "percentage": 4
+        },
+        {
+          "name": "Hypotension/Volume depletion",
+          "percentage": 2
+        },
+        {
+          "name": "Euglycemic diabetic ketoacidosis (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "3-6 months for significant renoprotection",
+      "treatmentDuration": "Lifetime",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQSTewdPIjqSAfxM-rApLJ3Ab74GiA-kH6EYptCEwjoO3yydER3Q_t_y7oJuz4WvjgB33KQ9UYVS15bgP7tZBAKE8dOWmVszmwEkiIyyKqXNQSTi3FnVL-OodeFJR7OGSilzTn"
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQK2nrNSKzbkwHG2YIAJ2nTOxOaxAQuSiuqndDhfmz0g7nXEk0p6iEN2yRQLNzRiAlTECbxFFgRf1YHnxZ_v1y2qWihZtFMp1Z5H_Griy4HMNCq49QW03T_Ye-CAbUfzmVR7UNKAX2Gx7VAAxhReLo1cZze2a5mKc1rnnEUvG6giXZ0jrc9-Z1BlO_cFXZPPB0j6MAFQfeijixdUA92gIjHPZ4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNmOqRkdyh23JMT1OqhfafNSUsWuZuBBUZiYiW1dHH9hE6XZJJYTsvGYGlbGvqr9A8RqzTgANG9XN73ZdLeKaAcv7D5SVXPLwNMKF5gk3sxeQnQlIjB193rjjtF3t2P5tZphbUM9Zxc8uLRi0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKH3xcCckfDHtUkOFup7NIurFYWmSEAqBvSBgCNgF6aEAT1sSCbcRBfpFeAx1ppBgsT-adqcM7qnnB-z8uIVM2MCQRZQYmklFcGTqZqYvDe4itjpINBGOb6mPfjwe7-VZpJrRryPzhxcvX4tGj_i-UyqB2BLdAkgfMhoqqNPoYobgOsEfKZf8Ug0I3yTOX2i0F4bpnSF5-RMrUnVOIPqieHJkvFcz4p3zrOZgquUQaTlBmsdTLjTwMJytzv-O47qagBZ1mrxB6psNctfiobCE_MCDP-3K81v3t4xBHlqPNJf3SVN-oE268tz32FrkUp-qbZL2a5qm80DjPl86Oyaj1CnofFJWJL4sr0OaPaRoYi80kAnkOCg2drvNfiycHBRcHoGHRBokq4ujUpqqnZvBktaHGfF7ULQ=="
+        },
+        {
+          "title": "acc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcVg4-AGd-uoNFBylafIU6Mc4J74aKybJc3-ETvuHw4mqzyC_ZnSNGlS9bAHWuacNE3po7WVSKlZ2ThMosU14IAkV-u-ze0PBWAN6EZYT_7pjDOYCBmiJXxTQjV5QkeBgCrb186J4rE34wWSteDHdEBIrOQwbOtaEn2fdsAQ9BuMHamtNRmCfUM_rqvaW6iN9-hiDIc2LXNzarJhcF2fj1"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESk7PadW0TDmiIdeKObTTyQOCpxuaogp8__lnF9-C2jWQtkNNgD_O0MKphZGuq5QmbXM4sQ9tsneFmoW-uQ7Wt04lNW-EOWTR_CpghUBw2DseGe_3FB2ZlGeOmiMwAO7NZzNiqDqJtrlSxnccQH-QmKsDN5aC6b75tuh4DZUxzNAipVG98CzMkM_UMkjgSBqDO5cQK_OIePg=="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2NK3nLDvQ3EzU5Pnpx3n1wH8IEOoBrU1l4Tfs0BeLaNiq6Gp8JF4NgvXUhRs32gdterHB69-HZtSlvzd3OAXuU7mqb0T3L8E1PpFWdojMdKoHhPGZY2fygmfJ2vHvYV_9eN4o1ZlhmBzEBuuG_Q=="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp1zKh4iyXPyZ4ZdhMVU8e4wqCh5lmPUBYudfbhHQg_yXA3B-_J8tKYH284MCjMroiEEBmWwr_tSM-hYU7Q6d07OtwAwVAF0l7ejvWs5VNzADC5RzYnoOaM8dxW723LoNZH5Yaihxd-YZ2tuZN8-1Q1hYTCE_HuPkk"
+        },
+        {
+          "title": "goodrx.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnifxBC-hE9Eg3mH9XNUUvxTxVnrrjJwxxwUAk3SUpP79A7OfuwmqKOi3vo82DlFvzRa3W1Epn4Wu1vgND7gM-qQGWx9r6zwtTLBhUcQMGgoPVPDSk9JtacdcIzSHBSpaYsb2nPuMbnGUbIrZOFFGHxtSk99Ag3Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1bQ-jN-5EUpm1Ly2Y1YrJTQ64xWHkihbbiJ0hsUQY-_OIVHTQ2RDWtOX2Zj_0yhXUmprUOpxwAEuLGGIT928hYgD-qONMhjcEIj0e6507OK7MseGwCdrJt1U3QI9bAp6BHZVpWKQ-aJNTmSg="
+        },
+        {
+          "title": "scite.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYrehQBX0fSASUaUIIdTeoSE8E8aSGNwOEApNo0M9HK7orb7Ci5CU0wx2y03mtNkvZ1QxPTvFWn_tvvWmU5sNHpwCB1XaQM-lpIv_IEbnOztKxyM9SXbJhv59donffaRROW4XTKrG1wiY_FNYwb6mm4nRgPspmnsH5UX_wipJvf8EPng=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZWzJGN2FiWtKNIJktGaDEpbDVORyvUGOeHW-7F085IQfIvMeDe7qRkl2-rfh8xjnKNxtYE4wRSJ3VGwAKLulsQm1q_hVGbiQ2YB9ee0kM4lI7fP735UC4kfJLk_dJvOt08MEGHFsJ48c3vEs="
+        },
+        {
+          "title": "ClinicalTrials.gov: ACE Inhibitors (e.g., Lisinopril) trials for Chronic kidney disease due to hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20hypertension&intr=ACE%20Inhibitors%20(e.g.%2C%20Lisinopril)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Lisinopril 10-40mg daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 75,
+          "totalAnnual": 1105
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1700,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": null
+      },
+      "name": "ACE Inhibitors (e.g., Lisinopril)",
+      "nnh": 10,
+      "nnt": 15,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Cough",
+          "percentage": 10
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 7
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        },
+        {
+          "name": "Angioedema",
+          "percentage": 0.3
+        }
+      ],
+      "timeToEffect": "Weeks to months for full renoprotection, days for BP control",
+      "treatmentDuration": "Lifetime",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkS7Dv5Y9_8jk2VOru0-lmAX-cwWi1YLfFNjlIDO6f2tYQD49bK0QFmf9rYbFojL-Tcu-cAFcGPzS-8MB2otpTZSbYIAblyUJPOo-qgeXHhBOvxlt2l8PDu8yi5v4JtElnMFI2EY20o39vtUiaRV0uFC7rObawVruzub8wcg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2Z0Y4uG4ygDq_B9JBgre0IbIWSdsGi8OCL1-QJkRlUovtknIxgRdzsSzmZqTpIxB17UAfT3as4wCJyYF8tCEJptfbl72aSMhZx_ExcXQv7mtV5mSu-if0WEZroRSTnRstHBoi"
+        },
+        {
+          "title": "mcanalytics.co.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuk7DCRibN82L3HSAFSatGDPP1ZCyCuyvOjfrFqtRMIKe5dtGSYSUMMVH_42slvuNY5i1IF1z5fQV8mGTA78zZj67aACydD1rLInQ4H7CK5OSOWkRXjFnFp2RZpPzuujPpCf-9bDclxzw25-OtSut5nvQH-kd9HJ5qZP9KKLrpWEbqoHfX2PDlGtCEsB8DlGg37nlXuPHElKe5cfO19x1XUN9-MXVWghV3NsmA8Y6tRnMnKV9E0WaaJgLVI_R0SZ5l0YLDQcJ05PkN5Xp89SXg1l_gpOYsnpoqFQB-CYs3ygzOGHHXeleLLFQPbV7mb88EtgNNe1Jna4kYbdj8aoUEk8Vm6daDdym6szqbvSrZPEbVaVnKElKvqRs="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQJ6JJ6C4gcMWJaXKlBNr3MguQIlbDghiCPmPp7WaWFBlRxZoFCCQqSgtqVyRHmlbBEwoI9Ct9PqXXj1tJBJgZB2Ht3lLvHcxmuvPe3UwjgGoh1tRNLM_NLwviWY-PiY-pxOSdjek4w7NxEQF81Dpc1zvrqSO9iKNd0hazxT7r_bqrCYHpith7lQem83y4aN9S1g=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwQFzBoczA8j2Fhqh_uU2DIPgg-BVi-HTNSCSi5jHC8czpjmhbK_ULyJjbwQ17Ef019R_GkRhitv9XkfrjOQz-jFusCnvC3DnAM9qYGAcs1wao7HBmSjDpwAjzVHhJu56IfyYEyr2qF9J46AYb7yC1-06PGTMf0ygjGJmp"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUD-bFURvttJCjhB9dwqW3otctpSTf-tfuF6lU26ekEfEp3qeV7pP9OmUzdcEo7ui4_hUZFluhW4r9TZnu1D1mn0mcsELQSy2-WixG1Gkhs9PN8T5jbAv7KSmSmksWWOOUVkBfJp9ofKYUXWw9g7iVZ3nf"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxGD5aGEnttow5IxQvbuTBaktoqNDtaRKDIrJ_apNkIhBSqPtYPczByDg3cqmmo8iy6iuSHU0LSOiKz3It2IDHOHcsFvQcLUxEIVwXNWGGjNWlpDageRkc9dqsac4ravMmrkRFtkt-7AZ1c_OseHrfDAYdMht1COYA8-95QLGurIlECtrDCPL2YdfXigBaYvcb7jKHdDHOCA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4k5f3gsSfmTdKqPX-F7_B_bLSVD96n6-eZoIv4NBJqh6Zoulup397i9mbNF15yR20fe0007s07pM7xfHzpRsTqO7Yfn_W_S6jDCSDfvBCJURoColNKxDJN1HMxrUdhbunNDHNfPpYH735ToJ6Knag_w_sIFsVkRMZSg409ptVa4kJDcuXxmwu8EFCZ8puxu73i0bokOJq3cvtQMNddNS-VPVOHcZ_kLF4zWzMKqHXdCiPMBLO__je5kEJ2EmeKEKtZyMftyupCv6IgzXv7oBQaFPm7O1aIBjpP2jA0MfRvAtcKODq2dMH-na_SQpKxBMjnC0CXLaS7BW5ripzxx7JBqXBXYP3WF2kmalcmML46ULQM7o5eqNBiuC1r6T8CWlzvKbVRCc="
+        },
+        {
+          "title": "ecrjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECOAUlKy6jYoi3o0IA6jS8a-kwrMwzhQGV2xOIzvqp5URxZRxTsATnloqCKK8XfiZJitiW_opnRONPRtys8zdKGYD0hpnYQoT81dr8QezfPU6T4Aq8vKDIqfTXf4Un0lJmzlaF-HzT14pd_jb9fAhWJEAC25KB5dz-wsnUyae48YbWgi-q0hT5ETAu3udeOERqgqZQCa-lkcer6cdP-svIbGM5LIgm3Q-XCfU46yty1OQpMaOV7qp-kv4HAiy-FUwYVrbJVQ=="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMaxaAjLhtQSPXAvR4PfEdJYcRa5L3RgbQS8UoC5nbi7Ot3-HVQaEDtV-IyqkMaGbhGKimq8QmOtkLQCHmXH0BlbkzHYZN-u-vb7nWWW-iV8TdPqlD5o5YiMNzfZ9cmogFD2LUxQEjH1bZDLh4aUd3hmKGkt5fAw=="
+        },
+        {
+          "title": "indianjnephrol.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw3StluESHVrCHEYXYXivuYFN3-iEtJaXf1UQ2ZQc6j-UnCAmOPRjzh_1z3eU-gK0Pfg1x5GOBQt7oer3M7upIXjgFEWdCkKWZvOrGf9ipqZQOvFr5iE3G_O7sjta35XFufQgTVD1S32c3cMy9VsLjIpLL6kxrvv_ZKqVyWNa6l4efTG9tTiqb-ffDDJ5IlutpbPkrRVFMBoULIM3V4TEpWu9KqZ6qa5zkk3fjoqwv7-aPTMObRzhJNLTiY2V3e8933Pq5tNuEhK9I-l7IcW962HDuME_1Bl3P_NMAMTRAVe7m1LW0qQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpEFT_SlabRQA7e0yYtQ2qFw_XCg8fcMNPMvjPX7gtNW-A_DhUwGzcMgzdjugTbibt31OQ0LXMnNtyyiSsPV-yP8R9JnVTTWxgMok5bZVb2RTsl_ZX6ctcCaU7QNnMvr0qH8NQ0T0bV9X4trE="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-BG2RClAk1fNzoDcMhG3deIAY2lOyRQy2FiEjrCUSMm0iIY7GVubmJE4I3f1vsZCwtusd0DQMztLoex8FJx0M_Y5z-Brdqkx7abut6fTknppRGOInXC1AtfysbXILvnpOG1LXFt_6y8CAzbMl6JdfZ1E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFfdxNXSMu0wGVg18XLOMd_ApjUjv_duczRqhDmIDUWYdb1EMmtfh9rG-dWx65vQwpw0JIdHFl6v0rMrAwhtOr7YBB6LFj-y3Vb2uR8lAsIHH-RK1ucmoNVZMJU4rJ1o8JtzcqiXIWxuAQ7N8K"
+        },
+        {
+          "title": "caldic.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwHJ6uxsFcUy0RNRaWlA2YuMksGeY1Zd-YHqpHtHBuzvm6nLsXJHYRzSzuKJ-i1UWP99LXrAlYILG5vF5tRKfE1U98FPv44ZlQ0jkBxZsHrqTaD6Pr--8JHpvX-d_z8xTNMCdSvTCVnu4vrysKTkFh7asH-msHT3-VqclQnw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Angiotensin Receptor Blockers (e.g., Losartan) trials for Chronic kidney disease due to hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20hypertension&intr=Angiotensin%20Receptor%20Blockers%20(e.g.%2C%20Losartan)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Losartan 50-100mg daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 45,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 75,
+          "totalAnnual": 1120
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1723,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": null
+      },
+      "name": "Angiotensin Receptor Blockers (e.g., Losartan)",
+      "nnh": 10,
+      "nnt": 15,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Hyperkalemia",
+          "percentage": 7
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Weeks to months for full renoprotection, days for BP control",
+      "treatmentDuration": "Lifetime",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4ZctR_qkeCNhlVM_9J1llqkm8rDfEQVBYs7577vb8IN6IjgbhSs1gVfhfBdkpYahTPpTENZquGhSllVGkuNbtC9E6ICCsDLFBk4SLHYAfN354HkwxGL__uzGjmxCdfRtF7yuEvcsOcu3cy7Nm5Rk3"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhFkwAbIz2jTk5Ddkx9ArtdON9zf_I_5rKyesWqajupxOEl5eCy09RkMzNT1qCFiIPlKy5mh9q5dQxGdF_Ogs_38bHGL_csaJPB6bEJq_RuMkSB1C-ObyUBISqvdXtcatIgpvqPeU5R5XHpvA="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgOk8ugq2fF5WbfPCKxCNZYiHHUALn10TdNvJZ-U46oA_tq5EwCiRkgSFI_mruUN3KTWaiQm0yndNXKQoGjGXUCSMK-vebA9wjEv0GW7iiw62_JWSfpQIjUWjyF4Zi1odK157Hb1wGbHZTKUctMgZ552mA2bvsd5L2HV_sC0C7EADobH2n9Jx1OlDFDiPJli58Ri_X"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlgsLAupziyRFiD0V_shBU-gNqVebBPwxTTETDSRziMR56nsO7Y3qa2pHEy5BAYa2Jp7xj2BlvuJxo6wzMpw2ppyZns6TuKF0IJmMJorvC7K9afMxl_JSN6MIV-SqpWw73mHsP"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1QXmGrMammQ7_iQZyatHi7j9fcim9MGLEXRHDg2HetznZ1IHrgdXFdQPrOgqT3D0Oi4u0lCoiimD_-JknZBeGpjW4yGNe-lYCaOM5WYO080xwbH9yzUKF0_1UlOEhr9XO-jk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFd6b8hh6fhVEe4tm4BKQHViSObywtFxtM7-YLskif9pZSYpCwQkjWuIDmGaqfLzPRvpGHmJFaHlQ8Q8H7wZEQH5Nxjth6Yvveyjc38gZWD_6FfxI1yaya_9V841Bim7CGHkHgFEM5R9ruIe-Yl"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL1xdYvIxb167pxycaTEqewPjMtIhjFYnUpQrKYm0Aq79gkAEkXiM3R4cPQVXchxAKDhypIGDEm8QCZu3c9yAOyccw-WiqN5uMpeTnnlEgDEwJdCm6Iif3MiQ8MNZjc44OxLjOoVO8soNflHRJlbCX7UHLf1_r6LQLbvonWM65_Ng4bcrIJx2wAWslQ9DoFwwtBiVtuaGHzw4tIhB2CSojbIg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh5cbt26timGlmWe4W0buwF1IDdtQglpOkmIofRzMRuqgUJcRzXmjqjm059G4pKTUal8yQPB3izfaNnJQp9lkk9v6hHJNqCSMerhGmw-1eDTK6TTujfCfEMSNZ1oPh1ZTncbX9xvihu7DwMLca-qR1mTFwGU1ZwWN5XxQmDS3AxzaqRPEwqX5yMjgQ3_2T2YPWIFSNUp6Q-zbq0mO9Ty8i-DsRJML3bG6xW236vJ2tuyrTwwZtEopWoFJDdnXZK0oZaWw8uUT2Pni9CjU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Finerenone trials for Chronic kidney disease due to hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20hypertension&intr=Finerenone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10-20mg daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 7000,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 250,
+          "totalAnnual": 8450
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 24143,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Standard care (ACEi/ARB +/- SGLT2i)",
+          "costDifference": 8450,
+          "dominates": false,
+          "qalysGainedDifference": 0.6
+        }
+      },
+      "name": "Finerenone",
+      "nnh": 10,
+      "nnt": 29,
+      "participants": 13000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 35,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Hyperkalemia",
+          "percentage": 12
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "6-12 months for significant renoprotection",
+      "treatmentDuration": "Lifetime",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH06ZUmiJow5IJmvG5rNT6_jpSBzB2E9EvfMBFRZiVvq2mj1nWIUE7r15nZRwq3kg_8aJfmN2gzIkD4JE5AIOfpibY_v_bMZG2Bvgz9AC2IR1ei7CrQjBtDHwVW9Xoe-E-T8NNcFIYfussQ8A=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGxJGKwkOh5wRK0EbnZid_vih7SVCtxKpwBBccGz8HCtt1plWXA4crMnwl3WXMWSVIW-tVIr0HQWgVRTKfCXPIsYDfOABLnQpN-OgoQTEijpj71p0G5SJdItAXeiaeBCFL0luThA=="
+        },
+        {
+          "title": "austinpublishinggroup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqPnEB90TbTCYROK1XvuMatBR_bwVNlLCDHI5p6rNTSfODMEFPJGoGlk1gYqm1U7GmXN1NOk7uG3EqQVsXgT61PMdhWKvQyY7qndkcc38KOIazu6OqfcIvrkvdAbyuy5Gj0Ud_tzlL74GKTdpCtDcC8KxZGaygFMjxfPwxg4F2jnbg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEubRiU_fTN0fI2Ysq2bwdmASEb-ercqUCKSk3xKtQWNfgourciCvV_Yf_nqnrm4Cl7pjvPzCbG_VpiuMw3jJS54L5a1s6ihv3aNT9IXicuKgYDDwyFyD_-TzCq3egB2AMRaZdR-xb0pDtsZA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVzB3lF8Hsw6dhXWG8nIq4ir2XLRmnV9TcfAD6i6tZiZKVh4KCn6YoApQC7mjMAl4Q-Wcl2LMpHnvc-OF76nmQios_0jrobboFfXv3pHJ-iFq2E5L8uRmZFk97PBxI2r98PRmmXRYjnuFUO_9-DO82UjKDZ_GPiw7hCixGKVOvwK8IcEfUePDY3XrvStBLEJKSqsFWXwV0uxojQu0IE6LCyhfy18SYiim9Vflk5iBlZDN-sLKh7Li8MFdYDLhJGNlseSs2nyi2iCxO1Z0="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMlHIic8sumjACgSKPm7E9E59miJbVPDrPM-WL93zjOQIy1CzIqX7fN658utpiBHzQ1o9xS6h05CyumapO7PkA7mEjJy8pa_qa2aGMxbCPIDKdGHLn_ApVof3OzLcN82mQFVcV24Y="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESUErrWSnkKKt5b5R-V_BGPxbh55yDkXG-LE97FXHfTk_6mLCE016GSKcKpUxMSyQWjeHrbqKncGC8DlIQVE4IjMGqoLCymWIRAqkCtOiJLqD-ONCI8pDEigma8KVu_U-ODLE="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN13MkMpBji7-eT74ICzR0yoluT9Up7yqxs_ndibkRNM8S_kJQ0xXcYqBRwpmgJ8mRL8mO694rbWHdi7b3UJE_3bA3felWEeQZNNvAOdJCYUPolXKF2MORC58tag6946QORI6XmUVdXIk4PuLA5JuJYg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXaMj3-EKG067adzEsdN82bmXU5cxeQLofWOOqhUs1VZx9x5fwb0C2-_vxCwxok8J30ZEfJqBiXSJrrQvRFk4dckmYYsEYdCYcvjc8lgIKETKVILYOJz5VykDXAemfmuWyEKSsE3BJiWaYpQ=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9i83SrSYub_iSgnWgVgV4EUhflQhShcSkpwgiTwSbo6cO1v11exD0TCd8zG4_JjhEiweENhTMycTelynwXIsubNapCNrOgroI1FtZfquW0ivQVC8YVhczPetF6TXoLAiawbHHjvNxyoUsaXASY5yNN1j8aYywgSDclu2V0HmT8yqeWw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZBNuTAcn7oHOJMb_y1_mBQrVCa6I_tnainkxjqrXEmvhUjcAVKQb5cSePNhpth-OUYFbyfXVLa1MC7GVDOoJV92q_IB209Ru8kznT8WpSnTVqHHw0BXZsYqtjx_YJebvxNrk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxu1XRl2tejrkN84m4Yigj4PkM3sSdGfbN16QjCytDpVDGPdfpSQ0J0kOm_UmaZLXeaju5SU0Clrs_EJyd52ebL51VJh-WbzBUxcxOfoOgPbosswDGQ4mc-ey5TUb39hRAJSeVwFWIADluq27wghsgIM93NcEvmsjr29IJBo3Jc2iCE2HQ-k4qoOnzjY9wSbbW_Di2in5h50wOLjdxecv4QubsxIJLxhg8YFTiMviGUT105yHjiihZvjzFKSFQNDUWPN6RjCoHsGG5avB6BH1NMf_7sXFD8jQYyL0tagOkfMXHj1ZRg0xt4Zyeoc4ccHQjGspCMlM="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuyiZ9qdB1CzC0pEDxqPfIqj5FZT8RRgD6hvUw5PyjvBvaeeUkAOZnBino0vqmGN9-8nUD9V4bV_1fKW_waZ23-fvUQwetfL6lU4oUuyhYXZG4oXJ84sqGS6AiZqnJSt7IUi99fkBEPu6tJmLmDPsfkT-QKxg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb2Yy6J1H-Z-_YW4tBaiXvqOTghR7SN96mPbECClMOIqsEexovwAKk7Ea3MQm1LeTVnuSg3IHyXAHt3wmKF3tMdAfSERQnYHpjcU3ADU-DH3sCdgfRHlWizc9cUNW4YWPkaZCiBL-NfUUdxwo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG60VXqxVg-16fzF0tBXnBBSuP5371JY7QsPQvMIiN_DzROvJVZkCMrjhKt8CSlqHv4pPbVoaFzGAgEVHtzrN2EZ534xF2JRyM2GdsiVzYYRDQyyAq_1IEBiiPksW-K8udqs7_9pXnW1E3mQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsSOgFDExj-vRTX77vg2DzgdSyPPL95i7qKp2aX8eUTqT2iHNSvl_jAyWiTVMGsHcCWVgtnso2T1Hx1IMLCknceVVKEXv7bZr27uA4-Fsrnx7riBo-0_rGlC8A2L7-olNMuoOFGj8WUtw8Yw=="
+        },
+        {
+          "title": "ijcmph.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3K3OD5AyuejwVDHLHACcAu2s0NCGukQfvq_cKWkdS14Vmijv-Q8VI83LIwiDspo1GOO6-E1g9x93sfr4OnLuGcf-h5LzhCLdz_817l-gWgCcgx2iapj2Xux2n7NAZCmNrCD6t8N1zhtpFYk2pcZQAtEect_g4NLPjG4eBw-N6iLk7OA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpZEmZWhzsu33lHT1EN3s95-9ZkIcH4IjSuPJiifCqLCpEDiBJxD2DEuiwC3B6SFwv1PxxBggQdQ5UgxHEMrLlU73s302Zx69hJcrO8wDMbRVgFueL1hHrqXByveHrO4g5eDqMaBZ9fZzz5ZCfl0mx5PGc2YY_-GGr6qf6Nn43gm5ZftE_FJhwO3vguAINOXLaFFkQlXBpR__r6VUxWkcKMomQo8BAms0YheqLDGAhK4ykHkr6MG9Dqd-gpqtBBniW3Zn_30ugQCT1_8E="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lifestyle Modifications (Sodium Restriction, Exercise) trials for Chronic kidney disease due to hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20hypertension&intr=Lifestyle%20Modifications%20(Sodium%20Restriction%2C%20Exercise)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Sodium <2.3g/day, 150 min moderate exercise/week",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 70
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 117,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "No lifestyle changes",
+          "costDifference": -70,
+          "dominates": true,
+          "qalysGainedDifference": 2.5
+        }
+      },
+      "name": "Lifestyle Modifications (Sodium Restriction, Exercise)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Fatigue (sodium restriction)",
+          "percentage": 2
+        },
+        {
+          "name": "Muscle soreness (exercise)",
+          "percentage": 10
+        },
+        {
+          "name": "Headache (sodium restriction)",
+          "percentage": 1
+        },
+        {
+          "name": "Injury (exercise)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Weeks for BP effects, months for sustained benefits",
+      "treatmentDuration": "Lifetime",
+      "trials": 300
+    }
+  ]
+}

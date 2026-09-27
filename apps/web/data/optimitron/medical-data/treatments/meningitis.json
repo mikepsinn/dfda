@@ -1,0 +1,737 @@
+{
+  "conditionName": "Meningitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:22:39.694Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVWqwPJ7xqv1ICokFcBQzSiNdtL62Sml3cZG9YYqA42J9eVHBJyAYQq7Iu59aPE4t8Ip2WjGlOnT-eN5su_IJxWtYkiqohxKqdnFSX_yuYclYvoKE1uRL4Gr18pHFrVaqxlz1Of1AE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbzwAn530OTj9IHavxFHwMpXc8jVEGZKoXwkyII56mVCES7HiXxLpSGCjWiUBxgsC7vYvzhNAR2pfhKg4eAOHj0aDx_liT5G7BlNma6FxFn69Fl1jJ6b_apOU3Ve84pB1EvNUloLRh"
+        },
+        {
+          "title": "mathewsopenaccess.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzILysdVfidOO3_4mAJHjhkVnZqz9HwgNzD-PoFtOsUJ5EdUdSls0lBFk1inAAC262UVqdNwZGPxrHkzQaNwl1J3kOGknJNpwokMY2_rAl131tgpSaisiw8Q3GBIhLe5nfmuZb-tmljoC9VTixZSGz6q79u9B_rF6vIqpI4j5Svo7JAhLHvXxFRLYDDDr8hYl-Ne_1K6Y649vY1EUuUU3vy-HFPlB03mkzukJ2N5ZaVCXxfCCWTRLd3-sjAw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiM-SuQsm1PiLZsJeuiY4Exf8nWQlL0F487lvxrJ8y0VY-HWZSButXmWbCmcviWnSZBPaxo7WHiurJGiTneC7H86xcgPmLPcUUgIsNLze-RieH-pX42yn_Y0I_RvrFnk-_RIWRI83mES_4lA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH51c6NDOGdt_BeIYz8UFE5ZemqV01_d7awPbAWW1_ciJ9_dXvmHuxoQa4VvS7gq8uVef2_IFJTo3LYa38tlIAAwrRjARBxxR4Rirk4AXLZcChBl7zY03CnApIug-N2wXcfdeWg5GaP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZBYdfuGbR81qS1TYvitPLQXdvfcab9YitcK0BpjU6HT64Tqw1VjJcI-9DIzZCO3uZWC5burmq35px4d2tKGKzkHqqXWOuzhqofXJSYaMfJdXSlHFEeC0qPFgKE9fmVIWYjNzY8wkg-SrUbQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeVqaUOrxTpZPzEM35eoVIUURQM74qcrILB5fAtd9Nwu4UM8HnvHwcgvisnorRF7qN_8zv7TmxYZCzMdUThkLjnnZpjK4HUENLk98DabFW6nXbA5Il68YHBNvLxc2Lpo5J8rCNEmikHUC9GfoP5U4TRtqItnJUpEcleVCHIJNIxFSJbtPAjMAna172FP4wGIUhXln1EZokHbm6WveTaYonZv1Zk9ZGcPF5NzACcf0fJTsTL1Ev7e1X4OGf1VBF9EdtokleyzTPd1L3l81bGFrGf91V"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL3-OWMdxjnADiBh0BHmC53oLFFwEg9KBZ4HIPeWpkMff8Jxi1R8jq0fJyUJIrGRUOCMTnhdRylzu5cVQCio9B5N3e6pNQfxhwsH93Et9NmNpl0S2JrzVgi6K6KAre2edebwp8qC9j9plP1w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone trials for Meningitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meningitis&intr=Ceftriaxone"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "2g IV every 12-24 hours for adults",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 750,
+          "monitoringCost": 750,
+          "sideEffectManagement": 500,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2353,
+        "costPerResponder": 2222,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Ceftriaxone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4950 cells/mm³",
+          "baseline": "5000 cells/mm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-170 mg/dL",
+          "baseline": "200 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF Protein Level",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "+25 mg/dL",
+          "baseline": "30 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF Glucose Level",
+          "percentageChange": 83.3
+        },
+        {
+          "absoluteChange": "-3.7 °F (-2.1 °C)",
+          "baseline": "102.5 °F (39.2 °C)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.6
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "10/15",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glasgow Coma Scale (GCS) Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospital Stay",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "Numeric Pain Rating Scale (NPRS) score: 8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity (NPRS)",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Rash",
+          "percentage": 2.5
+        },
+        {
+          "name": "Eosinophilia",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "7-14 days",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZAGmcSaTLHFK5R5tQUPK4xxS2SyFWm4VIxaROxUhMz1eGfywJuta_tHIc-DiBiO7eOrrJEE_0n9MmDfqCiBfq57Q-TGtN1SSxBQsyhp5B-wopKnnLC2PBDhKHBROtOcnwADYMFez_Da3YoEA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5lT3aildT1It7YBO8q9-H60Wn-cXLPbhKgl7YlBpsq7C6uSd0XGnn1IzPe0pbuPQpT6LfA5L0kyMYOu1HO6qGSgEd-6EhMt_iU7gZSHiOkeKM3qTDUb9sRqgolc6NeYVULw_FovbQwLlPY_tYJ6V-SW0-ue8K9psL2D5rY6FeKzasxn-zZS-M1AidhVWr2-fkQo2sSfPYkRToiYmAnJnP33vlkAigD3_EyZE5b2kc51hQ_4SYcUf0ePc_kRrtyY69fO36igS-rGFlBm41CkgEFUPuVJTRAClhEukZU6haJVNobBHisLz0Dxw1EdtsIqtiZAEVPesUhUDPW5H9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkH31RUavUF3ZcCfpwF9HSK0qKk1WsIgJj34Gay7LpM19l8xHy0NSPGm3jMDo8FndDIskJ8423WDxox3HBiOsYURwUOCryacwTUvW6djkrcwun6IGJq4wFh0WgVVNxoNlLxN5i"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkbHE3bxJEUl8najCb_Q8R8U8WBiFZZkZ5DKY7ybVnf55itJlE6KcmnkKRSARnSpfszlyViABsCtPbkgcSQ1CstTsEvkJJBQ3nCXmf31dE0DsxY3IHdwdJmqhJNOxhPsnvQvq8UzovOfSqpBU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEsdy6xQY-PYP7B23oT8FyznfDaxDeJfpDvVdBQQtuVy9Hl8pYZkuvZm6KUmIwNpFbeMoiRCHC3ctLPvE9UQYWlwP6agRIbvBdm8rulJ74mFEYTeUxGVDWyLkYEYoh7HCJ1BUZBxVz43f4w9m1R4P3etrG_rUyGNAbDO94b2earwiCIJESa_muyhhCQADtvP78oMGcKVsbo6ry026PZxkXSR2ywrCzYfw2uWn7NV1iPp8wSvIA75r5WGMNOO1yOhvrZsThRYzArRHG_PxqY3dvED40VyoqrnBJoy_Xoca6-bk49H8SsP8A"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv20v98pIRdAx2wbPqnUoNnbeEYr-tDtp-EW5axtbSmnYNz4YQ139aafCiIIDyvk1WIbPkxXiyXOBfJXy9vrn2y1tO00A1FNMtJBBsVMxOuvaYUliK8Lby7RtW7PDbh_xJkV-BfsDECkXSl6Q="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDiMislaZLg2WkmrihV0yvR3WFQ8aCWAG9aDWDdPWMJQFF0GAW-jABsXc-4jCS9DJGWSO9fGzAcrqPSdMsvujgEMFfI_GN0qbCkRRRRvBIX9DqjvBSGhvqZ7QfEswDgpAS5Q=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFFPlgaNcsQJdR_7394tWX0ZDmf-EFyh0GDC2f3hG6RnHGwb2IN6M804VRBE6qvouGrdHy4GE0QVsVp15H74nWTsROeDHn_71XsG0-Qb8aYnh_0ZkXD6Hf381aNIdpCG2H7g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vancomycin trials for Meningitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meningitis&intr=Vancomycin"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "15-20 mg/kg IV every 8-12 hours with TDM",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 700,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 750,
+          "totalAnnual": 2950
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3782,
+        "costPerResponder": 3352,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Vancomycin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1200 cells/µL",
+          "baseline": "1500 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-153 mg/L",
+          "baseline": "180 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP) Level",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-2.5 °C",
+          "baseline": "39.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -6.3
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "12/15",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glasgow Coma Scale (GCS) Score",
+          "percentageChange": 25
+        }
+      ],
+      "remissionRate": 78,
+      "responseRate": 88,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+30 mg/dL",
+          "baseline": "20 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF Glucose Level",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "-12000 cells/µL",
+          "baseline": "18000 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peripheral White Blood Cell Count",
+          "percentageChange": -67
+        },
+        {
+          "absoluteChange": "-4 days",
+          "baseline": "14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospital Stay",
+          "percentageChange": -28.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Red Man Syndrome",
+          "percentage": 7
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 10
+        },
+        {
+          "name": "Ototoxicity",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "10-21 days",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhb88lWG346ux7CzdBHTAPMg7Gc4yJwFWTIbNPR89Dy6wvFppZgB2J-y5F1t3nmuBqv6r-81pVx1W6CFv0girbkENktNDkzE45qBCt8EFn9nZw7r1_cE4Ktz-kzsxVWWDsH70z9Gq1mcWBkw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETr1tK91Cg2qtnOO3BQIX3hyAlghzZsu3QVnihDguEu7xLmlkh0EbdbFKEd9CackWsw9KfNBcZu6WQKlSRPYV-La_vfwdz0XnSacfi_8hBzD3pzG5YfCFGBljsGw8JZjgU5GuNU6qtlgVJL0eylZ-oqf3Z1sCmlbNDy9PBjPpimAJ95RpJWu8gXvOnJLuyOStTp0fABvudzC4kG3vGCI2oSxG7jHfxVqioWrgXoZiAcKtGasjLJ94kdTqdkOsCPdAxL6dk67c_8A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_5DNz1ZEHacxm_7pxbcwG1bFmBKla9m6sajTy4xoX_yDUmgQiSYp7mohqBKKDRK2UZhlYVWZoqLg-E6o_WtTs9-P8cYpuDH92scjPfw6qdbbgqXXCv2AsxoMOjpUyCBux5ik5IH4Wz4C8aw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkDMdoNxaKo17cXi1Og221xHI6PH3dcrRjOeCyZWV6B6okpp5O_i0Vr2zrIzcPFYpbexykyrDtDRvtdUX3WF36jAy2DN7FvF05uXy9BRqvfc-MDdQpC7QtDpEAQD2zCeONlWeGlajkpJJFER1ll2NVVu2GgK1uVrJH6UrqHlkwKw6_072rSA5Ikdx0Aev_CwQudsII4f-bEvYGQVu_ChvJAKEm0NwNa1SQhiD_Jo1GPuYJEc5-8wBgXo9fGuvmLKyRTTLXyTy2LrZ5SQZUdMusT6Nlaz1iocJ1GFThjAWV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH6Z5m3tSOtAArajoh8wzMBiYtj59UmSkvw7HPI2N41S1zKTbFJ_PPFPHgIThx22xmH2HZFdXtL3gftcfNnJtG9_4EGZ9ZTf6Lkyj_sirCq-xCaF-VCzVA-Gx9abXZJypcFg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEik3rA-eOGeQJ54S8FwO0y1n5guPe8_x7raGtEwaRcTWx9TSqLA5636MSNLnUGeVa0Zvfwyh7YMr_yhkeF3Gh0BMnOrFwZF1Z4eZfRroPR4Wu_5jhEItQ3eHV5dbHX9tXOKJEbro7cAUMacUcX7JL51Hsxq5rxNu3fkqWfoVxTxgLWaQE63b_O5WIdifzKMHw5FxCTzYXJ-EIU8VSkHd8vqsX0qJmB4uDqa5Lt4y0zGXmh52aW3VqMtvSAMhAp0M1OmaxAjhQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlQiKpxRzu4R5jBlSiqGhTPdOoDeJhrsUobgATeEEfNqNexVVzIrjeL4nsDDhEwmbelXv8-wFUZlQcaxzJNd2dKjkkru7Sf8f2eQNzXW-1z-r4yvzN9InwVXS-u8CrIjsc5Yw="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9O2dKrQgGgFiU_bvnLbvQo84JZmg20_fK2sIDlxC_m9lfPL2HObjX885clNREiWFbYTklWtG03lgo6R8C_dd3Ay9JgcJxC3Zuj-r_uLWOUtPeN-XAuYutgxgKkiW4Gsolb5gYY9E6hhcjKt-TfRp4JYa96g=="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFInexWVFO1Yd2WP3Ip68cZyH2tVxHLHDJ-jHMCTFwkj_NQS7ocKvmCLV4j-1KjOUqa8X_UwWx2gVTgWQGkLkQ7cnZR2cS2paamM90QrMWKVYwScE1DewEwgKd8jOIPV_gMUSS6EjPAvCJb8mgoepS1g3LpYhjQNlcMAoEys0J58JmyTA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dexamethasone trials for Meningitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meningitis&intr=Dexamethasone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "0.15 mg/kg IV every 6 hours",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 375
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 536,
+        "costPerResponder": 500,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Dexamethasone",
+      "nnh": null,
+      "nnt": 15,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7.5 percentage points (e.g., from 15% to 7.5%)",
+          "baseline": "15% (untreated bacterial meningitis, especially pneumococcal)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severe Hearing Loss Incidence (Bacterial Meningitis)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10 percentage points (e.g., from 25% to 15%)",
+          "baseline": "25% (untreated bacterial meningitis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Neurological Sequelae Incidence (Bacterial Meningitis)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1200 cells/mm³",
+          "baseline": "3000 cells/mm³ (average in bacterial meningitis after initial antibiotics)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cerebrospinal Fluid (CSF) Leukocyte Count",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-7 percentage points (e.g., from 20% to 13%)",
+          "baseline": "20% (untreated pneumococcal meningitis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mortality Rate (Pneumococcal Meningitis)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 75,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "6 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Fever",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "12 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospitalization",
+          "percentageChange": -17
+        },
+        {
+          "absoluteChange": "-60 mg/dL",
+          "baseline": "200 mg/dL (average in bacterial meningitis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cerebrospinal Fluid (CSF) Protein Concentration",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hyperglycemia",
+          "percentage": 15
+        },
+        {
+          "name": "GI upset/bleeding",
+          "percentage": 7
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "2-4 days",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMPZssMlhmyQU-7WhjyP_GoPes4meEdSO2DmupTHncTLMRZUaV6Uv2I_BWgM3zd7FiP07wQevDayit-9VMBK9m7HmWUVkWyFxfzI-gF-CamWEzk-7oy_TieUn4gh-IgEzo_oUZRerCsWbsolKR7XXg5LoOI96DYrMOlQ40G3QdBZIL38P0cqV1iviSEIVvcjuCGHsaRqEhjUMPk2ZtoHW2aVjLQreg2YLsKmcFW4pjJvM6tuktuIl_gbJeJ-UK"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy0X8W3tJPh-0a7lWXyVKvs7aq0CQy_QFIOKElfzPvRJGKkDdb_PeCeXzWzw0LNSKdv-SDOCzayjbrwrfDFPd8S_310TuyoTbNW32TiB1q_cajJb8QKiWYa8d3XQ2NA_hCwP1OlJlbIJPxo-Nc4OZahtpfR3hHleSunkJtqyC2_px0GOi9yW-SmtkdNZVBSTY="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2qFXZs4Mdyq9RjfgstZmHGiEb8ewtclSpvFOwqchie9cpBPT1kiS2t3vKpJlExzQREjyAIa7g63ha_x8RXRvpvRtqMOoddA7th3a2tRloU_XtTpUt2xlwFIUPMcpqcHeJshGlx6qIeKzjflTUhzM8SQwO7FIBYPgf"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRzKgEGPJxm-5479EZWfeXWUoEQZQcR6yv51jcQtHD0MN_6h_TPtH-fDRlmvw-a2QBxdxARE5OLIGyYdsCuO2sRd5VXwWtLntV44IXq7FQqTAlTzO1E7tYSWIdWnpWrdNb_6TM9AS-WZyTDNPZnslBi5WOoIXClf85Slsuo22hlub5Q5PTb5GhhKEYDYJ93VmcYo_5ftTCCfKIfTWYBaAkcyVun6TD5F2dIYFggR0jovIw7XuI_Jqe5zx1bHakORYduNq5_axuU9bPlgfLWRiIkWYE5HJDXFVzQ6aLp230VsXAAh3hcJU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8BMX1pAy7tiL8rqpge27RwiBU-didxSynvbx7fCIBHWmzGHF1ueZAltbYkeckxu6kpmMlNYJtYftH0INBA-UkJoMNXKokmzfVehrZSnmc7MRdLpTDMrr8Cv7u5y9F1C1MDjqv-sHwMJ8JXJ1K6R1hI_jN467bUiBdTECnVsT8w2UY_Kv06YoAynj0aJJaBLrbl0vDXPSN3HPUOagtKCFxAyK0QaTxoe-oxASWM-fyoFwsn0xYJSmvKN1kHDBbHSPTRiAni5Azmk4mSNh3JEX8N2UBZEiQtaDSnIZCb-tdvKybk3sNCg=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjaJgcv1KWXl5H14lpgro10jmiWqxoggZF8JZPru-oSfIdvQEjs_aOAYUxn_HhDYyS3BOCCwre9-qbBrAiVPfgwPG6KYeImx056lSRb6rndYvbk3AjGo1qARTtPk0uKIE8donU5QMUfWtDoSm2vCpw7ILWYP00MR9N409cu2S0ndXx-rPUSVxigHE="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuU9S9Prp7NO7ew16I_x67b-ac_5pSwZ4ncZ-PzgOSHQDaD2gonxhBPh5jabFggR_8herwBAWJKYrhG4W6fDos2u57-0nqh_PbDI5QC8DCl6V80QXktZ_57pTRGvA1zMJYnvSBxxyyYP9NDljXnJx1ZXr8"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoiACbcVHet376_HniJoZYTsgPOyCA-ayCW4aIM0DB3JXdPIxKWhLO1_Mu-Jo7aiRnhdc_AJR7i5929yY9PSKOg4wGFvshzdB70qjeBkSrovHhxKRYKjp0Q7mcfQAnrvlJp_dLjIvfiBkplvb7ZqN8LFNt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnSS-6wH9j9sk3UQLi2zzBgA8iHCTlul4SAfqSZklmnPAeWHGM_2jBKYGZttSKkm27i2sQ0GbC9uRtjny6CK_6c9-ibfRuCTLwo90jZDY3VWhT8g5x4RNHTcT6w4ai-d4YRB0QgCbt4ALZEog="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOxMuMq6SNnoIvmnQNtEfxbgjLSWhGf1U7MazT9XxH58rrM210ujTksK9lR0IM1rfIZGGxJVPhvfW3iM5XmYdgZNpBaBSmDZkFIix1baU6sEx_KLl-tu0pQX8T6bmYEgmOlb_2B0CNkzz_aI8EqQiqEQiB"
+        },
+        {
+          "title": "ClinicalTrials.gov: Acyclovir trials for Meningitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meningitis&intr=Acyclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10 mg/kg IV every 8 hours",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 750,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1667,
+        "costPerResponder": 1471,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 8,
+        "vsComparator": null
+      },
+      "name": "Acyclovir",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.95 x 10^4 copies/mL",
+          "baseline": "5 x 10^4 copies/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF HSV/VZV DNA Viral Load",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "Average 5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Fever",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Average 7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Headache",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Average 10 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Hospital Stay",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-150 cells/mm³",
+          "baseline": "300 cells/mm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-0.3 g/L",
+          "baseline": "0.8 g/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF Protein Concentration",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "Average 4 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Nuchal Rigidity",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting/Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Renal dysfunction (IV, high dose)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "14-21 days",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExpeHpTNLQ1BZyfmswXLIkyfdzXpE-JVJFep_6sucRMWNA4ZhbaVNQFmmkgogNSeKn9tWEGXP3rzYbOQvEdDUDwXlAwh7VuLvaILgijdvJO13vDPbPqMU_DOPxkfm2kENSp3w6_92njex-yarkYbrwO_D_F-KwhYNjb47bhCu2E6Zh3_mYninVcadyhlLp3Djsvbc0z8eYYw_7XRzB0tb9UVIZzzjN60q8_oAhKKLbOnjNFSHntbY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHELNsIL-5i-sc5NZF7Whvtau-iDCojnjOLnR1hIXhjrB-MfCnDvBNvaOL7OnIghVNg2Qj7WrHHZgIxTb5G9MqcfRbTRxCDhL0osVZEzuFUP1WLTONTRJ12qq9vKi8UFrL3zoDL1ZIM6h1kWRJXvq9FGvqvqgqDz5zVB3nNyxdkB6SH6jIts2Q3f8bVLujzs0G2KxFVBHrykkKjpHqVGQXrhI7sz0ZYqWk093AqkN34UdJxiSt7ba3N9m9gpSEhyiDPyLhs5B5AjVlrHVevxniSmCYr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGt55ePWper9RL3sa-ebK8YN5rP9VrDVExzT1rZIll4KDzmErE-KDYgTB5c2_csqYOcjqE7voljgZp9vqTftmNJ7Qld65Td6zSks2K_Wlc6bpe3VUFmnT9vWgnE_RnIWkROrj5R"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS4-PhddWEu-9SRiN6f6wXYz02Os8r_0XqesVQ1kzKJqAFhWS21wXKUM0305CiAOk4quyLbrUyBJhmpbXx7hMpSE9rAXu4oFcvwDt7UWPzYWqW-ykKLSFZDzErB4fg-H4zVPEf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG616FHxbkHfCoxVLgiVCtFKHbEowHgeaxKmtTpkZDT9FnRldo-fQ-Rbb9wG3GSubBIS7m3Rp_o-8jVVmhVYRgudw1tIqm9EYykJu68n0gxTQ59z-BWDkttIF_ysF8M_0grx_6W"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3xeJCc6tUTwP5AtYIacMiN8pRYpvWcGm4S2HyOem1DYOWTPNxGyBEP3jQCHyzLHDkAwQv8n9jPSx-PDYNqBipJfcO2S5Qhi-NCOEeJE036c46BzQbuoDzmIHXTFoVTqHsg-BeMeMJfidPKWU="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHsMovQ0zjmTLJQmLaMFBnk9RBm4mDBoqFLRW-NvnjbOKDMDf39xhKpEeDoF1tGuSWfYLP4NB1a9nWPkYORwhfHC8HTe-Jj39Li3LIWTEtswBZVLbe7IMOh78PoFJUb1PiPQiPY9gVJAWMy-wa1r12bQ2lQElO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhiWn_tuZBCdoK1k6HVoSF6Wjdlzzb1QOdCPy9sSq1Cds3BXJ1o4KNWjJ5UCDvao5a2D46VKnrzAXCpw-X213GCviRs67nu3fr7kidA-NlhSrr0iAzpcp4HtYmk3K1kQzt5WRJ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Amphotericin B (Lipid Formulations) trials for Meningitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meningitis&intr=Amphotericin%20B%20(Lipid%20Formulations)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "3-5 mg/kg IV daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 15500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 26724,
+        "costPerResponder": 22143,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 6,
+        "vsComparator": null
+      },
+      "name": "Amphotericin B (Lipid Formulations)",
+      "nnh": 8,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 58,
+      "responseRate": 70,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 20
+        },
+        {
+          "name": "Infusion-related reactions",
+          "percentage": 35
+        },
+        {
+          "name": "Electrolyte abnormalities",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "days to weeks",
+      "treatmentDuration": "weeks to months",
+      "trials": 100
+    }
+  ]
+}

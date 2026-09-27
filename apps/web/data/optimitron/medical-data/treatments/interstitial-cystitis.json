@@ -1,0 +1,1047 @@
+{
+  "conditionName": "Interstitial Cystitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:43:24.659Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFRjk-C_AH-2nrWLXL_z0jL-WZr1TwQkf-SEGb_Ir1DUNvJifD_hzzXQ_lOAN7KnspRWvcwukE8T6EvWYw6_EC4oO2HuNjaG2xQ1ZqR18gp25ijClbFkABwZdofS8E7SEou3fk"
+        },
+        {
+          "title": "spandidos-publications.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxAy6lf0hDr5d_tBkXy94BUaFtM9xgWaHCLFHy1UhypGOtUKM0giSguOa-Jayb2EWOkh-ARATHzUxvOiW_dus0HUXtXrqXNB5L-muWITO50Q09OvFRKnvWBCV6V1oBRPeDD7zRyhsdo71fVKbqkTfvQ2dN8bcuUg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZt4TsloxlZmc67RqLEw66w6kPFoc5gKhUbs3z7lviUeNzPI2A-_GJIbQY1xG8ijcQJrR-amUxnyDdOpIVVsp1s1aaL4BVo-N720fU-PtZMiZeg8z_7BbRGR6f_ea3F_bLx9qGIjfFb1YpczsLbuihFrj3w5DGYaWm57TSQVnVFGSDsWQxxFsiSwRugA5kG3ftv6OxiBoi8RKxPGfgoElYzumYN54WY2tzwp1O9hKsVd5zpwjRllQxaIjScCtm0X-FWjJggUUQyr8JRAzbwWuFDZsZNR6SEo-pQp0aCHc-f7LfXkM="
+        },
+        {
+          "title": "grantome.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_S8Ewa5a8uh_c6_3wai3JQbOwaDmQuBQLyaJ1rCl3P2rnGSgRUvkBCkPbpyoiWBMy0e5mx3jrrzOdI-VVx-k3JVifNdIwXE7PcuL5bT8uOGVbcMz30o0KOJn1hXo33nZ4ypuCvWY9Cgk="
+        },
+        {
+          "title": "icnetwork.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsHVd3Kn57E_Ai_TBgRrU-FM7uBk8kLmH1-WCVEMDpb9DNmPgCru8T3u9E_nHCJHnSXirGNj95S5FP0h7YPm9BVEEL3suMsVyzs2PD2QNwi7NYdziCllqobLchn2cfEMoefBZP8xtU1jCWKQgWjbpYxl3Op6Sm--tiHwCK6OnlDmgsoA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqYxOap3wgi4e68zNQzO_qa03laFYWI2A7bOVNq7D5OSZUobXV8iLmdW_8-ErJ5W0jAg3waRllkCK-JAYfCkr77Xe-ZepiUOyn2sW7w02v7CKzb1tr3o80sU9iKW0PTGEGPWCRwN29lMdDaGo="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAt-ZelqZZBwS4n9Dt7WipA-HQ4-8IAtrwwDeNjjeFdAVOO5ehn-Ki6FVJWDQXHll44qzBiAYsWc-zn3_dDC-9uq6xO1QTyUCFBPH75yRg5ekd1ulWD0d9qX1f0CGyfdYYWcctQBfasneYoA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cyclosporine trials for Interstitial Cystitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Interstitial%20Cystitis&intr=Cyclosporine"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "2.5-3.5 mg/kg/day",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4000,
+          "monitoringCost": 2400,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 7400
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 49333.33,
+        "costPerResponder": 10571.43,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Cyclosporine",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "28/45 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interstitial Cystitis Symptom Index (ICSI) Score",
+          "percentageChange": -28.5
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "22/40 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interstitial Cystitis Problem Index (ICPI) Score",
+          "percentageChange": -31.8
+        },
+        {
+          "absoluteChange": "-25 mm",
+          "baseline": "75/100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain Visual Analog Scale (VAS)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-1.5 episodes/night",
+          "baseline": "4 episodes/night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturia Episodes per night",
+          "percentageChange": -37.5
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 70,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+17.5 points",
+          "baseline": "45/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interstitial Cystitis Quality of Life (ICQoL) Score",
+          "percentageChange": 38.8
+        },
+        {
+          "absoluteChange": "-6 voids/day",
+          "baseline": "18 voids/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Urinary Frequency",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+40 mL",
+          "baseline": "120 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Bladder Capacity",
+          "percentageChange": 33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 15
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Gingival hyperplasia",
+          "percentage": 8
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "6-12 months, or long-term if tolerated",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgfW2jdHHrHMQaZSwP-2rt-aZJrkTLGOazVE0F8zaOg3_SxUFJ_wyUA7j3oxHuMJVoATPMm4TGla3CRjnWfpTl6zXeSkFHXyUO1YVFEf4H8PUPlN0gyTiTyU6Qn9ZvTTj6NUDo"
+        },
+        {
+          "title": "urotoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgzLAT92JNPD2s05yjZJLaIHyAq3EBuGgGm3sU0na029Ohdy-US8lAF_ZGObXZJkgWeDzRkWouIk4bAFwqGjaf5fXt416AiMClD3U6FBRXosEkH9qEwwSLFfH1nidNtOeb4GKfjF-C_EeEwDXGEuNDZcT-rA6drWoroVnxOYmwL6dXwFfzpdMKDFrx0YEkOT9JYayVxJKsPdmHK_uCgrw_H24_1rkK1ZT3rQBhFP0660mq07KAIW6nsRQ45M5DzncW7JPveo0DqvoqqbZPT5FWaqQuEiXn4iFTLaqbWI5BJsn-7G0mKFlaCDX-Lux2PeccdY-zyC7yyyTu0LxpurfA9RwKxC6kgfaz5ffwdG0lISRxyaTEWfYbHqpHu_9cFLAo-A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGldlfoe_Up0iur7ykw0PmRGxP4Yb3YX0UZG07ArT-xhcNUyPsysNux7vfFKZntiXV_GOspSYJoxy8YRYccA5axMh104n5lq6p0zNuY2U5SuMbwACddc5vEvQc0z8PjGGBJTXC8MpHrL_Nhbdo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyGUDotFAMHbC5mTBmgpW98wEB4V3-L3qQ16h6yZ-USN8Si97xChLyDiZSmP0fysH00a62z-kWJLcvUD-L6mmWTZG4Bz7p_C_v-EyKcLBfV0fXzmd1W5thNVviUEPFP6ySOf9ML-Ud-J25-Vk="
+        },
+        {
+          "title": "h1.co",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFByku-M2AmNmjTOCYDb_7qo5fns5Qeh6FcGfYWWk1hOELHKIBJc0Vdt23KHBbPTUgr3A8GLfgeLEyRyFSMQgz3T-xeRLJNAXaHyl1chJEYOUFG56CN6uoTxUNMCIc7oyjKcw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEogzIyJkD9V3EvvjjNCZ9eJDMSCtlQRWOBffVr42SqMBaoH5hHMNkXe-ale9jcMF6ZFvFBNIEbrXbkVkWxFiZIVwiBOAxSM5TA0k55AqfqoS_xb6ZTris8guZKYpzyys6kUJfO"
+        },
+        {
+          "title": "sci-hub.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhEW1Jfz61adltnAJUv3Ll_hZvjpH3K3Ze58dax-pTna45XipEXpH0z6tNpe594Tpn2LMA7QIMTxej13z6ql604y8JfHDxrbtf3tVw2wATxX_T_KBKJKAop6qWAj3m2VI0tDRAPmRFCj3ETT_ozwuxxjZVnK2qB7Mo8rTSvl-DLhO0RpcI_vWECcrgOeNOXlVkkTvuOh1r"
+        },
+        {
+          "title": "ClinicalTrials.gov: Sacral Neuromodulation (SNM) trials for Interstitial Cystitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Interstitial%20Cystitis&intr=Sacral%20Neuromodulation%20(SNM)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Programmable stimulation settings",
+      "effectiveness": 68,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 800,
+          "sideEffectManagement": 500,
+          "totalAnnual": 5400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 54000,
+        "costPerResponder": 9000,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Sacral Neuromodulation (SNM)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15/20 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "O'Leary-Sant Symptom Index Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "13/16 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "O'Leary-Sant Problem Index Score",
+          "percentageChange": -38
+        },
+        {
+          "absoluteChange": "-5.4 voids/24h",
+          "baseline": "18 voids/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Frequency",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.8 voids/night",
+          "baseline": "4.5 voids/night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturia Episodes",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 60,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.8 points on VAS scale",
+          "baseline": "7/10 on VAS scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain Severity (VAS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "50/100 points (higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IC-Specific Quality of Life Score (ICQoL)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "+36 mL",
+          "baseline": "120 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Volume Voided (Functional Bladder Capacity)",
+          "percentageChange": 30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain at implant site",
+          "percentage": 15
+        },
+        {
+          "name": "Lead migration",
+          "percentage": 8
+        },
+        {
+          "name": "Infection",
+          "percentage": 5
+        },
+        {
+          "name": "Device malfunction",
+          "percentage": 7
+        },
+        {
+          "name": "Revision surgery",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-4 weeks (after activation)",
+      "treatmentDuration": "Lifetime (device), 5-10 years (battery replacement)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg_9TWfiP28FzTi9hP7qbgFEvxxmpjW-MLxJT7cE5j744wwXuiWX8BkR4hnwrl9Vhuo6xwMUkYZIQmfu_sEEZgA82HdfNs6_Q-ge-iojgeGi98hsn8BkAV5c-0ysQHkTutzi8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx-OhNrnbPHzrY7UOyg_CKTzQA3ONrZJUXxzIUZ0DeVuZ_-2JwyFxKlZ3LtS4z9TZlEdVORz6PAEsb9nr0GAB9Q69KvDOcbuCcSRqj05_0K0pFM_nMtCYnXr-zlNJ9pMBBgXVmFL-hC3BNIWv5WG8t9yO6EPg3-pDFWZZmOcQWyRYiBLmz_mO4zTh3YPK26ZaNlHB-W0BTkgyh6nPXi_PdavkvCjGyfGx_EjM7msNpfXpo8kxCSNYVNZYRjEM4M9puJV8IaGvsf9oJFLeD-dHg3bpdeGo="
+        },
+        {
+          "title": "urotoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6DmSR9hZwHh7JzW0rqH6gR8ane02TPR1KlDM-151X_ZTK-JjOu3wszxCFxGaPyAMVv-dMgmbBoxCVE0tLCuehah_55XRljJaDvNkbhZqHa47SLnYfRvJeOiv3rEs9W5AHrgGF59wo_iN1ntS8sXXybeyncFQQ5LikbGZPofpv_qDxMgES6ZgD25R4ElFGw3h92BZaqwEHprQn1R5YdJqTxEPyfXh8aUY0VadzuHrjISrib9zBF0uYJXPwY-NEwGMQb8E7AOso07gbW54g4SUKwE5O9BpluTXxbjvMgBbg6CWceFHMTAtkQ03zpNSAY_Fl3DGs-2VilHVrUzqujoqWrpXVu3Og7Xu6s-wR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpG3UePHACInQEgyq_ImUIw7FOFvD196RK2EEQTY8e_hTSPQxkZPOx4dC9weTgnwHU2ZsCuFW-r0lzq6L1gsE1cA_ree3V2ko-lqtZ8AcSun4RXbERf-0GWOUovmHLxmgBUJc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFhvHxknkfLNkALmUnC5oVkzwkiywDLlIlXVpTo6d48kplagMn0d9YItA7KNoAyAVkK20VU0a3xLQ1BDJiBE-UuMdGV4_mBJSlCFfXOQ3DUbrnJd5SvrR4RIeB0bRrHRyE8qLr-SMmZ_sGbg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeqfBTR_fIzPawKleMogJMJ_pmElov3Mn2RjWfDi0CM3xm8HvgrtJn_H8TMGMkDG34hF9yK0YqBzeC91X4tuEe29atuNytuG0lB6TLGLaFIEJW5ZRHPcG9E_G5gCYXi7N8EA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dimethyl Sulfoxide (DMSO) trials for Interstitial Cystitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Interstitial%20Cystitis&intr=Dimethyl%20Sulfoxide%20(DMSO)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "50mL of 50% solution intravesically",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 6800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 136000,
+        "costPerResponder": 12363.64,
+        "icer": 11353,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Dimethyl Sulfoxide (DMSO)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.45 points",
+          "baseline": "VAS score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain Score (VAS)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-4.5 micturitions/24h",
+          "baseline": "18 micturitions/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Frequency (24-hour)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.6 episodes/night",
+          "baseline": "4 episodes/night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturia Episodes",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "Urgency score: 8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urgency Score (0-10 scale)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 55,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "ICSI score: 28/36",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interstitial Cystitis Symptom Index (ICSI) Total Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "ICPI score: 30/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interstitial Cystitis Problem Index (ICPI) Total Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "ICQoL score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interstitial Cystitis Quality of Life (ICQoL) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+45 mL",
+          "baseline": "150 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Bladder Capacity",
+          "percentageChange": 30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Garlic-like body odor",
+          "percentage": 80
+        },
+        {
+          "name": "Bladder discomfort",
+          "percentage": 40
+        },
+        {
+          "name": "Bladder irritation",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "6-8 weeks induction, then maintenance",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEztuOgiKaPw8F50ggTvUaLrpCfiufETPsAPqiSn6PMKfk1SI3nedaGvvAG0saWzEsMdWp3uDBe1HfP9CIZPK1jQxRfVUO9-gtV6dDPhBXIV0QkQb__VUN-G8V9nWz6Izx8KOFRezjnzbTgWSc="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtXFjeGJv7Rn9_qP_Ds8YMARH711PaouCafsa2RNl40eyRYnHx_PjEBPbxEjY7ZGzzsKR0Cv9ACkbBWW0F9zUP3VxA_312IBUSlpknA-ynVOAm_QzRHNYluAbbXVSswjFaLj_zisCdsea9pg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFFfCGQphbedoQhwJDjFwet2ighDHXvmgZFsbcKhPbBqAJumqel93UmGkTYOVugX45lIto78sfajk5D26VBDempFBzauO_ipEptGsiFyN5vOI0nIFqkh6OGdyga3-8c8B4OKLLp2h2vQlurzA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGay0XZ8OQ3F9ZqPpEm3Ss07x45hO6OGBdjOCYEKC01qI4EODQ9OlA6vgVffDTx2_dsT1IrXTWmwDEBPkjOJH6ovkPAOfHllfWPptq8jAPWJQvQmgnvEL_HYiswSHDSEdkti9IwGe6byKaa8fA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZgIWLXcIukmNAJrEYntwy3SuoY39o3_VzZcHzuUYlVB44ZueARhEMuNdASp0_f1h6W0EHG8GgJdAkgI9lFcPB68g2Ww1mngo0bgiBb1I510CvoQGl7EO0aot0KJ9oaPdwZuSfT-J2gZgy559b6GWSr_ucywKhtAHxsBDkT2epw5kqeRKzgbD1GHdNUFkHeONus91cE1SHIllSmeIw6HIrj97qw0uM0iGPBJ84m1CIIOPx4dXgnAlr1c6TE5WlbfiMLqyV5YuyJYzD8YJwQ8MHqnnBaKcUwiPmeys8MVS9bK8rUQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3wkMjTYDlYPTlfyx326FrjwyqJaBXpPsFjl5xoMcHs7wnR8iX_JTosov4jC4-taDUcHYzm9n2Zzzp_1OvFy7XbPqOT73S4d7JZ2PnK26udCoU01lYVSfYRnrZN_xX59IBokBp2jx-USO2YdM="
+        },
+        {
+          "title": "spandidos-publications.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHu_edHWITkKZQYsLONoWF8u9dBERaG-xlVdDTm7XpphhhwhEnMVJ9uj0w0jowilFbWuk8-67IB7INnmJrM3GRJvFISe3XzCAPU-Y2Ku7gwLESP8_NudiVLghPGx_7aK7hk-yEFOkCWngNp71qmK43ICpIRB73NQ=="
+        },
+        {
+          "title": "ichelp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6VBgvkS7MKBtyDm9HdYnEuYa-sHaw_Seo3I8kO2AQ26LsbaklWQyUcnRHHVNFpYs-BY_98jxzXAFwQaapyt7SRUZA5f2j7vSgU6IFDnrydMGhKT8--Dqcw9P5YXEG5rj-R-dL6QSk2td2KpFeuTqSUEwKCMzcjcDPG8Mr2IcnnI6Bnt7wixyes2wWlA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Heparin/Lidocaine (intravesical) trials for Interstitial Cystitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Interstitial%20Cystitis&intr=Heparin%2FLidocaine%20(intravesical)"
+        }
+      ],
+      "confidenceScore": 68,
+      "dosageRange": "Heparin 10,000-20,000 units + Lidocaine 1-2% 20mL intravesically",
+      "effectiveness": 62,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 6850
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 228333.33,
+        "costPerResponder": 13700,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Heparin/Lidocaine (intravesical)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bladder Pain Score (NRS)",
+          "percentageChange": -42.9
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "12/16",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "O'Leary-Sant Symptom Index (ICSI)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-1.5 voids/night",
+          "baseline": "3.5 voids/night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturnal Voids",
+          "percentageChange": -42.9
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 50,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "10/16",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "O'Leary-Sant Problem Index (ICPI)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+50 mL",
+          "baseline": "150 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum Voided Volume",
+          "percentageChange": 33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bladder discomfort",
+          "percentage": 30
+        },
+        {
+          "name": "Urgency",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Immediate (Lidocaine), 2-4 weeks (Heparin)",
+      "treatmentDuration": "6-12 weeks induction, then maintenance",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9VFxJVlyw-mqisyAKfDuN18D7jJG5_KqkX8Xxb8f0nnBxR7xwQCL4JyROB79lciuvafh30IgYM8U8BxbxCIZnZtuRHd1hR8x1u3yqMH2ab4MQb66GDsq6GtRZRyFiS2eLLPRzyuBKksn4hbk="
+        },
+        {
+          "title": "asclepiusopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf7hv6DEp8ZMQmvZgBvT4VVa8km3UsV_OA7J2pnvEcsYUgPnmlmqXLForZQO1NVNppN7NE-BPhzAUcvHGo7DTDr3dq2YvnD6V3Z0RT1lbm0gKlQUhQIv1LiijFUzg6q4XgdZG7NKEUcxhrpcUIdNE1vK83zqJfZnjj-62fRjZ42rUzdjHy4-nZ"
+        },
+        {
+          "title": "ics.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuYfozhbEnozoM5tlbHbtoH6b4zX-mBAelFCJ4XDe4_lPMstlSDgoX-lSTLCnh_NmCRYu6NlBB6nvj04nVlZ0AX2E6iexHmwmUjJeiba-IL1KMWtUt2v1fOwwClZluA9zDwlzhkx_mg5Dw-t1RZQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6IOVbbl__rBkD4tofVZmPaVFEdPSFQmrtj2vySkZYPn5wLqC6NLqFihO-3sQ--IJFis5vtbVbpu3wSSkf8GKORk8bHJNYwRnPsdvWWUoA2vdVNvOZ6ExBYzeA5HCM7hDP31zG"
+        },
+        {
+          "title": "auajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKcuErBVW7C-YnBMsWEwhAgACZNhygai1f8qHtjU6CIN6p_bkhGxEuDNjdnZSIQtqT1_yh6tHh1Qc8uf7eR1WHM0isCX6R0CQ3SCqTJLToL99rtS8QLpuKb8DsnHyLcROfNLa5eAT8rm7_xpZ6RliVJORV6Lyi-u2UEZq1"
+        },
+        {
+          "title": "ichelp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZCM4rnYfV9MTjGt3aovRBlSjpV1V3Y9WlwoKJ8rRDTP2YXtDTOgFgmC-GT4PYEG9ZFnFaNBQ8niAg5CRSMrwhpLMuBKgV-EtrAG_dMClUO5-E_7WNfkooGBrgZjaeTpFUTjKP860NxICoM27quJk2Zb_Q5JgIb7HFpQ_tUING"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRKFJWs1sO7oOF7Gdgkq73c7_z0QabzsRnkl5hAjK3LO9rfYPr3Mji-GKGzhmLA_Sey15SiMd982xjCLjvtKzjlOIEw5UTg4jqkMQ7UD24NmNjoG49DmzVO-Gy4Quxtse_ZMOmE-HK2ybyhQDnoTkh3TClqBxsVuPbUvMn2hl3dYDJ1SZmJz5uT410AKdQyC4x3FC16uge14KNtW6rd1UXd5RaIoeSE6RSPFZnx7OmAUj9hOU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUxHbwN-Cj48LzXf7S66WPjBrLBSuK3jNiE06lJ8LhE5Uh9vkY3HDRUBnfQiWr-a8Vqjz_n8AiImvclIWph2Fu3p6tADm5VqXq430iP7KAzISx9Nq7-JlJp6cKunCQifUthtifTxC_bSVna9wMtwhW0249kFsPaYExYlKQ-Da2Hjl5JISuB5sHG96tt1Y5q-7mUyPckriMDZdaTUXOUNU-Wid2CbLxeVmwBE7EIaHnVTbbRU8Opu_MPQlySrHF9IcZsMUo33pTqw=="
+        },
+        {
+          "title": "urologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpYgk_rMq3-MpauTnDYtRe0_8WwKA-Jl0w6sKDlqfDRniu_6oj3cWnA4_YfzTgu2Et0mkdPCQAba7E_BvPMEXHck57O-15Id-b4op-SV38LptzVOvbFJaEvZqSUShTG1eqCmka1Hb7pUTyosDf47Cyk3tvC-VKoDfIQwCW1NyPyjzpoPGsbJM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Amitriptyline trials for Interstitial Cystitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Interstitial%20Cystitis&intr=Amitriptyline"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "10-100mg daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 500,
+          "sideEffectManagement": 100,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 16000,
+        "costPerResponder": 1777.78,
+        "icer": 52865,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Amitriptyline",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-13.0 Participants",
+          "baseline": "74 Participants",
+          "dataSource": "trial",
+          "name": "Global Response Assessment (GRA)",
+          "percentageChange": -18
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 45,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "name": "Changes in Quality of Life Measures From Baseline to 12 Weeks"
+        },
+        {
+          "name": "Change in Urinary Symptoms Measures"
+        },
+        {
+          "absoluteChange": "-35.0 Participants",
+          "baseline": "62 Participants",
+          "dataSource": "trial",
+          "name": "Adherence to Study Drug and Urinary Educational/Behavioral Program (EBMP Educational/Behavioral Modification Program)",
+          "percentageChange": -56
+        },
+        {
+          "name": "Change in Nighttime Voiding From Baseline to 12 Weeks"
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 40
+        },
+        {
+          "name": "Drowsiness",
+          "percentage": 30
+        },
+        {
+          "name": "Constipation",
+          "percentage": 15
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyWkeYs-MnceQnti_rPm_EFC8VigK9zRn2PsprwmFynt3y3TcyvdL2mYT4RBPIpDhmyhlDx4IwrQBAWMIAmdYRrUxFxVGe85PxKUwK_aGJftYuMSp4f61aXtJjPkuqct2wehgN941toXOshLOr"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh7QK7Dsn3pk9WMuqJXc6SEJOwYekkG0Vm3hm01S0WK3V_sh0VtDiaW-zhNPBbLbXbgBngVZE5HvAIIp-KVqXrGsC8DZky_lEDFk-3yb9Jfw9ZTc_NGhgZySu32OEz9y6Hc4lOsWL8jxFllYRkl4ar4sp4PQ8kMtmxqoTX8Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEa8ESt8t4hjPJqs3VXzYHVeD2q-VjJvPkVq54DwYkh0b2NgqA_jFIxCUdDTBDO0jS1q0l5EzWEp2VMRhp-mW7Eps3dT2AQrvCxmvbgWm8WPMsNu-IG2C5PQULao1MEMcizyyWB"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmR91tzl5rDhkhV9lF4OnliZCjkCGApwufKFz26tGwQh_7U3A5lymyeRL1NqKHto4_moFAdTsQfmx0nv3ElEJmY9nIqY-cvlD4-qJtlRVimCxhPmXv28UitDx9kFghqFTW4N0TVWdtZx-QOG4gKJDsaYRh3fgnOX9bield"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9g6zSLzLcFHr2Zx1xJSaq6eBAD3cgZr0pA6p_TNHPXw4Ew4ZYnFMVweOcQ-_lZdmFQhFGTjgWmGcichDayyPDB8Rwi2qPhyoqMMait3KfcYPlMUsfoa8lDpurodAzKf2IGhH2PDqeLfM8owgdY4mA72PhuqH1vITEBr1OqcOSP8XsbGDDq711cRfzM1tSenNLpWZ9v18eo-WMHWX8OKzM9r739tTCMFI9mcSGKFGEaVto2WCH2pkWBmPZFcjJDmMTd2iZYkP9b1Do-FELO5fseYjUKHCfnZTZfNCBiy9Wz9w5UbooFN1qfX3UKEvkpyBxI5M4p2rea7q1yfRBo9-_M__BjlDm2KlpGehJjXA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqW6M1qslMbKbjg2re5iP7qoMx-mbHkWDD6KMx44tforsw1IwVt_TbifPFvdrvge8WmAb14UucKDazr3G8Isu47vYzPyFUPJXyxkn-ePG6y9M8LP039I5wXqb4t0mrilRLfHtUZvgqFcMjl4Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpfxYQdiyKYr2bTA5Ind3J82iQoA3wTCr_opqGi6h9vkyZ3pvh8AmMavbcJnXa_ZhELh8E3NW86Lp9ZfK_3fAjmKlI-o_ySwihNHfvkFqLUsc1aoAQZRbFyKWPkJK0L8rJcP1d"
+        },
+        {
+          "title": "ichelp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLUzfaBC3jqSK5UoKtiP97s6DWnBHkxzSoE-alLFUy80_BTGLP7X6eYfm5Ecaq1tjYFyTuMloksnbO3AM_1Z8ZhTPGiOB9hHreIJGdIx-x1lR2nvBcDpQRnb2r0DTbayFBjs8CES2k_87qCxQBcLfgM2iH_7aoBF74byVA_Fw8GiCygb8UAwL9C9jd"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pentosan Polysulfate Sodium trials for Interstitial Cystitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Interstitial%20Cystitis&intr=Pentosan%20Polysulfate%20Sodium"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "100mg three times daily",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 54000,
+          "monitoringCost": 1150,
+          "sideEffectManagement": 200,
+          "totalAnnual": 55350
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 1107000,
+        "costPerResponder": 158142.86,
+        "icer": 112654,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Amitriptyline",
+          "costDifference": 54550,
+          "dominates": false,
+          "qalysGainedDifference": -0.2
+        }
+      },
+      "name": "Pentosan Polysulfate Sodium",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "15 points (scale 0-30)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ICSI Score (O'Leary-Sant Interstitial Cystitis Symptom Index)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.5/10",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain Severity (Numeric Rating Scale)",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "-3 voids/24 hours",
+          "baseline": "18 voids/24 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Frequency (24-hour voiding diary)",
+          "percentageChange": -16.7
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 35,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "10 points (scale 0-20)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ICPI Score (O'Leary-Sant Interstitial Cystitis Problem Index)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1 awakening/night",
+          "baseline": "4 awakenings/night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturia (awakenings per night)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+15 mL",
+          "baseline": "100 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Voided Volume",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 4
+        },
+        {
+          "name": "Headache",
+          "percentage": 4
+        },
+        {
+          "name": "Maculopathy",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "ichelp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs8pws_V577_2fZo9ID-9-ZNs2ZKCdlnmJZ352qRl5XwEV-lsgBRrqMhnyBoxDrXfibIGH-moV-8lhWWfV_uPX2pSJSU0xevCpDCTcjkYxOtQ4KavHqSfbTeafhO3TxWHBgMy8qnU7ELozkVIrIfis6TMBMpCXwFpjQwxNgg=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu5IoepnJ1d2vfM8e46nzYfUZT10WYN1r5jsKvt9a3Xs3h1-gGYitHa1x3Kzc8eMuKu52ct6z8OfMh9jtQc6ZXDcCeAKIRZXwHyscYwYBX76dUDhCAFv1b_NDzsf5Lz5rnz25YDOQqekh3WJS6EY6Tkmz7hkWhymdN9wtrhqj04e6eOqH-MkJqXnpCpF-9l1SeRR3Ue0Fvb2LRuokj8Gk07oUTvw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtI76dU1F44yh4ehoH0r4AzLp2W9dYtsjxaawOy08OWSKNOgxobWjqzr5gvu-txejVNxJr_ibRilUW6CYxpjxxThUTbW_CIxbQ0eF7GkB7ITJoQ9UaMLWTsbcMzZdlw9oiFw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrA9wBNY7kdZG8bT85KUeYKx3rCiLKSHJWliwloGwPWpiJmfEw3BBSa8oKamsxqEfCndqqMBN0vG_vaE87m8uW9cbmwiF9Xx4kEcsxKfc-kdH0veAPzMQMIQB1sQMA1irv8NbcDaiuWCU35Ig="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw3E1VbJV1Obb8xXYIwyAWppIXW-MSy88onFIuqrzUNguBX3bsR5G2WOYW9fxWBS8vFeJ66NeII6usTJ8E7VoQqFccv-h6-hoT0Fbz4foVlBmpIn-bfEzJ6DoOil3XetacTXl9ufLeEnc1hlocdGYbDhjnEUQPPc518SdwobotJ4MFWlKHDlTxWO_fJWCiLqIDz07ksmcaC8oKFfGC1rUTHxvB93S6ZPdsF7kRcB3mOCefbgsl5NTX-bKTsUDTpHJPHMQq0xK0"
+        },
+        {
+          "title": "acibademhealthpoint.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5lzD7GOsOrQ_7VwBYRIfm3Y-kAA4Je-_ugdY5DDZsMGhLE4JJGUwDh-g4yVl0W2OuIwK3rvBBVgqxbCDIDGvLz74AKAgXKemXDo-84SaLJU7jrlY56Wrd6jgQ4joUqj3r3Xgxq0AjzO9aIKhUrzQ5LFOIevGVxVOAo5YmsjLQE0qHyfLN3adhFNuJ"
+        },
+        {
+          "title": "bladderandbowel.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWeU3cMdVZIfACU7c6qxQ8Pq9NcEGhcfrrm02xkLqLY8VbnnoFlBGzYoe5cLmfDBG3zNzc-j77pvwUX-5k9XDk3zP6G60RcpNNguP6miqyvZlzIECfc1e68XvQAm6dwy6R8EfWAhSBPaVB3HMD_NpbGgat-UH0uo0OryortQ=="
+        },
+        {
+          "title": "acibademhealthpoint.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFcj89wG9jcQqMhoHL0W8rsdeushD_4sbxhDfu4zrEkl3LHDzu1XEP7Fh5SAWeW9wy6lro9ePpkt0RAKMg4-nyZPv5lsdQqheTp6cfPBbgl0jrwJkF98JFMCRli2T2MeOt9po02tYhtg9c_cwrifIRXfZx89Iy3fgbbgTjjyULm7JFRhTonVxVm7GafTMkbbVsTvg="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKumB3QXM-QXI64POYQlC4x8hXwhT_ZeDfRbRKhkwPPv7phhFkaDZ497MH7BoZsoGlpnUAHY5gLqxCaHGI7wFo3z_IhmsZHmd5On2WYRV9rvIfzKcRlqceIMsL3E3trvyUc1s_9PeVXoUKtEdkklnxrt_2WH36QGhQGsD70k4pmnIrF2qvUWWOjp7PLQxiL8NX0PvE1w=="
+        },
+        {
+          "title": "nova.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE44oEmtWmUdOagVmM7WBWFPnBA8AK8iEAkJtPtxIBjlf62hPxp-AjWyiEL6DDFo5HrH6LeW8PrfuBV3YIEWx8LsS1gdY6cny3TUE7vAuHj8l5UOXtHnnSpodBV3_K5DxqKl52D1XU7vjfUfpIBwVoID2fOzKrpsx8fV_iGyoQXyy38kFGSdXmshzWADxIgJLFUJXAIUTNdRCZYrR__v22RW3iRsWw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHOTiravquDr_Ce0llcXFw5NgSmhDOWqziXXgalGAQr59gX5-mmAJXuU9vX24GsaxNooukQLrEtGEmxoE58cn3fLVjm0b8nnJBxf2Z47hgbgoRcSL5a1D5a-_aN_G9nBMUR9YsRHPimD59iA=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGymJchoYZLpBvLX33t8NnNNjY8hrgPu3rUr_AeicXBV1EDd72DI2EHv21jim8mLxLf-8z9Hm9aXw7uq1A3egi7hESpdCzCYCs-k2K2SKEgOEfCmKPZN4_9FITitq6EeHj5_Jes00x54ab15imC7cUBjwCQMytL_g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUy9Zc9h4VgK9A3W1wjAj3q2Xznu63-XVlDLqw9U58Z_c_5cp0sM-K-T1f2ZKrEGFyofak_ict7R13OjVGAxMyxWxvmr38PI9gcuXKF93TJudsXoQ1QLgM5zGZI4EFwBItacBdt144oVidKmNVKpuVyESrfTtLEoZ6uSlHYTsRocdij2E3zZ8G9a92AAFYZL-xxQlpxUudYS-W1PBWGLhwp0XkmPLfNopaXuQ66UeUCEi0YahY7EvN8Hqev3lSyRc1O_Esm9hh2ez464dX0tlym5RVLUV5zjhfTZ3IE7wuEIJ4_xONxfgHagAzhjQgaeqVxw=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA1Gs5EbEueantcRWhmQ1IGuHwiaOGs2ILZ9wI_Y_vprp3lDiVCDWNuNWX1z0IpHUrWUnkM2v_jxqpjlO9TDLYrXr1Nc1fmZ1mN09QmCT9dtek0Yk4S73kHy0jAw9Kg3p6ffI9ng=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Hydroxyzine trials for Interstitial Cystitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Interstitial%20Cystitis&intr=Hydroxyzine"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "10-50mg daily",
+      "effectiveness": 45,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 650
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 32500,
+        "costPerResponder": 2166.67,
+        "icer": 10147,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 100,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 2940,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Hydroxyzine",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 2,
+      "responseRate": 30,
+      "safetyScore": 78,
+      "sideEffects": [
+        {
+          "name": "Drowsiness",
+          "percentage": 25
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 20
+    }
+  ]
+}

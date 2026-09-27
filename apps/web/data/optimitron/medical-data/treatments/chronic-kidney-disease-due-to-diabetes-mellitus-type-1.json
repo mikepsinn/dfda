@@ -1,0 +1,644 @@
+{
+  "conditionName": "Chronic kidney disease due to diabetes mellitus type 1",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:15:38.025Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyR5AouYBiTA63LJcKzDxN71oIA_ls1c8AKeGJKfIWWYyXsdhztnbJZdSkaAHwWeF0ut6C3aiZQDOYsb1f2r_oHxmJcPaPRT9J55rt8iL-gkS8jt2KJijnpI833nyQSEKtl_o7lCvttB8pAq0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnF0QBf4uOKNy0OYH2DtseAwv1VLoSqe_Kd8Y-w0JohTJ27XeyAlSWaCOBOwzzaEn-ZIfNfdcR1B2_43KSSx8GNM1yWva5E-w8pz8IOk9Pm3eDs5g0VK99oE6eQG28zpbdABMTf6Nj5aLU-18="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ6VtpEIXdEaKjDJ_AsOeYaDCg3pVkBoEeaQYJeOcv-osool62V2665fs2ukFhymUreTZLO2h9SldyC-DKUxBVlaMzhhGbG8Xpxr_ok_QFIBSO5La0zf5JPxGtW90dHW7i9-fw2k3pUSt9KdhhtVHmVp1UoXmOuxi5xO8tPJ4BGXVKrfchUjADoMGelFeF0KEf66Uuy_ZNvK-xB7BuGxtYIdBndejkPsJA7_CDPm1Q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAsgy7zDGa-HdEx73kKqa6CzEX-zt3_ORJMBqrEuctaqbLt6bkuiQ5OUvaIxcqJEsyY4fs11NrVPI3rk_yBMbLPvQucX2t1UBnRwHiPRX68l1a7U_5kx6a_TsaS0-MMhibk6CusPr3Ir3VTe0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6WMvVEgYNI6hjZZSoCLVOcJo6--PVU4TnkrJHxL7BY6Z1X7YyDPKOdyMw3MI3254ajzAsp-5zqTXRMzgnb2tWSkdC1GolsPvThJDj_Z7ve--sPwJeQYc_tknS6Xd85uoJjXi25XhlfHSKxFsC"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intensive Insulin Therapy trials for Chronic kidney disease due to diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20diabetes%20mellitus%20type%201&intr=Intensive%20Insulin%20Therapy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Individualized, typically 0.4-1.0 units/kg/day",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 12500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": null
+      },
+      "name": "Intensive Insulin Therapy",
+      "nnh": 10,
+      "nnt": 3,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 90,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Hypoglycemia",
+          "percentage": 90
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 60
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Years for complication prevention, immediate for glucose control",
+      "treatmentDuration": "Lifetime",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "diabetesonthenet.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF72u4wLwm_QaDYWAlBKvyPxWNZ3dFBw3oLos_pxFYiQ0CBXEpxAO3Ljj5t0PTNr4Mqh54sIUd6ZmQ6RU-eNurWOeW1mv90_mc_cGUtT5miK1TVPXUd39PEmAMUcEm4dq5V-LelzJJGygKA3ItRfv-FmmgXWIViHHCAC3zBrWBMzZsjTOstKx17nbkIz8aWRlcHUg_S6aWQyRjRT9voc9YJfmDFNw80Qy3csLpfWPRqpvM5SHCtNUo5CQB9ecDFnQ=="
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG04aYjQLwSCk6hOARo6WNznG1VA34zqsMgBFVw0d9uXewyfS1HM3r3EVd6cRwE2htzT_mhwl_0MWv8u71wNSfbYfcmcqwbvB3GyyXVpWLGFH_f8wyu5xuqEjxd7vCGXt8guTZKAyB-n6ypThJm2Gks5RbdRsukdPtmmOhCsQLgFHgHry-0MYsr4_PrPvWuCTyv0ZnZdleS74b5IUfqMs9qvYs7sqXYYjc="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECSZF6_2dT0NAGEmYDYAOuHldnv4nFpMW0HH8oHimnk1CkX5bSoRTkXTTxMUe9H79U9QCoXURISTThremixMtJQo10ifZDNFiWenjrbYdzL6M0GiH6UmO49m4UrmVN7LpI5lyK4jt1qt6R6SvSXe6IR48YzQ9OrBbPzBTFlK8zwTa30NduYN5Yf8SbXcw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH6hOO78km3hkrgP0QBPEnAiGiifi4XrrmNUmAXM8JnjQPu7sQF6DD70B6XfmhAZOXo2jJKDq1D5R9G325kGo9FVpBP6Co60umr_UwSX3y60DoIo9LdHJoudA14iNW7XcndmSjUJ8O6prqRWSYLexh3kPBr9Aa7UAxKEFo7zfysQ6ef4QubaNMF48CbhG0n2vES79d4cITQgMdmlA-pJG611KNstCIbmMuCQJrwpASZTsnXJuMyMZxLpMtIO91WBYBddFjwTKReoN4BJXkx46gx9GOK4AR4pMhCKVtyWrI6fcD9N_dHWrsVEzSSTz6D1NKa4Mn0J-7z07xXHjNwM7kYCklC32MQsBFIg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYYoF15quoELf3c6keEhosInSGSPjJrAeknV7CHYs-vcUjvrty9wFCaAR7N6m9LzKCA35TEozGoq6LRmF2j8NloZr433ryaL793Rt19hqPR87FidO8OHVO_rL9aobSrSnw5KyKADg4ZVzoA4GC8Dyg8spzzeSwRhlgjro1vuYxcIP1jNF4MOfaOUOuGnLn_0zP8LReGtvj34af2b5KXEJG8J3mY7t99JTfr91FDz3Zukokyh52yG5rt54WdivyRLhxnrgTurlBtW9kEfo3DUJ_wYUrepdTjgpBa10_xcERxQ=="
+        },
+        {
+          "title": "pharmacytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGACuHL23o4KmKNw1PmE3asY8aBaqwQxp1Uit6YWhLpeJZz70ygaLivkQ80hEApczcc1OewN_au7jTvi-s-a5meSefND-QXVUU3kqpesUG8REfsmH9n3obbaxkDHRARHjQzK_dfGnEp58f9b8i5_aaDfrm__QXQ1DxbhUx-LX2lHlXA8JWE4QlSDbddr7hg9V0D7tsKUucDgqZCNznGkQbq4nEOlerqv2yz7Dsw202vOUU2HL8fhA3aYwzm3Bs3XLNOIbUtkjUZvQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQgD_f2hSKdFlhGlgix3OSnzCE2v1hRomOpRU0d4LCjngzs4b9brN4sJrHGbI3bdytGeChx37f_BDNzSO5r63nA--Cb8RUn2aEVTJT168hCt521YSqLsdqjBjPFE9geAK7StM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfZpcCT3KT7XFEm_cv9UVwwx7fQ9_YihOte4CiHfTeyKwAwrK3DaggwxDHJ7b0QAy7CVXEMyOO-TxOBcjZ82VchqB2_tQsILyQH3vitYCWtKRcgxVLg9LZQrRFzU9N21wKYpqaNBD7v8U_tVU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGThDvIISXc-nwfHGQc4nZerPs007qnYQcP66qdgKD73G24oYEx8pVEXQg29nycyRV_fPMYTVOBJE0Bu8xoB1_s67cW-zvIkm3f0-wfHMNV4zvshTMoPOyF6QZ6IS5EdTleR8UGewN8B7qzVA=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGLGhEi1M0F5feuQvVkObzVjWsu7oS5gpUUY4rM0J74k_Z9FP9nEkTKUvCmY9ewDSnhPRiUernsJiuJy0ggaXkN0mtysLkYaBw4miAJFLWBSlKMLgo8hcxiZaFhHpSqk_tNTJQzQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6wIipF_h69PIqVMXW_wOB_4pqrKAf-qnxqa1oqyAompzeK9ggBbFrKvcuFXsNiIVtCaEZmHcunZMihBJUKW0k1dQfK8sRlMy0atYWST_kr0weuQQtenzmyxEIuEPDvcw9tyo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dapagliflozin trials for Chronic kidney disease due to diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20diabetes%20mellitus%20type%201&intr=Dapagliflozin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10mg once daily",
+      "effectiveness": 88,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 300,
+          "totalAnnual": 6100
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 8133,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Dapagliflozin",
+      "nnh": 30,
+      "nnt": 20,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 mL/min/1.73m²/year",
+          "baseline": "3.5 mL/min/1.73m²/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual eGFR decline rate",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-185 mg/g",
+          "baseline": "500 mg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Albumin-to-Creatinine Ratio (UACR)",
+          "percentageChange": -37
+        },
+        {
+          "absoluteChange": "-0.4%",
+          "baseline": "8.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -4.7
+        },
+        {
+          "absoluteChange": "-3 mmHg",
+          "baseline": "140 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -2.1
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.8 percentage points",
+          "baseline": "Annual risk: 6%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Hospitalization for Heart Failure",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.5 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -2.8
+        },
+        {
+          "absoluteChange": "-7.2 units/day",
+          "baseline": "60 units/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Daily Insulin Dose",
+          "percentageChange": -12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Genital mycotic infections",
+          "percentage": 12
+        },
+        {
+          "name": "Urinary tract infections",
+          "percentage": 8
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 4
+        },
+        {
+          "name": "Euglycemic diabetic ketoacidosis (T1DM)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Months to years for renal/CV protection, weeks for glycemic/BP effects",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn_Va9yY6uJcurLXOQzDHY7uwydWSZK03FEyU6SEDNMlmpiixY66nl7VzLNAy4KKTvh-CeRk6oKIGWDBusWsVxAl9Ij72wyJp6HSlFayVUm01Xz10kynJDKtE_gUkxh-sJ6jC3vWq95p2gcZ3Vb7s66kg="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAf3CcJyaSA8rLUeQ5Th0_tMkUy6ls6IeB_THhcm5Safgx0Qk6yInA6LFtR-WwI7_b4dUbnXab-7Ce1OVXNqxRBNa9escM6-Qj8csN6bSwVQPK3Pe5k19X9XxrgSCOvkp8uWrZqqCCLc_xrrzoh_deUB9vF52qC-Yh"
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP2YiU4PbeMFFtyrwFI9qI0N3paaXTtAvDU4_mdlM49ueRcJAe0XkXlJWYtA0ZTVBbz7MXwh9IULjtAmn8faRj-D-rU1hm41dHLfFnINNqyXea8BQk1QinHaXBVjeO11ccXZNQk_IGOjuLblXk3p4jSWbMe5YgUq1T"
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG59ZKdODfc1nn7z-rm9r7RnUh9zkHh5aCum3gASuolWNdG_0dFaLIhUydqIzP5Sw037-PtPZIZzlJHHy1KpXbbDuMuNbhuTsC7VuZDMoDsHAjGGMndI6zz1pwhp1jcVgpVB4vCxlrvvMujB4FbLWHdUzkivDTSroD9ZWPYMeAZ8kgwXFssD6MP8icvetnBlvFyERb8-hao9o5mtAZbgJev"
+        },
+        {
+          "title": "eco-vector.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoOWFqA0IapLO38XLwAZCHmWwAznOvXXoVzHATHkAupTp4iCPM6_m9mSAGqF25Nh64LHFa6QEHbMoZZM5oVMXzqb1mnH2pdfyrCYHdwAHPGry9GAKntnwu_kvuO2n5wGgkkn22BRyDdRQtIEyrlAYQhO9esF4ZjYE="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8ye2497p5u_4-eJA38_lijzXaKPwqETRX8gZUPXEo6YEFQQOserF6pviIuuS0XM0_9oftr_dpSY2sVs3jEkVQ-qgxaUju9EEJf5jq9fc3Fy-UjJvPm0-JfPzcu59kif2BjhfVOOmpoGwvLaAgTXnUMdi9f-uW1vWDGV8TNc1PuQ3hrvL7IA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAwdNYjaAjVLHYu4QLBDCDfUixVOTeF_NnIlMJZncfAp7ZR3HnnAlWKNepGTRtxThgG7SRPkSbL4dHwoaKz2P13Esrw4jGdlQueukKb3SyFF1D1Z1EXup3WkFUX1MrSezVW9J9QfRr0WSipXY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkM5VLwrGV25IQ-jJuXV_5yC-CVIpVEl8jJK0FG07HxJzEMQuexgKA727lHe2satBTAOkSenPscmAyjlykarR5iDUi1lc9daCVPtHfUAhSE5DLViT_0yCd5K-8XTbMTM93FJSPtvU="
+        },
+        {
+          "title": "hopkinsguides.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy_v6Oxp6S_fMcajqrVKILLEUyZpIlajG3Q2_jiDVu2OquTQDIBquAJaf-lvzNWC_Y897ZWcc3_jxCQB_kRlCkopaTvXy2iS3kLugxdFhZqIeWPeTxxxMgioaUATvfAe1QSt3irHz-AuCGeLNHyIGsiOcBbptznI0XlShAdrh4Q-y_RWmy1rPpbMG4FuMehhiBjyHBccVuxoNlljo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUBIl-T4CmYP_v2JQnNzrkzfEzc4qlRXBponP9cpo0kBq6kUw7TMAGXa23xPWZlHKVdjObT9lAoeVhVoA5YbkqtIDIEvNokEr5gSCqEagKsrrdKil8r0vneumfuxABkyBj9l_gSLoky3yQqQw="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-GghbPf8Ml62nHwtpZxPUZFehd7b7386N0IU_jCNmxIfi9s-_L5m6eqJfIXVBaQetpsQxZ0O4GeBPDHKns-Tcgw-4MC6ga6fQaGbk8wrYiHt21kE4JbvXIqJJgA0s0cD7GQEr3o7BABQMzfxdcjLmGoYlhVWC-2BvA-Dy9w1qM7pQRJF4GJRJ1v0I8o1iGVpZHv3fd4mi6wkLDT3FHov_nWYJ6r1ADHXQK9MGlL0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lisinopril trials for Chronic kidney disease due to diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20diabetes%20mellitus%20type%201&intr=Lisinopril"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "5-40mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3333,
+        "costPerResponder": 385,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Lisinopril",
+      "nnh": 50,
+      "nnt": 15,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 7.5,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Cough",
+          "percentage": 10
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 3
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 3
+        },
+        {
+          "name": "Angioedema",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Weeks for BP control, months for albuminuria reduction, years for kidney protection",
+      "treatmentDuration": "Lifetime",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsD7nKtIT2b7GnjomBd4x6zLV-9JEEOkQlNgIJYpboVEfOOFDzJ0qJqbKYRVyhbc8MfJLnCcAgmKkeSSO7AsE8sM4MQejdfFdJTKH-ICj-nZjtEAXjAGAJr0PxwrrGxyi4kaWQltiU_V0ONFA="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeVyqI5KUJcAff3NBLTJyn2DfJJsLHNmiw0e9I94uhKprKVf0EL5b2J6EyLx8hKcxMz7KVl7DlkzMJ34IE3dtXdx42WQIzJ5gKz_nf8Klp-OPnt9y4rhtgFdo9hLEfRtVIPdEgtHJRLCqprUQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8rlTPrkQY8UTNGVocLNy3U26ZF06lIFnGpK_q3grgDSK3PsK8mqSs5YGKkz01jKFFdf60w1eGgCzNQrtJ7gTf5p7aj1_Uu6pnmUFv2HRQIt6WNeAm0-qQH7FHoXFickEGW3RmiKMfA-mnAJ3e2EHfmPGBPzfRz7xfyVe8JWw6Giqpd6nAbGPMCQfoMPjP3uSUAB2pLsVPP4cHHRJgZXDCu2W3WuI1rDU3eq2_gIQIJVKKl0RXC8HjGmlnQ24SycC5Zf0aitxT0RTwWc3Bi6UOdsCYdNlPuxWQQl_xK913KUJRQhHX4pjG4IXFCYoU3zpRw407xAUvx74FFPuc711TAlVj-tza8mpZzXpRcXwmN81k8A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuidtjdr_yj8ETXHO8wt3hC-5AtYgqoO4coedOPzsW2d9e-vE7PE1z9ltRuyH8-IYumKxx64VN11EXDUyJX3XsE5dp0ugGwWlHU4yAYXEhUmHL1aQy4Q6p9ZRzVkRHVhHOxsDLohSMfFvFH1c="
+        },
+        {
+          "title": "highyieldmed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiBrV7UqwurqgTcKbYPs3m3qZRd8dSkoWcf39sfPxRH56yJLStD02uYNJgmAkt_UW0pM9krHaqruaQan3CjwAXYS0xrjr706BtTwiOOsNbX9R-iQwfumh83cLkKKn9kcPf1xoOpTW8aUUWscpdueRyzH6pCCkpi0wVbpzB9vKaJdCY"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYO7IUkmvv2OfsL0RX2Q4aDItSN5A7cil3E44VoUaB0P12El8wRDOuX849oUsbo24_-wYNyy0F6WIoVvdGq1uwYWrvC2R9FHF3VrxcfuwfNSWw_6hmMCdCPSLwsR6iWYIJncYDXwCiGNesH6B_oTxQVaM="
+        },
+        {
+          "title": "pace-cme.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuVvURHmB0iojGfr8sJLdMJcdWL7iYtYfWr3M0J8xCoxR3Pw0VJQ5lPMCmm3KvxTNlJrZlHmPCkehPg0R1C_qnrq5nekUhuML6eTiQHwy1cwp4sAFbCeJA8oi2CH0cXpq4xWCn_Aq15X7gmEVxL0atbZIHilBX0AMTC_vrje5VJtsopgFroettfAXs8tiXzuM9t6Niny3zNUW2DJc_B3MXSVEDLeZjz-UAcaF0C6klfwT9FAy0gQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyuE8qZbjZRfa5GtuQvOTa6bOzYAMJF6t_phBet2yFpUd6qiLg-KeMMNMUD1_nEmO5EqW4fRCl42LjqzgReyOMSDeEoRp5y99wdsje9VnfYzwrFCfZUSrbu_2UTWX74-eea5Z6WDs5ohdgyy90Z84A3uoc0Pxdc3RmxllnTJWH6BZFiCxHqEyMJDkio9EQ4ar_-3qmwAiKgIXUUxPYmvHJ3b5f09jJBlAi998HmukANDmLOhQtRn9RU6ehDp7Q7KxBN7oJ3HJhVdqT0XbHEtNPvpg1eGY3wDfiCrQxdNuCe8y3Yu3DlghqJH-Ncv4AcmR8SttF4HSRhevsTxS0zvk="
+        },
+        {
+          "title": "the-hospitalist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFExec2VafbCWNPiLa4kyeGuTnEM-FvTyJGsz7xQqIk6CcZdpwJCIwCYtvIoljh0THr94le7_kSA0Si1mu9ArqO2BFyV_ATLdsDmDU5I-E1orDrc5IlkAclQqoy6TXhJvmOpMmLApv6ikDZyO4zdovaRYmvUqm2BzgqMUzKk0tNJoqiljmRHfoNEj8e4_k1-Sz_FDQWJkg3AD4uWPsfTlKqoAJHMD4Ur1Ef6ynElY_Tn8tvdw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPu9Xpu_-hEs7W15QYyFTAobaYtj5SUXCT4wKxOlLcmwwAmazHXwdHtPnAngpVOQelBbmTKY7ixi8MJ-UhomKbURWU9rXKUoBeoRihgiI0lVfKzOpZrCUAJMWTVBGnUaTMnDBO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3y4KZ1eMbAM9hPq0xAK-YTU4NhPmYH6yT1M8H0mWj-mysPI5iKCykwe5eMqRBoRyzEs9VcQ5y-pYrX-oXSKEluRwdUCmivUkKMMAITj5usraSHHAaNRGImmgJDRSMYlXzX2V-IzU8U5xTjGYL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdXktZB9kwgDZlVtohn1FyYporrYHbAdi2npUjZZunnE0oxrLLn7VUDemrG_exgGjInqq05AdNnAgnAiCKNIHQ5FKpfTjs0p9ZU0jeGFFumea8QjH8fm8Nw7iVeSDzNqBeHmoR0VCTDzXeeaMF"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECgbJyYA44P8_wJC06HQplfAD0ZSQiyxGue91FZvX_tO8IOEAnL7fXaCj2KsCAOc3gEplYiqauzml4McnBCfg1bgeownqST9usUHGYwsM7Oy8ujXmqWVCiP4564W5oGUIxRgjGvNT-6B4nDGq_7DAmMuvdon5Y6SANHD8eJt8BmPXVlcv_ifYFFw5lIJQkxBQfUcB2G6s="
+        },
+        {
+          "title": "ClinicalTrials.gov: Atorvastatin trials for Chronic kidney disease due to diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20diabetes%20mellitus%20type%201&intr=Atorvastatin"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10-80mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 120
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 141,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Atorvastatin",
+      "nnh": 100,
+      "nnt": 30,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Myalgia/Muscle pain",
+          "percentage": 7
+        },
+        {
+          "name": "GI upset",
+          "percentage": 4
+        },
+        {
+          "name": "Liver enzyme elevation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Weeks for lipid lowering, months to years for CV event reduction",
+      "treatmentDuration": "Lifetime",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM2DDX0FJ7FfJ0tHLVBZ5wGEAAhgYiD-dDNfOLactRDAweMhr-R-7rzbU0l4iSikI21H1S-pdEJXU_yWCPVy7WMpcUSpdo4NcE5ra3LQS0Qhr5B4-AFATkdfIjOc4cAkcORXea"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGrXj_ebOehjmLGOftn1dmEzwQyBuNxbarj75zPOJNheBBCjENQR6iZoONZX3kyoPu4ON-JJKqD_WY0RaSYUnofQTHr3UUkT99S9I7u6MGve7XjYenqJc9ZfW7roGmjz35GUJi"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF46umqUCY0hKwSJIwx5gKeJcsQc3ewaSZD08uUyV9v-LThv0UEYLOtYaqNoWWGpQFmreJeJ8_WxsiBeDMrfg2EYl7lXeV0eVEOjiZv0LntXSRB1ddavJOQsszw-kKgo-zwDS6HWAl7qzI7uSXBMESwi9qVNdgI6p8a1KQj1AT05lc_N5pTAkeeViBBUQwHk3AGu67Xg8FGhF-JvF7WtMUpq9mjzsI_41m04cxKaUisPqw0jEvq1TKJ7ov50k6SAjgSbDXMl7PXVUiE_5E="
+        },
+        {
+          "title": "clinmedjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJzgMkBncJVQPO-ZhKXQTt_8yFziqRf91xT-ijofefq4hy8UySZ6JVHGqA3Cu04remUkU3f4V6BAsspzxwDj-jUV18DFM3OJsu30mSyRBDPpySMh0uqwgVG7VK-pm68VYzDm14P4qvFrqR3Gl2BO5vwGHxCBumBOEoJyK2VXE9tYi7numvR2Cyla55ms_JybBWaSWs_vxH163PTDoa1sqUmh0ePOpkKYNF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8jLhp_k-ozYkmHl53yNg-oWIldaM4dehnPxbF3hE6RgKHmwj08qIy7cVTJiplDE60p4fx9IJbAfjUdT8KEfC_IGjU9ghwldvncokFhDdrPmlzj6Lbfnk3D_mUweGVaNLNunNKpI2sZ32KJv0="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHK6HKkp6jcrbCudo40O6uMcMtXgCJ89rgUKKcjgEbl3qpHSJEpvT-dg9j3kFbJ5fcoOXWIXEGM9cdGVG9I4Sfh0NZvJoZa-xJu83JXTUI0Pc6lgcUGPEcX-cOcSyxSyd0FqiHL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0JeI86hVHOXRbdQKxvv87UpjRpvpPpPep8bWXJki2W0miMGjjZGOnrUChVfzPMAoMTmczIemEykCYsdM79YmCYb-Z-GKCGNvKOPlk02Ja4FqV_oqqS38E26VIYDD9dXrXLVWJBVBSVD9Piko="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL1bMP6etWeIP9VqgM3ySCw-pKk4IswX7ft4Gta6_-BofrWAouJejNVRZF9uAZLeOTlvcT2Pc8ivBhlTZXvQhiBI69kSFrM2EOCFS-_x6ghdOo3eUlxEIZTcUEABqUmIFDxtClWwXDS2PsnSNcuRuy059r3rZn4KitLB5E"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgYGUm3DeUHf6eQhzJ0jaCwjNkcDWvn7N0RfytKv1pRKgXSfAbLW6qdnyqQdD1BFwhWD8HkxbnzRg5FvPWUQ3xN45rxGwmkqQRtFCoRbJ8mQHL1JfH5xxzFXPd_4-dgsQMHY-HVgvGucpvzjgePgyKaJxPt7_unzh5b7xw8_yadxqFjE6CGo-MFcOhx39ufpuEYtWTRCw0HwwN1fTUVY8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtXHz0yyyQjw4q3wCx1kXFBtJ5n9gHFIQK7Ixz2FBbU45rbsBL46JGymf5RFHuHeGhKg9Ii5jbLEG5t2AzprF79FdwemAmKGqMSlgJ-cV7PenVFcvRCjcIzouzCbzLeRcd-Jg7Fz6iah201fw="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz_0bszHrw082H865VLYiuNIO86Eeyp94Af9InxLKOf8YwBA6lSHeFR9LZiwdq8RLaUY_x4ol4IZcJmtcovXmomUBOL-gOSAsMXXolCOhqy-xSAZO6r5BzQM9m8-xJP1Dg7IlX3ByYdhAb8QdcUCKrX9UWReQNsReBMLn4kO7tTGZnIHeqPTGOL1MkKbGjHtGDiq8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQES2B6quDA31va0tTM1YtovDT5NkaFOswi7ju_KBmWNisC1Hdj-kZ8-dwXuzWRl0wPffEvZAmVsEYE2pLRSXhpoKuQXtZena75NN17M5lhzRJrUkXXHLihZ_tLbDIGQL6xLxkaKfglloKcUp-4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdBZUcVdXSfLREYg38blEWjuexUpl44eapE0JiwAnHBtQUrNIwLKWRNar1DOKshX9ErB02aTk4zXaLPqGfJkVhTuQxKOWmzyWzuZyS2VPO6Q8-NiJsykVwr6u2fN26jTIs7_Qt"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnjWN5fJOdkdsV3uBWrS5XOB4ag7d7Bw6MfYJM6VxdMwxkdi318S_j6Tz1x5_dbJuvZoxHw2eMYf0RPb6KNU6K6cAvnUYIm0W_uIzMaLnZaSgosp04uvXJ1tU2J8Hy_-2_x6Q_Q4H_eB6JVB2hYKdOexC4MiMfCGmwKXzR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8RhfwCgT577mPTiMmhzGIRL98ZVdyk2thQkPaUOiJihHLEajJHqfv9Y17Od48-v5V6ymmN0weu8e1l3QXZ4zduh6h-P1wHT7Mx7UMuGC1HxN3k0PC-pyc_4vJOdbZypwPvS_TocHm5sqNsXg="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuR9zjj463EWDcV2NAqpV1L2HxtetRiFvRIVjvCjNjS0GakEiM0v4r0JSm6KXkOkMe9E4VDCWrTyZ-l1Y8Om4ATtV5w9qLiHnisad1fi6hKKKS2SoS7LbCIblYUxVNE9OqV965izsWjZxqrH1HWeAYh8Q-nTYZMvYSoHFM1I30tx4k_FpSpJ9Y513Fm8yDcWlxIusp0yzgd4DtQYDn74GhCVlLqvxNKdM6ihcEQpl81Ua19O_FzK59lJdFQPmdEpeyYDFrLx76msR1ErLg1g=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG23P554q9UvlJAgQ-dl_Qm3WEaDRqdySoC-WfxlofGVOA9CyFpoioxNQibfuu6Mj-kXWm559GkjYsIicd1cTacDTOfYMdTRU02YzizPMmMJOLYi-4esoasMAysJtoSd4LkYFuUssPP508svIFAx4bgiWeiJ6qdB04Wul2QZ93i7V2XlqFzV_8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEste7FEohR0xHCqSlnUgL5noSTEX-vF7sHYoqVftgA6dSwG2bhCCCryQXLz7aBg0gA8gLvB6gX0PzcoDZw4yIo3BVjeGAYw6w7w9SpJK9_Ho66f6lea0lE5uqEr6Ta_mcfYgH1JvDrzZndOhPw"
+        },
+        {
+          "title": "ClinicalTrials.gov: Liraglutide trials for Chronic kidney disease due to diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20kidney%20disease%20due%20to%20diabetes%20mellitus%20type%201&intr=Liraglutide"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "0.6-1.8mg subcutaneous injection daily",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 100,
+          "sideEffectManagement": 100,
+          "totalAnnual": 10200
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 15692,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Liraglutide",
+      "nnh": 10,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 12
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 7
+        },
+        {
+          "name": "Pancreatitis",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Weeks for glycemic control, months to years for CV/weight effects",
+      "treatmentDuration": "Lifetime",
+      "trials": 100
+    }
+  ]
+}

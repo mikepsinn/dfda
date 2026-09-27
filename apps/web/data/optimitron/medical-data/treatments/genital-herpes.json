@@ -1,0 +1,675 @@
+{
+  "conditionName": "Genital Herpes",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:54:23.381Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiURPgg7Vce8mBiwyK9Afe_Aw9iP3fGiMwtKdvNhdT6D1x8iXz1NLnwGyFMgPpYW5K6_2H1sU_-1FFbc9Sv8lK6NVDbKzI84wDN8uNH3GS846zTpKCxo15VlE9Ltz0cdeQW1NKP_Oj5crNf1pCCKDc8I6tr8iz_3KKwgvr-Ao6lVR_tE4NASG9HlNIqwFy_oYIZetWr_-0P21ZyXqulY6qQqneO9MXuGyuFheM6h_Kl--smitzZvnfSnB11yE0JdwX3Vz6LU-Mj4HkaVCRmnl7XCmsFWVLv0G3ertsdOaU"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJLbjLvQJxhAqP9DtgITJC2qqo5aEfEExXQW9_8uRJuPuFgF_PoJzkNoyRnZydORy2vskcJ2VQ5wYWrGDuxHQnOzU19MjiaBVfN11D53HpVeaUJ41e5GmyZDtB7k5RKu7ETiVBe_sK915C4yebA-pWCOo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxcF5Bk2b71FgkGjRK0AA1L82qaDT8ENgiFJu45k1zpuY0Dzd4_jY1Q5cq6hqC2Uo4D_W0Mxgm2zVbH4ulfR8bXByHH-39fvnAd244b537jJjTMjsowKWeeEqTqVNM7_Kryge3IcR_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPi4n3bqUHBm-msAr6oX9iVm6i2pRokpk8COK-4Yc9HDDa2vAQ7TKv7cAMBXQFpd_GVa6TvKh627kLcEPKtEERdkqB1DHaMTpkTxBWMiAAXSNm4akKoVE_XcYJSWcqF9HOcCc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwoasec14E5CcXICUahwonv9i5b4uz0Nn6UjuwMqQiS-oahPG2Y293FpqMmu7ehvS1U9t9O-SNsdkzFd5jhCgO4vEgeEY1gdqwqPcAsK5aAHMsxg2IVFotjtO7Aor9VloNzzs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDca0qXWgEwyz15s9S9sRGarHdYUxfbnXruMvrmj0cGdjIIeKQn2cvYAu-hMcsQVkTM2OjTyoM8Qw-7DU0uk2r8gHiY2sJbeIVBDG7D1uJJNITc_ruCrUIanvnEpEtNz5Mc4kv"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsbjyUg2P7_bqISyjwIYSz-rcOyRDH_Dd2e2aGQloDNdB80SqfzDv83yBRKe7XglrnqYroGnFOYQLQHjwaXWSLgFnistXmhqc7i2C0qggCqIh6HjT5kSwLrdq9sRTSzw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkt0YVfLy8JKiChsse97ebvPAgRrQ4c4cRMsIPGPNozBD7UEml3sqxmSXqnpLyg_jOBxZtyNQfmcRYgNZnQeXdSBlPWrhVDTIZQqFW66RcmHHTgP68CzAt4jiuhfxnOc8UTxbP0Sziefazj-AUyvNN8KkJFOkcc-ppCbvh49S79mgaRGlWqkUNWABLD7byE5ya3c1v0CunANQ28mTmQI_cJ97oc-uEiONVfEuWZeb7oLgC4Jx4HBPWZIpU06GBE2-ri8jFu0oT29Fw-JPuuechLM2Wt499osj45ZcK39rxrvlclid5zcu7cQ84QR0R9g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzpHDKWHkCjUkxWyB2YzqUPqd7_QFwMqDIIHHtgnFEvURDB_EUEn9E9rKCdvdF6KcVzljbj_BHuv1sqwQ5l61rxveNaRdYuDbiXHq4k867QZw3DOSlRI_8q_-G4MS5-cPuMsj2o0DsG_dny_Zoo7LVQ-mKr7R2uxO7n-x6-6A2jhDm_FxxAhWokxVNMAO4-1THkTDAIsnY-R4b2wocmFNMW3RwAhgWKbZ-984q2jVzNC-um-jCISe2c6N0FtMLipfHjsnJI_c3dq-f"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFblnSauqJeu8SVJiiOSYPBFBSz5Xq0NxvnVpGK3S2VxdQXdNsUCzOSEbU2t9mmCfi5Kz4THi_Kiglvx63ZotIRhwL-1N1VmRdflwm94bNyGuiJ8L2Wh1GAIc3T9y_FrNthFji8lWq-5_dd6u8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Valacyclovir trials for Genital Herpes",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20Herpes&intr=Valacyclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Episodic: 1g 2x/day for 1 day; Suppressive: 500mg-1g 1x/day",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 786,
+        "costPerResponder": 647,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 120,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 350,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 200,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.06,
+        "vsComparator": {
+          "comparatorName": "Acyclovir",
+          "costDifference": 50,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Valacyclovir",
+      "nnh": 500,
+      "nnt": 2,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "4.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Recurrent Genital Herpes Episode (lesion healing)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "7.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Complete Lesion Healing (scabbing/crusting)",
+          "percentageChange": -26.7
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "6 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Herpes-Associated Pain",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-3.5 outbreaks/year",
+          "baseline": "5 outbreaks/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Genital Herpes Recurrence Rate (for suppressive therapy)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 85,
+      "safetyScore": 77,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "Moderate (average score 5/10 on Symptom Severity Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Symptoms (e.g., itching, burning, tingling)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "HRQoL score: 60/100 (lower score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Herpes-Related Quality of Life Score",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "-18 percentage points",
+          "baseline": "30% of days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Asymptomatic Genital Viral Shedding (days with shedding)",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Episodic: 1-3 days; Suppressive: 6-12 months to indefinite",
+      "trials": 33
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGb643_CBCM4IRLyOCqIMVS2MsIOBbxrUNW5snZpIkyw2zxQBWnt2Nbvw5f_8TvnielKKyuOM6HJQ7oci0AKQ9eU-2Wk-SLS--K8UtMIzXI9IqK_NoqNFU4f4ArzUUbS-L0I4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJhpZ04arIWDDCYjxcThf5VQH8AEffgCwjQG8X_YUMNeXEC6GzdDbfQWubhcC4W343GDqgxqbsqi4Vd-uZTAxI-7wnxmAbmh65pZZ-AQOhvAJpG9eHA8wHwbfi__vWQX8yvOM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEla_dyErlyOC1jSwvE8TPTyqJsCu8VGsfjzd9GFfkNSklOguvSl-S3CdfMI--ztXIWam2nqku9YHF5eVWkRngNZ28tEvm9BmGg48wLD9mK5vZXcrx6GYipYs8KrEVoTlxPvWOlWpuvrR97fL20Ax37Xzw_i-VkWClTcd9KKqkRDe9CnTJn1GTjG8irv3J8HZ5MnAR9T4Qky97GUQYZFrq8U_dFeW0jWcw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMYYLKMyHQgX5mMeC9yerfrFAUnPTpG0-JocDfmzJWJIhkYqeVD24nyB6GyIVsvXReaOm51zA7_5JrOwdSkzGKPZE-p22gkBOSq4_ZSszGZwa8zNI-BLaWhtIDBiaLRv-4lT8="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwjXFTNh89-S8mCps0IFMWq7xStVdwLS5xn_WiHGjljQc9nfV0_wM79GR2Gf6Zo2SVLa7MBux5uGGQQjdNKeViKMkVvIcdK_21vd40c5ffnLW4CC_jtxC5NGKaX0RZppllcPA90Mzoph46pNLIAcM-KgjaGsn4UyUZy0cD0zB3r4WOELZK44HGVqoMeJW2SQ8YtPxEz0fhjIEgl8gwsOQ2Rixr3TGC8Yo2xhNlRZQGa78iag-3fCYbNRLf9SVd-w=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELm_i8n2GdCJh2LrpmC0LxOWItY9f9FMEw31iMCE2vYvXfcE6NTNO40X_Ca7pSttKL_5NR1wpHPOn5v9h9YZr4DVsz_cO4BXVECpb0AnW3hy_Zdp2x9eqBb38YSP3Aq3BvmXBMvXudnM9dJoEMNQLZS9yx1ntjnMb0hy847z7b9C_ua0hlhwF5W_xq6HQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR8kpXQ8iwksyXLJ4Q20mRccrA7upmCkeiZC4LO6kIIXsog8Kt4raB5ya0JYpcAI-fskIn3yeBeonTs1IOmJnFZhSRBExzoMDLKlzKNi7DIQKssn09LUu6ZibGGwAbmnU2KD0="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7m1I74QBNlbQqya7RAKIdbCquPZaCz0q5tebgYLx4_eLmf0L0pjL2GkDjZmTPhjwUEdlwrgscycqJGoLHZmTbeLcdMQ_ooxvNobwqFsIBtrw2kSoBCNo3Eq7wtipLBMvA4hgOeJQ_iTZDyi4i4aA2EeOrHA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd1GPQisRGoQ747XEGIg0czKHH7Y7QxmJMIYOKIUxudE1dwelfaGSu3feq7t4uLoHQz1L8DbHzrlH8TyDv-EnO1mfVLR0BiYGhb39UI-qxs9apmOkQwgf0Xg5O7AQVoQmevDa4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ4DXJLNCWhkxoVTvFSvYqIJDMv7KmSRoVIfjyX2tIv05sQnkA_je5l2GVdbTVWCsDp_mWsaJVs-3crezeNnx_ked0NUz1zXWaPBf1cHh9cIsi5qND3x0NXuccDsFRtETdsP6tmyRQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNP55UtAiLn5Fp8MmZcFI38PvwIK9R71dK3ZY-ME1SAturNYOuv91EpWAfVukav_5zntjwCyFzlxY7hAExTZPXdmX0H122gfdWbOPAcb5p_h9QcvKMDq0ue7VkaTxiurh-GTqWAdSWgA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn4knW6M1nSIcRXejrwCYS7rMHqv_l27iWYlDkQQ_UDHsJHbZAgtSWnwVVL35O6NJwTv0qXuNOdcwjtDzKTOy93_x2Bk1T8_KoO0HVTQyEXPxkjLKWa7_hSYIqeIPaDIcRUSTPIJTufaCg0sA7VK3uNBqPzMkOgQxOjuDp8lrprrA_DMWdkK5dVxdYK-B_ocfv54gPi6EvzJoIVmDt3O56hEX1rys1S4OED0_dR9h2nlzkSq2tDJ-MlYUKEbQn"
+        },
+        {
+          "title": "pcom.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaU27TZ6flwmhSp5NrFplELFZSyZ7U9hPmdrvIVr-TRBnyHj7ilLV3IMvIWdlX7HFjCJpGzPB4ShA92eRYW5FhR5MNJh6BCtAwTse_44aUFQ7nU5vkamkGU9KfHAxRA62vhFBO3ECspf5SuiGzDfPY4nS6AnFMOFze8RT3_Qnj6QpT7YS2XhMfWCnN0nSD7IXOrut_RCNTrxU="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuVDtE7DVavCiGH4FTCAFtp7_zRqICkMJ-mheGwCdWLZ3KuG8QJ2mHbxLVjUHT9YzyR3uLcfJSmL6duddlPom7MO8STCK97HBSR8Vy5OYv4VpcR72uWLFbruE2evB26RahPcoQA_GA7T1eyDIGPky5ghh3BwScahGSggEZy3rnIrX8wyy_rxTOwNkBS1qNuQJrTU_CyMCy9K7Rg4_o_XWftAzfCRCfBmviLVpxZd72ZS0dpG0QiHRVIIJHhTq7730WShg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Famciclovir trials for Genital Herpes",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20Herpes&intr=Famciclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Episodic: 1g 2x/day for 1 day; Suppressive: 250mg 2x/day",
+      "effectiveness": 87,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 320,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 520
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 800,
+        "costPerResponder": 650,
+        "icer": 16000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 110,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 320,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 200,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.055,
+        "vsComparator": {
+          "comparatorName": "Acyclovir",
+          "costDifference": 20,
+          "dominates": false,
+          "qalysGainedDifference": 0.005
+        }
+      },
+      "name": "Famciclovir",
+      "nnh": 500,
+      "nnt": 2,
+      "participants": 35000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 days",
+          "baseline": "6.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Healing of All Lesions (Recurrent Genital Herpes)",
+          "percentageChange": -31
+        },
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "4.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Associated Lesion Pain (Recurrent Genital Herpes)",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-1.0 day",
+          "baseline": "4.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Cessation of Viral Shedding (Recurrent Genital Herpes)",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 80,
+      "safetyScore": 76,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.5/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Symptom Severity (Patient Global Assessment, 0-10 scale)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6.0/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Impairment of Daily Activities (Patient-reported, 0-10 scale)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.5 days",
+          "baseline": "2.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Resolution of Prodromal Symptoms (e.g., itching, tingling)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Episodic: 1 day; Suppressive: 6-12 months to indefinite",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyiaYkUJvv0vMmDDv9qEv-lVmx1A-2NG4m7UCfuNpAw3BKBRFYDEzUoFUk2BRwl4NiOexK333qdaFU2uQ4B3Ajsbwzlv8uFCYupeKS78eixdCpjN8koiZF8RHx-G5o7srDY05oA_mS"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7I_J_VBgPDKm4Wim1uiZMJn5j5hE-CjiJjwjX6KQKfBP0zQonAiiN_oBMAaRPqgeW3AlzyAnkq10si-nfGPvt-hYwoqDKxMlt7-sQPbuZWx0sVFVeOWlROb3lu4mo8l2_MB9L9JIWE0c-5RmnT1oKST8="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl4E62RJ5FTnVUfM_ktuipPjGvvILbm9TLJmX68kLq5_duohWXbKRyPtPPfDMzpOm5WqiuLmoThP3qUUBdW2477xyScOG8TSpTj06EdRqyJpEtvr_OUVBbDefJftHp5MlBCfi6LTAP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIcd67VQB06gkmXxjflk0mS-SmQ7RwTRsVh6jRJ80s4HqSAOcLqhvNwgvjqW8RKQpYdx-12esWYMd8xaw8OfD5oZUe3V-3CpFab0mxMBQOWsOwF1sATS3Z-kzE0b_MQKp5Gh9ah1l3QQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMe_-y3GTboShBKRyqqQa229LfjI7F5YyJV188-BDpKTxcqI3VTuxAY-K0fL78EQPkrbu7k8OnC8NN_eMmmNSTKgXyJU6-cAPE5RLkFeEvFyj4C8mDeg9DzY8RqPUpl0GCugI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRnaSNHT7W9Z1dmr7-9rr62-iqFp7Drk-tQufd4GB4Pk1XEkOjGeyNFU_O0ix78sUSk-wG8GDJz7oVjqarx-tep8oiEXk2XUgTs8FRKCWi_pvx8A6bBTJCt88DaTsbqbIPOXU06ehn5Nll67c="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJHe_KcNalpbwMl5SOd6aP7A7yZR5z2kCUMfd79HdNcmu1kFSiBD45LohYj8cvsPDdX5FLqsQ7UuyVl0Q6z1xjw2y_3X_pandRp2btzA0c090gZIc-rbTBYDYMOsI2WQ=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzqcOyltdEyOBeMOROEA8_YKkg5L9YNnlpD-6R1SXlGR5FZM_EFh9e1i1zmplWHWYxWVOeHitT6kIftrmmSNEinD_v0qDs9YokrbS2mQLnatNjHpLl2ZgRlxYMu2EGkgLljQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUiWq_tQMvBrEGSl0Ml55qxxxOcSjoVMrEepDaTeOvDBHBHz-HTALZ4mE2FoOpNEcNk0ZMyzK9Z3EOX_-81EEHO5nCx8G1WIK1cA8TM0V_OTEWofeE2FMxkcvWoPMw45GJxvVHscMJKw=="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEF2-YIImsP4al16-PKBTTQYBpDtIrFyRjkjL-I4BrHh8468Ag6z8LLDJCkuAa5Er7Yvf1wH3-R9rJctRExSb3Jebqc1ZG_2_5ti6x_Zb8ZnmSv0WeNpNJSNWlN7UG8RYZWTSaEsi0kuOSOSQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELmDwQhdUuFs6Mdil7JrXG1sL1khMEJmQ66NoYNuVF7ohPh0H6nJEKs1NAp8WFAmChqip7xGe3uZeAhnO6K4A6u7ZVEfySFCuv0JjwnbHUWhyDLaZoofVE7rT6tHiA5w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Acyclovir trials for Genital Herpes",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20Herpes&intr=Acyclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Episodic: 200mg 5x/day or 400mg 3x/day; Suppressive: 400mg 2x/day",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 833,
+        "costPerResponder": 625,
+        "icer": 10000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 100,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 300,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 200,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Acyclovir",
+      "nnh": 500,
+      "nnt": 2,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "7 days (recurrent episode)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Healing time of genital lesions",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "-1.6 days",
+          "baseline": "4 days (recurrent episode)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of pain",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "4 days (recurrent episode)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of viral shedding",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4.5 outbreaks/year",
+          "baseline": "6 outbreaks/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of genital herpes recurrences",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 80,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "5 days (recurrent episode)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to complete crusting of lesions",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "2.5 (0=none, 3=severe, mean score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of overall local symptoms",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.2 lesions",
+          "baseline": "4 lesions (recurrent episode)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of lesions per outbreak",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Episodic: 5-10 days; Suppressive: 6-12 months to indefinite",
+      "trials": 59
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI0jskdT4sAOy4wbV3D61VTNcbFzHgPK4NvCyuw0kes8RdLQhgydIR4XswrGnCxQ2-Kg73bFrnIQbQUNMhEM8G4CjJf2kEc-v496y3i8Oq2O1uUxadNHcwABBE1RKF3vvjj1E="
+        },
+        {
+          "title": "skintherapyletter.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLRMsl-6cOlGnD33D7ehztjo8KZlBbkfP5cc29L8Qovp6KArs-XwpEsk06W26pgGX1fJgQe94GeATNYf6bfdG-e8Ls8QV_BdI0bs7t86-5AFxHetDaJsRWR_dxvemK2ACJZaqm9-Q_eDtavXv9ADrfUIc0l0w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBM6DVuYI38oxDADBuLvP52pSstT2TXAj2i83ol6EQ3VxkRFbF1ZqIHA65HPUOKq49DlJphjoIII-t1uO7Obf20UIfvZRvv12RdBGXYXxuCsRSYG0a9I-DcLNL9c0cgzOxnQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo4OmX0fAysqdbUCwnfiQHngawJYkZyUkg1ZQTU6W9EmrStUZkFbNrCKj-rOlhkxBNSOIqm9edRwWt9xKH08XepBiFpF19Xdp5mFQu3djLH91BrMDBP-CkYH10lFFtgale13g="
+        },
+        {
+          "title": "emjreviews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzuXORAWNGMywYgWNozZmwWxQEvGU0eA1Wm7DGtlWS2ZQUGxUzcQjO0sJlfxRd1sHl0jW0i9KfrNrovD44MT6sF8IqpFe3eX3omqEWwqD6S-BSUaDGgW5IDdXHyBkDff8en5-gFsUVWAGCIQdD-C9UPk0HUDIvHYdUQP_IFdr5aCul1p7WKMb7l5WZkFIqntN1ZIchw33BNl8_6VQJhzsK2jZG9MvuHHDw1FmGDgeKK2P8Y2bOTtSSxeQxpN1RW5ohpIrLzeBX93rkZVXBZrr-etcX4h2GknaeFSpFbv1gwFFAemDKx-A1AuI="
+        },
+        {
+          "title": "emjreviews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDEaozk5Tyb1-rOOf-z9nGKAdq6-KAb5IpEz6rflp6ELnkvAPAEhj9wfEO58MhOfo4GBz2yEFCo36lRDhJBwd53FNJZILOk0N1mKDSOi1SnrkfEJ8CZV94V3AsqZL9195manDtzvSSsBypuxFGfTuElLuxeMuKu5hEC6Y1U27GmXhjH75_8aa5AKEmHtUjY26xjDlg6Qf9iREOEd757J9nqXNyOgLN_9h2Nh1rLzLpuB8mBaTvGbEEM6hsx21MG6_4mJZ1pKGyi9Qvm4NQSIpgfNvByPLTFIm0LcZqPc2TaHO-6V9NaQ=="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElxqBKkrtZ3JasVDG0dd-RqgFfM8B5CJD2REzkNrPdI98q2Bu5Cqivz8dQfNAeEWA52mdNCjoSM8Bl7b6wPX8u0jlGAg0XeM4GcrmDUgLLleTl1_9YYUetTqnT2e5l22sgIQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Penciclovir Cream trials for Genital Herpes",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20Herpes&intr=Penciclovir%20Cream"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "Apply every 2 hours while awake for 4 days",
+      "effectiveness": 40,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 650
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 230,
+        "icer": 180000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 10,
+          "annualOtcCost": 60,
+          "annualPhysicianVisitCost": 50,
+          "annualPrescriptionCost": 150,
+          "annualTimeCost": 10,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 70,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.001,
+        "vsComparator": null
+      },
+      "name": "Penciclovir Cream",
+      "nnh": 1000,
+      "nnt": 8,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Application site reactions (stinging, burning)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Hours to days",
+      "treatmentDuration": "4 days",
+      "trials": 30
+    }
+  ]
+}

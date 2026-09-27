@@ -1,0 +1,524 @@
+{
+  "conditionName": "Acute hepatitis E",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:31:31.096Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGXfGFeNl8FqaORie3RraPY6fvp6w_S9EWGxdV9NLM0Re9uskaXQvnVJT24LkBueRFe6srSbllqwOP7LFX6tX6gsri8qDLQ8pHe4PYJyo8p-H8xA0HR9bY7erUvYvQvtsawl4H"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE_6Md9L9BMTr6AzvL_1f_3G22q4ex-Dk9SRK113GKbwZg9aHjvvFMBLYeuFdck8qF2kdc9hpfYc082RiZiUvJQxZ6Q2tGQL1mKKOPrltGGDwzDJXVtviUwcJHTYSQ9hyCvOmEgwDlJ5alnPqw"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVvPz13SXtjUtwzF6QIJya01Qvg2upH-K0qj3zqahk7enT5_4IDow4vjgL9eYPrrMRNna25gXveAWLA3oVmkwAB05f_yoFUz4Ktn2p2VbQwvw2K_c5cayhfWYJfzYSpAcsm6LVBcVvaMsj9BKik7dplevf05DzZRP4Dyx_9Q3D8HtD-kLR3ChiARKsWRtZ5Qu1StyjT0M49JtQ8FQplYPJ5Tyr9BwLD_LAYyOBUpNc8l-XNWlRbCh-ZzLcAvxAQRSLj0uiJMycADg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH1sfBRlfxFVP1wXzu-GZFemc6Lje46TCeHYL1C5tWQPKbvIgO6J_FHqls8Xz9BVdMXU9eNsXHKXqfm8XAG5g05C_7GDjQXuwdepfnSpW3rew-xjeiYGlvCnoyBWUcwqsexmiU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdrACxAF6yNWu-9uQsuSxGCkkIwV1CUE4mOkF7WxwP4TB_IKoH0KzJqzbL8nB8mhJKikmY7MLBzXg2QtzzUKt6J5lP8S3PDeuPCMbXIu4v2HMAwR8j-oFaVzmUrV4We2orRZr7x0muBOwZdXfy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnRLxsErHQVU6rDA67Oh7X6B-N5Xb154br66CRjJZoETZ6OMszcybgJAFoBtQUDHNGnuOgE2BV78FphISI6KKEoKcppRfQ7WlhbQhJhv3YDIu2E4RwPWBwRZvpNOg3wiVuAwjY-uDWnKiQ6dV449i6SZQmZaatL4ja1iguVL7yYVEjYRzy68-DrppdeJ-25PaXyjto6KV2-pCysK8aciZ4_GssOffF6eNuqs9rA5isYBPzv7BtxppEn38qNmjdW4LSNSE_YB_tJsV8HqEpXJnASYA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_qymYHki3hh_9VbwhBGhq9RqEPZWFwO4512dbcisHD0PkE6y7qFdasOC1vsV1vQ7u4WxLt-B5jcTdhNvFm6je9VcLkukXv8Pwxc3aztSrod61aBam9BRR9Y-6EYf3xwN7v-25"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmqmtUnK-HBcRa9aEz0uwk0wG6x6Js7u53W3JGUhhK4vGSaKeuD0zDslU2hkNKDQ8LASdT676YjZRZb4w9S7nBwfHuaJp37PkzB6lxEgKmuLnaSwBUr7yDWqImFdM-KWeWJBhTBZHY9NhH1MCaqqY9ioSrQVizEm9o7fXjCSSnkVkHFikm9iCvphzlmVDIOQud4VKZm26fj8Scgypj0k5nXRnnbi0PKaxgjyCwkCGuTGPr41REDaQMouzqyieN_FE9ZhtQ"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJSL5-IIk81SQ6E5SJETCzmRL2Py7MsQY9PIy2gJNHukpMTeFAHraHscBy2WYPjYdYYpHzqoavjGBlkhC7XRHtJPHtQqixMXww0mCt5oD6cwcL188Q__UDRPDRrxcpe2aRdzQgW3H4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4OidnujqLd4HcmX8lfry9szcdm5om6OJbEZ7UEXOD_Fm6bHmKA3iXiKoVniY0R1mwmQmQq_1OxMxZKNOLDqREsVZXfMoF4idObDfuwCHxWb30vbKOrJsMzuwDb6VKa0JQFcqk9OeU7-HXl0Y="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ribavirin trials for Acute hepatitis E",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20E&intr=Ribavirin"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "600-1200 mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 6000,
+          "monitoringCost": 900,
+          "sideEffectManagement": 500,
+          "totalAnnual": 7400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 9250,
+        "costPerResponder": 8705.88,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Ribavirin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Hemolytic anemia",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Teratogenicity",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "3-6 months",
+      "trials": 70
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmywTCsmOzymM08ciWEMwh-FdNChSYfks4j_Nu03XOf1IPE1nlfobz8ebwo6IgZrExbcVffciq9r1NhnyDtp58nYgHRyqL0F1Kr51XOAgm8MtQIFA0kznCi7ZWEIEPhvFwwVW6Wt3Fpg=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwZ0w1LHynKKLstP9NGJaa2y4NjqqSaw44VCa_FP0Drq8Q_7SnaY7ryXRPoBL4wk_wfSXF7ARMzZBbFLwSyaQQqutqmNBUeRwgd_M3Aw3KQGNj2f1GCwpo1tY66eCvPHqiBIaTL7XXlkbnssA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJK_iKH_PNhhgVsNTNa19qpTS2I-0uKK0R227ORvSgAUEg9LBhpB-bOHB6P0JAdaDL7MZJdkwg0NCauH-gpxuvOxNk1eJBzn_hV3kmBCfJcwXoBVGrz0pEmrQ18WoWx_ZqNbbB9j2aUxLK4Sni"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVgkCQqDmmKv_oA9ZtjcDrPJqh1gpxR3kuXDhPrpkIormotT4zRrNcoMikSTDZlZ9JbdajbdZFq6u3AxMTu6zxumm55PPKOLBpH7ctBA5BLce2nRYRH6u5C6MxUqAg_tjXY0H6LaHAtiftfvCpLTaY42za2H_inFl8mbgmfu-Nop4yBVjJ0r4L01rS8o-4NeCvJD_icpV7WVKXqKgwbhEnHHAKfrUK4M86GDFgQULweQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSVXrWyYKZhTTYD3zAbRC9Sw5tt3GA-afJnRfglpx0qq0i-93mlm_N9Y815CjZcB02RYEb8uc-W8Rlfh6sWp3vUQntGHr-gBaT8iFGG7UY-Feqw20NoxtnH34fpWV6XKSy0wBPVRaLD2NsSqsal8IWzO01KbUHLZ7Xcu0lhYglOl2of0Fu9nO9CGEuQe34tNRN3e9K-0AYjkGMs-UrMlW9d-U-tTen0heYJm_f85CAUU-iM8dimopMBQ2yDQNIBTN5yQm3tTdDYyDPYBCuZYS_r86T0amLpPk3wgGmpH4Q0R3zbcfhfAxYID-aOSOMUD-9Wq0q_K3vIGt-idviu9D-pZIsUwDKhyPGLuGsrpUUdVOIqs81v7c2Kd6dCLSrlZlYFFPlCm3EbzU56lFiPDu1XwiCcRHb8S1FVBb1sfLK6LnF_bVGMcvoBdE_qW_oyqEQ1IR_6W2DPZm8-H-nv3SWEVp_Vylry0bAwc3y4oIVol7cJgkuYMwxsskFykQQXcd3ymysg7UOxs5pLGlG0lv1W3g5T22WKaU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEDWWbJ_rBEsPAdlzkjuOyj_A1fvOeqwHqZcgegXZt7-hwkHtQdDuKdr4hzzlpDZRRJgl-wp4Hy13_G2zfjcsQ_9t1Fzai4SQuiEZJkSw6WcmjkBCVoF7LWaH_Zub1VjN40joKl-cpEy_qsrBQ"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4EUVsZAy_Ty9CJTBy71SKTamVMkTXHRHcgyRllO0mS3Df07v-shE72rd4qoKIgnW5wE0aedjEzMEVclY-QFsBpKXIh9_26Sfv7baJApbXv_wu6H2F1IpU5q-zms-jY7ShPvlx3jXwRS2G80JqITXDNurfdISkkMul6gT7Ow=="
+        },
+        {
+          "title": "xiahepublishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8Jid1A-L8uIKjvaFqgu4tE7_bgllsRGrAQfn806M-33BvPPrbrMd006sv-J8JXfg8fXMwL4dktJdrt74-2HTuW24F7UtYWnCPe1-_zYwmKcj90MDB47vKv0KK2huHlEr_JIURo6qngpepcO9osUSQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2PhWgmAj9ENi38e6n89Xx17pFaXRYFkHL3V1EXlkyPZW9-kTQvc7HfT84Fo15rLWuOxFzcx34apuHS3uKSozChRuG5-57DHQQoDa8yNhbaHzwRaIQu1vyuu39oAYETiS3hgwwjIw-08yh5ujx"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyqKzGSWE4d1akYRJYzy4aQvPZy-aYJcN2Lf4DiCqDInp1y3-Fg7ldlJRYBJ9M4Yp1yYKYy-SWFdT4Nb-TApyxmy5wlU4TeYGnkircKP2C3JOa_oX1ThVylSX3Rze8q8WCf4O7AGUw6msebROZ9veMybrt1IlZgBRPH5Rim74ndSFeqDSBSJ5j0jQQxLuwxHYgeM2bk8uGn3Azg3t4SxXvj5ndUnhcB4I8i-_saV4ngtb9gn1fi4UayW547Xmeg-4Q1wAKmzcfvA20MGdMxRIb"
+        },
+        {
+          "title": "ClinicalTrials.gov: Supportive Care trials for Acute hepatitis E",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20E&intr=Supportive%20Care"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Not applicable",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 450,
+          "sideEffectManagement": 100,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 561.22,
+        "costPerResponder": 561.22,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0,
+        "vsComparator": null
+      },
+      "name": "Supportive Care",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 95,
+      "sideEffects": [],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Weeks to months (until recovery)",
+      "trials": 5000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHR4n4M3MZ1na8wklU-mIZLt9uvNfwCjOdUwtsB4EI6AEts2gPakGYHOgZbLABRGPWH2IOMm4Hx0A2qB6OEpGwQu0O7kNP6W_lHBkcCQy8Yl5co6fHQ0W73wHwWMQ-lTaMgeU5WQKWXSxf5HA="
+        },
+        {
+          "title": "easl.eu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-Z3cA2Jc2IPSe_Ao9WFmA26Ap8ThlT2y4QaUQ75bazhDkFwsN4B_60smn7bsmxhDS6qciB353mZBQIf5Eh4-bbAyTv9ZPSVG-9RvvjXGs3_SImdpBBhoFACfWC4REniKoWYegGLO5AwMlE3vOgbt93vAMaanUNVFQcUxlQgODkFWzT2B1ujwAKKedF29F"
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQx4epJAWU1AuY5D9yKgnehx21rkw3ZcP_Ggnotc_aruVmSxK-vTKHKoOQVdPOsCKPfdXnlhP-_mbkxo1Oco1dZtIJiOT5GJ4h6FfmqNMrHNaBeldK4d5kMkOsytNLtanBPMf0xdTWepDVOtHfixN_vjGPtEEfqw=="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU5WbZ-HJUQpZL89ojW3-61d4MZIGhO52h1Bz_vj5fgKjJtTTEsrPr_b5Tk3CbPR-6l_9vFSRBBvGK-pmkGf4va3aSWqIHDF8J3EMxtj9t98Svi4Sis0CrnHoq9M623CAgZE4lnMrNsRnsltADS0NLERGCxw2BAESFP1uLqI9DAMr2EvTs35ud8FBoRRSL3MdIXSE2TBaxEU0p"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe3bJZdedbQACDMp_dWcG-7F-SX51ZxvQnE-dy_rfS-EFDMeKVeuWRlz-XMSlbrTrVIxsrkTrhFfkcvWxbZVJ5Fcv6EDohM6bb6UDeBqItMa_O85l1UnYEWYZnlvp8rVVPixCt_HPHCNfTFQX4WXyKb1jArXXz33on0-TVDgjTZdBPV2G_CCiLd9KwVi947gAgfXeKt8RFWibvijDz2NIK0xC_Shr_kg=="
+        },
+        {
+          "title": "bts.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKXtork0zaFRbC3_fjKmwuBmK0McopH1b0hIYD6B9vKYnW9pzNjqxQyK95ibyLWRhqEcx_DCMSDuJvWsSDHTSeDjzbcMycZ-wqWPs6axe5Is1RQOE5YTdPdVkgrs4FiScnqpWUq8nNJiDPGIoQ834-ocves73lPnWeE10ewYMv5n-CDqk="
+        },
+        {
+          "title": "jmedicalcasereports.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtELIXoss6PxD-Vq9k2mjjwJrLVGGZ9P6X31fTobwgpd5HKyPcBgDqLo4orF64JkVfk4lzAhMdiCvgUDyhofpWPDWOo0pB7e5NY_hDVZy6w6L4qnyxN8xkv8KCjc4f-2UyicgaMx35w2d-CZAqbYsu0j26O5ahWbw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrdyM7ObFikZS9oVprE0YPFI3ITE38N41C2bClIsJ_W98FPDnWIOhX-FVPili9xaxov8WONt42nVHs6oA_pKVtt543lI0Qv69W93wP6VsAIlfrH2dS0cG8lGZxUkWQHNnt8609071substqr8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS5-zSwNPpbuMsjJcC3E5prccWxcogqKQoL830KiHmqit9UDi3wikvwktw0bqD4IJeh12qs6o1I-ItCl5x9Sd28F9jaqsVy_DGvNi8UcF5CO2mb5ytQuw_u14FebU16Y_RoN7XwdTq9j5YxqnA_r8o5hWLPcLDguFKu0duOkPPgPDQBsZw0SvcQUuXh4igRbKG8xvBlL6xupAWfaza4XXawXigWmRMIGK5WQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTl21FGTfmnEKNz9HBlYtZnmrvOquWM1jy6wWgLow57xC0WHPDS1JJuQRBEhXF2LC3mMeJtQshtbF24oif8ju0wFCBqatnaK2GLV4VB_73ahjPpRcTKNMYtUgGR3W6nuELFloPEX8G-DjnOL5H"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcjHlOyNlcWsBTdzcXBiBFrxkF2Iz4R0XMDFH7J1RFsDkSkN9c-qC2Sv2x7tUOW4UXeoFtMsYUPT3b16yvjRQ0-DHq8S9s01-KMRP9BehYarPCKSUgIVSRnme4FPIQb746HI8U9j4hYDq59oXM"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuDyvVMJEge540uZ2Ahg_ou7sHr1Drx4v9oXceLkEV2c8HjZmBlSfuH5FyaULP71FDj1F9pnydoG3dTHqEjE5nOJ8XkuwUEU4g7kWV2NLEyab0OIe-klmdnw7ezMOTPdKSfJtrlBo1vUWIUnTJDmKRxjkd"
+        },
+        {
+          "title": "ClinicalTrials.gov: Liver Transplant trials for Acute hepatitis E",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20E&intr=Liver%20Transplant"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Not applicable",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 7500,
+          "sideEffectManagement": 7500,
+          "totalAnnual": 30000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 40000,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 6,
+        "vsComparator": null
+      },
+      "name": "Liver Transplant",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Surgical complications (bleeding, infection)",
+          "percentage": 15
+        },
+        {
+          "name": "Graft rejection",
+          "percentage": 12
+        },
+        {
+          "name": "Immunosuppression-related infections",
+          "percentage": 30
+        },
+        {
+          "name": "Renal dysfunction",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate post-procedure",
+      "treatmentDuration": "Lifelong immunosuppression",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2tYcZVGld7jCKs3GoK428_QApK7laG41Fg0rQF11hSHwotkkYJTDlDgaz6rhwUwimLR1B2MksWVZ_wIl8f5CLdyCP3gT9OpRBFi3PmiCfgUjrx-U-VTW8ERu9IsdP8J4XdGLhkpgES6zeLPS0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsLnLPJraB6dPZ75R0aykCAn3Z0Xz_EwOoHv_XM2EUT-S70bwB9m7TdDzu49lTeKFOi5uKLDvRwMwPAvbcLNrpSH1EZ1KAL5nT_9ORKpMKj_cJOTvGmqx0Pl-lb0dQq0PVDkQuI0oNDidj24Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8A1BG7bg8KbjCIopeSWRlY8r8K4LuEFdQM0I5FjweBv5IOxr-Yad4JR-BGSLltxvGrRJ9oqk29ra1l-gzY6AndaeKFYyV_7-tQLYxM2wtKHeGSXXGmHQemrbYCnXfzvkppdEWkA1inVs2390j"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyAe9S0jqBvy1f4U9zfRZ8PEKO-TcamTsgmoE5aLGWt4vteoBF_9L3KssSwON5nb2BfAieCZtDSoy2F0BIpQhoOHqaypKRuuTzr_96mKoJsWw4-W_Yd4fzGFDT9bhbbKJO5ou6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPP4AW0i9Na8cedgiaRq8C_Ll7BvXJiY3XolVCaaOgAaIPll9Aaldbkrp7D1sOASq6hD6JFygtUI8dIi2M8f6oB2Uxp9H_O6QEmi73UxjDy_Z1xceqm9eZR8NguID_QprNKC5GpmA7-ocKOLQ="
+        },
+        {
+          "title": "uu.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6FNu-AQOquojuGrNDYRddJ_5L6P0PGNaHGTtzfm5Lj2JaJbu21n-2WEGkSzNNvT8daDClr0FsLu5CrbvRYxmLwDCi8id581Km2H-F2PzQ3wzVvs7kEuke5zrSSNt8pdbDdnHbR-2vox_SlOG7mISYHM-NXs0A7b0rzmIqRMtwQ8T19Ft94abglKlKUpu22yfJFR7o6XUHIoLa2O_qBIlwqnIGR43c3dFVe8xcA71t4kEWSRq-FDzuY-C9z1o3EMzkVwHJbZvwzjO-59jEzKM8A5_EF7BEl_GHYlV8zcuOLCrsAsjr2XA0Flqt5uYHaScV2otq18yy3iPuAg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQlyyjEiCQivuspKAtC0-hZ23ujmwg1CiPxWRfld4K_-98KvvaCHjOorFb-T1eHTTncWunlJ3GUda8H9FXJQkYQzEjtu5_igftPFlWwmqd8MYLfKA-pBFd-dX6vEAe6RkRvy8l9YA9lq7SOJ6xXaajSljuGnZBs-9wiiCypVjrik8WmCZJJBirV96SuUDeXv3cuXb0VjaXyFj0Ux-qPhDfsty1EOjTjj8FAYV_0xKxcFh-7R1OSXh08XNpFpsWdC35pF-RuofFhXgbINrB85K-bA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW62D5dAA_VOulqNEiENaCtskRrOMdy5VIKeJSOHBrh0HQb4A0mKOyLXsh4BO5hRD7rNjcxuNU9D372daewWfxhCFZ40chUjz61YNM4Pkrn78hPHm4VIb28b9AM-x4Gew4oEkjY0DZYhZJVuUbg_-Zyd8bcNzHySD6bUBE4rMDM5x5eZoaiTlhy3embL5LPtDwf_CVn_YfvtvVH0SHjf-G5SjzcWbkHPxhPY1q1RNyhxx0BfGmIi5FvRUDtQbbesED5PkJA4KBtn6EWQi7tDV-mQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pegylated Interferon-alpha trials for Acute hepatitis E",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20E&intr=Pegylated%20Interferon-alpha"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "180 mcg subcutaneously once weekly",
+      "effectiveness": 60,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 35000,
+          "monitoringCost": 1400,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 37400
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 68000,
+        "costPerResponder": 62333.33,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": {
+          "comparatorName": "Ribavirin",
+          "costDifference": 30000,
+          "dominates": false,
+          "qalysGainedDifference": -0.4
+        }
+      },
+      "name": "Pegylated Interferon-alpha",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 55,
+      "responseRate": 60,
+      "safetyScore": 30,
+      "sideEffects": [
+        {
+          "name": "Flu-like symptoms",
+          "percentage": 60
+        },
+        {
+          "name": "Neuropsychiatric effects (e.g., depression)",
+          "percentage": 30
+        },
+        {
+          "name": "Hematologic abnormalities (leukopenia, thrombocytopenia)",
+          "percentage": 25
+        },
+        {
+          "name": "Thyroid dysfunction",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "3-6 months",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfm2AP5brJh17KVZPwMOEqLpDZ44Zdw_r-uuRsUUCHbcD03SEw-6Drh3FUah15qEEYlsf4H46wzNq16wedMMgzJJxtEkhAaNNMniYUczO6YpRj2NSt-LfRWrgVPKL4lWRhk0ykRxrbVfe2AkeEK2AQpCU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLSMV3UYhTKzbTrq2LgaE-pFWSXGxafNZDFLxdUJ8NPLMp76BuvpXbD1pBDEQl_2ajxmcepggIFB2v2hOs8veIvpdmPnVQqVj0p6Lr1mbZLPij1BdYRCfo_FVqppWSuE9ZEm0NPgwA_iyFtEQ="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFWhN4LljbSA-5hu9CHj_9gbrSbpR0X99Y68l2fw1nAgU48sdND6z6wWicJbVZHwTTEiC-TM1ib_KSfR8PByyCXjGGGKdPSfHgYHZ8E_N7x8wY9j9oZ_49PIcu3sz-BV-DNBWfJxi-UB8Z1w=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqJf2LZ1n9KeYeExMkDG_8swDsL-Pv3LZ0n1mUZUKSFxjWm70mxZNfmNQ3cFHLRu_s9nUonHVVVcdeAQc5z74dnIn9j-8N29kldmrFOf2WRAvjcqcaBSpNzj7uNOi_ZTNsrPQtNhKWD-Vupwiizm4FvA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoHPpExFUnr8Z0lJNlaEpX59nLs0g3SiVBowqan_QFCxP5up65-DvxFavNUr3yd1dDSyePPdkoqPN2Wmwww5HnUFQtbnczPKM7L89VBhHTtgt3ZPB1sm9OrzD0kbNJuRJo5wPyXbX2HX0rD6U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpfONGNpLBWT0PMTliObF3qkAZH27vlu7TUwenSA30SXSSiL1drBOeocZTft1Ku_ksOaDP1z9HIEdcxPfwU-QCm9z5MKq2T6gZ7PkSqbfa8vNYFBXYI0NLOcCCXLEaCjK81Cs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKWbnItIUfJk7pznF5n94a0EEzWkyzn9IjC9xqj7GhipDIq79W--yaB76zOzojdCMs6JfyCheCLhyQklTTSHJrEd0n2tgTHk1IfC3-tgy7fpKKzXswKmPrRag5oR0_SVbVxS64YWyP-ifi75s="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn23llOflURr9j0LDNaKV3JEDY7Hl8vJa5AwrYTcQih2icYrCsrZtNrr6HK98-HAyY06fsi1L75JYz8AXcZjbOARc9A7opkF7g46PKEcWjY2LVZfnWcKyk7sftY3VhjI3GpQt9FRmuYAsVK3H6ZrmBaoJ8P0njhop0A7a_il0-a9GZ_IGeni64mjhpo8TCU4jYnX5rZgda6_s9DWIFJqA4wfzgB8LbhdOyQgcuTJ1EpLP-3GxVES5jtQZljL0NrCynSIVZLtLHnPPDzEaY3W4zoXn4znpcxJQdYtBpaC59Xz9IdiIbMQo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravenous Immunoglobulin (IVIG) trials for Acute hepatitis E",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20E&intr=Intravenous%20Immunoglobulin%20(IVIG)"
+        }
+      ],
+      "confidenceScore": 30,
+      "dosageRange": "0.4-1 g/kg/day for 2-5 days",
+      "effectiveness": 45,
+      "evidenceQuality": "very-low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 12500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 31250,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Intravenous Immunoglobulin (IVIG)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 40,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Fever/Chills",
+          "percentage": 10
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Days",
+      "treatmentDuration": "Few days to 2 weeks",
+      "trials": 8
+    }
+  ]
+}

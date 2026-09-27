@@ -1,0 +1,993 @@
+{
+  "conditionName": "Irritable Bowel Syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:01:09.011Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy8bxJmYfUozaz6pGkQ9d5PrgjaI8XqR00gU5F10K2U6S0DLbN7FSc7BPJKC2mQRum6UcPZJ1b-C0ZjF51OL5STUb8x3LDRIuetcawspUpAD1vorWdouOVL_dzZI4lE7mXgZ-cQkMiVW9tKw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN--2WH99V_hrPuUubXPpiFIRbjWztzVB4MXThg37JKSAv_9zwrKma0Qb36_G4-2VJdLml-Y7qGuHSe8REveeuasLsQ2ZFxIQF7vMn3DF32iTxfxeSNcbOhX6o9vlkxIXhfzkvogmxj6ONvuWiZWSN1sVQ81751sFIO-Go1yV_zP9Ra6nsALlVpalDv8lP8lGxi5O06Sk9R8FxqCscaUeW65lxA5LluKgqYU2vP3bxD1Yr1zwo8TOsloZeznao3fc9VaPiIjllktb_YaDRy_hxVA=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXKAyKTc4op63PT8IZKbaMyPC6W1mNUqHYW6JlgDMoAFY8Pfrj9U3_-0jRykXDjFC1XPD29EyB3Mhl0nSr34xqyLKuxfrQO4do09sN93l13UkWHoed8V3A84XbsaKQMYYFUTMZybQiqGC8wNiQPnvPFNNzHhue64wqq6p_BRr0c7ZLPUE_R31PShw1IyHf7w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAB0DnMOHpxVEcBTAJAfyN9m17dS34IAReKfem5JZhryjjCvMUO-ZRZzEQRTvZtiUFniN80y9M2uCZuIoM_B7Ix8dEhHJblveE6etlzbdSJMkh4_NNQK1lBtSgxQQKMdBKlyU="
+        },
+        {
+          "title": "examine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMWfNU6LMicw9dhlCTaeTl8qDIZTNmWJN5HbljNuanmOvLQKV35LpHp4DH3YBHArZZn-91Dd4IDCNnMjhxVwSTYIND_d9l_NSajSAIoxYQd_mSiaDwK5wqHMOHJAu_AJ26tvz80-cXuYY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjO-qAunLYEgMuDAEONWOp02ZAcLOp8pderhkx9P8DswSGt0DDC6077JJ9nuSZQk-IGnkfHuGXCWdxft7b8Vi7JPfbcZ_ikWRtuZBJd-SF9ADZuF9M35hlic-B-pr3fI04WLk="
+        },
+        {
+          "title": "hopkinsmedicine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS1xTMY-op4d9T-rSI5K24mBQc4YUUcGlHk7LkclE9PRpr6uslv2cJkWfjY5xaLKQoIY-vMiOM1y9C07KgjU73B5-ytADWDN8z0t1ShCrwlCYhtHOJhipsrT9JlNGjZ8WsWQ62hHlyqy92IKdYqWo8fg8EGkd6CiS-d7nEqWX0z-_WXESkhhgnDZ4UqikVMIHcRhNR75OS_L0X"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFWGUYnGdYjqRPCmBZ2Ufr_y_rm0HWmTAxbK6oS-xL5NGD7IoSf_JNgYNZCjvIdqOFQCt6H-plfnaTVrKOK32HRK0uo4StGDNXf_E-LsF_qruWK2EDTns4QyjNPxtPCA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG92fDNISNG8amIMBFVFTxTlaBAMhNswCOGO5avV3xSI9IxmqI4kKzLCpTzv3jML4Udef94Q12V8VYbqKXIMGq5d9LqrKJ8uOjW9kxMWMEHBGVyFm0XqFhOx7xllnifgsyZbMo="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQ9lRd2-oPEqkDMC9qQGMvPLnYiM437hZalZXybjh6xnMXdK7rL5ztidM86PkqPOmE3nv4LaRqtdBY_-0YDAy4dF89ob2lyc5aWKb60aEFPkOtOmNdU6Tke_HIBagPBww="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFEPouRUz83LKqKN7s-1R_zBTLAb0dvETOAy5dhuvWvtSIsmU2XEwQBSFVJo9LeC_gx8YbiAWMx6QYSUYk4DF2sHWoQ3WajxpV4enP2UumVih-fou3esSWYjfBQfq0t9TJF9Y="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqrsp1Ron99p0s1AKXEpmH1C8GeTxWLL_xvPcGenPUVX8cU6Tw9Cx2vJtg80VsezakGsLVVjGlAyTEnZTArjF6Nx1CGUvUeYNbi0snWdk7_CTIvElW4uXMtOx2bVr1h7CWrVVS3lUtEXwvlcHkh9tJJSDp71dc0k0MXC8hL6aMLoL0Pjckj93IPE6ISsqCw5O55pp_RpoMkJagc8nITm_KI5BaVYZC9PoEn7wU9fSL1te74-V17fzeyTvba07-2OaVArUPp37luYaotAk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Low FODMAP Diet trials for Irritable Bowel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Irritable%20Bowel%20Syndrome&intr=Low%20FODMAP%20Diet"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Adherence to dietary guidelines, often with dietitian guidance",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2857,
+        "costPerResponder": 1667,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Standard IBS care (e.g., lifestyle advice, antispasmodics)",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Low FODMAP Diet",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Clinical studies"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-80 points",
+          "baseline": "300/500 points (moderate-severe IBS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IBS Symptom Severity Score (IBS-SSS)",
+          "percentageChange": -27
+        },
+        {
+          "absoluteChange": "-1.6 points",
+          "baseline": "6.5/10 (0=no pain, 10=worst possible pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (VAS)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.7 points",
+          "baseline": "6.0/10 (0=no bloating, 10=worst possible bloating)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Bloating Severity (VAS)",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "-2.0 points (shift towards normal consistency)",
+          "baseline": "6.5/7 (average score for loose/watery stools)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bristol Stool Scale (BSS) for IBS-D",
+          "percentageChange": -31
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 60,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10.8 points",
+          "baseline": "60/100 points (lower score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Irritable Bowel Syndrome Quality of Life (IBS-QOL)",
+          "percentageChange": 18
+        },
+        {
+          "absoluteChange": "+30 percentage points (e.g., from 20% to 50%)",
+          "baseline": "20% of weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Weeks with Adequate Relief of IBS Symptoms",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "5.0/7 (higher score indicates more severe fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS)",
+          "percentageChange": -12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dietary restriction challenges",
+          "percentage": 40
+        },
+        {
+          "name": "Potential impact on gut microbiome",
+          "percentage": 20
+        },
+        {
+          "name": "Nutritional inadequacy (if poorly managed)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "Initial elimination (2-6 weeks), reintroduction (6-8 weeks), personalized long-term",
+      "trials": 78
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_75-4hEPkmXx65QL_J00MgL-fzjajC2YhRTc9J7lpo9rV8JUFYS2W5QAFkjx99gd8OlPU7CggcHs6na5iTL5-B063RBCQleV6KQtHGNfhBBkMc6avD-8Hm_fjNyOwe-WKYq0="
+        },
+        {
+          "title": "sci-hub.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8h9SOCyobXi3ebOWNGwJYbYoWVxuie-izxT2zWGHhV0DjUs8rls9tFtyt6xbznQLW0KSBOzpuaGpiG1H4bHUNaKnrdfDOSMZiSFJd68_tB9OLjtMwe4BsT4hEY5ttcUpwJQFdylNBS1dATjAD1fQFup13oX9eDy7D0rBXS1VzgaG-V-gt3w=="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwyJNzthhMi-YCEsbHFT0eArZwjjFDQGTI90-k9ApMwo9drP9mKU3xpvagLdevJyKQ86QeqBDt1HjmCMphRM_v0OMJM4nD_53ckUnWjrkNi9mctPniXZOMwZriBk5vUayNaHZxneUEr_TTDAQdEr_wrevgUpWQ0yoT3KeIxifMwHYc0-mz2WknOCeEMXs7JBq30MSP3-f1pDMBYiXArgmdhO6X0YAQRERH8ecc2oDq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpZEt7TU9ykqc0s2dhoX6elRny-mYNufv9q7rKqSxXmTmah8OiJ9hqf47cPV-kBudV8sPJZCOwQYdAXBV8nbPCbPraMLUojPjnn8dSjZyhhuniOLuICMtHANyYo7MI5XosJsk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEGNxzFxyT7bbP71XYCdpDG1b52HIQ2jhy5HjhzO1JtAybND5X6DGuJeBKW_3dczmfCFQKVddgSWxzy3pD8sR7k5-cGa1RXOukLln8AvAHiumpCqUGRf1r_pNoZqlf8qNyz7LFFs4bdTszbAOauVnCaniHdZ4dI54t31FF010IbK-c0ZdAfxPfX6fu--VEjcigddWmZtCJw-9fXeoJYmG-Kmo9WXXCcDGUn_ZWhQORQzcD7KFX7CQ7ubwI7OYA-6SSrzeKd4q5ce-AqmcIrewaejlmnhTdkKb3lI0MeA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjIDjkRZ9EDmYUOYCsVlk_NLXe82MIHEIjacNtU5esN4ifnR3xFYuykZaBIDrdov5ugvA9jr0prReORKC19JQM6XVjaYk7uytcneV3QKlCBK9zKv3OwCvWWYXarvl8Cmzqxyu_0-QgaCKFYQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD3hmTp4RX4Yaz-h3CvXgWGVeFnzqq2JR71KwZtWHVEtMdCGKjFYsVVLBohUmbden3gZ-ZvzdycQW80_37eP9EcKX3PtYyhVp0eXqUluSKsbqiFSpYzGlbB0ODrUR8O1dIEgjX98E1HgIawYwe6JND5R9WvFKfo2TYiiLmaZMQQEz79-pLlEZhe8Pg2u92DHJHmwsNMo2BfB03GGtxOrtK1nrykv7e7b4-eiw-RB2nBwtLuqPZSEwr6zoVZv4="
+        },
+        {
+          "title": "openaccessjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVhuK4jVm-zYy4PttRKXAx8wCHvr6N7sGOpnSk6u1_tMacLqVaQeJjVMXz9wdBa9Ko2bI4MuUWPgj51hIQUFB5Sf9saTOSzesQoJRQe-WSOvHIQugKe1UPtWszL81MMMWmgwUV8-EoJBZsu6pN1Q5o-hzaCwDrdb6v5GhF1z4yYg6WUQfzrWu1tkFAuNa8eF_MyU-tldKZwQT1bOXHSrsHX_PX9I-quBr9RMYGtg=="
+        },
+        {
+          "title": "linzesshcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3vsSMqcfswOIhTa2mXdYGhBjX1DPqxRdEhUdk8mL9q-z_1QsPt3D5DJt4T-tMTvzeZSQwsolzYNwr0uV7Q_Nj2PTV0ttMCXIS8R9IJ-T80tVdlMqKPG-H5q_kUh0f_fWW8SVTrjJy6kS-KQ=="
+        },
+        {
+          "title": "cornell.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1j6uGHLXvGd8UVN0Jt0U04Z8-Q4HOuZGesVBKRfMtg4sLGVZmTiKgInsowrhbLB_pAMRDnLNNWHRPWGx_HCAIrK1eYUtbbF4aUTcqM9s8lHl0RECNhvGVHuOfpTuoWV08LDvECr7AXSOafw4aUA=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECMCx9CghKh7bmXiCIR0PwgJb_loKzc9uI4-U4WsRbF58of5IYqUuRtxXjpW3thhvKO2LvdOhqsU8DG4QR-2zQlJp1Nuyo-yhFXztRQfydbbXyXsf96cUwfwtKj3U2rZVhDHiDMB9WHQNNFW_x94q-PTMQ3AEGlYwjLg0F"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTbYIlfMpqEO6AvLkt81vDZ_Y7nfy_sDuf9-jb2aZ2vg-FvfVXDjIzZ5NIM1xFufA2_DmtyweKRcIoQsltReVN9zAcR0K4Y723paaGfJ4JdoO0_EGF8mmqNk6aExTGHU2QHoYnZpdqYJmCMA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Linaclotide trials for Irritable Bowel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Irritable%20Bowel%20Syndrome&intr=Linaclotide"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "290 mcg orally once daily (IBS-C) or 145 mcg orally once daily (CIC)",
+      "effectiveness": 68,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 20500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 136667,
+        "costPerResponder": 58571,
+        "icer": 85000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 4000,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 20000,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 16010,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Lubiprostone",
+          "costDifference": 5000,
+          "dominates": false,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "Linaclotide",
+      "nnh": 5,
+      "nnt": 6,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5.5 on a 0-10 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Worst Abdominal Pain Score",
+          "percentageChange": -27
+        },
+        {
+          "absoluteChange": "+1.3 CSBMs/week",
+          "baseline": "0.8 CSBMs/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Complete Spontaneous Bowel Movements (CSBMs)",
+          "percentageChange": 163
+        },
+        {
+          "absoluteChange": "+1.2 points",
+          "baseline": "1.8 (type 1-2)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bristol Stool Scale (BSS) Score",
+          "percentageChange": 67
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "6.0 on a 0-10 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Abdominal Discomfort Score",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 35,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.1 points",
+          "baseline": "5.0 on a 0-10 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Bloating Score",
+          "percentageChange": -22
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "45 points (out of 100, lower score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IBS-Quality of Life (IBS-QoL) Score",
+          "percentageChange": 22
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.5 on a 0-10 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Straining Severity Score",
+          "percentageChange": -31
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 7
+        },
+        {
+          "name": "Flatulence",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Long-term (chronic)",
+      "trials": 26
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIKdehklFz2VrrNRjXzXrO56aReBBGQUlSkSmj5iZ_dK4WcSn02HswATahDStDcq7y1K-znojZxDH-M1tlxDYOh2weXq7s2wDdOazjOBac1QSks8XYYFueWKDX180_5bCU0RmRtXXs"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWWrL1KGSyQn4onQXqpHVSHroZU_wQ4ELhctvkAcDh9_cfnjgMaeRHbAvkhEBmaIQCJwTyWTVgcs-7mt5u1CYNKnrivRFh7TDviiUy-EHF1Mde41jjMZ73ImH9Ls3Di8fw3GIeutYmypsX6tIf4xbRkCx39SiWOA3bLDyDzxyN-S1xngTE1lUh8kJ-4poX9gtJEomyMgNVgOcR-Ae0Sf6W2cLV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0CAysJh7M-pb3YmDwbO1eIiUaZmX--Gesw44yPGkvCPIUkUlh6cQ0JKOAhzDjSgqlVyonl6M6vXL7SS8p6x9LYxmjY7m8lU3lD4Or-sVRYP-RXTsB4WC3LmSEBwbCiqxu9rKNy84u2qK_UXQz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj31aKknVZRzF13Tlvqv-Q9Uvd1hRwPk-dtRuHqN6ejsIWU7wHEcNj-qWRhVjATNXGqEDwfU1YJgq0tQqMePjovEASieGjh6M61kid3G1hx5nPr_vYzHUNAXIvM-3BGnERtSU-"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMKzI4Jy6gFj8CtFXNRYfy2hpKuwYRT-O2_QYPFC_BQRwFsjAjTz_AaAohbcWbBuO0sgz6w8Sq56gPjscsilfELwIOwkUCVT1vLXtcB38nuCsx-oDvsAjSw9aD_U2LsncHr267yt_lGkWGbS3VxI1SYvl7zc_rDEJDvoGsvY0eGiUYqoIJFS7438vnB2_izW-NluqwCoDmmrtmJ_2C29kPmmb2NLccJgECUnTmqguhhFtf-8ibxc9R8To6aGF3KT0PtEQ1e1BplDaUksnsioPRfczJPH1fE1TB"
+        },
+        {
+          "title": "microbiotajournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHiIm2LP9d4TpSe9pHF_ZBkmm75Y3dcCpmp4Jgkj62hzxtGAvCiDHVzGn8GsDWJPCyFHzwkDPGePg2oM6aJolMXfHhTFzl5zf11sCvYaxBuUHP__7zFlvPglEh9IkPtn5EikJ7nk37AA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rifaximin trials for Irritable Bowel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Irritable%20Bowel%20Syndrome&intr=Rifaximin"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "550 mg orally three times daily for 14 days",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 18000,
+          "monitoringCost": 200,
+          "sideEffectManagement": 150,
+          "totalAnnual": 18350
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 183500,
+        "costPerResponder": 61167,
+        "icer": 120000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 3600,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 18000,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 14510,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Loperamide",
+          "costDifference": 17800,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Rifaximin",
+      "nnh": 100,
+      "nnt": 8,
+      "participants": 9000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.5 points on 0-10 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (0-10 scale)",
+          "percentageChange": -30.8
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6.0 points on 0-10 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bloating Severity (0-10 scale)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.0 BSFS point",
+          "baseline": "5.5 (loose stool)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bristol Stool Form Scale (BSFS) Score",
+          "percentageChange": -18.2
+        },
+        {
+          "absoluteChange": "-90 points",
+          "baseline": "350 points (out of 500)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IBS Symptom Severity Score (IBS-SSS)",
+          "percentageChange": -25.7
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 30,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IBS-Quality of Life (IBS-QOL score)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-5 days/month",
+          "baseline": "20 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Days with Abdominal Pain (per month)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.0 per day",
+          "baseline": "2.5 per day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Urgent Bowel Movements (per day)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 14
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "14-day course, potentially repeated for recurrence",
+      "trials": 24
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF59-VVCC4mqGmGtt3uRqvxri3WpTAIpIfJAZKc4DyK6vTANsCzKB0qw_p5-dTZcpcBFHm6WCDI7pbq2UzcQ-EbK7Dy2E5OH5J0MBU4n_GYHvg1IMQoefvzRkFHuq0FOYMHJ0AOCRGZoI_l35I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8e9IUYRep8jSuNUWwszdssf0Z7P54JN_I7MV0Fk1AmK8H0Zq9dukTdpcL6755DILIClhlUp_tKUqe8EDweNuCx6BQ5OxeQD77-aCk0aqlgFnICFsIke_wp31M_v_Q84fSabEVn_DlJSXZPlo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgDNxesYe6cF0r3cREqBnfTefUF5vems5D_a1s1uSW2MW6l7o7-4KfIFCVn9xhALPVIa5KPTB2j7biGnrqA8rx5h9tG7qs47cvpS8gTCVJtM-3tuRb7EeSTt6-Kc7b9iTRUDdD2GrEMigKJTY="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHue22Zej7C7EQQgNmiSGjtEsMe8yBBtwqgGnP_KQwnPE6ZF3P_x7MXiag1BpNAY60M_diaG2Dq9SnE1LgLc-7hD0PHRpwFzKO-S0VrudjH6SUZwSebsb4U5hahZXiJ37pXjU8LJTV8rqXrAplajrfKaWGCtyhxbRrWmBm7cjV8DfFCjirX8eEIRCT5U6bomu7wDUvP16LORrWRqH8cnF62YhxN9Q_oIlk7V2Sp4_kK0msjh53oobaAzZlzD8s3EfI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEluqr5YEkLWYYnCEnA4XQ9Fqtc2pwdkGgBTzZLww8Y9RzM-00oUhDOA8Dofvx_FfjFUzlJ7uecjIw2NnVJR3SyzNWlKkVHX0Ns0-Hrye--ET__TUfOokn5rTFEZPfs75gX3nhXEuVPufG3kIc="
+        },
+        {
+          "title": "canadacommons.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR86_XExkiv7SIqCg2T1lp736qTslY1Ee0OnVxIqPXzMh1_8CJXfgk77lT1ekCACCcXLWiJY37GDLoIk_YBsgKUxroeSTMRKPqWTASWu4oqZ6pF9QmmndkIJYsged4h2Yh0sXlUt_XcWzEgDUHZeDuW4LDuzS23VjncGmyFYgClA1wpHMgfdFpF_v2gw-jkBeBnT7QLr7WG4w49tidj3xigp1aneus8w63pYkRhMnPW98qmF0CG4iafPJVIgZmKmT190ZQmy5n41viZsoy"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCmEt9oM5v1ECiKDsrlEqoyivG-z8EYPTwnz3x3bjYV9ZOe3urDxaI6mT5yWwG6nZlK0_LdZm-jz0OnkqH24xHmmtxOBTE8-yxz9TIdr5vvlVBrxr6s2zRtJ80boGauweAnfPeIucx4NQFVnOZYjd6ub4hYpW4ZwCByoYrNI8AQiA2JfpfbT-QiJZBt3yCiGq0aKriWj4FvGtf1e55g7h_qDnUFgqS7ZcPhmcio7nzuIyg3np0dv98-UMDME1L1jI="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqWZFIu2faGAwxbDWex-D6R4wbEdNzoowEvQxVDFag-FZYaoGuKFwnMzaiBANX7nnKJCcav6c96AZfoqcBBHQ2mObwoQgWJGOYCw9yJ5koArxCLaktGtiH6qScMCgx8dbe1y7Gv5afg5iCNSFhmaFDJTWrSA8zp1qmF3BROw=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAhvNGogLj4kzkmxD5NfN6Y37D10xAqAExjfNzFtPa_J26D-2VK4gISlXkQ2kKvA7jyqjIOIW9Em6UNNVvUgQ5JYG0Sauun39m7f6fmYRXqax6OnF6iwQvn2q0Mu832To_00qYNtj-9txLYQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Eluxadoline trials for Irritable Bowel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Irritable%20Bowel%20Syndrome&intr=Eluxadoline"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "100 mg orally twice daily (or 75 mg twice daily for certain patients)",
+      "effectiveness": 62,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 300,
+          "totalAnnual": 15600
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 195000,
+        "costPerResponder": 62400,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.06,
+        "vsComparator": null
+      },
+      "name": "Eluxadoline",
+      "nnh": 333,
+      "nnt": 9,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "6.0 (0-10 NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Worst Abdominal Pain Score",
+          "percentageChange": -41.7
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "6.0 (1-7 BSFS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bristol Stool Form Scale (BSFS) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "3.0 (0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stool Urgency Score",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 25,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.2 movements/day",
+          "baseline": "5.0 movements/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Bowel Movement Frequency",
+          "percentageChange": -24
+        },
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "65 (0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IBS-Quality of Life (IBS-QOL) Score",
+          "percentageChange": 18.5
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "6.0 (0-10 NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Bloating Score",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 6
+        },
+        {
+          "name": "Pancreatitis",
+          "percentage": 0.3
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Long-term (chronic)",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfavcaJdq8yvG2uJSkkqtDx0Wtdm3YP_rF0u_8xPV-S6862jAtAsf3rrYqDmq2b5dj-t8jAdzzdE_HQmQjVm0GzOG39A6b1JSiJau5UK4HhSjduA4YUN7BjCZOM7jaQUojA2vi94JDpoq6mA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcnpztmoKBl6y5DTN3bHVMstxu0CiUK0FqkmI1VCRbo7cjHy06WAzhq06LOGhV43dGjXXi2__4edvIRF0NiJdRMasyQnMYT5n3FyqeyYl98UdnI8KubaPe4_cI57tMLkuM34Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_K9sA7Da85Syha2tEieihx7JnrdNJ63Zyuvwwik2k8siqe-wz8nq_GMmTdK5ZxcWLrfVdySwmWRmE5DqP9ln2BL5w1to_sDsy-3VIMCCkTUSjWDT0VfgY8sl8UGEhPY2VUes="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6ds1m1FkCXRagVrD_E4ULOK1EG5VyFLLcRIfOixgnnCiaezPqaB56DVK09_r1KknwX8CFSmTa5IShraTngV5ko8jn66aFtEKl_huzlZQoHs0KVP-KAlqCq9CTSuvuy4rEqL9WqAwKQq5uR9VclbRWwfxvxN08K1e79QCnNza5KSjYEVHD62h049NyXFWNr-FnAz0sgFwJ_R-pcBWnUVeHPhgdrbun7KZbUQJL1KjZGFWVfnMD3HUy7yvTmtbUxPTRlUMuwqGK6HzG1jdSIHpIz1R3mJJHxQ=="
+        },
+        {
+          "title": "mdnewsline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZJKW8bpeZkb4MxC3lehpmVqyUi7cBdGxGWg9hYJJ8A8JhdSuuTU2oLDRnmPajH6dQltK2rOZX-7CAqp5PdbzAhas7vwV4r71qVL4o0MlHr7o8Y5pB2zC-E4qzuvMCcVcPCIFnZvuQLbzWy_xhmGhb6uq3sl6CU64t0l4ZpCQJmKKWzfWQSOlFqOOxtICFuQ=="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8OTKvIcHdA4POCBNihJ8kHYZTY-JrEI81CW_i5FG6ZNU8eJQR4ywqTQ63b04zvg5EPHhfJoN2Th3O_vv6z4H2MUUQKE1u-xcnoGdNSkuyq8lS4_tHSInXdVhxHjnoyB2tkOSOgtwwWdeY9Nx42I4="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU5LuuyALdq-qGdZZNyKoM3-PuleCnprXd419KEsWPoB9aB-R5OsWuIQIpe6JPKPQccD6MrtlNHFZGzWn40HkIPF8-lK9ds3HyMDoCYK48b207gZRX-YORDPfw7RmoHcfp6q5E8IF-NcoDDGIrn0eLMEERlj7ukDD7rA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO1_MBBexqHyRMcThFolh_3fLo_4W3gbFy67xDkJwsaA1HXDkEcjvkFJ6J76at7dW23yrlx6QQZ36HWJuUtICU-NbVZKWtUrvWUwzKpymnSq_RX5atOfVVGVciXu2tN-i5zHkzXte9MYLe3PIJAtaVM4nvqhxk3zsOnavnMd6ltLN0cR80cilWoMN2dF2FRap_VLEN_3rvylka2EKlmQgaSWdOijh6O53Bh3JvyepcSCMEAdcS43kd4wXaAJOwzmteJDl4Fo9KD6ohkhsJ2UJAomBRcsgccsLtCcAWEfGOC7T_Pm8bins9wOU6p1oc80_zLeXTYd5ejF2RjJtudQxxXA=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBVlTCVfnrqOCpQYwzVzgnzboQPNMdKGkoBQC4Yaw7hGuuaCPGtKYlLa8-5jASpExgBQDLQAy0f8al7Ef2YoGWbYcue76t3r4CVrTT5i4uL0xCgcFIwsg4Z0OdTRVZ58X8ylxA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY26LkfrBlZnBPy_ZLM7k0K_m7YCbbd8I619rBvvfl69p1K6uGnWwYRXgySSkWdSVtB9NQZ7c6lH0Pn4dGizg26f8Ap8MMF-dMw8d8FCEFLIhUMmGPaXkj7Ly_iikyJiMHPlZi0Y07qrmz-AO62V7RfcHBp8sfdx6fIn9DaeMpCLXDFn3nVzpEyhPaPknUW1nVgjBE5b9EARw615faiZLKZY_Ue0zTxvZ2FcRsE1w5oYyEKr3bhHnl4-loH0TrAMwnuZIy_Xqf"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lubiprostone trials for Irritable Bowel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Irritable%20Bowel%20Syndrome&intr=Lubiprostone"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "8 mcg orally twice daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 250,
+          "totalAnnual": 10550
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 87917,
+        "costPerResponder": 37679,
+        "icer": 100000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 2000,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 10000,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 8110,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Lubiprostone",
+      "nnh": 4,
+      "nnt": 7,
+      "participants": 7000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "70/100 (higher score indicates worse symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global IBS Symptom Severity Score",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "5.5/10 on a 0-10 scale (0=no pain, 10=worst pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity",
+          "percentageChange": -18.2
+        },
+        {
+          "absoluteChange": "+1.5 SBMs per week",
+          "baseline": "2.0 SBMs per week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spontaneous Bowel Movement (SBM) Frequency",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "+1.0 points",
+          "baseline": "2.0 on Bristol Stool Scale (1-7, 1=hard, 7=liquid)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stool Consistency (Bristol Stool Scale)",
+          "percentageChange": 50
+        }
+      ],
+      "remissionRate": 12,
+      "responseRate": 28,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "60/100 on IBS-QOL scale (0-100, higher is better QOL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IBS-Quality of Life (IBS-QOL) Score",
+          "percentageChange": 13.3
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "6.0/10 on a 0-10 scale (0=no bloating, 10=worst bloating)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bloating Severity",
+          "percentageChange": -13.3
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "7.0/10 on a 0-10 scale (0=no straining, 10=severe straining)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Straining Severity",
+          "percentageChange": -21.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 23
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 13
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Long-term (chronic)",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfli3YMoGz8i3ksd0BAl3BGjUGDwH93qQDdHuO8SbxBG_YaZSnZkxntFuoBiLTv58qt6K84CaqnHfFdY-My2eVknwfiSn6Lsyu5HT5sCqiF0QYmwOWuD5wqXgprZ4rdlLkusOiMINSCXNdNqkBvZIaPkWimWUDXt4CDsaOsPMJoN75x5wFfXDfnhTp4EClsbVVA4HM8cbjiFh0ouJYdymbmAJEwfOAbMNbve-cYUQn8jwCrDaKGkoHnCLO0vDW0az-E8lv-aG1Upsr3Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbHtV4VTZrw-dziOHi9l9noFa_mMbZjSZ1zO5E5fTIqCI3mGHMMJvDBjolC7HIEi7icA7t6IX9djE0uOEiyvcN0k5OCVq2i2xSFqAEJ4UdjHkfsWz2ICFL9YcI7xCmApiYxs4pVeBcysQVzZM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1kheTmQGDsQZKRGcXT8UQjRnJnA7E8RprHrui5-tnk77Gss6RSDEI6uaSYDm-qxQJL76vSiBNT_DI4oIGgXGk3n_1E7FILVSijTg3WlH_4UiPd_ZE_E4TwydhJAffedk9bQ1t"
+        },
+        {
+          "title": "hmpgloballearningnetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUos_dQucOkPlDhqW_B733z0RLE743FPrkM9j8m0KS09pBkjhHFXOu7caYdMCpfnLzzZRv5Hc6eud7v-eZ5qI8RAesx1T_JZDxcItVFqxUxdrthyuqcy-L3s_7Wo_VkD90j3Sah9LR69bVJnYjpaINBkdLzjtPY_e_Y9wdXozNZHo6p8vW0DXlDBRStb58Sfn6Pa_qnXa4YWUaCWf3l8D9wA2Guc8JbgJKhrkROktIF4wJLrMnYaSw7RuNnR0rJk3xrg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj2GQC8lm9Z1vhinzlKCvdB-F54fhU9fnnn21xZv8VgZqGyuODBTUfcouEmuMFm1Q2AtVlJxzi2QtARpD-tpq6YedxJasv5E5wtVJGhGh7jsS6hU19T3Wj_OloSjgxYnK_iT3IgyK-TKB0MOla"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8lwGsjPQw52Go0p4UXPMol4_CRHXmYdDMoBepiX5cpar3E7pdwfCt-RbJyD4ZVSkLVKeKJLmNC5hJcyvueCKMqfGpa7WsO0eoL8P1evpn58vMYV9V3AK0It6tmqrS_TjcEKARodgdJg=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWZtIdAuJANOAFTxxkvdTIrj4g-sb_Tai7vwFawBkRJSxt183QB19yfgIuIfc0fYgosLvaemRUY8YXB3dtC8QArtmgO03IIsGpR2WbTABBoxKjArTO3tTtKhOdTYqq1E3rgjmQUNM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4DJoiATKHn4zHfa0OAeRkOqd9XLiqtH6mvEU6zCx1BOgB0MA5gQctid1o3LRXUJOuAQRDeTg2D0-heNFFlX7GZCEiOpb4BsmNQ0NnLOUOsMNH88doR5slVIY8ghTbI7S52A=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB_psLsfRnubKAhu-uJ15QGee2IlFBB04P6SAIS2lm6PkmwNbX4KG5sXEuIbZ9AftoV4Pdmmu-mzVU-rEdIfUorZEMlzmEPFAIaCTdE2CLat0SSUurw3GIjm9fcTvp1qW5ISqSiLTPoJPP79s0Hb0uuQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tricyclic Antidepressants (TCAs) trials for Irritable Bowel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Irritable%20Bowel%20Syndrome&intr=Tricyclic%20Antidepressants%20(TCAs)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "10-50 mg orally daily (e.g., Amitriptyline)",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 150,
+          "sideEffectManagement": 100,
+          "totalAnnual": 300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2000,
+        "costPerResponder": 750,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 250,
+          "dominates": false,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Tricyclic Antidepressants (TCAs)",
+      "nnh": 5,
+      "nnt": 4,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 15,
+      "responseRate": 40,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 25
+        },
+        {
+          "name": "Constipation",
+          "percentage": 20
+        },
+        {
+          "name": "Sedation",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term (chronic)",
+      "trials": 30
+    }
+  ]
+}

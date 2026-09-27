@@ -1,0 +1,996 @@
+{
+  "conditionName": "Chronic lymphoid leukemia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:32:24.818Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "lymphomahub.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4IeEnC-uSAZwIupenCm_u4gM1mBR2cV3gE8w_n14tJMrkvc6_8-YX_5n07T2bdZpGkE4dp3EmS_FTY3MBQrdecisuWpXRH02WrSrJsvmiwvGgCXIqK1qDjB-apME2VAz2G1HpLTJYaTLQ9BMl_vlvbzQ4f53Lkh_u3K_MAJWOhSDCdwyX1C8JibArHUjtq6c3o_xdM8dqXsH05oc5lXVkjY2xcQhlhUm2iaHp0HlRyxsCUxfX-DE6nWy2IQyFV0bPzvEuo_O3Jqw6"
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIXC5unysHAOg8htFo9Xbe1TcuHJgbNCKTQhcfGxF8nyOfToXyQ6LikHei7rq0M6IGqJsLboEtFbF8l1zaZPam4pEVZEXKN1qj8zCEivQdT6lSW0lV5dyz_8GhkUDkS2z4Q630hYOMd1_jQZT-OEZ8VlGpZr-WcRxOGsHp9QfsNmD0TdDYdno35ckSvnaO4NvKbNhC3qrchPgLh1vk6NBtaqgBya7KHWRmcsaA50NFLlCW5znKKs4LOUbG_rArYjdJRoRaKb8EFlgPGQ=="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER56Wm46a-x59kBpvQ7m7PmFON3mvji4R3F1aAM1ZGewuuJe-6g79z8BXGXGiDYtTYQo1jIwubtvu8XbgHNLRqBp8mhSVLXvO4NupO-U1F79-AGFudR8B6Da8ZTZx7y7-ftNazgU0nxj_vxGqsJofWFYmse1xi9CpnADEvZsWlcpId3RP0u9APDvmevUEb5Fr5cxb_yfP0hgRYLIEJr0lVOiCUjm7gwfII9TU9d-XKeZ-TZ4Luk_xguPaqGXlMGD9L4g=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHk5y6ome7Cgd7vKBu8eWNa43ekeKfMClsoAP6dc3Xem_wqpuYFmxubt69bzqXoowB5_HE9jBbBjBxvsK9SZnXZI3uKsGAqX6n1AKc5hR9nGXAE9FVeGL8FiQ6hX85ptFkarO4yUIQOY92FlmGf_v1N4GC6EnXynzeGeoXnnHC5MeH8J81ZX90s3oOjUlvaDBrll6rBNuQTfoUzCIIham1j3YCaq9qegxU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjOlNUc-cCqMDZbDMrbA7lHY0bEMJriEQVvIGiGVEBLmAi-udFLyI6cFkR6RycLoKPghMGCI6ZV4zs3FwzY-ZPidGacMPjVlzo2W5nmCSz7NmyN_r_qe1MPZ1zjF0u4r5v34_m"
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI9I71S09E3A8ixywEFVtDhIISBetDzXbGC8AXGqFEUhsb54SYjKDVWFAnrgXqksWzAxMHwAtdVt4dStJoXOE0rfUEsLJakr2cj45O4rb-N0RZF7NH4ytpuX2NE9NG1i_TFpLBPFDmX-wlzrRHIEEUIzWSahONaEm0m-XmXYOvH14cpcbBL_5l4KFDY9dxnA61qxrlcaA4rcEurCsyn9nuPNdSKE1PGQBEUZUnialqpmt38s99G56n_8p9IkrJHlO32XMTu9IWOQ0MCTDzqPeu3mDpt5jcu8zzCxqg9zEGXxlhdqiI_8Fu3d4Qd0ZLmfyEQdhIKtH9"
+        },
+        {
+          "title": "medicom-publishers.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQJvFXphVlp7cUwQm_9b4ZFv7wFCEdQZ6aZHDjZCUGGCZbfBYEI8Dj_CCVX_BM9arj4_5fHRvdyvZtOgY9HJeSPJw_GLIcZGE92hQxWycpgXTvPlRpZ2QE7EiizNXxtT2USfRH3AGavXneFxeUoBYOPkhrzng4OhURX4t0ItVDsk6mZGTHwXMueQMQR6RHwokaBDgC7MnDwjWFSk6vjmtZF-IuBkqZC24inpvK4mfockQ1U7H8kebb3pU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTjfBP9x7ytMixScBnlmTj6KB5wYt3_qmbckn-2IAotsgKGFfw23sZNWPb7SmLdmU56_7PYTNQ3o_TnxFHz-vuabtaxscoMg9SQ8cy__aOBuvRLrT3ieOdOJA-tjaIrtXetJVj"
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_wurDAshddiDBQFpEthgqNXR99C0vyzapnmyM7CJr5Mb67TCJDK5NzGCttALy4Dyp55Cb8JU6UdWDv1U1-7cpYM4cGkLz7mX6VWzVbdzW9-lYkAl8A0WBh-jwJeciKEds8GMuiz2p0Q09A5SzMzOB6YDx-0zNcnSfS5DK4Y0wcBsOSakSi1jZhzK49kZRiUVz8DqOcKg0acuEpbXOLaih"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5DLnvstlU3HrIuE5Qf8LTkh8EP0lr-1H2JuC_z5UwJoQa6QR_ZfqfrjBw-o-3ZWK8YeBCfMCUvtHX9xIBhAddy9heYUCbEXZmdPRrdapPdeSZnNYwt-CGcpO6oS1gkopvdzQqqwj6qR_hb4Am9ZUdraVjeHtBrle69Q3XSqTKcnYteX9_tb_VDcxrw-byzpA2Ois4U4Cbc6ak9r4scDjuQRNpMjtZk_83p9ZkMsLt"
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZJts-iMpvfnMxStXCHpXiXepzOM95O_xg66wzzacPpJCAq0fQkG0sJ-anC_4eeMafBrBGREVQOnVIbOPv2onyn_auGJh9nlm0cCW47k6pu-qCm5Cl31vjCWhvNbqsViRvL8xtJDOs96XCWBNXyfxv__adIcC5kKq2d1eNqqXgz-Z6wO2n2ahWOLajsbEZ4eRN_3z1zkqtfAQ0G74l8iQQBkMM"
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeFMkHHC1dGlS-syQASRezcU5wF4CqjNXPuy3JDwXF8weZUwjPKjFokIJ9vxDLLVM8wJnVSWFVyC3WZC6jPIKzX2q6mXfK6mrQq34HCj9vXvKWCon4NILa-3KOH7NZ7psATy0IzbdEgnzFqvLaT9Kmvqv8ehV20eFm0XwyLMy0n7NB6e9zs5MRS2JEExxWtRdDry-gS1URQrnTPjZNY1QUb_KCfljajQ=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIhiLY997F2drx5Wc-DWlLINGQva4nNNd07GP6Gdsbe6ZDKJtGwg6z59dgnpN1exZwoWW5VuOd5jpJBrTK79umacltFPSj1Qrhu3RZJtCvT_EoZNlHib0l1gWQth_jhUy5C64SIBc="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQW84uX1mCVcwRDt6rwqGgVnbrRJPSxylKav007spuRMqIvLLULpyk5zIDA8dIXkaYkmeWVORYZCS86kIxQ9zx5aPgA9yr7KqZxq3MHl39W5GqKeK4w-2KreEjZtC8pdOOEIQtyT-6en7sb9ckwHwrxr0FmTTUqSkyvHqFXw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKxATbYQBaGAKxQS3OSpkX9l1ZG0KoZs5s-vYS1rZF99sqvoIiImwhS9vY32MA36bOPastDQB3fPuGQBBU7t9tvnffcRAxEc6ZNCx8bXiLwtmWVl9_0HrVs6JgPXsvxBjbQmFc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEORnSsxdwQ0zbIoKWqWLkL-wsxG8JiW8j7WIdUQ2-x68Oa2sZOuhTb6yC1lItCuueWrhaEgaoEE9HMxmbQ4yux27BRijJNFYe9HaEDlYv37hwtwOolNK5pOwDQOglpKIiYY5iufOu898sgG4iUH-qCCrtxcC0zsGsTY7-Oa0--YXUsTsmBEZgqm-7JM--nxtk1KAvbLfBuz_Zgt0e5m-uMK3yEXI5WHK4jWkRoMv7o3ro8tSJ-CQoedkBtIE_YSsPB4DVHeNLFWMP0Coj5PqdW-IvAzejAyCfaP3h1x6n44Imi2tHNh5vYd_rNHPVrYAPDnx2MRTXuiJdExqR-av8bI72Hf3pgUoiANJMMcwno3aGBLm3fvfq9FOeFKRgnIH_a9pou3O8azgqubqgXUy-Gqczbv2AJg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Venetoclax + Obinutuzumab trials for Chronic lymphoid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20lymphoid%20leukemia&intr=Venetoclax%20%2B%20Obinutuzumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Venetoclax ramp-up to 400mg daily, Obinutuzumab 1000mg IV on specific days",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180000,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 8000,
+          "totalAnnual": 195000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 325000,
+        "costPerResponder": 216667,
+        "icer": 38895,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Fludarabine + Cyclophosphamide + Rituximab",
+          "costDifference": 130000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Venetoclax + Obinutuzumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-98 x 10^9/L",
+          "baseline": "100 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Absolute Lymphocyte Count (ALC)",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "-18 cm²",
+          "baseline": "20 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lymph Node Size (Sum of Product of Diameters)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-75% infiltration",
+          "baseline": "80% infiltration",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Marrow Infiltration by CLL cells",
+          "percentageChange": -93.75
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 90,
+      "safetyScore": 38,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3.0 g/dL",
+          "baseline": "10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "+100 x 10^9/L",
+          "baseline": "80 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 125
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "FACIT-Fatigue Score: 25/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue Score)",
+          "percentageChange": 60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Neutropenia",
+          "percentage": 50
+        },
+        {
+          "name": "Infections",
+          "percentage": 37
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Tumor Lysis Syndrome",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "12-24 months",
+      "trials": 45
+    },
+    {
+      "citations": [
+        {
+          "title": "pharmacytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbcHcBnoU1SJuaZgOfylOrM5HVO3TWSpY-Uv4Sbu0mD63nt0sd5zr5NtRd1czbc8xqMlxAKPkQyN5sI69bJLq5-Jxs3Wtzj6g-AfZ4KdO_GpCT8Stqw0VkqCssvlcHwFd4oG4NgQT8QqdWhOB8UW4AzEVrW9vOqdFX6DsycktQVnhkOagvOsJ_nzsrSB4Pvx3-t_TFpKVBEKTLwd-g3bKbXvqrLr1teIULo3w="
+        },
+        {
+          "title": "hematology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZfBOqB70Gjr5ES7Etk2zShyd6uvufB9olVBusMln68nRjF4DEDbecaJ1MAyC8u47PAsEXx3Bof8KDbWsdCsJRd7hgtzIozd2nGcbSK0PVGsMPLeVoCJ-9qM3r2NxXtdiA9aZPzNiSsgydlwMVuffTMrVd963ntZpG00eymqgoITWN2NIZLx93R9T63aSggzh5QVdBWcolxPlZERYuHZEHnT7cx6IwvSMMP8HCMyuVNAOWcFqzt9k0NBnAcsCsdqvhA_5t3xjYwdDfKi6r"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnfnjG_K6XoUP4lreIO6Jn8wapdgqArux9j_V3FqjXUayqj87tAxXqHzLxSyuXLyWvjhGmIrGfNsysrdpU1pKH0NBUA5TXiWPEMUGMMFG-3CxjPrrw77mU3YijOQ4RRi0SK8aWk7g4DyB1q2vw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbwXqg92lKZCeJ1IExt-nNDCmquK4btbkl79-kp9xITlQ0hlYNQUUlC4mOw8l2lJlVWoVl9jjQg22UuIGD0ajMavubqIFgyroYETLIlUr9icvTnP_I6ns8-RsdKdS3EC7iOKZ4"
+        },
+        {
+          "title": "lymphomahub.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtvmOPf6BTHu0390gDmhQEJy6YtQhsYoj9eMCcHFK15JDBLL7xztSa_K_IsqsIp8gFe9bN1_Df-x9W5H_VMsMlv7nSsYCbem1PNhUoR9x0QgYbB9M5ZFFOZEBVSB7gh6ZTLLGvS7Imly_uw2-11ptKWpABmkrWLWICRaKZEQ7FA_f_zOId2dkd-rw1h8MZTN3-mL0zzfAvRihq98kqrPkJqi9DP6RJy-MrBBcEN-iWYetIv7sg8WjSp4CDucsfBh89VVJnGcL8yA=="
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7vWncOH91VLkt7MMDsaBjCWUwn8FaD6fXMgxOonJVvgIBUt44bjtGvABGGzMVLBkdbOn0aN-HZVa9lGehTUOXyqScJ1ZUznv2wmRH_9Vg3ofiu_0jijaAczmXYLhXIAlVw6jiWTC_kHLke6Ln7kMHlo65Lx63pHFTQhV37yAa4hO8dcn_iGztzJskpKy5bV4AHXo657v5ze-PEETOsWjr6YCzToWfnAJXJV-7_imJ-vFa8o3"
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQhsJx17Q9zw43yjv-KG6CmNIKwBfBxgOlTOR3olhUoAhHYgVz2FNG08I7tcVdlfzuYnkJ7XbKaUfQNY8B-WjOLexrPdTQHfT8OHAR5Q2sjk9QpwbJSFu5GWnXyhtKwezzGSqkK038a5LsPvGWIhRSWn4F_-tfP74sKDfGQ3GZc8OJjAp1D1Ue4Qp_O1RuhpU="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-_q4eKLlraZoMblYhzO8UddEa9bC-66wOh5yON8O_CYJVTiYuMSTUu67Q4luvIh6xvW8LjpMbkrOIuAJo7FdCij3QDHFs7KvA20W7EQnh-KA_j32jsi5x7Ddq6YdF2pES7YU0D10="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7ozh-RLAi39NX0ryjTaVJJcVT-SNGu3tTNmj_H2MZasLaP-evCjKqT8wyr_eOZjIKokQHyNjeipjlQ33lHOb467eQiU9iYAZ1CZy-_5fTBjv1XwUSdFy8rOJL1smQDV1nm12KTmwYCMcFIJZZt9sxnhiAjO349QibqiT9F8H5-xhQst9V3Keqt5j1VXI055DE3Tdhvqg1jGNQWaAntfLbQGvG3u8="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpJTkmvmmtJd_mHC5hynP8ITurAi3eDzERJZMRu5BC8WtCJNf_Dx6ichNc3nvfNxxjpDv0IF01Q7HOPKTVcDuFMolZwEFtDTB-2MUYBTiGClfN_83nrRnYnfSjGGoe6lD8bpYasSPO_RWm8_OcLl9yBZiA5v_ycYpTArZ-88MwXTwnXbY_0lwJGt2ZFXpZ71FQC4mM6zWUiHGQ_FlMoQ5I6zB3BTQkzOMgXrE1i1Ic8Wdb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2RzpuxIPWaNAwMEmssdosFZ1bDa5H85LUd-I9L1kpBBaddTPHRNJFzEiepLp3I0boztVgK0xcgo5PXJplAzkd1TKDD0r1Wnd0CnULB_sZhqSgtHtCAWjW00l5Kl0CjaEHRI2RDV6byOYWJS73"
+        },
+        {
+          "title": "healthtree.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKz185xR4R6TKjUFrSonxgqbQSo9NTuFKW0pWZoXfeg1soJXeai2G3GUuKoxnS_iiieJNJ-0T0CNml1udo4Efo2X_oHua5vxJ_9-1iLY59ALjVofEPtIUej85FjHdi9U_MWBKyNK0eMSsVGCvN0hU0fMUXPNGSUYCDBZ7JnSus4Db97TPI5C5p8MyZzA=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw3KIg1xzlqxJmF8KmAdOpvLrrLJBYC3tEGIZ1phwULMJlO5UrXdYA4Z2S96TZMZVmHbJwcNT1miMvGbU4X17fuKL4eUl0Y7wPtNSbu3aGeKHqiGF0Oegi2JcmX2H1Yu-KLXF2du0="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECG_Eu_xIjh9CFW4NpLDyVO_78UwbdS12rE9ndbXsIPzLyPiMSUr7yMdRz5SqY4M_9SCOM_xeMO_fefIHNAE386GE49bVib0hRL7ScW92BTs78fBNECcW-yb4t0C4UpXa5_3Nc76wcnaxXDHk9OEv_ej_odMGcciIcxiNNREa7kyVlb5ez_Z5umu6K6jCKcTzcV3NQMCxYnB1i5riZEU2qze9LoA0v3_Zg-o3XjOTC_ICq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI2VP4iNGSaMIfYsZBMVEuykFiHluROHgv4KBwKUqdUr2Sx9-5_Z5VS0REBJFw9uUCRBtHQSXaSOL5HKjzAA9e0eSJgSN0E8BGPqIi5Cs3eDoDR74ycJdSsvtxfm7-ZMra4B6SUxz74I1aBC38HbFnzAf4WkEoiI_YM1UidARKgqJzjKgSGaLcHwtC1UfjBG58CHF5bZHcmvLCQutudJZPljpz3YHHzIEH_VxrYILzXGT2zIlM7W2oHyE3gqf7WHSixazBkh2GrWt8x8xPmdIU4kzrr03MpgZJJoYVH3D4PzTplswMOD83excFwgLoi3zKpe2bg8a0FyagFTE65his9basZQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZfgyvzhO6lO2OlzZKyKrp2fxNpAkpQOojmwyS58WmR500HCh-M5dBO9LzrUBGNx9R1y7xscC2XKKJ7-nJo1BA-kVorytRgYy3M8EeQnXUdFxNGn9mTzBjvMmkiVCwQcpAyV_ClxTCG24J4cSvs6j1Guvo6R49FOXWI6GLY1pd5QEvTb9VOzOUv2uSwVhyNC-XPSUIyxUH6KjfewCrjMZtZodL2dguvTmgD1yI7QKs-6caJkrzFOs3P04BqsWNCCWa77LRKjXFFkXnReCoLZ2FniN0ahYUOd5VsF7XLvpWttz7De8wY4-8s2j_wx1DAcOC9Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1-JQpATm3LBplJNE0focHcjIDtO4JWhFLPMB1_wJSYuejWhjrEI-UljSncdGl3x0t3A1-3pxvmfE18_Pth3v6rzLiIgJex5T0Lkp643Cw3sJzIWlmoLRtmhGbm5qaIWLOInFB2Ac7WNS9gBzo"
+        },
+        {
+          "title": "ClinicalTrials.gov: Zanubrutinib trials for Chronic lymphoid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20lymphoid%20leukemia&intr=Zanubrutinib"
+        }
+      ],
+      "confidenceScore": 93,
+      "dosageRange": "160mg twice daily or 320mg once daily orally",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 160000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 4000,
+          "totalAnnual": 169000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 845000,
+        "costPerResponder": 187778,
+        "icer": 60490,
+        "prescriptionAccess": null,
+        "qalysGained": 1.4,
+        "vsComparator": {
+          "comparatorName": "Acalabrutinib",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Zanubrutinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 4500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-190 x 10^9/L",
+          "baseline": "200 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Absolute Lymphocyte Count (ALC)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-18.75 cm",
+          "baseline": "25 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of Product Diameters (SPD) of Target Lymph Nodes",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-9 cm",
+          "baseline": "18 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Size (Longest Dimension)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-60% infiltration",
+          "baseline": "80% infiltration",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Marrow Involvement by CLL",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 90,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "EORTC QLQ-CLLM1 Fatigue score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (EORTC QLQ-CLLM1 Scale)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "EORTC QLQ-C30 Global Health Status: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status (EORTC QLQ-C30 Scale)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "10 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+40 x 10^9/L",
+          "baseline": "80 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Neutropenia",
+          "percentage": 28
+        },
+        {
+          "name": "Upper Respiratory Tract Infection",
+          "percentage": 20
+        },
+        {
+          "name": "Bruising",
+          "percentage": 17
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 16
+        },
+        {
+          "name": "Muscle pain",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Until progression or unacceptable toxicity",
+      "trials": 42
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFWX_9daLdAT9NUCXO_0vl8n3dANytBUOjmzBcdCv1NAj5nZsPF5sMTyyI_uhQR8g_ogi3Ii6AAXzaZPgK1s0xDbwRPxQN6kIb2u5_uWRvg7DfifV_5cUyFtUOReTbY_9qcID5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGgpjpo413QNOQ6col8Q-meFagwXYSAgmP9eUpjwqt6F0ugrZOPZrpldXczJO7sEnrK5P_euVuwdiS92JHBz-f5SjCWVBKsNtOVOlwx8UOBCkoLhFjPtpEuUg9z-siPNnnwJxacz0rHdmzjt4eRP7V9U8hlezOHOnG-R2bWQP3cv-LCSoo93t1s6yDaLFy2FB09S5W2QUl8-7NZPky1Oj0frc3v6msYByM9hhqzhPsg4pMO4-VoFGTmv8chrJsMQFFCOcv7k0q2dhDpNiQPHhZ-01cf0c8jQ69ITeVkG-gK90s7IjufLLustwa_v0LIQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE19kPfzvAGIloyn94yiAykL4gXUXT4N2RssMHFblMgYAbakhapWj7C_p8K3bEDceUOaSSHfWJyQy28l92IuyjhEJPAtxVC58Xdb4Sj211eU-W6dpOMWd8UWZ3TyTnJ6SGaOjLE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwnQqR3t3HASEGfEvZDP3_SR6aBekkrIXIYbKpnfk9mRnRq483Rt9avlYD47BJTLwa2XNLXx-LcusN48Q2O9evMnmD3b8ZHd3pSXX4oSSHX41rb4TfIn_4cNf8H1Uo3MZGdbDf78RjOv6A_Xvxo7QXqHsTfQcuIyhGJxEm9D02mZyLR8fkqEHTipNNmUa1llu1OgMDiQ_M8fjKrcpnug-OVi5BSnpSRLOqZWB0p8vXgzTLxZiRuFqaDe7WWHVdUeGAsdkphDjHHulX0YqtFnKcBUb0pEd8JoCe9feEppWIQzQy0hZ7D1KEolMc"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi__gSuKBQhgw6vcb4OOx1IdRm7TJV-GcJc0_klQ5NYtSZI7w5x7AqDK0VXSDwC1gXMJ8J6z6cg44wBC6Z9dF0oJoDfN4krtQO3nP858NjNkpmN0aqZ1LbtsrahfpOd-kl49kP5IGLA1jjk2KLsSqz1fKZ2_KxzbFfCagBAAlDXmDR0uTfv6PfVHf28lWJ2rO19hmMZ86yyXYFkOVe8xw6oYRgNYlsTap-iw=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPmvs9B94MvkMSS8KVKiHQ9L-FozI51Yro-YTumPQ7RNyYm7ecilAFJG9Vx9eIX_eYO9rDS3sRu7IsqlGclvz2corjX7fDSRYCp5-koBQIktdXgI2z9xHEZUz9R_tGW0-V2u3iPAF9fMIzZPLYIly7-zgmAq6y5sizHMTHri-ZbjzyqZjaDWkuvnlpOXe49bg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVoDbaxZH9gDQRA2AGBNInFgvA_xwJ-y4mzRKfsCJ55OgAMcSo6AoOFY8Epf24p3qBOTTQ289qJfMZmTwyZpzUnOOCFsjZV5KkDUSA9z6UyXG1vPsu7gqE9JRIDMIsYQns3MIxnmdKJy0g06c="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo39SXCYJgeG5Oq9phjtq8lY2rZzzQKMmqj99i9nyDyEkM3SRNGq4w4mhPv-2iKDNUnupPt4coAplFe1I6ycAkkiEjOcY16bUUwxcJDVvo0I3-kRiLCrqm-iCl8auKITLtbk5Tq6np_SofT7GRfvyeWeYkNfy2HepAC4qrTWA6Px8wfQ5aNHfNEv62_dzSnf0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgX48HwhJj3qZLMs6fah5nooQF4zZhgdNJGVXTOP4Pdi-RRcxvAQDwOVHNo9JmEK7EAPTpsKsVY_7EKYEfbyAGX5kyZTpQv8wiekKr6pezSPw4x8S0OPUeaQwA6IzViQOGZHkb"
+        },
+        {
+          "title": "cllsociety.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEytAa9BhMKK7gPvh_IgxurhuXfOXVo75Zr8-Lv5W0NswsIz7kPtKKPxio47fHbJ62C-jNykm-94-eO1UlwrGg92nVmK6uMkXvs0Ks7mA91b--tfmv6h-Rhhb2DOuG5UV09u2U8L8eJgjYUIe6Q_88iGnC4lILFmvnj0UlUHF_0m5Efo6WTqarN7Qu7YYMcRFkJ3U="
+        },
+        {
+          "title": "ClinicalTrials.gov: Acalabrutinib trials for Chronic lymphoid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20lymphoid%20leukemia&intr=Acalabrutinib"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "100mg twice daily orally",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 160000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 4000,
+          "totalAnnual": 169000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 1126667,
+        "costPerResponder": 211250,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.3,
+        "vsComparator": {
+          "comparatorName": "Bendamustine + Rituximab",
+          "costDifference": 100000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Acalabrutinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 7000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1275 mm^2",
+          "baseline": "1500 mm^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lymph Node Sum of Products of Diameters (SPD)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-105 x 10^9/L",
+          "baseline": "150 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Absolute Lymphocyte Count (ALC)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "9.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 15.8
+        },
+        {
+          "absoluteChange": "+40 x 10^9/L",
+          "baseline": "80 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 50
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 80,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "20/52 (higher score is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Scale score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-13 cm",
+          "baseline": "20 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Longest Diameter",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15/30 (higher score is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CLL Symptom Burden Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 39
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 38
+        },
+        {
+          "name": "Bruising",
+          "percentage": 36
+        },
+        {
+          "name": "Neutropenia",
+          "percentage": 29
+        },
+        {
+          "name": "Infections",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Until progression or unacceptable toxicity",
+      "trials": 83
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZxQE28ooX9gxcX4LSn8FTP4rjpV5CDpvknhkumkZ6t0WbV9znqA8-dWw1jtbWlxtgtAixXVg2N0Dl8u-WuOTcvSAF5NOWb1A7hEy2oqwKHpxk_GidB0etCW-qjQ2adqRJhTHjfUz6vrrJow=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeXYiphcsA8Jvg4gE1mAwRGmxnYpEkidz4LKiDisMz_mZ_SsBqqiuSquxD0iU6kW4-MXKSXpBg7HYDyCXZu62pbaQuSh10rMHYLe7VwsPVS_gwRnb7XNPJWFrVwIi0ifT3m7Ju-uo2aGQ578Y4q_y4gH_IS6vjrqdL45jj-6sDXDUSI9MR7k_2U90N_-Q_DQR_YiOMbJKHzhHws70IAJuHIzIV9gz5Y3Zn2v3VvpyCEaJmtktTeMDp_IvTvSR4znI0NxI3ZE-sFHBdb_5MdA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFd-W92x5KkoBo21lZrsgsvgXD8CH_qOZtJ8fKZz5BxXzI7m3BimyL9hIiS6jm4VT4Sly2YW2bZHx-bGeaOoZ-nBKF25ZlfggX8HZkf4SPQZaJd_EN1_3KtVidGuyzW0_L6fq-Z7-l1UPyoQg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmuJt7AHiz8E94iRpYQK6pyE5lcv0OiCuRnR34j-V8vVgXODquIM_vpAZJSBfIsg8EEvsAWigzzM4vlVe_NgQzXFFZCr8FEMB4bnPpizbjpHLgwpU1HRUfaocCrDPpSffNHLYTcEMSwAxRBYre5wVsJFt5XrYPwghfr6FiYmDq1sZ5e0wb8sceyoW7kPGk8mVjMaOImm8AFHKI5upTxvsWyu5-a2baRUuP5_XfYMxzPp7PeJnruHk2BwzixDN6H2OAk6j8TbmqxvlZ--BWQntJM-CH_gUw4XHJrMwDlw71vuJ-ShI5jB4W-k5jlCXcjFs1tLmL_sEOSEa2H5AVMBqpSIrcsw0kV6XIdi8="
+        },
+        {
+          "title": "imbruvicahcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWM7LZZs0nhIGjy0VFSQoRoj4sft-hesbu9g6vzojtUoMN4YCCxu61SW5zeuiJT3ISvoDDSZhRZXDo-MTZbFZU54XX6Qv73KjMd7R3ah4vl1N7qe2EuQnFldNPGEO9-b7ITs_2yM4nrfpkdTssVCZ0A2hDB27yQ3Y-fF0ZfEbPMdDtXXMrIg=="
+        },
+        {
+          "title": "bloodcancerstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmO3THNTmmHwHRQuQ3U57G2U-bRky20Qwn9z-ubkzABMbUzdArJPotJFf8rXwqcfU8YHcx26VM4ZkcKNYRiG85_s5lRW9rCJ5FYEmV4KNEEGS8Q4TYw2emMMN3IyYeG8TGw_VMeYT_80guGh_9NtvOe1Jn9YdJTWZ6LVNEr15By9vAm7i2rkD3-yeg7-WbsPJz1H2Kqk15YW5YQpv5Pwhpel4ccukAaWDnk1iNbyin-8YcWXrC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtbtLD96Ub9kDr5DM3ZdDzpTMznG2GOxER9FCQKQ3mf3A652PZnx4_bNxwHyfV3Kg0nJa-_DqcmHzan-5o_wyn69YfupElSxwthD_W0jZMGh4CYmInsjCIx_C2WUzxcMZ3K99eXwZdDu78Eg=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgonJNcVyBKmD7xJj2QL77-L9R_sZeR1KRdCoM0kmhgGSmxWccEf5xm5QHk2X7F4AaTlWUgV5iLtftL_BLK_UxMaVzjk9yc5ofgw5H4poKFzrXci2xTg7ThIL022ZDxtRc5OZz18wZ_eit9g4Wsc2PTrIyMnjVMAShXLjeogDSR3C5JJimN5IKwfBguLohvDpoSmsIxloeB2dRUTJ0fB6Xre7sOEuxEvD0RQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDPETMfuzNQpL2DoHuiV0O6Mo7HITVKt8unD4rKYYT0wPF84Wufbc8HyMtKfY9G42DnnEJGF3VCB_XHmS2qRHeIXppeuM6Yi_icZe8DPkJrO5KxI3P7F8BvlFyBhrFyoc5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiqrjvBKpbHMwG-4W019umFzT_KHvOckz8hOdjR8eWBjUGJT-DD7JvvCg9XbbOeE8Ktb_Oa3cetTSYBdr7FgdaII0t2xpWz168GkqlM4qTr49BIEgcJH8vO81lUh3YEyu2v4aB0NavxFV7jw=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_CmHmS4xqsWQIMh2JKt4mwJAMNVef2CjyaN8QVvvewWEyC6wRvK91fo_W_weeN6YSq_6XRHfxqrG9mrS6uQn_O36EHMqrAorAuKGdP3zi-3U7RmxwlzURv70sIcG0_FkjKT1XXILcK1HgPXfJRpqIRw9f_vGw3yEc_pY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ibrutinib trials for Chronic lymphoid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20lymphoid%20leukemia&intr=Ibrutinib"
+        }
+      ],
+      "confidenceScore": 94,
+      "dosageRange": "420mg daily orally",
+      "effectiveness": 86,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 160000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 170000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1133333,
+        "costPerResponder": 200000,
+        "icer": 168782,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Bendamustine + Rituximab",
+          "costDifference": 110000,
+          "dominates": false,
+          "qalysGainedDifference": 0.4
+        }
+      },
+      "name": "Ibrutinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-70 x 10^9/L",
+          "baseline": "100 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Absolute Lymphocyte Count",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-15 cm^2",
+          "baseline": "20 cm^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lymph Node Sum of Product of Diameters",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-5 cm",
+          "baseline": "8 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Size below Costal Margin",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 15
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 85,
+      "safetyScore": 42,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "FACIT-F score: 30/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-F Score)",
+          "percentageChange": 17
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "EQ-5D-5L VAS score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life (EQ-5D-5L VAS)",
+          "percentageChange": 17
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "ECOG Performance Status: 2/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 48
+        },
+        {
+          "name": "Atrial Fibrillation",
+          "percentage": 16
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 14
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 12
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Until progression or unacceptable toxicity",
+      "trials": 172
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVjgpNY31Y_FhB42AvYlvQ33JVCAuzLssHFesrTOdq6bEb17IVlRsppEOnPYa3x7ZPfGg8SE510a5Wst1iE4_GEojliFDYWGP4vwkKNFMMyVTruMpD7lvNx5J_5niAqoeiZFoAkvmqPwHBVms="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxBuNrUcfgExjGMS0sCIjEHVBJYEKfE9ebunOhii5oWp0c858smbFKi9UZmBtg8LAG4kjfX2p1qJX1GTh3MEx-Yxl1ivvT9s5QT2Xqns3WxEUpmF7sI4Tuqeb6OxCXgE6Y7-3OF7WKtaFpsfA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRvxcoAqbeagqxnN9ejz-9FHtu2MgV3TF8mcyvPOM_Kn23pRETdnRu7ZvGXbR-aMLeU_tZz0XtgSqabvShS5x-TBYSrMxevAKUGspp7CK80rg4URBxUwS8umW0kwiD7ZGPSrDdis8XBd72Nsc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCLllB9_UkOj2X0c3skJZClimmfaaVU_EsRKbTQ6hS4ziAzh5nnfj50p4fPvqFtzFHXB1igwhYn_zI7Urvv9Rvvlaz0B94iElpXlSnbv21sTOEiJCyrkzugdIOJNZkhriG4SLD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkkD7ZLi9qvgOEiRi2CO6fWLfMYipiP3xloVS6Gmo0YnC8UNygGXtaTna670H0owbflfVMbLjkhBeEDS-BIHKxUJDItgZ2fz1AIXZrZHwu9b7pQ9RG5F7dsaAol6e9xu9v9EQG"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxNDF1o_T9YphuPVGgaY3ZSkQOpTudo-iLcyCvWX8OVVEbVBqFuWKIj_P51TqhA25pOW1GjXe64QTLYX3Kjkwom6fHd6AL25ClAqWcIrwkRgLrIxKeHeUduGaKiGoElxwkRt_cvJ1V80wGV_hax0ZDxKWQTY7g7hgXxP669NYinIEO6Yi3R6FBEvYht3dxrgJ6yH06qugGG1C4vefCewfJVgMR88MDM-M="
+        },
+        {
+          "title": "tcsurg.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqDoZquwBtm5q5CLo_drN9c9QR9QYz-OEJsgtrLcevJ5hQ07npY1hqn3S1tkQjC0WcQoIkGay4EDI_D8k_e0S_k6Yj0CrmY-hlPQ8ayvWPNGDG1I5_rGnGiKkbWw8Hk-zBqf7ksnAjfhZnUb3uNuw5yRWWwFPLZGw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUypGfG_txjhi2nfzwWvpPnPnkmPUEuD04dKCg8hPOXkkNRobxYbhBM8axhfYVcKwHcXrMcYW2hpas-jQGNRXy5ata3O9gEEObWtdHVcdIKpRBsmXkOIGRl0P919b9AFv4FGtWwK7JfGyiLXo="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1re-kJ41e1jMvkf0eJlwXf75AIdTob_dtA182X6PRp5Tmbl36YhVDPuM8GJaLINCbHAQ0_0HKuHf8TiyMueBf_eBAK0RQtIDJnJwGJTER0iksXOUKve2ccwYsSaXPsK9ZOAYN6pfu6kSgyB_Xet2-GPhwFEO0A1hQjTdtNCPNzkxtvUyoSS0R9sSijoDXOoG8QUTLmsXA1FqNS9Nv4-g="
+        },
+        {
+          "title": "hematologyandoncology.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBMCrF-lAlb-F1AuibBm4MEVuXqobAGpJZJhV3P-odNjK8Idbc2VOWJz0VKpFTzYYE7aCDH-73dGrVX7rgLoIjo8JNZdYxXLf70Zs449IQuIbDf6feTLHj5wBb8Eo7bZ_bbBYJv_o3pDuhRoaMUdmHqpTS973jlRpkaqDNCw1gGJyNzeQNE14pQlJDrK7ZJUHzvPblwToUf3bF1NHu38XkesSr25M9BFutjP2LEYMYsb5l8i2fNiVibIo3x7It6s3LU0TGVQLP0DmhnPXNB8Cpe1zj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtWlorMrq3q2QWQXJYFFK5_bv3524LqYumF7iiYPuSraiSCAcpZm4nLHrhXYG5SCMAZ3AsiKrQy-a56Bt0OGR10J7LlhGZH6x2z7uNq7wCqCr4hhjoFse2-OwoiteM7I6JkF_IMpuKGeKN1GY="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbMUhEaCrsrCKwgEoJUh3yw5NCvVI6T-Q7uwEXdlcfObATGozNpT3s9TjDL7AhLt1wSua8JhCt0jBQjQaQ7sKCR0abrgWB-528jQE5m2fcuUuHeweKOvDPJs3v_hbSeu1EN_MrRXCrC_SzeN-iCU5VyIDy75yXRI1Tm4Uk-RKcp_qCry5RsPFK5ZETEbOzDPcvusL0dgvLjb8j8IVKDykwaXi27Xn_QXibs0cTBj6xlg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmSVQCcwTQrXQP6o3oa-5rDYBU9ouR_9mKAwNScjWSjkBpQiWyqcKCxSgjmttkt6lfN-2_Gl37IzH7_e4BlP9RHbpC6DLREFArF6oIW_ZqxWSWO7Fi-XUS69vOEK0ioz1lK-7WsmwCjN6pUpQ="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEbB8jZ32tourZDaN2hgw7H1uLn5_yzaFidxn9J8ITQz4haQKq4yEegc2MgKNjAfTyDk880V7h_oyCJ8LZHr12m2h1N2vZqeKstw8YsYko6LRaDiF3rWJUBIrfUJuQ9U81"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH1mTgtnnzBiQ0tPFDBxTApaB24EvP2RFBTHSs7BIznlDot_nx0YjBeNFY0keWdpmAiQ2kmM5kGfvwqDPFRMxkVVKfi_8kwkCZ2wwQEr6IAB2A6qbDEJGKrPz8DVvZ3uTWsdw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Fludarabine + Cyclophosphamide + Rituximab (FCR) trials for Chronic lymphoid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20lymphoid%20leukemia&intr=Fludarabine%20%2B%20Cyclophosphamide%20%2B%20Rituximab%20(FCR)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Fludarabine 25mg/m2 IV, Cyclophosphamide 250mg/m2 IV, Rituximab 375mg/m2 IV (all on specific days of a 28-day cycle)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 65000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 162500,
+        "costPerResponder": 81250,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Fludarabine + Cyclophosphamide + Rituximab (FCR)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-90 x 10^9/L",
+          "baseline": "100 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Absolute Lymphocyte Count (ALC)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "Achieve undetectable MRD (<10^-4)",
+          "baseline": "MRD positive (detectable at 10^-2)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Minimal Residual Disease (MRD) Level in Bone Marrow",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-4.0 cm (SPD)",
+          "baseline": "5.0 cm (SPD)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of Products of Perpendicular Diameters (SPD) of Target Lymph Nodes",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-4.5 cm below costal margin",
+          "baseline": "5 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Palpation below Costal Margin",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 80,
+      "safetyScore": 28,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2.0 g/dL",
+          "baseline": "10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+45 x 10^9/L",
+          "baseline": "90 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-1 point on ECOG PS scale (from 2 to 1)",
+          "baseline": "ECOG PS 2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Neutropenia",
+          "percentage": 50
+        },
+        {
+          "name": "Infections",
+          "percentage": 30
+        },
+        {
+          "name": "Anemia",
+          "percentage": 25
+        },
+        {
+          "name": "Thrombocytopenia",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "6 cycles (approx. 6 months)",
+      "trials": 35
+    }
+  ]
+}

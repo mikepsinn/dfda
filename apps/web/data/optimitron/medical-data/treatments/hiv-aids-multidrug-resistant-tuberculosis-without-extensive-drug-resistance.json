@@ -1,0 +1,755 @@
+{
+  "conditionName": "HIV/AIDS - Multidrug-resistant Tuberculosis without extensive drug resistance",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:54:04.394Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "ctfassets.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHt364yfLYMPShLTpKeYWTNFpYzJwecRbJfOxYcVSxhJzQjsmz6c_CgMrQcMrKDhCCSwsEPYNrUn_Ug8VLaW9yiFyxGwUPy4tDC0-BhrEENpX2O55jXjfl5437prxLzCoAjpGCe8obqpbx7px1NVVyZrzyba9yj-_ad4fEKb39fqyUVTB5xUn8CMaoaoBNo6vr3N2OcWDj4lgeIL4nprffVvbkox8HZv7W_PIMqw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHP_5j1zDXgaMbeKNmK_SS-YpQDlBa8T496o7wgO06mzA-bCRGmxlwISVnjoCwoCbL0kPjbCEZFJ2R7g9XWIPBazlbbWASe8XfWj0FTfmknzY99tG9jZB0CrFE4SKUexBcwZwrx6erucCaFUjT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp3WLL5nZKxCP_Chqe7aan0MwCkxROefxM6jJadMJGtSojlI8d3X5xlehkk0zDT52vfnYOb21exqr95PLPZgjjNXdNfT0DcnJc0ws3arF2hcm7DGJ9Iu-7ClL4_mLZ_YrIOI3ac_NP05dBg-sx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNPRC25OHA1v4u3dSWNMiOrZZoiHQI86Y3FSYp0c5AInX1FEi71tvnnr2FlsHIRC2yo0rG3K4T8At2XUfTe7PJyI6V18eaJ5U_izEKqlm6FMQeNyXuRRBLOIJ5hJheIXGqNvO8xzY-51Pzvz-P"
+        },
+        {
+          "title": "tbthinktank.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnr3ffvWVNe6CEXqhwn8G_9wB217607p_vXUOlEC6a3P2yVT564AJVJooHs-Yb5j-vxLCyiTBK6BfBRXPnzFwNP9xsU2u_3LgFX9hr9FPVrgYLjU31x0vfcdIAw5DjC0m_eneLZjhZ8siE0rXiXqmTJCguYD7qPXUZu2wsLS4ubtV4NdkNzPYk8dpHq75LpvblvReQyTdLkZ3sUPEQvyBaQVW-UE6PwDHO_pbJ"
+        },
+        {
+          "title": "kncvtbplus.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYkF6SbpSnwp7p9fCMJVShc1Q4c0Am1nPCdnWuAYzJTs_5ljV_JjSO_6kFfGUa5MnOTeGB-j6Dq8XO4_0jHDE4S2SGO4ZeePIhrDDrHyhO4QVypYtKhlz3r0kaJn88jICGhA0DMeYJ8ma8-N5PSlv6bF-eWhmQzJ0jqRXGwhvUqASgzYIrE9W__lGMCCSsvPsJi4FdxcvfePk7aTN8kjXl0V6SoQWfNE1UOajNGA8u5U3cBYuy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHkE1Sk6p1jD4VKJTtyOwegmPjNxpMLAUYnYnFa95nYWRl8mmi2nuugCsBBZ7lM6xnyu-4G99rOtpkEhEiD9pP6pRYHgQtaJmyGaXTgwcf9us0x8uikQR626l_3ZPYFTYqBIc_rcvBB6ffqAY="
+        },
+        {
+          "title": "eatg.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqRmpu5Z75UESK_zg0L9HieKBGa80YqNsyvgtyFom9GQzCJmq0E0A88-9kjHLwWnHRRRr5RnX7-HMQllLx3sHOGICOrYdNlGYNvUe4ByUYQsKUXgAXrexahcYdfEPxgP29SixB1bGP0KUs8oemAy3EUG8XxvNMGosorRD5V_92TeFWGfd5F2pyATL8b4GfLWMQ-uFR2bA4f5zUKfqpItIgFGunKsWgfNzTq7pWlXoA3A8A3NM="
+        },
+        {
+          "title": "theunion.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzu64FqrU28BM5DNrljFr4bRDBV8p1o8-Qij_yZH_eQkNUa6tFzFXOgHVhnKYA4gv4VCfmd0wCXbJn1nWrOsTebgTqmBFGVYp0k1ehMQ8Z0zplOfq4U6txND-oRqmGMHUFnRDu29sH2E04cctxDWlApigIY9sNP9FYuLo5TwVz6SdNunw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_RXWqhqX7G6vh26feJDGbf9RmFeT8a7axSwy-Tkw6stVEuei7_yc-LQ9UAW9E6ak4PmxOvzFfpfQ96HDoTonTl2s0T5U_7E43UHkSRHlksDf8V754NbEw61QJs-lxvYTtt1wwqBbJPuI3bcNH9_QbzFPQcC0b15-g3Kn42oxUoVABezHuDMPP7CVFV6kshUwV_B7c00kKcLpTFV5vuQi5V4bsUT5y4O20jwIR0WHgP1Tniz1x5lo-hmeFLidkxtBw5Oen0oyAisFOXdoqTBRj6c4="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEldAaTKqQkeEnk8V92GHOPsl3_Bv0oYDdsG3juZx7OxmKisRRbZjLD8b9tlxtwo4buRMCe3V3skwgo4XmlW2AdGwRSw1PV8EM6bDdlNjUE8srCvfsLaaJ09EO_NVSHIFpjO06Q_mTDop4eHQjZyICcPu2lZ_Zy"
+        },
+        {
+          "title": "eatg.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbWQbCH83diL5KHsDJZgFkVLww2KLZKrDmchFjnySxK_RC1YZSY1TPeZw9lyHeYUUddPOUqhSq3nh2lRxF_2jYoPGb1Isu0k0-yYTpP6n7z0-abMlBH3cjuIZdO6fRr3MTwWjdr_jB5fUJgTbgUqqTLQ0QRxDVkuxAIflo0TfRVHV8pzHEHWyqqw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: BPaL Regimen (Bedaquiline, Pretomanid, Linezolid) trials for HIV/AIDS - Multidrug-resistant Tuberculosis without extensive drug resistance",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HIV%2FAIDS%20-%20Multidrug-resistant%20Tuberculosis%20without%20extensive%20drug%20resistance&intr=BPaL%20Regimen%20(Bedaquiline%2C%20Pretomanid%2C%20Linezolid)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Bedaquiline: 400mg daily for 2 weeks, then 200mg 3x/week for 22 weeks; Pretomanid: 200mg daily for 26 weeks; Linezolid: 300-600mg daily for 26 weeks",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40000,
+          "monitoringCost": 3500,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 46500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 51667,
+        "costPerResponder": 51667,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 12,
+        "vsComparator": {
+          "comparatorName": "Longer-course individualized MDR-TB regimens",
+          "costDifference": -15000,
+          "dominates": true,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "BPaL Regimen (Bedaquiline, Pretomanid, Linezolid)",
+      "nnh": 7,
+      "nnt": 2.5,
+      "participants": 1500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 58,
+      "sideEffects": [
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 60
+        },
+        {
+          "name": "Myelosuppression (anemia, thrombocytopenia)",
+          "percentage": 15
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 8
+        },
+        {
+          "name": "Optic neuropathy",
+          "percentage": 6
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 18
+        }
+      ],
+      "timeToEffect": "1-2 months for significant clinical improvement",
+      "treatmentDuration": "6 months",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvNYPyuryLvQ13rp7W_D_wVz8unfP1lQG81h90kL2XeWTdeoR0XH8EeWcxNod00jFahyXXjKs0dnXjrxDmOK8gU46W7Mf9q5ymT5V6d6GhAlUdeUQiEo7fTJlAnhxc-JtY6VaA78y-VTe0AFY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6gkG8c7VFyS6s8e-tkUBCRMHdrVog5BuWwCkUsoEul-uLFwixFnkWhB5g7pvL1RJ5Q_yOn1PuNsFH8tg0ngFmuI71-pEZgTgGig3vjwyX3rS9Cx5g1GYkE80_zv4BGGFxgGnj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4F11pRYFAf2tIMT_E-wpG1QLMdbXZhF0MJQsm6FmuAbfKalpDT7VQIB0z6FQJPdCgnAxje4JE56b4M8iQhAYhxTV7OfoWud4MXGYsfhGlLr9G_EEfrZNG_QQ_aKPUg7da13J08f9fsXtGPCw="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAngTIpAidqu5gwS9fkBV6jOrlx0oKi028jMqJrHLVYRwpxI0NCUhtjiXRFKavHb88JRSkiivqqiwAoczsrwPeBYoCSN4ibnktpMJv-9Q4O-iFVAZ6mPl4Iq39cobB_OgDkg=="
+        },
+        {
+          "title": "jbp.org.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB3KCWbulouxKibpC3t0_H2jSNL2JXOkqD7FBljROoWNPBfnwKzObeLVB6hXnvussYI-_N1RjCSg6aNf6eeDhAKOIKP-F9BMt-Fha_zzB8q2y3-GQfWod1kHCw5jB0Vvql9rZMQHQ90vgYbqgX_jjtwGQtHd6wv6KyRRpI"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYdd-o49h7AfkP1hKIEDwbwPUXcO2skm__3K3MTH879UG-EO1L6cUQnldDE_-EwkvokuOfGx-XP9tVHU8zljw1gd6-vR8NsJd77vvQ-chzx5CsDxqG1pTRyzjydlgYDTnrO3CT--Wvxyzohh0UZd-iYukDMQ=="
+        },
+        {
+          "title": "jornaldepneumologia.com.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4V2EdPBuo26KSGKUMY2a_y_AeKLQyPVbnWesPAuEfNwGa9itAkcPVRMkwl_VCJO4R_AvWd6uDX093GVwl7BWvj5DiI5BL5VFuO2QkoVF96iGp_Faj0T-GXGrLQ-5Ydrt6M7kHOeFhAN9NF5GapbJvEa3asH4Xdit8CfzOafHl8PKYHHAGsOSSTKfUEKJoGmy6d_Q7FvrKy4AjWQOlU-8nPq9Anfd58mCpUdFIUpnfAQH0a6GYd8I03u6LZamH_PNo3QFs-8Cr3uAUIBTcxk_NomXJLnqmRStUV4HSTv9EIczo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN7Gv1wKCGF3inusBRjTXrPL1JzP8EbW8urqqtJ_Q3EFDtNaHsN79jI2F9dxEJJ-hdgYm3_-12LsojyVqPRsFcxNChLLpLOsydvmgV3GVVwvp82-PRxmpbAwUtIbUXS3bRuWAlJzELYK6RZ1krbGqudJHABd1n1T4HahEuxKY2jGTySo4S5zzTTIpCLLMbP_UPPIH-KxrR0RexjtdhLchNAp1ILEv4O4dkqkP7FPCFaJp18Z5FvO7n0qg4vZ_6YGj2DFOEEQPbcoeEuQPmVQzbyBj97jArP8_wJF_q"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuuLr1S-cxpvGjWIF0TI5prmBCUNcpFYraFrTEgKBXggl7wwqR03JL3mJg9T8p_UxK-fGtQ18z8D0i9nq508wdfg5nXJFRuCxct3j3XOmBwqd4mzVo4rj9ocdpMjTN8RvIHOKKwxnqHMzjcvsigk4Qu17dV0YewIUlrZzwh-n8qJIslqXcgZ1C6wLcdlLbCzwcbyuMYskFihmU0H_WAQwIs19pVJ1Cjuj8fBweIQJqKTtN_Hby2PhGZdHXfMFXiPhNPVBMkj58cN0cscQfXQwLoXd7z8XNEgump6ptiGAj2KMPlgOEQVAZCxGBGyL23Mx80nWXL96w"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0FifiRdqLzv2P15juXSXDNQ-3XrHKigv-l7mIwkZXlUR93mOUwKbls03QMIaHfX4FWTWt9vx5BoB0f4bksAwzQ7M9CdJ4ZtVjRxWM8xedWVnSIYeeYt0EIwf3zuODRd20aPV9pjjcTzBnXFc="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_HVCioyz9YMsvtavblyIqIeVlRq9XE7Yx8xOP7ImRwFe11KmPPKKrvmHmrgzRwjfU3h8sb6SR5XAjbIE7Mv_PxSFpaBMG_b5PFRzyTIEEG8j1DlvKyQG0a5o6UhOwJpDL9ACtL4agsJSN0FF2QQG1wC0ECWoV52U="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbe13BUI-6PlzZh8yZgca00BRhNw60GEzCy6_4iGOWq-cdS6LvjYeoWLpvKirc9TtDYDwloI4I0ECG5IiTt2a-VqRyDOA4ciCRl5ybgx78XwawxovL57-PDE03RbptawClbSoPH9HHR0TUQu02__w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoX14rA3mO1viwy_3KJCMVtxXX9vZgX6dyNybS04CvQZsCr7ZIeU-8q18rLIhjSjco8L86ZJCwE2D9IDL7Gf-Bmd5YzQfnEP07IRj-tNb7Glfn3D2AEJQgcbQWvVeDc3bAQ-j-5eaCRD4YXjQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Bedaquiline (as part of a longer oral regimen) trials for HIV/AIDS - Multidrug-resistant Tuberculosis without extensive drug resistance",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HIV%2FAIDS%20-%20Multidrug-resistant%20Tuberculosis%20without%20extensive%20drug%20resistance&intr=Bedaquiline%20(as%20part%20of%20a%20longer%20oral%20regimen)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "400mg daily for 2 weeks, then 200mg three times a week for 22 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 45000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 52000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 65000,
+        "costPerResponder": 65000,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": {
+          "comparatorName": "Older, longer MDR-TB regimens without Bedaquiline",
+          "costDifference": 2000,
+          "dominates": false,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Bedaquiline (as part of a longer oral regimen)",
+      "nnh": 25,
+      "nnt": 7,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 80,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "QT prolongation",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 3
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-3 months for significant clinical improvement",
+      "treatmentDuration": "Bedaquiline component 6-9 months, total regimen 9-18 months",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBZkTq8LB87A7t3doLpIquUaAOIprRmi6kHCi1D9HhGGhz35i39oSliBYdsPa0kA1u3TUCnPXaE6vR3LuFO1qxIOCtRPFbcI_3AP8AwqMs-B4lTbRUFNUQl1UxhGPZFxj7aAlX"
+        },
+        {
+          "title": "unimelb.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuY1g_R1ARLjYQNS54230675lZri0fr6CME1cGNpSmSUs0jQcqw9Jkz5PfwUjm0akRPvGpa4AQ6pY0IiZZdhyzrLSiUslJb8VUuyFCfqTuKqYaEilPluYZCArLWrgQdLhdHH3dIogwlQUV4dh55evZfWJhDMGFWx3saiKA3gPx6AeZV35UxOZUtqLimJovF66OZoZ3BMeZBvorOUIisGe0RLOTjDm02giqP9rhDvNQLKjxZS6zCOu-r7Ul2kbp3UGEfgV8dgfFiF-F0kSM03mo_t9Kg0CdreF158H7rh0iwpkBT2N3tP1nsT8JFyKzLsn0uPk="
+        },
+        {
+          "title": "lstmed.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhNa6CTORAiKqrIseZdJZHcI8Gmp8lHYV8WoStoxdguN7fqbBPXPoMpEQo_AyTkkumpO0QrC7sqPWXhqN_Ci2pplQCWo-2jiJMU8oNlymCBPkeEhn9BgfHjlTOqVCq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJkJcrxA5ixkoEbeffmxP24NgvggAEDEJd55-DK6uLKNVLKBvA6G6KMCsU1f-Qwf_j3s7Q0rGKFqCgZp_KLXAPClDdEccBWGOB-ZmeqYfDdpx6I8vhg26NF0oTyKVqluMONw9fLzDcVfCqG-7qzGwDGq9SyhV-gcpRcExd4SDmXnZOGlWVCB18CshMT-Pak2TwWLLx_hLJUVvntTHernkj44ISrkpB0Qom54h5PUOLNdj8mGpZOIlhP-5QGO6amMbDCzpHzwkNtlqAZSE2Jsrq-BQ18jAGOA=="
+        },
+        {
+          "title": "ucl.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVJPIRl4btqHaIbMsLgkr-faB2oNFLDw5q6IFXfwW51ucIUEyO4oWA0C0vnuvLcWJGTdRoehXsUM3GfLWOxJpul85E9uI2MwEADItpK0QqOgVxTu4H8eMa9PAz3y5jXI_mJxClDRKux90UX8iLBEbvbwAMGCW2JyxudV4zoZtqDnIXMQ=="
+        },
+        {
+          "title": "newtbdrugs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHanauxr19IjyQrTCzEXOGZ7Ryb4CLlczHkZ3sjW70cTfCCUbQ2T5nnXZuV3Zxj9oXHbjv7Ej1B4zXxRzKBmb4lBSYuH0TCV-sjr2urr1X9SNCr0fSU6tRely8r8ScTlpGsImsjou7JN0CH8SabzxMHVGHJRgR6ciV7BA=="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK1nzXL0KbPIflJIN1sQTK3xTwS3MqdY1i5xwxeuKNEgf3CMuuxthAhDYZuE_tlV_ATFzNJc9AxuzeLTqKcLKb7VqI_zvgyMxXawm-UvDR70XlsmZs2r5xHNzVDSNHetj9gYLJ882z-OTKs7n-BZcBDYfw21nixMuqB-N536CO_wSrDystHkxjidHMORiwOc-ZVYn9QWox9gfzCo6k72AzCo2Wyv0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqTYz03Wdv9f5qqDj7tmjjGJR84mL95vv15SWCJ32lSjV07wLClAU6POijW_pUf8ml7CntMoWOYymsacDijBesYFby1FXHQtfUvcb4FOhGg2q8FKI-esAJKmvHcH4d42txjTWTYCaAivltWKPtYfZFRbRX9ldavjO-S33vdwbQi4GQY1hACC5NT_wQA_-B_a4BMWDuw2kmEwC8wSRImpuzFzDj0GXOs2UCHAmz8UX1gm71jh_D9u7U1JInduSihrz7R3eSnQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbikBJfZESdCbZXdelllMXIG0al3JFt5zScOixSLEBCidMw8NdGuozmxfZ3gJ77gRJm4NOkJquLavs_ldwZ7sgQZ6YgUcsxqXVIK3K5nNOIwfZ15BmCyyVHHS1L3iABvQFazplqIT42A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIZ5BolhXg6sIyK8BO72nWfKPHsfyGKmGVt9xd9Jp4Rjlfcv7QuvEBcqmIv_5dMKiMVVRDTbi9-9Piob3HnChKYX_LRCLvxiPoX9OH-v3gu0i46hUoR07JAgAy8ALnOyCeY6rJFgf__zSGsw4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Delamanid (as part of a longer oral regimen) trials for HIV/AIDS - Multidrug-resistant Tuberculosis without extensive drug resistance",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HIV%2FAIDS%20-%20Multidrug-resistant%20Tuberculosis%20without%20extensive%20drug%20resistance&intr=Delamanid%20(as%20part%20of%20a%20longer%20oral%20regimen)"
+        }
+      ],
+      "confidenceScore": 82,
+      "dosageRange": "100mg twice daily for 24 weeks",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 2500,
+          "totalAnnual": 46500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 62000,
+        "costPerResponder": 62000,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 9,
+        "vsComparator": {
+          "comparatorName": "Older, longer MDR-TB regimens without Delamanid",
+          "costDifference": 3000,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Delamanid (as part of a longer oral regimen)",
+      "nnh": 25,
+      "nnt": 8,
+      "participants": 4000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "QT prolongation",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-3 months for significant clinical improvement",
+      "treatmentDuration": "Delamanid component 6-9 months, total regimen 9-18 months",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5Y5zZ8Mhj-8mLdVn0z4skMMLQlHdbmhIUtl3wPxxg5VW2uWLctp7-_ciB7hPxCvIG1-CJRNNSzTD9u51S85kj9UEDIm0nZZ5q9Q4QHUPyFn5mO_KMKgJfeA8x38r3_k6HT5fXZenu5TdMPkZ2tio="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOlQRa735M2musZH5OfwTuAYnYKS0RLlz9-MgXOq96_85jcPyXtoNebFNAOM1TefOaxgnf4dNTX071HGhNHFmyP54Z2MS3FMWI6wKzEJph3nITF4ZFr46Hxqzm-gfCGgV3ruxjJJ6zA1XYPrvs"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqtj9CtcdYrZKDb-NBwnfgf4P2mntbtQZyIQmbviEy_lW_KhPZOaIIJYSra0_yFrSO-hifRp5Fd24k4I92oMBiHFSOTX824O-UxE8vZbJnR7cfZHanJo27Wp51nMuQhkW2QGRsTDhUc6vqvFY="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPGDYawX6GgSoFRrQVQaQthZlvwI2e9Qr0_CjNhmaYLO6-Ua33Xx1fZWUbQspWdralIuYIOOz08eOyCTEFQk4ymYjBBzHQeg6v0olW8crDxHUwDJTxR5URxewQXCLpnFCI9rM61TulACUzBkI05g=="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMCVzJKmkK-yKyDqRb9PUJjeqURxuRx-cPwtVwND0nyRP5utQu8sgb681-K6Jd7EBSFQC0axYLy6s8PcZNwtD_gtF7phCtJ3nWWqxoFdw-8OJIrGLjjDPHfcZtPTKDlj53hjBp54hXIzWTRPRUrD4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGajEy5UiHJCNv5ORQe8A2g0UCu4OJzVnYDenR9UxAIRfPLj7d5ADD24rlXol4XljvSDPiVxShIahhPAz2r-AW6LBYrUSXTW4z_FOabTvj3sGB4gNudmmYf_LBqs60SJdmTKqERmnGyEmrFGpc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1AFULqfsE08gqg6O8uDlJX4IepA6-nQDBuB2KAov0ctJlays5CW23Q5a3sEn3d0r6lCQM7t_SLp225prxXObDjAvkq_-qMf6cu4BMNftzfx3N37nsGiqbKdHd_qePTifHbYp9"
+        },
+        {
+          "title": "www.gov.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEALTNUIPipNhlDmcsFDd3E3KeeUxiup2WFeectRjTvFv2Ngy_JByIRPO1ksDkLi9MzZmnium3yVJ9FXBwAFyefIG85tg6pLu-4GUmBa_gvYFtIwkoKLcvozIKlp7e438jqoCZO_UTOh3ENds-XqdpGVf9LT0lY5Xx_zKm3aOL5Z9i2agk1ELsADL1ZHaRKZWzPC1Ii9tClC120c2mjO8Sf5azAUiFJoERSwAsEROVDIeYYFNJOpGOcMabQkbhThrZ2SpYvHE0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCh1PhVPu9wMfK1Uf_jkqgG0DbLXXG5Mus4SG_WgOGerh8kRwj3d17qulkEiAnmfKVGRtG6kiWxMSYhtCgpp15J8I7wkPZ5c8AJW-9VLONIZL69i0ONMHQ6w8n7ZJ0YUoEsCMlJryUEkGhcWI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcJSoAFfbFVIy2ZN0XixTPPpJShPXNshj5-1r9qVKHjFL0FA9O7_dQVqZt_lY10in-hf9VhDAgktuyihfXWylZZtjfoZKL5JZYf_nsON5veT9f1HA-tPF-0qtjtlnChR0sbYUpOChn31dHEth-4WPNgMEx9p7CE3Xc5e9SwD8SUSYsJjav0H4iGeHz_PGlF_cYKC16Cn8xAx7mut_iEk4VG7gwcTQWk6Vg3qJfb3zVUM54JmSKrXpGrThPpDumhdlFkOY3j-umhSDyX7sSuXjqeNxHoVQKjnpPKo22Va_7aDPOv93FRrKkxFbiK4XZYgs2qn6H2WMlPGByAFVGHZRQyvoTiRBL1qw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzTfztcZ2QeyJsroA0JhUiJwUlK90iPTp_yte5ldF1605y2Y8ixsnXfaQu_F7qkGxmvO-t_zD4AtmnhJfp8JpQKvGaNkEXJbICQgLmPa3GQ2q2mmAoft6q0NdUMhuMY3jCWa67Ln2nveLADxjsOqyB4fouYbqtARkssLBRJxhAyXDYeS0GkXY62f9Fc4biTjqNaUrT1RCLdzGEoq4pDshTwKIjwQjI0OEluv2Xf02AUXyWLCj1UoQRnjZ2-4AMNXD5mArd9HDJXN51ChJQveCO08dFHxzZClTUW9_Irx3EoFJVgXU_qKcIjPLtato2zw2fGSJh74gM"
+        },
+        {
+          "title": "ClinicalTrials.gov: Linezolid (as part of an optimized background regimen for MDR-TB) trials for HIV/AIDS - Multidrug-resistant Tuberculosis without extensive drug resistance",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HIV%2FAIDS%20-%20Multidrug-resistant%20Tuberculosis%20without%20extensive%20drug%20resistance&intr=Linezolid%20(as%20part%20of%20an%20optimized%20background%20regimen%20for%20MDR-TB)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "300-600mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 6000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 26000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 34667,
+        "costPerResponder": 34667,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 8,
+        "vsComparator": {
+          "comparatorName": "Older MDR-TB regimens without Linezolid",
+          "costDifference": -2000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Linezolid (as part of an optimized background regimen for MDR-TB)",
+      "nnh": 5,
+      "nnt": 7,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 75,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 60
+        },
+        {
+          "name": "Myelosuppression (anemia, thrombocytopenia)",
+          "percentage": 20
+        },
+        {
+          "name": "Optic neuropathy",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-2 months for significant clinical improvement",
+      "treatmentDuration": "Linezolid component 6-12 months, total regimen 9-18 months",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5SYHjhP1_e8lIkS9NUuS8VXSce0ets7IomGdATh9ad1To00_GfROFLwH4rtHST1UHmXCI8FpikCSPheDsTHaKezMGzCIrr8YSWgBfx0VY0qhBLXIpNM7ti5WHt000tfYcnw-nVCY8BqpVHDA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVkQn5IB2LW9xz7x-ZpCZm_bzXUePlcx5gJTjp6yjLQ4WUPEnYpfjfIybgL2c-6xymzchFtk13Jmnzd5MPLe49JQ274ILy2frkiEKwppMBvj1yHMtHVuRPCOyaKmEClwMvHLAGxuUy_g=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaoA78pQYvZKc94lrm1h5M2VdUP_6_3FQ_un9yr0gStsjcx-SLl_p5NjqEGkOSSunwjjcJc3cy9y5pLBDpcamc_Prbt0xzRnwCKED7HJW1FVWalNnL5IfpmxXdwzCpbyHeq_VFsdYTXW91QYx_CMU="
+        },
+        {
+          "title": "msfaccess.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIYmk7BPq8DggPj6kYfPzgIFUKmFOlydYvtTf_KNczn7j5D_SBcDhAvDxS-E1xnkGGxaaOzg_1gnVUFrvjqFIZ5yZLU625UL7MbmAhK4EcUL8YfWpXcTfyZ76DejhgygHssDLdQpOGip3ZY5oQ5RAkl80c6kkV4faYdpOUo9SL4W_O4w3BjWalGRlM80Q71bPFX43uuHhzJaO4AupaOSXysCyqk-hnhmFVnSXBYPjc"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrA-POvB-tkBB83XxT6rTm4J2RGferqAG9oxGBIw1hCLAX0O4iUHT8WsPtkL21Y0AVS9U3ApcwJbsAosdn5BUNGsuNkpE8BvXLLP0Ya3ww8YaNZePLa-9EKaf-YXEMYBHr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcKzEq43TvPemy-BkxYrYmt9iLpp_FhmHb845Wjh7KZV1wi6EatTbWlT1cQQpGGlqBJSwqujVF6HJBwS_9v4jH8aVNTQZOA4UNWkebDVqRiu82trL7TRBU7lo-txgGMWBdTrTco2Yfx7HlNJw="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuNgfrheLCUk8KqOaNB0rQDsoRcH-72-4okbHhGpvxn6Mew15zlXM6ccBGhzG9CtoeA_qvw5ZZL9LgLBAbbf3krHk896XExTVFYjewrcFpZkcohgDpEDTIklsT3nW8xQAbzFFNBm_5bEj1cQpkzVgh_Q7poU7qS-fzrrM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFQQ1puoNpig50iKHn1niIXVt83FEHMWTUr6GyNDBzg30areZauA6mvBTZdAmqtbrPw66jxjIbVHRvUnmDq4mQU6qzCJqsTtJAwF08xbqTWnLKf8_Cih2ueJNntrKuFexf8dNx"
+        },
+        {
+          "title": "hopkinsguides.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo0oRZxevOMfncxHWOoZI0lI7H43iEwJK14fjRqh38S90PDnP4RWydodyqXze8gRMCadfAu43GpIbeBnovvwkOkKuMX-I3df0J-wYTzyrSMTHLwhVlYcfPZFOmOM13WF3YrG1Se-QeeBa3wc6Vwqrtuhr5GIH5_VYDZmL-6y6W8_2TpfMkm3R3Y9IPB5OkUQeJ1042"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZX4E99m2WgitkOYFfd0QJbDQP-UJbU0d-zVDDVO41siYXKjfWvXMaBrp5q6fzENcaw_Xy9NmMH8mkPdvkanjOIpyvihowHa8mTyxKpHmUSnYOxL9M-S2RnXw8In__k6FkIW_hD7j6u5L_F00="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-sHLByJHSKPzveNpPe0TOj3eEwwUsfh0AOFl4TK-dXj0IQmyAu79k6O7q9ueLGvZAhdKXLQ09u3JiZtrDYJTij574FSqbyZkjeXsCtnbVfgDZZs0n8DRJk1pWFBo180QAyyGJxjYL8uEXzMiIzO7_0qeKGtTLN2CaRGVNKsrS-GfYmGbjkBrfP6cPMAjs3QULR8BrRw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Clofazimine (as part of an optimized background regimen for MDR-TB) trials for HIV/AIDS - Multidrug-resistant Tuberculosis without extensive drug resistance",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HIV%2FAIDS%20-%20Multidrug-resistant%20Tuberculosis%20without%20extensive%20drug%20resistance&intr=Clofazimine%20(as%20part%20of%20an%20optimized%20background%20regimen%20for%20MDR-TB)"
+        }
+      ],
+      "confidenceScore": 78,
+      "dosageRange": "100-200mg daily or thrice weekly",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 12000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 15000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 21429,
+        "costPerResponder": 21429,
+        "icer": 30000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 300,
+          "annualPhysicianVisitCost": 480,
+          "annualPrescriptionCost": 1000,
+          "annualTimeCost": 240,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 1500,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 7,
+        "vsComparator": {
+          "comparatorName": "Older MDR-TB regimens without Clofazimine",
+          "costDifference": -5000,
+          "dominates": true,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Clofazimine (as part of an optimized background regimen for MDR-TB)",
+      "nnh": 15,
+      "nnt": 12,
+      "participants": 7000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 70,
+      "responseRate": 70,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Skin discoloration (reddish-brown to black)",
+          "percentage": 80
+        },
+        {
+          "name": "Ichthyosis/dry skin",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea, abdominal pain, diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 months for clinical improvement",
+      "treatmentDuration": "Clofazimine component 6-12 months, total regimen 9-18 months",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcaJNwFrP_P2T73Gs_Pjt8HamlHwxuterngxa6M-PN533eItmmiRQbkfcffr7i5OD0p4MZCZKDsQ-rVT3zc4Lx-KV01smkeReR6pDN2OIi937LT0UJLW__B9DhXQp07EOG_QBnQLB-s_VyuA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERMSN18anDd4q9XsEVRsVjrUUYRwwz5dXu3BiX6IOGeNtCkFGM_a2tuHMQgVqrD7ujoLEXGVNmBoNMvs3Kpg8WFxTfZkp09FpdnZwACwxN1pMxYdCZ2JMSF5hSrgoqmWGrtu9QAeEO4fwAeA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnoJ71kXiIJdDdFddGVU3_3PWvawzJIn1rqOgyrgYvtDk3Dbsz9P2OR2v398mOrQ6W_C8t751ar-vdHfYaXqFvPMaHXEWDBh6zSMnH4kHPC6hxXToxkf1upewT27I2xE8mMgmn8A7lxmq-NyYQW4WMuw0zxUEM_m2207HSCPjFxnwwaXlnPOeD_zyGUnzYnjFuoV5LrwT18NgLxyzx_qps9geKxpMtoQye2AV_xUo288YTE1T8VheQ7inn9TYYJbRetpqxUrKtOVa2SnFZsb0jnnm40EKIpmGSPy7hDP1w2AbMi8R2Bpeqe91hfANJCaqY"
+        },
+        {
+          "title": "researchwithrutgers.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPEJtC5QQrLiQ8-O0g2SCz4wChC2zHJ9qv9lfbyTb-YHny8-E7CTl55UdL9H2MbB5eq1P899wnIW0VbQessA49VpbdMJuMf6sZYkzfR3boejPDyipceqrgKqx5AOl2dKgp2HKWsewCL4ZC93odKqwndkM0uBCJtEBDT1Fmqc3QnYpCjVgl2Gfe6SETuRPvoAk8dKSMBon1BmkYKFlAx2iClO6AF8A9P-evwbKxbcF-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErpunPqGXbrO4NTTQLgdJdWXL54zsohMrsK34-Ldf0WGpAbx8ign7_fJrOSQoeaRiJvnvbrfC2RQT8an7zrEVLW_h8zrwzWIR3q0pJ30iRFZ3j76Ejy16ynLhK4R20uXoSg9VHHGSyJBQfcg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrMarL9wuK5FdY6Mj61r6d6p_Oga6NEp9xfj0ILOgUMWndHP3iBiKstUXazWKzZ9eCtNpx_BVsd8QsuEjM5tdxqA0OxXHkNOEKDIviemyDtbJ7UGOxjIRBhGSqGmvMXZuVx0Qds9xOpXRwzg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvutEAStkJrRtz1-N016guCvwKw3DTzDtuAUQMgQmBo_fALlee0YMlICeFuPS7cwdMIh-ZEoHIXL8UdZoItMyK0P9-vmON3-POu2G0ug1kQvgs4uhvg6eG3-m4iHGznioVPSlBZ-G2Zxw8iDb6dfkSa7IYtg=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPakdDP1i004N0OMY-09o_zj8Zod1bmpJAtGgQkvvZ43m5kZ1DB4DqJ0e_T4gksuEs9l-c1USRSO1B7khR_Gr1iQUSwktXDmtSKHwETLMhDbdRtQ9KmdHaQ8yQIq1OYNK6"
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf54__YLByxqOouMyvm-A6rvjM7S9WSZsVBm7lt1LIhXp8cNDRdx6yPIcPYv3VhnsWSiZzXDNWf0b5ziSY841ulAtrxIyCNii5JKb1zCU2VLJ4M6Ax3mHXM22cn-H3yGJrdIT_XszYkvW36Aeru3Z7qmQ42-n_6NakCLYX17lQEPKmHuw5I4vLubE4JWl9MyJ74Gzbcs9Y-6ItujxEZczo7Z4hW6jcuLXnfXcJK-UDjDud4a94NP-MDVdwvX4aOgsoXxEWjGbZdtOR2XE="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnb9XTuLw52hqt4FZgq1lWh0tv6cyrdBnpdl2umEvlXKUATa_3akBaxnbI9V8PUYo3xnVQHxWOPwL5gnCavEPI5ceH5KKmDVE2aK2RCtDPLtrzdmaWx4BWamhRD4o8aTCX8YGbJMZbpweA6rkDsLdKKtngqwU="
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXzz5igCCVDBfGrbGifKEkmkXCH47E-bOUVpv47SHT-8BaosO2-iDrvEMnlci2YrLfW0u4CQrEca1DZiKM24Zhqm1g8st3lbDT2WpJ9sRQRndqqeocSaGMx612VvhnJhXfKd5myOuxcdTJ5o6NEpLnzKoIYWEfIu3p"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ethambutol (as part of an optimized background regimen for MDR-TB) trials for HIV/AIDS - Multidrug-resistant Tuberculosis without extensive drug resistance",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HIV%2FAIDS%20-%20Multidrug-resistant%20Tuberculosis%20without%20extensive%20drug%20resistance&intr=Ethambutol%20(as%20part%20of%20an%20optimized%20background%20regimen%20for%20MDR-TB)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "15-25mg/kg daily",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 11000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 12500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 19231,
+        "costPerResponder": 19231,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 6,
+        "vsComparator": {
+          "comparatorName": "Regimens without Ethambutol (if susceptible)",
+          "costDifference": -3000,
+          "dominates": true,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Ethambutol (as part of an optimized background regimen for MDR-TB)",
+      "nnh": 30,
+      "nnt": null,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 65,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Optic neuritis (decreased visual acuity, red-green color blindness)",
+          "percentage": 3
+        },
+        {
+          "name": "Hyperuricemia",
+          "percentage": 15
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-4 months for clinical improvement",
+      "treatmentDuration": "Ethambutol component 6-12 months, total regimen 9-18 months",
+      "trials": 60
+    }
+  ]
+}

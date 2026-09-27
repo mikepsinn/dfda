@@ -1,0 +1,782 @@
+{
+  "conditionName": "Syphilis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:13:17.757Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8sPuLWtG46IMe8tig9rw7q0KUDXQCop1fVLBGBii66NXnpihglY7623KaJxPsdLkbtoh43wDXT9bJ3g4unncCazA-pjnUetcVM6I102Fj_cces0dJIJRyogaT0lWSZ7ul8z_ubP8d9UAh1Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkhrmu2GlQMjHH5cdiIadQZLPVXg9HSVgO98jHPHKBjtlwK0AWCwRSYVvd9U8dguejJ4GYFsn_amZRY2Zo8pp-wJy7V8lCoPwac-KKQ6Oc46Wot8TRRqzD2_dK3JaqBnTBn7wIjATOc0_00JzJRwyItY8X8T6Wag4G1bd8IsJitRdFbKHq1HaMxM0N3tylq9ismZ1aMobxtU7reoHUt1Ao5FG4JlclGsrt-UypPf47usVWq4XQ"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTMYmsup3Xo_6zEGqhxavacGGXqJH0dy8E3yUoczUZE_jMBvtKdhdrmuw6eLKgks-Gq6o3uGakelsbV5jVYj1ZjGVA4MhdyvIqU_EKrc0CA63P4OthBNbx2PegD8PG5EJJVt5rrmncTDFqqGQmMDLL_w=="
+        },
+        {
+          "title": "tribemd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMLugqFKjKEC_bhhcgHVkeAX1Vh9M2wlcZ8z3aZ-TQOCyPRTBfIZt9tXY9gL2x3bMK_0RJERX9HjvPeQ20i-anz__tnqx5WEGiVFnhxKJ-mN5m7IrhNQ1dkzP17pEUaFS8bxJR6XnZgK6BgvAAYWWVl6G2HGkFPewmS0xj0EjX02UsTr19qNWgXEHIJkcS75HkRTZ23WT4nsRJyKGTjd59IktRC6HAG6h-Tg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf86VrgHYS51CJCPRdCaNG-y7P3IgTQksHAD3bUmgBBm8fJ0sgyXxwzonj7VC-NfHycnIyFZJGSGFUwX9vpAZb76USqt6GjYKx6LfVFivSJk_O_DAef_DpRSyT7MVsCOMj315yyavb_upSYn5WVnLUXhJIK3eaWi78olbpdNoKpDQOsDs97doSsZPnZDIAGVbLMFQv2zEY3lpGErWxx9DMSsY="
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuVO87DMwUHG8JtjF7Xn7aAKS4rPGmzviHjTLUrcqVrPnmCvAF-dKuL7-d03x17MJQRKZJUC9CneFNaZq1ZO9lNjmj4v0ifYVwYmqTTpAopCKwEKAbUziKwAZZLZB3O9tIiFhRh5FURs3OnbeA8JpfjW8b9pLNE1ZcT9T7Fj1b9lTsAXZqRzN16520SFSyV7AdDN_Z7o0Dvn1Xs1nIcL5inOXSrsXd7m6k69ICNMfRCsnTjSJ_rqPT1wxcSQnMN3H3h01HtoMlh6l_c3wVP56eJwkbx2NIbAWpPQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqh5O8A8NJFSWlJIPkFT-FLFCdDuXUmHZgTnowvRddK_cTNDg85yyfleLM2SDxzJHPgERARKvoEam5jaiVeX7xwysn2iZ3fkHiVAF4EpzSCe6XG4wb5MALAuyjSbTHMbzuoiOFOZFgFt0jSBLbSUQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbKEo_YAGlWXayDQumb7kZ_v2OBeT33jc09LCSYyJ-D52RC28rtiw5YxE-c8sGcannMB1gc3D9KPv2z6fAW8zoZSdUppyA47LfLrdIsfB1eqIkbMaQkThJqrNeNbYqKPtPXuE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE13I877ymMYzhjMz74Yjz1QESHHtEicJSci2halBKMbTnme7PVrjtRFHuwuCPPDIx8NpowEO-p2ajVl2e__J-nmEvW2TwthfsWuQbmUP-cpnpS1JE2emlA8_Ty8y8f77ubGeIIrAuJDZ-yog=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLQesVLgP3tyuzImIr6GW2aFGD9Q_osAI_EdhfPab3A7VkgPknFLCVfIRBypUrM5mHa4SI9EE9Rdy8qf5f742E5dQ2TLG5_O91gawr4MRbqRhxwLo4_D8oVk2jW_vY2mOvpGw137bHQO-C1_XL0nrDkCL4pOuZgNhKfA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV7bQ_l7jsN8HWdpuaT_On4kvzPKuNtVzVIyJrMGdUQNru6CgK0BwAfDMV9Ia1LQWRCl7Eyp71mWyq0JJ65aAkCbCl1O-pWP1g7UHT_eJ8FPe5-h_PD2Nr08zjT8hqJVPWzGyjlh0qZrIVMtyRvfVWkaYUt5X_9bpAA9uq2LAYwpa4WKM3fwOhvyvTQEw5Rna6cKQ7-luFKlvwPeWzpClCZSq0HBgmadTvS4mEeCwCVXfM7M8FGPBoF8whPH6tlsqm2D9LsSXF6dgN3vfXu7fTAbOC3GFHE5_59ht5"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbuKNussW2-A0MFtgkWyYd8bOtT-d3AR6BNBiW8TL4TJZbUo1z66CXKfK--EXf-59UbncFKLYEKEId5Ln3pZ2Q_iLpNPcWTOs4ri3QpOgSlLWveGdJC9IDSGFQ6Vv9mmXDE7Q3g5vuiUyerV4mBbUAgdLVP1lRGWU22qtjplWB14pF0YuCj6dtf3wGvAL4ACHZM6fp484h"
+        },
+        {
+          "title": "cuny.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIeV9k-BOz6ZAh-RohF66K8P5-AOvsZwvaSXAcjiRn9eGSomHLYX1_N_2UAwkJWFWEdOgv2hH5frQ4-c3bd1J_6mYbxYqccnC9tNOZukWho1VGVmJo_jZjsup5XikekaF7SdTiKTjh4baMLGpjPjqNrQ8p2OXAF61DXEhkbm8CKYhp9ACYVgxrmZewKmLUFxDFjopUKEQc"
+        },
+        {
+          "title": "ClinicalTrials.gov: Benzathine Penicillin G trials for Syphilis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Syphilis&intr=Benzathine%20Penicillin%20G"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "2.4 million units IM (single dose); 2.4 million units IM weekly for 3 weeks",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 200,
+          "sideEffectManagement": 75,
+          "totalAnnual": 375
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 395,
+        "costPerResponder": 395,
+        "icer": 10000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 2.5
+      },
+      "name": "Benzathine Penicillin G",
+      "nnh": 10,
+      "nnt": 1,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-24 reciprocal units (e.g., from 1:32 to 1:8)",
+          "baseline": "RPR titer: 1:32",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-treponemal test titer (RPR/VDRL) reduction",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-6.3 points",
+          "baseline": "Syphilitic Lesion Severity Index (0-10): 7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of Primary/Secondary Syphilitic Lesions",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-11 cells/µL (e.g., from 15 to 4 cells/µL)",
+          "baseline": "15 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count (for neurosyphilis)",
+          "percentageChange": -73.3
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "Syphilis-specific QoL Scale (0-100, higher is better): 60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Syphilis-related Quality of Life Score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-25.5 points",
+          "baseline": "Constitutional Symptom Score (0-50, higher is worse): 30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of Constitutional Symptoms (e.g., fever, fatigue, headache)",
+          "percentageChange": -85
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain at injection site",
+          "percentage": 99
+        },
+        {
+          "name": "Jarisch-Herxheimer reaction",
+          "percentage": 20
+        },
+        {
+          "name": "Hypersensitivity/Allergic reaction (mild)",
+          "percentage": 8
+        },
+        {
+          "name": "Hypersensitivity/Allergic reaction (severe/anaphylaxis)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 weeks for serologic response",
+      "treatmentDuration": "Single dose or 3 weekly doses",
+      "trials": 24
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErU_oNuQYSuVGiVta8cA7644WGfaNLVOeFLcfv1Cn8dBfYhL2BPpbwoz6ZPpPhUWRJYzBUVLA8lwcznl-v7B1MF9M6ZXLYyt2EMnA9JaNyxMrVxZjU7Q37iAQseFM6rn0LBNuIaui5A966_a8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErt2_bmwsNziq5nBMc_yFIh2ZqH38mBTKKsa4iV-8MYCSrbQ3P_TnFPP5Kv2fvRzxT2hezF3sfK-mxcHlwsm_jbXa2BVpjY-mbsyqW3mF1O2-MSig97yzyOn4WTb7-siImKws="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8fnBjlD4gSTYRAB0uGHJshCbh_ahujdT0-q0DCL5jM2h-wNl-cVSWZOkkAlTsOQvG0ZSsBMhadCVVWaAamgytpx42jnkimD-eaEdathThblDmGElrOXH1cddKYvOa74A4qjIpa6uaGhBPvQ=="
+        },
+        {
+          "title": "cuny.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM7wfL7Tpx1RZmSUnQtDy7OqDQDf3RzbZ1eAIpYjpqvQFLhpVyN_QWsC-Kw7gsDI6lF1tFMFpOP0aoI-Eq8i_usYxI9Yk6DHUvdL3zKel6fuUvveylmvB3ERbSxQYZe7VmnykjzTu0LFxjTyoqp0I0yPL7uDWEZdlR0TUVN2x3NReU3WctI-AZanrLhQc0COx9Kf5b6Pnt"
+        },
+        {
+          "title": "colab.ws",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnMngj3d-S3VOpWr-6REVWsleyO0CUv99pA66oPSxtgIraqbxSTXzLlbgDexpleRJXsmrew98CogvhquUptF6EvMrlc_pfEzSTFj99MccsFMrGkOY1xj4GUCn49RQ0sY-qMbXhJkEcx6D5yxI="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjq4SpjFULXA7cRIr_RCVce_XVhG6p0WSHzZQqzFO6CDjU9WQZMGNVGEH9LSwtX8ZL9wcBYZyL0RvruJX9JJndtWMTMKO-vEPcV1rgUwOfi0jTjleOv8vKOw4VMqJAajmyllozYsnYSbCKgLW9vKg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY6pr7yRvlgssvTRn5_-s8tWPF9OB1LtUqYs-3f-IYuO41A1me9B_I8IhwN2S-UVQJ47Y9kzHgs7T7FXQDzwTk7FmNGM795jOadlfB1V1fR6oMCDUipp9FLF9bouXEnVjOfH2JkmYvY_FFYg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlsWSw8tN-rl_fNm2vJwun7VS9S53UXQinz80Zula9ML4HFDdTvzOyq2rj20FKHdGaCYnR-SVIN5cc8jnm37nJvXw3PMygskKqbkRQ_tBo_2lhkAGIt0CTLcuOAJWS0hghWurrmY36eFGPntCP7DI6bfN5f6osFy9yze90HFbVYeZhf5mxUk_1dsIsnWxHLtFHgEDXctv7Vgdh7pYx5mBm4PAVTRAF_9FzxDHfCI8s0NV5Ne985Q=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXK0G-o7vkjPjCzG4WE_kPpElqYXuV_oA2V7Vzdw6dUAh2tOdBsrH3bVFyGZQwIauT1D0jUdKIPSjAUleLzhqRD6cAidBwi0qckSroed7aZ1jEth6eEfmPXaHLL67oDxK9nf74Ne135T0Qjv75VA=="
+        },
+        {
+          "title": "okstatemedicalproceedings.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHscm_3UXH6kJmQzFs8pM5UAUhiwX6XnU33uGnjLVw3gqqzvflhqWEwJUNvq0X-JK0e4GhMTk8eQsSoSzL1x-SFAYYlTXCe-HoODa8xKiha2bBVhv8m0zFjl3mCknGWRd21KGszFKvwQAdXlrYlFlwKmoSvvHkqd_C_2--c57MS6iSjOw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErBooKITC5rRcRZZp7V8qD5kDcYhdKYyW4HPScHdyJ_1SR4TdrVnnv-gfLjfLO9YF4Jg-H6S8LsFj01jCsQdMQ4QxQ1cIv6bGKAh7pl3IBVeSIC57tJinA31FSISFyjtsIKc4F2JJL"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp3PVHl-fhj-O-IJfq3ZtDoYETmI4-4QFEuRSZCvIvS4u6thAqMigh7obl-6EwS5OH11hqirD-wWgiX36vHyAvX4TPMff6rRLEVOTdyqmD4AWuccMJvbW0RCfg5KBcr-BwmcBztFdA7hKdtXwFJ29nQzqaNn6JKezz8g=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlu8j7V18-ueM-pcONMgmURuK7VwT20DnZ7CvCiSG9QqGLlDBbZ-9YNTaPN65Y1BPVYPpLH4BKcZk3VCrTqx-6ZC5cNjnUeqHRzvvXicj9Xg5g0I8dG9Pd-E3q6HK1"
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxycycline trials for Syphilis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Syphilis&intr=Doxycycline"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "100 mg orally twice daily",
+      "effectiveness": 93,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 200,
+          "sideEffectManagement": 35,
+          "totalAnnual": 255
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 283,
+        "costPerResponder": 283,
+        "icer": 12000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 15,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 30,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 395,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 2.2
+      },
+      "name": "Doxycycline",
+      "nnh": 15,
+      "nnt": 2,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "4-fold (2-dilution) decrease (e.g., from 1:8 to 1:2)",
+          "baseline": "1:8 dilution (median for early syphilis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "RPR/VDRL Titer",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-21 days (e.g., from 28 to 7 days post-treatment)",
+          "baseline": "28 days (typical untreated resolution for primary chancre)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Chancre Healing",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-1.25 cm (e.g., reduction from 2.5 cm to 1.25 cm)",
+          "baseline": "2.5 cm (median longest diameter with lymphadenopathy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Size of Regional Lymph Nodes",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-12 points (e.g., reduction from 15 to 3 points)",
+          "baseline": "15/30 points (moderate symptoms including fever, malaise, headache)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Syphilis Symptom Score (e.g., modified STI Symptom Scale)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+4 points (e.g., increase from 40 to 44 points)",
+          "baseline": "40 points (on a 0-100 scale, indicating impairment from population mean of 50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset (nausea, vomiting, diarrhea)",
+          "percentage": 15
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 8
+        },
+        {
+          "name": "Vaginal candidiasis",
+          "percentage": 7
+        },
+        {
+          "name": "Esophageal irritation/ulceration",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "1-2 weeks for serologic response",
+      "treatmentDuration": "14-28 days",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH50KogBNfgxEsaOFxSpQPAqJirRL9s9KK7AzumsYkzm3qubic5wjhabj9iTBzyULdClxvcsyQmVXxsMo8psamSK73tJOMC0BJnqnaYRj4E98UVxhZS9NE3RGBcGg_GxAclA2la6Dn_QZQwmfZZIuq22LMw2r6HA4IteH4bm-1uJQqcN-9T0ShDU1N_qPRdLznvCFsf8Tfru27ujBZshRshM1Ns5g_YKAi2jJ7WGwNXMBVrRZ5Ne0wBWM-IV6ZE01UKmA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE14unYtspuo95K4p25jpbEqJ7zN7L4Waucg6ZWsVdq7kaOxNzlPSjKMICMHfuJ5xsEhEO85VE5ejQGL3mVCeY6EYroLtd168TwGn3tCAr-jLtPaqNH2Q8cVmaeiWGTav8Khjsg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaj8HVK0m1bW8NaahojyxQhZ6Ua1pi3lGvImro0JTNlu_-t6a0f6-2dcm7GxFmaPc1dMIJFNkG2ECcL9gu4MlhnKF74bkN0gg_9nLKjgSVmNf4Zgv69P4y05FQE_CkivyEU1tsyTE7cwgsILCx"
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxyP0-8eN3k_Qn8EnwOmyfi1SzojO21CZE6OxSjB1nCQhAp3UOjsweA9wv-22VYQ7Cp9NbQKOnbJbpxDubfyOOUEXc_dir9Hfb9dQaHyxcuA5xV2YnMZ0BLExzS4MtaXMI50ilS3e9qNdwtfkRSFtp8Q=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDlIHFOOBi0E26rapG3Jub_jczPL6Um4ToN4Rb0Jxnecphec6vsZ9xTa8PVQDoEsKLdUi3zcAhwDxbCfJEieNWB639jSMZ1HlNltRVHbrY3c8CRCQwqRdH0aFh5YTDJPuqOlYG7FM_iylC8f9BD1ivMic="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTn4gMn3WABABdR-5GUYm_UlmtDCn0qkkyBa926sA_ZDiRUE7-HX20tQz_PQ70B59dRY5RGt3qLAxyxu9Q3242N9XY8RZpS7idmNpYGp4_v8UqfjNt2CMOTxzWXRiqbJLsyIcGail7LSdEot2MJLF66gkg3QFW9CcC6N5n17TWfRO6lH8iHKTFXXglVr5cmk7uFfwny4LevH9UKLVMmexjjJLUFTQf_MSu4BZpj3n6b6gx3c04ZEo="
+        },
+        {
+          "title": "ophthalmologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl6It1xRI7SJDHuKX8pkFBp2d7Ngz0fadNv-105DgcgVzBe8JeYObPh5ux660gluJKdBvdg5wu-ks5t7Ce7EJ7DJKy923keimYPslBrMtP27m7OnF-80nOTPN6yuWAydekyhbKJe-GhoAogYbecV1fnavdTd-fAQTEz_nvD5ZFDiG2LHMxXP4sTeE-J3XAvjFxOvnSPalFRaSqf6b9dEZyk0n1mzUQhh3Ubw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone trials for Syphilis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Syphilis&intr=Ceftriaxone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1-2 g IM/IV",
+      "effectiveness": 92,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 200,
+          "sideEffectManagement": 35,
+          "totalAnnual": 435
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 483,
+        "costPerResponder": 483,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 200,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 2.2
+      },
+      "name": "Ceftriaxone",
+      "nnh": 30,
+      "nnt": 2,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "4-fold reduction (e.g., from 1:64 to 1:16)",
+          "baseline": "1:64",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum RPR Titer",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-22 cells/mm^3 (reduction to ~3 cells/mm^3)",
+          "baseline": "25 cells/mm^3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count",
+          "percentageChange": -88
+        },
+        {
+          "absoluteChange": "-25 mg/dL (reduction to ~40 mg/dL)",
+          "baseline": "65 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF Protein Level",
+          "percentageChange": -38.5
+        },
+        {
+          "absoluteChange": "4-fold reduction (e.g., from 1:8 to 1:2)",
+          "baseline": "1:8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF VDRL Titer",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 points (improvement to ~25/30 points)",
+          "baseline": "22/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Function Score (MoCA)",
+          "percentageChange": 13.6
+        },
+        {
+          "absoluteChange": "+10 points (improvement to ~90/100 points)",
+          "baseline": "80/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Capacity (ADL Score)",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "-15 points (reduction to ~30/63 points)",
+          "baseline": "45/63 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) Score",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 15
+        },
+        {
+          "name": "Gastrointestinal upset (diarrhea, nausea)",
+          "percentage": 7
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 weeks for serologic response",
+      "treatmentDuration": "Single dose or 10-14 days",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoV2dQW6rGCNPQsEsuzSW06EinaeR-bYX3Cfz6qlhUUylXF6NSGDHoj4VwTxhxWRv42C9-PSoIOpNQiGuDXunabTV4KmubkKWzwt2QJQHgvoCpFGBmQGuc12PU7S8R6YkIpxgcf_LWh67sHstkPf4rQRgn1A=="
+        },
+        {
+          "title": "whatcomcounty.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjW7_mSh8D1bKo1odKEIf_EyPmhxNpSBI3jTXy7mB7CjXle0MYrVfJKPWJ8DnfZp623OAvwuKakwLL-mZgtIJUr6WahJKZWtjadqWSw4chC4GC5-t4mHvQ-5PvU6umwtWfhApE5dIhgRaOHYm-4C81c3XkSXwGAkiiSUJHtMxT3Rl7Uqhv6JCiZOcn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY8FzAXFdiZpH6FmUOG6HzKAiWeEGkKdmPGBb8IKaBnMZuULpkuJV3wj3eLNOhnTueMIMFoFZk2Kb2FCHJnFZ3_e3_nzab6MRy8PbDxHAZGS-NzGcCJ_coblFnoUomGZTkdyS-CRpT9w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8v6uMu8KaFnjTt8BuF2tZZAp7umLJ2SRtmatNOxbrLPHedVlAtHMsNogoNMYKCTsGCLQdUI_QFSm2nXrBwGLNhDdQ_I_XERZ-9XZ734fRM7MHIvVPs_3Y_gkGREb0XPpx9lx-WKhVNf-cCv25d4a3TcPHTbZLjAbDAqVRC1pOwoPKpv_6d7L6Ny-l_ADaM4ZTXWJS2HF5fnMbZwMApw9pPu-K4BNo3m2nIDF6dRjkDH7hPCj7RiF8zayhJir-io9ErYttokFGysRcM0iijqlkFM8EVkaneZOEKxkcp-h2Sap7K5gZJkMWrB8tNDEeFdKEn-J-8w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8POo33vhljz_plh1wp2QSTsmOW6z7v1-NCP47sT279rH5_gYxHlJGtPST8eO9zFZmehUn1UNCT56sHlQt6FurH7cRZGacYFrqGjqDHCIC0HVh-IgY6JcViySlDHiu6QD2yc4kBbe2fPYweHw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-o_7qcd0T0Z66I1HyKLBG_dBIi5EgJx-qfGUoYyLQa6CEuZZVLDuOoTnCVIy3_SEeHVsRWrUOaGSsP1wtiogL_NB-u7Hg_2dUOZ2mpUuvc9ikHo4ArW-umC-r3dIlu0k8a27C"
+        },
+        {
+          "title": "cuny.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCkFmvF-D2UAvbdRri-4ahTP-soDyliunavFMabmHZuNCiTUwic1NSyFwWLJzfXgNhu8rRQtX3jFkFj_AzOuS68H7vTI0Z9fVXJiXXcuiKRM7d5RMgeDFXdGojXO6t1ANjj83PQ9gN_d7w7gNoWnDSSVrevNpDq9FhIOoQZgewEUHiAfv-mQw6FmxIZZU7XN7xvG9SbCtcXg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnvXtu7Su8zliBNEEbbX1GIm-2Adwm1SQvadma4lbEtnNSvgDLgusdVpxJZpPpxxvzuE1d8XOA2dgS1WDUMhdD8gzQ9Ts_OJSrHkXPwvtc5g-YubNFUq4zFHf7fDHfzht5rPSwSxWpOWsISeOm"
+        },
+        {
+          "title": "colab.ws",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8I6HiBsy8V2xCDxCVOy61XHLZJ6tWE1VjTh3IR4zYf1IW74P7y58Q6AB4IZzUa1MD3kU4BZjeXs2JjLLY_XWLFra6hglsBm4-25Wn8Uy61LrsjyfwI_H2az7fv54xh8F1WeZz7tHz0V64lxOc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_L9s_FHC56TICbcqU0Jt3XWFzZK7p0iGRuc7HjaXksFSvtsYIkhczYkBNKGK3Z623-TF8etn1hXUOjCw5ZKpGrsJSNxKcgxqIjykUjHbDUAsXsbPe3Z4xrgZ9UqWKAoHm6XzL8IyqL5FeSnk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwegP-IMahXv5CO_yTjaMu_1CWEUaI7iTt66N-XaE1LOLsdCOmG82RT601vbk5NVnLvNtmXRz9nnJNdkQwpR6jtX2pUyKtuym7PbqQy0n73QCPNfZMhAVWQkMSvakP2KQAC8w2pvgXPHxP36MBuDGdtBU8g06oTPK3DkkTyBpMUsR4KmyBAXH7hnBhNXqTdEjyW2L-oyZcf5yAZ_rIV9D8vpRrTUV7uipksd6MPHrsPepFvKUOKkx89J37sZ9SNVcTex4TFWnNvzSQva8DNzWqW9YGTXAo_vBNc5ImSOTHoLAcGDIgLFZtjiTOJWd9JgmIr7UWlvTQgZJbMaYjzYvtI_2JDPX30Gxsed_dPCY5w48HJL7dp2TPiw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Aqueous Crystalline Penicillin G trials for Syphilis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Syphilis&intr=Aqueous%20Crystalline%20Penicillin%20G"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "18-24 million units/day (3-4 million units IV every 4 hours or continuous infusion)",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 350,
+          "totalAnnual": 21350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 23722,
+        "costPerResponder": 23722,
+        "icer": 20000,
+        "qalysGained": 3
+      },
+      "name": "Aqueous Crystalline Penicillin G",
+      "nnh": 15,
+      "nnt": 1,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Jarisch-Herxheimer reaction",
+          "percentage": 20
+        },
+        {
+          "name": "Hypersensitivity/Allergic reaction (mild)",
+          "percentage": 8
+        },
+        {
+          "name": "Phlebitis at IV site",
+          "percentage": 7
+        },
+        {
+          "name": "Hypersensitivity/Allergic reaction (severe/anaphylaxis)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 weeks for CSF response",
+      "treatmentDuration": "10-14 days IV",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1_wIyjL_tn70JTXuoPuxYZsLtzKyeYQlWt7orEJIM0QSabp55hDqMhNl4agK4z7I8PQ_HGyeIL5b_IqcOdUn-PqCxkf-hZm1guGA8yfRXvSuMBfmibD6rIeY4LWyG7uFLe2ZG1DG8FhZLDA=="
+        },
+        {
+          "title": "croiconference.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgTnaC9D2S-aN_9wxA5q_AvKDfRz3ASMhv_SLXYwBAn1YkgInG0U2U2d31Bph6jnHp5iqUcEjhdP6bg0Mo-oBYn5dtIQhXAnyB5Q1qR6CAV7mijwl_ULhusehYkE9txeeXo9n2sf9FZgFREdRcADZDyxSQGAVwCynwtNiae_snhp85Y8oSDJ1s38V1xXFaFFk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDmUERd52yCEo5qgtHjWI1jLjjpwfgmYde9ag0WUb4eXh4hvSSAmpDdWCmJzM3RfS4rOndtz6rjr6zLbzDsOfe__HtTOZ4Wu8fmB3LP2aTm-taNj3t5o-5Pg7luGLF3NLW3Kq31tx0TMmpIg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFStoDYif6Mp5aFcikK4LpmOnah9NWWGTsb_EMCHXzLp8S-dnqw4RvqW6brSnVmqyviXd53IGrfaabrbs6vaZj4UXLlRVq43Jhlh1qcmZftT5Bw-k_7hVRRnxOr4Lnt0E2iuiE8mmStdM_TI9nmqg2UnveqSouc0ixcEa4GCsnWIyazDAf9F9BuH1aK1KalKmF-bs_NVl0VfNDzbXbmc1A2SteMmHvK4EPWxiKD2Sr949qeXFhMg7XG6R4Hol0q3Ig2IboG3jTtazzW--fJcA96POEXuuAV6wGaAw_wKIc2ctQl_4dV-UNc_eDF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0mXQ0FkFKcBgfkgcOJGeLxSanhdFN1bkQuPM7jYyZk0XRC5g3iYHJoQ15Me4xc7R5Hu8fpbblke2iEoNFidpk6Sjv_cD31sQHyW-nu6hO1Db9Yi-vVIe6QP7jASvFfs3bgo_aB0NJycZ7IAs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Procaine Penicillin G + Probenecid trials for Syphilis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Syphilis&intr=Procaine%20Penicillin%20G%20%2B%20Probenecid"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Procaine Penicillin G 2.4 million units IM daily + Probenecid 500 mg orally four times daily",
+      "effectiveness": 88,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 10600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 12471,
+        "costPerResponder": 12471,
+        "icer": 25000,
+        "qalysGained": 2.5
+      },
+      "name": "Procaine Penicillin G + Probenecid",
+      "nnh": 20,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-24 (representing a 4-fold reduction, e.g., to 1:8 dilution)",
+          "baseline": "32 (e.g., 1:32 dilution)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-treponemal Serologic Titer (RPR/VDRL reciprocal value)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-3 lesions (complete resolution)",
+          "baseline": "3 lesions (e.g., chancres, mucocutaneous lesions)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Active Syphilis Lesions",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-20 cells/mm^3 (to <5 cells/mm^3)",
+          "baseline": "25 cells/mm^3 (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 points (complete resolution)",
+          "baseline": "7/10 points (moderate severity)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Constitutional Symptom Severity Score (e.g., 0-10 scale for fever, malaise, fatigue)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-8 mg/L (to <2 mg/L)",
+          "baseline": "10 mg/L (elevated due to inflammation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+25 points",
+          "baseline": "60/100 points (impaired)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life Score (e.g., SF-36 physical component score)",
+          "percentageChange": 41.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain at injection site (Procaine Penicillin G)",
+          "percentage": 95
+        },
+        {
+          "name": "Jarisch-Herxheimer reaction",
+          "percentage": 20
+        },
+        {
+          "name": "Probenecid: Nausea, vomiting, rash",
+          "percentage": 10
+        },
+        {
+          "name": "Hypersensitivity/Allergic reaction (mild)",
+          "percentage": 8
+        },
+        {
+          "name": "Hypersensitivity/Allergic reaction (severe/anaphylaxis)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks for CSF response",
+      "treatmentDuration": "10-14 days",
+      "trials": 1
+    }
+  ]
+}

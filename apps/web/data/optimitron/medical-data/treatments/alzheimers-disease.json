@@ -1,0 +1,998 @@
+{
+  "conditionName": "Alzheimer's Disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:16:41.503Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkq_fIOmno70C9rLnHcZpNqFO-oXtPFUoXXlGW9RoaBZ6wF6hOZGCeYWgdFK-hbzcodQb-rlurNu89D5jD-Ee7armSG8rpPRBdGbMb-XoDEbCYG5PP_2QZZQ12pUl8KqgCST3IsgG0_9RsPvQ="
+        },
+        {
+          "title": "uees.edu.ec",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2-__bxSqshEeqOo4Q2MIMCaYpGVYaQlB-La3W3r8VvskjrAmFkMQIqKYjxDmm51krtyaL0wpcBVzRPb9G89R-dZL9-FaVZ-mX43kY1_ptj4Jy3UhqBu-UJ0l8V4ltrSRfA7sdh6Z3oQyvT960MWeXcIBX6VkSCm6ucwW05mUHdrvh37E0dEXw2iAO5Cxh7q6KJ03WdJo3aIi0TXX3LU7tHdlfzBgpi5w66eA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6tq4TrnCYhNDwxAOW54NqJko-uEIxe65qstPbt6wfY4KMIjOAftSH4j38OBqJUcv7elqAcs6z56he0CnXTgcpcEbtWtu2xYFXhQHYMVa_DqdnoUDKwhbwvVfvFDYxhAabQ_B3FEtZEeCu67MevzuDgInZb18my-ha1d-_8_friqtjwynxigt5Ciphc0bea-r9Bdnc3JwhHxJgS5HCeGnwOWVpoVEKkOZKRUl0Ir7tGMh7mEF22w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY9znY_XtveN9NOEM3QKK03ld-ou6J6hoM_m76hz4sjcpu6GUMjSFr0B9jwIjQ6s31Mt7s0C8BqygmxeSkHfCtXHo4IUD-lyyJbXkXpKQR5WLllWLAXI272TeMQWl2q6dZs5Fw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK_V6-rhvhr851KjscYPOf9u9964nsOCfIBPFtcecRyggo0QpOv3GwFp9JBC5PmWVuVwcnqt6fhSQPGRix4FuGa6EBrwN2596bTNpyPFlU_BWyggStW-6H0FL96uf5NDdOpBL-"
+        },
+        {
+          "title": "alzint.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYJ6V34qeFwNu46bPubVaflNyGSE12r42ZoYg-jNTuCraulI0x_8KZaRHXnLpL9Ky3_HlsBriWM7VWaLmJ-iY00AYfznZ_Fm7s7RrYxRYyYNjCbV7f1CH3oE-ncsghkc7hpssos9rZGh5cZDhAPCAxggRGmJzwlEJFsPT7lbJU1-FBqvUFWJmwkw1U8f0hlwyS5VMhW4OtspY7QQ2Wf9zu1yhzbIfLq-7N5ctbfg=="
+        },
+        {
+          "title": "neurologylive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsTelD8njlVtOtoC81th0_DZZPm4pNh6nhMLIdyJvxDMixUWEs_JjB59gdWucmDoDDJUJiAikLb_EjhvtjGUzyA6D-l_Y5TyyFszDB88E_hNNyKUCmUjD4ObexcCkRE76kefPtvnnjdmln8DtEaFsC4HsWDcZbGG8H7d4rR3JefTUnBDTgmZx_PPFpHbF7wk3ss-mmrH5kE2jB1nYOXg9jCfaUirEFaI5MF4aP7v4wG0UZLhUB5ioOxFw="
+        },
+        {
+          "title": "lilly.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGywuGoSCeVqSo6AzmJBzAxs-ijXpWDfiILmd02CNt-ApPfNSPEn0SPQJEUAi6QzRExft70CgEHuODc3HLuo6qwihz1If9K1ai9fzsNUiBIsHmazeSFYDZ-dafgjBJzKDhU_nUXINPcJUDkB6o4yz3s9buqax2PRqAkY9yjFtF-2GJVi3pF0SLLNlvu4GKHXYMixZV7KJkm-z8OTBL8FktwobzPmw3O3B7psS0BprQoLZtexKs7On0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE89sUpSjwwHZC9Uwx5bVXU8g6GR3pqKTErZzs-Y1tJEIL43RyFRtE4zu7nuLcCS3X2mTrHI3UItYXB3ti3TAxKQE3ziiiqn9oOSDRi1RjskbeR4u0F4G8fMm6hc3up_RrLXSY"
+        },
+        {
+          "title": "practicalneurology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_AGfr9xmKH92bty3NlMQ3jFo7U4RsY-3KHy2QD_aIMYYEbYpEHVPhQTXSfjSUl-fhHftzWsmF7--UgUzbU7OLMgTeyljcS2HfKgEw0J5_KEsFsua-6zQ8SsBYZ0fvmqY8vWayJzhgywcRA-BHrrAr-y05bDIOr1AraD4kTHo29AHsC1dObOoZsuFFTjwnkq3Ol0_6Flhg5jFVCG80jqlRhK28jw2NmJ5d3ZqEOh1ODhuTXSiMGoD7bG0Ni49Sb1jvH7PxCSzdMpOUwtOu6Ju_v25Hk9D1X8ZmOmOfGY3ive6nWkaNUIM0U7Q5078YhV6G7w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Donanemab trials for Alzheimer's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alzheimer's%20Disease&intr=Donanemab"
+        }
+      ],
+      "confidenceScore": 78,
+      "dosageRange": "700 mg IV every 4 weeks for first 3 doses, then 1400 mg IV every 4 weeks",
+      "effectiveness": 57,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 27500,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 2500,
+          "totalAnnual": 38000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 600000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.22,
+        "vsComparator": {
+          "comparatorName": "No treatment / symptomatic treatment",
+          "costDifference": 38000,
+          "dominates": false,
+          "qalysGainedDifference": 0.22
+        }
+      },
+      "name": "Donanemab",
+      "nnh": 4,
+      "nnt": 9,
+      "participants": 3500,
+      "phase": [
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.7 points (less decline compared to placebo over 18 months)",
+          "baseline": "3.0 points (on a 0-18 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Dementia Rating-Sum of Boxes (CDR-SB)",
+          "percentageChange": 36.8
+        },
+        {
+          "absoluteChange": "-80 Centiloids (reduction to amyloid-negative status)",
+          "baseline": "100 Centiloids",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Amyloid Plaque Burden (PET Centiloids)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+2.9 points (less decline compared to placebo over 18 months)",
+          "baseline": "80 points (on a 0-144 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Integrated Alzheimer's Disease Rating Scale (iADRS)",
+          "percentageChange": 29
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.3 points (less worsening compared to placebo over 18 months)",
+          "baseline": "25 points (on a 0-85 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alzheimer's Disease Assessment Scale-Cognitive Subscale (ADAS-Cog13)",
+          "percentageChange": 26
+        },
+        {
+          "absoluteChange": "+1.2 points (less decline compared to placebo over 18 months)",
+          "baseline": "75 points (on a 0-78 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADCS-Activities of Daily Living - Mild Cognitive Impairment (ADCS-ADL-MCI)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-0.09 SUVR",
+          "baseline": "1.4 SUVR (medial temporal lobe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tau Pathology (PET SUVR - medial temporal lobe)",
+          "percentageChange": -6.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "ARIA-E (edema)",
+          "percentage": 24
+        },
+        {
+          "name": "ARIA-H (hemorrhage)",
+          "percentage": 31
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Infusion-related reactions",
+          "percentage": 8.7
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "Until amyloid clearance (6-18 months), then monitoring",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVskvvAz9GoRbfHUgzYqbOybIZLyI5xH1YqzAIhlyhUS6MGDl07CNrdE68AlgR9uzZ6YZ1Mlf9lnNcqNynmM__wz8kL2W9dt0705tb0Ud--OW1EflTbenkv88PyL81qF3OYWMPb_RgZY8rvP1v6Nj6LGiS4q1fGAW43XTyIQPN9TMAPgquWMA_2ULaestHm_kUfc1gwKlGVl29XuZnBUq9cSOI4HsC29HCnJsFbE2eGB-LfQ_VOAfPbdLz-A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFusqbeVLYXD_FsBxLYIitRd3F6ffGgjcP1WFPT2yTeO1no4_9iNi-iTWtmRma_Q66pu5HsZi174-UENvAhsprTgobREuJMAPTSCtNBOVadzRGa7NujePy5ztAEvR6ifiG4xXIE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEROyTa8LjNYpIiztloR143A0zfKBwlo7KM5OFA5vrj1DhKDjtykk8mO2HVbX1p8txomXy6rctNZvdfnd1cQumRqUmcvTPoofCuUZLrIrpSm4lXoBXoY71zB0yesSPwFaUjv6Bf"
+        },
+        {
+          "title": "ispor.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR6coFcd7xlmNQxzXaUQ6FvCTisWoj8ev5hez8q-7QO5Qc6ItJjutPmCj97WNM_PPLCDdkr0F_Hj6QFCR9ot6AYb6c4Llt_5CQslt3s_JC6ZljQb5eTTk8EV5XlsFQRjGEKuN5Yn1m6N7KZPf6ImRAPwlq3YbRQJmruCAZs6OtvaKE83kNoxXGx9_vNKxJXNo0RoT7pAG6PUnx5Zl6wzwaC9e9DPQT_IoPqR_YA9Qyl0t2a8QzgOfzmfx_N8GhWhVMm7ua4ekhnpIXZmPesTM="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaupChk6AeNqrQhnxipOr5wBcBWEvJ7Jz61HA0bwKJXvayLk-qVFIJdBbHdG9-L1eLC82BypY6SgX4p3Dn97g4LP-CeLrWgwO-V-Qujh-CLYtcu_p56vrl6jKm5EgT-M3qNKF-y7iWIWRyE2tHrzk6X-aynXjU_zr7WxHS_9okdZDD4iyZy8U3_QVfRCSvL5WzWgJJSx_NIPq74g=="
+        },
+        {
+          "title": "medpath.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUp_uxK_0l3CCZF5qdSF5cDL7s8v_XDaYTlZzHmGyR1FrazqGcHO9ka2A9Cf-3yTxHGwzwZMDh49UniwT0uj6GqbuaoilXuAeoff7KlEubUeY3T8m5-gnY6cFNiTt2oVUdTWnJSQ1p4-h1bDGJiKR54EcUTL_DfwnTGaFjdhvTYDR-lbyAOsfnKZViL0vc0s1Kpl_cpbmdkFPkWqS8M4QmgTGQI_L7wgl-gyotnK5PMMHudmYAufudH8C--NZux7t7TWngaUMDYZEw6nHJvsZRiXD-fzELMfwEuo8="
+        },
+        {
+          "title": "precisionnanomedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsU0P24VewR40eRcMGyjsMmmysl88wMG3lDKgNAX3XBsOJ_1qpv8r639Jl4j2xYGlS6Crn49UsdR0B2MBSXiDKUM80xjNv8F9aI3OX_sgm_6bGcNey4tkazZnhYjn5uPnsZPErP0ekt8_u3tnhAsDHUdIO8UH9imKnkgbHMFWatATogfa-zR5mgTba2mP71owIl38RGOxQ4nl6K1joAywRHn7zZh5UkWk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB-13k6UrHmRVT2pWjtu7_dbCmlbKg8HzHg8QM6Q82DQguDYrvQqZ0CzVohzWL7kEHA4EH2EnAKHuNh5I6O4OE_M7ey98fmdM81n6bhW8fRvYSXi9d_lDWq1tXA4nxJhzgwx29LIEQjqHa7KJA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2Fs2B3JRLCQZsGVOWR6Pmd2hWaMd_Wn3j2z2cLsnu8Ct7o-bsLSyol63YRy14jW_pgI53YX1bprLRvgqHeUtjbdfla793QVn6CKWVDfD91RSaZ9H4EmQ_9cg0Sqoj8lnH9OlGNyYx9KBEVvwtcohZT6ovu_u0HQHZ3iW4ME3jsPxfBfe7sokqfnaia1HzMG13D85JTSUHzCd58uvMJDYGpYTrAsVnfjidlCcBiKQZJ9CovTZl21ZnoWVuUYQujrUTPeTxKBh8GKIswrKszOJ2Il10DGgjmBiiLaIdCiR4Hn4joXZCaIwH1Ggp"
+        },
+        {
+          "title": "eisai.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq_0OjHsyQfAo8QO0GDCcqBckPARxjhaLUtuzbCg4E-PjAkW542t5D5CkFQcFKIHvMgLF_Yx8SSYwjbwXD0yr2DEDoF9YOESBUlVon68vPXjcHSqFSjHbJ0UJ_pmZ9f5pdtmJmEY_C-jE5"
+        },
+        {
+          "title": "alzheimer-europe.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4DAHRr7SC4JdgFwfE8MJkSjp_zV_Svk8Y1bT370LqOGR8cd2s4Prn-pwQwvhu7DOFOWAgm5T0Gn9A1MHODJP7UOmJQkT45InbDRsJ3vII2VrON6SrHW2Yl4-_CEeU0tu7572R_k2TK1wAeIgi2p2P-06b0M1EBcs4TsjsIs4PtqsZIh_dump7YGKZHBvW9jvmChVKp-vjZspdCjyJzSBtrSqGzsxA9ffpgTKEKitjS5Dv1ztXtQTFQJsZjf0="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB86EeoEF_gC8kC4FeBsDEMSbdrSKAgVhuFzO35pwLu-pb-EQcDtIx4TZ6K-Q2LDnFB36ISVpGBxWSDSQSy2QyEUbHp0jP0OBcjHj51sBuZakv41nwuNTlpiX_VYRPRCcPj5yp5uZnZA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZdI9XCGWHAeah-QmZdOxLzvo6NdHz5aPNj-AkhjkUUVX5i9VU-CQy2ADsD_pXo74cS_j8OD62fypAN1fPv5CTTdrN2oyb7BsnRr413RtFA5eGg5k5NZgBLjhDqAr-CL8WHDf5"
+        },
+        {
+          "title": "alz.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCxVnJdvp8o4xZSE218pAiwE5f7QGfV7TYs7Q5nTP7rJOv5QH1kg7N45OKG_8tntTD04s2Q1erb0wUdnIunqJDORz6vGr9I7ISa1BBF-ZDi6srUiF82Dvm2MALhSAxgR8RS3JYmkuz50Zue9U6T6Xxf6VPw_nLKVFnmxY23Y0i"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lecanemab trials for Alzheimer's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alzheimer's%20Disease&intr=Lecanemab"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "10 mg/kg intravenous infusion biweekly",
+      "effectiveness": 55,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 26500,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 36500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 640000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.23,
+        "vsComparator": {
+          "comparatorName": "No treatment / symptomatic treatment",
+          "costDifference": 36500,
+          "dominates": false,
+          "qalysGainedDifference": 0.23
+        }
+      },
+      "name": "Lecanemab",
+      "nnh": 8,
+      "nnt": 16,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.45 points (less increase compared to placebo's change from baseline)",
+          "baseline": "3.2 points (CDR-SB 0-18 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Dementia Rating-Sum of Boxes (CDR-SB)",
+          "percentageChange": 27
+        },
+        {
+          "absoluteChange": "-1.44 points (less increase compared to placebo's change from baseline)",
+          "baseline": "27.0 points (ADAS-Cog 0-90 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alzheimer's Disease Assessment Scale-Cognitive Subscale 14 (ADAS-Cog14)",
+          "percentageChange": 26
+        },
+        {
+          "absoluteChange": "+2.0 points (less decrease compared to placebo's change from baseline)",
+          "baseline": "78.0 points (ADCS-MCI-ADL 0-87 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alzheimer's Disease Cooperative Study-Activities of Daily Living (ADCS-MCI-ADL)",
+          "percentageChange": 37
+        },
+        {
+          "absoluteChange": "-55.5 Centiloids",
+          "baseline": "79.0 Centiloids",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Brain Amyloid Plaque (PET Centiloids)",
+          "percentageChange": -70.3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4.7 pg/mL",
+          "baseline": "23.0 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF p-tau181",
+          "percentageChange": -20.6
+        },
+        {
+          "absoluteChange": "+0.006",
+          "baseline": "0.09",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF Aβ42/40 ratio",
+          "percentageChange": 6.6
+        },
+        {
+          "absoluteChange": "-2.8 pg/mL",
+          "baseline": "20.0 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Plasma p-tau181",
+          "percentageChange": -14
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion-related reactions",
+          "percentage": 26
+        },
+        {
+          "name": "ARIA-E (edema)",
+          "percentage": 13
+        },
+        {
+          "name": "ARIA-H (hemorrhage)",
+          "percentage": 17
+        },
+        {
+          "name": "Headache",
+          "percentage": 13
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "Ongoing",
+      "trials": 26
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSce6fHfL0yR3_FCzv9XvxH_2POD7HN6XoCA6p-aGKDzxO9vCSXg28T5YDcbjGRopBvah0pGOhUt2MhToIQ4lIcGIp-NPx90qMqwVuh0K5npy-SjbCE57FRBh30lgCUkZyy1ea"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYhOKxrj2_9mu6kqxZMj_AB2im4deqD8iBPd3FWAgI5Dgpl8Y-B60go90A__x3_SWPtT1YGtWCAbMcr1QANd4V76nUfy88TKPhyuLxHKzbgZ-m7ONf2CpSyOOhsYhAby08tqcIKBcKQU53cOb3"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJ4odedvyd1vVDy5e0iVvOQCiVor3ItTycb-RINYH_6xoTOSElffGGA53KHW6ZSlbYRbBwZdW7lSxSHv7eaUkYtwx5xf_c5wNt21_QoVS7-uU4oGyTw-p5FYUD9PyRK_Wk0VPmFTNMc1DM7ICk8565wFHASk9TeV4oNLFFT8cgaZl6aeFfTe7Tzw0GyakR78Ya9MF8WA=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsY8Qmbx26BsE00cdJciWkZ77c6nZ47jwzPBdw3_19bcuTh2C0HlabzXmwJUrtDCFaLbrbuJDKyFqBrRheNNmvCirYQVexxRTvgRjOzDn1Lt__vX7ijh7kP0c4oiirwStOmIkde5S21N3fWQigw6zTWmE2oStuLeGQMKgePQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBb-I-8UvQDUlJP-QLK5blUWmIfEBoub0nFLyfcZFXQssuGr3Uy27E5lfjVDAqU15lj9wNkwPW6YPQXbHwl9WhfislTMOFffH4Wno0tsuVdkF2JdA6xDcb34_FRQdmOhu7uQz_"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHALnhGX0mlgoKoI9YEVqlTnD_6PUwniz8xNUFv5G396kmOXtHP1bcdyPXBj-Sxao7AX3zOo8laZUXh2g3WLY8OheJt1Y0OEBy-rRGrqdHUHpD0BeyHQHldJNiCYx0sY61jW10kX-1XEMLYPDzX3sgFxvbilJVA-5RJK5le_b7ih5apdvs3nQoue94LirJ3X8yOpJZNAXvWGswSTYgPLDTmaChfk3mCUz7kXYyEadcPXXe5PO_hAUuanfWv4w6FQFXAaYePbKraIQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUyW5l6Avx_Wc-RNsBFl_tjo7kRoU6cL_LhyMZRBj8UHXXzpCnk_SgbCI--njv5Y9Y2Y3YFlb8QvJUb9JdAQOCDGv5eMmN7KhZpUn6dgvOGHfCsK6_SmPhOTfsEI5p4bUGGQQexF6PWVOip3g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-lU0LB30WO5DKbhA26MtX6QnYtk8pX19xeaq5eS1TLF9WgF6qRCZ54XJ1MCoxW4tn-soN85dDc1gIiDqf_kw7VvvdgvqzrGv1CjwzaUtyl5ZKKwkJbJPGAqgw-vOIP9X16Khe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwB2zKHbdSauAgkMphK7MQxjBy3J2b3MhmFcybSdKsTPaql0e-ImVemBzfbKjem7DjlN8_nJRRIk4lQfoyintoviisnfxwCnwRGiazsQlY63o2QhqCPRnEn2pYU-jO7Xn-U70mAcKN-_c8p6Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlTecRRPAmYpaSjVHO75G06sVy1kI0S-aQde7Yfc8d5PxnLvfVkkusHj4Kwe8iYM3cQVGMQ9PHfcQAfam4JS5a5kickzt4yvEwAQGOdMTe0cC66nwizTNlCbNRRj1yhT8YBUHL"
+        },
+        {
+          "title": "ClinicalTrials.gov: Donepezil trials for Alzheimer's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alzheimer's%20Disease&intr=Donepezil"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5-10 mg orally once daily",
+      "effectiveness": 45,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 400,
+          "sideEffectManagement": 50,
+          "totalAnnual": 525
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2100,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Donepezil",
+      "nnh": 12,
+      "nnt": 9,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "27 points (Scale: 0-75, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADAS-Cog Score",
+          "percentageChange": -9.3
+        },
+        {
+          "absoluteChange": "+1.5 points",
+          "baseline": "19 points (Scale: 0-30, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MMSE Score",
+          "percentageChange": 7.9
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "7 points (Scale: 0-18, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CDR-SB Score",
+          "percentageChange": -11.4
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 25,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "58 points (Scale: 0-78, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADCS-ADL Score",
+          "percentageChange": 5.2
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "24 points (Scale: 0-144, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NPI Total Score",
+          "percentageChange": -14.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 11
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 9
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 9
+        },
+        {
+          "name": "Muscle cramps",
+          "percentage": 8
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "4-6 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 202
+    },
+    {
+      "citations": [
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyAfU1DG8qgwxgbB-4nW-gsBpWpWFSYN0JcnU7BrcBqgjINrCmt098q3HBNAb1GPFCUZp8GXrZ24_QEK9e5hGrX__C2ts3Ag3x02mE-3e8hKLDsIl9BBXnWc9AvDrX0lTqeZw1lMSUnV6S-MOGXI1uotVVgMg0yZ1o1S_e4-TsPK3F66Pvi-E="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwGA8H-ujiM2y7ZNrZcQSjMY9eQDHmJi8jgiiIbWhJP70hmzmfMoyZDJlhR3OR0qbOSRS2ODMBHa3exCxYn79UYcMRS8Y286W-1NgooBcPlqrnOYqiCqxe7W-WJbiIJrKQY-_5aEYmGkGZ344dTChGg2BTmvVMB5QJiGaD6LnkWCIqUp04fTYn51IWXQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPj9ryqgGn25qNdJwnzZPw3QXDw4bhytRMzJ1kiApm-mPrpFzsXwJ-H72fnl_u-zzFXclK2yUwQsSaXletX1Y9Bz72qDaHY7SfcR5zoqof56xsubVtfzZVJUnLODSsmIsVMnR8ejcJpdRcP-c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp-Hxpe7LCrTjE32xIvD0cfggjiJdu3DsAGMVGh4YiBBBgmtep5eWeSA4FycNn4YAoaIXgC5XeWKHRihfmZLc26PSGEtfz4K5rotOwZI5bmcdrIBmC8rLws4qCVrbtIQt1GV5ezWYgFL0t"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVVIaTB5M3Rs0gTVqWdCL3f9LOalSjwYv7QxmmQZFUxeiQOYv9e48htyBoiY0hU2XRtzYfp08RqiSq9IJP6fcN9NYkd_nbDEMqsImDwrwHwoAxzKBlkoIZEBFtrgGHmDjpj5kx-UBze2dky6c="
+        },
+        {
+          "title": "pcom.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp4OKWLqX7a5Ro7M0E5Nliw8_MS7tjjIQd-b7Jqul5j6RnNAJt7fWBEp8oLiK5N3D0ZeET1z8kXybWEHSnEYDzdrEEdCL8MnAzvpNrbnEYbPXdWT4IjUjvHxD1A7kR0QTQBPGmqL6pc3qPIiC5pn4a2vD_IQ=="
+        },
+        {
+          "title": "pcom.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9swps4NuWgfalHM37KmNob_k7_GskmTpXmMg2v5z-7mxzoYBJH4-LVmco27Mfh2x7Avqs3rNrvlkxSpcS4BpHk0kQoFgkZadjv43NawhE-4VMd_wNwfIr_Gl32YsIiparwUrp85BcWY0MOqHE0ekaKrt0jIaLTft4mMNJ9fSnYgnFJDixUZx5C58xEnHgz-qG4t09IM9HbQA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6nxpi36NPmLNQoNGqZ4YSHcohGGgDDiKAsYXBztnirx_wE_P84elQJSr2uL3CX8ZClvk_XnKRj03k6JuhFZtNfb9FCNNeakMZsU5oSezldjWN5ZfZEUT683bYx5lz1dFwRp_wIpFXuh56kDU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rivastigmine trials for Alzheimer's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alzheimer's%20Disease&intr=Rivastigmine"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "1.5-6 mg orally twice daily, or 4.6-13.3 mg/24h transdermal patch",
+      "effectiveness": 43,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 400,
+          "sideEffectManagement": 50,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2400,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Rivastigmine",
+      "nnh": 15,
+      "nnt": 10,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2 points (lesser decline or improvement in score compared to placebo)",
+          "baseline": "25 points (ADAS-Cog scale: 0-75, higher score indicates worse cognitive function)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADAS-Cog (Alzheimer's Disease Assessment Scale-Cognitive Subscale)",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-0.3 points (less decline or slight improvement compared to placebo's change)",
+          "baseline": "4 (CIBIC-Plus scale: 1-7, 1=markedly improved, 4=no change, 7=markedly worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CIBIC-Plus (Clinician's Interview-Based Impression of Change Plus Caregiver Input)",
+          "percentageChange": -7.5
+        },
+        {
+          "absoluteChange": "+2 points (lesser decline or improvement in functional ability compared to placebo)",
+          "baseline": "60 points (ADCS-ADL scale: 0-78, higher score indicates better functional ability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADCS-ADL (Alzheimer's Disease Cooperative Study-Activities of Daily Living)",
+          "percentageChange": 3.3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 25,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points (reduction in neuropsychiatric symptoms compared to placebo)",
+          "baseline": "15 points (NPI scale: 0-144, higher score indicates more severe neuropsychiatric symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NPI (Neuropsychiatric Inventory)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-5 points (reduction in caregiver burden due to improved patient symptoms)",
+          "baseline": "25 points (Caregiver Burden Scale: 0-88, higher score indicates greater burden)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Caregiver Burden (hypothetical scale, e.g., Zarit Burden Interview)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 7
+        },
+        {
+          "name": "Skin irritation (patch)",
+          "percentage": 12
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "4-6 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 55
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbLq3KTkrkrKCC2a1LNcZv8rRIJ-1LrYZ1gq8ipbQMQWw558DDW2ZtdBg5-N4Baj3lWXECpy89ErRPeZPjuyzOLYxolAvT5EV8vkXZh2odGueXFpNYE7sw12EPwbTrc8HPywW-YLwkdHWPKGsqAvzdjRMFcDeVZ_5iTzvnXCGNtvkh66XgOl6LS5oRVtdf167to16Kx8FZVVQYxDeDWX59DlzCHJs8CNpfS0_Z9mq6qpYHomY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_JRQyBGo3ZuRRbki-WF69PLCbk0nrqCmOPygAvWWd2XNcgkD1NHRhMI_OCmEMFvvup306ggYVOgHmUCTN92gGwyrg1AAyVZZobgzn0AZwBAk7d4IuPeRK-m2NpViizDLqe-bkGSK4LGGeQlBc574r0dI3nipIEAWE2lTr9JL02saNqxMgXhZtsnlMfu6ZQcx4YBoIK_0saUErUd9f4Zgp9PMQ2MXOShjXqorgqO-Bs6o_YXeZ5rZVn7tVT83iZ9U-lQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeNLN7h8HGE_VYBAtHh24B3HMf0T4bmCux_zf-HKuvOy9wtbr-xXD-j5yMu-ICzuVoxtwiZ_-FWZ_8THEDA_UGA8EQmyziG_zK-9mQNSfBaNHEnpIH_dVVGt9US8HxwzUT2brj"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE03TBBR7A1M5PBFt2-UrBW5JXHduoOo7BPQPhNql6WNa7TnfH837PgcDl6-NCx5ig0uOsJAoey7wr9mdUEDIbAZ5dQCXKaaEf58WlFLBzxJKGyjqZXg6L27TaYU7ZktdnIY83Dr00="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNWRP-4Ho31YO47TnDfbJ4JAqpaNPYbqFaZ1ubfSBKRjw4_5gLOGl1pxaBVLBt_PYGulO5Y8vMvWiYvKd0C6_Vqnr9wgT5ciA-ZHzvwM5DkbHo_XIPvrBxsIOqggJr9LLg3iDHrtSWrekX"
+        },
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENKyI4DlrVBr67BnVqBc_WvDsMiQMKaYNdguj3RHB9wjxnjAs0Cx7QSb4CblCJrMhtzZCweX6irzEwwrgqZwL2D8XNgO-rrH2pIBYiwQdROKvVn3ZMXhZDsjHzhMarXYrWcvd6BxVeyhaNke2SHCd1"
+        },
+        {
+          "title": "ClinicalTrials.gov: Galantamine trials for Alzheimer's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alzheimer's%20Disease&intr=Galantamine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "8-24 mg orally daily (extended-release)",
+      "effectiveness": 42,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 400,
+          "sideEffectManagement": 50,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2200,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Galantamine",
+      "nnh": 18,
+      "nnt": 12,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "28/70 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADAS-Cog (Alzheimer's Disease Assessment Scale-Cognitive Subscale)",
+          "percentageChange": -10.71
+        },
+        {
+          "absoluteChange": "+1.2 points",
+          "baseline": "20/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MMSE (Mini-Mental State Examination)",
+          "percentageChange": 6
+        },
+        {
+          "absoluteChange": "-0.4 points",
+          "baseline": "4/7 points (no change)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CIBIC-Plus (Clinician's Interview-Based Impression of Change Plus Caregiver Input)",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 25,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "55/78 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADCS-ADL (Alzheimer's Disease Cooperative Study - Activities of Daily Living)",
+          "percentageChange": 3.64
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "25/144 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NPI (Neuropsychiatric Inventory)",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "7/18 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CDR-SB (Clinical Dementia Rating - Sum of Boxes)",
+          "percentageChange": -7.14
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 13
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Anorexia",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 6
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "4-6 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 58
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1aQyIXpjvtO71YlBu3qbTqv2jmCph2mDP_GiJ4ZHTROIErp4tmMs80TE5N4zUTip-F01Ue9KuWZP3vqxSg-XvOcGpP7jyJ2bONPTN5km3GakzTQrISSDJ2C9lFzP2KugVbsfo"
+        },
+        {
+          "title": "repec.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXOP0XCwGnCSSU_3p85dZrPg0mz59B7E3bnU2nk71jTslPBKCtSnCqmQsOgHgok50tTzpOF2YRS8YNsJgiOFO57GgSmitDzERoEMxVZqhrZYuFMhDCKF1Vn_dgK8Eet59u4SOjLmdRhHaHNkA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZFrLNhcHYkU5eF2dEyTb-KQghg9XQNDSrEHu3s7qI7rVPg-d-Ln7CidR_cb-UVzDyTSEGmXW2A3BoVL3TwGmK5mktpBztukQgd8Qqtm4q7BpK4w9fblLFsdROPYjz_AWJvf4tMWAarJyQDVJPyhRTVsvjU2QunPFyFgxHTZuDi2CP-idsnz5LgCq__Buw0qRm7FyXWwNGgJJ51vV7wdgWHAhuxInvx1dGk3FCVQDyViM3rvWxksKrEEXOHc1PEw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn4N0akwNgdCD1j288KMs9oM-hn0wEk6Y_56gyGvwGz0Dq0H4Y2mWmluJx_ssjFTz1sr-gkpSWMWtIf1o5sxC4qF2no1DCjw7bg9vWHKe5Wa5E29Ub-p-HfrTzTnVUxunqxm0y39OQ1ceZWfqd1Y5TpWmj_0YCqU4Ce7tTNJTM6tS1d40ZAazLgjV9PvP9jLDTdnkMxglkoDPdbwfPxYHz4zkcfVkDfy124DHIdpNkzlZKukXofyQJl2VIVk-udpGrBg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKlat-yT6V9w61leKk_DWcsmlHCzIkiKlMQQltr5ar8FOZI_e77xwCkWHiHbqGsbXpsobLRaozaE3-ssoASPt-heDodNgesP7qwjuOljN6Zyj9UgzgQFuGCVuA3kZ-aIk8jUgv"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcem9Z8z6mSf8f7YdRok4pfkkD4JdHlo6MhsLa9jDkK9GXFUgESAWBDCE5CMYK8avH5rou2trEClCKN5Xbx5vEPNfbXKLDYQ2QD2QLX-DFZ_em4wsD1szPpI0zrC1q6TfsFwzP7z32D4zk6qrynIR-1dyZ0wnoWPeOYNG1TgtPuiePmHc="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6WOzMttDR6mCv82H0U3Q_QIRngbt6RyPfdEXU4ixBJEU3BwcHB5kCpi7RhnYJEJJM6u3sMU4wwPBpvwG4sKfX7HUXAKDy0z7a1HQyRoxrQbz0x2OB-YfXGabnlkN7rFMz_yQpHU50fE4a-gXkxSO7G9ukheuwQEjNaRQ58k_ZH-beJ5yHSGnCvVt9904QtRPBgzIMQAt16-hq-Ghmc8cnJxC7_VpnGuyhp0wYBNrQ_Se8vBhdPwECwjdm_D-RfAdrw4KiBnshN9bzpyz6ww=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoEFEZtEyB2iXIgOYMeJGbQjDl5PZC6LE-h-a5XtlVB8yNJgjjkriSsOeCAfHtLxtxkf2zq6PtjyQyeZq7dJSEwWZjsR7eqTBfxwjh589vHNBF6YWe-CahsZPdHxMq2P073xO_Ct0U2ZqojiaVe_JqBgTO1GYF8VAIy93FX86sqkcOvl5YVd7N0vtxE-KQ-OYZIsWZZ03WhJuboMwOIc5YGEGgvK4OR_1_fVQhpuWGCIlgFx6aHepnXThD3q0M9fKxACAOkJx1OMg0v8zJWAnAaZLwoiQI3g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_AfmFNaAHtoISoqK6MeMGwwARXM0ZxJMysPZIvkaiYSKixinEtwXWjPFbt7Fb6_Ea1yvIs-TRHrotwpwsTYd8JVFhNZF2bJu50VM_2BrO-tKs9DQ0v_loNsZVQNIlg__0jJz_rBG5QhJG2Rk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECrkL_MEQlUpBcOOIdeOR5KjZrtMwg60I_c_O5PRGW1wneKWRMwRJvx7lXc7OEzgur-qvsCocx2DsEhKeEjvrgmbv2bd8uNAcH30hClVbs6zt_p0tnYr8MuOll43Gkta0hFQ5w"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTpLqKr13EOT40udUlOi9bwYpoTB70Uiev7YD5S2pC41b6uLDMBcAU_poZTWltmGZ3wvLYlTMlBcwyrsERekL9ui4R90knNf5QZUKzpPj8-GesAHWD2xF4lm1W0UmT-KWBIRkVBr42lxL1Tho="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFefHK1LViWmC_FMK4oJTLKwyZQrOut5SLXx3RMvIRNDeIhTBg29RaQsprZ0xGAM0yyOq1WLm6tgJCgTRfr_AtPqsG6a6vRHu7ZxGIeJOblsflkfNGu6OnF90fp5HIZagMbziKHcuFUWtVW5cPW88bICIkAwVQHthl7Ps9y2EkRvg0fS7vLJRqiD2sJwqk0TbzxD3s="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvkyAlOoIOiSFlKdbccPLnpS23PjuBECrOasVuPanicbl_6sUscBmN-YtXn6h26MQnG6zC5EJ5gXHnUl2Sy1PUVxdLPUGu2XDbAj3QHcHTTitLeGzDhE-bstZgaCOZZJiugw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2f6TwYBfRHQ1PWmU8pc4pyM6FgbpUQ0_R9liwAHYMA3quNBbInDCx2PD3jmDsJozdGowhG7hH5dunzcQsk6nY8qi34khzg1RtRSggeeizi3Cj-s7WYptdJIUXlRo7bJ6kvH4I-UOgz5uVICWmYPxVOmGhY4-b672t0tO1saxcrkBsl_vqhYZM8VHyN3Agxn6RMlDXL5CgUYI_Gh9NTsN7WaZd30gbXYdUmCPjegQ1lfj_x1tIV19cPZpn5VX_Fl96"
+        },
+        {
+          "title": "ClinicalTrials.gov: Memantine trials for Alzheimer's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alzheimer's%20Disease&intr=Memantine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "5-20 mg orally daily",
+      "effectiveness": 40,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 400,
+          "sideEffectManagement": 50,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2200,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Memantine",
+      "nnh": 25,
+      "nnt": 10,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "28/70 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADAS-Cog Score (Cognitive Function)",
+          "percentageChange": -5.3
+        },
+        {
+          "absoluteChange": "+1.0 point",
+          "baseline": "45/78 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADCS-ADL Score (Activities of Daily Living)",
+          "percentageChange": 2.2
+        },
+        {
+          "absoluteChange": "-5.0 points",
+          "baseline": "30/144 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NPI Score (Neuropsychiatric Symptoms)",
+          "percentageChange": -16.7
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 25,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "35/88 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Zarit Burden Interview Score (Caregiver Burden)",
+          "percentageChange": -8.6
+        },
+        {
+          "absoluteChange": "+0.5 points",
+          "baseline": "15/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MMSE Score (Mini-Mental State Examination)",
+          "percentageChange": 3.3
+        },
+        {
+          "absoluteChange": "-4.0 points",
+          "baseline": "60/203 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CMAI Score (Agitation)",
+          "percentageChange": -6.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 6
+        },
+        {
+          "name": "Confusion",
+          "percentage": 5
+        },
+        {
+          "name": "Constipation",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 73
+    }
+  ]
+}
