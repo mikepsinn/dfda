@@ -5,7 +5,7 @@ import { ResearchPartnerSteps } from "./ResearchPartnerSteps"
 
 export function ResearchPartnerHowItWorks() {
   return (
-    <div 
+    <div
     className="relative mt-12 mb-16"
     id="how-it-works-research-partner"
     >
@@ -15,13 +15,13 @@ export function ResearchPartnerHowItWorks() {
         <ResearchPartnerSteps />
 
         <div className="flex justify-center mt-12">
-          <Link href="/research-partner/create-trial">
-            <Button size="lg" className="gap-1">
-              Create a Trial <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
+          <Button asChild size="lg" className="gap-1">
+            <Link href="/research-partner/create-trial">
+              Create a Trial <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </div>
   )
-} 
+}

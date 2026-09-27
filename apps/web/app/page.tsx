@@ -1,28 +1,30 @@
-import { getFeaturedTrialsAction, getStatisticsAction } from "@/lib/actions/homepage";
 import { HeroSection } from "@/components/HeroSection";
 import { ComparativeEffectivenessSection } from "@/components/ComparativeEffectivenessSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { KeyBenefitsSection } from "@/components/KeyBenefitsSection";
-import { RevolutionizingMedicalProgressSection } from "@/components/RevolutionizingMedicalProgressSection";
 import { OutcomeLabelsSection } from "@/components/OutcomeLabelsSection";
-import { FeaturedTrialsSection } from "@/components/FeaturedTrialsSection";
+import { GetInvolvedSection } from "@/components/GetInvolvedSection";
 import { ReferendumSection } from "@/components/ReferendumSection";
+import { conditionCatalog } from "@/lib/demo/treatment-estimates";
+import { getLandingOutcomeLabel, getRankingsPreview } from "@/lib/demo/landing-preview";
 
 export default async function Home() {
-  // Fetch data on the server
-  const featuredTrials = await getFeaturedTrialsAction();
-  const statistics = await getStatisticsAction();
+  // Both read local snapshot files; neither makes a database or model call.
+  const [rankingsPreview, outcomeLabelExample] = await Promise.all([
+    getRankingsPreview(),
+    getLandingOutcomeLabel(),
+  ]);
+  const conditionIndex = conditionCatalog.map(({ slug, name, synonyms }) => ({ slug, name, synonyms }));
 
   return (
     <>
       <HeroSection />
-      <ComparativeEffectivenessSection />
-      <OutcomeLabelsSection />
+      <ComparativeEffectivenessSection preview={rankingsPreview} conditionIndex={conditionIndex} />
+      <OutcomeLabelsSection example={outcomeLabelExample} />
       <HowItWorksSection />
       <KeyBenefitsSection />
-      <RevolutionizingMedicalProgressSection stats={statistics} />
+      <GetInvolvedSection />
       <ReferendumSection />
-      {/* <FeaturedTrialsSection trials={featuredTrials as any} /> */}
     </>
   );
 }
