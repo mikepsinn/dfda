@@ -1,0 +1,828 @@
+{
+  "conditionName": "Cysticercosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:55:22.785Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRS6R0C-0EzkvFCuTiWABslPCCeUZD2RSNL6V-St2NhP9Ph2vMaxrZq-mmvNqePPhzHSsMQhcQv4j2wGPF4xfD7fUaDudWAD6KJB153hpS9PJrEmjD0Wq9_9mV67Oy8xb7qnUyOIj2SFf8fYEC-No-3y4DdW6EcusFJ5eBkS4cTn5dnMn18bvGc7rnFicSsn7Qk4LZ_sGSlYyerRjQn4QKRiqNqOZ1tPTOjayG3NEwvgmPf8U000C0Oe-iL9cdQ3HnFkKoLFGYGmxXS5lABs-aZ5yvrNAeo0byvvxSt3VxT2eqKxyDSMOwkZPd-t0cMXsnIw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPMoFeCMW2hLOYy_n2GQQuB47COl12qkbKecpozyc4H-jCxJhacMpO2RYQZiyOLNbWtYG5o3JLSib12dDNZwj7TKZ1JwSZjpVxdGqOwLuk2X8O42OENUXJhO9KUUSnOQVdw2ZUgNNPFHpIosY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYv2zJ2Lt1t78EL6Gjb1TUnezocfJQrgjqcbqkycVpoiOQbI28w6nXbLq-BSyINXH15wtGen16jmnwy--sCY9wHx22Q7i9dKN7ML5ktuSgPcG9ITF43rMW72nLi8cWQQj3cMU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXK_OaBBQgCMC6ECSYZ6bNkuNZMUAXhMa03AaKariN6Ff_1TzVV8Ta4MXq5a5dsHqnr7-w_p6ba7Rb31Q1dJIuIch77SmScUCGymYMaf89lgAMiAg2baCvUsuRxMHm6yoXxA9KOfY="
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCPHRPEhOkRM0T7RnaqXW-OTZwtUPk8UaEAh7kSEd2SS8BqV9kOMk7C90fzUkKKtRtn81RmEfX6kAm3Owb-P6M4hl5EG2HpFlf5vnQp9yls-BiZEjJc_Jtqyq8zgd6iLUixP5bQKIROe7kwzTXOfzBb1gyfSTzIb2pmibbiAOD_DA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Combination Therapy (Albendazole + Praziquantel + Corticosteroids) trials for Cysticercosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cysticercosis&intr=Combination%20Therapy%20(Albendazole%20%2B%20Praziquantel%20%2B%20Corticosteroids)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Albendazole 15 mg/kg/day, Praziquantel 50 mg/kg/day, Dexamethasone 0.1 mg/kg/day",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 1600,
+          "sideEffectManagement": 300,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2500,
+        "costPerResponder": 2352.9,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 2.2
+      },
+      "name": "Combination Therapy (Albendazole + Praziquantel + Corticosteroids)",
+      "nnh": 50,
+      "nnt": 2,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal Pain",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Elevated Liver Enzymes",
+          "percentage": 10
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 8
+        },
+        {
+          "name": "Mood Changes",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 months for cyst resolution",
+      "treatmentDuration": "7-14 days for antiparasitics, 1-3 weeks for corticosteroids",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCEWKuZvgCx-AdunDWqreT20EE3mvD0YNKZ4tb1RAX2e2TGBiImFimVspHLVi9FARjwF0FsEm17peSrJZc1YOXqNf9EBwFjGYL1SsyFGLx6AT09ha0spYXdfi2YO5XvvxPE6zO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHtXQ7lSfXcxuQaIq5KD02WTM6IFaP_m4Kg7HOPQQ-NEc_tc1T_BxESstEozN4ioRSEb-IGCaOTLWohjxZ6a5bGH9jh_ZGi0dNCfamBjVPo3eRKKmDwObhiBOXiR7IzrJQ6jVS1sGBJQPj5nE="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdamFMkC2Hn6V6gvMAfcJEvoHld2-tyK-uKZ2QMTWvtOtEPYqp8LkRAha0UZlowPMaBoLehC3-Ro4U3aqN2ZJS5wHNM5qRAlaH3Nz49V7bwsbn8MI7L1tVa-eykqKqqdqcmwwCoUyww2FH3frXtZLNhS0vhNB9dwZUEKLHMalD6BP_DYnQ2Zhccg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmV5CQhX1mLBZISOb4Pp9omkpVwDWaOP2HqCMPG3__ec9ojwfjMeT8lD_voANI3FpDbCTCK5wep0t_Mamx4N0YP4LOAmU2NcrvRfW8aGu0QL8nIb-YjfW-SdcDXs1Q0yQG1CW5a3P-EHd5R-xlHHIGv8cF6ahQqz8RYaExdaU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKkvj678pyb3ZGM28lGkOGxGLavUUthwJ6L7FqJcACI-ViuiJ1W2besfH0eziQm_agtmH6nzM_aUIHpjiQ56ZvkREALqXnW2z0NU1Gr3DFd-6aEfiW0W8P19A3VmNIcj8LAFY4fPObU7LUVI3OUxn4sVn2ai69wOa4oFdv-spwQDACCHfK4EueymfLVRWHl6D3pABtczj-8v2OleAwi6Hfi_EBjN5HtHO_89T4fjAprecJb7lJFXXl8GthsgJQ75cqkuU4BK4gCo0qv-5oucL7"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcaZivy6lbbuayLMc00b5zgP9_b58B0faydkK7terjxQVoAHLNKtBRE5CrPLn5ZpC4f4A3twbBIgmebL12U1ZgKHLJX5-ycb9JlU-gUzZWb_GclvzzV-Bm51Fe2hdADw023cPTK1zvz4t_sttphPb8KHU="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwpy45uVTGd3j35LCC8twDZ3TkzWDAZNAeZtTQ4OWKL7Qen-P6YKcgOORFGKKs4tMV_A4lc83SOmkprOF4yiS6qTwCNCYcCNnIQktAqmk7vV3cVmtXCdurSCZo9k5dW7pIUFVqsZTV_OgUsvXNLbcNIX3VRYNTjxadPlV1NgmGlRyHLTs7"
+        },
+        {
+          "title": "emjreviews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPRORKCMGDU6tZtWuR4mtSQF_AMp2zwOzC7H38I_1YvOTY9ac7F5pCaaVVIEcyiq_dqn7DGWnPahK4wXmTpMIZ7UjxYXv-R667wjNuapRyVQDuaMGwbPW9G59znLN8Sh3av89nOsM46yriIccf6Kcx-MwtKfC49TYtjYrT8QJLCXYxRloHaqoISezSpjnpkSZCFGZ4AphDzvVVVqcEa4ybJNzZixtGgb8WdBILt8a6aN1qpVL6ra5-d7fdumJrkwS1uW1hZfRh4jL7rMapbOCbCLArpcTb-jR_WeSk8g=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD9UOhYWqIn7Hh39is-vXjrbjEYw4BGAlc8y0ffdWxgy67L-GLQpoJ-piiyKW7PkhmPdfPp_tYRdtIIdPfL9BN2GFa-bAMkWvcwvIjPtcXdJIwljrZjUtqESLHeX0n-IQ4Kg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3EvCe6rNTv30z_fg1ohh-V5chMSe3jNvZH5GtU7GTkk6-CdDM3IONCvLkQ1Ah5UMstp8gpC8NndUsG4zmDYPMX_4GnG2M7gODZlNT6ZgaT9reD5yorUEU-JuLIWsPa9gvHwtJ7SeayksScbR7EplSodvYObqtWLBdubmW4LnKHNBgaSHYnvzKVMDOo4K1Gul4BZgqHq8htwSdXxvOZjdw1aOtMY9TBEvNtkcnyT80odzAnFr_U2T45ctWz-ZeKhUNPPPJ7RA00el9cm-o9mRSAaZ_gwiP"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1BFsEO0sGD_0rKjoWGmggLrkcPyP3SldqhSMhXBEdEJdCti2thjBx5qThoyS9BmN81-otyOz7Sk6eCc6ChJhhPhVtQJFgVp34fIlntnpU8WVKeJYitdLPVAPZ4MvUXXDVqKc8SDb905HD_TKacuYky_uDOmNIctYHVhfbIOmjmmqjKo-Ao_82dwfXvAHHKfoWV5JMB8w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvN_KRFYs-3vGUSeKpF5YcOqDYZGrIyjbWmgTDcMgbYTjoNfIxUjpxd3J83ImQjtHUD5MsULw4bbvxKabHJ30Zy_rasc1_QRM4nBc2dfdW-5KFkMZ0q-fuI_aYMeUQDeNGATUzMpybzg6Kbjw2VgQ66ldnGR2gLuEBYGiMbJXdkyoq631yvtGCbUOpxtCY3XZkE8UOy8qFpVYW0z6VWMJzCFlHj_0j18fLkL6vGYoBCF-ZAqhRjwe0o320Z-cB7GEl4Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ4xvur164Xzxp8h_q7pr194obTxpwImUG73DAVnQHPdJ8hYwK7-fIw-o3af8hxdobX0GW6LdqEI9vI5Hstr84-rXVWpbIjVSaNRPXMX9sXHOSYVAXkUTVdviSO1cOxJkQ9i0m"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Shunt (e.g., VP Shunt) trials for Cysticercosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cysticercosis&intr=Surgical%20Shunt%20(e.g.%2C%20VP%20Shunt)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 750,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 7250
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 8055.5,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 10
+      },
+      "name": "Surgical Shunt (e.g., VP Shunt)",
+      "nnh": 5,
+      "nnt": 1,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 40,
+      "sideEffects": [
+        {
+          "name": "Shunt Malfunction",
+          "percentage": 25
+        },
+        {
+          "name": "Infection",
+          "percentage": 10
+        },
+        {
+          "name": "Hemorrhage",
+          "percentage": 3
+        },
+        {
+          "name": "Overdrainage",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Lifetime (requires revisions)",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFG8Tp8JKXV4IXc-jf6CRSfVt-iS1EM_uWAOqHo02wbkldKodKBLkyk6tKA6tp4QOCre8T4qIzdyD0WwpzBb_v0_8NW1rG7NpDImFswwtP9Ebd1bjgNVjKeZGBkMhVp7pfsMzXpkUSDsaaijH0NJNbekPt3A=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxqNVVrgI6JQcElUlABV8R6qf9BbHz2D18EdnIpTzrhLkCrb0S3-7F9-dt2TC8Q3jUXuXEFEXWn8pXpx0NCgAEZR6Jg3ePTgGEpBCDbVALYZCC1Kmi5f7osn5puzFLWhfNYUkMPbCbuhWId2YdkcD845rr57qC2QrQ5rSMvUwj41VbgmU="
+        },
+        {
+          "title": "doaj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs96iSfg467Y9oOT1WneI6cxJlYlU8XR0-iqkDdAAPUDZV9-PboncEmAZ2E2HBM3A5tZoi3PNVTyNN-slgxnSI_aMJozGIxdNqroubtg1ADO20KFvHEcMAgdKW0jVPbR_7QeE1Z7lW3B1L729C_A4RifhY"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5_bsZOGaGlxg9U2xdHcKIX_m7xgUruElkUBx8xBrXt6Iw2ZpUDkTmPJCkfSXMhLxKePQj4-a10jK2N-1V8tPdw88_rSuAh7PR9gKU8aGr1PgvhlYPv6vQ35CdclpN1ZpyJHLC-qC0hyjedRYPv1iOXpDDyaTwOGoK63JJ_6BZ8qiWgcmOnz23VlDQ3YZ8GsTa7hsuQrfsjkX3t5-leV-a6QsGODnrWG3hfYCXNUofhg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoe3O_bu1sciWEnsYenM3Mn2nPlpND5BToSq58025_Q87-xu6OiHQ1hqSSQoh2SZceIWUDjXB0BUfatDSIUGbezgRsE8o6_CY2mtSjSSyv4dBeOzAQtTB4aL-ApIerIpPO_dGi0zm5HBHYaLM="
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz0tHiHFLgVjFVBy2VCnOHHr6X4T67HZpldjVh8pf394t1XyzpRn6H3UhIq8SjCazMMoEPzphH3AJnpLcqLJk8iU_6Xar4EyHGrHOxPvXZB4oQBL8kRAVBKUjrXMXAovps8KUVy9iCDKzX0Nm4HOQYFm_lZgActiCuU9JO9gcO03ij7eZjp8tZvE-e1M47M7BMYINaQo6kKtqXxYk7T-7vZ6uXAaASEEGnkAvpcKOz"
+        },
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV-zyDtGGrWEp2QVqPkFFYrIVJlkDZv0IZygulHLvo5C5uTsn9pcaBOXquTYwMXesruTeXfgeWuYkXSGH6QwsPXFV2ZSJbjt9bd31tsijiTmmtKMLZ9rOVxtnIyimrREITnTzgZEf_lOf9FYRoWc4PhWGH0gn8YIg-bSYIT1JqBJFEIyS95gOqPM8iZ1yNMrAy_2G500vFzM9-G3F42cksp6nZsEnDAH-WSHj4gzVRp65jGcvdJYubU_ixpQPksUQ="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE11TxRXOVm6MklwheK-QNz9yj6PdvXz92xClSxPpfTZdx7k1VYeN8P8-1wJCxszMdURmwHxia93zFoVQ9UJiNvPzhNen0ceclSv-OZ-bQRVSsO8BTofQxVIOycn1KfIliR2JLwWzPafnvAWZBRBr_jEL24SA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzg3bZi07AqxL2au4HBv-FKf-imQBnij6BtJVWPDHG_rdLkHx7pmYgppZ27MNZktuQ8t23tKiyZXwIbB4NwxOFkltMDmB__rpZ-QmHD8WB7acHInj8kcnx9QOOufKzWwI8-uU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkd17CdhI9SXruiW2nzsZAPGUVFUQt_m89Yo4T5G0o07q1spzc-G0316d0gDQqjO4HEoZQlz4GP4XHvcmYVE_3TRxiy9hr5s4VgLsfAbsqkVQ0_7mbZrGN7fTpllmXm8fYW88uLSAo3r8nbyne0V5vwbmCPA1Lfn-l0UKJHLj4dqJyfzBw0KUuv7L7rFAjqdYsLbeub-F-sFnLh7tQsenMmVAFshPkz1q67VMIKk8NftzYJP_q6TA5SBHUQW4kSPUvPkRAlwQ9CeOuAa40nsX2LJ5xJCHKPNiFTOy0gYx691xFrU-vM39oe7DotLHVJ7vcfA0Vl-hbyKzCDCkyBu5qMnaTX7YToPFXbv8n8w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE17YeGmuO_LciOjAlTS6-ooTy1qitMLbK8Omy8s_xRreu1Yghf5WRtQgazkJnNzQdmYdPx0Gs4REnESdviQL1tqnjWsVVigZte-BDb_UbKDZa3nUbi2b5CN7-bfN9G5IZT1GahpbgOqndViNPnoF-By_l-8gCvP8mt8MN6JLQ9Ke59XzJA50GXzedCZTEUUQDltA5NfJhra1o6ZX5Dc5zpyYgzjZk9gwWF1qcfWKcUJK3J3-A5Gsdg_ict09j2CeYP-Os3xX_KGyqzE6WUSkggt2MwPdYygzHHODqhV8XQ8kJkVHGnL-Kld8cdzYmCfeTKhw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKm_-mCnwRcKHt2RgQ-bTdNKUHFg6z73QTR9WwU43JoJZMFCp0yOxkTv2qbvG9adxkvGrx2fHzn21opqn1_PR0rHCv6CaaidMEINo2Z7Ay0EpkR839PTVyLIVb1ihDWWrgcSKpacNrDOIpoZw="
+        },
+        {
+          "title": "skingenious.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYcZdGgdeafndOHeG19gyJ_6jz0G5xZN1NEJkBMu10TjgDwLdHTTPhdzF5Xp4d09X4P9lFBTDCMijOP0X1zqhbzVt_bSchoFjRv9-LYo2_PDiMc3KRAQfRYG1oa_CKbcZDe9lkEq8dQ4aqCJ8VigYQfshPi2PLZXpOBSiowqY__qlm2W5SfBW612zGupiDWvRUABBcS1kv8X-d4HL-t4QSgPmCYlsivUH4HDWsCDQ3j9_bDw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Albendazole trials for Cysticercosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cysticercosis&intr=Albendazole"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "15 mg/kg/day (max 800 mg/day)",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1750
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2500,
+        "costPerResponder": 2187.5,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5
+      },
+      "name": "Albendazole",
+      "nnh": 100,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.4 cysts",
+          "baseline": "4 cysts on MRI/CT",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of viable parenchymal cysts",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-2.1 seizures/month",
+          "baseline": "3 seizures/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure frequency",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-7.5 cm³",
+          "baseline": "10 cm³ on MRI",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Perilesional edema volume",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 80,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7.2 headache days/month",
+          "baseline": "12 headache days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache frequency",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "mRS: 2/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neurological Deficit Score (modified Rankin Scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+5.5 points",
+          "baseline": "QOLIE-31 score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (QOLIE-31 score)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 18
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Abdominal Pain",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Elevated Liver Enzymes",
+          "percentage": 10
+        },
+        {
+          "name": "Rash",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 months for cyst resolution",
+      "treatmentDuration": "7-28 days",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1CqyLfQOWnBbad8sOiDmFyn0L94MnaXVYWFebyh7G9ZiNAObAGSisxrj7tPH97wt-_fMy2RBgqrR7uftu-NEr88y8SCF0fR7yL7vMHjgBcUgSfmNhcxZiDDsqIUBuF6YQS4GWcGvwB3r5wNva"
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_6wd39dYRuY29NWNmpKhE8S9Kx6njvZ8-eQwMxltppyH12bWrCs9kB9EPxyLj_92scb_lAjKjHUcZR9y3a71ikMAxM1bPu6P69q46TfIJQPayecNfyyS09EH5M854S4UbIyMqFllKYDzb_dT_vtWDtCK5Bayw0y9ES8ToCIl8tEcZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERG1hRHyKM13jOxuLP1rfA-VlgL8hHOdh20AbchoHsA-0DsxGYVkByNUxn4DJzIWXdmB4_fxi6GCpoq5SBzbKNCM8GSbFlPBiksHVvHiU_qUASTqiIwUgb36_yIKLCFYERpzx9sSCL"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaUeNc-j7ZivpuKnZH0tHe2c6uzEjnk46tml-NHtTxyBIBKTxSA28mNYTcOJFPv8F0h4xflODw40tTHB_ev6gkCm_hoSvVMxvwWhPVRiqhxrvMZuwubjcGFV1aZbgfh6qN6lsikYDlMn7ZvTT7yZmR9NGJZ7S72s1U-5S2Jaq5yWTlt6_T"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMRZRDUET9dFjx1iEGk5QB-8Du3x5sz9XZY-66xjXyiSBoJ2p2tlL1ZohAzD7a0UEoKFHPiF1hMazTz-V_Lb0k2FmkBFLZD3jY9bBCMYZT0s-bV1FXot3fpwogPkPAEL1rr76Qu92fzoT785O-W6uriGp7aVhGXj7haFk2_s1mNTwwq0BP_K7qQnp3OVsWtnfB56Kmr4M35miACmvVXQ3qu92S0V1fgjsJFr2QuvY0FVkmY0xtBa06H5PXxv9Wzqdv0xaITaYX0OlgmGAlhnEtdrWDEElb8y1e"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYME-Gj7BjiuPTl4nrCkSdt4BjmM9SXxPHoW-LKSG2OD33xzMZORvEb_wCarctZSVasM3xbMpJ1_8bI8f_MSjc_kjaPslUIaL7TDkFnJ4m_p13cwvCLNSmo0qYYsDMyaToR3aPA7Ki136yXmier-eop4dP3B-tlmT8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3tptBG1SAQ03hBVWvDBRrdT_l1KYgz0EMuwL74Tt76LVhxQYAKinHKdQYtlu2p6iaz98LguK1UlmOhlk36zrbM5YsTWAn_SH1MeWVnbwH8aXTx7j4ADND6in6ReZqOiWEsPnQHrVzUUdzl_Q="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhpkXNBMsxItbmtjt1P1m4Ho9ctfYjoPeNMdd9S_Fbur_WwwHGsKMZHTFb--fn6tqUV5egQkuXbQ9At7biqTM5TvCQeLkzfqsBxoa9z-Kx5PTnF6dBCsTOuhStwzalmRlDjiUAbii9ddSJHoFGh3USIuM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl-cDCu6lpZ-5dgs2uI_ZUsyuDGSXuCeQbw7qZ7YmEQbPOLRkpz1ZhS1wdC2mYRnx8MXRHJ4fahFzJ7VGEwyY4Lwof1H1LRcEbSDu8LWjQf6MNAF3ebtu2t6umIJS0fbH8HfnJ2O5ZS54TVnmH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ4-l7sv6R1XoFIScS3mYcYujD62YAnbt6VEh2QuHI-EEnHSyvqroa8vzF3HvVlxK0ungHXYC-D2vNCPeMNWumB0FJl9fQxuAwR65lENmVaqtKJWybhXy4SyS_yjhx6g_tazZW8q5_ZGUfWDA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Praziquantel trials for Cysticercosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cysticercosis&intr=Praziquantel"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "50 mg/kg/day",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1740
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2676.9,
+        "costPerResponder": 2320,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2
+      },
+      "name": "Praziquantel",
+      "nnh": 120,
+      "nnt": 4,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 cysts",
+          "baseline": "5 viable cysts (imaging)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Viable Cyst Count",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-3 seizures/month",
+          "baseline": "4 seizures/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure Frequency",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-16 cm³",
+          "baseline": "20 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Perilesional Edema Volume",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-35 mg/dL",
+          "baseline": "70 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF Protein Concentration",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 67,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points on QOLIE-31",
+          "baseline": "QOLIE-31 score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (QOLIE-31 score)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-2 points on NIHSS",
+          "baseline": "NIHSS score: 5/42",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neurological Deficit Severity (NIHSS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-3 points on VAS",
+          "baseline": "Headache pain: 6/10 (VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity (VAS)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 12
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Abdominal Pain",
+          "percentage": 7
+        },
+        {
+          "name": "Fever",
+          "percentage": 3
+        },
+        {
+          "name": "Malaise",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 months for cyst resolution",
+      "treatmentDuration": "2-14 days",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF49nJADx8I_vl0vRA8nfvn1X68aLRV3dc2Y88LVrdfM2xfekKNYKLtqVL-rS-AFrX6nVPFqLCba_oue8-MF8Chyaatjc4oIYZZwbRY479H8uIE3fB9ibBU_U29VBJrVPgEO7E="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPxYNhxO4glXkR5YB00fj9LPVVZ5V0j_Ac_cu0lkUZ7kunZetaJcNYZj4Djw6ulzjz0UOTyqvAikbeTRQixeBvq6wexDSSHaU-6N48MBvSHxsARU4Fvpd3GAYdv444TymsdYKGSodFYDDP4cN_LeEqfg3beuk92nId3_7ZjOZUUJ0jKrrPEolkxo6BV_ZHV-mLYqRamlP5i9-BI0N-uL6bb-FkR4S8r4ojhEfbwHgLZF-ifMWQVcwSstZB0pbBQZF1vK6rng2LQoyq0sLWdV-SGptTE9iPBhNqQg=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdf5-NJlBo6hA6LfzLTXCxM5j0bd-hJXkoifNemxNXSCMtQUM2ZYcjiI472jEHafVLP4_EAtKPBXjnk_fNcD_h3yQss--BsvpN-9gHR9PTyXCMzXnQmss4-Hg-sx3qQfmcqMDEkA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYDXG8svvsRp5DeUxk_1sAyxid1ESx9oEDebhOfJ5FdlMwlGqOM8xZzjGRFyM2R8QyQIWSboZZnANNPQkRKuPTnDsQhmz9bPMZoWoD1CejoUi83tATbnLgyoQ7LfBJxrcl-i0kNqPCUZPL"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBoapYF0L-5rMidK2V0xcP8LIfQl39T7NLeUZcFWy5RUwF50O1MTqcihImubdsvzx777HyRuRtXWo9_ls5_ZYFYcbDl0QQauI9v86q9QCaM8grqci8nWNvQOzRcAjyCW0j0GcImGWpcxljem26elQNoQQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiG-AI7yYcGcGpN0L_0TnAG2aqcR8dnJtrPdtYlbGVEO3jItMtvh7BpmM9pURcmLuoJeUNdQmMXm_bzdmCubKLVEW4c7Ea4iRfapGOslSSspSOV5L6MtllLDnuX_KPkiIiLXGiv4z_nSXzTm1U-upbYCIVtXyY6_PDBHayDB3SPSo-Aq3-xPI-fmfwcIVIRn8kzO0PhVYlrQVcyMUnzy6Eo9RXvnJKNPA8X51-jchMtdl6BimkenzkCQ_PhHHdY6ot08MfEPGntYbKOHJI1lIDZvsRdIx19w90XsBczYNpUE6I8zOwUmcsTA26CNjNImKN5YgrriKMk8j_dqFVLPnl19Yh56SeYXEy"
+        },
+        {
+          "title": "ClinicalTrials.gov: Dexamethasone trials for Cysticercosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cysticercosis&intr=Dexamethasone"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "0.1 mg/kg/day (e.g., 4-8mg daily)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 50,
+          "sideEffectManagement": 70,
+          "totalAnnual": 130
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 144.4,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8
+      },
+      "name": "Dexamethasone",
+      "nnh": 70,
+      "nnt": 3,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9 cm³",
+          "baseline": "15 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Perilesional Edema Volume (on MRI/CT)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3.75 seizures/month",
+          "baseline": "5 seizures/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure Frequency",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-4.8 points",
+          "baseline": "8 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity (NRS 0-10)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.0975 points",
+          "baseline": "0.65",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D-5L Index Score)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-2.8 days/year",
+          "baseline": "7 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization Days per Year",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Insomnia",
+          "percentage": 15
+        },
+        {
+          "name": "Mood Changes",
+          "percentage": 10
+        },
+        {
+          "name": "Increased Appetite",
+          "percentage": 15
+        },
+        {
+          "name": "Fluid Retention",
+          "percentage": 8
+        },
+        {
+          "name": "Hyperglycemia",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Hours to days",
+      "treatmentDuration": "1-3 weeks (tapering)",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY7-HLpNLu_etLz-Y-pMj9XNm3bs51PNZHGVRfKoDkgtUzCyEyZhvqxIZDg1YRNlIITz1g4OH-rJ1tASsxQkVnD4EjXuoUXdM1Wc8JbwuZnj3EMxIRAYoQOut7U5M0XlrXhb0mLJ7N5at0PA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWY_Jdbao8HAnSL419V5TjRkmFARNgsWpluXc94TR4WB38_Qe4Gk4Wblim4OdGtkwjC7SUWXOozaEdSdqqyWWPnbGz1sL0_SMgA9kNhgPuXcns71qfYQLhGNGU7r-fRUg5EQkhPy9rTtcg_g=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5uOp-rOFoOjuWw-_aX_UQBAvwAGMBHfLti6BqcmMoDuIpWw6hSU2DM_R2njdS2e4A3bGqlnR0SIFc9iY2e9a6Y68HbYqJ578PcVcpxGfXKMzjlHCxS4UWFlfmfA3KPV3z1Tbqg3kL4aseue0aOmEDrqkK"
+        },
+        {
+          "title": "escholarship.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEW44TDkrXxs1notNCQA7lePKwKWYgsczMZ9-KN9TWmz5s5iBEL7sCg9KZqn9fbKZ05o3GCbHDMJESSsymBzwrCjVQtYG-YLlHlaBpKgBWaFYdiEwub_aVEwcgWU7OBaq0LlvRlgaYf7Qoq_6ccL4GGr7mWnNlhvCBaZ5InsVEVT-vuFizmY2ROzR2MMSqMdo_ObdooJWsmt-SoT56YhA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJsll7CBfyvP9aaqCveT8l3tL7heqRSKIDqd9WqXNvr5yEXxZIbMwjkDEU-4vnq4-1WMuFaD1um64L0Tq4BU6LooKMIsYyo-p5s1n_5f9sSKYQvHjiI6vtR-Xoe-T-bo0MVzI="
+        },
+        {
+          "title": "unimore.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3GjPRnOzFmn7gWn5qS2GjV-7NTfZ20S4nhKhTbBPJ1N7ljfWMppnOmTN5BNnRdvZNeykV1Gvh_xwopBwMBiTpzq1UcJzB0b7uBfFx99qBm8lbmyDK5SE8_wXv9giMvb4dxPDJVYM42KbUVP8kUjV78UZrWA0P040YRyZkAjgMCkt3_duxc-wU6DBYxWjJmoF55kq-TL0WcAHgjcDfH8fENXPHh4uKaW0WjGZVn31ZaCDzGBFVLwX-9rq7RHGvRwD0bSPkFFw_ajIUQO3Swh5rqek6dcj6-rlBR-piOTMvWv2aurW-ran4W58L_bKaAsKCa4BOGyzIk03hIqalzfJmIle8kG80tM_h7lma8fG6x5hOjxij8BFyUJQMIfLl6LNZumPa8leOG_FOcEE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMf_uMMT9fdxiRCvrV4i5F5WCC_BjXTkBwbRtM8JK5zniqIpoW7jYWGAFaNBegN3mgHOS0VgiMNJS4Mh5dSsBt4KG-JPxSKv9ZbZNGk0HktLrZBKFOo33o_WTEcf94rHm9GGAj5iEExHmM9Q=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs24NzYAy_7FddxDMAC4MF5oSk88H61_SO8wkJnnywe8oONFEYQR0Ie8d56qPaY6eO66S-DAYHSVkVXt6miWIqwBV7WEawSissX8cz6iu9RUhNL8MX2Ke3htDZMHCUri-F9LvpIUtHknu-U533NRZPdBX6oZIbK7s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqHctixA-S3Y26Ss6gWeiL8odVyktMZ15IyLWHTIjTCHX0dNRQ4YUvp3W3Zq8qa1XUlt7UNO2QXsj7K1CanUWOWT1cFf_NX-abFbhG-FDd1CeCdxILb8dZiNlQv63h_w-jsst-d-6Wnw9h2A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCYq4otlzahD5JuTcbCTdcvkRLYahEXC-SV7T7ZQ7IqScD0jY1w67UO1Ri03xoJaatr3knaPAVTACHlEJgyWJ1oedRDK7_sSxHydYPjUu-sb83rktmQZuX-kXtIgW-ZyTakapDTWo0c1d5MnYHGLmYOilWJVCE7AQ1kVwa2Sy5Zj_BhRGIjRD5eJ1Kh1DrS7zeufttYKHHZxq-O4iR_XtiX7J_dnrH9DBVg4JNzkUQ_sOJl2sl"
+        },
+        {
+          "title": "ClinicalTrials.gov: Levetiracetam trials for Cysticercosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cysticercosis&intr=Levetiracetam"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500-1500 mg twice daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 600,
+          "sideEffectManagement": 150,
+          "totalAnnual": 950
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1583.3,
+        "costPerResponder": 1357.1,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2
+      },
+      "name": "Levetiracetam",
+      "nnh": 10,
+      "nnt": 4,
+      "participants": 18000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Somnolence",
+          "percentage": 18
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 12
+        },
+        {
+          "name": "Irritability/Mood Changes",
+          "percentage": 10
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "6 months to 2 years (or longer)",
+      "trials": 180
+    }
+  ]
+}

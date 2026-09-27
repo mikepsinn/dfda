@@ -1,0 +1,823 @@
+{
+  "conditionName": "Genital prolapse",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:59:03.190Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "amegroups.cn",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO3vXAMbAWzaJowe1TOSLf8velI9ADB9rvZp_8_ZEuaQ0NfdsRavupKKfbB-n14nrpcYRrbHc33oZZyd_BuYKetlpP8bu4eW-enQmzQztL2zeOnkQc2kKUOOVOtmNW8jK5l6M0fXFaS1GCUGwXPcPljBEy6yRkTr7Ict8IHkUQL_mI0Fqrxp-pj1W5wH3Whs339jATMUuGQKKtl91f84hp"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtH-Ge35v3UnfLI64PJT5u88l6qjVvVHqORQAkmpApK4msVQCB38XOmCNKrRtcN5txn5IWTqZx6AWu3tlW8RWJPVMtC-S9J6MN2Qo6wLJ2RQXvP1_EmZH3xzyeQZWs9Rmjf8RDzttvBUYCQy8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp6GH3EU0eR3jVxqvg5_XbHvk4HekWlJmvaL-u4XOgRg6TNVbcoQBwa6cauOnbNwJ5s4E-ehKJb11S7tcbmIoyPydzUsNv5TP1UbFrGq3VjnhRIhKXfoOhEZUDclgD4bqOMvs78Ew0R0165Nk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl6WUKpzkQHAz7YSXBaz8W7taAkvqnzFx9EhtVuXxDd1iYR5g2W-HT4Qusls27OnyOaNjbbp9UqQh8syq_L7TwYlAXS1lkvjT6_qpA9VGWEdkH7X6zgUv6vFfB8OmaZ52oSe5Y4n24qcQVXjQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW5Eu9iqWct7mYipP327U_lbQfqMNH3AGYZkCm-x9DaJXjsasKk_xG4QShwD-TIq3zUAan7zEwpNbGBGPpMO-7CrkxbNtckDp2xR1zS3yjIkdwvkVIIi1YICopr8Dlxz4dmbNBmN6b0eD0Eqk0Yn-KYQY4b7yTFOkh51Wj4yncLzEDgbaA6sQFw9k4h_TSRyDsaBUfX1jFn30jIVO5_EcCX0inA1tClgWKYAA11pqG8q78QAWUtA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc7WFUZeXQ5Hz9jYiBsOuj9x_wG7h3EEVOzGdNrOqijMJ8F6oE9ApYiG0fd5kjl6r6T5SqUb3JnLMyfWTBP3MMrmYG2w-fnWTDOtqgu72IwCT6PShBeuuhkQJ4vL-dZ_BPD7Ko"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1d1lrxknICngPfJgOZ9IASI9pVifcz8RgQJRFn8pDtayhh5VMuK_n5ynHgZWYuiC-hLnYTEqN7b7ITuLjNS9CkbP9vEIJACM8BRHik1BhbffGEFHsJqzWGQWUAsi7qqbMdp2US4fBWHVVdf3l1IwRCQHWqX_bDwmk6DwypKzouZR7LG8dGoyi5U_o7PmhNZROjMLr9hQbf2zHSnIeuRDXAZA="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHLrFMKOqjmJwdnd1Am4HArSMnuJ0zes8zdOvANhZ4IyryKMri_fvkmIQBENmPWZrQBujxUnXPIvWIAKK5491la7-4H1p-2R_DQ-_ES3PwKkjqmSyLn5PXI8j4tFEHP4eatH1unH2HudrswEN3CMusf3dvgFL9RVXU4p-dRFFqDh6l0Cb01igM-dRvwRTCahTAx8K-fCFKM_ooEbLtK80uoiD44BlNNbOhZSh7M1Yx4EOK-FqfRd4sF8lk82qptDJ6IKtlcaNOdqA="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxIO8jUgegJa4pwW2x_GasTdP_njkf4Q8Qx2RLvm4JUgxhUDbrlafBI6jW0HMCZx0mU8gVbtaubLxPDZsWpVAzYhOsqwdB2AnAmhZSM789tGY9tJtmCUet6yGfA2-UKuHK5AeRTnc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkqjh0-XG3nCz7oenmL-pSLH9yehKg1IO29KJtauQqvU1RGJ82Iw2CrbvWMqEEv3kUAb9NzS7B4nAVKfByYcJpOAlg6fOCV5aqxlhkcA-V-QDcQ5YOJXL9k_iVKKVyxDnEInH2w-4uexQBXjM0Oz-MzIF0d1BEAqPy4pkH3Gac4ZBrKtENE0yj8r_eS6U54isulO5eCeQpheeadeZV8h2OMEWZr0_gR4bKMGesRYYpJK7kZuJDCoBL21S0S6Tw1uVcHNeZijj5A8tVD1w49qu-m1gjIwkj92uwDm3IOWQjMTDaAdl8e8Esew3jkMp38q0ObQ=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4Q0FvwZEXpXFc_LGpfy241uvvLhf9FHwYLtQJ6F3nsQPm1DQ6heBrq2c7cmOQcN5tz-Vp_V5HTwVFxUYNWF_hm-r3VBuEQBHKcGXeAELERdEj4PxLlua4yQBIPM054wiakMvjjnhd4R-cwd0oa3rHYb5KJ0u_ZOx-R2OvermxghL0YLlLadQ2owr70hEevRo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmYFZjPavuEkqnJQfhHWqXXZH1CnG2nsGVYZkOgPLkoHBsVvLyqVjOlfx1h3lVHvRYFsKtDFvZvtoFSHuHNDIlZlMw7oABcnIVvDLNlPCE2xxh-9aBpp7HW3la2XNGQWKog4re50OA-oP5isDbNF-efAWhFBEvV3pkzziA0Ujjv6P4lKjx8w5RmWrt6rWP_w96uwlVCzCMLULG0R6K3N0dckP4jte0Xrbf5wdKvHMiNVmW75BpXic92JLgsCi1MIoix_1iSJQIFTFE1gREZ7PqjdHFS6-BIt7zt2Py0lAdlm0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Laparoscopic/Robotic Sacrocolpopexy trials for Genital prolapse",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20prolapse&intr=Laparoscopic%2FRobotic%20Sacrocolpopexy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 700,
+          "totalAnnual": 21200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 25853.66,
+        "costPerResponder": 23555.56,
+        "icer": 65000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Native Tissue Repair",
+          "costDifference": 8200,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Laparoscopic/Robotic Sacrocolpopexy",
+      "nnh": 15,
+      "nnt": 7,
+      "participants": 8000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-70 points (to 30/300)",
+          "baseline": "PFDI-20 score: 100/300",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Floor Symptom Distress (PFDI-20 score)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-2 cm (to 0 cm or less)",
+          "baseline": "2 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximal Prolapse Beyond Hymen",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-20 points (to 20/100)",
+          "baseline": "BDI-6 score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bowel Distress (BDI-6 score from PFDI-20)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 82,
+      "responseRate": 90,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-30 points (to 20/100)",
+          "baseline": "PFIQ-7 score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Floor Impact Questionnaire (PFIQ-7 score)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+5 points (to 30/48)",
+          "baseline": "PISQ-12 score: 25/48",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sexual Function (PISQ-12 score)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-18 points (to 27/100)",
+          "baseline": "UDI-6 score: 45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Distress (UDI-6 score from PFDI-20)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 35
+        },
+        {
+          "name": "Infection",
+          "percentage": 5
+        },
+        {
+          "name": "Bleeding/Hematoma",
+          "percentage": 5
+        },
+        {
+          "name": "Mesh erosion/exposure",
+          "percentage": 10
+        },
+        {
+          "name": "Dyspareunia (painful intercourse)",
+          "percentage": 10
+        },
+        {
+          "name": "Urinary symptoms (e.g., urgency, stress incontinence)",
+          "percentage": 15
+        },
+        {
+          "name": "Recurrence of prolapse",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction; symptom resolution 6-12 weeks post-op",
+      "treatmentDuration": "One-time surgery, recovery 6-8 weeks",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsru3_nky_SZkdIWsRcDtSkNPQf258u2ra_oh6Y46p9CcFoepwibalAg-ED8iW3Ip9ieQbVAb8iYUCN3dfiHOt2oizTkQSjJDm0rWVhyqmi_3_ZimaZkHQnfvnrjxxRD6j2OUtU8DunAcsirZ9wxPWmLpjXfbaUZaCGZ_coonvzv_M8JMFBmfdRv-AoGDTUliD0FGfzxknj7a7IV-KV71YjB0O_MuLHohJSnk6aDT4HNT_9YsZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwWA41LnfYzsSpqyp3nWjUs0geS_mqJ8jfXQRo8Z7Z8Oq9m5aP7YwEDBVf2G1qD1ZGKapDOa0xtp2EflaUnxMMvevfCGnNlXHs1lgktfph_eNTb-a7lmuLzcswuLQ9Cwyd0pM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE76vAMhfRtNqwwp5iYEcXcmfSpT2qyET0lGIV93CCebEmmye59i5GHvr79vvA3Q1UBVTy8L0qdXsDC8q1iYq72hUAv26hk2jbwfNN0jACarQ42xk4XbFH53CUwrdrf8SO1sdBuxqwBupGQMNHIQP5iX80c7F6jx4ri-_jQJs464XN0Sbss4jQVxipWk4A2CyP8QWVr3fFEF9RXVYUQfYjZQzcBGlK9AweWfDU="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG66cJTVPfj02kDBYoFqvr2ndfzdpxTqeED6IjUoHsP1YSsThIinLCjY6hiJP2QsVJkDYNq1iPJZly3uw8gB4uxCacTbpst2cFwrwv-zhU9o-saX4Msyav0o3MdAIwpdsgZwmMMYQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwb0B4QUlZ-oL91C_9HOd07XkFs9vHVFmriFymuGt2StnW_OK9bP6AKHRmNNZq9Z82F8lIdROdjZ7LlNoNRJ0BCR5sFr2-vao9k-lTPLZ_YhrIvzmLymDo3Jlmv0Y-E-ivePpfadxc2FRKFg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAgEXZt-ofB33Q0JdNW8TrXabGv11X8r2ge1x99ZVLVJrS-VL1n243v33au1767A0RJlrbv0qqdfL9A21n9XHaJiWgoWudTRrxVI6NPR36fGcJbwQOXjr3nbku4hGQLdC6dAE="
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsJSpD8HHCOCKpJ1WPvio_9q_1_IuK7GyrKQ87KmSptqaA4f9biO4XosDisXDUwlc1mRs4lV5sHWz4HIuc1DbeVdMknMwRZbRyMwFB6xu9rTNCOOtBZt3SWg9BXptpBFCmjeNF8lJk19QNFtVrN5Z1gceLOKk9U1uFwc9RXo0gPMK0DTP6_kRETbobakHmCZpAuI6jBWKN3FC7qnEGJfxNSw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAIvP2RNlbnKGGxDMw_j1zUEIUXqgaOq3aCwdm7WEONRqkoYAiS5f6vE5d5oN7-naVJtdSUks4y8fbYmCTe92_4wcCDH0v-eVGGID_9kFGU9uhuq61sg0peIuTsxBMnA5W_UA="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoU9tqD1WU4ss55O2L0nc83_qyeKMkjjUv-BPkGFt6Zu9-Njk8FppcfTJeE-FsBw9Tye8tJX6AYbpVz94kCm5MfZzIJkQOhma3pG2vmqDw7ED6zCxWQwa9fMP_IuhwDNaCmEwAKnNU5GPkXrdIAn1jbhNeX0i15qgiTGw6ZzToLENdKO6zeevXtk820QqAYzfU7u0UY_k5f2EkhsJU2w1LVCVzbQj_3_eVSSSGtqR8MZWieAYzL94zBIfXIRKDL346CSzQhOZ1L89ID9lt-aSzJnzKElbXVfnnYMpUEEPYnU56ZMJMIexM7zs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vaginal Pessaries trials for Genital prolapse",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20prolapse&intr=Vaginal%20Pessaries"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Various sizes and types, fitted by clinician",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 875,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 50,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 360,
+          "annualPrescriptionCost": 75,
+          "annualTimeCost": 180,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.4,
+        "vsComparator": {
+          "comparatorName": "Surgical Repair",
+          "costDifference": -12300,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Vaginal Pessaries",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 points on POP-SS",
+          "baseline": "POP-SS score: 12/28 (moderate symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Organ Prolapse Symptom Scale (POP-SS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4.2 points on VAS",
+          "baseline": "VAS score: 7/10 (severe bulge sensation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Vaginal Bulge (Visual Analog Scale)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-4 cm (e.g., from +3cm to -1cm)",
+          "baseline": "+3 cm beyond hymen (e.g., Stage III prolapse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Organ Prolapse Quantification (POP-Q) - Most Prolapsed Point (MPP)",
+          "percentageChange": -133.3
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 80,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points on PFIQ-7",
+          "baseline": "PFIQ-7 score: 15/30 (moderate impact on daily life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Floor Impact Questionnaire (PFIQ-7)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-3 points on UDI-6",
+          "baseline": "UDI-6 score: 10/24 (moderate urinary distress)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Distress Inventory (UDI-6)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+3 points on FSFI",
+          "baseline": "FSFI score: 15/36 (moderate sexual dysfunction)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Female Sexual Function Index (FSFI)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Vaginal discharge",
+          "percentage": 40
+        },
+        {
+          "name": "Vaginal irritation/erosion",
+          "percentage": 15
+        },
+        {
+          "name": "Vaginal infection",
+          "percentage": 8
+        },
+        {
+          "name": "Odor",
+          "percentage": 15
+        },
+        {
+          "name": "Pain/discomfort",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate symptom relief once fitted",
+      "treatmentDuration": "Long-term, often lifelong",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEen3xK8i6NVQqalFPT84fh_SoEnd6IjC4fcxhMVdP5KDvsgtXuzq56PjH6nCgt5ZQrFcStzVAlLd_gs8fK06L7Ycu-NQ0zRRKFY4oF0h-dvVduzKDmxwbT0_uy8YFi-KgUddvK"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwd96ofKoFFbyJBFu3b3fJ7FXILN8l8Qg36CSr3rIJjRkGRm3Io4JshmL7MkB5dfeR7BZJtDiJEiAk3FF7WrJIlpsEoeru48QLsgK4sZePHBbEijIxzlApBAEOi9FBvdIRMo5bwKWi4LOwUHwy5d2X7UeYh0MZ6wEW5j6DBsST-LnwmVN2-A3E63UFaIAk4C7Cv1zUhuciSFrAQeg-tsoA2RyOpcptNo8bFHQ1Tqq_Gpcf1cSFfaazNAKiuXwLxbU5yHX_V6I="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEontJgFrSo5N82A-fqJzx9j_7B0RU5gV_t1rNHSAiHK2UtBxVi0pZ61jkw2zJqt25MNY0Py4YIgo5ZPgF97AyG8sbYOBZnv2ULris54vFYmB7djVa0wb4BcUznaJTUj58gH4exo96IQt5XwkRrWRhsGi1YuOJR-UCKBKDWY2ukiUhAEItIQb6zpAQLipn935He3u2hFPuvKVIhStxc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnQSljTHeBcqxlpLftsNYYUPNc7vI5oKE38uiFPgbUyy0ec3K-1-Cmk123Cm4jM_9-jI33LlRLg8zHPnH3AzTL0cnl8sjOKrz7Mu2y0mJmcR52JpNCejGK2rgtZ-Ud6uia2jdsKcw9B57BXJRQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ70GygGpMPaFLmZ-LPjtXLez5dAx5-eW_TY9UXDzxTa4HvfSsFP3Xz6WQ51L2a9g5ljoCYTkRHAOkiCsXl4j4mNai6gGvI7j_oIPIpK5EHCTKO8q3iJ4YEW9c5m614m1ryJVK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdsniDj0LEouN1lnPcvW7oeWr2sWdQoewDNclB65DKZ4fQ4G6wei5YfAxBDN8p_0qddJ1WBjWKX2838nCIjpCNa1u8OBnnFHc1XgjDx_ZU8g1IXlSVWQT0B79DCAQK9Kc40TitkkU0GcxcvCGv"
+        },
+        {
+          "title": "h1.co",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmhWaWqOHzJOlUpUX0C-f0VAzONEPVaHOtrpBEhsufz9osTUE1mXJSpMpfgjxcsbTSYALOGzRoZYctDwNt2ScggeXnn2QWjvSRRhl3jcMqsjFL23bwfKVWez9yo03tVl2UNzAnovMlAdM="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAr_l1-F8uBCjSBa4X4ngLm0f8Ezc_IkhrVYb-r14JRK9qfRfGuZ-DlI1APWCdbzv5Dm_cPObzCJabtne2foc6glsbUDYFh-REL80ZCkwBsId-oq40MQpn8qrObci5WOBbaISA9Z9C4SI9-NfVFb5qEXoKTKMTdXp2Fg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVMbT3hXsl1q29bjzH6ncnXk0zNPLy1CRBXWkRCKqDn643t5vBbG1z6EgDqH6PZbZl-dluQ4DIuRUGspzGDZ1-igVs8yDxeuzUMAD9j49ou31ep1AWXOtvfymYBytq_bc19LDTy33W7TOHijs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgLCILIRGXe1g9OE1HTXXYsim0QnAjZzxHmxgwb_DqPzc97motqS7h17GZsDfoL2wLS69cgKmnPkGW-ARAqCCalWZqUmz_LmaAqrKhQN42LUpgvSoH8vFdBEC6zSV5FXCBXM0X1gZUy8Zd1-A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhsDfDyea2cfZWlhb329Q16h1Ta2LDzN96kdzoQbGhEgiRVcY6TRNasS0Hw70l58MM5FoLBP5TajDLhkf-KVy6yVBzCmgKDj6mky2O143_oeMe_pHeFCW7UdxzDmoDTFSqsKtF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFNldeZkG96Adv9_lnoZ42JRjQvZHzxY6iOq_qHCrhJ_R03qszaVpIIBD6E0Lvy5e3FFkrnWj0J39wpK3lI8Ss7fcprkLr55cDHSUVynHjnsrw3hsgdV3azYMgKW1B9G2bCf9lTUSH7_0MDWc="
+        },
+        {
+          "title": "contemporaryobgyn.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDCUsWqI95clSfF0xuXvo9DJqfH9TdMz8-OLupfUwvrk7HG-QO4TBgZtnVxXx6I_9wsiC7pYCduB8FsSOM96HwhOB4JRF_0zUtsmOQeZhomBly2pS3iuo-5Qt9gQ5LN6UApu3d_7LTJjnBtuRYhqCEyjnTdxD3nNZkPOOOAFaEx9uD2i91VaAHwqLYM25JwsJ2YC4bJLtNLfTEacK4knDBtWjJGodHy05H4HcPgRtCT_BTcvc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3aAoq7T4nrixQhYeHThIYC9E3qe6RkS2sEUxMvclJJ0AVR6zOYev-Gz1IJgDlRhSZ12mohmT5yfzoGibk5mNWMmscGGp9-xI0p147LYoMbxQHweNzcapUk2njF87Adxy52f2acwlKkshfFFM="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhsj91VC_uhRMsGhK3pg10rgBHTdxkG2qmc_Lg-hVMXkA236J1VjQNc9yPbtpxjAJJ-dIUsiH4PIrGo3uyuufM590PfPHKY0Ib-cOkvjQJPoupbHAN_yNTsxwnQ7bwDAYBqNU_jm8XXTc5AM62uuWiP45ffjbjnLGZbwTCLjlKG7FlrrLMvT4xVo0-bY00k2oN00eUYkDVzmrssg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Native Tissue Repair (Colporrhaphy) trials for Genital prolapse",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20prolapse&intr=Native%20Tissue%20Repair%20(Colporrhaphy)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 13000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 20000,
+        "costPerResponder": 17333.33,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Vaginal Pessary",
+          "costDifference": 12300,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Native Tissue Repair (Colporrhaphy)",
+      "nnh": 7,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 cm (from +1.5 cm to -1.0 cm)",
+          "baseline": "POP-Q Ba point: +1.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Prolapse Point (POP-Q Ba point)",
+          "percentageChange": -166.67
+        },
+        {
+          "absoluteChange": "-60 points",
+          "baseline": "PFDI-20 score: 120/300",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Floor Distress Inventory (PFDI-20) Total Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-40 points",
+          "baseline": "P-QOL Prolapse Symptoms score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "P-QOL Prolapse Symptoms Domain Score",
+          "percentageChange": -66.67
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-40 points",
+          "baseline": "PFIQ-7 score: 80/300",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Floor Impact Questionnaire (PFIQ-7) Total Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "P-QOL Sexual Domain score: 30/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "P-QOL Sexual Domain Score",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "-30 points",
+          "baseline": "UDI-6 score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Distress Inventory (UDI-6) Score",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 40
+        },
+        {
+          "name": "Infection",
+          "percentage": 7
+        },
+        {
+          "name": "Bleeding/Hematoma",
+          "percentage": 7
+        },
+        {
+          "name": "Dyspareunia (painful intercourse)",
+          "percentage": 15
+        },
+        {
+          "name": "Urinary symptoms (e.g., urgency, stress incontinence)",
+          "percentage": 15
+        },
+        {
+          "name": "Recurrence of prolapse",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction; symptom resolution 4-8 weeks post-op",
+      "treatmentDuration": "One-time surgery, recovery 6-8 weeks",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS12Y8a-hYPpiNzZ-KSL_XG_W1l9WLyjERGLheMRep9ppwnjmeRBnh7-_n0YEt4TjWrp3fwUMSCNOeCxfVRaiRSknBvfvucAOGukp201MlB4LYQgaQ1P87OeMkccUzik7L7ms="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsULJDHW5WHHsBgSHtGoyskt8_a2QuBU0KnQuRo2B4mHXyUOUDDvRwFiOPMMykCgucnm_fr0YXrykY0PZKywIEbfJIWC24rfpdzQfOEyMmlBYCKEe9uAwGlfBMka5RMFYilzFjcnHGvT5CPGnjnY_B7dlQenoVoMcj0QKEhiFk-WSyH2HMBt-IIWL61Qm9CSZ6o_8xQT8HyohTEN5Syz8_3sZ8r9WRhvLA0oWGwsmFW92Baq71Uq-NZT4fX5NH-rkOJ7OW1DE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjhzxVw8lhLgHYcmZMSSLfLyAK-D60XEi03-LR-pd99XaPx5EI9wxINmqpZqiHDJudJvP4iPJ__oRaU9Lh7LbPdHnGnLZmIGMXRC43GSD81YBmyB2qroMjJvkq2eHaMn3h_3FWU-yuXKzyN9T-YezFEo8Vw1YfyR9UCupSXKvntWXl0-6-zDBClxnjshXvMSeHv_uDvaR3Up0D9F5V-NLztZ6wY0U3BrsD1xwhLKKHOWJFtY6-FFOcGchx0l-UNcb0epAIQEJM_adKQC_tmtkTMcEaLQtlVJok_Q=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcG_NaykJyT0k4km8PBMygBnaub1iae1AIkZyjrfqPKaDZrvYjj3ZdAHMLdhMomNFsQpY2qDbbaj4HN_ULfbBJboh5HrW1LuDG5l2pAHkvxH1GWSVE6PHF_FFBTh5WXFO6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHPPnJwcuoYNXEttn2SHbtqMNIPf02NTmBeknwqlB0BV2LWeRwXdz49Bc-YQQLc5VNb15O1cujKWCHuIrgq4BD4tb33i_iHFDFZC2X-X8m_3BYhhyBAOk9gcaWP67rDzws6Xk="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhTTzX4LH3lSqmG5gPYNieb1p683gLrJcAQageDu8wFHcYuC2UtL-Cf1kvFNzWkE1g7MUN9pJDkCiASm1dkDJA7TT_63BRb1Y5YV3v9_1aZchDzMlKrBFcCVAsaILj_zy1V0ZN4g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pelvic Floor Muscle Training (PFMT) trials for Genital prolapse",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20prolapse&intr=Pelvic%20Floor%20Muscle%20Training%20(PFMT)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "3-5 sets of 8-12 contractions, 3 times daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 0,
+          "totalAnnual": 300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 666.67,
+        "costPerResponder": 428.57,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Pelvic Floor Muscle Training (PFMT)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 15000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.5 cm",
+          "baseline": "+1 cm (1 cm below hymen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Point Ba position (POP-Q)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "Improved by 1 grade",
+          "baseline": "Grade 2/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Floor Muscle Strength (Oxford Scale)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-50 points",
+          "baseline": "150/300 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Floor Distress Inventory (PFDI-20) Total Score",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Perceived Vaginal Bulge Severity (VAS 0-10)",
+          "percentageChange": -28.6
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-30 points",
+          "baseline": "120/300 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Floor Impact Questionnaire (PFIQ-7) Total Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "28/48 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Organ Prolapse/Urinary Incontinence Sexual Questionnaire (PISQ-12) Total Score",
+          "percentageChange": 21.4
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "10/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Consultation on Incontinence Questionnaire - UI Short Form (ICIQ-UI SF)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle soreness",
+          "percentage": 5
+        },
+        {
+          "name": "Vaginal discomfort during exercise",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifelong for maintenance, initial intensive period 3-6 months",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvwkE5UP0GNXJDuUeNXldvZrcxGcE5eIFQayvC9BXGc_7gwE5FbqYEXhpqNFRhg0OcQgqU5nxnF_qZjjXvO9F4I-KZhs4Voe27MiYyhGylKCVYeNEp47P1ymw-0ytC8fTyJJZhejB2qI6yMPKh9TCJecedcHEtS6JMJsVTkwINlEHN95zfArhgdQHGFHU1XD_23Mtm-5t2M1CA4f6J7niyLE1sCZBqLAoyNVhkzRVnXY4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0_ocHDWPww5lj6F4Zd6tNUbV_oKtXveuvTQ5EfUblgZlJlK9r4nIlIpCsn7-EFKmu0jztf33m6PWRS95PlQa0L_ohw39oZIY7VUqyN_mwK6VEW-p5PDgaWU7H4YnlcK-wAd4SlInmIkJS53XPuAsGpQ8vsJEOKfqmm8c2iYfCYcyHJJYhm84pbsVs1oXbPUfJdYXfWWXFW_QxHcKPdwA2IOmwtDCHK5lYRZqrtJfNN-j2XQ8bl5OIHPn1bDbpXCk4j9r2RCT8WIs-RbRBypPo-VZBjeAlLe6tu9CmGh8RliIr-PMHymGRhA=="
+        },
+        {
+          "title": "urologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN7H5R5rZput1UQp0CSFzzxWoyJTcwGH1cRMtqkWIvSRC546H9CJw0aU5O3_Hdwm4PZWcGzQWZL7iEw1IcQuG3jYlDZhnlCodLLjIlEBV2Nv16nHtkYtLQDr70HttmnR0FlqXz-OUTBAynLXmyf30uJw5MrS28NY_gLVIdBcJADSYFxitY97JX_fseWM-NnYWib4yObWpkf1B_HtBizlKDM_a6NA8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLtlE4cLcYuL-fhfo4i0oMmubsNhNaQmzYwMVrnETUD28C-qk_XidJ8WBKymWZKwK-wsd7DTvAxgaRbYY1ln5uxpCd3JVrRnJ2vd2urccfjQW3Qmy_2JWazDmjOi3NDqE9tioJUhQP"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIqqBqlaEaHlOmJ1GZvBQR_e8ucSRD-ubiL-qUn5tnanGzbRNciqLfuL14lnCDyoFNuH1iD-j7rOlxgK25JMRZxjM36Sq0pjZgEjdqvOHW3NPQqj9xbUjnXn9da1K4DN5T1Xv8EBPy8EIF0jDnKl0aEMLYcMaK0KsA2VBwyp9SYyVpTA=="
+        },
+        {
+          "title": "cabidigitallibrary.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLCqVSxZUf6juQmTFk8a0n5uIhO0SkoxXijUyAxVhBU2yziZiJEiPLC6-WG-4dy_dWfvcsRo28CROLLFJuIfGyzDbxQ_9aLOldehdUVY4frKOSzRleBzJQP2-QV9WcbHUNVdAy-u0N8ClT4z7ju627rOQb-nOrNE4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQpd_MER53ZETl-jAPSvKhyNdPPbrB2qdWbWK9cAKESffM4L9krtMdFkF80jQWlO0Eeo-RaEWv0kqLbpYwFQQp2x9ixMklB1W15XfLRDKLP-t2x1nD0uJPPlVYf-4eJ1dZzE72ebViuLg1Rw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_tn7pDzR77hW89r63MqXZEYPuC4Umr3HxdS_OdhCUZnsY6vEBxElhOwZ0Kq77M3F4ZjHR8hkhwgjgCUbZBgOdv_HUHyZwDM0FsVvQPw94CgJHlzRPEYZP_8TDuB4ZgO7s0ApePTCsgLV-_Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vaginal Estrogen (Topical) trials for Genital prolapse",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Genital%20prolapse&intr=Vaginal%20Estrogen%20(Topical)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "0.5g applicator 2-3 times/week or vaginal ring/tablet (various doses)",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 870
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1242.86,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 250,
+          "annualPhysicianVisitCost": 120,
+          "annualPrescriptionCost": 800,
+          "annualTimeCost": 45,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 735,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Vaginal Estrogen (Topical)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 10000,
+      "phase": [],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Vaginal discharge/irritation",
+          "percentage": 7
+        },
+        {
+          "name": "Breast tenderness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term, often lifelong",
+      "trials": 100
+    }
+  ]
+}

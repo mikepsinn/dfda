@@ -1,0 +1,836 @@
+{
+  "conditionName": "Lip and oral cavity cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:30:50.225Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErEfhuJ67xVcvK69CPZI2okb39mjv5mzE5mu8FSTDOr6KeVQJfvrwkMNTbzedPA3VhIoKBJnjPWCFmPFE_hOWeHCCvWz9TCS15dYZc-D6W__7IYCBLq2rtxw1WdRoeYrEpxzoYFbYxiMthMhYHAu11og_w50_N_oete01-2f99dRuL-lMv7aB7re4um393vpcPucs1xkRnWs6RUAjrvIugMReY8RO2_q4N2f8tEmmmAABgILqA9m6_IYRTS20pSOFuIX8s6eSadw0Aw--NASPNmaHjpRLhlM5GVOrmwEIkgq39zGwmRPb7UusXVHyaykpu79aSDCz6yeEwEKhL40VEnu582Hwi-PfvyAI30v8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIObabNe2_A-rfiplD3ZKwV2R_A4QHMhxnEUjd-XtlMmN_FiSboRnr3UnMexn9kTxLVf9SU4YRvhDNo4xTdamkYad4F7XCpIktfBjE14kH3-mV4acNdl8ZTWqxAGRbvlVLNjjR0SdRzYR5MMLu"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwFyu81YAG-2IO9qI_q7EntcoCo4-woADk6NAqeMK_AvwpcSasbOO2Tc8NO_ABQNm3pugS7rD6vKR2PeNbmB0rapVK0WjuM4f_Dit6Lw_ZhF6Pi3E6hwv83UpjToXXs5IcH2NUwHBLZfdDtiLwCdP_tO7MVkxfyX-BjYHxr04Tj7O7g3BsxlWf53fmJbmA-4_OutA0K2iulC3R66luXGJG9acwsuPUnd6bP1mTnMkl8g=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENmR_JOGNNEZxic6gGI2HRFm9_zy8Y7XkYkFpla_qjjS2L1icg_19HosMpWStrEkl5Vk6gOsiOXypl68a9pq9IAshybEN93912ADnoiStEESLsounOZpAzAWmV30B87-u--Tbn4tY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxWR8YyPaH1Ut3KOL1SIM0i7p1fDbgNC3tzf4uL33YNq7Srn9U0rPJ689PomVy0FxA5Nfx4x-9jbpaAASewuEKZEAgXJwYPmcUJU1vxyO2k4cW_qosv8lgzT6HXWH2oT0aEtRn5TqgoHO0bAuhDTRQPYmc7v7Jb_nXrOJcCT7rDXwh97NoZAp-GOGIK3ZCA4TUzaIM1UmLZwZGtwQaStWBOnSkXTcxsb47hUzQLLkX8z3urs49PrkseZwg10cL0QkaLDCKEqLH-oLr9sskFRR5WW0T1rQa8hhXcPNKo9zuR_EXXotM8Sssstrs9aka-fNJj35cPwwHZFPsBFauue1a6v4v"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjwwf--i080sR3UdKQXWluumbx053wHXLotcN4KvWH26zgJ6dA8Pgt_MaEQHevaWx3CxJ83HN0bOlPlDA4A0xGopR2pV645CDs8FZeb1qI8CsI0Ljz_8PJxExp_o8bC8NKlwjiiJsJsUnbkHw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsaGRH-39A0bEiiu7ylyTzhl3L_0CSfqnK9hDmrdjlsC6UVieWQF-CcJDodQGVRlZfVlzG1cKDZuHg4rCE2EMNZI9ZWHfMAMl_dOv2yZ2SqxQO4eE_Shxxnt-24_3yFWBAkRwzthBaSuowC-YL0o_1IsijTNA5UrObLsNDzYDXkce3N0dK8VGplN1sG4ZRhHDoLrp9OTTq6KXRWfBd_-OItjIgLzqPiKoOJ7ZArjjkr_pxCow_XEmH5gNtjUqyEznxkGR8VZjRFGVTL-hdspKaOWVItcgZnyHzKziXYp4jKug="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGewnsieMoMTdy_AveA1wxZiVFo572S0RQZMKGAoIpV1khouN9a3daZKXgPB4KzNlFbTpFmSy_A8jf-aKuSUmX-c-tQZVXP0uY77qTDYXC0OW4s4B7frAKzwD5rmrW4P-BR4hjL"
+        },
+        {
+          "title": "jkaoms.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVDtzSpZkOTkmgC25fAh7x9hvmP5VJn3Wznonu7KZx_xOG0uGrtj3S6huj0NDEdhguj8cVgmuVaKP_4RWLcgylkHvrZfp3ESIoUZGaykJu6P8I2z3BYUUTd1fPMzJbIGbre2Cq1j-7CQaA5Xcu0UZdWvm8tJ3XkzwhgfjNy0Km7pSxDOs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvwibbtshABOBhRZowuVgywmFjXULLMdk2VtlW3Zaukc5y9MbWhqR6tqSMr4RumY6PoipYlu6Bs7kN4kUDgJtqXSuYkaaE4r1JlMshm6br_FKRMG7HdmsXSZA3nCs6wSb0mMJdl9whYsE9xr0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdauo8i6kC8VZ0DvG8ZvhMNXYNnCCOwIfLT5anvrQwXHbevt7mqhi-N966fN4nE5UDFA1P0gPC3YWM9O1xo7yAjxxCi35BprAaoHKyaRstwa6qzoK5Y3qiYNd7KLbbVH9PkMuPqQ-GLhbVmtS_f2_u6cQpx8RZlEzhVrv6F7J3mkq8bxW81e8TVLZSt4XNwDDe2njnN83i40rjzM7kOQeWCuqnDfGFxUdqXECWQxC9vU6onPDIUs-LNg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESv-FH3Nw9YN34x1TLYjObnw4Fh6OdZ72_bFIk_krQUi9pNj-xXOgVAvnbDouK74gmvEVryPTbaSdhnMNMMoRXfRoa2Q2W18Hq-8DuGFKTLIzRhQcjETE6z7z2hjmHJ2KnoRWWazmvSFEh9DaB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAJZZ1cPYAiRow9Q-nww29_iTb1nnuYQGWH1OB_rRY0YJvjRFDrdRk94MEVBCfdc1UbnAWjn2G29GQT9twswGtYSmPKT6KP1DQUxKSiARZVrMLkCrmbuY_bHE8JyOncAXRKWHKRBKywMtiuR4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgery (Wide Local Excision/Glossectomy) trials for Lip and oral cavity cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lip%20and%20oral%20cavity%20cancer&intr=Surgery%20(Wide%20Local%20Excision%2FGlossectomy)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Surgical resection with clear margins (e.g., 5-10mm)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 8000,
+          "totalAnnual": 10300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 13733,
+        "costPerResponder": 12875,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 8,
+        "vsComparator": null
+      },
+      "name": "Surgery (Wide Local Excision/Glossectomy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000000,
+      "phase": [],
+      "remissionRate": 75,
+      "responseRate": 80,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 85
+        },
+        {
+          "name": "Swelling",
+          "percentage": 75
+        },
+        {
+          "name": "Dysphagia (difficulty swallowing)",
+          "percentage": 45
+        },
+        {
+          "name": "Speech changes",
+          "percentage": 35
+        },
+        {
+          "name": "Infection",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate tumor removal, recovery weeks to months",
+      "treatmentDuration": "Single procedure, recovery weeks to months",
+      "trials": 5000
+    },
+    {
+      "citations": [
+        {
+          "title": "unair.ac.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPS1WXdeHL1FpR8CTaNUXbzGkH9tr_yZl7-sr43Ar0aK71zkBI_dSQtNOuIHN6gpcDCUqgwISF9pmBd5ncb1VTYpr6O1f5YZfMF2frBNCmGMnSUs0L9s5b742pSvcKvueVOOPg5YVL43DMTrMYXk_9yOehN-ZL1LIpY2LsZPNUbw=="
+        },
+        {
+          "title": "unair.ac.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_a6WCATvMgdu6jDxRK0uMACDkxthEQbMRBA_wNuBgGYTpiSdIci9_YzIKXcUL3A5l4g5g1R8ZvpBw7wio6KWe98kxX-g-ejEZYjzWWkPgfAr8Q4tsl7XhLRcJYQCbD8qxO5zdzcTSLppy85f1PUU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtgNef5b0E6KRYwbl9exMtM3vSODx70dTO4qPf0K3jbc9HnTvgtfQx52aJIcZuhocPsxSjK48IGtz77LEMlDXz8J79IUo1JX4__6cIakKQBpB-6X4q4uiCRgbjUZkmCcjWMLRpn4uUcBE1tQQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmjCChdIBgSBkPtN-PmApvgTuVdoFx-XJH2Mb9aTNuJ_BNESEwobVr2q5xgqqXjPaF0EoG-i1RwylhFWfPPwiH-jZ0fF69Te9pcTzK2l4q9iVJJ3enWd68Ok7n_kit8m9vKZDXkT02cWDN54MTRgzzxcDRjz04ZyQD9XsBxxJa90nfPx5l9HZWJ2egtUX4SubSWwT_wwknSKzY1D6WOZB4gD7e8F8TL2woMUfjVQYJ3JFbqmsGJqOGo7LB1vAWCVum3NOHkAVVG5G9od8UiRW2nc42HnZBBKDAdF_snICXQ8YcQTQ="
+        },
+        {
+          "title": "spandidos-publications.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkS93DNLXDCrmt3xbzT7Olf7ovG8n0yfmLgbognVFXWfKW4snQuCBT_1p-OuJxjL5UJGQQFXf9RMU50_2jWWsnDDkADZKVKNITOInq_fO8Xc5VlRdJn3tqiUq8oVxV9d4OjRqB3ZaKEA252gUoWYAhnedR4GIl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrGbUJFTLVIsvLMbkMUuTIv8WjKHI7Effp6sX3nSW9dOOcNjs7InaVW1kceSyx4lnchHEhdqNARaMNbdF0k6_kmxtyIF4EspyhnUbh74r0TTzb6DRYOaoNFq-FEaVxwnfxDtDid66MtHVHjcY="
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVmJmDCUGdZT8tVNvwDbmXS8EhEaY3IbjSFYqHlddNZG3GWR3e61F1GfVu5mtRsA847M0zZbM8cKuB3JsWrujGoRQ5hIy--_QF7W1NZdLX_YQcaLcidimze3Lga9-w9q_I5W0NX1i25uNMw09i9lQIIIKAteeUyLzg7mlEyS1L8QsGJxOIPUxZBwdFENOZLYSXQ3D6KqfVugUkVCu6VXYBfzo="
+        },
+        {
+          "title": "pocketdentistry.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF21FiWnqC_IUprQUq09qDizYHal4w3TBvxH5AoH8imNR7Bvi8bpwdrLYdW8cTf-T_G6cXXpqyEWF_gWK6Un4EHsRP7L4--6khZJKXtP1kD1McV5aAXDygye3r76USy5YESIguZYJ9hOhfV1hf8gO1qty-LewDIvKJGwIdNYVnn42tQ2iHxwbNGiV6AXgDAXZ7xdZzYfmo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC_HYWwrPXQsrxxsL9SQ1IRptKTsMZ_IZZCf-631WhySz8bON2XCF-0oQvnNKuAdD7TXpHw-9zRsPgEjiNNSSh-tRANd8pxIjkz7Xpfm-c5kjoyYPM6chi-L_qalKc21auRng="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbC61Bsf-nqZEI3ybkeo16dyNWzM_X86oL1gxRfP--A17lAfPQ0nEtnbZO3VcQ9HjaG6FDMQZUNFp9gYYfqx6wKsAZmIUctWQJ2h5wO8dizTfFzLIEN8_yeGavxlGtAzYwc4T-z2l3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgGUxxV1N6kYaY9E64kJP_qWOdsdb2zueRiLZB5FYAKMufKRIAimfwUBtPROccOZ0ItLFhMRRwUWD-IYpgb9qfPKPy-1Imcgd70_bLUNb_WymySPPEsl809hvsazi2VKHXyFbVel3YIPy27G4M3vAfaSFS6L0cRwvQmCSqUt_fJaB6hvNzX6TVuH7SiBCXDXMt-LreWfYeKpGdjW3d4bFoQg-uRW-wsyWnMSDJccwG1FUpU31MvFX7tVr7EIRSjAtUwQ136dC1AOwgLjkSSWgE_TIn11eMwL64jRqBWMejpw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9VANm13vRrdBX944-xCr1DMD1OV9RjGeOJPZItCwkJmQ2XtHTsJroKmZUzJcPX84QHyLXjjFZiFbIclwgcz-MsWKW-a-zVNoBMC0Pt8jZYcQ8ndkL-zgInL0O6oKfgbAuLOk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZM3MRFXv5FVMZJJsJ0r_I2vEblzcEL2ykGCkpyA80F0H4RZUwMzmewluYolltKRw1TOUz9RMh3h35psOahx-euc8LR_M_SHMsoiedMnLqSDCG0Gm0eV-R4MiNoncSYNiFXe-eyM8_FtRwqGe1yJkUhIhZLqtzg_lpGrX2Y8d1U-Upubor0Lwpzl0ia1Y-y6Z2xKODAX9yw8hnglFIW6ZeAoi4TsJfSPc4JHz9svwaZjyOLdfv9kHqaoITf29FVY5I5wZB299QzHI7BbhglwC9Sgupb02RiWGYAPrRwTTZ5UIugFbhtf-AT18nCWjy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLhhi1MOF_slFKl972N4c5tstPFe86UkPR7-RNZXpA_cFiYu3_WFhORVcTJ3j5Ko15S3SlogL-CwwmboEFLjB_9woNbj0vVDwRIkaYNuBQplXSEh5M3r8g58vjrL1t39NTksTc_Bw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiation Therapy (External Beam) trials for Lip and oral cavity cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lip%20and%20oral%20cavity%20cancer&intr=Radiation%20Therapy%20(External%20Beam)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Typically 60-70 Gy in 2 Gy fractions",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 25000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 36000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 60000,
+        "costPerResponder": 51429,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 6.5,
+        "vsComparator": null
+      },
+      "name": "Radiation Therapy (External Beam)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.45 cm",
+          "baseline": "3.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Largest Tumor Dimension",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-4.2 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oral Pain Severity (NRS 0-10)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-16.25 T-score points",
+          "baseline": "65 (moderate-severe difficulty)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Swallowing Difficulty (PROMIS Swallowing Severity, T-score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-30 percentage points",
+          "baseline": "40%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Local Recurrence Risk",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EORTC QLQ-C30 Global Health Score, 0-100)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Speech Function (EORTC QLQ-H&N35 Speech Problems Score, 0-100, lower is better)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+3.25 kg",
+          "baseline": "65 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-40 MME",
+          "baseline": "80 MME",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Opioid Dose (MME)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Mucositis",
+          "percentage": 80
+        },
+        {
+          "name": "Xerostomia (dry mouth)",
+          "percentage": 85
+        },
+        {
+          "name": "Dysphagia",
+          "percentage": 70
+        },
+        {
+          "name": "Skin reactions",
+          "percentage": 70
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "Weeks into treatment, long-term control over months",
+      "treatmentDuration": "5-7 weeks daily sessions",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSrccdqZc3tYEHXmfXBX4GhNTnwLQq84UHWhurofmWz-vrsiiVI8DU48hW7sHCyyIxPqwbtz8YcpV_A7dLKfBqE8SRSyEf6_H2yG7k3T6xEoajeRracAyBTepjkjRrt4mCZz5wRezaYtZskg=="
+        },
+        {
+          "title": "ccij-online.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuUiuCbm07TRgCiyIWYPmC-XWaEhsVoL6Q7daru1nqOpF4sKNjX4Nt3w0FF60ABZLvSgP96-HG9U416ZVeDm5G9MWOTSFlZl01QVbv3o2sVaJt4Sn1DZq2YvWkxKR0elKOfRvh7tW5yF7Lkxv55x03vUCL07HuorhJM15JPQKG86LuWtiekipr60iyppu82cBw6geQnlMJZK7QxhdankmjGzT4-itTa4TihlN2epOlXRokNaxsNNU_vg9xF-hho3KtPFtUtAHykBsJrXwzDVkzVaX_yYlYajkgHy1WkUgpXmP1Ldtj7lpolZhKSZYagS0htmsh2DiwSeH1TdZiwg=="
+        },
+        {
+          "title": "oralcancerfoundation.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPA7hTD2ZbjOXviVvidsIR5GyQ6QPXMZTuJYEQ-aT0fjPmTg5xEVOQC0RS2HAKvTrUDEje8dOV7DoPjDFhNwiRdSSpD_D5qgg7S7pm2HjN_xiuVh8tjgirdpaINhywqapCi0qifvqSQNpns4p93YkSPm5N1ZnJF9OrZvNp7fRrEGFE4p1sDO6EliaDp1rnwBZZBewZU6xKyD3AYLXicg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEodU1CiaIXxV5XH_Jyz5VZI4AJOdLtqM4JwDTkeZqd3NgA49OCit93qhq7G7Huql1__UHIyhIY0olyyN7Z_0ysW6BKAtyGccCRi8MhYpgQPVKpEvNySJ39uyx9M-_sVk4bQxrV_07-C4Nn9g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNOh7FgAnq9nUWlFVmEgycTwdT8d1QxWNWV08eArOh0jay9HV468igLX2EPisaecSDkGvrKXM5B0d3ZAB0wwRYq3dkWrA8cUqsYWVqL77GJadZIvD2q9bwh8XrPJRAI4zt8zjtVrdEp-QKiA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYLFz7-T4Xcm_NxWo9vMH7D7WwUVt8SFNBYE-KMy6r-1cuyD8SmAS06fPdj4hISvACpZdImwpr78DHlfncqiv8gdfuGng3cR7YRZi-9GivBVTCLbZWZ4QDneu_kkf1H1Bz36JavSUMD-hD_Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE0sbc2ja4vm386M2rL6j115ilTIRj7avOADzCfgmX1nZ_aPp5I8chEI-0bVDUjGYJKmjnY55ghJyT4_vKcTSw86ey4QY05iCk6S873jpYFMcMCzXhGmLK3ut6t9jXIeYm7KxXWj4SNDT-DoUjwpX1tXMYir8OVtKrOdZ00rSkyYyGAaJ7GvowbPf1woiBDaz8kAybcUHYtcFRqBgT-EllMtEK0cHYNUNEaN1fQ-6n3LGfVFq61Fh9H9hd9CH7wEeuSrH-LzPWEXbXpScuAO9XEzUShNHGuHjjbgqXaYE-ROqKPRezx1Q080hyPefN_dLbJJ2tvtRE1GRVfCQCknudV3f6ODkLk4hILf1pjg-N_yHQde84_4vjMNSJr_uSgnI2e_7QyaTHLlnK4Kv49jqVk6e7oW3lFUEglIrw_vNVoQCr1TLW1ZMEhwxFQ4zxDF4HbkP7yi1Vz3uQ58EQi1JlXtcjNLiRczLvUtE8kI-YAtgfG1Fc5SfoBdMDYlRuP3vRppXJzc0PzcuuLOkgj_lsoW9Uj1z9WZI7f7klvADoU7Dj1BVJbQGPBPprpiyAFZ9CGeyjC00zsKh4gpj99c-ZfOwHV2FSX6ROGZbPVQXeoFFJzOmWqUTV0bjhjP7Y9XDASTVCeVwrbRsK9J6sh4tBK716lgcT5w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-i6-U6xpzSp4FL6i1DVKqrzA31B3Wps95gXyvonvfPvmRX5rSX11G6wCN3jPU6rZfnzJpHzz_eyz8iy4DiHaFoTX3EhAymgt3aFo-yFeHfVwNWuYTeHLAvLnUlxlR0biRH6HrSPxpA94OCyE="
+        },
+        {
+          "title": "ijmpo.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESjEgB75ZI9hgOrvNsLLyc3rY9kjiXHxRpmcf-InF_12Bp9Rd6CzRzVD58CUq2mpKxPIjX9zgKaqI8jb9ZyhoySxmYOXgNmdk-WOlNGYBuVuqyRSIdEA9Jqpji_CKA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cisplatin (with Radiation Therapy) trials for Lip and oral cavity cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lip%20and%20oral%20cavity%20cancer&intr=Cisplatin%20(with%20Radiation%20Therapy)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "40 mg/m2 weekly or 100 mg/m2 every 3 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 12000,
+          "totalAnnual": 23500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 36154,
+        "costPerResponder": 31333,
+        "icer": 95000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Radiation Therapy alone",
+          "costDifference": 23500,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Cisplatin (with Radiation Therapy)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 150000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+8 percentage points",
+          "baseline": "45% (expected with radiation alone for locally advanced HNSCC)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Overall Survival Rate",
+          "percentageChange": 17.8
+        },
+        {
+          "absoluteChange": "+12 percentage points",
+          "baseline": "60% (expected with radiation alone for locally advanced HNSCC)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-year Locoregional Control Rate",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "40% (expected with radiation alone for locally advanced HNSCC)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Disease-Free Survival Rate",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+20 percentage points",
+          "baseline": "30% (expected with radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Response Rate (for measurable disease)",
+          "percentageChange": 66.7
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100 (moderate dysphagia due to tumor)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MD Anderson Dysphagia Inventory (MDADI) Score (0-100, higher is better)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "40/100 (moderate speech impairment due to tumor)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Speech Handicap Index (SHI) Score (0-100, lower is better)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "50/100 (moderate impact on QoL due to cancer)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status (EORTC QLQ-C30, 0-100, higher is better)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 40
+        },
+        {
+          "name": "Ototoxicity",
+          "percentage": 30
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 70
+        }
+      ],
+      "timeToEffect": "Within weeks of starting, sustained benefit over months",
+      "treatmentDuration": "Weekly for 6-7 weeks during radiation",
+      "trials": 61
+    },
+    {
+      "citations": [
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_7yZjf6maN6NRTcCkv3HHXtBHpyh3BZ337I_sF5m3PUVOAGB5Mlusgoogm3FfMWCtjNkFJ-N0C-dDNkCMhxP0UB4hD5A5xR_ilxfoAZ1p8EHuYqqaI8aCtxUZ_sy-iiJaZI8ItS2_jxGbD81bcR3h7xf5Baes6KoROpwBT04SFf5no9o8m0jGsNjelt2ni1sTxSSJOfr3jaJHt0D8rRTMTkM5BMqEZiWC5w=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHk-jGvuGWqg0ns4NnK1Jr7liEW4M62htbgh4WUC6cXlI3OgHiiw3JLQbaq92C9dc0djCgf4axJrJNRNgdp3CDZrMRaeZz6xjgAazW1Wc2N5wER9KyS_58UvkGW2bWGtwk4QCyBfkgT5bfQag=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5hnk3l193nN3-KHUEJTrHgKrFiIOeW4Z_e0SRc3pM_T7tbXiu3PfnUm2PV9V3iKh7T18bGWm9uKP9pu30-LHFBo5Cr66croj3iPcFZjMho9PBLZEp11XpLI_WRzvOYnmJ9vir6dc410NI200="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExKlZyZbJczbV4jUwIUaNFmed__UqdlekZ4Y-0UYBV5vrNvu7GjHvr8PgF3lAcVpbEXueAelAecuEXTijKmNI48g5zoRH0-oAgDxBbkCobWVVPMsjnelGMKVMHFluJpqC2c9NQINE7Fu9Qq-sHfT6EDHCJVf_qgydI43mPGCbsDxNqT9q6xkKU5z5CkAb53zvy4U9ZDovese3rzvbGLSQe7MUsqGpPFMlOvT2lnr3SIz7rbDTbSkFE2ZSJ8pvzK30iNxrcUArcst-HZeg0LUy4ADORYoUkhe2KXtdAMo5dHIZBKyrmMAIaJ4dRUJNAM7UiAXsI1tLv4OUF2wCQrQ=="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKTuXL7NJp-M4HBuXvXiNv1dUTIIuLGQzScOZBEUyTe6Cwh4sfQKkWNJZIoKQAtj7OvIO4LRwwgGQeaakD4mTjNTr2fwZw30EDxeTg52P_Juu-1lbA-6F4yRHe16atHrTGqLOJVgesf-02WEak0_4L8CuHwobuObeuRNHWoaYg20W4k39O-DZ1joREFF69Nv9haN5ps5N20eZKztc4uSa8wYgI_1zyJtyv4g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHked8OqWsgrOFZkhRk45-1yras8X1tUK2nCN0kkdEMgeWCZAbWTZ3M1lHCsXjF9ApCUs0EU7eZeAFHfGu8MxGUACmF51IZjKMP4hrRlTAHLA19KCy_I_pS_9EcTiYrAyPF77WeFFEN5ClTms="
+        },
+        {
+          "title": "generalsurgery.com.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsJBlBoOL-nVavD382tVYjPIx6jNW5iajHWJ0aHp4R1I7SxHAQGdcqEyy45z5FcAKPTzCg0ierwW1me2eW5rbAJRqK9t0EUI0cPngPRoWAelKS0P6aRaY4f6oS0Gd8_RRxNE3_RtTlV5c-"
+        },
+        {
+          "title": "iiarjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsAzYokASLfPnlwu06rT6FxnYkHpzo5Ntta6IiwVxB2kuK5ZnNPTO54BYY1Z7yhTFUh-Wi4NcIFhblvUry65vzzXZ28YFZikpaCbdPoH3gtn2eNSWIYJn-FbMp-4vTojMIki35gPxE"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pembrolizumab (Immunotherapy) trials for Lip and oral cavity cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lip%20and%20oral%20cavity%20cancer&intr=Pembrolizumab%20(Immunotherapy)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "200 mg IV every 3 weeks or 400 mg IV every 6 weeks",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 8000,
+          "totalAnnual": 203000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 2537500,
+        "costPerResponder": 580000,
+        "icer": 350000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": {
+          "comparatorName": "Chemotherapy (e.g., EXTREME regimen)",
+          "costDifference": 170000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Pembrolizumab (Immunotherapy)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 40000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-24 mm",
+          "baseline": "60 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Burden (Sum of Target Lesions)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+0.9 months",
+          "baseline": "2.3 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival (PFS)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+3.2 months",
+          "baseline": "8 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival (OS)",
+          "percentageChange": 40
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 35,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4.8 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status (EORTC QLQ-C30 scale, 0-100)",
+          "percentageChange": 8
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (VAS 0-10)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "50/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Score (EORTC QLQ-C30 scale, 0-100)",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 25
+        },
+        {
+          "name": "Rash",
+          "percentage": 15
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 12
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 8
+        },
+        {
+          "name": "Immune-related colitis",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Every 3 or 6 weeks, until progression or toxicity",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "whuhzzs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-pMl7ld-oQ0oycUlXXxDi7GRoqwvYqoEbJdpzpxquJHxa1qm9uAJSk1PtnZ7uc7TEWxrbFHp_wUn_MU1SaLwO4yo5lwpfWtsf4QBKeFV24bNHbAGcypsbH0Fdb_WE1-0uJioPMmzeMb7q6GLH1Lr9qZ88msidgGVU9hpD8VDkbYvp0LZ6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtoSkn_fGteQmR6K_kAgZD8-SE-5j-I5v6ntO5uc2sgGYgbr1wqAK-iiji_pT2wIPUAIDKPYsTnvUkyS47K9bD8agA98K1VYyVwJTUX6yK4_DXglR3cNF9E4RaIb5MJkga2imtYbXOxacxmQP-MC_AIzCBSxV9AGpffvQhlK-FjyLdV9DvOFH2hado132zxZOxnlDN3ckq7Y_TZiE9M18S4wqgylMvY3LXiVoW6a_epbC_6Q4vEVxHeOQVHBgKGZmUuoIL6bAt5Do="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHHaClPO0Cjy37IuxIGBDHf6C-WUKCvl8VLmJoY8mQFLJmExRsSE9z2WcArFzNRfb7_goqLkWmMuAFAPh6K7cUMxYD676-L13h_X0rP-ASlGP3XhXsGa2hh9-FimTl-cIAjg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdREc6bqRs2OC0iD4L72BJX4DW-mFiLcQLym4OCROWj8dQeTo30AWvOXsMEViw4RnOgFHdWiaSeOBLsRIeF-pphq5owIUS2THNu5oSWELOagNthiQzCNTy_S7RV6tPE9eFRJFMZYTkUTok-ElJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYFXlIdOgkL-YSZ3rsUJP0Nx6hm8g17WTa3kOdaKhrGzN0yUmWWTgHjlGPWrKymz8A_Bh2ER1B4XHjSp9vIH7iMomlY03npkGw1ymaP8LJBbIviMsWweKgwH62JCDoBj8eFBJ8UNzCn1xs_Vg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ9Ca4Y37dPqb3OIJtoA9edCquYMISugPkBX9vE3dfbSQ8hZwiM0txo5DjJTxlZq6vWMLAv7YngMrenZoZVngVKbp0VRwuE7Vi7nVwpP4lImHUVbr9kmWa5N1sYAz5p7V_k9_-v3ctYqY2dow="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvHk5Uis3wfSo-wTxx2DIo6wbhnsctbmyWBaiMdtKIY8ThQpSo5T2pOStWVn3tiDqxQ09xi8ILFm9JNF_tpXnb71-q_5PpnblHxAq379KwPlR2BL8AI7EOfalICuRdfSj6ACV8OzIjlCjcTQA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4AbZ8qDlTtGj9AG-RrpBfxSo5M5y3jBBTzHVPJT5OOzcX1l-21wo2bSf1idGbZygIXGn36El3wFYHJ5huPau4Hx4n8eQOrZemBFY96xUEDnzEzhAyauYD-Up80gu0P7GvkuTn8uaKCjFAsF67"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG61qYbhbP5-nAGn6oTxq7tJw_14ekup3F5ofg2fYGFaPI0lp_V_2pz8gik2DRiz16lG62IaFCaSce9p0rz0d-K0wo9u_yrikWmi63NToCKlRXvPt49U6gLHP3ae5nFHQ4tu6tYSLgQ-6ZvKgElb6nT6cCzgoumnYbozk0jeW_VoxW9ywT5wGRE4SsCUngVyuWDE06OV6QN2cftrM1sVSequkXJDnTX3ECiw14fPLGYZJEsuUBECxvqKJQEO9C5MJuK3GeRxgQNfHzXoz-t-thOXuvQM4Ye4EHQCNw5WOzPdOyH0LaX0QmD4D-bKJvzfK9hg6-wDhcsAwtKsix21Ue9fdhe"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cetuximab (Targeted Therapy) trials for Lip and oral cavity cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lip%20and%20oral%20cavity%20cancer&intr=Cetuximab%20(Targeted%20Therapy)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Loading dose 400 mg/m2, then 250 mg/m2 weekly",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 61000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1220000,
+        "costPerResponder": 305000,
+        "icer": 220000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Cetuximab (Targeted Therapy)",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.6 cm",
+          "baseline": "Baseline sum of target lesions: 7.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Size Reduction (Sum of Longest Diameters)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Baseline pain score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10 Scale)",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "Baseline MDADI score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Swallowing Function (MD Anderson Dysphagia Inventory)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "Baseline EORTC QLQ-H&N35 Symptom Score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Head and Neck Symptom Burden (EORTC QLQ-H&N35 Symptom Scale)",
+          "percentageChange": -18.2
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 20,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "Baseline EORTC QLQ-C30 Global Health Status Score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status / QoL (EORTC QLQ-C30)",
+          "percentageChange": 8.3
+        },
+        {
+          "absoluteChange": "+0.3 g/dL",
+          "baseline": "Baseline Serum Albumin: 3.2 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 9.4
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "Baseline VHI-30 score: 50/120",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Voice Function (Voice Handicap Index - VHI-30)",
+          "percentageChange": -16
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Acneiform rash",
+          "percentage": 75
+        },
+        {
+          "name": "Hypomagnesemia",
+          "percentage": 40
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Infusion reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Paronychia",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Weeks",
+      "treatmentDuration": "Weekly for 7-8 weeks with RT, or until progression for metastatic",
+      "trials": 2
+    }
+  ]
+}

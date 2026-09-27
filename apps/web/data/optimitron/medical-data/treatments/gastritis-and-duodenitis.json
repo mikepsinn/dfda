@@ -1,0 +1,737 @@
+{
+  "conditionName": "Gastritis and duodenitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:50:41.622Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO9YUzHKPSFwg1yYOx3GNil1JgQZeNl8xZDdxnhCPIEnGl5m_61xgXTTDgWzOAy5kxrtvcz8LGmlqq1rekShIlQUXDBBL-VDas2PA_M2mFzZg6fDKoxKcthoqccW3oto_pebk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMZgRmtCgSyri_zjfYOLLai2P2KO2xiLyXGzzMD1YA62_7QaQ053cYdJVr8CyAm_xdDU4ENVs1Cp7NFmdfZByMHvTU7GYrfT0Yoyt0vU2V6ilthJWMEo-El6JpMpL5JivcUSti2XlkZue36Nw="
+        },
+        {
+          "title": "termedia.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOLdM_nnrVberFs9-c13b0tgzBEeAENhy-Ak9eFoh4sj04A89JChUzuAl3eManM8gpBL1BWkzunf5ncbS1bizWJHSfTr1ywpBSJ48Ew8pjFftKZZsAyTjAAcl8oVPDZh0YWe_clDygGIvymg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0nnmWPyw8W02MRuguU3iWUL1NJC11v1hRK_yrpVbdfEDN5lZuDuKfRlwBD6kcqjpUwtxJaTjsZxfFmHYokaMLW2p1F2ODIZDFGAPDQuNLngxS8RG2sD4Dr1mYNAvcHrFNHQOvj-dXjfcB1QCUvakFOMK-5ZpEFup1s6r6YxmrCfL8XwDENHL13HwmwlKIx0hvYZpyTCX9mVkfMwXdgQIDoHCmJTM1cU_j-mQcSuLgrDurmc9UyS6cuzKc8h-RnXICeXonMfOB3YrLBc-4oWKQP1If-ZauWXW22S9SBg8Yj8yPlVt-9XQbBOA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-gQ64Zl3PhW2EH4yfPbQCXyfs54h3hjtmZVtLS7xQqRw_l-mTTPEJhJyW_P4RBNObHlDlwgdC7MDhVbltEUYb-eEnohRkP0bZy6E4Tn0Szd0giZD8a_x9p9hq-ITpIWv4OhFCEdSKVQIzzkp_beWbWmg9GR2snJlpfkn1Vc3uRhw_0V8TLXBx5juXEGkCgGrf7mjIqw5mmlvZaoOvtZIoQ4bzSwX6GfX5g-O_e63oy8ZxobMSOi9jGikOCevEXnKNX4qY97xk1IFTIIZWgb7JXPSbmfl8UZSUqYKmMS-X5NhGFODC44DcWaio7DJjXA=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHG9UDdpN0oURdH0_FOE6k2Yr4rEKDc79EhsHnC7AJ5trpvn-NfBgUjBgK_KydJ4ZI1O3BLqWD3p2y-jKU_E7y3pczdJFm5Eq_o5LsJWwSk30ZpFvGviOk5FOtMVX1U-zjsEYnvAI8="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdELwZ3E91IWgUgH7FmAgacanYFZ5AMTggBzIGdM-VYtXZdC2EgZSoO_C_SS7AcSs__7SNUxe6oPnlZhvr6Bbw4oa-0OprJbTOslifalwJeYJDq-1JnUSiHlOLrZMFyuktVH-9ucTeDIFhg7AJIo3K_wI="
+        },
+        {
+          "title": "revistagastroenterologiamexico.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhUa23vfibBM2L57nEISODAJJo2EL7KxeIiwDvi1ZE7IVUT3QQNHz0LgOliQ1jdLAeff6uGwB2eQeHQHgvDgQPA9sz3J7F98feiOrZjRr32n7L5RPi5KDlZIQgIuKIO1vK1k4qpYh81LcI4KJ3yj4yFVxRIyjwVojaLwk0TL7KBV5hiRClLgCOzIoKzscrT7ZLKbfPIPoqOENraVNRE4a68DZWm5zWY5DVH_Gu7Ait"
+        },
+        {
+          "title": "ccjm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxxF4avcGc1fM93cbF_H5BQP0LxYcCpwvvtAaqFA5e0APZN-0DUeNFyDuIYrnV8TQ2-IhcTEuLl-CjJB6DICuHOW0ExNVb1uqDUdP5XXKdl18wE1oX2wn0nRnRrnwCcTs="
+        },
+        {
+          "title": "ClinicalTrials.gov: H. pylori Eradication Therapy (e.g., Amoxicillin + Clarithromycin + Omeprazole) trials for Gastritis and duodenitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gastritis%20and%20duodenitis&intr=H.%20pylori%20Eradication%20Therapy%20(e.g.%2C%20Amoxicillin%20%2B%20Clarithromycin%20%2B%20Omeprazole)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Omeprazole 20mg BID, Amoxicillin 1000mg BID, Clarithromycin 500mg BID",
+      "effectiveness": 90,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 200,
+          "sideEffectManagement": 30,
+          "totalAnnual": 380
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 506,
+        "costPerResponder": 447,
+        "icer": 20000,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "H. pylori Eradication Therapy (e.g., Amoxicillin + Clarithromycin + Omeprazole)",
+      "nnh": 7,
+      "nnt": 3,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Taste disturbance",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "1-2 weeks for eradication, 4-8 weeks for healing",
+      "treatmentDuration": "7-14 days",
+      "trials": 3000
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-H8GOzcpLgIF3Kr8lZ_4dbgh3FCYYLdL-2Y-EkDo2xwPatZ-L3m2yAb2DFVuPJE_nq_JnD1YrhBKKpM0i8cUF1gCQ-s1_W4OOoQXUVS1kFyy8RA7vNC9Ylut5-zSC-A_IxuN6BVq92QzW6GXo-ta-qDkASmV8PF4WG-FIQisye9gnmL0_1mcPVGGDH61-UDR4hJS8R5-VooXL63v_rcJSEzuahsEfZYwa6hKta4R4vANqcRAQBymY-CBNLaXYUEcYudU="
+        },
+        {
+          "title": "drugs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwtFwtP4fIzrpLv776JMNR9RdBtFIvt-dMy69N4R0sT1_-zNz2yu0m-MSc-hGNGzA1dPRxBtTX8ZyWpLRoaWl07neLZGu-W3NMKZRFRQZKwD3uIFRWuAn3sWCxsRbpRTk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHVeJAQJWjmWs-rnpQY_i09h4Oa_mBklfcfpbD3wowQL_2Y3OuKrTstL0Fk7UFoFN5MiZoCBrPCG2Lae9OtKZ-biXY0_8yEnbnwodysbCwDeqypOF8XM3m8eG286Si8vpnYLIe292d7HbXBIQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkFaSftZybJglDZ5rIB6boOqOBkctnHkKjVkgN_tQsLeR3lifsO5TEhMKQysAmM3n-wrFpw1H9DGabpbwtEqFTG3ysAd4te3HmFEKEMgogBBxoT8Vf-dOZYCpTtz2vbZAnGN7zL4yKWiC8T-0bsvkbwkVcall4l41TW9AIOHSQpn1y2_xgV_hZXSKLdEZcy55eF4wGRzhCT_caXDbJoQo6u1dFDEVvUFO9y6lN_yF6wRjuNa6P0q4tGgQX_Q0JyTfuSnAZMmzDzvdweYy7tQs5lbSCJypfN2h0JGKW3zNXygms199BXoz-Bp-lewkNfvO00xxvcbaHkueghqsug5ZTVtPshCeynZwnfAuK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBUFkeatTwV3iyv9wvnlFiXWnY3AT-tzQx1t3NvtQZFz-w9bRUYTq7SgwsaWg7yEhhgmjihCRM8a98aRcdVz4Mgh6dhIcobk9uvGSJiCnuIR_dEduLJHwwAuFh7AAFaUTjiKs-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7onP5qFxe9mc47Mn3J8c6ZhXt706Tj1jLZ8Es0PSiVZWcT2lfQ4TnCWCPRWS7B9JQZQQLinqqUYHEFxzecTmhuG2YSrPd1uSh7zrMMlzVQVPV7P2Wfzpu9AnQ5c-c8ufAlZSVQqge"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFB0h-rHmYKfCN0c3XVLE-X6q_E7-Gc8xf4boDyVuEauctalnrv1UaLNkwPdPZZeOS6N2yDmcWd-ZcNbRGKIMWXP_UcymwlaLKkTjMz7IqbQDma_5qE0wdp-mgeUDTjSmmc4ja8qMNZa74ih0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJkxF_J0UEgTf7pUC8JZzebZymlyhynnOw_znTe_Xvhv82gwiaTcCqQ-lTUlWsbb7t1g-9dhrHFVCMYMqKW1URHzkuDaB0UQoaGeg_kPbeHz_Qrtf18fd5KnrLQykKhFRucRJV-4M_GGONZcye"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8BVhLPLNJujs0N0HR9ipMsKxeWp1oEsdVMeJYgdopETc0bBwhYv20E9AvPeBlDRHVr1en4x4FqDBmXTv-pghgLJT3EcTyznxU1_DUvWIVSEhx1JydbfnZZXSwP_1F9lQMoQM8NSSbnu6F6RZsbVYihSl19D0So6lZsGCGuPPOQhMUFzHEKzMLUbUk3Lj4HUGzNtqIIuyYZ-kDqJ0ueZ1C8TZbkzjBltCQHVhO3eJRF2j87lOqQxSyUc0Gn6vVlSrxf1DhpODgi0n7VVGtFPJGMcNNiGexEpXYEBn0fsFWir4="
+        },
+        {
+          "title": "jmrionline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlqEpIKbNRaQ2yd3H6HqmGooc35epc7OjjiQEsCI2SbE7NAQXCJ3tMPohpnG-4SZeCpXQDqOP8St-LovTWMnMt6TtfBNzGsETuGjXon2_ld6afqDxaLz21PX81BJtw2tVOerGE8pZA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwhoZ5sI6yDNGQiAy7YDszcxaBKsJrxaWxVeGWyewMPA4hoMHCez-cF0MynYxrF_l54jk8DmKDJnQ-ajvI3i7gwMCscbKjIXpl3mo7apD5toiqwVmyC8SM_kCGsSLQpmEXPnzZI71zQJYkQpBx-uSdNbxesggCUF2L61qkB3S5qd150aF_W0nMMJ25mtijBETve8lhdbwjH_IIuFKgUSg1FGn9WJhrC0oJrd3MwkVpOeB8NyLeSZuoe7iWEN8fBAFL4LMYRtsLNhwLnsQYkEsoVt666PztzVO1N5uZpA=="
+        },
+        {
+          "title": "jmrionline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmdizogJMKriUB3Hi05dLays6LLKfwe1a8_5WlakB8HyDunomc58o5SbkXCaImNCOJee-igMT7fg7wB3AJ0Po0jcvLsFKfwd6DO3mwk7Vm1ZyuyT9IPd3OulhS49KVcDUjc8bwh9O1HxigXYtYCWiS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBoD5oN1Gdh5lVE41YFwbb5qyo6WhfQUrpiIpelGtT4SKOznE4MiuIUhHcOQfnHnuI-WMItZAlRGdteU2be6QaqY8bT29DvDPY7hsnOwVIk4J6h567FI6chA88MDVu6n-ZbpjTdxOGc2OsMmE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM8bL7F-GvMNl9E_FXR8k4tx8fidSJyUwIYF4ylnNJNmfoJgNP-E8q9D5e8fqg3eL_JLNeUeb5BUmkB0ogqGRPiwFu5I-GCWMAa5QB1fKAMejodKQJ-SgwX5ZZc_aerjkfUilz0hc_fryILzw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Omeprazole (Proton Pump Inhibitor) trials for Gastritis and duodenitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gastritis%20and%20duodenitis&intr=Omeprazole%20(Proton%20Pump%20Inhibitor)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "20-40mg once daily",
+      "effectiveness": 85,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 270
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 338,
+        "costPerResponder": 300,
+        "icer": 15000,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Famotidine (H2 Blocker)",
+          "costDifference": 60,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Omeprazole (Proton Pump Inhibitor)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 90,
+      "safetyScore": 75,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Days to 2 weeks for symptom relief, 4-8 weeks for healing",
+      "treatmentDuration": "4-8 weeks, or longer for chronic conditions",
+      "trials": 5000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx3awrOjxr2Wtghj7n89R01wJTXzEZY04tokVlCe7egCPq-7u9jqd-vbujUu1Xtri9prsrfbr_Wwwk7nzM0iYUrYGPV9ves2I0xP3vF2_Rm72m3ErQtoMNI3puP4HdKmSmhY66"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWWYy39NMIjq8P9c_GdVWEj2nqWcZGgh-D3cis70EP9wfuQ7rKGYXMXkGl83HUo9gfKfmherkzGn9iliF0E1i8iY8YxNWk0Dabj6JvG28Nf7ETW3zigIgU7HtFlh21cAD6OcU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExgAqr7uDIhsShzeUZz0bTgQjJnym0FTFw4t-qUypEFnjauJuSctrkYRSYtQfGLkWwQ5NfxV3PrfOF6crEmgXHbSD9RQ-gqjB5ThKzsbMGp8gz9BKhmQjvV4RSL5yK1787d1kqd9ph5A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhlnHMGe9ccCEw5lGvYBW8RjzroefqGbTkEZD5SF8rlAktYp0MYKyWbmfG5w7q-qna2XQ7p0nuB4nr3ZV7MCVGVtGbdvNgLzU2VgrAB8lEncEDqaYBMm12EuKrbVR5KvH-ZNo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-6jajbRsSY6Rby9STlEvGkIP3VuuoLGaCJvVdsBRLFtgeSxPr-toagz4tky-4SZ9mFq99HX2p4Jz5P13SxNiqsojH9WbbCu1F1Qkf23XzFraijaRKRWYK70GwlzWZ6ef5p4c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKwMN6WkbpaDYzz3NM1i0x21yvhIH7Qq1msKu_NVkNfOC8jkZHyNFVzBqwK554iXOdVIrZV0egc3A3f5liSnUkfzeyao1PYiwjpmjHGGzORLuuFRPCk14iLnQiX5I-evu6EeU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1AmIZpVBv8rnIhBy9fOMuMuEqH-QwBWlkef_kzWNOy-b-IVraSPwYUMwtukJl8Hoz7eOxCugQWssNCjLr621DDiEytm-b_BAcZ7n487bDq9JzawFDOw13C2OCmD0LQG1Pjyo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWl1fzN207UDrbd-deztXq-4l67wQkncWfYcZ9Z9NrMGznpDaf6UyuSn5_lrDDTDitM-B013P49OP6-cs8saWEt7oCebNbllMAr-Qi7FYkGqlTgDecJ2bVbvUxnP_MKRGrA5brZ66J7eAUgSSD"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsAcZhVAu2Hs2vd2xs_VlRq9oI-jyLgjV9Ru490NLfZlAnSz3MkBx4-_5hKbXvTbprzIPf3lT0_JJoRUxad0koN1GWPHZipEDoAC8XfW-Un5vrwxy0jZc8JDnhdZ6GcdEH0-Tecddyp-oGW8rv1bRxfwQKTitESdTaQQqRwmYcWTvFpET2inTumTND9HOsV1vKSK0vPAuv5Ewu1cNooAAj5TVHMNaWYszmof8z274LCXOonsvszvgld6vV4xVTsiCvIuI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5Z6DL5ncYwTnhnriEOijCYudMAQdhWwu146CxwJiL6wAaDtAoPR69a6QcFvjenmNX2TKwMZusXWajM2SiS_FJ7pP2XC4BzFTPShJGCnLGawoMZu3JyH6wbuhVH1tLeisBu3FX43jbCmxVMdOsyym20jRZyaMb7j1pXUTMvEmGp_bJLfS9f2rey2ftgb4mZS-7Mh18BmtED7CL5kaE4I_Tz-6TEFWdPznstQ552Jk_kDdIt65q7NivsfJf5JFVpyYSQOYJCiS4SK4DEsm-UevWP3H9xxeW0f4vh_zSGpXuPX93-Mns-UQDUNry12X3YQezTv_IIpMVozeWnjKiYy7QZB1-osz1hkicDSrXm-poU4zG-UWE"
+        },
+        {
+          "title": "ClinicalTrials.gov: Famotidine (H2 Receptor Blocker) trials for Gastritis and duodenitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gastritis%20and%20duodenitis&intr=Famotidine%20(H2%20Receptor%20Blocker)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "20-40mg once or twice daily",
+      "effectiveness": 75,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 210
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 323,
+        "costPerResponder": 280,
+        "icer": 10000,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Omeprazole (PPI)",
+          "costDifference": -60,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Famotidine (H2 Receptor Blocker)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 78,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 3
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 2
+        },
+        {
+          "name": "Diarrhea/Constipation",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Hours for symptom relief, 6-12 weeks for healing",
+      "treatmentDuration": "6-12 weeks, or longer for maintenance",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "wjgnet.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_s-WzK5Nm94SxFu3J32Kkkc1BIUKUcXYKbpoDIemysYd-myeqyqzNnStd8rIfvi3-O9BKlyYGnYxImNbzMS4hOh40XKo9PjsmGqu9dpDMnRZvhgBhClAmm6q-J7JpF37OdsAHQffksL0nn0w="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEa-olQte3EwOPhy81I99nVTW48-QHft6g6yIWXtYzNvaEAvzYV9Ruhjj8REAqTLQCcqhULnsZ-23vsncOeenITH8ob-TcV2Ch8_27_uHyzKChwrieWYyOp__oHsXLKS8JGVQmun5xerrpULUAINJw3NoqrGtsojiPkQA1VuTw29ray11YT7PrB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkglKXV8hG8UAJIQW_J46rQT1oP4yl6tLJ8_jmnC3oJ5NaUu486xAga6wd7FpHm7JW2Ty6gMxOMuWmEKBQf9MdoYVI8SWPGUqgwqiOuvo7nAOpt2TdeyrOF-ourU59m0LU-5r_3pDhjw=="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYe08awkds8qztdLZz_PQMMeA1Qyzv3cehms7koc5qh_gDU_1mFNwc4yYNA0tMf6qx8-_jfz8f9kCVuA2wz8Ajzmut8mM5MJiXQwEhT6_qo2tic8ZDSB8Ow7QfU_HCRUW_a3Oyyb1Sn6m66BLc5BkuEmaM_w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVcsQUa-Q63Isz77VBtNjuANRpqdNWS5OUbnt9q3FxmZKyijETzO-ZS8SXZvxUBeZ8AqfR0SManZjxhZkr19xou1pxpiDj2Aid2sZkKT3kqUhV4C4znP55RPHoZDqnO57QdAiJAMeYFH81ya8ZNJTtVymQggMUetsaKoYCnnZ8npUeor4q5HFRCU9RMf8sjdfKAlHYER9owlb67OD-Oh0YXXdbOgjD1QSBF68Y1UMvJQ=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0DmRrCM121nt_DOySr4L8-R5mNqQtoryQfsY6mGqJ0teDTxxEWCPz68GjWB1lUEZBo3M-HDh_ikO4GfPiALc2SWGpFkP-JBkS7j0d25mHtcXJOCmlz7sMtsHs9bHG0pUFMg2dQODDKAme4c6bZIsTnJXDN_m6_MeL3t2nNV_EefgLDMnweT62VRL5DhlPChVrtzAMUGDteQ=="
+        },
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6MN9iNGQ3cr8kzN5SEc0qO799cYptAPowCxUZfV565e8VWRGuP2eFgDjyQN8plGAOXPcs5tpu-8h3B4bAfhmRO388j5NzM2buYKdfUHF4MhPl-OLnUT7HoIvOdEPl9Vz1havmiKYbmSYem52zPPbsGxUI6GRBPw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_oysuDs4OwklcuHE1QyySITfPpv-Z4E9f1wFKEwqsxEF1J06kgyn2oD4dD5Mj38N_uja_d4MS0NeLJFIV0XPnU4MULEjeswV-JlhSnGPRp-MUD6T4XJVZ4ZMZkK3bbDdYeEM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw-bT2jVqU8O7KLUSJQeJYoPAh4zUO98s2TTAWpaNYAHCN7K_--bqItFvm4BYA1jfNfSOaNlBrG9VPrGx_Q7LQ03TsW4c1Aa0_wzKbdUpkSflpwJd7u9P6bmXBTrOYUk7UY9A="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR1W6lO7rDWv4ytnp-jsQi2W1RfiwytWk3uzv3F0yYL9RtUGpBbP0TT-lF21ZvxjMSyG1ywvXPpBI9o4kdEc5geY1oESqFwMnuM95u3kfHgyjUtQe9YKHYYNje0lJfw75-SAFOhrJ9vWuB2fWT87NQitpSp-0nLdt28eafCICMN_orTUtk2RIEGejC0-DRDR2H6G2qKurmdRUeczjZFwNE5aH64nOK00UeUqJCJ27mwRBugzQFV8tYzuHuvbHEXsjDuuP7zEFMqyFJZG_-Fik-iR_T_vtk6pGyq76_O_6to5uIFvd_7w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sucralfate trials for Gastritis and duodenitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gastritis%20and%20duodenitis&intr=Sucralfate"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "1g four times daily (before meals and at bedtime)",
+      "effectiveness": 68,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 600,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 660
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1100,
+        "costPerResponder": 943,
+        "icer": 25000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 200,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 600,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 495,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Omeprazole (PPI)",
+          "costDifference": 390,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Sucralfate",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 83,
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 6
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days for symptom relief, 4-8 weeks for healing",
+      "treatmentDuration": "4-8 weeks",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "medlineplus.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETgRO73jzTRB--4zaDieTQGLmmbYXkwgOyawCfsudo7e2JlYJ1ge_Ek3F8QMFDjn1wH9PmH-QiHZjq0LprdDwpIynkjx4ivB8sW8hgol3Ox4R0IDnSeFMU56_tMCz5lZ8vFEsyJxLuObICJ1Cx"
+        },
+        {
+          "title": "saintlukeskc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEECkGZ9GuE1ifO75q6WxM1vb6zUJkONWDgTLMhmiyEdTPXbSsQTeMZkpkeoz6gVakiAUmFNSlejMZvbSHY0o-Zx6eg2vnp62aCvuZ8IFajIUL1yvOXZ_GpnWBC42eceYLwtTcCYe3RRNm24fF-O1RfFDFHxoM4c72MELCW3h_QXg31rHLAJH8qvPHZMIo2atC7"
+        },
+        {
+          "title": "globalrx.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEV09gyxP7WugnOKIQKXqKmq38bJCgao9VIZ4PoNm_nSMdKErDG8bNIzprutdBWn-P00bz8_kDH6evjbYztzhDXHO7v6FjzbY8IU-oXRPtzd6jE5_Mn3efrObwU9zBumQVb4BgExq3ABPMquQCEfNpPuJpAzVj3Ar0H_u1gKe_1U11H8yxm9Z9nxK52NHiqi0O9BogBKUTT6w="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6rYj_Rg4chatUmwNjoUe9yZ2B8Bon5qu9IqbiNx-6ruYCBoyzoWTiIInYRdF5-56eg0l_D66GhDlBigIyF8gRIr1f-6AoAt6UEhtIK77T3qxSdhoe5AVcMr8BV3VLSEfnXh76eQv0EiVnI-i2-b8f4AClPBEB8krhwIJh0er84jOzv8wjdGq3Qw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgQn9cLXEwzDLk27oQqn7XuVpJ2SACcz_uQRRA2C0Y_L-8lkA0j1Fp9BFd3H0Cae4XqvO9rRfULqCoAKc2ZASKdYVrGm8VEwqx6kTk4UlRMQKuV4uWLiq-ecleZinq_HVpnVBpVgVpW_5tH9M="
+        },
+        {
+          "title": "healthline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlOUp-h2BlQA1MlutXo8CB3py2q93RvCBsJ2-DQW1r_1JjlLpHNWiAPRNwPqHjvTHvQyEMWC2DrzQuZ9MYsz8I_2T41yWpzrgvKCPVmq1xUjYIAFbTpWVgFwdQnYqZMRjle9tekE9vNfU6CoVrxmag5w=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8pkzdAx6n-OrVMpzKMHgStsrzUyuRnASNMeQaxU9vwR5J_nTPIIHEE9HJDxPG0hB2WAaldBgClZT-WV_R38TSA-sHGjo1YJ1rSjufFznjoF6CnauS9tY6VwJ2Quc5Cyvl0Q6fQmhPLcIu_J42Si913alZrqedR7RGZttY9PgzX0rzr2KAD1IEFw=="
+        },
+        {
+          "title": "journaljpri.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnqYUR_F5WwkMSqhufT6ABoYLXFyibglt1-GHLRMjSCLTbLDBM6y995N3wK-Vfg5KfuEnPU_kD7AJJZYaJvDQ6rPjJs4hQaKWh4Tvb8l1g-yCRKcdUxT87x6b0d7SMqOTzK_bzWMUOt8EgrNx3kQaWjKW1v__OIxdbDcETRvxkVNc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs_uzEEJYZKkGltLmKV28llb1PF0RgnltoV7rcqbhIZCTqFyu5FXkEPRPM3KAdH96EQnPNChsOZOMnDPEEekoqyEAeklV_sQrb5jDEzMuwALBgm4GOCtetcZLdNr4omK8WQDE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7q0nlgyARq_cprxAdzCH7U9jvZj-irDOmUKPdgrVxY22djPFYoaZXE-HvfHP7coDHM90pzv3x8dTj8Q5lvvd157NrStnvCDzpYTWzYF2z2oAOHzwz5NlRhhw-xk5eZLYgY_0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH04XM1MhB9nPT0tjUSzMCDOojsZcLvRIcH4-m-kSLr6b9GRhTyPz3jhUg_TfdCFFfOXIM3z8Gcjcgz6U3CNE1v813Qqquvf2EWuhT_UH9GHJvzemtNHTPR6sFBKvuCK8X-vU="
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTrUngagNwSS_oGB0FV61s-VUjODGloqXQLESaxYxu4XXwE1ejsOfT3JDe0147X4Zra1ePRwn5yvDgE9lEODK_kPFojQdFTNCksMzmOnd3XlUiCQVwi8acMAMLr9-p8C7MA1iweZZsUVdZ24Cxmc5R6WPe0lpPmZ9deQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy6yenf0DZMQropEwGtR5CvFloeY4l2SFYBKzZ0ctVRcmvowmpdV1WEdGbPsmUY42kVxHIQ-eehiS34NqKpKczd9LU900oytkmTtsAPCXO46Ky_zSVZg0UrSAepUxr-9J3X3Nk"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5SmLcXbu4ESg-wT7ihI33kOGhPiTx0gw9zGDkUJg0xzN0yUjbidXgtnIKGrL-IuHT1rZAFNXbJODawaRIsPQtsd3hRXZ1qRoB3Dz1xb1bYxQ2So0ICF5rdn3fEkF46KH1oZL7OBmlQ34SqP0WPw3nOrW9"
+        },
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUqwQtpSGALBZv5sNG8XikGso8yAI7tLHlSWb_oJmb_VngopQLTJdQ-iidBq5t4ci8E7mQyathrh3Ohr2-v765AO0zikYQmgxf_aBXN5GBvGxaw2EjAAbkUsJcbvFdhugDRefYJ8nQN7b7IA=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBVGvDXAcYcX6eAxok8mspVu8R0aJQSyLMimoOwEEhd1qui9NPqNNKZUXks7HZS5bHhYBJnwJ2qBUZTL55apQC_b9nXdRuyoByVMtk6BilDZqbmihNDihNYEYkITcFIVpfyl9RY2LxztpIfa8ohEKlWZExzQrXBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY1PhZnwpsGuMkZizpbtmwnm1uzUrx0ep2uMxKRwLVGkeGyQXM4UaiWKImSsCzTTiMEGMlG1n9Qf9aI-Uzw6mboNIRRbSGj0riuuwqnSrUkuBOGDE5LYzea4GhGEaPRO1Sn7U="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX774o6E6cKAQrZWloOrYdHe-HA5Y1TGtA2KOUfdgGybq9SS5pjB7G7K3SvPCBi2RZA-tRrFcDJwh08w802dfEFohUfIa6jwxcsmaDUmC2RevvG-RNW-aCk_6rEQIxh4kVxuQKWm07Ihnrsry8wRxOQh-MAh5--Wqj76nJPsBDh9OdwhY5a3WOBX9R79f-cFp4LSBXBB1-Uj9NNH7lZ4Eo723YKuAWq3FCKEUbJfU6rqkj_tYb4_JkGUPY0jLxQjRSOpTsQDmo"
+        },
+        {
+          "title": "ClinicalTrials.gov: Antacids (e.g., Aluminum Hydroxide/Magnesium Hydroxide) trials for Gastritis and duodenitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gastritis%20and%20duodenitis&intr=Antacids%20(e.g.%2C%20Aluminum%20Hydroxide%2FMagnesium%20Hydroxide)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "10-20 mL as needed",
+      "effectiveness": 65,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120,
+          "monitoringCost": 800,
+          "sideEffectManagement": 5,
+          "totalAnnual": 925
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 192,
+        "icer": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Antacids (e.g., Aluminum Hydroxide/Magnesium Hydroxide)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 65,
+      "safetyScore": 82,
+      "sideEffects": [
+        {
+          "name": "Constipation (Aluminum-based)",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea (Magnesium-based)",
+          "percentage": 15
+        },
+        {
+          "name": "Chalky taste",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate (minutes)",
+      "treatmentDuration": "As needed for symptoms",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjy5WuC3M2Gqh6APfA1ZAowWz0tWItoOA6H-z-hcDBccf7lB94cIxJnsBHocE7U0_r2Oo5dR5Z9GulMNOcoddViMUmFKXuDTgSUkBQ4dIDBjt2csUugN8gFDdKxKycMBzO5Gmp9_c17XepS_w90h-pcTv5FHXLfAyEPL_1fAWqFssCiEo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWvTwpg8atOK3UP6E_7lNlqqZooQemK6B4iVUBK2LEwVR_CPiBcsGWTdpUxkTemC733YOo16oi0euOj-coTEfBIw1Ghs31uKFFyXYs6ahlpxUMXxsb_HN9G2R_mQDLrWtf1dg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKRFeLZGD0hoP3tnjJQ3y-MmWpyeNT1rBO--GJA8rSBzkrPFx-kJT1SoSA1wRW6q_KeWLlRxoiJN1XfC0pRKrvMDDV1x61mCbMFmjK-iQLjd_8ipAJGxSNoiwUUB98QPn_uyAqVR8p4w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECMk7KPk-q-IAE68F5N0GCmB1UBHYsJesmNWeJEvuyVhb4fcKKX8_V5UjZWAS_3V8yS4k2lEeIK3BAjvTbzMXj0xr_A5VLi_LrOJ42lkknVX-j-hlD3z8X5LYIf0pr2EYq09k="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzlPYC_a_3QQQJdE3cdMkqSPwDsdIGo7DP73RWe4Mky_S8WajNG1G-DJwnEkEFJThx9prC9ddLjZYjrir60zjVyyoSHHDE-dRXjwobj4BKzi3BLD5cHL5WqGwzcW81ugfCePPE0EPPgYa7QA0M7Wgkk_gGo4YJNXWSE45bFeF5DgB3bq1uPNATDLAxZOOVgUdweXpTQETKvBFT8WPCGD1Fy2wh2QnSg-MX8wfDo_yrc5GVaH4BYKoIs_FIFgMR9dMcOQBnQXaRLADRuuZbHFyAgj0PLRh9ZwaT3G7Chz_3xavmk7UJtCKB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6QY3YGWWM82wDGhJtuBXwqidrGbOwA2ZvHiyHiK1Hh6WFgnIN2IA7vPrgLsPTUMg2IfU6xLbzp6PHaCWQZxOcZnouJLqYwBY39uqIBejE2yBIh21kSNJAn66kRv1lmR5jWaQ="
+        },
+        {
+          "title": "europeanreview.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0t6TDOtf9G2-8FIVCKZzlGR3FjfRxssBzJ-plkcs3sSEe1mrmOC5a3xvU5ZzelESQy45_ADNZETP2S8r34RTY4rX-HV39u4SJLLReGPKK24SfUq9ziiqv_QrCl3yhNw5UBEWVFR7ks6TVRsqeASfYt0QMs5e-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAzDDkvlNGj0aOU8GfXZnFOGs8FRzzfYuZ9ff8PJrVs6bGRLsfOFavRKpqwNFxoWMQgJKAXMF4I2GR-UuHKqs664lXIYy3w1UyTakTuwXtqxb4q7TV7k293qdQyk8C8E70hiQ="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRHNFI7hsHbWI8eusoGHCpa4kj0T7yUFNGjnU2MVNcMdbkGAfIAbFNFeFc8gUaL6oYOUUHzTuAgkkOxvTYFAEkY8aOpOHZyJnlyczbDprWyQVhcLDYz0r1PPecfDr4Y31fWQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETXu1uVUH1lbgnk9mkCEvlrydZqJajcKncDnt1Cn1NnQwppMqftzXpYzU7qhBgDs0H8KIYuHJc-wsSgGCwDlXWiRATYNo9_j962ElYUaY9uygfOTentlAdsL575qSwqCak3ZY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Misoprostol trials for Gastritis and duodenitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gastritis%20and%20duodenitis&intr=Misoprostol"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "100-200 mcg two to four times daily",
+      "effectiveness": 65,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 480,
+          "monitoringCost": 50,
+          "sideEffectManagement": 50,
+          "totalAnnual": 580
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1055,
+        "costPerResponder": 828,
+        "icer": 50000,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Omeprazole (PPI)",
+          "costDifference": 310,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Misoprostol",
+      "nnh": 4,
+      "nnt": 12,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 55,
+      "responseRate": 70,
+      "safetyScore": 58,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Uterine contractions (contraindicated in pregnancy)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days for symptom relief, continuous for prevention",
+      "treatmentDuration": "As long as NSAIDs are used, or for specific indications",
+      "trials": 200
+    }
+  ]
+}

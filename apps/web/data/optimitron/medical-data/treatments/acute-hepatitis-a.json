@@ -1,0 +1,399 @@
+{
+  "conditionName": "Acute hepatitis A",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:19:27.108Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsylkPM8_Zcuvkj9tzdWt_jdp0yp6GhPZInlpgxzy3xguIUKeZazMYdHEAThPQ3zbgajepR_E--yoaFjqSJtVJBKA03Po4lyIHkjtoha0t1zdQgt2GHIr_NFB3oUihCTL-lU8u5j9hW6j1kwdg0GBaj14="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElI9ovFDlm9Q0S9OXSHsNIhnSpCsyh-3RmAyWMfxIVC9Ei1iiZVZ3gTgbZVnPjGaPVPfmczRAlNauvMtUDg1t2GXbqIZTGU6FQf_--BjZHxVJgc61N1y5fW5XRcby58mF9ehb90tl8DjnaRCCj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgcy4DP98Trl-REky0Lnpc6yokwUz2O_YguKgtKU5x2BaFeqswFP3H_9meUc0i_rLAbsOmrLIvsYdFq-q45RkSVulIeccYVIx38NWJ5uB_DaFIeglxn0vPcnmCqRqwmc2SLnsb7wePtg=="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFpHIAso2foKrCFaWcR0vs8VRcbInw71cQgEPDkv7NwNFHSRuvV33rTsDvw6Z8Jr4NO9ssBh7v4F0BkPI_QiVW57Pc5-IKXidcltkWPdAK4KbReHIoWXIlfvNb5noxNdOgpyz94nTDMS6a0G7hexI89g6L33bD9Q=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTWBCj-Ei1Q3VkiqB0fvtMci8n--a4_PTkbLgzoU6DIDKQq_Gua-Z0dGk8N0xtOoD2YdHZ76wbdsxWylZx8ZzntGU3RBTRONoal5K1A_mKE28fowtm7GmzMz0-19lFqGka9Bcz1oEOWvdFgqo1MgE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyaVPqf0pqtdv_-wXLTuW4lsDoxQbAj1S0tvxJTZnzE3SG1Sl4uuPc_vENBiN63xehiVThC6qt16DKsJDKX_llaTo23m49ue7oSmJBNTaEcH2vrTFnHRZDwx1VVP4kyS9w25l0ZefD3rnu96gUpMsnM9MYaCzPI1Ds1BtR-khgmVICP5mWzixAJlPyZiEJms6t74TKpM2og7JVp6OX3H7WQD8LUHFslHtRbUHGOJuLmmM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Supportive Care (Rest, Hydration, Nutrition) trials for Acute hepatitis A",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20A&intr=Supportive%20Care%20(Rest%2C%20Hydration%2C%20Nutrition)"
+        }
+      ],
+      "confidenceScore": 100,
+      "dosageRange": "Adequate rest, maintain hydration, balanced diet, avoid alcohol and hepatotoxins",
+      "effectiveness": 100,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 0,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Supportive Care (Rest, Hydration, Nutrition)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [],
+      "remissionRate": 99,
+      "responseRate": 100,
+      "safetyScore": 95,
+      "sideEffects": [],
+      "timeToEffect": "Immediate symptom relief, full recovery over weeks to months",
+      "treatmentDuration": "Weeks to months",
+      "trials": 0
+    },
+    {
+      "citations": [
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgnmCIy-PDc-BaiPRhjADQbZAXQ5z7yggYQiDo6Vs9JCmDHTMGVwws_-Bw2e-S8vstxYqgQWEzrsIYE5tYXmQ4w2wJES0OBzpDJowmhDzn1Orb4z45DDQcgDhftd74NDgYKtYRt_PmnqdJ-38f"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5D_SiqjR4sciFIg7CVgSGfsMzv4S4ttXSiX6F2_hOFgR0_0InMW9N3Yi1CPH53FkxIyVX04OeB0CWYqNcwLJ-tMms-RK4340q9K_gHgmL50dUWaSYJH1Jl9ipQQeyqQTqc3qALuj4cdIdKN7MenVRFOa3OldP8ve87Sq3yW6WpPveoa02AWiHKiINsI21QL4lZzFoqcv_QgyS0lnbOreAnSiN-FIzUzU8vA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJO95EQ1ziI3DK_iUPMOFZIGW1Be6EUVt60GHutvfXrrWaJkyXYJTk4Vw0y7cjBZMIMIoQdZDDo0vsa45eaBkdo6_iZP0kfciJtlBsTdqxI_3B1RM-17QBZDJgR24g8VhhokEY_XnPxpYsEA=="
+        },
+        {
+          "title": "lacounty.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdhYtfNKZ8k9NIG7YwRmeIKgtj7O2Ugfc5QmFj5Zj-Mmd_upM0cKtXnALUcChIyHgdENNmcdhRKHVj6mrrTOmywK2Inzr7bF-COPt-V_MLkjGmGUYwBFmC-ZHiYz_vAesCwOpVydX0Kt0ZRrl2S2Sn8eWLPTbf4Eo0mx_Jrp1U5Q=="
+        },
+        {
+          "title": "saccounty.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHq9xtUojD0548IEpL75lQxdYQictBJHtEwqcLHwElf6T80PMQh3g8onzP2WxtoottkRhh9Jv2rDyPUDExunh2pzpcFj1Cek__1e3mGMXDFyRsM06hEqGjZz0PNOfm9lCHXbty5YZplIyGhKnIfJ-Xt_9nXDHw092mx5nDyfWNUlce9_MaeJyeZ6wahlVQ8Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO90xw7dcLClbkpDpv8jfAP3gyIQXAW6C0CCLVJpf_xgVBPns-qYSIUBoch3vsJaYlNBxRbl3D7maGT89PF3TMFJvC2tN-WObRl8xOhPiYSxYquVpsUMOuLnkDMwxZn6PioRM="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoYXsLt4_ogUh_6dz8OLtCV3YgKMMoQ4Ru0dNAonb0yRMDAydSPjCoTCKbsCW8DZTdeJoaJ4JOsNmhXNKc825GRAVfppQ4w9tKhKR2D4vgAVnrbDX41U19Q2cqcGJQNmj7mDYGwKhPA1vRHu_e"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH511UNwy1jmHxz41xCgdgb0gs92totk2QMdLLWXC8dFF0pnpnPQxJBkmQGz7mfBHAo2_VVPApMVq2VXfq_lG2tBFBxA6D2PiJF4N7RkoDAa4avOt1lqqfvfUUF-5q1n2u_RQ4ndFWCxTdTnQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Hepatitis A Vaccine (Post-exposure prophylaxis) trials for Acute hepatitis A",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20A&intr=Hepatitis%20A%20Vaccine%20(Post-exposure%20prophylaxis)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "0.5mL or 1mL IM, based on age/manufacturer",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 52.63,
+        "icer": 40000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 100,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "No prophylaxis",
+          "costDifference": 50,
+          "dominates": false,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Hepatitis A Vaccine (Post-exposure prophylaxis)",
+      "nnh": 100000,
+      "nnt": 10,
+      "participants": 5000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 88,
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 50
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Low-grade fever",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Protection within 2-4 weeks after first dose, some immediate effect as PEP",
+      "treatmentDuration": "Single dose for PEP, two doses over 6-12 months for long-term immunity",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGaKTFoKgvqIDbzaH4nNtfDBnEAvM0f8gX34PEB3NDHH2DD03y2XifPlskET9dWwnJZkxFyVworxa04W1CWkZS9mIiBOWOXJhLpmjAZJnjQ4MY9dSIMSU1Q6C2s2_KvMuAurM="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmsGd1Jq-edm95v-JULb73RAwAB100iqoShDwLUzpz5rMPJuWwmiiSXXbbFJD13CgqSO6JvRBB6myWkNSzZjiY90HJBHF4MqqlHxRMmxx9gsXLWWPIw9Wm7D6NneewmV9DxAbE3XnP6ZQqWHJl6Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPngfbP56DDZLBW7jM-XzoOqkvfSpZ90jqhV6hNhUNVjhwZd044H86GVVJoQL_wupan8dxXj5rhGOerEgsbMgNHiRjOqYmQNTd8nzMdznXbcluuI-S7UYFbFP7sWUzrMSdPjCo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp69k3yVZFa3oXAB5uuIQsexoX1ZxFMcOxBW9p0GthdJAfL2o1TweuxrQc3N3L0GaI0p2m1TfPv1RXlf3BRW2fUXR141EaD-Xi3oxCcZco89ni1Wi432fVeQuDrzwJ7BwEXdROUEEqD-eVNEER1q9S9SHvd8bub5TMP4wqgVI6aryyTORZBfPwDn7-XhOE712o9eLrkcrHmwyd1DLWuGjjBXpq401DqJ2WAO8yCsmDbEXhkKqocA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-IiG4Kij61zOYKy2O15YmxrGJd0CpLlkD7x5__smzbna0_cI-pN2NSp90Gwtu9GDLsgAMU8mrBZ2-9zZ3xJ7K2dIRhOX3y57-dCbwTEN-VitzKXTGV9uVxjLKu6qjZ-gJtbUY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwBY29C_4sKqeeM4M3l3MPmZL6BKjd_sBlNBF9gMpm6mRvFrCPk7HfH8phzg1BgWlgZfYFizi2xRkcWEGfgf_vaVTTDYrsH3KXOUFngK5ZeFyJMHHwxO8jWEX6J8rQzxMMScEVb-t2gGHWBtc="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjnwvEgeB--ibyBv6RhslWRJElzS0wuPCvLgiAJdAtJN7RJH0zH2fqXquMjnug92X39xeoVjG3RLWpTj6DNaLvnhmqHNFag39t7ROTvTDyJWJEH6BjjYbq2dkisCa9cAuEgWnbVdtjOE-3xj_8_A=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaje6fC9cpL9VZL5Ena9gODJKHRkZ97AQ5Oh15di8KDGOy4LyOSI_bSSEoKp8LDzRrtx8Ubf8Xu7sSKRkhF17YS4YfH5-FIfMkwYxwpYNh0XOVuQwqlB_7D0JkSQaCTZPnh4sG1ATWMU0GD0T3gp17kh_v"
+        },
+        {
+          "title": "lacounty.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzE0UXLmb2YX0E-wDy2Nk23HUyek6Oy-XpCXyn4mumM0c_fQbqCQ67nQmeGve5Waox64MVX_Cy4wzXJWyt_JPSMeCk8GFGpVfKZ9nL-BdPf5kZ1YPMNe7CuOfVw0GIDMi9_ckncRX2_Jk7YgPmX-0e4ox_YSunGfQ2Fc6iTDlx1AU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Immunoglobulin (Post-exposure prophylaxis) trials for Acute hepatitis A",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20A&intr=Immunoglobulin%20(Post-exposure%20prophylaxis)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "0.02 mL/kg IM for typical exposures",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 235.29,
+        "icer": 75000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 100,
+          "annualPrescriptionCost": 200,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "No prophylaxis",
+          "costDifference": 200,
+          "dominates": false,
+          "qalysGainedDifference": 0.07
+        }
+      },
+      "name": "Immunoglobulin (Post-exposure prophylaxis)",
+      "nnh": 1000,
+      "nnt": 15,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 78,
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 30
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Malaise",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Immediate passive immunity",
+      "treatmentDuration": "Single dose, short-term protection (weeks-months)",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERN7ODO1HzKX9pj9GfsM-pmF9LLkWjl-CJetUsQ2Wsae4ccHuY8Ul637macI_FyBoD2am5O-bQETjxWX9L0FJOSPmfH5qzhO8_y9TIeFZtX9pw263SVSCLljuFpw9FCuQrjYT5X5FQorxS6Z1SxNBuonf6a6S7_fDTgD602Rgqw3bnhfn8qA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGydkqXWa5aMClXCOHs8Emgt7uda4eH7Fb3xZcqJWaU13SvQRqdaME6sBht07Q5PzAtqLbM2rEaeY-94HxjxRjNaicqa2FX1nVD-5a82HZzluQH3KH0uHpSPz5ym9I3MvDRZ-zWIvoVEeta3KNWRusLxfkGBuhaeC79GHIsCJh1sNVowCeRm8RisC7ZB-_IX6mVTLJ4qMbJ7pOEamdSovoGQVJCNBGwhvPzXf12pVEzqrC2wrcE7oWaNlLkad3t3sCH26Qjpg=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqu5LpL0wXtOjMK3I2dvXuYokFh5Zr3xzve47Dg-D1IAPpV_UEV0d1SYXW4fP-wG3mkVXtWGN0YNW4KAEAgVYdlmaP3C29_MobIR_9E4j71holbx76sATh8IlHl3hhw-siADOjpmm2C4S42gu19U1RVZE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9eYtSGw4QdkNx2iyPnC8G1bKIpr6CyTrSCCwfwSFaA_EO4pyWUdkamNEeKust4G43E2NtQVcx8_cAFathRMtutK8uFCmSS8rYSE1lGlhHEqQ1fEJbu6KeHp1qAKosW2iMZ7EaLdeGpsaixBc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Symptomatic Medications (e.g., Antiemetics, Analgesics) trials for Acute hepatitis A",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20A&intr=Symptomatic%20Medications%20(e.g.%2C%20Antiemetics%2C%20Analgesics)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Varies by medication (e.g., Acetaminophen 500-1000mg every 4-6h, Ondansetron 4-8mg every 8h)",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 55.56,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.01,
+        "vsComparator": null
+      },
+      "name": "Symptomatic Medications (e.g., Antiemetics, Analgesics)",
+      "nnh": 500,
+      "nnt": 3,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 78,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Constipation",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "30 minutes to 1 hour",
+      "treatmentDuration": "As needed, typically days to weeks",
+      "trials": 500
+    }
+  ]
+}

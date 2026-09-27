@@ -1,0 +1,768 @@
+{
+  "conditionName": "Tension Headache",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:16:12.141Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA6JNy17-YArKXunUf49S_8NkdpOSdKDxF1WT1cSFG6qc-xHIDPHFeM2Pc8cfFKihojl-iI53M96eybFnPaI5r1SRcyygJfnwR0Xwj9BIxxhtnecc8Wdyd7rTKzPU6Pii0EfS5PgqN15ny548="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-NN13KRVBsQNBR-eQy4YmhQbEIgsJDsci8nWKEd4HmhMB6vW2oHzi0QVbyjKmmmnfT-at1pYieSoFBEHTqBxWd-vasotyz48P8YoruJXBvwGOz8KZH0LXBdo9aUbdq1dx3qerlYQElB6lvIITk2Q2ukL25-b0PSqqAdvepKSe-hU9HdUaBK_iZGqGhz0xOB7ItWpj4Gwpz8qQXK2zgh_ydx8Ro4SDWtgUqTRLdHGRskRg0gdduDlJR76OmaBDSwZ0mwxq6WLsYPkWiHqG04yWqLztL0lJwdtHHRzuci5Mz9VSP2MSpmHbBcmdmTdBZH3KkQlICmN3igcy2bVet0dSFdnxLJyPJeBBpe-lQOepnD-d9x0h1QEwNHkSF9X8GI1broNRuKs_P1X1c-JYzagLuChzY56JCA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtkJ6K4cInY3Hj8sVsFI3ftlBStfs35k1PbVyBWf_wVJ0Lws1yRHGme3NPVoZBjuUXiRISWAEhFzSGIyKDkNI7kHMebg9vfZBtv8UrsMFaQZ5oEWFLOyC3squ-22JWUtSYU7S4_MCZTw=="
+        },
+        {
+          "title": "excedrin.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4iacLE2CwEbngwemkg2huJVXSw__4qR271PySo6cpwDnK1eDSvuBQFJY2qQrDLpcVNrVynotdv6gmXspLR6sJkC3mZFeVuBCXN20lUdwVfl_4Jx2nAstZEe7rizJfkqg6QbJpIkUeHbyAsgpbAS4CwQEHdn_24tE4Go0iWqkJY0oEiXl6CGwos8mZc1Rs_Ogyy8CzAnWtkQ=="
+        },
+        {
+          "title": "healthline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbazTdnkEOVqmMy_CR1Bv0K_N1YyCHfB2IWmAQgn-usVw5CpvyShNi7DmBClRdX5pRSJARIa24vdWr4G9-N_1Ss0A6gQKsCp4aTfj0mRMpvE2TotUmsQ9PLHOXMP2N1xdd4pg-I_-1PnWoxEduxSC4UT52HTta950AKZYRXhfm"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwaWrNw6_zpDc_TBsEYwHwvnXm9QBkMQ7GbV1SMK2UDLN_UXaEBREQqZ-iIGtIO94ut-TKEdQqo28zQBrHP61Cq-2onu6QDsEHip3k4_VnQPAWbjTo25oo08YYvjUjDdjm9hil"
+        },
+        {
+          "title": "ClinicalTrials.gov: Aspirin + Acetaminophen + Caffeine (Combination) trials for Tension Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tension%20Headache&intr=Aspirin%20%2B%20Acetaminophen%20%2B%20Caffeine%20(Combination)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "2 tablets (250mg Aspirin, 250mg Acetaminophen, 65mg Caffeine) every 4-6 hours, max 8 tablets/day",
+      "effectiveness": 72,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 20,
+          "totalAnnual": 1070
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 93.33,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Aspirin + Acetaminophen + Caffeine (Combination)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 18000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 72,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Dyspepsia",
+          "percentage": 7
+        },
+        {
+          "name": "Nervousness/Insomnia",
+          "percentage": 10
+        },
+        {
+          "name": "Rebound Headache (with overuse)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "15-45 minutes",
+      "treatmentDuration": "As needed for acute episodes (avoid overuse >2-3 days/week)",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeccyBlIu-YychjZpmR9Vqd-vnCvQWxRlud9XVm1QQiXKjspnyjHlSRr9W0QyXQSxrFscRFUUEH3cKeVUyzBmxECGCtCsLNAnqfi_ntEVOdPtu_h7naI4pJIzPo7EwV6UWLQWsualC0ARgzLwy7ALQig=="
+        },
+        {
+          "title": "thennt.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgKwn3LosxRCdm__uR3YxCevzQhV-QLD7zTjwZrNAIpI5rUWtbTmsunlySkSPvMS8umfOyTWHFkz1_aChiB4ju1eecayl8-4Fe0skoXMRJX2WG_vv2fY36kAF-FIAw4VrsVmp1BeG-gK8bnLSaMnDfwf--MVVplNi7F_gc9wHmKp79ROgHA96xQdy4StM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH5unofpAmauxhI8g8Ec0nQyts5NdksSWvuJZ82RpyWrXUXWdXMui4DVAh3iYU6SsytBCrGLXGkLMbaKIc3NRejN9qfcqOyjVMgN_NnFDlTms8xJ7yna-wC4hf5qll_X-isJhEwZTtuXxjsA=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcl3KcjUVJgPAONluF5LuFlOhP-lN00n27SbsOBLTko971sOveTQL8ce6m0dyzaMJpTmBGaxLVNSLRoQfe2M9GXqOzHOq4FX3Z49V3IFukLkpofnUXfyYcWHzaCvJMGaf-hEYDOb0tmXE9xrEiBaTlmWhQoQw3WdA3eu2gb6fhaciLHgYaEtbTNwr075Dp2p6oOf0T1WRL68uBHe93yZrD9adWYr-AIaoN"
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzjmDDsd2BKz2VCSpuPLHScbLwGipNA6pjDLMCerurL2OzB_lii0XHah00fYILijJE46KOphqjbSOOPtboH2pgaDv29qmxOX6jP9GeWJOOO3tGxTj-uLt4cwY2xUsAwiirYVoChQ63WO1AzWJEv_Qu"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1oEt-HbrgJRfqHt-1LZed6uy5tf-pcUOFLitfQioXR4QMRYqz8csodwz6lZYfiP4xB4ugsDG2Amk12CTc49xTcxMWjKEmcX7-7oEes55kmwxD2wmjug_IMTVb10O3XplVg1HNEG4EBUWpZMLVCsQrAMh6zg7bef3OsnR6UrSRVto3UzW4bDBa90QQ-sLtIw9W2AtBRCUkPNAczACY8o1dxuFP90-0JhU5Hq55UKrV0CmrvzHS7Q=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHdWgNz_PAuDMZsr5YqqbFrk8ZVGzOK2VmI0-H7AxhQ6ZWeVSCjOtlVpq3UwMCGcazqqZX3Sm9oeKJ0yHaQxUDgCYCvKrCdfHjCmSB0VXiFHgW6gXhaMa0v4H0yAOkjwuKYKbgJ5XZDw3Cu3QikIUFi7r9si2KuYIoBrRH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7VFNeQ3hYA2-gMWAj1888GXfVxHULYLgZmG2wplJJJt83MM2OFpHYJxMDjXli_Wuq2rDqcRpRWJl_Oivd84aEz9dKio3rS3LwI6BQlv2jqOuloMsii5WLD4pB6OLK4uHddrY="
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK4b-A30EbHAzNKs_9Mpq4vB1_Zh0oRjvIJTRfFaqU4gSI6ZSPYuvywAllfMlDYXd1P4DfpWyFny0WV3r8gvBYuXVTiskGIK3pNr7PD8I0asOiieqDPB_Sekx-B1J0hozRTIt9jiUdZiFXfapY6Rhe_M7rI83GDWiXDU0-39hZGXHd6cCIaeYskHzveW42Sp4f8Dnsxy4ew_USmi2eUofLGpC-NE1BKhBRYwCoqiDQ_0oCFk2_tkRV7i6z8WW6WQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzZfYuusVrwAVsDFkCRY88fZhqRae_zjsCBt1uf6JBk3JFnFPavCsC_e6aboCLY3jt1qbKg40BqFHqbBpAT4X5sei2TjMjCcvKtZofCX0RC8iKeww3agw2Rv75vi9bdid3Ow=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ibuprofen trials for Tension Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tension%20Headache&intr=Ibuprofen"
+        }
+      ],
+      "confidenceScore": 89,
+      "dosageRange": "200-400 mg every 4-6 hours, max 1200 mg/day (OTC)",
+      "effectiveness": 68,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 10,
+          "totalAnnual": 1040
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 61.54,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Ibuprofen",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "6.5 on 0-10 Numeric Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Pain Intensity",
+          "percentageChange": -53.8
+        },
+        {
+          "absoluteChange": "-13 points",
+          "baseline": "58 points (severe impact, scale 36-78)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test (HIT-6) Score",
+          "percentageChange": -22.4
+        },
+        {
+          "absoluteChange": "-75 minutes",
+          "baseline": "120 minutes (for meaningful relief without treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Time to Onset of Significant Pain Relief",
+          "percentageChange": -62.5
+        },
+        {
+          "absoluteChange": "+25 percentage points",
+          "baseline": "10% (placebo group)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Patients Pain-Free at 2 Hours Post-Dose",
+          "percentageChange": 250
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "4 points (significantly limited, 0=unable, 10=normal)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ability to Perform Daily Activities",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "-20 percentage points",
+          "baseline": "40% (within 24 hours post-dose, placebo)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Patients Requiring Rescue Medication",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "3 points (with previous/no treatment, 0=not satisfied, 10=very satisfied)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Satisfaction Score",
+          "percentageChange": 133.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dyspepsia",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 6
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed for acute episodes",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "ihs-headache.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWROJ59zYTNBhDOwnEs1o8SIEEOswGoH-OuM3FfIOfAEBWeF1zHEfaoHV7SoMnXQJ8NfkXvMDycr2bUak6EKVQUlmT3h55hHvHdhacwtXurQpyCmPtXZL9OyE9_KqSu_Dz4gYjJHzS7Kf2QbJmlFusR_3UB2-sOQY_"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-YchoqsbGWPW3IhmRGuZqbaEXgnkSMP1-6nmfeA_-2h0ySLAomOMcRzMTUv3boTswhJsSnyMg31az7JWix_Qml-ycS2ifhwbK6xGqQDEgc_YcrJvjSjuYB6XX2zer9LHslG7FtCtc-hvd3hZhj3JUpUuVbJVVVeHtssM0udTTlQiaHdypFpzr4IEEcHKHHt21rKEbp5Duq8zliGygngDWgebHSOwSyoKGGZyeN4B_4IZp4Rr14Q_0RVBI6v8N2hQ0vIo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE63Y8QWA-2WZrce8r96vKJH3i19h8ovdrWNm2qf0oQoTROmap_ktAxneHYQqYuiSvJwoRlUshNwWORN-YxMEoy6NRzQ1Ma2FEwViFOY_y-mKu3lkN7LNe4eiEAjxqtOwlor1r2"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgbKLjtXvffyVuFAoBXs1WXPKaSh1DVNmomhHk25iWUpwnyKrm9QUbe7QEvytf4YAykivw6xSvL3W6_v5xwxEf0NGVVqya40fHK-I7d31q0zjAkgQVZM82vokKIDUs8X2GSaw6_vmdiS7Ofbo_maGChhAaO_6cqWjVYxCYuw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_mA8-nHzJhMDa8yLcv8sCcfpqyQO3fYEBnpul9-m6EVCTAjRs8I3fG4dMhgGwEVqEE5i_a4hroikgqdn-D4mh0Fkc4Qyc23Pv16AvhSYcLeGONPCcbti2raM8Z8DGjL9DpSAwonFcTGIVgueB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSmreD5VuapfRVtZ_v3CcqzJoakMK38K-saIL8gvqdHYRtdIG23cqUL3-Ps_bv6dNX7k4-QSzfn2gda1zY573YWnz2yoBmXdWXGnp1FiXdgoKBE3QY4OyLPeE_MDRiln9s6nx7"
+        },
+        {
+          "title": "ClinicalTrials.gov: Naproxen trials for Tension Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tension%20Headache&intr=Naproxen"
+        }
+      ],
+      "confidenceScore": 87,
+      "dosageRange": "220-550 mg every 8-12 hours, max 1250 mg/day (Rx), 660mg/day (OTC)",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 35,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 10,
+          "totalAnnual": 1045
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 75,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Naproxen",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "6.5 on 0-10 Numerical Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Pain Intensity",
+          "percentageChange": -38.5
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "56 on HIT-6 scale (range 36-78)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache-Related Functional Impairment (HIT-6)",
+          "percentageChange": -8.9
+        },
+        {
+          "absoluteChange": "-15 percentage points",
+          "baseline": "30% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Rescue Medication",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5.0 on 0-10 Numerical Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Associated Symptom Severity (Neck Pain)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "4.0 on 0-10 Numerical Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Interference due to Headache",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "5.5 on 0-10 Numerical Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Productivity Loss due to Headache",
+          "percentageChange": -32.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dyspepsia",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 6
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed for acute episodes",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESoMSjR7B1oc0rSid0nlDS-qwYSe04P3OCsG2DOj9rg9S2_WWIBpuZ_rJNHaKluHpdGNjejmhC54MoODoeQhcAIt80k2IAdWkTl7HjryJN2rypqiFqCXSIhr-LlzNm2Wg9vjWmyygcvCrjxuxIi9h6RfTYcx92lnb1YD-ZaUpmZWIIxwI38OA="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8_40ybBVnkhIoQwqIec5DD6QjLi0gIkT-D6cVVsWCysvwOJ-N1NxEoZkRFeZbEFFotD1ewcwuR4BTnPyWbzMXNmetVsfU75zW5LgETpb5X-E3ONCbdtLJjtg08sMp0pDAhYcfuNTW3gY7UULK-rqIEOFNex7E1rD_gMvuRg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1SZ4AVIcssV13UkUmnyMRFVfKC79S3JZVFb2RJ6AKfWnwmTO4_bWqsDQzlvlJWzowbVtbD4RFhq1IanAOorGvzg7NhyRE0KZc0bwYvOETIi-VMs1tmXuMjdHN_fhiusM0qLHQOCJgKt-bko_kNVKheYH1Jb3H6ncSF18X"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE-2g263f8EQpXNygYa4ZhwAUN_xzhDRfAj2XakJEYfx8J2bc-SA9ps8Ok21uIpRKVHsEGhpzfIFs4LFx-xK_FV9xO_7lD0lBOicFHCf9vVcVYYIWP8QP-KowXWtjULxdX_6L4"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCJk98n06cj1vR0NlU6wwPu0etrnvFj1z49WWhEyoxTy78GB-LNK8K0WE6oH4t-2Rx-f26SLaCYgzzYle_QGNGUR9D22fGjpz8XFOsZdbGd0viTcE-Jmr_lLJD3i-r2ShxqT_3xpGDDSVts0SowXT_wbaUzzqz3UU5FLOddEm7JChv9QFWehN_NIooM-7mcdREAgYQmCAg1EmzemhJoE6eIci_9Pu_ZKFMqG9ZQMIVjqqdc77-9ARScXQV88v_WGw="
+        },
+        {
+          "title": "eur.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuSq75i365rzvJdDNnS6EZFJubHQqNR-_ygOG4sEiXsHYS-Spx20-dngxQcLQhKm9GN1MdSfNx6-tS_AwrvonlSODx2Jz9yv5j1-nC0apsMP4V0RIkh6LLIqo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnACTiB53SKlA9JZbfQ95R654xMp4afQNgn1Y_bNtGGQkD734tY0tD4lKLxthFlsok79V13aO2JJ2BpHuLYaex0AeAxmRZHG9P3o3Md3QuIkmaXxvga5-pq-HG9T8avWrFOrSH"
+        },
+        {
+          "title": "kjfm.or.kr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-tZakh14KW7Orh8xgsb5sf7C09eBU_h0T7mtKuQSCxEf9yZUrTCJC8Ye2ags7wPoaSyTMijiPVrf5Y4iXRIlLxFKLt3cqPYGMXi8umLE1e_XDfWhk3hb17EGKVONhmplAu14XYKs7-YRdbqRSQQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwv9pIetkUQ7TLb4U0oysQ0aPIa4HB1FzWZKAwWM66E6kaazzWeuakMYJXJyUitIO8qmBe_4UTCLI7TwSwgoB4aBXIfs7ICe_nLg20F7GiEX48M5Dso_FPsFaeKDqJv6iII5lM"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhWxgWg_yYEP5fFcVRYV90ApgA03ujIBM6rg7ll14PP0o_whj_JB5G1mDXamAijG3rOsSa_uqlrNqn_4Zr5i66yp9gLsm2X6tvPPphPFJN6ndbYUnMclg2zkDGsXXNlwvlmMwt5p3cyMXD5HO3uEpRfaTXHqGuqDeT6t0108y1s2tw7au8_IRyx0cCFPVV_2mkvA8YLslnN73cYuT7HCnPi7LhxZT6KYga8EVruoyPYd6mz4gw1i4li33dTtOIuTsteGtiz6Ud44I5ZK7HchHD-fSPM2t_3bErY33rx0DR8cDdb-A="
+        },
+        {
+          "title": "neurologylive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq_Fh_6G0wNQpkmYyHkoX3iuAGCYKcStkMa9rhCMP7HlPgDwwhnIyXbAGo41bhGx7a8xf8gVI6ekBhiv7SZFvmEQf-zDLvRBe5EGVpPR2uY_HkpnJMPHDPm9cnDTW57aiehOPlabi7jALT3Y_sWxMWuRqtuGQ33y3iopv-r7Xm5iG9AXc-w7UQic4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Acetaminophen trials for Tension Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tension%20Headache&intr=Acetaminophen"
+        }
+      ],
+      "confidenceScore": 83,
+      "dosageRange": "500-1000 mg every 4-6 hours, max 4000 mg/day",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1025
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 45.45,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "Acetaminophen",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 65000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "6/10 (moderate pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Pain Intensity (NRS 0-10)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "7/10 (significant interference)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference with Daily Activities (NRS 0-10)",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-25 mm",
+          "baseline": "70 mm (severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Headache Severity (VAS 0-100 mm)",
+          "percentageChange": -35.7
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EQ-5D VAS 0-100)",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "10/21 (poor sleep)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (PSQI 0-21)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "4/10 (moderately impaired)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ability to Perform Work/Study Activities (NRS 0-10)",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed for acute episodes",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGap230iB6srI_P7PhmisdM4tDyEtEEcFpxvmmR7O2DITzHdWSIK_jQWlEr2doyaknOlHZDenCigqkqrvFZuKFhVdLsoYYTk__1YXPaBo-dVZbDFbxiO7QQjdFJe0814jJpb9s043RLPDn05Qg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrdJO3WjYWsmxvWGrQe1_onEioMec2fcTgDpbq0ansI7IGSk7jmV8Tmok-OyXEvKSCet9b3bPmTwkzPsDQGjuR-DVER411HpEcI6U8XK3gjTYthkJ2Am6oFXlfMvFwIvSrYRGNARdXGrtIlHULDiabKjOrqBHwWl3Ahizm-0FoHHzMuGzwZKBF4-JUe_oqQeEz9ufBZCkYbmXu9ZNIVlw4xYq1q5ux669Y4haecTYvw6V_vuQTPeaZedMNTm-FLlDomFuKNwaThWjWVA=="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHjyk25Vu4EQ3aiuJIxnqeikJM0vtL-M52UZi6Vkj8ZuLq9zv44STFzksCbdItPcxDIl_eJTze6kKPYpv3_jD4OCjmIcYh3Igo51VUff-leY0ANSOtuMX7dnYBjP6g2ut7zot-7MdFoj1cXcTahveUrqQl"
+        },
+        {
+          "title": "medicinaoral.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEsKVmhUY3lY6Mh6L2aVVHPha_hmS-meXnB10gQwbxo_ML4E3DBvRmP82ujE40amhFRdAd42wSwYwBH_itOdXnSbQFvNqZGx6mlvb-T3a0D4BLAgwlFjYCmxl1EgWYM2xJai2Q608d-c2NiNRRrqikxvwF228="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0nbyolc4e3tLWs_CxrjeezlDQanUXTYgf-yP7xEmHupsxt2vspZaGIWviBNOkZ4-lpRBM2V3Bh4BkyEXK5jZ3g2PbooaBX42dCzKarhuAIJxhlt84UpIPuOYN4YCY47fGYXCoYBsa2CkMVzYkqhxy1YWpVBwa7B54ogKMb5RtEURIjBh6Fps64maTj-iUn_RInaxVX0rUrh1Ws4PLDpNQI9dKZk9iNAlWb-VBiImWivtFhkPdmy_uD_CUFZP--4LoUhueyoceP0rwDDrz5A=="
+        },
+        {
+          "title": "e-hpr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIYbZj8OybVWh6_hvz1Ys2ZoJS2XgdnWV__WyNLoZlSgls_crVi8EI6L7QxaKtR3VQbCHS37PARuWF8ymx2uV7KHKC8fR2iPDqgqsYdykGuSjXx-FlgMrsfOXk2zqjPvfGSlGXHgSt7w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHlFuGeMXuz3W-badU6Mrd8eFSRcC9Ua_FWmG3C_D9zsSP3ECLKVpJMIp0Vqy-Bw7xdrZFp-n23UGT4p2ZTk1Q8FenqhLliR8oCacR8ynjgZlFv2C-gGgi2Y9Szbivl6d1RmL9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErpYuhcKp22oT_1Wf7jUe3oioJ0fvJAg8Gb2Lz6XwgNan9PTBfpiJieSGUYMdx-xbwtku9yGKf0Ck1hCW2sWJywy-IRIRGhwRccZPaLSxmHh30yZwoCNoLs1ABlRflVGPsnb_97WuEgLZEZvY="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvjrz6gC2fZlB9EzaTTB_dGZaapWxaHBYZGJ4dzKF9_5ZkdNXgqkjhNzGfXrnY9-68AbKnmI_6dDt07H8DGC_1LGmhQzFxDJMkjiRGdHEgMZ0TX87NBzpp_B03hEmgIG9H0CP88J8="
+        },
+        {
+          "title": "japi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPIQGrQ5DaICffDor5V6nn5UjdT08YZkaKdlkvry3zXGWf0HvaCOk_r4jwT0kvdOVz3q25EejaS5auqNETvzmvkXhqDcMd-ZDe0aLnUkI3b8qf7-IDdlzqNV7accdgAO3p4qP5"
+        },
+        {
+          "title": "ClinicalTrials.gov: Amitriptyline trials for Tension Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tension%20Headache&intr=Amitriptyline"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "10-75 mg at bedtime (titrated)",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 300,
+          "sideEffectManagement": 75,
+          "totalAnnual": 415
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1660,
+        "costPerResponder": 691.67,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Amitriptyline",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 9000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7 headache days/month",
+          "baseline": "18 headache days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Days per Month",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.5 points (NRS)",
+          "baseline": "6.5/10 (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Intensity (NRS 0-10)",
+          "percentageChange": -23
+        },
+        {
+          "absoluteChange": "-4 doses/week",
+          "baseline": "12 doses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Analgesic Medication Use",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 60,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-8 points (HIT-6)",
+          "baseline": "60/78 (HIT-6 score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test (HIT-6) Score",
+          "percentageChange": -13
+        },
+        {
+          "absoluteChange": "-3 points (PSQI)",
+          "baseline": "10/21 (PSQI score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-4 points (PHQ-9)",
+          "baseline": "15/27 (PHQ-9 score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Health Questionnaire (PHQ-9) Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Drowsiness/Sedation",
+          "percentage": 40
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 30
+        },
+        {
+          "name": "Constipation",
+          "percentage": 18
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "6-12 months, then reassess",
+      "trials": 3
+    }
+  ]
+}

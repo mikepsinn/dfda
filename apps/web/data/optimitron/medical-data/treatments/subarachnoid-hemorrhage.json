@@ -1,0 +1,931 @@
+{
+  "conditionName": "Subarachnoid hemorrhage",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:09:42.447Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC4wvO6skMS_w6G5V0dD2XyrfZeC5VV9gsZryYURyvJOTiq8F5Xq8IcF4k3DaPoESMKIhbJuE_p10H7-QScqgymR7Dn4L4_U8De9_nfN9l8ch9Z8a1_JS1DkCmfLxXW99nuAFuMHi18Ia5xDw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG727ne8tAbfCZ_kGgJw-Zywl2k4pfhArNnVId3xz3lwpVVnEdAvIf2r9lGQRpuwiTa3VSb2hO67UEfD7sxwqehwODPMorDLgwgRwM26RI_HGcYD4ZzHdbk44KIG8YfT6V-rdod_x4gjpJhe-U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0wEKaNCkjMipnjOpMPCjMOVQUQfjMVH0NG7vqVGKU3CQPbmxl3kfdv2QuGFiJcHZQlud-w2ULnmgatB2sxMs02ZQp9aqeGZ7np1O_9iqU3akf8HwN5euVMtIE6ULzWqE9ag0P"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH18ftMQajy_PFStmoyoA0wVJTuhTZPpi2ylB3IUNApiswi2t1s-2_0x5uP3AWCp6WSz2hBO3e019fg--Xwx4DRfVt1UacqBn6XhN-CAI_zQqQe0rxhAUEaMj-RNz1tOwVw8NnLpesiRyPLFZP2aavMDCtF_DSQqWB1zQDqCjMkPUBAM1WZmfMYam-Bp3Fo-WZBH3DPTLTVcAUj4NNp_1fV67e_UeWRfbbJ2VOjJXeZk9fiYLwG23GLqDb8rsDyFR2d2V1LHLkShB7cDn49URK9_oITfZTclt4FoXcIRN7kZ-p9s4c48kZe7n80zPJsOwWgB6DGNbMQRzSppKvH00WJwrCjb5gslODvqIbkH4BSLtE3hdonR4R_xJ6sGUzCLVNA2yqihxBYlAlKQIE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYKiDq8pElv-Csmn_vm_dYARCRxZJp62EZMo_wfoVf6EJTo7ZGdvp0pKXmN63xQpxh98fkD6uXazn0m3T6W7hWqjMRWgT1jVQElFklZQJEdj7OFm49uJbLTjzGtJgfbv16Jxmo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtwqhE_jKNsuHwDtpCt9A6utrCydncFSILKEtX_sBj5UkX4C3_4JCzlUcxZJLjMOA7mJdxcTgSh20xtF3tKP-1IIyiO5bvYhC5TiauNlbmllecku0jTWInBuuDE993PrPMcnKBp8I_Q8rgSNU-AiGwbL46kkijgj1JEk37NEH9xZtqqc_iXjFVn6y1155iH3eNAYW42sZUg5DVbqgio0nnyTKladuKAQW_NN5jaoS04ulEWxQQHyNpTugyRX56qfCqIccPxdmUz5Ep03KA3EtyRrWzsY9KyvS-_QB15weaSVrYkhvEe4x_A9SesIPNX24kPbEZoj__Xw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4WsOvhWPGoFn6AhQctdtHgqHmnQ9zOHpv4qGpKUXgSTXYmxFSYmmbUM34XsLDetdjQF0Lf6nFpEsh4Qty5WH4_waEJUXzCYkGfTUKteJgGHZ3A0LBjARgpamYniaH9evmGddDeynFyCC2UwygR12zju8nmIHpAjrNaPEI-xkk42xK0ck7O-qfUTdmW2JaCnbuhKAQAtZq3vU5gp5zq1vPv44XR-QcOknWPSlKKXhZ6j-dd0Gpzeo2LgBBaruWTi2bUsHR_8JWvp5qdFS6Is7dMut-XQHEdCKkaTWcLWh0PFqm60RioXAW9W-9of7lUFwcnTFz9P5G3icVN3D0v4CW3A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVj71hYB3AbjPhMeH5eCCYSx_KX5gEV3wDzKgmGNFL_NtoOe6UzHfpLW4MX1xTDVEj5ct90VRSHQSSQTbwJ_M9dboV9T2wWQoFtpkfbpZZdjifA1egmmtzsMi1PfhEW6C72rc-PtwYEiW72dgPZpgKK2EEgIiiSwbGhqiCj2a8NxJVP3Rn5RmXD_-WEX7SbnZQ0UvbhiOkg19gW6D5Uyn3alwPBe22wi0DMm2Spj5EB7-3dXHL0_UTws-mYgIgBt2NgZafaDFj"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK4fprYeM46KgYf0zRHdQaiQKK4O8q_cya3J72uYnmBenQpmCTKdI0z98_3t9TIL8O_xIiwQ6-70NIPBfkAtimHzmROgM8QJhmgFZFAu7_CmkC89zpvxZHdY4ZudNqhiowZCOHD7gN1AeKIjNf2DtlidNkKNZHWbT3gA=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDZPzhpfhfJ-8rjiJLa47zCl3NDLStrfU2lD-Tu9B66qomxtP8mjyTWhCXZcVJYhZ2z_SpW0gBl-NCgWPW_m_CkNKyCEC0YudTmcCXyC3Erro7YTFR7t0NtalkZP6CxqZOB0ItDV4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ventricular Drainage (EVD) trials for Subarachnoid hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Subarachnoid%20hemorrhage&intr=Ventricular%20Drainage%20(EVD)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "N/A (procedure)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 21053,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Ventricular Drainage (EVD)",
+      "nnh": 15,
+      "nnt": 2,
+      "participants": 5000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 mmHg",
+          "baseline": "25 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intracranial Pressure (ICP)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "GCS score: 9/15",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glasgow Coma Scale (GCS) Score",
+          "percentageChange": 44.4
+        },
+        {
+          "absoluteChange": "-0.05 units",
+          "baseline": "Evans Index: 0.35",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ventricular Size (Evans Index)",
+          "percentageChange": -14.3
+        },
+        {
+          "absoluteChange": "-30% absolute risk reduction",
+          "baseline": "60% risk",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Permanent CSF Shunt",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 52,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "mRS score: 4/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) Score at 3 months",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4 days",
+          "baseline": "14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of ICU Stay",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-10% absolute reduction in incidence",
+          "baseline": "30% incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Symptomatic Vasospasm",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infection (ventriculitis/meningitis)",
+          "percentage": 10
+        },
+        {
+          "name": "Hemorrhage (catheter-related)",
+          "percentage": 3
+        },
+        {
+          "name": "Catheter malfunction/occlusion",
+          "percentage": 7
+        },
+        {
+          "name": "Over-drainage/subdural hematoma",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Days to weeks",
+      "trials": 16
+    },
+    {
+      "citations": [
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHebpFyuGVluCME6-MSK59Z71nsubme3_Vb2Nu16MiYcl4nd9i4SzCfr9f5JdRjHi-pe3feBM4qBM0IRQRjQ8W5q1lnMW2S8M-sfPg5TKEl6Cw48pw9VhRZ5zMUGZl8vxMdre6JJ0pdq6ihYRw72V8wqKVi8uQz3H1qmM8HaZOwM1EBAfaDJoE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE318z_4dB1kmtF_QEnkXzQsCGGcsY4XrvZ6o6_hE60KxLMJglbLabSck90fJ1RMnR2sxxVJrP1T0H5Qpito4bcZzuMNh8V9xAp4gInxAwwiXA0NpFQUpj7YRGMsvm3ImQ1w8nOIqjcqfX1nFI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYqOy8bZ84-_Uk4oOVU-bNF4yAjnU0qK6NkXWV_EXaNPoD_PQpfPWkTdndgl8YNwlKwnHMw2r0K2h0rfd-B_xs9cRlmzcQ9RCkEnHqfXdKd7fgdfzHxFOWebOU089IFSqoMZvXVrJFPrCQ1aTXHJe4O1c9ilrq2sxCkOW87-766aDrokpweG04D40zOJPeMJPWvEd_PnfBBbaN1lLsMmgmDuNCiYRvyawM1yJt5eWadlMY8BPFbASdvwlew8--uosZYkE-wrWrCsS48H52BJoEodCKb4P0AwMz3Q-4vWDFnnTQkqOb111Nxrs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESdEmPbhKXZIY0AcuOP4CZDP1oWAr1zR3xhLAgqELxU61lUvQ0cljnxAtz1oun6dV1r8WzRRyQibBNibsNSEYSK0kOX58fAvCduYOHreNqCg95uJnItlulIn0eO4eIZGEw8ktK"
+        },
+        {
+          "title": "aku.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHuadHUbe7T1veHFglZtpoL9k5ynjURrpX8ibAP3ZhZmC8SiTb0IcJcb-Jks7O6LpjnmLEGNI4j1QVR9LMd6W52IhRtOAM66ALzfGez5wuBtHjCHMZlKAAzQ6gx1NkP0vw7OrfMBKZ7HU-vi9sIv06bfnWYP1UBO5Gq4fuGmAAdmozXftmgMkuddAhqh0P4fMxPFwTSZUJT0wjnhrWrgRQ-KNBmTSCGL7mwoedLui-TN9rxjID1O1TMXr1sg=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTVHUWDH9dObR8pbfsO9A5rEoPk9SN056OM_gdZGy29x3qw0PkBfu_2VP4jIDRV5uAPxT-LzF378C8OhzX2-yvpfngFXWe7mITYWRzut32AFGCzEho4TQSriig3ENRXrAQykumGyGqxK3jfZ5zM7yWFvyQaXaZO1mmj9kbIrvmfwCdMwMBGwbOXCeqoQaMkopDnKgy6nYPXcd020Vnkb7zh31-H8oIwhl9GrsmR0utPnYZmwYHjbO2sI-3a8CBig=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Endovascular Coiling trials for Subarachnoid hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Subarachnoid%20hemorrhage&intr=Endovascular%20Coiling"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "N/A (procedure)",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 4200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Surgical Clipping",
+          "costDifference": -20000,
+          "dominates": true,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Endovascular Coiling",
+      "nnh": null,
+      "nnt": 14,
+      "participants": 20000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7.5 percentage points",
+          "baseline": "Expected 30% for SAH",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Death or Dependency (mRS > 2) at 1 year",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-9 percentage points",
+          "baseline": "Expected annual rebleeding risk for untreated/high-risk ruptured aneurysm: 10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in 1-Year Rebleeding Risk",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "mRS score: 3.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) Score at 6 months",
+          "percentageChange": -26.7
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.10 units",
+          "baseline": "0.65 units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D Utility Score",
+          "percentageChange": 15.4
+        },
+        {
+          "absoluteChange": "-7 percentage points",
+          "baseline": "Expected 10% (post-SAH with surgical clipping)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Post-Procedure Seizures (1 year)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-4 days",
+          "baseline": "14 days (typical for SAH with open surgery)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Hospital Stay",
+          "percentageChange": -28.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Procedure-related stroke/TIA",
+          "percentage": 7
+        },
+        {
+          "name": "Aneurysm perforation/rupture during procedure",
+          "percentage": 2
+        },
+        {
+          "name": "Thromboembolic complications",
+          "percentage": 7
+        },
+        {
+          "name": "Groin hematoma/complications",
+          "percentage": 10
+        },
+        {
+          "name": "Coil compaction/recurrence (requiring re-treatment)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "One-time procedure",
+      "trials": 17
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJAwBfOYJLtzY1oDQRvgMOJbcETWIX-JfsXRTVI_HyZ6N6ftvU8Wn2SyqA0HUNbf7uPnmu3hBHlAMbfpzbvjyr4ITnr6n_AV9R3vAiqebzvxGUtwGCyKL9dFv1NkcKCa2F9DuEOQJvAPv6-4BBLmfoHIAQuE4ks9VIUKKFBZqGXIztQfSFIFv-byO10RXv8SHV_zVlnWxg5dCMcQjkbhRlSUdTP2aEZqMBZBPs1s-TCpMozfXdg1XdIWEWIRxCPU85IgH8wgAZw11X49VyKw7IlEs7hOnLa4M_HZUXoB_aXTdHHPdNV7IXI5U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfUUmgE4Thm0VaDCx4bG2TfQnQrj7dusIBo9r0eMuyGsSyAy14n4s4GdMCpAxNAaXWup9vxXmginfrhJZ2zvjOswKbCVVIRyy13gGivZxpMekKjzZhqXkHeYC6OTSqygvYh1nL"
+        },
+        {
+          "title": "aku.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr-7sUsRfetx1Z0hyrE7jNv1coVcpr9ECAtRk3A1pG5MgPf-Q68bqi334SrFVpXYhT1bSd3G2mpDHcJRYSqdY8mmGYiiWqze9opYCxInY4cHHh9leX7iYxOMVrbBg1dt6xWKRbFpk4vE7R1Oa-qm9uf-vcpwv8WkdfPAFbCOPqrC0R5HKt1-_6Ze4DarML2ohMbZDmQ3MyeZXTej5CkuWHJ4D6y6rkDfUZOO2g2t71fTH-e6ewVByOh7F1qA=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1pYcoqmhwEpKI5ri5NGt9BpR94Jg5UkEEitLODZVptxi33ixLib1sVj__Ejwhr6EcOQ6CepTMypt1s4Fpfv_mWnfP4Y9dSIY0eX7BM4QMTb_Lp15rnjvRb3zJqHiLiDfStlIXzrVgGOCMQQmDoexwBdfQQ_mMglaZ_QdLESTtLfk140Ty7CDAng=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6VwjC9bdaaEatlb-1hH_bRe0gEYJdE4mwF4w8nlat-2Xms232tvPjNtiwlDIH2f6eeFA9OKlpfITJvTW3v3MPS1jDtnWgNRRnuIHL8xmDjOHGyW8-51524M-SFOowG1PXmKyqKrF1zRHRulRh7jleOzvWkKY6js_HK7C5UrtHc4TN6FrQzXJVurntfQVsPnw6JaeoxAPXVGbByCbTvYORtsjVxhJOnzMSP_J5Dp6DUid-RKUlj9hwDd7Oig-8S-BdgGelG3Fu7aEhW_8OYSLk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVemCeIjBKlnsdytdHrfnOgzVcn42E46U2eXLdCixY6WTzral9l12aWUqrHuf6rMKlvOWt3TZm09QWGJlDdC1TOxGutz7p6vGo-oQ31JIkC2ZCkk8Oco15XRca7lEoG0LLXUcA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Clipping trials for Subarachnoid hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Subarachnoid%20hemorrhage&intr=Surgical%20Clipping"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "N/A (procedure)",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 5200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Endovascular Coiling",
+          "costDifference": 20000,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Surgical Clipping",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-14% (from 15% to 1%)",
+          "baseline": "15% (for unsecured aneurysm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rebleeding Rate (within 30 days post-SAH)",
+          "percentageChange": -93.3
+        },
+        {
+          "absoluteChange": "+25% (from 35% to 60%)",
+          "baseline": "35% (proportion achieving mRS 0-2 without definitive aneurysm securing)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Good Functional Outcome (mRS 0-2 at 6 months)",
+          "percentageChange": 71.4
+        },
+        {
+          "absoluteChange": "-10% (from 35% to 25%)",
+          "baseline": "35% (overall SAH mortality in managed patients without aneurysm securing)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "All-cause Mortality (90-day post-SAH)",
+          "percentageChange": -28.6
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.10 (from 0.45 to 0.55)",
+          "baseline": "0.45 (post-SAH)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-related Quality of Life (EQ-5D index at 6 months)",
+          "percentageChange": 22.2
+        },
+        {
+          "absoluteChange": "+2 points (from 20 to 22)",
+          "baseline": "20/30 (average for SAH survivors)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Function (MoCA score at 6 months)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-4% (from 5% to 1%)",
+          "baseline": "5% (for endovascular coiling)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Re-intervention on Treated Aneurysm (at 5 years)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative stroke/ischemia",
+          "percentage": 10
+        },
+        {
+          "name": "Intracranial hematoma/hemorrhage",
+          "percentage": 3
+        },
+        {
+          "name": "Infection (meningitis, wound)",
+          "percentage": 3
+        },
+        {
+          "name": "Seizures",
+          "percentage": 7
+        },
+        {
+          "name": "Cranial nerve palsy",
+          "percentage": 10
+        },
+        {
+          "name": "Hydrocephalus",
+          "percentage": 15
+        },
+        {
+          "name": "Cognitive deficits",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "One-time procedure",
+      "trials": 19
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKH5zBnHT06Z81gEe4yLY3V3OAXrEXNTnLm-imCZjmVN_0hTmweLK5Chbf8Ory11Toj-ddz5jkFiF94IiQrJsozSz_X9Llge0XjellfU0LpqOmLPz9hWu4eDQljnqwW0Dh7YD8"
+        },
+        {
+          "title": "nursingcenter.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEinz5GR4GPtQ16rPKbHLDwi7_s6pw-XsQpv6KdDWpvYK6YwGo2VeOWvCadvT5svZG69FmNUnS_ih--OBmSz4mbC4XOoLfCTefMF3HFtis3xnCG4O3CPqRbI-k16vrA2pj-WabkEOnaJncAzkpBYmm0ICNrfTQ_OGhRT5aDkFrrvwgQXAFEQvedXrnHtwY-vYrbTTSX8XvWZ1AnrrNWNA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTY-VvmqGhKXTvNiNGcLU6eWckzeyF4KmhC6bhDkbM9-Mh-287WkpAu0b7GGwtpa-e_zb4iuxTEoyT_rtDSjDvfPs5Uydq0C0doSYL9DLvD9E3HiNRrCuf5acV4VMQbVFkyULj4vGQCrZQLWE="
+        },
+        {
+          "title": "koreamed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMBYuZIIj_pFvJtKCWqVgcXJ9jr9ZpjMDPqAHaabfQO_5o1pakfEs_PPVSxHLIsQy747dMHfdNhndEYs0WsZsmG_XnxErP3J1c6vrXbqOfgiTZCEfzBoxAFdLdqU3MNziKCx8ozC9x8en-0ueIK6tKIPWHlyUf78rnU3hSoWU3AdWyufP3Kzcwt7k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHciley9z0A6hRswYUzVXwuSyAvURZMsuwdPZDBeSVmbz-ndCvSTzbk7-CrFhNZi9O6DWYaGQRGW922LtzQ-h_DHbSGVBWdrLOpysYGaAhUHyJnE2Rz5xF2a-oE5z3FPgnl4EyVKS7QXv9FvYQjaj3UXy1L_J-IwVl1eAHgrvlzEMKX2zWFm9YTpzWiFnOqA3o0ounBRr-dPEPIL5bodisSvHt3dSqGuyx0F8wzNh6HvsMkGF5OmuJ8y6rBx_IeHfeFWlifn9iEiiFDQEKAm1mtcsWF6DybEEuirj_QrqXPPs4Mo3W7jkNVZozH0mxzOXwTvtMCehNea0tlIembiqHecbmJBtMJQA=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFnBqgLSLUQFxWwzSk__kvYedlDsnLNy9H-_mZUT-R0u5LQ7lukZAD-ck8UmP9Z8sMRLukJEq1tDGL3yamIKx_ALLvl-apRL2eHry6QeWbngHwEk5vLYsPUh5wplvAoeVCpQMMEnWhlSz1waKwstWwH-v59gO5sQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYgTJeu03gzsKNa0uLgkhEGjlmukoZdZoUHBbxqAQbME7eOdjZRN5Xz_wgFB9VwiJWdJOAhUn-VKzh5UzqJyThup7Uzwr22lpD4KqahV7UJXW5CdMFxnOubzIM5Gq-NEpMpwCz0cwqVRlnp3qNFAJ3VrQJhGRD4T3GegytL22VnIdxAKlHaI4tMbKmSes2L6xQugl7VDxJSoCBWbmMFryYtaCwscJ1474tupyLezyJSzA1YttNZPF5rk_F1oJID3jC9ry7R1cGZKDiAkUtmyUKyIkzAgJH"
+        },
+        {
+          "title": "ed.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXwFo64QEuO6uL_ZhJf4V4GEr4R4qlbCCfA4xiZl4FRDLCRix2v37t40noSNU6ImV_sXp4Ybb_yJtJXNHzXYtds6tUmD69SWoKwX3GiBMfWLzNNyJxHZ4ymgQxikHOay-Yl7wTTXgt0K8T4-6P8GQcg76VGdSBAe2vq0rTBEPHXzSH1LGvAN72SEI5YQdFHQ_ULLpv6oXEh6N0m7iXIQVFnCgdEiQTfs1sgA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc0CH9-NuU6gcfxnZ-FSItrO_2elOzqOfOBVn-5ENiNSdxn-DyJAblKj3mizChgFu1Vexc7Jxlyg6Qc3_d2STuzxUnhYRToEQOjlhCfTFnOJBvm1t0cspGr8Eo3gZ2W7UGjWZH1Stid85LNJSl7UfIeEmyK_pz7oxLHUhp7GayykHbrDL2tj1isOVawsBKXM5L2OyaAqHvmGQjsFnnhcmX5Xmjrugm60AwLZzUrjFpBUlMNnVgCF5OMrod_vnCOo1TlH9vlQF1sa4fJFS-K5QOQNsUXm-ocUHmF10HPv8Sj3Rjs5uge7ZOFIGm5hNWBwY1STSLsqpC"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGelFoprhrFiiMKJUfeSSoN-UcWd4VJz7DaxpxLZJ2fm2hhjhfZsEiMrT87NeFa3X7fVtS_ISpxK-YnBIXFBBvrzKirpwnndve6bbMqFwglyfLCU15kiu6cSqzBGtka7ThZgrf-zLf_rGY3WYfXmFKdbIaZN9LiKFsUl6w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJjJXkrko5HkR63SAJWZBFqBtEO9Cz4XAfWdmUMCDo5bOPoO9Gu7z_IaEvlB8ZEYmNgJ0NuZM2Xcet3qv7EKisI24WDcq3yCRNuNocfryc4_P4gssd5DMHkzLJii8cUwlBiSlSn2fLCMqJc8E="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwzTGGaBoKeYYSGTsHk1TjcivrPoA3NLjf2_s_DMN-WPFfXD5aXyiFBxgZEHUH2rMI1itnyCmMzbfaWH4rrW3fkTTJhJnTA2mf1V7Qy_g3IRyfMq7EzlZi2-5OD18Z-DDkCvvhyroeKIrmlkZq7FXOtgl9Y8g="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEJ5geVS-rWYxis37mdKUf8OjIPV9dvm6NKPYHQ-OGq5DW8QvUKOF_8ETffweAq69vZ9U31dtPyUli4Mok1RKsaFZDGDNzIcvzyyud9CEp1RdoaK7P4C6qGDJLm6oe2xcpHMxMqFupZBvW_j0HWqtqOWSA8qQ9TbtQx6DFrsZlvMLXA7BUJmuCemvfmra2mlLIkku9aolrX0BbOIZoU0nKc0l9qZSsogzdvwboU_gANMzCqFMQmRVY7APyuGYJ8DJWA3NPV0Afqbwyzm25Qll3THYKNJLYjPE4lAhRiQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOonX38EMI1qGqpTcuREej8fSBkzPRs9qiWXaQDa108IerEYHGw6e_8oMoBQynWshQQZZzGIxnI0z1o5sYAQSs9tHxf_FhvlPqFKcMDMtapgWqQuCWtF6v58O2Zb4TmgJLISM2SoymQmulcxcDzM-bgH2AUadYy2vo7DfGDFF6owcVT_t-wnNbHJYm0NJYVZg2bJmdJZunMI7XWO1AtF_TDr92Mc4eHbop91KmTLBvI6Mz8PAfbayFTwX-9sQ4Rl8KrDzbzmkOgjT9pQ_8nPaIs78gifshQ2tClTfZELs1RhbxSX3HZAnoHQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO-WpqmEbVAkK9n0wiaTu818Wcu-1gBF4Rv44BznBiHo45P4nuBdqKqFjwZoE46CDbts5ZwzzKcCrtohdfrdlQutTDsOyqpN02RK2QwetvnRJgK9JqmA2U5agH6Hf7SJ4x4FR_oLOg281glGW9"
+        },
+        {
+          "title": "ClinicalTrials.gov: Blood Pressure Control (e.g., Nicardipine IV) trials for Subarachnoid hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Subarachnoid%20hemorrhage&intr=Blood%20Pressure%20Control%20(e.g.%2C%20Nicardipine%20IV)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Nicardipine: 5 mg/hour IV, titrated up to 15 mg/hour",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1053,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Blood Pressure Control (e.g., Nicardipine IV)",
+      "nnh": 25,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 15
+        },
+        {
+          "name": "Tachycardia",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Days to weeks (acute hospitalization)",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzYgxW7p6X43NvgQrGaP4dNj-pjWSSAUHWXmQ39LADtKZ2j5LIF8aGwZLYoHX49uaoKQE2gWnUqY0zYE-oxk1xRvkOTPa9bW5QwlwqFw54L7Ysex_Shjnb8DhDM5r_3yBdAPQ-"
+        },
+        {
+          "title": "arquivosdeneuropsiquiatria.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJjcFXw7BLvyZB-9rpILDR8xPjqG8LcB5_ahAZ_vS7x35Q7ZVij1aAJqiizAR7oihU-YyjeGx-mkU1WJOq1vgSdGBsKl5qb1Zc4qpEl8BOvzJy6YEo6rwNrjtQnKv5XesBTDWcoOgvUlEVb-53CfgyJm2k5PjDRxbEO42k0TqiBqJaVpQ7OtEvpU3Kx5cEvsgsVs_rtMcJHHEO9LbB9goU9TkLFZccmmV98D5ICpnsJH5TdZPeJT12IMvPW9ypjooV9A=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9HOTHyS4tBwtKngd1A-7gaD4F-QEzAOCagj5auKU_Ht91GUikla6QkAbC6AYdbzoyFZzKDWkNWohUneQ6AvuKwKwn-iwrh6epU8WmPiJMRJ4jaYbOedbgXOzh1EBZ5k727yntcTE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAOa0e1hf6MnBtSWdgbIelelOHF6D4IJnTl7sMKtWzyBvu2dHJCTzfu_6uFts_fgr9WZDEklM_kEpp3fh8uWhv9eaLdt3WcI_sWy_esiCtCCr7Z89NDWOrSltrAUDOTUpilxBf"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh49pQ8_Oo-tXU44_znlxnTIzAyoHKFqdtFBAHog574_u_LxIYsdLkq7vW87xnbSegQKEXz-yKJii-GvHyigL-tILuhmSAQ3g75NBy3RYgw4yd9U3-4VElHkglgugEMT1kXc0frqCSb5ODXYdKuIHuEM4RyDcY9MuveH-dnujEGsV971AUQiJ_rzlddPMLCjll"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_7yiHtaSmxmawd0pGs5U1EAPumLbGcypWp3XmSA-X3IH1SAfcQYTY6L9PlZq01kyGkmQ0gzlpMqcYN4OoXp3AStpopT4-NHGXvTyFyxaboHSlHVlFMB7IwLae3K1w7Nl_yZvI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCXH0cN29uvg5-id8gyZ3g32DbZXmONiTdewe_6GaAywGb00LLe2jZDi3fl-zq6Mo0Gt-eYxekCTVAYgYhYf9AFxVZOD4JLemhCkSd5Lblp4xHg4sqH-o5o9K4iNcOMqJqCfmABnm6YFnbOFs1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY_936UQFkZZr3Jk4IUcK7tz6Bckuzhr6m6xOXoQ65sgGCnuFRbnDorTu6G-nYCbNzZM42ATwY2vqB9wR6Vr1WdVqUtDdPgqX4IBJXYBZYc4A4MSP3H08iVxr51UcYY_7-cN6S"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEOLOcwXpN2TggVgJ9hJy1KoltGgBeCm3hT1d3znFAPQ3cUGhjBs2HrZKsHer4srYXeXgUGdlqcEvDop6dMaD75Koc2RwlFoXE3luJNksqjgbrRJW6lh48Rd_0kzdE5kDqNEctQPc7iJ-BTwkssKmGuVy_u_Y="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nimodipine trials for Subarachnoid hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Subarachnoid%20hemorrhage&intr=Nimodipine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "60 mg orally every 4 hours for 21 days",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 100,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 4400,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Nimodipine",
+      "nnh": 25,
+      "nnt": 9,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10% absolute reduction",
+          "baseline": "25% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Delayed Cerebral Ischemia (DCI)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+12% absolute increase",
+          "baseline": "40% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Good Neurological Outcome (Glasgow Outcome Scale 4-5 at 3 months)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-3% absolute reduction",
+          "baseline": "30% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "All-cause Mortality (at 3 months)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-6% absolute reduction",
+          "baseline": "20% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Cerebral Infarction (on imaging)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 25,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9% absolute increase",
+          "baseline": "35% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Independence (modified Rankin Scale 0-2 at 3 months)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-4% absolute reduction",
+          "baseline": "15% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Rescue Vasospasm Therapy",
+          "percentageChange": -27
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "35 points (on 0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 17.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 10
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 3
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Liver enzyme elevation",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Hours to days",
+      "treatmentDuration": "21 days",
+      "trials": 17
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeBvCqrUq6esszLWt2tiRMYprMTsePde5Pq8kwQqNJXKRaXnvbZthdrivIknk0x8Gn647KR76RhH699u8e5j959y6_emJBEDrIMlYhiNJIXDCYXK3WwFkuZWxxpfYvOa1E7uoX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvLkdN3FFgriAl3n4c69B5L5aHrQWTy-7qIBlttWZCP9g_c639A36EziXKgtoEjwhhdVcksThgIiXpyB84DIJXf4lfwLTmfViAKAsyhpEB7DJ40tN6tfYafW0lc9o6VTKpEMeC"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyXgYW8mKSkuZA64Ex2c_015OT16tWSBWQOlIGgw10IdHcm0LUdBJJGGAwPp4SSWrrXTEQ5lSpCM7amC4PEEN9Fg2AtFhgPFh2vIlujRCumyltOCgMbOY2nufpsa8oaudbvb6mz08i5J-89Q8atQ9nX5I_PJhfwVmRcWic7Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfR_4hCu05zqlZesARILQdNy-Jnf_sXfHOt89d0Fy0K-R4U_ADhT5ZIVT4GbnbovJtEBM8XWHp26gI5wkwhNebNOjAa1zCMhZHenR6-5RlfbZAfENSvywImpneDZrtnJ-55Fpb9tcxUzXCkWNv53F-w6BEZgbTABxqhXKs_2jx-h1wURg0sM5maLg3KpOttjssbM6m4SD44mTCPxP4933ST3eIT8s4LRg8gVE9X2l4n7fwCVt2WZVVuNkFJylHgPaFZGnDWfkc-c_m17r1QtrzlgGcVpGHptGZvlq9C1rVrMl6RPmMTEkXFX446b78kcmwFRL4yu-8JE7lFGONdxY7VAhSvXz4gIv_n-PX"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE858EqwqYaThFlg5Uqt6rD0tWm3lUPA8PEFX2OtwZlqNnNEmAcP0MhmnKtN6wqBR6Hj-L5beeJwH09g1W35UlkaqjLNGkpqmG1i2WGZZ8k76Mcxj4wnoVEzwjzV68CFlFZS26Twrv0MX98W993w8wEcZ-BeNLXjzBclQ6RvJa0RxQ-tFtrUstsa-pxr-YQP2OH3w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPi-XPv25UCsX5j9Nu7FyywkV3M8LjNX_JvOyWgKwiyLSgXZzfjlzFGJSamLp3SzNkN3YEnFB29LPR1x2pj1UON7Su-QtWfRhuLBNPQHA0Bx-1Y54NajF7RN4mUdve8WTPzH489KHKSXj__bWX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3b-5XPB6HPTbFNU883-HopfWkZD1y-736tYzaN9FpdalZj5k8D2Wc_ZP79cjiB4gSrGFMdtD-Tq55S-xXYNky-FtmPLsW4czjvG-pgVNWKxbksW7bVQjtS5JImxwQ3cJwN_A_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLgUNwQw5LbuQsKrC8XQEixYXFAuMa7Bhy6tg3O67W7YqrVjgk3TcXzEJgQTrsgtpb1P-XU6J0xdkYJJp_XpyHbY-UKqUlD2DBwJaNqC66hITfNhnNqz-Wb7bwyunQTU2DJmbPYrjNem1KoYo-"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZVy7ps38Wa3acfnF6VkSq09HlLQFQrJzNPcvTMQb-FKGZ1RjN3WNkeOa6H2H-6pkK490_Hp7ODw78g875fygIohzmHpw09NKwc37LVdkaN_BHPiHq-wg5KJvkTACaXfh6KHzkOZEHF9r4WhQBGs5WLPyIy2c="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJUFaQ0zJL90moerFuzKSXoRa2UuiKHY8DD8Z1w6xbAcuTNICyTLaFsZ__oa14AYS7owTfrrjvXLmNebOH_1kHLyvd-ydBxsbTJ5Hyv9q4erI_OP-CmFn0UJaiN01xDJzlhtabDxhzWKw1h5LBVBoyAhvmKF_yuQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tranexamic Acid (TXA) trials for Subarachnoid hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Subarachnoid%20hemorrhage&intr=Tranexamic%20Acid%20(TXA)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "Loading dose 1g IV, then 1g every 6-8 hours IV",
+      "effectiveness": 68,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 50,
+          "sideEffectManagement": 100,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 1250,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Tranexamic Acid (TXA)",
+      "nnh": 75,
+      "nnt": 8,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9 percentage points",
+          "baseline": "18%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Rebleeding within 72 hours",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3 percentage points",
+          "baseline": "60%",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Proportion of Favorable Neurological Outcome (mRS 0-2) at 3 months",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "+4.5 percentage points",
+          "baseline": "30%",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Incidence of Delayed Cerebral Ischemia (DCI)",
+          "percentageChange": 15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 20,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 percentage points",
+          "baseline": "15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Aneurysm Re-rupture requiring re-intervention",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+2.5 percentage points",
+          "baseline": "25%",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Incidence of Symptomatic Vasospasm",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 12
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Thrombotic events (DVT/PE)",
+          "percentage": 3
+        },
+        {
+          "name": "Seizures",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "24-72 hours (acute)",
+      "trials": 1
+    }
+  ]
+}

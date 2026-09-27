@@ -1,0 +1,961 @@
+{
+  "conditionName": "Cluster Headache",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:47:42.363Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQBJ-mK6IiMZnogsS3GvoQ-iFshWUZakNm-7y4WbaL9mx1v3MH8ZsZkAj34_hv2DGPAKsqpaCdBSTNPsYM_GrlZT25V-qg52HZeVNZTQ6lurB2SlPoLqY8rs_AafOKjKHFHr4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi8rDFX9W5SZGX8LghADrJT1S3m8EyOMDwev3AdsoLbNniyZ2zpRgc3a11CQZuyMOvCW_qpt0Mt8dcyOZDtHSnh4q2apwpfgiAxaDc7eAhC6rj4_p6nMMc_JZnLX3nBW6I_vs="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkRt2uqaUxVCD-nEiEp4afwubDj2yijxL5K9Df2cUcGV1xk_6_CekTYfhPBS9rxn_zp9NkJnuQmrJ8zruJdoTRdpOCGZlukovWm_vWPkDrcCGtaY04OP2Pr_KEpw0O3ZdST2KNxnBw_jW_KF_ypqrOafjvtvOsqz_PzxfeZ8ezmAFcmwI-6DDxrrSGO78Xl-GdMoNWIBtFU9NIPymZKkxoojnOPFdv0o0n9Ny7RW26k_q07JV4vXKhcXEHk0dYRJbGqlCpcggNZMdpwVMiLKqIGIcNAg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgNSPBRhpL3PGGcuoWgcwUtC8tNWGX6BPIia7Ehkg788SMfsKf0yeaax9T9zkGvDxCsXdM-_3cLJmj8vhUurjR5UWRa4W871lI9o6FEBkIrKmJXDFcDzuvk2X8ZY1hKTvMYCcGQdOBum71Zi4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0SZnDUgJmXFNXTkjpwX7UUJ0JQuGFnVhWo4rvwVxmDX9KGm-3z4cJsCB21gpgs-Vl9Q1c33e8-9DcDDWMTFY_8PKfhHoj8EiLxZ2uz_jY_4nt5c0YDCRDH2ZXv_eolYDBRiQ7OIO_VU2zjyR_PFhb0iTRQGKvKR6piUSDK4MERErJ_KKl4_yu-Fk6TivHgQstTz4V8NN6CL-3YNSoE0xWCdjtuahUWjKY171y9LrkIB5Fq2pOARQJP8t1DxviI2lRrGtP_fMb-Vw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVMBDtROUWaq3IafYXDjRz606WkevI7optpijqPat1iNWA5KY2nRhlxJZ5h-4DX9OCbhXCk7cdY7xpycmacj82cEXoebvx3SouHXKOdWOGaxTVh5U3FC5hAwLTAVMkdgB91194"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHteMJQ4G08C9slxffQLaZpWIGzReuX-Oo9pZtrsVpaK9QI1j51wMo3iqMvguuC39fP-0Sd95EtAEGXa2iFB2vhxeLx1JyOkwnS-D87g34L1AktRgYSAAPY8r_lD2GfVPus7AYuHEXYOA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sumatriptan (subcutaneous) trials for Cluster Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cluster%20Headache&intr=Sumatriptan%20(subcutaneous)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "6 mg subcutaneous",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2700,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 50,
+          "totalAnnual": 3750
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 3667,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Sumatriptan (subcutaneous)",
+      "nnh": null,
+      "nnt": 2.5,
+      "participants": 5500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Injection site reaction",
+          "percentage": 15
+        },
+        {
+          "name": "Chest discomfort",
+          "percentage": 4
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "5-10 minutes",
+      "treatmentDuration": "As needed (acute)",
+      "trials": 55
+    },
+    {
+      "citations": [
+        {
+          "title": "neurologylive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0UH15XCEk5gXSPV0iFjOu3VQs3OwP-WrrjiVoQFegQN6fS60V2HyovUgsY2hWxr2t5poDJiJMcJ-LtfjsPDdEzT5HwBQJyhu_0Uc1k0h3Tk7h01Itg-Tn_VP59i0tIYEHxXDFdGh6__RLjQCVkG3E0IpU4pLnqk4w9z9W3QUudyT5bRSd4XKPu4w9gLI__CcCrqXpHGgqiJE6Y6zz4eT3y0Rd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDqOq9OD6BhKMmj7ThClXV_q-ZjUrl0Z3x29BqryIStQoC0T2-y9q32LFU6uTkvJCoTDd9xyr4QeSKAg-bUdBiltUEElxGXfahkEtT-A0u5RzNiTorzZYlLi_50EjLoKrVZH8j"
+        },
+        {
+          "title": "sciencedaily.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0q_bnV80gNHlENOKBD_odVGKTmflJRHs2QWleN5QnC_Ju1Zzu-nIMVT2jG0iCfuZggigb9OB9sqfi5o7LPtT7WtMwYOGd3u_GZ8vfR05cpqnKDKVmpj5RLiUbVDUytX3uuFctSkWBfPo40e3Xr5SQDthubjX748yL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELUrH9rAVvgd9ektwncDkw_ZRJRXVR56_aF4Hrw0omE-5HL7egWPz1Skg8TeCK28zosJc15BFMbY6y6CP6lFCRMqUAgNRab6kbAutzmai6GjSiAxgsnlfgXS2QWBfl3ODQ55PZ"
+        },
+        {
+          "title": "medindia.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQBWR7HvsmADF2zzfalMDqMuGXpd-O6aeV2Px3tVbroQG9PEQkxdaEhbYBXaLIqRVtegCFm8qzYQ5dbL23MxAzs6Mexaf57f3dTemdTX1Yzued_FSHB7PXmVvaHN5ETn5o_3jAJh2AFP9vfC9ppRdumu7Zf9Q6qGAgEMY7FpAyhbkf67CEWtgNexP8csqNJEX4W-7zhPqgZe5emRD45bfMPpn_RVw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-bZNuIt6O9VX774eAwIFA_yNOvA1bjrFBCgAaa4uBxEh0Tgqc0QU8n07v8WIhmW98B6zeCBd6gP3EDRcRmXi7D71RzlJovItxiNAhc1FNavEnQNa6mjnrv6WPfhZummDv_0vecfCVa34xuRA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgsnQbRxCCylFOgQWWTAIKUZD0unJEYUWvL9BT5MsCHJQI4xDU4w9hxpE-7SY7XnTw-kxpkwTmHAHMQbWfgWCpmHGktkYeHtYShE1mXCjNsX4aMn3Vcs9EK6B5d_2kJyNK9c2i"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMqH_hBLHouKzFcAu_Q0p1ROjKVY6kFY6QjBYPRsoaLqjtm5zwgX1e46-jwXeG1fNADyunVkD1G7ecIWfG_YvFDfa6oM9jscJxyX0Npp8ZCYmifv0XZpymUd7HxUedoY7ogg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHagu3hFwCQtrC29cRZekRuZdfguIQpYHQTy7RFe4alPewKlYj-JVzSyYCzg7vpMDYzfLn7f5B7jBv_JqNm4rXViJuROMGq1wSvTH2VirX-Tt5gGMCQzxTWoPBXH430dzEMy_s1ucQCzvNAUyc="
+        },
+        {
+          "title": "mhni.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtjMoA3YJTekDzYDX-yQYumnIwxIFqsg2DUjYjKilCHO0jnfCC-40mhJvay8JHsl9UrHC9s4t_zdgO3dcYaEuvlfHJ9zIAswilszEA7ktu76BIreogRy-m5QJYujR-1XBw3qUeAVYFupUx9_YrSlsIQIPWIdqP6S4K-hKdALQ_pStpszSRGBs="
+        },
+        {
+          "title": "ClinicalTrials.gov: High-flow Oxygen trials for Cluster Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cluster%20Headache&intr=High-flow%20Oxygen"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "12-15 L/min via non-rebreather mask",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 750,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 20,
+          "totalAnnual": 1770
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1027,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 600,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 750,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 5000,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -6130,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "High-flow Oxygen",
+      "nnh": null,
+      "nnt": 2.5,
+      "participants": 800,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Pain Intensity (NRS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+60 percentage points",
+          "baseline": "10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Attacks Aborted (Pain-free at 15 minutes)",
+          "percentageChange": 600
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Relief of Associated Autonomic Symptoms (Ptosis Severity Score 0-3)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-35 minutes",
+          "baseline": "45 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Significant Pain Relief (\">=\\\" 50% reduction)",
+          "percentageChange": -77.8
+        },
+        {
+          "absoluteChange": "-10 percentage points",
+          "baseline": "50%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Recurrence Rate within 24 hours",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-60 percentage points",
+          "baseline": "80% of attacks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Use of Rescue Medication",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry nasal passages",
+          "percentage": 8
+        },
+        {
+          "name": "Nasal irritation",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "10-15 minutes",
+      "treatmentDuration": "15-20 minutes per attack",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeSQZEyx7s6w42afMmHLQZGs7nUjjoH7kkqnqRX4FhICCLvZq1orYbxtmUW44STZn4dTuhmO06IpvLDcTrcV9lUcLh239p1u3Ow6HHwoBXQ_gGZ5-D-1MPDXkJfEKiet_x_xVnaPonq-uj106UGep-TrA4R9jqqwQB1WxOQjiPrgcki4CS2d9n1NEHoOhqf6zbwrHkuaoCGaWDTROR7Q=="
+        },
+        {
+          "title": "neurologylive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3yJORdmDxPM1reZ2iNvangjMgGRvokwZCChhn7HO9_fQgBhYMfqqi6CkAQo9qlRMPM2bWduyku5mACxmbCEeXZVGZm94UxAeSnDJ0fOtF_Kkgb5cPejHCSIa0eIHD0n-86enIZm6n0ClY11eCTxC2eEpwLNIthPsTBTFWZNpR4lAdTucfLUzrLUD_-zpirnkvEh-suPk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaGZUJ2WdNjsekHbJFlMnw9dXpwPs5wRiShrpfWB08X_ErQ4vYQFimldFaD5fkQvnGbzbWYHgaZcpAKSMgDBXxU-Npb2CW_9me2kAcDCq4RwI294Am3LVJoD9vuhPx8G7e2QMmzYvziSOakRU="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD25EVxF45NcjOWaPkl7JRE5-IsgZBXFp5waNK0GRgiKJVVWbEur86P4DtHtF_STEHFigMEHfOePyJ_H-dZuMsz9XrgFCGz5EiOOvjCXFeKBDQ-ZQZwHfB3Jj7kQKQ1M6sD14B4s6OYdxbWMRJXXod_og5uAA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk3R-V9gb-FTIgziJdJjOCdjnI8nEJptpK5w0_hqTF2Ea3je3T6jZI6fSdK1rJp2dygP_DmhfRJvrbyPEW4tb_VjYe7CiccvAx4fPiYR8evkAVJJRqAAs3OSiohFnQ2xKBctg5"
+        },
+        {
+          "title": "migrainecollaborative.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQj7Tt_BKjtnBlpt_AAGNtD9PlMzuy-nyVNUU1aQnpNnISCqHizw_HYg7KwKpUBX1scZ2sG6B6a_JYIC_Lk7TURbTa8aZ1x3G_f4EFSTRfh-ifVww3_-cy6hfBnHIHKGLokoUtlAUr6jGc3cuP0W1Yd3BQd2PkjAwqIWC5bS7y9tTGIXp1Blm03c_jmi7w49_U3v31Z5rhf0yPuKJQBqBqo89yBXHCQMXeZ5Z57CSmZIOsN9zEYTBEO4YljmMaszEhAwAFZx3uWY9uh2hpHmp6i0LRqZALquA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbTKGI1Jtg_1X1FYyL9hydTq0VYmV52cPXpzV-FgPwfdumP5pQtX1kn5BH_khKSiLeDRpLLJ_Pvj5nvWBX7uWq5au4M2pY4ZSHiIqHbrXROhhxNi5D1jdgqR3fZh51xtics5o7DLho2CbqpvXo9OereGGKqKPVY1NXS96_Zyf4tWwCxO7OYnyPEmfwhADwLT4jKX53cbypqp_cq29y4pgtAhVam3dspGGQMIexlUfDM-E7wlxrAbg652nHtH7IzcG-cUXju-p5S5df_FUSqVJarsB3"
+        },
+        {
+          "title": "ClinicalTrials.gov: Galcanezumab trials for Cluster Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cluster%20Headache&intr=Galcanezumab"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "300 mg subcutaneous monthly",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 34500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 34850
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 53615,
+        "icer": 200000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 120,
+          "annualOtcCost": 24150,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 34500,
+          "annualTimeCost": 100,
+          "earlyTreatmentBenefit": 30000,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -21130,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 2000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Galcanezumab",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 1200,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.1 attacks/week",
+          "baseline": "17.8 attacks/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Cluster Headache Attack Frequency",
+          "percentageChange": -23
+        },
+        {
+          "absoluteChange": "+63 percentage points",
+          "baseline": "Placebo: 8% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patients achieving >=50% reduction in weekly attack frequency",
+          "percentageChange": 787.5
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "NRS pain score: 8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Cluster Headache Attacks (NRS)",
+          "percentageChange": -22.5
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5.0 doses/week",
+          "baseline": "13.5 doses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Use of Acute Abortive Medication",
+          "percentageChange": -37
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "HIT-6 score: 62",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test (HIT-6) Score",
+          "percentageChange": -11.3
+        },
+        {
+          "absoluteChange": "+40 percentage points",
+          "baseline": "Placebo: 15% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patients reporting 'much improved' or 'very much improved' on PGI-I",
+          "percentageChange": 366.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reaction",
+          "percentage": 15
+        },
+        {
+          "name": "Constipation",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1 week",
+      "treatmentDuration": "3-6 months per cluster period",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "ku.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmrJA1qJ3Dmg-wpteucqVSu_nXsRHRfpbAGBd7YhnTVQC_acLZ72YqqwcZsKYNmu0W4c-gJVgmzwrfJi-3Uo8TTfS1T6x0RSuIzLqqfi0d16e8tQhMM7-7Q9DE2aU2HpYMXjMX44OJWTl9I61hsZAi-jS5Hu0fx5hEasHK1BFOHUklUGXoQe6Z4WfZYGwNFzKRLK2KI4Mqhc5BtwCmIRzMZT6fAoOzdAjMD4g="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiw8V8eCRxh8K92dhRGrgXx-cF4oiDNvMyI0gC-GX1rPn3clMGnvL16Kgy8u8OJ_4FrI5IIZ6zTbD2sHDIWwHfwMs7dGId99tpuVtjzfO1_DV5_tM2EJRg1o1IktvyDM9Meen_NMC_3dNjSW8gt-47Z2Phj5-z92cdwbj9zbwAHT5ahC0ZgZz16Yr2knIJihwH0avbHfJO5SOB5O5LNZ-5JqpL3U5RT6tD0Bkhc8rgQX9VPxsk9_o1VL5c2CRXP_wfneteQgnof_vmGAyBLyO_RTs40eLm9mU="
+        },
+        {
+          "title": "ccjm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX1NsD8gOd2s1pMFliYuhNHLDIt1h6hpHv742hlZJAjZEL1aZjtBvWxeMgzvg8YX3BPpMctAB9Y89ug3t7VtSpGLolSeITrq7GEWv1WvCclEJlJvz2u1CpQW-C0o4UNwWJSW8iiCzQ-4jom1jR-yA="
+        },
+        {
+          "title": "acibademhealthpoint.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw8zfsokjTIw3PWOln3E-SCLrbMJbww92FvCVhXExVxwBIusYj3-Yywi3epP_TNbt2jlSnaVWYr4L3iL1zLKMReWq6xCeR4T1RUaG5QQXK1BSwBer865u8hjNpOsuhmXgHdVZmLEiBnHT4o3BTi4qL_ky8vyabMdNN2bvHCPA6yV2iYxjLR83kAg=="
+        },
+        {
+          "title": "medicaldialogues.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQTWhGe10Be6zAe8403W3J-QAj9_6gf92fIgwios5sI-aeEZnYF77Hh4kAbp0CtQFTmFH-bf14aCim_r8ilFKIJi-I1APo3Q_INKErxi36WCwXYdV54P5HsgTCAdsNysyhPSEG_rBc4_c7t4kXnifO6iSEaOPmVdCEonw_IBGCJsGnuBrhi2fjOLsLe8nOFKfboAv9ijJo4OeBpC8gbS6F1evBnMd9iOPdsioErc0PypU_32G3r2Q2Q4M4GQny37E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMmKsPYEIc2iDZOEslgZnnWKoTgZ298LTXubJik38bfCTnilA5Ag0PZUJwJ4clgQZi81FP0gjUw0Iq3YeclY-jmk5YPu0cupt5hL9fk74cYSNstH4djRaLaf-YMIh1jAuc89sX"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0N5bo6N2AapZLU-yECbMhWJaOW1iCdKF-cGj1mcSo3RA0QAuvh0nARoP-SSqWzgmawLix_esGpsx6UcCOOvhU68xh-CsKs-efrStHU2J6JHC9DOkg43mpiGa4UIN0xafe5AQ3za5NGXQ4FgT5FxAoaBQmH2jSyOzf8v7TIJkoL_59rP-Ybas-IEYGax316iiZziUz4xPZ0b4Q8ZMReaVt_9AuivBVBtP-cbgTS3AoFivVmVqvrpUr5Pcr3tCbBhghLDOwuLKXZpFNivk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcWk9f8OZbofUBtF8JEwAZPuiI4zJo7OG7pr3IqusdPY1lQpttID5yPswVy_obr9eoPDdkXtzEcm0Y4zVxkHbzMAVnmP1eoUOKZ2F4gIiBrMJa9Q7sWAmfc8iqvuHv3sukVQ-TmLRHEjJD2dU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3Mf6TvbpUyTMbH5wuITkbrR15-fAfKLFChy2JENZ74a27xfPHQ_w_-8BvB9F_wgWMaxdJUYkDBjJLSq1oMKWdSERGFZMqRlUIHjnvb_2iDBLnCDy-0_gAIxGRIUPSEJ9uH5jxBCbWQXR5GdPPTVYeGl0HwvZJgNx6x5KdCWJ6LUQol20oOdtSV4Df4EnWdaPLWgjvWAtkFO92X21fQy-5bTz2kQA40-0JAzr7iQiu51Y2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3bdp70bfz5d1j3RWSCwk_Wn6VRyJzfboTe57B8Kcm7XH4quAAV6ylfIQL1eRbvThfmUUN_nQ4mCV_V3i-NhDGD3HsEeFgHNx1uTyvXSm3IqTYBhQL9DoS6YRAHRSMY3PWElyk"
+        },
+        {
+          "title": "acibademhealthpoint.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6hHcE1qZ_LEQTskEQNs0zoPAjoW-bQqqNlx_Otx03hiTtyNpPdXRfia2b5keJeM9xiNXrST2z38Rnt7Z_r33L5hX41HTya2g01BwbN_Me-zIZ8HQsUSk7fuSI1XU5DHDUxE4FLo7NsOAZz32YB1gKMKcQFBEXCb9HAoZjzRNrMFK-ZciYyxhns1-P2a29w086NA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkdRSnEjQ1TIClpx9F6Z6D85zbFR_CPV5vPE_UWQtEhj2KDFumcA0XHAvffSCDqpomUL4_dqj3mW05VFy_BBGUFQYgQxQd7bgVfV7IF2I_q9UhxPDDrhvR9TtG71bu0glsLF2_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNgEHq0IixEIJFazYurAQpYk6mtygRlVtPX4cUkXnAeY8vfghQ7wa4K34X21830q8bFjSZZhjkrRgbhHzzDz8KtdtEILV-m4esboDG8Pg8uu36xTNB8Rx551CMfZceMKViPZfM"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcC43eS4UEBknJlRX6PcjH14OcX4L9XSKeyJDgwWQpOyQ_q0hHuaZUdph5BjeWpGOt7e3CF34BvqUdO2In8g2T0JjXKVmLj1B_16q8Bur_Q8eCPJzi9Ia77g-wlHj_DGQ1cg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFUp0JJnkwvJeAsSmib1yPM21rwelqBMUP9Ry_HWtUSK1KsZlXlLKAAzA7Kt2ODVRbDP6GAZz_fug2RQL3AIMEzTIyDHlcRvf8tgeC6yib9fbfxdPaItzeKZh8uHINuQU5dZHeYlPt8tlMUt8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Verapamil trials for Cluster Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cluster%20Headache&intr=Verapamil"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "240-720 mg/day (extended-release)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 360,
+          "monitoringCost": 500,
+          "sideEffectManagement": 100,
+          "totalAnnual": 960
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1477,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Verapamil",
+      "nnh": 10,
+      "nnt": 5,
+      "participants": 2500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7.2 attacks/week",
+          "baseline": "12 attacks/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Cluster Headache Attack Frequency",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2.7 points on NRS",
+          "baseline": "NRS score: 9/10 (severe pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cluster Headache Attack Severity (NRS)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-21 minutes",
+          "baseline": "60 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Cluster Headache Attack Duration",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-5.5 doses/week",
+          "baseline": "10 doses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Acute Abortive Medication Use",
+          "percentageChange": -55
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-13 points on HIT-6 scale",
+          "baseline": "HIT-6 score: 65/78 (very severe impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test-6 (HIT-6) Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-3 points on PSQI",
+          "baseline": "PSQI score: 12/21 (poor sleep quality)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-8 points on MIDAS",
+          "baseline": "MIDAS score: 20 (severe disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Disability Assessment (MIDAS) Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 35
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 15
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 8
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Months to years",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXhAn9Di7Oac9A8xtekwSKbE7Yzo0CmUjqO5bigZFRV2rTjW1wPFhpuj0kH4GveOnLutiH5rUd_6_htiz5tNqpgQRzw_oS3pFzdGeDr3eeAnHD5oGSY5y5kH4d3RbipryLBPd5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBHnIbvpuNHKd3Ij6qJUZAeeuTHnH1S5BlkyJUz1K9wXDqbX_T4IAyUhd_-MZo4taL2VZO5fLsUIbnqhP1NsgVrWe0MQ09Z6nNnKpyZTpXv_kS11dTpKzFRMg8RorAhE0Xd4UQ9KSQWAf5uAKKiqlSerg5KCj5lBO6ZZ6dfZ8bXGTg0yS7wT17_6HYqbZQBpEJwD6E6ztlKxrstNgqJSlLPlZ_7cTXpH959d6k5ODTp4CpuOC6PNqChFMYrEVo54EAlHTEJDMc"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHacLSyJLCxc1Sr_Msnmd6abPdtaV5liKezEydUxJuSvVvag_3YMhfY9C2X3Rlqcv5ZquASQHV6aUjHYYg9kQ0whYcsFIzv4aZt25UXiKeVYX9H_zgLhV_sEFVFaOmGyDdjOCnkH1cEqOdXzf8xP2yJSwgB2Lj8P4eiwfEzyrmUxpwpWf_UdVIy7yJdUjQZnzt44GoNIw2dBxmY0ibA5TkCAwShnD-fzJ72JuKid99iFek4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA85amUvhZMwT1DkUIwKx5CG6yifEQpx2LPTR0Hkim5RSw9L0xZ3Kk5oTr4H1OekyrW-OZMsikOOE7Xv7xbCneZ24VdeJNjlpxL5p_wsr-5huNouO9nChdB2xrVsSDeydXJrtD"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7YWnjpgSSDI0hkuaef_-R8Al_wWujvzCoJsEBvlkZYvfsuYwdE2eR4k2SXBTSc57cj7RrCmlw_mph6MHu5ffVCCG7qS_PV6G_5l2kqd5RnYWHD_QWVir13paa5LRorxNOg0hhlmg1Xn34prRShM5WAjT7ZMJIwJ8ugvuKzLOVZPbHEiK53sgj5MvuwKq4qIgx96m7zRt5SIs7BXPpZvUNYetT3tbAXCvI046Aiqd9-N1zZ1Cr4fEt63FT5_kMO_DbOTFqp72yI3psnOmKm8Iqd8W5VxmfxbKCmgzvHdNi86wuFubqVlti8nV_aKeuOqFcrBx_ThUHVwTV02wZ4I7hsmjH4LuFX2VEkP48o_V4oHYucra4V8-Byh0q7cqd_84MlPrZehHgdJxpB2Yug3iOsBl6mW7Ym2TOnWTZ4yo5nmoXryt7h8KYuwoJ7lXmNadh9Jk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETnsIdgqHeK62XpwA8pa52H89JOUAA1H-QQ4y2pJ8StSIoOo_FN_tM7QEVkUwtDVabVk3flE-YUbpgvuDIxgVTErmT8ZQnZXL6_xXAHnPg7YbpkDVT4DCqBwbEYe2E7FZMPikl"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESk6q4b65qd2f4epRWC_UWi8Qv2I3ChBTHvi3GIPqHlF8ubZp_ybMMYDq3gdPGtk2rrs9oQtp83wTuFdWJuInicnlLNU1mQUa2nMSTjHGOAsNFVQHRaxGZYlNzVg3rDhbFQ_s2J118iqHfVw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtnalylSTtHvJ21DrZAtqqgE1vT_DyDOG_S0u_d25Ke8R9t5rjM1jRfF6EwS0imZYoBjgY2uSIoSQ6vzeGlJjmct2hjiR0xhL7ttkkbm55GAq6EFRjTLzotdCZjQ-2vOl1f1Bh"
+        },
+        {
+          "title": "ClinicalTrials.gov: Zolmitriptan (nasal spray) trials for Cluster Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cluster%20Headache&intr=Zolmitriptan%20(nasal%20spray)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "5 mg or 10 mg nasal spray",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 3600,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 50,
+          "totalAnnual": 4650
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 5615,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Zolmitriptan (nasal spray)",
+      "nnh": null,
+      "nnt": 3.5,
+      "participants": 600,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Taste disturbance",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "15-30 minutes",
+      "treatmentDuration": "As needed (acute)",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "isciii.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz-KMyRgCjBP7vsqpMdpUBglAs1FRE9WXfEmITg7hRYHovaLpALaCtXAyumgOOAc-ENgqbvam-12GFeJnpOCh3553NosKYzqJpZFizZo-15xsJSoTCwzGdWW4_fQ6LbfupWm0eGrN2SctVzHkEdZTFWwPNOlQpaDiAv-KKKdRgcv5xDWACkw6mJJNImA=="
+        },
+        {
+          "title": "psychiatryredefined.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrZhp8vK75H0JZnmEDpjBQtZDmaz16KDXqae6QG-cPxtiw11i0gEQOavDTYNmjMb857MFm1zFhGIF1KUDAtJWgHRlVgXdpTzhu1xvHJExUv-I5lrcZasJglyg0vf-kUVjvWangMZRhB-kaytvCgwE-EpikgLSNVuDfNBXPo2m_E-OGOpuGXkQw4tbPOPM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEynqU_FkBcdhq9bu1A1Bk35ku26JoQbm_Ay_MT6LZYOXjrSUmaPB17yIsPV9Mj0GbbhpMxEXx3H3ipH5Mr0Hi-lehbWg17vbhE-MLIQPeK3_VYIi2gT4yVRJkmTDYNOs2Odo="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyYg4pK29bJ2K3upLFQ-z_vTztpqeeJ1XIxSZAmYF5f46UEGczCr0xprUR5uupXjxTFjumcEUP8bMEdjdmmUxUe17O51h7CfIqzq7oyZVxScMTGqPSwaRsjrOLzFs1bKEpOzLgjPjHff6-k6s="
+        },
+        {
+          "title": "psychiatryredefined.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnWuHf1fCqEqafX2YvHrqsU0F9ZDXYQ6UWl2536baW5APJtuP06_gA6dfa4fyT0jjzq7f_6N8LhmXrH7IC4Ro1JYOrThZlmoaGu5zn3afcleluGROIrKVG8bsl9Q364TLRhC-e7WxfeB92LazWFYGKpsQBumIZ1-uJ_JUtupigGVTaPSpKayZ3Gkk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lithium trials for Cluster Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cluster%20Headache&intr=Lithium"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "600-1200 mg/day (titrated to serum levels)",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 240,
+          "monitoringCost": 900,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1340
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 2436,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Lithium",
+      "nnh": 7,
+      "nnt": 6,
+      "participants": 1100,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 30,
+      "sideEffects": [
+        {
+          "name": "Tremor",
+          "percentage": 25
+        },
+        {
+          "name": "Polyuria/Polydipsia",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 15
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Months to years",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "unimi.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmlDMO1WDzRm8s9F7G9ZUauKvZvl__tA-qgqN3_EbY1vUHlV9aWmPqFu_7hgsY9JKVE48qlkDpOoZkvRsLrhYD_Bd_da0IHedNQnqqvxUzylA0Ogjy7Jl1VjmD4UIJjlZpLhBdRPjXzrmp1vfE8o3OEIIKDkP60CUQwfgyWukbFCwgY-dOFnY33uo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJqEwg1WVruvPwq56KuOZPdR-LmHD6D-3knfr37RbCMFindsvVCY-cY1ji6yqt4B2q8o6cAM-LQ0FR2JbqST_d7PssW8RMEq1gl0r-hi-LvPHaz4zbiFkT1GYT3lNeowHv5Mg="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkUurQmLCD9LAdP8xAGYRnZRe4xZH0BoME4Z_EnUH3AI26j7NT41WxzfkW97pHVLj-k_wJz__uQg-QwiFJyo7jr0wAJVRYoNd5s0pABmx6qZLlcgb-K95B6wrSZJteJiCR1Hi9b2dNocCO-f3MOqtnPttBvfjAnqPFIpF4pHX6xWSjESKgNWMf3omFhpRM3LYfdjZssg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG34pulgwWzau4V9d0apZvNTwf6w2yftyOPewlpGnORfS732Ha07-kgQ2Ecu6a7TMZMllzICN4JrZxchRdBLe2YFKpcJ4P8X4jrcVAPqVOPf1qOXvRa6bn9M3uLL-sHcdRBQzqmsFMW6SKABQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaucxJvdH8z7mtSwv69TJfNcKsezJELHS5l3rOyPwdRPPd12Z6_1sbWPjdPvRTUqXNrESy4oL4aHIQa0D_7sEWPlRtZ0eqdbwienYrpq2M5BX6A3YhoopXdkkiF_3AbgAS0sw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJMnrGEOwmMdiizQCUYQbvauJEmjwzA-D0xFGON9QXI1BGhr72f-u4FnmeKx0iO9SfymiAZW0y72pQLfmSvTe6ql_IeS_1S1voCB6G3qfttzCpK34gJcNJGG7ht_G8PRKXCo8yT0sElr8SVLdvdMazL_78MLb3EAExwGlVd0g4FXtqEWCCH8qsN4H-OxRAdoMdUzx8H6BVrPoW2MhoWcMKgM2U203i8nSKrA45kVgwxDDFdnXAY0aERcGp3cAupmynOMNV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc5ktZKTbT4-luuFISXPumg1Zj2DjSFw6sqR4xrVmxXL8WPpM_BxiLbYIZ9K_ap5OIhFYSAUMIqYvUkKfIn-GsbwKpr1OowQ3luJc5JfYAeN6NFfZFJR_4bk6iykt-7tTPm42uOmFGLdBHnOg="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfNtSJaCbKxGsBN2QS9uX24xNdDfzhzbCGzajG3UtHQlhqR6wqG8N7R1O40iD1KPbXAfcVHaS33-JnT153GdOu_gZTXkcoAlBfzDlonDoXQCBWP1obzcNrji1RuFuXsGFWbrQEurtVOm0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topiramate trials for Cluster Headache",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cluster%20Headache&intr=Topiramate"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "100-400 mg/day",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1778,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Topiramate",
+      "nnh": 12,
+      "nnt": 7,
+      "participants": 550,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.3 attacks/week",
+          "baseline": "18 attacks/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cluster Headache Attack Frequency",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "8.5/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cluster Headache Attack Severity (NRS)",
+          "percentageChange": -17.6
+        },
+        {
+          "absoluteChange": "-6 uses/week",
+          "baseline": "15 uses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Abortive Medication Uses",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 45,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "63/78 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test (HIT-6) Score",
+          "percentageChange": -11.1
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "12/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "20/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment Score (0-30 scale)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Paresthesia",
+          "percentage": 50
+        },
+        {
+          "name": "Cognitive slowing",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Appetite suppression",
+          "percentage": 15
+        },
+        {
+          "name": "Kidney stones",
+          "percentage": 1.5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Months to years",
+      "trials": 1
+    }
+  ]
+}

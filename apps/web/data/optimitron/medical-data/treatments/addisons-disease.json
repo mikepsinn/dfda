@@ -1,0 +1,553 @@
+{
+  "conditionName": "Addison's Disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:47:35.593Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKStpOFIqdrQLTRsle17lMgJOQ42WKugGIDdeXw8h3Bzagl-VlKQauG9rYFBIJDoGu2C_XLgWNyDa-HgausN_AjW7rj9_rW1adgKAtUUPxdt__dU740rSOATZkbjaP9ZEWRd5V"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGq8FsLDXWV7Wxg-XMeaQcwI9v8McP5EQd_WhxbTul_9KkFo_83smmvipjhoD-xWZPinhvrxWQsdDWd9o_rPe_ns5WJ3oaFmj_QeZ0DregNPcH0AwDygRaeBfWSkkRXZ12cHKgx5qgrD1-7NGwYF6tKMcY2schqq7s7RWBcQhd8vLiNCOdMX2YqgONPgT-dzDZAzyTIKfElvQ=="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQPg5izqRsUXRmvDUwEG4Bp_w_V9BCsy2-U1D_bcJskhuuLgcJoTu34Q0RcZffMkzU9a75z8cQF1voXnGTG_tTooLm1V5F3DC35QrC1RT1fCAjc9hr5Hi2ye7jMaQEjNzfQti9UTRBBP6IRA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeH5wMaTzHMHS9kH8Z3e1ziJYWbdCk9vZhUYUMYy9cjJddX48BKHuYJlX0xmrTc9pNbGlMIpp0AsOO53PK7VjggbWJpiBlTR50M975b8iaw7pFJVu_tR2uQLY7sWAOOK2SoqCg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGckDrzbOag4jCxSHaj4p8kAn2-eB5BmQ0XZzcKN81orfGIWxdp3fxMWB-O9dVPerCcgaUxjz9CbPNzqETpOoNjdS38oxBhAGkNoOr9J-dJ60RKyslm2xETfzB68OZL8hhY2QKE1wIpuaXaevZmwt_Bz8Ox8uXawWtv_PTU9-TRYNRAWuCqt5pdTSw-TWyiLL3cGRAzDCTF2z0sjBCfh5PzqeVpOaeqtF4ltZVKz0bTpO40zvcjDwODTqUorGE4e4hrtzYv59JVB2pkuzSjmfMfCr4Kw9YgjThAnL43RZKBXKx3may-8GI4_uXZUepX1KsMzSscuJwEZeFRs3EbHnXa6VeR_nT3dRwm"
+        },
+        {
+          "title": "ClinicalTrials.gov: Hydrocortisone trials for Addison's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Addison's%20Disease&intr=Hydrocortisone"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "15-25 mg daily, divided into 2-3 doses",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 450,
+          "sideEffectManagement": 50,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 714.29,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 30,
+        "vsComparator": null
+      },
+      "name": "Hydrocortisone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+12 points (to 32/52)",
+          "baseline": "20/52 (indicating severe fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (FACIT-Fatigue Scale)",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "+20 mmHg (to 110 mmHg)",
+          "baseline": "90 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": 22.2
+        },
+        {
+          "absoluteChange": "-3.5 points (to 3.5/10)",
+          "baseline": "7/10 (indicating severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gastrointestinal Symptom Score (e.g., Nausea/Vomiting/Abdominal Pain Severity)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+1 point (to 4/5)",
+          "baseline": "3/5 (indicating moderate weakness)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Muscle Strength (Medical Research Council Scale)",
+          "percentageChange": 33.3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 98,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9 points (to 39/100)",
+          "baseline": "30/100 (indicating poor physical health)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-1 point (to 1/3, mild)",
+          "baseline": "2/3 (moderate hyperpigmentation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Skin Hyperpigmentation Severity (0-3 scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+5 mEq/L (to 135 mEq/L)",
+          "baseline": "130 mEq/L (hyponatremia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Sodium",
+          "percentageChange": 3.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Weight gain",
+          "percentage": 15
+        },
+        {
+          "name": "Osteoporosis",
+          "percentage": 10
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 8
+        },
+        {
+          "name": "Fluid retention",
+          "percentage": 8
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVYgRG9SFRPuIKLZJ4TQs638tYg94j2hQlFuzuQyoZyWRhKbhUxSm94hBueTt0TodgXjOmGvY3k2bEBmH2YOi2WKm7lborjuPi4oxGnKKa8RN2iHQUZqiZyAfmdCNH4XXzKD5Iy3ZQDIlh5tMe01fl-UY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5H0pTjeMM-Olo43SVHcWvGus4WI6yx7iqLj0-S20IL0DgmG53MN5r2ogjUEXtd8GwsqUoRj5STQt3PddKu6Xhl39xTSbvC4ztOAGMe6348JrOxw-QQjE8Szo2171px3R1N88y"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF2MbjeSHKuNJJNV-QI9-dba5d1WCv00EMzX1esxAIewjDIWC-dnta4X9hdbdJh5Pds62i2H-PnmKCcoUP-Ph236LOR1nW_V_RbDG6X2iFtx1x0b74L-ENxEKdBwfIsPvEIWwTPTlV1QZWIymkFdnYvWI3Xqo8T90sF4h691VAh4wUnn5jPWu-BguGc0DtuP6Ka7J1c5Rqm5Bta-box3aS8y0yXYtG2VUP6rx-HCaCfef2KIbeLbBt"
+        },
+        {
+          "title": "addisonsdisease.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBZXrDCRV0KMX_kvhw702t-hDkYAMy8h3tNY2n1686nyYCFGJu2nX-f7aWppY9wij2Z3eQu5C5LX4FrLWNl66agUsoCob3VteFkki7yLKr9QdYHoDccd7kbb3vdm9X6P4JwYvRBjh1vkanv7j51T4UYhumCnObLK0K3J-351rGgtbkDQAzhw7iFuERVc6gSBfoUAIXWo1yiql-yPo="
+        },
+        {
+          "title": "geneesmiddeleninformatiebank.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXkEUeSiX2Ye570mvUdeZpYFPqNzGJ_kOUgNqvdAu92OShxM-tAATF2MGZ5w4iXqQLfiidOSjCQ76wcysPP3OCslVIiSPhN_wmKCeQvRYMFQP8D7bN95vuJMRaFFe5gVGGu46C0dJXlhY85OFEQzrlWw-ojSm82w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtAqQkze13Y7vXEDZDh-ZvYi7I-h3EfJgVUQY7OecVAlz_19EgbBRXqxH22zaaqs2ef97hL-S0HnS1XtkQmG9ZJvuRkLSlgI41mNjzIJA9dm1XcPzQrjDyNSPNErxKJ_k3YRA_RZLangKuXPp1_l1520UKlMhG3_JIjcHQueAoFkjxqQfkai3GLlNAnH1sAiGFsILY32fDWwKu4oihp4IrOLNjRqeNSESUs7AsSXxY2R0sJZ1mq-16HLNvJGJq7jrZEJnV8wZr_lrYoURr2ZR2tACqm_8jormbRDGzEiTo3-A="
+        },
+        {
+          "title": "drugs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCpZxmyANVqxYhRY6A1-QPS8y4UzP-sjFJUo1u6IHYhmR-E2WkiXRhEgtrVm-X-jQBBpgPxzFKLq7UhQVVKcFzYe1XdXz27piScx--lMe9Gss4Y-vyIeNGGKqN0NeEBESA1SA74pjI8MKdJPUVeS-90VfxJFbAtV7I-Jg3G6MnaH05_Es="
+        },
+        {
+          "title": "ClinicalTrials.gov: Fludrocortisone trials for Addison's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Addison's%20Disease&intr=Fludrocortisone"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "0.05-0.2 mg daily",
+      "effectiveness": 97,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 800,
+          "sideEffectManagement": 30,
+          "totalAnnual": 930
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 134.02,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 30,
+        "vsComparator": null
+      },
+      "name": "Fludrocortisone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 97,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Hypertension",
+          "percentage": 10
+        },
+        {
+          "name": "Edema/Fluid retention",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Hypokalemia",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "hours to days",
+      "treatmentDuration": "lifetime",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX7HbF4Kr7DaIB_XIKAL9nbVvXep3VKBx1IxFFfXxSMq_CDqeFwVBgA2e7MAbD9QhWv56nRy8u8Bgi9uLQcWLolWa0uW9IDdzYxjCMuGtsPYxOYWAeHst3gEOS7GyZ8qNmyPO25nWie-Uuj7c1tSE_tCDilS2Um4Xxu4nVSfX2Nb5gjgyEw5qSoN_TdQjDdTmcnVtFKf9ZTw=="
+        },
+        {
+          "title": "isrctn.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHk-7U8bdMsSOdF1-6uhANTfexg6SRDqHHWscU_nscYSEz0Iuq8NmEBq_oVP7bmpz3f15XLmMcUOCctoA6tqO-OLP1RuQs1QNawBUqqWCk0XJ0wa-Cml8KgVjOc0A46je0="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQXQ5XBTwtfuaETN4orWI5Lj3zaROrzlULgvNngoOJMZs3bVmJccxcCfIqovR2OT7AHAy0coDk3Ub_7nF2XBhvBkGJJ3FpfACNZQCQmuAUBbKMe8UhXr8GkMx1uOUrHMeDJN5Xf33S"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFlb44n8FHWquW7Pj8xLWJCUMkirqLjLbbtQE4B1CEdxibo-qxOTBk5wgmbczqPjWhUa1G8cLB3Jn9i_obY1z3Klq3XQq_P4g7xmNaCOnv01GG-CR4LpGj3Dj2fVwVkzYzaX-Cl63i2KCFvQ1-"
+        },
+        {
+          "title": "ClinicalTrials.gov: Prednisone trials for Addison's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Addison's%20Disease&intr=Prednisone"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "2.5-5 mg daily, once in the morning",
+      "effectiveness": 96,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 800,
+          "sideEffectManagement": 75,
+          "totalAnnual": 1025
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 234.38,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 30,
+        "vsComparator": null
+      },
+      "name": "Prednisone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "25/30 points (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Addison's Disease Fatigue Scale (ADFS) Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+14 mmHg",
+          "baseline": "95 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+4 kg",
+          "baseline": "50 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 8
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 96,
+      "safetyScore": 52,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "30/100 points (lower is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-12.5 points",
+          "baseline": "25/63 points (moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory (BDI-II) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+5 mEq/L",
+          "baseline": "130 mEq/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Sodium",
+          "percentageChange": 3.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Weight gain",
+          "percentage": 20
+        },
+        {
+          "name": "Osteoporosis",
+          "percentage": 15
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 12
+        },
+        {
+          "name": "Fluid retention",
+          "percentage": 12
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 10
+        },
+        {
+          "name": "Increased risk of infection",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJdN5CDdwQwC1mhUMTFcRdje4r-9VpJs8g316FJzh9b5lVAGegD9lkzNFJ5fqgTPpxdStVXu-J4F69NfmYtm_YIpgMuerjMUdgmY_PiRZ5MxC9-ln6H74Fb7tbKedkvJXLSThR"
+        },
+        {
+          "title": "endocrine-abstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMSYTtr7vXlyT2IQrWyGdsnsTbs1kxb0HTOd_JN7I-6_k7KZz5sxoJ5WCtLZZchQs4TJ4FxZPD5fZtV16jDmiX2aPmffxdasPcmredaQwOj5LTmygK-IGCWtqdbuCQfbZth7fzy1HSoQD6OZPUVJGb3Q=="
+        },
+        {
+          "title": "the-hospitalist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErTrGeXk3kVauyQDkRDve3ekLeNKkvrWqPL49FtS-UVSo8TkPwdBGRa5__1_aQbzKfbsxU9szIts-jnTocrGh4uLIwdzShVh4jg9gSP9tcdH_eqt5AHeMDC5XkHLJ1B7G7UEljhQ9-raXAWt7LwR3R5gwS6qTy28hfa6dr-dYDxxYyq2U1722YbmDaLEE="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkj8gBkOYHLuucxJidDINyLmY6sCVOA_TlC3dezyqceMI_39Hce8GMlkGEsImQlz_k-BeBy6ms1eAmkHpHy6ggCe_ZWYgKvelQV6t-QG1AlmLWf6UcxSU2Xr6F5vudH0lrjvpaY7n64n-mEDHyFfcrHAwk"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgThN_dPjUNToRuBxBYC80hRbB2wMTd0Wqco7rQP8jz7-Hw030pvyS-OlSDzW1LHHeT5mCFV5OJpzWSs5AntpQqLygBVhmrmtANJFOJIZsGkrl6o00NAxTeustxnTVBVnc14YMj-68jVIVuZmWn1u28tTeOOUJOppS86gLt_FHWUhWBGlo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7KlNQ0m_buh-Lux7lJw7f4GG9lY5_lv98Czzil5af0_U7AavQygSm9ruas3GfT7WzOO4tugNOsy5LFvxyYrTo9Go2aYxXXKt9N4WBGPAqPIITCSi_wupzTwDtxs7nO8xpsczHxZmlcFfidcw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1YPk4N_Qq7c7BAhEao2fMmLbcjgv-2MHSwRH0-9cn4nz4n9Sx46MUHvNO-8JOme2ln-c2c3ilj1ko0_eV-84c-IUnLxK6iBwWZt-d6kKAjreNvw4bjsQ5PRN1M67GJDOG6ECw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvVZOdpzLnCuc3gUtTumm-RMU-_CjPkbe4YMK6bcm6z6nelLv_QL97EFkFn1OCd8bPXWsIrLjJGpamxZ3-AsA6IHhN-UDs1wOMxJITRLDW3btSNi3MqL2rr3d6RcqvvhdtKlugTZDM"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEmhjluXQ0tZlOgqU-0i0ocVVHhPUSgdIJCKfZwQ9tNL5PEUkHhYMxk_nv3XMZcZnNSam1Tp6v3SQ9PL5EP3fHCIIweoYiQywlUkUKJkvBNexo_1dYs0e4aA8mr6bulDrYDT1t-gnLieAGORghAC4Bo90SIWDPz5GHHg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dehydroepiandrosterone (DHEA) trials for Addison's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Addison's%20Disease&intr=Dehydroepiandrosterone%20(DHEA)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "25-50 mg daily, in the morning",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 370
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 616.67,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Dehydroepiandrosterone (DHEA)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12.5 points",
+          "baseline": "50/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "18/36",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "General Health Questionnaire (GHQ-12) score",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "20/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory (BDI-II) score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+20 µg/dL",
+          "baseline": "5 µg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Dehydroepiandrosterone Sulfate (DHEA-S)",
+          "percentageChange": 400
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.024 g/cm²",
+          "baseline": "0.80 g/cm² (T-score -1.5)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine Bone Mineral Density (BMD)",
+          "percentageChange": 3
+        },
+        {
+          "absoluteChange": "+2.5 points",
+          "baseline": "15/36",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Female Sexual Function Index (FSFI) total score",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "20/56",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hamilton Anxiety Rating Scale (HAM-A) score",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Acne",
+          "percentage": 8
+        },
+        {
+          "name": "Hirsutism",
+          "percentage": 7
+        },
+        {
+          "name": "Oily skin",
+          "percentage": 6
+        },
+        {
+          "name": "Hair loss",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "lifetime",
+      "trials": 2
+    }
+  ]
+}

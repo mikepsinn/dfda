@@ -1,0 +1,266 @@
+{
+  "conditionName": "HIV/AIDS - Drug-susceptible Tuberculosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:47:54.183Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvzbz-jiRv1M1JklneHwaVpkwPvxIfQCpqddToHuaSB7bsR9c1k9Rk4kOYVkMFTh7YZotAiw7gp31Yqra0p5CKum2vOgFf8Mkjk268_JulkkvJapbfoUslvba23NrCDwo4V_fWyZtViRYsjA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCsFP7bDEswpGpxHORg1vkQYItzGTc1Awzgk4d2Z9XkmsJGRcXJEU0ZAm8Rk_FzG4mEcbAVdBBRfl5gxS8OOGj6mU6nhoxxA3dLCU__FOKrupc8EgWWFFlWiD-lFItezfTsb1ddKa1BzQ0Iw=="
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3KhVjP2QB50ccDGsTIUlxSgXQZHt44ZlRMMOj9dESTPf5SLwr5ge-tOz8eFbzTdu-78HStKatwxYnAHnCPo_rx2BLEJnqvbEVIkqxynBRIPBG71RljIuKkLBQW_RclfNZdAuVkXZUjwFW0Pw6rRhXzwyZxT7flSG57R9qhw0="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbzr1_8Kktf3XV83m-5HbaDhVi4kuoUcrBR5Cjk5WpYEN9CwJ8ENSIgTd4aGQqKalVfuwfz21vUOD8T9NIKXVvthCbCJxG_AsrMSM868lCUpR-clnidAVFSob_GejXOz0UwpM3YocugPVmPZyaNLnBz-ChtS5eKahU6BLA-TJkwV2E-o61ydFp-PvVZOFjiBc66CITNgaeha3c153Za6MusIf2soYr0UOB4X9l1k-S8j8IwJi95x0LKIg_wdQ8KpUflTlvP9ek80Z2sLn6eA=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdeP_jmwXH7kKm2FVendYRLnH5AJytYfp0ManqQAQXGyw4B303eK3xGYJc7joLwJj15R1HB9inVjdaQZme-TZwmqouQ9vpKTQBoJOmHd_Fq8zQzsFYN9JmFsFXt7Ln7yQvXd8bKepPtjqnZ-yFBWMWVPye8XNe8eGCKiNBcRq6MFciRUFpbjZC1H7tVDva4DZkrsD5"
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIVn7kgnLkyRXC-UVeEVbXWYxADXm39B3JBTNjcu6GwnXECW3OrfNWfXKXQWnHYqmoO3laZQ_1LWOtlP7p70VwqCwigV_svG0lIbXOCivRf0oCk7mc66sUfsrd1Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbFcervVNvHYFjR-ChSncruDK8IitX0b7_xLXUJf_2h1HnWfcecoazWYX2XZ9Of9R-Xx0L0VpDG4IQJr7znhMCtV7lfHZhEyH3E0MCSiZhnW7FG6CsuFKLYW7CU_tErMuTCr46AcP8"
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-5M2bCcuUeOKjH4U6rnn0-b5tg1hteTgCTVRlVMV9FvUBGPacCxJoaOczOHu5l5aZoNdGbLKaQibtcNOOPrtHrXvSi7Adzko5lvkIo0KqL5EoQ2HbXRuBAcdM7A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf70nd5z8E6ZAODx_cJniAPBuSrmCPiYZUYm_fWwCyAgzCTdMrXo2qo76qFZ1oLaOFQgeiHgAoaRdo0XUMhd5wnoK54Q3iY6hWi9lJain6UjQLo9xEC6kru49j89jXOe5YCCth4H6s28caKn4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Isoniazid, Rifampicin, Pyrazinamide, Ethambutol (HRZE) followed by Isoniazid, Rifampicin (HR) Regimen trials for HIV/AIDS - Drug-susceptible Tuberculosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HIV%2FAIDS%20-%20Drug-susceptible%20Tuberculosis&intr=Isoniazid%2C%20Rifampicin%2C%20Pyrazinamide%2C%20Ethambutol%20(HRZE)%20followed%20by%20Isoniazid%2C%20Rifampicin%20(HR)%20Regimen"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Weight-based daily or thrice-weekly dosing for Isoniazid, Rifampicin, Pyrazinamide, Ethambutol",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 680,
+          "monitoringCost": 2300,
+          "sideEffectManagement": 350,
+          "totalAnnual": 3330
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3918,
+        "costPerResponder": 3700,
+        "icer": 8000,
+        "prescriptionAccess": null,
+        "qalysGained": 12,
+        "vsComparator": null
+      },
+      "name": "Isoniazid, Rifampicin, Pyrazinamide, Ethambutol (HRZE) followed by Isoniazid, Rifampicin (HR) Regimen",
+      "nnh": 20,
+      "nnt": 1,
+      "participants": 5000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Hepatotoxicity (elevated LFTs, hepatitis)",
+          "percentage": 8
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 5
+        },
+        {
+          "name": "Gastrointestinal upset (nausea, vomiting, abdominal pain)",
+          "percentage": 15
+        },
+        {
+          "name": "Orange/red discoloration of urine/tears/sweat",
+          "percentage": 99
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 15
+        },
+        {
+          "name": "Optic neuritis",
+          "percentage": 3
+        },
+        {
+          "name": "Rash",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 weeks for clinical improvement, 2-4 weeks for sputum conversion",
+      "treatmentDuration": "6 months (2 months intensive, 4 months continuation)",
+      "trials": 5000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYOATiQrhud91yHR4ohDiYCVj9nh3d6gEpyricd5PQzRlZ4AZGnS1JFa03_maOB_ryOsOEQqU6F4jg35RzNPCDd2lrSowsDP6EXs83OcsY_KDHt1vf-xxmIl8DuwswFjd4jzaUUwRcXsaWWQUn"
+        },
+        {
+          "title": "eatg.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa-ChHixDNkfwiLa1uQyEX4l7bFUMgs_PUl4_wvLQUxWvCQaaB-GL4gY4Yi4uAVj7KmemRBJJMot871zEuxLjCfPim2C28JxZU9MntP1FEvFogNuloq9Xwc_n4KodXJ7n1IHNWO_GGRy78ThT81VnoqTkhaPQVJcBzS4pISJ5YqFUNFxNmAY-2LUitMjYlJSk5hU7scwy1YyI7S04enezU1fJPE3hLEwnh-oJGkTI="
+        },
+        {
+          "title": "voanews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlPwZ_RSn9YMCmizMvpIvjcHfjBf9CnqJR-1VNvSn2mVkbpaeOPCJdpdy9jmE83QllyyFpWWCNmdbSXd69JXbrk6H8qPbcnXjyBDx_7ab09t9ZNqv0azgZdP9lrIro4nfHHPOcMZKHd4HV1uDtB1TRDUEo"
+        },
+        {
+          "title": "hiv.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb_RZAJsNc7lPRFQzVghhqvEG06axZs7UNBG8a8PVApJbmAP9YMzBhQYGjGyFFi_ClC-7qemD-TuHwg1bpAyysiPpV3laBt_Q8JIAgyQpclSr3k0jxl-opB77zquHZZlgIJwO4v-Hiq4zgeEnXuT2KWm92SzFxGX3ZF3PccSvZ_sR8XhnK9VHaxDpVAdHxHL7ZfOsbzh7JMhCKq_uwkOLqyaq-v3bYttiy87VIVYnDRHG47F8="
+        },
+        {
+          "title": "columbia.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeqn41KRuc4RDRZIbW5GFTaMj_fKUPRoioNxsE5vA0e4f1fyTtAMWtaN1J4s5jkp0hCU0_H7YKxquo1Fl8Nc_w_wIiP4L0ZRk_EK_nmHimdFBXxDO6il6i6_pqteXcUHCT6EEUErpvxAelDhYSfM9HkrRwr-tdAhe6-b8613JHsiDit41sXKgk60ynAwzHUMcVYdWP_BjGFVJseT_7G8Rx-2B2ne1C4ZRc1F1IrVYErptsjZpXVOZ91l7R__Y="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDGhK_aBFUYVaqaWI52f5YbWqS0cHxi2wIYp4NEUxTpURCs0rgUYLYMffXzbJmzPH11ZlOXsHYIjKX4oVSicmyaIKvKWXt3c2XnCAr0BEuncwHA_NLfEouIB5j2wV40GeS1-GqScyNBoUV4YNg4g=="
+        },
+        {
+          "title": "pa.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVCXilSt9If1FxayxxisJExAH-5PLWeo0wmiKvj0xpwsOGrCwwQ0SL3G7iFGT0e4zVSK-rxkg4dLip53C6c6sAyvokcxj35ygOoRhSmplrki4RTX0-Tilr2dazXVd0rTflYr4XX8lKxiu3v4RdTnQPk2_I3X1873GPZxphBcPKqzobwwe8HjpDOoLBvD10OnybtLfRb3J4CSy4VRMNhfrHxtXT-DonopdOqyMSpkOogJqQS8bS_NJ9f89FaHWnmUVOgWtb_XsyqVsuhnUXE6eE1KkNjMQmw8vN1Ni5vtHO-VbTJKM_d70Dob0x7i20X4hIIAbUfn2773olZNFLPKzEbw=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfo7nae0TD5ijBqyxWSXvzIAQDhI1Irs3gKkgBiR3n5bSg6pvLn38rrXFuN7cpe7GwrsrcUjlEQV4mDrBcCWPtunE7YZ6_-D7_8NXYCL0_4m6efxX3w612E_G4-C1EcSeJ6g2BZ7kT_VQT_wzjQb9hKtWnbdq0_3aH4w=="
+        },
+        {
+          "title": "mims.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf0aoPo4QILNAuhPQduENNPc921_ey0yHvq8A3G9K_lIXokHcGUY3l4L23jTegzV_Q-JDYhlXcmAIFu8Bt0MZSJOhJUWMS-9qcproICORM4VK2jXvtD45IoYT-6s_vLuzSceVhLUST8MTXQxiuMpanYz78hJqkdgL4k0T_8a-TOkQE3J6q8PJ_F5tR2RL5ZEs6Mu4wwn2ybNbB6JeDgjEzV71ggik4jxTtqK5uffY="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvsfIxWTHkCpju0OdNqmJxich-aNoRCzU9zUSPKrQ-V8-lDu9acOk4VmG05FYWdj5FT7ilJVFz83ImmDpXzlVEdAohZRObsQ4RGPW2Hv6Fl974EG5wU_HpT_cPtZIKkSvUICx7tBFB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeMEMQ4pnlF5TeMfJPENxb8Jx8aCsRt2fL3LhlKHvGZwACyrtH567fzeeaylV3QnJRreVbIsw_-SElpAkQSRIBlxOWIU6F6iK4bx-Z55UF0QBH8arbSStvw3vqwYw-7sXNQrV7"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExrGbKFasPmt21bE_LhziLFfs04BgFQjwywy9c9CGS28reuOZoHXe7THawfbQnmNETk97k-jL3_WFW5dop0E3Y9S44nCN9YfVEVqsaPYxC4tVPxz7KXWaJ6slyLWyZjUSyScsdabI4egRF1eIzSDbyFtAX2sbvPyD9acxBrphbjJuP3n2TPjxGaQ=="
+        },
+        {
+          "title": "endtb.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETYyTAdGRJIgM930fC5CLEJK_0tgdSJg2SAnP3aSzgyMkQIfnv4J_ykiWH0XyoyKBjxIUofdZ22SeHX_niNrRh8AvlzgH4r0p7BTlIji1ommcbdHYQ503miP4B3gtkI3_GB-oV12tNPHilXEdl1ylzpqebMBxNk6NE_2x1-1n8mQabO3KcqpW95JEx-fCJO8iPVYKkB4YedEDXeM0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHWKg6SXAxQrE6bE0BMbs6YwqAjm2d6_XeJvioQMWZXVsfK19sQI3sT5Qs5hnZKKWPTZA-B1A5faYR9lCOoh2NHFdTFNvQB4NwQbnlMfaYfe9x_W1JrDCtu1WRtZvAAJiHFee4ny-iAV6bNJHPTEnrE_L71hwFfvPwsaooDGLHxgi9v6nbe8iGqr88c5SDOFqd9cYp_ZsSmYNLpwSKIX8WR1yn188nPzDzdXk3xCFhRHhh5pcRgFzRmmPacUYtiqZPLEhE5QyPUetwxOvFpfM3xrxL90AYfbOZ3RFjuydUw2rTfsA="
+        },
+        {
+          "title": "ClinicalTrials.gov: 4-month Rifapentine-Moxifloxacin-Isoniazid-Pyrazinamide (RPT-M-H-Z) Regimen trials for HIV/AIDS - Drug-susceptible Tuberculosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HIV%2FAIDS%20-%20Drug-susceptible%20Tuberculosis&intr=4-month%20Rifapentine-Moxifloxacin-Isoniazid-Pyrazinamide%20(RPT-M-H-Z)%20Regimen"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Weight-based daily dosing for Rifapentine, Moxifloxacin, Isoniazid, Pyrazinamide",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1160,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 400,
+          "totalAnnual": 3060
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3687,
+        "costPerResponder": 3477,
+        "icer": 7500,
+        "prescriptionAccess": null,
+        "qalysGained": 12,
+        "vsComparator": {
+          "comparatorName": "Standard 6-month HRZE/HR Regimen",
+          "costDifference": -270,
+          "dominates": true,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "4-month Rifapentine-Moxifloxacin-Isoniazid-Pyrazinamide (RPT-M-H-Z) Regimen",
+      "nnh": 25,
+      "nnt": 1,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 83,
+      "responseRate": 88,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset (nausea, vomiting, diarrhea)",
+          "percentage": 20
+        },
+        {
+          "name": "Hepatotoxicity (elevated LFTs, hepatitis)",
+          "percentage": 8
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 5
+        },
+        {
+          "name": "Orange/red discoloration of urine/tears/sweat",
+          "percentage": 99
+        },
+        {
+          "name": "Rash",
+          "percentage": 7
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 weeks for clinical improvement, 2-4 weeks for sputum conversion",
+      "treatmentDuration": "4 months",
+      "trials": 50
+    }
+  ]
+}

@@ -1,0 +1,776 @@
+{
+  "conditionName": "Tracheal, bronchus, and lung cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:37:26.697Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnLThqpBrxugy8n7noQsFjlJ5ZFxZps-wbMgALyJRE-EsJ5BVw8vx2oKRP3DfM-Ug1qRAZtHp86XN6WQLrAWJPpkxToab1qpITy1E3YliHXuCPfmqaCSBkVlJgwWPl92_QqnRp9CxgFBAmpxwLTNZln95L29ghiJORoWWzcN1y30XuSbuVkD-4oa6YqIoh5iwUfeYs9iGOUO7Vqp1hjTE7_dG_JEu1mQ=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBEEVrvudrSY47RFTrwnZSPErKjQDDgnGQCsyVR01kbuqS7z-8Ds2gHCiRD5GB6Eipkal3k2F5iZjIx8J3Qtc4dyGcgWcnYMuRZpMfW1cmsYES8sCKA_7pi9j17HgQ4flqEi9HrR3YHd2iikjUZZx_oVTtb2m_gEtyJURsgEIOZYQRy2Z39SJrAp--geA03-uDiNIKaPrlT7IZYvNtJO4XGRnNlQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyxV9vYzQjhg8GscILiBUOysh17bAsCFHtudkHqzYmwuUZlfalCLI6DS9XknMqThV7X3Q4vyInA-ootsDoHTGBdP81SNNFKWaSs2aiMJCwAmNYjp8SAdZSgp5L0-AwFuEMXfWurk-UP9aQvQ=="
+        },
+        {
+          "title": "jhoponline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaYH3s_bGE3BFyzQwU3GIZvh8O2fgWZa22iwD-Ne2wF1MBNWw5HTYqElxoINBlGYhwmfi_OVVIa26KWkMBOKwMhv82lMQJgaKQT348wYPsJiikqDi_hAYNzydwZE3LmGb_jj8t5icBENjiiCyeITJET4vNqQxf27SnAINThE73pH6nTbIKpV6rFxh5QPB9W0BVnUFWO8pVWOhLmhUP1TkIBB6DJ7R3w9F9ZI4J-Xc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4cqG2NvYXp_T3olmNLsG1EoLajWlMEEx5N9-f0QLI3O7ZC9frltvHeO__BYL0ELcbUOe0Q-w9HlVUWSAa5rYFiqfBYy4I-DEEIFTwG1aQJ9IjvM-zV8vIQ1YjdAMUydE0XVA="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuHxv3niK4QayvqnMvGnrwJH3mR68HPHn1TujzlfHTfRKTMRQ2OMdzsEAi08U-81IQHrL1WdMuQ2bcAxSVmkGUOiU5kAvoLI18Y3IyvzARhUmQye8b2po7J6a2hutDwpFfTZKD__58_PQGRia_re8-v3XJMukpR-cmGwV1gJcDx7aIT5jPL8Ob4LYAYukZnVuLbg8XNg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRXr1rHzj1b4MQ4iSmU4oTBI4L896FicNGie1u8Gv9hlUWgBpyoPNHvvv7o73hE2GFnNJKmAW01gvkdpW2l4ShN19GZ0yg06h3e4JpkEtTfQlUHZWNFXJmrX93Wjm9OKkF_yZFxma3UXepqA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE06hp4K-09jxyLUmMHdim3LhbjdNZ-yZkHt5XKFSKIiBe2gtPr-uQOYVKfE61Dp9iQzvJ_9GStWYRbwDOUqwey-5kG31e1zHBblmInc8Do29nFXX_blWTy5CKqsXN1ZX5Tz90="
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRBUeJqANTZ8f3oUruaL59AxqiuMv3e1NAZEfRz1cd4p0-EVHKa59xf8rZJ6eT2KRCNnXHL2TrFLB9049WAWkH87SRzhVuO96TOKyXxbzOlBHEj3vMN37cW5hVSbHl6K-X4KlxoZt8vE0Jv5jBLHiLNibr6Ut8AsgDOKJmslnIauKYhZO5EnvqKoA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyLPqlNtz_vo0OHyEGrJFDMaVJLkYxTyXW8V9pHdhq9MKkXPtLSts2b9yW1s7d3tyI1HDnzIie9m85D9QnyuiNsfBTdj8iMT5froX6ygn5tkb_PZZXwn1tgjqtpjt9WLz_aXgEPYVZXqTTPA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7xPQviO33FbFh4Fd26PM-blbYErqLynqFhRNV_Iq-JHwgOb57YdZHxMfR6EKOIVC_nWUeG2KN1_B3JaSLBhLXhq8YJHU593fWr7obG8XoFdhuL2WRtuWzXCgWDT1-QW0wrTlWYuhA_-2JRA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCAIOF86jhyaT-YGOTpKYbYGwLuM3S7WaK7KIrX9AAgGxTFevYacvDnOMrWRSygXgE5isqQ7zR_pTElaENSPfOptDjxWoRlMmDJX3SwzgU93qbhp9Nn3VwQlqQWBhA2Q3KAWyman9tHDYaBA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeNTtix5AUGArHXl3nSUUd4-93JqFvrISUlC-wEjcuWdQ-qMyq8h66A1eRRj-2ioS3cy2KoLbNsziXhAmHV30ShG61erNuoCdEnNd_pkMiuimhyn6YwZXdE7lKwwducwOniCyudjfQ1EuO0ECw23UkgZcWyYol54Cmhakk41Uv07j886mQkDuCPLKx20eucJ3auefk5dci0o25IPKFkgdfUYbEZXhCgYcF1i_A7GUQ26skaCnvLOuZKjxbTXvL_73OrmJ0nu1cuZS8AobJvUTrVljK3H34oK0muPAo0zB9T8-kVVLUcz_1D3QOYxM9CWe4NxE4UOMHL-oGKrIUSSOZHN4itoFwzN3pId9M9wuuED1LOpIMZgDZCB5z5C3kiJKLwNw="
+        },
+        {
+          "title": "clinpgx.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6xtb1HCg2UTK06IW6xDiSP5560WmZyyjM3I7Xs6BwgvrAN33zr_ZScPxsyhHYk38B3ijL5VmwZs2-SZshpwKlIJYZMfWhMtRzEJf_aQWQbZUFx2G59aH3b4EM75uvpZiLLfBA6A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXibZYPfMMHOSX4_8kK3jkgQrF_i6ocTg6ykaKiEFjynXu_x5BTbBlvHCA58PVYqs_b9vo79TwH99EueICJ8sIvn7F1KkOZeQBs5B2UGokKWJlb443WTH6WpWId7Hy_SBKw6MGtiVshQP0qg=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeQQRiDKHG8Nn7ugDUhpK6UpYW-_OVIcdlKxE4iVTn2JO51ORZ41K1f1sWoEC1rXvU_cjj094TrlIWCwhcpL2eQ0M2e43K7KxupmxxSv5fNUAo7mFX0o0DlsR6qLMiIkuc3R_GO85lEQecgg=="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNUj757m-xLmiGMliuZP2AbBeCjAH7AaTv1lJ3pcJup46GKLvKmn1gqr030LpWLoOyQ0tRW4cGCQEs_RdX5mGLmsVmrOF_4aAMUb9pbS6MaDH_pYoVc3YzirC2oaos-DiaAoN27PZVtDEA2Zfn9Zw56GFqDCm05OGafd229oJSXbAFfI1FD2rMnFR6ljyB2eZFVUrxt4aKm0zDT7xwPBzWD2cyb86hnbtQLeJm"
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9i6NvaBkhMVqVcuw9XJYTStu-EMmZ_6soITPEVe7_eyw9DuiKneSm3dU65uZ_cNDvTamJmISSvYAgJeZTp3QFYNSYT4JvAAvTkEUT9JdJxR3TsbDGxE8Ddg42EBlDkhXfEYCGFlPmZ2s3CyUu-NnWitCVYjI3_N7lG2T9nkfcaNDO5Ug1iZ-GSY_Ui9AKplN5SA9wMg=="
+        },
+        {
+          "title": "pharmacytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSFHL6WpETrJl5L9H6H75MsSe5wAGJYk1KT4gVANd1Ed9CZRng7eOxwOp5DMwz7vqpSzkB5HxlAxzVCYgmkc_myv_AlFRdVUSyRhe2APBPHc1FI1CIRMs8FYcP9w-Zw_HjUmuAge3uPyHqQfCfXZeDNKim_0PmTmYmB6bDxQVo4FyQtdX_Gm251r1KRfBcrjr52bDtp8_1seGIc9hJ1iP7mx473hWi_oZUSk15-io5wdm4SuvN9NbihBg8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkPET116xaYipcqXN9QLSVmcp098ddqgIkjWc9suiM-rehm9kRAVU-QMBPVh5buLScGJTHF5yqG8LlSZDkTq6z9PFwDPMaoH0lr55G9uvbq744_G5UNkGqiMXnOx5ajveb-g=="
+        },
+        {
+          "title": "asco.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQAHe7edHNWNGJsuR0EctqEMOBaSN55twVX2tKkVOiMn5Plci1bJtaEGf86pbr971qyi_9kyjQk8AZxlbetryt118eFRehLEm39wkgBRFQbJViikWwj1fOAwEx4sc-rtQex3sz_4nlxhUGLg9uEYYC4BJD1IE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Osimertinib trials for Tracheal, bronchus, and lung cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tracheal%2C%20bronchus%2C%20and%20lung%20cancer&intr=Osimertinib"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "80 mg orally once daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 185000,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 197000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 6566667,
+        "costPerResponder": 303077,
+        "icer": 170000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.81,
+        "vsComparator": {
+          "comparatorName": "Erlotinib or Gefitinib",
+          "costDifference": 85000,
+          "dominates": false,
+          "qalysGainedDifference": 0.81
+        }
+      },
+      "name": "Osimertinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 3,
+      "responseRate": 65,
+      "safetyScore": 32,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 50
+        },
+        {
+          "name": "Rash",
+          "percentage": 40
+        },
+        {
+          "name": "Dry skin",
+          "percentage": 30
+        },
+        {
+          "name": "Nail toxicity",
+          "percentage": 30
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 30
+        },
+        {
+          "name": "Interstitial Lung Disease",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "6-8 weeks",
+      "treatmentDuration": "Until disease progression or unacceptable toxicity",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMrOsl0Y5iLNyocjEJktG5sojuQZ_LFVmLs7msmS78aqrAlZ11LzzDVFxI0aTbj44dfFQOmmpU589QkPp0r45nirdB1d_EvEIbyPtDreFW0iitoxe0QFM6RoxZKz5mylgExw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx8C5g8spBwx0lYy-o4EL8KZwfs-Bd5TFnSuf13gd7CnchEmcp1mLNGgOkbXcGYdmmmOtxO6N7FEgUbEKzcZd3hz2fC41I1CJzLQqiiIO5pDhUhSw91g4NvrUIiQxJ_iXgZLLC_7bj1zCSFd8="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEsMBWgkIb4Y_NQkTV96Kd7X0QR9Or4Qrx8V3jANuDkWZ6Z7AQLBH9xzNk13MiE6cR5TU1P-Y-7VAQYvc39dKvKIsVynz_P2cSc8ZduB929M54irWXnopyVzB25TzlK8aEFbUoTfX-l1tsG22EkTpmguH2dRbtpLFCITAjqJVvdFpJ7wMwoRjg5LyWSiaNSA=="
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi7CcjLd4GSBh4z7SsqqBEOtCAwOldGIPN8AY0w01_vLlDEZ14pq3LQs580juHdfxxKwUFNQYhfHVx47m8y9sDGc2ZwubGyZA7szubwTgJlccJhDsb4k-MzjykSgy9bg7L-WBgiE7ya8VfQ-E_0rL5Sy-UTJNz9WTaBgFHw9uDMmGVFGOQ2TuyPe0wzLw99lbes0JM_vaSK5zkbZyPfQ=="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqhQPz9hmW6NJ07sXakdHLlYnIYz2MCmttRJFn04Fwr27-XHoI0iYdGB3uqH-TYdXytdfJV88lMp-SyQxKW62yBJUM6b7LQDTaMc72dad6Q3PWE9femhRNJE5iaDJ9fy_8IShWzjZH09v4U_7p7NTUycd6LlsNpNiY7CRF0Oa-XDcPYclQJwfZAimvM-z2ccr-pBOkriI2NSgWFkqo-DU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGu5yL6zY7J31gZA325Xd7diDMLO-T2RZrFLTHQpTSsHb6j9q3K60EmLGFP35Tg29UapMK2XoD878GSNVVNo7_bFYsPkCBBBRUIIrYlkB8LX9mRUuhOGDbi70VtWpB2Rn6ZyQG"
+        },
+        {
+          "title": "ClinicalTrials.gov: Alectinib trials for Tracheal, bronchus, and lung cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tracheal%2C%20bronchus%2C%20and%20lung%20cancer&intr=Alectinib"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "600 mg orally twice daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 185000,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 197000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 4925000,
+        "costPerResponder": 262667,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.76,
+        "vsComparator": {
+          "comparatorName": "Crizotinib",
+          "costDifference": 35000,
+          "dominates": false,
+          "qalysGainedDifference": 0.76
+        }
+      },
+      "name": "Alectinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 4,
+      "responseRate": 75,
+      "safetyScore": 32,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 50
+        },
+        {
+          "name": "Myalgia",
+          "percentage": 40
+        },
+        {
+          "name": "Edema",
+          "percentage": 40
+        },
+        {
+          "name": "Anemia",
+          "percentage": 30
+        },
+        {
+          "name": "Constipation",
+          "percentage": 30
+        },
+        {
+          "name": "Liver enzyme elevation",
+          "percentage": 20
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "6-8 weeks",
+      "treatmentDuration": "Until disease progression or unacceptable toxicity",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGjBalYyJOjvxsDdcT-Uw0uQFy_unjwvzPsHinidyRivNp1A266uRAvzNobHbVWMJwGvPZPHfVurd30fRspqaxrpCHXOBbILY-48rFBY9m3DaNYSaDJ4BvJ5rq12vrDVuisqZfvjNKmQludy4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1l8ekqKGttPwgy3nDNUDI2x3B1VQ6I9PXSCqNaBuDwsKWMxUryGHAR8n3TtMLTClqmy5JfD2MrNWcBJnCYWBY8RPYow-j8UwmeaHeEcbyus_tcDwsFftqaNVqQ12gQGy5txItpEnlzyh8hh8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtZ84oav7IxvVNnNRQjtIaIhLMTNIcKutTXjpYi0OqoWXYh7DSrHSErOgvrQB-4Lu-4w4NmE2CkZBMaygb-wFk4o2-Y5d5E-6rLoEIMrUuspVnkaF6znc3h0H62h2FainmzIwf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6Iwlgck37aIFJxRNeHzPNxyIzQsgWsyoNfZT-sPohgQLxs3HZxpbFo5J3HrJZGo3gekDlCGXH5T3pulWt72RqlPEVv5W2LdfpTc-q4OU3GX2MDgf9Tsl2P-tevTqc-mUwZGCI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkCM-BdzBmJqfW1QdqdBRwY5r7ylUL03PPzd3iDwnNL_ANUzg5BiyWObMNoeHr2P-xo01L2Vp9yhfhEwlVAjVaxdlzqhc2AVG0Tv6OqGJLZx_M_tX6LMQsLEn0r8G0lfJ5KXCd"
+        },
+        {
+          "title": "doaj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsN3FgW27QRDcEcHU5goqwzJ9lYL-T7y1qwdUqaPtuZcylzHTmKbzOVfKm1nUr3CC_LRlsoMrEkWgTU0Ft0FLoLCXcNt_6XsQKxqwkW4ej187SzxAreBNlXnW389qU4vuGzWpS4QkPmsEklxwKBzTFwuvZFQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy-CKFt2TsihjC9B6p9S0JhyJDvQ3zfBPuToBJLMBbj3ZH-Ii-Omytiu8pKQr34ULH4BPmD9LVJIKOqdPJ4JDUVZSfBrFh38f0Y-nSK5J3yEwE-7V0ZEfcXuzE3lRmfAVrpudx"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTbLKP5THHgNgMzpCX8PzAoUMEm7yG0QBtR4YHSflUPur57ZnBq-otJy3HZpqO6pr7Xwk7axy_wm9ZZHg5-TFJ1ljCMuIZbgLBP41or7sNgjxAD-lnbG4oAIxAxr_8x8ujvEj1m4c16YrtkKlnqpvrDQ9zysgONNBDuj-cH3qJo8Bl8qhxOP1ojCX_ebq935fFGKKC4jx5C98c-y07yeulD6sXrqwmpCgk7lwKCrOGCgU4PG0Q1f5ARmizimKLC2lzC_IxNCdCrq0nChIK6n65cpL4svYW0748dMP1pvNPZ4w-KRiJBK6H3Qo-MUwiaNKoPiB-Ov_1voeJHtD30wkMO7Li-aMYZa-RHXTJlcW33Cp0vx1v1YZ-dNl8KDCt_MmcA3ZedPipJWjc4A=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE31wDxFMCnaL202oaVTOzQIiLD7rkfRPVTCoPSg8znovxwuhPYhxIyVWVb3uNAwq0mEfgGS15AGt-C3n7n7m-9b3ZO7gpt7PMClTdQo5CiBgvJK6UM_qLjXGEtNdq7BufL0u-mOjZgoQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaU-QwJzG5CRwBa-_JmKb9h5SL0nybGGLS4PJGwloZ4LrZk_Nm2AX_tzbAKBGI0085G3IkUbwWIzcJ4iOJn5Uv2iqBlI352mumRweXd2hWat99Ux3ut--6CSwtkHzJGM-oSSxm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQ7cF9Gr3q8LTEM8gPpDaeL7eiMAmOSX95VuPQDGIzRIrftqFPh0jrjDPqSCtLXjeIVQWw5DI7cEhdczcaPhQ19DtITflLfcQCOUBUBJ8vkUZgsxRKApf4_Jt8zYMFGvdcL46BIrHzWAsOKPcc"
+        },
+        {
+          "title": "aacr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy0nenxi8egign21T7-xYDkqDVEjFQMHGLlqWQzvYTwcGaEQe-a4lz8d2ICbL60H2o-Gd4AHh-4zzNXPVrwkX6sCARcMtfhk9ldnA6QVOnE82jTSS5_24G_f2DmkL4r2l-G3B_dMJn2fA_8Kq-0-3XJSHg7RUWqkWwH7JbgToCQNi4jh9UHE9nojub6xJoKBqtcXsseG6CIt1Q0TniA6Lk46oPr8Swcb3HQ_zO0HCBqAt3yQ9Rp7mE6itxmtSU_SyK"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pembrolizumab trials for Tracheal, bronchus, and lung cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tracheal%2C%20bronchus%2C%20and%20lung%20cancer&intr=Pembrolizumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "200 mg IV every 3 weeks or 400 mg IV every 6 weeks",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 198000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 3960000,
+        "costPerResponder": 565714,
+        "icer": 150000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.46,
+        "vsComparator": {
+          "comparatorName": "Platinum-based Chemotherapy",
+          "costDifference": 150000,
+          "dominates": false,
+          "qalysGainedDifference": 0.46
+        }
+      },
+      "name": "Pembrolizumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 5,
+      "responseRate": 35,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 20
+        },
+        {
+          "name": "Rash",
+          "percentage": 20
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 15
+        },
+        {
+          "name": "Pneumonitis (immune-related)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2-4 months",
+      "treatmentDuration": "Up to 2 years or until disease progression/unacceptable toxicity",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgG3HFt14UplszxxCRe89KwpLNtZ4mb9-8XHyIyMpECi9Y_JdKg1lC7UZV1OcU9FerqFRPt7l-ldYmOWNg_m52VVipLItY9406WrA-X0qqiQnpQS2aHS4yilwXe8SUdl0OiHM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIVTfxW_-FnZuw_FX3sngpGAF7VogUJ6rtLGvP7Sqj6WfawjTP0cfK9ms1AVSbV4haLMVomcnUv0RMP_5O-ASoia4iAOm4_wm9tZShl_SgakpZFTOpqvz-bYyFmAnLtA-5"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWcrJt3RksIDjbAqGMLK5MPpuotMrfuMj4lTLQNJbeIDqDpv5yu6Z4WbkQM8ib9CC5B_wsHhaJRJ6ap4B_99LthdeUgsuaDRkrJ8O3g_IgXBX0SdffCRFT5ZA8XtDECIeLtmzuSD7WQaPATWI7i3pyIGxDdb_Djp_VlYV5opjGViEPJ9TY7ITWG-YrumSe_qwiFO8m"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7BntrGMauWX6d_8aGxIJNzioU1YoN-puWAWy3syhIA1xu6WbyWhVatyG4BrtYIDmVP6RBXPQLWGM8dD1R8jVi00NEHPRcBZkC8060WtxNzS17lmF3NwnVkJn6a1UqmhQjaPQ="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETNnvA7IzYYGT8wCVNEMK5XhXMxm_ZwIznnTLRd3yui_DKAhJdSiE1JGrQFmOs5jSQuDL-McXRCR1crvKrq_h8N9daVLhJd7Sf-hFz08O5hU50k9oMyClEYZ3jpn052tqG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZrvywf4jwo462NcWJD2aNGqLYKxWmLfFWQgPaPPlA1lqXnI4-XrffPQEVzlRGlM1vpiaLG4olcRzXrrAuWyaF3VYji5zMDxPM0jvJjEVJlGc0HK7Wu_WQaM2VQhqa0QJ-sJY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3KWWhf8fKCCIEtBj_yUPDGjqj3Aq9XSgxpsxLqS-XKz8rHKyT0bzrB8kk8hCYfgOJ_K9MdELOohCluhbNvGYeAMibqQ8LhUgg0fCoKS0kveWumAMzxkRYEH_q5ZJm6-_WSWrh_eaK23M4gw=="
+        },
+        {
+          "title": "astrazenecaclinicaltrials.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmsijTIEpIXvpDKcRmuu049OBE7czlnjV-ylVdQnkSiIVvzapaFFwiJ6w6eA7NiG_wW_FkK8cuN5xSlOXHOodxN_wd3iI0LsFLgvm48CaZU6tFcL6Xt6gpSeh87kaYzjrLdLc2DjTW3MtYncSgcRvuzYUcAvXW"
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnOferowIc0jcBnfPFdgs2gOg9qIw2blLLjyCt9rcr26JWXJgHEBvuuA_DOmSMmrTwzqm6ckPSfwfmJAU9OVcSCvfNqvnKHKSe5cYI5APukF_NfJTcEM0A1yeSff2uwyv7h5AJSroZmLBLDA2lQwWRLdgDYwxkVep1ffPHaN1dubVVMGBCNwI6qZ7-Apkx5Bzffkg9IX9QEr9VBD-L4LhCio81nThykPQ35g=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW2AP_hog0SG667MjEefQNApZwmbAdcT24M22RITHVQfbkFEVH0B7NZNdC9-xJqjTG4yh3frjCm9epe_H_wtaP-qI4nu7JF04BP6qkVe1v4sSHvRlDZB0jcas5ZbfhVaIz5Kx6mQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Durvalumab trials for Tracheal, bronchus, and lung cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tracheal%2C%20bronchus%2C%20and%20lung%20cancer&intr=Durvalumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10 mg/kg IV every 2 weeks or 1500 mg IV every 4 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 140000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 158000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3160000,
+        "costPerResponder": 526667,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.62,
+        "vsComparator": {
+          "comparatorName": "Placebo/Active Surveillance",
+          "costDifference": 140000,
+          "dominates": false,
+          "qalysGainedDifference": 1.62
+        }
+      },
+      "name": "Durvalumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 5,
+      "responseRate": 30,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Cough",
+          "percentage": 30
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 30
+        },
+        {
+          "name": "Dyspnea",
+          "percentage": 20
+        },
+        {
+          "name": "Radiation pneumonitis",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Rash",
+          "percentage": 10
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 months",
+      "treatmentDuration": "Up to 1 year for Stage III consolidation, or until disease progression/unacceptable toxicity",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEQHs_xA5izpthhSXiOrnptw_0RDOGsrZ5ENfhYAPOuzWQa2zMm3TxoCWTxhGJhb0bzt8XOl8lOYS4swb6tYAt9h-M_sNFjqMIN9sysyvqQGoAXXeCdbfxahW72DrfGCoDfPuKlWPBuHQmxw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8myRQHGrvxEDmRBKOGxXMt7IbOBWbUXmOACDJNB9Y-VcwInyKnEQ8whthur2lhewQNc9ZtRN3Tj-8Rsn831iq3jLR0QgLtEpeMckQx77CAGaolOSBZ-wUM8yTpm0flSUIzAlOzz61"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ58PwSxZuE1vSN8Y6fEOUmmNtJZUqBdXGT-r6-mpZlAy_6e0ij7CKP_K_8J5IL9ovghx-2PBmco6hy1i9v8PZz98Rummf8hGa_SlqOSLQwbkJ5OO0RGkK53yXVhsXnyAwkNUJTe0ZaEH2PA=="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIqIhUjOAHo8Zhr65SERA4Xy_888xnPI8tj2ne3SXcBGkEVvKPBAiDeNt4o4gVD85PeYnJddhAoKTFphiSMjekYo8tVydiaz6QPoQfUQcW4PLISFEV4TqzBLudQMfzQ1bAILlE2ASZYj217aSQBNbu-phYgNs9ePvFUiKydcRECnmawJJt67LuuSfdGiRAFHM1z6OpVI-aC24Imqm0OZg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXv5mTriE0aFcwb_8EkPF3W8M8ZKLalgCvz_ONfiK4RjqlnmoXkUo0V2rQ7LkxutxKU957Iov2V4meSpswqtNkB1s7RXsQEn6lf-JTIp8DXk2Vd8ueBbgHBIRt5hmekQ95sX6xCMRl6F0-Jw=="
+        },
+        {
+          "title": "cancerconnect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3tpARDbCA0djs4hbIwzrZ8lqdqlIVAAhpOwSHnDw-M5whPJcLndPqv_ijCIW-g3jw_iV3gY8GH3fZKdveLaESaE_Od50dBSceQIdn41mna0NldLDIZZDCuD2ZBKL8pvkZ2bjfKooycIkrdzh-FDtt-qyxpoMBvinBgFpqtK8Tx0pSKOsJwSutXw_ALBxzFQrAcoHUyZG7nd0H02TVPT5nIBnw_kCKNXSWoA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwzPUNpngjkIon-lO1oCdxIq1DjMfCIKHUUQ9VAvfzgf52sK7YtV8zDSUW0ma9n1tQDw_u6V6p9331LQxay1NtX9vtgkDMVWLV9AZZ_GN-d5lCtGPwb36IBwryTLFEPmdlLL9AO0D0967TwF5Q1BE25NjY-weivE8ryvdCx6vwIepgcFuJk_cM6wxakTZdX4ZCEyPh_PgOQvce7o-5tVkvIKda7ueQhoAoLbh0olOIGoAlax6ON-UQTmzH6nNo3hCHYNb-TEFE_wwYPG3NDZ6r5kc7VWWEWmXbYd2MKoidOUoXAm96QGon3O1x0HhsPv21jbGS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO9JNCGAH4EtYtrNBhKv28bz3TsrIpKjBl9gGWrru7gWJ2b55GDDdVhJFAiTGNuNuyxhGz1C0ppnCChq4sE7pYNDUmKOSJrPPjKIWVhEmqlgFEGhKmYzONMb8rChWrza2ArY-C5UpgZ3-Mqg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqKOYhqRRDZXoXZNCi9lLHnxlpB-4ipRVc1ORi4ZV_JBruSqrbbTqMDJoTGAs4QB_1Zx0rTmBT-JCX_pwcQXhURKTPF0vN59oniCGwYjuC_LDT5hD_4ofMA6mrW_7f5RupiAxu9g55Fo3A4Hk5c9-77PY3q1HAywHUxFMAf46DHt1cehPtiahJEiMDolKZnBlbS2i1z_AZ3kQjCyQmTeremmaJcCZcXjVMA71PT55clS-n73JxDTddj983XP4Xh7xSgdBR0Snqp_i4vojh_vxn6a8CmqjewNhTV95QlM88QHhiJFJytYPTp9Rijf6PJk7UY_chKalMF9P09YtErhGObg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Platinum-based Chemotherapy (Cisplatin + Pemetrexed) trials for Tracheal, bronchus, and lung cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tracheal%2C%20bronchus%2C%20and%20lung%20cancer&intr=Platinum-based%20Chemotherapy%20(Cisplatin%20%2B%20Pemetrexed)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Cisplatin 75 mg/m2 IV Day 1; Pemetrexed 500 mg/m2 IV Day 1, every 3 weeks",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25000,
+          "monitoringCost": 6000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 41000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4100000,
+        "costPerResponder": 136667,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Platinum-based Chemotherapy (Cisplatin + Pemetrexed)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 200000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 1,
+      "responseRate": 30,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 90
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Neutropenia",
+          "percentage": 60
+        },
+        {
+          "name": "Peripheral Neuropathy",
+          "percentage": 60
+        },
+        {
+          "name": "Anemia",
+          "percentage": 50
+        },
+        {
+          "name": "Thrombocytopenia",
+          "percentage": 20
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "4-6 cycles (approx. 3-4 months)",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "hep.com.cn",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf4PxMpQhNyTJ2aN8SzES9VI78z0M82IdMKpB52t4A5LJ1TNPVaYqL8QG0Owr7cvx0QDXSr65DIYohZMKwsWy0s0MxMvTKH5INscVUiqwS7Kumy0EzjX8XYbN2la7VpSk3HSej-Ab-nmXiLWeG41BMjig6CbYjNPIoLZGppGU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpFn-BbvkZ1m21qKXVpIOoibF8MBQsxqKUxfXp2mInluiSPUJLiaOBXbz314uNmqgKr9a3varn_sfV_D6w5zcLg5Qk14qGmSAzu3ctzyq6sfSk0SERiau0iLvlSmuR6v_MU6nQUuf4LNXdg_dK2IfQXM8Mjz9hrrvZJlFChg_qHhLFZc3TbMWC7qxXJxcV8Ar8jWQgxeTZ74UPNjd4BhyL30EiPJHL-7uHKxlRyrxQPQtCqVCJplSYM8DDSWQG7g7Vuz0S7lbnTHiiz5KO2fQoKbwEwo4IwQsZZbvnT_FbPtfvRHl_bWDTNexyZmpX-MNSJyzssE8Mkmjpzof4A0p9lP26otFwXwTjHLfeGjP7LnAquDpdiVD_18tQnAVOiKVe6DgvNmZf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFu7H9Qx1-Vaq8ink0jNmN-g3KLdZS-7METMBq4rC1HcA3oqykWYjdGUxC3rLj9mb4YsdjhOJTh0HpqQjVxo0BC-i9eRi_yl9uDGBSVjVw99CZevAfTghH4Oe8QGAimSR5t_s95fS4twj_LDs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe2Y7peFmJh56Ktjo_D5hK0sUUgqz1-b_TivNE9kQTzMKR6UrwidUugld-dEeYNBF7mvDTbhydOEDLG07kiOEaGS3Q3QP7-Wo8KA3vUhjGj58ZRNwtsV8F2-tDyyMeVLtSsGTUZLu7pHXJBg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn9Dnpaqqwcy7u8ZxakcVsKsoSbCBm_ZVK69DNER65dlMPIqfcBcsiQ2AEbFYbwuDf-WDL1eM4ST-5YurwKAQPL_bDVcs1SF0RaLnnCafRzkpjlVlRikKVaZCDCMULgUL-l5D2WOaxXi2hGQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6y9muZ00fuAZ3N3Az7tyZ3O90NDrSktCPTS49rLbmXFOhjf1yyy-hidDxxOjpFv-MNm6YVtSg8TDnxQKqddKJhmirsmsd_j7Tu2Y-CIVBQI8WWf2uBgpEZso9K_kPzYqApnk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNVjahzv_egfLptyktDTv1r54v0yt6e50V4g_4ZQs_kZKYM838YLjhQJCOZqUMo0WNmMm0-ovsWW0jvnF7b-aeQdUvv0uj6oLuaR92cX9d5IB6XCu8JVCicy3tlZYn5T_Ecg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Carboplatin + Etoposide trials for Tracheal, bronchus, and lung cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tracheal%2C%20bronchus%2C%20and%20lung%20cancer&intr=Carboplatin%20%2B%20Etoposide"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Carboplatin AUC 5-6 IV Day 1; Etoposide 100-120 mg/m2 IV Days 1-3, every 3 weeks",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 30000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 300000,
+        "costPerResponder": 46154,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Carboplatin + Etoposide",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 10,
+      "responseRate": 65,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Neutropenia, Thrombocytopenia, Anemia)",
+          "percentage": 90
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 70
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 70
+        },
+        {
+          "name": "Peripheral Neuropathy",
+          "percentage": 20
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "4-6 cycles (approx. 3-4 months)",
+      "trials": 500
+    }
+  ]
+}

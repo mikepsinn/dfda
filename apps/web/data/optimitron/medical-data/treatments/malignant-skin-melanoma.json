@@ -1,0 +1,1065 @@
+{
+  "conditionName": "Malignant skin melanoma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:11:36.896Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPVDiUc8wfzONT6XP302W0gnHqwM0zadun191nBVOLcavIuF3KAA5l-izwlmzrXCPeJ7ABDrN_sRuHOeJpEnSBQOpIpByVV_WeiFf8BR6OdSs1Cz_XttB1Spvqzuq2Agvptss="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx6mzTOf8_Q5lVihzxdL50lYrGxg6Z5O4Xn0aF0V9uGBZ0Ym4_-QPjcDG2VWC5803gKNmQfGhdBYC7xlDxDMUbaVnKWCRIVYiwkQR75TvZtzj1OBJnGNx8Nz1iCSvSMmoRB--U_vHyvuuyqWGTowZ0jvKltqivLS2Hh-LHvCIXr9Vh7WwT5cBggXfLdCo4OoElFK54ZR5ETUcPbK4XkXft3AQQcYEqv-ib076Gsc0v5s6dhNDWA9qn9tArpYCj2opcFk0h3ay0c74jmn8_AVHfdrrxMaYSucAgXHk-y1je8aIxFQCGRb0Ehe-Q-g6NVH6pD-vpMjvF_oWPkhJQJMFyRA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7HFiEAqm0us4pUZfAf4EGiUccOc_Vp2rxD4PhfFRQYRun35T_OovYlMhL7AvHX0cxzrkESNL2wtdTWD4jnrtc1Mn3uVsFSJ00EICJBPA8KLF2TXuJr1-tSgRq5Z0J6uRYrOM="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPBluoxEGibv6FtlKD6Xyssy_vliG-ucz0GJMnSPsr5w31kR6wVyPuuhn6YMY33Z1k0DMOkpujiOkRIZvjX8Hfe8U62KIckEnxyay1b4zUVJ5HxzAI_6jbc8DPey_frcQIxkoVBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaS7Cbw1jjYwSPQhkOh2XLCq-M53v616Oa8XiltnDjV2nz2LPoDIhHj9aaD6tSPpe8_dbGMRzVpW1d4PzPnGaz6YVmy4YuDfaQSkKER42RW59z9j9vl_eZDJrEd2VYwiQl1VE="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-OHQLQOqZasl-Zw9qUyTxW-fqIRX9xCkjLuX3gQis7o2pdcMvBBu97ARHNiPZKTd4RhuQseHolvbppogXQMcAnFMKzzA32lpwZisT3bRZNRNCFf-hhRkoeX7pfTYPkhJqnS3oabKTiOwUDilx3f89MUgeQtg9WItRSCXA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZqhVYb_l5492gdu7swsY5aCbicxRm68ls4EjITsg8QXUsav5zlJBDF5H3qE-O6sROkDtzQxgE5ebrT2tZjn7HoZK6i_U9wMmvXinMO50qLFLnRauefNyK1gWpFNLClGBV594zoZSbCTS6ZA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFg7qDP963r-2WErRQSZtCokrZtpeeBHPAfqEDi5iNl_8y-_XM_BuyFW1Kwwgrsn7GJAMK3XYqaJxwI_B3DgPNW8iRw7VSS0P-t9WmoiK5GRj5Mk1_DwLSHSVk9onCpkwMeY9Zts5si9fzD2CkgN32l4Oonv7s1Bc3vmAgIPtKhtrz25Hu8KQpnd8cDj120956jNVJULVGYjXLWrgUtwLOTRpenRtNEE2vTwOlsDv0hnrffoqUnVQg-2qCs50SmadU8s0LYgr0GwhlvDcr_Ca8y5RkDdyRG3wRWwfk0ELow_kiMmBhZXphFY6rg10N3MhMwSXLxYSLR3j-KGRV8nw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nivolumab + Ipilimumab trials for Malignant skin melanoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20skin%20melanoma&intr=Nivolumab%20%2B%20Ipilimumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Ipilimumab 3 mg/kg IV + Nivolumab 1 mg/kg IV every 3 weeks for 4 doses, then Nivolumab 240 mg IV every 2 weeks or 480 mg IV every 4 weeks",
+      "effectiveness": 93,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300000,
+          "monitoringCost": 25000,
+          "sideEffectManagement": 30000,
+          "totalAnnual": 355000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1420000,
+        "costPerResponder": 612069,
+        "icer": 350000,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": {
+          "comparatorName": "Nivolumab",
+          "costDifference": 150000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Nivolumab + Ipilimumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-300 U/L",
+          "baseline": "500 U/L (elevated baseline)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Lactate Dehydrogenase (LDH)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-60 mm",
+          "baseline": "100 mm (average baseline)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Burden (Sum of Longest Diameters)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3.0/10",
+          "baseline": "5.0/10 (Brief Pain Inventory severity score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Melanoma-Related Symptom Score (e.g., BPI Severity)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 58,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60 points (typical for advanced melanoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-0.10 mcg/L",
+          "baseline": "0.20 mcg/L (elevated baseline)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum S100B Protein",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 55
+        },
+        {
+          "name": "Diarrhea/Colitis",
+          "percentage": 45
+        },
+        {
+          "name": "Rash/Pruritus",
+          "percentage": 45
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 25
+        },
+        {
+          "name": "Hepatitis",
+          "percentage": 15
+        },
+        {
+          "name": "Endocrinopathies",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "2-4 months",
+      "treatmentDuration": "1-2 years",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWwWtNEa5E4OKmzoj5FBYb-lyOu51Zs-LwwPMXX35ZdVtuYK6ktTo6jChKGpcrGzMjaZ_vb8aIZFzRoDLvZm1tDkdA9hW79FMeHNOi6x06C9oQVAeYa8laIgCLTZx974aelaSAhuB84a7YBvgUEesHwbC1aesChi03TuY="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjqbdzTLz9hteNbLa_EYkLzaEayA_y0iryrde9Jo1MqWGB_8Dol0hLPhnnn5oRq5tvnLwYt5hrpkFjNtyObHXL8anNe2fDv2EITDHM18vgzReSn8EHJMokYUsUg4vZcLj7A4mY7MQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwEFJERUaEQpBswpcQtaWysuiDoMIv4N3AJ5WADsx6HAz6AZKPzykPq_nGRp38xPS1XghR2iGBexAsn9vBmh8nl2v65BwEkMlXakHtwzctWNEqIiQFcJxeL5FN-dBNafrKzMoXWDzJUtbbDwPfRroSYMCOcIzUbkS916lOOao-yTd2ZK-vAGmbOJLSXyT769OSuHrhnh-eowJs4I3Kn4BU8p6P9IpV3Pqpkrl5HRzC9SoqlC2EkoOVF1RmyuYjNXgNQDZQhKFt0CeEu0oUoQEb8kZqSUliNQFzC7cXPFakiuA1AvlVKgtI6WRgnmsrB9c6dqpb_89agZo5bgsytEfR2IFIWTNOCn6A8HY1sD_vBy2wIKUO-i1Af1Ff5JR1MYnVY0dOmjXGUiYDjoR-OSkY4WMrBQ=="
+        },
+        {
+          "title": "dermnetnz.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWFQPZN6Y4nFZz2gbtyzEIbMQeQiDInJxXYqfnn-KdaectIYmsiYfIcBQDxMWHGqrU5pIofv9fai7J1CUetNrrwOuyOLUrMdGswk1QcaBWO6UwJ-W6DjTDwjyB8ZQJ8mrha8foW1LhI2YN_YfEAsVujAOg2xJTLXADP04CzC0EItx2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF89GFGekWWPOV1lD03mXJ_3QgVxHDfCgwLNdi3Nes-VhEA-UjmjMPEppV6TvcbIqWIXZZbGuCexJFNQI-CmI5XWYiL4UUOGfVJA1qz4yMucIP_CnwtZbJbTHp__K_9tGAAQRMb"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7UKc3uWc8mEARk4-Z1Y65n0czIwZJ1WPxjhb-plI_0oaRcUQGcvYvb24OYMohfEATZYO2ugtKkrFypl0HDldx94FG0FjIqlLLKUtzFgRsHIRcZS475TdfophDleenWsawU9D4pQX3_eKN9Pn4XGjHaHOvWphxAEvHj2oA0D7t4xjca0skI-82FGxnwGRby6c2Gqa-AAkyKmUt6Iv_aLYfPAAsiNxi9f5hThEX-CG6kizrmGz2RvxHs5sm2FJlsKSBouOeTd_keK_vKMUClirMQ0HNtM9J5KDvgjt8O1tYCRWKVuyAIAYj9iKZMhDVE_05TnSPl4kkeshAWIRHtgYWxSN-Gx5O3A-lcUokjR80jq0Sehn6lPp7hQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1fRMGh1zlOmyFf7wXv1sputRyHuLHkutCEJRNvjKs4i52am8PR4g4Hgz8YhWfg653OPriXuIetphZrNYjDNi2yqDe3w9UA4qKUT01bcRZAJ289BZup9pfh2c294po0pa8T7kbPn3ToJbkQec="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj2gH-UWG3QS0qSIPylu1PRxii3zAHzh7op7h-VIFgKObPgZ1lEi_SglTR_IZN7VjQ7WF_EgcLiCcdyR11AKNeQwepXlbycoZ_i_gg_f1WwCev7SqVJD7-siFQtG2d4JYkvH2mLhgeEQusfMo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK9CfpH28GbnF0yDPJMkFiCDHDw5hOtsO0Lo9IDS4wbsy90FNJE_t6aeey9kBZHUjL1B5Savv2XwQGZe_CBOrY2zxDUgTLN4HJqlsTOVded3Ocz3A4hbnxZqmtZKf-LkVT_Han"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7AmQHV0W-SQcMWBaxvijMHnczhwuL3lG7FHfLlVD7IBdDkgYl3_9SXPYH0OxCnI0eU70KZCbGLe3xNKbqy-eCfrLKCzZ_Cs7iXaBNhsWFSU5D_gxq0OEsWFpR0zgQ3R7KBWoZNDK4sbUUuc8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcvFK2QWkhOfKo3Yca87Ol6Lv0JCWdGG8-2gkg4xhFJs5eKAoY2Bub0F-8dc6syjCIQP-8IrOFC6jELdw7-z4fLCsscFZKBnItNIC7USFKIUvHsq3uHZ1Lzw_RYXC6SW8Qna9xJe0-t91XuFA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dabrafenib + Trametinib trials for Malignant skin melanoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20skin%20melanoma&intr=Dabrafenib%20%2B%20Trametinib"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Dabrafenib 150mg orally twice daily + Trametinib 2mg orally once daily",
+      "effectiveness": 91,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 320000,
+          "monitoringCost": 12000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 342000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 2280000,
+        "costPerResponder": 526154,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Vemurafenib",
+          "costDifference": 50000,
+          "dominates": false,
+          "qalysGainedDifference": 0.7
+        }
+      },
+      "name": "Dabrafenib + Trametinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-71 mm",
+          "baseline": "100 mm (representative baseline for measurable disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Burden Reduction (RECIST Sum of Longest Diameters)",
+          "percentageChange": -71
+        },
+        {
+          "absoluteChange": "-180 U/L",
+          "baseline": "450 U/L (elevated, common in advanced melanoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Lactate Dehydrogenase (LDH) Level",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-10 mg/L",
+          "baseline": "20 mg/L (elevated, normal <5 mg/L)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum C-Reactive Protein (CRP) Level",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 65,
+      "safetyScore": 38,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7.5 points",
+          "baseline": "50/100 (typical for advanced cancer patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status / Quality of Life Score (EORTC QLQ-C30)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "6/10 (moderate to severe pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS-11 scale)",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "25/52 (moderate fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (FACIT-Fatigue Scale)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pyrexia (fever)",
+          "percentage": 60
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea, Diarrhea, Vomiting",
+          "percentage": 30
+        },
+        {
+          "name": "Chills",
+          "percentage": 25
+        },
+        {
+          "name": "Rash",
+          "percentage": 25
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "1-2 years",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZxU38N9vkASK8KzKbH2YUb0evjH0gscvcSYDGsAY9HNoGLuIxkmxG6RwOCGcz3vK6oiQxzq3DNVeioz4mxZOKpHmTX6U_bxNgrdUqZYC9kbhHP-vk-IMp9EpoReKE2ankR_htFUqajGDOkaU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfhQEEO7wcam6DUMZq1z2FR1kOnLQ6lR7pyHySsrB3xz0r_jBFM-BmLBgNOvbJd6FzaLHPgqQBY4PrxYxcARCvY07ekD-tfInauAyVMJtTOvT6tXd06cORESeiPgOaqqKoL_2M"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGz2MslzEvj517zHt_ue4FbzImvGLSMOPY77bNppuQswRW7nOOm2Cm5xZvmuaTpunh60IPIQytcMZOM6oxFZzAR2-AP2S5E6jJsP5ajZXn46pzA9taRhmRmsbsTkVgmc1Eu1KLTyKyWztnu1QplA-e6yrm135F9ODYQGBH8KQvqMs20WCi_kZhj6Bo5tCX1pXG49f3r69YOUn1H61oFmy5qmHHE4NZdO64nMaBVRbcQY8x1o0X1EtV7V1mdw0aSugDsM9NXIKyYetQn8AlmbfFqJR7ifDyboWsDTpvv0awCbf-O4yUq39_k_WYEUIofMxUo0TwgLeIJHw=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp0MsWOljDxnNiiXpcaRy2fx6q9eaZQPL-r43V07HnshwYL2xcf-5NmvaRW6SomgLy1Gc9ouuZ2EKC9L5bH2ibqdLejEeDyeNfl1GQj5qufHp34OVSsLrYVXM252tuzYcAmzf-TT8VfBQplwXrDRosFgnf9CSselQS-Cig3IvgCUDakluxno2XTFQXEPC8bBKUV4OackoDoDhxEpg6s7BaRtrux8aF5UpKWbO-XMEh_SQ6DnLqfn8PnaitVMNeAA=="
+        },
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNwFK7UjPrUCv7j4pcpJLvGOzgW7dKTjLq5uyCZ_SY_HWbnHTZX5xk1kJORNSPe4LbLIMNGMUaKofCRQ31XQU54yqADeqsVoR_0hjklRZLkLV-zEq2Op6RuZj693-2HkB1rawJQEDLkXD5yb5aJHZQ-BMy6M-pjacf7gf_38GNxgZDPUrDKhusna6xY95GHiJvOfp0RyAWtW_rYyxYO1O6jMPhftMWePoZnvHvfdchmq_cqQ=="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKgszZdxh_DN8gDENb3Emqeh5iz8mC1YVcdvJV0ShhomXqnAI66yd84Go38GEHTXVnFtwoFPClRfX8UOepulrQ_yH5M4CSDE7uW4EwMazC3RHS0qt_7GyCAdHOMgIt9l8b1p1kHfDDIGjcQDGtFj4QTPxBvfSMGnyCr-CcvFm368aFQ2t5AY5PM79xtngaVJzAQmD_Ww7eft-1x6ckZVG9l8g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQtvPVGtSZ28dU9VUcERCKFqjbRDBn0EVTb8aH1lCdgntLb-k2Lhkv5Qge0xDpHxhXyrQdZ2FdH_tM1dbHtY2Ln6IF_KZyTKKF793mwbZRYvXgfteyiNPAAlkwdJa-UXvtrjJobcjkpUj0_ec="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH620EBH6MNUXXXst-sjjSJKNdGq9DJijj726dUk-e1uO-Egl_beiZrZoPbDx3RLHyuUi79ygyCXibRAWfqxG0l8ilUTEojn5gQWvKhkhYzjD1n0RLhH2ypsMx4F3h1d-Yd7sFh"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_LCa_JnRZFOmIjvcim1Y8aEk5ncc-0oiAbRYAW7IwdsU4D_N4zXgvDkjMJ89ZA_M-sW-828itp4C6B5-Ts60RYOjQiip0VAYL8aSDEahS_1Sg2FmEJXVFP4jQpCMPfarS_fAK5oxobPKhyA4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQFcnnL5JQ3YsXSs2t08HkREqkrF6SnbS7K-_teRRDXYC31VlvflAGRnbwrFcWwBjE3ywoOEfGSSHIuEk2-SN2UU-nDXetdepB-LL3QizJJ8CrV4igGx90Hsir9_dZn5VwzfeI"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMDcJb0zvskmsjzdsSgU3LjNOveyuLp-A8v-fpxiprFTf5_EyNqEMrSeJK57lasVVFwdhFq0wCLKh76rPlN-aVU1uLD4jq0GO_8cHnWXkdhWyAObPhd6c_0A_hp3jdIwElKf3Hl-eVIiBFVVQGid0KaS_Aeln-MlxwXx1NGhuz6Gy-N2ivnMFM7lGOW42s7WivGL_L1AqU9s8rCzuDZi8eZ-JFU2JNy7rEWRf7XNmicwA4VsuS0cYY99lqWCNxLsmXYdOnLrQV808QbCkIxA=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiodTbie-B902wlcmz75kBIcIbks0c_glI-qPKssx3lDvvw25rr8pHJJRaw2R3RQpF_zxqynVf9Wl7VsES8VNYwdFbeXBeeAH35XHsljf4OyGewSj8ObMI8B-519h8vREEfQV8"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3IU56qiJoJC2SHEqrlBV6zD0w56Xz66Z7fBSfgvzem7yXOplHDOrlBvB8WGQ9WxExwKN_lVqwmC3JIa70K9jXlDrG1KVT96-opzHfy2JSfjDx6c28U1eRgD6UkVr_kstYYWOPP0A="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOz8bRAU3p8LGprjuTjdZkk79zehQnXzygnO0mjsB2F00XO5lwUOCCtRLmN9uVS4PP_B9bWyz2-7C0X-EHwNyIQeKIQs3ZDiqmIawLYW-clyjUPHKyIwBfKsXvlkxaRZCVS0wIp_G-nJbgimkTeeVbonbly3gy0ZF_Vmz6k2dtKUQM5saaZ0YfeQnM1kwtiObO8MMEKv2CMAfxTOW2qEMUZtF2TU4T_OwWZARefMTSlA7eGq6gNPw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vemurafenib + Cobimetinib trials for Malignant skin melanoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20skin%20melanoma&intr=Vemurafenib%20%2B%20Cobimetinib"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Vemurafenib 960mg orally twice daily + Cobimetinib 60mg orally once daily (21 days on, 7 days off)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300000,
+          "monitoringCost": 12000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 322000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 2146667,
+        "costPerResponder": 495385,
+        "icer": 210000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Dabrafenib + Trametinib",
+          "costDifference": -20000,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Vemurafenib + Cobimetinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-64 mm",
+          "baseline": "100 mm (representative initial tumor burden for RECIST evaluation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of Diameters of Target Lesions",
+          "percentageChange": -64
+        },
+        {
+          "absoluteChange": "+5.1 months (increase)",
+          "baseline": "7.2 months (median PFS with Vemurafenib monotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival (vs Vemurafenib monotherapy)",
+          "percentageChange": 70.8
+        },
+        {
+          "absoluteChange": "+4.9 months (increase)",
+          "baseline": "17.4 months (median OS with Vemurafenib monotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival (vs Vemurafenib monotherapy)",
+          "percentageChange": 28.2
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 65,
+      "safetyScore": 38,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 percentage points (increase from 50% to 70%)",
+          "baseline": "50% (ORR with Vemurafenib monotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Response Rate (vs Vemurafenib monotherapy)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+4.2 months (increase)",
+          "baseline": "8.3 months (median DoR with Vemurafenib monotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Duration of Response (vs Vemurafenib monotherapy)",
+          "percentageChange": 50.6
+        },
+        {
+          "absoluteChange": "+2 points (slight improvement/maintenance)",
+          "baseline": "60 points (out of 100, typical for advanced melanoma patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status",
+          "percentageChange": 3.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dermatological (rash, photosensitivity)",
+          "percentage": 50
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 45
+        },
+        {
+          "name": "Nausea",
+          "percentage": 35
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Pyrexia",
+          "percentage": 35
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "1-2 years",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRzuHvezcgSBOmTxp6Wv6qCB9oWpKlLW51AmUZerZjwk5KTRJz1kHhJ8bONwNYe14JKfKWIohGBnY6gwrAWSlq7uqBv_Jsde_mxUcNPt8chkTGhkF2KxrYpzPY490FdnDsip_9aPJVZJCUZMw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8c8KJIH6-wlRLwhtCXTrVpHH8ofRmT-vZKD2cxqGSth_YghaQA-P3-3sQKQgAwL_jWQ9Sg5u76W90KQcD02TP9dRp4aKynSutdWSO8gCkI9dG8W2bWU_r3aRxBm-WKVN6Yr_iCqOGCXYjIIQXA9etZaML7nY1iib4TvRvfq9Ba3UcRwyJnqZdilwzFuhQjjPc3TAz5H3xE_41pKcl3y9VLDoefxj-uc1ENE0V_PMSZ80hJvQUvq58"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoX-P2Tx9Z5i5Q1-TlariBi8EonyhbUPgVP1b-NwaLc05MXrBB7NB1ozGOGCy2fJGG0hQry0JHdTuorC7uR7E8bVU7t-C1AUfv72j96iI62GO29EgxUujVwbzZS1718bQ8qoP5jXZ5Bl2n-BiX8d61KHlXbQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9A_xexsTxu3aa6w3P1ymjRZwXHVhYAVg31ONcW6R38O4M0X6rThO-KPC-2MDm5BSIwpAD1qq3YfU89URKK48xDrKLuT6W0KnqGXFwc65zkCfjxVxoqVcFrYoo2nBkIKoInY-9Dhc_4J4jqq1u"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0TJWxZ_xt2o2i8Sxfs9Dwlycr62JcdwN2MN27zeaen-PcfjJd27YspV_LA1URVOIpvOJ42m3VSeaLRxYBNJMZzysCXf11z_HIwqloQ-pzNc9cXEFLmocaeMDtu9cI5tmk1Hax8fCdtIGQd0ob0TdhKLq4fmub1fUp-PNQwJjoHQ2e0vdwx1elKZ9l1__Pihf-Z-iyIk0DCA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgBilF4tEYI4wonczvQ9Xd2xmxVy5O50L5LwGObVMODMLtqoczmPyShDtxllZ6XqkSSy5D2dPPIRzj4eHvg-w7oJUzlbjfeI-KoFBe-i--eqeJQ-SDdpSN30PpK9EBLwZWltd7Drv3pOq93sQ="
+        },
+        {
+          "title": "oncpracticemanagement.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG66zixE2D2Reme8n85G_NxpfYsoY20QoAJlPLJWq-_4Na7vLpm5n_97D2QU0f5vm47yEzvYE9uFdapzdJh2-Aq3qImCMI86-vEfGp6AK2R2i1qqfvyQvv56cKXpHcqNFzCtgNrqgl2uUdFnv0Inf2gxFPyyL2CyAvjSGuLWYvdtz8yqB1oux7O916pQm3MihNWxy9sou9vVvodzMZ3dGU2Q1TM"
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh--k5OMkBBOr2DVi1DeTWMZ4MiRwPopXtghs-Olzl0usMZAnk9Evf8g0luh9KYCcTazflJ19UFSVoEYTPZd0tnqbVBtQUHjGQx5AMx-sjB-ffIFnCg6olt4Hr_yfzAp63X12qOK6kEu8qlfccYUtW57h5EC25IhsB87ULSv5dn9lZbCse9sYIuh4f_pRbyHqMFEwhKLCsKy3TvrwXBoeECofu"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjcSfz-u6QKP9X4SGYEcmnSlGBQaWeIDwGUIiM7B0XKbuBbzX-8euUtxbymyO1rG-Q6jM3wJDZv_YQqPwC_N91BVOmYeWCVvYcF4W8d-R_M4TKcpw8-XsIok72q8b6M1a6Bmcofg=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsYtLJHgyHsOVX2bE88dCt4ZInE6GUtqEd5n4aEQ6ZF_MRIOdsEIxi4Eg2Dq5ZBSRKkdDFOPRKabQDb-ctYI4hmHHpZUDxR3GrHaZgoNLjX7BnS6EI4ngk50cnq7ORO5fNDE3IKjo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pembrolizumab trials for Malignant skin melanoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20skin%20melanoma&intr=Pembrolizumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "200mg IV every 3 weeks or 400mg IV every 6 weeks",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 170000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 195000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1300000,
+        "costPerResponder": 487500,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Ipilimumab",
+          "costDifference": 70000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Pembrolizumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 12000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+21.8 percentage points (from 11.9% to 33.7%)",
+          "baseline": "ORR with ipilimumab: 11.9%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate (ORR)",
+          "percentageChange": 183.19
+        },
+        {
+          "absoluteChange": "+6.8 months (from 4.3 to 11.1 months)",
+          "baseline": "Median PFS with ipilimumab: 4.3 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival (PFS)",
+          "percentageChange": 158.14
+        },
+        {
+          "absoluteChange": "+12 percentage points (from 43% to 55%)",
+          "baseline": "2-year OS with ipilimumab: 43%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-Year Overall Survival Rate",
+          "percentageChange": 27.91
+        },
+        {
+          "absoluteChange": "+9 percentage points (from 1% to 10%)",
+          "baseline": "CR Rate with ipilimumab: 1%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Response (CR) Rate",
+          "percentageChange": 900
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 40,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "0 points (maintenance of baseline score)",
+          "baseline": "Mean score: 72 (scale 0-100, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 0
+        },
+        {
+          "absoluteChange": "-1.7 points",
+          "baseline": "Mean score: 35 (scale 0-100, lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (EORTC QLQ-C30 Fatigue Scale)",
+          "percentageChange": -4.86
+        },
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "Mean score: 25 (scale 0-100, lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (EORTC QLQ-C30 Pain Scale)",
+          "percentageChange": -9.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Pruritus (itchiness)",
+          "percentage": 30
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Rash",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Immune-related adverse events",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "1-2 years",
+      "trials": 65
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrrZDA-LcVNJcCrd0O4dm_3vEun3ypB1RZ8PVI6PXwZ9yjHdiefvForU-DLKcYeNoK6L4EODDYaYy6k9KPm-ClUIT8Wlfzro60eDHd9kFg9kKw-R4a06QmViq1ojUYfVxjBoZ_"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEorG-CdZC0HWUDvookFOl1bQfHJTGQ1Wp3U2MCVDzxE9oVIGk56a22GNiWAA9qQhPQO_4y710a6X42xLRrxm-oEr4XiI4Ist0cC2thYAxWYYTLzcMwtoIAnnX2frVDQ7Ed1YHtrOLhhbY2RCyc4TKYdQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-3UfyPIsXxhwyVhDBw23jvAVVu2tglCTwm0XImUuLot-w3O98fMztU5S0YVbtjpg0wkBNf3TIzvNbeZEJ8VrIxeaaPK3NQVTs3ri8mkFAvMDuBeA6M5x6MG-bimZ5UAhhLfXGl-ZTfWQAi8Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfVsbUkYWDhPUdIlBYu_7uUMh_JHoliu7WPlUXKGJiNh9v8ziAPl2eXlqa2UWvqhny9ydyuIocXBLe7sOJ0rNPEittv1n0dbuzHROvE0EwACfdJGZ6kmu9g_L1-aJOgw8zn1iAPPUGKQgUkSI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDo5haqsWzVAtMKuCsSYwqqxAeaptckAkc8lNN8SNiL12jWNyUhGOj-ZsJJNM0dGMEjHGco8y6RnOEuIBRsJdi6YumSLhOMdz1N6C8EcjK5R6xdhtcUStKGxEqWC2bcjYUEb81bJcWfQKeffs="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfrXeYfBqr05PLDj4S_sBCc5j8J6RMk2nO-jW8XZMvA6tWPKvfbb45RPq2tKe9Fep45XrbE_dHYYLyYj5xIvt6Y7UT8EVxEZ2qEhUqO-zmS4l4D8cCRguzZRggkKrwEJtM2cGXWMov6waM-mou1qjc_0aILnU06PIVBNNqc4Nlqty4WvJxeOgxIu8T71rVUlFo9kh2qmICrLXkIwFDBpoERKhAKV-N"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpuOy41s7WmPb9eS_k8JGU-Dle9VfQAptcemSu0UwQ8basI4wWxHSOANt_M4CRsutqSkjfMWJQhhICYFhHOh5H8ujIkRnzZp8fQeBEYZMcNDjZpwcf-BxB5LfVuGnxaapOpqwmvJ1E_Neldw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhcLuq_-OG1vc15Bk81H58Asq0pTXZpAwge6hZ7udh46J6MxhTyIRyf1VyiiCG4mBIEWm0zB0SH18ulKyUQlKM4pb0AWgvbWchUR25nv6NHElg7b9guO8sB7AMBvEF-47uQSFj92PyJfvU2O4FyV9ioH0-jYuQ6Ikh9yjfk2KouXAqZTsfs7MvupGoGet8vf0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nivolumab trials for Malignant skin melanoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20skin%20melanoma&intr=Nivolumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "240mg IV every 2 weeks or 480mg IV every 4 weeks",
+      "effectiveness": 87,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 175000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 200000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1333333,
+        "costPerResponder": 500000,
+        "icer": 185000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Ipilimumab",
+          "costDifference": 70000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Nivolumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 11000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.9 months",
+          "baseline": "3 months (historical control/chemotherapy in advanced melanoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival",
+          "percentageChange": 132
+        },
+        {
+          "absoluteChange": "+12 months",
+          "baseline": "12 months (historical control/chemotherapy in advanced melanoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "-40 mm",
+          "baseline": "100 mm (representative sum of diameters)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Burden (Sum of Target Lesion Diameters, RECIST 1.1)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 40,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12 months",
+          "baseline": "6 months (e.g., for chemotherapy responders)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Duration of Response",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "65 points (on a 0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EORTC QLQ-C30 Global Health Status)",
+          "percentageChange": 8
+        },
+        {
+          "absoluteChange": "-105 U/L",
+          "baseline": "350 U/L (elevated, normal <250 U/L)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lactate Dehydrogenase (LDH)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Rash",
+          "percentage": 30
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 20
+        },
+        {
+          "name": "Immune-related adverse events",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "1-2 years",
+      "trials": 48
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7hCRXWNPM5PPsKEhxNySPg-DzGf5HD3cEaFJFynX7_tBi6tUbu8yZjZoNS8_2amVq8OAk8jYK5nuwQE3ZpyvNTi1mNuN9dLVcGfHKZOXc7ArTo6pkHXyWIxWXw6u2SXebXHuZ3wqOXWy68lw="
+        },
+        {
+          "title": "aacr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgGJYTk8cm-IHmndXwe0VxPLJKQq0gl3mVGAQQonQ2Vv233lHFtpYdGIPKACf1JBA3Bepev5L6E1uOsjV3noSaVroYrgA8yYNu0b9eLGNQF4FBYDTAfAjjGV4Q8cicGu9jQOdJlL25dN70BvnW2KgB3AFw6GbOxVP0aKfIgCV__d-ZLNWmpv7Aao9_OGTbZ9L-UPb6JJ_YN42OwPUAoBoYdg=="
+        },
+        {
+          "title": "curemelanoma.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0XFkLHV70JbdJixpL334g04NjneMVTSa2bAyXb33R94-a_Y5xB9z5LZ8jUhYPz3H5gokliCVFvdsUsq99J9iQQxuCCMrAOg8vn5RXPatAmugFNHqwGMWIGFYFt_Ob6I5LAY3PJZoghSmukP-7y1uQd_cYM597OkBbEf7JQlyUvnln8rnKUjKGeZQepA=="
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQBXK6-i12iXf8VVMsDaczPv1eSITiJgrCBIAB4Epg3lq1XSzJ0SepE27EajfZgbia_5q1HsiuuCKi9_qji5_BNqb01pHvnFmIPzOifmdS4EdcgLT5LGWvxmXmcXj-_tvc2tPUx7gktwzlldTHwiTQ7hz7p6qrLCYxh-hsA0h7c-LCPGi5CQ=="
+        },
+        {
+          "title": "cancerresearchuk.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ79YQOcxfVJcsKXa1dnfFrP7kkLq7-OSYsuPsrV7xcRd7vwy0bsDujyxPUiH5V6wiqYrnaGXt4bPFUs1ZEIufaT5X-als2X2c9YTnHwfPzg_wydUtJSjTlHB-JOReXg6GYuLCc_s2xjl3vwiSF4GgJdbQv1ZqQKeXnJSuoJ2fh0LyTGhtCgfJ4Vsftb56IoAywsSLofgx4ya7b_3y6RhBfU1wlHU3xCZte0pnYw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO26URIn0l1l1mB4RKIha4U2SHVhLhGrqi7qAgAJKt_AR-7Y-VPSsULk2HqdZprplk2Bu0JMVTDyBCb4CNkk60cXL4kpWUEKOJm_uMtahzlfi8NK97Ib9Tvj3stsUbwZRECOnCqpaFU3Z4BzcpauucPcfQgLDrAS5xs_RgdyjFsWDFiF5CKuSP_xDO0Ig-OQMpwzLpVve3z-GLw5KfqhyJ-txsshjaFwBzPErWDVjsCDqcU50tWRoPjNbs2Po="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGp07YS_JECkJcy0mK0oBbXnOXoxhQSehZltuhFeWlGFEMoLWK9ax3nQY8YYIYb_pUnrG-ZHKonfapbWiHQdysz95yHWxTBYGFbV2ElMIrXhlt_nb610qu_GhViSTcvRLoUdAA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW3fOdCpJGEk9jP5F4POY5DVj13d6Kq2E9EE_XaBFrszjpvDfPMVkOLzHHcFkWNJvQMIKaDbBGm9bri9E7mI2zmS4lj45_pHoRjdXzv4t6n7nh1DPKc_3RiI_Ij44Y6eJGOztU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkF5cm8FZZFAiuX1yIQfsKtn85on2jhBxU2JBnku_QuZ3cswhTyVlsT9kmIk2mpnJaagq-LlCdek8H-FcOAwKaBoJuxVWIFRPZdYytVBix2gLhcNxQBWEI3q9KFU_dYpRccb_W"
+        },
+        {
+          "title": "ClinicalTrials.gov: Talimogene laherparepvec (T-VEC) trials for Malignant skin melanoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20skin%20melanoma&intr=Talimogene%20laherparepvec%20(T-VEC)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Intralesional injection. Initial dose 10^6 PFU/mL, subsequent doses 10^8 PFU/mL. Up to 4 mL per visit.",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80000,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 90000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1125000,
+        "costPerResponder": 450000,
+        "icer": 280000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Ipilimumab",
+          "costDifference": -20000,
+          "dominates": false,
+          "qalysGainedDifference": -0.2
+        }
+      },
+      "name": "Talimogene laherparepvec (T-VEC)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1200,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-81.2 mm",
+          "baseline": "100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of Longest Diameters (SLD) of Injected Lesions",
+          "percentageChange": -81.2
+        },
+        {
+          "absoluteChange": "-9.65 mm",
+          "baseline": "50 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of Longest Diameters (SLD) of Non-Injected Lesions",
+          "percentageChange": -19.3
+        },
+        {
+          "absoluteChange": "+4.4 months",
+          "baseline": "18.9 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival",
+          "percentageChange": 23.3
+        },
+        {
+          "absoluteChange": "+1.5 months",
+          "baseline": "6.7 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival",
+          "percentageChange": 22.4
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 20,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3.5 points",
+          "baseline": "70 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "4/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference Score (BPI, 0-10)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-45 U/L",
+          "baseline": "300 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Lactate Dehydrogenase (LDH)",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 55
+        },
+        {
+          "name": "Chills",
+          "percentage": 45
+        },
+        {
+          "name": "Fever",
+          "percentage": 45
+        },
+        {
+          "name": "Nausea",
+          "percentage": 35
+        },
+        {
+          "name": "Flu-like symptoms",
+          "percentage": 25
+        },
+        {
+          "name": "Injection site pain/cellulitis",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "2-4 months",
+      "treatmentDuration": "6 months or until progression",
+      "trials": 4
+    }
+  ]
+}

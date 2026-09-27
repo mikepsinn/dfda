@@ -1,0 +1,888 @@
+{
+  "conditionName": "GERD",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:03:17.554Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8A2XzW4yi1kNJRZde07Y2ekWjIY1HzQTyJ3wg9ISCk6KrnpXkaxhQyg-gt_WpnNVN2jZ3f72J9OXsh678_VxIa-d0j6x11-bXhvl-f-CPa_00NmVJ3ikExpgWAcB5Admce8R3iddLk6T37Yhlkrvd8gIoblGfCe89-KYHtWmYeMnOGHs2pfabxaVSyCkYvg8aYAuSpZ82FAnHGuXYLA5z5Mua3VwLn2foMPyN_szq42wausjdLLiX77XfQPPLD1YIdaTtSQU72qC87Zvu5KiC24Ts1BmrgRDJ_0eH4FEVkAH3"
+        },
+        {
+          "title": "jptcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFdcIAWCtR2WS86zjzhSsQ2Iit3S2LRdXxWZRGPOYNjzx08JQXtyzlvo9kEyME4uEUsueAY_DzIYkjNubVIUAhESjIKMVqqcjctG3ydCi420hAxS6atMVet74assInoPoSTc_59OrHYQ2I9tHTzg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbe8ABJHfVftLMhhYB81q1ZnXilbHMPwJA5gFENiqQnoUjft0Vq6ZcjzVsST_LILZsQZHRBdGYV4ZE0FEZP8p4nj03ezifOM5ewL9z7cYCyBXsWkLoEE50xC5TAkdkneLvwh_O"
+        },
+        {
+          "title": "jmrionline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8fGaR4EoASPqDxRyNLTFAQ02G26zpggI204Osdn7j-JnBY07kySlLWT_GARM1gTW8awqZGPeAEFF6CShpyAlka3OjfkLFF1B7PQcKHTzmz1-x3RrVXurywqm2-bgBnD7nMtMC5VbD"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMkGwYyqUctGOT5Biuijoti4BDTpUSkggZPJI7TEzoS4AbnCc5OmNP3S_YfJ8fWXn49sAdKWCmqPCMHct5EdueGFEW2BerE-7919xvq-oDH0TbKlEQA-FBAZmKD-9YCzAUQ3c="
+        },
+        {
+          "title": "jmrionline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0gi-Lep3Z8fzOS1WUd9Qo2XqRTAtQmiMUPRrN2lrkfm6TE1pZ2TztpFRLRgHph-bFkoQzDQ1R00YNyDavcUF7jhlpVFxTfzHh2S-mxvLlF-9rB4i3rPPLn_MF3T-Fuia33V7VonKTd4jPzQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7JC-sFdgdzWXiWQpiBn_PDr2ik-4_syBg-QkvodQK-_3Op0eDQgpJroi05uIR0bMSi5bgo4NvJ4fCAmoQvZdIbHPGhJ0PuNxLjWnygndPphpk-eVCRAw-jgVZ_S9mComB3a--"
+        },
+        {
+          "title": "jnmjournal.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2t0EDs6D4kFMNq1kvx1M5W7kjvOnnTSrlLnllips7NbIAiyd7mbBhYB8GzQnxm7WvNoq0DkabFNlV1S_DAN3xHi5_vaiMvquFM9Nn7LkiVpFpGZXpjxIYcS-CT2xs_e41yq7_8WyitBFe5nvcddNNLwB-klyO-wo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHywkS81nK9BmomOJI39-M5ICE1ytp-2lzCHQ9H2wVW451-SG_b1Z86VZpXmQLpq0RxZW2ekO6Pk5tIwvUAuYeR3HNgZRMRvgSCKrGgcZ-_Q15jMel6KPr-rOM_b8fbIedH6ziFzZz1DqlNSFY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Omeprazole (Proton Pump Inhibitor) trials for GERD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=GERD&intr=Omeprazole%20(Proton%20Pump%20Inhibitor)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "20-40 mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 230
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 383.33,
+        "costPerResponder": 306.67,
+        "icer": 8000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Omeprazole (Proton Pump Inhibitor)",
+      "nnh": 500,
+      "nnt": 3,
+      "participants": 200000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "2.5/3 (0=none, 3=severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heartburn Severity Score",
+          "percentageChange": -72
+        },
+        {
+          "absoluteChange": "-5.0 episodes/week",
+          "baseline": "6 episodes/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Weekly Acid Reflux Episodes",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-10 percentage points",
+          "baseline": "15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage Time Esophageal pH < 4",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 75,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-13 points",
+          "baseline": "30/50 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GERD-Health Related Quality of Life (HRQoL) Score",
+          "percentageChange": -43.3
+        },
+        {
+          "absoluteChange": "-2.5 episodes/week",
+          "baseline": "3 episodes/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Nocturnal Heartburn Episodes",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-3.2 doses/week",
+          "baseline": "4 doses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Rescue Medication Doses/Week",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea",
+          "percentage": 4
+        },
+        {
+          "name": "Constipation",
+          "percentage": 2
+        },
+        {
+          "name": "Increased risk of C. difficile infection (long-term)",
+          "percentage": 0.1
+        },
+        {
+          "name": "Bone fractures (long-term)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "1-2 hours for acid suppression, 1-2 weeks for full symptom relief",
+      "treatmentDuration": "4-8 weeks for acute, often lifetime for maintenance",
+      "trials": 52
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-SqzhS0fuPWnKPRII6JOx8GsIo8R1XdPIvKRMEPgnXqXvmq37HUTKHlxqIWT76fKkK987FO97rLdLre9aaAAFaLsY8E5GA1HNXGqXAdMW2g3eqF2hLpC76puisfQWC8VurOJq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEncKQgV3gKXlXAZaQQM_qz6CXfc8Pxo7DzCGOJux6FZ5AS_lixcb_Svp_MXTO6jWiXsAPVEy7FY1CO65dt2JQp9QhRV6dscUHy1d9h-L_Ov2YL-H6Jcyx9rKeyjK9lvxKfwmvKb6m2pw=="
+        },
+        {
+          "title": "wjgnet.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGq7VNeXv97oVq5QyyMEdeJTjtj36_TAbQgIn2lrYPcMX5KIToj084So5wlXxWNVXxcsVjNCRlBW-Y5VM-uCApkBq6elN8xz3Rb0eku5sQBkfcCyOhC-LlfKBYaVmdODrx_udoQP7g4_z5_fP6M0d8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3z-B85jx40g7DVbID9rhn7TyFtPoPzB6OIJlyL2NS1frdTQKPo0o6m9zSIR2L0UM-ddcbGBqtaWoisZRbXSzdKIYH24CBFWP18xkfVHFXq43tfP2v3UTVAfaiZsx4671cKiZh"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUbK8bhbSVhriKXR2_mj1H1DooOwXlmfJ1m1QtCCCUkiKXCmDZ_M7QnMMZeNodybuv75Ryj8O4PWJb-w8kT939MmLNtunfr1ZoHwoM0eZQxnOXlCYf0RtMJ-qUi9iWmF6e3WNQm7HYcED6hcigaHnZ7ZEnjICdVCaa8Vjudh8L2NBM6BY="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeTSn7qgbHT5F6MGwZVaL5ZkvElHmdsNCDFpbME2MhQL2wuzfzwov96nl3Vap9jcEe2HWl5wXKDprew_A_wPIx_bLXQEQS1b1AbLzLdLqUJaQR7FJW1WO5_ltxTXTMTQ8Vpdj4_gfP11ENY_lb-wijUoG6zXOLjEfL1DGqjTFW12YVzLVUx_gZUTLy27hK7yc="
+        },
+        {
+          "title": "repec.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlCdqFV-LH9gpl06G5-voTc71BVdiOZlxnTbXESk9WrDWh3O3IE8I3gZFdqebBWG29DoHAczdT755_hwYO0FntiQxXmB1AfVRM-oLr1mhAhZYdYwYp32uP_OD-e2kAoQowGowuJXe1OYN4FRk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0Vvf2N6Zr7hhdAAOz8jz0gb2QaaZ_wr3RXZBt8lTcey6amMR7ysx_CKv6yJH_2GD0Pc-vvRPvrwVY7-K2v7jepZH224AhL_8zsPKM_74zeqXDEJkoztfYBL20CQ7tTVhbayZRqsoASh2GHOD-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEp-FAIRpchfPf1bAejLBZoqYmMuK-3AU3h4quI7f_Ws3RaOzj_4FdligHCWVUlIBxDfZJkmoij105BG893U-H0TH0ACiTBq8kE_1s1EECQrzQXMzl0rhG997PqryQS4GtRZUW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEksgVG-Lakc55Wcm_HS8aAH3f17te1xl4PmzW4wE_qL52BjBRB2Z4fu_bznyvln9f-ZD-S7lYJX2g_meNqGP3YWCyc0kmIwqe4BVKpMZePz0hM42YPXOm3DuI1NBmMx--hBACyNR152C3EiWmGLrWkFiGiBbe68Rchuf2p9AcsTUzrTkuICHv1fAJTGjQwQsNWCXzSHzcKozW_TNxUShK-jhOKoHags2l6u3TH9Em-gtbJ6VPO_xUO434b-wPnjatBqliAOJ2n7GdveUy63wZXPm_cD2cmWX7sYpco4qmOHowDuJ9ZxufuEYbpcli0yuPUWPkX6Y5h0S-xLb9vuH2qrD7VUA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-zD9cozDpUzkyW5Bi3eR63RO9rFwC7xiV8DdOYoj7eJIo1zlz-uAdNEoUX5YPbMqvtlkP5FNNezCid09_ZLQJrGlywSBV4dIUL_frJTopOpZcN47XhI5cg6rI6gvcmSxxlEbZL0LLDTCm9VIlfd6GjpyMF2LKKh8KCYvBRzuCRv8UXd_FF7Hk6l2vS5ojARcYwHlfbpWomql6kRTg8lU-9WeEd5PGvDspp--bIuvtecmqu6Eczy0Tvdx5qhK6fnvts9qxqUN1fnxEqH9u7kbllwin9NqW2IaG_13edMKIwNIvS9fkHeMKA4wGbmS_2_ASxUvMmWd6wcd2QPHuIkShh0DCe4RIuy5Qxyyzww=="
+        },
+        {
+          "title": "springermedizin.at",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqLWMKtfNErMboB-WNfnoX2H34j79MKkHNyzboBbYWmZBv_65YjaOt33wMkDR7NqnSPRVoNbPHLUh7W75XCpogPAmCfk1Oj0UpFO6Tvpz43vNsKeOoZWCg1MUoej-0UoQkj508j9fyuMKlmRwqzV78thIhPMhhqQvIrDna0DjjLEyVkzyTPDsgmSvU1ox4muW5p1a7EmwqAf_AlVB5ml05Cbg9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRZgnltSTnRSLSvdoE2R2Qkg9M-qr7lUDx-vr7_PjfWMXiPc0Vq42J36PnNsmUhwwz5WvRwLnb9BfYW1mFmmnwV0sPybTQRbiuF9_Tik4q0_0kBXaFFct-1rjD-sLZ6I3FjGrnUaJUuY7iJCtC4j80SubsyIQFoSgPgixktewJHOZc5Bx7B5kXUxR12bCjAnra41Lpnu4ANZFk-X9xxYOEf5WSIwJfb1a5sS_MlmvUQV87-1gS8O8bELHk4yvCMFlMA4l2amGuBfzJGJ91K3rIpGKEbBMd8H1I_DiGm7uLLlNhY4i3_TqNKsE5BhDzwBQxIMxXfpk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nissen Fundoplication (Laparoscopic) trials for GERD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=GERD&intr=Nissen%20Fundoplication%20(Laparoscopic)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 300,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3636.36,
+        "costPerResponder": 2857.14,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": {
+          "comparatorName": "Omeprazole (lifetime therapy)",
+          "costDifference": 1770,
+          "dominates": false,
+          "qalysGainedDifference": 0.17
+        }
+      },
+      "name": "Nissen Fundoplication (Laparoscopic)",
+      "nnh": 10,
+      "nnt": 4,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18.2 points",
+          "baseline": "28 (0-45 scale, higher indicates worse symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GERD-HRQL Score",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-9.0 percentage points",
+          "baseline": "12.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Esophageal Acid Exposure (% time pH < 4)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "Reduction to 15% of patients",
+          "baseline": "100%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patients requiring daily PPIs",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-4.5 episodes/week",
+          "baseline": "5 episodes/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Regurgitation Episodes",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 55,
+      "responseRate": 70,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8.0 points",
+          "baseline": "40 (normative mean is 50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-5.0 points",
+          "baseline": "7.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chest Pain Severity Score (0-10 VAS)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "4.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Score (0-10 scale, higher indicates worse sleep)",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dysphagia (transient)",
+          "percentage": 20
+        },
+        {
+          "name": "Gas-bloat syndrome",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 10
+        },
+        {
+          "name": "Recurrence of GERD",
+          "percentage": 30
+        },
+        {
+          "name": "Surgical complications (bleeding, infection)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Weeks for full post-operative recovery",
+      "treatmentDuration": "One-time procedure, long-term follow-up",
+      "trials": 44
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhqIMKT6ms6IssX2zkTzJ4qbil9nV72sbrwXNvR5TaG_m9adhxU-15M7xi13q4bzRaYZ9mdoPXHbwYlR50jJbwydK6ixACryWHuvbOBbPkcS9OF1-37-5s3eTYyYWYeMQXJWZl"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3-C1LXHnS7iIU3hyBS8ca9ExsPByPyzGMudHUjff1vxYXVy3Xt9L-hwl-CccXRDxEwJEnx_jfQhR07HYb0Yuz11iu2PAvon8k6Y5JAqyNBVsIzUzn3GVdsyNMh9QUnosEJ5TEh-uDtgi7E4P-6YOyvCBaa4586qHwFUgiGxOc7Bftj71e4v859NSE_RH8tDGHq3ntMKBHuJzzUt-ZU4ZfKMIEeM2xT1QrfHxcFhczVThGIC60BD_NkZG9Dd_NiS15_ApOwHWqZ1rv_JCYdmE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG78bTfBVdkYPnMD5pJ2eHQKH59FLIeZVyEfbjlHxP-8x6FygGxgZSjRUxUyzdpblkNfhktCDAXdOoxeyLXEHrSx2YulWSXII6Fhhqvky0BVgZdNflIHLa2Ed4Lv12Ljxp7oTJfONzRANOsIHE="
+        },
+        {
+          "title": "thieme-connect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKB0YHykJ7paZfWqxTP1looog9Wnys06umtiGzUQ1PQK0U8_E6EGTFPMZAMtPpDOc9n3Dn-H0p4_3c3MCfCxOCTWsYa_JM9aOViG2yLjzU_RYSLeajGIbIQqcdImsFuUWeKJ4zDDlIHmQHKYljSHzrYogZO5GcXSO0t89TlpcHey31XRw5gepd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuLadtKtFB4H-FgeOtwRTu8EGWukKg76ve3y0zHgThoz1MXlWMmG1XcqOufLTKbs7mEodP-gY1-qkrxy1wHSirZtYe5yIDUOD9QF4P90-SOL_ifvmiw3OS9lFzH2cN3pZSOrS8"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnGMKIoHrZA-vR8CdupBNcm64E8vbhkSRtJLt4jbO0rVNxUds5BvX8PmA1hP4z2aQslZ9WfxMLqyq3ZbSQXHuVkZ6ISlemDk_DbMjm8gZ9XvucrJPEdk10QFz7hrHsFoQKr_qdNT6xG7GteLFwwYpDQ2B8lEMgpUjZ-1o9CTuzf0jeiSsXJprH0B-zwc9-gVwG17IW-j8Vl0anA8TItN1Byg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8oYMNILNbpv_ps_80SbvLTI4M7eQKiJoG66opYL6-vt1LyWzRaqlPo_yA04v4-xN1bOc_ZeBHESdqGwtVuK1eRZerLynGaGYkWtdjFusqS1P1TYXfuOv6Y10JztN9CJ7haPG-NAKYB9waEIG_"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRwXYDQRZJkyaHHqJFQvm6GCYS--HD32wFjHbJows9wLo8Aqu3DCCleCGpFKfN-oEm-W5qWAu3dHdFLZdOHp0AV4piXeM4UaWEUqxxX9dNQdJsOOBkH6RKXkJTINasrUUg3ayzqALgAwgSghbfjpCGh3x_8xo9HEY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Transoral Incisionless Fundoplication (TIF) trials for GERD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=GERD&intr=Transoral%20Incisionless%20Fundoplication%20(TIF)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": null,
+      "effectiveness": 68,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 150,
+          "sideEffectManagement": 150,
+          "totalAnnual": 2300
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4600,
+        "costPerResponder": 3538.46,
+        "icer": 55000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Omeprazole (lifetime therapy)",
+          "costDifference": 2070,
+          "dominates": false,
+          "qalysGainedDifference": 0.07
+        }
+      },
+      "name": "Transoral Incisionless Fundoplication (TIF)",
+      "nnh": 100,
+      "nnt": 4,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "28 (scale 0-50, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GERD-Health Related Quality of Life (GERD-HRQL) Score",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-1.5 doses/day equivalent",
+          "baseline": "2 doses/day equivalent",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Daily PPI Dose Equivalent",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-8 percentage points",
+          "baseline": "12%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Esophageal Acid Exposure (% time pH<4)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "3.5 (scale 0-5, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heartburn Symptom Score",
+          "percentageChange": -85.7
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "3.0 (scale 0-5, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Regurgitation Symptom Score",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-3 nights/week",
+          "baseline": "4 nights/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GERD-Related Sleep Disturbance Frequency",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "5 (scale 0-10, lower is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Treatment Satisfaction Score",
+          "percentageChange": 60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dysphagia (transient)",
+          "percentage": 20
+        },
+        {
+          "name": "Sore throat",
+          "percentage": 15
+        },
+        {
+          "name": "Chest pain",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        },
+        {
+          "name": "Perforation",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Weeks for full post-operative recovery",
+      "treatmentDuration": "One-time procedure",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrSh0TCfaHyEz-QAPraA2o4PlzZum_bxKlY1RVZs7oDK-TeoLI0rPHf-RsuPaKUsZ05yUHD14kZNDaoc13-U-eF1dJnMMyFEk2iVtGtC3qWK2_ge6Xos1Mpw0fRf8AorVuhDU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX8pyKhr43xWgjRGjVU7krreqLI2WQ6txxpHO0NtCJYSkzbGLJnL7X3m50S47sxRWC8Q9E7a8g_ChwhdkL9S9UFEWMaLIK4t5EKIsJtiWjXGa6LBN8At-ifcsq1pMWFM1FKA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk7grayjR-PuXvZ536sXNTSbQRISlHkgmikIZesrb0Q5D9qzQZn4v3zwc2E0iWHJQGCq8FofoTApZxkfpP3OfIb58ZDO_IVUad9Q105GxJnIaJI50tyWSLu_vm4xprd3_XEOPrdCZsZ2x3jM8JRd3C0Yzj0RnOcidetnp0rTu4eA7WQhLS8E4Tb1G_LP7wx0k3fbmGHG59hSc_mevusiDMhrxCld4zfXQGNcy3NdgydgA0qDvEkyWC0Z5QOw1cyXva3v1n99c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH2jEGwatVyUqwZwE71VeDpm8KN3l0SDDK3JGTq6kURsimbrX9cgyF6wT-4t5OUXe-mQXZ39UcB0BHB8M2FpujyNSGnPtDKpPjhpDVCvpG5YQAGJ9EYVR-jE-0DAb9qHj5PBjwN2g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKtrFauwPGv3cNDeVRU4CF3uBLUc0JpUwcnIJGlS_ZWm-lYvrJJFyTEe9nxtIriw4pMeEOonFmMtweG8dxrr5PNtV-0mU_OSYWOicDBfrNdmga82Ch6J0REsuap9oMU4tYBvKhRPhXfktOlQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8uSwxrSGDHpO0ooJP0VujcWfaAStSzJ-5s07EqHD7LuJMCiucvw9H8jFvJIoXochVuLSLUTaYuR9mQfMaVkJuM33duoyQkdnWyZbw7o94Sh8mmcCZMXawvyPvbFGj12PQDryvAt1CXcQpg0ME6ywOu0aWMqftrg1DYSp4RcQ-RkxZz8LfjkdLMXKnIJRoFo1wlvEaHs5oxTt56B1GrovhbGTJ2s4DdMF1f3GfJxfG3-JYN-td8P5yFko-w5-CPpmgBz2DdLsyQ_mSyt4GfMKMQLO734CqfDinH33WiOItZxTyU-WM_m4g_gsL8ys287sT"
+        },
+        {
+          "title": "journaljammr.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHEZQIzdXSFLQqQOIXJieB8lIJPv3Fjnkvks-HzzI8PKLPOsxlB5dAhnONzCBREsRkJ7Su_yTpUcXRkaEJIZuXgF5-7XUhh5bMOU-BEyaCPvrDzNhIfXmaEiqSQoTD_TmDTTU9_ywecxmyRPg8kTuyGAeBoA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuPv_5YdcwR5FKsORrdXIALLJYTVRX1Kiz0FcV78OQzcY8hKnIMphfOhFCiafmtI5Ja4GA8gPjRH11C7YwPpvlueYPDzhGQa6koa0YJe0ua-XOcbRGk_-E_YTZJZMN5Nq8mXo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaMuMfhoRe1juiPf6o6OMklNzFGhqNUKwboGO0SZE2wBw86E2KCk5_7kaAKCXMruYtkRmAyJYhtBXOm_RYSR7QfS4hU7U4frmiGSMLybj2dsEqsRMjTpFXLjW_XAb6jAKAGLo1lur44LJ15LhcojncWPlkdDkxvLnfLUVHahaqZPhnIoe7DDWlBLF1xDgSjgRct5KvL_R5THAbMV9GD2NoIwPWT9RW5h26WdpNO08qu4aYjtRg1uBL6jJC_jNe1AVF1iVdRei4OzfRZX_9qpP6-iUT-qm6nfvu_8UG9_i9gOYe94QpL5lGnPgXDVDUWtK7h4C_D3jy1BZTKKJZfziD6_-V1waCMzRj_3NgzgI8jz5mcT_uU9U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBPf37ppgqrbFJOD7JycrdPehILwSwquh34Zner53hMydUM80HZ85WuEY4JPEuI1CtpJUIB_xu8uadbQlM88bTrZZ9Si2INbP3wC-kOKr1JfMsY3AFqtnifCIY-zo1mkuivVrXdn-ySVavFpA="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTJ4VkjKXWtzjkBp7vxGLBDRyaxFAwpsAPwqfnu5qOBb-FR8xc0Gx7037q7QHt6l1LMziKKYFVhq-qEVD58IT6CahU7j1k_RZielOdpoGqSVMPtO9csDfa207HsMrtxEOqiIMZM4zVTCBBTSi4ys4yBOOzOZgT_UqRCEeR7Qqrjnyq4oOXngGCk4V9LyCyiHJU-jEaj-kF9p5Aofxc65SnfEt5p891IEIbXVriYW5eAg=="
+        },
+        {
+          "title": "e-cep.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUbq7ExQinTDoP_lOPb0S3OH9jDF77vdU-FNo7Kk0BPsfJj6VtXP2vMntxSdt1oWY8A-bPFJVniW1rU73zhxNarjKIKPxNgwwzWHp2p8EAqC9ztvzH-dXmchJw2SFXYe2acx5WozOLbHyYz-qAyUY-Rirsx07DQsdwYMQnOL4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Famotidine (H2 Receptor Blocker) trials for GERD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=GERD&intr=Famotidine%20(H2%20Receptor%20Blocker)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20-40 mg once or twice daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 150,
+          "sideEffectManagement": 30,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 571.43,
+        "costPerResponder": 363.64,
+        "icer": 5000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Omeprazole",
+          "costDifference": -30,
+          "dominates": false,
+          "qalysGainedDifference": -0.03
+        }
+      },
+      "name": "Famotidine (H2 Receptor Blocker)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "3.5/5 on a GERD Symptom Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heartburn Symptom Severity",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "-3.5 days/week",
+          "baseline": "5 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Heartburn Episodes",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-2.5 nights/week",
+          "baseline": "3 nights/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Nocturnal Heartburn Episodes",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-5 percentage points of 24h",
+          "baseline": "10% of 24-hour period",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Esophageal Acid Exposure Time (pH < 4)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 55,
+      "safetyScore": 82,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "10/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "25/50",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GERD-Health Related Quality of Life (HRQOL) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2 doses/day",
+          "baseline": "3 doses/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Use of Rescue Antacid Doses",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 2
+        },
+        {
+          "name": "Constipation",
+          "percentage": 2
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 2
+        },
+        {
+          "name": "Tachyphylaxis (reduced effectiveness over time)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Within 1 hour",
+      "treatmentDuration": "6-12 weeks for acute, often indefinite for maintenance",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVbU0KnsUpDQP1q9UV-qfuHQeDgLkQYHLzfva81c-eJGIZ3TzoVyU6-MhBfpY9WZwTk4s7ME5kRKGQszT8H8sMmoZIg9hGOYFyu2OjfLf4-jnNapw1yw13H6dUE8u1DoYDt56M-8lvIcA_CK0Jsk8iI7I9z5y5a0nXG3KC75zeyP6xOoUzksxUz26qKMQVaVyK5TUnJ8SgPMA9KuiUpyD7tIQWXreJqpCq2Q8h3ZIWxPYqfMLLamaULN9uEbHuEg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFluhrMhpwxFPPwFNLN8Qn5VUKwr6sRm-7cRynIoszX3sGSG8S9xGRXHUZ9woRuaTnlw3xkQDuKlgRgb3HU9H8vv6Nu-AQfsWIsL2aMJLagmy-Lp-H5FG8AEnN1136ijrJjvD-rIhghwINwuPJRqSMhvr7OFA=="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYWD8Z5qCBttR3ihkE8Ya6H1Ww4oHQUPXy5ACnIRu7M0tBQf386PheqAinklLIX-Vpv2HXzHV7kU7FLhcxp95p1L6oiSR-H3zUQv1WohdCceoxQsaryQgCuZIIqTQcGNpStm2K-oEJmESPdjcsjWnpD6OTm-19SncGTQXFlhcKvB5NuJ4VRrq-lzRHD0kdtB8r4Ppees4l4x2h"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGy7Q_Q8hD9DiEKLEBHSe3frJDWiaWYkvLt8PuoYT4twpu7ZDiwMrf7fNvz7Rt4cNjnMXMZ18vqIgvbBxV6k5y_7dlWUTAH2GCTPEBvkqnAp7gEAOJRE5EJRtDL8SEUt5Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmFlEeqrL2Zj8Z-Ac94H7WrRtu53CaKK9KndX29-SvTCqjpq9xoL51bGxzDnX1xhY01M1C0OWR0R5M4C49SrK068swqKvC5BlG7vuVAk_UCN1Ibl-AxxrDeY8eaSSKPmakZry4AMLcZvW4faQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFWIttOrqJ83cLBTfXK_hBIaR6eBaEMUeppmsLwdu-dWyXr-e3c6QJA815iMCZVEadufKsA1crkug9BA8TPa8lGxK2S606mEQlL2Jov8Yr3NBXUp38iVAA6mp12nLQ9DDiKY_L"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHomLfgZ4W3TdseI2kET19zaI8cW1aJtpHjh3ItqYeyj7EmqTgAZkpHrUuF_vzt8Ow5M23kg3gOL0UoKqODunRS74XouHlXxAitZuAELb18l6Hj-dSZy9CoTCVznKANAhiutausQOjxAsJKrQ0OmbzRgfkPucAufFmfldt_zndOjPPWl1zBOgFqTz86Mz2N3Li5o4QZkqrBJbL6075BpAVKO3QsFYhFNe93TFGfGzgKmh7TLDTvc3PUVIQncu5K0A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lifestyle Modifications trials for GERD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=GERD&intr=Lifestyle%20Modifications"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 0,
+        "costPerResponder": 0,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Lifestyle Modifications",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 days/week",
+          "baseline": "5 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heartburn Frequency",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heartburn Severity (0-10 scale)",
+          "percentageChange": -41.7
+        },
+        {
+          "absoluteChange": "-1.2 days/week",
+          "baseline": "3 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Regurgitation Frequency",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "25/50",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GERD-Health Related Quality of Life (GERD-HRQL) Score (0-50, lower is better)",
+          "percentageChange": -36
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 40,
+      "safetyScore": 100,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "3.0/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GERD-related Sleep Disturbance (0-5 scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.5 kg/m^2",
+          "baseline": "30 kg/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "-2.5 doses/week",
+          "baseline": "4 doses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Antacid Use",
+          "percentageChange": -62.5
+        }
+      ],
+      "sideEffects": [],
+      "timeToEffect": "Immediate for some, weeks to months for others (e.g., weight loss)",
+      "treatmentDuration": "Lifetime",
+      "trials": 5
+    }
+  ]
+}

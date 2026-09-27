@@ -1,0 +1,735 @@
+{
+  "conditionName": "Chronic Fatigue Syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:11:32.148Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHB34TLj3YFG7UC_YB6oM1rjcZ_ruXZDLoJTOB0FHgSaB7C_iB16QSlyWRUoEdZvlCGtLSbd_v7UcmxbcRO00utYFgTzp6DzEHoZDIykywIqTGusy8GxlhTSUMW86xb8edFjatGKGpTXD-3hfu1jN2_t-UdXoG87Sj7nQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM-t1jcDuIqwKTOgqYpp3z3DbZqAsg3U2wJrIXZTBLQiE2zO5pMHu0oMS1qndXpSHDZFhD6rDBX4GSV1FPOm-HnIjezdhdv7SHlXT4Nsns5hnlIR3zaU6-gQaH3FLXHmc04ApBDjQObwspvr4UecnpWIMXqVpbtOmWIGB8jACMOE57tyKheDhW9Ll87HTBJR4K3FGSIhQAOrwYoiUdmieRgcMKO4mPUZ9O22AioJC1rpUAO9j0MZeNYcf1iKNGFaydTsiG0TLb81y_sYn6VccIxUx1Xw8d9iR8wzw8ZeVjOzxQHOoOuAjadFAeSHLf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLvl1lYiOAF3MR5D5ozG333lqVfx20uHXtwIxzveuFo3hG_OH-jzAnWpkOJTxwI4b6lxPLAvdhvdRCCNQuzHbwm_6lWZyXCeq-tXuDZlakfzIAwTbSNx1s018fjpSomVNrHQ=="
+        },
+        {
+          "title": "iasp-pain.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM0pUpkot6wqnqGAXN0CIhd4kUa1iu8CFoJXGVr8P3HNUovHOBiaZSs2YM3PYyaTJiwCVLExYbUX5G0bKYJilk6QO6VNZle4sPcYScIJtxpqUtG9OtcR77MbrXlJvG06u_a7a3WUe_UBwilLbEG0k-X945AGliYvf_1KxQGSzKSDKs88vDy3ABiu7AlYAb5CglphmPzHpgdjLPX7MI99_E5n42UBU_3kHoZFKLal3up8TkaTYNjHFmS7Tv0cnOeHpm64Jrq19TjAtlSabjKYUddvjyUz6IUkjC2EkkjVL7KgHB8IaILzbDi7jlIQ=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaVMW_aMB1jeMKj4MagbPkd_EZZs5A3bLQMwN2hJW8Z6McM4-nNnl2ClvyLAf8CFemw-XodcMG_p3m6ptyn2Q9U1NZDcHCLyofCvn57L40WCX0dBEdpAFsv6THN5WPye3Qwog-qE_f1RNm2pISgEBVaWhAWSNoknwZ8Q=="
+        },
+        {
+          "title": "s4me.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWvdX2PB4qaHKigjGYTHP-XTomjeJemp7KsyOL95jdZQl2bfxd-a-FzukdvhhLseZBmMbgc9yY4fec6qbWgZDoC2gMiGnB5GoFaJyrhOQctg0Vk-i2wYHzzCof_GYt65pEi8g8fbU16rjz5XIhC141LM5pGlx9zyMfql7o7WGeh2D06GbIB6oHG_jTPSytoH493GJ2cxmu_aewswe2JsOARFmQqzHtmO8LL3NCNNj2lz-hfRvfh6O09hJCrA4Rq2Yxtkvt5pL57ETxijsdlddzWXcr_uNI3dOichxFZ0juvscQXRYn750nMazQVrX2gGDk-uHu10vs7Gph"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4y7NSGzCB1WAjPB0anGm0iyyR5I029M62NMvEVFbciL82AobY-FjzPIZmaC-BYB5aByDKZeak6VKTFoydY25m6k9SMPwWNneFiD40qJrut2_EtD540W-gdTQL9IKjC01eIhYcxFH6-2AsZw=="
+        },
+        {
+          "title": "gpnotebook.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0uYpgtG-JmMm2FJruGZP7ElsJaZef3_5TP6jvO7HfJSxMi4iWQ9EZtlC3n-nO3wx7n4l9eFqbaDR2K17qjUStuHtUMft1FB0mQeKZ7Rn0LMygE4xU3Qrkt_9zHa3Pg8MNgv9aiAnupLKXTPBzV8RD4SLde-LL84wy7oIF5z0C8Dmb4L1v0cISV5cdoZHykOn8vGUxZjOIsofdpucfCPKxUgKYPob5OSlPHW6akNzk6LBq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG88q-h8xzUuBaiovaJgZ8IXAfc3boX3VcRTvuUm8fACOlNuKgZIeS1ma7_Q2PqNb9pfIBJcLcRBw8K-SisfTgggG2k3Eo2YHtP0GFGVJVAeMjLnDd2hwtDpqjBj91OwcvWQG61B5LcRPQs_geTqpX2q939IyYWQTA_CQz2fv_rjBX0Z3sOdJt64ru-uFyvw0A-aFOEcWRYg2vIienUF1peZ0X7fQlLlNddMzFVFsVzAuVpldUnXGDlM0BpW4SBtLhdHnSINzgRSfYBV0OIV0Cms4DttsRTTP3C8U2ErZegthZlNYitr20="
+        },
+        {
+          "title": "ClinicalTrials.gov: Activity Pacing / Energy Management trials for Chronic Fatigue Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Fatigue%20Syndrome&intr=Activity%20Pacing%20%2F%20Energy%20Management"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Individualized, e.g., managing activity within individual energy envelope, taking regular rest breaks",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3333,
+        "costPerResponder": 154,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Activity Pacing / Energy Management",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [],
+      "remissionRate": 3,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Frustration",
+          "percentage": 5
+        },
+        {
+          "name": "Social isolation",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "kcl.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPILSMJpTDc6zwWgVc6ARVQ2VinQ_9T-ymHy809yduthWziIWQCfiDi5YYiszAs76jvykL6AOZaFXM0GxSH10QMIxuzkE_0Jtvz1aGMk_yMkhBR4bk3ZoiPvyVQ-VzwrlNzCVhYpmlzGHpIBPxbnUzZwSla0UIJ8W8LFRFt4afMft-Dmpqtzpwp91BuL4RaokkAHGoENiz-d7NTVI8g_SJd8ZQarOxz3mm5a8c6Q=="
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLrZhOZGwqKlPSxiYqyPEKMcKjpqdovagTtyvRfU6YP5eBRfDoov7WUh_s1PoUbnCYCIwQoGWUfahwzOXTu554n40SLpsPXgnpXTCL6KQ2f5_Ki1LZGJO4pZubxqtE10tIrYrXCRL61vOKSDlpKKURt4FHij13iPn9xLLLdwWq1IjCwj-PjHl1pyuNIGWaw8DAHZyuhYAwJQAQwXHNC-sUHRynkVMjrsLN1P7BpDucZJubwhtO0QnQ5fkqpODppvV9SqgQv06CT5np7y0lGNWN0kmjpBupECCDEi7fF9XqrQXBRzRdOGkPDaSkKg_Aa48JEdNsUsGzC_4Kq2iClP1PEQv6r8xsNH4Sj1W107umpvbhYGqgWMrGnctIjtcn-PzzzMFmJnRAvleekz9sTTbHz5uRw4pzu7sH10yQZ8uC7Yc11ck21_6IoXfMA2XEYvR2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsCIYV52gPAwm1H3KTxrNzuV4XkVK147zesVfL_7yqX9DdDHDnEGHAZxYk7fRlHG3UvY6LqEdw5gtN1_tdsULcGQ4xEDzLGx1q7CwxgcAI4SCmNJihsdycC87ZfvVlx-EKTxPN"
+        },
+        {
+          "title": "s4me.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsuC0ViTkKH_SDisWWH86jRymd93r9rXrYqbCAHqx2cdADt80mPQeiyb8shee2tILTts9aj29aEV8prvFX7qhXieR9LDtgMDpf-XmeAM9WaMC6HLznEIK57NRHt0wVn7VmyhPCJDHH9fe6FjJjGGNEWjqOA-U3EFBTsS5pJpNu16UqY6uQbNbAv4g7SpONR5T8FicSd-zkNqkCT6uJN2IZj5z9HTGGXES9lfWYC4fYS7AdSXlKAUP6R2HtHEYCx9GmlCRv2n8nYBZoR9wXyVLUipnvACBuCtoOttN76eJX2Bl6XWDHbeiCiOaFJjSqIw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMlWpuh36ZqOxv2ulOEfzkQDRhMTPNlAtzDfuAaE_SbFVKGcWfX5tdDTfKYGrD82Iun_TQJKI927iEYGs7Fef6srUwHZqUDWRhtPjdwSbvJOOEg_HTrdb92jhfSp9S9G5G95f6OO8uaYu2WljI"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCrfKnlU8uuzP50nknsAGmuM75lC0t0zVdKBsuIfLwPCKtx3OSc78Xic-ykhh2G-2JKSrPY_gt--6PLGVusYNScwbD58t8D4x0hkFSlut1sigIw1FwnSLXRHnQh_310RRDGdgyuefwgTCm9Vw8-EKns4wpUNA6hUxUXQT1Xn_AQmHmMJqo18SVUGu8Lyh1TX-N1kU2d5TxFywgVIHFFYxFJMa4kz06RpmVlUMzOALrHS1w3q4knwMkQI3p4cRw2UBeZZ-qQIAL6e6GxhwmPCnEumt89H6qYITdFgZBlziIygSUWQN8_itiDISdz0X7sVxXpu4uK7eqDC9IGKY8asSSmHVBoZnqg_jTahKv9e4wsdAAeO8w_EiRL7DqDV5hIJXMbhNdaBdLOKA3F0ScnFP3gCcW5HvaZOyzng=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMsILqtHRqrEpKAYSHrglXgjqXe1mWIDk7JCYpwSKg04WNn8PtWTF2iAtWYkrDc1KsDjM2Zj-S6hBwlsp0I5vQI_Fu4YtJmpWfQcgdmJF25Bwf7tLEin-zmo4CO_CroJl6CwzOxF7iS3ovvFT_6rJ1dUT6msEmJr2thWS3DHJXYy_03B2--eIHuLZX3Y6-TTVFhuo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEioIHzE6m585zJxiEVzx-ySwtzDax3cad4qsLH6OnXddJrU4fC2rOhtsi-fpNY1e3j_VUaOp83f3Pr_OjayjpNBctGEwpLukz48E4yWbynUK_mgua4NLswwGc2bERk4PRNxxWRwJF7_r2DfDIVWzmuEmJe7p3qWtSEKwfyvzOg3PgRkaL7w2AHguhaFIYf7CCg7bJ-lILFaCoxZauCeqy8O__EUgf2dWS-NTWm4WO1amyxgBeiSW9zuODd7QAOXmCPSH6RbIjVDgCXz1EsgR-ijf4L18Fs"
+        },
+        {
+          "title": "ammes.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDaE6oI6vXENWG4eS59qtvI0Lde6cwVL1PKgRhezKFeBc0sbu9UuG3Bl55KLSJDN7xNrQ-gOsvog2KSpbeXq4cyrNamlucA63MLfkXa0QcbOt_NqROfL6KLxsRfKiIvS0oucoWIUJtWZHcyN-fdCAsRce6cJ4alHYqBoWhwN2cvRf0hBNRRvQKWBHVn5NiBx-jb-Vr4iw48dZ50c-BQiReFOgln0s6u8zKQWys8oo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) adapted for ME/CFS trials for Chronic Fatigue Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Fatigue%20Syndrome&intr=Cognitive%20Behavioral%20Therapy%20(CBT)%20adapted%20for%20ME%2FCFS"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "12-18 sessions over 3-6 months, typically 1 hour/session",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 31250,
+        "costPerResponder": 5000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT) adapted for ME/CFS",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 7500,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.5 points",
+          "baseline": "22/33 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (Chalder Fatigue Scale)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "35/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning (SF-36 subscale)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "14/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (Pittsburgh Sleep Quality Index)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "6.5/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (NRS 0-10)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 50,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.6 points",
+          "baseline": "13/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms (HADS-Anxiety)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2.2 points",
+          "baseline": "11/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (HADS-Depression)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+6.8 points",
+          "baseline": "45/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Social Functioning (SF-36 subscale)",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Increased anxiety",
+          "percentage": 5
+        },
+        {
+          "name": "Frustration",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "12-24 weeks",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFceZE4lpWiUKl-UORn_4uhIgodIP7izk-uM8ObQoRHkCfAjS4L3fZlpJArdFvcb8DjkhZqMAHiXpsvS7_qq3yXvRa2MfO1rRplgC-6dKbcScdTCELjFyAq2GsQ1qg-PFHBGL0HYB-ghpdOP_x_C01wEqQtL2eEq2P28gkVar016P7rIqoDz_N3tizE286kof8BKR8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJcPC-m6j2A2fcuY0bwEZe-awfeQcbOr_eS5ts8MeXXRw-NNtaac3Fao4TQ1ZTzSJBRRfQDJLDIyIK6DI_ZyJWkNooG24mJUZzD-nCpNBoPu0xiUkwbKizD5uLVq3qmT110QvFA6BvBtr65rk="
+        },
+        {
+          "title": "sciety.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4v1Mip95SXnW95e1GSL5N9dg18AIhDTKuOffkRnHYSXI-VCwW_f6MadZ2hqPCN6Lc5aesMEPeywYZ5MCVrmX9nWjezxPttQOTGZ-v_0IlNakgpIWs6G7q2-a3EvZ3hahFCdnI3HcZnJqmpQC8Zw-g8UA9NGoTmdKaSzw="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEiu1vEXhd4FMQaEMML7rPa8boyoTpFD8GbYwM9c92Ie-7KN2AwOIqZCKSHd4CFozr4ZZvxI9WmrwjooZUDV5FYLG62egecXVN_uFRbeAh4e7z4v1B0JbYz3_sZKNRjoyasabwhxT8RCCW0A=="
+        },
+        {
+          "title": "meassociation.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbiIU1dsSoNnJSh5PDK7cvY5ckDMZl_ZQXjwlpPBYF_uUYg6jhAxdq7HR1hGAXQIdxM7hh5SifffHXYn7MAV5x8FIjtgiOImCbrJhRHiQW4jL-U1-X-dh9AN2nlowVavpvB1eWUBbaI9Vfn7gJHVcVGvhvs10DSMfI4Iay7tkeYFCTszhMyGJV4GMvdXzbcaqI2WBx0ER1lyUh2j5gvs2p0I-Mat5ijyt4JLEcy9QtAIArhjLDn0k2KA=="
+        },
+        {
+          "title": "meassociation.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo8SLoGof5NGAjWrs1C5xgqIKlgNZT1zTU9icnwFr3Rud5o8sOyU3NlMCXahBs_bkkPgrQaHZ1abPipmPN4VIZvtaudCnk9oraamYFn2y-3NdawINsy2cl0bVWe1S5bo0kHXT589VIEDd7IXakNXzURgWuscAxa6weayW8nsxJAP0z1cblvmTx2QhOZderqDDrsVHnx-KVS9iHVLkHtZ45kTCAskXU"
+        },
+        {
+          "title": "ammes.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmm2sh_vUj9sy1GDz2vncK61kE3zBnFV1YWtn31SGx9niIiDueU0SUm2zECzLbIwLvTpehhcNZYufoX8LoslTiaIwm8B_Py3hDUfJ5Bc7kq4fmVpcWwMzrP0XnJPfsGr5azzXWY4puFNN_pFyxwMDmdp5BYPtuxcGNnWCq34T4AJwhVm-PRL8zYTAlOoNCsxwkGS6apZO2HEN6RDfVv4w6DscKioLyL_YdXaqVGlzPvjuTeksk0reSCh8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTNPeOSu9Q8hSjsOXKO951MGgQt2p0z3CEJhgj7jMpxuHwD17v28yTvl9HGGVdHa3RC_yPPpjVcAezviyWFkvfZ7h4qWEa3XzoUMjd97-hPqP5kiiCEHfR2ArQBJAqfGTDGOYQbEJUhdr4W0a5PJFqoCVcq6H6KOXYkfKYFdqVevXAYSQPk7XbiOd8ePMAOiqS-NMMBgD7QyPoxgc8-jcPFuPHaXsw578ossSzzNk="
+        },
+        {
+          "title": "griffith.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOjiQzFw7yugJLVkpR5P9GHZBsNVgabpqqNDEwa-leax0nWjgN-Sw3F_Vl1nUQ26u62svEy5kKHUuZrm6qYg-J1LYqWO9kSDyxdP2VGg1uXwp_asPsUKpuy8c6fnoPubaFSd3iSf3vZyXTVZ07Z0obqbUUXN_tAKwZ5YiTQw6_S1JgYlv96ApbwrALnlP8IuH6FZmjI16wvZZWMp7E80EszeJ3GcDQGSBjKDr6ydF_lx0sbTzXfg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHfnuDR7pROG8vvCZzUgSvjJ4QaM_7dfcYpzMK7yomo4qXagjwrFdHVUJDaJwKc3YZQeFZJraS6wc6Ij252UxRTRZBm6zWDcjw2Epoq8KQbhYait9pPt6iCeWG7qtay_mO0IJyMCQTrgDTdXU="
+        },
+        {
+          "title": "ubc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqIf1bjD5WtlJwTCICM1AliLNpE_C8Co0yGbhfegIZC8sNTFJQ_T9FL0H1Cb1HXbAcIOL2N5aVjk6GElQg-9ZfQI17aKRYmOwwXfEDZdVHK-fGsPQVGXid64_I7x1fHvQHgn_TEudE1wD4va96SaXvkFEF119U2Ys="
+        },
+        {
+          "title": "ClinicalTrials.gov: Naltrexone (low-dose) trials for Chronic Fatigue Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Fatigue%20Syndrome&intr=Naltrexone%20(low-dose)"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "1.5mg to 4.5mg daily",
+      "effectiveness": 55,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 750
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 37500,
+        "costPerResponder": 1875,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 180,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 500,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 1540,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 0,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Naltrexone (low-dose)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 750,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "5.8/7 on Fatigue Severity Scale (FSS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity",
+          "percentageChange": -20.7
+        },
+        {
+          "absoluteChange": "-1.3 points",
+          "baseline": "6.2/10 on Numeric Rating Scale for pain",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity",
+          "percentageChange": -21
+        },
+        {
+          "absoluteChange": "+11 points",
+          "baseline": "32/100 on SF-36 Physical Functioning subscale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning",
+          "percentageChange": 34.4
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "7.0/10 on Cognitive Symptoms Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Symptoms (Brain Fog)",
+          "percentageChange": -21.4
+        }
+      ],
+      "remissionRate": 2,
+      "responseRate": 40,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "30/100 on SF-36 Vitality subscale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "13/21 on Pittsburgh Sleep Quality Index (PSQI)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality",
+          "percentageChange": -19.2
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "40/100 on SF-36 Social Functioning subscale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Social Functioning",
+          "percentageChange": 25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Insomnia/Vivid dreams",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK9MqHBybqQiq6Tk9BwQxxWII8gJIRR3YUMrps_-vCJgOrteaV8AHOPOnNr4hr2Oj1rjU5b2hrj0UAW03j__ACSCoo_81zYN7xWGUURdasY5ANm57nRucIyWfJa3knR3awiHbAcEGf5M1NWLU="
+        },
+        {
+          "title": "meassociation.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3PDohkMbUd4_XG_24SHlPYWP6yRDTd9PnYCgmuXKcPygoLT6424D_cE5ibKe3Rc14HTn61rTPeoumh2vWPRy01_J4bcWAZUEahhtzWVip6a73xaurhc4tyeOudEKp_M2_JXnbdVvH3fSexUv1MoVgtuyPz6oTfeLiPG2gOwZ3jfR97HeXdJUQ6ZjxAVilSMFrEedytMQMyKrq95M9"
+        },
+        {
+          "title": "moregooddays.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH36mWjQq8wltVVgVtla2JW5fOAErNEBdT8LmDB12RgQFLvgEtj7ORoY_L9SPUfBE4_lGAD-kaWzSWAzgVGP4dgEMuVNjw0vI0aZBWQVkPZ-mWrdY2QnkUubudF0vj15hq5Q0DuU-vZHY_PCxZ3dAaFL-0EooajtldqElk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVWbdxyfx4oAa8wCz_T7VnL3WxrJ7v5b58_3VAv1vFaDr7eany-y8tAcjvntVEDq4SKLOXVM1IeF5bgjj4VE6afW0APt8AhW8Hg90fWepguEL4DRpqRn7I3QCafxI5i1ho76s1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjWNXCMltdFgssn4ONfYjN9eFZmzTJee-YgVYbIxXoagTg1Wqv9N4X-eoYGAjkbwM4IYLUgcOw6H6JhxrXKZp9uSqKhiDrAhH-JZBOaE7IjFFk9yzsjbfZhQLyyEgEOOZh056E"
+        },
+        {
+          "title": "meassociation.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3yT4yZUEFqEO7HLwNVryzUmnu6uJF9GBOGd3j8DT_1ZiT2f56j0jtk4HHt84QaRIIgD2YHpv7qa32TAjOyUg2FxASuOPTBkXO0egl8ISwvqy_ApKPBzUecoOgt94p7HRX6O3kPt6hlYC4no96Tbyc931pt9AI-Y5ji3rqtqa7f1vfBAseU-CyreoUYvbuO0gUsz_irJT9Xg=="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg6kNISJOT-iB_gS_trKB3eeOOANT1BllWfJGB3eD5BeSM5tlL4ugdXt55ztSjx3Wzpr4hj7VXUU7qaNb87NLoElFG_QydLXNwvUCoNrSfvtSEFbAs0quy7PjdvblHhsIEdi0u9uhPqtKVN0MjyCrTC7K_Nyqmb7TRG8HK6iMZEHW7c5g0v90JyBbAIJWjn1r7qPaAlP3CvfVTa-wHrKdo3dXM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9bDsdmvpAHfAnUc-ZXsW3krd6glzr1FqaoPtIMC2ygVZrQY4wNqMpFY2ntGsGl8aXvgSnquMUoo88Rhx7HdmvmcoirxiCYNcLzX36qkHMswkaftbV4dSSqt3VF_GP8sJ6GH1HOxkIR_jQ-0A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS1Q64wO0k4dHIbrDi18gcbnyaIJWG1fjn14HIRTMhGKixLo_363IY5NxeT9X51zKKs4h92Ps1JQ-OB67D67lKWUfFxZQpGO7FZl3MgecVWZGoPUPJIpfCQaA_r5mPACaoNYJw"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHckN22oB9izi_GVpRHVG1GfqwtxD4GsdWVdlPjljGCcFr7AaV33BS5V54k_Za9iQCnVKk1xOGnHNJTnQ72wiRcxz2Bs8AqHzFVuGiBRALERUbBhN_d3_mMwDoMK-fkGVMf6j9NacExmEvOBybNcz5NO93CvHkrel0NZCY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjF_MFOBLAFt33QyEDrAdYaTg5NgKUUcNy_TaKIJ9FDH1S6X6fq0mkovprnc5PrJ1BzevaCFCBSJChR36ARz0TQJQ9id_QbkJ_InAlmkmmq2p1sH6ujUUqeSw_WLy5pQdibrgF"
+        },
+        {
+          "title": "ClinicalTrials.gov: Amitriptyline trials for Chronic Fatigue Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Fatigue%20Syndrome&intr=Amitriptyline"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "10-50mg at bedtime",
+      "effectiveness": 45,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 200,
+          "sideEffectManagement": 75,
+          "totalAnnual": 375
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 18750,
+        "costPerResponder": 1250,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Amitriptyline",
+      "nnh": null,
+      "nnt": null,
+      "participants": 750,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 2,
+      "responseRate": 30,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 35
+        },
+        {
+          "name": "Drowsiness/Sedation",
+          "percentage": 25
+        },
+        {
+          "name": "Constipation",
+          "percentage": 20
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "avancepsychiatry.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEXwM9R3cAaEnUQeXVm5YFeADvIkG8gSsFaXmOrvqQFUS6O9BRCFp3OuYJDMiEJeJeaCKrVMCy2AyttSYJ73Aqi7txwzzSkFHWYSLlejBvrZEF0VqfQSfAOucdIG6eMLYOEYnHvWk4FhfNATidkJwyj_8pB10d_nzcEWbOta9-c7DIsZH13-P5ticaQV9d3risnxGsocF2issHk2GwbioMaGfXgBkNT7TBYxaSnl2tOTkfBeHv28cElXGoioHI4YPBZnFo6ibueF5pMB5uXbkSdr1bv2bXDYe6zwLEPXtfYQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFclNTnjpQ1_4N4Tlzv155HZZnRnPTwuZILYUAZMJ5mi-BMIJd1p9Eb5ZWeu2Eh4fYVFuuJhP13JVncKkMRiZxVFzIShQPhTJaPTF_y8_wQoL1iONWLKvQahHDMKIGF4Fz8pvvDFgq42Ij4SKGHaMUFw-0hNxoY9CqzRisAAkTwjFgCJmPP8lfnswhnugJkwW9edmBUe6u7Csq7Hi6cneZ872zcz-Rarq9L3rkIEMt6dWiD1gAqxqqtzs8RqAG9gQlYtLJ46gP3tjOhog=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeL-iL0VqGaUSRT-ecR4iuWkuxVrZ9yvvixnxSX3DwotUK2QdC9VF6OLUkQJqrCpd5xGt-cPHn7Tr5JWQUX70VjYaKjm1HljIpxVClSBslbB_lzI4_JKGGSuNk0Zr95Mz2bxNOHGndQP_4OVU="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpi7i9GcC3WdupxgGfa6ayOYSf6neo5xKeBNP8wYbioh_hrpEYQPagE5ciQHA_bqE9o5eSs9fduRIF-VRwtaW0PD0aalB2Qg_9DXS7fxVRQjY1bAuFYK8ZVkVrdsaiaEY_2qs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnUbFR9H7jZI2T5TsyuHe0WHpuFndLtdCNPl8VJ2Pq87qFrjW_tNvHO1QJxgSAP0y8Z81xstZCNsImkAOJTxXG-iWucngDofMAsAmT2a7XUGifHAX-Ic3WdHZm-3b3yCH0ejW8fK4r1lamCDg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sertraline trials for Chronic Fatigue Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Fatigue%20Syndrome&intr=Sertraline"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "50-200mg daily",
+      "effectiveness": 40,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 680
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 22667,
+        "costPerResponder": 2267,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Sertraline",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 3,
+      "responseRate": 30,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Insomnia/Somnolence",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "4-6 weeks",
+      "treatmentDuration": "6-12 months",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "postviralnutrition.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqXTQ5NRVic5Rz6XvKNeVkfK0oeZvH1j9h3mNoNs5oOlmNZb_jo0qcZhl3fGORSyR8MmuSC9pptcUgMMeBo7eMsPgr3SKkL6NNzyHghW5xAxOHhlu-NcDNjlS_4HvT9q6q2qS_vV268sF46hT4EoaP0bcbzV6D2I7Heik6yQSbusj44O3ztiM="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqhEAFiU8AhV8HGHZk2yjhIPFFB7P_Nj2bPDoahu9igc1lpaJNUlJytu02RgH_G89N8ZkIvWe_pDbgR5D_t7QvM3WqA9B2ctVD6I5xQq8mSP2ETqMbtgn1rRWHrZoEqXcN9e_q2tRMNsqS0P-atri_Um1cKEd1b23PmATKymtCkox7msplZWM2HZNpeHJJyP4gNT906A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGP4T61KVUvuMWTSPUfV4KS3u_bC-XL29iUQCynMmAjsRILAVn5i5JTpzeUHm9nRwErPgZ5AWOK34v8c1Egt1lD72kBJv3MTsrYHo3nihaSPbeWSQRaQaNvCT-VLOoFKwN0Cu4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNGGsHXxUZHljVLOQ2l5Kx9jGV8JW57Rp6CGuUDY6jfcyvPQ6Z1dNunT4pq5w9dDabr2mQtZmX46vy3UY4HkyKZajn3IE155yD19GW5Mz1-THNH169av0FIprgrBUZI_DvR1rfXt3nfR_ygqU="
+        },
+        {
+          "title": "meassociation.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_Kvc7PjdkSJwDra-d8aYHEzruTkn1NuCOzNg4F8J3GA5J0ylffbdN6IUbM2yV1ajgWj1XFMfSR1LtehK_fDSpxuG6reW6CkdBsx9jP3MMF3yLBhKJDBdYEHJygLS9pa-OOxPFXS5gsQJSyl5gfySiZIYTwyIWtI5DyToSQdCvNGNc6cD6a64UMh1ZyO7zwAkomDExjjV7QDpWjLo="
+        },
+        {
+          "title": "viveenergymedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCl6dtt1RjtraKkNZqmLJfvZw8o9GgA9SlZ_B9fcxcnd87hSFdHfxWOhYShG_eU8UKFUHtj2eje3Q-zNKlqtwJ8sFumfsH_GIKL9amrq-c2SttjY7AkRP8bZST6yRGdgd7OMT-skTwcZuUyDGPWkik4whedj9DisRccZJOysl_Fu_5eEHljVQ16bWRNWe_gDMMwp6iQqdLW2I="
+        },
+        {
+          "title": "ClinicalTrials.gov: Magnesium supplements trials for Chronic Fatigue Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Fatigue%20Syndrome&intr=Magnesium%20supplements"
+        }
+      ],
+      "confidenceScore": 40,
+      "dosageRange": "200-400mg elemental magnesium daily",
+      "effectiveness": 30,
+      "evidenceQuality": "very-low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 240,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 10,
+          "totalAnnual": 1250
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 50000,
+        "costPerResponder": 1667,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.01,
+        "vsComparator": null
+      },
+      "name": "Magnesium supplements",
+      "nnh": null,
+      "nnt": null,
+      "participants": 350,
+      "phase": [],
+      "remissionRate": 0.5,
+      "responseRate": 15,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Ongoing",
+      "trials": 7
+    }
+  ]
+}

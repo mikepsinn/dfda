@@ -1,0 +1,856 @@
+{
+  "conditionName": "Iron Deficiency Anemia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:57:33.013Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMpoapR8KHJqUOsmt3-Rqx8oZ2TzmWPQWfyrS2eDHeIUfO1mK0rtc2Kb8OL4uDoll7JIuOwEyakOdTGnYVv6J-zNK1jmK_D0srHXMh9kVoErrAHftJJNhf3_MeAiwxVrKrp8oamvXg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGe66YoJ2C9zlEEZiRT2Uc-2ZSlCwQ7bkZAH-sp_iCWS5c5OXSiMfmf66p5nwAwuDAx-QaEhqbU76YaR66XJ68nXMXmUQi2vbswr9tmocdwt2GDm6CKSZriMREhAJIOC1NHu48jBMBAB4cD4-f7srQ1W7cAz611fBJ0HvrzUyMAY24ZkFab7kS7KOdS7_6FbKNgpNwYi5mDF1U90hjMLzavEkukm4Fg7nnyBR9WOYYuKZ9rFbS1ormLMfrgSzUAhEv54vMILWgRyNjfC29cKyFe-psGNdX2wPysxsgU9D0TJh5R945IuzswTy4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMJEbQeocyD1dv4YVqFY3kCRgsLmIs9vmKVRJSJ0ofMFRaQa02R764GZ8YDTGiqtpCANse7k64ZAnWbxf2sGv4433YlBSh8qsx5E-6ke0ZT-DuvVwcV6FBZQ36i7bSyDttq0BSKal4ad0IyM4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMEmD9iwpAtbY51UCHLt_WujoOdFVEbK9XGrTbsFz-WSOygZggrje7DzKP4Zb00ANWdXABRxv_NpXrAQqVjYGOctSeXbRLSZxhR-BHK6SPjG5VYdx6W-upiK2-uo8LG7Dlth4YV-nT"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb_lh4vYIufcOY9iPPjYrhz4uHvxOx6e10bzctiAlbWTEJBLkHDLhGltl0bmNqMoTw04RNSphfJ7SAAk_dRP-Pj5fTlmcAK86ORf1MJksI_fZJ1VNknGSbdLttGSAt-rEtIfTpEoKn65hwqpMO19HWh6X5fwD9nuOPu5ZOUg=="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoaF4sntGrmTFfraNamV69UKigNIC505ayBB4sidoirP-S-G_EYJDOEuVa4_-Mace33Pfwllnu5i3PdDP_vjnf4ruTivDvNtcT7cdtxaSkD3DnTrvWVYgedxqWdCjkckQeZ2mqunVp2P1ZbhYmshH-g70q6S05xz7iWBL5agI="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXUJ58H-z2PbEQdVqIIcchgFOoSJghq3Re6N_GkANU6UNi1RT9y1EkgSG35NITZZSNDR3CnMj1IT2nMV1CHRi-w0-Ys6XKPRdoSXdjWp3HlUCbavM3mvRVBV3VJklUGidaoTH0acOwTYVC20XaWBjjthFxh_ordODW_HaewwNdUMw_J94yU73KT-Nbj5mR7GhzDzpwBl8FD5rx3LzUANWb1Sbm7xFZ9_89KUFcJ86F-PIiXh4raJ5sTxZFF4nDcQzuZZBxbQHuak4ww2fqH_Njc5H1O5ehUHtZHNijWw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS6X3wpcr9NoBPZiWPrWZWzcDWFC5nnVYJAV8mxrldXqz0bDF-6qUyk67krkj4j_VYJxFudb-c5BvcwdTBbt9kOcSzjt_id74bH3v0kM8hsfPPDm-Nq56sl4sYm6yUehuQFGn0c2kKJLUDBw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Ferrous Sulfate trials for Iron Deficiency Anemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Iron%20Deficiency%20Anemia&intr=Oral%20Ferrous%20Sulfate"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "65-195 mg elemental iron daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 400,
+          "sideEffectManagement": 50,
+          "totalAnnual": 470
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 723,
+        "costPerResponder": 627,
+        "icer": 1000,
+        "prescriptionAccess": {
+          "otcAvailable": true,
+          "prescriptionRequired": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Oral Ferrous Sulfate",
+      "nnh": 15,
+      "nnt": 3,
+      "participants": 5000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 g/dL",
+          "baseline": "9.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 26
+        },
+        {
+          "absoluteChange": "+30 ng/mL",
+          "baseline": "10 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Ferritin",
+          "percentageChange": 300
+        },
+        {
+          "absoluteChange": "+8 fL",
+          "baseline": "72 fL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Corpuscular Volume (MCV)",
+          "percentageChange": 11
+        },
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "22/52 (lower score indicates more fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (FACIT-Fatigue Scale)",
+          "percentageChange": 55
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20%",
+          "baseline": "10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Transferrin Saturation",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2/4 (higher score indicates worse dyspnea)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea (mMRC Scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+80 meters",
+          "baseline": "320 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Function (6-Minute Walk Test)",
+          "percentageChange": 25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dark stools",
+          "percentage": 100
+        },
+        {
+          "name": "Constipation",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea/Abdominal pain",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-3 months for full correction",
+      "treatmentDuration": "3-6 months",
+      "trials": 137
+    },
+    {
+      "citations": [
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5TZcLhriUXn3-GeN6YL8SvUGL9KGi9dA3lbgDRhFzeGRjbpGdU9KNEQ5jWZljMcQKfAHW4jUUVbTMNel5Ocej_W4-e5nlx3RKP9SrNGQtfA_EpnRNRuJFskz3savOXlBbnPphYj1Dw0W7WKATafzUBbXwwud9FE7zVS2n_uSdeLv9jjkarYcDyXmXuElZ6DA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHs2Xv0iT13JmmzdU-bl2k1FmMvTnjAMiQYky3PJzHpxLbxzV7Uv2VArB4sy2-azmqcCXNheaW7C7D26Vvd6MXxxRyuwN_xH0WwquMFmzqSdMB8UlqnxVn8fVAhANREiVDK3zxGIERfilX_i_LwLXzy2E1Ng7vSMLA78xhVq39GB-Zlq1lY12o2vjcqLQUB0wt_MYvwwxEqUk4cgxjMH4JgffRzvMO3ymG1DcwuKWLtSkrhwHInLiDs7Kd67GtqkXjlhJnLFdwTxyOsXtHfd1ms_VFzBh0_LiHdio8AWmun-qp2HFk8Zcsm70XSt2ry75perUMIcA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW6KhJLMhAZ7tallBZJY_fZgkGIzrmY49wU5b2gpxmrM-mtTfNoWAdLVeta2oZPTnn6EUSRGeUTg5Tm_XrTMpWouJ61-1u1lQxfK9g59JNgz-I6LcEMyBHgoukuqJaJx8C5OiTl88C"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRjtPrcLrhH4lRWvDAdjAK3ia11wekd8ypfO8xG3eXusextt_Cz98zcocil2AZ520_ygxC4BfOcFT0SdbOPCPbtJXtAOLiAxL82Eu-8wvr8zC0RC8HRe7XzUGtqQqFFY77LiSz5KU4MO8IyNMPmy1YM6Bly6A_S8ze7D4cvDQSXe14tlUbn1_KakO36kJKLujKFHE98Rq4sBdryUZj2t4_oSvUMbapN6fYYhIp00QlgrXFNUBfU5T7Z1wgRe6qpIWYj5zw7hnDJIV3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHP0g63hPbMHw56HJ0ovN9JGGVmkKbEzRE9Eof3I1jKYgJCujc3VwUqT4wBSvICvKdLxrwS9-cHmbFczY0bJVz-DdKyM0COjIESQUPmlCY8B3voiG51yy9CVuaVhQF7CDMxwjow_mGlwkn7NRdkp81tn-xf0ajOd51AyKVmnuLdkQiOMcdiNWyzCVL3bXey9ozIm1egoCo430_47MBzjjSRZZaOqkZKuMDt8xrJ0BKSlo0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8qL41VhCwtR3E-0sUCNk5AFmkpDzJKnSZyKdCcYyfrXgrdjowaj8CJ545iBpWM9i8D7fzJLJdxJR_eLVNi9a2zxcvbLK_KuvipbD1h7R070Pi-KPUmCfVjrtQBPkdm3ApAaen2Rc_e1UehDUs"
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMxRgd5ZamfIolsERMQxt-2B1MPyQ4pYvX1hvhrk5A1rbh7VJx-07-t20Ie1FFSkHLct6Ynza8Ab4dB62WNFxGJ0ZbxMjpqjpyDiIJv7ts4tPOdhatEmuSngtbQIiMk7uO3GRLxcysmgzhxq8SnnJ8zwniNq4qSnjZ478PDOZhQjBmxVlvC6YfGil-4LOJcawEBL_h2WVw27GzB7PsB28LROitJNxEho79"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4j4EZEPTN-vKRxfMlSZtqQz4nIdmy3gYnb4neGyJEdafh28xpV6XaIkfsILu7WzmbwNSW9nhGndKNhoVRy5O-mf0b5ermhJt7_haGBEVfp46IC3r70XeGY60Fkw8Av7Km6zEO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGASY1Bgx4XDJEQnwxzhKsuguhfwB6K6BJRr58HQTSSzYlYBiznWAIhvfofUHmqP_XLGqxh8dWMRQJSPPdGyTLC0Rust31ZW1tbXiSzarX0uzqP_JrkyZOy5edy7cJrjkNtx63SnacyCOZTFkvi"
+        },
+        {
+          "title": "springermedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJWfRZg03VveaqLwD1elXkCAi-Ng4JyyDXCe40FvafhMHB3-XsoQnyxIV13heTxUzCNMctI3pv-uB66gnw-OCa-Fn1-4wANxFLpsf39Bf8tm52osvRsqCCOUVB_PDG9u1D3U8EhVTbB8Eqdfw61YhJNaO9R90Dz8BV38LQsuVNGH2_1Ccsxh-QE3oh6WTExUG37Wf6G5tmVikRON-zqAFk83xTvVbvxWU-2YXpWqh-39dmj1b6Ig4D0AaJbjMg8bT46Xbo4mny-vjwh4G8rOeo4g=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV7NfS3VIPYE401BHC6NhdMAq9HL4DA8J0IY2zgmKXDef015VTBP_fFf6aKEfCJyfT7nKlJHihDV4QoUlzQC5y8Iy0X8oZKenY94QBb2kfeg9LJZo_Je8aEJQl7W-yYiBstMQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravenous Ferric Carboxymaltose trials for Iron Deficiency Anemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Iron%20Deficiency%20Anemia&intr=Intravenous%20Ferric%20Carboxymaltose"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Up to 1500 mg total in 1-2 infusions",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 1600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 3200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4129,
+        "costPerResponder": 3765,
+        "icer": 60000,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Oral Ferrous Sulfate",
+          "costDifference": 2730,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Intravenous Ferric Carboxymaltose",
+      "nnh": 150,
+      "nnt": 5,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 g/dL",
+          "baseline": "9.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 26.3
+        },
+        {
+          "absoluteChange": "+150 ng/mL",
+          "baseline": "15 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ferritin",
+          "percentageChange": 1000
+        },
+        {
+          "absoluteChange": "+20%",
+          "baseline": "10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Transferrin Saturation (TSAT)",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "FACIT-Fatigue score: 32/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue score)",
+          "percentageChange": 25
+        }
+      ],
+      "remissionRate": 77.5,
+      "responseRate": 85,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 fL",
+          "baseline": "75 fL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Corpuscular Volume (MCV)",
+          "percentageChange": 13.3
+        },
+        {
+          "absoluteChange": "+70 µg/dL",
+          "baseline": "30 µg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Iron",
+          "percentageChange": 233.3
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "SF-36 PCS score: 35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning (SF-36 PCS score)",
+          "percentageChange": 28.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypophosphatemia (often asymptomatic)",
+          "percentage": 30
+        },
+        {
+          "name": "Headache",
+          "percentage": 4
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 2
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 1
+        },
+        {
+          "name": "Hypersensitivity/Anaphylaxis",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "1-2 weeks initially, then as needed",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbim1YuQ0gTBFXHEAmXKjv85tMPxVehumoGX8VZsAUUwQniJ-hIhPv8CV5pUVuPr4X4o7wXndjKYFhnC5evr0vxm0pcbYB5TSLGBgDMVGWx5U6zm9v_lMhCRpstkcOsp0xRy1y2v7GPqL8ebXQKyhEQg3sQyVqWPbfhWykUc4PJKI-7PHE6EMFwDgRDCqfPQz-Z6q2L7wYHMs7"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBLfN-M-VPdAY3t711w27YL3wQprKRG0oaOdHyIJk5B7guwYnGKfk7QEfFVI3NpTmfCHj8zn3YTmda3bXnJU6WshchowZs1gDFFB-wmqSxQDW9Nnw2Qz07_zfqN21RfrTYEeOH4LnOovLWbjU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfAK8Tp7ltLQMVZozjVBC6ck4ZLtT8qDp7gHLWAWOX2uZ5yjGQMNNW2EFaFWeu6PLZHMgbhHHTUEiKqcJpcUUMtCAXOUoNTnAKaccN6ImkOFAJnsgErNKrzrsJeRuVj_ksyGSPJrPIG5vnib3_3TV5rlDYnPqFvn8_qIj6dziw_1lF-sA5s56-yEUFJsoY9W4LEDuw3AojsNDt9gtTWXSIRd0hCiCbMZhDbR5N4-RTwsTKLngGPy4ZGByoAd1jSKW_4tdVW_N4jgK-J0e1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZIaeClPuyjEJ63O425cF8ckYyEKSPcGSSmZwul0yQjy_FDUEm0gSqQMeCd87JFyHxErfYRJP4p_NFjRe5aCDbkf6KD8diR6DNHW1_Mn2-490RcCz69V6EyjChWzed7aDe_DZe_at325xdZho="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZW84uIYpvwVFtIOhh0SfGCxQA-YMRVmkVV580KZfszXU1WhWEpNAowysxy7infV6ev0XeHVP1WXf6D-KPhjfYR2EjIfRu27iVhULzgEsTy919GsT8CQv1u9St3dmwwVaespJMm02baDCrt6Adrj6UDG03pIGWwbso-Xpm0yaGiAL6QYmQGcRP0U6p3swcXiNKVk3TB58SPzWhhu7MF36WVWNYZfBKxB6qK8J4ggoybY-NsfKMsig3eFXxNrz2___3UzyvQOUk-hfWpgMya4ZRcx9_nMGjIs3MF759u9Y4axFUcoF9TVU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQKXgTD4n4BnpJaIjpAhy4kt3R22VC-_MMTIkOUzLD4ETbOLKCN3vflqKVGsqABOucvX7N2yOQ3teyjON8xlCRaAlcawxWldV1Coo_cMY4LVC5QVPhw6HH8D_uPuMpvZDz_l8P9mrCOOyYSj8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpJDMEyrTajQL3KgIAJdZwr2ymbfLhQQFioqTHKEHJUPK63YIdPiuF--iGFuw8rNf7E_J9F0-ysqNM_Em_yBLYtMuwmMKWu-qJ5zB2xiMnpRj8XS_fDY2cb6d-ZVh3A2SHCvIR6h42AwaQaJiM"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravenous Iron Sucrose trials for Iron Deficiency Anemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Iron%20Deficiency%20Anemia&intr=Intravenous%20Iron%20Sucrose"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Cumulative 1000 mg over several infusions",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 2100,
+          "sideEffectManagement": 100,
+          "totalAnnual": 3000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3871,
+        "costPerResponder": 3529,
+        "icer": 55000,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Oral Ferrous Sulfate",
+          "costDifference": 2530,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Intravenous Iron Sucrose",
+      "nnh": 150,
+      "nnt": 5,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 g/dL",
+          "baseline": "9.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 27.8
+        },
+        {
+          "absoluteChange": "+139 ng/mL",
+          "baseline": "12 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Ferritin",
+          "percentageChange": 1158.3
+        },
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "14%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Transferrin Saturation (TSAT)",
+          "percentageChange": 107.1
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "22/52 (indicating severe fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Score",
+          "percentageChange": 36.4
+        }
+      ],
+      "remissionRate": 77.5,
+      "responseRate": 85,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "38/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 15.8
+        },
+        {
+          "absoluteChange": "+40 meters",
+          "baseline": "360 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test Distance",
+          "percentageChange": 11.1
+        },
+        {
+          "absoluteChange": "+9 fL",
+          "baseline": "72 fL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Corpuscular Volume (MCV)",
+          "percentageChange": 12.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypotension (transient)",
+          "percentage": 2
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Headache",
+          "percentage": 1
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 1
+        },
+        {
+          "name": "Muscle cramps",
+          "percentage": 1
+        },
+        {
+          "name": "Hypersensitivity/Anaphylaxis",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "2 weeks initially, then as needed",
+      "trials": 46
+    },
+    {
+      "citations": [
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhSANJ6qhes5Q27cDQvvnyZqHObb8vPPVCZ3DtLrutuDZflpar7jGyO4H1UVuZNPQLzmecN8DY3M9k9oLA6OAcvkCJZBYGhvxok43A7whAVQQ-q6Foga0ZDYo-PtpdTgkX_JlS3YHeObIK9336jv_l9-NwxIU73_rGsbRp19V3M15xHKVpSsPETIGDlExNDljpZiYw5Adw9HKALoz45roua3hAHM1IswBbpMPta5zZIwE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4ZJDkjfZ2R3y_Xcch92wZUKS9XpwhzPrEGb86KnT2-RJjgruq-Iz6vPGgB38QlPcFW9zOE8n5qqa9OfVbURYurPTE6Xzrlmhqp8cR5COoz03EjEyR60ZRX2GtpkHa0C9p0AvQ"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsUDsMMtfzuwBmLHQe52o89JtaE1bHjVjuM5IBj7CYSj6aMaTDZmToEEqxYalktIO166FQXtCZUlqjz-JVfCBmouN0Iwn0LvHbGnQUbTVkBocs7ADgFCkpo9FmZb6bRmbdq56IxPET0_ItZJR2wWTbUlNkXrodkn6zaSymfoB38FLFfXpJJv3lxVTTgXz02DQrHY3FaU3fo38="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOLTGhLIVNAeTHY7wE0n_CiG9BJQWchyV5cERiRIL-w_KdYWXiUEzS-3VcMr4IL8AL_1cA7JwfW8eTtUzPM-IFAixybMEMRhQYaDjrH84QK1WYEfNzqkWRpR2qssDaUFV-rm0-_7FJtrbpbCM="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxEyWdPPPbYkv726KhYJzGgK4Ed_MFlziA235F95Nz7G9mVwMyS74Dk3TI-s7CJ4obkA9Z3KjOF3MEWH9vj3o29k8kK7Yfg1Cul9kdpfWhCm2gpARlygx7S6QR9puEkZCXnqXBSpytYa4ivSqwsMSR10djiBir8zQ="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX7QkbJR-d7bBYg31axe0KBev2P1XCPzA4kAMbrScT6klCvdtzqYupuahaOO_WtweyA3garDmofFjp7684-S8KR_3gW_T7ATh8K_JYKyihqauWxlv1DQdN1qzlaOH_U63u_P-s69M3ykCH6CEoi5A4yzJZR2JO61v9Ze51GGm1DGz7QmPx0WFG7UCfteVyYXTub4_m8CMz8MUFiDsUvsIsnoNviNpOSMo0C96suWNuOcZY5uNvlHPMRtQPyPHnCQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNigijG1_6nMLsoiRRERKrKx161XTvoaXiP2By16WIkawiBZp0CHmvUaDzTWCkGW-9iATziFAuoOjHUfSJ-QeNzZxkkBmMnKPmfKXLOT9_dzdiiIKd96LTalTxUanRvIFBE6042rVjIxnX_duP_SfSbBe0hVa2DfRbZ8OocpXB5GsUhFepbnwWVWwXb38iZrijhTgD-3FPbqNEt3QyxdNT0a-kVEAjSPY_bbTjx7c2vKa7WLcDX-LscOEXDb9oeq3AteoMNDCSvXRrxDoWnBIT9DGZwCm72D6V9MGDnx5T"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwACFdC95vUHq3njAKy1HVDUqRddBcSW2jeYLc7-oD8XX0xJE7A0Rmsrsjcr3rwQLdlgAHB9fTE9KzX1ilYZQ_vmjlbXwfytwZETR0Bv_vU30JbWDvFZHypfSPstSEWfbte3jd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAxSEq44UGxXuFtiuwHZ8LeZfm4bwQs_SU8qaRHnioQiYEx9SZNwYFEDxjRsYQsv5Sysr7yomZu00ei2KaLhc9TFup2QleNsl89z4o0KXgbQphW9vwLtnngEo2LPeHNiaSGHTGeqmkGSC1FtU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOsIkCpjR8AAPisKCbT9rsQIutpLSKTJz2MZgbgM_El-9EjY9NC9iz0zwRAjVKaQ0onfaqb5Dmf2U7MnIxrJ0zEnbVUlxpIuxZdRi2lQADWL155fTk4NgYkdootnfEQDCUpUB8i7yJ-pSaLODyg7p0YeUH7TSBKp2KARSn9lIdFcrm_Rx95PL_ek2Hb_l_q1PZtw20T2yOTgV89YWk8eBvpU0LCEc5aP5gLsw6DlBAAEnBxKyz7XYXref1tNTyyPKzePTLLEkqg5G-sJEa4ZZouH2TjTKvqEqyrI3bfu3klEsaRRs4mTL0dBdLIKeBeF4ph-hiXq4OXCpFdpQP-QdJbJhVLO8k6oVkDogyUjaQ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-FGYj5BmDdrPfWJXV3FVo4ObHJxbkFrFhsuBzhRQnAdWcZo42L7SKGV6MhYYOZ38iPsYiZiX_F_qa2Rb3yKP3Q_6ErrU0RCDrshlvsC6uvstaS4apzkQqYZeetiP2mmOHpMw8ldEXM8_z8uZhkj4O1r0phdGtlyE-kjW6lbzs71Mf-SQGn1zp8GTxNh05mUGNNvNyYnx5IKLHWHpHeyZqKbVUCmlNv5Hc12JeyuQQpEIrHxQApU5wpcq0DG2cpkjUoaJhndiC"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravenous Ferumoxytol trials for Iron Deficiency Anemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Iron%20Deficiency%20Anemia&intr=Intravenous%20Ferumoxytol"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Total 1020 mg in 2 infusions",
+      "effectiveness": 89,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 2100,
+          "sideEffectManagement": 100,
+          "totalAnnual": 4200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5419,
+        "costPerResponder": 4941,
+        "icer": 65000,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Oral Ferrous Sulfate",
+          "costDifference": 3730,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Intravenous Ferumoxytol",
+      "nnh": 150,
+      "nnt": 5,
+      "participants": 7500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 g/dL",
+          "baseline": "9.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 26.3
+        },
+        {
+          "absoluteChange": "+140 ng/mL",
+          "baseline": "10 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Ferritin",
+          "percentageChange": 1400
+        },
+        {
+          "absoluteChange": "+20 percentage points",
+          "baseline": "10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Transferrin Saturation (TSAT)",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "28/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Score",
+          "percentageChange": 35.7
+        }
+      ],
+      "remissionRate": 77.5,
+      "responseRate": 85,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 fL",
+          "baseline": "70 fL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Corpuscular Volume (MCV)",
+          "percentageChange": 11.4
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+50 µg/dL",
+          "baseline": "30 µg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Iron",
+          "percentageChange": 166.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 2
+        },
+        {
+          "name": "Hypotension (transient)",
+          "percentage": 1
+        },
+        {
+          "name": "Headache",
+          "percentage": 1
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 1
+        },
+        {
+          "name": "Hypersensitivity/Anaphylaxis",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "1 week initially, then as needed",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHltBOqF_blUuRk91O7J2s20N7HJM4opKM9lUP_eN2bgGC2vlZeGbB1ZTvkPaXsUo9ISpxs3LBp-qFzObWTgBVlwAG5j673QpkdOJ4Cdphzune8HJyd_6NIbXNsHir1hDCSkI2e3kugAoFTqZM="
+        },
+        {
+          "title": "medpath.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqFGU7VIBc6nWEqbr9OYn73bTEtT5Eb8tkzwsYuScX1RLREQuf87exwa8kBnY8JtrxVTyuGsD1pEX2nfQFqmn6YWfQm_H-NMCzduE0nBrRc25_-0dqb2-e8COL-aHiOZUEwxIxVPRKNk2MsMCCngmQjA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfYzK6NqtsEPq6jkynMi0bV1VviWd5O7LzuAGvnbcbQRQ7ZaBva5Up9H3GBZbkoKpN7y3oWsCZMK3n_oajnEBmXJB9s_4wqBcnZh_QrKmVK2prXbbz47CKuuJXlntfiNRvnHuJ5Zg_YT8ytIiyPtaILQkRdaGaAHCVtOSsBHk06J-na82lUOYoN-F8U6bkJp6fmAZUHlQ7NIzlWuFvM5vDU8zBrrHd83N7MbvpXsY0VOW3AChKXT6Cfmg4GJnD6P9rtD3dwMFVQAHMQfYwrtx2xPyz_ftRu6eOO2YuGlbKteyfkgmL74bl4oc-1ahA"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw5ih7TAuBtyOJ9edk0b3VrGENKhJTM2nP-b1HUCT3HFp2320W6xv66MCsiJ1C4Pb4jiTeE4aT9iOr69DYVtk-cOv0FsT3OoyW2uOrllk44Dtruo-ITxLlbQkq1zl4fXi-PwkIle26eJkyfZNKEfvXQ9ExDLrOJ0AV9kY0t8cjQ6tFjWLXY8B_FnnhmZqeJIsnzyg0ANDjYyU-g1_Bc8F3Otj24T203TGf3J4bnQJPAA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNjXuPBsE2KJiOsPoqrrrtWnM_AIpsqP-2W_TqcUSWfv_NhytxJFqUKweSlQYmel54_L-r6RmbbBsh1susfv0TheDlmcq5_H7AZwklxQOjff0ZUURLshhZTEx52nLVPlID6uIIFEPc7A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwDGOKNGi9_Fbub_41Mv2-Lx6tg_2bR-SPFUMMI4AxF1sW1P-knx3swjLEyWPy66mR4hc-fvX58TlchAAYZnihVlnUEyPvJBmrh9LNV1oWOxC0U7iQw_OZWxagJqorHEnJ_mCv3Kvqj_1yw3I="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqUHQIyiEHayxkjxllvud8UzwpP8NtUiXdOACrA5gjK4oNLeb0-kOdREAqKmeqvoAeB5FE4S_bWOjwEiL4W5HeU-stdd03ITWc6oxxKqBgFrC1alVQJMNX5Y3hzXXnK04Ep4Cb0ldnrckiTBsKwKHDxBf8Mq9CAxnHyfI1mevwcQYZS3KEotJjrTPEHM65lFJB3JG5mG40ZH6kVL6ZJpmscwEn7ZpflWLfIH6X1fat"
+        },
+        {
+          "title": "google.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqCiJgM9imzno1vgrPY3IxNqf3qBmf6WwzEf43V7VSslZ72l5fXZGH0m8mPwLqpCBILi6jqwP7lTab-_n53jiGUtllKDEe2tTL697BXQvpIK43oC-Ip-LYSvrDBHBg-KkPrywIF0wpasLc"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo1s9SOz3CGmAetC04mXEwG_nzk4mhXs7S5h-BSjLA6riSeNHE8lBuRszQ7gG0zDewlQqwc5Zj9CtW0dibtIwx8Foo1FZNvmNqAy1l2nkBcWIejta1rGA5NTdzgtHZDIqCq_7KKd2TLblVxhAsCU2VIgW7lhqT-VoXTpaxR9KN-uRJ8i5V8yuc9bVr4u_fj48pm2751b4WcWlRDvUiPbCMoIXngl-Ia0nsNDwsEtHCC_7ltSvfV6jqgFVDJCqHEpA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmGRhXvG0l7-YMraeXm4eQGjzVff9cGWacKRjZVKjrK6lFD1IG4TVLulX7-v3gf9IXGpPcoLwQJ2n_n-c_y0GqtpijtrOpcL8pjrghqaxVD4fowey1pcMsAfmM_68t4GenMkpV"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravenous Iron Dextran (High Molecular Weight) trials for Iron Deficiency Anemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Iron%20Deficiency%20Anemia&intr=Intravenous%20Iron%20Dextran%20(High%20Molecular%20Weight)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Variable, up to 1000 mg total in single or multiple infusions",
+      "effectiveness": 87,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 2600,
+          "sideEffectManagement": 200,
+          "totalAnnual": 3150
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4065,
+        "costPerResponder": 3706,
+        "icer": 70000,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Oral Ferrous Sulfate",
+          "costDifference": 2680,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Intravenous Iron Dextran (High Molecular Weight)",
+      "nnh": 50,
+      "nnt": 5,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 77.5,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Fever, chills, arthralgia (iron-dextran reaction)",
+          "percentage": 7
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 2
+        },
+        {
+          "name": "Nausea",
+          "percentage": 1
+        },
+        {
+          "name": "Headache",
+          "percentage": 1
+        },
+        {
+          "name": "Anaphylactic reactions",
+          "percentage": 0.6
+        },
+        {
+          "name": "Skin staining (extravasation)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Single dose or several days",
+      "trials": 50
+    }
+  ]
+}

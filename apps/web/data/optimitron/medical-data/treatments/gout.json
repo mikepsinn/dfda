@@ -1,0 +1,898 @@
+{
+  "conditionName": "Gout",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:23:18.081Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyIrbVZ-x5L27FLWnerNVGGhN930MtiT95RgWokdcaKAOIkf9aJ0SzRAxi1Xc4ksFzUo46ryNdQneHjRfnes0ZzWp9rYKRtsY9i_sw67ud0opP_LqJd6qSLZW8tpQslOIM__dL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfF0c8vW_wxSFRh7Mu9-y7GSx_qWHr_6jzxnRDzJWgTpaiEPotqSgAFb-MchTihQnYMWboKsATCL_BvlTrEeAzC_Q9Mgrp7trvXcwdpg3kwwXHXLnQIsDRYW_uXlsUVcSL7bScCJwRBYM9Ac2MtpFDcVvVRZ-mmG22UYrxPUB_A3PT-7QwmJ6sbu4ULcpWTlhFUFThjmKnjZPWeg7ifGxshsZjONHaMPSu6c8s2vfDlrJS7BvIOs1dIwx2CSwP6Nc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNCnbRWSLHLLUA1Zcana47GxQo6kVPw51eibNrgKse4XYTsyWall3TiDR5Pls5SNFWkgaQtEFKh1tT0o6mUbOIyM8h4vUPlyTNPkGI4mo_W9fBpbGBsJRC_qbEjks6_rRID5iBSqho8Qe485nfYYb59xYKpnSwtS1mM4bpalJmeMn6s6ZGMxDw06ANP8TqLKgz3SNHqG7qWauLb1kTLmCjRJenB10EhTuCQRSCPo-8kpKsPeH7OQeEX6KxsVV7Z0L5yzecwJy7ZA=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI2L5HS9l-6y6zsS4wRTyyzS-Ec2rrnkTLp8KhSsZe32QV2pAyBWKeBl4V14IpUnB83ayZGmCyFp3svUvYXlN6sItEOl7lx6XiQh7duklxoTbVaf_WfFVvz61sDhQ9pNNluvozHUDRweaQOUzZWDDbOv7FlIY3jWwp9RE0b2szU31tmotBJbeEJRww6zoob1lU4jxp7NvyDIS247DdukUTqLuVoxEU7QvRUUo43_1iZOjm5Qg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6zADSS_fLPaQFd5mHsgWhT4AIldtRVSFODKc0u_tt4mNjYO1FXPkAPui4wiBBE-lRUQ0eHI3ykBJNDmLP35WoWVPqGEGGbhF1SyFuEmvrui0KJ8jLNVfYkE9EtpU6C1MJ796-E5yjTMuUdGjf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfRPXwiwJmF1oQNhL8HoGO3DFI7Eh5m8cN9U5aDHPrSWTzoc9Z6bZFULe7QQkMegIEeB0fwoIg8TW71IsQKJpNy-NkeyXlrKZs6Mpb9qCgwyYLSmFfhfLDSIBU_ijk0TIznn81"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXdyrtbHd15ZxVnc1SJ-jPkhi2byIax94F61LWcdEGaDykslbAFdQw5L8G-8WMEC7CmM9XRkWrtDGup4qw2c7qD7UATorJffAmptTAdA7BbXRpQUrlZg-8IAxCO2wx8PtD7Ujd"
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqMVcenbASGiqSbRFhHS71vQtwDXjxTYBREzkMZHAd6n2viVR5AhQf1nnntIEd1mapNqZKihbEi3eBl1CiA1WDswsUlCFA7MeZuahZSQUEcRLU8F5Idyu7CVzMwNiK4RxCnBmZHIxFGqQ9bHXBYYNQblIORH1SyW6qmulj_WxzYpsGIRfLQ8UM9o8fI0qGyFgA30Iy89Na"
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMv9QMeOhKl1z4_btp8ysRlxtFwKcwZWrtUoFOg5m5xo-17atKjoVqFBmQfo3VL1AO28HGpHOvX3XaCE2dzieA2AvRqH4zzE6kFZFlq7QlQS5xCUgUDokBJE1rQSxrvGKJSXm2z1AZlHspoXgP-HBQGwW8TCZaSCM="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFruSrc5sWfkybtB16UFTG9OeFk2zfKbCXlPhkZvkc8Kaz5UYaPY87ofBRPVX315vY95ieAe6acNGhthRZAUHuI_qE5OUv1dQ0Lq8EgCu1x_G_3B7eSTuGfri7tzRDV4OBTAJmpvUg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pegloticase trials for Gout",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gout&intr=Pegloticase"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "8 mg IV every two weeks",
+      "effectiveness": 90,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 234000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 7000,
+          "totalAnnual": 256000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 731429,
+        "costPerResponder": 568889,
+        "icer": 350000,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Conventional management (refractory gout)",
+          "costDifference": 250000,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Pegloticase",
+      "nnh": 4,
+      "nnt": 2,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.0 mg/dL",
+          "baseline": "9.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Uric Acid (sUA)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-24 cm²",
+          "baseline": "30 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tophus Burden (Total Area)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "VAS Pain Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain (VAS Score)",
+          "percentageChange": -57
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 45,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 flares/year",
+          "baseline": "4 flares/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gout Flare Frequency",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-0.7 points",
+          "baseline": "HAQ-DI score: 1.5/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Disability (HAQ-DI)",
+          "percentageChange": -47
+        },
+        {
+          "absoluteChange": "+3 mL/min/1.73m²",
+          "baseline": "eGFR: 55 mL/min/1.73m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Estimated Glomerular Filtration Rate (eGFR)",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 40
+        },
+        {
+          "name": "Gout flares (initiation)",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Antibody formation (loss of efficacy)",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "24 hours (sUA reduction), weeks-months (clinical benefits)",
+      "treatmentDuration": "6-12 months",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsMd3TTDHyJIzXikxNQHP4_G7wM9vYaq1bJ467dtkobG3kt1b_-7qf2sBvy6y6H2kTlvsK2EGSR87ocEr3TWDq6fIl0F6lvxsR13zKnw18zQsDbcAtqeljGea_kIe_oDokU0aQ3dNiwQ3i14zJw0KpiO9ZT5IbyLUpGCQTRJIUaCtiKlv7_bbwehGi2zHHlwWUm_HIoZ7xCL8IXSI3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjxKfzMORpXlRoF3zuB1CXvw0T-yMcj0yUNLouO1SRHGybwNOtL7gHP6XFcQsI7KoovBkADUa-dePkpY5z7vVcjowm79CyGwIbOzaOMOJjDoULS-b89CVVBcU2Ot7SYG6g_d7s_uxoZO_7pAVTakGtn0PPR_kNxnAAa1xwO5yftWaFEOhQulkIcGnGjV2yQyACoK9u7_KJEdxT_St7khATSFQ-UeqSjl0TktGlEoxVDMKnG4ObJEMVuXxtjeMNK1gWeGi7xGpDOOseqyTKCkP6o_rIyxQnggsDxVuwtmhyQogzZfNuKx_83AuPquaRXbK-2Xf3kw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_aRBmgImFYIaNs1Y5TJyoDz6S5C48rC9ZIe5CHvDSL7Xnzu5MnrLAPpup4KdPSKuQyVzfkxlL_k456W02XKf7HypypnsxZd_DSKYDTMTBVyUEHbqm7GWMOiPr4cWGoq4EVWvBI7-D7Q6CiAdsOq8SPsW0Jb8rLAAePKDsfO0tX_07HkA51E4wclSqCjGgp_T3TpwdnbRbGrxLDNOGMwQXwK8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6QorWqq7o2p9NdyS1EnO43RkHVsOT9w_E3IA2KJEP-Zj5sscI5Y-wLuTnoIRz8Pf-5NmP6W6fRDz1ccu3o3TeXN3skT-tD69YoE1EA0kLx4gN5Kr8if1Cs0gJFxfchSW0HNLeTvgjnhedKpU="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzOqDcRugFa_0phTmpUsq1eLyzBdBxZRqShIjHskCmI_UpyH272PuOjftgzCLz6kTG-b_Ol_LDgSbuYs0yBZz0odz69ZWhGC09epwzehhfaDp1DGoJ9-DQEP4gnfYrpAsvtrI_By56SJK8L7QYOHiOq31CNXeMoDFbS2_pDujpDTcxfupA27SsZwAX_NqiFWAEpzg="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtDzhwmq0N_kKOTHoYJ3aGsELNeVWUvqo_Akr-GZzsnuoRQL24tkkARMbn36cNqtRZQnxReugc8ftg9Hl3vLw2ZyDXFXvKFLtlzggLK3EIltXZB8_DRViCs5c0QNUGoVxRQHZ0f_1Y0YMTfgCC1k8JDVIrigg73UUcsMpH2IKLszvdAAgAi0k5aVwUFbjFw5G7ifYoctt0TRy27sSDv8yVP1MJcNcuF_Nn_uKauwsRU8TohiW-8nPKPLbZCox-qF2M_0ehhj0="
+        },
+        {
+          "title": "springermedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEo15IDGiwtyqz7vmkL30h_zwttnFxBWviwPPC8dTFpcRD7bMnkfCvKRvIynULBf9UtMmX__MJxlZ1h2pqenjaqcyE51Hz-iyCubQG7zdSofIQRoolXgat73bAMvkX9dNotLpNSxBtzWXPnHv4MOLmmfFUdYkBRYspUU3KdReaSEFY4klwDi8sfmZ11zCd3iCmiDgRbKgodPc6b12W4F-t0z0x8hwk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_VZUGORKLzvbHvR_8iQLD6_7JAW-YuBwqMG3yEW2tgHHVDT9N-6Q6QqBw1E5vV6WOKszFbTcL4e3uQvJG9jQCjSMHlqEq4Pau_6brZFiGuPk1bAnNXT337-AOp3-anzRh4dSdpFy-Tf4PFW9lmNqsIiXkVoCD18kxDFJt4r9cwiDIUlDGSgvWKXdW3OoVTfy7l_PDFjCDTtWxbka8ouuC7h0b-sBghE9GDItLBFQb7PUvNDTdmPu3KkNuntMnDVTVFTAE8jTrrsIKvrEjAxqbexQBGeiY8vSlIexnd2vP_e9VxYS9JzOarHKL9A0HAsM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEooXkMrzQWmIuIpR-Zxy3Hnv1V10U-MDDHnqzhAZa8CsAEwUEHo_2aCGz_r2OQXgrpxzq8aRs0HpKyW8hK1jZenWYOEMNtTVyp-j8I_btXql1kyyInOonLe1p2MsEY2oHQLc2ftkWj9L0QcVk="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeA02D9yo-FoKf_nTKTK_2JFsDtaaU_7-ijPcIYH7tE3AZNXvos_bpR_A1hICgWty5WtsDkzR8fR6X9sWuv167FjofzPnbTrk11oagrMPugPTPa_8jFQq-Meq2ao1flyVA5qU0jwoSbOneV5zBD92x7y2NoEtpz8q650krkdcnhNHQswqxla5ttgYwCeqz682Zp9nUlH5X-aXWjFBqPYCdZc5DqMbVlrhxf3vhVdImz61BNAd9-mHiJPqXGmh9rrctl7XI6g=="
+        },
+        {
+          "title": "creakyjoints.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNzz4GHSLDanMTDrqEQadtxkpzadbaKqu7oBkRc0Mm4twv2zI5HoFSm1Lreu2r2J-cW1uJA4y9bfX17dsUapUkRlkAK3TKjOjvRPfG5Du-VItNEbc72pD7l85htX4nqKxnZcHBh-6TFpfeRczZMVMUMmve2n4F0jlGJ24flQtzOVx5z3xXT8_VeQ27xXPaDItR9lNJG4R5iF4lTbkwbvZ1xI4="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKlZe0tZb70X-XqdAZfNkIlTUsGhAGLXoLhbqTdMhspgrJG833TQ8RTDKhuVgd3HKQz8qrAmbnnXgI4uI16RGns0iJpPezORexLBrlYg7g1VUtnSYTOI6S6Iu3_CqlBw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb9DsdUN12FXgCpH5MEvKSYVzpc-XD9_czlly_cEk5wzPUfCAjADJuWtWnty4q2HZsmd6hk3jzOeDBYHsL1xq7_9ojSPJjFBbj9MGbOb7AnjLdlNh7TWY_YPbZBZze3jXKuUqE4y6ndg7VYabBq-Fpm98wS-S8m8QD9czoIxFcgTGNTIrgoUq1uzRuSqFuW4F7K8YUkYonjRrMPY_o7pQVYDdSlkepPjwEnIJBgqBRcKiBPztAT2nMqEBFYwz1YEXyZTvKzHwIHHazLoGEy9YwKHg9tdCJPX9wnG0YnmTxaFE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHU06WKNztT_3Ly9pMNRRTfHuhcXANQ_6mX6NumIwQrergLOoB8E1A91RwmQO7VB1plVR77CC2sxx6UlBdV5-oaUjNERjL8qu5ki4F5CveaiAtuM9C7xw-oqq1Z62S86vrF0HUz-jDyixHGhB7y"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiQgNYKZdliiF6kRB-ZW6PmopJhHVbbQTAiQzFzNL9sW_cSv0kbApUNathkmYixLoN3_uV_na7ID4ny-X55pOToTTfsgKmhOrX4RToAhuD47eRe6mTZIn5eHIDi8Sod8J-hmFePXUs0Ab4ueuR8aAerRm8ZXWdTDOYw0o="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUWFlEY2cFVeaP_BEWfdPw-JK0GZ5ypTkP0BAQi5OHzaxQhWdtwb4cKKsdoqFupMVXMPiHTdhnw0LEQ6bs2D2496WqhWznqrZSurnnTFD86CYYq1O-VV6jbFWKQ8ODhAc6"
+        },
+        {
+          "title": "ClinicalTrials.gov: NSAIDs (e.g., Indomethacin, Naproxen) trials for Gout",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gout&intr=NSAIDs%20(e.g.%2C%20Indomethacin%2C%20Naproxen)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Indomethacin 25-50 mg TID; Naproxen 750 mg initial, then 250 mg Q8hr",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 150,
+          "sideEffectManagement": 10,
+          "totalAnnual": 190
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 211,
+        "icer": 5000,
+        "qalysGained": 0.007
+      },
+      "name": "NSAIDs (e.g., Indomethacin, Naproxen)",
+      "nnh": 10,
+      "nnt": 2,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 75,
+      "sideEffects": [
+        {
+          "name": "GI upset (nausea, dyspepsia)",
+          "percentage": 15
+        },
+        {
+          "name": "Fluid retention, edema",
+          "percentage": 7
+        },
+        {
+          "name": "Increased blood pressure",
+          "percentage": 3
+        },
+        {
+          "name": "GI bleeding/ulcer (serious)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "1-2 hours",
+      "treatmentDuration": "5-10 days (per flare)",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvQczfU8NuNq38JS2EwIJPdYlWkPiV8ScnAJ6O1aYBunLjXVVC2jSZPXL-CUKEzW_k71z0wLN2tWP7irKNB99Jxz4uyNvS3f-IlPJ9yFepfMQH6SmRX00inm1XZ60aP1UZmX3Qb8gE_Fs9cLfB0h4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV2FTdHiDM0u2skSoDaB_UN_mzN9FuN6V3u9G8a71s4GzxJikbNVzxYUo7pLGu41rPIwQD-5edJ5Wu3JQ6XtpHhkHG_51OB0p5-Z3BVo7yF7JtCr8zuL5m5lErWgUuXoUq3229-CmdhF-7Q64EMVYoOQO265ACWIMzMSDp3klYFUxBJ8dFb3SAiFQzQ5xPHNqMEAd3cdWwz3uCpcDoxNqE096hsFltvuSiD9-_fIuTd18_YgwRwnmA318Q5A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJK9V_nS94YbdMsaLGgXwAo0Yh71mwKKQawM1FJ-uhEnCyRo3loKrtiFcZP9jix3Tp9NuPgs5dtZAvlC-P4YJ3q4Kz6vPWo_-4Cbac8lbE_vqZmLel06bhTNgEwj01ILrtqMMr"
+        },
+        {
+          "title": "jointdrs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMQy0nUxOMA17oVUPkR3wLPxG3EOFYVmIRpFPxG4uGBYifK4FRTHOt1HvlodpwxP6P8UMnYhRUniKRut7PsiW2EH9CNnqiU_trrejQmjE-jHvO1XPQMFaOBONrHK-iaQGVBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXmDNMzqv6BsYc0Wo_-Khzj18ENb2db7d8DtzEpwpQ3G9gHrOd6M9TPYmrRwQDRoUrR3bHdVP47M8SO1YeDoZUC8trvX00MLd5K_ZGEIkd4DBBRhsi9ZGja1jeZ4LB-rP7c4mVAZK-aKBI3TE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKS66W8vCIGF9VHnYnj43j6JT46Y6rd-yvp-ke9lUD8VqUDn8spVqMA97cgW9cKG_O2hEuS2nu0l0DSCCSpAWErIiWsIJJMnwNmk0kPuKK8pXeXt5MkMll5FeJ3IZna3oK1gqO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkL5CyZJbMkKUBCdHvJMCfg173gFA_hVZ5zaeg9OjSZj2H8yn3qdAh7PxYQ7UlM1Jtd7rzl8jRDqHknyHLsvDtp0mmYETDEZhSIDBD7L0qNQYuKhPAbHlFXPG3tE6qTBvAKlylhWyxwba2KBddPE8Owhhz4Xhwq_MG0YMKBFioFGjYfZn9R6xle6NZ5TZbKDznh8lOcVokrhNRxgjg-TC1fBkv8i3xruc3MZ1_DKl6yvAwR6nrOfDK2w0uHEc="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYaK0N2cLQRoaz_S5VQoaqq3Yfim5p46EZbJmM-TIrqY2Hrgm5ARZMXdLIo7a35jX--Rv2SrdkVlj0XScFyaf7cxMOZwNEU8fMBA4Uj9gT-r2LoD7T06nslLANpEPoyJ2idaUIaGkR222gzxaCnFrwNzaUp-rXM13nvOqz8QyC2HeBVuy6QGDaNFMsuHF_I0x7_17aqMJUdLxvXkc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjIznHZA7c4AJiqp_pSelh7YlhPZ-D3Ui-zY-TlPQSO1ZLSbt15-XhNoIU7hYVsgATH0dgZX6ld1KXggzD04w3AgH99wn6GII4vEfQURhX9ylcWt-_kEYoZBUPenCHFVgk8GXO4sduj1sWofA="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIxN3cpU8DpYOBEr8joE2rSAIOGTEGIL3PQYVKrDp0RctMVapgfdt226F0hnTEJfgAvNHgtpmJerBDpQUFuT6gSK7fq2yh49UNrNe4qJFHu_FtmDhTGG2p8ewGw9oMdBhXOGJ1ypyxGGay8uM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu-wxwwoC6-xr5-phyhmmqrLKoNug5_Ii53MWcD-DZ9JzXBdz0OSHbd7Ij9zg_yHMdOvckGM_Ke86qzqqi1WqMd91om7YC8MEcq_pcA3H3ZWmMSrRbFVgdhQPCBdP1uQCryfyk"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaqNcEn_zSV6xZgxcdO_kqkTIOQnda7ylaXeHKRSPbLYm4qzrxLNpfedsYUyrpPtMmYtgZ6jCEwIlEcrL3a6vA7bFxD4uiv_DwqDTxCxRSl5vsoXLSep-qTOf8j-u4Xz7dgcU="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm5xA5lHIryrcMeomqw3svtDx0aNT7vIjKo25U2iE7D5-xLReFE0mJhZGW1guwXBGDnj4b3ZtL0ylQ9_QL69edkUmeKPh2VZCGLTzTJdc8jf9Y0iXS78YtgfyXyK1O-_-ngzJgp5I="
+        },
+        {
+          "title": "ClinicalTrials.gov: Febuxostat trials for Gout",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gout&intr=Febuxostat"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "40 mg or 80 mg daily",
+      "effectiveness": 87,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 300,
+          "sideEffectManagement": 70,
+          "totalAnnual": 670
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 957,
+        "costPerResponder": 770,
+        "icer": 110000,
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Allopurinol",
+          "costDifference": 290,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Febuxostat",
+      "nnh": 50,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.0 mg/dL",
+          "baseline": "9.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Urate Level",
+          "percentageChange": -42.1
+        },
+        {
+          "absoluteChange": "-2.9 flares/year",
+          "baseline": "4.2 flares/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Gout Flare Rate",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-90.0 mm³",
+          "baseline": "150 mm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Tophus Volume",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 87,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.9 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gout-Related Pain (NRS Score)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "1.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HAQ-DI (Disability Score)",
+          "percentageChange": -27.8
+        },
+        {
+          "absoluteChange": "-2.1 episodes/year",
+          "baseline": "3.0 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Gout Attacks Requiring Treatment",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Liver function abnormalities",
+          "percentage": 3
+        },
+        {
+          "name": "Gout flares (initiation)",
+          "percentage": 8
+        },
+        {
+          "name": "Cardiovascular events",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days-weeks (sUA reduction), 6-12 months (flare reduction)",
+      "treatmentDuration": "lifetime",
+      "trials": 65
+    },
+    {
+      "citations": [
+        {
+          "title": "tci-thaijo.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIZa5mifNsZa9vjHUuB0dP81Jl2HVQzf7u_Ir3IEPp219fozInPtRSasIDlk6UXDCxG5MSuk-tlZbc7Tv1E2Dv2zUG8IqIttaaX9mCEgfKe4qXVnjSCyNLVcsMfmSHFvr8-H0As7VlpJTNct-zp5v2GZMO07rfvnFjtjdqtg6NpC6H4nd6ENM="
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf5AAgKK17l02XwEHxaTDslthWJFryEsWfzO9y5SHtD-F2xTJZJmdTXwqff0jiANWnnrwLjwZ5_eJ_XBnW5NbRQJW2NR9pnsVGAXt32FvJgUpGjYoTsgxxnMkylfu6mX9gVDO3yMu1iCE6"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRjKnnxAwEAjUg0hpTCTtut6cXLATSDiKARsIhwfKJVx-fUn42EttiOK61SYcBVLzNMK_58m_fHJ26iKAVDFGho1XFhTWjNGRHAsTHD7kVCvAOBYklcsuWK97ggYzIVxqlXQXt3Tg82k0ueWE0MXXIZ7w7dgVbkd_1Go-SXBoOPuyltKlD2_W_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsya01hNr7qvUNfn9_jBlRiJX9RrN80Ok4TBbF6yk2aTpvVGwXLvKLHjyahZTiW6Ngr_303uFxzcM9FinG_MWmkOfAvQU0sVqO-PZH8yVMirDcRu1vEeFRRr4i9Z_c_gQMlRE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVClyWdJNaZh3DTn2Jjt3I_stPXLf-7UT67P4xbRcS9bDK9kpUVhHdR7Hdtv2VKQFYnZMnjg55TYsPZtV3DA4gBJZsnEJFpRAxsx8g4eW7hY0kI3Bb4ZHWp2xoolMU-Pw_sT4iEDQbVQEiAg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9oCjl7eimDRf_zJmNXq4KvMjYEUSIE_7Gtp3tY-xR6J8bcSbLtrUpO5Kmw8E6GONchU1xe2Ur6j78HI2q400aYgTY7GBHwrkKpGbJHeciuD0nduoK6XGeJTgJ94rAjtMlRkRh2OPBakJ7LQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Prednisone (systemic corticosteroids) trials for Gout",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gout&intr=Prednisone%20(systemic%20corticosteroids)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20-40 mg daily, tapered",
+      "effectiveness": 86,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 150,
+          "sideEffectManagement": 10,
+          "totalAnnual": 190
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 211,
+        "icer": 6000,
+        "qalysGained": 0.007
+      },
+      "name": "Prednisone (systemic corticosteroids)",
+      "nnh": 7,
+      "nnt": 2,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Hyperglycemia",
+          "percentage": 15
+        },
+        {
+          "name": "Fluid retention, edema",
+          "percentage": 7
+        },
+        {
+          "name": "Insomnia, mood changes",
+          "percentage": 7
+        },
+        {
+          "name": "Increased appetite",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "4-24 hours",
+      "treatmentDuration": "5-10 days (tapered)",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7SNZmANnPwn5VXcqHxL5A42NfuBFfOd4QwshDCK6txoRF-CQ0iLqe-2D-p6UsLay3ZTvG2C_ouqDinQledPEYGreG-eMaPsiuAz-5oo90GVFbUfqqH3nM893MebkCNbQEhN_shXwC6FcCB93zVKpCXgfGdurkMpgKTHS2IfWBYWhs4DP0iuA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPoxkiydvVqK5q7upK4woYVdbZRR_r7Fnmo126aGfEzRAfl6fgZZSrPt3aQ--SytWyvtVQyXA-Gk3x1uKRqorPYjvXZsyIGdmSgxMW3Ie8nl8ZO4UvO0l55e7DD9qLhlCFsQVirk1XeC1qpU8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTf4fC5L5hvXgjICRp6hQ0j-E6QctpoikOx43HjcA2AjF0LV4bIMNvK958ur5Vv0g3iK1suTxA_A-ALKgrcfFGESEx7q11r8AvO2staZJs0N-ZBJBi83gvlliChaX8LEz_vHbilMOBMpihEFns_aQ4Ez9IG4tVG-r97PMw26No7xcyIn-M4W2FRRXShbj0M0kg9VJY3CRVhshxBmc="
+        },
+        {
+          "title": "nihr.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-7GPCAX71YaL1nB7VcEKvymEBiAKgFhT4gbSq2MEJxzsrV_ep8PkBL3VJ5G7Rc8FQbjiMyiWoqIBVx8Xm4zM_wB2mTTaGscno7syW4oB0XNsV658mQIT20k6o0yVkWpFmg_Li79_c5ASr7StrULkwM27gpTEvxcfBjJ6kHdylV6UPlivLn8BOzCytghwWFHl1FRfqw0JUolXMNHRK889lQ-AMOOptzK8L0h3Ml6_VlPOX6q4l8rc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOLUFCQKBcqAEyCQXnC2a5mQ5M7w8IACbfoSqHYFOjrBca1MQy8hl6tDgGVBwKE2ZUyJhQg2t2Bqu4dqKhdWqPoWT0IZcY6Aprla3LFw1GBE7lTWYql9rCqa1Ek4lPvg_w1cYgTAqtf9r9gUc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5BZDQHIGn81d2gvTFE6ekN7b-JMDWmex99m42UaFA7HOe1EMAsBtUZcajEOAz8Vm-obpQRRKqhSwmAUCZLUy_DlGWfDz5TlvWHqXsq0mT3eV1YUBt9V4h5qQcYEEi4oK4-3KJDLCq2R2aOSccRYQyWm0LwO92Dq0S0OKLRNVL_Xz9PNa-zGvPl6A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsotyEzDUewK7TDOoEl0_zf4MPLMhTZCnER-Lv5fwkrUnohdv6sAPONJ2vBV2KImNWSTYFRXYXj9IkCapU3QMXljquPLktiHsL-82lgy_Bvbz1KwX5chrEfVNWHrtZcCM3yzLl"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERo9MZGbrEgQzphUEsyGjfHQNrMs5y2oif-r-Oa3KXj0G5McLpgZ5Tu1f2Ufhqp3k9CCmmLg_cUuMiS4lWMBvL8M7UcOoa_-tkS36Jfv8mF8X9sR9_RbRYrOwK-xqQ1T3xwA62W0c="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1fs53KFgU98hY4DBeIXywFNCdGkuuP5GDxEcOwrZ3bEOhM2gvbpCk0uuEcnR6quGNX76x8ZuiWW-ZkOwj0TIVr8lo8dKlQkVLvEUkU2di43fWBN8nvxn9r8wMiKztv3VfoN7ujyOcBgX7YQICXZZ4dusRLVVNxQfN_RAGsSo04A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYZYYBnGiQ38lPIsGqX5nKWc2s-Q526D1ZiFK_kGFz5FcRKShjbmiaT4xQ9X478U5bG1lnnPyZpW8vwo6uQbDIeiI1kbU9DM_mQNBFfm6XKqCyhuospJMDo9ZDHA97V4qeWUnRukBy1g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQwmZY1a7FiynuqPyu8o5wLxjJsq9-nvMXQbcNMoMgWs5cLX8xfIcIfjpqC6TMdhTGTQyoTuBVjggPoCp89zNc3IfqlfwT_Iz6s4hq40cuibv5OTQ61UBK_Kss3_p0vtyAHKlN"
+        },
+        {
+          "title": "ClinicalTrials.gov: Allopurinol trials for Gout",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gout&intr=Allopurinol"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "100-800 mg daily, titrated",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 380
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 585,
+        "costPerResponder": 447,
+        "icer": 15000,
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Febuxostat",
+          "costDifference": -290,
+          "dominates": true,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Allopurinol",
+      "nnh": 50,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.0 mg/dL",
+          "baseline": "9.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Urate (sUA)",
+          "percentageChange": -42.1
+        },
+        {
+          "absoluteChange": "-3.0 flares/year",
+          "baseline": "4.0 flares/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Gout Flare Rate",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-0.72 cm³",
+          "baseline": "1.2 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Tophus Volume",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.0 (on a 0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gout-Related Pain (VAS 0-10)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-0.4 points",
+          "baseline": "1.5 (on HAQ-DI 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Function (HAQ-DI)",
+          "percentageChange": -26.7
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "35 (on a 0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary Score",
+          "percentageChange": 14.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin rash",
+          "percentage": 3
+        },
+        {
+          "name": "Diarrhea/Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Gout flares (initiation)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Days-weeks (sUA reduction), 6-12 months (flare reduction)",
+      "treatmentDuration": "lifetime",
+      "trials": 71
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzuLqK3P60nHneUJNnm7m8dnNVUTlUIs3F9m2N_sB2CPCIysbRyV5YRUOHht6wnfHpiNCI-ejzHknE-In8AkuEjvvJvMSlV72szBM2GM_DHvZ2jXGmg_ykx-RykMMTz9V6wPDQD475-X5g_nA="
+        },
+        {
+          "title": "thennt.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHK4BA5_YOpIdiHv9WU4aqsKwn-Prlf0UwoPofe1JThwbN4yK-Cae0qyJ83jIQpU-FUWZQnPnW8xhEUe-pb20WeKjwi3dO-8TxC3zEK6OgInPIH7_5SwLAM4S9_l1JXkERzJkwibHeiVw=="
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnIooHnpsiLiUnqgYvSoXU6xsyQ3Qqh52wikLPkaSE1j1zI8ttQPApQ9_4LSgLsuTL8Uw3NPYRdTgiuevuHdnxppn0bpxqMmCcQNp9YgH81USW5d48SKtc9Gjx7C6lPjnOJUTN6tp1WTlN0w=="
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE68jWbch96RtnjA4Y1eNjc4GAJm-jrY5A2WEw2pmGDWY-7ujBkRdAMW4a7FdfkERFJX4FMKqtJvsNXLSKQYeMMIaSXlsHPizIQm5retofjI3zJkLTcsmb439Y8yXN8bogk2p1k22KSwNG92By06hY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPT0IOKo5Ty5x1xD1pCVyQ_YVX14cq4pLucJs3OM55gSbOrlZQvNpyTg3WGGRX0gu1VkBC_eDTSx36okudfuKfSZ5FaxoFvaFDkOL5uN3mR4c8SNIQOIe8ZEebOtfVvM9kTPhjZXYzDFRMc1TMJj4_3lTazi79VZUmiquk6NFEKQbKweAON7MuPMWs0m5kCzDI-Lqd4QxHvfRAqG5q8bBh8HGqfHoYbSSl36CzcmfteXldOElyeoqA84wPgvP0pDO0RoToN2UKS5X01GlTD2reTLjyJJV90ae61qhercLyKTQ="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDpOGx_1vT8zj8QFnSaOMdiVw2Eq0PQrko68zj2dUcHvJXc_hKpI7Mb5ZmLSYZQIFAlxRdX1WIyQOtr2bydNq8Li3VoLTRPf-fmA3WLF8AGHVFrxPzfh4yKuk7MjD2eBqKCEiUdFnH2tfDy7wWLD592aQkeWyvuTUppRR6qKE2Dfmp7Fyx7KY="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTCOnODpbJQYvBxZdAUW9TK6hYlnJd6r6y4T0X2H0LetCoXipGDZL9xwkkvdRuvA5QuRaNvmPjzb4F41WBLWJ7FZiMtW2VMLuz9rG83KYi_ucQQmUBBnd-J-IT6IjnjaKAHja5S0vVr7lBq9Yg_1fhGwcr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuXeQCPry228v0__zRPZLKkpG1jEitNR017qYRWCfSod9sQEwd0Be9XIay2uGUnrJiFnlg58GgHd075dPfo25Coap1bhhjvE6c-sLRV3h1S9XgODuUvDYSjDePlNXY5JuXj8h1"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRSwp__h3e7PqlxdI3chBSxzurbRW6J4gm9M6q34rIRtotYI6jc771NDldmja25juWAaf8eq8XOL3bdfybAqaPQVbrfaCkotyOX_chnoGl2rIcQi5kkJXRxMq0OLFanhwYtAnTjtKYywgwDFbElqZuvFcfBuzgAq4x1GknLl9jup_q-jT1gf23DlhBvZOSfqqnMMotEp7VSKfAM0B4jcASaP-JUzbAWuHUdGSJUzd-BSoTZWjWdvLxmXOBWc-RCM8NMf1k-hEJ0x0Dtf8EewA="
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVJICgAozCWwiS3JXcEtk-WGwDk6DNQhaOs0pzpu2LQ9JIU2asFSHxUoLZ4jxwh8M9G9n3eTRn1oYAL6y1lMJYtgeCHl2nF5PtLFQIIlY5B7ZsLW2J7ZgjAbhtwPW7-KeauNOk"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjW2hdbAZZiQyo2J0XaSlrsixH1BOCh8-P4eUQ5Uz8ng25HO1iRqnMcYtdc2h0S758q1yquITiyZdSLYTWPc8iYjzun9EtQLybB6Ay1h9A0TlXLbrJdfbB0bwsh-DkhIqmkFYPXN0EN2daurF0jN6xZefn8pmW7JMYQJ6bJrE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Colchicine trials for Gout",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gout&intr=Colchicine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Acute: 1.2 mg then 0.6 mg 1 hour later; Prophylaxis: 0.6 mg once or twice daily",
+      "effectiveness": 83,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 220
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 259,
+        "icer": 8000,
+        "qalysGained": 0.01
+      },
+      "name": "Colchicine",
+      "nnh": 7,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "7.5 (on a 0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "2.5 (on a 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Joint Swelling (0-3 scale)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-12.5 mg/L",
+          "baseline": "25 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.4 attacks/year",
+          "baseline": "4 attacks/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Gout Attacks (per year)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2.1 days",
+          "baseline": "7.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Acute Gout Attack",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-0.3 points",
+          "baseline": "1.5 (on a 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HAQ-DI score (0-3)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea, vomiting, abdominal pain",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "12-24 hours (acute), immediate (prophylaxis effect)",
+      "treatmentDuration": "1-3 days (acute), 3-6 months (prophylaxis)",
+      "trials": 44
+    }
+  ]
+}

@@ -1,0 +1,920 @@
+{
+  "conditionName": "Menopause",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:26:04.888Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "menopause.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdj_uUSoNa2sPSfe7XwMg64ioQSB8MzwCYap7fpdWb5PtdkaAAUEtH_nIiQpLBTBGWPq1LZ3c3ghX4fk8UHpWMg2KOX7RtkOmoZs_wsclLMddJRR31lpLdHpoxdM9sxmdzoCyd78Zkrdbequu_06QUQA0UHNnwzpxPgS4FK8ZhDtXYA4_rg6FzZD5GTbOlNPamZc0CM1ScC8Av3qWDPl4jONveGEMKqd56c7nbWZqCR5JZ0MPg1vtYmpZ2usN4oA=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEaRzDcszKiho5jLNHlL8vmraXR9xAFv44zaQ79-DTlhe0yXXXCzcN1IFGmmsgRSWXMl_0wcdiQksiXXidJ5XN9euv2osKxgVxr9bkaZbTSW45vGQ2TlJuB7gfoqBazM1VEfy2ILk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5iP-pj9b_smyzc7u64vnv2tRpVRwYLK9ACzbJwtZ7uYuAhbbVZAhwlCmALw8BL_wvzQM1EpIaN76JPiIt7QnX1EtLFLmRLsDvOwmhJrFUcdGlAE5-qx27we4O1de2Ic74rtjm9swP8ZgRjLbZ"
+        },
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKcgMVdOH47iZ5A5j7_xW5Dqng7m4_JR2GVi4Sv6E_1eZibztRG9SPkKk29CRucnLKEHGLD6WGEu7YPeKedqRyAX_9iWV1_s-48K9iz4w0e0PNJDXHRNiwOonxUDZC41FkJFsBGY5vjX6-5pw_dhlWwbu_3IZPnfJOMrJKwIutF4ddHmsrP_PPuFFM3NV7VQ=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZZsfQ4QZL1kddCmfugENdMqJUMn8c0Jt-TUqNlq-vpF-8aIVk4o5cj5G8GKkP1kK9dZ1mPmp01CuVp5-NAbghlPjqEkTtIwe_fqVzqc2TlXo3W_KVc0CiDOvaKbMQfUlIJDiselekqPDrwdiPH5xvmdAT2TWJy6SDm9es6HhdW1AMndb5_h_jDMJ2z9EQBrrcsMUKow=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF8dDDXd6-7KVL-2KqUFLt9SCNuvWNNfCDHVBfpc9mXv59qsMNeJCR1xqeUl3A1KykCLBFixQK-XrRNSIyqKbjeqaeHBkGtF7SPuYN8jgSBiABsp18x2ZaBRGGB3-tEDTY8Xx-GQsYXIJ9SiV2S2Fc1H5y"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgRwzBlPiml0vAdbIPjJ73WW_RkLTuk74z7Qm6RPJIQ0fOiJEA5N0sDMp7fGC-mhhmLA95ccZqIMCgtCctSEtYJzc7nTkFOUYzi0q0HHXFejm1WKiu6WiGFxBeIMIENAAnYGHKq7ClRIXtdQY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB9tb46SUkfYjvbCqd8F-2wjo6E9-tQriepfLofb4jhmc5BsZKeM7r9n4T0AqBvKJZh2-R4IwSNYVRVVLQ9Fu9HCux_l1I7mpMoHdctEapWWyo0QxDJdSCy2uBNQAAK81rwhN95iSUW2zTHcXkUEs_nIHs9OGS8IhlkTSBICNVVCz2s58xyt7KrbE0lkfsjWkpSSub0hLdFNBnOHLvAZ98mzRnt8Tr_-zG3Dwe7YJAELLys2SQIhYE1UprAqV8EzP2Y-PivcUV-c1ZQ170DDpx5I4EZYfjqYyX8Z5FcFd_LqCIVwRkQGVUiZMKfcl2XXFcZtHPGn_ciUz90-fjSw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHokKm08puskM60T2JgCAkxYXj0Si1DcOerefz-EnTD_W5giN70MiR8pNVPAeWIAhDjqUZb8h6QDCHhV9n0loHwiUV4U-vCp-UHXY1mhWDws1k32CuPEAATZNCzOGAZeHXz4W0C"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq4mCXXbuyjN6w38x7-9sg3M56_RD6t4U0ZKyoXbH6NZFUMZnMJmnlwEcJhZWczW4axvWWGeqZKz-irJvw0AUqU4l_Rv9zb1dtW8PnkqOFf1fuXchcijpAF_i-I5cmAYpBGmWI8nE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtC0tXzlfuiUYasRRRdkE7FJoJE7ZkYv10PcLDHx3SoGCr7Qqxt9lFKtgy3P6GTbXlvL-kkytJrjef3IgcdEHQDXmLH-wyKNU1lLtkPCEGVdFJA8e9Qob1r7O67zCH17ocyWVP"
+        },
+        {
+          "title": "ClinicalTrials.gov: Estrogen-Progestogen Therapy (EPT) trials for Menopause",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Menopause&intr=Estrogen-Progestogen%20Therapy%20(EPT)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Oral Estradiol 0.5-1mg daily with progestogen (e.g., Micronized Progesterone 100-200mg daily or cyclically)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 75,
+          "totalAnnual": 875
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1346.15,
+        "costPerResponder": 1029.41,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Estrogen-Progestogen Therapy (EPT)",
+      "nnh": 1000,
+      "nnt": 3,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8.5 hot flashes/day",
+          "baseline": "10 hot flashes/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Moderate-to-Severe Hot Flash Frequency",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "2.5 points on a 0-3 scale (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vaginal Dryness Severity (0-3 scale)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "28/44 points (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menopause Rating Scale (MRS) Total Score",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.019 g/cm^2",
+          "baseline": "0.950 g/cm^2 (typical post-menopause)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine Bone Mineral Density (BMD)",
+          "percentageChange": 2
+        },
+        {
+          "absoluteChange": "-7.2 points",
+          "baseline": "18/28 points (moderate insomnia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Severity (Insomnia Severity Index, 0-28)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-3.6 points",
+          "baseline": "12/27 points (moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (PHQ-9 score, 0-27)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Breast tenderness",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Vaginal bleeding/spotting",
+          "percentage": 15
+        },
+        {
+          "name": "Bloating",
+          "percentage": 10
+        },
+        {
+          "name": "Increased risk of VTE",
+          "percentage": 0.03
+        },
+        {
+          "name": "Increased risk of breast cancer (long-term use)",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "2-5 years, reassess",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNsMSsYF6kCfqnRS2rsk_ilx8I3CQ_K-vHNQX2hXMG5PhqH0tZSmsgZYMcNrZ5wgS6WaxA1N4_HYi-gozQ7aiOu2hyaRY_5lXbpJ6dGED1JE2NoXlvGtly8AhunKIE_-XLLMpNi0PpN9BmFEm9tPT6yHhLjbo-aPJ0bV_l1A=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG094juWgOj_TvRAwp_IxU_ivZYnS9Wbc88RrSPQWnh0n1RdT7m4mdhIs8FLCUs09SX55aPWBXNGPIZ5hFYLBGAt6vI20PyPegK7zg-fhc4Xc6E3oNsHT665AcP1bQhgiqrvP5fczJMuX39_gHm-7LwxZzhMnDGHlA41FIrqw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4o-z6RM61ezPsxYH1VI7Klp8JtWMY2-yBoa_YUOylH4Z4Bs1nR6wF3UswB7kKCijAQJp-4SQbOLURLnp1m7aWs77gekw4mhwO1oEQVJoccF9KxB9C-A1UF8-oWrMWopmva5yo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEddmu6WVen1QqqiVYMGW1fCFnba8O4jrkNdQALVV5NZuTx-kpV89JMfG6Xxlk1T_1HvZTsHndxhAT5p7Johzs-atmo1Q8Np-enICGS9WCB3ARVZFXfibbps_bjGWBm0-Aqr6Lc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyjL8nUgMpDMlvcHq1HSYp4ZdRd_CHF17VIQ3t3ByoCfMRL9LoOqkpPCo0Cn1mZA9u_Ye3LrOxeUNAzp5bxEAum4R9s1LZaf6sCwAQoMAdzsuZT6WG11U2cg4vQcyCzckGm9DB"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4Hr6PgvoJmy4XkSnd_FhmSTp1XQuykUbJKz29Z6l2Js4tI28JszYgtTdqm1xnOhmF8k8uT1MI4AyVtA8oG7vAq7ZVfCIeeX4IhW_NCcpFduZ277pjj4HSZGKHfsr4j6zl953xQm_MmlWfGa_PWBlSQQzcACdXjTh9fpknSBzS4GoKR5RkUkfrs_L4jtSLvmDFVs9VGziIiujqc__Zbgg20ylKwsmM_SFz7o-TLbv_zfiQX_TqOkDMDnZsyKPrAXSxgPlYOCdJl2aElLSdRqSsiWQ2X1svUUrnvMNrcbrxHnTEzio_0D1qwsacX_Hnpg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6vG26dtyIotXyrblJOmd78kchJPAc6_FUYASzxioyummm7lgiLmmMCZSKL72x-QgbSAfAhwDpRhgFt9H2x6Dmc2u6hDrjqSIReOlYZ5fWxWfbjLmIxXtL8LI2fNkeZYdwUDjv"
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWOqG816-RzzjuUk8C8BbgLLZjAprDQfXDN8iToZCYYdTh02ufOgp2BiWoIiN4a7tMArU5FJDUeFZvG9glV-bvdD0acPveLYcnASwPSDuYXSeIgo628Tf5IgGRErcJlIEAxeCGU3fcCIyAIvCzC2OBZ2-FUXFXzUznm89KipoKpX_8r60pXojJjFlnwGFr_Sy5x8Zw1zgLy4aQlptnLIYCaGqMHUuqT2mTlkF-ozvLj-Y-jb5RQ64Gesl2Yiq-nRthABnFiQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2D4S_vot_ptZfRk6Mz223vrwre1Y88a0DAr9aUUnam5cvDh_b7a4Ks5_E2LpsO8XX69TnYrQ27zEqwMVC84WutBg5KRnDZvu8nOja3eAt4pshtdXXaz9SDlL4u2q7KA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Fezolinetant trials for Menopause",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Menopause&intr=Fezolinetant"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "45mg orally once daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 7000,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 7300
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 20857.14,
+        "costPerResponder": 11230.77,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Fezolinetant",
+      "nnh": 1000,
+      "nnt": 5,
+      "participants": 7000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.0 VMS episodes per day",
+          "baseline": "10.0 VMS episodes per day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Moderate to Severe Vasomotor Symptoms (VMS)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.9 points",
+          "baseline": "2.5 (on a 0-3 point scale, 0=none, 3=severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Moderate to Severe Vasomotor Symptoms (VMS)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-0.9 awakenings per night",
+          "baseline": "2.0 awakenings per night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake-up Frequency due to Vasomotor Symptoms",
+          "percentageChange": -45
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.7 points",
+          "baseline": "3.5 (on a 1-5 scale, 1=no bother, 5=extreme bother)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menopause-Specific Quality of Life (MSQoL) Vasomotor Domain Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "2.8 (on a 0-10 scale, 0=no interference, 10=complete interference)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Interference due to Vasomotor Symptoms",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+3.0 points",
+          "baseline": "30 (on a 0-52 scale, higher score means less fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Assessment of Chronic Illness Therapy (FACIT)-Fatigue Scale Score",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Abdominal pain",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 6
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 4
+        },
+        {
+          "name": "Back pain",
+          "percentage": 4
+        },
+        {
+          "name": "Liver enzyme elevations",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "Long-term, as needed",
+      "trials": 17
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZXvz2QnOwbScUoiRG8bU0Im9HgAyKEF_zBPSpCGiYAUle7czYiq8eqKfK-mNsceMcFTEcy5Bv6zB-b4lI9WmdU6Dr4RvQz0TkWtQYFgFmGpJVx3ULr6qIKo-MaBLjCdGj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHENZycktSb4PBd8GcieUrf0-HfsWqCDDvFTQmO3Zh3BvY7prF1OvqJAKWZ9d3XBPaqwdBHc30BKsiI36MnsO7tvK2Si-tyXNY4axRhj0itGm6lpV7U-y97nQnjGDMskTrQAOvjivmD1MeBvg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCFKmWN7unp_KbXL2RazaVwAhIYdRmq9PP0SA4Xu73xeifvQLlO3l1ZMijOJCElsKh14jjrFW0MySOl6dwTOZQRG6ElF5VbsDpz-2IfB0EbYsF8YzdEV6iQbKIMjSs1luc_nEOQWhtYBBRvvr6GTi0b0CJ"
+        },
+        {
+          "title": "gjmpbu.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCHFEyFpM0cGHdT968F4j0Vc8mowRyA2Vbna_hwBf6DcGiJrpxD4eCCvQdWP8poxcHo5nQnbxhShrs-m2D1c7SitvODrA0osgsDGrB1SXCHLhVq2X34uedTexGxHzwYwTFqTnLC5QJek74FeLsFeM6LAl-QPuJBcIUHWdY0moFKoyY-BNk0QdN1n25mUp8UeSraUuy5nYxJWNisaV52SSlyJJr-NSeWKpPtuGXU-MmHhiK9GDtIDMAfglgxvQIm5EIcw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3_5c158cLvHrnnIuAAbmyOcluvOmQy4HFbxJZwUoVQzsM-EPOSS589Cx236FdfQ5wwGiw0D768RLUE0AfuWZkD1oUjra2Kp7zt_82TYwvZ_lU7J-aQmm_9C2AzIpwBs_hGmM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC4Ad4mxM7sjh4aQijo4SP21hUIbA_Ld2e16wm38WgE04CUxIfKtNXskoppUa-Dgv4Q0zBXBYG8F1cSIH-FtDJz3t1dfWvo49ghnjeAHcO-tK7KPVpomEtrLIBILmFK7MH1hIixf_CpB-k-6f0mLeAHCpVNi9Ii-lYgqpLBu7N22UCIcPq9AA1CYIgLHfH1YqVzLr2CASkJV1ZcPO8n7xpSkGX80vB_PiAXoKp40zHhbE25_3BddFCWQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy4-kqtA7nNV2Q0sl3aPShVAC_3-HQyIiLAZXLxGaWFsDT9PCcWF8O6qULlihabeiqWB1ddb6f97290MLjrXs4dTU5q1UTKi2bFFSwVgY99XQqf3iH8Tv63MqWk8rglPC767Y="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5cFOCbI13xqdhLiiqfa0hhDiPWKS35QRpnFN1EYs9It5fpgeZYExC6iyXOD28IGimZ3whyEZyUoFfTINkOpvOS_OY9BSrSmMaLel8nalfvzBxd4eCVwZdTzg-D52gM_ooe-M2FSklox402s0NYc-_3y7V0q6hyqVx44vwC5HT_bFZwZDkKeZhEf1wBtN3E4k-V6g2s4HF8S4U5DrfuHfUbB0BnRFVgUJ1GA92_NDOcMplYQ8JiAeJeAgaeObANIBpUzbVjvgk1KR9qZAA8wsuYA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHieB0NncEhO8kctsPRY_iNzPSlFTx58o5J0GlZZr-GwZV1ZEtxIoGIyRtRXz3c_QM718LvKi2R-MlHYS6wOiBJuH2VpM-QfJu1L_JSEHXPVGAZgkHGy53oEARo5tpLVexjM6-xmlbTfHiB2A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Paroxetine (low-dose) trials for Menopause",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Menopause&intr=Paroxetine%20(low-dose)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "7.5mg orally once daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1400,
+        "costPerResponder": 636.36,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Paroxetine (low-dose)",
+      "nnh": 1000,
+      "nnt": 7,
+      "participants": 7500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.4 hot flashes/day",
+          "baseline": "7.4 hot flashes/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Moderate-to-Severe Vasomotor Symptoms",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "2.5 points (moderate bother)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Hot Flash Bother Score (0-3 scale)",
+          "percentageChange": -32
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "18.0 points (moderate symptoms; scale 0-44)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menopause Rating Scale (MRS) Total Score",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 55,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "10.0 points (poor sleep quality; scale 0-21)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "3.5 points (overall distress; scale 1-8, higher worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menopause-Specific Quality of Life (MENQOL) Overall Score",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "9.0 points (mild depression; scale 0-27)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Health Questionnaire (PHQ-9) Score",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Insomnia/Somnolence",
+          "percentage": 12
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 7
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term, as needed",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE46eBHgi6e_pRY0MPRY7DfUsg2hrcxxbixX_EQ6WHecPPXT04_QdT3r2PCTz3_StS3kui82aWGrcPH-mTtVURD86ppGVSz57byJL8-cs96_8UIM51eL3Dn87p-GRvf6KB7wqUi"
+        },
+        {
+          "title": "erkenmenopoz.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4BosRg8CzqRaJoTX0ZaANkjHR5x_1mxbUTUSgiUYiizjbSasuBGtDUudhnig871PDNeegZJkl3vuI0EV3NhGWIa41v8w-iJjaeX3EQ8xRrATH_IrDHUgjR6qTR4cziG7blGMS-g7tgpAkWEvZPRDhnH1pndB2lgp-5AAhU4dz6NtDgJNuzlk2cCbro2DU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGinXQT6U8TMewJcZKpJRNy8DDxMFDvdcO577ovuFCND2j1vtZB-Ze-6VLVBmMLFQzccNah57MzbIBNJJRaobNAt-eyupEw9it-BYMZRe3rwtyvs4Ien32q39IqnJwFkH9DPowN"
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHseyL1mhkpqMEmifY6VzA7zpK0uKtEY8HZ6FFZKx4RpM8Q_VQyxF1HToSsbdtdu7W3IzACR5WqyL6ZZiPw-AMMXn1xoykqES0KODdRu4VjrpWgHjQR03-zUpnIk1Ydf0kflzQZGo6RCuab8DJlRRJZGAHNTWU9QeOHDSqiytA78izMBT4UuiKouceakjKOeBbqHprjIcG9VlmYTmwnhr4ZEX9oVw=="
+        },
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHuG9Cu8PE2jzkPSSenyuLoJ-UNg2B80mxFPWu6G40LlSnV0v6mQiRW50kPqig0TLko_TgJ5PeJpSL8tFuxl0ULV9viyV42cv0W9vqP-XLwnLmKdYc2GEM5LwORgafaoGB0DkMd8IfVuHq2pvOiMyDySO7Lmf5lRuQ0BNotmUu"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsjTo3-29i5ANqBgE1tfWUJitnhnkdrJ2qs1hRboy6PGid6Vtv22M_UOSbr-XLJZqq_oWrkIN79uPO1YnZCmCVUA_o1WjvNvwa4hHFV3fCrp8ElwXjQB4BnMT_VxShpp_cFWXigxaJ9PzULfBcrPrLJuq6cvDFGEzK3wQsMZsPZi5rZX2vjV16BqiZkwvSVvhse2yulu1lcgI9Bpj9bpqzFDo7D5KTnPGkui4XWOVFcxyvliuN_Iga31cM8OIbB_5I"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHteBZzl5NnwGEGhpPQr1V6s8FUOJzHSR8Y39B9oYwbEwomAYa7eQgXqWaCSD5YfNVZCayfKfnQEGZCVRGatbVVrZKyJpLPPH1XI8-qi1Pnd9-CcA-AxU2DKLhs28te2elZNQ0iRuoS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHulXBxEeaAHPrsojdb_5FhID8KZ59Px-Y9ams0KnEYKT9BSk0UnDAqttmNsbHwQGNXGbZtkFZOdz3fMplCIIZQj7w3bP0AObFpGx-tgRLouJQ6Oxi9EV3_5lrfMqJblawQ8I9t"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeLSxYqWZz3zpitip9H5InFRfAQ9Oska0J44ygY7Z8MfXd2oGNlA57Fd7dE10HPcLMd_UchwEcbZwBEBgx1QusA3Z090NRoJR6SvL5D5jpX6lnPfx8kc3A4HY5qKXff1d8QLkIwmuoWaN9KjrkarVvp_uPi4IEWy_xitF-aoui-QUDLyMn3MFEOmtAI4TxTkG7o4xquNPXguaKOW6wVfy_fu9yIbDX2WakU7c_mn6VDuumxWETE6sQd4Su_gntQRRLJEl55f1HqvK21FKUFP5A_TAvwAeezABdD_Dkb-lv7tSUT3_SfAZpD_GlgnS9mMqZ8Vyi"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGvmifgTOM91x0vcG3pVz0JdFgAk9SeSS2vq6x0bA71KpASWw9y5nKTCJMxDmLoyXKLpgpesgPNn0ldSxuDnHIDt0925V8GzH_Vn1DvzX3pXflUUQ7YALmXJdplqwScJSl7u53QJ8EAlQ7bND06BSHEbo0BU5j2hALqrE0rMoMsmtx2zqH3D81dZ9uSY--00MC24kQl_b-Gn1Sz-W_jpzhCUAkpUWVEXOEvfqI4WB82IdChoXz7w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gabapentin trials for Menopause",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Menopause&intr=Gabapentin"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "300-900mg orally daily, often dosed at bedtime",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 270
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1080,
+        "costPerResponder": 469.57,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Gabapentin",
+      "nnh": 2000,
+      "nnt": 6,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.4 hot flashes/day",
+          "baseline": "8 hot flashes/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Hot Flash Frequency",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-0.6 points/day",
+          "baseline": "2.0 points/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Hot Flash Severity Score (0-3 scale)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.8 hot flashes/night",
+          "baseline": "3 hot flashes/night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nighttime Hot Flash Frequency",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 57.5,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "11/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -23
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "25/44",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menopause Rating Scale (MRS) Total Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder 7-item (GAD-7) Score",
+          "percentageChange": -17
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 20
+        },
+        {
+          "name": "Somnolence/Sedation",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 7
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "Long-term, as needed",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBPFaecGl8D4ZzKFaqjs6MMJZ46c8zpuM9yViSXVZGU_QaxJzlAPU_HzeWoVaI8HvP8iNyTSzIlRJx6AVuZPL9Omps_v3wN2G0aceFRrieH9UOxu8IF0WMJz2fiHbH4lXmYlLAFPqKSG4YyXAkCKsWQgFFCKOYtwDDx7QGbFwoMZKCBkKV_f0AywBChmXxZShdTnVRZwAZKdCV0YZ0veO_V5gJGsXsqqtAp2Yk_qyDe5dwYIU8FFVLxiUQyia17zRliXaRSUphu4VfVbEM18qMWSYPAZdOd_OvQ5Jkmb5W"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKMBunNpnHn3RJXgnfqNi8JaSyPftuqAqyyfp7cGtiYw0h7kL-5lICdpWSan6jLt69F8-bp85r94cKJs-Qbv_-faJZo7ZBSno78pSLlV9BmawROuLNd5L2KqkMQGO5Q4H-Abam"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEFnWv6012T6BZBQrYczFtudha_P0BC_cS_rPRPRlUb2M_ajb9JFzEjeWyRLnhE-Wsx_oM9VCTVbk8aNirgRZnYrCK37pRVR0-lLaIAUdsABNkgZFVghuNMGakWZ_HW6gFMMzVcOx3QGOLFtGde8_mZU7t8FdMWV1s1aQNWxUQyktHdnZ4blJJ5-w7ILRi5PTX1wUMPBMY2Np5f1UXs1YET8iQjUc9oevfwNG9X6miOFP64jIPYyUamUj6G48OcgFAYRshs4krrufuIOCipmbh4OPrY1OcdPkOFPcMolH3pA6-vhKE4TT7ozhlnZnALoxO8l1TVsWWoil1X-0eJSEYgV6KLco3Ivcy7Tkvw7L0sYhLUw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZn_8L_1q9YBcqtJowP5k_vUTiMJNZjxwTcMw_uCHFRZnCSM39WSovv2RyJFO3svShu7axWL36sVqD2d3LLlSYVsctfDEp9cslibBMHUREtdHk8BSIYz1aKu9NHPqkjKdkEmbV"
+        },
+        {
+          "title": "ucl.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_4ZHlfQ-wXiRBgJQt5fXSXXHARtWIr2olzU3nxdGPLhUZMRIWzn4uwwivEXbNUOv46OIRnc-YXYk1nv9XbdEeHJ15a88BMupSzozK5f9DBzELkcQfOabnf7pmzd8LJYdMtZq3qQ6A-dVHsYf1mHS5nlCBBGXquc8Sy1k_RcDdV5S-Oj8mhKB3h82vvz_0J_MLNkDaapzwuPPZi7aThXUnJAkX3IKgX_vbdbB_ls3jDcRKv8rEzEOymwQpn1k5"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv8iA-FTs3v4z6vmjF6v1sKqlSmPrZ6YGL3JjOPfho8zRzDIjy-9lPyV3Jjfaj-1IY3HO06tm3K7kjXZkFXkhIsxd2pEVtIu7FXC2I9Flz0Bh4MxUVca60DDCEz6_yC2ozy15OlVI="
+        },
+        {
+          "title": "womensmentalhealth.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7w2l7EtoYeqX8Z5Io6VkLLt6MwYq-iVNAT-Jut7PoJ1JF3HZlki7ufJ1FedySprgTd-NRE91zI8g5cPkdpFad8iJGkr32loboXOyKAXIavBszBu0eUKz52g5xxx2KBqCkdX18LcmMMIiN1wnEYVq-KV-eAet8PDibAhPdhwbGwNF7qvoI4g66eUhL3w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) for Menopausal Symptoms trials for Menopause",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Menopause&intr=Cognitive%20Behavioral%20Therapy%20(CBT)%20for%20Menopausal%20Symptoms"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "8-12 weekly sessions, 60 minutes each",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 50,
+          "sideEffectManagement": 0,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2000,
+        "costPerResponder": 1185.19,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT) for Menopausal Symptoms",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 3500,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.7 points",
+          "baseline": "5.5/10 (0=no bother, 10=maximum bother)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hot Flash Severity (Daily Bother Score)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "18/28 (moderate clinical insomnia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insomnia Severity Index (ISI) Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-3.4 points",
+          "baseline": "12/21 (moderate anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HADS-Anxiety Score",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "8/16 (moderate psychological symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menopause Rating Scale (MRS) - Psychological Subscale",
+          "percentageChange": -22
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 67.5,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "4.0/6.0 (higher score = worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menopause-Specific Quality of Life (MenQOL) - Overall Score",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "10/21 (mild-moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HADS-Depression Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+2.4 points",
+          "baseline": "20/36 (suggests sexual dysfunction)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Female Sexual Function Index (FSFI) Total Score",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "MBS Score: 18/30 (moderate bother)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menopausal Bother Scale (MBS) Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "8-12 weeks initial, skills for lifetime",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQyR65oVdT3ayKtJcot3xs7p-v6r744YyLohtHYZ-biGdnFVLG3TG4GIZ1p5XXkZMoo7X1yE33NkHIkzUE_HYtXUW3y4nMTFxANZTTDSSslvLWFdWFb9cWLfbPBOkhH45jCrV2"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuTRLnQBNNFrYMOEVE1V-9OliJF0H-iRTATb5kJOQZfPNaII8OGvzl4RUE-w9qcMEBCACZCPd3Vp1Ygpixxr_HZSN677HpcxNHxTPQ19L8rRfDIIzfgb6AIl_gv1Uk7Nnt18rDt2rs6zt6e1Rpg30Ycyjiau5bkzTRanvmaP5N-bW9n_jEiXos2VcD2rxGErx8Qe5YnXg9Q_jUX5lEwjzR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMBTfs9P7q-WYSelNs0Rtu9Zmhhf4ZQIkE7i20iLTYxGIu3hn30DpkvokGOPfssudmHqEi4CDHa6_QNKziP48xeKyx-E96A-myVlEGeJbvymD7BjKuhqiOQCzapvqz-zWTvg6Q1Y7frkPChKs="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqn6_b-xlWY_NsAVlwdLIjZZjVXxbs-AqCvzystztaoafx70Nz5SMVPrNssgBxxlkLmd5-K7-pv1woxH8OMBm5v08dWDucPR7YFw-NqVN7e6fn7aFWYpoegd2F64d_5rXDCP51bpbeu3Pa_t62zHcDJdYJXwk6w7vUKkFsMLs7L7HeD4EqNpT2eoxz"
+        },
+        {
+          "title": "breastcancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG13HcJbCAGVES3t37SR-Cv1JQMG68HwE8L2gHaZQQCIC9VDg5wO0fvgM2-JZ3nWCs2m9HXu1ZZJM8Dt6qRhc16XG5LB5f9xJEShAn6zqcfob8RHye-Jzrb4qe5ayadePr8sm0BGSMfzcB4nBeSJeDvA4e_kEh8nh-UhZG-NUb8xuWLH5CPcJU="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcwnyY72mW7Uva2oWt4AqDSPo6oJjwn95TJCdx-SNtS1yhT-vp7Y6x-VaQ6hSllRuzbzFPFsTXuwwBVRvDUQz0S4KCUXkDzYvWLLecu79uXG5GoC70za4ak5bI7YuECMRTmZOz0sHQbtb5s-TKdwKIJsv0_ukLHtHRCq3UgihTk0b6ljvrSpcFezhBwmM9f5cUjOJ6qG3Wed2mPPNU0BJCLgIKaztFqubtKgun78BKz2KSknUk0Hb_H8OwFSIqzOusk42cSBsNCuqZ8WRmQao9WolvZVLz"
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr1HX9nbYl4U7wu2IslVV-v8BOWRWks8yXSG8dqesYFY82GkVbaCOA-rIJBFhT3yyHWEaydSbevrhncXEfJtgdiSDHtMQyP3NgaMZds2bVlQmPydTRy85nmS7ee6YyLMOir9iDqRycSKNig9BY1p8iGXXw3cO2HbZtNDUoTcX6qzjRJgGRbsljMnf9V-cfpllY-1A6u8X7ZhR9x_jb"
+        },
+        {
+          "title": "ccjm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkG-QhJkisdpPxvHaL4y5dlfzgGGP2kHWa-xh2ASiCzbicZm2QWF5lmvHlh3_D-qqbPXUVQqHIPI3HyV95L2acfZwjcVGBaZXcWK8WuZPYbdNM3GAXPqbQBmrEBNhBZP_ejhmEMPLd7tlWLUl719A="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oxybutynin (low-dose extended release) trials for Menopause",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Menopause&intr=Oxybutynin%20(low-dose%20extended%20release)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "2.5-5mg extended-release orally once daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 330
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1650,
+        "costPerResponder": 660,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Oxybutynin (low-dose extended release)",
+      "nnh": 500,
+      "nnt": 8,
+      "participants": 1500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 20,
+      "responseRate": 50,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 25
+        },
+        {
+          "name": "Constipation",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Blurred vision",
+          "percentage": 7
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term, as needed",
+      "trials": 8
+    }
+  ]
+}

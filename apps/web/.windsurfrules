@@ -10,3 +10,5 @@
 - Prioritize using generated types from lib/database.types.ts over creating new ones.
 - Run pnpm run db:local:reset-types after making schema changes in the migration file.
 - one table/view, etc per migration and prefix the word part with the type like table_, view_, etc.
+
+- Before UI changes, read and follow [the shared design system](../../docs/DESIGN-SYSTEM.md), including its UI change workflow and definition of done. Reuse this app's existing theme/components and verify desktop, mobile and keyboard interactions. Keep detailed design rules in that document rather than duplicating them here.

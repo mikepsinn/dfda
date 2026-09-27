@@ -1,0 +1,937 @@
+{
+  "conditionName": "Pulmonary Arterial Hypertension",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:21:55.821Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnn1YK9Gyk0UKbCHPJADdTsLb-5JhM9Am3CYEBRA2WwHxIoLmwcGNVhZjI0XhcGCKYuc0psirNEiEUeTALK2bvOz4NlU28dz3mUpNdhZj5RuMZC3r9FlFoogbO7fFjrmK4D4KURvpSOT7DruQxnzw2MU7P0A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERLjjUxqesAIH05TPunv4TVBF7SFRUHeTkkeTUDu9xmofJ-mee8BiKqGv8iKRXlzNI2P0PuMZYqRCSYvZwSnT08Own0Nr_ziDTkmz6B4-r21mrEJmV_Jrkm7X6BRHY7ISpI3rHrIiTJ5L7HVI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhmkZXfCtVRqzOHzc4wOXsx8DxkmKudO7cXfjtebDtPXVD58n7IKkfMBJpaf-oDSrY1RfskmLhtMaH9Xqd1pGiZZqj2V6iUfY-Fkr3oIFuVy8J9ArEgRgnOWLP3DrkRRnqsczJDqCmqBi0_A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKMdoeQkIPGs_sIiLYeUPkgS2HwbtA88Tpx_dQPiyXnBdqF_Pwe_9eq1gH70-nj9dKiCJiyFTiPMJzsGIPshpja8M5ii3sLEvKPaEEZP_kwOnco94wHgbwAAHPUquRokhvi5tkWTGjg40uDw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED5z2b95E0gC6LupU-__f9_x0nZEWDOqdUqaLTyTlvdF07UnJgaGUo3RKpTqlKy6D-GZK_yIdKEbX8bKu2e9IAS1brKRpvq1j-22p5nBfZC_PDNr09X2OzI2Rpm4FqRqFEYPfs5ISKz3WOUA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCEvahoaK_WS0zz1QUt1d2OIkp0jPiSlHLNbJaKjFWrXFEizjWnQCULHZi_yZILvJ6N8d-DY5fWKsUyZzHtiCzSKbBkNg6BAbGHDpFjx_WjZ1JO2jZk13nrc0nsM46_xMR90k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0ClhXguUGw7Q52WqhSCE1CZVEc7WGLVxCp5wNB1kuZzLNzSGpdnJ4dGujQYh9Dy5dde5_Z3Tv4srdDKm110h48gk9Yhp9LzNRIHT5eN1y68wVsnjvQVBTHdRcnh9G90TXsUjkONkd81iO9Xk="
+        },
+        {
+          "title": "termedia.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpC-XDzeXOdFUAhSKjQxUEDKQu4OV6wAopaVefT-NXK3KXRxpxwYUWdBnWxgJOl55Uf3Kmsh6lbzwo2B5GWk5hdl0A61xuo8mh0fbMk2J9ng1gLORHXPoS2G8LiIiRU57pRTO2dR0t8bgNpi2gOVVfAR2B8nzJXoO75QdiIkWwiCSXtc0RhyqdW__RQVm2M_JcXSs_BWAn_yW_U6dZazoIDpJjA0-BAffe5tn2_NEcrVbHz6wvsvQN70eaS5DDoP6vCAYDESmOrfftoyu93P7GATrE4eQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl_gizptX1BxgzECNO95cDv72kHepuVlbzKKqgqsPyweg5b-z4mds5Kt-2ugonsnoaKi9JpqezM4b5hi_uTWYlRQK171IBEHoRCpGNCVjAJDVcWBeUwkHv2AamHYfWFGoV1Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Treprostinil (Parenteral/Inhaled) trials for Pulmonary Arterial Hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pulmonary%20Arterial%20Hypertension&intr=Treprostinil%20(Parenteral%2FInhaled)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Highly variable, titrated individually (e.g., IV/SC 1.25 ng/kg/min; inhaled 3-9 breaths 4 times daily)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 12000,
+          "totalAnnual": 202000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 2885714,
+        "costPerResponder": 404000,
+        "icer": 400000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Treprostinil (Parenteral/Inhaled)",
+      "nnh": 5,
+      "nnt": 3,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+28 meters",
+          "baseline": "320 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance",
+          "percentageChange": 8.75
+        },
+        {
+          "absoluteChange": "-4.0 Wood units",
+          "baseline": "10 Wood units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pulmonary Vascular Resistance",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-500 pg/mL",
+          "baseline": "1500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "N-terminal pro-brain natriuretic peptide (NT-proBNP)",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "-5 mmHg",
+          "baseline": "55 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Pulmonary Artery Pressure (mPAP)",
+          "percentageChange": -9.09
+        }
+      ],
+      "remissionRate": 7,
+      "responseRate": 50,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Borg Dyspnea Index at Peak Exercise",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "20/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CAMPHOR Activity Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+0.3 L/min/m^2",
+          "baseline": "2.0 L/min/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiac Index",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 70
+        },
+        {
+          "name": "Jaw Pain",
+          "percentage": 50
+        },
+        {
+          "name": "Flushing",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea/Diarrhea",
+          "percentage": 30
+        },
+        {
+          "name": "Injection site pain/infection (parenteral)",
+          "percentage": 85
+        },
+        {
+          "name": "Cough (inhaled)",
+          "percentage": 35
+        }
+      ],
+      "timeToEffect": "1-2 months (titration)",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOaSY2cLEbEsqjY53txdXwZVKoJ8aWk1jkB7ZeZmEqj7igTi3vXeR_Cs5aji7jMDWKiv-A2Z4kNEAEWpu5AF9cZAd6N-2a_ztI7zeLkytsgJEgGdn62gY_wnleWK5lqjmMWUEf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGfU4g0KrtVSRNbSBg1sHvFscJmKZ-GmuTnOWA5zQ77kpcJOhzZ6x3gveAtcVwQOoxXtcLoM-pTGu433Uwo_IPQHh82UiTTj-PPcAP35AWDYcSe4dNsCrBxXL7yZAgxoTzprqCiIInCQCRol9q"
+        },
+        {
+          "title": "medcraveonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqs4eeptXW_lJ93X5OlveNneyPAIYJHjTKht0nd7vzgyv7aK6Iu7bvxgkq6sH7ISo-aGCzRKFE7MMjjgfS87MwNiSnL8e0F176jiqIh0xphI6NKJNXosC70HpWw51GReTBkVM5Lw3dvwM2JLzIGUPQSoDz0N_kxXhdNG1PkNjH4ZgPUNiMeJLF6-zCFaMgIins4mAGB6BMdAWhfmKaxHDAK3WAUnNApPmLoUsCAcm0p9jbfE5nLnjG7GQKQTVK8w_CvEWVXgsYZiApBKypRxtdAezyoYuNyByh0GUphwQXUmfyct51O-wrxmwX1XZwpsI2XPLC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXtjXPxxqN5lEJjakiSHd-0PDhmG_t7RIVLzTF4sU0DriefgWaQpzcAXgKDOiSaR6hxIhVFRd7RFQ4WgYceTK_ANrHD48MLps9csUSWog41yK7v_laANpEz48OZ2VG_7Y_pi4U"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJ0WConMgse1esLPogqy8OFnGpQXLatrxVMUk6FKG2EU5Lmd--BrcV3vxVTXkSmEWSG_Au1kzFBgyZzY8YxOHLwkv48NkEyePv8qAmJRFZBbNn2CWFf9QWuD7VdCH8I--RFGPKn2m_tI-68asfk1XYsa_cR954zBO-5JHcoj0qq2DMLwXatJMKWDVF0KI-8zh40dBD13Lyy0cynBXslyLvmhddeecL_rYdUMLx3vs2UyXgK-m43s_XB6edz-Hk1vw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBu8px8C8oyoRe0HHxBBFbU441ETV3ylllBZkf8aQj7t11-eio_AMnRywBPBKZOL2dKX7KX3lLvpztdjxDYHpiIkzmb9kFsbCoznOkETrIhTUHnQW2Yc5yYhZjAgeO58yfVZntIoCnU9lHwBz8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiUlKalAhTe1_jEPqToFDDEhz6FAVTpYyRCBi4jGaJTZmjNWNhUjqT8drEZwg5T2kDC5hC3T_7y95RSYuSdJ_luAdycKx33qwUaMWI66I8DnS_6BXPe5o5GTj6FEetvtQrvLwE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9iI4NMjQnWu7r-wGh38ZE0VkKgZaqNHYccZj3d_j-4IDZTNsKRLxY3DMwaxAMGDpL-7JjnO2xh_PH0AQuLY-JSX8psDIzVlzc61cLveDF4Tb4Eet0WrGdeHjg0gB4ECv3_kVPj6Odt6-ZLhFAoKepfPm6VtPFJnNKSEZ3dhdUcotlu3pQ7wwYaPOMgt4C3iPkBwy4Uu-f7Er-fqldWC94xeSPGbiT0KAAkYT6c5KLkrFa-DlxF04juXw="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoH8KS4iOo4xHgQWtvft8D9l8tmRRILwiHAOskJj6uI5mPL_WaDoiNjaBKAWwRaSAqmXAOqMgNnlawj_7ASernP6DSHVqCL2aVyPbrxH72eU89ToxkeoCJxPZCy3NrBstc1BuAwAM="
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkGXqrICX2S6KNxVTPfgfscm3H1Va0YsWrFjsnIDcJGf8A7QfiUxrNJxedTZAGQZ9hTLpT3OBa9IPUYx5XlFHC6bjjUTVCDBjZKNtLY18r8GnR7lmvD6YOKbquUo9v-eBmCwUJBmTK0O2pvfDtbfUX2Bl5Je7b41ci3KjaFhAXMRVgltX9jP7Z_I9r3Rb0m6qmWKSNfbUdMw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Macitentan trials for Pulmonary Arterial Hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pulmonary%20Arterial%20Hypertension&intr=Macitentan"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10mg once daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 126000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 2100000,
+        "costPerResponder": 331579,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Macitentan",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 6,
+      "responseRate": 38,
+      "safetyScore": 58,
+      "sideEffects": [
+        {
+          "name": "Anemia",
+          "percentage": 12
+        },
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Peripheral Edema",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHATX6SMed7q-Kb1PwR_h_y5GiD6LuhBV1QFTEsACtKIQAWthULPy1sQtanjMeCVQk-M0mzFaCkhb48P26FZzqAWv9a4QLPdL16Cj-tYX9qG35HgrJwgUpug2MZqPOwQRKE2tB0if5Eg_Kldg=="
+        },
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB_mtFKoTi0xNcclyM_mwZUlR_iY9fXlxv16MLB71LYAAd8_a6z9gYoKiPdUjHgi4E4M5ggZi47xwo8BNmvXxQ0v6DMcjm7Jfq0WdnAj-PJa84YCmNa5L4HoLfygv2kNxCByAQxHc0T9YpBWnvX3ev"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhfgSp6Dr55vDDdSszm9BA-cL82vgdzwmKmsw2EuyJP0mhboAxQkcD0vfXRYPVtusXvvIfAIZEtf953gIf-DHqXh4AB-09tkSZevAjpODA8SiRavM1jzwzJwfDA18grtclL9hcImfzuHiZjA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZsJsCBK6SZepcduHnEGqdMJ7bfEFFrXqfQO7IrSwhulpuG1y33DYZsJArxg1eOcN0nBV2dI3oF61HqJIO4HutZIxT0JJrArwCStuszf_m1I9br6LAzQf_aT7aze_ymShOUQ0="
+        },
+        {
+          "title": "longdom.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPE1UnHuHFcDkFD9lQzzJhDH-dC3im4geQKqc3KKFyDgQfRD9ukPWwlF8OYC4oD-1Dx2kpMbwhai3MZaDS6DdbNtSCXqSYB5rVj060q43t2FgVu76IVj4MBsSUb6iE4waIempcOIW8GSG3ta-eU1b-RVhqLpN6TM88b-pzw5Gmiz9WKqBPEoSsxnAznpkI2BUQdm0lgQcvVCLjGebHWAAgSEcyCmeHjPSrApTAu-ZqVGuMlUqPRN89F449tyvh3QYlEjoihQipuQborFmDwJmClNvLbxQpgKqLtj4MkOKxi_EkiIS07Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXmQogMjhh2RZApHiQEnTm31tOF7ZlqwDoSntNgCceGGkvpmxRasJgaUF3dnftcmDbYyOUASmp2hE9ezXkzdm8rW1uwoWU3efhfba91TFsjd1dMvEskFQemxT0OjuAdIWSH_DWSprzmxL0oi0nFY-5pTGZVlOwk-JrsNr2sIKvMEe5DvAWipUksTEKuQPOinz0M3xoWoDoJIZUS2Ptw5BoEX-5UFdJEsHbQdCrFiCMOV3mRsdQdugvniWp8hrjfJM0h2o="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEptSh2oHFyevNYZwbjT4hnHe5e3PyHdLDL-S2pRmtD9S9HTv1MVvFqkOqCilz3yOMs4xJrHwBOGbOL7AsSDvl59TxWpClbGTxiZ4tR1u05Pbaiq8pRHlDjUNIGcR5QLz2Tvg4TdU5hEQ8-U7TDXnz_SUwSv4b1v6TeL4D-3mjDueshA7MaYjroRSh5S3i54_o94_pgquPyky7J5xiqyLR6fAmhwsomYteVIDM9IyMwvzoI0s7gM1fXZJKItnNo4MeC4tjG7sQEaeYjEzluPUX0VO8oz_FlNgExnL7HHtkM5-E="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW_psj5G7PdV2GEWJlrXQjzO4Tx1ERHAAaMvSlTy1cz1J__GZRgJfjg_wxEHkV4eLK3bcMrjtrrwkWfuqwe1jJsi3bPyerufTdkeYuXmeKuSCBCclbqO8lvdAooeDYIH20LmqDvITcVp-67dKSl9UnVCrTp7-hQMRdcwuVMtP_Z6ko_a9ap_DzidfTdTwQguEOLHTC"
+        },
+        {
+          "title": "ClinicalTrials.gov: Riociguat trials for Pulmonary Arterial Hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pulmonary%20Arterial%20Hypertension&intr=Riociguat"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "0.5mg three times daily, titrated up to 2.5mg three times daily",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 126000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 2520000,
+        "costPerResponder": 360000,
+        "icer": 160000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Riociguat",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 2500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+35 meters",
+          "baseline": "370 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-minute walk distance",
+          "percentageChange": 9.5
+        },
+        {
+          "absoluteChange": "-225 dyn·s·cm⁻⁵",
+          "baseline": "900 dyn·s·cm⁻⁵",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pulmonary Vascular Resistance",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-525 pg/mL",
+          "baseline": "1500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "N-terminal pro-B-type natriuretic peptide",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 35,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.3 L/min/m²",
+          "baseline": "2.2 L/min/m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiac Index",
+          "percentageChange": 13.6
+        },
+        {
+          "absoluteChange": "-7 mmHg",
+          "baseline": "52 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Pulmonary Artery Pressure",
+          "percentageChange": -13.5
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "3.5 points (0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Borg Dyspnea Scale (peak 6MWD)",
+          "percentageChange": -23
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Dyspepsia",
+          "percentage": 12
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 47
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyVlU8JN5pJWudL4FixLguJDY1jMmI5N4vSp5krDoEOg44UnAaAtOzTmwtbXO26BDDD21fJDrl4BGk__m6H2SMYYtKVi0ewb9kW0Z6Nb_IhM96YDkY2ZnD1te0qb1dNuWOtli7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdM9Eo7YrzDBw1ly6Azxh9Ot9pKaNJ0s9BP9r16pFTrfvtoXuIGpXD55dQp1Jvroj-TYyv9bDT_fmDmj0S2xWlyqKbuyuf7Nv8XCbvuTd-HJYvQGbvqH6XcyKAy-QddBqL_G85WdNdJWDojR9pBGd0Y7ziqyLPIBFaEiQ9uOIrbgMBmbNTz41yqpe-m3rAKv2ZiVcgDnom3icgK1doqZsZ9pQxC5Va6GUWM34EzzBenFldjAxq5yQVX0Sz2P2WLxtvpErejH6k"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBkkf9Y1EftfwBMWSybaGaMU3x2lHLV5icybMEyaRTbtew0fnEep2_L34if7EjIGf5BWuNXQ-DVeb0elvkGYOFmnUCNU5dX3rflVUuOW9jTy9GmS2-Cc4HQ1cgI82MrSqYAtND9jmX97F8Dv7Q5fwthYV44PL7K36HCi5t"
+        },
+        {
+          "title": "archivepp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvKBc6uxZAd9_jR1SnYD7jjZXW0soGVFq76e5tNXTJYw1KNAD57WwAzxF5n5u51DTcj5fP0Ym0EOAT_0jJVu5ChtHhCJw1upk64CWnOmkL63rTEUf2786Px7s5F3dmtAWTCiwwb_G0lPpJpl4DBo5ogRjB10rRbQ7h1xhv_LDBT-sc94nLSvVHvARKROJb_OJpLSkJVReD-YVpXYoCQpUWpNI8EFKWaCgzr6a_S3mnFWvLqJufWYKK-lgXlcmON4agWQhPYyz8ZnR4xoNA"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkqO2vV5aPQ_bkABsb0-O5oflrqn_scx8TWnTSJOeR6zwy0MMfNK-osNEypKdhrHSATcG4gRQ5tZ-xqqm_vslYPgj0K7ivAFyCKWtd7DUFUdPKvTl0IRLE0LWkP44-KwFJXDpVPdb7FFy_EAs1EqDoKYucB0KILlDiam02Gv0kdHcDNBs_VZWxMQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKHccD-vFcNFVtNa207qe8l_nS0mg1RfkESmML2pbrg7M4A47MWlAEJxjSYKYFp0vBoVyEjyNUazeugUGvA__wCxRK72qP1XGVkgpnHx26K4cq6Wg4ZIaHzLhumqBcZPBBbytSA3Z3zJF3QnDEdKC605U1nOj9BPVZnOi7bmxv0yCFuGD8dADJbZnp5XbKXaeoljeBjQZyH544Wf6drPr9n1IBlCYRvs7ynPZJEgVQg8sno_f9UCH0lhPMLFbi9G8U0vERwajJhNS8fejliHVmQfpTr2kjNLsYC87QYh5dm3-nbVE4I73G2mOfq6AZ"
+        },
+        {
+          "title": "archivepp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYgR90z4O8cT33kdIw_2p933CDg8dBc7KAoVWhTi63oklhWLGen7h1jmIlBmhrzW5u9ZbUZRfgWWmNfPCYXO-WL2I6nWQDJACNk76SCuJKGIc_AKXBHtk59IRMXZVBP6PTTyGWQGh_o4B8XJIjjsfDo8widwg6C7o5GjXiigu8LKHD307nFpgpP9xu4tdeC-I4rKucgiOytvgJMeAg8owOvMFi0ZdgIfdyUjps92cm51ca8Q32GEqQD5S8MKlPeBgh-A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyRPOmrwVc42opzkBhK1ru4sxrL2MROZwH6RbB8EXnoARvMjI5uOWw05CU-fT_Nxrs0ckM2VBwXQZI6m3Hm_tR7f8Xcrra6LGYQdmcqgmL9QMBiFH_Tc8CB-IGZkwwzw4xuX92"
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-0SRqg9TWYCh7hMxXvutAoSEhvsKsSgK-ba37yQHhNMBrcug-vDQ2zZbq0wPS49qsrZiHhqhdGRICaoJrO4KUkgf_9nDGE9-YPOyawgbpevo4RVToRkLXMX-khWAiCPb3zmnlc7SN2WQe458Z--00Rt1NAMwIGFnomDaaa1ZqIv6n3m2gBBtMvYO1CxBaW4DvW-TBwRO7JwiBrkoN6IcTTEfbIcmqanQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sildenafil trials for Pulmonary Arterial Hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pulmonary%20Arterial%20Hypertension&intr=Sildenafil"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "20mg three times daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 4500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 6800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 85000,
+        "costPerResponder": 17000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Sildenafil",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 12000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+40 meters",
+          "baseline": "330 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance",
+          "percentageChange": 12.12
+        },
+        {
+          "absoluteChange": "-250 dyn·s·cm⁻⁵",
+          "baseline": "1000 dyn·s·cm⁻⁵",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pulmonary Vascular Resistance",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-8 mmHg",
+          "baseline": "55 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Pulmonary Artery Pressure",
+          "percentageChange": -14.5
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 40,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-375 pg/mL",
+          "baseline": "1500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "N-terminal pro-BNP (NT-proBNP)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+0.3 L/min/m²",
+          "baseline": "2.0 L/min/m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiac Index",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Borg Dyspnea Scale Score",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 50
+        },
+        {
+          "name": "Flushing",
+          "percentage": 25
+        },
+        {
+          "name": "Dyspepsia",
+          "percentage": 18
+        },
+        {
+          "name": "Nasal Congestion",
+          "percentage": 12
+        },
+        {
+          "name": "Visual Disturbances",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Lifetime",
+      "trials": 125
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHavX-c_ucqvYjx34960Dk7rYhmInfagpFfUhj8tXlsfdv_89w-WWAfhZYAKE0b9YxPCLbOdnRA03EViJueF1jys1VDQq_d6XqoWpaTmTf_U1w4b-5mOLRgYoz1RnA7dJv2-iG2QkEoVjLZ44W8njReVdKE471wqgQKanOrHgc8HyXrjYbM_LgTaqA73M7NIVtn2weRkypaDsfyJyDC38YwsxRPPL_JdYx4EjJU6-phCD87GZ9q17iDAMQoHz0TA4b1MfUW59ke47AwEipKsSxtPO3jS1rRs8IVGl_2O29NcgMDTTBHLe4TFObr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHry0U0KzN13G_iRLYYfOp7LbPDpaan00kenO3PvTir2Rik171euwa6T0Z88YPKKde_DLrCabffEd2-rElvyX3XeNcsbFpvv0sfZ_e5wC95N02H13j7NQE8nh11mzo3-TLt_6-0e_-pSre1utImIDfWK2MZk-ZstUompgNjfdAE0t3T3Uu0eQXJzKP18IZ2Zf8PcalzKyPnSIXF46LmA3kyRU5UkkyuA3TkKSZdB1pYGPXPb1OBrv3PjkvBZR3IECTY_4K2PBHh3ZMN-gnILA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh6UDP6P6t_2dgKxkM5HjI1oZRaIst-9ehx2d4yeq5juaHkTgcseVh67nu91BfJ8RgHrZqgrbedJxJI82x4r1T5kB141D-Y6UDtOL-d3m9XSfG7KgGB8M2aRD6UJLCMFgngJOIVqg6fkH8S5o="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFubJRSk9fNNSCfNjVI-4n5vJNQs25jYWvUK-PIjvlwYmXlw3wTCyd3GeqdFDF70IRF8sKOq5N8mxT8-KcCF9-usvmo-5GsIWo_YzINLNJH1MGDltsijtxNiCkL0O3KkoUXSma9ghwu1tdvXlmxQ4S2_5NJobDt9hLMXlem"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg5hFE09p7diJiYGGhiczNwoJ2IUEpGW6tzoAq_CZzrh9ITpp9DOtAUq7OUoTH9soYc944MydQ9dZvdI-mr7NpezICpoA56to8AVwxusGIFN4T7gDCiSZO1VNbxt4TGQ4HNZ0XHyj7hf1Fy0CVwpMp96yNATkPLUdY_qkG6ujwWvFt9_NHz0k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDIHDN-15Oi_O4rhQBJJ27d_te_mKuwJnjGchjQtCnRMPsQJP02rbViIjBoetaGroA2XwlksDjYUvVDWS39xfMOUcy1mPs9oCuaqoHA3TrCtJl1WwRhvFusd8AxUljCA8ixlJAHyDx3vL6tBk="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcZyJBOFt_KjowZItpxT8Nr2_XqE_GkKJqf2XMRt_pYg4eKC1Si1W9Vae3LIjIIQbjVS7nENEnaDwWu1DFhc_LV_Frr8g9uZNY3fap7WgyEJPUdJ9y1JPzFYKtIGIrQCfVIKQC7rNuYfiFt7RjPvX329Gw-eePctq-sWc3lG1_MaoxDFtZO17WPWcycpFulT35sTtHiBPylsxsYPCprrAjxJZgDioVrhgkBG1xVSBYwMxzgjUFCkcAhqHRGt6l"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRA4D-d_E45xuP84b0pWATbZsMAHLjHLOY5aGRQrmTE39cp9FsQlioirVXXUxSJIwFxrs1PH3Nc977hsB_YShektTf0CieNzRSlQCZv4_AanFx5BkK8MXS1wPti8owLeVK6K3bvQ_I9CKGSzk="
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSH-GIydeQ8Rx6KZ9gWoZULO-BjGn4LS9Mg6Rxcs-bMaEQdYyEWLVBoxi1sAgxG33fCLhtTONAM4n24ldSK-qC_jw4Carswx8QcAANtlb1zJj_cWKOc52okSbq646sNZU3zhdBy_GFi6kCFu74E2PvtB8Fkmii4xIhYsHYQkf19049B7ywEndNgrs7KFgL86bO7XPzd0xfjazqvsLBN_X04y43ZffrDvA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkz2cx9djSz_ulc_rBOI3TWXTTQnJIxR5KPrB6VKH4fE24xvgrkUjc4ae5rm7RWJ1OZ-pyrC3AEcK8Ec0i-L-AD8EY298DdSw52aF9tXxUyL0_rtMUo7bVvr-SHHYRUbLXp-Pvxl0w4d96uN1FXoVqSJFfkrAzWlrJQG20t0vSb817QhurRvgpkjQ2YFBWVdD1W-Wo8iHfoaPikdcjN4M1dDgh2G9bVvb6dmHhRJY9d5lxg0g2zvmLIe3i8kj7DcyfcB1r9JvV1vXry7OjIYgOE0yHBN6DG_ctOsfBLqNctcGFmWx4wnV01UbY7_tD8JQB3nleDftYVEKWmSSDTgcG3RsPFyFPI7wdA8i3YF3e-okiRDBpv7AIxMQNosySjX08s1p4-cBQJR7S3N5PN0NGB0tkc8JVcA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tadalafil trials for Pulmonary Arterial Hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pulmonary%20Arterial%20Hypertension&intr=Tadalafil"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "40mg once daily",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2500,
+          "monitoringCost": 4500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 7300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 104286,
+        "costPerResponder": 20857,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Tadalafil",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 9000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+33 meters",
+          "baseline": "320 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-2.5 Wood units",
+          "baseline": "10 Wood units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pulmonary Vascular Resistance",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4 mmHg",
+          "baseline": "55 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Pulmonary Artery Pressure",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "2.8 points (on 1-4 scale, 1=best)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WHO Functional Class Score",
+          "percentageChange": -18
+        }
+      ],
+      "remissionRate": 7,
+      "responseRate": 35,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-375 pg/mL",
+          "baseline": "1500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NT-proBNP",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "35 points (on 0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary Score",
+          "percentageChange": 11
+        },
+        {
+          "absoluteChange": "+2.5 mm",
+          "baseline": "15 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tricuspid Annular Plane Systolic Excursion (TAPSE)",
+          "percentageChange": 17
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 30
+        },
+        {
+          "name": "Flushing",
+          "percentage": 15
+        },
+        {
+          "name": "Dyspepsia",
+          "percentage": 12
+        },
+        {
+          "name": "Nasal Congestion",
+          "percentage": 8
+        },
+        {
+          "name": "Back Pain",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Lifetime",
+      "trials": 44
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmBrMBfRWCvrQZQ47Qt1UjRff9LBn7he2-hF_uK8Bl4etbqZpvq3MVXXhlA3c3vWTWxZyKPaCevgPZ4JzrMyY-j6CMvYKZPC4QfLvoefvikc3TdbI--wNJNyrpOLS5iWCkeH2lWV-ZRnk4bIM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWxO1n-SNN22lHjH6ts6aDdr3jandKIviLNyaiTbvm5Ol8WPZJ3VbYMR7yojycnMZNsZ5J6A2sd5Q35Z9MGhAcPUm6XkIX5C7x2HThMeWEBUovDl8U1LE65y6G0QMzi1mz1lKG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5Yq7WsaWryHHjU64aig5G6B8NIvjE1Kjny-4FfmbwvOBJTUDohdcxSFQ7DcO9_l7_-HDFbiI4wIpEmlExw9AZzYcKjZ3pTHSq2hWsLxGKTGNmnEyNO6lfVKBaRbyREeGuodvl"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPeq0Rj8scVgOJtvhFr4rcpIuiSXGrhizDrRJWT3-i7fSUi79L6uxIQIOPh_qz7xvnQg8sH0rCX8M1C0R1dfgJnp4g5zCshUu7fyJxLvEtwOHPVfm6yfBggZ0aWlk-9GOy4QjkJawLfuRr4XnH3A3q0mPjomJO5diBwC1cXDOvOySm2IYHLZo78E4ckQdXOjh7cl08jy0ul53zGv0KXr2jZoXVU4H_GSNyUbqDqR615496zYVCAiTsPClPkBPPG12C9oBmsz7UAaHHk75lz2ClKIOedNG7Pe0FxwppaudnQKw5Wgf8-Tnb7oa5iVX6FybsPH2ic8JbwQI="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElUrNiPQ3QOO1dwvk9twNkiNEyPkaSr-hN59fhJeHW02dOwXQ_u13AineD1g6ZnB4Rsh8cLe3XXm6bnv0nQ97O49eiLqEIuGXiTtONICy4GV7snXjUaLCrxX32qeKchwGJvt0rMiNGUB4BB3xgyDRZ0TU2nQtEovy1fTCEVg=="
+        },
+        {
+          "title": "slideshare.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMN-3faYDHxVf4HcwFb7JJn1w5ei-zZ6RjEJMw2BtYjsM2XpNLECuZSGXJVw7P9CJMY4xcrWarfm97dTUD1Ql7r1-wM3kf5QAlh3jHCPNeoQnSDRNgyya2cV15CN-WXow8GjVliD3_fV3AXU6UNbc0Z1xIyC8F5YqlMu38oVOICunc4Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjc3lHiYhljCd9Q1P_F4QnjasD1gEXpsMiMdskcHvARLa5iiWBrdE6ZSgVLAQ3xYMVTi-u3Bsmbjj1Mnd3Qd88Iv4BDwIyttiO36JSl0u6wi5AKCAeZIAMUFi0Gro9SA1wL0oC31PBdLNazSg="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6kj0ulkfFX6D7XwOpf_YGQzth75pRrQ0YdG1FbztlrglhOKob7pnC6Zxj0qh4Jzi0o7GXffhtd8aU5MFsAOZdvlawebk-HFZ2XuGNQbUOQxzRSv31FXkeQyR0sealieVPuhNny0iIf2cc1GI-6F-ZDAPCS_AN"
+        },
+        {
+          "title": "ClinicalTrials.gov: Bosentan trials for Pulmonary Arterial Hypertension",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pulmonary%20Arterial%20Hypertension&intr=Bosentan"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "62.5mg twice daily for 4 weeks, then 125mg twice daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 6000,
+          "sideEffectManagement": 800,
+          "totalAnnual": 16800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 336000,
+        "costPerResponder": 52500,
+        "icer": 85000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Bosentan",
+      "nnh": 15,
+      "nnt": 7,
+      "participants": 7000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+34 meters",
+          "baseline": "340 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-170 dyn·s·cm⁻⁵",
+          "baseline": "850 dyn·s·cm⁻⁵",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pulmonary Vascular Resistance",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-5.5 mmHg",
+          "baseline": "55 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Pulmonary Arterial Pressure",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+0.25 L/min/m²",
+          "baseline": "2.1 L/min/m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiac Index",
+          "percentageChange": 12
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 32,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-450 pg/mL",
+          "baseline": "1500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NT-proBNP",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+3.8 points",
+          "baseline": "SF-36 PCS score: 38 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 18
+        },
+        {
+          "name": "Flushing",
+          "percentage": 8
+        },
+        {
+          "name": "Peripheral Edema",
+          "percentage": 12
+        },
+        {
+          "name": "Anemia",
+          "percentage": 12
+        },
+        {
+          "name": "Liver enzyme elevation",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 73
+    }
+  ]
+}

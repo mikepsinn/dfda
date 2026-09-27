@@ -1,0 +1,944 @@
+{
+  "conditionName": "Intracerebral hemorrhage",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:52:17.121Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "clinician.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpXA4cdUd54W95xDq6sPA552BqLUPAyl_CBP2K934FCNpkdCs9jKQ996iYTkMHiRTFubZ_Gf_SX30sOpz2nIQ8AUy9Ac5RRIHRa-s8ATljQHijQO7dsKZe88b80-yWwI_jk-qjB9MceiiBR8macGD5qRgUQcqtINcpswrXyh5KemdGx6HZ1OQlGwZpPxU9cK7rvZaleyjpeGLW7jrdJpQCYbPqaC_hH_5hpVEVFyROUQ=="
+        },
+        {
+          "title": "tctmd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElqJY5ie-I95Kxy7-aEALq6Co5ofCQ4sTNBDVdLprqah2AzMVCoSeJ8sxfGaaSGoZoqKf7_139780No0xKhDasG-tp5wtx0v8XCu-oQ1uTc15e7oqFamTD725BYHKoffnE48hFbumPrL1P3KROIz8giZr32fHJLSl8g0IrPv7UzACyXzW9Tszq5iBKRpuldIs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm_Yv4Y0HgHe2sayAyj72O2dXVkZJhSbqqCnc3CBGX53ZuVozgxRuTNRPTUcfX71nGlVhQ8W_TETvJI6_SC9VZ3N5Z5ALGLnZlyTIqTqAKQe-eswic-E2zx1N9lpb0DkGh01ZUD6atfqdf7Eys"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2qkRgHzHl8x00o3hFAFo3oWIm95h91pMfMw0qrAiU5EggrE6C5XDukiJ2D0z2UqIPyBCdUxf3jzj5U73bLokq0rnHWFETTrY9aO8-utv4f-lE1nNVcAIIa9v6Gw3cKBxHmXmHQWbs8uFmxa-Adf5BmUFfDVJ6HLIZgeoD2Dg6croxoukWE3JBLDqDxCz3bHXvdaRdO3RhvyB-IL7Yb4fPwmi4iauZTkAuGwsQSOAdog=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5zznXdB2_Qq1q2i7zlHsbCznhzy8F2c1npP6laJyPRiP4Y6AahGd0TQlDlNDlhfMD26DxGaP4L5I7UoHTWJoPQHhtBQNwzFcQBl0VxgMOGaMJhwDyGjbmowHRZ-TslMi2YLpx"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFyZZ9Rm_l2iJZkPH_CkAt91Fuy_A7SxbsyZYLQNQyarCUnv7hJtyxqYKxoaATKzknyYjZRsXUmo19S3R32sICBL6Scgl5UFC-iSgV-X0W1RG-RCXKL52qgrtHBHjepJKd3VYn-sqYiYHTlQoRzQdvQELtIUMjP0t89hfsLbB_BW06W4TueHRIn2Qaz4RMu4WIx1rfg_kdqNG7mA8a4qj5q-_5CWLHzcmqpoGAfWnAseg_FbLrW6VFqFwiD35zaqRwlBqoazeUxNeKKZdbX93RbpMSe8wN_Ss_h4dxyJ6wf-yVguAjBAM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE9YHB6Wke6O1RYaSUubQdG5mb16140Eylweop3Z6vWQRPUSXHrQKuyU_Cv1vQaeW94iVbK_zNhlWSQ55gT3NTAJgRcEnVFSrvSQZx_yv2g4avi0jr_6daZlOW67KDoZkdZ-b98nThMHCorN-8"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUg0zklTrqDWfqmMJsD58tXjXKFKZrtdsgnvIMyMAH9mmPn1YgFHEMn-9QVnFJPPjPqSK6n26dXBZiwJUq9b56iFM7iFYreOzxadFeHrOxoV_TML4ANoV8kxeDNDbVUDGemhKDOUMop4R97TQEZJxMn8VgrT7NiWFT4GVl0rYtYmNcszxptBDO7E-JxT1Tnhi2ZWtRwVf13w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rapid Reversal of Anticoagulation trials for Intracerebral hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Intracerebral%20hemorrhage&intr=Rapid%20Reversal%20of%20Anticoagulation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "PCC (25-50 IU/kg), Vitamin K (5-10 mg IV), Idarucizumab (5g IV), Andexanet Alfa (bolus + infusion)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 8000,
+          "monitoringCost": 200,
+          "sideEffectManagement": 500,
+          "totalAnnual": 8700
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 34800,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Rapid Reversal of Anticoagulation",
+      "nnh": 25,
+      "nnt": 15,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 percentage points",
+          "baseline": "30% incidence (untreated cohort)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Significant Hematoma Expansion (>33% or >6mL within 24h)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-8 percentage points",
+          "baseline": "40% incidence (untreated cohort)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "90-day Mortality",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "25% incidence (untreated cohort)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion with Good Functional Outcome (mRS 0-3 at 90 days)",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "-4.8 hours",
+          "baseline": "6 hours (without rapid reversal)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Time to achieve INR < 1.5 (for VKA-related ICH)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.05 days",
+          "baseline": "7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of ICU Stay",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+7 percentage points",
+          "baseline": "35% incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion Discharged to Home",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-2.5 percentage points",
+          "baseline": "10% incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Post-ICH Seizures",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Thrombotic events (DVT, PE, MI, stroke)",
+          "percentage": 8
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (minutes to hours)",
+      "treatmentDuration": "Single dose or short course",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGydJl0jX4zClGbN50her0GPumBwOqquU2C3yAVUwWhWcW8jBP0Z-dFY8tFGVr3fMaEbG3KTIH4kwtOOIhOme4td6cwrTuIFbEiJ9rfhYxKF-TOmde_eTp4Boewr4Z0ai9YszgjDTys0dAH9AE="
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAtQ7O92onTW3Q3ogxZBOxoiGoyz2jVcCGeQ3O0T0GFjMGR3EKSCEbWpyYjzp6Edm0gnftoa8pMyXyZVU0dxvCmEcT_1VCcR2H7E8zpgd6aOZwHFiu5m7-YNFOkEFpfpfIt1O8dOA1nqxmJQ4ZxOElPc2Es7xoj58CTOdRfIJCIwATC4U4emuW3nB6J9v6fMMJouul-haPpqklfAFN2TQwhVQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXoYBx-QbhS0EOYsb6-Hy6SRD8i4lm3oCEjDlKkQgcZ32GuQHcR26Kdx8gGt8B45HzXAXGhRPuS-iFfvL1ZDW8aVGOd72xPX_LqjwsU4R1S0BShwM-eoFHiKANhqSc7T4Rls-pfzZHoqomC_3xcU2AErmN210WdXSFZKPet7BDXjj1MmG8p6vXoKZ_7AHA49pcAtF4l9scAzia8Hl1j31erB-wo0RanXu_8g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx8rU8_2yFfzZSoKwq_8-DvpxFyGn8ebONYTOh1UUCum1LakCGcVqIOyR2ds2Wubx5ABVPk7sKRpguwmesblwCKomLEPVnZTrjO0nkJpakiSZw3WzU6TxxfiTmpY7ZjGuakSqB63D5N8VQ5bE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUXAKY-Ki8ZTxs8unTAuoxJkQC1JHfS7n085nZlyjEBRCA9QJwwcp5TUixDWvC2eNwc5AHIBkjj0qmWyOq019LIUFIFzQzD5FNnj_X4oEuSnQdSdRO1OJea74QksX84TS1OOQuP8rz40FzpKcDJJC_MkRL2oSfNNJcHUh3qmcYnYJpqkfWoiL8_Ms_aP9auPR4m1Q-yKKTgLnXkj8B50LPrdCUtBDcxEgyyVZXkuxXQ9jgYKkGpA=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR6ZCUTz4fthHESC867a4gbfnwD1vl5L-fQBllMfZWwxx4yPt71Mr8yJ8ckz_QaMC1k5gNM82X4VYCpgMSXJQ37yW0NjTxe54ETkyCPwE1G7bngErXkJFg62Q1O_lzGe70CWF5pvN6Hx5ckTEsruJxid8X2Oo478RyiVLC5l7hXlCKHoQaV6NVvnaFBmlZ1TAldQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBrSbBUFlZFeqVA22u2Fn9zLdES_ozLTYXxoqerh3dDYEX2nXvR2Nhow2PYvrlWZebLeoEhbxHncKWLO8pxCeCti3FJFzOL4XbRHl3IjSWt_tCn-lFkmumt7ovBLdy02MI_HRygNbxYv5QJgo="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBZDcaX9lnozqKoPq9WFRD5UaBsYXeI8hHBY0-ja6dD0rgyKcdVTqIiPM3DkCtbd79beOYOyoisQ-nS-Ne16OMqssVKVEIlFEe1elzSWUR2j2oAgncouLlBkGbAKLTXScEExFNvjh02gE1ernZqsshxtKvBsfS6N43NznjnUnXfGM="
+        },
+        {
+          "title": "ClinicalTrials.gov: External Ventricular Drain (EVD) for Hydrocephalus trials for Intracerebral hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Intracerebral%20hemorrhage&intr=External%20Ventricular%20Drain%20(EVD)%20for%20Hydrocephalus"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "CSF drainage, specific settings per ICP",
+      "effectiveness": 88,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 22000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 24444,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": null
+      },
+      "name": "External Ventricular Drain (EVD) for Hydrocephalus",
+      "nnh": 15,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 mmHg",
+          "baseline": "25 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intracranial Pressure (ICP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.07",
+          "baseline": "0.35",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ventricular Size (Evans Index)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "8/15",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glasgow Coma Scale (GCS) Score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-10% absolute reduction",
+          "baseline": "40% (expected rate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "30-day Mortality Rate",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 mRS points",
+          "baseline": "4.5/6 (severe disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) Score at 90 days",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+25 points",
+          "baseline": "30/100 (severe dependence)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Barthel Index at 90 days",
+          "percentageChange": 83.3
+        },
+        {
+          "absoluteChange": "-3.5 days",
+          "baseline": "14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of ICU Stay",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ventriculitis/Meningitis",
+          "percentage": 10
+        },
+        {
+          "name": "Hemorrhage (catheter insertion)",
+          "percentage": 3
+        },
+        {
+          "name": "Catheter occlusion",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Days to weeks",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3HfK7_fCAlsDx6lxYe5hCSbkCqXrUKzKZC_7cKN1Y72ye8ev5HFFutYR4tLd7gO8tcz1qvcIO8AvqWaHePjxtskEdZfw5V5NfUKh48Cp3xNh6D0K2ZSbKg_f8HxSFDAKuFRuy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD1HzmhRwfCN7IhRBniLUXEANP9aEtjStfY9_H8dvcKG2TywdVDd6S0BXfBs40vhKOA5UbFCM_XWQJ73wcBPkRzdLI8vc9ZolQ_L0KfwPvlLxtOg583k16Bk1st4QaMVSmXe-xPF6ND2xe0HHgICpDBMB6xCQZAucTjpQ_d6gjlfO4mIR6nySVdrg5lhxFu8-DrRF8Ce6RHHp8hvH7eL48zZieRAuxEfrnmtb4kwmZGdmD_gpAy6QFOOmnu28P8AkuxUyT2Z3TldvdKkzYyqmZBZCXV8CHMD1yXZ3dCKoV7GSBj9vMtb0pEgcasP3gDP5H74FOHqk="
+        },
+        {
+          "title": "unifesp.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp2XTG-dTx4IHA4eNifw1sqExG-Ua9-nc_WRLl0brwZOitXeVp1VRIupPaBY2SFIjn5p7D0oidE7Lm1GuCk6lXIk4URu-PXA51dQxyzwhcYOgDrRfJj69G1nMCy78XfDTlc8x-GA3IsBjZSM033bDnvezluOPHbq8UO28nBOfM3pwhOg4="
+        },
+        {
+          "title": "tci-thaijo.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB_EBO7oSHbJ9kKNf7z3Od0hTLDd5bEz2MAtGyKS-IQxamwLRyeFko-yqnyCXaSKVMz7l0qURhp-iN7EPy5rsXUsXzPerGNER24IfPkzvcgxkKwtlYpEuLg3NiTTCNTGzsFT23Yx7lLRfmxXe_B6ojvUqnXci1NC_G"
+        },
+        {
+          "title": "ijccm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVEgeYulxWRJA_DBWDUAEB-qqIjA0hyGesbTlF53i0SmfNRR3Afiq8TRNH55JWzM9vyFrc4rdnnsIrfSKkkAucvOuBN0jTlwlhI75s4EZraCUmwgzcrdBg04FWdCXpbCR4_PpGxpm2hAxq3NS9VKU5zQFg1F7svcgJFFgk6L9epq8DdevZYA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4nC9jS55yWDIQw_TPVGs0dkcMxdJBp6MMRAdD_1oO3rBE4NxfQQVhvxNbMZWFhwtOVaTZ7obB4oZDZlwTRgtXBiHeg661Qtqb5w0VDNTzweB8OsxSOtGMUHFuzhqIibkcAZz8ubUTjEDyMiZw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiGwUOm0ZY1KwYFyMe5W0R0Euq1HZlkW-YJj3mjpEMqK8TeXv9oxjt6G8l-mLpVUE3iCES1so_-Pv2Ay2C0IMZSgLXpKSFB5OqCPwE_0ILre4dxSwZKCC2isnyf2teJtqhm0eXdwyRdLiTklU="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaeWh0VQrjuHyGnMCOWKhfddSL95VJf5kbFp_0fUjV7F8OJ0dKWO6LH5AwJy9CztLRya6kfScSMRLJjG0B9jea0sM9OEgq44WiUtWPKa_oGRDQ8YKBjP9FX5JT4i7S0zK4Fhea3qVZSSnQmFMo9I7Em1ZnuGgJQhi_XIIeJsoMBE4rEbHm6h4f516HHsP5uRumgq5UJaZhS-CMQsogy6fFOli0kvDGVQYT9xUyqXoPlTd2w4gHTxCQJ7y74SJtk6jdfYHmwAcFwJc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpG95yNen2cszx4bdn9Mun8UjsuLq10jE6UEd0DVM9XX4yfyzQnC9ERHbYFZwnFBi7z_cLOq14LmnOTz4vd-jYMc92Z25ktcr0Df87wx-uxEFTa38Rpjp50_fUQz3gTLJZOqxbg9OK29MTWcEpQXpUw4tqd_eHiabdsJmuqHMJHnZhpiTHXT_vTL-8hxp1_fWXUqgK0klWUjqp63XVMPL_-Youk6sdywANYlt6QGxQuCxAv7EDOX0raMB-lhW9tw-N"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJruEfCCUoRjF9JNstaASrFizEn-ATa2SVdnAfjc5PRfsDYf4TDPuxsYxnu-WYx8NjtuEKZ2n-TjiMZ4Fnozq2NpLTG6gDug4p7vX7d0LwgevwYcjC0ExWbmllTZIGlii2I1DvD_rxl_xFXhSKnYguKc1QA09WxsHC7-pyvBvOZG-C7GWeyIz0tVKqa5EV0Uc_80YnbSbW7jdSNgHkqtOcie9RgHmcA1TCL8tQk09dv-0_cg_IgRhui07b-4B_eOMnhht5AfiAgpjuMLz3S4iqzPIyQph1BA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Osmotic Therapy (Mannitol or Hypertonic Saline) trials for Intracerebral hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Intracerebral%20hemorrhage&intr=Osmotic%20Therapy%20(Mannitol%20or%20Hypertonic%20Saline)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Mannitol (0.25-1 g/kg IV), Hypertonic Saline (e.g., 3% NaCl 100-250ml IV bolus)",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1000,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Osmotic Therapy (Mannitol or Hypertonic Saline)",
+      "nnh": 20,
+      "nnt": 4,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Electrolyte imbalance (e.g., hypernatremia)",
+          "percentage": 15
+        },
+        {
+          "name": "Renal dysfunction (with Mannitol)",
+          "percentage": 5
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Minutes",
+      "treatmentDuration": "Hours to days",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNa-wGS7SFfpffMlkqYuWIe2XagpyDPS4jnSdZG5AK_FB0GHCnavMq3m_6ivCaGmtioN7ThKeE6oOxorYJo4p_prGwkEvkRjCDnxzMqRjKSqyzS_ahWvBq1qPVBk8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi5zjASzqn51WKtzlAYwOXvt80FThO-eCQg860IJB7E92CnbdXUbPUHdht72p0J3-sjUqqQ5bD_Wx_OWaQq2F3T7M5kTsmNpQ_szq9L6galsB8L6Av6fhqnu-A48E8JrSq8qvCfwFNFuzCMYM="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeM0cy3zcHJ7oQSn-qbY65r4q-zQ4c6dfW0-ocV6iwmBvz2c2Jw4C2MXanWFkNZ7h5Sfg4riNqkYNPkXMAeCyrYz9oaIzdgXDeDPPJJdJ4YJJfarW9llVg8HB960q5eTAzVirtYA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf-BNUnbgzhzFpsGAxLoBkP9-S4v05EX-o83iWJ2Q498fOJfPnXsyeTzuub9d9yyei27WRCT_nrq70ZzUgO0tS5gImD9bOomE6J4GkhZ-bW-Z97uQjAQaCLYbyl62siAFqc-0E2QmewnkQf9-3HgQfn3lLy8G5u7R5_baPgEgWD1XQiMRjxc5Q7asLFZtYJ0OavbbegHZodxjomsHCOhCcMpPXVXlgODZLosU8FxR7E2_5VRyQMgiIhFps4n-RFrVUx2ncJz5sV7JBfUZnf7Ca_6ppcbEO-e-e7hkLrvvNPrtZb20h6aKRXeINjgU3nvF990CxddYmdAjW"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8tsdGCuDeeDFdbTPmnNeq0noxxSH1mPSJnBCSvskHizN-kJhHUdV4DRDElur7bg9AAZBx8Jgilf3f-vP4N6zrfLyp5Bjv7ziKQaDIIPE3PyDQg7Is3RJBRABr09-IOrAJJKQryw=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrje6FplxRSV1fRxF55CXAur8Eq8btjJm3uNdUacpjHl_mtqiwdZecQZJ20vYZGFHYsPzOq59FP-YEyiqlfypULxR0iyg9hDKPNIzti4wE2JUr3UpasoPRImmxY4AufUtZNqkJ2fKnMtx51pjPa_JA"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFodZg7expfp_7zCkcOL5JNSPm7m1KjZLIjcvB6YY6YPIV0LkKFylorH3ieeTZVxezTxUl5LEYbzdRC4I0GywnwV5mwOhH5ARTFPJRpgDcEXs9mpzRPfrfq8fr2O9FGWpMT3AF5jAR330L4KcK4eG6a7aafD7Q3"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intensive Blood Pressure Lowering trials for Intracerebral hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Intracerebral%20hemorrhage&intr=Intensive%20Blood%20Pressure%20Lowering"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Target SBP < 140 mmHg within 1 hour",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 3000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 3700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 37000,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Intensive Blood Pressure Lowering",
+      "nnh": null,
+      "nnt": 28,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7 percentage points",
+          "baseline": "28%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Probability of Hematoma Expansion (>6mL or >33%)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+1.9 percentage points",
+          "baseline": "38%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Independence (mRS 0-2) at 90 days",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-2.7 percentage points",
+          "baseline": "18%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Early Neurological Deterioration (NIHSS increase >=4)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-0.5 percentage points",
+          "baseline": "17%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "All-cause Mortality at 90 days",
+          "percentageChange": -3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 10,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.2 mL",
+          "baseline": "22 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intracerebral Hemorrhage Volume at 24 hours",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+0.02",
+          "baseline": "0.62",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D index) at 90 days",
+          "percentageChange": 4
+        },
+        {
+          "absoluteChange": "+3.9 points",
+          "baseline": "65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Activities of Daily Living (Barthel Index) at 90 days",
+          "percentageChange": 6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 15
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate (minutes to hours)",
+      "treatmentDuration": "Acute phase (hours to days)",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw1zSiQaMsqDtOTY7g0WQCCk59ipW7L7qU6ZKHYxafvx5E9u6UZ2QTS6e7dDX4uAwFRZVbg0Ea2cK_ggKZK_W2GUv4uZDTCAvwfQpz0Cr_UePMVXvKQt_B2JZW8bFS_hx4reNcBjMQcQhxCgetMGlPuUkXAiBK-_Nhf8GJQuJoV5Kk9HJKIBj5xWvYicI2NC68fIMBV82QBEdM4_p0q4cJMRuPcq3TqeTTzk01Af3s34I1U8VMJTWI7jyT_sfM5CrqZNOEc4dwfZrN2p41SIZdZxcNkhj5ZXA-e2ltjicej_u9PlAheYRfm6wxlYsgT4YEuDwrJo6ivg=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmhrc0Le3WMahfdm_PuttaGqW7oNwpxokQ69o96MWQseEg2ygiLC76SWD8VorK2K_yZLbAfWGdR7ouprUDlFWxGXsYoxensfQZMNzDBcS496e6Q5x4bqELBJBcz04ovwGQBWMkcfQpUCJFPHW4Y7CJXyKFNtehKCUInENq8_9PaQUYbmtC3EuzLEM4PnuTlFUx"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHIPLHh3PduuWoJD6xshzn11BaZcIrmXvHDrmfVnMaIfu8l3ZmmEovrcEAXN6hr-4p066bKFOdyEEl6Q0Fm4Fz1_raD8QGcR5YnRnm1Oa5CPKeBIHOvnBWOf8XJaMOxwp-Q94PgtNWFFeAPXyR35vErL4YchwJWQ10DL6aVa2XEsYoyxS75-U_EEflRx2JgArGmxMRtvrQmWLTsIynEKZBnff4QXogF4WX6onf6QwTet2s_Rk3VD2P4LM="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcYfFxAolqoO3L7851waVa56Xt_jw_YcklRUawpIqA8IPQ2W6KauUQ4mlC-RnNXOXqA_VyTXtQ-UONCStMWaNyGK1UiTn8git4GK0dn1ZTNGtUKgeoksjWy3lFL7DrCsj1wl7RB_eXgD5L9HtgjlddF_Ba-NS0Pg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1kArTbpTZLAV02XxV5ze3wioufKOYXof43e7qPhyeo8WRjOJWgBpgdkfvgbyLgCit_-LSc-py50x2gJtS7vtsdTiwWuMmM91Txb214zwqUrhmr3KnImwidS2Lu9uzh5yomr9"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgG3nlthRklLzt5UwPnQVPA-s__ArH6uxmTBhPAXOSNY5LwN27wt-T40RNUtOE3_HhqwHGrkcJm_JTsPWF_bzxl63pF518ftuPNFcQNsHIXxGy7p905gig_j226J2uIkcyaBU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1Ru9nJEct61b4wixlN9_SZwpBnv4zEPqb2BfmIWeFZ2y_Aa3OMosK4qDyiLYi3qPO8kG2Gq-y9f8ocikrbJ5yN-ixMBPQU211QHn0EjS5pCTEennlf3-gDN_ko8tvqA1NRL50jfeA3ukKG0J7zNu8FR5eOZlpRY851NG37jouTHcAk3VW6sm6Az3synAEkt2LC3F0b23tnVCuV83wHKLclpC1Lhdf_rG0jnVPA1_wrCuP42y82Bd4ZrXmxvzMvkVNvUfBmRwQ39jXxdwyVuUM0qE4ijXePuIpeeLDNUvgdTVYlw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVDa3tqiwoS2Af5dPio_sUcoubJ2XcowEal0G1tfuXO-p-6vXIr-KLWKO96yUUMm9XOctW2FqbmchJ1P2cMGRpW5fFsZVXJ5kmjxgVOve67tHwLX5Z_IS1tPYz7M9pNKLN3VXuzNfT8b5KwWqYv0vMmEcpmyycHT6uvQr0RPfEvKueZRq8miBq3Q0xcIqEhVZ_U5z_9d5uMo5PC5kOvwD67HQUXTIEJ9J8ooxv35kq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmvqk2n3OU2Vwgnha33_S2KoJE2otF9QOsWTfmDJgeaZEegjwSoI_aebz_4BE4fKwUfc40v_M9aZOZdr1Tnf2xvClAqFivQ7M3bbih9QRo0R24pINqw-gLz3dkInhJHGqUZ5kBjKI9uE2YeKjE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9LpVB0DrWvUIJBvD6Y4G0HeH34EfxPob6lMgUT2GLhiXsmSQEf76A-Y_0uyzwvLhhGOc1778KwHP7WdsczTsw7w2r72w-rh2yT_TZwTsfvk6PqkE_NxCwr04mZ5JDN7U3uwio"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpyuA3UoLzkRisswAQxDAzehBghUJG916JtoCoKN-DC3c453GZt7eSAikuMkuvttViWKUDtPcSNZeCtEzuinez_y3UPv6CC2kv_S99eS3nHfH58_BSON9H-4J2H5WtzyHDCWaLY53Fg8LCYw2QCHzEQz_6OPSfhig9N48AArSG_aLUbXM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUhKrd11Y-GbscXLrdp3IIOjcK0SmxDuDzv3LVcRZbTdqjDhW7lqcg8gY6EEH-OOosCDI6Fag_evA8T8wcg_6BoC2QX0xtoa4F-MPbYeg8ztoqAZOoTidKVNXcLkyBQV2ViY_7_EJdpYL2hiaBSPIelAQY6P4LmilQUiRpVg9Aeha31hJv0mIZADv0R94FK8xAC6zHR8cmMxwfexEn9DnOEpA_h3ZXNVxKmbuGvwgAtU9zg64GPl2vHzHU0lpMeQsIKC_3I1aDTWHFLJNL8a8THI_jklNrDA1D8dErZiCUcYje0pSY8kGnOqwTQDo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwlnLQFDe7IirNhjHLOJ0mfWzQ5xlcwkv1jABtM2dK8hWfnsZGPFnx2MgUoHnaPL9SfdXpItFpq6zFeOPHbgRR3kjz8rVPDa6FDmNRs9GEy0W9s5zXr2Y3gD6d3_0a88bBIcvi93e6HVdee80="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWmHc_A29ffwQY7-HIJmNh8IPWCBP2rNmbD08hcSl1wVErsrFhs5_GeL6YGJWKrKNYmYMv4cH_Rneld2PYGoaG5LNpUI15JrLJFcnse86sRQ6tOCUCRVqHHPGsMPdGQSMGnUQ0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqjz5DtuJuyhkFv50Gp8PHaYCr9ysEowQAV6fkY_lGby7avZLQ7TlJ9cezvp6NRs4BVzTo8gf93GJ0GGcjRlVKPl1ilk0FhomOnQhBS0y6ePD4E_6i7S3eXiVLI3FkuIhkEqHjW0bXuE705u4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGgZF6C_JskKB2xLjQRwFKHwr345iQPI8-ppvYNJztbjGo8EUG277w0OVno92IPM28P7GSYdZsyOIZp8ajXC3DGTBt6fcneFs2YnRY6-iCouNntp-MoMusmuOH50ACH--OJ6bEj89z_QA7giphO7w3Vm4iLyI_LSas4jwm25nds7qRmdXnuPoOKZDmCbjNmUo95o3WqKLdN7s41ZwqxAH_liWmpkWiHdtmFT_GlyPDXi34pYUd-Kbo2osVreiFq7iCA7l9sN4ilyfPO_Vic3O0pFtSka9jtreINSit71LlKEGI0eBlp2Htr-3EB-Rq6Ii4V9xgpo9E70-tWPshj34DCQTcAkKx6guDUEM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpUbCnhuw-9X_aOAuN-vebelUwT1HumyT1qDzUlzqT8Z8oq54xu1YQ498fR2tLWivCRQA3OQfOr2lEp9_PNZqzpHZtuSavvFD79JTTCGAvMKLMF3dg2FYrdjoJItHJZR0DBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmSSf9S7Ger63JSRHQqpkA7ftUI-kYrNVqFUb-klBCrNN0EJuvWS2wco3Kyaq7Ea9fImeMUxRyqYvcw3p3tBfEdRri9v-voFDPKIxA55yYYEvvc8YUZqAu9dZ_RTzQPw-r66a81zPnAJY_1H8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Minimally Invasive Surgery (Stereotactic Aspiration/Endoscopic) + rt-PA trials for Intracerebral hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Intracerebral%20hemorrhage&intr=Minimally%20Invasive%20Surgery%20(Stereotactic%20Aspiration%2FEndoscopic)%20%2B%20rt-PA"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "rt-PA (0.3mg in 1ml saline, q8h for up to 9 doses)",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4500,
+          "monitoringCost": 40000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 49500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 495000,
+        "icer": 56000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Minimally Invasive Surgery (Stereotactic Aspiration/Endoscopic) + rt-PA",
+      "nnh": 25,
+      "nnt": 15,
+      "participants": 1000,
+      "phase": [
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-30 mL",
+          "baseline": "45 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Residual Hematoma Volume (at 72h)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "4.5 (on 0-6 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) Score (at 180 days)",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "18 (on 0-42 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "National Institutes of Health Stroke Scale (NIHSS) Score (at 180 days)",
+          "percentageChange": -27.8
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 10,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "40/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ICH-specific Quality of Life (ICH-QOL, at 180 days)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "9 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Intensive Care Unit (ICU) Stay",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "+4 days",
+          "baseline": "18 days (out of 28)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ventilator-free Days (within 28 days)",
+          "percentageChange": 22.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Re-hemorrhage",
+          "percentage": 8
+        },
+        {
+          "name": "Infection",
+          "percentage": 4
+        },
+        {
+          "name": "Hydrocephalus",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days (over clot lysis)",
+      "treatmentDuration": "Days (catheter in place)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsx5MS8OKz51cU9HAYXgGxQc795oZK9QcnXpjYsHzcJ4uyS3CVqGM6madllRfYFR9pVa7ld2KQY4-O8FuKFlrbw65tRhDcu3UxaIabpj6dJkSjsXu2QCNtSUg3gVa2FQ7UTMY="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg-7Or1uZX_lieTB8bUkEimfx7EaItz5eMPNYnsVYpSJiNBbJNXWXPq_fEej2c7j7M1LyHMMV3UPHIXA6tBQWvkJez30rtrUVsvwXQqnjn0KkJYB-AR00c7T_aTfxoRpFp1n-JxUlUkoXUFp6NAyZ_e9_vCdFm4I6BWvZftJcSe_dow-GMYAKFI-b9za39nuk="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-HHmtbFwpzdWO7k0TkFZxATSYB_qb7ALbGz0rJP1vEm1RAwqlIw0l2AffrVXDIQm7r-9Gm0pVkU_wm1Lf4DLN9L4Tdizs7vLbmVkp1XEJMPGRaI1LkvgGvIN_Gg4cfJxeQZc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeLaKQiwK0fFhhwDQ8a6GaddSdZcSvMxAdRKSlaCbQ7QtQlfejvPVN1ZyzNUPATTPJ6mQLU1OUH3AYxIXaA62ThFXfzZgJwSvog-fvJejWTjGgd4IJBfPh6sfZOYbT36aku37m"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgd_CeFcNCdA68B7k_CDtKynw8NViYLXuRlV-vS3mCwCCRQ4LE6m9qK7WsAsRNHWlna7jsUE9sJesInVh6tgRrLGevdwCEuujaFO47sv3fAXlynjvz74GTw-X3Pty8eitNgMupGZj_XbA64ybV6l-NKsqRQ1lw4g_m9jGoPFhRiwTjl30xdMFPLwIsZMOLu3TuS4347uJ615SQk3JtnAjk67fjXJoA23jdytXBhiZKAMVyN-q0FkcvgNy6CEuKCaQp5_BeKGstgewIUenTgWnvHrZyVdHhRdTfPdxKjWImLY_v7NqkqErD1KxOIS5-ln5HGNfrE5YhAX5xYvJ9ysCniycxvZQ="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0WP4UsBORpqKC_UWmGI2xISzs9MfXMCuSHGZ3xNdoQETYzQtPNG4zZjvzHDOpfd5_Cb5_2PB7EqGGqJxno7ZxwnTaY_0W0FzoXjbyv_lJlMR4GUfOd4MWTv5kUKDowfOb850Xl_UC8GVxy0JPnejd_CpNUueMFcKSIWgIM5hIjJsiJ7Jax6y9WroqgoDVj_zd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqo5UTHgKZd2JInNa7DOgVXftEvcqUpGChrasF6z5HWRcRRiYdkW7ZMPdNr_tBJoFpElGd_TPjDbNkc9TYScpwY7alCtCf-SpQYM6zX44U7d3aIv0x2CEOzeuz_Vp5sWpoWDj8"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtOMPzQAss4QXKK3wcTftsaRSBuCBvjbEJx_HoBnl0mUIOM3XcFt3yIsBj18oc8DVsXnRzbT-WZTSAEjp8Ek2X0lz-TOzTQYTP05PeZGnnPqgSDUXy5FfsqrrybAuTcfCCb6dYt3Y2U_g2bu6-RmuYeiequNWyUe4H"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyNibCK5sUUAdcBvL360ZrMDfsTMLcZdHTNN98QEZDzmBeu9ApxojvBAIKn00ZdWUoPCEs77Z3hFxnlgQ4Yy6GfVoR6iKe4AK8f64tRHdWvTnUB6jOwpQBdVcZHvcMZuGN9PApft1NXakofJ5Lts1Qd03yXwOJcQ=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdhaGLC4vGhAZ46-V0OXG6hvOOrwfR4N6blpp4C0vhMeMsA4FumKy8F90RubTQopdXzjr1KdLlmKdpLP5Oexqq2oyjht4n4OkXKaXL5PII1TFXkxSQAAAPO4OhopIJAW3XJhX9bpfh5KYfTJ_oONKXQhWCn27pne5Ei5kOyqBv_8cp1HYzLEpgEWKdcmeiZN15YCaYPGSnAvzQptEdWiBCtnNNtnh0-getfQliD72Z9Rl68np_DCAPbQbKY6YvMJA2OatzagoP1QWCH3LBH78GpPBygaaXu8iNASYFlRSe6rsHtA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-QLOCVhJigJdtoIiSE6i4tJkRpsJSXjRzESCK7HbezwjQmxZcgKDqKd6PpxVuxI4RexsScH_afsfKsuOx2fQOnS7-6yfLDmIzwSCtGaGlxajyzKF6DYgtw557bLPYWwOKuOKJX_k7PFU0sMIOvP_EiU3y-aRKpyhnClsFJD1D_-FYkwW39cGzXO2CiKWwgMxKaUYQs-SB7PIKGSYqrnzG3K2wcOZM2w4vQM3yD0LYUm1uHuzm1fRwt50lUp4-KQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOXmnSlz_wuzVWMD09l5G7jgwF5K3lngYsQsHzZgvD4GpwgMVizAn_yDZ5CAsa73PvLPmg40pE8FmXBzDh2nDQlab54FcCGh4e4mYXcYysdlk5gfcdn2FZvCYykXYmhsn8AF2DT5I4LfIs8rs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Open Craniotomy for Hematoma Evacuation trials for Intracerebral hemorrhage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Intracerebral%20hemorrhage&intr=Open%20Craniotomy%20for%20Hematoma%20Evacuation"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "Surgical procedure (depending on clot size and location)",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 100000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 115000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 2300000,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Open Craniotomy for Hematoma Evacuation",
+      "nnh": 10,
+      "nnt": 20,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-31.5 cm³",
+          "baseline": "45 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intracerebral Hematoma Volume",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-15 mmHg",
+          "baseline": "25 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intracranial Pressure (ICP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "18/42",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NIHSS Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "4/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Rankin Scale (mRS) Score at 90 days",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 5,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "10/15",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glasgow Coma Scale (GCS) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Barthel Index at 90 days",
+          "percentageChange": 37.5
+        },
+        {
+          "absoluteChange": "+5 days",
+          "baseline": "10 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ventilator-free days at 28 days",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infection",
+          "percentage": 8
+        },
+        {
+          "name": "Neurological deficit worsening",
+          "percentage": 15
+        },
+        {
+          "name": "Seizure",
+          "percentage": 10
+        },
+        {
+          "name": "Hydrocephalus",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate post-op",
+      "treatmentDuration": "Acute intervention, then rehabilitation",
+      "trials": 5
+    }
+  ]
+}

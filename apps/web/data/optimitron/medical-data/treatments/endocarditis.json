@@ -1,0 +1,1012 @@
+{
+  "conditionName": "Endocarditis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:16:25.413Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "regionh.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxyVG7OB7cQgsSI0rdu2nBzjtQJKXAB2qjLXO0XJtidd3S4HhPfS2eLmuw_eJ_DTTbpiGr4gVAYvg8AIJWAPS6yqwvnzAHpwR5ug9VsDCb90HgW1CYm-0ERzMeyhhWryI4IWJjOqFEPoE7MrWkVnMr9WcWmz6UywpAe3OWJlprY-RamgRMh9bbvhSqUD6esMaLeRc5bn_st0YCg0AL8z01f8iOX1TbLE4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEaRCmkRMumgZVufjiPrleij3wnHCM_pXOXste5mALd-BCc5e09T6C94GZrIxj3Of8rxj4q48pIBovsru8G4enWdr_x1Dugpde0w9ov0pTfNRSH1G-LaKUuPmC68yH6ansB8gs"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMFt6S1pidOK1jCNfJsEAEoAcCVa6J23bi6L2WeS4qKYVVHVVYsZ2P04gFHc-zKCuI8ymrkeVcAVvBCspAfT4DWiNnqQxFWOhPjoZz6_sOWx1h9_r0HT5OYDD4A0Fgh-eUPZhnTs18kKc4q9dBMXc0CmMhkvoEeOJYvPR6w9WXKvox2CN6KjKljXycYlJBT_IYZPHMqjDASnY_LYvwD5O_zMykHwfythA-okpJ6LAiGidnLMf3RE6I9h_XPWldNEgNoU4PKp3J06ZSSuqI49cmRIaYzWz6Px5CIUgz0mjDSlHF5Tv6-kNZQ-Lw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYsjauEWPu6QWAw9H30o_cgh-UWU7pXe8Y7hbWyORW7ROgMgwR1FFPxltl0C9uqfagMrVH_nqpGmxdQgb8CRcMySJ6Og1oMYclIXDMk-QPiNqU7tjmBCurdNN3hohIixnpQEekEed74LSMwSs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG131471_wLt5uRkz82lbeVyRQgoPo9vymIzxpYRZD9fIs9IcGVh5QMghv3VFYAEs5rSoAFToc5uep9BLpHRigST178t_vgydRy97TIcRGbjWgRm1BocKawKABZTZwMuKZPRsewwjzPQHzGFoHkq-ygbZvw6oU0juN-IRmRZRmX0JsLuoC_yAq0KeuOdLorx6Hi5zPDZAV4yVMquRD6HX5OHo2kn4iE467YbTBud_nlcnu3ONziByTA6Zp8OdPQUl6GFSm6sYb_ub_g7Q=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl8WXBcivNbrV-6XMD9h1J7TBE2CUljGjWb1IC-IWXufCqFAOEAnaiTbUm8p5WjbX5OHw41yQRUZRIl35pEziGltHw6K2MCXwNtUDDHJBjtlp6FQFrg9BCCsLXDdE7LQZNQeyJ2uaJm2_H24nNVWLAHCOhfL3GqQAC30NmAWLH48iCZ74="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT09VGvIkxcIQ_QQwNuNKEOgnwP6DYM_gj-CcBu8zcIutRgIlq7TLG-ugqzdsd8oMCFl_3ZW5PhBDlcy_NVVlH7qtrDSG_0-s0OZg9RPJiLU0LkLYyFUEFs0IoUojbqFsieqt2HgpoHEB7TxVitVLo45Z2elS2pYBHnQ8bowLwBfa-GvXuZKycARbTL_xXAXkepmCCYuM3WM_wYY-P8LU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2bihs93WPXu7zofE18XUTEVB9LZ9cLvjSA2IkaEWe9NAg59Zlw-7tdE_DakUJl8blw6t8yFUYKMRkF7AE8ZKf1bbdUBQ81FwVceh9QR_UfYonYsh8Pb4c69KKhU2d0BD0K-ptvzwWR4blV7I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT5XGsgdTWRd5S0PC8hgHNVrIrO-fMR4J-Eoi-l-N2wgCpS7kcARO5HeXojKSbXJ3eCyghgTyMrd9oULq67ovTUqh-ropNfNF9HpKIyCQjUcQTxSzGBZ2XWWWKP0A3N0iy88g3F_dIliPRbQw="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpPp37icaPwhg_kpAJSEuzKL6v_TKTc8zSuXNCw8XOf4_hqcVoOiOdSLVnxSJwtxOCBeDeGlBiD00YTWmDX1nBpQyG13pZm1HXwKlpeAC5882BFWf7hsdb9DE49p7yAerWDqeWyomkY3UEzCs3FPlRpZi_xLohkxBjNvW-gruSge81maqnDAWqWDWQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnnfTVHHDzAuqmUsEOtc_c2Qt_yuAzoX9AVUyjI5ys8WzPMxfWj6n5fCKtTxXA5WQScC6YCwtIXlajTHpThughYTMzZver-CzGc60NjC1jStinjk8ZLIvQD_bhQNDEfM6rTIZHSYv0xxXctUPT"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOQZ2MR5TJ6z_0_vdSPGHuPzmDrb334qaiTHgkXQCYAkfozqk03y8AiMw8cv5tAG49GavJgBULUaS1a5WE4E9vCr-TrCX4dThpModGbEJEVY9N_7RlSuO_15EjoXfyBrJzEOYx1NsLL8IDpfoyhPPx0F39YQEeuya0hRgOStd5pKDvjEd41KagwYvxmxr96Kr1CWKmtXOQ4Cc01Br_9SdfSD6dzXKPbl-ebuE7h-qymclZrxtcf1QdIB-3tZSR4kin8CxsarQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Penicillin G trials for Endocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endocarditis&intr=Penicillin%20G"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "12-24 million units/day IV",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 100000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 101500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 123780,
+        "costPerResponder": 115341,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Penicillin G",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 °C",
+          "baseline": "39.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Core Body Temperature",
+          "percentageChange": -6.33
+        },
+        {
+          "absoluteChange": "-135 mg/L",
+          "baseline": "150 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-7.0 x 10^9/L",
+          "baseline": "15.0 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": -46.67
+        },
+        {
+          "absoluteChange": "-0.75 cm",
+          "baseline": "1.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Echocardiographic Vegetation Size",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 82,
+      "responseRate": 88,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-55 mm/hr",
+          "baseline": "80 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -68.75
+        },
+        {
+          "absoluteChange": "+2.0 g/dL",
+          "baseline": "10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+25 points",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D Visual Analogue Scale (VAS) Score",
+          "percentageChange": 62.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypersensitivity reaction (rash, anaphylaxis)",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 3
+        },
+        {
+          "name": "Seizures (high doses, renal impairment)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-5 days",
+      "treatmentDuration": "2-6 weeks IV",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYGgHxyLDrhHVU_C0PnB56-YHe1R6CUN9kng2pqPHvy_SpcIWjM1qSvGgUrHW2OSAosc16JEwuJdM5djgfSephcJsst7cAL2yL5Zg6Pl2zxq5h_Y2GppSyEpsP2rsdUKBE5BQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXRAOFufqhiZhaNpxYM7BKhQ4gkSiyfKAY83aPEcbOLcOCTzaENY_OKLcEhLhpQJdrhaKiOGpETlarm3PuoafY3tlPvTmceivBBEgVQmddhkeREMmi8UBKevcfkq0gl7A__ph9T3Qlhavk3XhE5ervw01fG2-zpd0qdedDQeYg99DOm4HKWKCppIarGjaegQRR2fYWW7IU-ezFmE5ViIl9yjjLi30EzqoVX_Kkec_VcSokOEJG94_SirFU2W5vnZauQ6OvGJOL_7golqrjZ86ZzkY0bi09JhPApTU-_AB4iCMKUSmOgg=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ2ltLWqVLrgFtDkxJE-oUshfZJKe2H_eGQJzsgZfiR9in9cZ-a-zleH1ewdumexYl5-p9jYQ1H77gCInlzewdxyeAegcO5MwUGlXt-DoistPiQZrfzzpV3I7MMxJgemCK980="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhHQ2fl5tbzhSf74AZAV0QJEjEsSRgh0bn2h6_YHUJvG_n_NuaGXryGnT6sRIn8LvNdjck1iugsee03S2hJ2sUS3aTLe4j94GouMplYIDm6OHUMjQrhBoaS4CP6q-_3JK4maol7w5ffXnjKL1Cx7S15RFL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoGGE3hPJytZ0Nj1CHfkgEfovwxn0NWSZPN8AdRCN5zOBH6WaufyIQ_uKqsuEIIyDqnrMj2w8ktq29WSQGsi3npHVy-6EVKAd52kr1iYbeD2RnYY_2pqrb-XrELPAxne5kqQ=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEouwPD31GJviiIGM4dpaiCOe0QQ2DOf5v-or76qjRQJF9W5O7rTCB-SQakUInL7uhoHmDiYQQkCmY5QIDUwq6LD2OKn-lAezGVDrGwlSgOtAXojcMKfWCN07qgvuQDlxjzrURt4Z2RyAszoXCAkNNCo-vd_EKvQDwzSYw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOfsvm6AVkiZtU2JrRnI2U1nDhX08SGoW6grAkGkE9g3OwbQKqzl84wXC2lFC4gsmqcWHdYOePi0-NnypYYLiKTJu_O6TlKzIJOIArXkJXn2zc4Je-2KGIvwGlBIogIgpu4vBt25ix"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp4xuB5YK8hV_Yy_zamywqMq5j5C-FQ6FuCAr-7WQzSapPZBGaTPPjJ6VTHmqhCfr2QlrmmzaCrIBKgEXkmuUn0D5dCqxEB5_VnjD_tRjM8MhoU9s8wdNqoqYXg_Rx8jCdy6S-nBMZBpwJtnIeY3WOow=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJbi3xai63vLSBb-6dVqqB39fmLFX0lVl7r0Uc1K6canxT5BhwfDB0Z4V8BzLB94PWwyAOmFi57zo1Gc_nQOR8YXsi9Kh5G3sfqGsmQsH657ZxmlKJMCLSsZkq47-Fb5OW8IB74W62-gcW6Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone trials for Endocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endocarditis&intr=Ceftriaxone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2g IV once daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 900,
+          "monitoringCost": 105000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 107400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 137692,
+        "costPerResponder": 126353,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.3,
+        "vsComparator": null
+      },
+      "name": "Ceftriaxone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Conversion to sterile cultures",
+          "baseline": "Positive (e.g., bacteremia with S. aureus)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood Culture Positivity",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-1.5 °C",
+          "baseline": "38.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.9
+        },
+        {
+          "absoluteChange": "-45 mg/L",
+          "baseline": "60 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-6.0 x 10^9/L",
+          "baseline": "14.0 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count (WBC)",
+          "percentageChange": -42.9
+        }
+      ],
+      "remissionRate": 78,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 mm",
+          "baseline": "15 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vegetation Size (Echocardiography)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+4.5 points",
+          "baseline": "30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+5 percentage points",
+          "baseline": "45%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": 11.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea/GI upset",
+          "percentage": 7
+        },
+        {
+          "name": "Rash/Hypersensitivity",
+          "percentage": 3
+        },
+        {
+          "name": "Gallbladder sludge/pseudolithiasis",
+          "percentage": 1.5
+        },
+        {
+          "name": "Increased LFTs",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-6 days",
+      "treatmentDuration": "2-6 weeks IV",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbydR8ROyq4TKsvqOOesa-JEv6ux8MoDjQpJWe3aNowKrfw3WrJAeZhcRWzl9KKET6mzK5DRgPbRqKrqoWyBpl7qa4XjM5APpr1DWrxjfzZ61aqwXsTunv7ba215DSCAwsZjHBQ8o_DuDOkJ3XiD1kkweqSv6HdtK9KkOsmJ_634E-iiaPIxvcN1_pdDORCsKPN3w="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDRyhD6iGwAMoxIw5GgMziXK4yKg-Ak49VPRmDIbtjb199Ysml3wRSn1OYm-KVhasgynmK7r22w_81jqOa3DgvqeCSLbwBesdqpIEYxSU6zvOHA8ve7ScSGqlTA4fIJWKAzCkN2pSF_7O9AbB_vL_DVBOsLD80Mh1WIGJref7e4Jlk7guPTQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBx5A6Zd4MC_1vX1YHFgMLeG8wkFhpx7YzIIIsXSPCUXOZha-duqWOkASWl0Mrgf44Yidl35SxOE-Zgml_a5v20R0PwsfI0CXUhKmOQI2k2T6BfhcxH5FbM6GKLWVvXzgZmBZKku1i3EbN6Q=="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxnfvTve06aAnSnDshSmr51gJn3Uf29RDepviv3voB8wLZ4debfVxKSJxSSlyBmLeYF0VItyaMOUkHJqpb9p34E1oB3znxbKsx5djaXqhdu4rxJNClF5lPnj2Iarm1li513nnyEBZ78JNCE4E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEccF1y5DgYxLJIfAz9OxibqgNBN5rXkc_PdXaLWhJ2biYFr2qDm-XzEn-j9ogsfdNskxTWcmJSB_raiUdC-6nYSd4VIH9DUNl-Q1sDVDdWq5VsZF7_0-r2gDQJHxOkZ_VxCg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7gQFpFvQZ5wwfWJUD26oKU7TUnt7J-TBaLXig0gISlMWxKbi1clptukeGUEfDMjHiSkqTl8y1xUxUAENRi7RvbGTTNxKzukSBSzc-saD4VVxaCX604Zcg26oQhHxCRSuWjfo1dYiYcjpv4d83nTh0"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7sDmOK3Ab_tvuOVoMbVR8aLRGu9c2uTBhBNjGoMN3xoU1BenFruzc8TREvQ5FMKVat2PBYXFqoT3ix7zHwvs1x14F7Lg5iSAMlRQbMpxuYzFIh2NW5YOQhjA4R5EJC6SmSnxm6coou7m5mrKCuALoDpdYBg6exmXloJQZM3jAl7O28SW5JtEuIvwEi1KCBGsFsx2j_9iK9piPP30bgyzs7mug6e9M7rKjQFIOqYI3Q3mJszfRS5zAslCasyCagxn5dOnBbfp2N6trwdcIbyNzmW3kareq5qQ4zsQpG4LKSAik0lusQrkW1VrN24bUgQuzy_sxh2Wl2EWvjsYrfi89ekEyy2Mh8WEgrIaiMNBJqQQaHb3HeZ7K8op4cGodxnF8ZICqHuEUAOxAgaLr9UtCQ=="
+        },
+        {
+          "title": "idstewardship.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8m9rhinClDHG7LmyAACkxNS182GJRw6cSLfu6kKLlI1rdvDWzYLA-2CBGNc9fKP62tLgnFGx6xHn3sangL_ogy1OM_GmgwtiaLw9Rpp3vXaqbSkKCA755BTsofVsOR_ahy7wrevpi9cTeocbnpBwm59Mbi7QQD6fzKHtwmH3fby4hPUuLXpdyng64fb1A2quc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH97-MqF8HIHDTpZHLx7Z0xuYrtK92GvBzyoX7ZV0hiEjVJtiVUDxc88yJA-Ed7iLpZr9uJt1a3XIbicPdlBofHIMCY-uOA9Uiri-hslZC68-wCx_FcrkDxOcrgJVte_1XV2GUukvyaB8PAcA0uJ8pQhaJsy2Pcan4kbfUfqWSdW_bi8fvosCVIL8vwyhQCC1zkEpDognToGAjuuELfYDIQM6zttcZiaCXa6HUk77Y_MzjEhYCJveVmQToh2gwm3dEsoD3RdoQEQLnnoR0tJCZGf5D8jloYh2uZWwGsqoVHrl-qPTqvafAvonNKd9W_AqF03we9lOmuWGMmQ2dJyAyzd8oKC8Pa"
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErSBFUx-oA1RDKhx8iqHQ0IGHfzA5f81egxQasg1fX1oyHN8LBFU5gged9ih24xIVY1y4_wBnQFRlv0YuUA_oBmijzTGr8cRAiTx6cMtpltUQxeqagEzaXJCioM7XoF9ttQG_xz0_3roOFcomaaISBvVyAK06IVDBfBu7pwP_hYshJKPWffomQj3xvFK188jiMPLryOYDbNqlQm81Sl8G8wcM5WrFz0Bzd2-kw8pB4OlDliMwbvjmVX-boopdLXDA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4sBq2lim9LYR1fgYJK0PCAsqjbWUcb7JJzZ5s6MvueyM-KgvOzj79zBydWZaqowy3pXPfOGkbA8dDCFrpFdrgZD4nBXYHI7hLXeiJnVBYZdpVMrwGxdvuXCIfL-QwYoKSEbLhj9kQ7g=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpWw9vMftIBRQKUtu7rDaTFQzxBD1yl68iwtM05Jyf3oKXU5zH6wSoo-nVMI_Gjfb4HIf_xpxyZOT_i-i0rWINEOmVc5yjZPoZaKiuqivLKiSywfEX5P6vspKmql0buenxLL9ELhX9k8CNTh5r6lW5StOW63d8"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM0EICJ6IjAl5bEYUsYDWEILAnyV6upAs9XV0c5ZM5Lv1wxAz_5pYewHge59efun6VVM8Kh58RsTPltH2TI1qP_Jt5ixt_ObxIPeuh2DUrSev-8vlLBQsO0UeU_7C_n42hp83Q-Ly33Qa5qss085Jy_kqk3sNpTSUidPVsyjDmhjFE4QpXO065_z6eWDGbtgOcN5wVzwC1Cw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nafcillin/Oxacillin trials for Endocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endocarditis&intr=Nafcillin%2FOxacillin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1.5-2g IV every 4 hours",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 115000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 119500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 175735,
+        "costPerResponder": 153205,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Nafcillin/Oxacillin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 7000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-85 mg/L",
+          "baseline": "100 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-8.0 x 10^9/L",
+          "baseline": "16.0 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count (WBC)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-9.6 hours/day",
+          "baseline": "12 hours/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Duration of Fever (>38°C)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 68,
+      "responseRate": 78,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "20 points (on 0-52 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Numeric Pain Rating Scale (NPRS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2/5 (lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypersensitivity reaction (rash, anaphylaxis)",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea/Vomiting/Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Hepatotoxicity (elevated LFTs)",
+          "percentage": 7
+        },
+        {
+          "name": "Interstitial nephritis",
+          "percentage": 3
+        },
+        {
+          "name": "Phlebitis at infusion site",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "4-7 days",
+      "treatmentDuration": "4-6 weeks IV",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEo94WM2eWZUbpR0-IucPuR9Vl7vX5WCCuX8tFRIz9MmJ18GHqn9sg7NJF6a_SVW2ZE1TOgbNmj8hU1M73Yyyb6BKcmLtx7NEuD2mH_qvZLUtk7XsanAydJM6DUHRSR8UAQtLlo42xJ1Lkubu_lwPhifzzqDgMucQrXqyhOimvjomBXuK9PaxeDEX1zfefEm-Ry6V0ugD31ym99fdzprQv3qA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmLGTEcHkgdoY1bbANq6sB2BOwAQ2_6COtYeytJHEsvG0Bx4s_KU3c5Shd-s4YH_G_Nvay5CQuuzetnYPwP8N7w87PGIzL5zfSZScyzP86dZhDnd5H6CuEhm35F0n57OPV_sRaJIpbKCFqGCclh23DS5PEK1kMAwx-fvB4dANCeVqRGfVB1vxpbXn4f502-VF9blAN3NwTlvNDWJTsF_1FE1L7W9XIlx85mG30R6i56RG-coBqxiw9Yw6NC8SV3zJLRw4hMvF_ZGNvtQWhSG-SksgK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOrw324DRvoq3DjV5uAV01zeIigYRPZwAaZGM6O97m51oNbJ8cM_HB4sQ004L_VvsnHvBH_jxsZo7grgGn4cZLbNDCZsODbi5X1EstEuMdu_0axRpCO5Yn8OtbnrgmyfoM4V8qsG-fnQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfFNuAQuL_RE9MmHyOiSIe4tJLjtH1CCyYd0nUHSwZ0BAOdQr0bQkqNVuNEtrJOjOSUc2kWhFFqhGSVsoCLrJ6ZRwCEwyDSGHOSgDJhnaZpy3p0sCOH5Ee8dpHSj8gRe3PMOZTy1XR1gxa_w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vancomycin + Gentamicin trials for Endocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endocarditis&intr=Vancomycin%20%2B%20Gentamicin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Vancomycin 15-20 mg/kg IV q8-12h; Gentamicin 1 mg/kg IV q8h or 3 mg/kg once daily",
+      "effectiveness": 87,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1250,
+          "monitoringCost": 122500,
+          "sideEffectManagement": 6000,
+          "totalAnnual": 129750
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 190809,
+        "costPerResponder": 166346,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": null
+      },
+      "name": "Vancomycin + Gentamicin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-75 mg/L",
+          "baseline": "100 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-6 x 10^9/L",
+          "baseline": "15 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count (WBC)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.0 C",
+          "baseline": "39.5 C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum daily temperature",
+          "percentageChange": -5.06
+        },
+        {
+          "absoluteChange": "-48 mm/hr",
+          "baseline": "80 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 68,
+      "responseRate": 78,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4.2 days",
+          "baseline": "28 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of hospitalization",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+0.15 points",
+          "baseline": "0.60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D-5L Health State Index",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+5 percentage points",
+          "baseline": "45%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": 11.11
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 12
+        },
+        {
+          "name": "Ototoxicity (Gentamicin)",
+          "percentage": 3
+        },
+        {
+          "name": "Red Man Syndrome (Vancomycin)",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 7
+        },
+        {
+          "name": "Rash/Hypersensitivity",
+          "percentage": 3.5
+        }
+      ],
+      "timeToEffect": "3-7 days",
+      "treatmentDuration": "4-6 weeks IV",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6uE7rVqC2MjL-eYkwpuJCMC_4b1igB-KCs9CwVJUTfX468ZWNDDaDgxOCY6SHSSMnBHR3yit13ZI9_hlwqlHLijK43oSvCLUeov1bcT9iDORl-IszbfmZazMQmNmp1wsod6fdhCENFWKEedU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHk73TSsAlio32xy6ZO03p0T9R_a0_KaEHoVdo3U3OtWdtFvzS5D0d-SGiiaZALH9lvK4nOLMFuSkCKc8NxbnpbcB0BCaLQyvv9KtU2Wy7Y41AIN5qXLXhU6auz_FX2yc_ehDw="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_4qot_EgLPoWwJVa9hdx0zsys7FkVD853DnfWpbmXfCNA9AzAlIchLybeaSbgUCCoRWmyc99EiLfeBy1tkxPzr_OU4meMeK6h7_d8aBd_f5TFd-SY4h9dN6E3mQRDzbiwjQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4L7RtflIGfWB8k7qUsgoi5zRe1wJ6EaHx6og3_lC8bANWbJ7SqZBjYxmMq4UJ2dLb5o3OKdNAj-FXRoSdWCfZpykxIdtNZqQhtUXoDEQu40LSM2ILSYXHbLaSVFi2NtmgDmDNr2xZgaF5Vco="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9kKiwVDaWfqmcfMKvof4wPRen-EwlHhWH9zH-gzQwHHI0OKZkq8u56bYdurL-g13vnQiEzepwiI0sbEEWm0AjeKX-NUxeov926jIpKLr1_VLokFJE2P92kwtCkTfBDpOfcA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1ibu2IPB77IKmUCoFSI04xhDJw28eHhomkyJ_0PNWPf6-JC7Qf9n1tk-lPCtglPx0YFgdXHg1gbJ4CllenBcon0hDYl1z9fbPAVyAE--ayzUoevuhTqGSY8Apn0CF6MdBOXc="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_gaV2o17Zu4ciZn1kV97FLKpVyh9cAwm67EJ9QnUH1LdEEPI04-lrrFik0rjk-gGqcgXuAo9eYoBaCLf2IaUn0g_em9O0J7FTXNOz9bRt1DvOCDUCZ7l5TGDGdbB6UQvPTUhlqgONB1Ny_Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmZgVw1Hn26JI0FsxPpUtKCD9y6OSquKdLqlpf0PC67nRcZwNHUfUXDRuWFDKkx7XJGVdNo3uWPnhS66d_kkvLaCRD7usajlApUo6-J5hlfZ-jJrTDWyTXhS5uqgDIUGBOqMnMlWWzSmOsBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXrip5aeEtyEIpV3_JfWjJCIAxx0g1OHtmKiIlBb5qA8Yx5qJB8k-6jss4gt0IBNXuVFcK-N5q7D6CnmPvA0Zfrlm-JDygDjuvDa0h3XSL-XGvoLXAlTG0LFiR6ZQOEOqnz8w="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYq-OTcnMR_rvDeA1kOY3z7Ap5Che_y8VLJUNFab4zf32vn22DPX6FD21O3baslSTCaU2Fb-lXZrIFi0Oc9z4_f8tcXhOEhLeRf4RPC2Amcp5fmdrmUMoLtrSg7kpYNuubcpYESM4kSkLVVRCSbkll"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDrd3bvK8xnys_PCz2vXOfYQRNeDGf36DbRAGgPvd-_FtAbPi1_SSb-kQMuXMFgezNSo3fLcZ8lyvahUd0_yZlJLgc_2c6Ccd5hkjxMWLMzb8ip4jPHVBXqqFmg3wgemRbMUCY6VnAfwlPJ68oRKjg-1_-r91dDT1r5RxcFLB8N-9e2BDYrLRy8q3PK9XHxfsijlEjVRf9Iko7kJRg4OVCe7VUhyZbPeOChJ4lGXkq122DPReojzCYA6wFWy2UE4X4jnqsZtcBk-Vc0dKWSeHUPBRA-pgDNw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-hJcXX_YAJJxc_dmM1peDkeykmAF1DBuru64ZaMkpVo1yb7xhl2_S1Z4tJFZ3D6hY3Ah43gCi1x4R6UHcDCF-ZTwiNZiBaIZAcc7Oyw85YHkS1b6G0P6YuZnR9XVYmkA-PbQGe4mguybSoQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Daptomycin trials for Endocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endocarditis&intr=Daptomycin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "6-10 mg/kg IV once daily",
+      "effectiveness": 84,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 130000,
+          "sideEffectManagement": 4000,
+          "totalAnnual": 144000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 232258,
+        "costPerResponder": 200000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Vancomycin",
+          "costDifference": 14250,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Daptomycin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-75 mg/L",
+          "baseline": "90 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-10.0 x 10^9 cells/L",
+          "baseline": "17.0 x 10^9 cells/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count (WBC)",
+          "percentageChange": -58.8
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fever Duration (days)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-60 mm/hr",
+          "baseline": "80 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 62,
+      "responseRate": 72,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "5/9 (Mildly Frail)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Frailty Scale (CFS) Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "28 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Length of Stay (LOS)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+0.15",
+          "baseline": "0.65",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D-5L Index Value",
+          "percentageChange": 23.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle pain/weakness (CPK elevation, rhabdomyolysis)",
+          "percentage": 7
+        },
+        {
+          "name": "GI upset",
+          "percentage": 7
+        },
+        {
+          "name": "Rash",
+          "percentage": 3
+        },
+        {
+          "name": "Eosinophilic pneumonia",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "4-8 days",
+      "treatmentDuration": "4-6 weeks IV",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3WfAbS0xBNRg_ABjswupyE7dXlE32PcyADZSJy_iK-5CyrL-2R7nNA7VmMjStVE0uSHCAX6zUnMlnkRO2VFncrxQXTxsCzRbR1so9yyWWWXLxG8SRd9xTuhSqQBK75EhVWG52Sh-iuYJZlPImjJ1pOw=="
+        },
+        {
+          "title": "annalscts.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFboPnw15nt4l1SoQwY25r6N7I3VGg6MWeMCWkTGqyy84pVPnKSxcblJEbnzmQQGBOP6AUAJhW2Hv58b_jbl0zNxhtUHdo3tq0znTU7HnE4Ms6VzHdIlbWXkRO2pu5iv6bw3iRTtkuJT7BDYEU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWmOQik4ke7_GgVGPvz2w5Aygz3jxbI7gRsDIPfqpCQAqeSUfdIIjDfpSXt6RrU7z4txCv1fq33L74TQjb8EqALmYmUML5rZdxWNcri7fBJiZhSGQUnR11g2M3sDgIgy8I8ICuwWPoVI8dog=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1QJ1uAI5B19v0oovU-VPH-abGzw8MV3qwwDMFMsdNd3r6XoGOJJxIDxeq9Kd4W-7eXVS3yHXQtCoW5ccl4ydDNbN1cmhOFN3e5kl52ScxOzw7hG-INJPnbWMv93-TRIGjMpil82-MfzdIj1I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw4RxPogEuLdeUfGS7S7N1fdlohu8uztRFKv9Eb7e0dz3WOPpSEvXPd4MlsEeTwpK-AFYv3mq8Oq07MfjbNv83lP-JutPypbk10noRIyl9_xuttmmNqxKnRA7oNs1n5Bf9pAk="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDBUQHu88t62GNgRcFoP-CaGCW8Q8ZKrZbP9y7pLmfyQmSz3qZRjdN-ImcFmwmS3kj8nDM_l4uaiikCWJd0v9jKxFP4lOmND-nXpDUncFhnRNNczHNAjVAt08iO0S0CwC8"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Valve Replacement/Repair trials for Endocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endocarditis&intr=Surgical%20Valve%20Replacement%2FRepair"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 93,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200000,
+          "sideEffectManagement": 30000,
+          "totalAnnual": 230000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 270588,
+        "costPerResponder": 255556,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 5,
+        "vsComparator": {
+          "comparatorName": "Medical management alone",
+          "costDifference": 100000,
+          "dominates": false,
+          "qalysGainedDifference": 3
+        }
+      },
+      "name": "Surgical Valve Replacement/Repair",
+      "nnh": 7,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.4 cm diameter",
+          "baseline": "1.5 cm diameter",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Valvular Vegetation Size",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "+7 percentage points",
+          "baseline": "45%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-68 mg/L",
+          "baseline": "80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 classes",
+          "baseline": "Class III",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NYHA Functional Class",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "+0.16 points",
+          "baseline": "0.65",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D-5L Health State Index",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-60 mm/hr",
+          "baseline": "80 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bleeding/Hemorrhage",
+          "percentage": 15
+        },
+        {
+          "name": "Stroke/Neurological events",
+          "percentage": 6
+        },
+        {
+          "name": "Acute Kidney Injury",
+          "percentage": 10
+        },
+        {
+          "name": "Post-operative infection",
+          "percentage": 3.5
+        },
+        {
+          "name": "Arrhythmias",
+          "percentage": 20
+        },
+        {
+          "name": "Death",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate mechanical correction",
+      "treatmentDuration": "Acute intervention + lifelong follow-up",
+      "trials": 2
+    }
+  ]
+}

@@ -1,0 +1,914 @@
+{
+  "conditionName": "Tinnitus",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:35:23.976Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGA5yx7h3JNp4Cd1_4ADPj54tlMst3yCLeMfprjf8pK8I-sTx_pPK8o-kLyliPY9-47JZqz8hoqSDeE-McEhgHbDOkPhDbXYWDhR7VhxNMLUsSu6MlTctPnf6lfUcNQd_B9l27CMcG_yDU1Ens="
+        },
+        {
+          "title": "healthline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlrJlmCqxT_oDvMBux1mEeGrrlUTZ2t5oykK8SzrhFFHX09aFFzRDkI522MweABFJBg03T2E53EAoWzKr4tXff7lsmtoRlZRqzXtBlrIRMp0_pRN31WcfoJENdd4M1UK70k3r_rIxxYmEcK1CtrT56TmIqfd0H1EHns78a42fsrvHI_srGAA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqk9XQp1ZD1Adj6IfN3-V3MUY85sI8VKn6kRcaSZ8jIZrCybMiU3QmRVF2n-MxLlCJwfCI9eISGK35keWlWXBEnOIwudM2qBnG16U_xLgpCosD0uFmEXqyy0rYLyfWYDpyPFE3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqLQZsXeYv1YuREYKz8Be08WZ6_K0VRdR5XiUlEB19Fkj2HC1XG-cIUBGSswjUSiiez8pVarRs7DXNq7aUfmM_2hCnI6QbtMnusWpAnwRrcXewVPi4dPcPBX5HXHQnkivNb3Otg1s-nMyJXShBDhJ0UqN62LgQWCIJqmLHLwGAzmJEa4HbzI7XdTWzFIcAMgYY6vWfpgKav0_RrITmhhinHsz8a1S4FubvXvt-o5Isq9PbRAsinIEQbt6uqkBfMK7mUp9Jyhffnhse9a4nlY9pBq2XdEYLX9ARFOtVDd6aYy9rcll_KNMdBA=="
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvwVNpgEYiPYx_k3oth_pahAhNilV0xHIdVD1ai9e7KC6-LhJReB6zIF3iL74ta4IuHI2aLAK1HOUDVZXRpGVexMF0hr0bpsgdy3TBG3E1MXmOf37OaHhMRFLo7z2-cn1ypZrsSr7wNL4eKdq9tP_TbZxhsYCTCIvlgbQCX-GfRlxfxQI5ejKniguHgb_wEXjawI3QsAVy06cTN7x-Rq-Nod-TpO116lzu0qmzOQzy1G2ZOSrpXzFsW8DzSkVqHdt8_miFDGxJRr3-7UnWWOrALshc1bEi21WFsq4vweXhRdA_QLdavSQ4kO1-YTDvb4sruWI-LuGWubzwd6zcP1OdIZd_9Ue-Uz7wXvYcQh-LYJ6VjRDOyfu4kxqbaItms6rPzbZYGIr7HwF81iQ5KoscVdeeOqnFBleQ4vNcdEs="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjtt7wMFc39l_RZGPx3w2bGgRuSe1TiF9mmjJFnV5ZYJQBKQw9ulgmdJudbt5I9Fq2Vknok7BuTij6tf80YHUeHIvvVq0hp725VxV7VxsvnS-i8_xymskyd7aIbarydXwdcNXRaeyc5WTFVS4u0Rr8lvhLK0CEsxEpruz0yhZ2R9TNQvx6H-nFo6Ijrsu7KDJnl-J1Lg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ0GZJEAzImCRlQ51Z8C6thF-zR8967sdtx3k8-wDXgL9-YMxSO5W6VvCJoMjYx9uo1XjAEaWW613IjRuw88FfjYgrtjZa-BLodYCDtMtdKsX3EG-SxbhBLp3sSFTVlR_JbS4jvnof9NGxx3sAOFUlMk1K2SdQd9Wh3-WCjN4q3VeTkfUP_UwOMAyS_pTObnpAE_1DxN1q6WkbW-0RPoh8A9JQTN63YyaRQvn5KZSnxiNcs0tW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhKiyzVi4YgJJL83DTo89g-24r7E2Ge4mmBv-i7L1qunh-bsiXcN9zn50TKVjzNneVFfAv6zFTV4Ewvl9Ha7Tp-CinBGnW7a_IuLcFhRbuPXj0LBdebPwPX-d5P3bsXc9mqX_l"
+        },
+        {
+          "title": "tinnitusjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcCKfS97srNoDyCM70K5d6eUZwkntAsWHnn_IDOCAAbpkZldCFDUrgLEqE3MiSGoYWRZr88seh518yuxKBcObhPoxP5wUCuIHxoBeAfUKOZUTB8uB7Fmq60GYi-yyp-VPAvHm5JUavFKKtMl_MLYPTGKszX9PTJODthT_DYZ2HzvjpCNtPDxXqgEsGEPf9Yp9y4tuZXC65-Q5yeKDGNirTKpCFxmBQNzUU5VuGmIFS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4zqK3p0kNQ25c-CHyczr_UuCKU3KzWWwx_T7DFCXvn8KTorZ7HoLkNVbZVKKQVMcg-uEuzks7duVKqf9mqtDr1Di-_XlxEkVm40YK6SsKU6sf3MCm0m5a0I5NUI_2EBICd7HOakX9XwFjSk7O"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRfwzhlOaHfeSQf3dN5oqlD4OM7gG4BEZOmmv2GLlEWJlozJNf44e5lFnjSB9lV0twGjv55GI3Qq8oitYsVqc1WpM0z31CEi8pWz3zf306ASr2jG4IbFunZKaqfcda-3A4QEIAa1iC"
+        },
+        {
+          "title": "jmir.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYRkAH3ssFnyhiRS2y6YKxQMKpFkEeNdu4ReVEJ1ZWlDJCKP05agNhks3qwpSAY3QdIiuShkCBz_gFZSO7p7yEKtwLu767ukMRqYG_oGKWKnPRC9iHkBBfRbIpc26s"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfS-OXhU7qFLJ1-WXHhbsBkET3ZMSZl3sU1xXDyi7P2gcQ90aN-SY2t_juiCBpBtTxlPgodeWotIUvi1Gv-51sS352MxQvLLiMjpmKHm9E67apzI7LzVceAwnd40OErEIVCgev"
+        },
+        {
+          "title": "ingentaconnect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjBN7WbrvnJXy4kjZMtvLdiKiHI8eEivBZvc2a0BNJasNiTDw9kAKbukd8ATWrOnIh5ErG2lxNVOvfXu8-GgX89iXLS9HvFvkSyV-l3KnWvGid72PctTcI-An-XuGjMC-gGW3guQcp7TiFxk_b0FqfoQwkDDY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) trials for Tinnitus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tinnitus&intr=Cognitive%20Behavioral%20Therapy%20(CBT)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "8-12 weekly 60-90 minute sessions",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 0,
+          "totalAnnual": 2200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 8800,
+        "costPerResponder": 3143,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "56/100 points (moderate-severe handicap)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Handicap Inventory (THI) score",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "65/100 points (severe impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Functional Index (TFI) score",
+          "percentageChange": -23.1
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "13/21 points (moderate anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder (GAD-7) score",
+          "percentageChange": -38.5
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "7/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Perceived Tinnitus Annoyance (VAS)",
+          "percentageChange": -28.6
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "15/27 points (moderately severe depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Health Questionnaire (PHQ-9) score",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "19/28 points (moderate insomnia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insomnia Severity Index (ISI) score",
+          "percentageChange": -31.6
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life (VAS)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary emotional discomfort",
+          "percentage": 8
+        },
+        {
+          "name": "Initial frustration with therapy process",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "8-12 weeks (initial course), then as needed",
+      "trials": 32
+    },
+    {
+      "citations": [
+        {
+          "title": "tinnitusjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdEsnp20w4DE-xX8JOciwAdt8xMdtreFP756GBO227-BrmOtEI2wUkY4qwoSRY_gSRdZku5IKjnMqu0x-bymykRCb9ycLhNcwwOCO_kdq_Zv2i1w7F4q1QT5g5VQPHCWFT5sUxywJoRIfot7o-JuGKPPcVxxk4djtARX86PNbxPa1_knvzYsxpcquAfRq-fxNI3neClJzfr6Nor2sFrCgVpVFbcPd0cMV2TenWBT8C1SfrDN1y_6pFVuV4DZbPO8sKfd6dQQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGN3KHWAfQBE_1a6L6iosiddgJGM2eE3roEdnW7q6WJH-hNN4_18Qih0GZsFlZM8Nt1XzsfqtMOGpIRoWjeLGZc3uI5uV8pX7hFXO46zlPu4KdWYc9Rwp-ahT0g1iAH_Uc-gmpLz-IDa6CGLrk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-zIaUKi-N3EjX3ef-nN9Kxq_I4Eeip-1m9yTgHRrCe37eLStQWj9hK__7I2rLFyJqqUFL6qNsyKjfr9dBKeobFzscuBsJZWP20ac-5D8_p9rDruFkqch5zDDXZyyQUB_Ssvgd"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwRBqEzuAxg3_ZkMTDISjWUYHw4vvEqcLaxHOWVHathluG7VSZDSfCTxdUWDE2G3NEUQG2WxSRZMtn1DIzhfQk3oFh8pchhZwofggt6-GZa3_WeZVB1m0bwpIlFvt2CKDjRR7QQAbO542P7gW5VABWgOAm82lVeaFvTDCK109h_qo5bpRSNr4ye88iYMtf6VBh_KmQYRgQExOdhLuh8AE_G_pP_DEFVImJ5Ypo_rBh-BYVhG6GhpTGzoqEB2u57ZeLBSP0ig=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGuWy2d_K5lHRYwfWDcXpxVbMmozPBykS-PRcY4_OKu-OmU1HdjTwXr6bTr7toLFo__3pXjTevgU-ceJgDYos3P9p_aluwtWh8hTtP7PcQHawSem8RrFA_ywRbLU7gIhmd3VVkAyCL3V_QaiVlpVLZeRx1mhCz6mYwWXgDCe021Fqsfd7R96BvYqp6sJDlkw=="
+        },
+        {
+          "title": "tinnitusjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuzDejQvrawzXj6eaREIq7RFGYPLu8cYoWNqJ_T1oX8azA8WwiISGo0yI1RdsR8DwcApc6Nje-d8r1bZTwkhXKRPXiK4Gn2XkCzrRUv0fBtmqaFHPMT8nBE7cX8JPlLJzwhwVJGwYXak2eU0WBzUZFpnYg1G6ZuG3prh8a5HTnLsXxf678XKHSS28Qhx_kmpkQtMHB6v_yto73AIK8G7ro7CpTKrig4D__AyyKIAOvspkvOvryPFdgYfAElISpCXPSaQ=="
+        },
+        {
+          "title": "mindfultinnitusrelief.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmJy2qEF4wV_jfXDDzOn1Vf7YqBZ3dWJKdZ8s2QbjGVpfio2Yr10KK6nNMp2Xlcud4a94a05scJG8qS0mGzSv-bDq059kBQOxnItXjYcqbC7-iqjPxiD198goUETPpJzy7J8Oktl0IAYtsIGE="
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRgyV3cl5f5zIWq6QI12rWW01denDq9jyP6XS113rdYJMsoX97Rdhn5cpOIYdQTKg-Vw-_gqQU26gMDY3SEs6Xjkb59W9darGS-aLlCZZnmOLVag_2FZ0cH3SjuSPguGn_0vZY3IYoYjeFxOXR1w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mindfulness-Based Stress Reduction (MBSR) trials for Tinnitus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tinnitus&intr=Mindfulness-Based%20Stress%20Reduction%20(MBSR)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "8 weekly 2.5-hour sessions, plus daily 45-60 min home practice",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 100,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1100
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5500,
+        "costPerResponder": 1692,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.06,
+        "vsComparator": null
+      },
+      "name": "Mindfulness-Based Stress Reduction (MBSR)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3500,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "55/100 (Moderate Tinnitus)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Handicap Inventory (THI) Score",
+          "percentageChange": -27.3
+        },
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "50/100 (Moderate Tinnitus Impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Functional Index (TFI) Score",
+          "percentageChange": -24
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "22/40 (Elevated Stress)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Perceived Stress Scale (PSS-10) Score",
+          "percentageChange": -31.8
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "11/21 (Moderate Anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder (GAD-7) Score",
+          "percentageChange": -36.4
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "16/28 (Moderate Insomnia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insomnia Severity Index (ISI) Score",
+          "percentageChange": -31.3
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "10/27 (Moderate Depressive Symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Health Questionnaire (PHQ-9) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "65/100 (Reduced Quality of Life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WHOQOL-BREF Psychological Domain Score",
+          "percentageChange": 10.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary emotional discomfort",
+          "percentage": 8
+        },
+        {
+          "name": "Frustration with practice/lack of immediate results",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "8 weeks (course duration), sustained over months",
+      "treatmentDuration": "8-week structured program, then ongoing self-practice",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQJpThc51cRpTLoGXnHVn-1OJx6XtcI9K8sgs8YpcNbo_l-sLvyySYjq8vz3j-DX7nr8tGKWg7rKIMJhCzn7Yi9MhJZUrF3gOTuU3IXNmtY47_rzG2kRKnxIAB7cMv7XfRk3_T1qMO_7NwcZNvTwKf4-xz47fPHpJx9SXcjcir"
+        },
+        {
+          "title": "healthline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwYsoVGg0zUdsH97NcrkmQEV8hFM4GHuIkyDKCCIjxQOTQywCdYpbSYZCKkzZsWkmJWf__tZkr9Lj5OvnPSjsFyU0ZZM8m-4gtIQvUivF7o_kVro7zYinbmnKdnBlHHfbfJPfLjHXjhA1Mkdw4hebrfd9QcIW9bg=="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzwIqSkawO3YqteQQ27iiD8NAMkZ3WH1HSYwKq1thfkq1OSNKVrclsPLKCg5X6ycMlAghCbFAlRZI870Zl5yh7pDJfl41NsOYknp_Rt6OjrayacIjO-Tq61vn-2JVDVXvVDJFiG5bbX4cZuvj7gUMxrEISY34xQBMWGUY7KxrzW2U1USWumVK0wrrYsHDDq4uHPA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlvZea8DNni8vFKn6uziYZtv4aYrV6IhCzLE9VKuQIrJKlMrvE5ceywpmav1BGVUJ6YctsEgLi7gEeBzshKobKOTwsh9ClfkFlGN0oUigUOYOLVHklZwq3wCbkTOMy5oqotGk="
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG3MOEZZsA-jBNP40HSWgRhLz2AeGQTAyGeVRnZFtRRxMwcB7H02zT4bmaGPNn4Yt3qOILtTJqbOMH7LVn0U43AT2xM27usOrrJSBj727vOQbV72ehvgIu_N2p0fekjg-rF2qk85sBFwD2jKyGYchcU4qfYVuao3FiQJp8Gr4_87hQakShPt9YGCwzLqha6KCWvAmBqKPw_iA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIYbZvRk5vrbY2nKee09tFSpKkEsBgw8H8EbfZTBxI2XSvVOju1DQSxQglyrTIpyvER1-5Y0cY45bhsazaOWPQgghjNpSuNCsZCpfG16p4sBedJ-KoaS1O_r2n4lFwlG-Z5LIEc6dE88AWS9ZBvF-xlTY6lxdkzbL3T2GES-CuA3M2msuY11nWn0lJ4qkBn2fNaImknMI71vDvdtK-fjbQE2Yh-BpeYSw4ssrXeeO1gO7ZnuInYKvBtIOETptAqtjKExp0cgKFq6KkAuiaoB9JD47fbWCe0x0="
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyZFioNSJiB1j9g5g4M33PychCr5YjJEUQSXjWNXBeteF6cNYALG87_XcUZownYlz73xIFnal4UmOZ1gxOcwZlm-sbO1sxQBlyPqUyFySjHDOqLn4v9GTtlQd-5LxHsjpPuuyTzAqGFq35S-l3TvN-cTplaHS8OauB0UnHUO9sszpC-LoKDgwRtkKHXOBoaU5gnQJ6f2Mcpqc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv10gB2ltdcqhFL8T7OzwzYSP7C9Z68snYSlLjV_CBl3dYJ_nDXIRNa6r5rWA5ENG-ikD6VkOX4XVDL7iTZidvb6zfg5hdPwefBXVwuHC0FjhK81g_9BXexXIrTv8RS4evTbv6nQGjCLQ2Lg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiKjVGRzpBUnuHqKwM_u8EdwILY7D5cq37w0bZJJswJVp_3ONndU7MhiAGkDyD5P3msjFNetQcy9gwy7P3zMUjNtVSH4N2opMWLbIo5pvFb5Yc2YTAZ4pRLTyN8zZTCOK4X18ASqWKmH4yzELsSe5pEJeXcUMnGSsFVXWZoJ2egT5u5UuQDq7wB1SprqOdHfsqrCg-t4EmOg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tinnitus Retraining Therapy (TRT) trials for Tinnitus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tinnitus&intr=Tinnitus%20Retraining%20Therapy%20(TRT)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Daily use of sound generators for 6-12 hours, initial intensive counseling",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 0,
+          "totalAnnual": 4500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 22500,
+        "costPerResponder": 6923,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Tinnitus Retraining Therapy (TRT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-23 points",
+          "baseline": "58/100 (moderate-severe handicap)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Handicap Inventory (THI) score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-19 points",
+          "baseline": "55/100 (moderate impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Functional Index (TFI) score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2.9 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Annoyance (VAS) score",
+          "percentageChange": -42
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "18/28 (moderate insomnia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insomnia Severity Index (ISI) score",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "12/21 (moderate anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder (GAD-7) score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "11/27 (moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Health Questionnaire (PHQ-9) score",
+          "percentageChange": -27
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Adjustment to sound generators",
+          "percentage": 10
+        },
+        {
+          "name": "Initial frustration with therapy length",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "6-18 months",
+      "treatmentDuration": "12-24 months of consistent sound generator use and counseling",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjCr3zdU8VhRfA5kt7DTnKwxjN-FTGvi32RGBDmlsvkrafv_SzpRVMxNxHHsLN08fu6dWaS-mskc9Cv5C8ZNJFfg2OUso1lsyL3jiNamZsAdHnPPv9oMfYhm5d4Xe2PtN5nDQ8wnzWbPL1me9DmIm7prM="
+        },
+        {
+          "title": "rsdjournal.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmlFEuQZZMTNyPXcBomw9n2JaWwxfOh0QU7L_s1gYsXg5FHMJB0WDBacqBKCo5AiZBCpS7PwP0Gl2vMTZ_xKfmwwqqVK7ugVJPB8WHQR60YpE_rL5Ejznx1-OvJ3Jsw6Z8Zp5mq6ygMw=="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwwLGcWKbq2-CMt1W-3Ts3fG65tP_SYhT2LqjFGVhVRyFFjYD3s__E6OcZaIABDHo_L1ZVEocdKxEK4XeK2jcNQuFiccgBe2O9Brj52TOBrtvylVmtonTM94KuCzqsVJkveMbGEtCAgsFKPKa-PuRCcjVm2KtBk8s0cSI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLRnW4sVjfDZvjVoT4krexkwe9mqrPJKvsSKR_8RuJilXcuMfkr-VhiXffK1Q2FSpvblwREF4CJpte65HWnqWaKHTkpGmI-8bl5bVRo96uvX8CbrRwJlAT0Vy_WUsqLPEeQNuU"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErTA3-skyCldHfuW4VY7piVBvk5exmILqSeiPxXcB4yyfBUHXeXjlkskLx5BUirpk1R9FjdcOzT_6GfdDZ3fKfjnX7BsODhIC5TFFOkxbaSfkwPijOg5Lq0Mzws33it76lIdaUFfOLLf4Pco5WC3XOGs6ccAyfoS2R4z7v6JrvEIXoBnGjoF8VQ7pkwnTPfgCCvDBI41pQ9WiqNrjjphije2dKruE3G6KoZLbjQwcoNXoyGW_iqedeUAqPG2vo5do2gCCxtLD0R6ic_wbZCGEUirEw5LNddjouu44nCY0h7ErvaA=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxla4Go-0m7SBt0PlFyr7FRRY0ojb3VQanO-SiPWv8Q5QZOEIS8GBRHkMcIONOLCE3MnNjKnTkmRbT3YSJHBmuh42rAvZFEH5IsVmHEZECpRNWUhjFpw0WxwXUddQHtWfKX2NpzV5XDidRqF1AsDjpMoSjJ-MA9YzoqZKQtzpBMijTpUin1J9SqsOAMMpTi3RyHG05CwV-H3JuRh6NfQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBI8om8UtDqJn0PzwTGf4CNCEMJKeAfA0UJyI8-1D8mPe3m-97iPKkvSAe4hnZWlZdRDK_6As6txWGmfcEfMcL5YlnB7mToss_gujutOqNH65UHsFr1-vpecxjDl__xsvj1Rqv2X5iwAEgDAI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO7jOMTsRm_-gyL-4lrRc_KalEi9dfAmpLDZylWQmZIZJxYA6u0DuJfGfdXcfunvTrfgplubN_iELgrDhl8FuCOtXjWuX7_2K8OA5fnycSXvZq7DxsC6imoVaQpvUldE0GbOpZ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3qoofseDndnEivRJ_JzTkIaz49HfqUE13LhtbGx_MTBQnh1IcFPVrYIYTP52vBYVs5J5MldRwfikB5eSgojCUXdAN9ioWdMKDLSXRIvj4EpAJyEdnJM-KIXfzc3_QBV-MHN9UTp5RqOk43Fy-JVnwa3mSku7JQVPVJC-73weEqUTLWnOi6F_2uZtcxz7yEwymcuknl6jJ9_HrjYhI2Y9B2Wd-p4sRRivY-c-1x_FHctG-H-3GxshMZu6WPdLP6TMq3ru-x95dqwqx52E_VBhyINBp4W92YbWU6BPmKloQaZSpuf8iPAGNM-7_Tj6eLdol1B9DgV5AGK8="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyAW3bdDLoOMSTV1nwfXio74RsdynR09zN12MLWrrZXgovsVnvBywl5JHbagQk257rmeFbMoqOMKEwxfcOycEr9X_Hf5bOIfZdTphdeAw9a0LaLOdS97oXL9-XXlSjwTAJvNs7"
+        },
+        {
+          "title": "ClinicalTrials.gov: Hearing Aids (for individuals with hearing loss) trials for Tinnitus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tinnitus&intr=Hearing%20Aids%20(for%20individuals%20with%20hearing%20loss)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Daily use during waking hours",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 10000,
+        "costPerResponder": 1429,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Hearing Aids (for individuals with hearing loss)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "50/100 (moderate handicap)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Handicap Inventory (THI) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "60/100 (moderate to severe impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Functional Index (TFI) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "7/10 (moderate to severe loudness)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Loudness (Visual Analog Scale)",
+          "percentageChange": -28.6
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 percentage points",
+          "baseline": "50% correct",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Speech Understanding in Noise (e.g., % correct)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "12/27 (moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Health Questionnaire-9 (PHQ-9) Score for Depression",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+0.05",
+          "baseline": "0.75/1.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (generic scale, e.g., EQ-5D index)",
+          "percentageChange": 6.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ear irritation/discomfort",
+          "percentage": 8
+        },
+        {
+          "name": "Feedback/occlusion effect",
+          "percentage": 7
+        },
+        {
+          "name": "Initial adjustment period",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Immediate (amplification), weeks (adaptation)",
+      "treatmentDuration": "Lifetime (as long as hearing loss persists)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiLaVL3WjdeUdmFlIQ1i9R66mdisSVWbm93Th4C5EcMB1DmT0I-kKKj1nFhz3C9t76yKgxT4u3S_IoMClQnKCCNW2tnIk9P977w9YVyd5WOcG8GNQBp8D9eRog3_biTcN5UwbC_z1351oMJE3wVBt9kgoc8CyKmgiDsrxRdMKSw2RO_VPTLll3nxbE5us_BYCvgQv9M9AsFadd"
+        },
+        {
+          "title": "soundofmind.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoOZksaq-SXIO4rGO_J5Zca43LSgaMb8AHbopktS-hdQXoi_Pkfg4yO4Pzsh4WwhfkJqqNbLLhdSP2ojpohbEG3QdjyJAAAi_3fsWdKoLvsczgKZ2F-7QOr4mzGY3KoUGKd1Sq-c8CkNqXW4yvvww2vSWDyRnJCpEiHdclQqy9MpsNSwhIAkTMj98zlXa7UCdIfScDyB8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoGkJw-9U9XMmcRseR81mA1wIrx0vMPLAfFMqZ0HrLEVWNUudhvWbGTJsSrl1BPazF_Jve3SD74lgvctOB-BATBWS2m9h0P6o7jRhdOt-kN1vCNA-3mbwefoVbzJRVnQRJPn9l"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyu7gQ9f74pwXuw0FxcLXiM6NzY2lV7o-C7w_ropOdGTx4DvRerNtFDjVrQrO72zYbbX8O0YM7jwIAELu7I8Nb2NRwB3J2WO7RYa6cc76A_mNj1rMOuNqlkrMfqlh6JFBR5KjYLGlvzMx6nuaGySwaTNAb6w7OOJoIC5Lz5tPK-435anxgBqbax-owC4yZozIhpJ56dubvYGouApQb7mAFZ8kEBbfZ5xoPfpKMz7Mr0LFpMtrjRZhqQd-oeuBltfW7FI38JmCiBmc0iOUjoylHQi8jt8JV1dIJdWKw5ZDckaRMX4fkJX3OrhWeHepLFszzF6MC1-Uo0ist_OLd9kW5Gg=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc2EM8llU0KFZ_YpniUHEV1OvkEhmRqURTcVq8IHAP0_GoAsSTp2g8QX47tQDdd5wRaiTZpTVyBjgMXbsUexE1xnwMn7Fq016l20us-ixajd8yOhN7kk7IKvlnRTWtRDpfiglTE3g-r2X0fILwU4AhMACKTWkiGTzkM-3MaTf3ayIKGodIlbaApcw6P9QJ-8BlW3CydXw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHapNPxDuDqje7uiZjKh1kdhKZWV5iMUu0Ky_Ywwz7J65R255iburFGwNRlZSws8iqBG65dBz8OG117BEme1LTPRV18DzA36FICNYspadFDL0aKMuhWQn7TfhsAyRwmSwF-S_Nvj9Gxu07iok0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK9VDInp75g6UOAzKWSd-n0T19OK0RQ_lk7QIfLuZpLxqml3CjIJLWy5k5khzj4W4VYbh5uqJHURAoAHRfCFOPcPsi-nYiShq8FkRazBZzliqxVcPeG1ciYgMd35JmnkSvifjV1LcBJrFwmWKap8tEfubSHhbIc3YIoKPd9tg0jRKOWV180xx0n6fy02vM2vrz2Ed40fkRAw-zWTVECWRVMgYm0McQwQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqSOBRMMA-VsusBNbVFIrDFJL6tFlDb-8Kq_Y4WD4qU9EtT9VquqFu4psfQ-o1DEIlTCdmQEfoDCOTUWglwCbB_KzMZS4VLwysxSpxu4yge42fyBJDVNZUye3C_iX-ABldd6aPL5q6qyt6wo3MsxmCUQXCnvjZaIwEnGo3uh2Ao3NwBgMCpt2lUO3TwTikHOBFynMxh9KfGWoBRCoPIGM3aNUg5h3c24_k3g5KOEtWw80QnlLtceznDUsDymq4Ulo="
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFthgo_ElrxaW1YTshnDNC1vBvZL8Ygi0HJg0-_JaGhQjAcz2HHswXRwQRgahxTxa3afEZWksBPX5r2BQmiHFPKUZ4RZAQFeL1V_cT3-1ItEceeWOguvK0XSGUyXDRDiQ4Ju2bO8JaZ0emZdZLqTw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjT2EgFZ1rhOjEs7X4SVX6DzzNMSlwUlzaqW0wxY83ecI2HAMMWLs5scpBIONFxWAYcDtl4dfWhFOdFCaE9J04QMqf4c9un0HdwjaUF-Ky2qJupZmsELiS68d1tzkMH3dxpouM8U1bOjcqK1g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU6x83zqFRgSGX-n6KIGhcwBcB-nYD9-Y1zgyUl3KJAU6MZHkARLfpG-F1PkRO9VtR1DohilieQLjFZmzXHcExOblkeSdLgV3bwEHx-wbEeGTT2rNIK3ArOUicDk90U9HL6Gr6v7gGUhuOG6o="
+        },
+        {
+          "title": "e-asr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmLnaMh05jWu0hBzetcBfUV3SkwBHxpcGmFWn8-shZiC-5Z2ZZG2qQ2h2FXI2sSw4LmbRr2XJjEqD3O0RtWtthdxDtJBGzp-5_T_AkRDRboH1zsIvHeA_9qayWRabHc2CNdd10k5u9Rua9QnQ="
+        },
+        {
+          "title": "e-asr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfqOXGNIMjgJ0K9qyGIVSTa2A317gSUJoetQ3aQf9hIgrL0bBMuG5I9iXVlKzXWB6dQH6vPf6-qUZ7bXaiDdoHWY3vkml45a19VNwA4avO3EF062HDWvwwhycWJw2qvdOH0sET2u4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHK0QBkUXDX_sMvYYjqxVrAhgp7rY2zN47mi6nY1YR3neal_MfzlzpcrjRDlqayDt7VVRh8uhoAhy5nubMgtl2zeLsEo9FrtXXTamlErQRU9NuSs0zSafeK0fhPatsMIBKB-1Ba"
+        },
+        {
+          "title": "ClinicalTrials.gov: Sound Therapy (Masking, Notched Sound, Habituation) trials for Tinnitus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tinnitus&intr=Sound%20Therapy%20(Masking%2C%20Notched%20Sound%2C%20Habituation)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Daily use for several hours, or as needed",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 150,
+          "sideEffectManagement": 0,
+          "totalAnnual": 300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4286,
+        "costPerResponder": 500,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Sound Therapy (Masking, Notched Sound, Habituation)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 6000,
+      "phase": [],
+      "remissionRate": 7,
+      "responseRate": 60,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Temporary discomfort with sound",
+          "percentage": 4
+        },
+        {
+          "name": "No benefit",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "Immediate (masking), weeks to months (habituation)",
+      "treatmentDuration": "As needed, often long-term or lifetime",
+      "trials": 120
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTNPomRBBJS3qxmfYeVMiOObuXd1FN2Kb43tPw7CUZmzMb1V__3-JMmxG9G50i6NdkQruywMORTVFOo01R49Sbfgs-oUZK9qA-B8XGluMFGyU25uf_5fpW6aB7ROb9cPM_69c="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjxh-EwW01z34-b-EvdECmcpNXHtbKpEikxthqDaprYw98NgAx9NU5kecEkrnZcosmXnDBJZERWVNnEgcEXzULAKJiZnqXsvY-C9k-ZikZpgoGniDuht3HMXmRdqP6RxbiQqA3TE1YCZMtOSgN04uBauxcC6CYbmYHVvouAOtd2bpJ-Yff-LWaqgWGXMdUkUThvI7gYrpvle4FYXEVYMZ2FR5h55TYWI3fOzSDB6OtsfrRzP1pV_TFYuOc_RUwxqkOSh8LotHNoyQ="
+        },
+        {
+          "title": "magstim.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB_WBKw81xe-JwXt-STaA5vjthI1p-9klLYlFp8CVzbSA3dzlAKgx3GDTuwcjXt_Nkz9Jq8klvbYRIgFj_Csg78keEJU04aucD7QubImjEUlAqUDOeJnF8pjC1k8zWp6-2hFyReF3di6yf2OFFckaaEHrfziqWEP60_etmtlq_y2G0nMVvGBGSwiDdJon-PPXavlhWVJeomxczexszt9856UusM893o_DYKK-pTC3xctktw1keS8V8MobsAtD8XRRJXg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUxhYwdcBRyTLLnQ0yqVGQEvHur8s8ywZZvah55Nxi9itUctESwnolJ8h4rz2dh2kQvHm95E8F-9mYIqTw1vGvjP41p3C-xWE5YtDIVf3qd8XPRfBzZCi2fy5K32Xzz5Nx7fBIC5-6DB64qw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIhHi9USXkf418rinvCcVgbdNGYsKc1UZiAJykTQIxJNmUss6wb4sCUg7MEJUscpuZtWBx8wirhDCBLElbzwZcU-dzHmzl1LKO9z51Q8Aq7H6TirIKgNLfhvUi7kwUNguSY8c="
+        },
+        {
+          "title": "ClinicalTrials.gov: Transcranial Magnetic Stimulation (TMS) trials for Tinnitus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tinnitus&intr=Transcranial%20Magnetic%20Stimulation%20(TMS)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "Varies by protocol (e.g., 1Hz, 20Hz, theta burst)",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 10400
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 148571,
+        "costPerResponder": 26000,
+        "icer": 250000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 50,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": 1000,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 1350,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Transcranial Magnetic Stimulation (TMS)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "THI score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Handicap Inventory (THI)",
+          "percentageChange": -32.7
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "TQ score: 45/76",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Questionnaire (TQ)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "Tinnitus Annoyance VAS: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Annoyance Visual Analog Scale (VAS)",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "-25%",
+          "baseline": "Perceived Tinnitus Loudness: 70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Perceived Tinnitus Loudness",
+          "percentageChange": -35.7
+        }
+      ],
+      "remissionRate": 7,
+      "responseRate": 40,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "PSQI score: 11/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI)",
+          "percentageChange": -27.3
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "BDI-II score: 22/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory (BDI-II)",
+          "percentageChange": -31.8
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "Overall Quality of Life (0-100): 60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life (Composite Score)",
+          "percentageChange": 13.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Scalp discomfort at stimulation site",
+          "percentage": 15
+        },
+        {
+          "name": "Lightheadedness",
+          "percentage": 7
+        },
+        {
+          "name": "Seizures (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Weeks to months after a course of treatment",
+      "treatmentDuration": "10-20 sessions over 2-4 weeks; booster sessions may be needed",
+      "trials": 35
+    }
+  ]
+}

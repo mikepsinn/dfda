@@ -1,0 +1,509 @@
+{
+  "conditionName": "Dengue",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:02:16.622Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmbJX0HkY-n6e5Ho38fKgZyeFYGnzeB_4PQE51GgzNHLjzhyWunghqvbItJgzQ-Q9ESnXLuUBWD2IO2bDsBPgAdy9FMoOTIm53thyK_knlLIm2byn7iD5a8lii7vdUCzvOlWpz1UdbG9RIWnGH"
+        },
+        {
+          "title": "clinmedjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVy0Tw7gNvpFdyRTWLUeH__IkJP5wx6PXNtpDJH-r6Z6MWL-PcWiFkSWT2jXxuY17CaRDv1G8PwxjrN3cv04CYKF0v_6MMYdITmsNxiREy6CxlERo6PSd7I3iLdRV0btcGTi-kHx00fMwDAY4G5zFUbHGJ68TNMdjM-5MHxGwJ_89xXy-alJRO9ulSZZTTuV8RwibDnxiHbudlXAqfTLl99N1AZ2yc5TIoTuU="
+        },
+        {
+          "title": "paho.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJpQmzmD3CwBV29xCibROAfxJNBVaRr3zW7H0WVfdH_Bmod_7wYJwfLbSArvEWgcrk63Oufr8WsOvon4n13gb0ymbWJdpH9ucogxLqMSCyynRi_iwfF8LaN1TBu3VTOZq6FdE3LT9DjsjQ90jPLNyM2i_rvQTTnnsCCe3myyhu1AdASOn_JFlmn3otsuG1d_-HRnXicwQHgnRh8hSLIbiIcVJvOh7yIaOS"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKuCz_4ToWccc6Fp8QZD4oCecml_1RvlaFXSkUdH26zuwXKkyeGJUZemSi5L5p3--L3dD4yh3R-nzpzDW_OWChUROomWrn8XRgSEDQ6DXmHUZBmZTufr9Tl_cXZpGT41gYrjaf0kUo56sG6POzYPm4uwXrIcc_mn-CGDZCr5KKTWw-s5ncQdmV2pbSfjKhcw5XliyxZLJ3y--k0TZHtCc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb7W0YpmahwI0CB3whqfeAXO3F-wM7HtGsVUUWELbsCWf8O0DfQHB1J9RmYjWg0s53qiXQWvPeLE78Md4zSVrwQeQFXupnf5lczpw2vjrX9nJPH1CYri09q2PsOIA1GrEUnWrlg8oXjD8T-08fN6NCPg-TII3cdQkfWR3q_9CtXDXsLnuMb_NaaVVqnnmkeAwNXI9TNcUr_ypiLFoWCIqT7alt61Nf7uibeEtNZZVzSbXXmUCdgeOWUV2IDlXXlSA5qyEu68UE26s8Pnb7wKOIYpjWTbKLq5Whwuw8cZg7X5Ng8fJjVQ=="
+        },
+        {
+          "title": "healthcare-bulletin.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwlSJOyfswo6trRhVq0LN1qQLhft3GtQaIhsIwMeFumpok8qJIryvQci3Q9EDz5PY8_irxqvEsSNFrmutXWa6tb-alzc5wl0OUCPKsoLPIbNS8QvBSc1eYzcJJs7Hd3WZ8AsZvQvymJexP66cGd0KHUgeFZn6IIwCWdlVvzDhnvOzG23b2sE3L-2tiK9hRn1DouVVPqK-TVrgyNaVm3xFNYz03S-uFoXY869hEhUxG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsRLek8IdgzNPm4w1U_-hvuid32J_oDSPh6KZ6vfriVNbVBrUU63K9JVjf57vPLankE6MGRj3q0IxTkl_6eJhj3W-peQPk8dYOU6BP0e0-vqa_8XcgWv1FIIuR0Qyp0qe5qX4JXlIu6AP2wlgr"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGto-kzARhQ-29lYc2vXUzb0vl6Pa-MrodUuRtMAbRFx0m863gKqEYvlGPLpK5bzC_hCrF9hjcY6AVMoyU0pmaQjUZ_nXHR4K6nlreACShtmTAdTXHzDXdmZwHe4vLaJpPZCwfrdc-eo5dY7WwRmgH0KT1Hce8-b9CR0-n3MO7JYNDb3m97"
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLS4oR6uat5Dlbv6PNmwDDvM9ZB4Ikx2ml18UM_uwWMq67zww-4y7wqPrGMnkxtnf-U4qV1k3BwtI0GyECxNYZhFL_Z9wlVVxprwkn0rW3vLjn_hQ4ipTC0V5sW3TyH82pVEsPECHcsrbEJfY1SqgMfAJCsig="
+        },
+        {
+          "title": "jppres.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8uhATrgHsQxGR0jlNmN8lKdm5xiteJbM1N0RSgw0HzQNOxBCB6lAoAr-82xSm4vX7FC9lUZRhTm1fNy-B1vXV2vDCKeSJ-LzcCDFfY4rYWCLkdY1yl2XjNJoTiWspZLQQ_Y7NbVZKC7aTLhbHKoyMuKQb-jF5KxtJzg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravenous Fluid Therapy (Crystalloids) trials for Dengue",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dengue&intr=Intravenous%20Fluid%20Therapy%20(Crystalloids)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Initial 10-20 mL/kg bolus over 15-30 min, then maintenance 3-5 mL/kg/hr, guided by hemodynamics",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 8650
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 9611.11,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Intravenous Fluid Therapy (Crystalloids)",
+      "nnh": 20,
+      "nnt": 5,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Fluid overload (pulmonary edema)",
+          "percentage": 8
+        },
+        {
+          "name": "Electrolyte imbalance",
+          "percentage": 5
+        },
+        {
+          "name": "Catheter-related infection",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "12-72 hours",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPMGJQQneWv_fqjIXGhNmbHIk600bvd07-P3oWacoMHC82rwNnVIxN4cR2774hxk5MQFT6P7dxh64oIYXpq59RlW3fVpkTPazd9DOqTA85fzQ649cHeZ2dA5XP7_rF3pf-15iJxo1S6K_SYAtSiHhHNx--tQRkvGReliaa539J7k9CTiF7s9GtoyW6if0Nn4qPm_le_sncQ39OQm1uVCkRxfuMMiZnmrDYg4TuqcBIQEqhPWnq1gWLVzDqsta1HoYp23hUZXWI9IvnODDfeZNu-sY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzblOHnzctr56EtnmmSDwm8LYUpLNptiNm5X0Do80iMGZCdco_CmPtJdx2Ru41b27TtAUsE1hUetikcEriD1C2E-T6Uc3D8c9g2JafDpfcB_sHvLWfd6jVPdPnvszM0Gxme67eVfXcKjZbLh4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEepzp2SCsvFPHDDePe5GV6az2EPCr1JHEm9z_gHtSIwpiISzf4FxLDZvMzrVbg-ez2NvTaf1diqp16qQqD-kYAQ8aRZTlk1gllStlrhO8e4rLGmiYwq67Q2yWRDzPKqVL0TXnD-avsHGF9jPyr9ch-2_V89KeHL2CTHTZKUHDAnIyJzcnivgYobzD4hJia8OQCHy_tUiUsV9L2zdTEa0rPf5FudRABGq_DszhXopvFRvqe5aopJOef"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqHVGM1tDPspEml9-e6qorAvcOJ5UKWb5oCc7Kwa8E_dugnNmV3okVarRw_fGBdmeWFcpOXfm-m2FOzZ-TaBqZQlLqdg5nIVoA3RhFRZGNl6z772lMLJkMhK-hs3giAQUk3MsiFquBJDyt4okR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4E9xfj-7hm1y0Emou1bLigILuwd_c-fvTg8hxBfUhBS9Iege64-eXqRYV6CKusBIMOAPbkwm5HfNdf7Ahy2LGcOvbfPpxFSJFteubNpG_xYH_wgA8JePpZRmux-WGxo_BBzOKh8uq0jbifmE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLdJTkcO5ouBlFMJrMF6cGDtWowPgbFtrcGHBdFnArsqKwN2ZVIG8P3UMKnPEw30r1IgKXijRMt2gDAbcZudbOeXi9tZ5GDchV2gGnfbCW0SQJBnPeBXEtYbJYrM7fz5nxAhlEDmqatVeI58Jn"
+        },
+        {
+          "title": "ClinicalTrials.gov: Clinical Monitoring and Early Intervention trials for Dengue",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dengue&intr=Clinical%20Monitoring%20and%20Early%20Intervention"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Daily clinical assessment including vital signs, fluid intake/output, hematocrit, platelet count",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 555.56,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Clinical Monitoring and Early Intervention",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Patient anxiety",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Ongoing throughout critical phase (3-7 days after symptom onset)",
+      "treatmentDuration": "3-7 days",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmXA17_5Ovk7mFuSHtTlwsGJDtPw7X6lpkoiv-zhDVIo-0EyKGcUbaWEXttIjUzR04iAM7_5-18054DejZ8i7ZyttkvE5vzhsu0LWaZTKWZS8Zw5kSjbsrdLwyC82hpOGN61bOuFYqi9vKKdIa122mY8Q="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfxlHPzYsL6au697J3gu3hKUIMx_HGx9-u_KQ-tmZLwjA47-ZnYrDHb7Oz2f8ZC7h5CPYFvfaSwOVJQMrq7AsCd9CpOIu9SbnuxyD6aT92u8y9UHjxS_pEGPSYU4VtJ1MdNzeM0N87bauqT3SVekH5I8w72OkcSfgkzLaOKHqpRF8O5zn9-pcD"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHB8VFR9s8Dclx5iRSnbuCqomvUXNpOajV-2TZKVzQCKfRtdWFqXS_hFUrNn4B_2pMTPEgDxzYI-RhkZtXJi4dV4qPhL6hk6Lv5JVMzrO7UjTbzbkOEH6UXhoVQSp6E2xCSbF2thCebpY-IUkTXHlqwxdshUKuhc3f2i5_ZXFFjfBT6htgwzQDm46WCaUl70v4Ztal6AL0d3_nd_xqmrU-5w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfkFHpKsP_uMp3Xe2yVMmDVIdgLb7Bpui_gLS1ZxwYPDNB121UcikdL75knsMi6gWkRhaION3DNi9DGO64ILcwLC69qlEHGg5-R69gHWZIsiPxpromFinVcqxapr7YgALjPTWm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOQ0jMDDjcyiuzUKnL5aukWqvrsUKWa4Ib5yb3n7JP9OGblI3mYZhrOjMauCrY1w3MLL5wWXAB_bi7fPC8X9wdFzAKz95Ulc2dSt0IpeCTlvDN-hSpV1c_s7viPdd1G6MMOybcA3pKqUehlqM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAFSArtNG3JXFygK0dTqmVAJWSry9HlZv2tr-LKTAaNE4pJoFmcW5T31LYBTLaM0NpECyOstA7HoZQC_tHFTP2kxYLXQIn1qRydJu-SOQb3pkg2TMkIpK6gQzye0sdJLUzoUQ2LUPNvu1uNODnQbNiq_C47bsnKoO9liwb8xKTddiVV4M2scfEX7zxTOXjbzJsirXR6kI7nLlOUtz9gBvcVIPZPGwli_eYRESw0vQ8zhgYFBvewecCjIS4vQFH9W80vTlWhkLsMfoSafybgCl_b_rvJCxxZ2a5uKqiTDMge32Ee1WuSBjT"
+        },
+        {
+          "title": "sjemed.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_K0sFJ7BQDV5qK7siKwW2D9D4vekSSPycXUXQvCwLnw3dUDvq_r0oOOd0F19GWcqrL7dCFmsfJ23QX1tp8OqOmjAb-ZGIz3MwDnq9YZ5F-lEqyhpyc2Z3dw=="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_MGfNiDVXB08e6WlUo9Chb4G7yIRdVLJkC0IcKlImFgIkG5oITe6EHA-hwIEjS9zaFgDPZTBM59sBVQavRjI0N29ke_qNfIdEiJnanrNoHHEyoWLIPO_2YNeq_jIlkZ7fw26jlY0ASASKIVFFEkthrZHIeIBbzBtbMGnMf_91mi-n5wGL0PkHo6OVIBg1LxhDcoNS5VHVsA39fYJuzmZ30Iw="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU2igBsM4gGo2HnDkn_hBxpmrlrajP8QohDz-n4PdXIKLDm83-BDsdHNozlDz4W9yolMqfnn6xou3pHJQ27ouKIycQ8mCGjIDlQb3NMXpz5KSXv3PQikAM4WoK-CA10u0SNQ9bBqJj1KYn0L2nlg_zMg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Rehydration Therapy trials for Dengue",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dengue&intr=Oral%20Rehydration%20Therapy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "As tolerated, 50-100 mL/kg/day for adults, frequent small sips",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 20,
+          "sideEffectManagement": 0,
+          "totalAnnual": 30
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 31.58,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Oral Rehydration Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.6 points",
+          "baseline": "Clinical Assessment Score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dehydration Severity Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3.8 percentage points",
+          "baseline": "48%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hematocrit (HCT)",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "+0.5 mL/kg/hr",
+          "baseline": "0.5 mL/kg/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Output",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "+6.8 mmHg",
+          "baseline": "68 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Arterial Pressure (MAP)",
+          "percentageChange": 10
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-20 percentage points",
+          "baseline": "40% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Intravenous (IV) Fluid Therapy",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1 episode/24 hours",
+          "baseline": "4 episodes/24 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Vomiting Episodes",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "VAS Scale: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Self-reported Fatigue Score",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "Transient electrolyte imbalance",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Hours",
+      "treatmentDuration": "3-7 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH57yFkYUP-n3A5muhU78N_WULJ_YSXFNPMty4nUyh7cOCvibGE78qcF_4_0QqI2CoO66MAP8QKBN4jyHfz1cvw0ax5sKYKML0FfxdVMbVLQI-KXmAeZRzmEavcyV-9OJsAyMWuTgHkAcLSKMmKIaYdtb_S43FahtJzHzRe4tYXnLwVYsVmRfhnIWwM5r2jPeWa-3TaqmaFNb3ZiIO0L_yuFtfmtlj11QHh_saK8EOWwp0DwD0aCh7emVByGEJsJ3nHlZCoLNRQIDTQ70sVFtRaY_w="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsc8v0iYNCcUUfMemDJzv8_8SHyvLwMuAUSVl7wjKs-A0Fp_g2wDs9Rv4Ps93_HxQLaAMLK1-FogiWkGS0DFSEBU9gJK5j0XqEf1cxNyBMUwNaGosIeL2WINbEMbYHSGx5Te6CJ-dB1oT7CeImicpmM38VmhSDvSbket4L9ttSjC1NRrLii6ZKx_OzY1o="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvXSFuvZsyWoTUCbo06RWqeMPc-KlUghrIw1UVunTvSGpInn-go7RMz-2Ej7JN62H63p7GPdQCCJzcLdETc_uCort9mCBLjnSMDPS-LJjlAuQ14W3FSS1d_S2YErcxsxwxT5LUaPk_ANgaIKtYhBPvaGGw"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4KKSv_0BfebRPCP6LM8X1oU-w6Dgpvb9wIZFZ3RpcFk71B9T3JSVkWcSCdibQywroYqjHnqnR-8GEzUBUo35Xv2NapfLuCpp2my-Kzp5a05e2xWZhYhhw95WsRvL2_tyZS-ATfP0fmkJHKr1gc-IjdfnCYPvawv4SmsvadpyPfR_n8PuhJHEHVVK_J0xOJCBiLoU_uEscCfgvW7RJxWQ-qE98i5O0XijzGMBlPMFEl0R_qdfNkM_BaPNJuk2tJ0yJLL-BfWbv81ZEHzQ2DYv3JGNCoeZdpM760t9l2qBQ3E1qoQ5JS5xAHJWbu6XyTzBAB0CYA3FhyqyMk-R2ttlWkvnkYo-rSOtOzcFQ5go="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZqp3q-SN1kp7CpX_CNbWbuc5V4abZEwRMIbvtTUejl-U6GlgJF1dukyav77d8XLvOQBABTaWkuWkhyUnwEmw4rp1RArJJ7cCl7oJN2T9AOzXCtxhlF5risNq2Uk2xWwT0Csie"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYAiUX5T_JBochT4PzPQU4oOwOWAja02ru-UKKM8Dd9kllnsOekdAcXBB7rclpJR8zrgokCdiale1j2fqu9fGy_MAmcdO_24hqPhHm9jV16uiA3ow1wyjPAXkAJYvlcOzMBgakGtTtjPf8tki0btgVVEjFzq-PQogiJ_dSQkmpjPLa94k0i7oxh-WMb9t5uciICe81Jd9QT2aWYNkn9MMsQiC_o32NlyYKJiIzo5iHYa4OYRsbfifYuNPcKBukQ_2C8M5oDUEV295a8JyqZO_Lxclb3mRvo4yKHKvPuRqe20AcndBafwvGGgspzzF0LJbFGIyngBTDtr6FhpmF5dc1agW_pM9PvWyizV4A"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjoZRDbhO5tNICqYyAWRrbM3PZC0yZePFDRg0Mt1MidurZIAgHbmr0a0DfWEtvwCYCEnDXbKWrd9LlResjvonLd0p6teKwx3R9sXz7Njg1SWWEocdbePIHM6dMG5fxyhFZen11od4hrlCeBsjiQu3bgUcSKLicPiEckyee_R-UsNZq2PKAOHpHXd_fOegQEzrU0Q5jp3OHxlxtnGVajUqUq3cGMin9gJk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtPaAE-JryCzczflXa7YWdwb55ENfTCxc9SseMWCtjiNfzMHPMDyXgkRJpONb3fd8WIV-kFmz-pIkbrR9hQ8DhwxVyWHVV_KcqahgJmSpsTKzKUggqYrLfgWFddSWCWfOYMV4jss8jUXzphAQh"
+        },
+        {
+          "title": "cerradopub.com.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYqtb3WwDf2Rkr8ux3HZFhIqPzdOSGpCj5kNBjbWXLTWordEII5Tu-Tq7OLtYwDAIwRCRfmLF_PIwTqEqXVZAH0tPXWuJEuv4mLEay7YqNQi4rSfQ_yCecjVngD8USpXkD3s1KpB-O5VzrTBIxMbc7IvP0Og=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Acetaminophen (Paracetamol) trials for Dengue",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dengue&intr=Acetaminophen%20(Paracetamol)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "500-1000mg every 4-6 hours, max 4g/day",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 605
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 5.56,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "Acetaminophen (Paracetamol)",
+      "nnh": 100000,
+      "nnt": 2,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 °C",
+          "baseline": "39.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.8
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "NRS score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (Numeric Rating Scale)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "NRS score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Myalgia Severity (Numeric Rating Scale)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "NRS score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity (Numeric Rating Scale)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-24 hours",
+          "baseline": "Mean 72 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Sustained Defervescence",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "Score: 18/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Dengue Symptom Score (e.g., DSS-10)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "Score: 4/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Activity Limitation Score (e.g., ADL Scale)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 2
+        },
+        {
+          "name": "Allergic skin reactions",
+          "percentage": 0.5
+        },
+        {
+          "name": "Liver enzyme elevation (reversible)",
+          "percentage": 0.1
+        },
+        {
+          "name": "Acute liver failure (overdose)",
+          "percentage": 0.001
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "3-7 days, as needed",
+      "trials": 1
+    }
+  ]
+}

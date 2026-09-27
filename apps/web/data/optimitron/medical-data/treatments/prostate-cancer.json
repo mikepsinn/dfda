@@ -1,0 +1,940 @@
+{
+  "conditionName": "Prostate cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:11:16.135Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "ntb.no",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4_nJI1m4cDsQGV6sgXJ6yE6GjAgBIzAAbZ8on4IXl5rJf4j44StoU7S2B0_5BFF-v2CJhC3gLoW13cYKCC1sxNaoQDJfxSTBz_EAUOpKLTO6-Rx2LCjntk6X-7CoYziI4KYZ2ROvTyuH1cV1fCIK8HpQR8g-PUGorS7oNYML6ZiP5nn5kB7w62tn_Gq0FPmc6Yp_6aUmt_m4e4zwbFeuMtr8YcYygqWx6hmfAUznCcWclUbueUKFmtWcpFZo2T_1qnBnJMOQJ234U_62xGBVane--Pl4K8yVuwzfOhEFuQMT_Acdf2F3p7oA_WtRS8A6dVpe2jScyalAr0uR88CqAxXo9BMR2eK599v5sEosHfja6E814Wsix9zL1y7f2CBiPv5kNEkwK9gV3cx8tqrGWClt-7UnmNmL9GUfpo34TfU1qP_MuibrikeFtBAB3r_17ZsomCIOwQNQyag=="
+        },
+        {
+          "title": "jnj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaMemaGOoAnbMLjB2AuSeZsaymOUE12bgtEDE3a2jOF5-SmTrYax8WZYb4LX4k5nYAzX0aMA-7bg1wZlLb2x75pOaksf_HlJg8Zdrb39Ndqe9TYtk8VnXIx06i-SodP_04Y2z59NGglBX2Q_24TNmBmpVMAJ1xlrBTajR9_jbhQNDXIrPy-o8afW5HlWFBE-aTnyUpkFAmyCUyjKjbsixjQuM-1EsVs1RLib60Ezzj7UcF42KtMq4_9aXYhflI7RBKdVPLzVy6qcgvWjdPBx_WfovT4upeNjPbwupNdQyiSw0piER9d80aHfcqmy0JJ-A0OXbtbxjCVWA5D0VGnf5J3OZniuubIpWdwL9P5WFpAoyhXGYZe2it9jX_VsxG0evz1nh1XqEBMEXHGHauiY5ZDp_IJhI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkvKxxWYO_3te9t0rj40XExc0PaazG0ua_kt7EoF_5d7zc7Ucr6bfYPhvmRJf1iGmWQ_z1IjchNjy8zF_V_LxT7oOkaN8kNuyOnOMSqi6kUevTdSppAORuBkHWChPpFtcd_xXU"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3iOVZQCKtOBqQl4hBOj-GaMgV35ms94XbFnzXqBAuEbxan5MODsI8_6TYFI4xeTXv6et88UrURPGJYtcqVB914Ml3TWNkXTD9xiqSZo4uDOe0km-wdUcYjk25n5tD7SXKWd0BRYQ="
+        },
+        {
+          "title": "uroweb.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELPi1DcmPnqpL4_gZPH_YfJXT_RE2SZLB0LgKZsZTflmI2vdd2V2Fe2C76reKqs8LgRGBvyadOMjpZX3pU9eHfh1Q9ZtDXL8Gv8uwufyiSc1UVmchLfNxK32K94fBy48hMXe36HAx_EwTyXP6rLzM2jWknpWo354wrDJdYP9l6L37lPyE1dA9XQFXA9JAxbzOfiCmE1ele6G6axwKdNqUyzxd2M74DGSqWVbbaSB5i2HRBzRCnfwIrPIR97-EqGuRsg1sJekR-n-ppYL2WpSPLoUBN41oVxQTrq-M8SHxW2k-bYoUJCt0GvETfof0hgfdwcgd3T10zFa9x6QkLBR0LiuDmpVQ4js7QjIoNNBEbe3BXdFxwiw=="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF09BgmZWWYtKVPhwewu2cesRHSVv_bAqDZao1W9g22rIOAN37LkFMNtcnSYu3MlI8pCdiOUeF0Oiqo0MW0PaJ4R33QQ63UiaLP8-MLHdixhnl9-TdQ2xQQgaQlhqvAiy0ACEQgBTIzXanBTXDpKvzsFXTbbcBpOKf2h0V3MWLBwSaS_nq802pIltZLRdpi8pzo8j8m13Wou2TGz4sfoJtri7oC9WftD3XM8YyjNpr6HwtahgSNz8gOqeRKNvxNCP2y2ZEgMJoGqmPO1A-_DuYZQKLE4HLzkuA-vqgXE27Bciq4zsZG8X8M"
+        },
+        {
+          "title": "waocp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF92tvhsDOMXki8hwmN2c7Zt8gB6LKJgskgYyjcv5GOZSUOcetVzBEu9CGEMdDxY7x0imo6qBRLGRG-7Ojxke1ELAAqsXCbb9h854XEKNBcN1y_KdSXqMcOEiO3WPuQLsijb95qWHxNnw0kPofXSPAal7gI-xRNw8_26LWxt0SFVLSspSifwPc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFr13qFv1EhIbx8lpJ02Ug_4PoA7y4kpj0fOOMhNtgFwsrBhYNI7JNd0DOC64BUiuwxbhXN0T3Dhl2QH6WM9oj7oFQvsvFobkFmtT30CJNJsy5hpsGVRgMS5_51u791PqDU_A3Cb8Zjg-SJAHY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH84Npt0OpZd9WalMGXl4AY9T0bVb9tnAdtqBiQPw6YFlgyJuIFteXdHAI8BQ3Hbo7A_SmRQcdm55WyazAz45qnxBunA5HT90tL11vMKK7Cr8w3spj3DMy-hJDm-MGM-GBLWtQs-rMDdfcgZ-c="
+        },
+        {
+          "title": "ClinicalTrials.gov: Abiraterone acetate (with Prednisone) trials for Prostate cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Prostate%20cancer&intr=Abiraterone%20acetate%20(with%20Prednisone)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "1000 mg once daily with Prednisone 5 mg twice daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 28000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 800,
+          "totalAnnual": 30800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 47385,
+        "icer": 31514,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "ADT alone",
+          "costDifference": 24800,
+          "dominates": false,
+          "qalysGainedDifference": 2.5
+        }
+      },
+      "name": "Abiraterone acetate (with Prednisone)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 40000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-52.5 ng/mL",
+          "baseline": "75 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prostate-Specific Antigen (PSA) Response",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+8.2 months",
+          "baseline": "Median rPFS on standard of care: 8.3 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Radiographic Progression-Free Survival (rPFS)",
+          "percentageChange": 98.8
+        },
+        {
+          "absoluteChange": "+4.4 months",
+          "baseline": "Median OS on standard of care: 30.3 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival (OS)",
+          "percentageChange": 14.52
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "BPI-SF Worst Pain Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (BPI-SF Worst Pain Score)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6.5 months",
+          "baseline": "Median time to SREs on standard of care: 10.2 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Skeletal-Related Events (SREs)",
+          "percentageChange": 63.7
+        },
+        {
+          "absoluteChange": "+3.75 points",
+          "baseline": "FACT-F subscale score: 25/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACT-F subscale)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "FACT-P total score: 90/156",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (FACT-P total score)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-42 U/L",
+          "baseline": "280 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lactate Dehydrogenase (LDH) levels",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Joint swelling/edema",
+          "percentage": 25
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 25
+        },
+        {
+          "name": "Hypokalemia",
+          "percentage": 18
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 17
+        },
+        {
+          "name": "Hot flashes",
+          "percentage": 12
+        },
+        {
+          "name": "Hepatotoxicity (elevated LFTs)",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-3 months (PSA response)",
+      "treatmentDuration": "Continuous until progression",
+      "trials": 194
+    },
+    {
+      "citations": [
+        {
+          "title": "ejmo.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZBpk1gzq4IW4keR9HAH5zi_TropKSb6rcdjcmCPJFaQWUjuB4tHbmP40e9fRBPEvuAIr7zhY56upP0D08-vCkK9auzV6V6w-eBJlXvpv9RRpTpuaLzNLEGmJ7S_yCX4dG0nPc1bgYHtuno7kfnedwLWzKtwz1KHS6qR3yUSF3mSNCcbgv6Rso0n4CFJNIhF6HxRMBLTVnc0r5x_jIKgVVj1ylZDnMiBmX_kFHjP0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVjf98suBvEz1pTpq3XBFM6InJ-l2rC8YCpBMPg-ltiLyNDVP0FmnNBFyDNfsKVUyr8derC8qydDthqpOUx9o6jUVTsny4CgK7cL_x5KqhzWuPcu78fltX98lvEaVBUFfFBPg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElVn30v9QI07SCST1S439RO0DB0ZFraAYBvzT2iaV4aUd6eCBdb0ND88Jzh7xviP0nCdZe66qPkzIjRMXZySffQvqZHwTZDsfGg1xCsZGMAO-c_wvQH9GCpgF5Xyh4b8CKB6ONX74qxkm_HuhvfnaXmizBxHqfl8bV3eJ7AMWa1adLlVpL2hPlsxt9YjJXKtFIBqOBM_y2SHChpe-W_W6RyQGRBGz7kZs-_1Fbn_X9UyPo2t_gmDcj6M6PDm06_W8syNcg_mb-ssAzKPH_kZbkrScU_3SELReMSOuGjAc="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7sJsXyfKYM7rc7YDLzIKF639Lqnzus2_IcSiQHjIsEX8JtggvxeCSXQnHixkF79Mn2wYHIZNXha7S61XDwYH-IYLGaV9eq1n2c5VjKogP7tignviQqtp4HPZoLMAyXv4LIXx2gvGbK2Q8Cw=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMCXGIbWL-kss-Q6wemFAPthvuaNb__fA70q30yreyohzj98onSBq0yGOGUU0aC2eOSCt7J8FE0NCnvgm04yQi5p_qTjZeabgGyTv2rBIm8x0VtHhoveBaBnj4YnYpxF__qJ6a"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOIz0HjnIkm7zJflG8MCae8784hrsdogEdWi7Vw3eJ0kf4DR4KrihbTBjO2PNNxCiv1dwuDbsZd6dsm6LiJVzMEctm29Hv_z5_r78PIeDv6x4q4-Firh0XXtAep0pUyvxBYG0ajPx8TpFB9tVl8XQce1hjpegnWdT75lea6cZqcABhKXKHgUY_L1J1u9loIQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Enzalutamide trials for Prostate cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Prostate%20cancer&intr=Enzalutamide"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "160 mg once daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 130000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 800,
+          "totalAnnual": 132800
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 189714,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "ADT alone",
+          "costDifference": 126800,
+          "dominates": false,
+          "qalysGainedDifference": 1.5
+        }
+      },
+      "name": "Enzalutamide",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 35000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-55.25 ng/mL",
+          "baseline": "85 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PSA Level",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "+12.9 months",
+          "baseline": "3.6 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Radiographic Progression-Free Survival",
+          "percentageChange": 358.3
+        },
+        {
+          "absoluteChange": "+5.5 months",
+          "baseline": "26.9 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival",
+          "percentageChange": 20.4
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "115/156",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-P Total Score",
+          "percentageChange": 4.3
+        },
+        {
+          "absoluteChange": "+14.4 months",
+          "baseline": "16.7 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Time to First Symptomatic Skeletal Event (SSE)",
+          "percentageChange": 86.2
+        },
+        {
+          "absoluteChange": "+6.2 months",
+          "baseline": "10.8 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Time to Chemotherapy Initiation",
+          "percentageChange": 57.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue/Asthenia",
+          "percentage": 40
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 18
+        },
+        {
+          "name": "Hot flashes",
+          "percentage": 12
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 12
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Falls",
+          "percentage": 10
+        },
+        {
+          "name": "Seizures",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-3 months (PSA response)",
+      "treatmentDuration": "Continuous until progression",
+      "trials": 380
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3szBAtOrI7uvpm9FhNSXMibIsqqVn3seiyRnDxLNzCXNNC1Uglj05-WdeEhb8lZdwTfpEEkwD3nVrOGEo2VVSexmzOO7FfV3nE6ij5VPevQWc8bvhYBip4vQkRUGeD-2OWqaDdAnnipYgg-43aYNe8aIGGNe-pGYVWKrsitcwTuPscRdGutGUUvKPYWR1cN8wGQ-xDr7nBbc_UOnOc5Tr6gPgtXHNfsBAPMi4sRa0q8fKAdtYJ8F-L53nMJt77VUhuAtUh1NZqs0KXMKRHNbOuQllYeMgB9lktro="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMPKn8Wbe4BKPgP66QoNk3tvS3I-Z4mvSRnuxpToU9Fendm_vEWpo21I043fz8WLec_coGXYO82Kir0ginD8efxtbIHBjj7tL664DL1SdpCLvFkRDAXnhr1bje-f0vzBgLIdtIAKrlK0w2zQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZqb00o8nhec9__QcS8kBmx_gL0-yGTNn9_39-5IEGDBOh35a3E5uDPd1phF7Xf5mV0xoZ2sA12JGop9XUcmUhWqdesessIN1iDkLssKWaUJlzBBXp0vwE5Kgc6MHe85BNxvaDPnvao1WHrQ=="
+        },
+        {
+          "title": "uroweb.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJtpvoBmas87fGsXqH1UhVwYcH81q9OhftRY6v50zifP83kRHv1o62JCm6adBLMB9zUC3ceWMYwDtaaF2azlCRW7AuTg6xvvo-87ZT2WZ58s0sK06_QiWsEnAxhH-XideVvviXtU8LJPoCCi9XWQ2IZNlZ0nJsQe_uyhcLDg2xFBfKOH_rU2w95rdruHzfNtPjN2Cyi1sxklKwDA=="
+        },
+        {
+          "title": "wustl.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKm6he34fI7X9-VwYxrR_DAFZ2m6GK_FYvfzPAHcl7Ed25q-iygO2snbyNZIT6-7WU3SJyozdJ8mPkoqjPfIRFYsLke__BneldraLBvKLxem0CsHYcRUdAYJeNVw7HqpqriYh8Uk5qskzNjUhuGBf26nae6Z11thUEaN1Bg5wZnOU02xg37Z74u9bZWaINIxi83JEZaL6sM557E2kCgMn3cugcADWT"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHZ7vrH-X4cM8X4YTBq6ML1RMthai9MKGiK5mwVqoQ_r5vHRoltz1anxvaaPxIK7Fo7lWucB-PMi3fAa2KKF2mtRdKkrx8twzLzNBn-YQoJfb-K6zi7zk0g1h_OYjMAjN94gRYv3cxM0LRremSxdId_7E="
+        },
+        {
+          "title": "medicalupdateonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFghRmaIJstLusN8N7coTsY6X5skqrxy8oCEBYszWKERJEEfLCd7AeqLm1SIFVyvgRwUeBXpKau88NNJaCZ46Hl3c-tTFniYBpGc6fdV-k6IcDkcnIsryBmuGApR0gxbmw4KdTRzkJgJcQ03fmfQysfIPZCfv1py1EbNivdl4e9YL8fNMlh3OKwbHCZhOFONY9OloDOYYzei1Wzmp4eXPlFvITtVhfiH7AJ4ve4feYZ"
+        },
+        {
+          "title": "preprints.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFW0Zn9iJMJ51esamliNpXGHjSW0C4U_eeVMPdm4_dFARtZLVhnaJbFnlsvuEQ4t2SGHeSjlswm_n3UXGp1uFwhKbjQ5ud9fMoyMpBYjjyCs0VcA1JyejJRK5fzL81IoAFSZKNEtGzYIwO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ9nXEWaDJdXg_NVzDrMhHzYBdxrK04NH1J03ljLjan5g_HYLS4su64RDC9dJ0L1o9ZMbw3vC9ib1_V8Ems4teBGvYj5bhqyOwjfxyv5oN4SkKcNomWB3DWwvEIkEWccm57RI="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0XAebr2J4mkPFHNstQRgvpR58J9KEiZrp7AVUIqlshjhj-LAZhdaGswCm3R8u6MEh0YWaTqUPZgyG2I_D984EQ3OP8yvWXgYgIMpifnjkw_RYIvpZAO-7kCn6r2ZIwnQ10nPCTeBUwt9IFwLeU1Is5us="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmKX0uXDyXzNC1xXF0l-_PAFWj9rwGVtS74wXvqaonMyLafKwpVCiQ-gwKTw0BVmZCGv-CHkUgGZXK-g5p90bqRGiN335ROvYoAlrZkrc2ZAjy6aM8vUSObNbNvVj2F9k8DYiJgtuRJ97_clU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESmNmYLGyzykbcGe62CH3tIL04Jt4YoZZfQfEc6irXuODDGWPByAuRk1nFEsdD167wxZ-EltGhuu4hwyesJ-pRPKolC3yY7yoh2Rkjnyt3Hbff-kZDVuvSEGZc9sN4iPXQbV2AktItNAiXVIUe4-wTCzNy-iPK0fqyw_mUztFc088KHdqfsVnU4Gf_b49SZIB58Zk5yS9chRjChsgnL7czGMffN7GC-kHR1d9Dkfi69QqfvFkB8M7bhBjEsAMa8JQWQSbov9uJag=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1aEcNnyoKJkbT7MEDKq-3Gxr3ZdSMpqApiu2IKa6Ej_5iE-Xc0MsQstQFhwx-V9Zb7HZ1Ludmtjn-U_xmBE4c0TRZibZqPvalnv5SE09gKWqmYyGK77t_vykqlsoxHIcF0J8vBnC2If0oIA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_qpWAuIQzYp0NelMnRsoAMLRMR2e1PrhdDeyscc4HnGSdEJIdPyNHZ-cpEIjdWoBSeQnlYE5OcIsd_1Ea1C5dqDIxY-tN92XhPEsEqCPK20tyLKmpcwvXqo0_OjIK8KwRmyvlIfDigYt2EA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Leuprolide (Androgen Deprivation Therapy - ADT) trials for Prostate cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Prostate%20cancer&intr=Leuprolide%20(Androgen%20Deprivation%20Therapy%20-%20ADT)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "7.5 mg IM monthly, or 22.5 mg IM every 3 months",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4800,
+          "monitoringCost": 800,
+          "sideEffectManagement": 400,
+          "totalAnnual": 6000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 8000,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": null
+      },
+      "name": "Leuprolide (Androgen Deprivation Therapy - ADT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 300000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-430 ng/dL",
+          "baseline": "450 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Testosterone",
+          "percentageChange": -95.5
+        },
+        {
+          "absoluteChange": "-48 ng/mL",
+          "baseline": "50 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prostate-Specific Antigen (PSA)",
+          "percentageChange": -96
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Worst Pain Score (Brief Pain Inventory - Short Form)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-100 U/L",
+          "baseline": "200 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alkaline Phosphatase (ALP)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "90/156 (lower scores indicate worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-P (Functional Assessment of Cancer Therapy - Prostate) score",
+          "percentageChange": 11.1
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-12 cc",
+          "baseline": "40 cc",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prostate Gland Volume (MRI)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 65
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 55
+        },
+        {
+          "name": "Decreased libido/erectile dysfunction",
+          "percentage": 85
+        },
+        {
+          "name": "Bone density loss/osteoporosis",
+          "percentage": 40
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 20
+        },
+        {
+          "name": "Cardiovascular events (long-term)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-3 months (clinical effects)",
+      "treatmentDuration": "Years to lifetime",
+      "trials": 79
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMnuH6evtKFedClI6d3iVLesgd5uvyQ-bySNzUYKb42UfBoGQ3ggSbAPfO1Kgpx7RnEPqoRa-2h35Ut-9fNLNAgUMRRe37sj0HoSOvEWBNkU23cqJ79yVluAXiEuRv5fTn2WWRBVA7zg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOW6rJlbyDNXgi2hF3eVsSZyMIfDzYpsvdVSwnyVXE4WzfJ0Lc6h49FwWY4fvUKwtdKP2-ywzLoJh8o0iG9T1LWN_kUsB3kUupktEX06uBH6EN93OYKRiyJQkNpfyiwNj3VZHCyI6qDkFXqaA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfsLS1uw5GyCUrMwYfNaB22KbiKL4mMlgjEeaw58P81Q6hU8bhYQ7UamAQqDSVs4vJxRuzWSwguEmz3tFk_-Ar_VFA1ZgsHXOm8JgeIIgkcxWuSt9yX9Bzj-7Gc18-O86GwTqy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo2X1Npg9xHYEs7Ch4Vn1kJ3LVyd86_hhA95PhoYUn2W4tHkDddr4pIGjLl8na-hMtkTeNKxzLlUXaoA6vR5w_K7l5-G95775EW0kxHUQS19ZYR4voLvQBdhhUTuEhAyyav6IkZcOduaDDb5kD6pv3Ld9BOb-iK-NN7zuZJWqBBYF5pOYDPA4YJ0M2XA3ps96SNTdWaqrLuoS5STM4j-KLEphf3wuvDYwQbbPjIUSWQ-Df0VjTBMdID8jawFbIYCHe-jn3x7bh9EGVgV_-ml2WR5JgpFrSy9_d0HAEpya1vr3_R5J3upecoaxSB9NXrz0UUy-XZsufNxZpODeHcL_FqHNiY7SXeAzau2zMlOt58Jn9NewfOCOEvYn0fAjqTGDP7g=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgr_gHSx-VlzPihm2-q8zsCMLw-dYxvrpH6HlhL3salfL9b2D-IvPzH3fZF5FEy_hN4jGb8WGkvHylOpv-7SmtDu2PloUOwHiRpl1g2lXUWmWghelCOKL4yPKredWP5KX1fUY1kIKvYxmYWhMw84s0VKQUbfdPFg=="
+        },
+        {
+          "title": "asco.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz9jX3JJV_v-kMfbg8zrWtHMknXfm3HF1losn8-oxvVXeR7Fh89xCQzopOpmV-P2T1GhtXEw96127Idbz1JQo5QfbqMCk3bddsYdwy9QSxDO6xKFFtnf9kaIu8PgjNYONXSIZVmDeQTl_T673teDPWffKDp2HC"
+        },
+        {
+          "title": "brighamhealthonamission.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWkViT-uO01Uybsjn2DBWkemWRhZczx_ByNOwJLhQ_7XYg503nWE_Ih_AqwRXYUoZZCLBXLObeSqcBgr40fOMALAlL2iJK6wVUHTS0i9KghheMjseYIJMvDh527YbZSAAE1lbys4Ejqd4zroLIkvjdRQzC7oEBcTgbS5unIDS75OeCZ4s1ntre_3Lh-5r-8bHb1HLuns0_ZZC7RZ5DAwuSzqDh-eluD2fvnuvjC7kxjC0JrfdTf0KtrCHhy58E5qujjN79az4gtcBCrVstVOa0mdnp13pDbC18ekU2J1mhN7WKY-8R1JnBTSv918b_HA=="
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFx05hC1fxyQkUi8J1NzlgNBM-4i-HKi9oTYxWG5JDvulO3Zim_BjdKNtzGoOIPFcv3LAjcGPXvQHe69Nf8UTYTJI5ndXjLxMuDUjWMhuZ4AIji3yxL8BzvJDccCvODVyLZv5TeEpCwtfV3-BQp8n5FFgDjj78qoKwPjEtaXhcUmbMqxcW_m2lyIU8NJCFB2rxYYq4YfI06IAgy4_DtGSRfw1fPDxc5t4Vgei_QdwRIbriLLTz4y2s2g=="
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFG4lxBx9ZTd0RXZqoollfu1QLAfAeOgsI1y-deuhmqU9B0fgcjL7bdCbwkEhoOFmXloQe6ztZJsfy_XmCPiKOenjpw60VexUiVmz5Fd6lGhpw0tWhmp0hosWl-61QNHD0dcyiAXhTCBQiNFXzgUv2F-zqGTSxMr9hcUF7zs8b-QVelEhoyEZVLEDVsecVBqJ8GjMTxDq_hz5bWmPc="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo5p55AtmbTr7pW3_GE6Dn6Del43oAKcx-iMm3xoBrmOkc0-oLSJ4IaEzCgDJeqMQ-VWC-WficRTPLP_WgLp99SlB3Hbe-cruR3ernxPHwC9AfKZCYoR8Qd1mzzzvxlN0q1lQqEoF8FjaXijWzvHU9tcRM-OaNZsrKil7Azce909NEjI-l5Us5gcTQRMn_nfoau3fmBzeoR8adfkjMIscGhYejxQirXxcO1RV_KNpCpA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3_HKTMTMREylHIbrZBrOl8cvgd8ESTFNLqaTlV50zRvASGqZEu_Z1gYCcv-ha9Fu-nl0SXapaVrUItFfRMM-H-OuAHOQxAlJKh0LkHU7xZIkpnIw_ed5gRVtSIyWXKlnRIjfV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcWM8wkBVKEzgiCrkFycP9nfFYWj1Vz8UJ5kssHqvNcNe2I31faIxL4mlEtMEW7ByEFduAPV9dFyQqqR2Oy5qx5pEOsXeSl-cKUpAKJbiXDqKxspDPhDt12OGfhKxpQRQ1QuZP"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPScETk8vDqasfh7np5m6RnipdV-PSRxF4D4gbLWfXDjqCEL53_cswBAygXyTvXtQ5bQ59awDgdVMOm5MWrN5ikNl4R1Vpy603WAU4Mn1agGfYx--_0XVQ5x0-Lru6heuC0vdBACuZKUkGPRFqciLu5p-Bz79_uIG634hP_eTg1AywryfYjZx8BYZKlKKZ9CZW7Tuh"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcjnS1ZPh6PWv0ue9BqSCqV-0dcx6KHzT1bRLWfrIx1al8QkLoiiHvIDPbwyd0Izk643pyt3HMnprsB0zaVJoSU1jKuJfZYgLe2EIkEY1PK9c2eZ4ekog5go4e_KAnF713pDTmulvyo2M-sunQiYuevGNTMZKSIw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Docetaxel trials for Prostate cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Prostate%20cancer&intr=Docetaxel"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "75 mg/m² IV every 3 weeks (with prednisone)",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 8000,
+          "totalAnnual": 32000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 71111,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "ADT alone",
+          "costDifference": 26000,
+          "dominates": false,
+          "qalysGainedDifference": 0.7
+        }
+      },
+      "name": "Docetaxel",
+      "nnh": null,
+      "nnt": 12,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-35 ng/mL",
+          "baseline": "100 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prostate-Specific Antigen (PSA) Level",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cancer-Related Pain Score (BPI-SF Worst Pain)",
+          "percentageChange": -29
+        },
+        {
+          "absoluteChange": "+2.5 months",
+          "baseline": "14 months (control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival",
+          "percentageChange": 18
+        },
+        {
+          "absoluteChange": "+2.5 months",
+          "baseline": "3.5 months (control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Radiographic Progression-Free Survival",
+          "percentageChange": 71
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 45,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "100/156",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (FACT-P Total Score)",
+          "percentageChange": 8
+        },
+        {
+          "absoluteChange": "-0.3 points",
+          "baseline": "2/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Performance Status (ECOG Score)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-40 U/L",
+          "baseline": "200 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Alkaline Phosphatase (ALP) Level",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Neutropenia",
+          "percentage": 75
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 65
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 75
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 35
+        },
+        {
+          "name": "Fluid retention/edema",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 35
+        }
+      ],
+      "timeToEffect": "1-2 months (symptom improvement)",
+      "treatmentDuration": "4-7 months (6-10 cycles)",
+      "trials": 509
+    },
+    {
+      "citations": [
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzd_7BCuxLfNJnoGC960KPDjNW0qn1lOD9d94cdRNHevk_NjIyRHz6fyhdp_pR2aRFDZtE81yhU9iyqLrbDd6UoAmk5xqMA3jGBlZoM0hBNUZqMbbBztOC77wHQbFsOxRrCmhn_4uwTALMN64bTl_q7XIUUG02ADs-mtJva7ZGs8ubBxJuL03-kBVMGNnbM-f6FYhl4ow="
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJaWZc-uavpUnvUPUC6pZe52kfeMmQS39TLpw1U9RyDDn-6lWQmSiW9o5IMYEHk5AfWuRZtp_aj-guEd0Lxtfs_jAj4yYP9-9KFY2J--yiW_xb9mJ5m4O0rluyTCUxmKBSMM2wKqVC-f5z8jF7paW8s_rewKDKD7GW3XrZUttGPwfABEpFxw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnspJqeDnalvupDuDXVI0edEl17fQJ-DIFlG1YUQf9EVp0HqM_TckVyxIY-AS-VOFM-8C4R4U4qPgZB9-T-e1KPUwTQXA3D3aN5p4dZFTZB4b9HwGdkUCjAQnkbNcNwDuiWlPB"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5jp0CosqgQLRBTEvcKOPSfRboHQP_nbjfF7CvvK5HApGK-kyCIAtqh1vbt59yz5oayNMYdpggS-kXX_dawD7YsLIOYZV4B-EyHcy-OBgn30ILRQJ3h2PUfaqhE8OxlJl1fOFV6Cj5eaQq2QNLGfqngciwlv7no_Ug8rpPrc_W2JVg58FMWji4pcSC0odKhO9DzY3bSEd8O-uFq4me8ttx-DtVqC0hkUen_YB3FvK7wPl0ofW_E2UQeg-moDkOqx0b3Ycre9wFcMGhyY6gDIspQaP0ftVdlGGrxc3ydPbpxIN6KCawMrs5hZzOISO0LhxP6pWEUJTBMxquZUKcRHIxaXAAxA87"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnymTe0S5qKpwskUEuEXMijn9E4brgIIQrCtM1jjFK2zPX76q6tcTMInYANQFxOoueO9D2hOTqih_9s1FiMbsXOvlav2gGPDB-v7Znla01IaQCsVHczr9AkiqVKku9gf4LnTLqiG27YyBjdgRoPzWeFVzRbJcaIvA23GcrpwATJDtOjq0rjoiJKKvmlemPvmk="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaacnSDfFm4elNdKGH4TOmBtq1I9oZJmjxQ6C_SP2ludMKVK2TChQCfagjY5Sjt-6-UsVtRr_M_qfkEqRHRKh7y6Q3fl4leRAKmY868PyG41UPRUopl3dfPw497cXpvJV5ETq0Umw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7T12Z_-UpLlm91B7k8iMdnMTrbH2WlQ6Di9srf-so8aIBY3CzATGczU3J5a9m5nysQpRXiN3-Qyi9TrTT8uLP1pleWzKt0VT9G3LX10qKU08lSPQNEBb9F-B08qS15M5rRr6ucHC5_2VGa5Cyz-gb2mm1yp4MmV3dCnodVh1wxLs64R0TsyFNfhjngWxfToXxHyiixUFiWeKSR5qFMaz18h0n6sIsiQ2GiwH43FUPGmfvp7nOzfqip876AF0IdbQJJCQs1DG-xGxxUYdUTUNsf0QQ67o3vGyJ8lyVM_LpkuqiBEAG8R_tJareP_0v_Mqj3ehwuURvUIis0mVqj_9yEp9Jpg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESY3tCzGk8ZfaW8KBA_-WWLj3-28SlXwmDd69yoqpFTunNjwU0DQO-v0xJZSY6TyPoaXamQPEiVnWX56e06tbod2GEYqZSEJVRq1WOFxwqFoX-gyS3kLwGzRAeU-I_YftDsiUE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8PHd4ZS5L1WpGEYRvFaiNTHYdX3ddqq1iO4kZ0SDyb63jlX_6Y8yi3pbXErDF1zbhMjLP64aQaYqPk6A-YdZrYVZoBQu6LeQyT2QsqkwVvC5w5YFmaT9Lvw_r5jVWJoW6GmbjBYqxWF0hHWOrgWLB1RRXGeTRQGE7gr4_LmZXVpapVgrebakslLDmlF85WKg86kznZv8x06_-vqZJ-cgwd_HiFsLIJ7wEJOJ5f0DBnSz5IDKbZUcjLbS5cU-J3BF0LlOeF84="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhwLP043_jYvjFSGi-DMB45mML3E_HKFFlDcZYFBi5EOj23ORC7YUyFRnkIqX4ZqG31SgeMI7eC2UJXyCBYxkgKK5HWHACYn-ChP2RK3Yv3F43C_7cV71F9RnBxz9KUDsUEIEr3qAGrdqhW0N1N5Pgx-2piMZHs9AiGSgrj_BZ0-8Gf50VdXCqGE60qEs7dqizdLM2pMCnegWYfedWKO50BYyBngvtMbvezujQ5jpxJknjMsU14hS5yX4PJMyU3Cu9kbfVzJpIPMgs5OX9GWtlWa80jr1hGoDoi1ZKyHe8Pk6PfuOfspjUNz_o3Nx0i3K2ARvDD2J7WsDNziPq5o8qYlR9Ee-de6nicWoSGbqfQdDxGvkdIwS_lFY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radium-223 dichloride trials for Prostate cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Prostate%20cancer&intr=Radium-223%20dichloride"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "55 kBq/kg IV every 4 weeks for 6 doses",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 4000,
+          "totalAnnual": 88000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 251429,
+        "icer": 226381,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": {
+          "comparatorName": "Best Supportive Care",
+          "costDifference": 88000,
+          "dominates": false,
+          "qalysGainedDifference": 0.25
+        }
+      },
+      "name": "Radium-223 dichloride",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 12000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+3.6 months",
+          "baseline": "Median 11.3 months (placebo)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 32
+        },
+        {
+          "absoluteChange": "+5.8 months",
+          "baseline": "Median 9.8 months (placebo)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to First Symptomatic Skeletal Event (SSE)",
+          "percentageChange": 59
+        },
+        {
+          "absoluteChange": "-50 U/L",
+          "baseline": "Median 200 U/L (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alkaline Phosphatase (ALP) Level",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5/10 (moderate to severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Pain (BPI-SF Worst Pain Score)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 35,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4.6 points",
+          "baseline": "Median 115 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (FACT-P total score)",
+          "percentageChange": 4
+        },
+        {
+          "absoluteChange": "+0.9 months",
+          "baseline": "Median 3.6 months (placebo)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Prostate-Specific Antigen (PSA) Progression",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+2.1 months",
+          "baseline": "Median 3.7 months (placebo)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Alkaline Phosphatase (ALP) Progression",
+          "percentageChange": 57
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 35
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 20
+        },
+        {
+          "name": "Thrombocytopenia",
+          "percentage": 15
+        },
+        {
+          "name": "Anemia",
+          "percentage": 12
+        },
+        {
+          "name": "Bone pain flare",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Weeks (pain relief)",
+      "treatmentDuration": "5 months (up to 6 injections)",
+      "trials": 76
+    }
+  ]
+}

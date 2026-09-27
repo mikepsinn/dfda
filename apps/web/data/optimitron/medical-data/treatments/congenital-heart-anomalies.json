@@ -1,0 +1,1324 @@
+{
+  "conditionName": "Congenital heart anomalies",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:10:22.820Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmRNzDagBTf7tEyAhLDwS3OVcxNW4I2vRm0kZ4aSGWEMa3wiPJMS1GHhwjdnpC4_iFcvOm2QAun6rI7RsJWk3KoY0qu0Lov1JU4uHiZxJuvzNZmJeWNVEbt71OZamPFhtPHAoyRCzq2beeDeTr9MuuOF0tNj1UHdOxDshCK3WOj2KjrBUExj-3boEdANm9yLqDOS8cuVVicX5Jb-ivGmx7utCObj7gpayXuEBu"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjMy-Ul0SQ8b1cnzJPRbbWlQW56xoJ2x8fHMiNCYFgD776Cxd4hGLRm_Fm3KPQ-_Zi1n-5FM6H-goCypGl2uE8vRQSpv1toFIFtdI5GvW3Z7uTSOFPL504UTmzfMwUczBkBIASGTrizMmxOL1trk6dWuePCZtAwAHv9isj4KzIut2zRObGvyfx3sY4yKmriWSLR_sxCZxbe-UTW0j34yB5x4r05ABspALrJxMgh8mzNedwrwQH1SSuMiaZC3zC6EkaJURFH3HYWNFFwInSSohK-cJLNST-aJpQELxOwVtKXm3ebgUxOEvVdwHSLFl8U8itgTLvJW3Y2CQWiuXw-Rl4KnJB0KmMN3XtVh9LrjR9-Iyg7kdDBeHvbhtuBDo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT_dUtpTZyOYZjK5NMQ16FrPviEhW52qP3PB5VFLqc0SuEILIz1Etzn6rY4Fxh6d9d23VMTq8pQDZ7OX2r7m2AG0D3I3GDmxloakrMhrlKdcNUjPJGQc1KFeTgx47Xs1aL_iDL0s7EtNHv-inWm66jUsPj9pXPWgYyXbr5-tFtO5dEudTAHLexuxlRvyO0INsLzl53IoJ7_irpg4G5SfiLTWoo7TAHvKqSyA8hffW1nNkZQ5LT_rQEPDlv_U9u60Mo5RzYppNcgsXGJyO4MoExEuF7WBU19W9zlNDgoO--AcLQDC6nthRQ-LPVI7jRVeVbQdD1yfPi"
+        },
+        {
+          "title": "unich.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_D9wPJJX4vC9Y_Mc0KHqNGlrUX7Q5wQ2k4FCNqfKvXpghWs_uJoLWM6n8eJ7Ahr-7rpdfAXhOpxtzdz3MZvx1JCWnxPKMpFaBsuijTxZjf8qgCaBlhpzxbjNaRZHqLMVGQlpx8ncD8WTDwoghoEa7FympTYrhmVQjGdGmIPT6GN_6yRngTXHu0CRMLOkn3dvxCIGP7RJK3yTuFf9L2-Y="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgH8Imin5W1arPKXil8iGd1MF_tB7nXHWvb2h8zUC1evL7m0TZBRtCbkVBYfqS302ZC0mJNwHUrxghpJeBcCrwN4zKD54aqkcThRKctSNbCTvXVTp57MuJSImOq0I6_F3G0CUPJP-8vRHEMvV8UWfhZjMckqw2O-JRQGGEYTyJlZ-7TTm4iIhQDAoIw1uGO_dd03ZyxM7AnjrJEmt6Fb1Mxo1c3kaqb0t50RtgAYLZzvRBMDYH4hMQuxNwZ-bli8GN-HWOoXu7ma58BHA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCrVml3IKArlPdy8IY6JCpo2cceuRaCboIToTATwKmq43vxham_GeXXn_Cj2d5K9qHwkV0JL83u2v_CG-bxqcNvoyAJ2h10bEGgFNUX7REMPhRP6HtmQ3o464ySHqg2PTDYqtz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVeNTY1WyXIyXpV1sUQPP2RNpJQbuGiDBW64txrp0UR7uaqAwsXn_5BCXtKHMYhebtdp0Yjr1u0p071zBYh7MdjY4A89PC_3p147anbNM-dbvD668msmYJna_PnpkGH5DhLCgq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3KHgp6X8xNgTK8EfDTnExcmtUWumE0BBprBpwTW03dtnTKfTYpgq7T8FqqVb8aWjC44RTCkIlqZevETJYXr4Ows3DCTxybirXJr1bKK5rZP67JJrSA4YlmHmWgX5icbuQ1WwgOjdoIOhd_fyL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeqrqwet8qIEIOsDTOzJLyH4ww2-IuETf46RbdndojaJEl1cZLvAfy16qDzU3D8b1Z6Wj5rrOp3LaTSL-_T7VG8PERiE5EvIPEhvfZx2SS5AQfnf3-YVBfv1Sdp885vQWSZRKJ4V6OA1ZszUg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd3bf5STIsiyHtqkS-PRNe-TAtjsgVa1ydCuwmgnrvBO5-sNMVppTim6zx8rycB17HQDQZIs5vzwioiX0FHaFVbkdXJ8oDDvakrGYo18rOGzCJ-aleTtdU0WTcTOFClcP3eXFO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyJAvHt4zZu5wV8nM2SuE5Pi03J7GIS8caiHtX3QCtQWAQztzYbsBDHjUTwb3VuWHZJ8UKHwZBShxvTO9PMKKFejj5RDl95XuDZNv3lnQ816rZLnsKfvZ5dpSUzpu7X_5H2ElI8KRBdbeKnXywNvQlXPnsnBLZ1bsJ4pdl0U66E5TggWg_E0yapZARiGXZ452QmVuYVFGUSXMPfnqppKz2wwHpfpRPsUgc5g6wDCAebp_9VRE-1gw_QqwsnQ0QOokcciIik62a3ca1gBAYl4hMVL9uYc5OR1DVPhsD4-s-fOcD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR5OLpBHhHRRCxIcduyKHxB6GcKSOgb8XdBCoTnNCajbiru3depJAbIeJjR3jprxFkldoIV5NbpBJrwHWBlHJJYNqqgfmrzV1_hiVd_xwuAQrAquHcHZsYdOQyOpMwxnFYUfRC"
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1ThYqKKoxVTZZ41k1iP-i7NvFIb0kuHjgaAV3ZpsV88k1vfTobWmWR6z84lyqF7FD0h51B2AYcGqHwGbHmSozFk5HEWG1skSh54fM2wKscb7MJMyDUmXz5ryfGLO1JViMoCAzeRzqabr6kb_PoQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh4l30T7BeWi6jXQ3WcaGtpr4lJ0rRBeLQEc-xGxyB3Gwv9Z8V8cwmk_XPu_zx2gPjN_QowfCHjAO6XfKMR-0clFp1QGwuMrZn0xvTzQyZDqel8K7UErF6kJZ27NUt5YCH1gpi"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBKJx09hnhUOgTyKUcoj2Zvhf5SFRRg0BuTTfgWWUxljgLbw_-uOof_AaZ6SqvuFvCD8HEpxBtFIRwGpmH1e6Qydv6kymx1GfuEGL1CKKntrr1ikl--_iE6R_L6k0-oybIv8yT"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHilcE7dtvz2QkNTLx9yGafb2AZ2ow8Mmj2PvMAAkCP8h_gcjYcRC95yUxH0I_Y9uXZ2csDuAqH82qk5dKhMZYT2x1eUOo__dUwlRhrE-p5eS-tP61SCYhGYYK_hobs3Lil2gVJfWCmcgtRTglUZGJRpWbEFZSvmnwR3N6Almg_isgp-r1oGO6RPq5WgA7rSdJSpjAkKxb-CSO54Jtu0xz4V049UjSg9015dMiRRPhg6IwXALuzEDZWo0EMddHVW8YA8swat81GLWHqT6xO"
+        },
+        {
+          "title": "ClinicalTrials.gov: Catheter-based Atrial Septal Defect (ASD) Closure trials for Congenital heart anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20heart%20anomalies&intr=Catheter-based%20Atrial%20Septal%20Defect%20(ASD)%20Closure"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": null,
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 631.58,
+        "costPerResponder": 612.24,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 12,
+        "vsComparator": {
+          "comparatorName": "Surgical ASD Closure",
+          "costDifference": -20000,
+          "dominates": true,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Catheter-based Atrial Septal Defect (ASD) Closure",
+      "nnh": null,
+      "nnt": null,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.0",
+          "baseline": "2.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Qp/Qs Ratio (Left-to-Right Shunt)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-30 mL/m^2",
+          "baseline": "120 mL/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Right Ventricular End-Diastolic Volume Index (RVEDVI)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+100 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance (6MWD)",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "-10 mmHg",
+          "baseline": "35 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Pulmonary Artery Pressure (mPAP)",
+          "percentageChange": -28.6
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 98,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "40 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-15 mL/m^2",
+          "baseline": "50 mL/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Right Atrial Volume Index (RAVI)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-75 pg/mL",
+          "baseline": "150 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Brain Natriuretic Peptide (BNP)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Device embolization/malposition",
+          "percentage": 1
+        },
+        {
+          "name": "Perforation/tamponade",
+          "percentage": 0.5
+        },
+        {
+          "name": "Arrhythmias (transient)",
+          "percentage": 5
+        },
+        {
+          "name": "Groin hematoma/vascular injury",
+          "percentage": 5
+        },
+        {
+          "name": "Residual shunt",
+          "percentage": 2
+        },
+        {
+          "name": "Device erosion",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Immediate (shunt closure), recovery over days-weeks",
+      "treatmentDuration": "Single procedure, long-term monitoring",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd6XMG3bnB-ghElbGFSNXftyeOfP_2hOAUb_tk_j7vrU7J4X3bTcBbFTWaNCjas6afo0jzlFWmxVNqkuw2Hqib_2vsSrf_7jXjcZjx-JeplUcr_vwQ4v1c86ggf_3GNSolhw=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPm_3CABmW5nwVB631nFrKjt1iyAXazHdjZ3akwq_9fNknZ--9IV4JSz4PF8DzMSx1FaZkzTrl5gEveTzNTm7Pmswc8_WANiGdJ0wgu_Q0cWnaod6mdvA5AON6QdMZtkBxVKEmcPoj7Q=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbixCPGQRf_BUpjkAn7oQDtKRD1F0L_bbU4L5dH9udtkRDAZxh-1MnZJldsKvUsYN2QHa6snox_A3AvJnwuwVhMnf72ppK52V-lafUbEQ7Ocj4TVceJgvhPympBsWQTxmrWewIQ0Z6HFcTRZNlaB3-CdxhPMrSQ1bZpwQhZ8fnGdSKw4pn4aQu2EVlVVPJWzb6JDTjbb2IMhPLzdUsWuwR9xZqj0bR5NdCIuT3pbHIXJ9MJGWTgRIq6VLwK-zIBsf8C64UOXuN2wV_TVs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0JeXsfVZ9i0-JPExULvvlWhdjG_T6j6QO6vHSPT-jl_iDmjT66SsFwLhD_h66WFgQB4KLOSwfN8jo5dSnQVojCbnAImYEIh-mv2uqFozgcXBgKfzdCHt83F7ODYSNaj2fgLP8d2wlDdTilbo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs53snKff-cUG0JUTVpuv5-u2JR6R75UbNdFlOc4wH9IYF-QDLSHJ-s388fGnalxuhCTYskLjTSGnBreTqRc0pUDeafN9e-_G0qXXC0cPkLsfneA3wy_ONfYwJnAZSY4z405E="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpqDmlxmJRjIeG8kkrfjotQjIOaGRL_CbBZQpefaiOs2vP7NJuuhxYuOxS6HWnQnqxrEXNcGSvmPCg01q6Rb5mSdzarVn6RlzRI0Uy8IAk0_etADs6AxOpGXJcqjKzScHfMhnSbg29IltHqtJgmqTeqGZD8yhzNxLA2e4gOGL4gYNcNuzl97faZyYxENzitgkEk7Jo3Km7-GOeEMA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFveu9x9mfweGyt1b_hUBVtTSlgjFVNUZCcXmzXaXmq58SO3ULisJuqb9-NZV95cY8sKXZ264nvmU2-FTA_9sU6QyMGIRgJ_l4fa7E2Kb_jbBkuyMPvtAnKnu5xuDxqtNln_c8ybDqJh-AQ95ZayZ70GuzKvvhwNXlEXoTP6lL-TeiUjAQKEljjLM4UEKf3UECPNIVT_RBQjClwNR3-d9GylJIxwTCYcjsi8mhRBrPubdcEhBOZP1BRQSg-9Nd8S9r2tdSZqKw7ssB12S0S9wzxqbKGrrDHbhj8ibaV9vJVFv7Oval2w1SJH2ePv6PlnA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqrSqtUnuOvC4B6YEY-N33r2LnWw56-hJgvtVp68FNcyxdR09FHrt7NOt23lS4cWY-0iC8bKwRdYXWDyMvHLVWtdfAWwao6TbcYyFkgXwglkTFKK3dnUUo8zIhZQ9qkdx-BpoCunnU7ZyMk4c4VWzlp7Bjvu9NNVtTceMhzHnNXUAjcILIfhWzgdJmGvfiF08yCG0rL8o8XOlb2JZhKLFfhWTiqRe2JB1rAoNHjACo8y9cxLJ1VlgJk61AfdUykp099uyOdkJe6_9SNlMU9Fc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Prostaglandin E1 (Alprostadil) Infusion trials for Congenital heart anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20heart%20anomalies&intr=Prostaglandin%20E1%20(Alprostadil)%20Infusion"
+        }
+      ],
+      "confidenceScore": 99,
+      "dosageRange": "0.05-0.1 mcg/kg/min continuous IV infusion",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 16000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 16326.53,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Prostaglandin E1 (Alprostadil) Infusion",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "55-70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Arterial Oxygen Saturation (SpO2)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+10 mmHg",
+          "baseline": "30-40 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Arterial Pressure (MAP)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "+20 mmHg",
+          "baseline": "25-35 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Partial Pressure of Oxygen (PaO2)",
+          "percentageChange": 70
+        },
+        {
+          "absoluteChange": "+0.15 pH units",
+          "baseline": "7.18",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood pH",
+          "percentageChange": 2.1
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 98,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.2 mmol/L",
+          "baseline": "5.5 mmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Lactate",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+0.6 mL/kg/hr",
+          "baseline": "0.3 mL/kg/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Output",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "-2 seconds",
+          "baseline": "4 seconds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Capillary Refill Time",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Apnea",
+          "percentage": 10
+        },
+        {
+          "name": "Fever",
+          "percentage": 10
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        },
+        {
+          "name": "Flushing",
+          "percentage": 5
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 2
+        },
+        {
+          "name": "Seizures",
+          "percentage": 1
+        },
+        {
+          "name": "Edema",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Minutes to hours",
+      "treatmentDuration": "Hours to days (until surgical/catheter intervention)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrpIsVIWrdvRT8b0lhKUkvWP8PBQWGWjI7_0PZIhOfOwBSar8E0gm9XVQfdDXHG8Zjx4yDXJn5X983hF8GWQJvs1mpcmfcxp4z3E7e_teAwZLUBzqva_zzxUXiWiI6A2RNyRCx12eQo2EmmiBDH_tx2BSJQhTuF-VxZ-2Bmr_68jNpcqL3ksQDesfgszioSHYIg-a4ZMdK6S34ZRJmeZwKKiP2udvRV1-FB8n2jVasWhvBc3sYVjq0n9TMCtk="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErI0EHPN8aoWWpiLphindFYXyjcYMrVAiUQydq4D-r9bb7vTx0lbWAl1Q3LYUdnrQg8K8ghCJwosIgB-IkBkO3PadK7ijQAv8hOVCXvzl9pnzT0dI14StM4SC33gtrf3cc-J76OhlbGAxpB7UMIFCdNzfFvrbX8ihX9rFvTzfGeu1P9g9znqW3lKpmwsnldJ3GTqwu95lPeiT3cg=="
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIQf9IVL_qLgudmgdi2wvlKVykF5sqImZ0yi4dI1FmbR5jqG3ywDRvmce3erXqdI0ASdmNGLUDI6WHtRhz4jDux-K_MvJhR2wqQ2PC9cBuszHDUfG-63fxPtOT98ga_SoYoCwLKkL64ghqm6AZzRfBSuNF8KkLV1CNLOhrlmjezbrlseq7SG0XjtImZhUA4sv008cfBi5ekhis6f1mwVv64JD-WqrjN-07wwhoYNvFP5N3O7WCmMy471aTgFcW-YiR65fzHpElQOGEmIra6eEJ1VO-F-gL6t9awlHqZlEm-FmhyYxgSI5tGUL2X_coxPTTr3A_6ZQXNuzzLw=="
+        },
+        {
+          "title": "heart.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyBmw2WUNrPj4pjRyORxW2dZsKsNKyq_fMhYlnEnEqDHwIC2YEVsiFa_Z4caq_UiHR3c124Ir8330z2zH6XUULqV-YREhsk5h6ASgLsG6h8u0Gqc-kHpUY-Xwr8SOtsGHMoiI_udAvtq9ij0FdrWKpV1vARAJX-BJg4DlPET-RHeiv5i6rf8MppuKlDvue4cyp2oYbGeP48PgF5hug_zlSyD7mVCIUtQqVp4ZtpFR8BNgfA0af_NY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWY9NSZurvndiZv7g4DivYzADM1kqWQRg2W6lO9nQ_xzYFznQlU9MCrlbxRWEqHynjVh060xI5BHLpNzVe5S9yauinGRanYt9xZ4EmmZf7bYrwvlvwRbGebdqM7XMg1pSdR_ph6KDhSeZRAcP3uHd--h1X9x8HbRJS_q6LLkZlonHwS6qfJ38mdjePa6wHsn39gPC8TA9BM26LK9dmVjB5HW6w6pL1sfa7a8gu22bxk3bfAZgmGoXEXpmG-kz2rXGkWcq8lC8aN02O6j_Rp5Dcv4iMBO3Jm35U45_f4Khp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU7fr5VtpQZU_mUN7SsLLbnNl4WELeE-QVSlY0MKB85gXIJgePbxsFLRf2-545K4f6QrlIS0nvVTmBZYWsHR1rGYcVLLZRqaF-AioRy_G2Wqw83-sjsUOfJ4uSReifj9KPS-2lQz6QFgabSa8G"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKXMmdwNc4e5TvfGbUPxvgvf4hLQ-Jf74XGZ_58g6FX1k3f7umA29dI056cZObdcnxX3EhiXC5p8rKCQ-2syh_i_Fzpq6qAucFAujr8givxRsuKv58ZneMKu0aWv2y6fYyMQfhvHk5yjDioak="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDWKzb3xqJPSfUzW4j15RsXv0faZHOOd5c8FSFOCxunEnKLVVhduq63IGvaqTWJl71X_HXdcoXs3RfZS2EAux1G6au74IpJkApdavW6Qeq23r55s7bK-XHt9nvrd-8FLBmq28W618="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOCLqW_fK-ChE4Wc81gYCJ5n6fUFDA_h6beFT-vCMffjIwwmdkPNv_b3fO4nZuaf7AgiEa0wppLN9ALZn63oonC_e--XrRzaSu8Gng39yE9KHMagY4urM-NC3MwVVxd3nl-LSmMsseFw=="
+        },
+        {
+          "title": "hsforum.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDmeu2TXmfLMtOCjQp3fklh76etZhV8rBacLxqF7U_KekDPqXSeeWzzqn0cksWXQXyH5e0ln6vup6Z0CE5h2FjNcc5WnCVD49IcUKwbEUBrRxVsiHWqC6gJAXllHmGpxEuTwSJs4LtaS6J0ceiUCe6V0bjmcWF"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Ventricular Septal Defect (VSD) Repair trials for Congenital heart anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20heart%20anomalies&intr=Surgical%20Ventricular%20Septal%20Defect%20(VSD)%20Repair"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 750,
+          "sideEffectManagement": 100,
+          "totalAnnual": 950
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1055.56,
+        "costPerResponder": 1000,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 15,
+        "vsComparator": null
+      },
+      "name": "Surgical Ventricular Septal Defect (VSD) Repair",
+      "nnh": null,
+      "nnt": null,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction from 2.5:1 to 1.0:1",
+          "baseline": "2.5:1",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left-to-Right Shunt Qp:Qs Ratio",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-20 mmHg",
+          "baseline": "45 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pulmonary Artery Systolic Pressure",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "8 points (out of 12)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ross Heart Failure Score",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 SD",
+          "baseline": "-2.0 SD",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight-for-Age Z-score",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "+30% of predicted",
+          "baseline": "60% of predicted",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Oxygen Consumption (VO2 max) % predicted",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-2.5 hospitalizations/year",
+          "baseline": "3 hospitalizations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations for Respiratory Infections per Year",
+          "percentageChange": -83.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Arrhythmias (e.g., heart block)",
+          "percentage": 3
+        },
+        {
+          "name": "Residual VSD",
+          "percentage": 3
+        },
+        {
+          "name": "Pleural/pericardial effusion",
+          "percentage": 7
+        },
+        {
+          "name": "Infection",
+          "percentage": 2
+        },
+        {
+          "name": "Bleeding requiring reoperation",
+          "percentage": 1
+        },
+        {
+          "name": "Stroke",
+          "percentage": 0.5
+        },
+        {
+          "name": "Mortality",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (hemodynamic improvement), full recovery over weeks-months",
+      "treatmentDuration": "Single procedure, lifetime monitoring",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdQZqIMOBIYla8jLiLWb0z6TqdIarJuJrpl5UTxoKmhLIiTPRJKxJ4hMXhLQUX2fCkRksx-Pzjg-q0BSOABGURDXd4QkLlWGcGCoW-QUD-7vDPNi3HF2Xb5nGv_ItT7dHoh6cypF4l2TtdVxM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6RtTaxwby3tbDECCZA1juYbIxB5kgkMDskvcgKzSRyYxgOJIpGM-gmLFDT8C-aRKxxyoqRqGUgvtMm0uVw3FRWpQMKdaBpIASWavnQ0UA6c_AK4HR3mtucgXJg-8BHEBmXuD_V1VNm-xqo7kReQEHYnaH0u9FYN4q4p_nDlZuX0ewETbZLDA1cPRTRRQG48y7UtHXaK5wLw8l_x6vfFZnkUfMHf9BOvoKJolnc1oNb41nFpvVHEFY5my_NN_lfwKtt4I-k3zuq8cosSTl2DJBzGakXZY="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0fsHWIXZgOFMGMYddvgYPMU0Miu17NVTBecbSkfEX8a9VD2z7VjWszCwpa-82nPXXqReVVAgVBYPFjl6LoIlFdVs0QIcnRkxLgB-sqi3sn0pdNiO1ASRHGgxfDEQMws9_U5k4uXBXr8V4ejWYUniPjdCEKk0epASD"
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7EfRTaPFvh-rA1Eob0secXqUrGx16IY4mA5V1hIlWK8a5xz0HeP7PNfd1mSDNPilvFQv_Zyl_Pe1YET6pPpwljYZBpPnVsLMdqJ-COIOcrb-S8sK4p8xWtQyqeSVtwaBFOAcPPBlKqzTkgO_5rQFd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKKdXncQ-z_fatPvAlUg9FE4VOQzhAIG7Zt6oyD7ZqsLWl9qXP8G_BxtcvBKcoZ5b8tW6PSkMCPNzyBHeOe5Km9CfvMt7zCHdTFk6RFXSzrFwXiovGljtDVYUJlWb1K1H13BRgjG5stiK2aps="
+        },
+        {
+          "title": "kne-publishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ926FbKBj8X15gOxedNFHCWHnzURr0rVrGr4Obo7Qi2wgCmHeaH2cEBy1Z24iRJ1WW8R7_o4XWP_cO3S414D75ekOe7aUXmSDJjZ1r64EcsGDD92VHV03g1oFPRkgDaijb3_AlO5CAHE5bBtvcEHx7a5piC7aQggV2nCdycw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJsPZtwNUQodSCPDvEyTD-qj2QJgqdnsSTKp9kJaqZ9TpBuVuH13JUTfxMq89TytquUCWarIO6swqmJXNjyOVb1r5yy_VP3H4BdwbRmu1XL3JW0WMaXYpjQG3IkofRDoA2NzUasNrT558sPwyH"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX1BlGV6eFDWi8PSZrw0zJNYdc7NZ-D1MCiaXbKBv-XOoUBW1oJtHyQfeZ-1RQ2P-KS0Lz7yyswFs26KrS1g54Xw1jN8_TzsFWpBO83SiMUhZY3WNgYz_ghaeAj7to-SVMBYY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKlsw4uht2lAnMGtrisoNHNoEIbubtSfrFiUdVJfRe8aUqFrsjkIBOqbclxBM8Cs5MVptTtMcaCTboc62Wk2TF_gy2r6UZQmuwVPerkDi9llChcxXsQwfeYc7xd-pTzL6phvcY"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwTd_-ZCFrpuFe7BwLxn_BYDS13_QqMDYAJKn6SwgrRiqx6eXytbIbEbej15tx-UvD2I2PM5bWXjmUI6sP1WUBRbpLH4FySvU2d8sWVd1BRT-G64nETZiQewvTbbk81TzH5UfZXKYKOPzMarMPadv24Qc2E-a19DaVZqmCaTDO4YtKhrZSlcxcN_pmLkDhgkCbfI-oy5gkNNMXm-AIqpzQio24c7icMYOGNpLN-QWN3Oon_6sogwmxEryHIFRRG7omaKb3a6aKS76ZI1DV-0oUQtoAUn3mhQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZ1oHxSVYFedHUCnyL4DpJ3Dv-nUM8GEF5X7gkOs3cRB-JkDtGw2MEp6FNG0kpURZ7JMJpDR64_NMXzCLf2l84ga8Ej0MPyyqYwhJjuDtOO6kswrqDdAHXdecuLgbzHBKlle7FOFC0--Rapsw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0FTQFR7ugAuAiiaS8pGaTorkT0x3D7aXlMtxMg-780cV5xpyzf8rleXYs1Zx8VW5uKcmeDARKzMc8NE9D3PC-NwdauQcPiWeai2p-osAPqXvHx2qmS1Fe9WJgucVSbYaphwyk_FGNmL9CsOc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwJUj-gIAskdqBe55k1wUSd3PGjQi7CQpY1JvrVlRAeFdU16RpzrJiXFu77nBDQYITkeqXSEQLUshScK88YJkN7FzQ0fdMxePnu9wOYrh-4Gzr8tR7iF4qi6awiQvxApfcpJrXhIvPn6oABng49AJHAnr2dtChjI-EFp-auwVmbZ1XwZEc6NBiHXlAx-zjC-CfvpOotf-4dC-K5FFhypKa-eiiBZ8aDxVf6dKx51idMX-qd1up9CZlAbJ1gw6ftSaHFENDDGn8TY4e8w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Arterial Switch Operation (ASO) for Transposition of Great Arteries (TGA) trials for Congenital heart anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20heart%20anomalies&intr=Arterial%20Switch%20Operation%20(ASO)%20for%20Transposition%20of%20Great%20Arteries%20(TGA)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 400,
+          "totalAnnual": 2100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2333.33,
+        "costPerResponder": 2210.53,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 25,
+        "vsComparator": null
+      },
+      "name": "Arterial Switch Operation (ASO) for Transposition of Great Arteries (TGA)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+15-20 percentage points (to >95%)",
+          "baseline": "75-85%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Arterial Oxygen Saturation",
+          "percentageChange": 22.5
+        },
+        {
+          "absoluteChange": "-50-60 mmHg (to pulmonary levels, e.g., <30 mmHg)",
+          "baseline": "Systemic pressure (e.g., 70-90 mmHg)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Right Ventricular Systolic Pressure (RVSP)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-240 pg/mL (towards age-appropriate normal)",
+          "baseline": "200-500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "B-type Natriuretic Peptide (BNP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.12 (towards normal <0.55)",
+          "baseline": "0.60-0.65 (cardiomegaly)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiothoracic Ratio",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15-20 percentage points of predicted VO2 max",
+          "baseline": "60-70% of predicted (for age-appropriate patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "VO2 Max",
+          "percentageChange": 30.7
+        },
+        {
+          "absoluteChange": "+20 points (towards higher quality of life)",
+          "baseline": "50/100 (significant impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Cardiac Module Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+6 g/day (towards age-appropriate growth rate)",
+          "baseline": "10-15 g/day (suboptimal for age, e.g., 3-month-old infant)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight Gain Velocity",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+9 points (towards average developmental range)",
+          "baseline": "85-90/100 (mild developmental delay)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bayley Scales of Infant Development (BSID-III) Cognitive Composite Score",
+          "percentageChange": 10.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Coronary artery stenosis",
+          "percentage": 5
+        },
+        {
+          "name": "Supravalvular pulmonary stenosis",
+          "percentage": 10
+        },
+        {
+          "name": "Neoaortic root dilation/regurgitation",
+          "percentage": 15
+        },
+        {
+          "name": "Arrhythmias",
+          "percentage": 5
+        },
+        {
+          "name": "Mortality",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate (hemodynamic correction), critical early recovery, long-term monitoring",
+      "treatmentDuration": "Single procedure (neonatal), lifetime specialized cardiac care",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEfxSSHRJ40X649dhw-3jMSRKjMwZBxzgB2vMick_1LEDjyxGDiEfOGIg_zwUB3q1Naf_reTwfCZGp6-cByhMvY_RuFAQHMH1iU7qrGDfBqx1-qAGxuHEtwZrB1FYZM9WAaW5aM7huy6NausQdGiy5sSBGbdD9MUFwfrWfLulWYnBbSED9WWGynJFkTLeTcr6y_Ti2Rf5HV14eeTAzkJknROWhA6OIc3n2FEML7xJMS7qUqDrhqYBTpyWZEMyzvmKcQ8e_58eQZ6lQdpiGF0AAkZ6ZwZ_qranrWr28VCQe50dt_DgvMIObCEjF91p3pDMJr7-qf4KEe1MgeFjF96meRQrjjQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBI1Uepn9RQG8OiIOk5EK1IM79fGq9xcsdwZtylAjRy8lEXXoo6P4mXF88AzoGSGpbaEBzHZ10ZZGXmV143dle3j5nNXn7wnpureW5rbA9de_exrPGriipSu6021nEI7nQbIgFQMvcPh7GzQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs2XBdRhIp1o0mm7GOqDzPoYF-nR-wad4jUDgX62XrZl0XqCDW9jWLzZjH9sQ-vDtBk3jTnJxbJAyjfoDu0gG3ccrKVhIC_lxp3ZwhejRQMFNHe7N5R6Qe8l6adoL0R314ksSh9xSewewlqdw="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHokD2HIvXAcXZd_ZNqr-nGicFGsVLsX-VxXxwKxtGT3Ss7u0LWpPA2i9x6RpXfy08JXLyK6M8Jau3DIBvkCrQBpPU6BYFVfE2fwNUrPCqyA6io2Lg5rcwZz9_gk9_-e4WQJaq9Ee2yKklEV4KNGD_NgSDKWoEefXREw-Q6KDyoDKLMh-Oc8qHhHlLZ5DXQ1QBxgdPr1YVkMX7SJYF4_g=="
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuh09fKT1v51JAtI9RHhNE8L1815Pw9nNG9Vz-0Gm7DRzb7qFQ4Jw0XZriV-oHn3gtvu3wLFa8nNZq_8IqyZnYrZc2ZKpuHjqnpyZmItjM2E4r6JSB9DJNVL3xaAXnX2D5Layg9WWNds9Q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsdyY-lmmqOiKQAWJ4H2yKMKxtvzYXP5uLttH7pZrfexVK6yxbTzh4arLsixPif6w64KGrXJK3PnXkJCaFzgzaiZSwsOmm-dXKz7bhbbxGGLlXYXpskXtQVhFyWZ8fL9ff6G8="
+        },
+        {
+          "title": "uscjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN02SosmWKr5A3GGpY2wu6nfRO__-7jMyk8nwNRScyCULO4W_DjKevsatvIVTirIYxIWmtxErefJ4rzIjiFiqGmNsJaxvHdp4RrBJB-g2zD_G_hiqKOoOzBRBkM_QhR1sgjMhY70ua0w6JH4Y5mQ40oemdJE2l1Fs8It_CGRJOwJsIMsZ_GnQ5KKUW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIgZIA7gJw4wC7c0-xOjUsUSSGwcxVW-queE9LuoA7iDd2Vu49Xos5vC4PRSksM1-8_QPGc1BZtJEtQiI7ETDvVqpB_6BTTigiLrx4pxQ6LB1Fs716MWdjNbun4FrcQJLPgvn0htyB8JPNs-I="
+        },
+        {
+          "title": "dergisi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcuQ_Mh0AkMw7fzKh8jRZFS14R6wdkShfzIpirmJuOf2o9ZaxFNBLKQI0oh87IHoa89VxTvUwxiro-hHoUmVxA3Ey-D1OxQH8_fm0AbxLZj323Mh7Aks8vq5QX4q8mDwyl5aLZ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4wwFX66JP1EURsKA7EvW3P5OUTrtDXB9yy-CduFx9bCd3QTgOorfdiHW8hyvKkSokxGpu9mcX6DGVbO88dbSkWQuYzI2OSAtnAJYILk0cdiKmZyBqpM6EjjGmZPDi6dzEDQK_r5AwDOszTFFZmAeTcrtKOxOlsLKDx7O1q3IavwtN4d-VjvHsCJnwSCsS2x8Um3bxv3wt2AE5QUf4jaAVXD69pdhEC38ahPssWLBuabccG0tL4hMIa9sQqwcxRWMQW6ffvDCR00Z7OtCOlqVjGyATK_owk4lclSchbzLa32GmzTOS0jUbWVrccYXeKBGpAZx3K8HL4VE3h9mLBnW8kben-Ig="
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Coarctation of Aorta Repair trials for Congenital heart anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20heart%20anomalies&intr=Surgical%20Coarctation%20of%20Aorta%20Repair"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 750,
+          "sideEffectManagement": 100,
+          "totalAnnual": 950
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1055.56,
+        "costPerResponder": 1000,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 15,
+        "vsComparator": null
+      },
+      "name": "Surgical Coarctation of Aorta Repair",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-35 mmHg",
+          "baseline": "155 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Upper Extremity Systolic Blood Pressure",
+          "percentageChange": -22.6
+        },
+        {
+          "absoluteChange": "-45 mmHg",
+          "baseline": "50 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Systolic Pressure Gradient across Coarctation (Doppler)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-15 g/m^2",
+          "baseline": "110 g/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Mass Index (LVMI)",
+          "percentageChange": -13.6
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-40 mmHg",
+          "baseline": "45 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Upper-to-Lower Extremity Systolic Blood Pressure Gradient",
+          "percentageChange": -88.9
+        },
+        {
+          "absoluteChange": "+25 Watts",
+          "baseline": "120 Watts",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximal Workload (Cardiopulmonary Exercise Testing)",
+          "percentageChange": 20.8
+        },
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Cardiac Module Score",
+          "percentageChange": 17.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Recurrent coarctation",
+          "percentage": 5
+        },
+        {
+          "name": "Paradoxical hypertension",
+          "percentage": 10
+        },
+        {
+          "name": "Spinal cord ischemia/paraplegia",
+          "percentage": 0.1
+        },
+        {
+          "name": "Chylothorax",
+          "percentage": 2
+        },
+        {
+          "name": "Nerve injury (recurrent laryngeal, phrenic)",
+          "percentage": 2
+        },
+        {
+          "name": "Mortality",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (pressure gradient relieved), blood pressure normalization over days-weeks",
+      "treatmentDuration": "Single procedure, lifetime monitoring (especially for hypertension)",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFytPAWp2mGo9P8RXR6dgHRl29wC-V0IUpWqIm5FPSplddzi4KOjUKSHG0e9heFlmqjEzMfaYvfvkgivvTIMrV5sd7bKAV1wwhuoWNMeodWKKvC0IcnAzM8ld3i54rVVH-TX8ou"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4AmSfMTZUS6VYRrEMzOuA-LTYS2sM1Y5M4-NRLgzTLaeKJgUZkOnDFB6v1U2FQlyNblGkBVypRlDMl8RR1dHtbkJOOOHKgpIC9R3wrhxnZG9FhQKUylwF6-f64zJhbjkvxEz90jQqXFGKUAbfmuIbcNptUnpIa-qy50HhldETUZjEtCU8kjbUXIDmllhLTlxHn1UcDbdGjtnJGR0iafhm5YllS30T7dmirmou9zFaDKtQET8ase5fUkyDXQRjx1dMp7AsioWeJ7M="
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD-EHYDAUOL-ypLiXyVzSyuehZv977k8BmHBv3dEc8DJsAxk7fv8k_-gCI2f2oRlGvfkjxYRZ_31Bnczf9VFW5i9DeU5wg4HcpKZJBZAjkpqDXACLisa9lvsswefRgHob9kKbXdHVIDPrdEy0YZzpCaWGPGAgIyAn4MGhNzJUNj4Sv777d9h1mzteMLNkLfzWiJaGh4Qf2BraEzWJsY2MxvzdGsACKCC8yYxkWBwjcNh273wkDQ-Yx"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw8adC-RcCzHHA3cANi6D0Zthz-CcWxVEnZQ3vzh2IHb9ulKJ_VinyJ2IQPQcSlUK6jP7QcqwzmUVpYJOjyNgQgL6fg0u-JoF8GlKB4aZStFQs4lSfL8WYM3Gx3OpVyel9L6Ir6wX3toXZOjdqjsEZYCjk1H2z"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwCAHh2JaBkDBRjs90teZdWuxvwrLvdshe6nmxmg9DAOIMA4nybIB6E1uskHBk9MV-8Te8hIm-Hdjs9mnQa-JAw8ON_x00A5lq5OSwqOphEApz3Y2kxB--7Vl7Uy-bb8LhMtY69ZyUJ9nbBMYWXznJMEDMNOQ5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHzVVffyF4LszREbwnFwiwEcC1_59gYcOCDkeOqw-yBxqIdcc3gplVSlUnUSze8coILp1OYqo5O-00TAYkKhcQL0n7Fhr5AYflrhKdBfPbvfwfHJPom6gtP9Jg5Mv74xBzzUytcYPSqeCXjK48jqxg-U6lhT72Cu5AszJKoMYQ8uKonM-anXrMlCTPdD7d5XxqAanmvUNtRMi8RYnFXjh-34lQM9jHLBtposUc6a6EXXFmWgNbs1kT24Jhk5XEUN-iTJzc6UOhDSP0uIqAC4SUn2nfr4aGuE9TUiKA5g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdFVyGURw39EbstJtKij2LkX0oIkQw9m08rcLxh1g_Mh6SWLrHPwcrDv6ej9sdZm6L24BR6OQAtHbWtmGYRGLIR5j4Rw9fVtb1s0k30sFpkWsXpJLvQZgKhFHX3nPXoi_aajZN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF9KVIR0emhu5Q1Kts9OgUZ9X46Wo-lyGkkgRqNbGRnxcGgBngVtsZutihRFgNbD4AesYZT-uCM0gv8pv1dLqHpbiekuKB5HMDGbpDXUBcWnePr6bB3Ruqco34skEL0otUPzDBy43NNq-j8PARarfd8Ojd13LEi-8yfNYpfdGa4w4yVuo5xJLL0x7Hx9iMKOrkJvxY92_dtlg6U819qApuHUogZNTxoYc7KRtC35wA9NKXIgDhcVvgko4ExC1t0m1p5bhi9s4cMuGYDi2clq5YJvCyL88yUvNmFRaUvTQk"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFENo43CswsIyePzU5oFG-bEWrNN4d6T-QNE1cNopValnDBogWInrCbU6JlpGSBW_294TbO-RI0zCCr8io4YM3HjGvdH3wmnEDjSJyz_rivdC0OsuvYW-b73cti4bnKUqfJs_9TdFN60tiQpc0_bUK6BzJG8RHakDVLlg_VkP2JWwdeGSkbbWPdAyNaoO4lLwKWcqWyA2OfHTG9Sr9ilpTzLdrCRVp_j6dqH2kltaoZuTvTNrtJDx0aZMTPaJBsU9xSSXX0TLZJv74npddmT0hrifZie6DPrv3Z6sCHLcwBAhcRAZt-RAXkLfFqIgjVfVmPKyohKGlfxgsJQhh6BBL-rcM0IJHkIixcjaajfsVivyiEe4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfkLZfl7sx9zjAILlLQUWm2sb3uJ_3_wnpRRbIAzj9ddu-LiMSh25ZshFeSCgfuE_8ZcpkIR6LtOCH9QxLPJ2VKRuDknJJczsQcyL7OSqoLrN0NvTbW-yTFi1oM-w1b8uWUrI-pIh-Kvn2GjBmdAZzTHDtF21OxP5jMU1GNTQHEHUfmYUGuB13W30YHBJRLliVez83I877EpXh2SC2WDzt5sgXWg-DNec41wecn5a6k4otqbgwDnm2rBnx7M5YGGcd018EFuVnjGJvtg=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGz1EmGBV6sMp-TczvQKbT_kgBOC_U9eYZJ-51xC1CCGt6l7pAqlENlZ4_FvPVTssKqXmsNjKRrs8oIqlHze9Cwy_ShbyRxYBKRqWm45dtmpn7rnAWBSAakJos3LHvsaBJX8l82bGhfMxjCJVARZP9crTupm51-SDzdA9Q9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTq2GACic4FN3cL6secXLe5w8Kh3h_vIME1JSGrTZmm5hyyF_FkmpLe-b1gzpEG8_Y3HtZk0YM19Zdox2KLk_ddhZ8jR7f8a5PhU21ItKayaIdReHj0Be7PljmoP0yoQw2_LAmNlNyLYNJJys="
+        },
+        {
+          "title": "csurgeries.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJhxvGL2LRzo3sknziBgRAjeq2m5AGe7JBkwOLxRE6FSH32zewiWusWS3uE20tyVKObNVX2_3tjxRpy0wFRueUs1b4jG4WLyczMMXdbFLz0SaKDeyHJy5TWoW9X-kyYPhxshZGovK4bWuAmg2EvzfFTMZR"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Tetralogy of Fallot (TOF) Repair trials for Congenital heart anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20heart%20anomalies&intr=Surgical%20Tetralogy%20of%20Fallot%20(TOF)%20Repair"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2000,
+        "costPerResponder": 1888.89,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 18,
+        "vsComparator": null
+      },
+      "name": "Surgical Tetralogy of Fallot (TOF) Repair",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "75% (pre-repair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peripheral Oxygen Saturation",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-60 mmHg",
+          "baseline": "70 mmHg (pre-repair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Right Ventricular Outflow Tract Peak Gradient",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "-0.60",
+          "baseline": "0.80 (pre-repair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Right Ventricular / Systemic Pressure Ratio",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+20% of predicted",
+          "baseline": "60% of predicted for age/sex (pre-repair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Oxygen Consumption (Peak VO2) during exercise",
+          "percentageChange": 33.3
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "50/100 (pre-repair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Cardiac Module Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+15 percentage points of ideal body weight",
+          "baseline": "80% (pre-repair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Ideal Body Weight",
+          "percentageChange": 18.75
+        },
+        {
+          "absoluteChange": "-1.5 classes",
+          "baseline": "3 (pre-repair, on a 1-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ross Functional Class",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pulmonary regurgitation",
+          "percentage": 20
+        },
+        {
+          "name": "Residual VSD/outflow tract obstruction",
+          "percentage": 5
+        },
+        {
+          "name": "Arrhythmias",
+          "percentage": 5
+        },
+        {
+          "name": "Infection",
+          "percentage": 2
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 1
+        },
+        {
+          "name": "Mortality",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate (defect correction), full recovery over weeks-months, long-term monitoring",
+      "treatmentDuration": "Single procedure, lifetime specialized cardiac care",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGr6gTubvUF4QNsSvS1dBs1JLyE9wy82p-BZQeXR0FWBr4iQw8VpzBYbxDYtEeyVq_SEcKyeE4w-TK7K7mX3ktEoUpTWOISR1Ds-Zo6iXnw3zNg3vqwIFogb3y8FKW-Kn64J8I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5ze9TQEVuWyqK3OeS5AkS2mqnvvbZqBO4-QAWP1HWjgm4Vz1hNK2e8eHV7JShM6aQGzwsRj3LvEMlzReW7yigCTNaw2knHotmpF0frwXVJ_OdG5LK9pU117FBIRqFiWA_3XQ="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH55HwkQTztFzXg0m2U3_FMGGFO_X7_JUi6eZnR8uf8Wg0BjCEdV9ZRx3b2n5ThOa-wYDpBgbdrXU1zGLcfDU0b_xcc6-pUakEh6_R6rdn77ooxp0PQCRvc0rf9L356uqfAQTHNGve606gY1yKUdAAQXcqhcGjM"
+        },
+        {
+          "title": "ejmaces.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFipodg3yJ2BahAG3_4BTb1ejKgSDvwK6V-ffFWKjpH7EPPbVJ-w5HyRQUThW_u9YoQarJt36D25xrdMzHZvSNQWMUk-ty0zRaFAHnbuoql7zPcBsnTXSYtTBNLAJNxTEYguNv5FqCq7YGAS0emxKMlpXxoVWHpoLv6pbjUmqSpgRO2IZ9fbfIRXVUmh0rb0u_VYGvesNZWfobsZ_9f02ZZdPnMJiw9qSbynEVcrP4qqeuFYsOmE_vkb0rz5rabzFVUjl3fQZ8pAg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMgFlr2714SYfIq56EEeCW-Ocb1W6l_9qI3OqZo5DF0Zd3dEwQwtWRmzStL4CELjiDIQQM9SfHXz5BaF6FTfXOZcPT6heH2XjgaHJBC6voxU65JbDLXBMxKbRnAhDKVOiDjMJY4gddDp11o-XN3icl0xLK35TOp1Lh_csioM_3c7X_-chvYqlTwC0YBNmYPQi1uwAU8mthNwaHI7BefeIk0mNevPpVZKOJaGx0mQpEAIPQaIH0sL3cBaq0ICDC9j1mxrsmrKWRjMKJVgry_DV8FcJzUVaP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9a6KTQqKFJ2BE1oU9T-epI9MC5aj6qWWSv8eXyrh2Gzr65hUK0yQm_dls3leL0YEY_qd1FepFS37Jv08S5d5oisP9wt1tKUui_avb3TeArXYnhF6DXtyFV28VWd2HMg68CSUMCefGh3lSAw4="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3yzPXDUGNs4d2ZsVgSxgGj1TyJgRUfzpkJXrOORQVV6GErQouNqEgJX9qazN5V9yaYSKoedvGqaEGWisu-QIurVOzBbaxTiaYzPqugbtCgNVYRfZ_C1rSsmZ2623VjOeknQqB0A=="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQjE_Jb3bVg0WYSIQaok6QWGgoTXGxpYGTUqNuK-3AwIQu8rGjWO69uChTTMtrdiXKPsJBgVHpcKIfpRJF7Bvr-5iC9TnqEiaDUXVF4e-apXwoyS2Z73x03xmPhRjU2rt7f_UnmDpLCm0D0j_te9jqlBQmejbI7ui2hktIx3aZsqdKHwRCSMTuKMqi4hGyvhwJMILiztQJk-dZfyRufkH0fZ6YW6cOYR3UrbV2TKULgvzYu0wBKvzSLKvNUgcS0cm9WzDDYxhk8VJv1Lg25uwJrHNb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd0lOQrHJjJQ6kTD4Vm2rybVHSUVhUTCoTbm3J_rlcjQte3MA6Bb95X9nwPre-zlDYh6GUiSFWbDXuWJo0p_LczeHIq97FfN9h1x9BGmuJRx5wDsq4KFdK5XtiwDM5XKdep1s="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTsvlcba03CZutlH5Ji9cr5uZtPN2LoqXU4E1SHYad49PL9FngPsIJFO3hxnCpEbFZ-lq2CbNBt0udC1YHlTgGQ4phojspQrJHSc8xoMq39EgbrFtZWDBfbxDq6lLte7tloD2B54VlhtZ-9Awv-tqMLyuCj9XhRr_3YGIZjHbyqHCBFg81_GxDSIpUSncEpk1oKsmM3pXp7QN3rgl0LkuBZbYLddUguqPwijJwFlrghBdMbvPd_fmOFUGWzdaZnKZNOQR_LZ1hkw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ1dIrfHEc1ESRgDPWjxB90N5Ijh78acfh7giX-T-l5QdN6v9ZNjNXiwRIlMRSTP1JqI5cSycMSZybALpbT3FdEDn5eBgyAJRO9YkoptWeOW0uVgnD5IV-mAp1ddsdR2bPn3sGK8Gt-4kLUUP5kavlCJkU4M9rv6GaHJV24FYzJQTETvdwy0IF9DuWQVV7CMY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEF-9Pdz1Btu-Cr5Yl5ptavI0XbEYJRIhigGAbT_i_l55nT6d0RTrn_b5fUq87-Cz-k42KJc2xkc29lVo9WmL11AjO8BNRPVUKeOUtRszAyggBjEs-2Bp3H97scv3fjVvD8NeM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd7kBgeHqHA2c7UDEqANrAuxoO3-MP8xC65Zr8xxRGK0XgF3czOn3tKR4vkK88I4w-iI2qskz5aeC6YspLXThqtgPH6R6bdohIm8NQ_ypmc6HmWkUp6iyOno2V2gJ-1pYttV6CcMJhJKM3yA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Fontan Procedure trials for Congenital heart anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20heart%20anomalies&intr=Fontan%20Procedure"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 4000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 13333.33,
+        "costPerResponder": 4705.88,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": null
+      },
+      "name": "Fontan Procedure",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+12%",
+          "baseline": "80-85%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oxygen Saturation (SpO2)",
+          "percentageChange": 14.7
+        },
+        {
+          "absoluteChange": "-2 classes (e.g., from III to I)",
+          "baseline": "Ross Class III (score 3)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ross Classification (functional class)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "+150 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT) Distance",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-3 mmHg",
+          "baseline": "15 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Fontan Circuit Pressure",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 85,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PedsQL Cardiac Module Score (Quality of Life)",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "+5 percentage points",
+          "baseline": "50%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Ventricular Ejection Fraction (SVEF)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-10 days/year",
+          "baseline": "15 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization days per year for cardiac causes",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-75 pg/mL",
+          "baseline": "200 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "B-type Natriuretic Peptide (BNP)",
+          "percentageChange": -37.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Protein-losing enteropathy",
+          "percentage": 10
+        },
+        {
+          "name": "Plastic bronchitis",
+          "percentage": 5
+        },
+        {
+          "name": "Arrhythmias",
+          "percentage": 20
+        },
+        {
+          "name": "Liver dysfunction/cirrhosis",
+          "percentage": 15
+        },
+        {
+          "name": "Thromboembolism",
+          "percentage": 10
+        },
+        {
+          "name": "Heart failure/Fontan failure",
+          "percentage": 15
+        },
+        {
+          "name": "Mortality",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate (hemodynamic change), staged over months to years, long-term management",
+      "treatmentDuration": "Staged procedures over years, lifetime specialized cardiac and multi-organ care",
+      "trials": 58
+    }
+  ]
+}

@@ -1,0 +1,860 @@
+{
+  "conditionName": "Decubitus ulcer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:58:49.103Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "medmattress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED7qiBij_5DVesmbx-6cyMCzZ5KB-l8pIyI8iCoGuH6Imq3yp9ukxS3nni6JAyRwvByI2Uwtln2aauQhNhrq4kf-RUSgeBpo-H7A7b52PhCaTkq_FhzaXcn11KUTRBTN4-Chf7a-XmXfVT5VNarUp2yJmVdIeM_7ZHpqC_DhiUim3xVlKnxuXUPv2DMVueWB2N-SJygYFDGL9Sl8rPN64t5AHeBIoxVQ=="
+        },
+        {
+          "title": "york.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED550dNKtcD67wK0HhKuNp-SaWAA1XXVLuYxu7Z0f9RKcqBjwe39IbjMyiDVCx1j6rrS4PG2cg9PFyEfkT3DfIKkRd33gwcaXqYlDn1sHdp9x6Y0ZBGFermz3MuZ3hLaZVI_pEVzBO-qr3JxRricAWFNAkNsBTYQg0OA=="
+        },
+        {
+          "title": "healthevidence.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5duqjY5cepvdCiAX_UrTulPYJheYAQ9QjbL4KVcfxxmsU0q3EtxR_lTTJ3ILGquWSjla7jVmuAU2caczK28yOOv0v0gEtg50o_pWtiIX3beDXbwoVUTAqUm_xUTlIjwzxulbq422aVjb46ZGExKVhQ661_o-egizPE29ZNMcGldXSzmCYHfy_dGwe3d-2gYbzcnXhCbgx9fJ0hljOqA=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzuzFiRqIYzCq0W-77lSCpcyeb-aay0wxIuOED3LOn8VzUKwalD-ByJojUN6j2e8vNKQk_hiwUIFX6EUsge7k0W2Q7H9fW0AJR_bHpe3j9xipR00wQTuRVBqbfZoc84ZtvLzmRyaEmiJWcpf2llfi2lXsGujX1frL6-D2ycBA-WKixvzU4RXxxyoQhtxAZrThyJuF9OEJWPzc7_yUXO8O7KPYXyACg7784KS4VxnFiTgYdgPL8rkBQP3g3DQQ7F8vonRcXromG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1tYh3emk19RLdrntu6yPbc_FkupHTsSiCgrZNif6klH1trm0mKfS8K5fpQs81eHiXBCbz5uTRkiwrfiadcmnomP9MtOWijcHmKgN826jUG8VCfgNnyP-X7aKjZMfAcAWNE506M9wqx5WZZso="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8WqGXgnpKZIpsjF6H90_CbUp17ujBiVB1yUS-dqu5Z4XKB4VKAFwWHRVIFysuO3yBKpo1t6ByK3fkmX-oULq2jd4vfZepgYU3AJW6SsG9RfCzFq65eN1oVfgt3EEssYxvQCGyDUHyZyGmzwU="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyO0whfeZ6CEOisSzjsgPoshvUtnoZS7QCitYWTOvH1fjun8Qjxb-WKVpnx0i2WtVkoRGgxVaw1xChFmnX59wtT33UkiEptu4xq8LVUYF9jDRMsyLjjQBp983HuPVjpI-3rC2tcVFx-eD7H2tWGmHWpYOPvDZ_VSmWC3-YvwMMPDNJu0o26A4="
+        },
+        {
+          "title": "hmpgloballearningnetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbwsctNHpngCtL-lTaoBkGZzS78vdeK4YSl2cGY_cu6cfbAvJSkhk61EH381bd5KRz77lzAiqhwOyY5BpWYpJUlzejejOPwRvpNw0kUtk1ys3vxnecgBKmyl-PSXTqXe1rwTsYTjEIH0dJXQMbQeZywLbLYjLhkRkL1Z_wHkrFxXTUqQTnog0vBjIhoQ6BzWQBZaqD_j2vtEbw4bSEJ_yjpCyV-2SIPdU2ABh-AOv0W4mp-ltVNJxFVu9u6qp84sM-9H7u_8SjDN5y77jD_NA="
+        },
+        {
+          "title": "wounds-uk.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMj5o2UPxxQ6m4qdoDLlcOTetyap7bVS081WbNpuIl4Rs9bKz_7Y-8BnqJPXmAd9Au2De48VIW2EZTTX-TZ2jym2EQDvbeu3mi0VuC1Cgs3w6h_vwcRPJVDm4M3wockOPfpW8V7932ybafcO0a2CEmN8BxVs773hyB4aSwIKdi82KRTGpNYmTgTkO9_NwdRACtNkyZ0OnzObfuHJVWSJkl3a58zg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIg0ask69LVC_Omth86SVB7F1n4eLcTuOF5W794PXZwRBJUNyBL87QN6hjzfyJcpQaGXnbiSWUq_1L6xKv9_mGV72QJd1h4ncbgXTRrpzq8og21sqt8Rr0l12veFWXaKwEynnKCSCHq0wOsft6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZaRJveCqIcEp7YWcA-sC3gCI1lX9IgBmebcRcWec7808xxXsVoH8Gtra-g6QDy7pk-T-QzuuHjavoyfXjumlD3dwYtvNcmysR-9r_bxlBEO0fIlpG41YmKtwG4U8l0cW9wshmU2BP0zFZDsCrxvJz_s255foQcjaQSFS_8fxFEkWEZUQxje6SS0pYyKZ0qr9wWkOWUWU-O82YPQaXXLJXBn8UlgKFZ0fX5fSV21yn08OlzIE5dPpuL25DSJcgUAO1pduc_jHGyikoqcKA4xu82P-egPLSaOrbF3S9DhwU-4fSzES-AGmeLopc6r4N"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pressure Redistribution Surfaces (e.g., Alternating Pressure Mattress) trials for Decubitus ulcer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Decubitus%20ulcer&intr=Pressure%20Redistribution%20Surfaces%20(e.g.%2C%20Alternating%20Pressure%20Mattress)"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Continuous use",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2500,
+        "costPerResponder": 2142.86,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Pressure Redistribution Surfaces (e.g., Alternating Pressure Mattress)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 35000,
+      "phase": [],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Skin irritation from moisture",
+          "percentage": 3
+        },
+        {
+          "name": "Device malfunction",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate pressure reduction, wound healing visible in weeks",
+      "treatmentDuration": "Continuous until healing, then long-term for prevention",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDSdPHyXrlkLeL-lgz3EbsKEACGvbSDTwyvVhW3PBRi_Tk1T5SLEgICyEhYjBxuvMHNRiyUE1aBysnEKyRYGtddhEaPELOKpoSnErfo2ouM4seA5K2ZBpgFXVUOjiltFDydiKa"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYdsSex4hu9ZBj42VcIjY5GcdbRFOZJbZ3QPhBdpMXV67qI3_cByElwVMVcKroKvHBkBXPHPMcKMbZEzAiXZ1EX6Zz_5RKJjMjyGUO-zbPbfCehVdhWpZLQcQhsoprRt-Dm-Fug_zmfpc3DRI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp4GaNvpL6iAPh4XhRIxf7ASzIQDXJ9QCGT5iJtN_q3Xzfa41RiEKgV_eCtUnPSgsB4XG8T2JY0nGHTBJpdpE_iawbF84sO0sCdKWqUFF-h_jxyma467ybWHh_52vuuG27K0UMjKYgXlDBdTTn8nJEu-FfzJTpi_GIL4h6ug2yHdD8asJLGLshH8fv1KiB9h7pEAXpiMvqfwegpTjycVviQqMcwB8HU1u4v49zM56MzUu9pCBg1bfD53UY7WCnQ6_qtFIlxQN6kdHoV6U6HB0Ii3VYeDQ5W77TzTCFUyFjBf95VnfDgrl2QkubKUhbwmcaPHlZNcXmiJQynO9JjK8PjcTSG4aq3epPSot6"
+        },
+        {
+          "title": "cambridgemedia.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb_cLpq2R3ZmR5BogYiEbWu-uuau0-iHNxeIy5pj3sGFNa4L4er8Az5LQ170UT62Maun9zX4VbgKgWNcn4dLwQfiY3vErveLn_sRG_teZ78Hpi7927vCTP7aIN60GsfY7vZjNBe7hoAVKgriKSoxcR6MN7D_j-mBqeZ8oYUhWgcLK1j3e4DI2fvsxkp9al-O_FmnhnYgHU5FD-dJ-DyOEwlbDP-Gnp4ubl12NP_8OTuXw="
+        },
+        {
+          "title": "cambridgemedia.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk6qcgLy6QUzJQy6beLg9ZgZQRJeFPjO3vbOT8K4TLBZv8i7lO71vCVq4gu6iXPAbID71e4V2_WkCKpTe-edfytYvtd2FDbNcg9hU7H8OcES-pAonOI46p3M6DLdY7v8EUGf6wwi6WGVoyH9N1EBHMgvFYYKq7g-De"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhzHrBEVWMXua-mWhEGoV1YWmuqLSHXjRebSemxK-Lre-MSqEJbulmIkBbHy3ofnzWESU9sZEIPy6bkrm7PtZ9wzELY7cLvXhimzz0aVO6MicQfF27dtAinz53dQ6I350nZLfDXIBA4YOh1mVka7BFB-4LtQa_r92kaf5TNBdpoIPTGA8KJGQdNIK4UKxOHS3N3YYHrafJHaoK3oGZ-5FOa5hqXl9P5A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6fzs5-lp1aOgPfQIX1pEE91Eh2VZp-3GRRSSNfa6HQuiLjoELGqG3-OgV5mkQBtWP6xmPbwaaH1M-oh2mUdUacfktPbl8WbQ_-ZsMHTCa64RQtRznNYYafd_XVbKYPa41IrCb3WpBV_pSIsg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQB6uG28ZLABgGD3vfmp4VL1fjxjIOGhW6JMnD1yeu1oAj9-_HYhTfaag-Lyi42BhUHhXKYgOax4wbIY5w915RYCIPy69pC2U_u2SwvE2W7HX2Us1CzDmXZIqd3Xmd3Dlj3D2B9LHlKY-zUtZkrhQ15f2iB7CmV9730H9My6w9Xq4bDjUhEqjAtrJlHue88vo_Jq2BoHLe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOLpBIfTMurEI-KUa94kV9SfGuQth9jTgrMn6sGu15U_tba_p-BZYAQ_IcH4rXa5gANbwRA69B3BpPc74kgx3_bP68f6_K80OBbGog4qg-uraFkFT-y5RHl0wFaQO4p3uRUUTav6GRpg=="
+        },
+        {
+          "title": "gcu.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOkfawAaCVS1dlyBGpd8hvpQbv_7zK705QjHd1jXmiv_n0zbBcbomTp4QhtlLaXhKuw5SJatGtBeT4-Bcf5s-iAKIzPfVdjlBqbBe1bTTvRau7yb6A_2lJDt13PD_vjyvLUDlarsPh7-1jag0QJpr2FIw_UiUCfh3gTdsvMKtZiIw00zTYMOVtcO9z6jZUUuLjuLJ3Zw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFivZezyd4xgMcqASa0vm6x3g4W-2dxjaKW-um5JRh5Yw12h23-I95fe9jtu6WYpPHQ5BjB2132u8l9ZDiHFYtr6slqWVLEzxxUFDG-v6Z_PvP7JjZic4AbKK_RMvOMdWN39hjN"
+        },
+        {
+          "title": "magonlinelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDOeBNCallL32rJ6eE2ogEIH-vHdn1Mbq3koRv5__sgA-Ch2FxEEBXH-3yEpycj6BvoLExuyh7rR1IuUhk9w3kZMWOhIsKERkKwaTksXCrvI06ac07TJta0tloXq4RtCtNTLLmYcUXL0GR_uaRXwqJdcUVxc6-bx3WOgnUmUc-vMtr2Q=="
+        },
+        {
+          "title": "diabetesonthenet.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTJ5dsMF5eIvSIdYRZxmVnfOfBkM45P7xekI05f8RJkti-K5AFC2gNcpBnnGXhFSmb4Q5uybHL9DfbsGCzEUZw_JPeSTrTjP-M6NG_YaC6T8RfOITVdp2vVXqhiTi4bM7kHNQFNgn7xTYyb3LzaCtfktYEYUgrOqDsnOi0KFPyK0UnKAu4PBwyomPIx0q7OpP3eeheKWj_OrGtQcsSWQrILeeOeul0GJNGi211GMA="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-5D7hOcya_mWH93o4zkrewB5txyWI0sn_IHK67_yu725MYwFglSjITBjglgORmKsHpD4wFuPQe1hXkMGFXIWL_P8Ps8urER5Btops3KgafNvI0YW-w8WKPnKO_xgXUHDwGZbSJ7576yk0I2IUBzremQhGFDegcJZg5X-nfeHoMxmJqL24jWEU0cgldyFdsO8sH_gElS5Cfx6ZL1aH3-4AZ4d5UGHOSrQ3sz0i-YVmOvZTunfT0BgigOxr8QxnaSKntvQzAWXTm5-K"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETQTjwcAfCZsfHeLl7OuvXCvmDoOtnIzJ46l0enwK6_lCM9Da3j6WNnS9Pi3oT2Wo4vE3xun1du6q2b3BGKAri1XT-XNCYv_wQMJJ7Z9EsekLlEklZoPUix5Qrzhf4R7V8IunyQDbkYgKGzUQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsRlhKyPaai9K6Qx0KKspkasb81gPCnySg0diQVNHVmXuRCyEMUxmg22VCzM20qnP07uQ6NlzV0R0Bi5y0RCCwH_bvi4mWuXILOiI3L3EOmyvcqpiQ-VxbKq75QBeXol0uD4IFle2Ohny29-I="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtmhBN0rDryg2jmrPU6S6AW9BLYAnPpeX2ciu7e70j7mTCk-1T2xQZObbX2giLq4l4TqyIGqY8jMPjfRXlBMpfwCEWl6oxKHSoN5u9Tus1yG9cRbXYgSID97FA8UZNXw8lW_46dpvc0gxbIastqmuIi87RWIhCE_KfNJh3blhep5pKZ79v"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF9Ga6JG_NCie0dlmHiekDpNVD3ILN6wNI8Ndwg9i1m5wYuDnDYNVsbgGXsK8hoaTJml4tanynXxz5emVhZNO1ISn99p0qvpAf3P0LNK8K7EKY78RWp3zlJFsJv_P5i6hqQzcG27FPeDbAuqCM"
+        },
+        {
+          "title": "ClinicalTrials.gov: Debridement (Sharp, Enzymatic, Autolytic) trials for Decubitus ulcer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Decubitus%20ulcer&intr=Debridement%20(Sharp%2C%20Enzymatic%2C%20Autolytic)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "As per method (e.g., surgical procedure, daily enzyme application)",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2500,
+        "costPerResponder": 1764.71,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Debridement (Sharp, Enzymatic, Autolytic)",
+      "nnh": 50,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [],
+      "remissionRate": 60,
+      "responseRate": 85,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Pain (sharp debridement)",
+          "percentage": 25
+        },
+        {
+          "name": "Bleeding (sharp debridement)",
+          "percentage": 5
+        },
+        {
+          "name": "Skin irritation (enzymatic debridement)",
+          "percentage": 3
+        },
+        {
+          "name": "Infection",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate removal of necrotic tissue, promotes healing over days-weeks",
+      "treatmentDuration": "Repeated as needed until wound bed is clean",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoHtbpWI2hiLSE3PhvJh_FlzxrxBFIlB_8Kum1qHiI2H-7q6HNKSQTZkCwcge5h5xmyknMedI1hMx3xVTvFS8rdm5uG9PPBntvKgawNp5qmGW-po7vn7yBZH9WuZ2vDIsh9CxASOszw1SoSO2yVmkBxQ2I5qzRr3cTSRXeiNYxbHCryrdftyi6RStv7ZJT7Ew2wiL5VZ9MjQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQcLaTr4vJxY0EjSgwhEL5RFpims4dKyneRu5ridjFmTMRw4-X7Egy9B9j_UIuBGStl-2GFQR9jqo6aXEAjUHlcfundL3ABFgMHFYjet-XUwmY18zjzagezoSwMOuI_53K9EFwRnF-weY0VwkihklUHis0KA1FXB95cV7MPaG3fTclaQXIVYxeVZ6wGsFkiYM03a1MJBM1KsQQolCAHTO2dsHWXJOVMr5vfLCM4gafBm2IGvLeagPjSWAq_0RIbCjpoMyD9VLfxGGR9-1P3pzNfZ-wtB_NAdLTo5qKmOz1FNwhmJ2yLsv4DLYf3ZY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvL2EjX5o_DGcfDVna6bJ28h_DrpIFA2jALo7V2SO_H8G8iUqqJV68AvA95XezaWFSJJwnKkyz85ygBJW4vipGVR1ZZ56Xa-21cKBDABMGwOhYfWV-Y1S30lZWxDj8lIvUm4iLm1gcoJvbFq9a19xw8-PdzUZ6RUSJmBApDLA8685qgiseTBDFju15aHKIIk4lF_OVKIfxkIxe7eEcDtUMolk3o0aVrD-O4r9rTtAnX-kQhZEX6K5YIE8teh3j87dMWH0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoKNRnlJ9tunO7xOwKvNB2HA9iEJtfeUhPhiETm27406H9JWaosxd_2UszgCjaUpMdPqfwRAgXm47Yz4gt4eeRbXVbypW3gX0NZw4EhZHf45m0isUGvv2YEee2bpqCiWITKrEpAEU6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsTxk8icAa3zlWlZ4WA3GSmNLY98RFGAlyNVIRmQU2XYF_NgDRmcPCScESxIC7Ts-FWjIBUEotHqoNA4yZl-WEUZP_RUwunAUW06sQfN5x2-zXdPZLT32xqYbjEEskHacpz7DZ7pBSsiC65hiGa7G2DthjD_OmM1EZQWuM3RYm0oV-agixcmBsMG1YE5WJsTiBV8GBXDhQZUcjZsDXWWMLydPDlffWf62Cupu1WkkqAHm_gYIOUZt6uOpXDqkmYtk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2SPVL3TeiRYjiio19N0iss3UEK5bwW2alyFBY58wIR-ygFmQW1D3T5kjpu-Apa_0Yfjqs2imlc4VsGxmREouHgZttNR91KEGKoTJxCvctxF_Rlr4bvQGrCEZGgVCA1nmYFjdY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqrsMLJFGAj3K-xaRdY0eM2ag3JgkXUSVI_MyK7udtIcOF_hmJm_aRkzTabV50bPznjtKwOrgJD4qtv2zYHbryfHtX329fHNnZDm0G9UjrlRlLFL7FbgP8cTx3_Seqe0GE1HFa"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc7vnisE7p9qlBZGacUNXVAOKGLXyMiSbBdriROH-_aeMZS_shwl8Qjr9zx8aWHQ967Pv2qTvL6NdlSZounTB4UM4u_bI7IKzxs4Qmis7NBs8aGlyE3TZqB-a06AMs26uW-jpV7UNwn3x_B1fM"
+        },
+        {
+          "title": "york.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBYsyUuHmy2Bp0JfeYqdTxTGP0ihuaRQCQz6Nmj_2PeQPGVrhrtEPyr7e2atEwhAYENd9ocWbI1FTBgh6dFPXMerApaKR8GWGF7f9uSEg3OGgU4vbAC2MLT_Cs_3iEcAip0g3T6mRjl0oxVXec6-8TQLaxTbd2T65lo9FHMCsSszSyMcgw4g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxQkZDhRflNaCfCic1sH2oZ-WMIF0N7NfgJuEzg7PbMrZXZKMEu3ONdYCewpupcipP9GYOHGHHpK0RcNvDHdsZTWxvMCKjapOEY1mDGsQ-qJSHiulskRl6R92Z_La8WJMqh91C"
+        },
+        {
+          "title": "academicmed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_HzXSn8PoRnex5QBk7GJ5yNvHJanTBaj6UBvP6L7mPofFRbymdZg5Gg1gNShIYkpaAa7MBcgA-s7jmddhoLopZ8CzTY_J_K5rOFRznwITFAUP5SwF01nijjAZxIkcF6tNrdJ0-JV_R_e7madmuI4Zl0H2B0GAlfUPjePeVECz16zB03WIiBjUuONHoxHbOqZr5fKfppu1nmq3ATU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQZJgOnQRGtI8nbLlDzi7daRrCbIVMclEymz174K3uO89MrS0wbgzB5eHJJZ2y5sp8RiODusGlvk7hWOlzo0pCMkOcC40DbrCPLMfnehHmhsbvT6mKewaQbBhNM7hfvMU9aiAnDvecbjc8rg4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjsNJP9E5j8rsQ-K-VNqv128l86-AoAn5evDsglBwCz_iiHuWvRaN3CPWjodTmAgeBeYAz3XuME8BmrshGrsRGpI594aRTD4fiHCMDYNJViUzvgLZ7OPMcBVivT7U-o6wdtmt2jCeo_Ey56GShf4fkAfKz6wrY629vcMThFB79kzsCl3tir8ePNliXHfQmRk25stevUM1K4c5XMRyyyw1ROKZ01e9HfGAGzG8XBOM5eGFgVB_sD-4Yuprg0DRXKmrVQ2bY4RV3Kz_KZi5Dg4789gIyTqPh2v2xViqTpMg="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQs1IcAHScHVg_ugg3RRuDGkEgZQyoGS6saPALA0mJnCziEDz-U30v9pKzjUbnYd-bOU4a4tpVDp0uaX6_hllm4HIw0vn63JslQCcXMGS9fO8uvLaMNe9sY5dqIq65uaqjxPCOEbfhk1znHdXekqJVzzHwNUfYBtFhUKwrfY5nNO_Oxs4D4hphQ8m-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_aQGsdF9aUEoENi4k-F3cihoa2dAe3MEey3FEmY3EKT5pJq9vR_-gRrlRfLaGLDdpxCVuVJINd8bc-hk9FeNX58bvcQGxDciCmfyOqx3EKfoImztWTSSzdsjWfPCx6MUB0OdRokm2SgsNLM0="
+        },
+        {
+          "title": "griffith.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErZikNjQ5xrFujGCNUzQZVGhw11qVC8ixz-AvkmoDx36aBeYhKBPJwbLoPECI2rSEoR4ZwS36BuZ4MoXyVYbAopVCM1m7pO1WHJYn1x5bDAdqHXavvTfvobEO4I5T_pPPlO7X4h3RvhA-Kf5S4MyGDn4nRgSNcd9tb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTuxDNI9ckSM_IT8IfEd5sv9RjspsoCqV2Z61PHHIfRWekc3XaTTCVOmYyuj0xJVb69uRl2UbmHuwCFgFGnhNHQ-YF0T-uWECvc6FOJELXMQ24xbGlCXlFQKltAr3YwOSkHrpqL8W3Ns0bn-DX"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxjvWQTkiz9xXq8Noq6aWNB1wjzatzzX0F0VNYrxbIwa9C5fg9jFkaj8ERYEd2UNan8QF1vGkiIQysREadjAzPKCl181xBpJmkY9gfp3UhWhE34a07j81b6Yhhp-lVEUsDBsSSqRbvNU0kJ89zej4e9eh4NFU5WMNdHpR_EumalrfgKerl_sPjF_E4oq8H0NCEkwzXwFY79SFRTMSP"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC16Ujp6m1HqnoQgtLoHm2Wv4UzxEb9G_VJ-oSroJEjpgzl8bl9aiRSRzO6wNOwr9ASRxT7bdpk69aiAhSfEAn0ZfPz_rtDA0DzuCDdkhIQcE6ngYhox6wfPQWgzP4PnIG3-2_9LJjDjdbLiXLSAk8d4b_sJD1wr1pi2sqkhc0WabZeHdNwHk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXwTI8JjOseAXut-yxCuFixvy8kbiULPrpP9jivS0J5LL1F9QIRlxZV_3Fuosd_UQFRcW_lSgoPa3eV2KjCnh7MN-K68KBBEgtWj_gq5MowOMwaj8rWQPH5KymF2LeO93DvbQgss8K6QQsE96AGu0jzwRldvdH7_TnV9iGVs5dKqI-EdkeaEyCFaKHcDSoOkEthAuvEPbMBr85IOCY"
+        },
+        {
+          "title": "ClinicalTrials.gov: Advanced Wound Dressings (e.g., Hydrocolloids, Foams, Alginates) trials for Decubitus ulcer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Decubitus%20ulcer&intr=Advanced%20Wound%20Dressings%20(e.g.%2C%20Hydrocolloids%2C%20Foams%2C%20Alginates)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Applied as per manufacturer, changed every 1-7 days",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2000,
+        "costPerResponder": 1600,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Advanced Wound Dressings (e.g., Hydrocolloids, Foams, Alginates)",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 45000,
+      "phase": [],
+      "remissionRate": 60,
+      "responseRate": 75,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Periwound maceration",
+          "percentage": 5
+        },
+        {
+          "name": "Skin irritation/allergic reaction",
+          "percentage": 2
+        },
+        {
+          "name": "Pain on removal",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate protection, visible healing in days-weeks",
+      "treatmentDuration": "Weeks to months, until wound closure",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "echoontario.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9tc-q_EfTKB2A0kzsMQoKbGy2hQjmw5rowHGspIcs5wyJw2omEnsFI0Ohu8TXVPO6TVd1_0-ATggh3w1gwAw_HGm-XfcACniCYmTsv7bSvOTTl-ZLTqk-2fEeHd9wensjBFWpUD7qhSkQVCXA_FVJzOZzVXFdPZB-U__pJ-GcqV9kXsw8HzMkif-l0lA6CATRy15axckCu1d8tO12bOuqHUasMQ4pVytbMmuggi3Xt_r3o4yP5rICiCT_1zmH2QjbSOUpgOO0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWCe_S9C9nGYm3xw1rEN_IZLw0SdF3fN0In1EyAL8u8H9_YC_Q7VVa59l3rs3773LgZ1gJ0cuL0ilNgfOoDtY3kdnoXHr-cuu4TyiLBF_AOu5a-x5ddZmeNokd4SJdIPze8fnd"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJXJs6YmpGWLNLJ6zZh0bFUzIncRN5dMJyDgtG4bx1qZTE0ujqbg5a3-QDQqmV17v7F5pN_1eHzmSMi9l7LfdsbL1114SnhKUXs9utsp_RgdHtDelBq83MpSU02ajfVh7mXD0L2TRCm7GZEZuWS_q_caYotCTnkgwyGBMs_BATxo9mNjSo_wdPqk5Vgy1qE8GGOvgjUur0gSV1v0chGw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMNnfM2GTO7ArCv7SPWtbaIS5vVvS2YhGHAt81W41z43XQIiMLDvmkDdX4AOmnMEz4pncDl4wMmhvKp2WErhq0Fr0l8EA2pF-T6pXw8NIVLy_Yu2Qi18h6o3gqh6nS9YnkTA7J"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH48WjuqZxQAZmiuVv1Fx_J9m7iAfnDvdAOuBaCMpWYiaDsSbfuY9lvcntYjPWICTaCbqi99XOrKa-WhzTOhgU6u-UKHuvRXnpMMM_62nIv0dNK4KETTJ9fqCWOUkzi12ts9hcb"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmg50wG-cwIrpC8pfWiuZBtzxS8M3CEsHFYw9BCR5HE2VwRFK0TITZORKey1nxOa6f17mHhkcwTguF8gS15Yx55-UOmJgUIKZx8xulnITLqzClaFYjD6egRk5CabQ2kz2wlv37m3wCmn1GqNV9Am1gWnFWccqou7_APx3DM1XQP75_nzBj6Tm7cAxUuFAS5zLCmWfUW_0ngtlT8V0o3EsjZcchoNDVcawaTLBGWgw790o4kKSsh694Z0LyZvNQCw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb0qFGQD6YUEGhwHFPuea2teE6BpU3gN_ZpuQP-wjWd9b01-_rNsUZ3uby-wvDnbQ72SvUw3D5qBmgXj2kNPGFKc6Pf11dc7pFoXygD8oKsPZ-F5G4vYu3ihukxwC2RIkYeazg0oThufMbWGMpNdM7xN6a262VZhtPDihz665w_CrkuIhJCrBpolxH0JlMANcAHuiTnRmq7u7lDbxh-776jGHEfLZLX3T1rVFfL8tnb3MPFZXjJQgqak4DAgHTYYh_wYccPuUcmIdi82Tm_STFJ_GO-esAR7VYN9OpZzQPS_R-b8W3ydbUEg775AyWvp1ZAk4zD6M1GVsaMsadntFEMXfC_BWcfHoCJIPOhd2Uef9mpvFLlyePOGdc7dD9ovuT_ue1Jlul7fWWa-vOb4vJa7QmjaS1aDQWGPcSZ2TtEw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNI-c59uiSwOc2zNg8N0XgIuaMloA1dj7pXMXJU-aTsxYFRgtgQuSwPdRWc8Ed8gmKrszrSFBbtToHSieeCNzrDiwyqit63K2exsH6n6k8B23Np4oKlm7VkzRHebZHOAPCmEh7kpIwMZyikgGK"
+        },
+        {
+          "title": "belitungraya.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmqhTJwCxIMqZQIn1HQgkyRjqhaTB8k33XkPo--cQGZx_A6HIQmSl09zoTcXCh4Cf0m4bGvlvZ2Ut3BRUZEuWNnSrTMJBeH-xcoRX1XdArnOmwY6atv0Ob18lcKadNsShvjL7HIl7iAl7WbR_hJJp9d1kaFPxowdLD-MvB7-ZY"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhPQ8xe-YLsDVHZie9_4mKIEeJGSI2PNpdpCvlF8U_Jc7onfwSH7ET791Pcm_CT42b5CpaLyvnI5lx4syjDbR7vnn350EqoLZw8Kne2zGqK6PA7uU0oI0StAsT-KC34LXohMgbArA1L8k7giI="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs0wmNR5-OiU7JA_Y921UvFNzWp2PcsE_y1eMxOg5_xGD83wDsvhx3q5C83h2isXjbyzks98LlrpSM_Gpj2AYF7DiZlEKEnMf5IybtZBnyK7r0DF1vuNPA0y-C0dSIIpQ_aeU_X50Mp1xz0HOh8OuaRamC_A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZpaW85B6baoLmH3bEWuNxgldCM8hUBxocpJOf3vjs21Y3NBUuAoIPT8VmxrZtKx8jg4xJ2MhoLoYVPmX5dYQDwoyRbYJqzzHh0wUDA1musJT9QY2rs8knK69yIZ45EBrcBd0m"
+        },
+        {
+          "title": "ClinicalTrials.gov: Negative Pressure Wound Therapy (NPWT) trials for Decubitus ulcer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Decubitus%20ulcer&intr=Negative%20Pressure%20Wound%20Therapy%20(NPWT)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Continuous or intermittent negative pressure (e.g., -75 to -125 mmHg)",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 8000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 12307.69,
+        "costPerResponder": 10000,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Negative Pressure Wound Therapy (NPWT)",
+      "nnh": 30,
+      "nnt": 6,
+      "participants": 18000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-16 cm²",
+          "baseline": "40 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wound Surface Area Reduction",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+50 percentage points (from 20% to 70%)",
+          "baseline": "20% of wound bed",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Granulation Tissue Formation",
+          "percentageChange": 250
+        },
+        {
+          "absoluteChange": "-20 mL/day",
+          "baseline": "50 mL/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Exudate Volume Reduction",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 80,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points on VAS (0-10 scale)",
+          "baseline": "6/10 on VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Score Reduction",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "-4 weeks",
+          "baseline": "12 weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Definitive Wound Closure/Surgical Readiness",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "-6 days",
+          "baseline": "30 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Length of Stay",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 5
+        },
+        {
+          "name": "Periwound skin damage",
+          "percentage": 7
+        },
+        {
+          "name": "Infection",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "Visible changes in wound bed in days, healing weeks-months",
+      "treatmentDuration": "Weeks to months",
+      "trials": 19
+    },
+    {
+      "citations": [
+        {
+          "title": "nutricia.ie",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFis_uvnHOSeKQ05Tcb--WQlLdndcW3k3EbMAu__11zU89yBrmsUNcFlQJHj1YnDOUZBfhazzhYB8XKaPu69-QlIFmVaJqXc_DePF-al-hcwHJicqvLruN3v4bZT_e7hUJNg7TpF-jT7WbF2izz8fAzeZirf-0miPOe_lSYy3ognCoviJLIt2LXHnX3gWE1WOL2Faes-jOMuw2qPLanq1NmzOJvzT8Z"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_eVRgPTHyZoApeOkz1iJLlJol4mcgBTK6fj1jmPyhhoYJws6d5E36qUAzza3J34iqzP4FbqM6zlnCuR2kZnY-bwdg2DENxIEmmyb4nhIO0vxtOCtZuqU7LjRjH4uTRvpCM5LqdGwcsh6PDKhAi1Sdvb2hZyubP0Bk8UrtUJJpFnw-9yeRiCBZq4pgPL2eJcHHIoi4Z8975J5vaBB_1P5UH2zyiHGj1BllJVNFU-PF4kWgWEygqa_4sRyE7M4Jyy3GILP9EZIm8iS9LA=="
+        },
+        {
+          "title": "nutricia.be",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4ZqQZaciy4zHp7ZZXN2XWA3W_nC2u9_IfppwUd0e4Z8FV7OB9AjTzvVeecno7qfkloD7QRlnsA4m9BwArmdl17psd3_mV7p7cJuOVGYvT1C3gWNBZTpsVOqgasoT1AFuZ2NjzWRYANvvTzU6FhDU09Fyy-7xpaNboMIbdJELDuPEPEAJicr8jAKpZx5aqi_70dHKVWLH58kLI-XyoIiS37xjldJ8s8Aal5_bgxqiCimtZc_6p9C2DQmU4_74="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4u3eMe2inWGQLL1a-dju0UjXPClrlAZk4W0uPgSN4S3uNYrjRQFjfQhLo6oCI_RK58mSw__DuM-T8Gthr7yM_Q8llE2d_3kqBZdW_TDFTFR-fM_DtGtNW3nv2hBQzJZFtpjj6"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyl5f8KZdQoJvboDavq2xpJz9xws8FZD7n58k4CP3zloMfFcs8acctxCx-1J1H2AEUWHfX8KtAdbvP5DXp_fbsQ_adOyFQGiNVQpCIb34RtcMLu-j6v6K6axlJ2OMXTwhpQtwUSYrFxNLq0cTEg40feWcT8sShNrbgzMWwktc1dbtaq1g3_cbNBb_3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoX_aViiu5mMUTRAHGdstgH9YaSY_ciFSvTcLNm1nVoaFuVeZ-_s_jwK7RMud_AWY8qQp2JBdH4iSPyWusKywExZi5eOjOdKWPHeJoBFIMEczUBQjE42paH3I-a0zgj26AkWc_45RPrWbxV2GfWyDjW2oXD6cAhSlr1XUACtfZ8OVLb46G4KZaZAEKhiTomtQ97AYB8ae21pNGsGpRjhdS-A2tip8YVdrbjlwD3fkeXaFRduuk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDxoJAhDhhGjADDP6bnbY4P2oCoTuaGWiVHqY6Gu3uFne9R9suGrr8AePjrzxyFbWJKIs_reKBSTU8pRBWGWLonIGDUUfbsPFUPcXWyBNU6vHjC-a5YBwhJj69UKtgCjHL5jPdyof-ygJcM0-a4jVTjbC5z1qOrJVB86ofupnnqk4JyaPiSpQpnvdsCBGMMyihqLJWjpES16sncmMgLmVjUT7nZYYp5wLarxZ-7JIji4YlNT2uRDtsb4G5RPT-_kO66VH5MtNGlSRibJTpYW1sE5CGU3B86l2mNrTH0A=="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-kbf6iE6N0uWUE3DOfBFTeWd77yTzftPzeneRFhx18MhkzHe7q4H-u8qMBLo1f-HrVoOUUculHPKtMBEyhUvKScgt5Mwzy4F6C5_IP6jKfOnsLJunXQujOAQxkikhvcwGFduWrWB9RK2UQeVk-mn0DEdugqPZS5TWfgpPvYK6uE-avuA9mLuFJGJquyE2YOKKLfgeNEpzPw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgq08oq4YR2G3JDw7Wj-aGAFU1BsOF0_8U47nMUtv194Ko6qUGA-E5cQb70cYPFThGhNE-blKtfYPf5Ddq5mnN7AgEkJYXmRdx6gN74ZRQqokKRNVeA05Ez43-1Sf52h5jDIN4HF6yyg6ka7Vrkaj9Xe_auWtG_orEsl3aynt7QkziogM7djN_XsvxqNiLbb5qGQidp3lHDWbCpJ8KgPiBAiVXfmLZTnKHaBcd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZlulFeQ9xWeeiWMdHCfu6CiBLoiiVme3FXYO3wn3DOgYrXB71xrFi2z6jWgfKh98bxX3GxC01ipAcLhMr84tiFPc6oYCfE2XWVzedVO1pps5QlHcdtJh-IruV3N9brwEGYxqKGI_8oI8FPbo="
+        },
+        {
+          "title": "monash.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQrccR54h_6q9Pbl6UBlnAu_ZKSoY_JxB-Z5woNVoYfEWfPKFFJ91_XtnwF_BhGZRwgvGW0MuCjBBQ472baAaEiB8dHXX_0Be4KM9TcKxD8h0PvUrNNAsp4PIwacozedGvBCkOe74SGQC0SmwOEd4V56jR2mn0RxNwYI0CbLwS-Tz0JrNcDqWBBNDydcTDK4xuOWsKmFHz_i8arxgkPAtfraa4WWGmkRs="
+        },
+        {
+          "title": "lww.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEF9W0g0lKAiCxraJcAWAWZs9j_9io5aHJBcxcQm37ecyg3Py32N2fuXMY_vRV3AN5lPUZwelqMhE0pFXFXFAnlLSLN8X1AvWdEctiwiZnbmryPkFaz3buRoAVPh4LrohT0LWITyYXmKRYQg5Euv95sAR8V5RnZotU0WbG0VZAmhgO8y-vafi3CZ-HNgB0J2kZXb6JYTiyFrcTjBQCmI_hBrzJMK-TywLwlwSoI2mVh2mbVtLgsL5akZD1rGDcfEycP9Kunkeo4IsJ-gbijuTdmlec8j8ehDEu_Otp7bymLNUtPIjc42A_zK5IC47O9yhULYhfKEBPBvA5g1m68x7ETalq4qBU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFww-VLjez2oaZY89Q2JN90yHWfT31eHEHpMxDr6C5uexDaFuTJodTfvPEiuwqEwbeQAVNw35ztcpLB__gfIv6-9hY7dxzTIEd3J4h6BDBMlRwDrW0P-ZCalJeC09vMPzOqIy6f2590"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAwJpg6TKzQX2gnhOXFHbJv55ujKTr5chgzrjybH4NZJScXh1HEiD-vCd9FbDY59PuJt8f78PMaMmsdyi52mQfn0uMgveV94PAFKr8S-lxduek_dWfdtdV3iRtm3--33yTEHDW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOTnBVjV9XPgZgx15edmRR7Z-H_OgsK6C7ow9fznNZrC_04IdktsIwKhai2BzoxZz_62IsbFtYDLn2NnmdjGdixD3rXL2MaslSpxntMsVS46Cd3C4dndh9SpPYPseLytywDWnp0vqyfMpkK35gcD25t1X4A8s7-Fljv4exI3g6yPm51gIkhHCUXIwqWQe5jWlABCUkGw4zdMahSgrsuLpM_y7s2BcziZsSVLmqHjulBPnoBcI3_SVS_17x1kzYIyjA6QyAp8r4uis_fNbCwQ7vmRvTgXnivmrMCf-D"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCqbQR-CE35PZcOi7fpYyaWUCK58LsGk6LBGyXH0LTx2p_RX3nerpBAyAP2X1oMXakhqI2hn4E6OEk7dh5AKH6w6jW4r2jKK21o1yl10K-WsxGkEWeJBuZkaMzq-0RFaM0G0HOmuSoG3xp1JTf"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVZtLKRwHMJ8WLBZk6KRiS8Wc4R_uVyl3cnOMPAhJGw2MH_W2bobgq0DvD4LZNvvS96-nJkM6lHRpSraOrLJ0T4pOuoq5cyTAZMxn7KrRiOkl-zZVkx0ltNfHJSCV-TWJJWyLa-ajq5ISc0_p4ZXPzZzpPcovngH9d2Sq2JsAhwQnh50GlOWQ_we4RH-6wZzYvhCzlyFtCoBP9AeBYDgv8E9S2_4YI5rpXFUreWqEK1w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nutritional Support (High Protein, Vitamin C, Zinc) trials for Decubitus ulcer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Decubitus%20ulcer&intr=Nutritional%20Support%20(High%20Protein%2C%20Vitamin%20C%2C%20Zinc)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Varies (e.g., 20-40g protein supplement daily, 500-1000mg Vitamin C daily, 15-50mg Zinc daily)",
+      "effectiveness": 78,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 600,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 670
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1675,
+        "costPerResponder": 1116.67,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Nutritional Support (High Protein, Vitamin C, Zinc)",
+      "nnh": null,
+      "nnt": 12,
+      "participants": 15000,
+      "phase": [],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Weeks to months for systemic improvement to impact wound healing",
+      "treatmentDuration": "Ongoing throughout healing process",
+      "trials": 180
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpesQ4XNV0Ya2jjXFoJfTT4qy5s7vgjaztDM5tAOdaBSEgqX7CT0NfBu1ieomRIfd5dv5hzrcewaXKSJBiRbkBiiNjLh1axa-cDvwanHF-h4aZhrZf1ZyfOfyLzHhbthcw0UdNlX8BYOtYgGYZ"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMqCw_7nv7OX1ieP8zNWxofep_dxeN9OOlsPXwi-n_tR4SlbZdxp1cbStzXe52eE8nwREIyOnoyZvfPPOF3gySYB0YOBOLg6yR6CDjM0aBSgxRcEXaf1EykDvDYU-j-OIuKtJxmbg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJyXtcFc55rRqtmmLXAsarFztjMsHGQDD-pJRkP3GlXaNnOvvz2CNbx8s6hcz7F46MIXWwwITpT3dz8ZJQQ1T2XMHn2jV4m9_KUjNA62zciMkx7lucPSOHuwnhPZgZuQWLzimKJMnqZ0zDzXpy5Gu6D14wrrPrL9EeNnJxo6sLPLGf0s7kXgDYTMAVnRe25VZ4fCqtouYrjCY9SLcc_DOX3x_s0gYAshZXBiEIy43Q7YJxZWLSvbgX_ALbxUwf6Iqa45OkXecpNkuWJZog_EUF8DHlTUJ9mVzxPdQKn6iB1s4myAk9XK8UXafeyaZxOenGEXaDint8o5PXChGYiiDMu1qj7IznJxFzoibLuyZ4GpW0AhxF6X8OEOqLh9O0EmTs6o5glT-UjfWC1NynfQv3PP3ssSOhUV5B0iygqYl7OTU5wrO4B94cITCfgK4TtLTpp42Dc55saDIP3rILUqxvrtKXByFk-5BBwOnNSzbCnA=="
+        },
+        {
+          "title": "thieme-connect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOZtTsSYmSsna7lnxf2BCC0GxXyxXoDBQQegisQ8Mci6QDlQgKJU7TL1yG2rNFp9w6gnqWZpNgSzojHQwWYYu21QaX_dtZafHfjZnVj4CKVKCT7fbZBOicX30EJomnK-fSxfgdMUPEEaUhs57TUMDYdvQOd4wly-s1hMNh8aLGApdeO7Chql34vHuC"
+        },
+        {
+          "title": "unair.ac.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-MYylgK8rcXEx1Kh6U8UZ0dYc1fOSnY444WjUHE__y8iEMlgFQ_-fPFZGS91M8zcxfLqQXkulBajsgoCk1ysjJg_RWvFyNd9oarJ2Vt8YryfeiZztY-v7Ao5BBwozldaq4DEgkOv58hHaQ3HTmZG4VFKKMX2Z7vSgI9-vkx065A=="
+        },
+        {
+          "title": "diabeticfootonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgxSX7IZp7oKX2P0uWvZrS72PtzdRvs-EN3DJXjCWnwReZJDbzOpEhyn0kFmhqfNIh74JJIVzgW84YYVUAKUAcXhHtD-qP3qbzCgaDkUwpQ5i5up7NQ5tpCIaERl8KqhSkydYqvzHeLgGio9I8V0aNZBgTMf2dDgKacbDdcyRETQDI1NmF9HT9UzBS3MlzkiNTfxx55Y_TqMQv-QWE-yy6yw1WLosC2-G58KYawES3FQFTvy_MAvLy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSKwd86pfurR1onw_EJJWoXoDcfwKF-xc8Y68Zxwc_BR_MvOQYiOKD-qelhz1cZTi2IL4ydtM9f2vD9vSzCKi_7nLU6-IdJ9svsLDrOR7Bjop20GfMJiqhmIxsJ1__VpZyvnOk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYfktqYjinBWCAKUUthk4qEZExV5QvLHHaWttJSat0RkjvDhianqYPJxdj2Uc_u6cvuAxRSS-1lf1-US2OJvU502A3I2XAQTky3pLNHKVwirbowdIKbKO5ELu8jNxB5unw9yEMTupdH0b1hv0a8v02VOjiRjkO2lKI0Bwz2X1cws9jtRxEX3wqgsx9f8dQaDUcUFhECl7fy06r1mdirUMWdEWwZViUJckvajOWWMWSjKPmrOvV243Qeuz7PLIO7cMll-6Vf08qtjRoqnCJPoy72ELV3fAfmmvO8EOdt1qRJ-I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr8K0YFGyu1StIWeo7mymBHlk-9NQz42ZTZNzg6fhqT8YfkNRUGZCNbn2IdG1E1IMjjFdX3oHNKGd32LlNCInONFebUKLTgAAFnT1VVWWHrcYLVWcLTLSLcTwawgTj4wfaHkXmdB1QnNLXcYk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIMZlGiR2nnLcoZQgHZzoKcdyuj3e1iNkqUTRCR-PAnNKbh-auTUpj5Gwm-SK11kKqa5F22PciV6vhxJoBDzqgG8rYnScc9LrQagPwTVLWeigBzfa_HN3QtHvQTO1Yovdd0i4Wos1VPJwx5Bw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbMZfVK7YihmA6c9PVew93-_2tdBd38I4hF0yZBQN-Zz5n8l9Jwz5-gH4aSmRUefLoqhN9R4gGW3dAMDpk5R-8uyiIlPml6Wg2rT0ijv8fhuE_rcARnR7XWjDhPf-GRub_mEgpdaTzMT_HzyziOut6XhBt8E-UsMUBlW0JHbF2Yd66wjmygMoe3RSdSI79WFZWnKRNJZbXUhq1DDyh"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5ql6pMwji-Jzm49Bl4X2-m_u9F4oFWQHQCxnX9f3v8n3nygRCEdh1Ys0YYKoOnRP4MJ6CsyxjoqcSwz2NQ_kVhYBzxLGl0CCm7sI_1U6zvKnhgFY_ywwMpp-fBxQravtMzQoeH-9ABR3Zp7o30hbMjZ_ZvEQdEEPKwma1sKHJvazygtCYqKs="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaWXObke72BFxklv5KjGzTohSDyUUqrRRT0GOsTfBrlZ8NwLWRE9tu5lzV0-szpCbNNQdFJ68tOGbZY_q8X3mTuWKUEYS6kP8vw_z5T6C7BQZRq65GldnGkKzAYzVA7QqNmZCNiHOJ1X5-n4WOeiv4ZJPZO4HLEfC8gJbeAZmk0LZ2IsluVL7Ii2KTsAk="
+        },
+        {
+          "title": "manchester.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAoug6-GYk_YRiPySFtbIwK_jzKHUd6kM0e3LAQXuUWYD4JZeqXK_D5XC9fmGa2gmYr2ZYSLw8FbVCk6AO8hcVP3cwRPD-z1fZeSppf06LAGOOn3hDvxnzAzWBtIpp5bsAAsL4U8x0C5_pv7qj5BSemKHVg3GEnHULxih14m4o7yLX-Q_8qdva9uS3C_7FhZP6itXtUP8qGVrDH6VgioW0"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPp___uHVVGVHobdCEtNZsi4MoidNiXE5AUB289ag2LFw1s4DSmp5A8F5xm2nlT1s3-1m9qnOJn0Ne6M-7Pk6hum4bb4YZCkyJ1TsUsgLDMY77OmmrHBN1WiFXZl76VqD5A-gVe47dLtHu9axR8c45KC0rzI9PF2WXgMOZI3Ym8jVJbjnK8ZJY61pdIqa-aRyQywRd5cchy0ET_FH-1LlD6fZG9CYJgxQllWlKez5F29V0g5lD2ZpsTSoPRs3eCs3_p0cj1UXEKc4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0AgQ4jR_Uc7Af2ejJl82bkuy-D1NOUV65jLG8xd6QoIqU9GqmUcujZJCG1d95vChE708sT9TyyCmuBid3CobyvbE0eOdZ8Y7pyOmtXvpIeU1ktot835WeJ4PGzMvFgGjumtaA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkQghfghvr7VMPL0wXjH8eanXgKixt31h60t3t8Cby0CEyF96pLWVj4gtvfTG8-ONo23-XqcxuCIc1j8MjunyZQOYWBXYFkEXOuh3I0jYDsfv6olr71ZLlLRxzhWDzrMkPfAbzU-o_AlpA8HnS"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Reconstruction (Flaps, Grafts) trials for Decubitus ulcer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Decubitus%20ulcer&intr=Surgical%20Reconstruction%20(Flaps%2C%20Grafts)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 60000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 85714.29,
+        "costPerResponder": 70588.24,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Surgical Reconstruction (Flaps, Grafts)",
+      "nnh": 15,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [],
+      "remissionRate": 70,
+      "responseRate": 85,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Flap failure/necrosis",
+          "percentage": 10
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 8
+        },
+        {
+          "name": "Bleeding/hematoma",
+          "percentage": 7
+        },
+        {
+          "name": "Recurrence of ulcer",
+          "percentage": 30
+        },
+        {
+          "name": "Anesthesia risks",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate closure, long recovery (weeks-months)",
+      "treatmentDuration": "One-time surgery with extensive post-operative care (weeks to months)",
+      "trials": 80
+    }
+  ]
+}

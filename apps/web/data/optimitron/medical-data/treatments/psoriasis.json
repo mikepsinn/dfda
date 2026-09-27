@@ -1,0 +1,1119 @@
+{
+  "conditionName": "Psoriasis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:18:30.120Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8MV6kvyhph85_J0Or_wy0UPn1AJk060_x4NWoKIkRozkVfzVxweCbcH4pIPOxK_nySKW7z0ztDM78Mn0AIPy25xLMB4WJht-JEV76OYbaBZCJw6NOCMEGnUkScH3bcK_TD5lg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8eksfTQ6Nz941pvdrRrD_Qh5yvqMfDLABjKXtaHTaiueqB6I5_gZfl14yRjHTa481BxU2H3pgXHtK9XSiSLZQwYz7akFejfBmkTvUs9sL0Al6vasgzqjVDLrPbc6KQq-7HtB7V1abIb6KWHhI"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtlzruwWA4ED9IEFxzIn_1TyubzyayOwL91gAPi83SRUSeL3jv3j0PRm_R9OIaBz4KZDHxcZZqvacHQvwZnKTReZF-BChvLX2z_YhL83PVbJNtkU8yUZikUEpqHE0em9NEuUr0T5UMcK_pg3YMQZ0sSw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-RZk2PJkMHl3XrtpgSTjML2mCrdPvmjjFFot6-dc9tcIloyjBBPCSdIEmjN9STI5AZ3Yp5I7RQqJgkkukkRpcpO9AxqS7HHKC1aU85xoL7ocwShR0ada_t9UC_1mcQChVg0xViOi-2f-eI9w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJR5hGlN4gT1hdDpeTGb_UPswYMbv-gqbsjkJiVxoIHE8bJj2wpt3xY1aBLZkRLmMyaKpnpJzg_1EUICH8IVtyIPYACwvIzn9_UhANBu5EmXdJLNH8f2I9u6dISJPcZJRWP0XW54IzbQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoc6MKEq6Aloq6eqM0wr4NpCo4w4BBnicFaplsV9ggh_kXsIUFz9wr_LKVN7DMi0iXuxbbEuLR-sMd4fTKGGwGU_HuCns241hbOvc1Sp-uBXROwoQrOrD8B3PgGxvCiB0KEA=="
+        },
+        {
+          "title": "prnewswire.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY0dSd7v42PHqu_dheOCRTNUy7sZU1eAFUrFTvsgMkqBjipImWmSPOx5hPMwAA4SjwKe4qIuOAOhe00G3QMrc3WpDheFHgQtHEmLwOyG8aVhYG3J88enp9G0Jx7c2E41VOg05Q3ZzyDmFSX97kTwcck7U8OkRPeXGxbUv5562u_H2aw83N4wN303B7JpXwLQWPvW3B5thNVbT4lAO_oT9G_ss2mqrOKzPI_aDFAxIj0gHXa5O4EKfR_FnEshmOLkkpYWpL6aeouPK2ExWyeUPAMcrHSWuStdcRfxqFJrxksfHmNHTfGS3_qLiIcpdFqXlV17XGSiBmOrR3IkZ01AdsFG2Pnx0="
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs9lOketQ-FKbCxGkEgGYfCwTp4ZywPm1s6NpbewMk4Uqoj-Sjafd-zCcSGubqr4CoOdhWP1WuVHkS26bok7qsaWWWQdE2GPbvUJTZbUKPDaEgKD0Cx04KhkP8kcRGL2chFllfOuuw1ymkcTfEg5tynqg1I1lyfSHla7e8Dftc6rm9RQqXkk86Amz3WFZSSS0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLwNyi1K48l7zpyVaIE55BTFuopQO-1KY-YVAjiQB3LrO79EDE65BUz9P6xHb8R25Idj0Pkl34ci6KNEPQ1n95OW0CbqAjPKKCWOmLjcm5a3_UPAPfhLOzdjVI1Irtp667b7c1VsQObEj-BfaPFYCIt3fgX5nRwAYIEh7kpvindZeqJVXAJNDjauqgccOhO6K7Z7KxM5Yp6gQhIX9LDqqv2lWAe9JM8ixd9j8Gz9pw0iMbumXF-yCsRIjAWVumg1VSpH9n2oHClvX3sSW1MUIJvfUStMEbQ0Ab14T8P6WJtFzqWg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzYwa6fDEgdEzpB6EhRnTSz1vVviTr44ftAnPFpmvySPa48jT76mZQnzXV91Z2r4mIuZWQjJHb-yag8kBfha2dgFbT4gWL_jMhbctq7sZL-3v-BoKLqr7eZ8SYpOI_3emARnbfsmDx2bKInKjpUaHw69EYQfhag7wd7s3YhA=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZCJJmzGZ7koR8rHkxTZ1VOuMYZ631nc0cB7rglsO2pvCdP0KOhuHyvaZsEPuUpbJkSpyc5b3exOaOTyEAJov_DMrUNvXyvXTic9Bc3_XCAzUeXAoQI_tBXe9b8edPXsiFUtP0mC8OHpS1l0qIzcO8VBHuKiz8NSlfaLMQ"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFM3J5mfaRHi8fPPYdLwQT5ZTQQPipudt_Es7Vf3SnzjxwxjxvXqN2ikLSElQhR7vpdmSVPu-vsxahRkE1FeHwtuIA9qAZBV7SCVGLRuSMxBQJ1IOKzp0e-Vyr5etvBWf0WWT9bqygZx_E2_GauroSzrPPoQSeJjHJaaU1N1A1m3WCAZBRzGLkm6lt75WhWL5bKwlgd_BQ3mXjeBfmM27qBFojw9GC5o1nxhcNI1qijwKxggdnvDN2n7c6ELR8pM3MJrNBKIfyHL8T1P-k8Bk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU2OoYUa2O-ACxD0_oI2BajVgG5G_QJfq8hgWByvC1zdH0yncOV3TYB8qJn2SOWr-pr8686KdgwMPlSbbeO4pQvN-Dis4izDSGXs4ItDN_pcMphzuuJboI7nBSjhJjoApNIjgd"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJfJS3_HS_tkjfloGmeoK9TZdkQDDNvYiAxA98gG01XoRfw7KO5G3PM3cNF7Zzzz3MpFdp8F0IPsQnYpndIlZbJgmffzlE6FiwUqp7m-u6muzmcgrlktw97rXiGw9Z1n9wa5i-Oig="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ixekizumab trials for Psoriasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Psoriasis&intr=Ixekizumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "160mg SC at week 0, then 80mg SC every 2 weeks for 12 weeks, then every 4 weeks",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 98000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 500,
+          "totalAnnual": 99100
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 283143,
+        "costPerResponder": 120854,
+        "icer": 160000,
+        "qalysGained": 1.4,
+        "vsComparator": null
+      },
+      "name": "Ixekizumab",
+      "nnh": 75,
+      "nnt": 2,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15.3 points",
+          "baseline": "18.0 points on a 0-72 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PASI Score (Psoriasis Area and Severity Index)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "3.0 (Moderate) on a 0-5 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "sPGA Score (Static Physician's Global Assessment)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-12.75%",
+          "baseline": "15.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Surface Area (BSA) affected by psoriasis",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 82,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-11.2 points",
+          "baseline": "14.0 points on a 0-30 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DLQI Score (Dermatology Life Quality Index)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-6.0 points",
+          "baseline": "7.5 points on a 0-10 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Itch Numeric Rating Scale (NRS)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-5.5 points",
+          "baseline": "11.0 points on a 0-21 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HADS-A Score (Hospital Anxiety and Depression Scale - Anxiety)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 11.6
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 10.3
+        },
+        {
+          "name": "Injection site reaction",
+          "percentage": 16.2
+        },
+        {
+          "name": "Oral candidiasis",
+          "percentage": 2.1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 48
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoGGJe9TiZhGfDVqiwVYc0K3yivhDytC2c2kPmJx_tsrxwcCnq1SUOW-BeaMVmmut8ZnrZVfSnk12BJBefEPfsZljPgxn7wlW-Xfk7D8IdZRIoDzoMKmsuAvCTqYYkeMiQz07HHKBFcPuCgA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMHnky9fRAQycseClHlLn1hFupnZbieSGnQIIoazJGeOLzcbx68b8mEGqTGuX3FRIjGW6JH9z1XhHe2pm9ZHrGGKwJGFnKbYD7fadlj7NvTTZEIeWFOmJsDkpOYEz79x2FC-HMlF1TmdvSa4w_aN2x7EyfmJuhzAsTZNRH4R6KnUOMf2JT1Qha9wAiUwKILzmS8gcIZMpxKYGmFKwQWK2LA2Eq4BaD0MMhUzihnT1qk9UZnuwyAg4uk9QZAUKzz8IJ7yTjkUQBSSIYrG4fPo3MtXACHEEROZnSsSM0pLNqyLHfUnfgkxUqcX6iW3WvfkIboawVPZE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa7qFIpU0zibrClNVoBWrqGbQ7YD9d-f49FM5G9es1B4N4Pb741HCVPH_2NaEUPWNrSpTFaZOTvGFb1_IYXD8G_tKk1hV4R4KpDWTMaJng6957HgEKoGqZIJyO6SWk5kOifVUiUVNbc7bJmJM9vqXNIiWTF6HaGhc3AKeXXeLMIqEnS4Zdga3AuvUWzfFARjFYCb4TTH6CX1zYQcZsXlOqqq_oXkpnQA=="
+        },
+        {
+          "title": "practicaldermatology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyqXBCE9I8cnwxl4CBrbd3-0SbD2RXGZlMjl6SlHwueNy4ehnZgMu7aKofYWDpZ_fWMNLJnqhrKvgmaAFifcO2zIrVifh1n0qngHdEDXWE60_DqsS7ZDQoEJhV-4hx1sYE_6rZE7H3t5AoS69W05b__cGoglbn9daqOSircD-iRB-hquEG9_ptbELtrUxPotHJOFQO8lf39D-yemb37w_QInd_rPPL8jIP"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFYpSr8K_pT-rQ7wrXoZtIMUCxRO6roeg56ToD79waG7_Ib-STzYHmzqMjBrV2tRPQttpcnxEOp3aQ5ujlpgNvBf08nvj-dX2WgAsVh66DXsIV9n2LlpF1JCvPxnAu0qgKhNttMVhjD_LxcHIpK02WXa-CA9cXey0z"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3qWdRQ9kD9Mi1Ww_075TirwIEAQ9Wpb3E_OzJhkmL3OuRXDTSFnsh1BorEF9wrphGI8TlsAGeA8yCqiSVL-70OC0EaomclrnwtZeWUu7DQMfTZxEAD7ORJrTAGbLOtI0triY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMr_yhL8x2g8pyRVwQ48c7je0Kb8olZeMGkBBQGKoShc86Lr0_av5nQaYN1VlUam9bd6rsh_dyhvp4HezMrlE_l0sd0v04r67IfJzTEs0CR6dUK3JgXfc3xyLZp_pia-xwM_xaYDsUDRKriAk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Guselkumab trials for Psoriasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Psoriasis&intr=Guselkumab"
+        }
+      ],
+      "confidenceScore": 93,
+      "dosageRange": "100mg SC at weeks 0, 4, then every 8 weeks",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 97000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 500,
+          "totalAnnual": 98100
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 245250,
+        "costPerResponder": 116786,
+        "icer": 155000,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Guselkumab",
+      "nnh": 80,
+      "nnt": 2,
+      "participants": 12000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-17.6 points",
+          "baseline": "PASI score: 20",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PASI Score",
+          "percentageChange": -88
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "IGA Score: 3.5 (moderate/severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator's Global Assessment (IGA) Score",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-13 percentage points",
+          "baseline": "15% BSA affected",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Surface Area (BSA) affected by Psoriasis",
+          "percentageChange": -86.7
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 84,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "DLQI Score: 13/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -69.2
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "Itch NRS: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Itch Numeric Rating Scale (NRS)",
+          "percentageChange": -64.3
+        },
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "PSSD Total Symptom Score: 20/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Psoriasis Symptom and Sign Daily Diary (PSSD) Total Symptom Score",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 12.6
+        },
+        {
+          "name": "Headache",
+          "percentage": 10.4
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 7.5
+        },
+        {
+          "name": "Gastroenteritis",
+          "percentage": 3.4
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 61
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDLwe7SzsRyGZwfyKojOQD9LSBdKygkdkjQxyjsp_xPTslmZ2DU0b8xe21XiIv0jxOQSAWIobRd3YMuLv9KtusW4ZxyHohU9Drywk0T854fu3pauMqwtJGCSSswxL2PANqqhm4iosiX3N5ods="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvANR6g9IF0FRtw0cRaxYtJxu8R8atzMmrg98R6enSE5bI0PH4zulOKGkGkK8-QO_bJ3PmOEKEaw9bbUVR1w1utlRnEnWvMrdpJoUsE8BDyk85ysG5wJ5LD9Mm_Qne-UTaLaQHz4_zGEqTtC-uH6XkrF4xuhYbDD-wtvojJANIT-A04iUAKL9hM02JPhjyW4-bdpQygmyIcGYmxsmRso6WtygGf34f8teiTajBs-dBWhD7H9uqVlw2Tbau6AdV"
+        },
+        {
+          "title": "aip.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxCgqYEsA2UF4sdHTVsgQUulpXcMpIgAt01jzEdJeB09fVXVv9keA934VFy9VVkkRSah-M2Jf4BeSbNSlkF2ue1ogmEAqUbZ7zPqlgwBQSYNKvZstts8P2NAhdmgxZr1opZGB9W_283Rci1Jc5hCChOaAs1d-UtHdXc6-n047k_7uwi2MjS67ytQo5lMwXvVXNdjPHWfXXOaN0KyOZIes="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzY2d0CPIYncemRbxG6DvGprEJ-VmRUulz6CseKHfHA_Y4Ixndvsd4NhPeoQQQa-J3fiVixZzJebqmiI8Zl3d-qjYK9-s9rlD2jHn0RmwRzEgN7SXwSnrnn223HGM_CDLJWH8KVxHQrBRLQmk67bMBQlhVWBc3K0xwh3BDVHFdmMajVa8VwwpfvcXzAL2_DvgwXN9gruQYjjMAZQSl5FuzgxoXv4D3hzGaiMJ9zfs5YvLwI8S_2N9YqQjajQ_aV2kyDTHoAZK5xA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGAbY0Ia8G3uNuYpBYPdJYHHMoAUbs4rJYAPxmbpYeKEW1nJ-fFaOqlGyS5Wzp9H8HFQSf9_67euzG8lSPDo_XTJzinvGtR04VfoINAsWWqM2UtQI0dd7kmSfHLTmspzYHX9SK7Elkmg7sbnWn"
+        },
+        {
+          "title": "dermatologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY1yF-OrXyZbINjfCMxR2rqfc48APNNWfQcy52vgwlTpOjf6AlS4cCRcefgEkcvZ46Qg-rHmpS6usAY6clGQCLJnCCan-e00CfPckmnn4k2r3TvIASagqdNPL185RwoBUTF28piK_r2GSmSa8K--K6NlzRgH6JSwbYS7rVmkfXqGNcIMohKcqo46DgEZiVusa6Dc7HeMia5g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEydqnEg5UnFIC5zEXBub8bFXk2Incj84Ajvmr04M6duyBb7HqXcAQWtsqSNXQeoNNVTEQMIOjJ6AUliU-7aTRGFFXeHTf1XZ32Ni3tVoywc6w5FKq1fdsqejjJPsGXCZmn6coAZ7yaG6gsD70="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfIv06DBnlQ99Ehp8FSMJtZQ8oZgEOKCBF_qT0YERkptu5QA-xa9Ddg2cL5r_ZL9k3U1MN8MnoOT2EcofyMrAttf4WRg3iGFHt0A80r32O0vUFBCTnjfqIKScdxtqOFHjFwQpGiT62F0WX8b71uGxkWQooCeiPnqQTCTVJERPeBGMO_zjcVDmj47wMqV_2RJ_M1ak98YQ7BTdDdQwIwU2tkwCjguB5QfXihj4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Secukinumab trials for Psoriasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Psoriasis&intr=Secukinumab"
+        }
+      ],
+      "confidenceScore": 94,
+      "dosageRange": "300mg SC at weeks 0, 1, 2, 3, 4, then every 4 weeks",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 95000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 500,
+          "totalAnnual": 96100
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 320333,
+        "costPerResponder": 124805,
+        "icer": 150000,
+        "qalysGained": 1.3,
+        "vsComparator": null
+      },
+      "name": "Secukinumab",
+      "nnh": 70,
+      "nnt": 2,
+      "participants": 18000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-17.0 points",
+          "baseline": "20.0 (0-72 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PASI Score",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "3.5 (0-5 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "sPGA Score",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-10.0 points",
+          "baseline": "14.0 (0-30 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DLQI Score",
+          "percentageChange": -71.4
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 77,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "7.0 (0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Itch Severity (NRS)",
+          "percentageChange": -64.3
+        },
+        {
+          "absoluteChange": "-12.5 points",
+          "baseline": "25.0 (0-80 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NAPSI Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-16%",
+          "baseline": "20%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Surface Area (BSA) Involvement",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 12.3
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 4.1
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 9.5
+        },
+        {
+          "name": "Oral candidiasis",
+          "percentage": 1.7
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 141
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT3nzGbTb2Y39RN_oKIHueuoLLKjEKusKE3SZhZLj-gog2R9vRQ4lAUtnXljb_h9qD1DzAezH2h6o31-PXPz9GtLsu2VElO5rdqEouMk6WLso0RklXnm7VFE_rkkkr7PxKQUM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtg_x8_9yHRwwizmcEsBmEg8YviiWAQlWLLDNMBKzKLXpkGAXic45wx6pFlcKlAFiB3xvTMICJCGIJngNtz7B-S9c1QYQWSFOJRZHNYPndXAJLL-SI7gG59EmvSYAmcRogr0sahJXKiq4QrLZSJhKddA1omIrR7lqcnmoV9XQR5PHLtAfn4nRJhBUXZeiCzwZOl-BpHErMZYJexj3dCU_CLQT8DVPf7jTpoqUBqKv1KPMHu3ON_WxEVNP8Cc3v-IZn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl_RzjjoZi_KLe9XBz1lHwas-p7A5lCwCh6t6Nw8Eo7_XtbwlPRtepXGhGcqi8Pr1sioB7gHHe7RNBhwv57qutp5RlpH7qfFD_rch8SkFQhjGnd5gjSgAbpqkEDTt9R_cI2e6xZPgW"
+        },
+        {
+          "title": "dermnetnz.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyW4BB4bcbyoykZS5_7WlOLJvawwOPW6mBYaEPjHKXt4Cvc0zwFEkhWMG_3K-MaifPjxqn65d9zJJXMKyOkbrwF3uqrSQrTXmLkmfBmeKtvruudLFcawnrrtsVdwDbfgxjjcoq9HVTpVY="
+        },
+        {
+          "title": "northwestern.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBQDwjB3iAEd9FaYqzc3TQit-PthaOOaciMwKZV_Vp2uVY_NrsmXZvC9pwaylvjLU2Hg4U3D6Yjelwykw0XpIzeu8gh5D0U_LwyEQ-On1I6MVRvLkm9D3YC5_govNnmWpOjNbvG1RXDS6AuQuh54vzEODd2ylDRPDgTPqZDwAx2OGBSXmn9OjV9coGBen79EPB9dhh_1MinMJaMMzd6EDIOy2flwI847nsrT_VjhkIluM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7u1qZITq48zex7Nd9Cl5c4hoZRPgIb_jJicPWLXE9RSQfM0TCKA3FIcVaBdDiap4xGJRHHp-NaeFPDXlnRNmpA7ZTcyJfZr8wjLPIgArkSnoIh1LEy2Z2Xdn_Ah4ebAiXdC3vGRs-3gvxLA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-24IqF6TFpy0uEHaTGGzcZTOMwQGwFvkQPFT1a1OrigX3v7ri5_js1DcgRZwJhkJEfmakBKJbwHtndWxZO680DIabQHeUyHenqkb93FgMGV44Qbc-vg2bFaxwQ8MNcIWiv_srKg2DxvRZdg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIiTxJ6OzMy-DspL2lJh5y9nl-lMD4CpiP5MGkFpP76tOlxEHitIp8RUApS-n3fslZknaRJ-RjPMFGpdIrbiazOqYgXNg7bo3FF2EOfU6JFS5IPfHRxZsNjXevK_GGjIhf8r96yb44083W0d0F_RY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ustekinumab trials for Psoriasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Psoriasis&intr=Ustekinumab"
+        }
+      ],
+      "confidenceScore": 96,
+      "dosageRange": "45mg or 90mg SC at weeks 0, 4, then every 12 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 90000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 500,
+          "totalAnnual": 91100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 364400,
+        "costPerResponder": 135970,
+        "icer": 35000,
+        "qalysGained": 1.2,
+        "vsComparator": null
+      },
+      "name": "Ustekinumab",
+      "nnh": 100,
+      "nnt": 2.5,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-16.5 points",
+          "baseline": "22/72",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Psoriasis Area and Severity Index (PASI) Score",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "3.5/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Static Physician's Global Assessment (sPGA) Score",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-15%",
+          "baseline": "18%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Surface Area (BSA) affected by Psoriasis",
+          "percentageChange": -83.3
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 67,
+      "safetyScore": 57,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "16/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI) Score",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Itch Numeric Rating Scale (NRS)",
+          "percentageChange": -53.8
+        },
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "25/80",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nail Psoriasis Severity Index (NAPSI) Score",
+          "percentageChange": -48
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 11.2
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 9.8
+        },
+        {
+          "name": "Headache",
+          "percentage": 8.7
+        },
+        {
+          "name": "Injection site erythema",
+          "percentage": 5.1
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 94
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEewijncQFgBOSGb3TI9GIhXrWJR8iD3RXaVQ47XCx9OcUSOXRNwbBJ3jRDLgy8SrI-3PpbfQr5KmToDEgFbDZ3ejCBMpXqJgRwpKscko-tWh_10Mv4px9V3PmNZ4EtXqbNBKZn9Vs5GbgGkeZ6AF1KgC3OfpWXZu2v_RwXEcVBF9FA8kT64ACcC-5HQfQINBgLsU4-a5lxneR0piFl-88hnpHopJbETOOX7bcsKQkTi5bSccnGFrTyXKuaJBYfXzW6C-DMczU9QHNrps_RhudDDr9nfFza4_KahDz61BOJWTSC"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMCFBjIaG_UTqXBs_2H816FG_NMH8euP9KUcGeUSYQH0sQwYWiM0byF7N143XWUArwb7pqx6yE9I6vSoqJkLEU9JGzcW1p5dyewm7FZ2wUoO7-kXYe5gKFu5IqDNB9HRFIDi2HRw3mirYWn-FbfE9_gw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2Lj39VIYmhzytFFAXZWoJ7X9S2526zoZ8f4xlZ80RJq5rbICY15_1eCh8zUtejbQQVjqUlSdK1mDuECS3EBJ4YaoQ2nD132DSTFGRdcm4SZnbyUGzpZsN_5iDBmFey9-G9c2SKWDckuzWRTtZOtFbQtgzf3vBvMqHeNjbD15WcjjyvdHfLJVrTpqNxLCotJ37_QGg-b_S7onsVHZFx8wzhGYJjASKRKlyEQ4wrUzexL2BLx2IzCh6enpNeB8IRy0V5udT8PS-HG03mq16TTFhmViz_XTrdlThAx8Wm_rwZIY="
+        },
+        {
+          "title": "dermatologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGTnznkCGk7fRLMPxahuKfp_pkHv5f9Tw_NVK7BYpkgYkZkQ5BZdJJ59eRCL6n-EoQJQImKSkCn8t9GKLrwWu7_VfxT8mdx8ZoAC_oI8q2GW7kO06aCYPH8LnILZnQy-6QCLT9ePcKiZGb6vEoXgj1iDzYrLFuEeVNi_XoNouqIhvXzq0E2lMk8IZls0WzLmId57Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw1rfEVRnkgtI0EEqtY6Q-G8xDAJoolVipwa9tQwGd04Yo-RzwLd9B6V6cwGGtZiACp5yNI5n0zRt7WX3t43VQ0SxxLq9NBGMSY28y-k2QIwd36t72K9VWl4f1RfQT3MdO8rYQzcOJDvdQ514="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTQPdPaVXc9qLwtJJbeHX4fYpxQbzJxb5eUlBh-faoU1ivdauO-x7SjL3xki7M62_BBPMVfhHEZReSU5Oa36vqZ1EgWTWapz4hr31tK85WJMAmXXh4swow_920dN5fb3RtKiNp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo8Qm2MgqkxFZtnf2nMucddKSC3ui0CoZ_gtF_OQWGjR1RbUYRSIf07Cgg33OvsJcrDwDOZrDc-Gzam1czwcK3yokHyOpOjj0WQsP3M0PbswmbxozZL1xnLhWEk5Dxdtuh6bH1GNrHsA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhIDSVC-V0rtT1j9pnuVtqk17JEwI3sRXeT8fg4YC748UiP15qfr-g98oV4YruGUtKy5KpNjZb9vblApfSOZ4g4iFTZHsbZCFM2KyZ8fNqJEQjyEj25b1FjRr4myNMF0SxcOkl"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpkT7Ckis90cILM2puJvTt3aWtikE5t9nkXyED6yNrTN1pDD2_OAek-LAc--iW0iSQd91WwADCOSnrM24zeDqvfbBG-RosMKPB6ZmZJP3wp5aNlQiYZyLXlSKXRPLKHNp8jo-nx92Kk3RY9_mt0jJTFPum-IqDhep8XlprS4VDNZYkoeIJxl4tTt9g-_GlJrEi7FepO8QPktoJp4PJnCWdyS-1xPOVSGDOry6MBtQ7M2AQiKuYyii0ZQFDxlcPeqLfAvTNJlaxP_utW29Ots1VxYWez7XvoVDg4Qqw136nHhUytwLThNjCjXtn1fhPOuIawy8f9A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRfWoCQ06rREWEuqx-aL9DjeVk7uZomkkxyS_oEHhMXQFyVtaySv9aGQetcebbdjbTcFd4MNQtl3TvT054kMnpAFKRQxPoK7LL2RFXyowztaNd_OmQxL0wz8ECDiAc0haYO4fqiDfzHemC6EBnDc3KTO6Yjk14mCmq4hLfTxddIwDTb3ytvuQ9vrBzB_q11zrnBNed5nI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL3XKAs5sgCVsx4YJ10t32ckye4XtX5ZSqQNldK2nFU2x2fnYKLscTAv-ATnBalzOXAKNR_g955i3RvBf92Hcr7lIJ_TP0rISlFY2oznB2auxmC3_oD0nnwnP1KnKdC7ITJ-90"
+        },
+        {
+          "title": "ClinicalTrials.gov: Adalimumab trials for Psoriasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Psoriasis&intr=Adalimumab"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "80mg SC at week 0, then 40mg SC every other week starting week 1",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 60000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 800,
+          "totalAnnual": 61400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 307000,
+        "costPerResponder": 86479,
+        "icer": 100000,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Adalimumab",
+      "nnh": 85,
+      "nnt": 2.5,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-13.5 points",
+          "baseline": "18 (0-72 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Psoriasis Area and Severity Index (PASI) Score",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-2 points (to 'Minimal' or 'Clear')",
+          "baseline": "3 (Moderate, 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physician's Global Assessment (PGA) Score",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-10% BSA",
+          "baseline": "15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Surface Area (BSA) Affected",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "18 (0-30 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI) Score",
+          "percentageChange": -44.4
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 71,
+      "safetyScore": 52,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 joints",
+          "baseline": "12 joints (for co-existing Psoriatic Arthritis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tender Joint Count (TJC)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4 mg/L",
+          "baseline": "8 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "8 (0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Itch Severity Visual Analog Scale (VAS)",
+          "percentageChange": -62.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reaction",
+          "percentage": 12.9
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 12.3
+        },
+        {
+          "name": "Headache",
+          "percentage": 8.7
+        },
+        {
+          "name": "Rash",
+          "percentage": 5.5
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 175
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGitMF0peCek7qEqFrvF3kDBKmhcC4fyPSclZH-pj5CCr8BQSQVS2jbTPHkeT-AQSoyTrr2phykH3vIZrIWEfiy6dCnKT8HdEuXJq6TzLIbg4Fi9ZHoEB2xZilZZNgaGCQlco7b5-SsoJQbHA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSPCc4JpCSp8lmyRIR8gDsMjYWp2s5tT4lSq9kcj0HA8H__FxjPaG0UDDVM9TJ99lAq_KfrFpcJvyjXZBzq5JhpUoyJ9Gcv2EiuQvomjVd8vOsfAL4uAV91a6GI9rte0Rvv2U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe0sTLOCCh-IsRZVaXEX7EUkjBaqzROYvGXXSxn_XsEZc--9DcQ4azvRz1TMLsDT0-96GlXojk92OTt4Z1ll7vH6OHBcvn0dehJ4NMxfS6L7p8wjkuOwNDVBAbuJ6lCEKCids="
+        },
+        {
+          "title": "dermatologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgSW4N3WLBpD667R9GxGM1OSgq-cU2XMzyPlfjPV1ocmeRg2CrxR38Nlis2EVtBAQaWq3LuGx_aU_1gGmb3kvtdAk2FJFl8NXFxDYoUw0lU_kVQawUjXRra6OvLgGGg8HnDGMLiCGNQe0RRU-KfuTLrh7vZHx46VqkmPxlOhUMmPaIOFTfjpWUtWVrKpRwEIoV2BmpRsDmTMFh68fcaOg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEQdxkyHhn3ZUVnYCBLHp39vHaO4OBcRX8OKrgu9HE9mBGMzHJM4xTs5oheY8uumQTcvbxnxLsWFKCFSWyCbiGOn856oWzl3IipvaFx3PPY9_4kxElw-9YH_UcWyXN5d5W0cA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Apremilast trials for Psoriasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Psoriasis&intr=Apremilast"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "30mg BID",
+      "effectiveness": 35,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 45000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 45500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1516667,
+        "costPerResponder": 182000,
+        "icer": 180000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 15000,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 45000,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.2,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 5600,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Apremilast",
+      "nnh": 120,
+      "nnt": 6,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.0 points",
+          "baseline": "18.0 points (0-72 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PASI (Psoriasis Area and Severity Index) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "3.0 points (0-4 scale, Moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "sPGA (static Physician's Global Assessment) Score",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-6.75% of total BSA",
+          "baseline": "15.0% of total BSA",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Surface Area (BSA) affected by Psoriasis",
+          "percentageChange": -45
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 25,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.45 points",
+          "baseline": "7.0 points (0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Psoriasis Itch Numeric Rating Scale (NRS) Score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-7.2 points",
+          "baseline": "18.0 points (0-30 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DLQI (Dermatology Life Quality Index) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-6.3 points",
+          "baseline": "14.0 points (0-72 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Scalp Psoriasis Severity Index (PSSI) Score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-1.75 points",
+          "baseline": "7.0 points (0-80 per hand scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NAPSI (Nail Psoriasis Severity Index) Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 17.5
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 17
+        },
+        {
+          "name": "Headache",
+          "percentage": 15.5
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 9.9
+        }
+      ],
+      "timeToEffect": "12-16 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 94
+    },
+    {
+      "citations": [
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQEifF-MMLNZPHtvqdpdDn_VCaH-zpW4VJ3Qom0XNK_UQ8wlYjBcECOBgPbhgWnLa1VO26J00qTN2sD5M8rbKiZfCyhpycHGS6bpPaxJM-h1o87LOwH0vKg0uFXFcBfvLbvIlFyJZqgpu2Z6uniCXxIdn5qQOOlIM_HbS4S2eDWKAhIbk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEht4utUvNivHP211Jxg9aXwQ4VvTrTJpN7CNV6qVpDCH6H_r74Dn2bHoY0pckV9yqnJNtm4tcw4F2k2bF9TPm52gnOSirKvkkLDeSvae8hOlkjGAbZYYHGWAcSvZrn7FuIm45DhGIQcuzKOTO0IbkdR3_DWBFiW84PP2yDVm7CgCiHPblIWzKDpMQUzWlhlre8O6ilpy7PMI8nYn1fiOKeKPJSC4zaVQWOlhMEph8fdEJG7RcBI9W5p5z9VzsRBOJjIkI="
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY6lMfmDUJ2UF4bT1vRJlWQtDM8Ab9N-mmmnFo6PoPjGdqxOdy_Ul3w7yWTJIsUdkjNjOTy6_5SuNztAMqsb-why7GayLLfEYwTvCPy7S8YbHZr784ODW21z6Hn-xWcEaj1DKxnarazW0I9SXXP2Y_tT7i9hvUK_0VolFJVlsT8cGRYyILvg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3vHwNvB5EroWyxzVmF2-rTBX41sULKCbvljlW4pPQWqQqWrMHMBzmExMh339fGvbcPGEgXAsO4Gs91v6mHgd6SdhaYNHZpXdpHP49VB1nk-_vMejAiWR1y6cwqev2W_tLupz4h2b18zZwH-A="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQSihWAeE-GDoqWF5mzHzEwpXgocxsQEer5xJQRnj5shC7v1JZaunM_lZFHN_b-am5kxvopABYWf5IYntGWokZhwJrI5_qFoOQWsnhxl8Klm5oLZ-767E3-_Mik8NkH1RF4bXtuawVLBvbHiFSy9aKencGNjdqFu-m77KJug=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERhHL891A4ZtaLdIFKRbkvzHw8WVvCCycDICa5iAXgL8QYUR69dyf6UO3Cyl1QORCgOMdmZZBipiUc6fTxnR45DgRA8k1wHeFWkwWkv-jbIJxWKnUHdt1y8dK72Fx26jQOiLZYYVw8kHQkJYM="
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF51CkM04K9vYaEOJx4OpzZH0HoKjM6KSjDyrO3k1LPiWC-YbiQLLW8Xc8_kkkt2KcQhVHExLWx99D2iToG0ItbGRvTwq48k3STrxdoUgp1aJboSVQnHQwkpIKoZUa9Kw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHACyVCAT_cEO_ycFGYhRTTOYPx2froDmc3vmbsoyvs6xUzVSk6HDofU9vqtbuu5MkAcDsX0O7SpFdkf8A7YmdfI7ed-zK0SHIjmCwxBq4stBU8YIpHuwGgtSUv7HldNyoJiF02t0GpMBZ5gHE-cLTvc-aHCk8f9JGv6Rt-_V5M97Tq_KmssvODcVXKnGqfAbbg_DyF1MLuuKOuCScdWtnwxrK4FlbictsJVv2oo4P0vskuORAKkU1OgbCvVPvBjdPCH9H08B3faw-sR2rO_bB1Z1XS8DAsw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Methotrexate trials for Psoriasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Psoriasis&intr=Methotrexate"
+        }
+      ],
+      "confidenceScore": 99,
+      "dosageRange": "7.5-25mg once weekly",
+      "effectiveness": 30,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 1100,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 45000,
+        "costPerResponder": 5143,
+        "icer": 15000,
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Methotrexate",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10.8 points",
+          "baseline": "18 (on a 0-72 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PASI Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-7.5% of BSA",
+          "baseline": "15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Surface Area Affected",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2 grades (e.g., from moderate to clear/minimal)",
+          "baseline": "3 (moderate, on a 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator's Global Assessment (IGA)",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 4,
+      "responseRate": 35,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "14 (on a 0-30 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "7 (on a 0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Itch Severity (NRS)",
+          "percentageChange": -42.8
+        },
+        {
+          "absoluteChange": "-1.5 mg/L",
+          "baseline": "5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 10
+        },
+        {
+          "name": "Stomatitis",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "6-12 weeks",
+      "treatmentDuration": "long-term",
+      "trials": 104
+    }
+  ]
+}

@@ -1,0 +1,797 @@
+{
+  "conditionName": "Pyoderma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:24:39.888Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJSwz2ysbS0KaYESzt-uL6U_Y4EiDi_c_zk_M-10oWW8q_b5xBth_UJnN8s9U8g8xExdEQ4nrwPsYKu1x9mTZwNSOwpFRFfTjbl3YaTZukiWDch6Vk1-SA37R9EoZ93H16J0zBVLDLXpYNN-4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEUd3w0VPDMrGvT-sP6RAHgZtTVbqfDCOeAy-HGK3dluqa_gJXZ5LAAieRoaYqclRzhMi6rjnCI13vyd2HSQPlV26j1uYEuvAqinh59vs9pLMGMbxFd0dwLo0IKgj3GZEiRDp_"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGEt_H5IZsw3OKsnbDEWRlAaH1eFLwMkT47Q4iqoSLgOCM_Li80IvdFIUajnvRhlWdo3ISWOu0C07aJG2KxoOCQj0KUvgc_X4U6mXj9N0Qrj55xfwxdH5wWPP0oiizX-C3Fs8nZkcbHOQ6Ey8JaHL9Ow7FyxCWuCH83p9-7zrvas2cFWubT0WAEKinZQFgiL7gryOspfj5FjkJggVAkB_0EhAgB6nrVJKvpciu4S2iPoXU7hl5GWXI_LQWuYDzshdgc38-f_XfbDi1vMu4BUbssg8hOA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4LGfNvVhx377TKsrEwSBwFeyVxdGV4x4mTkWCcb-QGYQj7_2E0_M8UqxiHRU9sXXtASW2dsieiY3ZxfleS7tN2Jp39FX1NCvXa6PtKKLrfoue9_EEWxXXEeTHLwNhaICFbE-FcHZgsMwgij8I"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk4tevF_B_X1ViAwhxdiQWWgDIvfkEXCiWl9NHnxG994Y3U3dLEG6jsLqCjiD88cuwFCRbzjPBB72XAYDMeBe9rUVELTX-D2UlYhztYQ6r5ktWzT9QJ_0Hs01soqhbiAq3TvuyK58lp0WTGYLYo9yehn7Tx1RmcIcH_6001h_RlzI0gBBVsy06MtKLZCcs1E4l3ACOilealD-XJ1doepvIxcNfHZbOwxghQncc35SX-16uNnsQ7LYT16NxAn0Ab8PQ4mJKUxNiHae8vISj3GLIkYFXs-PF6rZNXuNp5xtUo9kGzKf3bQpEDgLdiLQ="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-SSUEaPOCDJPgTgmL2Yh6OraGrSQT6Lf9vpNZ6TQybBp429ViQOHHpA70AzGZ1X79rKVH_DicHGh5V_lpNs1iNagD-cghjSOOLZA7a6xiXfIVSnhydx1delKLowxssiBqPl3N_qz82GjZAjeOHYhan50YG1cuWwahSoxrpDZUhmqOaogDyhr5WWusEEW3uteQ57VwfJWV"
+        },
+        {
+          "title": "biomedpharmajournal.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoIHA1vn9ym1mgkYefEDD_ZZbczvdXaIMhlXDtdDZLyCSaONYDQ8zO9Ne9ldFRAtzJH6_KZS2pDLFvhmvVFzUhSu8ePtbSPlnA2pyNdZO6E7HWP5kxIKYABTPgB_0pZt5CHGftDMTZ5GKi8Mzp6k-fZKm27RLnLhxxexdzlKCa0iOA3dFZXTVIebt1W5BCUEFAJVu6t7R5YlMXD6f-y3uEeDi-bdfx5K_To0KH6IoCZcDfUL_QibMtwC4ue3qeOpN3QwEommNtttIPAd6w-60="
+        },
+        {
+          "title": "ClinicalTrials.gov: Infliximab trials for Pyoderma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pyoderma&intr=Infliximab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5 mg/kg IV at weeks 0, 2, 6, then every 8 weeks",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 45000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 47500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 79166.67,
+        "costPerResponder": 55882.35,
+        "icer": 39583.33,
+        "qalysGained": 1.2,
+        "vsComparator": null
+      },
+      "name": "Infliximab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2 points (from severe to moderate disease activity)",
+          "baseline": "PGA Score: 4/5 (severe disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pyoderma Gangrenosum Lesion Activity (PGA Score)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-35 points (from 70 to 35)",
+          "baseline": "VAS Score: 70/100 (severe pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Visual Analog Scale (VAS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-12 cm²",
+          "baseline": "Average Ulcer Area: 20 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pyoderma Gangrenosum Ulcer Area",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 85,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-8 points (from 18 to 10)",
+          "baseline": "DLQI Score: 18/30 (very large effect on QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-12 mg/day (from 20 to 8 mg/day)",
+          "baseline": "Prednisone Equivalent: 20 mg/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oral Corticosteroid Dose",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-21 mg/L (from 30 to 9 mg/L)",
+          "baseline": "CRP: 30 mg/L (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 10
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Serious infections (e.g., TB reactivation)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term (induction then maintenance)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd8ZeYCWweDLXHNFqluD8prDQ_j0SSnqSd8cFrYegxRFaLcGUEl2lMnP3EV966DkB2TVWkjVp1K4tU7qAvTg8MjfSoZR57Kn4zGz_c0O9XNhMZtWwvaevXfbGvd1ID93uI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERvLZDs6JlB5vCuE1Y15rLpLmvC8abzpDaZ1z-UR4h6w-znwlZR9v9tWz7zOqTnwDVzeJknvoXv3TVuOAonJBReCAsh5v1pgZ97jz8DvDMKit0toHukUy-U4PrSjstboGCPyp1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwX0s7i3FOtVVlwzzo-BsKUC86PuAqdjq4eim1NKSqpBIl_-XELSMmWvhaRbDEcfTczNuq3ry0fnV312EBm5I5so_mwf17HwaonaYitlYV7krZFZCxA5tIXCAUbXz2VbZhA_LZ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnb5dpBiN0KqTscfu8qBrOPjIGFb0ha5H1eA2ymMFsWbfJ-jowM0kMHtqhpIBBAJOzjiCRRsi351jQsMGzSSP8RbQlyGJja_zJUguld5_KIiRPXy-r0-UddxGxDXiZA6RnWU1uhxlsSi8EgNTPcrXun_GAbTKdhVT4Aschwb6xIu9r8lh3MKtQA_fbmb3ybSek4sac7fRoPUjTlyfqp-oGpsivqpPc_Lg9uOogzp2kL7cYo2tZoSgLeX-p02prhN-YUCdkJ08df7KKlWhC4Dg9xwGoJdF77c-R"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsa-9BuYdiJn0BfJ3qyuFcp7v4Q5f-X1DWUJzqqEF01OzZsz2J7OMNqQWWo5fW536oAX4eNT0-UPG-FYlb5tPAWI-thNJI1YHAVsr2xvAdGOxrGeqmNfYYWhyFSUVf6yfVpdZNCE0kq9tkOSztbXcZa5PWy90uzn44vV0LHsGnS-GiAfYdIxMtJlV8FuxOmbNxiNrlop6gbpqjLzIMUENGmiZ-LTwKHn8CK3cHIIQRCATjtImGR9YPt7CELTreGyumkwXLx94="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkTH30PnxDce99_t9UJDaf98JbcQdoS6KmFDxgcex4Uc8vW0pEWVTtSFkgUaanx-QnBLYlqcKIrgDRvZ3iPWW9cvVQAOYXSlHEIqKEajCpIQcSVtITgSAB82pIIcQlHMMcGIbi"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdED6c-b9UZb4UBnZU3KnwHxagjS5z7xEE5MRcKQFDkurpl-SKNd_QYbzVb8GyblpEDXHWEg3MUD0SNLxHw7do-Svb0OLxxc7OvZ6mWN02sdaZZIj5CTxnVb8ZZKHt-HUxkHEE"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDHF1QKNJgRcj5_MwJQUXfTzhhXan7-uzcD3oWNo3eImgUtgjeszbenAWZVFmKD_7OtxDUeFjBcgj-FP2yPli_zhzQbFK3lP6lYvWJ8YbmXOrS1n_7u82mcjCKH9KoCv8kNgdRJ9H09lj_GjBCChzzEnUgOTOSS5Eg"
+        },
+        {
+          "title": "escholarship.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoEKGzBBgH815o2xXVhCZSqPD0dG9ZV_Skbsi08v8GoFlbWwBlz3kqf1SxLvxJQKFbK7UVEnp_8ylf3N6AyaTj6YJymrycwGB8iEzLxf9POD1TpD97MqG5RoAN9A2gaXmBVdVx"
+        },
+        {
+          "title": "ClinicalTrials.gov: Adalimumab trials for Pyoderma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pyoderma&intr=Adalimumab"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "80 mg SC initial, then 40 mg SC every other week",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 45000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 46500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 93000,
+        "costPerResponder": 62000,
+        "icer": 42272.73,
+        "qalysGained": 1.1,
+        "vsComparator": null
+      },
+      "name": "Adalimumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "9/12 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pyoderma Gangrenosum Area and Severity Index (PGA) Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2 ulcers",
+          "baseline": "3 active ulcers",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Number of Active Ulcers/Lesions",
+          "percentageChange": -67
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "7/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NRS Pain Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10.5 cm²",
+          "baseline": "15 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Ulcer Area",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 75,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "18/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-15 mg/day",
+          "baseline": "20 mg/day Prednisone equivalent",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Corticosteroid Dose",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-9 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 20
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Serious infections (e.g., TB reactivation)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "Long-term (induction then maintenance)",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlk0ix5maLsMq5xkAEiaPp80qxRBPcurGLQaLO5msWOckWOBDHvEZcIynxj2vKXEHOwLL6j60RIiBu_Uy315XvAR2W_Hrb4wCtEwqCFqaPXB3sD90gRmNMr-052V4HVjfBaK6Cc_TZ-5JufPiOhracSvVlu1idAMALWn9u_kDcAaXimEU-ZArh"
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIYdiN-BQ6AX61MKvXW3DnDEIWNEY3GGSQ8liplZL8laq4UPeFtFbh1d_ZVYdAYfwfBZcJR0I-B6TTXWPPbWDqQaeTu-rn8KVjc1Rf5O3sGQqEhSNehjk0Vb7xe5IS4i6WXnyWBWbve2IWCHUCHdgLekZnpv2AZ31KPEKVVeFE1VDLBtBDNCGTxKKvhlneZJJWbclO9L8hK4x1Vs7OohE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUmvDgBSUReRcGBi36H_4ULEDXDemIFvMhTDNCycQg1dmYdxeybY3c-UweC2F2f_kBlNXhfJXGt0hw1Ulsrhkz5H935lUCo10c3wLX4ImsaQCv-Ox3GSNc6d-Vzjrl4vXABL7ob5ZLOUtnQFLC"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvRwvrFhBhwSe18k-ndelTnqjaYFWE5yvsDUJOMYC_qhq4O0n_n8ZtH2NX9lYDdXuJBKw8x8YPiN0ZGkWU7wejRbos8HeOQyKLl2cfXrB5jAwrdkqWI9k2e5Oz3XZyDfuAvQrz4rAhffImjPv0lC21Vl_p8pgQ2NvZjfTUodXqVzMavpRe6o8VCfHEzQYFPnYqiCMVmlNCRm4nrkc7goAWZ1GQrOUKfsdoW8lRWYg8tP15I0q23BuMxxwk2ZvgklQzqUGn6iVKJ_fXb3WKG-365aW7xkRj3O03jpxiS3nDG-Xc5v4paXY5YiOVgbI="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5Nt7Je9mWKkexyvvzt-tvcw66sT1kCnTk2D5zl9PLuY4GTwNbj1-HO-ISDBmgYCDdJp3R5FTAy8ZSWGjU_WRpEpAzTvh1MwuzERR_AT29P-OZfQT8mnrlGPfqduae7TBGAiyr"
+        },
+        {
+          "title": "binasss.sa.cr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2fyDwWwY5ErVkEM9KIruAUCTPJ9efkcpZ9NNNl2go62yCYjps6GMVUpC3tzPHQOQSVE8qoacL5k8STzzuMf7NCees6LoQJ6ffx8y7klm0VHDA_ZqEwuFCv3U77EaDI8oo"
+        },
+        {
+          "title": "hmpgloballearningnetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgwKtS2NRZZjUmj-GtlAbDfDm7SpkNjKr66S2fgiA2J887KLxa6mve4e2cv9c2hy1cScZUXEnCWGAVBLmDrc4w9_YUZ41VEdxEhfBl-Ab1yRblnc0rAnHCvTWzOhM8DxmwEgnCu9QGpFFtfuI3DZ3uvoHXz1bvjb5oKNUlv3-aRoOQCE-eNU5s1mdAVd5Ur6sHKWTXOYNSmbnNVx66D3U5334NOovObQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw2KO2BKOkToGM83qhuh7V5yK3q-QSj8y3_TtDOcIHSGja8L2mcfZVQCypC4xTTa-IEkLJdUQ_2QeOeboduj0uH7X9SIHzY7Kvh85a9YAoquefZaRAOxlbt32UYViZTIsZ6Z9BQqNZsKmZST1b"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExmiAv4eWzKEoQ0qm_qPaSN-yWkYlUVjaDblKXh9o805dpVdEGS3MRLr8Kmfsv80B1FIGpYN_ezEMJ5kV02_nTaqRP3koeicIMnjbSr0b9NdBoncPmPMNwiA4BHO1E07blV6WV"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELSMOVkjwiOYXguqSOEBtOgAMUSTrnlX3KOrX-n0gTBuMkWRyZaR6LVF4oEwsG_OEN8asJrPRI8xWkgzGF3N_U9vHpPlJSaEZ8QjjdTVG4_VOBatTnbfYTMoavrL6VV7TpWOo="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1UwgbRjWi7TukMzzmL7lyQn_F6SY5vrYkvzKH_7yvUMVc43MBwmuMbyHKNxqnZDpmVHc7v87LnsyxACaXeMctFr8ryTxYsTa3grOVVCJj7lg2Ji23Hjqlx0iXUrulnCLclxYy5g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Prednisone (Oral) trials for Pyoderma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pyoderma&intr=Prednisone%20(Oral)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "0.5-2 mg/kg/day, tapered",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 750
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1875,
+        "costPerResponder": 1071.43,
+        "icer": 937.5,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Prednisone (Oral)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 40,
+      "responseRate": 70,
+      "safetyScore": 38,
+      "sideEffects": [
+        {
+          "name": "Weight gain",
+          "percentage": 70
+        },
+        {
+          "name": "Hyperglycemia",
+          "percentage": 40
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 30
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 25
+        },
+        {
+          "name": "Infections",
+          "percentage": 15
+        },
+        {
+          "name": "Osteoporosis (long-term)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Initial high dose for weeks, then taper over months",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcrZuKxJ4-yup_L-W7DmGetgMCtJGVXt2kjx0X-59TPBI9Jgd9n0xcQic15Y4ffOpjifwxL5I7noZpXNpL-6FeSv9NjnmmcIv-Hv37iV4Gwr9VTggKXGtrgjBdgmKAyp7pVIr9gXgXpBb7CEWi"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-I5kNgarKkTpZVRboRbzJcaMKLnNOAo82XbEzNzRRjLM76J7L2SLD0h2pJvWQmWeex1aTQi9ox_sv2-T0V0ykWIXD_SCfvzTUJCNXtcDcJ79rNgg0S-JLVAoFXZQR1uTOPULx86oYlNk8vxk="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFje-HbxmjZOBZYVGNKTqRSdSpK_deMB9vL9qsXQbEXF38m3u-M4raHvcgGPZ9t2d9meVOGjb61Vzdudm0ZOn19PPPKvHfxFaaHqGFKGaIOUaoW3CA0-ihhRGtmr4o3jSwL7P5W"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEth6lbqakAbXB8qrqKQXQ0RkxzPzY_IJj8MG0UKzRg7MMNZoHDHuJE_M1JKXr-IGomrEZ1rd-qwPHYAapD4NygzhuqlHd7b3tkHniCtoURTDVG2Pa9vwXfZwa_aH7ygwjYTCyfdMkBRA_atXQ336qFlyh9wZsB32rn8psf4SMXmlq9GfxZEE763-Hj4Wek9EZL9bvQGVXby9UjDNNqLSI0BGyJBDTsRpTzoWNEmrlx2q8oRMFBRfa-5eB4mOT5yR9BPMs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEihP2i6DQHGU3vKMTFtJWvzTEbBrdicnHEAjKmZ96mYutCN60RJycK85JHzoJ5tgdZO1DFdlSQwHi54ZbOiQksawTY1pRf5Gjm-vyL7B5LFwOv5EupX_VOFcXDYXdQDjk_kf-n"
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC3C76rfPnD8vgOg2ujq4QUQrMF8GXK5XbPteGAiAwfOl5-1VlqtnvXXEjdyWAE7XRLJJt-HHYPkQnUe3N7AVrzIax8ZpuHK3RxokAkmhC5IqUBkfFNAhwEd9vxcfwXnzYDm47jzfrAQccyhfdvbaSxzsyw__xRkQmh_OTrwyVF0tVm2Zt6EL591Xfk7t2Jb0BWo5hk5BuXb5PWNrPfg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFr2IBGh_VpwUyOwZ1ktLITrkCpNRIklfyinwUlqJSxgJdDDIWM_W2AjvF9Qd31HGlhhj6tUzj1FxgEbhzNEzr8pQKnEiTmg7PJsnOJgSjxhfv3XRSnher-EVXolA3bq9tYAU="
+        },
+        {
+          "title": "duke.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUFd4sfpHIBd2sb6uAdHxCkwSw9-TTdX0EAAnQpTCQO9hTZyTa7dS2P6qa0kiyyLqU8X9AuvcKb4xBs0AV561E0LQuge1vCOkqCrCu972_ofjmuuJwo_qyai5LE-TlCNMmOn6W_XhjQg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvO82-GVZnuwOTi1YQMD0-60p0fLtNU53pNOEaBLcBT0bWY_s9jAXygS8QAp0x0FlpbubBEjJmKp9cRDR74C4ZshCTwlzM5Yptf-7OUQRld0q7yT_ZWjjzeaV0G7Irpqb56usvxkKEHjBiFAdPQAYCACUpScunKC-nwjOOCfI0SR0Oi1UtM5c0UkXYArivf7GnSeP-Y4htiwNZD4MnHhIo4JURly_KPtoxAzCQsdB_qJ1i9A3YlZmQIx4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU3yYSEFeMyYxQKVDoFRbMg11mZCCNdbtF4ecx-jtN9Js5Gdu4_y3JrWV0249pIi_HFk1F9tAaJgY4LTpib55o4-hbLA2IJjk6v-H_I2GsC2XqYydZT-LN7w_ASwTk902Rf7dmVf4f9aQ7f7A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnWIFrS8jENFje5BxLazFlxqlMTDihctXglHfjhUp1_F2gHcKEWT71s7Oqw3IwaaPwgg8ZjcTFczlb_Go36KkbbMiWXC_buHfYtI5y7XBHksA5GTmA0Ju7m2QCuMbpsP1nLi8="
+        },
+        {
+          "title": "enpress-publisher.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9e7Cv0TFxdb-kgpAZOm7Vd2dHQZaR2OcOX-pdxBcwaGzIYwl9rcNONybta98F4ZpGR834CNEqJYS82Lp68D8jDuCYAduZUU1sZm37DY9uS0UXT31NgFngQO20rj5xKoYs4gs-yzi9VHz5zxEQdlWyHBpjKiJ-IurXytsSSe9Lw-6IQmMl4bKZ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cyclosporine (Oral) trials for Pyoderma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pyoderma&intr=Cyclosporine%20(Oral)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "3-5 mg/kg/day",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 2800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 9333.33,
+        "costPerResponder": 4666.67,
+        "icer": 4000,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Cyclosporine (Oral)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 30,
+      "responseRate": 60,
+      "safetyScore": 38,
+      "sideEffects": [
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 30
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 50
+        },
+        {
+          "name": "Hirsutism",
+          "percentage": 25
+        },
+        {
+          "name": "Gingival hyperplasia",
+          "percentage": 20
+        },
+        {
+          "name": "Tremor",
+          "percentage": 15
+        },
+        {
+          "name": "Infections",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Months to years",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv41bAbHxB5-48n6ivZKVLC2FKjTpGeywiRyFw-hHSUz-X0MGkBy-zh-Xlo4vVTrt2_m8NnWHgXxSdcPAwKz650kdPwZ-aZx-pHRYbvSF3YPJ47du6ahsGa1UKyIOlnS-NyNe5"
+        },
+        {
+          "title": "duke.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvyvNGslQ6rZP_4M9hMoHGFrHeSNPlZYH8Difxf1rNXE4HZECQoFzL_8NN1Yh43_zoun1gpBH1T2W9EFMrqxH6ipJH9EUztkHmUV1dFa9afdKj8S5l4QecPJNcUcrFQm_5c2mXynXdLA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd7S36MCv3syGPB9LP1T7gxRC_HcIK-4TfQcINcAz6UqRB4LrxGiK2KbpHEu-OMfRneWdF-a9jhuZvQoA1PIBnqYD7a3-gvEwh688OnbjEcJ7vCKkN7CIspVSVeCoq89EOBiCQ1rYk7fEF2vkCM3I_VTpH5I6BFvjA6wHT2YRQuW0lVD8JEeeBtBYmzFq1HORmKD-ttK9M8Q8Yu-9rBvPQisHsbnL69EpLzQKmn33dQf3ZS4tKeXHahK6qrFLNm3GAqqHtnWlFpw7eImbYI_QTA-wxZfwyvOl8Xhrz3JCRWawIxIm9HFoBk2xp_W-j2EuHHjE5Nep2dQ0NVg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkpiiFXXkxyeIHCAINw6g6VvWPnEmy7k1dNlVuRScEsYqXey14dt6aDjMQAD9h4dqw63A3Vh74WpLpRT_cW0HGohvTTqM7s-meCPI1jdGaTXakTXH8Kp2nJKgJy2flg5w3-5j7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI3mWstAbd4DN4pMrY9E8UOJ7UowwU2GPDcWJzudGj7uxphAsi9c72PXvzPpwGzt3Geu6NWhzR5LFv2NwACPlNwUaWr0o_cv3_LrZim7ML0ezSOiWagscEcfwTxbo6qJYdK6rU_DayAePmxDIIXcQwu8jIZhg6SXKHRvUwmwuWrYqnQdE7INN9V_QmNGwHIm8R0YFHzDA6R4zamclM9FBCjsuoSas1SKrZa8aUDAkO5TABM0ePcs90Tg5w4p4xLx2aPztqis4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mycophenolate Mofetil (MMF) trials for Pyoderma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pyoderma&intr=Mycophenolate%20Mofetil%20(MMF)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "1-3 g/day, orally",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 750,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4666.67,
+        "costPerResponder": 2800,
+        "icer": 2333.33,
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Mycophenolate Mofetil (MMF)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 400,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 30,
+      "responseRate": 50,
+      "safetyScore": 38,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Leukopenia",
+          "percentage": 20
+        },
+        {
+          "name": "Anemia",
+          "percentage": 10
+        },
+        {
+          "name": "Infections",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "Months to years",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "ijdvl.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmPN0svkVhAm_1Q_O7kf7rIRX7iJfQN2RPTQMuXeMYD1SOCAL3piCw1FNJ2RZTE0S54s9rsrpT02c_ZK91jj9nnNz0XS7BcSGn5WRTWZi7rEXn_0iqzQmCG9vhXz9mR9kGqp3ogXYjyB81RMvSwpG_AwWLNwFSDdL6ENihxT35mZUXG85_q3q6iiN3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVfgk9R4FGE4p0W264utE4stGH24nAByN2VG5OjS0sne9xnBKWTpU-d6hLMEiXK_4nomYSeJSm4ca0o_B2_7fv7-NaYOHASkbXE90OsoTFZIM_nX4Z-eg1ECDSX5pH2DGwMiC8"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpU4gm0FWqAcXyZzkF2UlWY-Nbv3hqO4o-fnY8uwktZ5lrBHKlSOomeh2a921CrAuLA4iBC_g3uIiyAV2ulR_CODXzQ8vgIJ9EWYTAZDO7dDV7bzh7WOy6bbTaAoEq67bFVM3FH1qJNrR_1YPBNRC8MIAm4J6pSnlZQUTmoEBwU5Z_Mjom0WrzdKhBjJvEHwuvntHtGPlam7KtILb2nd7UDW0sCoe-4o-JuMcT9mQJtMgYwjs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH41-Xg_GOie1uN_tHHeWZM_9YCQQEZdEqMh320O57XNCTg1K-ErKbEi06zSquS9_VWpQXP_w6-LxoSlPSZmspndh7yJele4kijbUGFz8PMEx40R-CulkDe652eFffamCAzEfg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE6jpsv0d8VVQfxp2fwzRTWJdXiergGAl4y9TNQ8_0X4tznttN_-_0p8GciuWT85yg68U24oELqE8p38-HKI6xNFxyubccECSNB9oNsgieMsclO18-GaXkcjrghCsTutfblq2XKpZMoUWiZOEJG_CHEZKBuxXYhD9Zb-rLGm3Pn7NqvRAoEP1-VTLkRzvn4mc7yltiDsfrxccX7P3GQZo35aYWcuAHro92tTtwlEGjrwLBweAzmd7eXTfFowgR8xTlFzEl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH7megtv9PbWN4TyY9k_KUibeFPJ_51Dk4KEC38ggdz8hdS6Rps_lcuw0eE5tUCbf0IKV_UJeT1UTWPONAE_UbFgKFldqoD5A9UgBXBixAamO-TBS7ad60L7tNtklhSv00qkSN"
+        },
+        {
+          "title": "caldic.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfyrjw3tU8rD0FYcbhMfhb-6RHF1i2m0YPRHQw8vKj9PrmFRZViGwSTg7mR_FH1sxrevg8k_Bo0kvq2vGvnVuKeODvzMs-whkYqjDt820EkPLmzTzNQiZjr4D7YI9rPeWgLzf8-5ZrOFM2FTUsIx4t-WF08__zdZCrXYVOU4g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuhp0RhI1GHZh2iF6_AHkGJgOwmjOt1PAbR3-gsaLCmRX3zUDlrv7y4iOq6WokwB387rzrrK3Zg0iW0rtfk03n7rE3E9DoLO-4iWI82eDwjoHTV8mCC0PrdltbvVcXsGlyCi_oaFks"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYhzg7uYpszLm6jS1iwnustVhlFPYwUlOpRgTwHZWtmC6Z1QWtIIpLvBGZKdjFjUif3rXZoN5djpICBiNdRrJwDTNP204-Yt5Kw0eyMW30axUzG83d6mv9d2-pSR9lMpVwrxBHdhMmaKudL4IjhSbV5E6NvasjBW6HAbNENrrMCxQzypd5geP72hxpy4o-qguOsScZ1fHJ15qtfrPb5CG60acbJlYGVu2AFHJ0sB8faAcKb-viQUasaIJMiqwSIH89bIY6tXqa3TdEiY2tX-V9rIpSe-YnHwR6Crlj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa5pTCMpkD8jzAUkxjeAYsT7u2rDp8kSvBZK1qUJpB_yYFF3RkNEF9KdNZ2pMztsxJZOc8YmnOEHbL3IKIIgu4Yvhwa7ZWo0ci4LSHoxniik45Nv4UoncYyAcZaMdm5qni4OW8aHZD-wd8e1T8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnNRHLtUwBClXwxjn6UWENe6Lwvx-6izaDgwcDeCI4cN3B9jk0R-wYQ85E2ChynqS07qSYZpZUgwXhBIoueVqDm4miGb_V9SnbQSwm0dNUfq0m_vJI5GCR_-kz3O9eFkbhBDuu"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-3I7DhOvfP76TM66WQR0kwOI4XPmlwMOWn7Kz3bfIOmLCL9FK5V7npAxFJHMhFapwsmbXkSX-9EFE6siNNZlJkM7NkBdM7QAeJ6QXhyX1cO-JZ5K91gKxFBYEnuSlsDlFVq5YZsj4vKgYeGVRGc4podBJ4L4h6rLt2iLeI_0VkeCRxHNN-l1dg1x8VW5nBIQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3ma1H9Hn1EVmRx23BFU5l3B5HY-PuZqUKBf8X849dKXr1BrsXECy4Qwi5gW-nRvOmjZ93qybnHzHZOIM6pOwpfxK5hUAsjvQ_olmt9j7A404uBtL6GEz_ngr1d1Iz3cxrudrHrwY02L87AnwGLGyfnNBHePQkkbikSXHrBLiMQnLc5fXMJyzphrMP__1FMtp2fVRsL32IXuazZ0FrJ17vqfd8tvBhJVjVJaK58E0xSgbSpQuqhhqsIlfT2BsZr671RKvmY2KYQeVXcvWsCxZdnYSIcLe9txxiww5V7pfDly3mIfiwpusxQJYgLy5YCzP5jBKEJeTB6HQp4Iso5KhQctqHwhaNVwRtbE_DSAQ2Z8g5"
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Corticosteroids (e.g., Clobetasol) / Topical Tacrolimus trials for Pyoderma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pyoderma&intr=Topical%20Corticosteroids%20(e.g.%2C%20Clobetasol)%20%2F%20Topical%20Tacrolimus"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "Apply 1-2 times daily",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1050
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5250,
+        "costPerResponder": 2100,
+        "icer": 3500,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 160,
+          "annualOtcCost": 240,
+          "annualPhysicianVisitCost": 375,
+          "annualPrescriptionCost": 800,
+          "annualTimeCost": 180,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": -4725,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Topical Corticosteroids (e.g., Clobetasol) / Topical Tacrolimus",
+      "nnh": null,
+      "nnt": null,
+      "participants": 300,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 20,
+      "responseRate": 50,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Skin atrophy",
+          "percentage": 15
+        },
+        {
+          "name": "Telangiectasias",
+          "percentage": 10
+        },
+        {
+          "name": "Burning/Stinging",
+          "percentage": 5
+        },
+        {
+          "name": "Irritation",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Weeks to months, often intermittent long-term",
+      "trials": 15
+    }
+  ]
+}

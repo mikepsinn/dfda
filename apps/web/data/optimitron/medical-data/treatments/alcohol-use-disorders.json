@@ -1,0 +1,1082 @@
+{
+  "conditionName": "Alcohol use disorders",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:02:19.364Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG99eiAohaisyDCnZN9iByxDvOfMMIAWIKsRbArHx0bp79BM61MpnTa8XDoo37Mkz_ZLztg2lRUST--ssoHC9gcX6SoD3PbKlkCst-dPAIUpATxs017LPnAR5lK7Taj0aEUhFHh2A1AU7r_mw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGFDGOl3GTgayFp-kEpp7dxPEHmo1ZpB5WlUmN_cfLaBiI2MEOjZWSHGD_u2rIvQkLPy-ldRPzfXmyhzHi3TAI3CyTh73z7Jo4UUg2gdXC8rWRp-hk8xwWMdUWWqdrckIsqTxCBE9-ykNk0g=="
+        },
+        {
+          "title": "alcohol.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZdZG5Kb1KCEB0z_LfdnKE6CVxmcGGmStnPdZNNdyWlJMvjs4lnXttzUwr57A3LDe8FPYQ2HIQ_DZ4PO6owD6WltjQknHd-Hu8lxCYWtr__nAPWnfSaj0bqCI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpeJPI8iv246OUqSO1EKnQCglZEPjeszuYbeDwV9fwleeAAAx8D6wXgCLF51nfHfJv7eQaVrXIwKzN0E9ghYOAPz7_15YGBrr0hEIhEu4yfHN1OPMsojWSA4OM3iMVQX1Bj8rK3SuMNYP9JA=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr42tQ7uE2LnpphEOdV_aW3P_zxykP-aUT14k-aQu4qYZcsnUWOFpO1AlV22-njR6eBZ2s7RIho_xkFQGuuyZH5xAD5WgsQRUZkaX7cNzERm0PSfKZUXqdcshXknGiZ_-i6Dmgz1uOx4sw-Zp0r_0pwZXAxRiH_unHUdwnwzWkAKUhZn1vwpb2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlJVUyoGvmJtz1ye9Cn9S9jJkw8j7EZ7d7HefN9vEUyoXzu5C0sPTea_3cEd69K9I8RUb135P_bkKLY_SAnB23qQgZ0WKxkLeAAajvzH2XwVDC8iLS0lqG8WB5hR1Z53AfJXYawMSnZAgkUg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpa40ltMLRogjt0LPXRagJm1jkxXXVmcpqrfFEkewrEP2RiXq5nQcaNwWSXO9Ka6v4KAEDw91U72XcAo_j69gP8DqDsTCrUnq6uuPEVJ4TWF_8hszhAWxeKw6G53lOCVn4POI="
+        },
+        {
+          "title": "ucla.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXuBAOI51tdzddwC9HKpGl2Bf8j_VHWe05zx7rMGDXt2gJCKGnvbO2aZtPcMSVKp5z_WjVqYbBSk6BqDEQTcp429AGQ5YKdwzctSnRa_PBV7q7LSSX3dqyQp0LFxJ0_rySdNAPfSRxfuSNvkm2PydOJcKf72kAX9k2UGw9RX3vOVK0u40bJ0uoN7B1paMPTI6p3Pa4W6FTpLmFxcPDEqJxDMYv-16thPRPs2FjbQ5Yy_MuNoQFr0v4eWCUHkXQzWaapDgD5f8okHvKhgu4ikDk0r1YYYnElqDIe25xWlTPnO-Tid282PL48wkbXCm_KCY94O24Bw_L57TwWoeI6z0ac9zO6o-fPwW3Ifs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-QBUG-KboEq2VV4OSKnceoYsCn5S7s1hpv_Z9Ayp9tqhg8Zv8rHO_PHQz04UmRDncEWFtjI45O0MXDs8dw0sScGkTVNbox5hOtTSCj4aVwzWAqJu_xF-g3v3TAFzOVgvytBMqoeOTHn0iHND56FZOGZgGKAxm8ves-8SCNsjgc4uZjpY0q1Ihdhc9cQQi8LK9GVvNdRhb2SI3di05LkmtwfXJNwwk4TIukp6jW7whM_Ock2H_maN4sZZ6JjA2UajtQ3LCIrJFwWdgrpMbEDUD-mBIFoHoLxH1S5MBskNeJFkxF8yC"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtByLkTKhSP8annFjOv4uS28PusJ0ag3qKzvfnKARtpfuVZeo0TJTEUlZeYDWIHLbEjNgxZcadYsgVvK72ICo5gNSmpj0IkdByiJrVZvNnkHQJUsU5c7jFaTipTkKjBHW2p0Loo-bYG7v_Yznyz2X-3RU="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkRKuyksUv1pzIA2wddjhqSMLFCJjJJfSYE5vwkbie-02ou6j18rkee3ZE_fKjcAV5jyVBhmCCAuCia5HAeQ4XsImclNoH2OluZUgpPeD4OFRKvPTBZL7AxJU8-SN2bMtT1narQ2WQzFkDskLmnrgHEx02J0nQyp4qcb8J"
+        },
+        {
+          "title": "cognbehavther.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4q7C23OApVa0fqyXzZgTembdimP1XnBhq0c2jd8779xIuOFWet1dtoqCs1zR8lbh3AL1j9LLHDiISNxjol6UBXvhI7TT2AL5El-CJyOUurSYGwZIkyE5x1mnMigcTdG8H7jActGJY8vxEGgRM8rVRwtI1Jw=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgh9Sfm9Utc4TFTqrZO35oWrALrHT_dNjWQhIaVB-uZdkBgH1RWSar76ejUBHLs1thjrZny4YC9cIkcREFx4jXwqErIlT8OXOBsRV-Azaw5V18I_bI5ARbwcQAeBU1CtgZgvSUzcZCQGeEvQ38OiCwouD3RUdrSP5pBro="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) trials for Alcohol use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcohol%20use%20disorders&intr=Cognitive%20Behavioral%20Therapy%20(CBT)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "60-90 minute sessions, 1-2 times per week",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 0,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 9333,
+        "costPerResponder": 5600,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+30 percentage points in days abstinent",
+          "baseline": "35% of days abstinent over 28-day period",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percent Days Abstinent (PDA)",
+          "percentageChange": 85.7
+        },
+        {
+          "absoluteChange": "-10 heavy drinking days per month",
+          "baseline": "15 heavy drinking days per month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heavy Drinking Days per Month",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-11 points on OCDS",
+          "baseline": "Obsessive Compulsive Drinking Scale (OCDS) score: 28/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alcohol Craving (OCDS score)",
+          "percentageChange": -39.3
+        },
+        {
+          "absoluteChange": "-12 points on AUDIT",
+          "baseline": "AUDIT score: 25/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alcohol Use Disorders Identification Test (AUDIT) score",
+          "percentageChange": -48
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 50,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points on EQ-5D VAS",
+          "baseline": "EuroQol 5 Dimension Visual Analogue Scale (EQ-5D VAS) score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D VAS)",
+          "percentageChange": 18.2
+        },
+        {
+          "absoluteChange": "-8 points on PHQ-9",
+          "baseline": "Patient Health Questionnaire-9 (PHQ-9) score: 18/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (PHQ-9 score)",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-7 points on GAD-7",
+          "baseline": "Generalized Anxiety Disorder-7 (GAD-7) score: 15/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms (GAD-7 score)",
+          "percentageChange": -46.7
+        }
+      ],
+      "sideEffects": [],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "12-20 sessions over 3-6 months",
+      "trials": 128
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUFNXXkyu8Z0zFR2jPz6bP_6tte-f1CazE2nMJHkydV5svkZR6dccL9HaMkcfFYbXrVgRA4nQfO7F77Qd-jPAdzxH5q5WIKPucapd0qBvxDaw8a8M2C67uHIBIGNkW9Jzizqs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxt0sDbPd6MRj-we2n6B2kVISIGnucbxHxJEoFtDZsJQ3wEt1AuxvdR8dkNc0zFmwJlBttv0X2CPgus_j91uGmtO69B9qUNNOSGc_EAd68iD2hDIiSXZe1zpv_HGfaCUXhFOPKJoY6-iYGN78="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB_SdfN6PYFbsG4s1ppguHXj9QepQnhl9v2AR5-PFUC0kDK-i9WRaxsD_Xz6yiucDi7BoFVFiJF9quns0BDO2wmUDMe4_Dz_ZX1bx-bbMGnFGF_y4Ojl6wQdGCJ40H4rLeAUkMmKcFxHQD0WIDNngpep1muJ-hFkow8Ckg0eu7IzL91_kVMoESYhFKDv0vyuBnWD5gMApZ1RvpYLM9SCKc8_UTegpGbxKGVEwuNMz4VkcuYQ7IDCqkBmtY5IZI6va-kqlbW88="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAK4-3fCk9lD-sCjL96YfGkXH9ZCQHw3toepge-3k7wqhwK0gpRtgu3NTAIPzQKbl2hHFSjbCZaRBRWgJItTTNEL0ydgY1sQsTs5Na9wsboEOoJpEgAJRq1AvlSdv9tvfxF_sYBrE="
+        },
+        {
+          "title": "recoveryanswers.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiNU_NkXSw95EutfEP30UvaC5snQD0i37pYDzGktAKUhco0Xf3xnJghe0enR_IVQX2v2hRPqZ-DxMbnAIrMM7Bpg9q2V3f2UVMxE9WA7_HtYtZB75otKyFB-VLaJR4WYCOVVh1l1Q1UXBgQlPNATCEu6MFxNt9XeK8M8trs7BtTRVRnBvodhRVNchXFw1_Oot4-Q6NhtENqh1G2w4TU6ZGx7hB6qrnUGko0xNUfDEL8g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7kD-s7kUmwln7jc56C5SCvm36Okz9diTmaAtOUdC-AioInzpFzoIoXnSKhkZ9suVuN8seisZEgdThTk5KBRrHT0fjQl5ucR1dvdX1d6U3vQs_yVaBk_NQZaYu7Ekow983Bs0a1m1V4UNTCQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Naltrexone trials for Alcohol use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcohol%20use%20disorders&intr=Oral%20Naltrexone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "50mg daily",
+      "effectiveness": 35,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 750,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 6750,
+        "costPerResponder": 3857,
+        "icer": 30000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Oral Naltrexone",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 18000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.7 heavy drinking days/month",
+          "baseline": "Average 18 heavy drinking days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Heavy Drinking Days",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-4.2 standard drinks/week",
+          "baseline": "Average 35 standard drinks/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Total Alcohol Consumption",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "+2 abstinence days/month",
+          "baseline": "Average 8 abstinence days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Increase in Abstinence Days",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-4.2 OCDS points",
+          "baseline": "Obsessive Compulsive Drinking Scale (OCDS) score: 28/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Alcohol Craving (OCDS score)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 35,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7.5 days",
+          "baseline": "Median 30 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to First Heavy Drinking Day",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-17 U/L",
+          "baseline": "GGT: 85 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Gamma-Glutamyl Transferase (GGT)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+4.8 points",
+          "baseline": "EQ-5D Visual Analogue Scale (VAS) score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Improvement in Quality of Life (EQ-5D VAS)",
+          "percentageChange": 8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "3-12 months",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "drugbank.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8ukZXWd81x370mSm6h2vexBPqWVtnF60kCqKNBEsPbro4nju5rymrNOFPTukNCcB9WFgurZXyzwwHRpnfoRPpApQRuEH89Ve4p09BtK9kizxznOyBblnF4SiJPyva_xM="
+        },
+        {
+          "title": "relevancerecovery.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgNSTCrqWuUt7MwFGSMFem1w2pvdeby1tfd_TSrkmuyGcDaDtb1FB3Zy16y9PzrOzL0gTnVSnb5dTjQ8uO7vlh07TP22dDqn5P2IVyQO41Ffr7JXSWzvqwZWWhT13n7NfV_3pOj0qZIn25_CHh"
+        },
+        {
+          "title": "americanaddictioncenters.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKJrInxkJwP9nC7DsAFhxV9RrZdfS6QPScZOOstXElgdUCIns-TWJONPIcFKAIcZBeylFMPN9V0W3HIIvCCmq9DAbEwZlrQ6c_X_-Egld1LqUC9FwXJ58xm1CDvD2wzysObj1lYrUWaDguDVCMRtOCX1rPQLC_9uBTqZUPPA=="
+        },
+        {
+          "title": "drugs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8Sy--Zv68ius31swJzCcIoSqpp7vk460_um4Dd42qwZWlFLejylNRi5AdqwdJHvcznsKX8NMmr-UIULZS1OWRitaAJENde8-NlMk2ksAUEhBOWFuXMFxE7je9-9DGAWfo8HGDgUPWjiM_-qiitupv2brZdUnocSD4ZQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb8ndRd5IGxdJIdW8kchpVGIVqztel5z14vYBYsRcGYR7ydyvgB1m9fDj5MTWmhyH5gOtZdNGbl-jxS6NerkIESnox7uA0EUgGWCEpjHwTOV8ag65U96ZsU8tBKsUm0izEAxzf"
+        },
+        {
+          "title": "thenestledrecovery.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNpH9361JzxOOWI1tKD_7n3NSIxRwrBgSPtWdZgsRs8DmuyVWUY-x1GnHy4-oaDLtMpzg3esQxEB6BXokWX0I8Pj7Oh5wItYNDtrOXb4HljeWuXqH3raau0rdYVlCDueOPy0AtWSRSW-IbNdZVCa4eDg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEkglCT6DEDWy_tIh7LA5j1_KmhStmL8f8HXQo2OGyI7E4rCLkj_w9FLt0NrTlCIwclnKp36HFGz2kMGcxSf82Ao7Br6h4to0ZgPVHC3CEhdwuNmYzJOa4H5kYuZ8aLlbNjlVj_NdRAq-cweA="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkHHHAqXl4SJpJD9wzu_NawNvhHqBMon7UMWCNmG-0tZ0ifAkcv6MvuDysMRi6m1fcgFAq9Y8sh4sXDMvoYdjpTqYsz6PVMb0UrJiehZmG5lI7-BdJEWIblt20ekPq8K0juJJ8vuBM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2Hf1MUw0bDRuSC3IeykqWUxWuMm-O9cZPwxcbo4epLaLT1ES0nHOR7MtwTyokfUhEGxqeIeokUWIZ7nMP8RZUwIU4aociQRWC2KmnMZEbduF83uDzc4ocoGQYxwLYYV7IVXzV_dc8Sdn14ps="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyW0f9_6SoLp--7gA7oSQWac29rN8WPhL6AjtXmKAoouWqL8uot8VkVOEbOC0RhesZA94XhYVSHOywnBV46LRdmyAk3WPhl4tL-YNKCXl8qsO-1hy9yrr7tZDAoZVBu7BLL4R21I674IfPprzGBSnAPGXS9B_TMz8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvLTzsie21H-9dqZaCeRpddnKCZ-dKd-PmywdVo2CYHgCgqjeGLQBtKy-VehMZ0xcP2huw4-OuapplEW3Ls--5DGnT4lvb9vQ33rZi3pxT_YpcTXcsYCir30zF1H9mA1eX3afY"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0YVSUAcRXd4XpPJ7_4MRAbAxZB3VIc7dv7-F0CxiPUe9qXYH-G0vNiFQC_FLtopxyFyCFDL9yLWEp7ct7uoFpTbHnEBDQ5fUAKIEPh1oJpDT724JVJaQT-F30aEm3LqZUu6qBXq92Zs5Cn-LCWhhPfEdiM3WcQSpNBZYOYDmb64yNjGXuLjDu9TcRC8aYgL4UzkSO5B5-3FLxTHtiry8X0NeHkKXQ6ykE59yBg4hjoi_1xGvCxtcB2N9IkHc-YftOjoGrs1BVGwvn7bQC8_cAdu0JkOM="
+        },
+        {
+          "title": "recoveryanswers.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiqQs5Yga87zJYP1pJmABu4RIHlfIyb2t98ctQNiTEA4yJEOgVTJB7TbODqpT8XA7oAyhzGLrue-RzT17GnwiQ0Z5Ezo2ED4x7J0B6TeOW186jZQ1jA_b8KAxLJ6b5MKHpMOz6irn_4DPSCDYLVyqhOle4EWlInmdS_AJAUE1XhGn5F62SrjweUBa5B12kxLrh0rrnolV8Oba22TGmoMIon1TNKJKCV4gK6h406ds5nAhitDamSQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Acamprosate trials for Alcohol use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcohol%20use%20disorders&intr=Acamprosate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "666mg three times daily (total 1998mg/day)",
+      "effectiveness": 35,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5200,
+        "costPerResponder": 3714,
+        "icer": 40000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 300,
+          "annualPhysicianVisitCost": 500,
+          "annualPrescriptionCost": 800,
+          "annualTimeCost": 140,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 880,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Acamprosate",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "45% (approx. 13.5 days/month)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Days Abstinent (PDA)",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "-7.2 days per month",
+          "baseline": "18 days per month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heavy Drinking Days (HDD)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-8 points on OCDS scale",
+          "baseline": "Obsessive Compulsive Drinking Scale (OCDS) Score: 32/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alcohol Craving (OCDS Score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+15 days",
+          "baseline": "Median Time to First Drink: 25 days post-detox",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to First Drink (TTFD)",
+          "percentageChange": 60
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 35,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-26.25 U/L",
+          "baseline": "Gamma-Glutamyl Transferase (GGT): 75 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Liver Enzyme (Gamma-GT)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-4 points on HAM-A scale",
+          "baseline": "Hamilton Anxiety Rating Scale (HAM-A) Score: 22/56",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms (HAM-A Score)",
+          "percentageChange": -18.2
+        },
+        {
+          "absoluteChange": "+4.56 points on SF-36 MCS",
+          "baseline": "SF-36 Mental Component Summary (MCS) Score: 38/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Mental Component Summary)",
+          "percentageChange": 12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 18
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "6-12 months",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0j8SGQ5xyquzUSPf8iN341SZuDjCvqKMlFHTOfLPR8r2nGbKjg7ABMnYrMw9WoBcUoCyxXezUexzpjXl2sfNxbtWMv5o995Dcrq2ZyPD3wEgcnS83vQGqvX0l8G9hkOnuDHbPDVIux2_I0lXQOsCYoARghwpSWHkTzr_Sk9gGDWQxd9DpayqFWLNh21G-RtqakU09"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGugaYWoqdkU0nhcV7aEWQCce2w6dneLnU6guZ4eUG-TKKwvRVOWpK2FzkUw3CGsLN7A_4TTq8cFaFdHlZfa0Mm0TcGiv6zM5QTjwrPaDi6TZ4nVcB7OeWxoj9KJdVnsZyvA478hKT4UznIvSQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5z2Ku2MTE4rsOG2CaaGu3F40-FiK9VLUzmAcvdlMXSOw8W4nvIM2jjVwuR8WttKC131IYQzOQKFyoaNThBeTBI2SLTLvusCmt60qcxNVwYkwN5NHmpYwSDTHHIUINRAwtRs4lXRuRjV7PSLlXKsUqMyRJirHD1XmsZEqbW1898E7xYvSUyeUzhSwKzTnRoVcRmhZkMM4SA7uPQKfYTup7az16k8xg4-n7qb4PHBVWVWRAJ0XkOXrru0DDlgPHVS9x"
+        },
+        {
+          "title": "recoveryanswers.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCzSli5pU7E7ftC6YREb1OZAW-IiRii6Bh330wx4v0_jzwmO2JYRkmXklt0_K-zRNxjFN5vu_n3JGQK17u0YjONgNJOzFn7TKNrlpUao5loIykogFNy4d8EHwRnXeDTDUMuI1acdAlT_TuYLnx7S8lf1XEPoD3voRcZkgeNGfF9DoPiTRRqc8M_5w4Lc-Hcgrin4jKwa1qFnrufpsxRnHDPAp9354w_k3mnMyexF3jxPKaDABskkcIzw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPpY0PyqQ3xhltExDR4ypee9JFYDCJjwHDWuvJ8dwdS2b8OrM7jMAqRTf0r3h8lf1YgY1ZPar4tChEFl6eT8nsil7ZTJsgQ86LIMtW8BJ0Bn4X0slkaGpszkKZ36D4WEKcvEudCUfIj6UuX_t0M23o2N3jIVTxNWgxn7eucD2rpY15daRNioyzLwmufsuzf9gOzsxNjY5gojeyLKaGTLZ1enxN"
+        },
+        {
+          "title": "ClinicalTrials.gov: Topiramate (Off-label) trials for Alcohol use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcohol%20use%20disorders&intr=Topiramate%20(Off-label)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "100-300mg daily (titrated)",
+      "effectiveness": 38,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 600,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 6500,
+        "costPerResponder": 3421,
+        "icer": 45000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.12,
+        "vsComparator": null
+      },
+      "name": "Topiramate (Off-label)",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 20,
+      "responseRate": 38,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Paresthesia",
+          "percentage": 40
+        },
+        {
+          "name": "Cognitive slowing",
+          "percentage": 15
+        },
+        {
+          "name": "Anorexia/Weight loss",
+          "percentage": 12
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "6-12 months",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxTOhkobUUCTe5FgEiq6807gESy98NlRUxiiOq2hhFtYDT8N4S9YgXV9AjLx5bQbBbAyObcHdblKi0attXJHwLjqhQXJ8Yr5sNg8NHQGGpPrjE74x_o3QuQGfwj17ydOnecUwHysUCW9AvU9loGVKzPSaNQdfChBidre0Io-Xmvz6wolQLOGDy3D2BvcuUUMkfHfEQYoRGIWZqbDUCNtB17JR9yib7i8IH5TMix0mH1UpbGniY6Z6hZ6wSxW3e"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErzQnhPabVjDFYhQJIO_7VPFdENoE6CqdOgAnemj_h6qeIB4fnF1ueEtN1wor9Ef-cpj6CdtQImTPM5NsN6nPJwLaQRIo5vx4CvVqM7MkFgHqKpu1WRHzjPaMEZyujZgke5zxc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOkvQlO_-0HvBhVHFbF-Uuv5c5n2VVXE3G8Tv3pLJEoS6gwx7wHCwAv-_QtBmctRCwUmwu2nH5i4PXlGXRV97nmY7VZfwxQjyjDZVRYKPtjj9GMRgN4ihW4jSBVClmukta0zMsqexwdrYTGFA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0fOVKstY4IaWozkV0Pi5ihK6S3434zA6a6NWBbehn7gWPobi9cFhRCZor9xTcpioUchh1S539mV1uT9Wu3i_pVrIISvhlLGSsspCgHgHsYWlv-QC_nzSubnoCH_BEIqJWk-nB"
+        },
+        {
+          "title": "uic.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHbiawM5yMHLpni-YDbf-Q2rBlIahkIJopsytUjC8lMdlofNQh53nsw9GAbte-xODGjN0zwmWeSa2MfgvandGzA8iGDp_h025xhS64xkgS4Ihp4NAyAea-9HzhGt9xdTNkMTikNLC4qRdUUxQ3b-e-oIM5c6PWQeIfHld7-qs3_YKywZphd10KOHidPkXdO4MK1gSheWqrgqnh2Lxecfz9mU3hR8s0NIGtFlfj67f_e92i6fhdKMc2_gYXouQaeSq70UzvZ8oCjKjfoi6OdY7tmd15vChYylviojtN3BCVsQ=="
+        },
+        {
+          "title": "psychiatrist.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD-uKZElrQylDx1Ktv-Edl3s7Sbx9j5Ggw19TJwsKsAzzKIsToiIlIJW4Y65HfsXKbSwAqrApOLTeIF3J-Oo3oqGMseNxlhvkWq1TiTXkEu9MC-y_rYUd9Vsz-NVkDGROg_Bp7BeNbfQEmtisJ4V3t9fxbvXzVNqu26W4MmA7uhpg1biSTejt5U0vv7VsO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAcZJaShRjVQ-ku0GkoBYzG5pxvK2P3JiT49Svft8yzvdZSjnEdZ7ULcK6waLw3KL5DeojOp4GVPK-p5t99dsgY4_zJYfayVOKH6ugrtk1T3iUhj480Yfl6l8wQ1iP1Zsf5c_EkfnzW61P-xw="
+        },
+        {
+          "title": "ccjm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlhwNLoIp3c9JAcc9Qp40rDZdb7RcXMBplterqcSFQTvhx7I5JXPGlN--8HPucuI4eh8iXvYxErV7X9DPHnOI5c_dFcPTuLV4bS600BusTi1yv6ZI2XBwa6qls0CmlUzOP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDXAdo5yZ8YD7duY9bCmVlUYAYUYGDH1Bjx51I8bydP51HfTC34aFcIF20JbanmuenMNF8lZayaT4fG8awM66d7HIuBYx4IiG47ABRoEN5mrvasGeItVMdXv-xLIxD828JZbC-xMldvSbq6PI="
+        },
+        {
+          "title": "uspharmacist.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqM96DFEGh49JdKDBLKLoLWapNPbhHcJo33fh-MhvjauWoHVUzLHPKgrWX37S0BuTRuaBbpasLdz2nP1hTWlP2VH2ItBAD9VIOsKpMzgVnsJMD0xQSBEcqi2V1JP537UrvJV23JibE1mEOlgMc_FzGhAeo6-KL9kRP7x549JzArNiFruSSn2KXXn_LXEYKliv0BslgD1_Rb5I="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0mz4ntYptokzkN5IRFkvXxhGwD_mwXFh_KJadQxb1rpW2Ia5I7PNy5PSNIPjr80V29pfRWtAXV69n8bDB3nJ7kgw0SsOePstzesmV-7NQ7vEUdB0Ez_nHgzQVYYQ7WPX4h9VQ9nJuSF3Dmm4mFpiEw_UtpVqMXk8Jq8A_lh3gb1x3BxMvn-EpbBKXRQozwXVSgzH5aVnBNchjsvF8-Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gabapentin (Off-label) trials for Alcohol use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcohol%20use%20disorders&intr=Gabapentin%20(Off-label)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "900-1800mg daily (titrated)",
+      "effectiveness": 30,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6667,
+        "costPerResponder": 3333,
+        "icer": 50000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Gabapentin (Off-label)",
+      "nnh": null,
+      "nnt": 12,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 15,
+      "responseRate": 30,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 12
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-3 weeks",
+      "treatmentDuration": "3-12 months",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSpPqcWvs7oso8i6szO0EBrZLXUiuXDcGMc5vVlUZiHKqY9AS_0fHoZYN1CRVWtpVc20RUIrbKp2IQF1r0cbiAgpc1fUbl3UKepDMkgKXP6OSgIn3Px4sul0PVIyhuWPhClTfWH1u19deH-O2dK5ZXM9tNNWEIBjs3m4-m--0NXi2yeQHXmPbhPxH3GuYuYBT64-HmwC95rmMi6D5Oc7S0sYlLFFThV1boVn1AXYJtDIo="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9wqglrwUW3YJz58WHgnY2blGFY36E4eEyD8kJ47wID-2259NS3fe_eybcXFJs0Qtjbyi_waKbG4eJLsd_KLd9huFM72YTUDsS2TLA51qJh4wHEpPRPZpbGZrpx2SSfiHz8GzbWXjE5pd2Q2lcgI_0S3DqapOY-3eAp-woCZ6yB6hHaI9a9_nMO7VqKbD93E5aeaIRrMPVlH2_lxW1u5k9sBcrvNzTkxNuq4SOnVF2lBkkguzFgyFv6Ah3D2akZeu30mkhCNB-UxFl7Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuD68I6gnwhVz6MYwtDQcbW5o1SLPuG4PK3qnnTgYoE2P_sRuLxbSyMognBFGtlDR-LcbCjXP8haMMRItWpAOPJRy92jLbfi2dAvcmPlh2hbyM2OAU6e5KFFuqhAAVTcKa9e5gbm4oeQ6IonA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKwymgc279SERIQEVDr7bF-WGdahIuWDm92_mrEuDdfSTfntGp4CUsAVKVFd5qOq8wOR6nrs_tmFxQqu8G6bzxAsjE1H3r_2yUVX5OgsUv24kTjZxHrferUmOJJV_K6txetRTj"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDh7ZR2xkKMgtvDECQTXZB_60deIDR027fI399t-e6FVz0l4_1H5bSghJ53ecgT3Mxl6x8cD5jjwwOwrmHo9ALfDrUTOILcJZBqFIO91f0FSYcXiuhAOAzkdzoWLmhHkOsbXo3TONsvQ8DAvAWrIZr24jBaUH9u1Q73_MU91TS_jc="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHI4muj0m0whBypmcJPJHwH50A_SLPZixjSaZPcJReLODAkRowYWtDRwGKdVJCQ0uYuVkEeDUSQt0puye5v2LTLpSYA2yFfDYZDSG4cHLAwZytrxfdUS4ES2AfizfgclfBWJjWytG0j-ATgvv-2-qp9pMJXYsGhoPRahuC50zP6cxHsctw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKdzohKXdZb30mGcHVPoAhXEJkxOKMXZbETxfW6gBGtXH_mu33EPNkTfujuAIuQ0wI9Y9RD42u7TPjfsWXlul98pD2s4sGQ_pW26zFdrJfYPcRBwxzVGzHGvI7sUZB6rdmrhW8Q9bPWRz_MCN2"
+        },
+        {
+          "title": "ClinicalTrials.gov: Disulfiram trials for Alcohol use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcohol%20use%20disorders&intr=Disulfiram"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "250-500mg daily",
+      "effectiveness": 30,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1650
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 8250,
+        "costPerResponder": 5500,
+        "icer": 50000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "high",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Disulfiram",
+      "nnh": null,
+      "nnt": null,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9 days/month",
+          "baseline": "12 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Heavy Drinking Days per Month",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+30 percentage points",
+          "baseline": "40% of days abstinent",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Days Abstinent",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "-90 U/L",
+          "baseline": "150 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gamma-Glutamyl Transferase (GGT)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 30,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life (WHOQOL-BREF score)",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "9/12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alcohol-Related Problems (AUDIT-C score)",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Social Functioning (GAF score)",
+          "percentageChange": 18.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Metallic taste",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 8
+        },
+        {
+          "name": "Skin rash",
+          "percentage": 4
+        },
+        {
+          "name": "Disulfiram-ethanol reaction (with alcohol)",
+          "percentage": 100
+        },
+        {
+          "name": "Hepatotoxicity (rare)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Within hours of first dose",
+      "treatmentDuration": "6-12 months (adherence dependent)",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "case.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-h_4XzLrloOflBg7U2Wl7y-jLKZ4GEBmc_cUx_h_9okqQaC8BXSoTlV0aZh5UpPoO3t7F6vHnHGD57Vr95xwYnldVmUSTnqFiltwNyTtWn9DllCDthholgLYUiV57Wtoei-L_hMVpZkXSiG6ut1qvQCDRxV5PnN27aQIJOWVt1-F7N8tk2sUvfSYGggctcnuQMBMUkbCbGb75E4b1hfO8x90ZPdA1Ah-ZNPkKNIoTnN5bviMfb2i5UR-mzVpihzxasTwlv6Q="
+        },
+        {
+          "title": "motivationalinterviewing.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGwSxV5RClOakWa4p-7Qp2-iV9f51cXrZ3WJLlhnnY6LB2610JlVsje2Y324v4UDum-NW3jZ0wvh7oiTVYyxEo4I_2-k5YBNS-Tmpu2sKoLyEaF6JzEKtI7-dhAHyEkzC9q2QtliEbi8kiN0Vjo2BNbPaOo8a5VNhA6FX7"
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAVL5-gyqGHgML-QPXj_akq4kxsrdfE5OG3f5QnGcW-3o6frhBhtwTeS1iiyXvJr3H-QZVNH-D8XycOLg_oiMEwtcaHMypVxn2ieepTillINiZMgKgmxEvooZyRM8q6zZgQJwE3LIs3BA7NkK3aZJ3aIekLzLnO3i014ccwJby6A3FsMrP3eNEFWxg33k="
+        },
+        {
+          "title": "ijfmr.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlNVkFVr1l2sh5jM6MSOWFScZ-DDXtnnuzu08yLNfKvVmw7niV9r09j5Bf-r8C83n1Vj9EDPGTOEZiLuRUL42StGHiQgZOMkR9-G6SyuKmQKqr36UXitA8tJeFBnG96GJqRHX6D7F7"
+        },
+        {
+          "title": "case.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvkly_shMx0ToXewy1YTCrkEZIPJlZ-wDD9hYBT-KD6j2491xzy1KJURYFwIWDKQZnTi1kRjE3AMeAv5wgqwLuj_2T6YnFk82Up1FUkHjtm0444xnEcjB7yIhc61o7IjWQtnStudrY8qLZoa8I8_pQjGE1OAfk9iq8HOxD-2EfX51XGbu6efic_ku_3vKBntn03CvJCXaUwjQ7qHvHiPeAdnFKjmv_vWjl3d-Wfaap_1ECFfFzdsLWzMnQx-RgPbr5sowgdJ249u3usI-sqssz0_12HEW_i9h99jclf-Xhkx1YfrFN"
+        },
+        {
+          "title": "health.mil",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFmTuDSaN4ZY28ZkQGkWPj_QzM6GZ5rpm5FhMpYoHkw30N8_eXPnsjeuqcgME0k5I3Gdoq_SulNOR70ch3CBpqGechINHjjrhugH050QCWj23iss_gEya-PfRq6p6EL9LG84XMJpZKfEDNo6OuqwMCJU2SEEDHcHjA1eYwq35cXZ4G4ZbMsLnEl-JST7LCRmew0QSogHAd4V9YNuy54iaxAwDieLu-oSz4wy7Pbf4Nnd6OgclsyPs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoI7N8tef0Sc3hmwElRy0ie4l5jD7S55Kp8RztDz2b83vpsaPAGgMVdorX9e5FNfLHfmv4siQFsrBJepXkByNMlSAfnpAnm-ZqSm-3F_wjPy8-Z1U5MTVq5DEmo7Yd-Gvw3ICj0rlUb8zHNQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIo8Zw19ZCzgKtwRQpHsputw6aUPr0EcIan8_l6h0c5NuhItoLtiB6_Pz2ykn2lOnwRQGEeYDHiRAokafRuR9XxppIyrnqYNimMghX3eXIdA6PGCnrfZPKGtgR2Wm2H-4DVgRbFwpI6D94lQ=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKhND2w8Qhh34KJG7nGVqaJpW9cAu3YQbJvUAWKhz6m1fuegeXQrNDBkmG7MOZS7gqGuC-L9muQrtVblXFNo5e5a18Vs_OhAZ1EBDTMKm_viYAQAu7IQmSaaX3c3WMGKOroFkc7g=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFALstaj1ZOCE94Q2naRvqdXybly__o_gxMp9yDqQwXxE_i-nHWZMyrLnx-QspNfsPQof4r29Q2Q1zm9wlPp36gDHAWbatECWfg00e_HBBKV7zCCMrCHBYH_YXOVlbAR2iYWu5q4w=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTZT5ZSGUL5D8PMTPptSgy0HyaBwVyBlTFXXhCkmDRsFl5ac6lAdgX-C-Ej_2W2QO5wYBs6NphgPVtCkqLQcJ6nlDxqpMyUTW-ZcCp3OpRym-2GTlji1K2f1wILyr1dTXYcm9FeA=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi3_sk84iCQN3_Za0CYWAAfr6dll-g84FMuvpI-x7cu4P88IjZdgKeC6lZ1ViQJpmhGr-3ZNNBuJb684z0n2fv5TMryLo9gNH9E9xGwxoCIVBAf6GA_Ehoy50TndjRYrN6X7n-1A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh1IJmk8iG9Qh8H9ylP73J94_hosS2a7krmvp4GmxngwtLQ6XhXIG4atsqI5ziUXknzoR5t_gNgiunBD_6u7Xg6Ilcv8kIk_qcx7bl1Uk6d34ZtkSkVyPXEOgc7IPnFxd1L0C-dXN6d_hT25b_u4bkkAGFVnY6id5xRfT25sgnc45VPB5PhbFEDn-WBLbKFungdI5bJxNatToRZRVrZtKIERIIX-nemzv5iKdrv2Htgrc9WGNBz9qcB6n-rpQpAyYfFoRAmN4boujcjTOz_3UeZvZUrBsNg1GU7SA70AYjzAkq7JavlQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Motivational Enhancement Therapy (MET) trials for Alcohol use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcohol%20use%20disorders&intr=Motivational%20Enhancement%20Therapy%20(MET)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "15-60 minute sessions",
+      "effectiveness": 25,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 0,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3333,
+        "costPerResponder": 1667,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Motivational Enhancement Therapy (MET)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 days/month",
+          "baseline": "20 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heavy Drinking Days (HDD) per month",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-20 drinks/week",
+          "baseline": "40 drinks/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Drinks per week",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+30 percentage points (to 50%)",
+          "baseline": "20% abstinent days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Days Abstinent (PDA)",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "25 points (max 40, indicating severe AUD)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alcohol Use Disorders Identification Test (AUDIT) Score",
+          "percentageChange": -32
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 30,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "18 points (URICA-PC, max 20, high precontemplation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Readiness to Change Scale (e.g., URICA Precontemplation subscale)",
+          "percentageChange": -22
+        },
+        {
+          "absoluteChange": "+0.05 units",
+          "baseline": "0.65 (scale 0-1)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (e.g., EQ-5D Index)",
+          "percentageChange": 8
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "15 points (moderate depression, max 27)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Health Questionnaire (PHQ-9) Score",
+          "percentageChange": -27
+        }
+      ],
+      "sideEffects": [],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "1-4 sessions",
+      "trials": 27
+    }
+  ]
+}

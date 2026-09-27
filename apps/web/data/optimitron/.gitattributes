@@ -1,0 +1,2 @@
+# Preserve the checksummed upstream files exactly on Windows and other hosts.
+medical-data/** -text

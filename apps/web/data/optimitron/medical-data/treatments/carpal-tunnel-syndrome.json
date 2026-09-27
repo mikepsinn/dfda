@@ -1,0 +1,844 @@
+{
+  "conditionName": "Carpal Tunnel Syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:37:46.170Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6zgtrQ1ov-hgUAvo4rD6uR7VI0Zk1Fl7FdltQHMSJTYKdWZuuUlEEiA1SMPZ2Q6X9S34N3DCw1Ie0NdVU9seUoBIvW777eNHPeznOybynMNzA_XaZdvIaSLRMk_5GGggklrfM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX9BOg4Zinf9WHP2uVbQK-DwxVbtxkGAmxpOfuIaQBOTmE5TXDUG3m9bmX9O9iYnj2Pdf4OC9ObbD79RYKR1A3h-LTUN_3z5Q9zjOkM-2U0bxHZwa1kMo2k06cNbUuZGt8BhPpBOXGIckPvzg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH22fCm1jsc8ebIV6xgvHBo5cuf7dqzyC6dsxGY4_OREK9nBUMZ4H07NbWMBUE3Ile81bmftNS9moPXvzJGdsx4aAgsdgIIwyi1VVeaDicWhbLbC6xtp7ETB4VnPs7Uocqul6yV"
+        },
+        {
+          "title": "brieflands.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEehhRBPuChQ_v6Qst_8HtodsSW9UkvfztsWKU5WDhF9cAs-bKUaCExuOZaZmAbKEk8bPhKt1-cT2NiTMRnjxPPDPNPJBGbDQvWlKewAu-C02FTJadER4ZVoDCQlqFE1UjA4jFII8Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh3UdrbrBuJ6LdpOOJIN7Amx_8Od4IPloworwb9yrV7-U488ihTemtkj7g5mrcy_t55qKNFtNWMDeSJNViXACAA4cMoO7Bi5MXnd1w6LozfalsVrxFJTRvcBIze_cwtQxRySG7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUyBze5b_XJNiaNXY9OXU7q2BQE_qWm9rJJbwKE7phMlNGHeM1WScQAh8t9lKXSGtkeast-AhNb9QzosG1E1rDP_fLKKtRQIdzwz3VDjLvvSlTWaoBtsKIaIWBKV5rp6pTD9cc5u_Ao4woLodvqjFacgfahm0UNsfTJFMmTnAUYbKYxqKDiUwhqPIJx6ox0frVdOYzvnwlev_Fwe4sVzXjr2Ret-7IoIGTIlIVX-wybB1YD_su0f3-GMg46zgnjT9rDsUPK8v5cAgUNQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf2VdAEiW6RI6vA5kXMolpdp1IYCje1DjPAIXoY5-ehnlUMvtFGeGTzj_BqlLoF2p3TVB2lgB3vTZXNJS2i0zqyMeTfxiErgNFswc9hKi_wRbiwIyII5Q863UAgH8Kb00OxBdROQqGQZpsEvMMigkBsiQbpiAxyW-5k_HjvsRBElFyrqzddgsVAfnalIVwC9s9n1dwwScBqap82SAKobcla0cEotb-NgZvW1pvBQ7idRH9NkPV_g-I_wGA28kuj65FGg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWvBYkBWr3PpnpNf-1SN4WYRoT5aoGBIZqu-gh3AIB31b8WkB5PPFfFX2jwzzNE_cB8yoSEgTcmCHmfzkfI1HeGmkRJpaADa5csDPC_wCPaWvsWN6SuxmC7K-SiMSTJ0OZodoY"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1YZsN34HThAErvC0oLg4GMId2ZjcRZVBINFXG75ZNTSldRm0sFb5WqzcRpWZCIVULpYVPrRReioIEYZtZHuxVOXcybTn5hvwAU7MNDcm1nqhyVByHTVL-rPkNPF0__WH0UqVJoJ1Oa-G3T0J-C7BRypMX-4OkB4_99JCV8G3WKjBQHIsRJlI4aPRLkF7H1s714Hk03bON1NXyBPY="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLYyH3p2g_WM2Sn3FExqCYLVA6c-YSPqqFegWRYYWXnSAzI4vYEr8ddt_ZZCkCr5CMFVgqLGF5cUYwiYMQfbgwjCewvw9EBPRIOthPSKWyMGVfCp-BTY2_9ITNfO5FGkmC8hzIoSw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTtvsLhbGbXQfTJN42XsVNgGg7H5uRUUBqvakPkLWBP5xzZoyv1VjrwsVeWNHoPC2nKrvZ_zhGS70Y2MIe_ALyBRkZR_DuwmX0NERb7zBR311zreTgqhgef8jTn9DNfv3VIB7a"
+        },
+        {
+          "title": "ClinicalTrials.gov: Carpal Tunnel Release Surgery trials for Carpal Tunnel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Carpal%20Tunnel%20Syndrome&intr=Carpal%20Tunnel%20Release%20Surgery"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 500,
+          "sideEffectManagement": 400,
+          "totalAnnual": 7000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 8235,
+        "costPerResponder": 7778,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Wrist Splinting",
+          "costDifference": 6800,
+          "dominates": false,
+          "qalysGainedDifference": 0.4
+        }
+      },
+      "name": "Carpal Tunnel Release Surgery",
+      "nnh": 50,
+      "nnt": 2,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "3.5/5.0 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Carpal Tunnel Symptom Severity (BCTQ-SSS)",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "-1.1 points",
+          "baseline": "3.0/5.0 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Carpal Tunnel Functional Status (BCTQ-FSS)",
+          "percentageChange": -37
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "7/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hand Pain Intensity (NRS)",
+          "percentageChange": -57
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 93,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "35 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 23
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "6/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbances due to Pain (NRS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+5 kg",
+          "baseline": "25 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Grip Strength (dominant hand)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Scar tenderness/pain",
+          "percentage": 15
+        },
+        {
+          "name": "Pillar pain",
+          "percentage": 20
+        },
+        {
+          "name": "Infection",
+          "percentage": 2
+        },
+        {
+          "name": "Nerve damage (rare)",
+          "percentage": 1
+        },
+        {
+          "name": "Incomplete relief/recurrence",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate relief of nocturnal symptoms, full recovery 3-6 months",
+      "treatmentDuration": "One-time procedure, recovery period of weeks to months",
+      "trials": 85
+    },
+    {
+      "citations": [
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxpzI1gR27thwBguR27slQrbwz-xhlTAJKycMCP7uCZimqSHGJfdU_aNJqjO2lK-m4biTGGUzSxV3thfIIztpUreKTvnayBHlpndIS_2vWnIHJ0rrZj5T1EzPITQ0azPtCfkCMI0O-vIfxLLAvUUz44sRAJgpWvWA1zG11ZDgy3CgG086K5jGnguiATgR73EtMWDmYAMgsT8cV2EXtx8LuYy8QB_bPC_BYxXO5luK5q4SUL9zzpm8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrI_QiOk9lO_hdMkgNVBpl69fzJiLLPF5caiLVNoa-eDNGT6L7Zb_Ygj9qV9pGEO2aMVWjl2DOMtMg0SUrD8icIjxfI72FBEBXHbrDq4njEmP-JWev882uoMhO6ZkidTIi7ONeGfYREkkFKKQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZFnnWkmtuvrNor7qs3UZevDpLc61upbgaMFze0JY3BxIB5SJxfQ_vVcbK1xtG0lCgEhWjpShPWMSUXs1DoYKHa9qRSdepq7LKoz-lJKgcLHLPfbnf5PAlSSsQivtP_7wxqObcrtjZ0b6jlTphQ3mDg2elJ0hHUewFYFXWjmp6YLazrphGe__VJDcVMsXyDj9T31WBNM45vIIURB-i9R_Qz3VEVxR3lFcHP91Neh67bXwfVuscEkArIyeYHFbuKpP0gycDVkYSSMve4L77nXVK6msr5_qdrsbmd-WT2qdvV1to1C7u"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF58UxzLSqkkdTeojjVfFixOspMgAsFzS3ILsvN40MmbpxQ4SbO7iJXJcsEvzHUe56SvTJuVXTgBcxbL3MnfKz2vkvk-FqpVZHxTYA-Q59RpmZulEXzy_7HyxuTMCTVjXtqxrTRbeSrGyMT6rJ_h2OvzNKYOZel2bM72zVv0cEIYyc91GpbdkPIEH2NmiuuW17Hbp8KfV-xnMkCJvYnJxszIZRqQYc_MQ9qmmQuMgV7cA=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBCpOhip8H-WpakB2uYwagCMQTOR7ofE5qCdLryAojtBiEhahROIpdjMfcU5bVwRWW6Q4puFyXQJTYnD-M_cD6p-Vz9a3FWpiaIoN4oU4R6xM0IAtlz4OCvfpyVLxScNS7rgHVt9R11dujwyF_rkzC5mCEl1qj15fxLLZBla9kvc2Kyah1w0Aw0I6ko4r9UCWWZRjUNKoJ76AuvhCU4hwNZQAJVFjpIuoPTEldDJ9nGs7a6uQXl9VOc0LkNpzb5w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgmk5PKIDFrZCSZT7Y2m2hmH7iUaCWtCg_8upTvW8qoiQb2v6DB3CjWpiMBPbqIla9PdVSJcRW7N0qKoHqeTD9pX9W7eZqOL6QeGtVKoBGS2yXSl3yrSQkvj9-_L8ZAkLq_wxJirwo0rN-igUR2llnCGz2iQCoMr2-2NOFU-1w-HDvkqRKSkbxTXO8L5IzH0lfiK01a7pq6c7GcTQ1Z5fhpXS8zAPRh4uUNA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5uBT9_WdrXrvB6TRBlTyw7NKI46t_q-GY5PAU2YflxoL9YOOkU4AevuzshXbhLUYpLYS68BUwH9dUwq0Fbv0Qw5K5OcBbeHWbTyNvAjqk2xb4Q6A_I0GIz3bM4CGJUQ3J1tum37Jc42oD3yZB"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg6Xn0FCnCxlbIP-W5FoNuqs3Hlen_UCvQy-mbPBpwFKsFOKoVoAue_N12GWssJCpn24U8QSfQwiSAYdaK31HvHhSBYpYKeWvusUz4diLffuHazP6MvPrXlgRaEU0KdiS05g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1_I9mfrRSmtjut6BPtBUyNOwU5fyVgxpTX46cUxYNA1fcd0ClsDS5MhPxzMf5UfjpIZh1SyGJT9aul1wfv2sVgpk-iVPaKRsKVkMv_Ql9FNQcIJ-cWAfqbF65Bj5txFRGbaNvu1rniQy876_u"
+        },
+        {
+          "title": "ClinicalTrials.gov: Corticosteroid Injection (e.g., Methylprednisolone) trials for Carpal Tunnel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Carpal%20Tunnel%20Syndrome&intr=Corticosteroid%20Injection%20(e.g.%2C%20Methylprednisolone)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "10-20 mg Methylprednisolone or equivalent, mixed with local anesthetic",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1000,
+        "costPerResponder": 533,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Oral Corticosteroids",
+          "costDifference": 100,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Corticosteroid Injection (e.g., Methylprednisolone)",
+      "nnh": 150,
+      "nnt": 4,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 40,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Injection site pain/bruising",
+          "percentage": 15
+        },
+        {
+          "name": "Local skin atrophy/depigmentation",
+          "percentage": 7
+        },
+        {
+          "name": "Infection",
+          "percentage": 0.5
+        },
+        {
+          "name": "Temporary flare of symptoms",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "24-72 hours",
+      "treatmentDuration": "Single injection, effects last 1-6 months; repeat injections discouraged",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "keele.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPPLoLcrH7BXgky_drHhJz0IF6Nx0Z5K8iU8Qcp95aGkkAY3GGz_dNOOIaPEuMfNa9D0Xoggd8D7qJDkiUnSCvUZsiFmgXI9_VwUDlkd4qVRyDVI-iTayowFsstRTbd2WwYsytj4FUnIozFGZSEXSJ5K8xCufCo5YYP-MTbEjEmjqdW1muJtjRG77VVFmS2sizDFyu8O3D4Eg446tl6Bo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7s06AvdOwZFKin9FCFDxFvDFgVA8roQuSkQH8HaaURLueQUu1KmyKtM22gT7sD4DyOUvKrtlFvmMr_WnYpWW2qPwUIn8ldlmk7B8_Yj5wqju-fvmVnk0q858HhDcF_0XtqD8cY02n__CdFdc="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTQ3e6wiUeIqIDhS8Nl2YD9Wus5HNzXi4NjTsktnglKUarI77jEw4UuMIiogAgozwoUs3O4qZyKBaiC6GK3MdjUmn2K9ny41TLSaoMtyKluyO4j3PZREfiCnkZ-I2faIHngnJWYX5hH55fMj9oWoXYxqrFNYp7mUg0OEoKp6DVyYKGzBteHA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3Om8XRUXFdNFmq3vJ-x9HtYtQgH_WJx7ubqQgH36wU8UCvF1ZBnrfIHngVUyDPPOfrCy25H3S4uuicAUfY7LVIu7oq7cwF8-enIgIzrPmyk5m2w8cDvtFnuoeoVruuJaatum2zsxrNnkWrMbYLpQSRNJAYoJcYnj8RBjoKJ7YuBXiM2Op6Enf1Qd92G2DVu-4hRfrld-EFVnHDo1lGIvOqsvMk7Cet2d9ODxYgl1lduz3X1okAheue50Gp99bCExxNkVojr9tipamzMWS4s7zm_B8t6TydPHMHHC8Jw=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4n9P9apghmBlY24C2NCfeNpnIXPe0YJKEjDcRBPmXisHaECuDeB0WpHUcuZmktlVhHo5Pg8EF4BxAmCc6aXgvXypDbOaqBbm9BogMf09Duh99cHawfo3gqkjKgOnLw11NigjlDsU_Z_8lYINTn6O4MvEaaFhDf_L7Zw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI3kEFaGWeM0zSffzzLcTHJT7kFNh_tBMzFWDxT9VjEpmtwtpvT6aJWSsA-X3z2dx6wGm23GdsKTjaVHYo-cIa5B7pGWwCLqKlagzwglKpkxAPyvAl9XZ3gNXa_40mD8-M3_E0X1F-qaS9RVM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Night Splinting / Wrist Bracing trials for Carpal Tunnel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Carpal%20Tunnel%20Syndrome&intr=Night%20Splinting%20%2F%20Wrist%20Bracing"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Wear at night and/or during aggravating activities",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 100,
+          "sideEffectManagement": 0,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 667,
+        "costPerResponder": 308,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Carpal Tunnel Release Surgery",
+          "costDifference": -6800,
+          "dominates": false,
+          "qalysGainedDifference": -0.4
+        }
+      },
+      "name": "Night Splinting / Wrist Bracing",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "BCTQ-SSS score: 3.5/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BCTQ Symptom Severity Scale (SSS)",
+          "percentageChange": -23
+        },
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "BCTQ-FSS score: 3.0/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BCTQ Functional Status Scale (FSS)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "NPRS score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Night-time Pain (NPRS)",
+          "percentageChange": -36
+        },
+        {
+          "absoluteChange": "-1.5 episodes per night",
+          "baseline": "3 episodes per night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Night-time Paresthesia Episodes",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "QuickDASH score: 45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "QuickDASH Score",
+          "percentageChange": -22
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "PSQI score: 11/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (PSQI)",
+          "percentageChange": -27
+        },
+        {
+          "absoluteChange": "+2 kg",
+          "baseline": "30 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Grip Strength (Affected Hand)",
+          "percentageChange": 7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin irritation/discomfort",
+          "percentage": 10
+        },
+        {
+          "name": "Impaired sleep (initial)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Few days to 2 weeks",
+      "treatmentDuration": "Typically 4-12 weeks initially, then as needed for recurrence, often long-term night use",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEklCDc9ddI8i_MyBKi7Z3E7A8rGbXmQ7aCwWo_mNReu_LGefcGeOW6EX81cvyqCt0XSTDlza6yzdkddh5Dixe7AXbepoEhQ8ZuGWmKiebovjOcEwHHhyotz14SomDByfc_8CpeGlT6BCJzrw=="
+        },
+        {
+          "title": "unirioja.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyyKZLpggtjPIoTVOfG7LCC5Bg4iewRR7UaB3dd8V44XH_1fUVzPJj5vWxVZW8wNkDl4tTkRgfmVzdJhBIfNBBKRtpfS_HHiqbpL-cJ84aZ0GTh_r5alXLFOaF1RAHuFk5O5XO83lGw1a2vTjNqsvzqd2K"
+        },
+        {
+          "title": "jospt.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn18jLAUSa_rd3zU76Zjos_6fghvs7QUYcCtlBmZxAM4Y75Jwv7BNuYFvPRs0TzkUpKfP8iMRXc5LX0ys71AgA_cHJg1rf-MbUJg0Iww3kiJVDq6Bp5FSnB2tM5ft-Jf-uzm3QJUiFj1lJKEw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRjk8eYGco3_S3HZ-mCztcVqzcm2ynkGimcE7Zb2VaHxxFxhStxpofbcqR_LcOy2d9ziqPaG4SCeydptIdBbK6To_v-kMxwqFn6QRrEWcjzbnIjGaPj-6fsy2oPbUbUoxXXPGTrS_r4o9gyhCywXfrAD8uuab_GWuZUNnuTKPpMCzw84HywfzlTONCk5jzmp8gozUD3a7g4Q0-ZjMWP_cwh6CElr9RtvS67sDXYW9RfdgJnbHAeYkTnhAZp-_duzDIlZlUWffC1S2ULVfBJlofbClW72AnOjg36mYuOqmqFg--YJYNnaukXfdM6SkVYEapQzlGPfMl41S85IwAAD4xtN4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfyotjr4R3iu2nTYkGEKQE78G3eoa1mTcnAN1GKGM8smE75u8DroN1dBHgv9-DvoGUChVhZWwpyky6gomQinMxWc0hR70W2RtZc0w78QtBJlndYcbBNoKrgY-qC2ffjtGZBozcPx1F-6C_rg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxDLOMJQx54t7wsSm2y4ZhWcufyEMkus92ZJyOYgC5uY4Y2mAKPfk-bD7sxyjRZg-RY4qr1z68WNzX6Iar-qaPbJD_U7o4oqezaP6sjNVaQ3j7RBVKTtvoVlOwyPMIshEz28tMEeU="
+        },
+        {
+          "title": "aota.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGP7J71WvEwL6-Q12X839BqPB4Pd6jzhW9fd2SNqT0-xbiTtSExYr9SLVzfy8bfEREX85cu3uPydcfJJ2LUlIJub7i9ZLRUS_JwPSNktUsp6ul88kb6uqDAmPOvuB-jqCN7Tpei3NBpoE96AsZIGvfd5_P9AwnZhx5-ZbXQ9bt3gXdpCXZpsgCmYRr1gHph-Xd00mRxtvjclpFLAzE3x_HQxw=="
+        },
+        {
+          "title": "aota.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM2G_CZSVCOHkg-gNCP0_4M55ma-28fDtndBnX5yxm6jqX9fOf0OZpyNMEmKxZnEopiYuvNm4VE_5gNuP4z7XBrcswbUGfW6YukDEfHKvPrWc4qDH_f6o0deeyAgmIDC276yBAcb3tWfCcGMqlpaBGY3xiIhkuGTNKfyE9umgzNUw7fDLw3ywAg7se3IZlX4lrH6hZy3btkoJxAn6k"
+        },
+        {
+          "title": "gvsu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrxqwDHWOlPp_aAXTorRfhYTgasbveSl_MP6KjFfICSW0jMr1iFg-w8pir7-59phxVmGM7pzfGRQxWeQ9_6zMK4PZzWb5Usk0PRAJrctIE8NKKjBNJdsMN1nyzfS7NfFzb-FrY78NyYrkBCzSjlIIuYJS-g_bKguWaA010zorHT92TgFORHolV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2nOMWwVOqJ32gLNtqUKWm1dBHzQDmzftUrWPgtRhUpuiLxxVbK2c76o_Xdia5PY07ewBWkk39fN_ZBs97qzq80I8Mx_5WfZR-vs8sbS-vrM1RC1dwOCk0BmrzvXBPaj5LSjI="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWjAFnPJWCG14tDnmlcZQGkNo2S3a_6UDvquubSkPIUPPHBCeSi55JEMgESvpb2J-urtsiwqoVBDlDGLT1uXXc3N5OZDoJXq0WguS6hZNH4ucozpZSi0jK9TgH6FQHRL5xNA=="
+        },
+        {
+          "title": "aota.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV7RZ9bdFbQivFdYRpHELNY2rsjrd4onY2unu_PwB-UyyWqvYnZG-zfvIEy4uqk19DFDPv9JxHxXi3QTBc5S_HsZ_kvGZl5IT78h2N4BUSTeMRlWojKtiK4MlOQBbaKYUQBOYCrxxSS_UC__s2RP6NliPHHTkNUUukO1U4PoEQpG1qQU1WTmxIZ9PxgJ8h4zC1D8joLUWe0HWcG1AthPA8koKs994-ou1eR4dYWXM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Physical Therapy / Occupational Therapy trials for Carpal Tunnel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Carpal%20Tunnel%20Syndrome&intr=Physical%20Therapy%20%2F%20Occupational%20Therapy"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "Varies based on program; includes nerve gliding, stretching, strengthening, manual therapy",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5000,
+        "costPerResponder": 1538,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Wrist Splinting",
+          "costDifference": 800,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Physical Therapy / Occupational Therapy",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2 points on NRS",
+          "baseline": "6/10 on Numeric Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-0.7 points on CTSS-SSS",
+          "baseline": "2.8/5 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Carpal Tunnel Symptom Severity Scale (CTSS-SSS)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.6 points on CTSS-FSS",
+          "baseline": "2.5/5 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Carpal Tunnel Functional Status Scale (CTSS-FSS)",
+          "percentageChange": -24
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 kg",
+          "baseline": "20 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dominant Hand Grip Strength",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+0.4 kg",
+          "baseline": "4 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dominant Hand Key Pinch Strength",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-2 points on Sleep Disturbance Scale",
+          "baseline": "7/10 on Sleep Disturbance Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance",
+          "percentageChange": -28.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary discomfort",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "3-6 weeks",
+      "treatmentDuration": "Typically 6-12 weeks, 2-3 sessions per week",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGihC6nlPZYV4-iVizGAT03VrgKQjSPbsbpnFYnxi73q2fEtPttFlxYZKyjXaVpD11F1MBVaVoIfyP9PDXv0ayXSEOaIxbwAzA9Q1ZgGEPZiGRhRWrhKg6DQUzQrEIpU5qpqagHEdKVNGjRcGosZeQkhVZCYOZaLn_MCVYLrmPCkx0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKR9zwKOcci8EpwHzErWJ2wx4rqHY5cwcKBhY5Z3ZWPjw12_Y6v93zemKR-S-6ocz_ZEPPbAkJXJk27K-jqfS3LiaDCBMruccFh0gMRdqYGdzzXBa7tjrCnWGLfE66Z9_EEio="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLfjBuXlUJgBy8Sk1-rVpsD4e4PzOpIn7lmHv8z6IBE0UvBAUkKZ5O7E3msAkCdsEHCQRSire0LqtlFH7S3omde94jtljZzdE7014mpc6LpZc2PxxuV9Q08pbhMk3omyeK1mIpctqNvO7B09oqYOXXS45jcrUMyea9XpZsMF-hNIPoFhOtkJKVXpxnPVClicH3cWuD2yC2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8nzxjykgh6rW19lMVQ4ylxhdN3NyXUcJ2-NsbQM_nAG9_7n3UXKRpJeU-v2Y7G_84Azvltav_JcRRhLSQavALJx_gaos1rcM1M4svl9eKe6755PKrbimCB9bxIix_lh2llQcRvMCfNsGF-u0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtEkfze8cQofGveZ9LCCMKpkX1tqlFOlbIw0N-iVYDlCwGca7eceG2cvoMYUsa2oVz7RWQ_5NU9HGR4AHnQPYu1x3Q8_jz-cisUGhlR8LpgLQQqMrJFBUT9IqnR5pTVmrkDTlU"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCNyzUiRrES-WWnsWH6vApNRNDrmKiJSzZOqkVQU_HjeDgHMVUNa9HVpLB6gVcBj81DD_nm8AnWg2pdvz831BPsXHgWYYiDwJaayx-_A2xcqphZNnQDQ8gaBgj8xlwfa33FtD5_N-KUe09JZcI4Me3vwwdDtML48IZVtMG1AqqHGFctgMQ-p7t6dOudPjZtptFFKkX88VF5bsYb7coufwEsVsAs8_-l9LLVJPdkN1hA1mE0QSVfIvK56BlWhAdhzG_HQyVOgtTFNLrAI2pNGSoJkRjRS-MQDC7aSuCDQW4JdYPpiRd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMfm4dCLiy0RqlcwhKYumQJRn6NixC14t0WiJjwZWq-8mxTqhoviixndCHO4qimlJCyAFrhyhd1KRG88NUyFO-xETtF2xmd6xjUgvmykuOEmSsQ7IvGUakTad4iDIQgsBSIMK0Sr5bDjL7vdn9"
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8fr8HwjtXLOH7O_mhwLmM_fLMF7lr6YefxkIZyXSseolyPmpR7NzIbChMeOLTARDtFEYBK11EVDjn6DOwlAbMTz1JjlkoEa2vKqRRfgyGE2LSBTtddvpQJO8oacRKta6eO3KPul9Y4WpuAqCHON0X0JZ20nsZX6V33grCRgrqn2mnEOTIqXL7j4ig6s_HSxVoYv_9KzcW0QQAZ0sNfWNH2g=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsrqA2W5pHtUdPmT2wX1g3_GQVhjTG8yiRGT-J6YziFQHTmDc1LIt7Yt26yxwi0MnXlFgkQ3BZlp5f5IMy7EpBka0FUJ7yzNS1aoVaJ_87c4lj1L7Ueqo87DIKnUdcqoSlQAlKHcHjHKq3PGdlSKmqQnx3pgAQlSLzNle-Mc5KQYY6IhdH0p0Fbw=="
+        },
+        {
+          "title": "annfammed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2bs-sggnyYwPdXxdq8Tym65pgfx1wnMTTogzkVomV17DgF1ysI1TCWK6PEPslG-5jmkHxYYGPJURm84r3EQp9MpTD_egNPCS2guRF-RZgOpLqiqyIcXC9AqKTUaYye7pkhxDW8LYkHCJX_tn7YEwF-X99dU5w"
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Corticosteroids (e.g., Prednisone) trials for Carpal Tunnel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Carpal%20Tunnel%20Syndrome&intr=Oral%20Corticosteroids%20(e.g.%2C%20Prednisone)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "e.g., Prednisone 20 mg daily for 2 weeks, then taper",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 800,
+        "costPerResponder": 308,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Corticosteroid Injection",
+          "costDifference": -100,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Oral Corticosteroids (e.g., Prednisone)",
+      "nnh": 15,
+      "nnt": 6,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 25,
+      "responseRate": 65,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Insomnia, mood changes",
+          "percentage": 15
+        },
+        {
+          "name": "Fluid retention, weight gain",
+          "percentage": 10
+        },
+        {
+          "name": "Increased appetite",
+          "percentage": 7
+        },
+        {
+          "name": "Gastric irritation",
+          "percentage": 3
+        },
+        {
+          "name": "Increased blood sugar",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "Short course, typically 2-4 weeks with tapering",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn6oqUj-_Y8RHpFLZIcRtYzo3mHb0Bir7vt5qA_sqpy_B14P5qOeXDe03b2FQkxUbDOo6S_PvfsNvs2N6KAMoqZbEtQ-woIgXT0himudPjMsQ41ounNOn1n_oY3FBChLO9_YMv"
+        },
+        {
+          "title": "duke.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF769rKLk2PDKVTHbW23feSMYyMjEPMKBzlFYty2vep16NqaCmK_XW9CUVLbY3L3zm0NPrusZd9PD-ZKl-CN9hC0odt5QZAv3ftAdZBC1MKtk0JNlN1p7QC228D4G5sbjTVvrsSNaeY_K1Dn6d3_rhE-Qo1uyJpY9-oNncYeqjmoN-I4jUfOfDE8WqPFccgCoPUqsv5NWAUHWyVQFMaAWKf_dn9Lb9h3onotd2ZOKOZ"
+        },
+        {
+          "title": "airrosti.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFroiguvP3CB1TK6_cyA445-sDp5XzxGmmsuzCWR9cCck4c-16qiKy-HdVOH_kAlj7F5At98hGfFKLluiToDiHwtgyjePYJueblSJsva7xONEwWuVOZNd2f0pegYGkK8T8yDKfrKgclbbGeVKaPIy9dOkIJCtbpOSQ0pcuQnC1cUoo="
+        },
+        {
+          "title": "jospt.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGob4ysVfgx3Kpt2Ao2IoEUqpK5DySWNlyLymZjbxCw5glO5D_5oYj3xhdUV5YKo9wbOR-tH8KJBMleoJ7OMpfydAgy2bCQyqdmz86gqtsSBApT7Bb1gF4Q-4YADcK69iZtwMr1uoM551OPqN_p"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeFsDg5BLJ6iii0JQOLYtA3I2iA6WjMl2mvDDqaLbNOABmqHQIXIK5s9Eo96id7vW3_x7CF5lPp4tTt3kDz-pdJs_u2Nf9al6eRiLYwVYf7eOV7BVwooI9Kq-NRJZM8rGwEWhHZtFGm7RQIZ4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1yrdcTdKQOxli1uFf3AcV66PsPsIAsi9SaFB6q_ZZKTizGJ94Mt2QK1q1AUKhgNcCCY4_tucMNhGeesc87hVYIfz7dFnSD9_M9skTMSQCSjw__qDbIikf5uFV5JEvjcbQh8o="
+        },
+        {
+          "title": "yogavastu.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzKrizcZKGOO14iedVlKyPIT-YjBUUMswJGMEBIlLuokM4uuoZe0Cu8dqxQJaOjbJgK-BkBsOG8dqJ-OPxuQCFbIhxOeb9Wk0v0gBLY87TAsjXqua24O2lMHWPSiNwGULfN7oGItOnZ7mXIo4S3hcYK4ZvPvHEBxe-t8g2oX1QyhcuxQPU8np77u3-fuFRyPPPUDKb0WoM2P-lHrUV9Do2"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXOuJ-UwqpOs_wCmjmaXJJwDZysJuvV-QlAGpjBsFim0pvVY1EG4_QScdx0kaAIGAO9isXGE6EiI1fFNPMIaRg3tOnSIhNZ8wf2ZPnWAgKv8smmeXHHdzeLPDNm7csQiIIDr5zxuFa_Y868-KVfYwM_AjG1KAjbACeF1UmU38tCwsjA3V4vk5FRlKOT7r8uI33AaP-geBSSSGCmP5GsrIz30LJOPA68oFNqosRbKZ0jko7fWURVg_jq8y4LwbhDTIo_6W58pw1a9wry4SV2_X3Q_c="
+        },
+        {
+          "title": "yogauonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTRKB0DgSPe_p4pLBqUhSz2ixI0yDFjSAk47ILhVsF-GI1o-v3cb3-smBQijclRHz2dE587zGdycOD9Ewgj3liiak8_46Uj9pxYf24KYX2s3CBx5_vOVwHq_B1FM9T37a63ETui2FPmLW5TnBHouzfRcdxeiXDli03BXblGOjkMfOzdMpXAxtS8wSkkMi1zIdmFpPYuxz2mc0d532NRywcEFrMUlVZ_siBF0Rp9Pt323fSXd4tWYNcXCjX0-snpAswyt0G2lKRMASpi-WcehPglGKbOuc36G4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Yoga / Nerve Gliding Exercises trials for Carpal Tunnel Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Carpal%20Tunnel%20Syndrome&intr=Yoga%20%2F%20Nerve%20Gliding%20Exercises"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "15-30 minutes, 2-3 times daily",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 100,
+          "sideEffectManagement": 0,
+          "totalAnnual": 100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 667,
+        "costPerResponder": 182,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Wrist Splinting",
+          "costDifference": -100,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Yoga / Nerve Gliding Exercises",
+      "nnh": null,
+      "nnt": 9,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 15,
+      "responseRate": 55,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Temporary soreness/fatigue",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Ongoing, daily or several times a week",
+      "trials": 30
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "conditionName": "Chlamydia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:58:16.667Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPrbdGtszig3HqG_rJAtPK_wDVrksvh7zHo_SgOwKJiCFIErWnwzm53EIHZudmRbWJRvlmAhhTINAMmj7k9YTr09z1A1Vd8sXd5KdnrG7AXlvTTFLTS9MGUD5GSCb3KdOAITNDexBF"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsr7rwm1MpnE-oVaQaoMEUXOyVElh98tnTm1eG2GnRJmqqH5ENNo1sfhOTLs-JnCUHbPv2XNeLWFz9WT-mGtcacpPfDgy4FB7PQFH6uwPx6r6NbaQtlFWYj5O5Zwkzv-wGIfBUW-E1oU_66XRcce0dNFX85erlxhB2"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJFpzrDcPYYt3LoKP0oqIi14JrgBnI0ixf5mdmmWSlkaIQ7t0rhr8dHMFvc9UkAVMhvJh24qGPDlNg6AocWLBT3Yjkoz2yOR3q8yNc-ZSLX89T442sne02dVa2ph0d3HAG-thGSg3siAkqlpXIQ8Zlb9ic72IzMHFMSR6_oF7BB1XJozPhsIeLX4ZAfmd0xFkjw4DYZttvpQUoVsaz3j8l4BCy2QCvvYZFd1SwcyMgE-NA0KM0HZnQ_kCYGrstw6Hi6KhbJIro7Vpqpw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_H9hKd68Y3rhlelKzrMiXgneYhbAkaIgO2Evb-ju9yZJLDffRuhRCCCVA4858aAs8_-NlJubgg8ILfIPcBHyNMlAx-Th_BMyenq7a6zwkH76asWVH-atGoK5Z-LuEX91B8ccT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx0kimRfDrh6JSvxA1A9qPmI8ySSpthmJ0BD3jjyDQmhg29a-tc-DFWktxecQGLHb7qY4DvB5e6fR3eSXYfgeB-F4wEjSgRAWAUWOOF0Qyw0OmLAZPUCPmrPtifzDpbKF1fT07"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmiNU49YqnEocZ7Q-cyUvTOedxseBh_rHt0rDUT1Bdl_XcJvgOzGgCe06Pkn_otpffcaOBCw10mHgrrSwtnsnzURN6haRtTuSLHSZKGRDDASiRupdUi7wVcIqAexLaExGwpwivegbmJBVQF9UjSQVDeU4dctwk4A7z6roXlz29CsshlZPLT94VacQXqiaYOsAdrbux525q6ibR8ooSfyB8BLb2LLwvYuMpMN8fo358CJqrzpUooX6m_In-78Vlr9LFgMiwzf4fE7vQa_DfBWlz9EPRE2Xh0_XveqVrHrpIy8zYtZTFd0FiVHX7_onb3Mb0"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWhv4-x5mx_Gl2lzlpyvKLE68gYO6kFoH8-rPN6-AvyyjB_11tvmUW2DC_DS085qqacylIK0XoTXuMS3I0QyuMF67Ovyk6T4NyiJhICpD_BlxUEnG2otstuUMdLXRHBKxGDAraig39BlEEyBZvwRwgR_s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc9VjfajgUDyHqHCeMJJIqgCjq791OY1-ldJv1KiK10_cKNxGQjj_Nzxo9Hk709Oud0vMHN1NjgjPRJs-OMxG_9UMS-8ELz4XAQSQluOekHcTHiXsdI53nOZOY3bDy4lVBme7_"
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin trials for Chlamydia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chlamydia&intr=Azithromycin"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "1 gram orally as a single dose",
+      "effectiveness": 97,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 75,
+          "sideEffectManagement": 5,
+          "totalAnnual": 90
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 92.78,
+        "costPerResponder": 92.78,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Doxycycline",
+          "costDifference": 3,
+          "dominates": false,
+          "qalysGainedDifference": 0.001
+        }
+      },
+      "name": "Azithromycin",
+      "nnh": 10,
+      "nnt": 1,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-97 percentage points",
+          "baseline": "100% (positive NAAT at baseline)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Individuals with Persistent Genital C. trachomatis Infection (NAAT confirmed)",
+          "percentageChange": -97
+        },
+        {
+          "absoluteChange": "-6 points (on a 10-point VAS)",
+          "baseline": "Mean score of 7/10 (Visual Analog Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chlamydia-related Symptom Severity Score (e.g., VAS for pain/dysuria in symptomatic patients)",
+          "percentageChange": -86
+        },
+        {
+          "absoluteChange": "-2.7 points (on a 5-point scale)",
+          "baseline": "Moderate discharge (3/5 on a clinical severity scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Genital Discharge (clinical assessment score in symptomatic patients)",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 97,
+      "responseRate": 97,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.105 points (on EQ-5D index)",
+          "baseline": "Mean score of 0.70 (EQ-5D index range 0-1)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chlamydia-related Quality of Life Score (e.g., EQ-5D index)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-6 points (on GAD-7 scale)",
+          "baseline": "12/21 (moderate anxiety on GAD-7 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Scale Score (e.g., GAD-7 in patients with infection-related distress)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-14 PMLs/HPF",
+          "baseline": "15 PMLs/HPF (elevated count)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Polymorphonuclear Leukocytes (PMLs) per High Power Field (HPF) in genital smears",
+          "percentageChange": -93.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-7 days",
+      "treatmentDuration": "Single dose",
+      "trials": 49
+    },
+    {
+      "citations": [
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWOFt5o2ayWOm_XcR207YYGyvMNRio5-u_vaW7aDg4NQJC8kaDsY9hC0X2MpuTDkBtqgPXMN6X2-HHaNntrIVDXNCZnMqDCL79QhcgYKRIFlAELWeb0xDoZNlRmtvNSw9C7MhTLcDUbd3QdpO8SqVxUyDxuw=="
+        },
+        {
+          "title": "childrensmercy.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE5lRVTqYnWtTm6j9OQfrd13cFw-uc-8CS1WSLqgQ4n1tMY9fVc3z2c2PADCffDeaPUgHnPI2jYKCrSv7kWkyN90ifq3JKm78MxWT0YaKP2bWcREmcFM1T-PZMPnOvpJNZl1mi7bizQ412b50MR_jaoHl3RiHw8japHS-mciHrQkvI66KJWtXzSKoqKN01CzBmzDHy2lX1Jq6P8p4r4RUHvyM5AwYKifTF1w-lfHkwB--uzaL6dZNXi9ZQNtGflL61s7wz05bbs4DzfDhuZgSCYxx2WYVWWe5X07GJ4s5GiiAC1-pFwKC1gP2k3zNLoFVYK5FokkphifemEEU4LW7ClXmvJW-b"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlkh5_CTMzvFdxEHgwWQxA5XpbCNxsXQhB4dCHjlT6T6bMefR1W_7GQgxsM6zBeNuToHIjRTUdXKrfzJN1rmzc8pLDwGcmVKUpUrvqeyn3lPtwCYXyRMX7PY2RrSBuwkOnu5lTPNY="
+        },
+        {
+          "title": "smartsexresource.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCvdDEvgORkUoOUpiuaN3uyZvjgh67fo_7_bpVDs9UE7-1GBK-07QcIXVFfRft8N3AHte8JvFt7iTcLBRdnk-S9ln79YZ0fwftEcvfdHcgapruSH1x_QB892iDkmzoA0QH3tir7GfodpqAA59nZDFmbZC66ifX4MBbGpXgwQQrvzmNML8IU-A_w4WdIfnotrMpnaARHuen7jxWlhd1vuUWeaL4HraC_iy9mceziW6Z11_xIqHkq_I0-9x8KT7c9mQOscYt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjSw9J9bwXLRQNDfvKxCsDlTuIyDh1z5rpoo8oFltAI-JEADdIxR6D3JVZRUozN7Nj_KUjaLDtlwXm9uSBEzhMkYkhpYT-aLQf9w0tu_WFAlwuZbmoyxt1TBq8JNEVO9HV4hI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNBVXa-cXCfL6jvUwdwJxteUVdu5kz2LDrU0W-2gYLDXWorWt0XkA0vCz_DVFXvpZUo1hVIJTi2UIMnCxyuAnu2FxVqI1ep-Qdl6XVw3MJP-9E5U06d40v5Iz2u41H3vrXcUo="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE9RZ30m9FF7pvHCOPjT3vNPTCYNCyWSWA_s481CPnXNw_W9W7ZO8LxRfHmEtAtPGftXphjpxPJA_QFxN6TzKUtGSwatM6IHhpFvZNNgFA72Y39yZEujVeF2-J3rUIjH51xx6A8_aMeGuqnzn4BNxMsQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNq9ffODYR3FKnU57RznT0W9ch5BYN8c3-1H63ZTWAkEYmO_LVJIEAsFXMkfHhpqAFtbHJAghcGBV6ztW6zdBKhl2WxA5VYyb4u-6t27buYywxM932KKnHQk12HAOlBC2ZMW17qX_7DedVtFoVt0U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhTx7KRtm154Q3CUtVUOT7NH5C8QX8OGFs3wHVciF4YDQcgEwuDlCo-aVreLzMxI_6NSY9bce-7Yhj0K2kx-UNV_CkbLEeSjK28gafzcGsmuNPlVz55iuBY5KD-6tM_TZEq8erKx-WazlTPQ=="
+        },
+        {
+          "title": "centerwatch.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyfxrB0JM9-aov74xX5PWQ85RjrCbD-CiqTgIckqYjThHBMAWjEcBfyoijRP_LvggWRslbyk-zn5LAhwOXnZ7U1b4gQBwvuZfIk-p38KZRjt1pngno_PSYjoi4fZb-WRTU61VsU6dUyHTZkNNRIswwPJZhzblXtJOm_5tOUC5PCh0n6Q8fQrAN7bhDgS2ejqvy9xYsuqxx8t92aEoc_D6K6bVpNs-gy7b6bD5CM4Ip"
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9nu9xR9qlQlGvKCOBNicQNYDsrbIh6EquEXFjIKmTknQcCGjTpcaaN1a1ciacYSyiQYBccv0RU68EdQd1uGRLp3dBHQ78GLexM04w2_Jul8SVK1WkNqotcJDkMIA8ZuhD06uTjPOsUFkmGjA12d1D3oHZNf6Mp2y7HlP1ieZ3XI2jMck="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZaI1GqXG_s83JYc0uailJs2foWfR5pEYZM4atH-tKiGo-kjHU0dO9JrQIjckQ52mhDFkk6LjjMBN-GZnG9xd1jVI7Ynzz_ThsOIUCpYcA210nSKhy7rfUz8rL2e0396_FzrRBJ_-Dywsz-w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxycycline trials for Chlamydia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chlamydia&intr=Doxycycline"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "100 mg orally twice daily",
+      "effectiveness": 97,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 7,
+          "monitoringCost": 75,
+          "sideEffectManagement": 5,
+          "totalAnnual": 87
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 89.69,
+        "costPerResponder": 89.69,
+        "icer": 12000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Azithromycin",
+          "costDifference": -3,
+          "dominates": false,
+          "qalysGainedDifference": -0.001
+        }
+      },
+      "name": "Doxycycline",
+      "nnh": 10,
+      "nnt": 1,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduced to ~3.5% positive results (96.5% cure rate) in the treated cohort",
+          "baseline": "100% (in initially infected cohort)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Positive Chlamydia trachomatis NAAT Results",
+          "percentageChange": -96.5
+        },
+        {
+          "absoluteChange": "-5.0 points (to an average of 1.0 on 0-10 VAS scale)",
+          "baseline": "Moderate (average 6.0 on 0-10 Visual Analog Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-reported Genital Symptom Severity (e.g., discharge, dysuria, pain)",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-1.7 points (to an average of 0.3 on a 0-3 scale)",
+          "baseline": "Moderate (average 2.0 on a 0-3 scale: 0=none, 1=mild, 2=moderate, 3=severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Clinical Signs of Cervicitis/Urethritis (e.g., discharge, edema, friability)",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 97,
+      "responseRate": 97,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points (to an average of 70/100 on a validated QoL scale)",
+          "baseline": "Impaired (average 55/100 on a validated QoL scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Genital Health-Related Quality of Life (QoL) Score",
+          "percentageChange": 27.3
+        },
+        {
+          "absoluteChange": "Reduced to negligible levels (in cured individuals)",
+          "baseline": "Elevated (in infected individuals)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Sexual Transmission of Chlamydia trachomatis (per encounter)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "Change from Positive to Negative in ~90% of cases",
+          "baseline": "Positive (in symptomatic urethritis/cervicitis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leukocyte Esterase Test (in urine, as a marker of inflammation)",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Photosensitivity",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Esophageal irritation",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-7 days",
+      "treatmentDuration": "7 days",
+      "trials": 19
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2ekGTkjFEo0MTW-6dXug6iF6L32EVbRv3gCtBU4ADS5klLSDwwTcoJnUv1LlU5bdXbkkRNrwuPxRrATtjZhZ4qbvPlEAptcXmqJ6LGTk4PmBJDAUoM5pCUTEE_Qmhg00PEivWgG716Pic80A0dXfOwwQWMGfjSkZJe9hhGTf_dJMxIoT21fhLGyZCZ_SkjnsO3UWPqC4ycFBYH6WFRrdeFj8FoSR9UE4GOuS0CaqLrNX_ysU8qaEgqg1B8zPbQa57INoVpz7ImWl2yGs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIFhSY8l8rbSWd5-ZSmeHfWsFrmvGZ-jIX-2mAsEC8WU1jyi0KIXojdst-MK3uFQVyspJxOoDCBGYxJqcOqKKRafc1neTxMecuUntmj7ElQQyiOsJCLuB_w6OG2Km2CdV0gszi"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP_u2uMKfNwTvGh-f8KeCOOKLiqsx_b_Fh283J4DxijhXGnP6KT9EhaYRxJO1zB0T0gDcb3ERddgs7OSUNKDW_Pc5FuiUE5DVHOe8oShADLjPTW_jSC_2lV7BmjbRkC01nr1EaB0mbzzuFqS7afZh1TXPkYBFfLD33e4SB0m4IA7EEGAbLKCnu8eEknlu483wiZvUBweb0XJS0oNf1kwg0--_ERkkiamFsPsM-e8Jqd-tre8hAj-t25oK0ojRWxl4LFShYQTNKoDKWb3iKfu_Ud2pUFs1cAL5s-RiyPQ5DmctwoH_AXHMm9tc5QIv2EYw2"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_OLS-uef2EiZ8YViUzisR78BKLudGjgvx9pzHF3GzIEBRo34HOyZstDGV31-OsuAYymIpEkdNtxV3V5cBvrbG-OlMd2vDpscol6k_PLVDJfjOOVMl-Geu4vkXUGl9UkY_1XJRIwW7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqlWBLRmPPnVZVfWdZpsIHxwPJBEkH-7MMnnmWchRVuwt-yTBtx00-g4Fpbd9tHeDshNme1-Kv-yo6tL1_N_LgU0FTPKiJRfyb4lozT1Gtn7ogLBJ-IJ__pGEJUclGF84pZEvulNm0JvkpSmtLpi54ObuNh0pti-als8sVqB2O3MTj4dNVdEINxLLaLXFI6d9msv2ir4MIczCf0VH5dtT51kOwYwsOd_WI36svx-Rt9ANuhAvCXcj2kLxE1QD3v-KzGRADL-fH"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNlKFoOmAU3WkAybVfZt_1TH-KkTqDFT7ZQr1DBMJGv0kNWMk52Fu23_gUR7JjU9XRfMv4S0ZFpsfhnjrUbb0jiF0kwDdKDXG3stnTPXCC4ZjUD9CqaOejq9iiIbEOpgDllg_NgdtZFRQFVgbvP0-99nwmpuSEa7-299HH1VofXpT7GGmtidfEJYkfKJbIZW71Hb2L2FCIuuRacQTXh9a_ZHnBjjLgi4bIS-2SohCyEezod1dPfAQ0qWkmNx4zK7SzbjxzxLn35rHpoNUg_MCymbum78cjXg=="
+        },
+        {
+          "title": "drugs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0Muszx30sIObWIbavfhhPsKbr7X7j0S562tT_Luqviao3Z3Mr7p3uoGqMbYJV1rK-ivx5Epfzv6FR00PM5FU68U6oWDKcii0ZczdXRwClpaWJ37j-hRm9GINDyq_07J6aYA2qGMCrQYsS4sotTXQAP0tuNaItAp81YCSAfhU6X2HZnQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Levofloxacin trials for Chlamydia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chlamydia&intr=Levofloxacin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "500 mg orally once daily",
+      "effectiveness": 96,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 75,
+          "sideEffectManagement": 15,
+          "totalAnnual": 130
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 135.42,
+        "costPerResponder": 135.42,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Doxycycline",
+          "costDifference": 43,
+          "dominates": false,
+          "qalysGainedDifference": -0.01
+        }
+      },
+      "name": "Levofloxacin",
+      "nnh": 20,
+      "nnt": 1,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 96,
+      "responseRate": 96,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        },
+        {
+          "name": "Tendon rupture",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "3-7 days",
+      "treatmentDuration": "7 days",
+      "trials": 60
+    }
+  ]
+}

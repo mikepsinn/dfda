@@ -1,0 +1,360 @@
+{
+  "conditionName": "Chagas disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:54:58.392Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO51Mo9OrrkEk_QEb_7YFvgKwcN-U1lPFBSSpqrTkWHwzEx4zLTFPgy74vvYuvsF7cRxph3-QLaKY-GmK7Lb0qx9ZtVtcTI1aSrAgXDyAW8h0gayYin5kjcyFlBvxOFGtdovPa"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvlvwJxra9EOT7GfmdzoGnbtGRk5AtzHqE_QTP8rvfACZMmGY-aTAOHN6Qel05VZxscaprfKN3mPypRx9RxuX3dqzMqcoQrmTZehDD0wz0DKJLfwqHbAMuXhlnNf2yT7LG_2IsNJqMxXGzEwSO7fH58KlnTXFhsQTkRvGaUUeEvxfjb9TI-KMLysGomACONdHxiuuRkIZQzBwhlXNl3tJ4KLsKBiVu0AZ-g0w3LjpGCHhGxQ5iOX6xFZAkyehooWeU_oFootfpuG11FHucb5TwLJ1g2w=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrns9CKa60JzsyW28Uv45vYeC6sCBFBwTsKzHtQVX2auMzMZTwBWvfcL1uo2bAa0zfZM0QyRrpvBSyUTr2cC8rvIiI_s5M4W2NsxsyRuon5FjKPjEbG_SS0w4nKYFeHxTRqKuyTy71jzqrRFDO5l0edBKJlk2V2kSO3OCe5jjLl3_ILm83RkD6vUrB_kDj3OEcdD4nFAnZgBs="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHptB2Jw5hzWntQ2VPZUypTJXOgRyePDLpGIf0XVDYnHwVfafj7rTbZIqaEusOOCJtJDVCWj67b4wHNuKRYvK2FzhZxfUXrZheohpUmtgln1qRlp1gF5-VJi27mP3UiWFLTEm3kE5-BuBDwYyNu5orjzYUzb_UUdimZF8tP6gZJAcdSe-fD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr_Mff-dc_YrGEzfnuJ-bd00ij0Kgq-dCA1vfhitucoKOtQCPWMvJvi_7qBeRkoM4AYvLhRWi9kmBBHNpENQsY6co6i576AU4cB2D3J-nNiwqXusB9kcDcSvzSFWP22415XCa2B_uRT_GlKMw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcunohyg_XAyDlAePgKnSSPtUILGc5bhJHa2KVWVnEF1CQeoo7LH1xj3Xcw_qxBVmzpWC06RCdM6gPM8kUJHipXbc9toa2Cx88LVv7bgI8KTBBlqpKPz3xRNAs3rSdw5t_ABA="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkxmEG5jWcxUga6TNXKfjr5GWSLNDIj3G1mrUeIltgaNMzv_h9a0pcQ5MJct4evnKVyiQb452OgP9Ml81IdJgCaIC3ov-_rIxYpSWB1t6G-P4cb5Ac894odT9_2BMew1yiJouOekM5hQvR2K0="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ7J4iGLr7hK1BjlRY_p4ysNFy96mm9dMhyQq6Q-oVMwwbIWvM6gUH2y0HwcMi1NZVAxOl9rooIEK9uOqTOMDZvkk88mB9sk_-keuh9N11r8GzgPoX-GGafoodD1gegX0ZhG10qMWoAhZ7zI2HEBw5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF92B4EsNrEnjyF2uXHx-BmL-Ttne8ZQVLWlYEd7mfR09WNot20eg5HO8euqFe3HRngWxk5dBC303MtNjfGjg3mFv1nvCtN2ANLixE26DXfxkCWRK_Vq-QsZrxHkVkAbWJjQ0TE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDdWKT_OBx3NaDSlFGB5rIGVTePy5BKYnRGPE_J3j_SGTwq2ov0aAHWiNB1fI0wzj7QWWBB-K9_PTSGCAz_UOnFu1e5utL6VvKGDBpitpGV-Qf9xJ4-IpZVX0OxvVsBKFgjGmr5eMA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfUvnM5qybDpsTwDTdXicPlGCGV8eoRUxMrBq4Mmqn_8YLm6aKioa4qut2BTy535DpCrqtSwD-wB3V7ukI8wUrYcTxmTMZ-1e72rKNdafONMfwX1m0PBCa-HgYHdyKEfcpCJ7oHTTwuBhV-KsAz8N59txj6lXzPzZ3uwSHAQstz7ny0KkGVerQhevKF3qmVGisxkuiaQHdbTpq5kv_P8SibZyMCJvIR8i8mj4a9iGtLKJzkqI1_VNnJOJe1IX7MUnikdIS_Ld6oN2jHw8ZAoXbSycOuIMgyq6qm-VQz5sezy7FOGXRfe4xNWQuQ2dPqYLF9b1I-jfxqMfh42MDC6jXyUgXcqrr5khW15jg"
+        },
+        {
+          "title": "dndi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt6Tfu3gnPMMBcXcWL_pF0X8Ea9tO39y83mEju9Zv6_BNWjlI4IAKj1cQ0a1ApOutIDhEwfaRBx_MFMlvule2ktucV0oZNpAeaKy2UlbA9kr4bgjS4OZl7ZqPeGsluSq1EZ2fDvRYSO5o9hkG6Vyf_EbYPPZ2O5C-HN4hnIlLAICB8kxKmhlB42Vu9xzDNT_c_KMuw-j1RJHuk8g7ljyEMu4c2"
+        },
+        {
+          "title": "ClinicalTrials.gov: Benznidazole trials for Chagas disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chagas%20disease&intr=Benznidazole"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "5-7 mg/kg/day for adults, 5-10 mg/kg/day for children, divided into 2 doses",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 2500,
+          "sideEffectManagement": 750,
+          "totalAnnual": 4750
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 11875,
+        "costPerResponder": 7917,
+        "icer": 11570,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Nifurtimox",
+          "costDifference": 0,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Benznidazole",
+      "nnh": 7,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-990 copies/mL (aiming for undetectable in majority of successfully treated patients)",
+          "baseline": "1000 copies/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Trypanosoma cruzi DNA Load (copies/mL by qPCR)",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-1.95 index units (e.g., from 3.0 to 1.05)",
+          "baseline": "3.0 (index value above cutoff)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-T. cruzi IgG Antibody Index (ELISA)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-24 mg/L (towards normal <5 mg/L)",
+          "baseline": "30 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP) in acute phase",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (Chagas-specific questionnaire score)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-36 pg/mL",
+          "baseline": "180 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "N-terminal pro-B-type Natriuretic Peptide (NT-proBNP)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+22.5 meters",
+          "baseline": "450 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test Distance",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dermatitis/Rash",
+          "percentage": 40
+        },
+        {
+          "name": "Gastrointestinal disturbances (nausea, vomiting, abdominal pain)",
+          "percentage": 30
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 15
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 7
+        },
+        {
+          "name": "Hepatitis (elevated liver enzymes)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Weeks to months for parasiticidal effect, years for clinical benefit",
+      "treatmentDuration": "60 days",
+      "trials": 22
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8PnHO7Vzda62qCAU1fsybm9vcOrA7JYJ-gAYefqVyytlfQjViOkTQVERXkeTjKEKedMRp_x2Abma_UMfyO65bNMI5e08k0NT6o7Ff4QgyiTxqYE_tv1JjUvN5aZWUU0vHvHA="
+        },
+        {
+          "title": "uai.cl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9y8VuscY7wtY2hiu__J5XRqyfJKnynKtWNFdcytNoD_WV_f0EQsxFF80xAdCsMB6OTnf5osM3zALHdkBGghDizo9JCUcaasj-ScfPdFh880vIC_-YXuUfMfPwRa4U_zk1jD8IlKcs4R0WCx5mXuVP_Cd0zMQ4yJoU9NxRdI90RLMpjfrMabcW9D1julbWFrF8pVyr63e2UuiCwYB4_Gw="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv3G54ceb4Ph_Ueo9fTI2sqKiZnAl6GoPaiSnvifKS7mCBnZ-oXnODLm2EEG3gCiNjb_L0xM0QsuUTCoBmvN6SM7_k062_8TO2Fnqph86xinwKcHkESvx5K2MNyubkY-VuvfKhbx1S4dLK0cPlDYIpCf3MlJ3mAw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc8-LNpmty3nwM3TTRptSBZ4uLEAbZoHR2YeTNFaz7gSXsBVHGuG28hYCEGgqKcbwDKxk3pUm-yCEGuiOXvQX_-KOo069yX2F1xQGc15cZ3q1r0b45gJb7jU6othu-PcppUMQ="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFztO4g82ujKzrL06qqmPU6ltvsaZZnFT2QCDLJl3-cfZsj6gU3DXVZUAdoT4aCIB8RYaxZOz3Mj0cQACgTp0e5P6-5vYFrzZ5i7RTy1hnJalef8_Xw46dZiBH8789lpZblPKLab4-32-YUt4jAIKK1M5EB-_erOoeg9RsCelB1a2G3OJFJTJzudKOdRAIoqKZ4X4K2"
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfyISMOIM7NfET8BRhqgd4G2vg54HW9zfoSC7s5pja4KVX29ZB15bLSVGUmvYvX2mBNYwlbZdKsYm41k5IO9Rfw-Eq1zdA4FKN1i7aPYGpl90gdvYbqVfqselyiQvf7tLqeaXDXotBPksgvA=="
+        },
+        {
+          "title": "coalicionchagas.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyYfXkEwfUzhox_boTJ7TNWYwHFZimsCVIXOpShCUpeo1BXEULujtjzgvEYPBcn-9OAGB3fKmkPYypomWvvoRl51q61bTGvsA_wtuzIzRxsVcgdRQ14_UQHWkeykuu4Z2d-5AP372maZ7Vwnk88Nc90_RduvxXiWmhyF7hbjNHZ9wu3rUzg-z3EAElYUb_pYGXsU4Wtf8I3np2eN-KcSxLU2y6wSsyAlFjN0BDF9XENJx-nbTk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrgGSTnSq7V9z-YyNT52o7fG3Akb9fjVtZbrIy0By1bA4YCE_5eZvLAiMlNk4lwiqchbKW4qh5N7y3kyJhdGT-bD-lSejn2dopxex-ihoENzhGrzB3zDYd27DVl2YpzU6SnMgbN6czWLLXYdo="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmzDlUlXvFDbYr16qjmXPY-q_1mWY-Xg5MXv0_6M8MuTagusVBaa6AXD2NW8NTh-pH2rps54XgqzKfjdWDEb8AHLSyRDIbwURHqU2sBZeWwX-UVOngxmov7TWYEXxtdSsyWQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nifurtimox trials for Chagas disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chagas%20disease&intr=Nifurtimox"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "8-10 mg/kg/day for adults, 10-20 mg/kg/day for children, divided into 3 doses",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 2750,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 5250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 15000,
+        "costPerResponder": 9545,
+        "icer": 15681,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Benznidazole",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Nifurtimox",
+      "nnh": 4,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-75 percentage points",
+          "baseline": "100% positive for T. cruzi DNA",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of patients with positive T. cruzi PCR",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-2850 copies/mL",
+          "baseline": "3000 copies/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "T. cruzi parasite load (copies/mL plasma)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-30 percentage points",
+          "baseline": "100% positive for T. cruzi antibodies",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of patients with positive T. cruzi serology",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-3 percentage points",
+          "baseline": "5% annual incidence in untreated chronic patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Chagasic Cardiomyopathy",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 55,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 percentage points",
+          "baseline": "5% new abnormalities per year in untreated chronic patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression of ECG abnormalities (e.g., new conduction blocks, arrhythmias)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chagas-specific Quality of Life Questionnaire Score (0-100, higher is better)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-3 hospitalizations per 100 patient-years",
+          "baseline": "10 per 100 patient-years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual hospitalization rate for Chagas-related complications",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal disturbances (anorexia, nausea, vomiting, abdominal pain)",
+          "percentage": 65
+        },
+        {
+          "name": "Neurological symptoms (dizziness, insomnia, headache)",
+          "percentage": 40
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 15
+        },
+        {
+          "name": "Skin reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Weight loss",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Weeks to months for parasiticidal effect, years for clinical benefit",
+      "treatmentDuration": "60-90 days",
+      "trials": 12
+    }
+  ]
+}

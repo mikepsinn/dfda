@@ -1,0 +1,587 @@
+{
+  "conditionName": "Ascariasis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:44:55.267Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnMsTPYdBItkYAuIctoL-gaxwLIlBke3mCGZfz1EOgIxg0_DPejCqSmNDeSslp4nYalWuAD6vjznol2RHNbX-tnlgMySbXmVntghKR5AudQNZqsZgMANtg927RooCC5x2f6v6Zb9BpVj-MzOY4Ytcl1Lg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2g1fpU2dwHO7TJkV_ph1UKZ9kY7kMOzOPjqtcqod4JTefk51FljcUR0jMYOTgZ71EPAvPhj5_uMmDib6ge0QW5Gm1pVFr-hS_dUCPBrKIN-dn8vlus6_aRy6barp-ydyja46NQw2xRxpzYAo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnoTAZxsxGqFYZUIuByttwH9ITW9FixYQ6R4YQpTHerhJ5JFj6DvXfCbgQ4EA44fs8ljic1_uhrdRzcKcQMlcOqCg9HykZ6y29fgIKiynaAdyXjDE0KPaK6lW-fVVAmXFn-vCD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF8JyLI--UsogeQ6b_y5VP0bA2naJfcL5ABEm_BZGS-_IZP0ZFXhQf5HHfSZFt3UdYKPQcYPyzwas_idYHBSoLqVHy3cgWi_O_tQ8XX8rQ_g0iWJfehAMvr2Eurl71PUAjZ3HHqIPRoj9kIr8="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzEeLInCF9XvSCZjdLRjxPhytvvhu_2VewH1g1Br-oegLchgEsPxMPQLAfP_IBc3D3pliqiGrz8-bAhJ7l4u0qudCmoXWZKp6kcEAcNxkYPbMp1t7fo7DBYaB1yZxPrQEjqNP67_Cr-q1IssRka1U79k44xYv4NQlhv4-oq6Qi1QrOBguQHCKyZCWKUe0zTZigqF0cSLKBQlSVcfJd"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1dfRQ9NPm9xFRekCkWItSdv98xyNH5w4UhQJl7gUtiOb79zyJAuYFKVyf3LwV18jt5aiENaYNSTmU-NxGF9miW9xejfFwMETxBzBOOz27ujxzsJh82JcksZ0DHQ73BhixFwGw-FzVHJmp9AfO-YKCTckjqeXrDkcuTqtL82HqI7iPIncvRdRUkzDAUesBAeD2HaYlxZjPKQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOiwTQbh1OczmjhAihrA1Ju7E_X2377YNR8rLc8MZyWc3DAqG_-zE9sVKY935jmDrYUDCfG6a_AfIZgxdf6eoJuH9QbU2m9agriFAmEGaIL2JLVHjNRn2s6mXzB4OKpvYFmxMvez79"
+        },
+        {
+          "title": "ClinicalTrials.gov: Albendazole trials for Ascariasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ascariasis&intr=Albendazole"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "400 mg oral single dose",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 610
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 10.53,
+        "costPerResponder": 10.2,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 5,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 10,
+          "annualTimeCost": 35,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 110,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Albendazole",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-14,250 EPG",
+          "baseline": "15,000 EPG",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ascaris lumbricoides Eggs per Gram of Feces (EPG)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-90% (e.g., from 100% to 10% positivity)",
+          "baseline": "100%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ascaris Stool Microscopy Positivity Rate",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-3.6 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (on a 0-10 Numerical Rating Scale)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 98,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1 kg (over 3-6 months)",
+          "baseline": "20 kg (for a child with growth faltering)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight in children (kg)",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "+7.8 points",
+          "baseline": "65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Total Score (0-100 scale)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-4.5% (reduction from 15% to 10.5% absence rate)",
+          "baseline": "15% absence rate per month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "School Absenteeism Rate",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Abdominal pain",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Single dose",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8l00fW68tPnwemDziyNl_q0KRd80JXy0yxMk0sRf2-CH4CXWZ2G6Ua6fAekB6Tw73EtV_t_H7K_g241ACYwHcYHwa0XiDyvrctyIwyIh-kmbOmlwy3asekk3DpvikWB1QBNiEXlTOo_cqF48="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFasdV7B3uPj8k3Zw27Ra8UY2SnxOOE_rVuVJU9kNcATqbabWAL-arMq9NMNtOYm1TjyxJOlH2fQKXhE2RYKDY4yGvLNbh6D4IpDrbox1RL_QlbJ9GUw8bYR4qqrZOpAHKIDOKH1yu-UeR0g7wiMaANPlYsaDgw3E_Ejlixot0GR3xgkppb0x2mkEQGzbXMO7zJ-bgkxN1qQM5OGxO9"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG682yRMyqRlN_TxvtDrNUH5KN2rF-mYMjBjvFX0rfTGhmo1ZlCga3Xp5M_8D5c3QxoQy02W-JKxJqnFDtGlLVquebUGh9_L7ZHkKHC2nJVqwG3bbywplHt4sk4BxmFwZLg-WFVjl9w4v3pNqOVhR4m-lGK-UHavS-S0s94QUNkwxmq25LOiGEDePcmeaQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCtv7fILYVDyETQdZBt_b7psOYkLe72YBx8U9Fs_PUF8dE6WQSvfX4nHNC2ZmkxO6TLQLbU9OAImy0qRV7tqtpqAREldKPmSnH3FJxe2Rb0sXqkISfnCgZwNqbCXqnr5RIBwlX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQR0SyM5DWVpDmMGt6p8LZgXTaOvo1MlKhUUfmiNWWk4tUHP_ZZNfalCSisJ5PBAc1knZlNXbw2WI_wpgR_enXBY_-tIQE9Im6_yIPgkzZn1_4SqW4dPTW1B3p_WX-E72TFnOL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuaKfBU51TTnhhVuWZg_oSLTRwE510gGRrDKOJMgmUvz35Jn1vMIDp3BXfkesQZq7ZLi61CkIitE0HZn8LrUb9O55JzX1ynD6-Wy7bQi1X7YsvpDNn7idfHEQmts5j26EC-PqO9EUs-HT_XpsLGYVFFun5M7VoMLDmgbl1V9QYz6m5p4C5EoNwV4XAtrGCXjn2Hn9LLGCCaw=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeY40JCU9VY3JEwUa6LnuUgJcXFeaqvCvmnAGu2TYOBPdkADGgd16uiWKrt1tc3j-9i27PKfT7QQhbi-2SERmUTQE7yIk5VHK3BzzK-KWrwCqiTIbGwhKEVLwknwfYTeP9yAnOEoNW6o1OJvrLUUOBwP8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGe2F8vDG-e25mj_O61bqJjhS1mqF-tFa5XbJXmIsuunDnSiPkrO9MgZLtVvbAg-o-05OeJ5GPLaq_VuRSHhQ_yitKRjVzLh40ZZjPTsT3RdvzfWmN87lts4XBY_e6zMOvNqnwWbG2TXNKKETT1"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVsvg1f4tzSZGcHHgEF9lXJ42oI2Fq6bBzQluHwLdoZ0vSGtDO0vn-QrmPoHoFCE4xirAvCoQ9HYqmE8hBANBkb-Hixwct7wYXftXI8rrZJ2uHndyk05gRkXtVQgs1q0Rx9Ju2pKa_EZQoFFe8fDBnVlipReoZ4AhFaZBtpAZ_PDrWrSFu"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ivermectin trials for Ascariasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ascariasis&intr=Ivermectin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "150-200 mcg/kg oral single dose",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 630
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 31.58,
+        "costPerResponder": 30.61,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 15,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 30,
+          "annualTimeCost": 35,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 120,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.06,
+        "vsComparator": null
+      },
+      "name": "Ivermectin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+95 percentage points (from 0% to 95% cured)",
+          "baseline": "0% cured (100% infected population)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ascaris Cure Rate (based on negative stool microscopy)",
+          "percentageChange": 95
+        },
+        {
+          "absoluteChange": "-6370 eggs/gram (from 6500 to 130 eggs/gram)",
+          "baseline": "Mean Ascaris EPG: 6500 eggs/gram",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ascaris Egg Reduction Rate (ERR)",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "-63 percentage points (from 70% to 7%)",
+          "baseline": "Ascaris infection prevalence: 70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Ascaris Infection Prevalence",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 98,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.4 SD (e.g., from -1.8 to -1.4 SD)",
+          "baseline": "Mean Z-score: -1.8 SD (indicating moderate underweight)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight-for-Age Z-score in children",
+          "percentageChange": 22.2
+        },
+        {
+          "absoluteChange": "+0.6 g/dL (e.g., from 10.5 to 11.1 g/dL)",
+          "baseline": "10.5 g/dL (indicating mild anemia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Concentration",
+          "percentageChange": 5.7
+        },
+        {
+          "absoluteChange": "-3.5 episodes/week (from 5 to 1.5 episodes/week)",
+          "baseline": "5 episodes/week (moderate pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Abdominal Pain (episodes/week)",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea",
+          "percentage": 4
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Single dose",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb4GZbOw3wJ-dIMAQ-8dPalMg1XqhW4V3pu7-ny68pEJKkaOaa5XPU4PLshTARMWl7ZBXANPRRwJNX1c9Dy6mQzo0q2tn-llqrgMj8BQhu9ZxTbwV2MDcPUIl5Zl1w705WC87efjrTbyYmWX-47fmEaItmTWItlF-E0TZhOGQhiUF5KnhcGOseGWV-9LUKuHQoQ-Zlhfa9suBRjIeJ4TcwkGz4NcDaJWI0nkeDUkF1l65KCqB-w3pI-D_wclWq0tA2rekT4HTrhfG9lhWdVK9pZ63wR0uNHcE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_TTiqYHEawZ_gzXc5STD70lppjxxN-CR8IXFNg7iVkZA7ugBzCOKBPLZOoIfZ5Zq7pvxH9npVMFHtkOzvdZmxKPeACvzyvSTD5HtzbMphYL3QGavKv-HwGNp2YxClSqSg5mlmffjqxSF2TwA="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4Xwqg96ZFll-op3P1mtfH6Cm-jzLTgBeQqxGJ6a9QMfb9otoiSbyW8rPwy9pNwsvfKenVazViniqDjdsTwsHyxzgNu9e2BCL364_j7HjGLbAZUg_iDCTD1iQuQW0dx3ifnC0xALA2gSKqUZtGt4q3zD96xUjka-xolc0B5OlM_rTaZCh7jf2hR049l3_Jv5T281ybJ9XYVrM9fXd-"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELG5zhBYW-rg31knKuDy22v0niDqwpzbhP9qc1n4ROc6asMfAjEGw3XReLkHdXPeFrTyRlbIAhMLZ7wzyFxgXkC9i8LewiEbNhFeJQEnyO14EyiDOUf3ADaoZaptc1adTbpJFprBlyxHjVtGdpPcZn_FY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3fybNrkLmUV8KRp9Cmsjp2LOyeiLZ89a4YTpctuOQ0jHA4o4iW-uMvHLuhnlzGXkIzd0fGNBu2AMVh0NVi1I0-m7n8I5wqblqiAKo2hqiR2hAkHcCJR480XVnUGsGvBu9Yc8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0CoyPhonvWbb8vPGdR_mGUd0x9PUoX6XeHXp4Dehgcn4c0YBpRO-Dny7H_UYvaZEV6U3bWYKCXLQARkW5SM9LiFgHr9Xe1EhNI5rRdUys-iLT1-PPuoQLpdsK9bzSToqsjUM="
+        },
+        {
+          "title": "ajtmh.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6ndo5hKEF9-eRxEdaGWqIw_cLWIxrq6MINjGmzIlGDEZtSDNDi4RUD5-I8yPtqekFWuDhbZ8D5I_YAWfVnf7BoK7JeCM_STsLKxrOWQh7qPQNniukbomo27FMWB4liQZHjhhJ5FmH1RZ_gOGoiqaaKcPv_Ndvk0oPFg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0StRSbQwSC6f5bykFNI6WjzzebtE3E1QCzV7INgil3qOyNjAUO2vMwG0Nrmc0nFrtUfFKUgivkAT0LBKfRQo3AD459XoKBgeM_1CCDJGBUg0t0sRVcWPwfjZlh1YN5RBOqE0prEGq3d-f7L0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd5UYz2P1jbSDclTK6Z-CMiTYcvFbmPyd0ZHW-WXakUhRSM15hJRV7uKRnBvS8R2JyOMgI3AC58l2_-gwdRoBbKk3QpvIlD9ksPb1OTADmA6FYW42nd3Ct0lRAXnoYmwuzs7SA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Mebendazole trials for Ascariasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ascariasis&intr=Mebendazole"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500 mg oral single dose or 100 mg twice daily for 3 days",
+      "effectiveness": 93,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 615
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 16.67,
+        "costPerResponder": 15.79,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 7.5,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 15,
+          "annualTimeCost": 35,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 112.5,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Mebendazole",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1800000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Abdominal pain",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 6
+        },
+        {
+          "name": "Headache",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Single dose or 3 days",
+      "trials": 1200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe9bFsU2Guv6ciZgjLUaFF8_MfguQ72N1p-SLfPQ4F4KT0v2AhtWolzxtj3k1ycPNK1d68aAijlQJcV3o7JumrJJ9YZDWpFP3L6JXomLRc6dkysnq0tzLuXzzeSsZv2KBRTFMG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOOh7cqClifaMXQxGOF5FqaLqMg3qRwA012ghD2fm6sELTlr8O0Zpjb5jrZX6CCS4FLYG_ztiiT_92aJDYrKs2tBzIN0ssY9YTALVuO3_5CVlfoC95SDnFSGOVI-gPTI1jmD2-2lZF"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpZLykIfz-GsvrW0VSrDeDah4d6d2mWlraZG0h2DcERMC7aFpEYtD22d8lj1iNbI7ehASBc0GcMWGRgv60fTx9gGaQ3Wd-DH89nNEoimxvAfnTmuTKlsupND1TFaxbT_8mPUW8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3GmcH5FbYDgLUiTuCRY5EH8zqiKJOoyAPpKTQ4JaUgVzSFGAtzq_FESP2Jgylj5GsxGM4Ns-pGINf_lVI5T-MNqqxZdSssmWUNxlrOrTHlRip_-c4nCzH1A8Ez34_7SdWLbKuVre10UGT7AA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZBw9Y4Ed4wInAZI-FHPqSg6XsZvirgysFSWRQXtMXfrKMgAllt32vrUWeVT1seIbIjLRKpWs690YAkwklCpA2kuQKwFuVhvQGrFu7cZMcLA6yCSKaniQUn7krFc27aWpmfW-ocQuHzo5We-U_OLzz318ynwmqNBovWkR-SvTXPnI6G-6O_1bvyqUmViRG9no2b6yT52OcqYcLCVg_eI9XJtpD-P4LyCLF7KqqqUuAXYm2jy7acUu0wf6f-kEE5cFwBSOIRJ1JerodtYW9TFRxwqrZ_OojCWlKSvSeNsUntOZi8SWQniw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pyrantel Pamoate trials for Ascariasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ascariasis&intr=Pyrantel%20Pamoate"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "11 mg/kg oral single dose (max 1g)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 620
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 23.53,
+        "costPerResponder": 22.22,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Pyrantel Pamoate",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-13,500 EPG",
+          "baseline": "Mean egg count: 15,000 EPG",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ascaris lumbricoides Egg Reduction Rate",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-3 points on VAS scale",
+          "baseline": "Mean VAS score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+0.5 g/dL",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Concentration",
+          "percentageChange": 4.8
+        },
+        {
+          "absoluteChange": "+0.2 Z-score units",
+          "baseline": "Mean Z-score: -1.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Height-for-Age Z-score (in children)",
+          "percentageChange": 11.1
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1 point on VAS scale",
+          "baseline": "VAS score: 4/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Appetite (Patient-reported visual analog scale)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-2.4 points on composite score",
+          "baseline": "Composite score: 8/20",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Symptom Severity (composite score)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+5 points on PedsQL scale",
+          "baseline": "Overall score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (Child Health Questionnaire PedsQL scale)",
+          "percentageChange": 8.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal cramps",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Single dose",
+      "trials": 1
+    }
+  ]
+}

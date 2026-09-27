@@ -1,0 +1,683 @@
+{
+  "conditionName": "Urinary Tract Infection",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:50:27.980Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF4pJ2sjSrk3EF_YfvO5gN0ip9SyyZHk5wPJUCz-02q_IvkgK6RcH1Gmn_hS0LhyH_K9RUMA7YYGXI3_hlTQ83Gc7HfoZwfBQ_yvzf9ue20CybuPbXJPpujDUEXJxXWx3awU7Qzscf"
+        },
+        {
+          "title": "eur.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEC16ojBqGCOkfWgTskxb8xHvRdKrG52Ky1CnSk1ZEGTy9H_m7M7zzlnEJwOEuW5A-DFVUEjg7sefP8sV0t5nNOEzFIxPkJPz_dpYLZ4Caqk7u8CKLws-xT4GSn5k-ORjiAyef8-7LtzVgUgyEgBmRbCVu6r1y2_LtXKXaB--QZxoZeB66uLhgf-zS-ri_o_Q2Jgy3P6kwbmx-sIaGdauBX"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPCOh5N_Xt9cRcvRKYalpBzRGmcIScrRY6P23Zqie6MWcvClmnESh8XMeF4iZCUzbEeb4TZpe9u_AjjbbX-XjKoT5TmKsK9lUzVx2nK1usQ3ym_bqkG5z9xSoDOGKvs3LNiT_JaHyEwA6BP9L9Co4L"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-deZsGpF0s6BHQ3TYZoqir9mOHAdNeAw2nM2EtUyuW0ZMoW-zQIdBsPS5VF5xxbtNlZxu5paLwfI4JLV1p9tUzrZKpChtyp1SNJgTHa25LlMWzQBHBnqoXEJDaPwUvsaXtVYU2lzddLYfzcZUiAEY0Y5GzMoxfS0r_NlKDKViwXmypsX1IU3nS263awTAUFCzU57JOLPhCJQFcvdL8gkhru5nYjIz6hpCVjp2JZ9dszqb4YdoQjuLhmsG3TPjdYTT6A=="
+        },
+        {
+          "title": "jemds.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0JHVkEgPBQ1y3fjsczPrjB_FmvyLcBl4OczWv1tp-jtwtvj2hgWLOoDKKKOWuRAhvBBscRE3_kO2jaMXYRcegl9e8yLZnf6_1oZ31nI3EhJt7ns4t7z8zBx2W_6KCg8pF0JreAp6ZI9cf7BQyBtes2QojMUpHvPOn"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC33IpzO88TQwiPfWp01HLscyZh0dXcRgzTQc-XjCsZqGxZDRszpJrRq_x089azYssKA4V1ByIIzmvXBR-zw27EPL6Si9UventdGN7EhSds4kwlM9LsgXjLXTgBOam9xAwJp0LP4TzRQl67RZdnWwSnrjXDxwzFJIG5hk3rDbobrgP_z981C2Y4CUcKRYALyFo7rIetZ-iyuAmHgFgItdx81rR7UYsoCBdsCSa"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOPyhnN_Obkjs86Q03tiXTw8wbD-vKAg4dvq5eZZHwoCZbZDmoA2ApmpveikrBresvvV--Sl9G9s0U-4YYt-FgnI2KjOCjVPqoKWrQsERgGyeBUUu1hB1tAyHL3jbMIMhAboma"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqx2jU43TelIX9V82UcyfgEV0SUxIWEo98lJhIfLByYSO2BbG3VSo_U7yopbZqyxMmuOP_AQ_nE-EvOP4x8SeRIvtGskGifQENOsTlnqgGBPJ7dceVdXf7NAykud1jr-giJNDVXengzwu-G33JBv9DToho9QtXuVo9ZM0NpUFkGdCn87OLGx2-nyab-MmY_dVpeJoHo33Pf1cHI3XYgqQXnLm9Ma0DuPd9aDW_zTMe7A2WSdO8i-V3zh51Ilyq8m3PA4b625OdmTguvZosFfFKhEOceWSO5dbe5fwFq775uYjJNu_hW7V5LyIu0nmLCbCWEuh6_YPvBm3HnB25lJz1T0vyNA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKRXYe7TPzGEdgesUSFDDZKR24lyXvej3UR-4h2yf_eSkoaRP1iUdMYOQrd4qy7DvwlehME4vM6niUxUltmqMa8Onc_UEVDz-pJy1o5P6ZGMzzsB30JBNMK3QjvS0wddHYXLS1"
+        },
+        {
+          "title": "ClinicalTrials.gov: Nitrofurantoin trials for Urinary Tract Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urinary%20Tract%20Infection&intr=Nitrofurantoin"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "100mg twice daily or 50mg four times daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 160,
+          "sideEffectManagement": 10,
+          "totalAnnual": 185
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 217.65,
+        "costPerResponder": 205.56,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 5,
+          "annualPhysicianVisitCost": 120,
+          "annualPrescriptionCost": 15,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.002,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": -490,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.005,
+        "vsComparator": null
+      },
+      "name": "Nitrofurantoin",
+      "nnh": 8,
+      "nnt": 3,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "ACSS Total Score: 12/18",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ACSS Total Score (Acute Cystitis Symptom Score)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "Dysuria Severity: 2/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysuria Severity",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-95/hpf",
+          "baseline": "Urine WBCs: 100/hpf",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Leukocyte Count",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-99,990 CFU/mL",
+          "baseline": "10^5 CFU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Bacterial Concentration",
+          "percentageChange": -99.99
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "PGI-S Score: 5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PGI-S Score (Patient Global Impression of Severity)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+35 points",
+          "baseline": "UTI-QoL Score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UTI-Specific Quality of Life Score",
+          "percentageChange": 87.5
+        },
+        {
+          "absoluteChange": "-12 mg/L",
+          "baseline": "CRP: 15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Vaginitis",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "3-7 days",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1Bql6FDWLZCRSnZuzybiUaH85TyrPpLo0_EqUglVVLblPgoararsx02HMyN4VxvdicglVhyAodoGmvMZFdscmAyiluFv5ExznVIwMoLOW3_YGTBZosYbBFwJV9GiFltzRAut9"
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETOASmMyal2uNunJ1NEOi-olWtSroBZXGRwiDIseJMXIHjjVDigXs-Leq0ZMY5OpwCZT-2OIHK9aO8XmKgXcKK1Ir1BwkTrIxhgn_1qQ88Vssx0GxqpYMML3j3SgVb0GGndDRXPRyMcnP11IHVKZc9iAUjcNbyd0X-ozQIfj4gETE9mSxZ9x8tc67VzLTlGfgvgHN8dXxUTgeekJ2SoYlGq8yQktcxx6aDRBcqolYN6IgIaL095ujhUlWI2e7LpjEICX1709qsbf2Q0w3LZw5qvBKu_0-Dxqo="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2lTcIs_Qe813j5ZjQ7K0SUGWqQGorb40DQ_Tjbt2RRLIJgHRhS-wITMbz66JwASGcTmCZjn3gK3TDh3C6ysE-dc-RVHRmGGtBhPCsyf7T0mge9YlvED6pzVlodNTRwPgzAqdoQehXQDapWcBy54tRI3I9He5CnhoY8fPqdg3EeFFB6ACKjfxN_yEINQsLYy_CS_HyofO7Hg0boHWJT0Hfp03pUA8BmX7lMf-y0Gy0sYJ2Dt02Z2kj6IMEOO30BkN9sipXc8sXg3A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH-k6K1-iBaMWXfvZhDa9LAde7DBbaySugmKupCCPKXkkDGZ00HfKqAEP0PnzCvy6ebDgKum91WYcAJZIpHx_LdAeZW4HMlG3brsJ-M09zi0OJdBLpn0XWKbGMmrr1F-rui3Crxcc_rHOP87lN"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2-oBFTLji_pkJJAT4ruaAbXTXjsP2Zc4o2ZsrmrOl2uh7A6FmakWT4QiW1fNXQVW73_GZgNlis9HNKyO7N1xbemUSMI11GWHXLV1TIRBqgngJoebNZkLUfWSN_3QFKS5wGWz3fAMVpAEQFcdGwo_hnNpvZ0SoxM3BS9_KXg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHldaYjp9pesvn2pw5ZFbEO27DqbfYnrVan7SRlpq2InOGd83ntTptH3xZcxnH-HQ6UvhNF7e4lIAk-gAyLZkC1ti9gPccy2pvUjDbIhoKzelOgZNlVy6o-_t2kQY_nZDtu3MROAl0nbDu9NzjBYNXQ"
+        },
+        {
+          "title": "medpagetoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcnV_iV8IVF73oDtSaIQidlfXsRqtUmLpYZz1pa97fBV1hu01GtStZtlku1Kk0PsdVXVJKXnHrJltkqGT50UUYaQWYJNopTp_WP5YPg5YbFXFCiToettjRLoCDXCvAqF5FBsHj83zlsNeopNI_Fw=="
+        },
+        {
+          "title": "contemporaryobgyn.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCe5OcDQ7AcMq7cHc_OzO20tVhO4td3aNTc1z9dwoAZ9H34LH_sgX2XYmp7iNyfAE-4g3-9quruLMhhyOzu3jEWq3BHNzlLB8D0K3cx3yYhnQkTT5bydmdjZC6ibLIdi7Q6fGHfym9OKwJaGpvLHFSos2zPm0xNs16Q27PHQNVjXqAKL81ef969WSj1w=="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWpxTeP7C-ih6hLi4Zrb9kN9DGBHDg1_mFeslkc6Oow8fH8ebZ9Z5cXZFxvuf49uNVkVPBwN26P-xOH3pfdW6Q09B3XMiZ_u_RSTbgtGVGwapHyhKrWFkGXc9Z0Ib7jsr9ZbeLatp-krjYkq84ZaTWDXkMw9GCZMv-UJPpHStewtbKFg0GZbYp2MK00WxSeyFWywLvM-24N0F7Es33g8RHHVD9LrU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Fosfomycin trials for Urinary Tract Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urinary%20Tract%20Infection&intr=Fosfomycin"
+        }
+      ],
+      "confidenceScore": 89,
+      "dosageRange": "3g single dose",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 160,
+          "sideEffectManagement": 10,
+          "totalAnnual": 220
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 268.29,
+        "costPerResponder": 250,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 15,
+          "annualPhysicianVisitCost": 120,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.002,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": -445,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.005,
+        "vsComparator": null
+      },
+      "name": "Fosfomycin",
+      "nnh": 7,
+      "nnt": 3,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "15/18 (moderate-severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UTI Symptom Severity Score (ACSS, 0-18 total)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-2.7 points",
+          "baseline": "3/4 (severe dysuria)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysuria Severity (0-4 scale)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-99,900 CFU/mL",
+          "baseline": "10^5 CFU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Bacterial Load",
+          "percentageChange": -99.9
+        }
+      ],
+      "remissionRate": 82,
+      "responseRate": 88,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "3/4 (severe frequency/urgency)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Frequency/Urgency Score (0-4 scale)",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "8/10 (significant interference)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Impact on Daily Activities (0-10 scale, higher means more impact)",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 9
+        },
+        {
+          "name": "Nausea",
+          "percentage": 6
+        },
+        {
+          "name": "Headache",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "Single dose",
+      "trials": 36
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEa5i2f2DEZTpQEwATPmnUUX_p3VIN-RKYfR0jtpkA3ZpvzQHUCZzT03yxfcAFIfiIYqWrI3gPNjO5D40X-rs9KAGraeL0xMAnTJvxsfB8C2Kg8WFrpuxFb20oZOGPag5wgC6M="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrV_hR-JPD8W6FlLbIq-_665XxR54eDr40QmHiGyXfp3cXwNXbRapmWqZQ5s_Tti3GR3mjdxH9jhkSn89Cf0Q72OuoEl53a9e3EG9Vxp-JZnAuhl0UqWAGZ4bgcVS3nNbWhxQ6O-SoaHIC3-Am9CCSHpptU8RUr6dWbaOCHXWL5mjFCnkOp85sQCZ1wMtMLwNT4IAgndIraftxpm74WIwXAoQoJt0OLT0fOUCj9ZHGGiO6ATnDfwZN9Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcZR-uudxRhtmahwnrDC6CgVZ1iyNbXW_vAQuJ3v-dAKqfFC0TfUHpUJE_bo_GM88YThuaoWq3s7syvku97FqviustQsZduX7nUpS4SwnK3YI6VEQReHTk-VlWw27WEjSAH4krsrWvkppbCA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKWa0tMy2Ozrn2owlnUwdyN_JHax72TrXG9oA-JFX3TXgWPsJ2j2jcZBEOUOoJIIUqQDAQWqmzbdjiAffEK-zkpHe9UL4KfZo-3ABrOl6jTMxzecaqC30ItGaKHN-liCzWfc4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHnIr3JB7Wuqo7uYk1HtpEQcsJ5RI4zgUQ7v405stxoO6EZ_H5yJLwNPHkJlQwxhqpe6Y6dc9Jfbv7VK_iocjgjEq1NHF_j8_Tg4jiLJduTB1JDqcZW2kacpoBbcx9B9nKxzmv1vv8SaJVdoHbNfhkktOF3DLrm-IpQGIgYvCCSvDHKnBGYiXAKyPvpxgfcACjfQwgKLnv5dYHA4QDED6NaArXqQkP1eYYg0onLMeioX4j1CsUpaY5NtnBfTFj0y1fr41u"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpEZy89Yffdqd1lt3hv10Stp4EtVqqP8hGhMte5UgspF053yAMsMyPDTyDkcDpO4D1tBD1Wzmkt-uu5r3QRPhHytFc71hCA8pEfJodwQDtPJ4TG8NSmntYIX035g1ohJp3B47vV3mJAYErcQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLwWA4t8qzTqN9QVPtL8oo91VLDf6YATjBmaLDbK6mpCPhRhNPeF0kQec0k-enTs2SMWu8eFV4mqtZpPqkyozocKC1xlmGKN_pFus-c9_-eRp_NCvPTaAt_iXx4h1LxkMqWPJf_WTviaR0vQo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKIM7GKWjB1HPpTnL5LvXolRdlc3pXD7kxhk2FjaPWduCOTEumRNeY1972sQhxYiMFZNTIbZ-U01JfNyNGEqErWerAMb30F24hfYHjfO4AmtaShTWnFaepCm03B6Dn_vGreDc="
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6yXeYguhFskdyQHu1S5K3qQJApWKyxl-E78DeYvynips13bM2AseFXP1l-KS7bL0ZtO7Uj2c15pxlvROSFgWS3RDB5Ok26o7BYT-1i3vHmm4W6X_Ll8KJpXLjczPlTlEA5_vZbNcPL6spWsML9zS0-Tt6j-css1KNpXEkuJC5khMzcdV8FyGchuWsFDwgue5zjWiYenQG7PcGoL8YH-rlqPPCqgvjk9y1fJJCYgAzxTQ="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoDizeS2WFDYQH0mNCnkauTmqrNu09CW2V7YyZblEyZp6jxW9AfhfxZ7fdJFKJWf9LdkLIEqcNpiOIcppFSALEJ5lC8YdM4aamsBzDZNeBgX8tT3iv8dxTfFCl-wC5AaSSosZXWPj9f2-LfTQ96WtIf5U8"
+        },
+        {
+          "title": "idsociety.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF11k8rkIDAy6auZjMJu51YgUBbvTytQz12_EdA6XMhMn7psmneBsV45A86aw8RmOg9NHtgPFvBL0wNAjow1CjfOJSxUylaJzn07YTPMZz1gbz8kIyuG66nejd4u3tr_3vvkixTIO3NkeO655EzQ06EEkX14A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFviUP1WqzoUWDPhZ2qsXzns5VdoUXJXY_esR4eclxZ3dW6hIFC-Yac4bbBcKd1i8_kLn0hbcIQQjD667tnSoveEPtTN2tzFNlRyf8WTkoJGwuBUY0flANJ-R4Ld6hf2cYURQOGnnLW"
+        },
+        {
+          "title": "ClinicalTrials.gov: Trimethoprim/Sulfamethoxazole trials for Urinary Tract Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urinary%20Tract%20Infection&intr=Trimethoprim%2FSulfamethoxazole"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "160mg/800mg twice daily",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 160,
+          "sideEffectManagement": 10,
+          "totalAnnual": 185
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 231.25,
+        "costPerResponder": 217.65,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.004,
+        "vsComparator": null
+      },
+      "name": "Trimethoprim/Sulfamethoxazole",
+      "nnh": 9,
+      "nnt": 3,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.6 points",
+          "baseline": "7.0 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysuria Severity Score (0-10 NRS)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-4.9 points",
+          "baseline": "6.5 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Frequency/Urgency Score (0-10 NRS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-85 percentage points",
+          "baseline": "100%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Probability of Persistent Bacteriuria Post-Treatment",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "20 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall UTI Symptom Score (e.g., UTISA, 0-30 scale)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-20 percentage points",
+          "baseline": "25%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UTI Recurrence Rate (within 28-42 days)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-3.5 percentage points",
+          "baseline": "5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UTI-Related Hospitalization Rate (within 90 days)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+11 points",
+          "baseline": "55 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EQ-5D VAS, 0-100)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Rash",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "3-7 days",
+      "trials": 43
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEImIjcnrx6yxms3YpUW_NZWNxLw71tn8XMhq2lQ_l36xsJRLodY66EmWEuW3jgB4x4QHGZLBbeJQ3TjS_mizmiFAB3UwoSpN3K3T1XQFxWeJKCChtZ1GWLOXsAXAk--GicShzx3bE4pX5LirT0siknyWiH2OpuqAZe9S0R5tTg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFG2L6jTGTGSzhV6I-CuQWiJx7_r6pWZrvyNeZ8jVyC8uoceH4Xm5OQZSb9WFJedxuyPwxto9sPPgXCAKK7FhnmDd7okU-CmLkLrKGd9giAwZrlUkSnIs_feBmqcvKhZTnXQ9mxmHnjMPHG-aXDg6Ijh2ao_l-kSpREx7XD7KJl_SrUC1Mc3CBOBU5GCUgAyFm823lefOLNWrR_sgxzzrNmR5sMj31l-n1q7KJorbNg6WTI9w5qbP6Nfwjf_BFK6F-Wm_RzRBmiate3Mxl5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtRE6J3R7WcWpcdQ1o97eS5KzPtW0xl3d_LewVaqDRJPs01eNfeVvlzEG338n60uHuh4yX9bxvpd7ndrxqtkuj15sBUT8JdHcR2w2R6fLCUG37eFjUwM7Xsr2URhAHtMKBHHno6lovFxX9Uvtk02GkwD4Bz7ZVznPMi6XspTgdE9z8bc1yKNQwWlJWdUw_soBToYD_jc_c4LRo9XLTc8Hb-RwyXt4NhH0wH9jmy1Egj-yqLPwAuVO5fB0jSvIEWMxw90K6clIn28-lPHYkmMDTFEvP1vBhanOk5Po-Jo_lc12jCDMSfaszVNCLjicx5A2v7pcUS-VsYpEYdBexmbg6yES7kw=="
+        },
+        {
+          "title": "emjreviews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7UC8P-JHvJYkJnahuc460JgUt-vHHjqS7_5jBdVbhTX1oqxfQnKvP37mvPdFXjtRTasXFp-K5-TdlT3I9JbzUS_Rm2229GrMNvhN5fX2Xkua57C8IhKB_MhM2-HjutuKjYrfs1DmJ-xD4IDSwuAC0ah3LBrKtRbOXlHywqLThArE1OtFf9VcrccBs4LqBxx-IP6Tn0pB9hd7AaFTuV1Ks4zglGdNZbuw6LOJBlmYb89pzeHdqk6kFFw=="
+        },
+        {
+          "title": "idsociety.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3PV9zeGmgPYOMxBmnf-sA_b0vsTJiDpr9tWWJChVvcoFcpR9lxo4EXHAa9Vux9tFG-DaLy7A8L8Y-MbpbjPYPkAp5c62RFvuTKKTPziRusCEwSWT4PiwVvROCP2Qvd7ZiDdn8U34TVFeyWpn9M6GbaWMLCyt8MVlT81Cmlqnm6LPgbb9HHtfVHruMl164XizmlCxPXRmp6kwpLUQbl82JMhwExWYg6WcRMa7wWO9C2UobdNBOKlI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKQ2RnGNLtfZ8jdQrXV5emCw697AHIpqjqSzUtLEV1Zlz69adlKPNG6N4x1Gr1tCrF-gKLF9Xwx_nX3txflpkQSBZ9dZEhbmtBJC5YHSFDUQ6InIOtlAib2G5MlD5ZjN5M7RA="
+        },
+        {
+          "title": "citedrive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8YUjnYT6v7bF2r8NodmNsVqI5MKoHIF5Wbt1bdPFKqmoK6DqOyB8q2OeQKzRVatDiqUfOjr6ScXtK3h2xt9KVSt2D9_MT5x8pbnrZlwO3wjU2hUqSWfsEQKg6U3wIqnzwWXbJJ1fwjGdB0LZ3abxu0H_QifZXuPLYId1uBf4lC2C001VGDc9qXm8YWTNj5Ro_oV9H2OTp6M1ifcUFxsUZ2iLPZsvqpqWU4KhmiRZfyns2r9UsUmJoksuq8jZuhwMLxg=="
+        },
+        {
+          "title": "singlecare.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9N5L8nkiLB_tdJ083WxSAHcSfBaOU11zF_Q5sfW36hxpoI4LRozAU6L6LVvvGv8nQh4kObfyRr0w37qSMDdIBPJlZ8bg3P0OIMeTEqrWY2QtU9lHszOZQlyCcdfmqQHDDQSfzZ66_SHEAfnjg"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cephalexin trials for Urinary Tract Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urinary%20Tract%20Infection&intr=Cephalexin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "250-500mg four times daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 160,
+          "sideEffectManagement": 10,
+          "totalAnnual": 190
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 243.59,
+        "costPerResponder": 231.71,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 7,
+          "annualPhysicianVisitCost": 120,
+          "annualPrescriptionCost": 20,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.002,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": -487,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.004,
+        "vsComparator": null
+      },
+      "name": "Cephalexin",
+      "nnh": 8,
+      "nnt": 4,
+      "participants": 35000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction to <10^3 CFU/mL",
+          "baseline": ">10^5 Colony Forming Units (CFU)/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Bacterial Count",
+          "percentageChange": -99.9
+        },
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "10/15 (on a validated 0-15 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UTI Symptom Severity Score",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-4.2 points",
+          "baseline": "7/10 (moderate-severe pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysuria Visual Analog Scale (VAS) Score",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 78,
+      "responseRate": 82,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-43.2 hours",
+          "baseline": "72 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Dysuria",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "40/100 (lower score indicating poorer QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UTI-Specific Quality of Life Score",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "Reduction to <5 WBC/HPF",
+          "baseline": ">10 WBC/High Power Field (HPF)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine White Blood Cell (WBC) Count",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Stomach pain",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "5-7 days",
+      "trials": 12
+    }
+  ]
+}

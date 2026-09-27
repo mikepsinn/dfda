@@ -1,0 +1,814 @@
+{
+  "conditionName": "Lower respiratory infections",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:49:58.026Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6xZzVCgrigTB80nNHrEFNp5-5HtHsEG3psJsYvQAPfLhhvPSX5zs1hFD-3vWp3LcP1F8910HmFm96r0I2TGe2nXtexCt1jJcFrLihTiIsS8DiC0prm1HKeDd3RHMm2tlcTxV8VCoJrHn3SbpmSp4gpirbkTN-jwhjYxK_9pQse0wo_LBBjtPyn3B7lcLlcq0QGDjABxAOUbU8aenXs_dWgCuiRo3MNE-h7fRzQmuANLiALZiA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBuaYO90dEiH7694Dkdv6Sm9YEvh830bLJ8LUTATrkbYb3zROqT_8JC27WNuVPAyE5SRFO5o6M9rgOMUowcv3QvadVwhYO-mDj0rXLiB-3nm4VAM9EXrrmpG-UtaLtUnVSMhx2tfKOEWsbeaq248Oa9iQyvLpMem7KQ5Sre2OIDNynjOtuMyjIUJwKEWq_8lPn7FWxhY84LuvnbRuC-8GQ5VYHBY44mt7JYvBECCsKEDb3hetdNuJLuLdQqVPQZu7jzWBRBaebVVF8hI-r0HEwg8jv-4_ezvHyhaVnkbzTwZrIqS0Po-_WiZmqfyWZ2ilam19hHf5U_sM9w0r0PVvO4kHX1yCuOfMx1H_xLky5YYUCp10="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYeYYV0yoEQJxoYar2uWnGC9gTBUbJ91dby4sHgX7bug-22hwK3jPEO5BwqTgeg6WBZff7MvmUKyvD0AdL9JTY2HNhAXsei3TVh9mnCESEM1wPb6p4sf83lXT5hQjNRFg6-b0LP94BZKwhxl4JSBe4"
+        },
+        {
+          "title": "revistaclinicapsicologica.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3xQurvlAf1tmbKuBTuPlKTkp8xlXeIBbPg3NPZHRggnEfNF0D-lTPStGVSBn98haFYjZXDnA-ytZOh46I1tOpLpBK-gVYMa_TZKKw6wuOCwwsjPfZOvTkX8GGQz0_sqS_kzmNkr-QYnleya2ulX-aLbXyVj4E2EuB0w=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDnhUbtKAF2JCxCrB3hVRbPPq7Zjcbd16UJpj-OCZZwLIw5xulmP9P_cwdeULsvaIeCdBh9YXVBX_xTjxc8tNwFL4-hhE-zG949w-hQLA0ElcsIK-keV6_r6UKV-Aag823phDMpig6Ixdh6JpqJFOkuzu7Ho0-tktihprgo2PjondTzJosrJAubd3gwVDE97TqDUGAihJgymKvQ6D6beNtDFDAJA=="
+        },
+        {
+          "title": "pharmateca.ru",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZscv5FGBDfuZpeQVndEhrCX2Wf9Ate7LOXh5RPQAtI-HGPigFmJdKvNltOAvR4b8Db12k4wJl0rVEvAwkBuVecbSkHYaOViGZmsW1NkHjWulbOoOxIGdbmKedxTqeRc_gpAX0bWtjfHc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg2eCM7rjcytcQaImHOJGeBwfWCm_BLEU_qAXB37F5r7HFBPicnzqteOS6ngmvnfuJvIQcHgidUxztJVYvv0CYsZh-bgf9hTl_cG3DX8DNV6rCZMzEL8Gy_mv9tVqTmenJYw6MJ0czhMHgiwR3"
+        },
+        {
+          "title": "ClinicalTrials.gov: Amoxicillin/Clavulanate trials for Lower respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20respiratory%20infections&intr=Amoxicillin%2FClavulanate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "875 mg/125 mg twice daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 45,
+          "monitoringCost": 250,
+          "sideEffectManagement": 10,
+          "totalAnnual": 305
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 358.82,
+        "costPerResponder": 338.89,
+        "icer": 25000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 27.5,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 45,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.09,
+        "vsComparator": {
+          "comparatorName": "Amoxicillin",
+          "costDifference": 30,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Amoxicillin/Clavulanate",
+      "nnh": 8,
+      "nnt": 4,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 °C",
+          "baseline": "38.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.9
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "Cough Severity Score (0-5 scale): 4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cough Severity Score",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "mMRC Dyspnea Scale: 2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea Severity Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-60 mg/L",
+          "baseline": "80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7,000 cells/µL",
+          "baseline": "15,000 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell (WBC) Count",
+          "percentageChange": -46.7
+        },
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "Well-being VAS (0-100): 40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Assessment of Well-being",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Sputum Production (0-5 scale): 3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sputum Production Severity",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 12
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 6
+        },
+        {
+          "name": "Rash",
+          "percentage": 2
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7-10 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEukmoWKmJzyIStpJro8mKb_VOHopFDV1GcRCdf1rWGv_MyL7Qtx3MMMz_uE6rr64sWOh842TUqRC9gCvFQYwpvpr9bnYPRJ0ENCqIPyecsryXWxYmMBSGWX1HeWB2rfgKQIALR7d-f9k4LbnU="
+        },
+        {
+          "title": "bjgp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb8GBba-XVM5_kbZrOArSMhKBUlDEbXhTiN8w6ziKoKstf9a3kKT2RD0HL1HxaR1-QBFx31OvOW8C0N7gmo4iwXCr55ekDUgZs_hhYfLo-X2sMg68_wvgPB_ARWIwG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0fvNBRpSu30eC22I9HIbSTk-13blhTVgS65Sgzxo--uT0VxKYOaOmuZ53MDSmPcijzT8bwqbQ2FXd72FlnyDee8dLAX_gjfIZlFNcGPNyI49FjeQTvNMydJ7ehVoHyJNnq3_VSgMRG0LWNUk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe2_OH4xPbesjnh7-L4rzB2LJkHO3V1SdPCCdLT0jLSVmftJE5Ln-Z83vj46exlzUwibtsz_kGlfnFPK8KBU3Ko4O3rPWSv1ErSGKig-n_ICyIf7XvHiRTgR9IkacLGvnHdBMfsfDmOIXb2hM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyR76IBg4LUcyA5IjTlRsqRYj3QGZPnI00MBnbRqY9ClTB7CAhIg_pSUCDawJyMLwm2i-auSBy5r_KfU9S50WlvWGlkuwHFWWN-VY_u1nFNGK6TPUmYJLXa-Pf8qhPxBslrV6cwDsuddH2Mus6A67aB2xlij4JfR-YxJ9h-pV_WytuEa3744TvDv9rvsXw04dtfaGaaQq0WMZrjsQ_HJCf6a2KKK6uRgVg_eszTJ7xbzBiAZEoIuBAJBKid51UJd6-Dey5ocFbkZ-9VLN5gykLNnw6VhV_QsLRS9dl5FzZjBU5u8KR_A=="
+        },
+        {
+          "title": "improve.health",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVKlPyq8j5R1RwPklgIPEr0aVuSSqOj3a-p4j_ngupIuxPXBAk4jAMGKYE0mAB4Og6175M3XFNES7uwFKndT5ZhKLfL1PKZi0xjyJcqqe-CagNAgVYPcrvg3nEHhLZ1hxcqBPoihLMMv1DqCNt0AfYPGi1IpTsD_zs18iC_Pp1fh_j6uw12X6nKNUg-nhZXWmscRBm-eFXcHMOLQejKcJ2my61_QmqLcC0ugkt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6K-JNU1KHK96Ile9H034GjUgcLvB4F6VBA6xsORyw6SXMFQ-9zj1cDQB1EfUOkBso0BuYavdeB0-Xxwqy8vdDU8hIOYsyuO0rTypQJG1lt_q6yX87M8pixN1dl3rAmzjq9heUiVap"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLXuFzsc9ZprNV5ho00kO69iRpCTcwG68-c_h7GRG0wA7_ylvilrH0MlrjExTavOP2zM7lb5GP0yMlBhZKIex2yBXDATHzYMMi5VL_ocp_KmEAiBu4Csox0xkrnX4ifGsUJblvnep8Uz8OCvcKD0H5lzt7_hA1JLSGUM2uWfi4QI5mUSOLdlk8nATaeJULwscXdHPYyVW8Q7CPTA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Amoxicillin trials for Lower respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20respiratory%20infections&intr=Amoxicillin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500 mg - 1 g three times daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 250,
+          "sideEffectManagement": 5,
+          "totalAnnual": 270
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 337.5,
+        "costPerResponder": 317.65,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 10,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 15,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Azithromycin",
+          "costDifference": -20,
+          "dominates": true,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Amoxicillin",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "LRTI-SS: 12/20 (higher score indicates worse symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lower Respiratory Infection Symptom Score (LRTI-SS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "Average 4 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Fever (>38°C)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-45 mg/L",
+          "baseline": "60 mg/L (elevated due to infection)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 days",
+          "baseline": "7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Days of Restricted Activity",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "-10 percentage points (from 15% to 5%)",
+          "baseline": "15% of patients (e.g., in a control group)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Rescue Antibiotics",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-5 percentage points (from 8% to 3%)",
+          "baseline": "8% of patients (e.g., in a control group)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization Rate due to LRTI",
+          "percentageChange": -62.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 3
+        },
+        {
+          "name": "Rash",
+          "percentage": 2
+        },
+        {
+          "name": "Allergic reaction",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "5-7 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8tbDb1Iy9l-_gazpP_yqd_adK0MxFrQoLgUVNoneDsbsYr1N-14VK9sk9w1OQz0tow1yaEbplTGxKtrWUU3J1ubSAGamMVZqlap0_s7i3gCYf4oWKBBq3Jwag7e3_9FLRyr70fUWqS_OHfNJz6iE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8xc59-noyLaUe-DWGaI8qZrEUnZhw3Rc27uFV7PCEB3TSXpff0Os4UV1Xnr11796zBHUkntCsNmvLqYOAP1Sv11W-UMYZJ6Arbo8AAtxJe5-GXWp38IFvmtK7HobajKz6tODde5MK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBTmqDtDtf4CkiRbD-_aitVVC8ihlTFuMla7wewe5JXpu0LJEWvNWp5RFxwlx44f5mi1IYGko-RCF-BeqX7FRpmJp-bDUsNUThGxay-SIkAfS8f1Bm16NGJIjU1e7exn-UlC9vN4D00Ae2lpM="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5HR8f0w90rhzAH74SSfaCTPaRE3DJe6orQNV0r2ZvifopZOSeSnsb2tfm_LuRt26Ic-6AaQO_lF2ZgyS3sx1l_XSZ1I24SyIUxdJesDk2_rpR_hGfKJixRewZNfPySBwDAJdsHpGW5ciK2ZLQjKQMz1-1PN7VO9x0OI-dzkHnWxle38dFEF4-WKCKV9t0RTcKRSp03P27Vj5zaA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdjK473AziaJuMq86Msip9sVcElicStEA4c3OhFLYqvnOi5_Choh3YY1W9hSjVinkMAne85bXLnos8rF0ikfqteASeOUqkyYL4m-WbkgIcfbHi8QZnYy3Mnj3FNjAr9nR7pZSnJwSe0849k8Ibic7FdXLd_FOoCpyuk9LBPkB0laCbEtr4rQ5O9zA7gkQu44agVBhEbpA55HWzicHvoix2A7QeLtU="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEefgyfCLJ9tcEn5SeM2-aJ1Laby9ugS98pCQwnJYFYWmDxVfO1vUku7VpmcaXYqiv0422bHll6NenEdg6Q57boNokyAaIquK4y7r6GM3Vv6Cd-4rvtxaa8xea-jQ-aGwyWLbDeec77uoaJ2sv5vv0T5FJ97XvB93jz"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV6YBJx8-1tkn00a-QITEFu0dzMZ64DoGR2-vCfXpmfuQknNjjXd25nrNJrnJtdYGhZdr8jsOCL-gmiH1Ilic2pF3w7q04OgFBW1aohNNhURQDTeRL9TJYvoIMxgaLkopUtJB0P6HGYdPSKQMafVWb6mp9tOUyFmnjK3LUyw7FZ70QoY-lwmkk5-K9rU5ST4Bc7liDAaQ4ZAuALTeJkdUDXCE6N0XJ7zyGNwt2-atfwF5L0jRQurmcCcW9EKr8GVZUharq"
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin trials for Lower respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20respiratory%20infections&intr=Azithromycin"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "500 mg Day 1, then 250 mg daily for 4 days",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 250,
+          "sideEffectManagement": 5,
+          "totalAnnual": 285
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 356.25,
+        "costPerResponder": 335.29,
+        "icer": 20000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 17.5,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 30,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Amoxicillin",
+          "costDifference": 15,
+          "dominates": false,
+          "qalysGainedDifference": 0.001
+        }
+      },
+      "name": "Azithromycin",
+      "nnh": 20,
+      "nnt": 5,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.15 points",
+          "baseline": "7.0/10 (0-10 scale, 10=worst symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Respiratory Symptom Severity Score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-2.9 °F (-1.6 °C)",
+          "baseline": "101.5 °F (38.6 °C)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -2.85
+        },
+        {
+          "absoluteChange": "-3.25 points",
+          "baseline": "6.5/10 (0-10 Visual Analogue Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cough Severity Score",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "7.0/10 (0-10 scale, 10=severe disturbance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "6.0/10 (0-10 scale, 10=severely limited)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Activity Limitation Score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "40/100 (SF-36 Physical Component Summary, lower is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (HRQoL) Score",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 6
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 4
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "3-5 days",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfdyba-bMwU9R4vn0dFwvSXPkF1S_TRX_4JOEQdzqM0P43enMNmsal2NebXqyAd0Cb3i5SNYSz1HZ5wnv9ST7sZcVUDcC8ygjQrAhACIAY0DtjAZUhE7PyJFPMr242y04shaDRgK1T-EkeVsm5uq4T"
+        },
+        {
+          "title": "shea-online.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW_lOXV9Nw5ji3Sf21kkcuT10kvnC722TOX_URtxNm1Dz5PvmRRQlmGOiIeRPJdYDQEeZVxy1CNf0-TjDXk2JpJqnYfQ6CyOsLvQs6lKhKVOrKoCKvAoJmJtNn3R4zakMcILmD6PriBekUqS4JQZnrMUkEPVGfHk1KGu6MylBPX7REypR1ae4srEZfeQcj01F5I_POlIo3fmeqEmUJZx3JU40AHezNtzUDwM34rLaxtZkS-Fc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAma01edRdc0BTRHkjX5_rPXOBP18iXfobOwFT72TCtnZMhCHN5SGDR1AeDK-dHa8H7uszITZEsk1NtxXmcXL7MB2kMPgTARnWkjYKOtmGaXXXUk8P7lYMp4asLJohEWFsDv30"
+        },
+        {
+          "title": "japi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOxASsYwo2GkxGh6Stgd6dn9cY7gnpe_3qsjg5DF5KSKISDRszbOj55tr0OUbk1OAA4XWMrqxpQCNjV-MkY3lpRvxAigsLYUrQ7AfIfXH8CiSjz0MiH7T9a3d8YTpgRIrRcV0="
+        },
+        {
+          "title": "amazonaws.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZpdvvn8EPROXWrxXcZSmBSc3EGgV7Owyo-a7mGk3qPKo1i8MSciduJ6MXK0VHyEBGcy7MpvtWS-zDP7SWU9jzmbFUiqbgodj6aSqrot1qRFQlhzopg71LhEYBMgw_ut_mnboWq6y8RrguViRmZBCe6_yjJeAb80ct-LwUfF4P5z4hvedSml2KJak="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRuas17bp6YZWhEeXCr_jqLp9jQuLXH2U4Z57weQYsnxYBHlyyqxhDJjlPIssKVXEsmxGxwTib9dVSRKgdjs4x-dK_4FrduTvZMuHZ96JWuio5bM7HHhJTgOVIcxD9pLXzMnjnV5pBA6LRLBlNOffc5rE2Iwhu3GYxvz1Ziepa6bFoOSelejF-QP0DY8o="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeDaTczKXpDD4AYssgcebnBsRiBPQNoIXDxsC7aNK8-n6nYZ2iRPlWdDypMg6jJRUyZifllpd1V_vP1LgSfe8GlQO0BCa_-JhjdmNh5WU8XaVR2fxvV7VUFt_mdwXWTo1BAbZJA_o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG71nysiiU-UXoaFoudDjMciC2PQAxVIjx7lLkPIZro79TTOx9L3IWOoXqGBUn2Ud6nH63rEDzeQMr1HLtgKYmSp6D72kyPUzzWbJ203Ocm1YBDV5acdJYJIJDQssZBTZ-M3kz_"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8SgbaxIaGEIJad0zCq8SIcGMyUNdGeid-Ep0zYsD8sbRKIhpk0klzA6droJ_ylZtblbYgVKB2coFKptQSNLlp5Lucv7Uwmar7O7eZ9y7pUr0N12rTKu91t_Mn0_tNxiGt5O1w831CX3If7t9oV2wI42HCkPp8irFuCGD3HCO85Aaf5FWhE9XRSshNdaUs_6MHlg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtX-ZQgdfcsVDb8ih_a2ZSFToOT4GhadpzoBiKMtB0rOvlUsVVMx-C0x8TgFdpaKSRqgIdSFLSOoSsBUzsMeDoCfvG-9lhh7nC9KHrhi8PrySC5c8eGqaKpho4sT1N8ho201nm_YSDFi82dLE="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4ii-2IOs8ixtDFTVV2PMr2TgVcR-KIxkR2Es8sAcQnlcDPzsoXeEp0kG0-IjBUaKJBgTA-vHs94WHr9KFiwaaRFGUjUVI3AInPFJfL7mhXZDwcjUeTq1x7ToRSSKaB72v732HjjzIGesyYAQ5ggAxhKk9f1iXkJAiSxMDE6peZ8BVCm958DDkOg=="
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhrQMxrvg8fvvGyyicjIz4bqu9HwDkQQ0M5iTDoAqUm2irUPo-kN6XSKxJ_PR46Ka9LAv0KXCUAjLSQCuEqMurVU_9w7pp1rILe-vlFBE13iDEBstNM1i5unEvmDmNSr1dDb39LyhCGaoPITABsdsp1vM1Pl3ihwyxMg=="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFETn5jtL6JNszzg-hk-jM-czmS1jZfs8nQzsqYH_MbPCJhlwwC5eUsAeJgLCN6E7KWjKvHgkB_fsnRWtAqXYamUjtGm04Av_plttEEfuqR8QOlCvv74ClKeIw2DtourHFHDC7W_ie1HGeats_Ecj6yc0LKf2swAQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKfKNlD1D3q3S_3jg1sVlExETgBILfZOHTTkLogVOGLN55aK1LkEq7l9ICwPVnpvEt0isQhHpf_A1ce6KdvXHZS0x3wA2gBmMKjCSQUr514IhMdHF2ZtEDwPYB0Sbtkvelf2XjH9dazY_zodU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw2WIqInw95IsxraRlJ3e7yU-MLch8N5z1N4dWh0AjCgSA1hMaZoTf1KiLDOLiPftzbxm1neiXtqJdDJMfjDe9mmO4IbAQsidN-xyHzHYa2NZDBpsf9q-QivpX3r7Wy5aGsEV0XjJbQhRLQDSy"
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxycycline trials for Lower respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20respiratory%20infections&intr=Doxycycline"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "100 mg twice daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 250,
+          "sideEffectManagement": 10,
+          "totalAnnual": 280
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 373.33,
+        "costPerResponder": 350,
+        "icer": 18000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 12.5,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 20,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Amoxicillin",
+          "costDifference": 5,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Doxycycline",
+      "nnh": 17,
+      "nnt": 5,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 80,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Photosensitivity",
+          "percentage": 8.5
+        },
+        {
+          "name": "Esophageal irritation",
+          "percentage": 6.5
+        },
+        {
+          "name": "Nausea/vomiting/diarrhea",
+          "percentage": 7.5
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7-10 days",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0JkFfIdJkXk8X9Z3rrefCHEACJycJZIh0IsXP8VFEmDAPDCj-KhEY_FhUIld_v_1eBxotBUVVLY-kjJE_ir4AqlrCAV8Png1FCZDVsrVgTz2A_UxMC5jqf2LQiuP3DlXYn900xV8Zad4pwvReb-VB8kIdlqB7wg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyAKfv12-tzIqsLfyjfzKevq5D09ZMXLelgLvCvC8KEm58SVyZkEg-sdj1YcpSjbdrkgBus5NNW-FbxwpcA5DfL5jUVvNbBIT_woszG5ivS9bF3Wy5lHr2RzS3Rhd8A9HZCrPUoH65JpRE7Q=="
+        },
+        {
+          "title": "2minutemedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOp_Hbr2KbfmysDB0nfu4pCDDtDbHevToKS8gc_DIcz3Qg0HcadhHSynkUAVZPLLEeckUtmLB8_VR6lpkm8H4ejOPuwfQKLmsRvsUPkbYrn8a5Ujh0PIRrwksNAPv6a-SrzI8td4JI2mCe7vgDNJAPtgslioXsRPMN6QYh8xUHFLEhcl7_49_pzgx-arWuUP5dvIEXOtE67EXPwZxj4Obg8ES3RzGWxNXGUtgEMh7xxr3IELIRlP1rCldyVWahAxv6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsBNZVuIcj2qIyn2_1xmSXIMbwZgsbfFG8mmHLv5IWX9GmO4eZPepY5c09g-P1rEJa0DyBMpSGdqByjltwWa1e1LMZk1kf_sFMeNd_Usrp-qfkOHNOT9ic5Lv9QISdSrYWSZIkyJ6cDh2jUA=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHL_w3T9swv6MvCOKICaVnbBK6kgQFUIOyR2jt27Mq-iyGWz1ihV0sMnkBsbFVOsyfCzvr60lFtKsltU7-AdexlzmVZkYMHN2hea83zCt2OnTND2d35Mg2erylsJi4Q_eloy-M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKdGpuQqow5bWw9NV1vhP_SM9R0xMXjvfJzWXzaFfIe7D06RZWpOhyXiPxacniRLSCtG_LJCrbwj8CtklllcUMYtuOWy8VhJnwxFIUSl4_BMSTU14jFYbnScx5dwoGJIdNSF5IUysqZ15A3Uw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oseltamivir trials for Lower respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20respiratory%20infections&intr=Oseltamivir"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "75 mg twice daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 150,
+          "sideEffectManagement": 5,
+          "totalAnnual": 230
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 920,
+        "costPerResponder": 353.85,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": {
+          "comparatorName": "Supportive Care",
+          "costDifference": 75,
+          "dominates": false,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "Oseltamivir",
+      "nnh": 8,
+      "nnt": 25,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "6.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to alleviation of overall influenza symptoms (LRTI focus)",
+          "percentageChange": -23.1
+        },
+        {
+          "absoluteChange": "-0.5 days",
+          "baseline": "3.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of fever",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "10% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of influenza-related pneumonia requiring antibiotics",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "60 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Influenza Symptom Severity Score (VAS 0-100)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1 percentage point",
+          "baseline": "2.5% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization due to influenza",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "18% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prescription of antibiotics for secondary bacterial infections",
+          "percentageChange": -27.8
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "9 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to return to usual daily activities",
+          "percentageChange": -22.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 12.5
+        },
+        {
+          "name": "Headache",
+          "percentage": 2.5
+        },
+        {
+          "name": "Neuropsychiatric events",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "5 days",
+      "trials": 4
+    }
+  ]
+}
