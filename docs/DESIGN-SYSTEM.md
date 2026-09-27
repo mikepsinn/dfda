@@ -118,6 +118,9 @@ For UI implementation changes, include this evidence in the handoff or PR:
   form submission and keyboard/focus behavior. Links lead to the intended target.
 - [ ] Applicable empty/loading/error states and long/missing/zero values checked.
   Disabled, unavailable and demo-only actions are honest about their behavior.
+- [ ] The pull request's "Visual preview" comment shows the expected before/after
+  screenshots. If the change affects a page that the preview does not cover, add
+  its route to `apps/web/scripts/visual-preview.mjs`.
 - [ ] Browser errors checked. Relevant unit tests and `pnpm type-check` run from
   `apps/web`; lint/build run where applicable. Failed and unrun checks are listed
   separately; pre-existing blockers are not reported as passing.
