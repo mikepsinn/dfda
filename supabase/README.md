@@ -1,10 +1,10 @@
-# Decentralized FDA Database Structure
+# dFDA Database Structure
 
 A decentralized platform for clinical trials, real-world evidence, and treatment effectiveness rankings.
 
 ## Database Schema Organization
 
-The database is organized into logical schemas, each handling specific aspects of the decentralized FDA platform. Migrations are grouped by functionality in numbered folders.
+The database is organized into logical schemas, each handling specific aspects of the dFDA platform. Migrations are grouped by functionality in numbered folders.
 
 ### Migration Structure
 

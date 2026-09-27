@@ -74,10 +74,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="relative rounded-xl border bg-background p-6 shadow-lg">
-            <div className="absolute -top-3 -right-3 rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-              Planned architecture
-            </div>
+          <div className="rounded-xl border bg-background p-6 shadow-lg">
             <h2 className="text-xl font-bold">How the data flows</h2>
             <ol className="mt-6">
               {dataFlow.map((step) => (
