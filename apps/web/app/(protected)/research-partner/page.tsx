@@ -10,7 +10,7 @@ import { logger } from "@/lib/logger"
 import { getResearchPartnerTrialsAction } from "@/lib/actions/trials"
 
 export const metadata: Metadata = {
-  title: "Research Partner Dashboard | FDA v2",
+  title: "Research Partner Dashboard | dFDA",
   description: "Manage your clinical trials and view enrollment statistics.",
 }
 

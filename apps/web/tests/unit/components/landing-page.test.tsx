@@ -24,8 +24,8 @@ describe("landing page", () => {
   it("presents the framework without invented testimonials, metrics or claims", async () => {
     render(await Home());
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Decentralized Framework for Drug Assessment");
-    expect(screen.getByText("Planned architecture")).toBeInTheDocument();
-    for (const removed of [/FDA v2/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/]) {
+    expect(screen.getByRole("heading", { name: "How the data flows" })).toBeInTheDocument();
+    for (const removed of [/FDA v2/, /Decentralized FDA/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/]) {
       expect(screen.queryByText(removed)).not.toBeInTheDocument();
     }
   });
