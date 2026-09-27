@@ -1,0 +1,830 @@
+{
+  "conditionName": "HPV Infection",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:04:20.213Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi4JGscS9oTHX8-fgAPE0B8QwT5oPpUpKToaOauT4oGCgEq05KtwfLeAD92N7mik6TsrfJHsZMlZRnhBPYsFkv3r-udB7T1RNQ0OXssR51GRqM89T1_mvsa3ETjeO7g-cXU0ctBMfBTAoA5Fzy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCWPz5VxAvzTV8ycVEFun4Fyh0C8wxFmWc55-KR1sFzocSbUqkhyo_6UB_aEhe63ExR3xJTBdrbMcuZAw8vmFraJysgqUfN8RX1YElgHzMVQV_SP3eA0lr8CmfRYdvyk98lPu2Y90ZH-QiW3rf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg2Va_BNpyMVwMYTY18n6d0f7CJ2lI3IkzTTBWxClVrKyqqyJIWhx6oCqjSVqlW1w6-7iF6AR3hpw-MJQTet4DkL5FNTYwJm_x4rc2VWFIMvLYtx2zUJIyMCm-iX06glUGqzL5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsKAPeUn7QXuosqFgQIt0iYmQBd8uQOxX8bOF_41Xx6f7rB4mkpl8HtLcLLDEPtneMG9wpcKLe0wtfb19fQa4iH_lh_YFYHw4O1_hqrXjPTBYanViKrCjv9oWBJilBFZAlzB2U"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5eCPKi7Fz-HpBevB0_oPz2fPgsxE2F-cAovdJZ5_O7-hKkpMVjxkPpiwFxTxnnjiKU0mM3glN3quJFn8uRTlwUnx-Mobhz0Llse6RkKBinQBoLz_UA2qNydD8jN4SogghC6FFdnIslvdTWS-mFaXbEBIVV9zY4fXoZ0SlR1_J9C-NC-PIkC8r8DfO5DjhRNjTU8sWwoBnCgiAxtcWPkEurVZ9Sb_JuyfdmHr2f1yreNjPXJr2rS-YH_sE4hWySk6s_rPXkQC2ZAhAr7euijs5z3Ce54mmqvT2k7ZojL5l1o2ci94="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0m5F4Q48LzuzcovHR-g4t9ZFgfNz3wAUD8RXDJ3JJPccTZZhwAYqyhqvsQcEUI_HQVe3sroZtua8uj3dirak94uuB2_XxAlwobDc5z_5ACdfPAlAqbaXX5A-Gr61Dy92hgxGjPUkMBel-PeDToQxpiGeFthbjoKzk8hykEGDyE7-yOmL8JPzUeYpQuFiKwEULIMQGmtrdKwDttNnRJmmqvzUYzXtrafhARxzevyZKG-KrWeHGmemdODS9AOjVCUMzv_TXEhSE8g8_vaE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRxnYu5BYDsgBqWzX8Rb89YrO2zxOMC8IPu7a6wuhJz_FYE6cXbwZj-BLfcUPjh5-nBC60rlDQIVYd-Uy4tEQg3M_oLfRdYaRM9gG2eJdGpfxHHIbm5CYEHhCKAGGKd93IgcpO"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElxWwg97t1Shn7cP_w56hNVkHsP4lRtfEbVSrsUHxhz0fuK_6llKTRna8yfAYgkW5WLJHe68QjYpGXXNXEpBdqRatNJeMN6IZ2R_N3WYmG6DdXkEnk5GQ9bxvqdxygvkodWHurumMjIZKxlpDxIootcH2-UDyXq2aNeZIB5d3AzQ_fJ0DmavQ7uHcOdp2v8uJI3IlJhr1WLSI4Z_aSxmk7k6Myj7dLRn6KX7VxVFAq4tOLL82-ZS76goqo2WD2y6kBpjQF0JLNXXGxmH0_9Dk="
+        },
+        {
+          "title": "documentsdelivered.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLER_2RxU_ez8JwPgenGOrbKHvrZWFy1mA8pTD86Sk38QjylCsXtcgfUZZflq3I7-vgoG3N__yNMtP7e7TqoUHpdd9mRQIdG93e2dUxexGATKqki2eHM2hszgeTQ8IXUfw7FXnF7CJrB-3TjM8wM36v8W4kFWJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_L4AhbDf1G1NAHQ0DT88T6NrR7Du4MEAw6CWNFl9RwE8ltCqWeiZitUXdsAEcN_w0_Y7wLXLrZSSdXTCK5K8RinFdLJpIcs7UELLceED8v9w9Xj-1he7mM681sc-WyvaOJPyzKb1kW-Y9j45X"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH42ZKhbVQGcVo3BKO2YcxEnIjsJku5FD1ADM2at_CQrqYDwNFQ2aFqJiZ8EfPbYzABI3227ey0fFlqkJrCBsPYSHEwAyHHIBtzlmHOTrgHyjk8gyaTbWAgN6Ym0YfXIXC_5gkFdQZnXNS_HlLk"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH09y75e8KQpLoVtlPaUaNjjYAmBHF3UwCRpXrAzPqKATi68WFpnawtm63C912ndQDOxJg7SxoXA05AhfDqDVgG2HNQvvxj5DvGhZF-obF7lPHkX0P5NGEOvxztav7yf6pLr8N_8-G1GfUiX3D5"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Excision / Electrocautery / Laser Ablation trials for HPV Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HPV%20Infection&intr=Surgical%20Excision%20%2F%20Electrocautery%20%2F%20Laser%20Ablation"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Surgical removal of lesions",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1700,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1850
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1947,
+        "costPerResponder": 1947,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Cryotherapy",
+          "costDifference": 800,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Surgical Excision / Electrocautery / Laser Ablation",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 7500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction to 0 lesions",
+          "baseline": "Median number of lesions: 5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Resolution of Visible Anogenital Warts",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "Complete resolution of CIN2/3 on follow-up biopsy",
+          "baseline": "Presence of CIN2/3 on biopsy at treatment site",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Histological Resolution of Cervical Intraepithelial Neoplasia (CIN2/3)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "Reduced recurrence rate by 20 percentage points (e.g., from 45% to 25%)",
+          "baseline": "Expected 6-month recurrence rate (untreated/conservative management): 45%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in 6-Month Recurrence Rate of Anogenital Warts Post-Clearance",
+          "percentageChange": -44.4
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-18 points on HIP score",
+          "baseline": "HPV-Impact Profile (HIP) score: 60/100 (higher score indicates greater negative impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Improvement in Patient-Reported Quality of Life (HPV-Impact Profile score)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-4.8 points on GAD-7 score",
+          "baseline": "Generalized Anxiety Disorder-7 (GAD-7) score: 12/21 (moderate anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in HPV-related Psychological Distress (GAD-7 score)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "Reduction to <1.0 x 10^3 copies/cell (often undetectable)",
+          "baseline": "High HPV viral load: 1.0 x 10^7 copies/cell",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in HPV Viral Load at Treated Site",
+          "percentageChange": -99.99
+        },
+        {
+          "absoluteChange": "-5.6 points on symptom severity scale",
+          "baseline": "Patient-reported symptom severity scale: 7/10 (moderate-severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of Local Symptoms (e.g., pruritus, discomfort)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 70
+        },
+        {
+          "name": "Scarring",
+          "percentage": 40
+        },
+        {
+          "name": "Infection",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 7
+        },
+        {
+          "name": "Dyspigmentation",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Immediate clearance, 1-4 weeks healing",
+      "treatmentDuration": "Single procedure, 1-4 weeks healing",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-dnBvPSYPn4Pgzlny4GoGf3N1tezNWRkltd3RGSaf4Jw36Sy_Jpjq8QKyvuwlOrc4p67dVFljxg9B0fj0dNvDV0OUI230A1H4cy1z71vEEqp56x9f9mf2uFIK0A50wGkBxfZxZ5JYjcrV7U41"
+        },
+        {
+          "title": "fortunejournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFgjR9vjZoSOzTeMlrjDLioNhmzX5mCsfenzdZKr7cimEHnaCh77qtp0FtA9ITKapZZyM-haNfopre_AWRlxBD3BpS5rDnxf79q9otnHCj94DUAxUQuwEGhCCRYKBBiRPKCwb3Sd9O7YNNdnC9tDDpjRH8kC_WjyfU4HUUoungS_8b3lYMqKtkN5KGemAwtb69Ty6TeKiiPL4A2ALNsVjsL6GiSLatH2eBtysVDbjfAzpvT76UcLxMxv5rwhds-eHdi9CCBimbfOVVHPw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQHMRGPBey4usn0PkqS8wr9_xRDu15XJtWBNew5TZWPye4o_X0OWG_sfiv0gRRCV1Jqe40jNkXwskYED5bEQB8Kd-ZvRQqBJ1raZrW8T92jcT_FqBDlWWngpwKtBiGtjCScowk2TB7EgjjJI-0CMjrjhPHX5uixHJ7oJGWjY0H5ESRkmL4v0dGFvmX5gtwHq8Z8NjDzMguPChrDUM6HZRaC9dYAtfOS4-DWVKMmd2PhfhoQlUNhAbx7DjGaqSVG62q9-XAAk9mEmeErmWXQQ1v0Ny0RrZr88DZQR1VQIQuBEpQrrrIkgu8PQ=="
+        },
+        {
+          "title": "healthunit.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZFDtR6LmrCZagTNbWzSl9WFEfVZw3qBir8V-G2NzptO_ES0DcT-bJMn3yGkcbEgGddDYBFUOrRnPBGTfwGQkfms616kuTsdinboJD_-HQ6uTG2XXDt2wcDpP9k1eU3pmqK4f3VwhDETGe4eoP3LDEivxvukJXdVHw8GrIQpOUmAHxKaWVZsIGEludq8C9dRPgQZ25L9lZDomIeDjHtQ4WxgNc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERs8jJ--0xW1qcgAk7eNJLSFawz5l7TWe0J5LPWrvBn51mP5GiLr0v8OzZqmABCd5NL-fW2an6SJZedTHNjkQSKH7emsVCTc_NKNArnFVeb23nG_-Wqe1M_jRefy6U_mUilnFi7qYMWdMkpRk="
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENs11a95h9lzDwXK79S5H_Rh1dyh3yg8saATvMVtNWXinR7Q7jmDVx3cHWqCvSL4t2q764vHAWrHwDO3OQeE3QnZ4vyFIJ2uxaI8QaDD_3SPF7tA9lpC0sqZQl8YCP0rewO8NI6DXQQpMCEiknDRecILaDVtvTEUhajr5sAtf7KMx1UnZCy3bCs2Kg1oUZbKhQIMKsUfr1uHhJiM2Q8tWo6oxVdLfGkDh8VBcrBevu-VUVveqqNN3DISAFHqXiJxgOQy26bvOlTp3xhBV5mof9gfk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm5Grl5s4zlsrM0oQhvl71eUxLz2yy8i0QxVgLbO_jpkvnolCMyhckD0zslx-5pRl8Kig6UvLR5kI93MSLq8c3sAiBYQ4oR3mZH0fELnP86c3l0diSV0PqFZzGe7wXmsBvsQD1Q9lRZzfAJCI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCPE7ov9mJwB4UhnysNpS39luKiJnG1sHuu4igzI1GjNixshGV6T45fU3Zoli8SaPdppKZU6esGVhqn0ELqRy8t_oBaB-vsGGUbsmd-nhYE9wpJcddp8dn79MZxYFQE84-2WfE0TXVDIvBYIwT6wucM_RhYO_YOfKPu5KBWhSvCkV8jqRq_6gbuHuJ2Arc5DI54P8vbKwyXlgJKR8JT-DaraSN9YrCQmaql0vdfhd5XAEZG5VVXrck_K7-1-yIC93vakmCfxWq-DVHS5fFdUj_sA=="
+        },
+        {
+          "title": "reddit.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUC9OmjnaxKTA4i08k2q86-KpM9Dg0uEWF9cC2R83eD13NJ5PRvCAfFdZGdz0u3YbrYmEl-Rmy9CSuhK1QYm4_nemWFh91XWk5AEoftRXHqAswxtN_YHFb_F4oWKgW7asgvi45CGFAp0go36W9zK7OPA68LwozbT02i1mH54C5WS8knaFF1ELszQlwVZbe6JjDCIknrDa1sIcU"
+        },
+        {
+          "title": "ugd.edu.mk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUwUwdE3o3hx7gZBolP0bXnEORhi-3N-VbfrFtqJsFKTm8_6utvgbqBmip1c5IdNFvRCmpQuJSZ3gd1Sz6g087coY5jN4gcPdedfh2SPoXKq-r_LmwRstuFOrM0w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Trichloroacetic Acid (TCA) trials for HPV Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HPV%20Infection&intr=Trichloroacetic%20Acid%20(TCA)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "80-90% solution, applied weekly",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1050
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1312.5,
+        "costPerResponder": 1312.5,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Cryotherapy",
+          "costDifference": 0,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Trichloroacetic Acid (TCA)",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.6 warts",
+          "baseline": "7 warts",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Anogenital Warts",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-2.125 cm²",
+          "baseline": "2.5 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Anogenital Wart Area",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-4.9 points",
+          "baseline": "7/10 (0-10 bother scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Anogenital Wart Symptom Score",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 80,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "4/10 (0-10 VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain/Discomfort Score (VAS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100 (lower is worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anogenital Wart-Related Quality of Life (QoL) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+6.5 points",
+          "baseline": "65/100 (lower is worse self-esteem)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Self-Esteem Scale Score",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Local pain",
+          "percentage": 80
+        },
+        {
+          "name": "Burning sensation",
+          "percentage": 60
+        },
+        {
+          "name": "Ulceration",
+          "percentage": 40
+        },
+        {
+          "name": "Scarring",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-4 weeks per session",
+      "treatmentDuration": "Multiple sessions over 4-12 weeks",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "cda-amc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEgI7YF58PvJz_e0rzFnMjEYAoA_7yclo7WbLoYbDmkjVFnNIEfgTSZiopaq6a_zpIChYMrdNhnkEgceQZWIncyyIN3y3o48YHr6Os1ExptAX0mnIiLxQZ8G7ibUsKg7qixZ4Zb5lr5aj7Dv1ErLKFAuWyHTSrrelU6o1-vve3i1n1u0NZXexEmoXoOYCgZJiDLJnVmudMsA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc6JCdXPqDf8xfkm1DwjXK_J1pJHB-mSrTZOZCM_M7ctPT3JB1PBp0ZKNiTPai0aj901Cw3Jv_4D1Z2bHXBmm3ZRHdviWZQCFW18_UtwFrkaq_FaJ6WipTOEQnoMasfBkt9Joa_P7-8TRwo0Cu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF03LNkqhutJfZyyncLmtGecb7A5Wdpld8OqmYzvzd0squGQb38s-PVpUlREYEc3VkbBxEgCWH4w2626xQ5nXERsczu0cfOmxDNGn8u4xxOXWckKWhbUv4G_Qxa51nDVEkFFypaBdO7V6ItPJMP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT7Q-HQrIdZUjEa5TkFaJaMVG3bBb9xdGyOHDwowEvDFZJnXsA2jgbGba3J-DRMgFXRiFjmSxQACVqHZgH-2Njip30gBoYuFDdzlselRAtP7ja-c4ybvFSlmhC1RGb-26YFEFk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu2u89NQn0AZf1wR1bCPac51uY_FSUrsb2GXHSeDYTcNdN1BHSppi_mvw-59BXZxNQOp3BY2_Af2WMI765rucJqYtHXVag2lIlUMNmd4JpA9_Nxg9VInMDNU0mDPdtrMzxx3wsp66cmA42PVjxCuOyNs6RhSR-dYd5k-BpkKwlIZpr2lOhNwwwy2tEgOnACIr3RNizwzS_gzNsdnzA55nOwLwAKPDdZbCg1NWGXNhOdyEqUoiy0FKKTDihVdcqDIA36nYJHvBtgA_V5yv1uPEGdnnkiagRrw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9ASXjBnppzFKXA-yVOT7juN8QOBed1aXwIcdtDUUXhI93HVkY21p-g2nXN6s8sPu0x2-Z-pOs0B9pWVpbxHDSRCBlZXX74NtWykFwm4iHvKx9bf1donNDZHVemBGzQq4BHd7bG785HIE9HdF2hB7xNIfyKm-K1TvT6YmE-OfWIC2xxO8EIZZrEF0tdNnYvNple35yn_YspCzEXax9--o7yEuLdGBHOQRKlrEA1UhFEo6rgA=="
+        },
+        {
+          "title": "tums.ac.ir",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPI0FH7wMdHcuRRHJmlb9xThpVK1nffZURWLlkq1k0YpzsXj_Jxx2dIkk8tyL6ETShdn75loBxk1iFaTvoOT7t3nu2M-2ryT6xMcl4xT0jbBM1KDXcMJt9itDML7046cDWa8svDooejJ5vR-Ivahdpd9wLyw=="
+        },
+        {
+          "title": "surgicalcosmetic.org.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-ByKhcFRrmk1Ul3hzoC8rYunO8vs1yR2Y4ms9ag3eBQWhxak4TdcSt_Psg7leJuO_n8rpMPVel3coarxpxlLSZ_XxH5iLkhkF0hvTFZsPDzj6NLOiKNsjYrkci203N6ZGd8pSxHGPyFyf71NM4jxA2Ota4ILi69fe-hH5pDrhhHbPQlnc0_txjf7664Q85yruyGLetp-FYgHIVxJzdrSTL8nrZxAwMu-Ig2dUU6onOPf1mN6tcrFq3dwbDjUL-u18LOdw-QjRzBN1HPZZu6h-dD_bYNa7lWh6VncXdfSIKiOsM8XUeTrSgtBrNw0TFzfdMzz1fFOKqys9r90JepOqHJ1bOns4VQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ5_AOhr077zYqSjMwq4jKgKgsgNwBnsoHkf3-erphuGZ1sQENgnVVFU86VDCuGrOtZB2NiOEUx3M37Nj6XSHAcBiUGHLjTMVhVFM7pTyehwfs3a8rEJzQ_Y9_pNhxe9Efj8jizUqsyzlgvmA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cryotherapy (Liquid Nitrogen) trials for HPV Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HPV%20Infection&intr=Cryotherapy%20(Liquid%20Nitrogen)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Applied for 5-30 seconds, repeated weekly/bi-weekly",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1050
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1500,
+        "costPerResponder": 1500,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Imiquimod",
+          "costDifference": -200,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Cryotherapy (Liquid Nitrogen)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4 warts",
+          "baseline": "5 warts",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Genital Warts",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-12.75 mm²",
+          "baseline": "15 mm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Wart Area",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Lesion Burden Score (0-10 scale)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-9.0 x 10^6 copies/mg tissue",
+          "baseline": "1.0 x 10^7 copies/mg tissue",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HPV DNA Viral Load in Lesions",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 70,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Genital Wart-Specific Quality of Life Score (0-100 scale, higher is better)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "4/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain/Discomfort Score (VAS 0-10)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "15/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sexual Function Index Score (0-30, higher is better)",
+          "percentageChange": 40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 85
+        },
+        {
+          "name": "Blistering",
+          "percentage": 60
+        },
+        {
+          "name": "Ulceration",
+          "percentage": 30
+        },
+        {
+          "name": "Hypopigmentation",
+          "percentage": 20
+        },
+        {
+          "name": "Scarring",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-4 weeks per session",
+      "treatmentDuration": "Multiple sessions over 4-12 weeks",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4Fwi1AZFHBA9Lc2g32bNSCJENedvaRorXYIHfWQyCYQIcUg5uq1zvsq3KzqzIjcq0bMC690mNoZ5uAIc1HRVswT_pH4ffEt2fAFvDC-IhZrqYgrZu3zA_jrCvxBl7u8Nmc3Yd"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMaJV5mI6tJddtOqQRSHtQUSz42D3xsLkq0jdG6keeniOeJBqBbXGcU3H4NHvjnaj9N1ROPKYXYz8XalxE0VA3u8_2-hVJ_sXtjAn8eybp0oh1tFjQPeBS55N_dbJKKQG7W7s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGYlGNGFGdSaKU1Tyu8cve8ZzprTWaWx93h5nqz1oCx4URO8iLWTDKsvYMZmgJXD2QLr2Kf9RsdTuhL25cWuPf9w3AKfDkgbnOYADBPsY3oMWfny1xkOoALkEXh00m2u1KGAy5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRsV2lAfsuBqaWoXs_QUbSECXikYWoRjHEvCZmPrNWiuKZN9aLKFRy-HfSSZKso8hsyUiMB6skuB4i1S54_Apbr9c5JQzji1a2i6DIEuXCI-S0hC_dDfjUr3Ikk6SzpKvea2WcIATnmgNofALB_8_y4BIOudInHrcPaYkVK7GRDHvECkngcicoh4uy4PVdfnQWYbznV56yOo-Hh5buAkeBTbIj5IAjOZgwrMxa0Hb34rZ2asMf3N7sF-WZOqFZ0jK7v4nlZMBCJzRgO8zb7Ph8pQ=="
+        },
+        {
+          "title": "imrpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcrMeBpJU5sLWZtx_TS9wJL81-koI7OIdDgV0gmcIBOfCHtT3AxShCH6qsWT4Qn9dhW7hbnREhDIidmuwsCgv4EWPor7beqVbvc-j9C21ApiHZWupauNAKAml_ZD0ctKYluXUzrEN8jvSC1fxBs_5Num8hkMxL2SV_hyAqzwtP-FFKiwMkYI7dlKyXT7kAd_k-syRRD2wx-ZY4DUMagC7Uo0U="
+        },
+        {
+          "title": "data.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsuBcX4k5LCCZwjR_ecYzgbbf_10CseNXWqFlrcrDCNvCHpIntQHAIync6171JXKmWO0q2ACp7hTG1TUEF5b-f3xBalyNE9Vovxzah3Jt6qawVE_azSYCGZhwb64GSf5k7uh1hZ6KoJiydqPTXNSjc1X8RIt23adn2G17oXryTQv7A4K4E_UrG-Swotw_b0Kh_NZtKpi4CZ5u6tLRznRUpjG32X0nKWJRj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC5_Ipqrg3q8sVIO_LIZtJxlOBk92rV0vrBrnUPwohDU9ApNP_iK9Sph6r_-iDN3qDwQ-g2U_lcsv_sP1QDA809hTVMemp2OZkGVX3XlYh2yeXqmdQyJJqiiDYS_6GTLBexDrMBcmj3Mt4"
+        },
+        {
+          "title": "hpvworld.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4dcQuesX33QhPHYpkbmed3BBkvKxiQCqzlXz5JSUAJbOpACIWhOfLqG8U6V8c3Yy3G7cP8Y7YYo56K_g1Ruprc5H2LydzaMtCwxzUX4EY8BiPH9OPSrH-EcCT2I4TJuE1VQe7a-HzvYwtmc--P6_gtL7YIMhtEbO6PIN5kXuWKDiwiP4r1IUoly1c9S5p62hyLTs1tExyd9YCBzZZrah_sEPH1FKl2ovcmIl2Jkl_nIjInKxlnRO2uc4fSYvtHKE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Imiquimod trials for HPV Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HPV%20Infection&intr=Imiquimod"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "3.75% or 5% cream, 3-5 times/week",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1200,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1600
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2667,
+        "costPerResponder": 2667,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 50,
+          "annualOtcCost": 400,
+          "annualPhysicianVisitCost": 312.5,
+          "annualPrescriptionCost": 1200,
+          "annualTimeCost": 87.5,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 1250,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 50,
+          "requiresMonitoring": false
+        },
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Cryotherapy",
+          "costDifference": 200,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Imiquimod",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 warts",
+          "baseline": "5 warts",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Number of External Anogenital Warts",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-80 mm²",
+          "baseline": "100 mm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Total Wart Area",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-40 percentage points",
+          "baseline": "100% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patients with Incomplete Clearance of External Anogenital Warts",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 60,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-27 percentage points",
+          "baseline": "90% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HPV DNA Detection in External Anogenital Warts",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "15/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Genital Wart Symptom and Impact Scale (GW-SIS) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4.2 points",
+          "baseline": "7/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Itching/Discomfort Score (VAS 0-10)",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Local erythema",
+          "percentage": 70
+        },
+        {
+          "name": "Erosion",
+          "percentage": 40
+        },
+        {
+          "name": "Itching",
+          "percentage": 30
+        },
+        {
+          "name": "Burning",
+          "percentage": 20
+        },
+        {
+          "name": "Flu-like symptoms",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "4-16 weeks",
+      "treatmentDuration": "Up to 16 weeks",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeS5t3UJewig_DpBk9ScuQqqg26l6kJ_iDV4Kpwv58nICKkWmbIXzwXREB6LFVXJV_ccfluZiSpCzqkBnyLBYiSIwvvGUto9Lp4XMJ88m89mHOlKATA0wc_KJrCF7YReemKmk20lCqPxynBA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECqjZ8MtYbubNGFIk5iJuTQPo_6qQT1r3YfkOSgkopnsyRRrHLhU2nbCu-A0XFnHNapfPU9-f7dpuJYbeL4KXLYhHCYgNsojGONt7fjXzA3ozQIM3oZ1uTT0wgVqx2UIsidtZ-q6gxL8VV4w=="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT2f651doX_bLLfg7rkJ0MJjX7v2ZrdPO0igvymYvVfUJd7PwcPwJ9j5xPIJt45JD6LZzDwTzqqE1VylJ6ZqVTt_TenwthfENcxJLOAR_hIwBsiTIRSYVqOMg5PPAOwuJY2pr6Utt601QZHNYxhXRPnTVyGgTznS3UOLYyPPXENnw4C-1akiGl0ghY0Vi_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSstv5W04ob7cktG2LKV2OaGCCj69ELo3H61cSqkBmqsn-cZ6mM7isukdx3oXktt0GrPoz2RnvUDCw514NQZe9fA5Ov4_987ryq3bZseKi6TQhX0O0PkfZ3d_a6XrqSJHOxw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWxDwv8fPGAMTWYDlS2rf9crghaBqeCm7UcebDYLUrYwfkOJxeTMXchcZvy4INLGTZieX6BepEVi3u7R_S_6LZwI5RWUkMVnWDYocHmDOrpxuQ-9DQAZlanO-jWgxqk_o0-HNoRe7en8jVJ7oVUSZ87pftgrEJvldGEXEuYhROlqSht-ivi5P3DGbccKRA1t69bfsTIctcjNQOOTTdMYROavCPSklaG_qNjiqFDTNEiRfNENl0X0HqjQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5mVredqHui1fK02AZcM2Wve9PAStm0d9-kVn1R4kCCc-WqacPTT3Dpqv19JvjFnkKjvjC_sx6kdV9XaZ7Sb1ip0d9G8qXfBSbc559DhfxOsGMtl8msjNccHyG1fwpfkxsKg=="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHYUGgEFV10N5ouYLlhwgCwf3gttrDUkoIs5aDbXUgz0C-AcxzMMa2QXXoaBegiVRxF9p3NCy-TfxHDablirrxXG7c7Ys3Z0wwUQT3tWDXL1Re0g7LEDg3cTHxjBsAJrhxOtKvl4B7QNsajjG0vSa9IH7PRZ0XjjYlR9yGYNGZnMtSwwfNE4lGlw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvVpqIC405cgsP0b1fElAktwRLlAbFdw-w7NB0Or4-1oX6rEH4z4Ih70IYYH8qyD_M4ynskmRTwL1oW_HeSxtAve039e59FHdafmR8K5ydSc1w0XlO_PX3XrOgAqMSoS1QOzffRFQ_gn02xXjshslbF4iNL1ZgD82hxjNNa2VNWMevJWyoIWQc"
+        },
+        {
+          "title": "ClinicalTrials.gov: Podofilox trials for HPV Infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=HPV%20Infection&intr=Podofilox"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "0.5% solution or gel, applied 2x daily for 3 days, 4 days rest, repeat for 4 cycles",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1050
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1909,
+        "costPerResponder": 1909,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 30,
+          "annualOtcCost": 267,
+          "annualPhysicianVisitCost": 187.5,
+          "annualPrescriptionCost": 800,
+          "annualTimeCost": 52.5,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 753,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 50,
+          "requiresMonitoring": false
+        },
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Cryotherapy",
+          "costDifference": -100,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Podofilox",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 55,
+      "responseRate": 55,
+      "safetyScore": 75,
+      "sideEffects": [
+        {
+          "name": "Local erythema",
+          "percentage": 70
+        },
+        {
+          "name": "Burning sensation",
+          "percentage": 60
+        },
+        {
+          "name": "Pain",
+          "percentage": 40
+        },
+        {
+          "name": "Erosion",
+          "percentage": 30
+        },
+        {
+          "name": "Itching",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "2-6 weeks",
+      "treatmentDuration": "Up to 4-6 weeks",
+      "trials": 50
+    }
+  ]
+}

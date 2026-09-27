@@ -7,6 +7,36 @@ Other external extraction findings remain historical, not a new audit of every
 source repository. See the [migration plan](MIGRATION.md) and the
 [`fda-gov-v2` extraction checklist](fda-gov-v2-retirement.md).
 
+Targeted local recheck, 2026-09-27 at `49e649e13`: the app/package layout still
+matches the distinction between present screens and planned evidence/import
+modules below. This was not a new external-repository or live-workflow audit.
+The [current priorities and to-do list](MIGRATION.md#current-priorities-and-to-do-list)
+records the demo-first execution order and current verification results. History consolidation is
+parked; current product quality is the priority.
+
+Implementation, 2026-09-27 (deployment not verified): `/treatment-rankings`
+and `/outcome-labels/demo/[conditionSlug]/[treatmentSlug]` display a pinned
+Optimitron snapshot: 1,214 comparisons across all 216 conditions. All 221 source
+files are copied intact, including the 969-entry treatment catalog, 536-entry
+reference collection and all dose/cost/citation metadata. Sortable estimate scores, primary/secondary outcomes, side effects,
+origin labels, source links and external trial discovery are present. These are
+unverified AI estimates, not patient ratings or verified clinical results. The
+[snapshot notes](../apps/web/data/optimitron/README.md) describe provenance, exact-copy
+verification and remaining redistribution review. The former 19-comparison projection
+was replaced, not retained as a second dataset. Condition/synonym search, comparison
+cards, the existing landing-page Outcome Label renderer, annual cost breakdowns,
+expandable cost-effectiveness details and snapshot regimens now use the shared
+UI primitives; see [UI conventions](DESIGN-SYSTEM.md). Additional metadata displays
+and cross-condition catalog/reference pages still need integration. No patient database migration,
+general-purpose importer, MCP tool or clinical evidence validation is implied.
+
+The suvorexant/insomnia Outcome Label also displays one separately sourced
+ClinicalTrials.gov comparison from NCT01097616: a posted between-group effect,
+confidence interval, endpoint-specific participant counts and original results
+link. Its bounded API importer and source fixture are documented in the
+[trial snapshot notes](../apps/web/data/evidence/README.md). It is not a pooled
+meta-analysis; ranking scores remain provisional and unchanged.
+
 There is one tracked top-level product app today: `apps/web`. The repository
 uses pnpm workspaces (`apps/*` and `packages/*`), with no Git submodules.
 The personal health workspace and clinic workspace are interfaces in the same app;
@@ -162,7 +192,7 @@ for every planned package. See the [next implementation slice](MIGRATION.md#next
 
 | Product component | Features still to build | Intended location |
 | --- | --- | --- |
-| Demo data and agent curation | Versioned data packs; common validate/preview/apply/status importer; scoped MCP tools and admin batch review; repeatable imports and separate publication permissions | Proposed `apps/web/data/demo/` and `apps/web/lib/evidence/import`, restricted jobs and thin CLI/MCP/admin adapters; shared record schemas remain in `packages/evidence` and their other designated owners |
+| Demo data and agent curation | Complete Optimitron file snapshot and bounded trial-result snapshot present; common database importer, scoped MCP tools and admin batch review planned | Present `apps/web/data/optimitron/` and `apps/web/data/evidence/`; planned `apps/web/lib/evidence/import`, restricted jobs and thin CLI/MCP/admin adapters; shared record schemas remain in `packages/evidence` and their other designated owners |
 | Legacy app and study parity | Tracking-to-study journey, predictor search, charts, imported/reproduced/corrected personal/population reports, and migration reconciliation | Existing patient/public routes and restricted app analysis jobs; shared `analysis` and `evidence` packages; [acceptance baseline](MIGRATION.md#what-comes-from-curedao-api) |
 | Community evidence | Permitted source adapters, source-linked extraction/review, separate scores, corrections and deletion propagation | `apps/web/lib/evidence`, existing worker and planned evidence/analysis packages |
 | Create/join studies | Personal tracking, observational protocols and interventional proposals; versioned review/consent/enrollment flow | `apps/web/lib/studies` extending current trial/enrollment actions and UI |

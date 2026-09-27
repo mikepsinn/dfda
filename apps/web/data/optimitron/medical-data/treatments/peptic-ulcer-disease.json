@@ -1,0 +1,683 @@
+{
+  "conditionName": "Peptic ulcer disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:53:04.202Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf4hIraTkgg4wXZf9IYxUktBdWmW-SJAQOI2TgWWh9ngJ_AtleW4FYXaboHsBXFmejlnLek-x-eUwaZQv0CYCQmA3GbQYAe1J_7OHsaZXVnMMuUOV0OaQ3uIAmb7esr3bTQ_6TITiyg1wfIQQ="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXcPwDlmCV1I0UZbdR2mopq4DPHYtzEuvf-I8X7WwwwI3Lnh6Czn4eh-GhcT7nPxxeKDTvsU-KxZPwLZe-iRd933ZYBm2sTWEr_96dygoyLqescwE_vEGr8pzX6qiZlJfZVpGoRiqjoarAy8w_Ssytas4U4dNmQ6924qnTjkBuBDC8PAA4_J07YrBOlsfOiFB0or2l"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXsagvoEzhApw_2ko6MVrAQRrBlRiYvNqKIDL6JOYF9407bvhvQK4cidwnFARePxwp-IO7Q2AwsmzgCE5uuujo0kUGj7_1hJRw67ATgLnT-a2GKNOr6phhqpA19ntxfG8D4eRzPPP1M5U91jjDYpG87FXur0FE7uE_gTRsr1B1C36j5ETXWR84y2lSupRDwzkK7amhCKStEZeMa86ozTSarBnmnxjuHswznCaVCEcZrPtaVXIWdZFKLhdCZuysRRR3Xz8="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzAwg_sKDre8M2CF6EOqzfZOe6jVkqqxFo78bVZRoq_NA1Xg4GlYZCfdeEG1YPfCdK1RC2FW_164b7QINmLGrB1tXe7BY5haqD2jfqeHxbrCQ7v6a2VI1Y6I4Mm0RD4bxTUmPSz1PUm0X2CJ8="
+        },
+        {
+          "title": "revistagastroenterologiamexico.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZaZiPU8PfuxY6Aa8yiZgRT7bBrbT5aSuPcP6JKXH4F-JmyLPeb7VwwmNFKsTT99_r7kKYE1vXh6B8opQJ2YKwmfqzOU5CbxHmmVjhoTgXvG3TE92oc9CzZ2D_rDdK4Tk_3dE8u123AkYiNljDz5fJmFy2axDAFQhNMtseZSbgxnwtcMBS3y41Nw5L6pBZncYk6HQ_ZCkSYbZaVkOQhHmfyO6_l1mY50OFk5tLJGM="
+        },
+        {
+          "title": "brieflands.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCuu-X_Lvj7LNgNPMZulHI0LyPizesNh1SID_X7ygxIBv24CaOTwHt8laiClDi97ELEn2twhxZysd_OENHaTUhwBQRPzAsHzr8Vwho7GaZz5h-p5nuUY0a9_lwqty76cRxVqo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTmpzNvJGOHj7VxQeAk5ga9OkxDYCG90LYoEGDC7HD5WGHX5Ko_QVZ_6u7u_U5OtecGx03QwNT22i4VJtWPcbXEZ7CGleb1XGUnUNGPgZVV2a84dSVI5wwMmp6XLUt8mh1FUmSpJFnDkVQ8Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVACcvzxQzHhXh7F_qU9XqdplvBIpPeYhIb9L3DuyoIc5hz1vzFhCg7HM4ruhqGDJLQTOHElmUMx1tMfhVUwK_i4LVQ-SKZrY35i63ewLHshqzwnQNDJzxkZ7Y64mIO8upXLDjKJw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXnbZtsUG38P2I7sfZ06shPO1WYqPXglabOVew7eToadlsf9s21pER0MA6QaVrr_FBOQHFdYofjYXz3tmaGzH16mlfOnx6hJ4HIHUFCQBlqUxciHlS9JCd0t_r9xsWPc7ADczG_EyzRTYQWA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZWl0eLzUroCQDT877D7pMYOacHxY6UfJL3mJbP1-6CK4Tdb_OCtto1ykziVwNlQJBNzzhpMdtbdxip8o_TruIfQ9GOIwFiyje-ICh5jNv5yaUF4_4dvufbTs7fznn-2n2BmjSre_pQvILwWQHrbeCpg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: H. pylori Eradication (Quadruple Therapy) trials for Peptic ulcer disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peptic%20ulcer%20disease&intr=H.%20pylori%20Eradication%20(Quadruple%20Therapy)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Standardized regimens (e.g., PPI BID, Bismuth QID, Metronidazole QID, Tetracycline QID for 10-14 days)",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 450
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 548.78,
+        "costPerResponder": 511.36,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "H. pylori Eradication (Quadruple Therapy)",
+      "nnh": 15,
+      "nnt": 5,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduced to 12% of patients positive",
+          "baseline": "100% of patients positive for H. pylori",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "H. pylori Presence (post-treatment confirmation)",
+          "percentageChange": -88
+        },
+        {
+          "absoluteChange": "85% ulcer healing rate",
+          "baseline": "0% ulcers healed (all active)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peptic Ulcer Healing (Endoscopic confirmation)",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "-2.3 points (e.g., from 3.8 to 1.5 points)",
+          "baseline": "3.8 points (on a 1-7 scale, moderate severity)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspepsia Severity (based on GSRS dyspepsia subscale)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "Reduced to ~14% 1-year recurrence",
+          "baseline": "70% 1-year recurrence rate (if H. pylori persists)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peptic Ulcer Recurrence (1-year post-eradication)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 82,
+      "responseRate": 88,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points (e.g., from 42 to 47 points)",
+          "baseline": "42 points (on a 0-100 scale, population norm 50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (e.g., SF-36 PCS Score)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-1.75 points (e.g., from 2.5 to 0.75 points)",
+          "baseline": "2.5 points (on a 0-3 scale, moderate-severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gastric Mucosal Inflammation (Sydney System Activity Score)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+1.6 g/dL (e.g., from 10.5 to 12.1 g/dL)",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Levels (in patients with baseline anemia due to GI bleeding)",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 8
+        },
+        {
+          "name": "Black stool/tongue (Bismuth)",
+          "percentage": 25
+        },
+        {
+          "name": "Dysgeusia (Metronidazole, Clarithromycin)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "10-14 days for eradication, weeks for ulcer healing",
+      "treatmentDuration": "10-14 days for antibiotics/bismuth, PPI often continued for 2-4 weeks",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7vfQZcJbQ1SRRdzH_W5giF_eCeJiqJnLTLxB5ik30AD9bYPZQsV89SDDePzOHe3k5o5MybHObZ7DrHXr2tPtCyWZjHtdr2pW32ZJ8ATI81IWXk2byspTINGmfVBmxsD3-HX7pf8KPZRcBFIUge6iXVQGGj7yRQWu6RKUAydOj6p3-ac25UQfag9TDfOoPOqutd1LsLu9RT8tuliJGMzEEIxY2qxB9_pEx8-NFU_mMzCW4pXqHwR5q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO1HwPq_RJBk6Hl21HcuovRAHy0U-qy999TfDcUBzhkYXrm2gYZVdiTHOz0vpS8JiUj3Tp9MJWhlP-Ao-VuIeZWY7GPAOzB8-jq76NycRTViNwa7vki8VA1maucqhse2gc5WmCJuaOzTkBrW4="
+        },
+        {
+          "title": "gutnliver.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEninfTr8Efjk7khxsOA6nBB5lWhIuXhlM-jnyfem_Y2Y8RP6a_Ak_NLVXEBuZlcDTula83HzfCHY5Fb5WeXW7HudpOweCTaSROIBp-qwnjVmK7R7Y99GvIDS-pQ-CvEmc3o88PiG6frSbzo2EFPvL1fXmLNpCTaRJLYQ0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgX7tKDt9vMZffRXkgy31Hwi-WALeydASqNn9rHo6bzhg3Thf1-85oDaVHQ4MdFsqoh_PCxQzjmCFao8UQCUMX-v69uzxKQOaZsfv38E_Q3RtXxXIA2smnOYceO5JQY-so6ipWwvyi"
+        },
+        {
+          "title": "data.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcg7brvmwEkPMVJoq0JNF2kwRa12qTp_PZmUudb-FEgtInfToYL1J9z3WfsCumE6beaA0NCAKWIMjBpOm8-9T7FA-XbNqFJFVWs1qLyvK3pJhFUmECgNsaarH0gJo6EXegPDMsTSmMX24pFfgdky6woKQiFdlssg_3JUr4uQlGEMyZ1q_m8A4pAGRqoZlEcG9NoQnEsuVgtl6uS-JPMKJnOaCjP7NwYpI54ATRrYZZ8nYK8-v4fQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUs-LOfi47nv-HegwfZhfQqZew0ooIxE17nOITkFZOZ8UeIH-uzhCZ6z8_pbjqV5BMRSEgcjQiqLhV2b5nXEEOVxFHT3XqHP7qWNCnTlTs01EJS0yBdPEeJAR_YYY-lS5DpyN08atv0Q8CQA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRVwFP_xa6_PGCo1UeEH-Uk9XPeVofY88SNY7zhzXxLPbwifGieRG8PQnO2zfCS26tLP3RgdkSA9iXfcfasLE5B1oSCWRYvGbjzNZu7EGSVBjtxZ9aqt00yhKQEsIG-IR7Tg3ir3QUivdPd2g5kf1Ss5kHZbjIZvfiwSRmEK5JcvrCixMZtIRJWOW710Qd3yTpMpd_pfqNrfgANpJr6zE6JApPSVbbSRaLr8y8wkr1iu4FNg8PMtQfXr1tUZuGCuTP0386-yfGiQ26"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWJAV8AM4HdVsjcGw-gPDJlBDPghyMsC--BUoa4kp2fqPmjmJG-JiKpQmsoF5WtQ9CMLcx56mprLYNjErrc4M6u6oXhh2WtfwXqSPWi95HIc90aEseLVU1mqe49DLaC5DchXYdn3hL"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI248q2beiRHgZGGK7Iu7xY564ZUqYPpRQWoiMi_13X0piXss8l4yFlvToH9PLBaxeBX41X91oifMav8yJR7MScbV_Cyt-fuieC-g1Zrr14IRqtJNE0D0xZErsCr7H4GBmXKr88_2iioOmEXbSljOeF4o6bPUshVoypCvYToBDpdK2jYhzDLrmsEaYKhA384gM0KBDuLOdOoHw7_r_jMFratRlyZXuO_ooc86Xyf0vFgh_0koR33NALXoc_AV-I4sHM1wVrlBzuVY6ie_O13MWMTw8-w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-Xqjc8WFbfgNpJRFODdy0AjKVDuZu6VUIN50G90Y3XYudSv66To7m4p8me-tZiqiSMBfjkESOSrtHf8GfmqwKZ1hKLcF0gvbRK5R1Vw6Y6FH-f9J_cN_ijehFjq8y5v-uE7ov-GwTNGMhTQD9PnFkolqub9UcbKCraQRy1n_qcn2H5NwwutGdT15o3l_fJImSi-hizLInz_mT2Z9WpVnHbe4TahskZAqUWHpD09uFSbUpYXquXrbmT_-aaUpMnlx3CbUSqsbVNcEA70phjiYhsVP-vJCFOaJJbUmAxVygzvw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd9n-BG8xUJqZPXfe02xW_CFOwfXzaIhkDlGoS1ITBBed7lHmCZbwAFQTKlwqWidKvNI6aPgqTHWLOTtG3njUwgNsj-lPxsoJEDYdM34IDgCtUmFcAu85-iB8KXXM0wdyA_g13vK9r8ZslgNE="
+        },
+        {
+          "title": "cloud.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-eIHVv2rphK9L54kQ-YdeZG7OlIUsntFY_CifI75_WbuP7L8X1G5fL2vhk5a3ckGcsvM7o2qfcZMchAulXLqmJcZNLDr5M0xpsOQvmYuSjbznVLZfn5Xo7aIZfuW0O8h0MYAJWYTgwr145JkUl-gcnXUMNEsf3nA3ufklJD25VN4d8bFOuAJ6BZ1E3wbChy8cdYEvABZG69j4_B1r0MsusuKGoCuQXTyZrSWc_Cu1LAE8sE2e2PkpAt_pJITv60r-o4NjhPPXgk5ydpA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Omeprazole (Proton Pump Inhibitor) trials for Peptic ulcer disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peptic%20ulcer%20disease&intr=Omeprazole%20(Proton%20Pump%20Inhibitor)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "20-40mg once daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 100,
+          "sideEffectManagement": 20,
+          "totalAnnual": 160
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 205.13,
+        "costPerResponder": 181.82,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Famotidine (H2RA)",
+          "costDifference": 20,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Omeprazole (Proton Pump Inhibitor)",
+      "nnh": 75,
+      "nnt": 3,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "2.5/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heartburn Severity Score (3-point scale)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspepsia Severity Score (0-10 VAS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+85% of patients",
+          "baseline": "Ulcer present (0% patients healed)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gastric Ulcer Healing Rate (after 8 weeks)",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "+90% of patients",
+          "baseline": "Ulcer present (0% patients healed)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duodenal Ulcer Healing Rate (after 4 weeks)",
+          "percentageChange": 90
+        }
+      ],
+      "remissionRate": 78,
+      "responseRate": 88,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 episodes/week",
+          "baseline": "4 episodes/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturnal Heartburn Episodes (per week)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+25 points",
+          "baseline": "45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GI-Specific Quality of Life Score (0-100 scale)",
+          "percentageChange": 55.6
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gastric Pain Score (0-10 VAS)",
+          "percentageChange": -71.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 4
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "1-2 weeks for symptom relief, 4-8 weeks for healing",
+      "treatmentDuration": "4-8 weeks for acute, often longer for maintenance",
+      "trials": 19
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPh-XQmJdBLd0CPeL8A0t45PFZILA13vak48noCsD1iDDzS59bWPMSMQB6HquCmn2jmJ0WyNq9RUkOdDZDVlezH4Vb2LGslujeG2bFm60fFvGWk-Xz4foAjoDLCt2Lj8Sh1UOfOxMBqzbD0Y0C6DdIX46IwrgLg6gJVLT3qbl5z-C94XmK7pI1bcw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrTapNnRbkUgKi6-jH2BxJfi6hl0rL1GT89r5ECU86pAoG4YBwNHPqRGtApqwaoz6K32waqdvrYn-juarvATgvuAZ8F6EPH2-oFU0MjMhc4ATv5zr8kh1BZCijpUJmUJDSZtRlKhsG"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFieBj2LBzc2rA_8ivipvC6LkM4zxHDn_rvDzMzzDBD0VZtRlvbQdqCcOxhOAQx2eSCoCvYrPA8sLQC_BldrIE8B51pPnn9uac-P2ZQNS3G_T_hM8M9lqv1caqCyVU4jbpx9yAnEFdNdqhf9RPd1bShVVJ8xRJmcVi5eWl1uWi_LwYoKMxBXizfFA7BJwPo8S_zfqpwzMbwe3lYb_4njLidOZr5doXIeQfeXcJOmxnQJMSlUuqj-VTnvR10Ly1Elj8lRNCmOA-QnyzouBohjDqO-UjlgfblaWxqRCmQdDxZBXWYvIWHpGc39B-s21Je4A9CjHnU_Gb30tjt9yMKN514n6nOA1bpNZL1neEYESba6uGXm24="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeQxEor0ELirOK0cvD0TyLr1MQtjPBU_83MArcaeWR21pkGVRl2lBCvafVZwngjC5XSj1yKU647bWVxNNlG-rCtgWj3onzZx9r9YD-f1uBPjTstFnw0xv0Jqlu60H4i2c7Ww=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhlR4dBZfcGWWtblicALSzPFV5hM2YniX_cBbFiA4Pdf3GzkjAX8x99J_J53cbWjK8aXeiVzXXx4LYvTZJIYIiWPTauKRdddQXUIbKNgR6XmRywNikHv0B7d6fChkChYyT4w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDD8_89r3DTXz-VT0YQ0HjWi6tyFBAYqQ1pcwtxVjxHfuYcbLS-ThbhUXdTaCdLWiWhYIOG8URpgaGA2MMTKDLt-1qRC5Oc0W2ktwSkTnPcA3Wvew1G8QCBuOzFQ1PZHmSIA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU1O-TQV7XE7-zpkG3Zy5UhUbM76BrNTfBlAJ6TKrTk0jLi1Jrocw8fMnB-utTB4VYcRm0glAq7a1H6avD67bI8VlB5Zp5snXuIOEmyldTl2XmOJStsaqWDTnu9-0HO_VQBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQqnWpybiAyt-yrorwBa88YquT8KAQvgGjHVGFDYFSyBKC9jbf1_K32eKGIPmi003pn3LkhHpp5gXGngvUUG_DanL1gG7_Kh_6q4PrdHMjGrdemPLdlRQ94volvzORwsUqFw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw93iYtOi3IsQYayGgF0en3c65XziTtVQtrYbcnkLGMqubf8haTpkwcnOyZEm2cMLr2z3V2A1_1k2O_4-xrHE0by6zXe35dW-BdKJzwrwB-yODB-kmKGYLtFYlBZBeawmgEOaM9mvDRJcdRJ4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeBTUkHcBveq3_nzxTMgFnEdTibvmvkoUujCDv1Vb1z06LtJVvIGC8HhytiXQgxqcB2bAaJLBfOkDPeVXoilGAGJDq6ln9Yq2Gr01ejBSkGxU9vr1DpOqNLRw20oOPfd9VDAbX7XW0D228nG8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJX2bWhzviSU7E0bBJKeOEAHSJ6ybQOVZOfmKMggB4zOmpf5qJ5o42ym6AeWvApKeUbQJ5_gWuffySGjstmmjM7TeNIeF52Kg4bQiB_jPMxBXeeanCHY5o--na_hQfLvOqFqxqK7o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYTfpgVp31JcwQiPYCNKaDo0q6w-u1GyUmeEYb9dXUquTWcwlwjO-2rbFnR4SmCFiurkSWnfsp5RKz0s8oRErE86nOgJJ1Mdma3xyv_f6Gmk1iJobSLjMaQdDrn8_hXJDswfU="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjcYD0P6vtW0vgO2t84aVQquzX1rGs8jFQFtTcG9Cit6_s8W9H4zEhZ6t00f_AdLYrFlWweUodkCpQ90gBqlAG5kbjqau0Vhdmmz80vizOBIkDmYSdQJJ52hUqJj9tqGBf9rxr8yOOV7LEVOgto2UWUjn-z2hM8hL2H_YJsw2COqwydPakU-sj6Jp7yQ6unew72js9_nQwuHyGdiqwXHA1i0ABzlzo4iN8diXe-oMJkQbm1vT5QufqVqxSHz2OnpYLjoOyv_BFiMC8q-mY6cKik6Jez5RtmJemejtwUguiATbtuO4lL2_fyAklxw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Famotidine (H2-Receptor Antagonist) trials for Peptic ulcer disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peptic%20ulcer%20disease&intr=Famotidine%20(H2-Receptor%20Antagonist)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20-40mg once or twice daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 100,
+          "sideEffectManagement": 10,
+          "totalAnnual": 140
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 233.33,
+        "costPerResponder": 200,
+        "icer": 8000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Famotidine (H2-Receptor Antagonist)",
+      "nnh": 100,
+      "nnt": 5,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.43 points",
+          "baseline": "Mean daily pain score (0-3 scale): 2.2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Epigastric Pain Intensity",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-1.26 points",
+          "baseline": "Mean nightly pain score (0-3 scale): 1.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nighttime Epigastric Pain Intensity",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-6 mm",
+          "baseline": "Average diameter: 8 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duodenal Ulcer Average Diameter",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-7 mm",
+          "baseline": "Average diameter: 10 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gastric Ulcer Average Diameter",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-33 points",
+          "baseline": "PUD Symptom Severity Scale: 60 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall PUD Symptom Severity (0-100 scale)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-3 tablets/day",
+          "baseline": "Average antacid tablets/day: 4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Antacid Consumption",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-3.5 mEq/hr",
+          "baseline": "5 mEq/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Basal Acid Output",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 3
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 1
+        },
+        {
+          "name": "Nausea",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 weeks for symptom relief, 6-8 weeks for healing",
+      "treatmentDuration": "6-8 weeks for acute, often longer for maintenance",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqM9vQrwndECJj6odf114E2F8Nfyd_Oripmpi8_JL_n0G6loujEf3UTQosBhUCxgZ2T_YDpcGgjqXKKFtURv7CcskR5kVwNoO1VT7qb7h_HGx3nuKqXEoAovRz-Bis59xCQ7M="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8TESStBvdOHNYDBYf9AMnsEJoXomKH8vROqI5rt1m0wLbA9HYRTg-_vnhvYR0EjdeucYIJL2tg59lM-lHBU3R6RAnCK4ZE0M5JPVoQAbD57UXO5oYFQ-NmTRn3w7d3RTGqbALUcA1aQJIvOaeMq2ek5deY8Zp4_W5gQfqVTssXsLHfc6VvcO1FUpzt_PAGoqfui2XcndzpFXwVZAfvdYqXbqNhG8H"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtTCFTTs_g0KUqkfGOA1IODRFoSCubljhugKhSqPQy0M0BKXcG8Zk9ID-tEDcLDxYlgVz7qyv8DtsrZvdQHYMZDcZwNgEjc72aUVQ-bB5Xm31PXvgRkm13vkjhcQcGhpQCJuY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBhMm6sFaq6JEaxQGe8k3BarJxbwWGnejz7CzSOiPS2mdekKGHIwKuoszN-vyaOks73yJatd5Y8bVlPwFfjWUj6Ewt4NTMP8y2tRpGmMqQVsvYZ8h4DmprnxdRVr-Qakr0nTc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl4Dwi5tB1q5yJBdYTKuq85AZ1wy0XpxgrNwu92TPlYxZqFIP6-dvuDh-lc_76A0PK1rwtENfWTQaVRL0opID-BP2tZjKXgorGc8nBR0KdNbe2YFGUy_WaVMTCe_KQJcLbkigmpNgMKw=="
+        },
+        {
+          "title": "mcmaster.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSEPV7FVtfsRnrNliCLIrso1LOS2pdYynKMH24Nr1IVL0TRVMCcGkxmRTzEaJSkCQBaG0o_bFpqZlsRIdf_29Zh-xzdu0B1IunqbRXs8kSHvdAAWGUse6fiJ78VvfEm4gw5GHSCtW4tRWG6saU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhD5I-7u2K07llHUAhs1hvM_g7r8luWz0bt6BuQYryhoudmzTxfODlxptKW6OTr6W4xiPntY_NFObQfsf86e4Gl8cvBFojl4DAk3yklANV22P_ITaHGTyKHkuM-FZUws8YFuk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNPs9zwyAvy1Sc04qa1y5Y_7TflCkA-hW9N442wXWOlEYLEaLp-g65E-ap6yv3_iKuqRxX_W9xGIYt9GNVPc65ik17CuseZVdcnq04i2P2Vr8L309ePdLZI_nncBnCBBuBeqoTSKA4AUPwwlXRlD0t9VwdyMHmucCYoWFWsJoEKSOQEqgfHFi5Ue-67qKCsEJq1lM_0DouKvd6FvA9XcwRfRSq_Qp8GBwk-qfT90Gqz9dEo9Pj4icRSg1ltWhKQ17ExMXMM4KzFarS-KC7AL7o3xlWiWAtC_M2q5w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9dRcu0mqeyPZzkgGXT9LeIBdn9gQrIV2F5oF9zBlxQYwQBVGJ0OkkOaYAgnDYRtoPIgPfRxR0Qol5ixQ3ilmD0LjL9vRXhXj7acVap1w6lbyIOI42DbejMpM8gh9XmEeY-NM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoLZ5TtPmUkaKv3qZEbMk5n-UMNrZDa0nneQtq0WtqwjlA-PNYr-U11_Bs7B2kVdj115Ha4OcolZIpTrfp09zp89tStrhaqPRP19bcJ6T64yW2fKBaVyHl3fYeONoO3mUfqjQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sucralfate trials for Peptic ulcer disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peptic%20ulcer%20disease&intr=Sucralfate"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "1g four times daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 220
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 440,
+        "costPerResponder": 366.67,
+        "icer": 25000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 75,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 150,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 370,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Sucralfate",
+      "nnh": 50,
+      "nnt": 6,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 50,
+      "responseRate": 60,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 7
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Weeks for healing",
+      "treatmentDuration": "4-8 weeks",
+      "trials": 100
+    }
+  ]
+}

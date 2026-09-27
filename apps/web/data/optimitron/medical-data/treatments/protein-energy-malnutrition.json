@@ -1,0 +1,788 @@
+{
+  "conditionName": "Protein-energy malnutrition",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:14:20.429Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEQuwHCPXgWjhF-HxkTcxtWsJFYABnyZBhV2D0OI_gy1dQwvXPbYIn3nkNdwuUH9rKgZ47WyCzLwc1-ZjONH4dVuDvh1dARY_JQhc3fSUJnjakaFiOxfhvAjBwuC1f3bnFLbqYjiGNDg-5JVU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEctEnqVFyngmka1fHLzNBYz7yd0epEGWp2ofwZR3lkSx7PcqAztGIZbFrhxnIRjtO9eA5LWNOW7yo14bJSNx5lEjsrwVxheAEHhsBx2gTfU5TL7MbVLZ2hCa61BdJRzbUXTjntpInoVSijy9c="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_4PIJL7DVcaAmL0Mft-k6XG_C22k7Joa66_tVQglshe5-SIfzpFNGnOuCWQ1_avhuhPPcClzIfKWsvezQAiARJKZ4eUTvGXfFAp6cIWsokB85ACQmxEid1BLtFA5NNahICmxjtkY4F33g2r9WZafuW6vooT4l0sGPjw1DKivCeXt2ApXrH3jpeEqm3SmpC6aX8F9WDRVfz8mVs9wuR4_BdZvdBk2vepfb3Qigcx83L2e4WPtxOxNs3ICqNgKUQI7nU82-oCjZWomewI32UtomXVyqll1obRmuaSAaD0LN5CjqGhKB6uGFwm63ceTcx-AuahA-TxT7_HdzOV1-0U3GGDrloFYwP0IvDQ-hSvOAkdelWgzg-yfy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz-P05tyTmgqMaZZel-z69pGG003Y5GxxxRep-IBDNN7VlVXH0N0LO5p1PrkWHNpDPQS7zV0F9UwSTAX6xaPfTTnp8rxpK2fEvvxhvciqRqhnEeyyiEecxlWQThScWSD-BzqBOCbQPbdobpe7L0nl_4w5Zpw8Fivo14CymCjNkvdtPHWSGh78-gSODbi6C-sJWEP1Y2HiR5_wPMM_oi6dDWoTSP7oJdQzI5YqZdUfK88MNVyBQ1iTQrPHEGHkEjFZ_R1VnOg7gAwzwfi3AXtvquBb3tTu3ur18KC87qZIx-sSfNlRV3QRvDNY9ncix6BXTTGZgc4bVL_O0qnecpMQWnjXPGIZTOoi98OVdaMmPR-ZwjelGstgUJCrZ0Np3JGJC0ZmbAmXelpM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHdPt3RgwhXxyGPj8gv5303n7UmiOrnf0r6yiiPMSD1io4Z2nyFMRh41WnUytgQgLhtGZYHFvvuiLfsVBgugq0HK3nkqcpuvmvRTVVy-IfjclRUwZ7BO0i9u9ElavOuP2G6dlrm5zutxjQOu0="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDBuHqlGNKdLVzc1aaZXk_L5eyGP756khw5D40yei89OA1uXJaP4avKpUVOg-iT_0xlPpuXqd5sJ_Cm8fyAnXkrWWlUjRT3jo7GmZXo1RjF8rT636ltoaM8D31WCzvjPq35I8="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJzskLhLERUsdd3J9Yil2thjqDkvcX0-2l--wsUbD_IJmMcPtR0-_bD9oCxKtdHuPLgmnIdNOyzBMX1IEPkSMlT3R6o4sLqDPGKdxwdvBuJS9zi5DQCBxqy9MnAVPG8oJQLzuhtzM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ready-to-Use Therapeutic Food (RUTF) trials for Protein-energy malnutrition",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Protein-energy%20malnutrition&intr=Ready-to-Use%20Therapeutic%20Food%20(RUTF)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "150-220 kcal/kg/day, adjusted by weight/age",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1062,
+        "costPerResponder": 1000,
+        "icer": 85,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": null
+      },
+      "name": "Ready-to-Use Therapeutic Food (RUTF)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 kg",
+          "baseline": "6.0 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight",
+          "percentageChange": 42
+        },
+        {
+          "absoluteChange": "+2.5 cm",
+          "baseline": "10.0 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mid-Upper Arm Circumference (MUAC)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+2.5 SD",
+          "baseline": "-3.5 SD",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight-for-Height Z-score (WHZ)",
+          "percentageChange": 71
+        },
+        {
+          "absoluteChange": "+2.0 g/dL",
+          "baseline": "9.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 22
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "60 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Motor Development Score (standardized)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-10 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -67
+        },
+        {
+          "absoluteChange": "+0.3 µmol/L",
+          "baseline": "0.6 µmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vitamin A Levels",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Minor gastrointestinal upset",
+          "percentage": 5
+        },
+        {
+          "name": "Allergic reactions (e.g., peanut)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 weeks for weight gain, 4-8 weeks for recovery",
+      "treatmentDuration": "4-8 weeks",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "scirp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE76CmCoaQKr2YEaDN4Wl5LEd2OZ0WpqQFgFumx5tK-7vIhye53vCdFoZ2Tjsq_2HqR2483xsDv8_CmI_gYrlSy67x0xvjfEKrCBLRQ4F28sOAQ_Cs5wl7737RryZQXMMfuBtJVwOVSrDPohAdc"
+        },
+        {
+          "title": "ennonline.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv3W7OnsJU9cnW-KgnasIg-G2Xa-N2FSvQVaAYJqV_6fEq8GDji6bQ7KMuoq8GlB8A9_20NKVza0kJoKxVxR-pW_nz20PyBoGt7_cCVUPoRlBpWs9hzv8xMEYCVZdEJ8jBuxAsWV8feO04zb-y4qPWBOA7lPkfKVfprLK57VhCDtEddy3c1wAQyqn-jMVrlmvqGdunrkPtZtdSRdnQnbQZTtTVoZi6uQjwnK_mjiYjzQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm_I_r6_5cgiKWq6vFcS_zGp12xh1gfZLCmvPa2Ozxgjv91hLvxaQSsOsv3l3WoaUrpiuLKNhGW_chu1Rqm3eaAVIa36ZjdrLu8ginM-pIoUslvHpJPXMP3f81uFU3ihq4nvHMCxrL9suJ31-H"
+        },
+        {
+          "title": "pjmhsonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHU2lFnil_KsufJk3jd-hzgvNxpPXUgvIw8wxqXLiFkwvCvrDKRXCqaE6b4YksNkm8Mj8ocphYDPv4Z__XKsTYdnxlMtrZiM_0Gexc7D0iusXgwCpu2TnqwbM9vczLUkDDRp3DdC-GjSlwBsBK7"
+        },
+        {
+          "title": "theprofesional.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE38Co6YLmScCgR4_2SujxpVe5ASgASZkwXgNDbwskkuciY53v0Iyc3wSsZA6H7IJkI79EKbzmNsiihf45TjcU5Rx38yIBXcen4mKhQEwqS25eR7cFOXtSva7ykIUpeb78CCYkWQhcX-SQcfESXeG26OyQ2utsz4xJlKyyJI4M7E4hEXseegJIGIwnc_IkkTYAqCg08keQgLw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO74cV3fk3Xyn4ZSr7mnhbTykq4AO3Bm7yxSctICrfOBR7A6_wjxsuUig67vZJ5aZed1bRBuFNveNzDJAaXFsdxS4KZdBQKZ4ddxr-uMG8KZNsi37cUyhdWtHyojaGaNmziYcutT9ySksU7Fm1w41HzvW_w1yzcP8Jg9LnAar_ZhbRb5BiArEwnRCBGGuGoDZDP-rp3h4rfr0Dw8PjMxKeEDL9SDqg_D_Czw5GjlrE1ETZ_3XR"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyWtdw9uqpehX4fd6XiWfvIR_2DwHlcfP8pQL4z63E0FKYXaQYIEkeslowHqQ8kVAYnN3Zu9yYUugIIM4fAGL-BDLGk-zf1549ovhaMXOvZPi414r3EbXs_Sel4eeif923vZvKO3DQ4tk-elWKhtJVNSsve5UStam7_nRa4Mp3vxoy2IAx0pogdw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzfoVCHC479rB0qOBRnBAVxb5xeaD3lNujfxqHGD4mcLCG9tbSXorQ9_3THHHjHnf3wgyC9nIm7B1n3XtrtERejx9BtLhTsgtR06HSWs203TlHn02Ih5n2wgMk8rVXW3jRKsmywzrn1E5uid5qNraVDs47xAgDkdgHgGIz7kI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYMBXviRU1mVwE4s_VhBneefoezImpRFtK4eLfgRwYPnCO04nGmDTvG99JSEf01ZbmeH-zjZAdWOyqnrS_BNAS_DbCEW2dv4ZXrLeJ2xutdiur3EQM9hO9AO0OZTgVGWxGLASIlWeFWSg5d2pVkrbhy8PSd3E1anUErjlCFGIwUkvIdpdrmw45jm9buxeQ4uZjtdlvuE7rvpb1kWick51njGCC4Gjmy6fMryCXXejgziP6CSjQADWk_GasTqNbd2l8TMDbK4CNA8lPmADfdUyWkQWV1n8aLG43LaClAiU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Therapeutic Milk (F-75, F-100) trials for Protein-energy malnutrition",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Protein-energy%20malnutrition&intr=Therapeutic%20Milk%20(F-75%2C%20F-100)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "F-75: 100 kcal/kg/day; F-100: 100-200 kcal/kg/day",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 3500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4375,
+        "costPerResponder": 4118,
+        "icer": 350,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": null
+      },
+      "name": "Therapeutic Milk (F-75, F-100)",
+      "nnh": 100,
+      "nnt": 5,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.9 kg",
+          "baseline": "6.0 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+2.0 cm",
+          "baseline": "10.0 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mid-Upper Arm Circumference (MUAC)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+0.5 g/dL",
+          "baseline": "2.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "9.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 11.1
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 points",
+          "baseline": "2/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Activity Level Score",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "+500 kcal/day",
+          "baseline": "500 kcal/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Caloric Intake",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "+0.5 cm/month",
+          "baseline": "0.5 cm/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Height Growth Rate",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "-1 episode/month",
+          "baseline": "2 episodes/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Episodes of Diarrhea",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Refeeding syndrome (electrolyte imbalance)",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Days for stabilization (F-75), 1-2 weeks for rehabilitation (F-100)",
+      "treatmentDuration": "2-3 weeks (inpatient)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHhBuAgl8zEq6ysebbIJNBtMzHILvyQFvt_pHYEHD4j0XvZOGLQdHFwEGyVgeXQWgxT6FtrDuMFM57XNGD_MksaVxgdD-TESVf_EpJGjj4xXjeo_Wf8BHNlwOHc1zdlLvBXXJkKnPM1MxBDWBL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoWnBuIyrKqtStz6XdSmw1d0r3lPxUXZJbfeA_XntdvDA9f4szPFqqW_fOFdoljxGfSiJsjEAnVeVMFQHG7NkFFtjkyzwH4W_3dQbNo-SXonXRFzpzZqvF4EkLeiHGub4bQJ79GWz2iWEeiFYUDl0r1NgygFWzjfa73Ak_PZJZlhYkLabgROENOjE4ZpgCBxoupmyOdHWZ1akdaUzTwNChOOGn_SBDI7TC04X1dPA3btGbmUUnV6VdqgaDZ-fon_C0Q7iWliCkXrtthL_Yi5z0-5gyzy0gO1dDDTaLZwVpoGPFsHXRf2tnQz-YweHB10QBQrJ2Sb5VdCEkhr-kzjMcEqJowvNxG46F3Zw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWH1J9OsgfiHptWl9nNYH0NPV-THcx_S8t7sAMb-6cQ6G2-bkvhkxre4ykHFEzwy7GTVkFhzvQV_C5RQiFxKwV0TBOC5Vk5pViVFnHPg8-upj9WzS8YZBnfoNR5QRT_IaaQg3c"
+        },
+        {
+          "title": "maastrichtuniversity.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOCu3Y3q89VPa_lEnB6GYF4XnjJgmIsai1vCFm-WQNCjNZ3JOb4WvJMxMtbbnETjfvyABeZ_kgZrceYe3Nq4CL2Xai44MDB7wtCV7WGLKAramt3LazfdasI_g0Y_TewFvCSJZfFuEj-YdKBO4E8QSsbzKCeZrsPcamVdAr3sfAfsy6zl2iQzglG9gug0vOrLzvDP85ijRkTFsTLOSb9Z_C3OkSBF-ETyhK3vWU59TqxaE4"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsarQHyQbW17G1ON7JKh_MhfiCz6x-oRsLN-eQnYFQhp7ZtaBDvFZ_5sP0UT6vkiof6Lnka8EIiHaV37mNylB357KrGTqk-Q_8ZUO_6oiV2wtGPj5PeLtCcbee7BW3eoZJG7RcIviylr-kQMiZc_piMAntOQTzmyqchoAMaebqbUNT8J5ldUcx5mwg2LyiBY3--KWpFCV-JRHeDktDanJEqrzunjW9SE_TJ5Cy6mdOqZ1jzlnX2PKc_ZhnSZC5jhiek1rDksmewBPNxL4eMGYyWMT4mtfZH05vSp_OcfQ0KgvoFMnw23V28VBzekKBla2d0Y4lmLaLGk6HgB4cZQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9eA2FeqhdA99yUBTdB4g1LS7GnrJJSVFKFsrlDYpvDG0cYXVVl8Qr3zTkoxaExAf36m5hT0U8cy4y1eymIqQ3-8xSjnPjQvVWHI73PpWeLC8gtumLkeK_B4WaQorlZ8myghbiIfYyxnmb5BZe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxjPNoIAJu_LVqSeA7pQt3ACsb6g_MYfVpcoOxO3CG-7dlmwWGuhYEcVewvDNbyUPXixWmHNwbuk1hP9uM4EVU_F1gSAhpYND87bMNxcP1s6Rj7jIp_6rJF0rJim9I_y1Aq20A_NUS-TWAfqg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ready-to-Use Supplementary Food (RUSF) trials for Protein-energy malnutrition",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Protein-energy%20malnutrition&intr=Ready-to-Use%20Supplementary%20Food%20(RUSF)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "50-75 kcal/kg/day, adjusted by weight/age",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 450
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 643,
+        "costPerResponder": 600,
+        "icer": 150,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": null
+      },
+      "name": "Ready-to-Use Supplementary Food (RUSF)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 SD",
+          "baseline": "-3.0 SD",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight-for-height Z-score (WHZ)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+15 mm",
+          "baseline": "100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mid-Upper Arm Circumference (MUAC)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+1.5 kg",
+          "baseline": "5.5 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 27.3
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 75,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "9.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "+0.5 g/dL",
+          "baseline": "3.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "3/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Appetite/Feeding Score (e.g., 0-10 scale)",
+          "percentageChange": 100
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Minor gastrointestinal upset",
+          "percentage": 3
+        },
+        {
+          "name": "Allergic reactions (e.g., peanut)",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "2-4 weeks for weight gain, 2-3 months for recovery",
+      "treatmentDuration": "2-3 months",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrUiRjLOGvYNeUtU831yaFB3JcTfyrXwhMoNrLd7dJ8lrxyp-yXasfLLkskGi5nI4DXl4XD4kJa9f88oVoWgM6qDH9iVBVlX4qu19Lrf8y6gRb5EJHXs06hQVStoCZc05z81F2G2ZfMqYgamqj9BPLSlZp_a-VkhExpMgYYwcnv8Wd_v87ZYY9t8PvSt_L6hTkcWvXi2OfnDfAazTIr4NuqWUUo7amVB-3I24e9znAMLqhhWVO4buCp3H7tIGxYQYaJGmXmhBAHFxj10GtOiumeH0K9twfmfkXamyxABGhhs0gBx-GycMP"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH719I3C9wA113-5xDF9eWUZ2i7PD1EPE7cPoh4RCSItkQ1QWK-V1DNx2Wrt6S7jEqyKT7gk2Dwf4Xt717eHWA8wE4W5c5AfSBsndwf4vuNRiKjre-tfdHnXYSf6NJPpSDA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUdR3IXgghseCqf9aEgDPQzwekbCAffPjA1jfr5nRq4vR_uDbtM86jppvdC-UITx54TZkYKN857jX0KIsxAI56RMIA8QPSy3HYDK8QAhHWhev9pGdYUxcU2WxX606V13VZjL8ZHrvWVGinrjo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJJ1d-7Wmf_6HaHn_KHqlDm80TpKLLqfj3yuOIc9fRip15lCpN6SjnXh4b8HonJR0aiJiTX3nkmzY35RkrCpBkvlw_WSPwesqeKzBum2XpKYc8OGcr5_1N8ZV3kdzo444D7FY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNgqLHgEVtTEc7L2YJxdm215ejqSJAaKTXvRwY33qspNbyrtbtFMUmowxfnmwlyIQA-MR9AuQ9PPAKEtL2Y71492JYjU2IiWo0CBsjGLzinvjw_kI0-Z6LL7tir7U2NykdfAi8M2mgvBUK04jzTtTU53iFaimGzIJNhejXaEXMzFsCaEsSb2X1fe6Sd8njdRXC3K6zx7yx_GtnexTR72Bos6fiGJwnO6cTUXpw0LEfayi0wpIEQqBfj2SS_Sd1Uf6pdtizX1e1vq4EGOXiYqT9qwSz_7ZbPlpRCXeEpk1QUiHTOJqKTwIeueylPZY48Ll6ldMbF4Rjn7gxcL4kv9Oetab-sgpyg8gBTA1rg2POaFyNEPkxNtlaKwtSW0iCdbtTLr61UykoN07bnCL72xBzA4vRIoFDbmIvew8HoHTm6oYVkL3eRWDyMPbOvboxG1dfHk5XffqwH--zyAlLD5kJfagGsRBS7e-0KB5zZKrpsL5JqQeYopAN5lb8wSIIiqDZypOjgioiGs9_QQJEoVLR9xwnf3TjvbK-gM376XOwSbj3iPjmy63vbpIDyWu7_Ul7hfIkSaKQTIZSlWQj5IfDWsQ="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhqJfE9DZuV4zc6Dt_WHgniC95Ddi4ydPyMk97xw7yjyeqOB3GrGWQxmhmIK3yM5jGUKnf63J0NnBPE8B5GwFj18QPP2d1T8cpFQlg64T35AWyvcxdoceT8SwjnkTORLTqMezWf7uEw2zkyx2JIjNnkfddy8C9sMxC8yi3"
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLYjLC9eMLsRZXZ5aLQAOs9EJaIBowEXjIYI4a8A5cVmCEuA5HXt_OGZT-eHsvsH34pGf5dA3Ulqa7a6idliLFx4iMPRVHmF8uf0YVvSI200_d1BKwx96scBrYzK1zimcMb4TQ3ZT7OZJ_91tARwQ8mJwafMLIWw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYxiCIJQ9N4fObFd1BTifWglsLlQXSuXfdxwm2weKsmFTz0AsC9ijNKb-9ApxhpA83g6Wpofbl_VIJzrxuKpOHHHAXzWEhIjxyHiNehLauIXsJnGdW5fZAhJn7rLHK3uP_Tf19f9i2er386FZlALlcJe8cNAIZX7hVyfmQKa7BIldch_eLOshxdKXvyTl9ZQsEzwSVbD1LSaoUxImtTZRo2oBWdnT_hGAcmgQiyiVXts4wDi8Mfb0jIPaTw-RnUVZ5Te9PSl87vzPTDFi_RRFAPwhJpMvo9X_LMjcST5kdauAO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCvrGNZi7-Q5vUALcOUA0lhhDU28RHghMZvRDa76JZ6FLTjBQZoobZXQVeUkDCf6vT6wB2PPTUrY3F41LW51ben9EFi-Idf5m9R_QUf2i8uGVgbA_RjijGgCV12I8K6VpGWUl00WFM4iL_n14="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWBzleuqFhq2mAcqeLFKbIZLLlSHVk8efZGjmft5ffvk8qQJ9HamQmEpZBm-Wekotavr75rukFXjBwWLSz_gULG1DNJ73y_hbExDw6mCNwDXzzUBTFtFTO_LWToO9qFtortHbCckOVdqFlvg=="
+        },
+        {
+          "title": "jneonatalsurg.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFNRaw8VYfAIW84Fe7KS5Lk0btQNmxEa2094MW7S3-rU5Scq0IBgySH_XPNusSXHASrkZ_65C9AwnU7oxf2A5gDeKt0CWB4JW-gHrcna4u4A4MIsvkrselKfoiUSnZ8k256uuqW7SXuSVJIMDoPq2fpZknLMZQrA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1OOeQhpco3-dDI0SfmPcH88vYQSfofR01zYE4leLUGPk7X7NEYU_S-nZX-efPBjPSekhQ85EbYPsrO_Eqpov9UVb6LCWBBIUV6Luhl7B9qDHRoqTj_OgD_02Z0nfHMhLErBc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCYpWZNc96Qo6aVqnDhUY51nDKXT2iXHMkw4ZPONqz96UG7wu9_gTQmiedzS0Rk8je9BOQl58hjMf512diIhRAPOb7yqdacgXc1X2TKA8sTjq_V404DGgAU_bdm442UEz22p2k5uQMfjjadoKidBgFqfDekLi9jmcoS6kjoKCvKWvWnUwcoO8cnV27PoY_hE4TmJQa7iRlwIK_QM5n9U-92EspcYlRHdrOTkTtUNOgreNncJXn8m_2XkVMOBOgzyC3Z-q7lati2QR2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-nBf0MwbiPMhC-SvTIsku-pb_aWjxxcwyPw0Ny8XfsdP0B7PG5tmGYkC-_qyhBEp9RjP-Oz3q5q6ten7LBYJw95uYUzgDHBUDqtX0SUfBcYAziSUXQa5lTr6MaoY2xDPVEOI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg6MNE2uo3vx-LIzpyscqt64g80oYlkuakPbOnAqxqJtpD_XdjaketuZ692oPkXkcF5HJO8XTQg0DKzOn5hUKqOERVk2JTwuCr0lSw7SDzgKBBmbkUR_TLfpUXBEup5YCGME9waBQDS3FI3-od3nmV2AcLAWlduZoh0fBaFLbYbGEf6pUDEukMNncw-az4UHYblfZlFD3lrK9pekfcKZNtdfxmzH8MHFfmhOopVFzsfeb3L8KfnRS80_kvQlGKUpLv4adfM5RYFKRZndsiEIBsdoRGd7szJwEWebhD2A=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpo1EMCPGf5Zh8F2MvaQFLI8X6KJxcuFAUTtouAnXvJAkSk7BC7jMrGP3ePQjLRMfFnDgVeovlFGs8CW839tDXQW4AGMhRKtUuE7AjK2OdcfCi6uJGWBtMNxZgqmMul0aCydKc66nF5XHJGTQ97seSPPK_bpZnbNdO0Hnq-3Y-FfV3DWAfIo3WgqOm3IWOIiw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Micronutrient Supplementation trials for Protein-energy malnutrition",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Protein-energy%20malnutrition&intr=Micronutrient%20Supplementation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Varies by micronutrient (e.g., Zinc 10-20mg/day, Vitamin A 100,000-200,000 IU)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 20,
+          "sideEffectManagement": 5,
+          "totalAnnual": 40
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 44,
+        "icer": 133,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Micronutrient Supplementation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+1.0 SD",
+          "baseline": "-2.5 SD (Severely Malnourished)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight-for-Height Z-score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+1.5 cm",
+          "baseline": "11.0 cm (Severe Acute Malnutrition)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mid-Upper Arm Circumference",
+          "percentageChange": 13.6
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "9.0 g/dL (Moderate Anemia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "+15 mcg/dL",
+          "baseline": "55 mcg/dL (Zinc Deficient)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Zinc",
+          "percentageChange": 27.3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.05 episodes per 6 months",
+          "baseline": "3.5 episodes per 6 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Diarrheal Episodes",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "80 (Below average for age)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bayley-III Cognitive Composite Score",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+140 kcal/day",
+          "baseline": "700 kcal/day (for a 1-year-old with PEM)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Energy Intake",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Minor gastrointestinal upset",
+          "percentage": 2
+        },
+        {
+          "name": "Taste aversion",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Weeks to months for deficiency correction",
+      "treatmentDuration": "Ongoing during rehabilitation",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGmN_OREqMKzM_PxMboJWgc_EOqcuIExGg4SzSaLO6y2Y7SWw5nfizB_fZ8AileK3sP_MlncspqcxHr_-mB8Hnr_edvJ0wdFNB8MakHkZaPIkkX6fv7rnnI4Amr7ow9Jtf9tlw46JHTAL8_xg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1-Cg8PqgvnhjhucEKpp_CRwUs34gqawz7lKttKOqlUWsidc5DFxRLJ03szC8qLoZZgwHzGXcopJHr5gLYHfGTz-zsQBf4QjXf7mWkWvPLfbxs8cVhzsVHXO8kklGMk02Rj8-vk0VAO9iaHsRoUyOAaEh8MRHLOMxq3iNK5YFczbehiDhLpsEtZSIHsqhQ09zrZs4Otpd5xVlvQy298vkhDeTw1EKGd6lGp-En7ZdOmLhSDW8FrXg4_UO7LuYgHocTxHqXN_2Xa2k4OntECSg3d40Hr-hvRnttcPa5-LKJSICwtjms1QVqyaEnKwEbA_Pb23fhrxLNxnT3-KZjXg9kkyvSlxb53EFL2Nm7NPr0luRG2kndE84Yj608H4chy1wbdLnB_2L_JBO3MhQh6UiY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGq5Ddm_is-upUDtaqDNRLOK4ORHprbbGPg00sG3GH-V9Z-wVF0WhoVPgeb-svFC77ekJt4UEf9Z720fGOI_tju8_qh4xOQnDPEzNz2mGdrGi9YgsPPL7P1tnPjpP554UA6SLtp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2zM-HTIiNkB95zyMguGcXGZkbcm5YZ2h5EFGASx_3H5kmIn_QHCt7PJINQ5CYwtmTvqV3wM-emKJFgR1UNPi1BinKgsL4eR7JIjj_V0vNh6gUH_7fxl_AAqC_LuSHeRodzxMX"
+        },
+        {
+          "title": "eatrightpro.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgJHGvwJf51S9Ko0paguAdAUXF1pBaXkLxzBPfeHrhVUh9EZzKObnkuhvCTyrsJlGn8jHQFuX7FVpW8EU9pGXf-L2mZ35GFvUh_Ifk8DpzdXTwtQK5uIB673x99O3oBhaFwJtPjUd9Tr8pT1llcV8N6tkAJ8lKxT6eIMiOnr0nQnQWbDDOh6BpL67rqdzraFQbawwzwz9qJYs8DJJxrBmOXks3X_6ItDqp-akf6yE4LHgHZZicLesB-04gangQOg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOKDGPz8Fbiuu8t7CX72KppctCpEKMBdf-XWgsjzVZ6T98nWTj6vI9v4AnkR_ydeLgWP5IcTp7cUY0ad6T13oYN-yxxbrM-KyOjp5_-IqcWpT8BmpYCo4_HeuxJ7JHMBP8bpY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc8urFbeu7Vi1dmruJpoHLfiXVaazhFRrAPvCJ0ynINlSbjg7olS_osoNdAMOXgmylS8Avw5Sg6JJtfx-GNurz2Pbx5r3Hl7DIlgCd7XHOmAfeo-04RQIsLy29cOE2M5slQBTH"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd991OVUze9VZgITTZ7q6iIDKWknNdQndT3Lsn0LxkZm40zqcTnJjrQmWUVSrm9ZhWIWbDXM0Lw8yqzUczf9t5ptef91NleYnPv6LEbnvDNSmRRP09OpnTyYhMw8zYnPyPezhV6pWuzgq1jrhA3-UkX-3t28RVA8EoL_XxsrOXXoGOj281Py4H9xVzpWmcFcXhYzY9F-iLn2CL01LlRVsBitW_m6445OBwN8c3ngOpRM8FVROjgaY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dietary Counseling and Education trials for Protein-energy malnutrition",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Protein-energy%20malnutrition&intr=Dietary%20Counseling%20and%20Education"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "N/A (behavioral intervention)",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 100,
+          "sideEffectManagement": 0,
+          "totalAnnual": 100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 167,
+        "icer": 500,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Dietary Counseling and Education",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+5 kg",
+          "baseline": "45 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 11.1
+        },
+        {
+          "absoluteChange": "+2.5 cm",
+          "baseline": "20 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mid-Upper Arm Circumference",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "+0.5 g/dL",
+          "baseline": "2.8 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 17.9
+        },
+        {
+          "absoluteChange": "+3 kg",
+          "baseline": "20 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Handgrip Strength",
+          "percentageChange": 15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "EQ-5D visual analogue scale score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D VAS)",
+          "percentageChange": 16
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "FACIT-Fatigue score: 25/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue score)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+0.2 x 10^9/L",
+          "baseline": "1.2 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Absolute Lymphocyte Count",
+          "percentageChange": 16.7
+        }
+      ],
+      "sideEffects": [],
+      "timeToEffect": "Gradual, 1-3 months for observable changes",
+      "treatmentDuration": "Ongoing",
+      "trials": 1
+    }
+  ]
+}

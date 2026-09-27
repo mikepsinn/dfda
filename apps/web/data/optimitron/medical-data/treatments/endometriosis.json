@@ -1,0 +1,1092 @@
+{
+  "conditionName": "Endometriosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:21:15.508Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhRstG9rReyl-0yb5PKNHNNtfzwFmIvmaUty1cVdWAKZWzcCmGXH8vL0EoazJjgF3aAnD9NJwqxfMXramHGSsCXGqSaQuken-AnY0cY_VnUL0dBf1FvSupLzsv1OpfqAYkO9My"
+        },
+        {
+          "title": "uonbi.ac.ke",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMdu27L-qneIK-mlB8ZzryATspZKLQxHi9ZIY-uTgo32eejaGNj-rksL8qZlzDeE7ak6MEeDWBFHZ-DgzdFnMwjTZNK47dnwzE7HbSgor0q4z1q5WSpPFiL_kLx49TA6jusrbO0woRySsHiZAROw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtvtVlkg2tU5TxLD0m-xUxR5a1-6wfbnU3TVEuBMHgDpyUqOVdomFnFn1RM0PY5HqdNLD4nK3xCNe_h8wsgKFdLuMezTpOBg2JiWUnd6RlLTetRUTwM_iKmSyl3nWu0bLpn8_TlY8Ogehi1jEyZzbiTue3narZAmNNFcFfRlXLfpm0_y5BF7hJkUeL7Dj2dFP3EYJJfRnmdLTWrpRcL1Xsh5Wff7BVkyPRm4pNiEYikAUuEZPS9ONqw0DrmYHlbouwPMuq5hzrsIk8EEEbdKrP6gEYb8czuS2ZDpy0MZWU5Q4O5uCv"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ6B2TAIIdXRPRfaWHPKsXKWSmmcEGisD-Kf3QEVgi86QaN9mbhUMHKm-1XcIVopL-gJrd0jsKumb8nPIwCSmBKNq7UhYIvhqRq2xJgLY5P1-W-kwc5qg2QQ1sSzWGo1esk8BEmViiER1cKgtqy30wIl8lgyjANGm3JGWhzh3IrA3dNuqnef__BGQ0bZvx43K5JyUzgDG_JroFuJNfhKgDmw2PmHED2UqdoShvBfNUaK-c9XN8"
+        },
+        {
+          "title": "imrpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA8_VtAC5Za1iZGHSx5GAO0OwYS6b0hA9NtoWx8rkR8Zem7FmIeeQCuUlPjbYr47mqobVDk-nRkD8_URC71EPbDv4UspzkEOeANCKQWIIteC0vOZ_hsyaNDRUoj1oLYW-CtctO47Ws0UVxNCFoue2cNPYY7HiZv7JROfqTCDFZBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs0Lo0XyxQEiIQIusLDB6F-9JBCwRyJGRg8zzMHl6PlrG6ZiAUzJkY-c34BQr6ARDs15PAJ2tPaPXM6rJGkS-aIrfCoNGm3FUeX485CX02C6FSnGDUEp06dYWg8OVLFZYJ_Wdh"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdId10kfv_zgaLHlik0cqU5yA1Op5jIatw3Wg2Tw7eJe9eUDJyrvP0f8UBmUOz9YcCbF43nrL5A0EgxZp3Et8mPb2ym7qjMHeUCCSCRjtgLzbt9uGeCBAwkXwYeS-RF3IcsB6N"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVyslzwdyfEZ84dmmQsjLwrS1A5wfyxwJW8UcVHOEC6tZBIsysjdLiG4JZAFRvb6EK9vFbpfbEwfBX4zNp1mp4qoS-49zLC9GnV-p7LzQwyn6GlM5OZVYOfYKCs-0FkbY18kR2Xw_D-sodGLYM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFndXezI9xteWB6lMvgEORJFcawqWQTJpy7jO5bLp9tD5jzxr3VJvCpmpHCpDsVSm0qOd9LBpuxsuF0LVYQrWBysCiqL8VPgKpann_Ea0bxT4uwzH5nlTkFEPH9aSieOzll2skVPfkt_Cc8KHSF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpJJpaIjH6iMibr4aiWeSUUDc9Ba-4XH-SnG2JmHGSrR1E6TacUPvUV7zPH7fBrIgHXjA5ikjzPL4VKgQkX4UKuFxTFaRV-EQlprpq-qVrBrEBd3rOPO_BZ2q0rS35Hr0vHx9g"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkHcB5QQlevo4LvRUpAV1z7q6oKXF-5nwuErhkfbrLJ25QJtF8CFv2D8gHiTisDzaJa6HEXw-nxxInf_IKaqQGxVoky5Xth8hTm5OuCSuVZMyRyzpmjm2AhCky4CWkqz4EYa9ci2MtU5E5wA8="
+        },
+        {
+          "title": "endonews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnWzx7LxG6o8HPAD7dpxNePoRz5E51is3BfQqcRzZ6eTbfkc2sNE-sW6LZsRuF2zqgl4YrG4cEnHzmda2yi02fkrVp8uGey1FbdlbcsHNJe26jrAjLutRCGPfEhE373nu5dlsaBnUnsA-V2a9xNWbWRjW1fnboCDniWp09-gTj-OK1IOmYww_4Hs6LNR6BSjbBz-67-bNbr7JR9fsG7PgIU5MfbM3UbADHv26lXhERAuXBXycl37F40u0upcY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Laparoscopic Excision Surgery trials for Endometriosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endometriosis&intr=Laparoscopic%20Excision%20Surgery"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 800,
+          "sideEffectManagement": 500,
+          "totalAnnual": 5500
+        },
+        "costEffectivenessRating": "Good",
+        "costPerRemission": 11000,
+        "costPerResponder": 6875,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Laparoscopic Excision Surgery",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 100000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.25/10 NRS",
+          "baseline": "7.5/10 NRS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysmenorrhea (Menstrual Pain)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-3.6/10 NRS",
+          "baseline": "6.0/10 NRS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chronic Pelvic Pain (Non-Menstrual Pain)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2.75/10 NRS",
+          "baseline": "5.5/10 NRS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Deep Dyspareunia (Painful Intercourse)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-25/100 EHP-30 core score",
+          "baseline": "65/100 EHP-30 core score",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endometriosis-specific Quality of Life (EHP-30 core module score)",
+          "percentageChange": -38.5
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 80,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.2/10 NRS",
+          "baseline": "4.0/10 NRS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyschezia (Painful Bowel Movements)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-2.1/10 NRS",
+          "baseline": "7/10 NRS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (Endometriosis-related)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+20 percentage points in cumulative live birth rate",
+          "baseline": "15% cumulative live birth rate over 12 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pregnancy Rate (Cumulative Live Birth Rate for infertile patients)",
+          "percentageChange": 133.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 100
+        },
+        {
+          "name": "Adhesions",
+          "percentage": 20
+        },
+        {
+          "name": "Shoulder pain (CO2 irritation)",
+          "percentage": 30
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 3
+        },
+        {
+          "name": "Organ injury (bowel, bladder)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (post-recovery)",
+      "treatmentDuration": "Single procedure (long-term follow-up)",
+      "trials": 42
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwJ0MKrP_lpwcBdN4pmV33wq9Kh5SJQtJkFbipSflILkuBP7Lu1stfFFrId_XJ_grCGkVIirVRIHWrpUavuhsDK60ABocYsW1PI9Rr6uQq7NpYf7oR5CF8oWhk1bFTf97pJnODD5myz0HiRaC0"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6YDYRX4h53ZfWNLdM6E5DgxtDJ9t27GCAhf1jmrypv6gWm8AHoD63bwVMaHZ4hH0T_S3AJTfIQcTbF4RmM5QXBvEYj3aX83OhQ38qCEQFg6UcE_MU2Q1h6acH1sbcToInyOIqc-N6BKEQSS9xN8NaKzfLTKub5u_oGi2yPlUWsff8-l3n37yWI82O5N3TTlwdEFKqN3_mpyaHRKX1ueBxokZQ5tSQjEJ7yKQ77rhsU3s4tsLRVo3TJHZohQLN2MxhJi1zWmsInw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcA0LcBxIpP0R7kc1SA_wWU-MRDx0zJLd4X6ZywLYQxMve5p-yIZjTP1oCVmED78pVhyrYjPianhCTqxARerC6GAI2x7qrhl4cImdfIzZ_bGZlo_NWzxvKBjzj9kXWBfnVqoXMsTNfSnGgJn9sBmuSp5U15-c8ZL408404b_SLXBkGNbx1MPyXDpvPmUgu7i7YkaP3kX6CyC_0AC3AewXbOl-xG9twcDAgd4H07H9fbjHHFXzFiLcuq5jMh1VCcF-8fcaDYTELsQnmFt_OObdeSBpYPKxZxRwk16QVkMI="
+        },
+        {
+          "title": "africaresearchconnects.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-8v2Qg3Mho5rEOTfT3f7Y9PNVZQ6uosIMHxDcZBLrd82YsSzSRHjrgmwmx14R8JpA7XaGV3QjaemgS82gI25CBfSO8Y9zoA29BsYt3GwzO--EW0ByJixPfhloGvko39SF1LFtb1Fartpa1PkWqhEHqoSvOeAYUzU7QIUxenGt08uwr60muwlH9vFoFZzLGobLloYVtFioluxrVpQrDST1BSWAzCawmIj8"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVnu5CJCm12YSuu-DFclrE8zojqneHpacr92UclObjaDO8Z5Dnt_wLwU3yTbVZ63gNffwDjZtF2WtNAg_0L_a7l3idhJm2RcieqwCACWkcLRaKDNRDSswsTV1wGnk8ng0xvj0cccpjnEeo4s2iBYG2rgt5CfWB0b8B3tpZdJ-9bsoWmQyimql3hmJ10QTftDK5vLgTtmPfVUVb87WioAOdUHEkrRfTa38joZO8UBk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKYVWQrH98Hf36J20nLbPXZIVlied0JWgvI-9j6E7rAFG9ItVetBk9pCtZB-uoEYD7lki4AHgwsynm37GS6zHHt7r_jg_3kmJ7D0h7OMEGi7F8AS5qH-ehmOHanFEa6MkwgiiWD9VNp5ustjg="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUQ8skC9wL2MMYyY5GxcqVVlruAQeQo_IG3KhdU9mjYCDjteGJiKVy-c2tdgsZ4c38Pv8yAUuIXzX533F1u7kkWMvX2KWZH5XQRRCUFPk-_6dsfON7tuSchUaYOLZPKQzTtIkogiIa"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbBwFTLKUA83gvZtPenbjkPt9FKONAQy6OGIZO02gX-TCfF8D6EA0JoTgm4QjSWDC_IlyCWgs1kRlW9eMxFlNmbCbKLPBb-EzkB40_Tu8XIrn8-KrAVjyS9Rox7Bebr3AZ4pZw"
+        },
+        {
+          "title": "ClinicalTrials.gov: Letrozole trials for Endometriosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endometriosis&intr=Letrozole"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "2.5mg daily",
+      "effectiveness": 88,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 800,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1300
+        },
+        "costEffectivenessRating": "Excellent",
+        "costPerRemission": 2600,
+        "costPerResponder": 1625,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Letrozole",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 1000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-38.5 points",
+          "baseline": "70/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Pelvic Pain (Visual Analog Scale - VAS)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-48.0 points",
+          "baseline": "80/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysmenorrhea Severity (Visual Analog Scale - VAS)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-27.0 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-Menstrual Pelvic Pain Severity (Visual Analog Scale - VAS)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-24.0 cm³",
+          "baseline": "60 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ovarian Endometrioma Volume",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 80,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-17.5 points",
+          "baseline": "50/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspareunia Severity (Visual Analog Scale - VAS)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-19.5 points",
+          "baseline": "65/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EHP-30 Pain Subscale Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.25 days/week",
+          "baseline": "4.5 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Analgesic Use Frequency (days/week)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 80
+        },
+        {
+          "name": "Joint pain (arthralgia)",
+          "percentage": 40
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Bone mineral density loss",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "6-12 months (with add-back therapy)",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "wjgnet.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWC7NwA1q8LrAj7zNSubzNCxKVagLSGv9-FQL5qqzOBPlyG0_Pw-4okd-wtpOIUEU_tzi-jFH5FNOSwLcV00EciRkguRe_Ti_LiG0nMjOEJ1hC27n0PHxjHXuxsrlac1aR44Jw0YtrzOpteCLGgQ=="
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHshBwGA7gLrUn_xOLM792_Ny3tqdL6Hhfqrxk08OnZw8sZ4-37-OugkH45YsmorIq05MwTEaJs9Ta5okikRwfGsn_NtMMxTS1DXdVJPSfbtwMeLvlhfZfoweIBq78KvRe7I4mJlS9K-3o3Tc_kjiOCH1sQHpuQCD8sb_yxehUPuD27btaTVDDy0IM5Lg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2Ky5tFFRQi4RYdMDtX6I63Vz6Xeynrz_3982C4OG2TBfdbmKATUmHxUR4ij1uQiVcR3MuUR29Uphn4x6VwCNmmvIJ8wXUNZ_KYaKs7Ztv7MtK3-NhcYUKFctD4Z-R5pLB9ZQRx4Rs9278Rli0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1YMrkpzkbRkzDi6FhDIyRXCUM9U8pzPC3R6OpY4N60jAaSjY2LYtcPM_k5sq7azy9barWzcnkGEhfSfb9K21X7t4i2GXkQ7Vt_ucuKdfgkHRyDlOlTixBXK0gkgCOhU_qGo0mKzEH0Vzucpi-"
+        },
+        {
+          "title": "geneonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuRtzaMqahpf_JsDVvNWm5XH-yE8FRVFfMrC8yTmrAB_tuSOARmdFk2yeHeqOzYC702pWdALEnawVC_4Fm-J8GqZlxR2-Ad8f6-K51FpWSVJtRBnnkcJRZ4ao6DNWtOD41I-U3gKWhdlw1U378JAu1frol4Zez3cmtUomvzq9ByIdZwkYvrvcDOBLNx10396DdpixlWLgdQHUHcXCyFhGmScDz5mPIuhN10BzG0qahwNo9WabrhdWj12s_xWAuIA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKFtjAQEdlJ0bXvZ7DG_DBE8T2N21NbM2GrmspolAuIhtqLDjkj8sdv_PGTHTtj7a8ATnDgfkH2PVVUcOnB5pPWsYjqZ0QKOTEhfsEz8tA18Zk70Mo_Sc9QIdV5dxdSMpaWqok"
+        },
+        {
+          "title": "uniroma1.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEilAeZRDKgw2LVTvIvRYUadt_Adj5t04cI6G7Et58rM5HUSFS3WdJZL7n58oBTioyZa_2puEqBx1SHqPDo_doPmOw23IqIVSsr7AbW_22vytKEmSZRwxvnblhjEDtGmfw319au84b0GwaHmRqOXGAHOE9vadQQngREDwIJ25kV-J3Lw8Gh5DGe2yEzcwUpKLPHV_5c-uogWc5YsONUqgHKGZKAAIihIEpoEtBg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGma_CYAKlyz3sgdNHjcxci7cIxfOEvlfKaRJJk16JNQRscqUBhajtBCP4yvq8pbYRzkFdEupbTI9pliR_0u7xe6jn-MM_mQa3qOfyd5AgATySFyGFNZ6Xqy1SlavLOVFGJ_UcxlWZk_c2lh9HJ--ChfBxdESVJyBd7kp4ix5SqV19MTm3E3eVgQaLUW5t8z7qGEeHgkTm2PoteWLXBMFj2ewLz12c7h1V-Wxw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dienogest trials for Endometriosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endometriosis&intr=Dienogest"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "2mg daily",
+      "effectiveness": 82,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 960,
+          "monitoringCost": 500,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1560
+        },
+        "costEffectivenessRating": "Good",
+        "costPerRemission": 3467,
+        "costPerResponder": 2080,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Leuprolide",
+          "costDifference": -5000,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Dienogest",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.75 points on VAS",
+          "baseline": "7.5 on 0-10 VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Pelvic Pain",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4.2 points on VAS",
+          "baseline": "7.0 on 0-10 VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysmenorrhea Severity",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2.7 points on VAS",
+          "baseline": "6.0 on 0-10 VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspareunia Severity",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-2.2 points on VAS",
+          "baseline": "5.5 on 0-10 VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-Menstrual Pelvic Pain Severity",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-15 points on EHP-30",
+          "baseline": "Mean baseline score of 50 (higher score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endometriosis Health Profile-30 (EHP-30) Total Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2 days/week of analgesic use",
+          "baseline": "Average 4 days/week of analgesic use",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Analgesic Consumption",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3.5 cm³",
+          "baseline": "10 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ovarian Endometrioma Volume",
+          "percentageChange": -35
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Irregular bleeding/spotting",
+          "percentage": 30
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Breast discomfort",
+          "percentage": 8
+        },
+        {
+          "name": "Depressed mood/mood changes",
+          "percentage": 7
+        },
+        {
+          "name": "Acne",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Long-term (years)",
+      "trials": 37
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE82GxB8OKvNmSCc3JTbWSl6__Z9YkH8Tdq0P3zd0vp50WgoZT7lvBgjL_vDSF5xXB2cxW74A80kO5u98FBvnjyfX65dSAOBkXhRKcDZG052GlG9vr2oFVaDKEo1v_wnS8M3QQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzpOuA4o0txnRMNHq4792IVa5mxdzjTNUyLQJIVytvdgOBxyxigSHYI7L8mThN5GahMyTtE_dG98e0DYPcaAEDOuU-YirNm2uSEPXUVXihxj6AOIQM5-V7zE6pwBHYS3ZrPcfH_qBwrwVAbzyAMH0KJbUnQpXA3LJrUmn4JxOn29ZeotqrEVQ5kMFPwdNJDCKdOT4VCFZpbMVscJtH3EiXglkRXbFYK08EjC2UrW9QUTHnGkFMcYayI5KBH2CNyHW7OIoeE0aDVeH31jgkEb3KoumYrx--_PBINV5wymc0w4zGoNckoohiTllQqZA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkfTzhtSo6dmbgEXJ8-v8iyqqY4VpZAaALW6ORTJelagVhrnk3rAa9X78UitKgv7pIzVqIjkN5DWh4hpYk0m_7CVK9E_jPkfYwScDZHTpXs4vH2tt1PPxxD8tKwYUEaJFbMFTVk8v6SUWyzg=="
+        },
+        {
+          "title": "medworksmedia.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNxO1n4MMCNjzpL0lyPwuPz0i6I6ToRSqVD0BE8CtEVvt2AvxSOb-HzU_3Z8V7I82JH1afOPjFwuSQbPvXnycOPS-2nBP90jaADwg-e0IrpHU2KC1R8vyYSNiB3tffCa5CnjcOX1CCtDbbcLYZYBdR39xmIRcqaD6VKbysVsK8mUmdVB41vhueVnEOSfFkvKgCgeL191OUuVmOb8BeeZyn9KcvVrFHREx-1SfzN3P5NevAQ-jbAs7SEg=="
+        },
+        {
+          "title": "escholarship.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJQc25TssJbGnL6eEFn28Kxh3ItoK_vJbf_dCt2hWxlgkoXMMl3bHd1txBex2NgFcUCBfcTd3Wqnj8lgV1bobOD5y3jMrAud36xeChnlTLuOdLnJk18_DxvJIFon8utniaZwo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW2TM6XdhJUKkQmI_MgLw9qcmRUxof0iJFBqLhhbJyepPzrxh4v1gCFaDszufOMjekrFxLcEj8XkM8uK_TFWzJvZ0Q7AfgFUyepKuZJwvLAl9F9AyKwV4ddbKWmDsK8-m8c18exr2KQlZ_sg=="
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcO7ooLpaKjbutVqqn_vol7cAmJxllBnzmwdeIJO_AlbNZA5z-RD1U_4YKXREhcJ8IGTCZmQR9MtySXNAvtt6bEWG1meJJDjk1kS0DIODZy7BnFzdo_jIvSKu-px-Bd2uboBRuvwCzYmRXj8qGnT8ZIMLePnlbgNSbJ2RP4pvB83TvWuuAV0-wA9nXwoaM1WWBYbpuyEJK1sYjcbho_FFP7uOo6w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Elagolix trials for Endometriosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endometriosis&intr=Elagolix"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "150mg daily or 200mg twice daily",
+      "effectiveness": 80,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 13000,
+          "monitoringCost": 800,
+          "sideEffectManagement": 200,
+          "totalAnnual": 14000
+        },
+        "costEffectivenessRating": "Poor",
+        "costPerRemission": 40000,
+        "costPerResponder": 21538,
+        "icer": 160000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.12,
+        "vsComparator": {
+          "comparatorName": "Leuprolide",
+          "costDifference": 1000,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Elagolix",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 point on 0-3 scale",
+          "baseline": "1.8 on 0-3 point scale (0=none, 3=severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysmenorrhea Severity",
+          "percentageChange": -55.6
+        },
+        {
+          "absoluteChange": "-0.7 point on 0-3 scale",
+          "baseline": "1.5 on 0-3 point scale (0=none, 3=severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-Menstrual Pelvic Pain Severity",
+          "percentageChange": -46.7
+        },
+        {
+          "absoluteChange": "-0.9 point on 0-3 scale",
+          "baseline": "2.0 on 0-3 point scale (0=none, 3=severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspareunia Severity",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-2.8 points on 0-10 NRS",
+          "baseline": "7.0 on 0-10 Numeric Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Pelvic Pain Severity",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 65,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-20 points on EHP-30 Pain subscale",
+          "baseline": "65 points on EHP-30 Pain subscale (0-100, higher=worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endometriosis Health Profile-30 (EHP-30) Pain Subscale",
+          "percentageChange": -30.8
+        },
+        {
+          "absoluteChange": "-3 days per month",
+          "baseline": "5 days per month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Days per Month Requiring Opioid Analgesics",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2 days per month",
+          "baseline": "4 days per month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lost Productivity Due to Endometriosis Symptoms",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 35
+        },
+        {
+          "name": "Headache",
+          "percentage": 18
+        },
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 10
+        },
+        {
+          "name": "Bone mineral density loss",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "Up to 24 months (low dose), 6 months (high dose)",
+      "trials": 23
+    },
+    {
+      "citations": [
+        {
+          "title": "asu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHq_EMpDoyUvIPs-M0sqRims00Prpss-QPLlrL4CkBZLj2ulffYbgLqvWQNmQeBXFM_g-mCub6g2V5e-AZ3aoeeguxFLMyFeVa5WXm3BwheSrwnyMxER6rx5lUOEAYOnva6Gqqoo5zj6Ja84CWVVW276_f53d9rbL4iMNM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPdmXfKAwlVI3m0_ikhUfXErIC9eId52XSCp-uVf9x3nzYTDbwYppqtPbgqLj9Wy8IBFq8fKCN_lpYcY-GbfTNr0MJ4j0sQ0xn83qPBdRu3ymnyaf_m-qqhVCbxVZGgkdAqgs="
+        },
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoUVQdVQNL9mgAtV-OXw9dBvne_IpfVYX8wzQ9lSQQazwQfxXrOeotii6XkYfu3TLgJB7nC0QMGa1kpeVYJcRCnvowHTc9M2vRoz4wkhcyQuiYHzlczOFyQESyjZLjkg1MLc-eCvbjg1gleL0Zy45CffqfazeIViJJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx1wyrvmV1rlsJZjzxYqkuN0gBZtZJjJ5ufFCuBVMahx2rMSn_QO7oWWhAhVUkSs6wbuSvgxucCznZozC0T4OjnGBh7BLr9hsaCMNrnOFvaxGLJkeTB6GPeteSUug7wVfyP--FlFISN0KvX2s9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQtaVjWYlKvBL3HPbSOqtUUrfQpLka1XjScrnp4Oke1s0oOy-cgfuBs-tm3Qxb1g_2z__KStiogNbpD6BYb48IQWy504LDlTN3KLPhGFUOdH-WyuP-9yiKfq_pPyWqfbNRiAc4bozXbYTbRvLWmbd-28HLQIXAz0Wql7hTr6VD5_8YYZBr_TuVJ_snjXEUFd43v4pWjrQYAFm2uSflmFU5UTAiKZ5TPMcF0Qlv60atOjC0Qt-zxV1yOvcAxxQhfis0u8l9ZTISAJc0QWnx0Im8YIMwRFibXj-Q9yPlTCrOizQtov7_mwWi4AYYYvGTEbIgCHHRBohXz552JdUPwWRfRkeMwz3UMdrnDuYEHZKZXqeqas0X_LZSxCfs2uWEMQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl_uepV3tlxldaZiM7PaJCeIgLx17CdWOg3KOXxGXTOAmmxJ2Z_XMSaHljHbdlAL08W6llQ6IisQvGNWo4zfH0BCrqbrn363wAF17ZxOP6JcSSXEGC5PXH6HPG7zPLr68aDqGb1b_WdcTIqY4="
+        },
+        {
+          "title": "cellmolbiol.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvDxPP16ujr3V4IGvr-BiqGAtcdWocAdoV-TjoK4cf_S38zt953SnC0z43IfQm_lC8KfrWm4ghTZzROSj7TiUK78tYYof8TJtzkWwwCoQJ3nkLKELnKX4BhDQWjFQYmShzo_48_SGK-f_RKZ0iN3cP71M="
+        },
+        {
+          "title": "ClinicalTrials.gov: Leuprolide trials for Endometriosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endometriosis&intr=Leuprolide"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "3.75mg IM monthly",
+      "effectiveness": 78,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 8000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 9200
+        },
+        "costEffectivenessRating": "Moderate",
+        "costPerRemission": 26286,
+        "costPerResponder": 13143,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Combined Oral Contraceptives",
+          "costDifference": 7000,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Leuprolide",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "7.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain (NRS)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-6.0 points",
+          "baseline": "8.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysmenorrhea (NRS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspareunia (NRS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.5 cm",
+          "baseline": "5.0 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ovarian Endometrioma Diameter",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 70,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-28 points",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EHP-30 Pain Subscale Score)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-3.25 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Activity Interference (BPI-SF)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-96 pg/mL",
+          "baseline": "120 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Estradiol",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 75
+        },
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Mood changes/depression",
+          "percentage": 15
+        },
+        {
+          "name": "Vaginal dryness",
+          "percentage": 15
+        },
+        {
+          "name": "Bone mineral density loss",
+          "percentage": 8
+        },
+        {
+          "name": "Flare-up effect",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-2 months (after initial flare-up)",
+      "treatmentDuration": "3-6 months (with add-back therapy)",
+      "trials": 28
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXlrtAAyCCTSMoYS9D39aUwCtO95K8hKf9AiRDHGgVsg5HCRt9aYgD0ASvxYeX8O-MnAwhwizQxNfR-7XukgnPKn0vKEU60BlOpuoMDJ4AUwdjGhmkS-vdyv17_an19z1sA6G_KcdjBaj2l2pxI1DiSA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhfRHs7OHt977HH-CCk6ILFqVglf_lRQG7UadhYGM1vdbOhUk4yUjcHySPGU_W0-7rbW6ZsDks0ty7e7fxyOvbLJeE_oZFEFJnatB14gGXf0S79W6GG49fmOonAWbKhqpsA7MKXFVfGSdnbQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgblG_5MhZfWojqsFetKyT7utwRVqYnpO2xvg5c34Yy536PrzuPtKxs0L63m7G-QReweG8043jZznFryn7s6hywvjAnVvH__ufX-mSPnUkKC95X81ECSmafX1xSPVwZ88GFgvI7xbZgm20TYiysGKLGZPiM-7KXmZOa_YyRKmyEOJo5fTK5L7ALX7bfaXdGBpZOwMWehGfSzDiQISepZgffEnf7pMm_yr22taztGUWYNI7TUgSsL34fK4gMDt_9Hg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYbIz9vRRk3zPqGQ-ZA_1mEE3h6G1nE-RqYKiCcxqeEGmH6o4MoTrUfYKoDywjC-BTCZax78MNy7XxS2g7DoMoxaHr0bHGuCpLE6V-id-bP6QB-IQ8_Yu0rhiuBY9-SLMsiRI="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhtKLNPU59MCWNnpHQVGaNQBKqy_BiJ9Xmw0F3BGfexzWnON_LRKtvv9m7YUqWFlftXWceq04ad2OKowFl7F3H_nDzHTaxmgG9aKRjurNDSTVO347pUvbA4tIT8G7A0g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0-sFvLVAKgPPRTStmZoREulQShFbmtNIgw-ILlTO4LGWfre3gOs0SS3qBm6trcs2GKb2yWB2OdicZr8nyBXTpMS-7dEYfM3R1pZSwbQmoatLs85BSq_vSLWoSANlCGLKvuQD26GTkA2JfC0Qh0Q4PGIuXZKRHtGXKGoBlHQOtfz9P1ZgF_fhcqAstva7fE-0Wp5zt14O5ytMilL1SyQODvo5KH5agbUf0WyTX49_Z5sJ9I9i6bEsV-KQ8MHky96ZjPjeoQftJWsExvstwAkhW-omMAlcA8O6UziuwPUtI389kUywwtWnp0QmxI9o="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0_JVYhh3jMpAXBPsHLO-wilWIR1wIMvVn9MSAdMKBwAkfzX-Kx-_pm9-hw5Nd-qdEUMVpl3xjCn865DiiGgnD8altUhA-01WE3AL2n9qbN0RZauNoNUPDkqKWfWzbwEwRW87LVlqUiQNDpviOiWmF2AY10zn6rpw4HX3h6icmqP85EBHDWPjFXmSajOSBLhgpJ4XohlD77AovjYgFiEgwETfihkyCa87knjuYHSmEKA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSgxPX3M4u0iiY8Jg2YKwcdwy9GcwHyjkknOUfqJCb3YLuE9lbzVLj31uRsTqqQnkYucTH_RcSD4lKn2Hd0r7CW1ivTDq-O6ivqgWYOV4dfdrvGSASa373eWtraF8ZH9OOu9OdpSiRWgcOgw=="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED3leX7VeulGJu5ogDYDTDfgLXWycq3Y67ZgovF2Oh2LUs-XgmTpoxB9xwj-03WnGOWj5NyKwrVSkRWifQaEJU5Cu6ZRrtBQ4HL4qJ2IHs-uPbGNe6udSWszzyg4E1yZkxPv2jznUAGYQo2oAOnIyHcdaPE-xGw3cXJ1ZBO86tFu5t24Tthg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxGZSq57kL8aZUwgA2z8ri1EsSmUwl6mhKxeO36XUyIuwQRr4NdaS7msdXw0pHro-T6bt1BqtT5o6iMGq_bRCw0T2XDsWnppSW6qvReJdSt2I2zyuNsjc-BedDhNmDnGg74VUkYaWwJ3Ekz11O2HslLzLZnguwTr4RgXcNbpOcCMAeT-MN7hhZnlbq2qvGfuRcQMREVWSU77o-uYNk6Z3uUR9uuflCigLYHaSiuY7zf8pdT4oViT6ggPXLncr1k97isu7xfZqdEbpfc_-5AzwOdA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXYrSlgHMP7oJXE7iKQxbBCknE-cG9GAykqCkV8DIMHC9VzPy0D0U6lY5LEUm5gDD-fypJuhumJHPT5eLh0p28mBmpJ75o3Kc8-IMHN0uZDCph97rU0su3rn1kORHw40YQRp1jPSg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Combined Oral Contraceptives (COCs) trials for Endometriosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endometriosis&intr=Combined%20Oral%20Contraceptives%20(COCs)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Standard contraceptive doses (continuous use)",
+      "effectiveness": 68,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "Excellent",
+        "costPerRemission": 2200,
+        "costPerResponder": 846,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Combined Oral Contraceptives (COCs)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 25,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Breast tenderness",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 8
+        },
+        {
+          "name": "Breakthrough bleeding",
+          "percentage": 7
+        },
+        {
+          "name": "Venous thromboembolism",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Long-term (years)",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJiepgHlM_sht-H4fN9Pd2AMUCq04P-9WpN3Ly_clAHATTAXlGLd1kx1lVAiSfSYWX02MscQd0xrt5b5kvl7Ud27eoXLCY3Hxwsk_2FwdiGzex3zT8WUIwx6HDza5hQ3lvI8QNBEM5jbbr5yQ="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdhtmBbrDRketYOKmvoOIOh6b4IjWrqJQkUXqSnKuJFGwtmuwBEzo7N-XxWS3SojHfui_3-ID_nMN63xlQKU8kG5R3T6sfjGcxE3s2RVpAWgMyEUqTfp8OYKaknqm3m8MalH98MAZzNd_J3-m1ytKOYW8aaFUMAVRN76xD_N7l8rArYkF5O7gMxB5D9LmH5Ytoh1aavSujj5AKL8WG6nDhBEqLy85tj773X4WAIpI="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_M3izpwoDmp6Q8iMyZEi5tZaM_GHCwCdnSwohJ8BgzvzEGWZ8MXWcX5842UZOEt4wjzPm_8u7jTA_9YXiDqUs6SGLhkswSCmMeU85mkfr_Rjr_IFtWhrgpf0w9XiUfRIm7S0UJaZOSZbEJD40hXJ-Hpnw1x1Hrl0Z9jr-Mi16tEcOjTqGxCsDCDPV"
+        },
+        {
+          "title": "cam.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmES3ZC6D6ZvN2sExTIaeVG08xg_FlZEVeYL9qgl08eA4pIYxqqLRA2R1W1pfCQCnEL-tCZoBbPjs2JYytyosKB3mgPyuidSk80-i8l30SOhwG4OeoF-VasI5DWUdW1xNCm2-9oMzk0LbUnQjPUi08VP9gI7vJNcZLQ6e4e98PY-EVj9d7lWFpLikfxwinsK8K9t92"
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBXf8Qm6rZsect8Z2IxALJiGpGwMc1hsrP97Kcu7ed52tfO0FaaJsYWPo20A3DBFl12NY29nxbGQiWPHpTzz34U2tOGBCaA4PMSH96hnmCrt3Q2ekjhgA5dTXogifbl5nsGkEBplzdfrVxhYRt517kQTpFMC86jMjgm5WqPpUWwvpNrEd28tc6d7S_KuP7h8IfuqKafaQPnMSN3mSqjiM90Ka2c-lkmdWX"
+        },
+        {
+          "title": "cam.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqZHGQpnggAub5PDMe3spq4FGxZmZI0DIld046VdbgbEbg7E0ogye8TsvLjtZJr-Iwe0wUC2c-42O1htu5AdjIrk6LAfyIaxr3vzSEoFhZRb83W-yOf9TRVIikItBUIS59hWE84Zizu1G9Ltf3M9nSsebIJR5Uth8mjQkqQS3g82jGGs2C9Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9KQHyp-d6oMmvbWsCsyJebrZAtWb7qXNtrBfTy2F3kTPGFkpZd6Y_CWVULahvZiHRC-WpsllPw-8CMgq0XHix78BAvS33baXzIohJq26rbjRddzyOy9oTw_ErxL_KNxWm7vPDihlzx7FSmv5zCl34kLPbxlWbxrUNhXMRh2LIEWZyihmbKXxGGQjeD-ygfxF9_k1a9lwTT69dJXLFwZGs2jHSKkxoaLDxY00HIr9q5TZXwGSjEw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrT1eXf9JZfjOIj6Ah-jq6P8BE1VTpXLeAtPuiYYUvCDZwcYyVW1zIZ3wt21OTHHiFE8TfyH0QxAA02EIhHFyLV2GHAtOKDzc04wJBVr1k7DEJ5T8SPyJNVXXHSkWxvDzjwDOylYjzBoGa6TsZdOqAxWQsxYZ-vWElOXL7xmpoqtyMXhPS-3AUQjhlQLr_FOzvgszu67w7CKi_7hliCxajfuG4PDP8oh8ql_Z1Q-ULqMd25wbQwwr5RCzRpGQaAE0="
+        },
+        {
+          "title": "ClinicalTrials.gov: NSAIDs (Ibuprofen, Naproxen) trials for Endometriosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Endometriosis&intr=NSAIDs%20(Ibuprofen%2C%20Naproxen)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Ibuprofen 200-800mg every 4-8 hours",
+      "effectiveness": 45,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 500,
+          "sideEffectManagement": 20,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "Excellent",
+        "costPerRemission": null,
+        "costPerResponder": 91,
+        "icer": 5000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "NSAIDs (Ibuprofen, Naproxen)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 75,
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 15
+        },
+        {
+          "name": "Heartburn",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Stomach ulcers/bleeding",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed for pain",
+      "trials": 20
+    }
+  ]
+}

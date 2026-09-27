@@ -1,0 +1,884 @@
+{
+  "conditionName": "Digestive congenital anomalies",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:28:05.835Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-X8q6yalV915BAXoGeVQkl-7rqGGb62SKc_bVcMfJ-Xoj524htmfDi4X53VqwhyjQ8cSsb-ecow86JOgdPjEAb_AjUe05Csd6RZyffrEiXGyTpctgpfsN_Myz8NYxP5gbr5kKtIXibS9-PP4c75GaaBnH18kWR_-hzE78XhP4Y_OQMZ7nrFEk9cEZaBql4soCTBzk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI3SdHUzFHQXCXw45KRGqMA8LviUO-XxQPYZDsHVAo0HSEG8K9VvkXZgBKd6vTqgrKKKZHXfSStz5MgfEeovuNY3jC9FGikx8fe3hTffgr5wEq9hHnGlKiOI6geNG-5RMlj8KRYg8qtxw7LqEi"
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMweyWUnnlpZNK1pjQ266bCGSBedfwOZv-rhASRyof-K18xuPmUoWe-eTX-o9uCVOLuwWM8vzOT8ZL7jg3PCEwfC1erHO3MyL3G8fvgOZk8fjC5pw7qqkR8c7H1OtmQ-u2ImOSJ9cPlmyRXjKNtRO42rebkOGp4AHuYhXi0RuX57RgUSo6kcmVVG_Sfr1NOR_NdtrpjLpb6gnyglwtA-kORg=="
+        },
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR8CkSjUPeH8YlGpTEPM9l1Byr3abcssTjwubeuYkdsVJB1gKrZUrJNsynhLUyCogB4VLitoHgaplRZeZhl9PiHAAns6geYKjxc_iJvp5dnhfyG1ZqZd2s5H__nU2KQsKB2FbbIvLn6tEOWCWH7iynRw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQCfuIS-2bG4UGHfNdaIcKC-xEWgmevS2jOoC-R_AxQOws47x7e1rGdLBc71ekTLTClxoqkCAtaq_FuTMmV0hoY7tPDz12hRF0O73tZOLq_JD1G4s4FUf0Kd88_HxdEwvcwNOJa5nPVwy_Qzs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv3CnKw-MjS40VL_SlZMPdWt2GWoM_darG0W2_9hoH91UehzaNYvlJn7CGfYSwzDncdVwFs_bO6lxBEkXVFZqVoOg_UZOiJMbZub_1oMy9LA7LWXM235XGniyhl96MFIlg2ajy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcJ-TRDfuAwDuuQrF3mbK_82gJSSa51TiPO8TV-no_yhp-i7J2yCvz78zex6PpLDmcVTudIh-0QpKohTPJT3u8chM3-J591Yg6nEFLfJUl9Rs3Tz1xjblMwSb9i0wIeaAGLZK7U9sQh3-POzD4XaCQA3LjEBax3eiVhSlwKiic384MfmtDoNSt1mcmoF709_YdxZOqRj4e2mQ6MkVsPPqN0AsCdxbJGH9xrPQFRQjB-qmJZ_VbR0R1gmRkWk0KGXPMYrHxrmcWeNl_3nYWjfVU03AyDaEt-mEZmvUlegGRLxVg8Z9TrcCJlmW8KapWslhPAjOSlN-8GlJVeDaS"
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFCquwJQBNa7so83f0Ve_2K8peCP32eULEcKkxRaF6os69keK2BbEgIlApmb2p3k4NNQoRHJntdFWEBTX42PZfBzuLdqwtffc6ujevAR6Z0Tm2RVfzfv_dJqU3nrzKoNICPVaQEkNImKKW5xjHYjdVurkDNNDiVeDepRzdc9iyJoqqjoaGIg=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZ0UXHOTlA7HgTLMC0VSPtJwQAoROp3kvdq2VeJuY7Ruzb6S0UNckCYjBzKRgVaDkqy8bZlQKUEepx0xsGLgE5HmxmttN5fsbxGfIaaiwWiSORWxVJ-bsxEh2hnCVwlolCtBVxEf5CokqGUvow2CyFTaT2tOF4gu3x9lpToGfgHaAydDsTrzXSh3EpteHIQv4="
+        },
+        {
+          "title": "jduhs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZVVXh7vfeKdpIm4DmK3XBQivsEMCnWUBqkY7rycBh7_KumrDwIGkyGXUZk4Bm7M6xid8t-GBKNFYU0ZcW-Y5J2OSrl6JxABBqLoYnVj8FjTjjHfVN7d-hJCd7h3k8zFzS-4YqukuApne4s2JWYkpggsI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5vyJhaQH2cAdjmCGSFv6-9jv-WWsYthqdPSVH5puspYaTQdfjax563z6cDZmhPM_V40BO4yPk8O6ktyI1ubTSnc2lZEe_AY-PwY3yCRZrdT8s-3xM63Amzf-8w9IxLDx01zK8"
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhamMZJ9QD0SARbbZfDUV8WpFxVC-pDXUNbkimdyL0wxMNeMJyNeegZX3q3CEXoRcJA0W1kxy3UunNI2CGNVdPQBPsJCFYdQIPnEtdJLSFuskBy_S3IK7FD00XKJsANJme5aY7_Tn-T008F5vN4W1G3YngpUCu-34R9qXNsiYEMyAk5Pe87nnk6mwdgA1z6bgqPXs3aqov-Z_LvywOA2E="
+        },
+        {
+          "title": "bioengineer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGgclkCtMBHjj8lml90BVLaQOHuLpAf0cw3aLQlUD2CHdzeqg07HcRnnbyzz1j7gAYfDg1CQzHMxA68YM4VYCmeoWqDqosTWDxiNf4Iy9zM7l0tk2l0vjgMj0vjvVcn2PWJu-q6iycGmOkLxxcQCDBBdwFC8h7L2WaXyitCh5mA29Sz7jCySsZBm9IxIKturZP8g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ramstedt Pyloromyotomy for Pyloric Stenosis trials for Digestive congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Digestive%20congenital%20anomalies&intr=Ramstedt%20Pyloromyotomy%20for%20Pyloric%20Stenosis"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 21300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 21515,
+        "costPerResponder": 21515,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 75,
+        "vsComparator": null
+      },
+      "name": "Ramstedt Pyloromyotomy for Pyloric Stenosis",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [],
+      "remissionRate": 99,
+      "responseRate": 99,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Incomplete pyloromyotomy",
+          "percentage": 1.5
+        },
+        {
+          "name": "Duodenal perforation",
+          "percentage": 0.8
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 3
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 0.2
+        }
+      ],
+      "timeToEffect": "Immediate surgical correction, feeding within 24 hours, full recovery 1 week",
+      "treatmentDuration": "Acute (surgical), 1-3 days hospitalization, minimal long-term follow-up",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAbWGvBBkfw3AktlJ4ugkGYTlrWFX3mOzq7UKX36OI76bjWoomstk5AWVJX7meQzd5c2ZHs4lEZCjUi-GQsbCOMaENFZ3G6UqflwoOjZ9IqfHgIN1jGBUIyYp7y2qK5_DFjpE4W2uihDK0m2FC"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEw9ce363CSyKJTcmyM8ahA7Gf0xq9SQsAFYmJ88uUscmj3Ke0AIz6ssERJ7er8Hu_FyzKA8XaCgLS2QxAbsWGd1zCo8stXjSlsEtZ9DkH62ktXekNypZZ1ReDdBPBf974qbRU5za0VZleu3qvpWltAyq61C67nzOFiBQOxS1U0h-vIl6zcrhzfrwB8oEazgJdZZjB6_-TN7JYYA=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAdjW7JAxIhHI0yvVWwrnOg-m-WBP-XeKw7FbtAfwYhMPsyxc5YoRFp-aEPPS4ynNR2TmvkXh8C2vJYDGtL9_4D4DkRD1KAXMs9eae8ZYR7kd9s6p9EJOSKOBlCoEngM2ZkRmKnTE="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDtkfe5XPemYZf_Q0clqgBCRvKV48QtqI9vvy0EsjpKjMGVkJoMEsYMmK7Ci5gSEW3c2AEUjvGhwpUvsXmGxKjsCzmAOBBmxtBsOGPzX21WFOELNnHzJ55O_16lH-3xqmGeb8WJOg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvo_LLwkNoU0TaBkNNlRUu6HLjSGv991gMOukQwl7ktKTsni609qZ_EgVStBqsjpUl-VCeC4RPRC07seDEwhQ9WwUnY7JHr1Yn-vqArlVFrTLfvmrz62ZwLv4lEn9lR7XUTwPI"
+        },
+        {
+          "title": "soton.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy3Lkk1ZZV10ZJvh3Zl0PBe1SMmeF3vBCAWL3GoZ6vjNd0nSjfTHyoAddDB8Pu5U-5sLColSWscjM5fA9beSPWxt0Cxzvc06-sGwu8OojlIpc4XFR1duTyhxzilaZvLfaBL7oVfUBcykW4tllteD6Lj_5LBM41m3CB4Rb8085PU5U="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE22wr5tYRqZ7IFH8tUMUZkqIMwFOJudP3pxEKgmx2UpS6bn5yE2Q_6KA1TPJoCJImpXwWU3JdADY4VkoUjrrRwz4pt6LEvLuQwTaEuiMCKmuIW_omUaYK8G17AenJ_r1rGaw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Esophageal Atresia Repair (Primary Anastomosis) trials for Digestive congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Digestive%20congenital%20anomalies&intr=Esophageal%20Atresia%20Repair%20(Primary%20Anastomosis)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 200000,
+          "sideEffectManagement": 20000,
+          "totalAnnual": 220500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 259412,
+        "costPerResponder": 232105,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 65,
+        "vsComparator": null
+      },
+      "name": "Esophageal Atresia Repair (Primary Anastomosis)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Transition from 0% to 100% oral caloric intake",
+          "baseline": "0% of total caloric needs (dependent on non-oral feeding)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oral Caloric Intake",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "From frequent to rare or absent symptoms",
+          "baseline": "Frequent episodes (e.g., multiple daily coughs, recurrent pneumonia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Aspiration-Related Respiratory Symptoms",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "+1.5 Z-score improvement (e.g., from -2.5 to -1.0)",
+          "baseline": "-2.5 Z-score (indicating moderate-to-severe malnutrition)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight-for-Age Z-score",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "Elimination of dependency on non-oral feeding",
+          "baseline": "100% dependency on gastrostomy or parenteral nutrition",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dependency on Non-Oral Feeding",
+          "percentageChange": -100
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 95,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points on PedsQL score (e.g., from 40 to 60)",
+          "baseline": "40/100 (indicating significant feeding-related distress)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Feeding Impact Module Score",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "Reduction from multiple to rare/no hospitalizations per year",
+          "baseline": "3-5 hospitalizations per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization Rate for Respiratory/Feeding Complications",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "Reduction by 20 percentile points (e.g., from 80th to 60th percentile)",
+          "baseline": "80th percentile (indicating high stress)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Stress Index (PSI) Feeding-related Subscale Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Anastomotic stricture",
+          "percentage": 35
+        },
+        {
+          "name": "Gastroesophageal reflux (GERD)",
+          "percentage": 50
+        },
+        {
+          "name": "Tracheomalacia",
+          "percentage": 15
+        },
+        {
+          "name": "Recurrent tracheoesophageal fistula",
+          "percentage": 7
+        },
+        {
+          "name": "Dysphagia/feeding difficulties",
+          "percentage": 30
+        },
+        {
+          "name": "Infection",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate surgical correction, functional recovery 2-4 weeks",
+      "treatmentDuration": "Acute (surgical), 2-4 weeks hospitalization, lifelong follow-up",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENcFcNQKSmvPPqdRMOln7989ML49uu3nCOLXyGTzJLIyux2VmIC5fcBs8txnqtnUxqeatFeGKR3H91eOO_-CiQ9DfjX3HehRITTs9lUwsCaAO1S_CmSVZyP4XyP-W60lfRTP1Ligeme3HkE2O39YnlPxI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGym-njC8H57RwqR530CNWQfC036AVWbr3e8PpAkNE3BrUgUtmxmTSN9odas_yTuzrXN1SlhOWnSUKr3q9nvGsTUIiM81JwiFgzw2fxx3YC5kRwPK1yiUXYS7FKBcsLoHS-6_Kd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSNOIaRVD5oEAO9fNFK_Tmrjrsg4zFyXBT_Y7Gg3V3iIwSDYixZhSTED-dmkVQ443C9YUtLfvxwRZHbgxX7X1D3Tp0Nt9zutKDxwNcuikTNqCQF5zPOUy6PN4Z6YvK6RYXXEyJ"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcJsUGkmTac37nkkB_7MOfVScBvbfo9njEoJ9mrNYdRdfkPQahfnFSLOihTPQJzFdJ3UF2JGDeQV5yAG-qZksmUoDVJh0C9ziRB6GJjDsreIdXBHoKgh4CfyRf0Lrra_RX9JGkezXzQPCoDMEDrDy_aIE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuOjbI6WsiwqQfzZCbt2DQviUCxv83TG3W7mvsHe5jR7Z_yNpTlwj15GBSvTSePPcsj7mM-Qr34PY8cdB8ZgI99VSobji_gnqxnZFTiQYR-b7ZaabssMq__F5dz8lrmFUP4m6GRgP_rJ75S8zK"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg1ym3JvAi5NeCT1XRPJss6Bdx9xN_j7dLu4SLIdP3vDe5xpa4hnRI4vQElkEqR88WKMNwXwjYi3mC5V2mBK8hZa9DW29Fl3_xBB910ALvYH2P8Hme2ciUx5W0QLTaKSCsj6IGPwh8my-5YsGKlSgFECKIreVRtsvRDUt28gZmgivn2nI3PQ6E1u8H7RcMZXGiaK_NhDodUTI6qRnAXFHCBlIPFnW3-snyDsNCLmMLlGVap4BfRwg-n5f16ydxKdgLcYamz0JDn1qFVhkF7EQlu3OB6B2TVIlmw__4BljZgZw="
+        },
+        {
+          "title": "thieme-connect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQmUx8C4Iw4TJLEEt3Pvk6X5Y9bsBcmAKhaM601lbgHTuocdAxMnmbrTZS7N40eYBEIfrqWWvXxvOOs5HdZCZoGigT1xZ6wl8AJ2k-_Jd1wMJ_85GhVhI4mPz_6-b5xCtfVi1EDeqDnuMFm31G0LoCmTWolb5JVZrAjy28pUVJ_d_3oNpUGN2m"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQJPs0HJe3stplihB_-BEH66Vm1eAVvpoV0l20GWlHa8DSYQVf24skPaH5HkllG6br9DPlJZyUsbGw0wPRfnkwJSKZoiYB6RPXMKwinTq_US-6n95R8sLZcVrde_vNo1jG8_Dphw7W0ifNOdh7f_6PauQ="
+        },
+        {
+          "title": "figshare.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0_qNuKg2FetgbN5V5thJqJy3LgsgKVi9ibh2dizQWXT0At-93mFJVJhFXC67kp9Xhdtgeqr_alB__3b8z2ld0GsX-PgMGZsWBmTEHMBrB4xav4YoTavdaTitCIrjKWsSYPRslxTYi7Tda2rqvHUErOUxCrv4YwnPQs0JsaKkM_netjBL-UOEHqQebVfYfrW1o0cqMsNrH660yL4AIbKIFn5W-cUG5GForx9FRw7btEEmjErk16CNTp8zV_L0gPSGNq-5SHaC7Y2rNOneEmWm39rwRxEYJIotXwTrwdDebCzCTtK4qSFchpLeMM3YnquLIEy87"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4XHLx6pWSSlTnYv4r7LnJr4ndIiPcOZHiLxAHmEvw0IfswwOtI9LdfP4R3ea_vGzVzz-PBzqU_uoDw3SZf0vrpWJ6fMbjU1u1nlbjcCMhJNfikWvDfI0AC3DdEF0oo8gVJlyx3uFjvqSnzuRPKArUBggadaprKWUdai5xN1TX8m67_UFJCuZSQJKjFVhJa6WqhZXGFAnjOHE28gIpxGJKTvmdkB6svEnLazJ2svJ1FRonipv_Xcl9-LiLmTPzUWHPQfBIIpRsbCEe8iut4UsB2xBauD5U21up1j5GQ1ZHW93LjeJa8aNNpWr7HIF3hQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6WnHpTr0bmF1b3gcfNxHWGAyQu3TRl1FXYldBDlLhDp5ZbwQEe59QllO74BWC26hIDVH4cynhJxZyxQJ2SLmz7AwRYhGyQ8ZpVkasn8MTFGwKcxrSGxKaUfKtgvlcQOof0e-_Z9iNcE7wD6WX"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intestinal Resection and Anastomosis for Atresia/Stenosis trials for Digestive congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Digestive%20congenital%20anomalies&intr=Intestinal%20Resection%20and%20Anastomosis%20for%20Atresia%2FStenosis"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 120000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 135500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 159412,
+        "costPerResponder": 142632,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 70,
+        "vsComparator": null
+      },
+      "name": "Intestinal Resection and Anastomosis for Atresia/Stenosis",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [],
+      "remissionRate": 85,
+      "responseRate": 95,
+      "safetyScore": 45,
+      "sideEffects": [
+        {
+          "name": "Anastomotic leak",
+          "percentage": 7
+        },
+        {
+          "name": "Short Bowel Syndrome (if extensive resection)",
+          "percentage": 10
+        },
+        {
+          "name": "Intestinal obstruction due to adhesions",
+          "percentage": 8
+        },
+        {
+          "name": "Infection",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate surgical relief, feeding tolerance over 2-6 weeks",
+      "treatmentDuration": "Acute (surgical), 1-4 weeks hospitalization, long-term nutritional support/follow-up",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr7NIgpi9pt5Oplar8Xg5NYIf3ueb7DWwLRtacVLJ5jTm2t-YhNz4ivmLqepNh8jbflnvhxOBdwmsZMoC29MSWFyY7s4vdM-payoVOJUuKryoFot27NIV6Hm_mlrgtrh2mq37UfRwS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlD3FiLhiHTC9C-__iBvxjQ4barYDZFBL5kbqusWdLNmTcLcGu4-40fvB4FJVJjJbQ8Ch2oxReHfVm3Gto6rArtHy-C8RpSDlni5mmvqEIb0dOrYjAecENn51hPza4cTB-33TbbRIsLfnh1b6mHIMI4_veDy1O9kVnkdJ8wHJm2YGT5LOOOblyDpHTxVH-rEMnAgVutwj80xwwuGz_7OvjflCHV-Ddee8FwCmUd32g0DZ1i60MR4zen78Ds7M00sm6wHFFmXuXwEGghhG8gYxbZWMJFCx96pf0wNnHUjb4Qf4-A5Rqeyi5I8w_mG3SEw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQLNBqVP5CKrKC6A6cVZS3ByIffutwCgqqdk4TkJDvWsJ7Uou3iLa4kqbQ_AOgPtdkTlFyZ-_VCMx6tkvWI9MAFxU8sN1UtYkEPkXSigsu4eBlqindvQK3uLDJ9m1Gf6xAYKI="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzgpg5phDKP1euWyKiLKAIhL4heYViilA0HL_DNr3XAHMjJejsGoy5uCuJcs-PVw6iMLu-83SBxiezL2we6efAKIB-zSsBepu1bzMvv20xpoImuusYFSqSntYPhMua0-Y7PdkYZec-u1Mp_imFPFTPHnDg5hlw6qofHyLu3Zi1K7THkfBixM15"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9Jjp-jh73s6nKMQsY_LevEYG5E_80Xl9jFARQVu_Rxn-1QJqSLN5-lOQKZvKbTIxYTjxhKD8VT8B3W6Elnh4cGMveSASo_huUHda6gIYJhK8qfmnM4Ux88Tux1fa73uUct74="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj1ZTCWi-btAsOQ9rOSOr-Ao4UtYSs4uuZazMCNi-FASpkCTPagOh4mB5i18KpCQj9e1yiK4UjEpiiLaIr1mV51DD4FA3lfOwRQnbJefzTfVAY0TI2JYzLzAkXTXjE_NXjfrE1T6lhj9xVa2kQjL_q_oDKzv4p2x9a3kbk3T7Hr97_IeA-OQjb1eg4WcYwsJuDfwhPn23fxVraj6Le6YgfWkSzcZONpHXvBMTQauvJYY6lhfakJSC2KX0Oh374T64F9JBZwB2petxlOD9T"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_5q4q-dXwl3a467l4D0w3dnAwBg9MvLwEL-r61EKt0F2ECsF_Qizr3fguNjhwR3IxRcv8PclRp8xUcOltCIe5b9Tirx1n2fK04J7L_StRYoW3IjVw4KI0DhdTYHTVjURELjbYsNOF754hOW-toRUjlOWOcnIxr-aOZ8f5Qc08_YgCY7pfikB1rUgqKRHXJ4JAWUY9-tojyDRBvNejhU_FUTv1PK4UkiDC-HsQzZGtZmvcTHbVVTGC8gmx_kK9BxQgcr08WmT0OWjW9qqAHLTIiGUxmsRYns_Fv5c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwd2MrJnnyfMV3pExT3gFGX16jVx8SNQEIuoWDTl97KQaatByqlFFvih-vFc6ZuZCm8vKafi_EJrBNRBOfCqaTO7rwFJJ5dngXDk2cpwIBj094zuR6-r33W1eurgBRQpAE0CPHaziOQGA3jyk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Hirschsprung's Disease Pull-through Procedure trials for Digestive congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Digestive%20congenital%20anomalies&intr=Hirschsprung's%20Disease%20Pull-through%20Procedure"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 80000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 90500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 106471,
+        "costPerResponder": 100556,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 68,
+        "vsComparator": null
+      },
+      "name": "Hirschsprung's Disease Pull-through Procedure",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+4.5 movements/week",
+          "baseline": "1-2 movements/week (often requiring intervention)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bowel Movement Frequency",
+          "percentageChange": 300
+        },
+        {
+          "absoluteChange": "-2 episodes/year",
+          "baseline": "2-3 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Hirschsprung-Associated Enterocolitis (HAEC) Episodes",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "+20 percentile points",
+          "baseline": "5th percentile (failure to thrive)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight Percentile for Age",
+          "percentageChange": 400
+        },
+        {
+          "absoluteChange": "Reduced from daily to 1-2 times/week",
+          "baseline": "Daily severe episodes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Significant Abdominal Distension",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12.5 points",
+          "baseline": "50/100 (significant impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PedsQL Generic Core Scales Score (Child/Parent Report)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "Reduced from daily to <1 time/week",
+          "baseline": "Daily use",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dependence on Daily Rectal Irrigation/Enemas",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+80 percentage points (from 20% to 100%)",
+          "baseline": "20% (remaining from tube feeds)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Calories from Oral Feeding",
+          "percentageChange": 400
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hirschsprung-associated enterocolitis (HAEC)",
+          "percentage": 20
+        },
+        {
+          "name": "Anastomotic stricture",
+          "percentage": 10
+        },
+        {
+          "name": "Fecal incontinence/soiling",
+          "percentage": 20
+        },
+        {
+          "name": "Constipation",
+          "percentage": 15
+        },
+        {
+          "name": "Anastomotic leak",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate surgical relief of obstruction, functional improvement over 3-6 months",
+      "treatmentDuration": "Acute (surgical), 1-2 weeks hospitalization, long-term follow-up (years)",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5vqj_YbUi1I2DYBPisUdZuG-NxN3YuexIhgCFdlX10APRQest_sO7DQwmCe9ka47baktl0h9h7SzCNTyMMNq7rbl-O4C-pTwk86NgZwhSLSgXLVYIFnAEvDalxcr8yH7uRy1Sug=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhxWu2j7NT4sunUDMaTnDBflpNijrEErJsLDJEWJV2FTW_OLzlIA87tEd_aIM9hf0hTycQZTCLkm-NaL9xnL0Pz1OIFFmaPie9GclthCFsdsHB1ljKz5Cy2_rPdHCL748uGnA6V8_M5crXmyY="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHej5oqLIn1BW2cAWk5MWeUFwnZwt_XdfBerZMkyk6ousLm6eP_X_4dqJ55DEJFmaKSiAw8YgwJi3dL-6oMmnNrw0xWPffjfhv8I9FXBfGLU4Id-mIVFJDJVUdT5v7wFYLzhv6CEp4caosfPMjZ6TYLhNu0"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJj2F9PZyZ_bHOqqRiirif4oN-VR8QCT33UfG3_r8IjGp_4fZgE3QNeUng1NDx7UPQLYEJdyW4rW4-vnMzf8UM5CaU6jbgkB_fPPP_OyebposamPkW0Wd-mw3y40ZTU8_rPNiqQNxpm7ugxawWVQLjOy2ERlxmfUhZjTAbyMOG264DfugwQ0xC13b0Krzh35U8dJu03MoWI-A3EVit5SOYdzw="
+        },
+        {
+          "title": "sid.ir",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl2HLgUmyKZV6VxzPbiRR8-7ha32i2EZbYvMkXZRCiPaLpTHzInttYTz42VOHySPsODdpMZ5Fr1Ujt3U91ZPliR3GyMN1cD3r_549FtPQLfPL-j3TDPo0eaUrUtxN2C537babfrtM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG35BjFpmbfsaCYAJ8n5oF6rnut5akLl2TQ7tH_bA-Md8xu3ZUpHtNJwITCf1K7xNPb4nadNqaIJVNs5vujs7s_QvnBSTuGhJCyAbZyZcltoi88nELyiElvkDNzr2L4mR9KhfT56u0kfI4qwg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Posterior Sagittal Anorectoplasty (PSARP) for Imperforate Anus trials for Digestive congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Digestive%20congenital%20anomalies&intr=Posterior%20Sagittal%20Anorectoplasty%20(PSARP)%20for%20Imperforate%20Anus"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 88,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 70000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 80500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 100625,
+        "costPerResponder": 89444,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 65,
+        "vsComparator": null
+      },
+      "name": "Posterior Sagittal Anorectoplasty (PSARP) for Imperforate Anus",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 episodes/week",
+          "baseline": "Daily (7 episodes/week)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Fecal Soiling",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-3 times/week",
+          "baseline": "4-5 times/week (e.g., laxatives, enemas)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Bowel Management Aids",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2 to -3 episodes/month",
+          "baseline": "3-4 episodes/month (impacting daily activity)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Severe Constipation",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-30-45 minutes/day",
+          "baseline": "60-90 minutes/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Time Spent on Bowel Care",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 90,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "50/100 (significant impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease-Specific Quality of Life Score",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "7/10 (moderate to severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Perianal Skin Irritation Severity (Visual Analogue Scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+1.5 points",
+          "baseline": "2/5 (limited participation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Participation in Social Activities (Parent-reported scale)",
+          "percentageChange": 75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fecal incontinence/soiling",
+          "percentage": 35
+        },
+        {
+          "name": "Constipation",
+          "percentage": 45
+        },
+        {
+          "name": "Anal stricture",
+          "percentage": 15
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction, functional bowel control develops over 1-3 years",
+      "treatmentDuration": "Acute (staged surgical), 1-2 weeks hospitalization, long-term follow-up and bowel management (years)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmY6IJnKtxhnt2CU1pfguInD4eqkPQJ13soz4FR_NrErStWSfJm4pb4N3JyyWsXJFX04NEc9m14dxC1uQXtMl9kr44mZQhXINEIirxhGsDlrJCHCbZJUQbSjb3mD4v_1H4NH_eymHOkxUfu3c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhP-jtrPXb_QZWmmLjj6sZEXMwm4-FwXfGcQTODdCbCr5XFmSSmbw6rJu7sR_xrnxCeXJ7WafXkxQN2wBnS9LMmWeHR-slwLdVosV1SSR4IeGLnHRHSrC1yJTGRIBxdkED0E7z"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXrgmnVFXWjm3FNNt7SXjFa7KbJge8IPEsNEUMv0gdyjr-Q5WFjHFS7bE5fwdkQK-gM1WuBdyxa3-cLc0tMGs9315Ndl-iIcThU8otyoRQr76CtDnOGJ9JhRnBJEhOMXvID7QJvidBo3N4y2ku0i9NzsazgIT54RIMGnO8B6-RsdNpi483_xxGF2oFYN5L3TT7hcHqWsRlPlwLCs07Wbag_1EAN_eAgMvRXJPvOF0eywaRPc7WprczZSx2EoWcXSjRvetFwhDgF8Ra1sGgtamB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyWXc2Qt6g_szhXI-fhimzA6domvfQQObK9h1atB7MO7D4GUvg7NSB2dtAdyy8_MN3keTJM2qIvCnFBDfoRO4hQEV5useG24IVTxHCcfRlwIbP2zTM_-8uffWzAYV1y1AyDqZwjOaqHCq3iNc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzzCsMH0eJ2Wus9_f1AXAhXs3V9lH7H075x8fznmlyI1JVQnIk66a8RakqGqjZFmOqYRLFzh5X6iQfgi47LxsJJax5R4faofd-VJ7D7m1H66tOUOpD0TVJspZiD16UNTsCPAN-JFMTjkaNUQw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGToBFS4s30y2ZF-IYksobwURmXMrsBfaPqBpCZCARwdnLF2xZkdQ11eUq3b9aWpgJT2B9HVx73a1hcIehvZbb9pUw92vTDlo1oqzufhNPXkv7jnUc0UElnYD0wONsuRKMjM_Zr"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyiOTV1crjfAzLoxEttvEXat3lsb9Opp37Xw1V29S4tAdT930hatDSjS1-yPd_Beh3u3B2QcYuSWWO6WwiWuwfXsRkCn76pSnTB5nrQITjCUPPl-D8O3UtYh6wamoKJIdKj3KGUOA3WCNIfxD1Huw50v8dluQznh2u08ih7HxKfLkj7fHsWpxQgxQABgqDyWGFTQ=="
+        },
+        {
+          "title": "clinmedjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYHgzWLdkWF1JtgPDev6pyfIEQVYuAjeww4W1HYBlNcLnS4ggearzP6L6CzODvHz250SKPrf_ZEjP2eDkG48wY6y9E-k6oZ3KT_Q1ROUSiF9WWFwOHjnVnYGAFKkaj8TQGlBBEfsbrqk8SVz12zZsTacW51nzScr1E3Vp8X4QIhGzGcWVYJLA-qZY4gJfyttZD0OQm1YoEiU23Mchru6tjq-lEYXK-aZa6Rw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaNvv0S7kIu311m0amWrsK2yRIA5jd5TPTVo4-BE7zE1bIsSQauzWEZ0noIjWO2jvGbhLWsU2PGpS5sIlz5h-v4Zo_ayplZaC7fkZM0YmW6GgaoUBwK6O1mvYBQCCOdg1rzwzi6e6SseGXVCc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2QuPS7-rQVOF4EDCLf2yIMlI-7Wr0GaROrGSmZ8bchdk_FfM_-ohzC0PU2n4__GtBLrMPBeCDbFUHIVOXX4UdfQLvET64O8W5K-3U-YhJP7yTwUzaqqZ5tvG9kR4pTSMZn7KnU0VBzHefdTSY78aws-sZyADSPIlIvjbd_ARcXHN0nDPVWYlKncCCLAW70Zb7r7tTYx48wRePKhpkBnp8wDDjl5aB7g93WASagMyl8r3hubdLjtkhClD-lXg0SDYaxxJXRO6aPSgjhDcegvQaE8JdxQxSxp5eHn9kVpyw5rkrodevVvv8O0a3-z2Qsr-Q2KVdFnB0o2DhiR_8aP0_SLVKc4DS"
+        },
+        {
+          "title": "ClinicalTrials.gov: Kasai Portoenterostomy for Biliary Atresia trials for Digestive congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Digestive%20congenital%20anomalies&intr=Kasai%20Portoenterostomy%20for%20Biliary%20Atresia"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 100000,
+          "sideEffectManagement": 20000,
+          "totalAnnual": 121000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 242000,
+        "costPerResponder": 172857,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 55,
+        "vsComparator": null
+      },
+      "name": "Kasai Portoenterostomy for Biliary Atresia",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10.0 mg/dL",
+          "baseline": "12.0 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-9.0 mg/dL",
+          "baseline": "10.0 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Conjugated Bilirubin",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-600 U/L",
+          "baseline": "800 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Gamma-Glutamyl Transferase (GGT)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-140 µmol/L",
+          "baseline": "180 µmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Bile Acids",
+          "percentageChange": -77.8
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 70,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "7/10 (severe pruritus)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pruritus Severity Score",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "+0.4 g/dL",
+          "baseline": "3.2 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "-0.4",
+          "baseline": "1.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Normalized Ratio (INR)",
+          "percentageChange": -26.7
+        },
+        {
+          "absoluteChange": "-2.0 episodes/year",
+          "baseline": "2.5 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Cholangitis Episode Rate",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Cholangitis (bacterial infection of bile ducts)",
+          "percentage": 45
+        },
+        {
+          "name": "Portal hypertension",
+          "percentage": 30
+        },
+        {
+          "name": "Ascites",
+          "percentage": 15
+        },
+        {
+          "name": "Failure to establish bile flow",
+          "percentage": 35
+        }
+      ],
+      "timeToEffect": "Bile flow improvement over 1-3 months",
+      "treatmentDuration": "Acute (surgical), 1-3 weeks hospitalization, lifelong follow-up and potential transplant",
+      "trials": 20
+    }
+  ]
+}

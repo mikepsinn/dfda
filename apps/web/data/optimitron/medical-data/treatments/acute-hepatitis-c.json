@@ -1,0 +1,810 @@
+{
+  "conditionName": "Acute hepatitis C",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:28:42.609Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "drugtopics.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvQ3wbzo2mG2-AY1X0j31eeBQ2dsLbpFIqbxbo94MbCqF4yxv7bQsPs6BjQa8X5tzrcJkG3qWahifiWS5N5s0H5svNnQwatbgnmA8p6keSCanQ13qzO__NpmZhWOjz2oRbxmERCxbw7GNmdlj1voAOXshFBRHUB4i2hFP1f933R-onTXJw6oM9knTEaF38GV4b2pZM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmGbVyBaROXqPm37dC9kD2puvGzNFvMIum369RtJjghTnXXwu1uznU5KhTmVPUS5xtxeQt3JD-1vP9S5jz5_55CS3ZcLBngFXvFT3xKzCs9zOrPVNi_RtpC6fV7LAKKrRCewPK"
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAtcjzeGIIPxabaMXdaCIWwyLU9he9H1_2EBztIO6n34c0fqY4e4xt1iB07VySIxCv1DQeNeGbRo8YrpnHZrgpZl0TvMAmje0WnaKiVJ9wXXJ3Pk14fUREBtckYeWEwaFz72BSyvrx8ypY-UxhT_nPQCF0b9GjwjN24gatibnx8oNJxBU5WZN0Jn2n7EUWmKkWBN0aQuZ2YKXZxsqvWhGhOTf_"
+        },
+        {
+          "title": "abbvie.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE73GlrPkkuvyZKWalDyGDz9joGiGWOJ62scJULqlqbXxFrmBYb9TqiHb2yBbFZjqGXjTSoAb3dZmI2n_rn0GVN1n9M35o6Eo8h9yj4JhDiW9dInVYyyiLGkpwC-BbDIFfcwtc3_pRyYfUPDODWFzCa_ev6TzlGOLbN5qxWTSjOALHkDhPC7Ea3eZdBSzRvjikO3npzA8e3kBKl4lO9vVbqpAm8Dnx8xhhd8cIRfI8bBIXPS1pKELeV0DVUb-CbzwThX7vicfZbE-755yE6YYEq1F-FL3zKQdgwvDwuUNuOtGs8U3H9-xIDEzKhYnO1Csgq0WNlFNE="
+        },
+        {
+          "title": "contagionlive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpAQVy-SPdIvWom6cqNgl6xCNk6ODvjdPPcLLY_POq0HBe_7k0UYC79DFN6M7so24u48GUDZpLu9CmtxAWicHEtcBfoysl6MZxROnVBhlXPsngPLP5FNv0z7LK5r_57dQCofWfA8yyDHsKLcACDJm1ze4m0ebLkpSksmvxwvduhx90FTapp-T2Pm1egfih9x4CRFBtl-7juAKmFkRbYYLPModZ0njP6xeDYPsboNQUTqtMK4pvJP18AD-bMKYo4GgS"
+        },
+        {
+          "title": "pharmacytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWKvtxPhC3EzwGOm0HalymEIUKbtsdVOcyV3NputoF0-l5axXlzYfHQuN8vg9DsWIfooAZkp6Fb0JCg6zdxoqaVHep_6Juj8J3dhhi0h4_2T4OoNddkPa3jks-Dx-Pp0c5pbaFiLMxBQLGegqRMoq8J2qzXNZpuAwwJ8fv7vRzAL8jLJqaH6AsO-NfRYeiDVsjv1Zcszl_g9s9gHB6mRWiDxb5CruvJzm8Dgpq0O2d7R5dDLES0aFF9Xw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQdVL3uV1frC4i2f52kJNjnmXFjwtmz-QMEJQZ8Cpl5X4ihNN8G17eXhy0RxDfLf8jBi3aEXfoYRx5mJ25Rn58-sKVpUZnmpr3KbWUhZXPehSslu3f-XdSy2C7AzPtCE0LFIlX"
+        },
+        {
+          "title": "natap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWcIFv5Kc7cAR0sdZs_GMolUh-UFeB1xEbE8QcphvbAnzQIJDJ5mYExMsAhpeZfDkpQ1Aa89d9HWkFdrmO-TlH10Kj69jVKlHwCxeguGZ0oFU392vZ6mezINZbZVjMQNIxvwmKqSA="
+        },
+        {
+          "title": "xiahepublishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_n4pNlXI7iQiM2VCZxdNRGomwCDXNWSbu3Z6-R0SEfWdwkiCAww9pfa-0pX90iVXxxDwLdHBBq9pS9s3_WMG78kReUDxlqSw89MUxy2MxtMxRygq-Bgac6Jv7rgN7xsOEl2sdCiDrLP5jvHfOX_oxTWhalw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Glecaprevir/Pibrentasvir trials for Acute hepatitis C",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20C&intr=Glecaprevir%2FPibrentasvir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "300 mg glecaprevir / 120 mg pibrentasvir once daily",
+      "effectiveness": 99,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 18000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 19200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 19394,
+        "costPerResponder": 19394,
+        "icer": 45000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 3000,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 18000,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 15390,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 3,
+        "vsComparator": {
+          "comparatorName": "Pegylated Interferon + Ribavirin",
+          "costDifference": -15800,
+          "dominates": true,
+          "qalysGainedDifference": 2.5
+        }
+      },
+      "name": "Glecaprevir/Pibrentasvir",
+      "nnh": 100,
+      "nnt": 1,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "To undetectable (<15 IU/mL)",
+          "baseline": "Average 1,000,000 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hepatitis C Virus RNA Level",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-120 IU/L (to normal range)",
+          "baseline": "Average 150 IU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT) Level",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-70 IU/L (to normal range)",
+          "baseline": "Average 100 IU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Aspartate Aminotransferase (AST) Level",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 99,
+      "responseRate": 99,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 mg/dL (to normal range)",
+          "baseline": "Average 2.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin Level",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+10 points (indicating improved energy)",
+          "baseline": "Average 30/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Assessment Scale (FACIT-F)",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "+10 points (indicating improved physical health)",
+          "baseline": "Average 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary Score",
+          "percentageChange": 25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 19
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 14
+        },
+        {
+          "name": "Nausea",
+          "percentage": 9
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "Within 8 weeks of treatment completion",
+      "treatmentDuration": "8 weeks",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD4zn1qWDUC4z87CKYspgu2ot2s0bYTkiQ1nuRP_q3dhJPqgUYIX7xSuvjBlMjk6B_rMXrLONmHhkyGkJPp5ncVJYsUXgHBv4xOiMnB2d06q3OdoSJ1AIQVKX1ghjE39aCzHe_dgsQuQ2tRg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPhBJXLdX-ifDNuguppWcYCPkKhl35rw7eoSvxlBjkrkj5LW8epySoSxHC8joPVwP0YkACLJiua07ZiJ4EQQNQ8x4iwdrIBoyuPAd4qo10rjUWYNLbGV1EpEk8L0NgWHIh3LU4TYrM1jzmDbPx4lWF-irjENvpYa3WLmxeCmjH9MfmOwFnLk3IWWP_CZDR1nc_Lyb4TdnTtz0FAXHgh6VyajQJbzZiKLkTN4XKVMw5lBXU1K4WCNJ9fT2yc-STYl_kitZvhjfPAa9vkhUsqWAftAJ-Ck4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAElNelXbZJee-CysnDpPUlJBIuOcxLaSPueuVc0cPKFZXb_qVR6qbaNSlemhbqO_vAJZjJoA_lyvq7JMNbq3673fonKQ91vBdGuZ60FmTDK05LhUZkIT-uSF7s491IpNKzfsuQUhHkA2pXA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcEXi70kPXg_PqvitbNAUPShkxbWsF74xk16LPSe0-p-zD1SqaeEY-Nt795u4FxLG9PUGl3ZpZBt0WLiq6Hv9ex7r4iSIW4LSpp6dTGGqQHE4WULBJVQ775lX6Zd3D17er0NEvpYib1PtWqDwpqcdi-Ruyt5xFW4Sg5cfGdP-vGy5jbOAmxgE1LE_5x6gxDam5w-yUtBZMseKy_ZxpwuCV-g76_MI5b6LFVQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwpflLQHh8lIVbQ5zWoeZLvHd4N1Jk9NFd-dNfcGYxWa6UrQV_wZe_SkX_wa9kQsoBV3vBL-1BeCtzSqINFHhDYpPfXlGY4259QxgBcE3ZG65oRar60sUWB-Q_UD2f-_WwDbuiOEnVzlO23oA8Zy7LOt_bB-7Izb3Av2A0Ck8m3cTLKSCmyipHx1y9gp1ZnLKT87hkHmWYE__w8kPaqAgJCCvkInE_iZeMibzBY-y1esZqXw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG88ya2rzXt87vJ7i7sFoZiGD_2NcbeKNu1il5yheTa74sJ8cyPbwqpeCBhQEzn50Pg1DdU4l5HT-yrkPODr8hxTXCrgVArOicE-dmEMtPmeWRj-vL9YiWlTZ1ICSpoEj8ARIoVh-WHCKucAzSelue0sEj8lYv8ib2EVrctTUQx_HtrN3YNKzC6U8AxtKdBdX6txR33xh_-Wg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sofosbuvir/Velpatasvir trials for Acute hepatitis C",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20C&intr=Sofosbuvir%2FVelpatasvir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "400 mg sofosbuvir / 100 mg velpatasvir once daily",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 26200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 26735,
+        "costPerResponder": 26735,
+        "icer": 50000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 5000,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 25000,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 20390,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 3,
+        "vsComparator": {
+          "comparatorName": "Pegylated Interferon + Ribavirin",
+          "costDifference": -8800,
+          "dominates": true,
+          "qalysGainedDifference": 2.5
+        }
+      },
+      "name": "Sofosbuvir/Velpatasvir",
+      "nnh": 100,
+      "nnt": 1,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction to undetectable (<15 IU/mL)",
+          "baseline": "6,000,000 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HCV RNA Viral Load (at SVR12)",
+          "percentageChange": -99.999
+        },
+        {
+          "absoluteChange": "-170 IU/L",
+          "baseline": "200 IU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-125 IU/L",
+          "baseline": "150 IU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Aspartate Aminotransferase (AST)",
+          "percentageChange": -83
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "20/52 (severe fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Score (FACIT-Fatigue Scale)",
+          "percentageChange": 75
+        }
+      ],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.8",
+          "baseline": "1.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FIB-4 Index",
+          "percentageChange": -44
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "38",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 26
+        },
+        {
+          "absoluteChange": "-1.6 mg/dL",
+          "baseline": "2.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -64
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 21
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 18
+        },
+        {
+          "name": "Nausea",
+          "percentage": 11
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "Within 12 weeks of treatment completion",
+      "treatmentDuration": "8-12 weeks",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "tum.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeUBIJdWDnBEys36qru0csGsqTGCXnCcFZ-0Vmtfe9KG07qz9hTewsVftq6dJLBw5JKQ6aLjs6fAmS-Y42sBPPxopYW7kb4GCYhAfEeLEb7-uDZzvRGIu3XXKgbwwzovmGqBWCoGiRC70sLsHc6hNo0b7H1fzagLrawln7Yu0x24aKH2hDaVK1ZLPwcm7GF9YX5_BQN0R3lE2y6yTotQfH1K6bZmY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhZQLFAHfyR5PU9W9bc1Rz3rbQp9ElA4k1QoVhpem69ZXQHvpsNe5XtmknG0giQAxx8FGc1AMXIThrKhpPw0AVlaLVBsqXXGLC8R8U7CT2PvdYeexFc8mMGZQiZSXjoOqXQ84xD_5xRNGVGQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxuwow2ZYhTLevILop-9UYIpaZLQSB9kKqNJkH5aITZTjutJOnLd3_SElxvHZZr_uRfFYBihXSJJBrdfnDcgtoM6qJr5qSxzH8NCq-10ShCe2avdWPexc1bpdd_nCZ-Nd5Oqw="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_8Y5KxvKhw6DpoBwZiplARjdI4T_J-hEDGarxo5dgxQKv3g-afv6pDWr_Fr6Ol_mkYmKxpj1uYPv33soVI9YIaw7ruKAOCbTcJzPL8Wax0Xrs2b4cv-JB9s-6sxSaOx5U4AJqjLraufazscirH3YOOPrk7c7MFJ8JN8L_2DFbdT8TcV88gUeaHb6UrWBg6sC-0_F46AJ5BbOV6dTBruTbWKYuK1KddYlVQRcQoX0U9sQpIenbPoALDHdLASE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv_9JweeLWgdMU1iSHx6kFnJV_SChS0k9gkIz1uxK76xGN6AEbhLTtiMFRNNMc-H0nNKrISvQTCZOl1GbG4mGSZ0k25axhjjVnplRKbd77iqWWj1sO7_bhwsZsL11l7tC-LPY0JzFgyZtIlsTkvAVjsLlDTj4zXjTv9Z4sF0JFc4LPeAahA3We3W3alC5rM1_XS6Sttf4b8GwGUixncYS2vVDCwUzr1S6BaqT14eHj0VQ13SI0CWaMPwQni9R0M7Zpnj_AxtLfDxN4O-C5Khi5zwdKR9iV4d00ymbOxnu7LfD4yt-4MVJ97Af9ylWS1ggXNw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEafeJppXn1GzgPVVb4Wx-VANrm8KmYYc5C6jpTfuRa0bAUltA26JybVpWd8rfF94X0bqAJ4j8ms3taruukIbjY2Ea-e9Hd20RN7FySExf15qBrf-w1kGAHsT2UlNMbMbEZn5BEcH36i_TkAA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sofosbuvir/Ledipasvir trials for Acute hepatitis C",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20C&intr=Sofosbuvir%2FLedipasvir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "400 mg sofosbuvir / 90 mg ledipasvir once daily",
+      "effectiveness": 97,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 22000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 23200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 23918,
+        "costPerResponder": 23918,
+        "icer": 60000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 4000,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 22000,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 18390,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 2.8,
+        "vsComparator": {
+          "comparatorName": "Pegylated Interferon + Ribavirin",
+          "costDifference": -11800,
+          "dominates": true,
+          "qalysGainedDifference": 2.3
+        }
+      },
+      "name": "Sofosbuvir/Ledipasvir",
+      "nnh": 100,
+      "nnt": 1,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction to undetectable (<15 IU/mL)",
+          "baseline": "Typical range 10^5-10^7 IU/mL (e.g., 5,000,000 IU/mL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HCV RNA (Viral Load)",
+          "percentageChange": -99.9997
+        },
+        {
+          "absoluteChange": "Reduction from 100% to 0% viremia (achieving SVR12)",
+          "baseline": "100% (at diagnosis, patient is viremic)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Probability of HCV Viremia (12 weeks post-treatment)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-112.5 U/L (normalization, e.g., to 37.5 U/L)",
+          "baseline": "Typical range 50-200 U/L (e.g., 150 U/L)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-70 U/L (normalization, e.g., to 30 U/L)",
+          "baseline": "Typical range 40-150 U/L (e.g., 100 U/L)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Aspartate Aminotransferase (AST)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 97,
+      "responseRate": 97,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.65 points",
+          "baseline": "5.5/7 (higher score indicates more severe fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "40 (lower than general population average of 50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-1.2 mg/dL (normalization, e.g., to 0.8 mg/dL)",
+          "baseline": "2.0 mg/dL (elevated, normal <1.2 mg/dL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 19
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Within 8-12 weeks of treatment completion",
+      "treatmentDuration": "8-12 weeks",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGYLQRDx5yWx5JFDeefIMTENJl6jxFPvWT3AoG9UT1rJ2Ee0S7DiqFneBCf21Q0NmF9_4VaB3_M7QKoxJDf35C0TeraFfaXY2yBvtHH8bzJRkAhXCJYQSf4j_SxI18uDhCql8pzvo="
+        },
+        {
+          "title": "clinconnect.io",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCX2a_tBQd5nLk8VyrT6Z1kO2-e-TxlMIDiCPqhyg0XfjQlS85mIxmRYitnBdyq1vVyONA05opSjbDtSHFdjPqBnSwLdrtkg9t9B3i8fyE6AUzaxV9_JGwxf-w7xLcORYd0Lpx"
+        },
+        {
+          "title": "aidsmap.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoHHqPMXq7Gn1NJ8ldQLLtzip8qhZ1fm7eUz_QOySoY5VPgV0C6GV_Acmr6vmKKVFwpC1O1OtMRWdVHAAjL06yl1WJtUkkIi1VameX6g1HYNK-2SGI9-L0dlIISxz70Z3qhmukQGU2MrjD3Qten3kbVoI-3D39oX_ITGUcfdHTGqy6NyFGg-erkSExAa50E5ucOLoGX6ilwbcoZJQRPnK8yEfbwfF5fOesM4pHDDX7"
+        },
+        {
+          "title": "aidsmap.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz-_4IhUGsHR06ScJ4GWtkfLT55eM8K2I8LcJmA94KiBoqPbFgLs4in7QptTkHnIcBpPj9c6m8uekHdbFUyncHp3JhhZLmQq1YxvxWseHl0KLunPjoDDEBxdw6B9Yo70LtG0tRrid7N-N4Puhj9WpL9ZsTg6q7fowNTazvPCSh9ZyDAfzvHKxd49tchvHQqMAD-abzNq6kl9pjftRWKcS_Cc8UTift6QjsrSoE"
+        },
+        {
+          "title": "hcvguidelines.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpsAhC-Li6LUjiN2BVXaesW1EX0L0F4TRJ85KhV05TJF0o6XT2eTrqCZ7ZxdAG6yavQUHkAXFzZ8QLnZ8tPs8z8q1Y5D6SmSxbOi2-77-Bcwa5kqY01TfSwoFqDTa2S6B4wn6wp8qs9LT-X-OUqyhigPj7ujiCklFFAXWT-vQVsgsEiz6Q9578Vnh4BylVtrFIli6Rf3VkQsDHjZv-f4tEyb2rlxS4AF1GAgohS7bYD0bjyJxA6mSWfD_zDznbTC9HCrgeRhEmdzNe6YlemQg0ShUv7eH76fTLrQniZfwOALCkMxCMu4erai7c8DeKXB8RSg=="
+        },
+        {
+          "title": "infeksiyon.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_k6FXFPGgaITcQ9x7AX4TuTVsyOYVGtBIWMpb3gBM9PZ76Kbf1FsvzhugGfplrTnzhYZh6V_NFL1W4kxfKqJfD6OtyaejGGDz8_B8dmJWCk9ntEmA6hbNjgv3L2GQ7cWfAmEVtaYJ4PVzW1sgyufgep9cOJ63dY63u47LhMXOcR378FlWTViHqTqTn2frW7fgn4vVdDOzC4_Qkhs_chsleYoh4fd6AmbwMuJi19dNbH077Rb2I38MmPuztcIM8PeC221XqINrmxnj8pKXxUvXSuM-lWc0jQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJKADXCn-J-eq3qFCoxv3bGEAE73SYdFEbn1Vwqu3hA5j8GwWeRabT_wLcVpJ3tUcy0S6PnKbSKe4K6Ap3qjjio8wHgmzz1YioiYr9H--QgtEN22WNuXfaNFKd3tCTElvFm8Tj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTkKk_nWLf0DKZBN5p82FtekiF5QLQe9553wD_8Ht_KkFHLjhURPg7Nqm0Zdao8YuMC9ag3Tp5-bFtw1T2r72UtL2mRNGvnGVbJPGDmcxnOUZT9oif0pgobxwsyMOv_jINohnoesfWVdqOlLo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT8NsVVR1e7jO5RRhiFOFA5hoy1kaVd-ZLWB5ZpxvS4bztK3toLD-9lLrzSngYqXWud8GCelYZn9vpPopmJHhDcxSak3xxreSSuDNBYXwMI_j2P2mP0tHiOzxuXPYt6C2Xzp2dw556j4fa4hw="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG79LdLuerzH6AU1QWpAvq3ZzLRuGeVeJkxVb7dvkfUaR0iTipMAEN5dv7raTTvCsBcus14-gkUduQJhSIIR2-5xjGiBbo862UdtnZD_5ZW-VhRjRQdKZ9JxmhWQHCZAS2fFQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX6f6COeCftZzqGlAeQesipXBgGJ9kYsX0Mqku3vzVC3G_J384nyLc2PU2IibdHiSnQp2c36nnVuPI87dEQjfXzCb1YkwaOKJyNutNoscbX62ZDN2HmTvWpXGoO25YbH6hq98t6141e9bKJGU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb7OG9GvSc7ZpBs4A5aO34Kbmnj7o1Z1-PLGEZglJIPLju7q4-Jbl5UQxiildu0m9fPhGwm_EKqMc-Gd_MqC0uth-HfWen9bvwa9SBeB5CpdJsWidU7t1H4DFnJHTOplU7200vVJkqyxjXDSq75aqy5IMHfEbAAhkdwW2fAihTbeqMdNtOdlGkF9gIfO86ywCyUajgt9ebQ3ZmWtweFDsQW6KMuqmmP0XcA-ADxocs8q9HB2JvFiQALnyWrq4TO5fwTnv0FHVJD2zQMI_F8XxgHj1nXdsvLdwUUxq6x7oS0XF9meAKATou4MATE-ILSbSOM54rhytqyAhGmEQ="
+        },
+        {
+          "title": "drugs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAoahiNIGQLf2Mzx1pKW6f6wrj4iMSsl3vcBo7f84Ut_13RMzUzTwjzRyVpnX5osIQHWNhqD3M3ycaHUjOZAjqXQDiX4RSE62irww_uwhdjtLDcZy8zq8bNCD3-6bvX2M4Hfc0fqUjE72kSeChpnJXPLhLQ1nxPJ9lGJwiQth9DVBgiL5BwzoHoircS9boQTx1Pw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFc3oqkhmiAi59Mn6Re8HaUqvZOVsRojNFtvCcWa-KWVQzV6ygUtdpnIY0qsj2b6DF56Jr6AVZXiuPaK3iEINgwReT2KDRsfBGq52VSawB8KwDMfkfbLMjcXMhMYiR3oolaFJsb"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ombitasvir/Paritaprevir/Ritonavir + Dasabuvir trials for Acute hepatitis C",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20C&intr=Ombitasvir%2FParitaprevir%2FRitonavir%20%2B%20Dasabuvir"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Two O/P/R tablets once daily + one Dasabuvir tablet twice daily",
+      "effectiveness": 96,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 22000,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 300,
+          "totalAnnual": 23500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 24479,
+        "costPerResponder": 24479,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.7,
+        "vsComparator": {
+          "comparatorName": "Pegylated Interferon + Ribavirin",
+          "costDifference": -11500,
+          "dominates": true,
+          "qalysGainedDifference": 2.2
+        }
+      },
+      "name": "Ombitasvir/Paritaprevir/Ritonavir + Dasabuvir",
+      "nnh": 50,
+      "nnt": 1,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "To undetectable (<15 IU/mL)",
+          "baseline": "6,000,000 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HCV RNA Viral Load (at SVR12)",
+          "percentageChange": -99.999
+        },
+        {
+          "absoluteChange": "To undetectable (<15 IU/mL)",
+          "baseline": "6,000,000 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HCV RNA Viral Load (at End of Treatment)",
+          "percentageChange": -99.999
+        },
+        {
+          "absoluteChange": "-360 U/L",
+          "baseline": "400 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-310 U/L",
+          "baseline": "350 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Aspartate Aminotransferase (AST)",
+          "percentageChange": -88.6
+        }
+      ],
+      "remissionRate": 96,
+      "responseRate": 96,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.7 mg/dL",
+          "baseline": "2.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -68
+        },
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "35/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue Scale)",
+          "percentageChange": 34.3
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "40 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 21
+        },
+        {
+          "name": "Nausea",
+          "percentage": 11
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 9
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 6
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "Within 12 weeks of treatment completion",
+      "treatmentDuration": "12 weeks",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAvtwUa5Q-3e656WBA4hAMK_42_uuFQRfsYMhfZZp44GFy6gvH0PljQI8GS1NM65t97ow_SgoEUqWQWh1TJ_EaXE1kRJLhxl7buL8A6jkEG2VkPIw7EN17b1WWTrRsnhc6LbieWSWCQOe1S0LA"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLTH4GI6GxjoWEDkc69-Annng7LsaSyA6diYSFwct_ycJcgIz8UTV4V9b2DP-3OmcT7XBd0FCrhrAzTtgqEPbWVXsHFHMqERS9EYHKDBxOhsEr6OkbyTm8nAyNfEpWXPcNm2ADO1ziv7HKxJl83I8omS24ceo_gZwU4hPb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsK-M4UGcfyGEiK9I-NQ9Ku3ZwwXrYQ0NAZ45kDdl-L7l25dOqPj3fwr7OEOM0_qgkfeofngH9k16xdG3Q_2hwZ-SuBuoO9-JbkpbGyb2_OWveX7lG1MMZ0FQHjng1YfokcWvi2C5ogU-Bd58="
+        },
+        {
+          "title": "scilit.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5jNdCCXsdS400UHmaVvZInBLea0iIGN7h6DPovuWeiFmYNTWQKNM6JJuZLC1a3Dn_vYBtgSBvstm7b_c583QyFchyq0bj8mV4KTDSGdObJn8slyiVyUyE2VhfdO5CAIuC7av96b6IU452CAdOeOarkoaDT2mzx7Wp_ObN-1go"
+        },
+        {
+          "title": "pnmvh.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGr-06125HbBw0ZFYdIpm1F2mAjs_f61bcncE183qrR3my1KXZMLrz1otU6Om8UzjkqhU_3mDlGd7UNiTgDwwucGlri9GTrJJ136nFy7LVb6qILvqdP6flRBOsRmLbdqjtTx8L0kYiajZzJZ8pBizQNX0y3sbHXntjpVh3TUIFDTsI1ouNqxoYF3APafZonczSl76oK8ZfHr9abgOtBHCo0BNd1WFCHU6RMbVRqMe2g2XWI6uKBj60QGCLYy1320EyZpCfafNYKU5M="
+        },
+        {
+          "title": "ClinicalTrials.gov: Daclatasvir + Sofosbuvir trials for Acute hepatitis C",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20C&intr=Daclatasvir%20%2B%20Sofosbuvir"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Sofosbuvir 400 mg once daily + Daclatasvir 60 mg once daily",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 12000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 13200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 13895,
+        "costPerResponder": 13895,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Pegylated Interferon + Ribavirin",
+          "costDifference": -21800,
+          "dominates": true,
+          "qalysGainedDifference": 2
+        }
+      },
+      "name": "Daclatasvir + Sofosbuvir",
+      "nnh": 100,
+      "nnt": 1,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 18
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 12
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "Within 12-24 weeks of treatment completion",
+      "treatmentDuration": "12 weeks",
+      "trials": 30
+    }
+  ]
+}

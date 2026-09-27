@@ -1,0 +1,1145 @@
+{
+  "conditionName": "Insomnia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:39:15.986Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzNwjwN4RxvPaWJ-Beyw695k2kxIHZYy3ECjWDMaURT3WMRQbk5GMy79TWO8ith9Tai_YKE6Y1orjiw82hp43cWzckWO63rRx_f4ANcgH4ufYxFot4arKnMj4bI1oqjDSQcaXEbrBZwEciBKQ="
+        },
+        {
+          "title": "sleeplessinarizona.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeUGE0yVDvKK8_iYVSPYWX-VCFffqcuzg5yjBGjhVxa1Y-XNDY114bMFJVfW0azlRR5TAqWyugk3Nk06u0R1lN62hbClxoSPb-wNNBARB2MKFSOiXVanTVEG37aTs8eTwNy_zZL89Y469Av5Xenv6IIclw3wIEGQdnJYVd_WB1cRperoILUNk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLNZToJeTiQaO2SiiX-QdPrA3VIQ55lqEfTVcvAHbAIr8jGBJdIFXItZRnZsv2JgGGiOA5R7DzgYkENVsEWdKyNUrgE-u0nq6II8yrWbofBcUCrNSnl10Q9xsAgYbpxUB99wOf"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_IQIhUPUOdAXv9CRqJyTGAd8nEDeA-OFsN4_IqTIUPGG7XrfyGqFH54G1l_tkh4st4NP-7BCPTclEdQC-QfM8qeXi_9PV-qGvLNO_07ybq7YB9ZS80rBUoaC0s6PIHmx9wu62U8tFI2Lsr1jjkg4W4Ign3rmoHkfhUffiIK7b3Vtj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIn0dYnACpM0rhG0lwdIIxNXBdv9sk5N0GRBW489HW_3v6UqZNoDpQmT81ohM2AAcV6pHi4QR2zS5_MWR9hbO_XTSPtp7dxJQo3wwL3szLzn1fnVkzW7QsxNMfNJ6GQ_4gQrPm1nKLI12RoG3O"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7nldHH1n3zUSmh7jmFGGFxT40PblmENzhVAmnWAqIvEm-YvccmnA0U7mADlmS7zMRnenQUuMUL-sIcRhV4_OvicL9dlCyfV788pKuvK1u6cuHQaZ24TK1uIkSG3BCaNWwFMf1TsoyHVb7NN47KCXhonIFDWgK2SdpSh5xY5TmGFQL0dAcZI8KhcQrnx-pa0yYltaDvJmI18QFSxQLFcXYQtwLWaWBmRxYeaKffOWhIv_AyJB_2otVuymGQghcNIh505Zvgtj2QunOuYr8emLOST_9ptfi0pa0gDhPiyB9STo9"
+        },
+        {
+          "title": "psychiatryonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9EKpxV7RJTPKPJ-3CAlg9Yr8ueOX4XFRcFjKwsq6-AFIp5d5DTgCJ0WZ_X4fvmbJGuFzs686SPHOjaixxvb2SIoE61uqI039yYp2hydC1Tvhj7ziCqY0zpMofSMNdAl1_gzOWCabTQV6HLAS3cEoG8BLEpcdb"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxesPj8meavPyKRl_hoRBgndWDEYOa68cFYyAklxHuKUO95Z0nLd8kiPLlptyhcuGdkK7XO9mKnkeRM8h5AaTB-jy8d6e3cMLYDYyZKZ-Br577YI4Vi01Oa8w8ODdsQF5x3hH1LRdlOwS2FRIIvKnCba6ULT3E6Ykely6nx06-5KGA044-p3zMIQhkUYCElljBds-hiWzB_TT7KA1cay6rWFranPwO0dTDOBJhNKAAglSiphl-vRaI08TcyucB1lFm7JcQR_iXwcY="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESpR5tg3O2_2MuCJXaZ5ZMQRSf_haxu9WEYDAvUVAB6_8LEW7SwnSd6tZpnF2BflUYtFj7eNo6buRRYlsVK4CwYr3CqFLVj3oPjxEthGlTBDwmsyn5YxF1Nlf3VOWaDgnyfDq7roT9ZEZQdGqktgDfqXzNHJgGrj8suOeRi1qM-gcOXqtExm8tKPd8WUKDYcVpt7kTmYs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE01wQbmw1RzFqb5OA8pTPBTz2vHQqz5qj79vYqD99Rrx0eCpWx97dSIxfj_IaC1UOzQ2cKMAvWTw9GQnnSZ0zjAQp4KbBLAh4hmPpmn2Cm2U0ytoiI4fpkE6LK_RE2UQnP_SJ5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHk3rRlei6SgvTT7u9p6OjrsPPOzPGZCaxlMDpWp2AFPFzVazcyW3FaAQZmv5gu8N4uNn-CpO1LVL6jYr-fBaXjCb08sFow7MDvytpTFE9V7PUEnkzbt3gOgOA4MoBu8jt8jZg2"
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2hYfSUju8EmAhhRkph7SilGhNJgH0sW3ApSoC6ROJvIEQRZEKR-MA9YBck7uP1dXlfnuzPVw2pmm-upnZSqd-dxR57AWJgHa3jave1JC6yl9RVoucATrsvjwNwTNCfZ5nR2nIcts382ad1b-firaMNqFsbUAaVv8rzxbCVfftPAjCdHQTSZW3kA_GQu3_y47WU9FrB2VtdFzW_qyQ2BrZPePDQGHAu_iCAy1oVMsiXIln9RYJymneZXjhFxItnlk="
+        },
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSkioifB6ob9X8Z7G2_TH2J9p-AWNDgAFb8pRCUBKGmJKyhl6tgDiJeWTC2DlvOXNXmzR26qFku9wwlrtXQUtzsFOk64EUH3D3I5ERLCBu-dU37SMbuKCSHOPDl8JW1vHiYuax1qKi"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJQM2wbiMxK5VJajhsRaLiJT3QiFLL4NN1egYLXNrrZw-a2X0Da3mmvQQVhJKyACQaZ4OLbC1RUuese15zt5xB1mpK2eN9V1iMNfgz_w1IMteI5x0MpbfTzIwr8HLFq5vT6VD5GGQrhdeK7U46Q4kLqryy4iglSN9NJ7kAttNWJqmIeztM7n9YmQ7o5VwoEV-04E8w539Kd5Doa5h6vRZ8kMlHeTmDrkC-Ce0R65eZNXDGiNU6D9jhoXeLVhiYfg-q-4m6TytoflCPNwFfAj8sJ0gzZmYbNjKyqBav7tHhvQ6zajrSOS2QZv4z"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy for Insomnia (CBT-I) trials for Insomnia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Insomnia&intr=Cognitive%20Behavioral%20Therapy%20for%20Insomnia%20(CBT-I)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "60 minutes per session, 1 session weekly",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 0,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3000,
+        "costPerResponder": 2000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy for Insomnia (CBT-I)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 25000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "ISI score: 19/28 (moderate insomnia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insomnia Severity Index (ISI) score",
+          "percentageChange": -42
+        },
+        {
+          "absoluteChange": "-30 minutes",
+          "baseline": "75 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Onset Latency (SOL)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-35 minutes",
+          "baseline": "80 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake After Sleep Onset (WASO)",
+          "percentageChange": -44
+        },
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "65%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Efficiency (SE)",
+          "percentageChange": 23
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 75,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "FSS score: 45/63 (significant fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Fatigue (Fatigue Severity Scale - FSS)",
+          "percentageChange": -22
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "SF-36 Mental Health score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Mental Health component)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "PHQ-9 score: 12/27 (moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (Patient Health Questionnaire-9 - PHQ-9)",
+          "percentageChange": -33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary sleep restriction discomfort",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "6-8 weeks",
+      "trials": 311
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYQfC7NU7cE9SX9mCu_EtirvTkuU0QEvMoSUjuQkbgJYNiufSEaZW6uZ4oeb0a_G8ndVcZ97fGhCyBOewzmNaLE-qrz9Wo0Myf_wxcHjuhlWJD8KAnhQ1boLHfa_nQIhUSJhupSDpy5l3tND0="
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErYbqhv3vUy0AfT48pQWkt37UGwTYg6yPCKiCwvSOaICI665smuJj3zRE_TtIPnwwtZkk-uypKBnvdl7UElNdCT4vaAbvw1E03TSaF7Ku_YxOuHu9EH16vDwKL3AhWGkmUkFqPYp8F9M1SzzRKXQojJINwomL61zW-NH_NO09FG0hKrKzFX6unzkhfPvaC9wl55hE3zvqjqyyHIpuf4x8ak7Jhfx8sNginR9yBE8FJgrKtOucICR9KYcxJKyLtQ-rP"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9vKaZVOlrhbkwqDy_5JKUoR7UFIkgX5vlb27TDYhog-i628IuKo1Jbohc6qxPqK6NAxR-dzzCTk5HMppqo7nHmSzaWRB19g33fDwRHWV-M1JBsgQl17jAQmXovI4ukxgNrHY5EPJX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrtpBH-HyZnSF7kZ_cGw4XGsJEPN26lYRVhtYiyJyutqFkFSm9iknXMxR7prHiC5bhlw-mw7Zvx_nmbu6WL1cKwG7-nxHvD0MHLgS55URqvJ5_6QIHjZlUKu89AY3EMH_4wD_r"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1XWbdOsCAsc4doDU2OTclfz921q0_VSkk-iXORh5P7rIR8wTBZHuvjhlj-6zBvygMRs5If7QUQbctjrfeMjkm33Ykpax14R_C8BpkTLDQNhWKxg0BfjSDRTzoQNpEzKVK9pOyhZPcQ-obVCkRfsnoCVAMgiUvJFzJ0XeZckMmtM8ORammf2VdlQ2cwociBo6rUkH47OcN5gdDkAc="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPz4x7zYkAb1tZ_Zvzg-PirJdZTA8SFw4VK86l90OuUYZwEyVlVzEtvAUJx29nARWb8ka5NhHnq2ePz60FXrnvqcD02NVhplx_EVdsD1owFl8mfy0CRPhtxHdlQOucO9fyWdz8C-mVMk2LTKknpKNWSq4YGVQbKNLXYo_0Db6OcFusXQrYhVdvfFY655IHn2aCtjtndtsxe5BTcN9xB_mHoZtBxYHFP54Yj-J3Hsz7iJDRLqIRPdRjYGSFOj1zePBS8VIgaNdBFjQfXHUaZDm1xnZhif9GyebEZCvoYPdIXcQpkVdIm6_dMNktsg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbPUtEJWexYv194b_wYvwrGtydnEzTNrgG63euFSINa_KcO2belpbFZMtUKpcW9OG0qNVJPQxcOVJrDCzU_Q30gZ_DDVWSOoFpaOQQ3IVVhlW14tGFambFexKzhHpfv9BEsX8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfceCznFy20Kui9ghqYMYY0VZVoeNiNEsQ_vfF5prhEkPkybpQGgOhHojASdpUlgwD0Rn4D9pK2hXZ1VHszComNH7m0escdMnBFYBbaY2xWq3uw5b6ucZyGyFdQfH7V7eocttvKXx98QmEXt6lfzh9s4I6VdlysI5qR9vlWXw6U2CaxIJZfK_nLdhY0kMGtjT3-R24nnXp1S4NdBQeNhBSfzyKIbTu4JqxApygS5p7hbjR8flLLiDDnnbjHKz_JzoKbQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErfI5C0E49sRtqE6r2JfdEpnc10JTJaAPUsrW_PGoiQA0vBWxRgn7bmM1_xS0A40Euk_flOopOQ2x0hFTdD5Y_DsDOo251pWv0ULeA1atAToBa_Qc6D8gDmmV0_I3b9KkyiLCayTOOlYDqO9kQi-REZ_MMBsfLPOMgvGm5j7ufXqZxQT1LU42mNfhDreceou3GhoSI-XESO7XORt3oRqXbBBBcuzJQKrmMQy2byF9vfJgEgKBIunlkSAJ-V_sBeci2PRQ1d7rp-klxNUeS7iK9"
+        },
+        {
+          "title": "ClinicalTrials.gov: Zolpidem trials for Insomnia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Insomnia&intr=Zolpidem"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5-10 mg at bedtime",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 1667,
+        "costPerResponder": 385,
+        "icer": 90000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Zolpidem",
+      "nnh": 20,
+      "nnt": 6,
+      "participants": 35000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18 minutes",
+          "baseline": "60 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Latency (Time to fall asleep)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-25 minutes",
+          "baseline": "80 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake After Sleep Onset (WASO)",
+          "percentageChange": -31.3
+        },
+        {
+          "absoluteChange": "+45 minutes",
+          "baseline": "300 minutes (5 hours)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Sleep Time (TST)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-1.5 awakenings",
+          "baseline": "5 awakenings",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Nocturnal Awakenings",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "4/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Subjective Sleep Quality (0-10 scale, 10=excellent)",
+          "percentageChange": 50
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 65,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "14/24",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Sleepiness (Epworth Sleepiness Scale: 0-24, higher is worse)",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (Generic Scale: e.g., SF-36 MCS, 0-100, higher is better)",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "+1 point",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Concentration (Subjective Scale: 0-10, 10=excellent)",
+          "percentageChange": 16.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Drowsiness",
+          "percentage": 20
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 6
+        },
+        {
+          "name": "Amnesia",
+          "percentage": 3
+        },
+        {
+          "name": "Complex sleep behaviors",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "short-term (2-4 weeks)",
+      "trials": 80
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGijwyuRHXVgNIWinz3wJyx495i7A6WIYtVy3lPK438euN_hlCBNckerkO9xIHpTyjVRh6xW2BvrL4H3LJuEBl4yRi4nGRiS4tZV_wbu19_ihfpyMZSEviSptmsv9e-on5p_vk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeW7sxDcyLGhaQDjzpRQn-mg9Gm5zGS1Nt3ddkUyX5veH3hQh-9VeosgW3Pu1t2Ceh7fVaF7hr9dpY7eZAGS4kQzhil3crW_u0KcpoQwBXEJ6jrwO-lDox_9QtRnrYqhE5PNAu3iMJLW7j0cOKL4Ro0PDjq6na36kELdteNuA8RzaSfz0ZqcDsmRbAGWcy7YvvzbzUZB6VArMZQkFRZ3mpUnNTrf-EJjvx-_PmTyinjvZxfRKXeOAePvEuPmj500T4fN9Dx1noKa3HX96AfW2QZ-Oxrtr4hRCcwHuKpNOwSOPmaALlKhi1vRoA0e31tNlsx9ApwIpLhLjC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBPuoMLUCreHtBU1xltGUuRQhk7kobN59xnjqXEJQrwFFNMfAdqICl8HRi49JqSO_aflJJqaUXY8wdssHheYgr5l6twW2pRJhPcD-_za_Gm05bH1KFegn1LaAtIvY8Jl3SExW79voSIFxVrA=="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIYWBRRLEnm3K_FIfb4et_o1gNnadrrFursEPhv32Q5VHFM_sSLu5zLr-_tUFrwThEillKlCZAm-7aHAdECTqFiQV3Abn63GnFPYBh6HcmWUuzMv350gtAritLWbgsCRjBUtAJ1bHiLfG2q_Si59rVDJ88o4GgUO5TcASk-MimLOc7frbxuA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZWJ7WZOJ63Ea2I7hpiyDSQrDZscG_CmUwxp-1hDo853LRVbyXxgYEsSYakHRAYcw_G8oxF7NrJP7VEWR_qHhE-J2m8_rUuxZ9ijhtAQUk87tEYHOan-gDvf7XmE276LCmyP0="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYbVJKQZiyJrf2kJRJpXtKn0M3l1rJ3IlOQRJsdwH1R3pUZsgHHjmtcN4zK65hUTYNK7yZQpSQmXw4L1pC3LLZ1-jNHZht6C41caSVjls8NPfsrHCuNhlN9VIyMUx2fLuqAoqEud2awvjmeOWg7zux3qch7QCMvHol258qrVWNzrfvrrJE74ts2w-t7fZQdEbyO38rKDAO"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQZQFH4Yq781NilpGpWq6lqrbxXjlaSgVK9rN644zi4aSQuhUuoy1vrm-wMcxqEgrI18XHk8ZSvcL1f9DKsVXJNtoVvZNBahIVP1TgDjpyacTeY4HsYAhCP2Fhcepeh_60Aho="
+        },
+        {
+          "title": "ClinicalTrials.gov: Eszopiclone trials for Insomnia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Insomnia&intr=Eszopiclone"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-3 mg at bedtime",
+      "effectiveness": 68,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 300
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 2500,
+        "costPerResponder": 500,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Eszopiclone",
+      "nnh": 18,
+      "nnt": 6,
+      "participants": 16000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-28 minutes",
+          "baseline": "70 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Latency (Time to Persistent Sleep)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-24 minutes",
+          "baseline": "80 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake After Sleep Onset (WASO)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+45 minutes",
+          "baseline": "360 minutes (6 hours)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Sleep Time (TST)",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "-1.5 awakenings",
+          "baseline": "6 awakenings",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Awakenings",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 12,
+      "responseRate": 60,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 points",
+          "baseline": "4/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Sleep Quality (0-10 scale)",
+          "percentageChange": 62.5
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "21/28 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insomnia Severity Index (ISI) Score",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "+1.5 points",
+          "baseline": "6/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Alertness (Patient-rated 0-10 scale)",
+          "percentageChange": 25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Unpleasant taste",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 13
+        },
+        {
+          "name": "Drowsiness",
+          "percentage": 12
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "short-term (2-4 weeks), approved for longer",
+      "trials": 48
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzY-uzY3x_fZzqGnqzicwAeQ4NfFeJFj4hGe38gcZH0dlVTvG6NEpNVQgvhzSgZTgFeZ9rmVNb0s-rCTViHu_Venh0vmnsHUdOvqsdQb6LQITY0xqcYZbLHHMWNN8YK28OXc7o"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOSMnlmS2gz3X7OrP64RKkg4Ma_tD7fSHrv4etFCwFaJDBzkFwvSCkkwy4YPcELZw9hMktCFUu5_GkzP3TEtc8eyJGuXv6P1x6O3YaA1FbkVZ0Qy1uQf-FM6sA4xR8So7J1ZOQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEanPD-DAzbuCQtZ9SrfqsBE374JEg9w7htDh1IlKJ2vekTDFAV_GipRXjeJxdMD1ATGnapDUOXXXmXr0cl3QTnlxsqU7l5Hd55EFp2iqCI5dJ3FVXVZsoedYK-iL6-dTjqZOJCikb51H25LiY="
+        },
+        {
+          "title": "habcommunity.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe17wEHsFfCFlIxOxk-mwVQc9qSLn-iefJcOc2uGb4KM4G5GPXcK7J_Swv8I6ZBN93PW5GvbxOUHFFkeRwIMnXfyeliEU-7EM67NkkddidBtVp_GXbcmqcZGyQps6-tF9rBlXiVAf63V09wTFaWnMnA8oWs3nH8CUwSSZ0G2-EDuqil9JH7TuDRj-bK40DzqBuur8aSGcl7n77yoKjOMpTPsOMF3Lc9ZWAQFyHxi1ZwUvW2uFNitH8RIPf6vcHFKGj-us7bqx-wcm4RvSVk8IgNy9TtBBAXjkWYWCqQ9B1-kgbY3VwOnWL4JlYSkaCTIAsWEPR8v7inRNa7luiQd1-Apjrm_8uYsrm2dihDPzeqPCL0uLhzODWnJUsMnxYcPT1dhMAT-CYopskBSuTJYhWrD6PYWMrr__-ZTGFjxTc76_fiJfFt8poWGovl5BpZFaqZ9H_gZMAJ_52gIxWaj3bIHBtTjk-Lp7ueNb0"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlxrxA2cgNekhScXTR6xrFDp8tapFZq8TuMezLkfNlkjT8mtmAtm9PPkX-M6nx-N7lFhcEFbUFzzBW49EbVQFpnegtW5uKDNx7VvLLFEhYFwRrCcuKoZv-HuvkKyGaNyhz-S5WZfX_oyytrIGI8xqTmQv5nDbaZE_B6zwRA2iKSaGnpxYYEzsTAlMEZnjKLSRraB3LEoQ08JYbQ3qvXeJpz0gpdyvwAbtAapC033omqOzqx_p35_TGxNRXL3EYGBsXcL37HebFNclohfgbTRcId16J0MpaFTWVjaZbDas9pMT3DDxy04XxTBtgWaXTFbmbGOTVFZJzKQ6boFR3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpgTWOcFChJv1ihFAVLF0LxNyDRQ6eFFWUAIIsn_3wbILRtaE8RBnfISZzuyA_FxrXCnbJj7cSFQ5_JkG3XTeZTq_TwSSAIJz1SO5zbuoT0E2k-mokk2_4-UDdX-cihelEOZAq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW8z1YHrQSONjLGpGEDN8pSNV9wd6Memejh8ekKR3rDj_uSFgA6uIynPbOmh6h0XA8CllPjyc2xs-ZPEk3KP2UQ6YmWpCuKiGd4mRCtQqWuR1CBfW49PGtGtb9W3iOgk-xVrX7"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfC2SBRudNhsI7wGiRG1PDoQt44KMccFM-H009R-h53Hy_U2cZQVBKx4viwYl63BhJdi5nwm4z43n7DtyiTi21kxCuaPoAU6_Id6YUeEpJVwH6aLP5vDPCECsgVqjMfP3kEO-hkpzOTha7ScnUN28Hl-inQQzxP3I-q-Pio67Z"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE72CrDa2IPuUGqOdRvElM79RCIY00zlCGDkQaA4hKzkmjra8vzQuwHJfXSnizPf3_SLSbxkLNRn9IKzgwT38tQN3RyQEI1Rf6JhvQWss85RfYAw3YLYBAryT-E9dnyN3OOjDIqvs6l85vb4KT40Rd0nob-Rvi-y8enO6uOnP7ALyv5nWtRKWl4cpyijUmzfPkaCd3QgUAy42TAYKaFjaVbReE01--3DOS1xuN86tJdLpLUGOdUv5wibEA1KCM4XA=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWtilaHWE_8-psJ0frtY4_3eem31-2pFUxvj3pCwt9VUqXADo264LVc6m_DzPm5dsog5ChGZMyelDA7SVn48WrHF1yORyY5jcN-N2JWDAJrwX2NW1IGAQINbajXXo_HqOmn2KyKrDsy9a784UfBpw6y_WAr6XuUxhWb32ajlAgUaIsIhD59Gk5LrGpsS2g5tRKcdU="
+        },
+        {
+          "title": "jmcp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4bEdpZWNWo_X0B6d1fsiiXIbnUhAECcGSuuq4YSXvBrbWJaaOmyd8CDtzMzXtP6SvkjX0aADkQzLS3Ffc-qCENf6qx5jWZgKa5Htu-gBa-6Rl7Xdcw0qogKjjy2-acP0vGUa3x-pc3c8ZbXZdkdtF"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKL_i4SchDXKeDlsIOE02Igxpmr4om5YEzTMSFzGm0B32gJyWtUKenoVKnssH2s3OI_hYhi5k0ex6LX_dM1fEvrqOU4jDbzzKtwnQrQrWQmfh1b2x3vSY8uBjlFsYQFSFZZOPsUOA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAX2qInPFE-pmAnG6DQPHAM636vBjDLirnbncMvYbA9BnroFFcYKfhcPO8i5K72iNzVb6bPw6gtkpDhXkE6wDVb-vQYLU9hzNvoat9QhuKZl9LQCIw_SjIYpboc5kxNcBX3Xhw"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lemborexant trials for Insomnia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Insomnia&intr=Lemborexant"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "5-10 mg at bedtime",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 2200
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 18333,
+        "costPerResponder": 4000,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.12,
+        "vsComparator": null
+      },
+      "name": "Lemborexant",
+      "nnh": 25,
+      "nnt": 8,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-25 minutes",
+          "baseline": "80 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Latency to Persistent Sleep (LPS)",
+          "percentageChange": -31.3
+        },
+        {
+          "absoluteChange": "-30 minutes",
+          "baseline": "100 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake After Sleep Onset (WASO)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+45 minutes",
+          "baseline": "330 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Sleep Time (TST)",
+          "percentageChange": 13.6
+        },
+        {
+          "absoluteChange": "-18 minutes",
+          "baseline": "65 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Sleep Onset Latency (PSOL)",
+          "percentageChange": -27.7
+        },
+        {
+          "absoluteChange": "-22 minutes",
+          "baseline": "90 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Wake After Sleep Onset (pWASO)",
+          "percentageChange": -24.4
+        }
+      ],
+      "remissionRate": 12,
+      "responseRate": 55,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "Daytime Impairment Severity (0-10 scale): 7.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Impairment Severity",
+          "percentageChange": -26.7
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "Health-Related Quality of Life (0-100 scale): 55",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life",
+          "percentageChange": 14.5
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "ISI score (0-28): 19",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insomnia Severity Index (ISI) Total Score",
+          "percentageChange": -36.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Somnolence",
+          "percentage": 13
+        },
+        {
+          "name": "Headache",
+          "percentage": 6
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "long-term",
+      "trials": 21
+    },
+    {
+      "citations": [
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrNrYMQ7f6axMa0LA8fmbbsaXNez7GAltguKlyCaysV3SFdEoWi4hznygl4xMtVj8DAXIrKhtD175gxmm7cAdtld5R1eBvajkXV8vpRZ-zoSh-FYyGe2q3xV6jq024VONNZtYZ2lXlNj5WJoQD9mpED-aR4ripso1ga7dzMvbfNWSjiOg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6Dsx2lvGMKIqPa8wuqB_FeKk2Wv7lN9QPFiZqXOjCSgBBO72ijpu_wt11oMwuf4uju6HJZ-TuNUadbAaE8I8DUZv1Z_2p4cAzMQgHVVmwJ_KXb8IJ65Jb7ceuZcj3pAuzbXxW"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkPYXbFARqz0jf67j9xKxwhrXNdhe5yQZ4v7kRTovtigQXJ3LGyZApAzn93CwC_gJca6_lcLYUU01TmeSMY-5AiCf_nYbNlIGwo3aMW4VlIGAGGPRLb6QXhxdxYn_O0Cwf-No3QfSG6gZg7IT5ZCd_G8MPhditYRauxcJmQRDRMTZ6c0E5FFOlYLVFAFAeFy3Ll7o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtm7VYA70mnmrfyNdVJ-OeNyh2yaJ6hjXVQ2ysNyX1oFoVZq-QYqDWou0QzxcgYY19E21O2vIQ1QbGScsGYIZILOeWHiRAeLR0vqdW5_Y3nRGLcIjy1ygx4FcNnBtVKkwrgsMN"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENAJM7_tUZB1b9NmQ_LU9arfF86zOzQhRRD6BhXJBFp3qBZNb5GxWFGY8VW-xOB0bQ_RCV-cs597hB9LWHB8KW6QUNyY_Ve60-CrLS6wzxCOvVCN6UjQ8mQwlfuK_BAwpZtq4="
+        },
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlrPdvocpo64xuUu3rp75pD-ubBhOklZdm4ZKINkKhCrc7PCUKT_bBU1erUPvCTmq8B3Tl1VOUF0SioPH1L5Og0PAsym3Q-wegew2N2tZCrXVw5yzwnEZnKfwFTi7IoYBF_0YGm1g="
+        },
+        {
+          "title": "duke.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJZpL0B0CtsNT_uiCdseR7ytfH9PD38inMI2S_656a9X-D745asdktuWsNb3Wb10INDDo61fk0noQ4a5taMH2BxqWh1OBE5ldEivLf2IQbfFl1Y0NnHrCQtf37d_PzZQei0Il9QPBIKg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjdizD_v2BmbXdsI3yWjMchnbxxbZhFmJMxk6Mr9-iKg90XJv_YCqdEajHb0UA6EnH3L2sFNtVSGYyIJJbb8Rr-V5rG4HSdtWYWacL6c8QoU-m1PfQ0BVMGMrHTV2MWPk2f7yOfSEg3eobzQo="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGq_KCC5t8YI57GbMd8dsGzIij1J3GGH-_fgee8adyokyFwcZpmwdjcofg6V0ifwutpAiJtLCUOT_5XMgFuRp9hw4I0teEu4jrrVI9ORU8QOk2AAtPwAr980wJ5kKyV1zvoZrrriwwMgWiw_3_kIMSfmwNXOTGRsLx5V8m0wC5HrwbaiKwRnrcD0Gbw98zWwpVkEdsqIk-XH8--O2zYT3jg_dcx6p2EtpsCXEk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9h3G_x4N6zxBQ9jKFmwCa2-mDFI_Xt31Mn89Wa3vuK67dNRp1L2BGzMiGr3FD_yvxuGLyoZQR7VFGIHPMPvxRqEpMWDnxeXp_QW8V-ZeAkgmRGSV0Yercl_GWPTtz2ediAy3r27RM6f1UoK4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWk6v_5qYOvTg5Uyaew_-OXKNXWsC0K9cGbNfbUTiBo60TZwAJlfpvoPGDBBCPz1QPhHPHRT8X356bffEauMCpfgjtt_T-NXWMftvZ7_jTm1aAQzS3AVUJtrSgz0XG5u6kXRi4dB7P1Sx6rnE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Suvorexant trials for Insomnia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Insomnia&intr=Suvorexant"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "10-20 mg at bedtime",
+      "effectiveness": 62,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 2200
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 27500,
+        "costPerResponder": 4400,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Suvorexant",
+      "nnh": 28,
+      "nnt": 10,
+      "participants": 9000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18 minutes",
+          "baseline": "68 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Latency to Persistent Sleep (LPS) - PSG",
+          "percentageChange": -26.5
+        },
+        {
+          "absoluteChange": "-25 minutes",
+          "baseline": "115 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake After Sleep Onset (WASO) - PSG",
+          "percentageChange": -21.7
+        },
+        {
+          "absoluteChange": "+30 minutes",
+          "baseline": "320 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Sleep Time (TST) - PSG",
+          "percentageChange": 9.4
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 50,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+40 minutes",
+          "baseline": "360 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Subjective Total Sleep Time (sTST)",
+          "percentageChange": 11.1
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "PSQI score: 14/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality - PSQI",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "KSS score: 7/9",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Alertness - KSS",
+          "percentageChange": -21.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Somnolence",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "long-term",
+      "trials": 39
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNWPTchO8evG8jyxsRU7D1KObYJJSlvah_W9MGuYnPKz2YL_DQO5lc2nzIKv4_8u6TpeUXucElYdJ5U3sEciOgIMwDA1LCDInW6CpanNiaOwcjlKrXRfbiDct8glPAr115jIrBjPnLEw=="
+        },
+        {
+          "title": "cornell.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaLeaKjei6yJnrkEVqCb1-M6TaL515mz3HZahkd_1v8wlr0aKbW407sf0v1QPhH-80eMMHlIKjbF1icrkOTY7AfZdinMCdRqvIKFwDy7rUbNCvWrwlw8DzenJJ35xZ7OLY5SvhORSyegLlSo-MhjM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFxaIurnkU8m_u8XLetmlkrO7fVOgb3Mm-cPhsB-kqzn_T6J7khtBCSiJa8HRNYyia2RJV14OAYcE68sZVEEW_SOYL2WspNpG5-M8bx7BARQQQ1nIBUXEOR0Wh4BbKo0CM6Cgw"
+        },
+        {
+          "title": "caldic.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsJGKPixIbjXKs3H85-AGz8QvZ5CE0g2eBSXkidoQHrK3ymL0-1ytqxxQHimwu8VZS_tzLkK10UWc0I6K1hM-GbcqdSoP1B9hcVfi2IwSlQbiING0I87uYXDyXE12IDcfukhYajJMxKTe3XmGtltm5TpHVA1i077NK89I8P9Q="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFpjedv1M72yyh7JSbrf74GIwOUNGEJ5uTjCSe5f9ERQl9NebZzhLP7CrApP633kCrj52Mzew3tGLph_RHKpZq9GfL0EzBJkt_xAlO036jqXtOl7QuhsGSE1KzBCm8cVlET8uuOPenFzv-JzbcM5i_74VAh0V4TAUXuZIXoEl4jM5uS-ISBxaehaWWDJ6iOHljmbZTJkWH_5ju0g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEykFIpvfh5rPbnOoFwxa02U-Ujz_Py_yqmBBXx1zn5AavR-fTYI-naF928d9QYMGKC_xiRqNWNoGCYt8kKJORpfMtwInLBZTMjrx5nB1kMf-rCbqVdFO9vQcGXGzPIYQ7xGwUdwsrePSoXd87NkYgu5FraBUFtIY9MXu0jewIr83s4kP-wmePmNz5IL7FtUU4kFQBibQHk4XFs5OM6sciOdzZVPi_HIc0THl6V7XNqpqyueCMFcbNJNc0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl4GFx5I4gnov6UFR_9VXUO_GvYxprC8feP5bqdNI5CtxObNMCT0ay9z_PwtXYHwC5LzjESLNcs1bnjrQWNlTAWoxCmcbWyYxeLYvk7seue4a9MHsIH2sS8r08cVKg6MRSm7iMEuriEePmKVI="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJx89ApBaz4qjTBnLB0fn23wHjZmq-H7ClB1mPhIUompaDk7fn-PDronFQS8ith8vj0dfutLgSryC5EJgMJjZOFIU405A1SRWG_5SP8TPsIdZ5n61euhWyrngBUai8kiMLK4i_oxGulu4Bimo9S3RSJobOVA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE53stDague4hziAWfGJ5WUS8hHpP2A7XCpCjPcJhSk23ofM68O4ZLmbd9oABzefbNmfe-JHDMdkoHLU_bJ8flv3NLcOvChNakpHkK_epS1wioxBTYytD3jULNpiqw-3ZkClc5_OvZCEiZ_9ho="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY4p3syliKQhw2oIUWghHzOE3AGesOhmZivAtWJFkvoyqRwAeqFYPXiYhMIPVdJVP97ziH0X2nCbRcfiXBg18ab4LHF0fMX0SLLidYX6Qwwpu3FLnjs9CNG1dxEmjY4VNdhnmb6aMhC0BXvKOWIuFz"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH_MRvyG69eWocBgJVWeuQNz_aDuizdC00-jy3Ag27aNiL8yecugA_OZLF8QMdj43UAsnb8sI26IsjPn-sC0uWHoCucPg8Fpdq_5yAgNA6hy3TUW64RmOup9D5C9JsRs0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxepin (low-dose) trials for Insomnia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Insomnia&intr=Doxepin%20(low-dose)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "3-6 mg at bedtime",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 150,
+          "sideEffectManagement": 20,
+          "totalAnnual": 245
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3062,
+        "costPerResponder": 445,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Doxepin (low-dose)",
+      "nnh": 40,
+      "nnt": 10,
+      "participants": 7500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 8,
+      "responseRate": 55,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Somnolence",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-2 hours",
+      "treatmentDuration": "long-term",
+      "trials": 35
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl3dbDZbniq6or5ry4GdjxbsO__ot9zMxm2xg0RG9FqjcbxtecA8i7KOAdS6B3xF6iS_Ea7HioKcJ0W1_VdQR6LfbIwixh0J5YJFiaWrY3U-MWstAnVxDa-T58dt6-RWUH-RnAQ_pzaClBx_pPUko7MQkkKKUuT17qTLGLMXLp2R1CrKAeLuLy9WVlu4nuSMQSLU7N2o7KLE3NbUrw5P1ZPRAGc_lauVAFD20Fjn-nD4C4HOO-KqkcafVBhgRVbhTkHK7kWZY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_6zg7D3ma1s2wquGxAlXPeiQISaciZZ3sDFPbEpMBoeq_79j9S4NcJOiV2YO_aK-JH12CQfnTtEEQGo_9_Hvm_WDTagCKoYHScuxQTT3fNlOQyU2v188HKIOgFd6l83p8KEmG"
+        },
+        {
+          "title": "hmpgloballearningnetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_7TAd6A4W6hj2CSWuwm_10daVmUHzfDqv1qlSO-V88LtAvl-plXBzTGmSJRkq4MfSRHOph110i4XKy0GFJ9wQRtGDVY5wfuUkq4bctYBTvoGdd2AZkeNOi3bAVRwclnc8QnBy9UK8yzplvGbvG-lfmmbkZ6vH60-NbDkvv8Dxm0zPtIVmm17mDSpfRgSnDFIZwqjLyulRUth_soFC4Ii1yUZzWPHGP0O6awIUvGI6XmCOq1WINuI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6x4Engu7TRSr3t7GYrlo_qEmMjoEzKOsJqEjOQj6vfsxqf3eQB4RiAxR-XnzhVsu0cnU3DHydVlIl3_U9DXd3K9D6d-q-iP7pTd8_-W5TPH0WyG8R5Y9NkPdayZuIZmJfwcxv"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGN90JPNNjuxTJvRDrgKBomVnHK8fWQ9oKbVW_gbDLgk1p-S-PawZtwrvzrT5GA3iBsk440Ny7kPJe9udIKiJmx0autg1xBaFhgga1RgMAbFLw7W_Tl-I6wI-OeorEg6yTo9sl7CnmpAJWU5C-z_783aHhZFPrCJjQD8LLIntbhy0-ugRX2Ps8eKpSL_2ZoMvaz_gYk3-EP-dGJD-rdVtKplHEHYFqo6Td7L0SulpC6Sy2y7hvQ6TGxBDSikVs3GPXPv1m_uuYCpoaexdGo_4WSxl5Afmo6LM73XbaKugkxEIZ-MVOfYb5D2OVoWvddvqk8arMJu2uTYsZq1LvQqw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjKVKCHm0vt0-lDxXtys5xaC3uYy2NHzFa-TNPcZxFIsFIyTQ2i5tDnNkKZjOk1BEvG1OYVkqLAaUKtvMVyBI7_TS2XTWlFAfYOHk837P6moJtt4Mfb_q36qKt6qvLWvIBz1es"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPKDSOnuILU6ZoZ1bto_a7LhG6nUCzlOHvX1qq-PnmKU_syhcld95x-1vb7wsupziH_Tp34AVCAegXXPglpUODzwIjx6EuWysDC6ZdVMMG2Akurd00tcu6hk1msU4jFKlDyVUjyHkWyN6KXqKv9pu2JDyjvQOUSJTpe5TjWqelwHfaifCSMxh1y5tCmFrCB2azYu4QLKcAkbiRJEO-uTK3GXehGG5ChxjoK2qnvB3w3NDkxTsQFCiLhYlSNHK-6rvy"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOBBP35nFVIrS5omIqUZA2PhuEHVnolTyLSdDstw14naVPRcDORcioict_totNKKDJyQAJTai_f_LYe3M_b-FZgmUO5_3ZHxfy3HA3s5vbfW6ZUbdF9muBuwraG9Js0ZGjf5NT"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ramelteon trials for Insomnia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Insomnia&intr=Ramelteon"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "8 mg at bedtime",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 150,
+          "sideEffectManagement": 20,
+          "totalAnnual": 270
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3375,
+        "costPerResponder": 540,
+        "icer": 75000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 370,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 0,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.09,
+        "vsComparator": null
+      },
+      "name": "Ramelteon",
+      "nnh": 35,
+      "nnt": 12,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 minutes",
+          "baseline": "75 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Latency to Persistent Sleep (LPS)",
+          "percentageChange": -13.33
+        },
+        {
+          "absoluteChange": "-12 minutes",
+          "baseline": "60 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Subjective Sleep Latency (sSL)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+10 minutes",
+          "baseline": "330 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Sleep Time (TST)",
+          "percentageChange": 3.03
+        },
+        {
+          "absoluteChange": "-7 minutes",
+          "baseline": "70 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake After Sleep Onset (WASO)",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 50,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "12/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -20.83
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "12/24 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS) Score",
+          "percentageChange": -12.5
+        },
+        {
+          "absoluteChange": "+3 percentage points",
+          "baseline": "75%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Efficiency (SE)",
+          "percentageChange": 4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Somnolence",
+          "percentage": 5
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 4
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "long-term",
+      "trials": 49
+    }
+  ]
+}

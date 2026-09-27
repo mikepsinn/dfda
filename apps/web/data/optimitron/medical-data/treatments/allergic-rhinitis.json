@@ -1,0 +1,1005 @@
+{
+  "conditionName": "Allergic Rhinitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:10:11.069Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoVEhZnekjV9xyDBTreszz_rTc7CEQFOYKzmQAbPp1lZPRQy3g87fLGq_nvw3tPexyRIVg2Vm0_TkW7WWaemFeVu8iaHY5MtX2MoBd63lGxu5BjrR1tpdzmSkswtep7lRpvjHH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4PwJzxzjAWkw6Gpmg7RUFCHrcryUD4dfCZlzHGH7ICIlpx_zeHLv31t0se_q94zY8DXrDaqLJHATDJDgoveik24iKbfgaiXumSH8SE7IzsK_OTs3ySipthKMFBD0rKPDZIRRm"
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCEAXrYtlcDnevQFk-2LbWg1WhKh6oGwajHdFcxibgnnuAEsVcfzpwdaQnfh14f_NJCJdJUK5_dmUAMhzAf72BV4QWQHoVFGxsp3jBPQo_EtI8oHJcUw5SLcI8EJ33EG1kdDvZKGJs5DvzqB8FF28-0ET35-6LRmh87W_4Od2SIfY_WtXckcsOGgce"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2IF09cyqEZIcAJ6WATHOQfPpyKAXa7D8zvuaoWMXAobgKOBTFfZyAnCApCK6-cqeDr2DvKO6b6Lf0F2TJJ-acqx1AjwQWfNyc6xvB818pwI0SnpfMMdInKpK0FGI8DcIpS-F6"
+        },
+        {
+          "title": "medicaldialogues.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmxR966kw0eGZKrTD1qv5fsiGqKR2t8U7VpZ-bw9SlCc5pcEeA_bzR9NtKbwOOLBPWZp2Hc6mKbxR4xKyOj2zLRH0v9i_fp1qt5TIofz386im9_AvDlLXq_gxlMgY8jJAXcnDztHEDd6bZGBG0F-VcyWO9QPPgxpozl4e59L6RiskIRHf7kw-vLAtJLEWxm5bpZc3JQ96W_c1AH_IXCGAxkQoSn4FIu3mXQ-OPlVlosqTrHiuv0VkPbyIzi0jM_h9_ENh_pie7H14vbORDcqKDALmUdVHvyTO8LBJH"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMDmV-hbVX1ky1wZQEwncZ5fVZrKaJuFRQf-tmdUF8ZY7Vft-M6O8cnjQAcsUnts1p6JBm3klNRqXR9Mity_Tr1LSDlCJixQVgjkVHZ5xQPsrnCmRmjpftKyZ2a4T72fe8XJp5SpuG5__lxCTKc427d19bcF7aAsyA11ED7ACC7PcrKbcy6xiIV5dHdBQQtapUrPTHYu1p-Cu0uWTGH_r-6XhY3Jw1jRQNgJaPeB-7bNrWxB1Hg3Vzbk5hpuNabwqqlFkdQNZzey0Tv6VPaFxiUTE0FmzpBkgeU1buAik="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0COA2kyJodMpaVWhWUg5QUayAA_dalIH7yMwQPO1Qf1foaQGeWjna35mcIKckvq7Kif0nks3rHtVPZlUV1QLGZOtMlX6k9XGN_HNPvLVwK_XhZ84L1ZSO0w-Qwvsq7OIfs3z4sp3qm2AEc8RPuU53NB1wtdXEb7OeWAddylOr5FrKYGtyHFD54TMGu3lwZmqtzyDDuSmqhCT5gsr_-Ly22jNY33B1AEVNiE-gob98IXlm3d_lAr_rmhqtL1U8doDoYGPK9gYU4-FjIs4bWvN2gWeQ0XMd-w=="
+        },
+        {
+          "title": "researcher.life",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMwULJq8L5DIuiTiMYz4oevh3jBE2-D5wCnWo0TmmySr_k20L5iOLDzBGZ0H8VPWWJBOkVS-kcWAwxFbo0-t08oQqhgfkVnQidpC_JfHP7ZmBX3m9LDcJ_8-RWH_hY7oSS_AyXUyZJgF5foiGfquw5MjgxzmDYYrczqANxa_v-jAkFbIJP__9jsAu81gBM9WNQ3Hv_g93PsMnbLN1fqP_cUYCWYjsqkL1J2NxvAOfJ0EmJ2e0aerE0xY4Bck6Ux4c5s1uVdMrokKA_sR7GpvR-7ZQobBG8TO4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWhxHuWJ8auG0n8EtjjxpSy_1t3xRJ5RStqf6QeMD_wuWQqH8hqXd4Vaib62eQfsgpK97FuLBFR-DVJy9rHbR3g1FcsZuCzaSe_Dqz9S5xtC0wrQ8lmBL1tIfhfeWcXyQy7-rfIlb7lwhrwM0t"
+        },
+        {
+          "title": "ClinicalTrials.gov: Combination Intranasal Corticosteroid + Antihistamine trials for Allergic Rhinitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Allergic%20Rhinitis&intr=Combination%20Intranasal%20Corticosteroid%20%2B%20Antihistamine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1 spray per nostril twice daily (e.g., Azelastine/Fluticasone)",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 900,
+          "monitoringCost": 25,
+          "sideEffectManagement": 20,
+          "totalAnnual": 945
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1890,
+        "costPerResponder": 1111.76,
+        "icer": 75000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 600,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 900,
+          "annualTimeCost": 75,
+          "earlyTreatmentBenefit": 0.03,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 565,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Intranasal Corticosteroids",
+          "costDifference": 730,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Combination Intranasal Corticosteroid + Antihistamine",
+      "nnh": 5,
+      "nnt": 4,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.2 points",
+          "baseline": "TNSS score: 9/12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Nasal Symptom Score (TNSS)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "TOSS score: 7/9",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Ocular Symptom Score (TOSS)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "Congestion score: 2.5/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Congestion Severity",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 85,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.9 points",
+          "baseline": "RQLQ score: 3.5/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "Severity score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Assessment of Disease Severity",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "Sleep domain score: 3/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbances (RQLQ domain)",
+          "percentageChange": -33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bitter taste/dysgeusia",
+          "percentage": 20
+        },
+        {
+          "name": "Nasal irritation/epistaxis",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Drowsiness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "15-30 minutes for initial, few days for full effect",
+      "treatmentDuration": "Seasonal or daily as needed",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "h1.co",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxbKPKziePyRI1MuJ82L28iXncW5qvYTIBbRfeE9GqYE1uPb9dRaR8X8UtvVKHE3Hj-Zyt0cdnvYyA3fBCjv_EwipzGqaI_yVV2ZF_DXvoC2AFfCLz9B6jDdxCTEmum98Vo44nR3DjC8e4"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxt8QdwPE7HhW-OcYpvw-c3c-sHLnKj-rSi2Ats5L6UKydjH5wEwAiH8BsXeu9AnHZW9VhJ3bKoV1YB__I4KGavZRwTPGKvyIAbnEYks2ctebWXiSYkYNwcglZpKmeEdQxLTG8ma0zgQPpUy4L3QmSl7qmFf1MClut5-eW4A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7nXvw2JF413vU7SwCNkKvr0KYuJu2XlV4yJhg2T1-2jQU93um-wIrg-70ZGLSLhmyXdzU4o07K7QucCCEkmnUVXjrFl1KXB_h1v6wdsSzzDRrnDue4cbHhTSLF4oVfGAFw2IF"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQwsqQl1F7khCHrTjGLStb1kPyuLbEpNfDI3yhYu64Qor6zHMZyTWoBq-8Ma9pRX_m8NepkQOp-Kjn1J1b5KJu0Gi73W9R242c6EXAcLNsYdc-R1jzg6B2XGviZiO6w3aUCPk5XkGEAL0uijKkg56ZXe-mBV8184GOaLQQEduVa-OSxOPsbxTQrcitkvga2jj7qbI4W6OEt4uEncQ_wZVFPeK1RT-z8YH8nY50-_95GfKOXkhBQNCrEQsyZ2Bt1WZImEWVf2KlBTg3O2w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBb9HvjmtP6sJUxGyrISHIUGZP-OeBFpKdAzLeGmzRW2u0LIm8xkQ7_pBEAEq5dJKD57-O1DHr_0Tx7KN6A1JJXg6Jo--4D8Z-i8vTCX1hZK74LfgivDauvZtv6EEzGlk5flSOVA1NaOxyHjB8ryyatKgDVXqlBbIOuFpDNOjxvqffKCEbNXtUfmGNuyBXiCINECm-_VfS-VMPF7LxTwkKaaLXVxkvLluQMjZ3CTR4xzJKzO4ZehfuFpePyHvuxu_tBcMRj-Rk7jwCbPbHA0MjzfR6z_l679q3P82KrEawVfgGBA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB4-7BcRsjff9Zd4xuObAbSKDZexMeFaABX7wfLIwAA9F1hLHOPIRSj9nfjkZjUigeENSIFqGvUBW2tomsLJ4wJz7P6VkoQ6Q1HGeZDp6X1eR5xZoFSwAlsDHKUZn3nzPP8We4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDuZoIPLiIDigxw1pyc5skRSo4LuTpn3S-_QnnrxteZAavQhU7QUGkTTDQ7EuM-U-vJxvRE3rGaW-a8-AVI9DqRugAcen9QtfILHCVhaS-HOS8yhBAIB6Np3Paxt5GmWtQp2rn"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkH4FZKND1zMVvS0urOa9bqnYn878mqnjb8tMgcsCqgJKoxf3CE2_PxpnXaeznO2dOkzqATptNdmAox0rKx2eWFj-MlhOGXMFKElLS25E06Bi4yUxGsFW1HO1ucwn3clmZt_wyEaIOTKRD9X0TSoaRsXyEnhHGj7XTG0ZRttbT5GUF3v2EbMBL-IU5TPMsSCk="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvy3D682opKHNSmQD2IayVujrtzp7CHb4BbDyk4b2JMbvidQDdevd9m6Il_SHGZHESVcVR5z-NymjNtKrUZvwtDU2NcQwy-ONq2B0Wddc15dUw1i3UGDt_cc34Z8ObnEDsZCp-lRM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Allergen Immunotherapy (AIT) trials for Allergic Rhinitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Allergic%20Rhinitis&intr=Allergen%20Immunotherapy%20(AIT)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Allergen-specific, gradually increasing doses",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 900,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6250,
+        "costPerResponder": 3205.13,
+        "icer": 60000,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Intranasal Corticosteroids",
+          "costDifference": 2285,
+          "dominates": false,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Allergen Immunotherapy (AIT)",
+      "nnh": 30,
+      "nnt": 3,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.55 points",
+          "baseline": "Average daily TNSS: 8.5/12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Nasal Symptom Score (TNSS)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.12 points",
+          "baseline": "Average daily TOSS: 4.0/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Ocular Symptom Score (TOSS)",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "Average daily MS: 5.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Medication Score (MS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-4.7 points",
+          "baseline": "Average daily CSMS: 13.5/22",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Combined Symptom and Medication Score (CSMS)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 78,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.9 points",
+          "baseline": "RQLQ score: 3.5/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+2000 µg/mL",
+          "baseline": "500 µg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Allergen-specific IgG4",
+          "percentageChange": 400
+        },
+        {
+          "absoluteChange": "+13.5 L/min",
+          "baseline": "90 L/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Peak Inspiratory Flow (PNIF)",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Local injection site reactions",
+          "percentage": 60
+        },
+        {
+          "name": "Local oral reactions (SLIT)",
+          "percentage": 40
+        },
+        {
+          "name": "Systemic reactions (SCIT)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-6 months for initial effect, 1-3 years for maximal benefit",
+      "treatmentDuration": "3-5 years",
+      "trials": 19
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9oAk5fM7odutQ3ADYeU5dZvTVSVTM6x1eht8_MTO3YMK6gp4G8aU0Z31dwpdiNyvJcHPV18FgLQEXhV_qckF0oP_l_CFQXu3kWeY6V-4uvnCgy89CmoOQKMD2I3FiYqmZrWO1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7ZB4P7lDACknuTT7pr_MeNLKJEL1LoPUETLRt1vReBMvHkHBeWJDYViXBZK4sSHeSelS65X2eUq5GNMtFtnwfqNodBoEY9_vXteD-j9uiY5PxEK8jYRVkNBY_cbrnpG9tgZai"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKt9xJIAv_rbVyb22aimn5yWrtytHBn3Trp0PJs6wOf_vW8pRdVqB397W3ov1q0lzeZmVTHm84yG_3BOjcqIdJITHp1CqkUE0rz1SZZofFRvrNM_ViOxhgdjNe7kyZqE7mZ6kHN5JRINQ658nK"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoL5MXgc95BEKrQWU3p0-MUshIoqdPt2fU1s-zNt7xpxWCrPb4_DlNlo7uxF9X7O2aGGIDG8H02FjzjgBoRgiOay6BJNgWw0Wkz-qlESkoDgjA4AVqY3uhHv7zUHOvkykfvaxh1Cr-Q1AA6JjVOhC2zrRmjg5vThB4NbycTutoEIV7-1-a1vWaWoCenh2J1l2NaD5lRA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKpXJZN_wTO9YKYxu3otMP2GzYbN_HbyYk8jsvQcMDlg_ukX28FICEPNtSfWvwQVMQx94A68WPQaGf8Qh24_UD-Cfkl_Ej7QP1ch1srCVO0Gr3rYNGvS4qCA8d_wvVnX0fiLA0"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyLFWf07Fb7-MlqY1WjrXw5wdZ7ajHoukvTVqFH_AmWSvYuU5BWi0GHNJ8gxqUTgmEBi-r8cRQghF05C_aakzImw1jnAyuo2EVVy4Gu6gRaiewu-OTUjw2nIPEHspvN1i9rkf7bhit-hgWKz7OkBQK-yHUBfxi6utHDbjZbeN_20RChJqGjAtWSeaRyj2sJgXaNr1hkpAsxOwTWWMe3SbUZE9g5gTjf4DDBYsFRv_-aF4lhcQuFW2LUeL-jWzGOW3-sRdEI1ZK0_3gT3SvQazl029TziUuMg=="
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF63RSfuGSbBU2zmvyij-Th9uFD9fWhEPo6VUleAwxkqgJ7cwEOE9WZfJSiwKgnWZ0o6J2Gr5W-Od_BEIdif6JqixceS_1h1ljOydgVoiYKJCFty79cqfx31Cfz_NOUuzZb3newY2He3vFDQzIo_xMxwJdg83HrRNS4CQgDNEABFBF6oOBKMAMIlx_2"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpOfJPhDtbNyeblzRwn4yhsuxdldwSkdsrA6KmGTW7n2zo7FJJIxPNHWYTaMrEhE3cEj2pasleWY2IjliKy057kfZdzV8AJ4qGY9B_skpsIwK4sd6wbhmMTMx0DUaMqlYAyWM9Usaoi1Kd2P3UPykhkLxLGLNdl_jPd5b5LWsuEWGY5AwPNxvDbo7tb8rxv8pI27_AfOMALLhuXN2xsYwXRR_txoAHNnyIWlRNAU9zzGlZxl-K_EXBLsUgUmXiFWoU2KQ7pnvbEk0f0292pM3-ZauoBiWrEL_UxnA6znh19-uintCY2qWX2uQwnzdghPL8S7kjOyfZIlVV1SDVEzQydcBFjPVCO7w25FpSCulBP46bIhVGp8eT"
+        },
+        {
+          "title": "rhinologyjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1RvpIo8--2byfAxPV57bHlIEk7EatxRhMnTSW80VP3qylMHqnOtRtbcW_UTVaphdIyQAMIytUAQLqtYakLp5GfijzKXgM_ihFLxp4fqr1EX8PitSKzlN-nlOBpF3Mfv5KJQjT1dR77TR-ePkmbv2lJT5S3Dx4mtDdENdIDexzFQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intranasal Corticosteroids (INCS) trials for Allergic Rhinitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Allergic%20Rhinitis&intr=Intranasal%20Corticosteroids%20(INCS)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "1-2 sprays per nostril once daily (e.g., Fluticasone propionate 50 mcg/spray)",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 50,
+          "sideEffectManagement": 15,
+          "totalAnnual": 215
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 430,
+        "costPerResponder": 286.67,
+        "icer": null,
+        "prescriptionAccess": {
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Intranasal Corticosteroids (INCS)",
+      "nnh": 20,
+      "nnt": 4,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.4 points",
+          "baseline": "8.5/12 points (sum of 4 symptoms, 0-3 scale each)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Nasal Symptom Score (TNSS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "2.5/3 points (0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Congestion Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "2.2/3 points (0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rhinorrhea (Runny Nose) Score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-23 mm",
+          "baseline": "65 mm (0-100mm Visual Analog Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Allergic Rhinitis Severity (VAS)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 75,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.3 points",
+          "baseline": "5.0/9 points (sum of 3 symptoms, 0-3 scale each)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Ocular Symptom Score (TOSS)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.1 points",
+          "baseline": "3.5/6 points (average score, lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rhinitis Quality of Life Questionnaire (RQLQ) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "2.0/3 points (0-3 scale for sleep-related issues)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Score",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasal irritation/dryness",
+          "percentage": 15
+        },
+        {
+          "name": "Epistaxis (nosebleed)",
+          "percentage": 10
+        },
+        {
+          "name": "Sore throat",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Several days to 2 weeks for maximal effect",
+      "treatmentDuration": "Seasonal or perennial (long-term)",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnG6WAFur1SNV832e6AxoUBI73Wnqn5klONSEeSy1MsOFGH5WFGRKkbSKsAcsd9VWYsfRePx5R49Og_pyCW5ewjVhnkRQeF9x8EG0s1WhAtsAVsHxtvNCF8Te2_Kq-Bj71zINk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXRtoatid5jKI3FzTwP4L9O1HTNKzY0XSglxeC2GM9PJmc6x_kK5-NORUZT-1SuxgXiojuVQpxUhZ53wm5blX4OEqYv2nJ8zxMBGKd3HVgGTS7xAPJHNBq3B7D-bIq-YYBiQTP8xkzRCva36bacMHLFbG_mcSTfU2U09GGPvlIFeXcg1b39Wsl7_-R0G0IufXzi-vnHDCek06uO_Km6gqKhQuIqB6u16O_ue7If9ukcAIv-4pkHM2putU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs8Dyb7YF3zyaPe7Yn8fQRG1kOm6bTSKnxim7gorlx952tjrJhzfwX02MhiBBVuVAU6VExCefR1RyziQJdc0wPoDEfm1uuDl0d-78TOyB2c2BEUxcgP4_RN22TLmUqpWPNCcGu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaTSlW8g_2938Yi-lGfSU2xEHIV2HzRmoWc_0qNEhfb0OnpiJsKcPS7Wpesb5wz90jNZ_WKK6vpveIkoBC8cGUVppJ58tj438R8PYenuqnCrDv9Kj0LzNoJcy6Z78Razdm8kZ7"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb17myPTtyl-PKPG80DhQu-F9ZoeWreOjDs07EytHBbSPcqROM9BMidtbd5lt1ZX-YJaOHcpQOytxzPIxFbraljfowK5HYOOWkGZ-tlZ_3VY7V16cRZpfnR7LQVyfBq4eb6K3A-3touFDf-JusUixL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0iFh4e_WRVu-NYOZyc5rW5cwrDjIehznKtOYaX6PqhXrFKy6tpgmfqVNae_X_Vu02ujNd0jO47O5f4W8PXPEH486kb1yoU7FIpBFAcANWpcuHj0qDDF3z33RyxK6XTOXL7h9Dl84GHNcEhfE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn1Qq1Ny8uAa6mrDt9UWeHdordcQ2o20Eo8VH7PSLIyVDE4C_6vTBb9GTG97tUpn9VFi-a4ik2dwcFu5gCarW1P3GFQ1dE79xO-vIQH8P3y9ntnWFV8-PumjwclPovR5TBB35l9xIwZ_GAcauQqKwcXE-Ng3uIjjVFGhh1x1b0cCw7ZxzH_B7YwHER4zuUY_BKlyIP9fon1zPFb2oDkzXNYDCh4khWHmZD50edpXTGhDrZwCq8ZPg3dwekXCOCtabo-8RjSS0JJjEqq9AXHeo4YXd4eh24SqD5ARHy5AxZz0VnktRBUA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm9VbJnyK2afo_jl0AOToBJqUNm37lFGJj_pd0K2UBso8nvgb_cOMsORKnUOXdOByIJMUaxZS-udEPkcw7WYmy9DY026v5PfF48Y_wSqgR6QBPNNipFEwVm5MkZX_eQg-UQCNI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeYPPXcBSttkLCzS-D6i18N0uwbvESlbu4qN2ajNhpiIUxbmiohRxhlYceAEe5xGdDC8BP_S6ogCxRcufNEPORJ1TTOx5lWHUFbu_u7Z0r1yyutPPXnviOD37ioC8zwNeLFn4l"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAuK3IKHo8qtoi4ykeFTYbvhxsRd967UIJLSnrKVIC1FD7GVQLT5pA_dD2SEopFpb_9rSZt6PrKvjv_XvJrAwsbfv3b6uXAXo5BR4emkM7EOo5hmV7ma24kG5JYD3bomv8iJ5H"
+        },
+        {
+          "title": "matilda.science",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6uiwhnfO9nBWlhWcPxpaN7Ejw9O_Wg1Zyfa67sPoW4I3X5YYooSgEVo_T-M0XxOvzEFvbxVM3Fw-M9xq5GNVA9Li6ysPc-Z0cf3EnoQBanuo-5k9WiDZo7euFXFCO1X-F2bQGuh7sh-dyK7vTPquO6Hhr7xDVVwPBuw_D"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX90RPZGpE9jhnhBcQxzigAKlCUnAbRkK6tO9HT2g--aGcc6vDR_feQKm9980NeJE_hoRfLJ9u85WlH0fgoEl58ENJPRYptxAkqQ9ljdtEeMz4oggULBWxgRxJe-b8tZuFTZEypdt5q69FYKOFBmJwDrvpvoXQBJpl9uTIhLcB4bAC1pQi3kynrPivAoUsFKQZa4UYKg7tO3WjhMMZcxSwwxhBVWurfP9-lRdY7uYxLKZQjwDEfmnXApFhfVF5iwDvxTOy73lyQExEkyu5wA7kxussJSahhFRlvwDCdM02g0oYmqUW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqrLbxJNNoKxbOBFaKg2WruoAFkdXx7H2M-mWNFSowcepq2zx9kP2sjfVp3HeHXBtFxzhY7Vwbb2LAOYa-EZHS--PkgmxHoINFYUWT1KKSnESOLVAPSVjKSUjhtPNHWM4fJiZqE19V3zujfFu9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmxwakMM-w-2IiuRVtpnAKxJqewi1Ho-dqf9IdlrPQtr1D1mTwD7ci9BqcF_Ju830urIKZoXU6b25m0mbrGWj71P2p4isNQ5OtipvO_SG6a_CN551btaftqjfHSdfCEr4RSmc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intranasal Antihistamines (e.g., Azelastine) trials for Allergic Rhinitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Allergic%20Rhinitis&intr=Intranasal%20Antihistamines%20(e.g.%2C%20Azelastine)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "1-2 sprays per nostril twice daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 360,
+          "monitoringCost": 25,
+          "sideEffectManagement": 10,
+          "totalAnnual": 395
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1316.67,
+        "costPerResponder": 548.61,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 300,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 360,
+          "annualTimeCost": 75,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 375,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 50,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Intranasal Corticosteroids",
+          "costDifference": 180,
+          "dominates": false,
+          "qalysGainedDifference": -0.01
+        }
+      },
+      "name": "Intranasal Antihistamines (e.g., Azelastine)",
+      "nnh": 8,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 30,
+      "responseRate": 72,
+      "safetyScore": 77,
+      "sideEffects": [
+        {
+          "name": "Bitter taste/dysgeusia",
+          "percentage": 15
+        },
+        {
+          "name": "Nasal irritation/bleeding",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Drowsiness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "15-30 minutes",
+      "treatmentDuration": "Seasonal or daily as needed",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGlFKNZll0xRRzkiK6QpVZJQ0Qr0Deqg0L6kbxnm1C3675aTNmYxLKRQHjYZIk7p6JRKIry9wdFYXh8Wy8XC3K10ybqZWC5cg4ViNMAKL6bW7PF1ytFgl8Xjg4frCjxIGZN3os0as6CEaa9wEGR-yZza-L22jsy2IvZjlw"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ0HMV01acHU3QgDap3_kD607FrqDsAszMfcRPx1jx2M7MUb9ih0_oNsUuC7myx90kLKZW5fN2eWxpsVEdeFY8Od_AC94KkzNe6kmQcjDz9iXSSkKGrltkdOAjCwN0VCZFC5bJCXlOzcGXBoIhFp_ZRD3cjm91sYaL8ghNrg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCju9QJeKsZ9PFUGsy5S0Yl-bwqSMvdDabfKLYblTnComForzfGM2BCnvv0AUDYLE9PakXDBuKr5ltN55hEcyjWIycHTYpAB3gLqaZ72hsRztM1RDGrM-K39ftVMV6gFJdOhDo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3unTG6sPEYs0hUiRg5lhdhNBPa908BwXDkpJbcznrsJuIThIuNvYuo7GbLEdr_VHF1vcNMZElgyCdk04C1pBdp7iSNhVxwgcKYjKemV4Xa2Tjl-4c3cb_CeA-r0MKiMd2ctk1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9RWXQQEfi2YGqDZqxQ46IsfcW4MS_Fp8Xo3OUt73S6cBiv69Cww5Iw_ib5OADKM39JsPvtPsCVYD_7XZa9hWVgpURjs_1NCcmm7SuaGW-grjxD1wuTIkziCEsZIeEgf4xFQkf6XwIIBU2J6Yg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5FvDwWC5Eow4vcuK-JKgqDuLOjTKwehjjeFio3Bi4Hodr0rOKf8H4xAw4JUbKhmLroIgKdCNln13g1GxcPuMggm1JX-4GUmcWJjK05DOrgkx7exKzbFV33889Cu4hTt68-zoe"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnLGkqmp8O2YnvnVte8S3pmLtoC6235YeOgvCabAlcFxls85UmJmXtKxLCb2yEZeZVciRWrtbP6FpKIFx0lAFalkK7XRTFXXqk1FT5ECXR1f0f9LWifKXcA2DdufuLCWnyUkl_eoKq9Lv5mzpVyhrlq3HXPj_BZHCyNm4Tv3XctDgNEmFbIAz3aE1Y1mfVt-Joq3pbJW9i6bemQvJ_9BglcU4rWAjiZFSDwkSOD_AtyDWh6K7_LqgkHga5RkCST42NR23LgIxKYlOqBCLBz06kQQHbF5-0CshlF7DsVTdfLkhwEy4Ksmkr8PKxzjpN__ROfuAygZ_5Vz971WDpBrnAcZz9epfu3l0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8EjqUWt_vdQ92ml3lUYlVZBClC7gZKS9IPUc_uN1TlYEUmoBnFGMCIJ95ubp2Npvr9H8-wWvXp2FlrlkQdC9b80yz0fzMxyLMd4fQjMm6JYmLmU2tZUiMNyj_J0BG1JKB9bjZ"
+        },
+        {
+          "title": "ohsu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG61I4fxA-DJPqX3-e2mbG_CS67ncWwR7ePS9uTCPyUcmO_2cehyEtHrsFMoDFsISrOv0djBQAAUyyPgpb32PtdLS0QZh-x-sRR3KeECuksjKKqf3-qZ6fjcYfPDrF2Z4ycZZ9-0tM_5e5CLG7JTSnoNSK-2oY6PbHcpmWBb4FoDW_JrFKKSWQcPT2yv1AijjFBrfFj5N_qYZ5XO0tJkEKcxC7Vn-U0ihg="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvePilr578SlzlqHT7i9QpItNjOlnxqgYOAf52TMQXAhPS7qv8tX8JHkr7JnAaEE_7dAIjgYFRx6Z1QXrmKgmCGPs6-at2CRwPsbBPAgsEBF0Um4rxEB71ZFKZtWek7RNUq-WspMeMDzHLRo6fs1g2tDMIT-TtxeHvwdZ9NMFnRrD9IlfqHlsk9At7BRDnLf9cfE_B6LxYGTaheN2JhGskNYbkFjYV5BKBsdsMhJQQ2tfeIgTPkbzK6sU3948BaLoVt7dducemDbf8fHex5yevwNm97Zx_ONSQR-wBJWsfZQ5TJ5T_FeYcwgAoNvT1EmFiG16TXP6Lwuq2kHyA1U4SyB0NqRPzVmQMMsrZlLT8_JbuQlCJIaqNdBv7DuKyErpy4C-nrOyL"
+        },
+        {
+          "title": "ucalgary.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1zkZpPUWNv8X_-k86SwKVN4AeyMYJ77XB3QQEGLzvvN6fgZWfkoaWkDnn-MLLnu1g5RelJnV4rMfPxEvYNHW_aUlD8YqjdjU6cT8WAWzdIU1A3c7WikFZa3rk_M4GGIOp-Ka4Wf6AiubgT6T-x33RFxeETnVEDXsglZQ8lNIaipNkR49_3cHrA48MhvqD340le2_El8YFQne89mDrPDw="
+        },
+        {
+          "title": "aeped.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESpbS_dlAMb5DV7uaLSlyYdVKB1-pT7_N0JsmU_tcxqmfLKHBzfXmEfgRBQKqftyAp0bSZRbTSGbXNvqnupgspMuKH0gY6-GU8JkrOoHZ36p_PJskW-DDpjdgs5xmKv1hIGp8Qp3BfTmpSIrZMmTNRdkXkhNupT3GwMtSG-pRR3rzx36PPJg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral H1 Antihistamines (2nd Generation) trials for Allergic Rhinitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Allergic%20Rhinitis&intr=Oral%20H1%20Antihistamines%20(2nd%20Generation)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10mg once daily (e.g., Cetirizine, Loratadine)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 600,
+          "sideEffectManagement": 5,
+          "totalAnnual": 755
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1033.33,
+        "costPerResponder": 227.94,
+        "icer": null,
+        "prescriptionAccess": {
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Oral H1 Antihistamines (2nd Generation)",
+      "nnh": 15,
+      "nnt": 5,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.2 points",
+          "baseline": "8/12 (sum of 4 nasal symptoms, each 0-3)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Nasal Symptom Score (TNSS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.25 points",
+          "baseline": "5/9 (sum of 3 ocular symptoms, each 0-3)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Ocular Symptom Score (TOSS)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-4.18 points",
+          "baseline": "11/18 (sum of 6 nasal and ocular symptoms, each 0-3)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reflective Total Symptom Score (rTSS)",
+          "percentageChange": -38
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "7/10 (0=no symptoms, 10=worst possible)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Assessment of Disease Severity (PGADS)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 68,
+      "safetyScore": 82,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.98 points",
+          "baseline": "3.5/7 (higher score = worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rhinitis Quality of Life Questionnaire (RQLQ) Mean Score",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "-0.77 points",
+          "baseline": "2.2/6 (higher score = worse sleep)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Score (from RQLQ)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-0.54 points",
+          "baseline": "1.8/6 (higher score = more impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Activity Impairment Score (from RQLQ)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Drowsiness",
+          "percentage": 7
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 3
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "Seasonal or daily as needed",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbrBjcId0lkSE1OeFDSqEf_lie-Xrk6P7cWEYJkWOzCFTbSW2Fs5Za4T1J4tjnmV54a_X3nY79d8sOPPSY15SXEc1Jzw470dLHsoAeMZ8msVZXQwpGOtxYQ5Bl3cCJKp3saEbi"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0I8qc50wunH4yKm_Wpp082SduK8Op8momF8e5zWqcQsS2bwB2cgyS_L-ZHOf67EIUqFuNnbfgssYnnKSOhKcOmRnyNo9prgkvRA9o46o8DTYZhxb_YxkMWg15_GO8kYtsBWW5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFHaTcvZ5gYGSDjGKMeagBTS7F3qIEZOSqO-wpi6W4KuLNIs7Bay_Rr05viE2lOcsfV6sawJk6oBdL5l4GIWXb1SY7qcyoZX2ACS8Qe8UYFjX3IURYmOV7636T3xEmaacUvCJ5"
+        },
+        {
+          "title": "openaccessjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0mfZ4OlE8TUEfku2pwY9J12rAqbc9yuTsUYgqMm_4nypFusJKq2x9AnaYx2BLPapWLwgNfOUhEsmDx0UljbWRvq4w6OSVfCOliFN61lcaB711ONZTjUlv_vmnKipTne5YXOalXpGBVgZu0qutPhMIGDC2amrhI67Yk2AZsd9hjzQX5l8gnDWG6WkJJVdE2txeHFX0v2_WzKXM82ivD2fp_AQgfVJ3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7zf-wlrJCBcJOQGsHiRPYuo5BSXiECoTXPagCnPUU-29lmu7EOx1jm_C-wzfoCF8lGzEo9CKaccaDaEZiRPrkdS-FqAWrmgQa8G2GK3Ga_qz3W3mQO197KT9FSmEZtSy3vkBqxPrt_7gjT_udcNeiJ3wFxrKpKY9kP-5mbxRg0txuN6JEm701tI8TBFFIRiSq5AH6ocLje9a4PcFikBe5qmuWXtaRs5N_5z8sYADLHBc2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt3tdnJ2-VQ74g2fYD76SD-oLWAckGAYdWZ3vgTy2dhknOhl0cpkmFSa5vam4WAhMeo9llZjn9DzK9j67f0auW8_e1oGLd1Aabu6E4HiJ1YxkVmviRTQH4dgrsdRFxLH4BzsPMk0eB"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyfSFrlTlNBjaXGm4iqg0UHiVcv6SZHvOemZWf0lPhdduZ6SLA46LNdCg3XtOSBNwMFWYZG0t44ehQ8mu4uPdhGHlOUxcQdTATJ3XwQ8X5mEjW3O2TIFoKHzEUPDxZ3natcypZG-YYR9h_ldVaE_StqyjGmjebs_706siqPoGYUJOS6gQgK79ZooSdSopo7lIRXg2AqXjK1A8cPkJNL__GmkTrVLeRVJ5DaLByDHaPdyEd5Fn-RfjU7DDW5KDYTTTEwmCd3obbOOUl55u5CJlfwA=="
+        },
+        {
+          "title": "bioworld.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7F39AFS815ngbviniPyjQ_4sZX728UIQaRY13BJYQFTw61rxe0BhbqcldlmNWC3zH43W4qSxxxogJlQDU2qUD8-9kQZNKc49fbH6C_utffGfHkOmeQJGOQx-TO8y1k5HWTno55KZQylKOPu26tzayHSLC04ntSvpWt8Dtjozu2lKgMDo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJfNtvrLZkxopT58YYQXtJUBPnIG8L6a-c87n1PhMYNrTNH_uW4-9l6tLNgISQETUNhVeDKkUoFq7Z-xO7GTC9mq8qE5YiALTvTYT3lPtt1kIj1DFFbzY9Xhypw4rRHPGtFx8E"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn4htCX6C0odEaiwiS5F9bDdRcsHCth-geg3jkM5ISKUmCTqhKTzkiEAlbs17nTpm0k9y4014UmPGlI32NnolcPo3Tc9wECtitfBhgIH5YHMNhhtV3_hzxJYd3i4iOOLlSyzT-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoNWmS_PpvtWtNpNeeyWuC9cHDumTroERsgW1o8T-Zr5gmCSvplTbgWR5r73CCLWyZ1wlP-y9t_G3cXFzERPdXx7G-sI-jXoWPjcSqZ1uw_cRbOicH2Rl5lB0-uW_kNtFWN1Fl"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6yzsxwPMu2V8t-rbkUIs2NDGNUXkN8PNGIAOq8UPuUXSfopLOW2iDnQZJNLClBT8YDVABeJPgvRJN8o3cvrP-r6GlC66DtFqe1AVJujbOCWxTA9tZZ2X_K2fv-dYP9e6bKoauvbyxMLKHwJZTwzr4tK1l1CW06RGBMEp1jBIGy4xEeCNxX1uZwfbF8EsMegnFbn67oD-sJbB-70lcji6aNqByBaQKgbHAFrfaJQ=="
+        },
+        {
+          "title": "getcurex.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWxoz2iVXYSJrWOyZdXgH0DbFCttef8Qrbw96foQKYv3BBQi1eFQdaQVdxnDUwiXjWKOh4Oy7-dT8po3omn8RqL4lTZSjH_21gMYnir6rKDLod2xoX4YZ0adeevs7dz74jJBOmQowjxeyU4D_M6Mhnn_-elBYZ95nxI0j4VGCIqZ5xhcaTRSUuKuo="
+        },
+        {
+          "title": "yakhak.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOHm_jS_7mbMAiWMR5goYfRQXqJtNG2fenTnLjosarIILiqTmeEDXnr6Djm-sA1xnGHrZP10BPy0j12bXdinAS6BphSCbFa9WCckyS8jkl-Ewyu-EzxpU6-MFdZyvh2CZEveJTRr0cWx4Cyp2QXLpLrS2OJ0wm_11yQ1PgmGq_HA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcOt0bsZYbhALvfdDePdskWJe7BIWjvZitshbY4wtHAxiFbjJczDqFnrekop_T1gwheoZ2Hdn2ti9hYYvbxsfj6WG-8ZdhlDMI_MdrT23ZtoKgnvuFVUEuEq-Rp2xmM49KLaZm"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGioe9-ANB99AVdBVGXS4KU0WXpvlCGMexzI3Thsbrk7IzgcBeMxw3eDJuVlaKAjCgP--h5OtkCBXOZ4eOI7BEkHxSfqABblO37VbR4vNZ85u43lDbR55N5PqLuERcmcDVjpkSUifY2HFprP8GDDiUfQPnclMtTmPDn7mPunsKbqGpnNcoxNiSJ4Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpY7kK0jIsCfN8n3B0lFVVqntIqlgltjn4W5Xo7NTNX-hI8u-7SXDm783eJvnlFc9qAeiBsz0pThaCqecAH_iPjLhnMlrrKv8ceBGJP8sCbQG1P7Y2ALnRrPhZ1f1iJgpe_IuvqmlKT_erzeVfFDHK973fpBncj5ri9Crv3NCpRlfJzu1mYK06s5YUDjWUZyAoQfXPRgFsO994GKx4pVVrMK8ofKIgMIIvwJYbrcZ_-SQVmN5Y6g853cq9-OqMAsNPnf_PeU1XgvSbDInFowykhWHEYG3vWeKmyHLKTD6RI88-DLuSseW_0G07oI7-94dtyGBi9YBdwG_bqQ=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3Wx3CnMPZ7wpQoW18K0YY-3_wKTBlBio51C3fkxc-fWHGpg1YtLyL_QHgPxEOF2z-YRQHqGAUIfeLVz58KQ6i3jCfhMv1pIynEi9gcYbfJj5TcG4Wleg66iizEbbthHE_byC1npZYll92s0aIaqJuDsalg0diBVacgUXA29kflz2kLL8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHliIzjYL7I08Nn5kk0iVhVXGR9WsgQQCpPPGsnZ620OPTX_RtJHCU8uTf78UZqTrYumQrE3M2HLjfazkS7nc4KvhLZry2sAC_SPiQ8lw8UoMbaJ97vNMIrVBA8u6ASisNPd7aG"
+        },
+        {
+          "title": "ClinicalTrials.gov: Leukotriene Receptor Antagonists (LTRAs) trials for Allergic Rhinitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Allergic%20Rhinitis&intr=Leukotriene%20Receptor%20Antagonists%20(LTRAs)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "10mg once daily (e.g., Montelukast)",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 25,
+          "sideEffectManagement": 10,
+          "totalAnnual": 215
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 3071.43,
+        "costPerResponder": 430,
+        "icer": null,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.02,
+        "vsComparator": {
+          "comparatorName": "Intranasal Corticosteroids",
+          "costDifference": 0,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Leukotriene Receptor Antagonists (LTRAs)",
+      "nnh": 2000,
+      "nnt": 8,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 7,
+      "responseRate": 50,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 7
+        },
+        {
+          "name": "Neuropsychiatric events",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Seasonal or daily as needed",
+      "trials": 200
+    }
+  ]
+}

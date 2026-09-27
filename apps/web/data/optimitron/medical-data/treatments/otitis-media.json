@@ -1,0 +1,788 @@
+{
+  "conditionName": "Otitis media",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:32:26.862Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyAtedqHL3ru9RiCF6QUJVbltJr9unXp80nwgL7va-Tz2gwwgWvQOSBOcqxDE8fZlLDz-IDZYQNaC71l6vGzp0Ffym-2CAHsLn0L2yeu2xbAEeUMjN6Kq-FB-4noG3j9_zBteob6JeuCI9yFCMmhr3JMahyuknZa39omS8fbtZESVixXL8qlw1I-Km0SuGR5XX-kMTVn09k6I_Pp35ch3u7Wnb7-5E1E_trYET0hU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFi_vn-tlulF1ejIJOTe4e47DA8r-dSDU0Y-5zTbgT4416Qs2RjF67pGK4Fyl7MLPPGDdRfLFWvxmkbMV50OAFUlqSBt_qCTdEh-m8TvQ9BRxyKGP51mUKJO8YisPTtCKQ5oQ="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoLWhS53PNXDhCO7s1Stw1rCwEJn1H8qhPn-HIzCtNgbEon2SjAwcYCgTNMp6jYP-qQIAJYTzwOvcVIHFsCKqGPjIKcSe45hJsx6hVnjpWQg0YuWbCyZ6dd3qEfBiBk8ZwTO_U-D3SKtp76OXlHmTU4Hmr6Fl3ST6nR5gNTmrXPfiwHG1AmsfqWKorC1xEwYUgfwAU6J3QabRDF1zOHsZuydiG54ELtOhrDlaqzdnlVrLuoCDEJYyX7DGn1SnC8wv9ZQEj1Qc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDtrbkt_R_k3XMwR2lt6G6xMAtnFpoHEsmJser3ggfb_4xtizBiRfEvBpn_v-luWOM9TNS8_ONex1_lgrmgxu3CxrD18ngYIikSKM4vM6TvIG7j-9E-rV_Eri7KZbMA7syjNzT5yPvntSkFVK059SkgGHzM6ximXuc1RXJpZdG1AIQLNQPIYBBBlwmiheFJvpiXoxSM8lWFuOc0d-Irmt1mITPn-21-_8WFuGkYFKBfhk="
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEafF6rJjAgD8SJN3TZcRBIXxrIEVYjqIO6Yf0NDCTGJzyJvW1sQoxREWZPDd3ruXj_XZrjDJu1gCEnRadziB55QWrpkKFwxcIKX4a688fC-WPOgf20AgafETh6kCOHxUlxrNZdurGZbQrcj1AtbKmZ0sL-XDwlg6hmBL8dE-McMhzngfKnlJYNjALZwUwI1PQlKSwVK9Ut"
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECl7-VY2CdkPVXrE5RL3DuVYWDhQZ9ZEmCEe7swlOdOJVo_coIqkZB09CX_Tt3sM88F0Aa8BoBYP0K_-xPYSdYsWw3NMf7rCOIZIyynP9755HosBxEzAhBDJIfpDQRGJsi5QI37vDpLSzT3s4aU3Ffpmh82FnLltTP1jgbtgzMQYZ7QnTPJUC1vqLAZ0NWSmzrqbFug_8oDGQ7GIYWgviuj8NYK7CiklA_MBJt0b63KSX9hkvi5aNN3GphlsCobQrVzLobWHY4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz7UwH8oUlbW3Fdt3A19SvXwwHubUaiH9fzfa-RJJSx-3rRmBtqkLPQgEIjMO4vVKcf0aXsyvpo-v7gRlfavHM94n8xsvgiL-az0UNHQwcQoZchWc4sGlEZi28sIBMNHUmbyqn6JRe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNzMbws2jAKg8NNd2QKEg9l5o_QrwhKyw4Bk2Vzi5f8EQJDxCsbG3ovp5TJztUjZTAkZ5Z4mLDpyRAfh98d1G8YINNcmKbJDLxOdCVKYsxIA6rGYV48Wds2aL4tcgZsaVTNw=="
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjroSdqlDGUfy8ARpJ_bHH8hhspNWPistr8cHEm8NylLcm-VY4KURnN-ac0MpxEe0FlK0ve-SQqF79sOQ9nUhq1F4_QlAkaahcSlgTB7XlQ-gqpC0AL6xbt1p-eOm5k7AFAxK9ZhIhIxW9Vsx4qlZuTSOpfulZvayHPwc39wi7aGjyVY_TT8Qax9o8oiiaN7mbJqANJMdei79j5D6Uh3h_0IQQ3hkhrC02VfA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tympanostomy Tube Insertion trials for Otitis media",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Otitis%20media&intr=Tympanostomy%20Tube%20Insertion"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 3800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4318,
+        "costPerResponder": 4086,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Watchful Waiting",
+          "costDifference": 3745,
+          "dominates": false,
+          "qalysGainedDifference": 0.075
+        }
+      },
+      "name": "Tympanostomy Tube Insertion",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 episodes/year",
+          "baseline": "4.5 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Otitis Media (AOM) Episodes per Year",
+          "percentageChange": -56
+        },
+        {
+          "absoluteChange": "-55 percentage points",
+          "baseline": "65% of observation time",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Proportion of Time with Middle Ear Effusion (MEE)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-18 dB HL",
+          "baseline": "28 dB HL (mild conductive hearing loss)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hearing Threshold (Pure Tone Average, PTA)",
+          "percentageChange": -64
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "4.2/7.0 (higher indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Otitis Media-6 (OM-6) Quality of Life Score",
+          "percentageChange": -43
+        }
+      ],
+      "remissionRate": 88,
+      "responseRate": 93,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 courses/year",
+          "baseline": "3.8 courses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Antibiotic Courses for AOM per Year",
+          "percentageChange": -53
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "65/100 (higher indicates more stress)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Stress Scale Score",
+          "percentageChange": -23
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "88 (mild delay, 100 is average)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Speech and Language Development Score (standardized age-equivalent)",
+          "percentageChange": 8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Otorrhea (ear discharge)",
+          "percentage": 15
+        },
+        {
+          "name": "Tympanosclerosis",
+          "percentage": 40
+        },
+        {
+          "name": "Premature tube extrusion",
+          "percentage": 8
+        },
+        {
+          "name": "Persistent tympanic membrane perforation (rare)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "immediate (hearing), days/weeks (AOM reduction)",
+      "treatmentDuration": "6-18 months (tube indwelling)",
+      "trials": 60
+    },
+    {
+      "citations": [
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWZX6QntIEmmGL1ptKA929Cd_819mew28TNoY7_Sp2Orv-bWuJBD_Qf-JyVTi5Hzhg3mL7IdKyPPdCvJU9ZX80QLwyM36yynlrqUXQSfjMOv6odfjghn14HDWXlc32zLJ2L8Z-sPQDy-KijxK3fImnTF_MNxoYYQmQOou0lWdjMqvUXV1AuAyd-67NYJFZGQBFmPkg433EYeFVeCI-0rRX39DAcgFtZ4IpFrx0m-6CVYjIbd00i_kRgPcXAOeRyP9Ed7v4ZY5Gj_4D8RYcpXnllpYoBvbNFbMpegST2stxa1xC9fw2zW8UzMdH2DF3qxHAqmYeNcM0ofgItA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMojEP4Tp-V-N5YXr0xwyDQpbq1ubJofilSOWk6YPxg_o9OiQrI475SjQ_lkXIMMopOqouRpAuPU0Ka76I4PYBTo_IYnKGCpT8BjS9jBy5KMwsQImq4DqdsBSSyXVBBEQU37Er"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu-A6P50ZZGVF0Z5jLvMQYwICuaSbAV6dGRxmblxH7bycP3-ktdEU6_tCM3IGtMQZDb4IxPSWjEKC-xfXJn4_XdCILijZ3XDoIdXstIkkEpPBpOLkt8f9k2-DKZiWxOn03tskPZk_Rqy6NVdLdkVtE2qHYKaLmEwSfP9sUUd7IwZr9WghHfWAMulurc4MKl6JssQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG276SMW8C6KfgYjEG_is10ThbxACeY-k6BPwAs4g1qYm9OA7GBA4nQJxcXsdYcMnUiqkn5vIUGI77BM0rnLEseOgywe5HsfI4U_cozPDZsdIdUd2xwitARQ6Pc6mSZFex5_KdqoU4F64XtdC1w7Bx1QjFZ9rwtwb-UKDQZyYEUT6xJNmTjJjgmKyv9y4km2QO2XeRdk2ebzS0dwAKOUefWBHpQUwyTmB7DyvrSvfZ3LkpNo_C_j7iWCiIQ6YiIHp3_IA7x8iXbL23Rrf3FaDgitZhjbhY5iFI580YNIr3zlljq279uHkEva-haAGAwFRkGiKrIAKhRLTY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAuVnUQ_-0X_Rey2MjcIkuZY6d8uQjpjDsscOu_vqWpsGahwgQWeQjpLTsNCHrc2NmQOUD7TyUy7bHCT6oD9MvOvMuMxEc-o87QLilZXFHUtj4p6CXYuKzf8AiMYKm52KU1GjX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZnh8nvQE63RcCaOt-ajQhpL2kCcJKxWTYqyvQ2cJ-7pvMfOO2X3JM52ZblBxN3Wbvyqo7A3Dg4SRd99q5FgYZJq5N0O96kGYG_0q4zyHekAwAH2HFj41fy0mN_Aa41oeBP5Tl"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5Kvl17HIbbVkp760LcITm1fHQMDRPJAu9fMi0TMdcm75ggehsOD4Zfe6YJA-gcscVi4mB3dbROwrtwgcoGpzkGK5ugOoAS4LRs7m3KKNujOoPMWdcdWdkibiHxaUKl05DSYfkzmqp4HHq3SkAazoUCjLwZmGqz11cMgWbE9VGDJLJ5m9iAsgMWRF7pVEgcqIFvtYx3paFzptjoMCvSXEENL92XpFxv4VaSVdjE77NgcHXs-PIu4xFJyM-n_U0M9TSDWnXyWGGu86BT1fVD4EfzgDKgyUBmcrUoI22vINEEgfNO-mcF9D7nkLpYunbOycEeJG35iCRpcvn2rsK24x8N-xQTrZ6P0UE6osEv_rrCA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Amoxicillin-Clavulanate trials for Otitis media",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Otitis%20media&intr=Amoxicillin-Clavulanate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "90 mg/kg/day (amoxicillin component) in 2 divided doses",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 120
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 150,
+        "costPerResponder": 141,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "high",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.02,
+        "vsComparator": {
+          "comparatorName": "Amoxicillin",
+          "costDifference": 50,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Amoxicillin-Clavulanate",
+      "nnh": 7,
+      "nnt": 7,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 points on OMSS",
+          "baseline": "OMSS: 8/14",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Otitis Media Symptom Score (OMSS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-4 points on Wong-Baker Scale",
+          "baseline": "Pain Score: 6/10 (hurt a lot)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ear Pain Severity (Wong-Baker FACES Pain Rating Scale)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-2.0°F (-1.1°C)",
+          "baseline": "101.5°F (38.6°C)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -69
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 points on Irritability Scale",
+          "baseline": "Irritability Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Child Irritability Score (Parent-reported)",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "-3.5 points on Sleep Disturbance Scale",
+          "baseline": "Sleep Disturbance Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Score (Parent-reported)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "3 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Absenteeism due to Child's Illness",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Rash",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-3 days",
+      "treatmentDuration": "5-10 days",
+      "trials": 17
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsgnDxIXovUmaodS-BYMF3jEaX_AuqGGzLTyBxV3cZYVi7TJhkTUC3B1reu_WxkPWRP2bubpEnyvBl1FAbpWawd_z_EqEWQYxRhuBSQyidyzYbqJzdfAwEHdtTZaAc2i9LyTDFqgL_ijF6KfRF"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFNVI3VXyrcYbBTm-b13hJbAq_p3wC2URxji5JhfWgWRqCcYGOJBAT0X-KJCIbTZyTzsQesINBcPvritpuVY2HUA2s2oUHzpYgZB2PfYMeDAfBBYbTjVs4s-8bOlohFFZoKpTBqMipO0rvCU4cUWqGRQrzhA9N22FL4x7TCryjYu-ElE-W7Vyg6aHbgp3cBkRyZu07HkBF45ekWUmL8B6xwFh5eJFokHde6Ypv0zmmCHPo0evogXv_pYHWMtFrA1815Alg_IOEBmQSiI-_"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfMiwtuzJcPo1FxsMc7PXwu2qdauh9pHxaS6W9yvGgigv8xUuiFrYjoXB7GeRdMQ2gTpvzmz8UziCKRSEp9YeeGw5Ar93SzqE-sqte4_egwZ0JNzhVVLxTrdMnVk77rUhB72ljvz0VqJk7T5swCtF84J7sRv00tA4t6fYG_QJs-tC1qf2SHI9h62tEUXmHyoKY2zX0spslvisY6hvDIrTqg0lKSO37e39oppHw4CBYkE20z42oElihYkwVe2Gsaq_nD2KHx84xEUvMc1Wi1O73OMzHyG_yunPad0_R3pVXAQxqFBoAbgWGvbFjEGr-AA6rPQeLg5ACJYiG8w=="
+        },
+        {
+          "title": "doaj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlSAyLx9pzd3ihqfEZkbYy8lJmyS0n0LFZUmMpTG02IGbsGehvczVtYd8ncgU8B0zCr2I1pZNeWVcHTzmoTNwdm6B4j-BDhI41jg4ruL5cW9oIe7hPqNYz9fLgfrOydYpM9wR3vrVVVFx4iHIkrIXDBVgubA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5__fONBXrjB9Z6o-QCttRAxIrMzttGH9TOlSaw7EFISDjbgm4ihx0EInySHCt3Es2seqTD2H8oJ-mgwIgdKvAb88YrZ5cHPGp0FuGJSeOyhwpRsGnEqL-8TfYySZnGafY65n1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsu65O_auJ0XCZWKaUNyEYUjUhvaBMuc-txX9NnoBQpBrPUGKebV1uF5L3jRNv-s3UhS1Td6VVEaaavevsjxZMLVswdOLijpMNOIS8udKXPdNaeOexoZb3solpRIFPWYnLzcWp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmHJ6Apk4lNrOYBzixzHwDuCcp-cbrP6cxAkNl1RYiCdEJqTtvm-EfqYOGGaivD0xMDUQ_SdX_IW7hARbPrIH_vevJK8N2PIqgQvYxGQpRDZ-siFmA2o4B4-H0uIHLl-cEDLGX"
+        },
+        {
+          "title": "ClinicalTrials.gov: Amoxicillin trials for Otitis media",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Otitis%20media&intr=Amoxicillin"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "80-90 mg/kg/day in 2-3 divided doses",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 70
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 93,
+        "costPerResponder": 88,
+        "icer": 120000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 10,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "high",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.01,
+        "vsComparator": {
+          "comparatorName": "Watchful Waiting",
+          "costDifference": 15,
+          "dominates": false,
+          "qalysGainedDifference": 0.005
+        }
+      },
+      "name": "Amoxicillin",
+      "nnh": 15,
+      "nnt": 10,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.9 points",
+          "baseline": "FACES Pain Scale score: 6/10 (moderate to severe pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ear Pain Severity",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-1.0 °C",
+          "baseline": "38.5 °C (fever)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -2.6
+        },
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "Acute Otitis Media Symptom Score (AOM-SS): 9/16",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Symptom Burden",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 80,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "Parent-Reported Irritability Scale: 3/4 (significant irritability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Irritability Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "Parent-Reported Sleep Disturbance Scale: 7/10 (moderate to severe disturbance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Severity",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "Visual Analog Scale (VAS) for Parental Distress: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Distress Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Rash",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-3 days",
+      "treatmentDuration": "5-10 days",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOL_i8kNZNryUPvKHH7S1s1y2ZmJpq41zZBoSxnGMOa6-vqaj0yHdJindzh-mzJM5keKrEfB2N79ckc7UcAqbZ49kJTK9YgpG5RC5Eyqo_3wGDyq0fbm742I3e5lj8OPn-ST-CPdyl8dEbMag5"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJlJ9W4gTBTDvw3gvp6CKJxxqkSnWpCPlWiv8H4kVcP4lTuCoBmiIhAylxkVRDJhbFOgGmoK-C3yt4EkLW35TyaYqzSpcp5srr2ixjZ0VMApbInigTbtUYBDn0zXFpOQpG4X4z1ih0hQdXPKNxZ0a93_BpVIDKv04Wyme9HQSLb2kovI5yHFQbGgfIL4dZElLjZdamR940sdNnRRu4MtTF40mqDW6JXflCU4cmFCmRIwJ8ng-sG5dqLjXue-KIjcpQrU-DyGVGcu6l3JUwSuGr_l3tINjESPBWpskYwTCM8_ZZOwBi814wMdAP4RnWspZ0ynnYGVqMLqi7LSskxcv3-znKFutpOLIWc0GgtdX496mElBC8tELBAOMzgmHS0HmypxoMb_0nPm3EvUNw786CCkfVfnc9XAeX-RyuVsTtpM_OAcPVXJTOFlyu3ho_-M6yp_oRClq2NNCJdCetcvaVnN7_A8gQSWBAbRo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkwiSYSmds-NPn96ICOjsnfCm5jqNY8ME8BGBQ4_jA7dQ_DRhprvf_tNQI0om5sWP1wVP1a7FMIGjVT8y9U_rOt9NVCS6S2wRGXiDGLylaT-iKzldf_gn-No_F4Ao4SPC9bx7_"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6Ql3IwDyFghj_DIv97_wN4cOnpXx9pagCwMzPeeM1HHQmA3qTJOloLG-a3yIF-axrdVJqqTUZneZCToWueWPX94kI3cLuxcPmtMeH9EMTBmaZO33B6uuYV4xbrOsAEL750YbQvFLGbwV7WdIdNA=="
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjLmbVNqcKT67rwM1hiuzTqnbeAsw_WhGqQ8HopnBZt2U61LwsmcCBM9YsbuO4UEHpI-jN1SlrBcCwIMwWeO2bc9K5wvqYWWd3sqmToqalzK7Ohi1kM9ybpCEEKzcOhnPhaDxbY2hINsh1Kycfrc5nO6Gu6s6vytPAvh_eojcLXe4S6HNs2ULpra0Y6NPq9X_u0N7Byk4-Q92zHtLgFFLNwSaHvXQ9gQ=="
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCL0JLUz__FQThK8U3RdoJHm1479zQobFBtwTtUm6DjW2Ulf0w_iKqsjGcQJxz4JtQUEBOHeuIcHsubq57N9s6pHr8PYH10lN6Iy7wVR_hxHx7tZcM52tWoJVQFWZRe6saHZFX2Uke82zwNByCjOs95tTV56nREBLvu2jcOLF9Oaekot8MlqdZnb4RXSWUvDXesvA34sMR_-UlvXbEWS4_UeABkTsRalmJ"
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErqLBHbP18EwfRcaKsGOO16lks28rUAb2uTgCy9cyP8ZIYm1dH7NEIrW1ZxVcMI3ya8hOzpGxa4ickKne1p28DBq9MXf1u_MXiDWMf-bcSJhH5Mi8ihauZAjIWEfH2pt50Vf5BlsAo6BT9jMlomXzG-vD8zBfX47ef9izmh8BIpzD6lCee-pCbdjJW-2_sE3HlTzIy-WoQAAZVRyIKxdMNl2tOn9cWSJRjgV4NKtA="
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF91VUjUF_1rTIHl4KLAsNzByWKWeMVo79ocXexLh784Tbjl3eErk6CLaENinD02tVpFTeI7e8otSDMLFzFRptrS33bXezRxDgrqx-pzAM4cD1Ip5QTWoceIM-JMnElCkX1bprVSm-cMCq0-IoRGZYhiN2Hbg6qiwNrI7ssVuWzeQ373alAuLg6CCv6dSe6vL_igEWDMz3TvAakHABViEuQKU_N2axrodo71dU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExmVmo-imdJAOi2KbBL0JKhGnptlma1pJqZddjcB_w6z4r7NfmncgaYf7TG-5YcdtRt8WcIJXVm0DKuq40HUneTvONVhW0ekr6DMBp8vDGxR-iEo3ATv0I7iNGVhVaTdbxrnM3v9swpwL2LuFE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcFFfQDdBKcS7VQX_yBC77VwxDTbsQCa3USqlhXB5Qi5PEJ7Kd3CaGUthHnVtjfGk3aVmGtWDEW1DJ2FFbtYw45XWdBf-_5kanF_BvmXF-2xckcV1EFft52ELadcKTm6YKjJhqrHCVewpJREhE"
+        },
+        {
+          "title": "brieflands.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGerT_BzV4JEoRMRvJnLaxF91ow7i9W_Q_Yd6fA_3uebacJRQGtJGzSnTCqGpcso9W_7iLi7N_Bt152o-7N7DHu8ECc3UhAp7Aq0hupMlWBCy-BnyTxA2_0iZ1XhQbjAxlNnvXQ-Dtb9mtSwLrvUA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyuCb3SQIGyVPc413UrZrT72Fbf9IjIUsOI8NZfiOjqcbYphJz17qeffGZcUPwJG-6Vt3aoRwnEUddLA8Ys0OJRr2VP_WdBHfdvyFr7EkN9dsqVZ1p48bmN-rbAjm_Pn8Rgws-APTr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFZDp_U2wXbjaCQiG5PIc0u0ko_1szAgva5NFIFaIcNE_TQdplft4jH8Dxp-dw1O-ruHqgoDjRu2imUkTqDeZkHE5OiUUp6PTzA0_c9YHv-IxaJrT2Rv0d5eTlMwRC4KTUGKPPZbudAg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcOyo-DmraO6oLt4Is4DOCxMmfPgOB_Kbu-TmDV5d-xd9IP15D5-P76M-mebGbLogfNQsD21D2Fk80SWeq6IuOhWN0vmFx_-SNzkaNNjnD6pKQNwMiJk3hdf7AzAbT9l5kSpsjBGD83NVFzyrdtdAlU08SJ0k_gUVNYAlQq6hz6gLOWngMKa75G1-v-0df9kCHeSCOIC_GQfd29KMnYLfyKo6vQasXvWCA3IcqLo6aGAw3_ziC2OoVRv4J5omZni3aO7Kk4gA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbIxVbJSy4xfzNWbzEo4YQCvxXWb_EWSV3uUgCeQVuGfAQqDf1NDDypAUsXj2RUFaviLF7C-n6GVeqw6iRtOIPElm97oPVY0oKDPcXvzbKNHI8RjtRiYAgtmBNalO1nvv5Va0toRNjRHph8lI="
+        },
+        {
+          "title": "vub.be",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV7v40zOLvHakNXxGdSh_VCe0T-AZPYNeVww_8KJLwrDWKgDphCbCEpxARii1w05N_a819vJRrGa55oyAYZiH0-QVRBmsjQjkEAvgfldfPQM5U8tsdfqwAWvbz7N65mRDXO61u99_ruvLU-zgWJ4h4bzbZkOWmZbkDNAS6b0BKVcO_yGkcpjWcUtdr3HHGt_JKRfhkCPajiep-AZ1aPuIJrxKMN7rgp-aIqw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Watchful Waiting / Symptomatic Treatment (Analgesics/Antipyretics) trials for Otitis media",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Otitis%20media&intr=Watchful%20Waiting%20%2F%20Symptomatic%20Treatment%20(Analgesics%2FAntipyretics)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Age/weight-based for analgesics",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5,
+          "monitoringCost": 50,
+          "sideEffectManagement": 0,
+          "totalAnnual": 55
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 85,
+        "costPerResponder": 73,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.005,
+        "vsComparator": {
+          "comparatorName": "Amoxicillin",
+          "costDifference": -15,
+          "dominates": false,
+          "qalysGainedDifference": -0.005
+        }
+      },
+      "name": "Watchful Waiting / Symptomatic Treatment (Analgesics/Antipyretics)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 95,
+      "sideEffects": [],
+      "timeToEffect": "3-7 days (symptom resolution)",
+      "treatmentDuration": "As needed (symptoms), up to 3 months (OME)",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEINgxqmTORJQ7QZaUuTqMNvRVYjANUUipKtdNMlLBycxyfCJERDRzo9DcfgCo9NP2yaa4VaJS_BiOaeN8m-rGm0se7NQrfvtc0UyEj-U6X97XP6E3jcGAfJi4q48At8873U3UTGimKDsO8gL1MOjJar_TVEosYpy_GPO4NWKIQtsDKB73KkHYwmmCv_9mGLhMm6_be3pkNyP_5QxV-78wDcK9SHyXM7uLBOlhp4kZBslkMwPJTdBcZTj77kEMwoHookEtK"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF66ezJ554EbLoOnSydi4mDNy1UxlCYzq7UTtlAMF4dy9UvDTkr6fR4IB5ReK4LqS5w9rlsQX2QwHthLJwAsLhVnQvA4s2zLmid-t07tyEUW6ZNG-e65njgfE3vYQ86t1o5dDfHMfEMzSNlETiJUaWqq_UWB5-VEDw-oCw7"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMZqieqvxzZjIH5idHXnmyHtzj9E_M8vJSAEUwMmKglTr7Eyrn7px3yj60MstKKAMfhp4whG7J3t9STH9_0cj0J-m-tFGM4DM5SRZk2bsNzmIVzQ_fsuwFw9VaM2Fq9CP-d2E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEplRF3cAruVK76ngTkvvff5UcJjGzVb1EQVjkHVPGBCadQxYq3fYj4cWSB5CMK5XcrEKWewyLLQX7FXIwRreyELS3HBnTVK0FJbo5KAu8tUKHAM7Wb0RLYsnVh6bV4wgHRq3v8tpMMtnB8JQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiqo_1yDtvLrUGpocQfZqnJ81dNoA-0LNYmq1SsTuE1NlA_Ma4bMQkGuLwoQS2Fydrt4DADBHg3-D1wdzAVnvkH-Wq12-fWZSKutYBSrJ3Z2K3subpbhyd1PjqV8UATd_ozEk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRF5aEkhfdmf6psV4UchatUr7z74LmrJrzUNaW0Ul15be6px6QnN6J3sQXaXlwT8IwZXRaY55G6-BlaKvle4mdEiuIPSzfzkMekiY6bUG7ZNj-so_ylXV6iZofnwxEsjR55nZDbIGAvLrz3AeA-WhnI_FHfzgzFNnZWs7ZnhknhhNAYxyDwkncZKR-y7YcAmzmGOs3oBBiO3geaN8bybS3bGA8DREIXVtFoVtQYTje1ceRbTTyuYTD8ZTy0d6dsP5Jyax7"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvt4kXcSknhthNWGCXtaKch40q7wyZUtSjgAdIQ2YvZG_hLHJmaf_CcE9u3ruLwlrhuRT2w0gob6ECbe4pWlKRkRNA6Ry_unjsqJxbDQSR6KrI8It7914T3FMbPeLnrktBpiA4ILVRI4dhUg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfqaYRMU7xr2wZXkjObpvmfhr_QLS4-MK6RoPGyXsT8qfLXkv6yowzoeo-oNCamBbwjEjxEUNRX1c2NIfb4CRF_0zOXG8vU-wNX5l540YbpCqyYOseBsJJ9CNwAHD3z6ftrSgjnHPAGmoJV7M="
+        },
+        {
+          "title": "nitag-resource.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgh-QdxEXCC6hzuy7Acyd3NO51pzjEyfYKeLs4MaAgnJOCStwzdi3q94E9Wcr8A9gK_EwOBAfSEEagha_gLqLdLosCTGozfgIU4eF3LgRrXf3rZVKIeae6Z7l3XbPib0op-ULFSCa7W4aJX1kqwPJnc6Nu1IVxUROMzi8qHAmk5IkYthD_ebd9rhDOLjzHETx4dPKE8KBawnK3YA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pneumococcal Conjugate Vaccine (PCV) trials for Otitis media",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Otitis%20media&intr=Pneumococcal%20Conjugate%20Vaccine%20(PCV)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Standard vaccine schedule",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "No Vaccination",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Pneumococcal Conjugate Vaccine (PCV)",
+      "nnh": 50000,
+      "nnt": 25,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.12 episodes per child-year",
+          "baseline": "0.2 episodes per child-year (unvaccinated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Vaccine-Type Acute Otitis Media",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "20% of children (unvaccinated) experience recurrent AOM",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Episodes of Recurrent Acute Otitis Media",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.75 per 100 children",
+          "baseline": "2.5 per 100 children (unvaccinated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tympanostomy Tube Insertion Rate for AOM",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-0.08 prescriptions per child-year",
+          "baseline": "0.8 prescriptions per child-year (unvaccinated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Antimicrobial Prescriptions for Acute Otitis Media",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.05 episodes per child-year",
+          "baseline": "0.5 episodes per child-year (unvaccinated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of All-Cause Acute Otitis Media",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-0.06 visits per child-year",
+          "baseline": "0.6 visits per child-year (unvaccinated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Outpatient Visits for AOM",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-0.002 per 100 children",
+          "baseline": "0.01 per 100 children (unvaccinated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations for AOM",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions (pain, redness)",
+          "percentage": 40
+        },
+        {
+          "name": "Fever",
+          "percentage": 10
+        },
+        {
+          "name": "Irritability",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "weeks-months (after series completion)",
+      "treatmentDuration": "Childhood immunization series",
+      "trials": 2
+    }
+  ]
+}

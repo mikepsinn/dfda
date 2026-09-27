@@ -1,0 +1,549 @@
+{
+  "conditionName": "Invasive Non-typhoidal Salmonella (iNTS)",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:54:32.247Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiwDfag08d18FcIwBvrZ6qtcAvJzbtgD6KMiz_6paYvspHDUp0GLVmHAbWRAhPSrIekYNsIyk6z1Vg-8434JsuCCKPy_-IIyNIvVfFXWFVOQkzRDo9jYfgQBCrZu5RJvV0JZSTJ9HnFo0Ts6M="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHB8SYqwE217bs319MsJNSWT_0Pr44lVN5zY0hmHgFWh0ogXFPoOjoMC0R1SOlvkWNAyhUp_4vQw5QD7mPm9HcnhlNnTkDZUd5LOD77H5SrO2FEy4n7EU2Auy0Kn6LD7TkHBawkWGVteFiofky5hVTtQnzvEUIKGnSf1Q9RwLE-A3pPjoyMNOI3nKTFOSah238MJJYK_u47MZBhu1V8zpcM85QlJ4dw1VBCQoPDddQmmPvrnoIWCdmlCq1npLAVhuOs2bCrsSfbzTEZFPWD0J8Bh3J1s02ejYQNVB6nWOaR_Jq"
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7rO4hLOswdX_wrW8X9PLss6UKKIdHs8a0DqjsiY5FKoIQW5iPpCGoTW0K-u0WrGI_QXnPQAmV40Md12im7tdOgX-18Y3dSXrVAEAOB7EehHkG_b_kgaGulK5dXvuyEDbyJF8_ldSsZj2zWTw1--mP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUnht1Jk1WiXtYb9TYh1KQ-ttf0GQvT_8Sr4LmpwiAT9aq1Okc63ItZFmW1HQYcq2IkNECKf8qfFXEnI6DIGQwkwVl-B0grYj7TlM0WgGzHA5YI6KFnSHoSIl3rmndHfZyuIzHpMtOEwfHJFU="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb3RDoq37FLwQI8oGpJIbSg5XkLiuuYu_hrOu40uxi5Io9uBcDKKzgDSrIs_Bl9xEODco11EERndPLhqWQmZFxErLwM1ZcsRSG1ZHvpXKb3P8IxvmdsVGl43wNVGG09PX4zNzJmP64YlXdtBe61pzHyW7w3_O13LSfUmtcFNpLO-MN-7OeU0b6"
+        },
+        {
+          "title": "cabidigitallibrary.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0MiCkz4vXUD1ivMSGmGxdViLV2PUw7dOXjNLqnEvzeJhTsuLGs7D7gBGQVEICDfLA6zpORuJcv-Dfv245XtZmZwF19dwklC_9-8HsxrqhluX1ufmK9OMFo726L3xLS9EsCu-NyV5d5G3PjdDL38vX8LVfxR-1urhVbg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXba4AHIlcWTIvk71X3LIrrwj_yrPj8r89okTdrF3F09hRTXmm4YP-_tSDNqluUQUUQe839E8Q24_w0w-YYrakjtBzGq2Hio2OjbK3qqfNWfr0HM2djHX-dlHGjwIuSfJPMdx1opxBHSe62TGl"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjLodqosNUTT-DmkffR8x4G_Q6Q8gIaI_qH01uwMRtshgGPkqpAHAzNa0nvxDd6l7ONNEmq-ECi2s7ePk8b7_CWVZ0tUvhXL_geVkCsyyGnyKP6wiadh5ZqXZO9f4XbuRUoKJ1gMsfbsfsYRHAxwDRTAqfPoO6QKj7loc4lZrUk7LYDnDeMmT79P9m942gR7YdyyZldXoJyVLrnELcD-AwXGBX3u7D-DEYq11H6z0KCytQ3K7YlqWCgSL1w1XD54FP6RskkmSUFRFxk5Zqq6jtz-X5xL-Kf78cML-03O571_auWJ7tp-TUypR8oxtXz_8JWB0PB9YcJdTaMIg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE_SuBcVjZPv24CSLkD-mAOs2BXhEFkTdI-FbxC-I5gn-eC9gTrfepU-jfs0uJSDT7yLztI4-hag7wmpNEFev9psPY66SYvwKfz8Qn9jPmb3dSAVX2vEt75Qmq4oT5EHNjoEKx"
+        },
+        {
+          "title": "ClinicalTrials.gov: Meropenem trials for Invasive Non-typhoidal Salmonella (iNTS)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Invasive%20Non-typhoidal%20Salmonella%20(iNTS)&intr=Meropenem"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1g IV every 8 hours",
+      "effectiveness": 95,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 100,
+          "totalAnnual": 3100
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3263,
+        "costPerResponder": 3263,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Meropenem",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 3
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 2
+        },
+        {
+          "name": "Seizures",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 80
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk2G01_w6G-O7kwiz46K7DL7ZdjKLtGRKGjPOrKiJQoZ-dagP5BPtwnPjAtWcbZ88t3FdujRAlxcKCFQC51tKlwArubKILQK10l7wBOCOoQzfv3G4d6cpA4_ptLeRQBhhpZYkECmmfOGt2TOEenH6i2OXF1-V4XaZMTPtdz3N-le4upcCM-xvXg_C6FMNKBcYnvAGG8oCH6HXCSyLSfx08kZShD7FXlo4qA2k7oX4t3Sth-tOIPmfF9E-T9I0MdXXJC3FjYCNH2g8G4BQcAGYcP0rC97IoBYxXBiWiRnSOQINTi6mJmHh_nITX6ZWc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG85KcBm7nda5te6gF_NvtMdKlggViYnnow14OI-zF7CPtoXXZ9i8_eWEqM-uTfcDQLCNPJBLZNX6NT0qvBJSFNomlquaStHLj19_-PmyXi81xLzUh4TycqNB8jNyTYiPu63KNdBP1m9yb-mg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKL9dXnsnFUoP_AAUjzujk6SYEnAb2Ajq79ank1nzXvPu9Xk-vyqZd9PjB3QC2xKDb981KuTIuMNU-20BjGacVJeliA37rR0M61gxBuyntl6MxaJeVdHJKu9wINS7XCgYpSGsg8R1jwOmhNXJ8t9a_aTAmDhXYLNyvtSse"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4siF3zfDZZvYtDhA0OO6n6NQSlh_fi2nvj6sDGJWzjZ3w9ln7_GXSluZvVkK5uXngX1L-SR7jGSAYf2nYy_2q_brGiHRMwRJ1uYDSdeUZWLU31HTj43r461cwqYHbcd-sm3bCJ4O2vLH_4g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbmgtn2c69o3_5OflA6revpowmb10pS_6uKV4poFwCioHvFD0C0GobMCAFPuJchUWJDdNRYPmpa3YF8mjow1E6IJ4KgpZyLM2gufg1Z0_ZZ0CAqEvsyQlITOJUGAQyby3pRaeE82pqU9QwA3Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5OtnZjqMwUsBhqjGiH0NP9yGy_Dn7Aup5MATNQ64SMHB2q2KyiiVo1eQbokGOdtAU1aJUT6mSwTgOh33A8_A3wgNLxIlkcID-qki9CSEeoULpwvYY4Fo0YYaQ_rl3sGSuk4mUARofMgneEew="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqhupR3BaKdiW9sP9xqD58ARgijOJwbuUhbvK8WuSafpGq5CwrgkblUV1u5VrF4H1sdVdR5o807JnbFWykwJ34E6-o3y9aWMA4bvZTnfIy7FtYLobFuzWbMQvxHlYQ0sgC_FJ0QHS1oZ2pDkN_39BAggMjiOGVzH0I2ZKa3TjuGgvUDNoaAMvjPnNYUKLH51vJatoPqcUKQiN3fH7mC40DposhPC98qlYFb6ADBzA51-YCw5F75SfES-UXGtPSKHXZwWw5Hr49xMOeWeQ0DI-NSMkJqsQ2b4hs41wGMEGXL5BZKK46BmQ5TnrL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEbjiVhSdZU3HnRr8cdOtcMdLRjN8GPAEOkid4O4jlnpUhrO6YyKGoQ6rVaoXRA9_qb9Czh-hRDVmebCmK8kl33jU94hQq5c6sCOq4w96hRe_BtZYz2Zt-G5gkh1MQNa5WPb6rajn6a7Dr0Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiqgEcY20JsBj_qFBEaMRJ7lkrwIZMLMF6NnybFu09Kj42boYpfD4sFidZZ7r51cNVHCSEkG3PGa6XvnBIfHgrwRzD3Zr68B_3sstHFXp7BjLKLiBLtnDLYAZwZvYcV8OeditkLmT8s4Zem7XdnqTWLrH4sH-Fh2PzVDab9tPvI6vbIBF7DPb5ikBH2tu1c38_-JXsbxM53RsANVVyfbXqMfS1MHcq2k6cA_dZKq1cohkhCKnvfOoFgv4GMnp1rfndsl5Yufpg9b6XCXLwVCVMHiABqW25wNgLEbfKoqdITZdvzmpFqIJtrWD3L5Q_WjXXMAWl_EF_cL4s"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone trials for Invasive Non-typhoidal Salmonella (iNTS)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Invasive%20Non-typhoidal%20Salmonella%20(iNTS)&intr=Ceftriaxone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1-2g IV/IM daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 778,
+        "costPerResponder": 778,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 150,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Ceftriaxone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        },
+        {
+          "name": "Injection site pain",
+          "percentage": 3
+        },
+        {
+          "name": "Rash",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-3 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjI-MOKIS78DhxCVK_n4duNrgsW0rkqyjdqC4ckkD4jwQD9RBiw4iseGaNuBpgXCybFzXLsxk0n5kRkDJg4P8WlrWMfT6xWyN6DiVbfgr1DPZjgWCgudUdIwVykrYs-6sr7HeHppN0PB32tkw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlJl9bmKvMzpSubvrf1zcieX2UF2Hr5y7UvnL3TtjUTyrBI0FOCman6RJ86xng7ZDLUavrDGICnhS0S8tRe8rFccDKqSCIPvBlzUinccas7b5pLQh7yl9csfT-8APCuqmvlNlcJ0p4uhVRbCXk1absxceqytKuyIvIDZOlTBi-mp-7U52WG36jd_uGA0Cy"
+        },
+        {
+          "title": "springermedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYq-LEGXfb0UZ_WmvNXE9Vj4T3yW0QHz9EDGxd9aI4e1IkSGbts0QsvLIN8pQqH8Oyo4oLH6JqsbqrmnpBTECfLin8xiYtWfrqlc7P3glpjmSuNk6dZXSuTXujXbHYsSliwdmbQBG0OXbrI9Lqt5fZlZpPGnE6Ut2mfbW4NlMbiZ611HfpdEOB9w3P_GHUMS2JepM4Q0nWj5zpndO6MVI2Nfo_QtkON70l5w7ST3tU6H2WZWPbOyWPrS8t3PFYYqnc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMnDJzoib18w7WQ-nqtnnEF72ogosBtS9M1FUHB3WvgnQ2ALBYl8-Qa0ELU4FSR0GOnyeYdsPSPYp6nGX4haLmbc7dtGNuOt6q0np9Zk0959Do92QwY9jf3k1Aaxg6I54VPVU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcoW4MlJCNFdcm4JDc-RlQScn97mqCgNhP5KN4Pf_YDj4JH6xivE5VXHNCbepYs_AjPO6qVNXoZuGz7sklGq0_0SnQgTi6CDsUKkjE1pLit8JnPd13nf1uF8ILU3CPqsereK6hCzP-jwQ6DILr"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4-RWrwdR1ksVXmuwItcMmMtAL9Ww4z2lR4oP1Z2a3AGDGGc0_64CmTT3NrjVa_5aangItMx-Y5hph8dveeBmVLn2XXpH5oAy6a7rx6F13XrNtkhpIocumVWf_CFX7Uuofh7gsT5esqdzQk3Xbe3XVBy9QDa2v-L8LzUJJAMlm4FV8qhgXOmamK2FolrB20JaDiFWVPFdJG8tG8k06Sr3Oi5nqSem8hNVJuby8lwTNcdqZp3O_E7pnZ8JO79PlrstZzSotyEtJF5GJLevM_s15zghXzUPAvttnHoFR0LEG2V1qMnARzsKb-HKP3Tyj_0h3P5lf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGE4hDPG1dLrvv9ESlxgcheoSfbOaB-N3Zt4_0pVpU6K2-NUIynmujj0uKV3xvTdpzo157q8mQtrF1a6snF5O2Ygg8hls6oJp-a6X6g-ieHu8QR2eL_HN2NV8h6kI3ulwdLAc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ciprofloxacin trials for Invasive Non-typhoidal Salmonella (iNTS)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Invasive%20Non-typhoidal%20Salmonella%20(iNTS)&intr=Ciprofloxacin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500-750mg orally twice daily or 400mg IV twice daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 706,
+        "costPerResponder": 706,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Ciprofloxacin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 4
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 3
+        },
+        {
+          "name": "Headache",
+          "percentage": 2
+        },
+        {
+          "name": "Tendinopathy/Tendon rupture",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 250
+    },
+    {
+      "citations": [
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEanawUuAQpnRtKF_N5JMy-ei5_Xn0klosDjCiaOC3Xx-OI2S2PJlkda-Nt2gFPq_9EghU3On7w_6Zsh1bOpt93-hrImx8ZLLUFIhIKTDjeCinQDjRSMuSttAwDq-sMsaeW3jRWAUlEYqL5THgW2Dsh6gY6e-MjhrBUQSePygcAjQYJdqrfJNAaDrakeC-96Vxkjm5VtStXpi_yxPQimd3okzEoK7FqJsISVLAr0XRA6R8bjw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpGxfsTRoZqkNbH2EhD9IMwBF91HSxKWOIUwkR112Hp6fTpOjaUTHWGiR_Kfa58-rFo5LPOaRA4ATF7gSkIWKV6_tt-0BVOxm5pTnigK6ONZl_LiK33ZwgubWOrqZJ-SCQ2zIB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTKpA-P3CkDiCWki9-8460O5iSbK14NzA5M9l_qOWFKudrQME2EPcvtCTycuixNGWnLQbbdhbXR8tEnuXCIZXXkRGNL1Kbff6e-e53QkY2OMS0pDp3G-3niOyVVoVKB_VGIJNSd9mJp-eS5IY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoVKEPHEY4rqyp9js2xAqLNzarYwRomMln0CDCKcqTBgZUJRkLksvbY5BPfHIvYGNhhbLmNPcfNpqh8ZedtpBjcXCotGoQRgpQGt6nnV3mcYsAUxHdhu-An8Q_2jOjgjXO339JzJcnxVYwuMW4suh2A0hrMLAxB3pLuS1jXmvN-39pwE3JlpOLxqI5k1nIsSdnzV8an99xZZrPzwXJrip2BsTXmXer3MtoTYU1uhi5UtpFPj0YXC65n2jvdA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFslGMr1kGzaNlUAB0Zofaw1OOU8NLM7MK8hgQTBpmm1amxayzFTBg7gkbwrkAODbA7LcEOhtxrh6Ow5yK4KZJDVcbNlq5aL4twiGx9c9Wcs9imqw5bLLsDnS5IbRbvzoR-jM7DXTMg72hlBo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSmsuNiOYmUVqZc8tGVUNNXfcX900PWHDsOPxv4IzKGX94pPyZIbuCbBXRTn84WGxx2MDsbd_rlPyAHcVK19kzhtgJT4KN3jxC6SiPM6mfi6LsJtLT5Eobs1h_X9w0NSq8QyG4XG23-GYIeM-usuirGLpS8_8SLHAHsIsS-uuF2CiuWMIDwzL5d9uhGbBYxO7TKMtnn4fEEtCYsWH8sHytVTP4pkZmBFP4_w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin trials for Invasive Non-typhoidal Salmonella (iNTS)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Invasive%20Non-typhoidal%20Salmonella%20(iNTS)&intr=Azithromycin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "500mg orally daily for 7-14 days",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 590
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 738,
+        "costPerResponder": 738,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 40,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.18,
+        "vsComparator": null
+      },
+      "name": "Azithromycin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 80,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "3-5 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNAxAvJpKbFkiWB6ZGf_v2_6xm7pZshJ-TnpRPlr3rBE5824OIUG2AgYmigzjC70nga4_oSyCkNujbiDXcN2W0CwEoCvMxVjTlZ4_de5CynOMvpB6Gs8YSMWCIXuCyzAsVCQjMGmrMbOMpj3BeOPLElzcttQs8tJhOPMxrXhX_5yM3BENg20V9FIE6K6DI05e0h_a7rafyXiFTDRbhMPVco1nU7_JB4fAC3Vr8vYqD5R8ZH7GywT6bebqd3k4DOvySKz7qwTCYjdbqJ4Tt6H8VArZKCpM5JRPo9XwCMRwaejzRk9U-8cdLtrCFjAPF8A=="
+        },
+        {
+          "title": "coalitionagainsttyphoid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-tPQN0EqYvzP8xhtXMKDy_CwUUx6yP69Cz8MbJH5hmVPL7xgbrSNOk1CVrcQKbmMFek-L1D_XoKIz6axzDGuvi4WFnB4Rzzjc3vJ3G6SdtiyDL2Tm-lD6XVV4wXqj4HW3CH4HQmUG5woKj3TRjnzCQZQtaLYqY9SukAX6ry--7pyp3CPGgE9rNYZEJDYuIKqZoVybzvf3HwVC6AIIo9TZtPZ2n1GVcdKNGsc-dpPyp9_8OOwkJZr8FTEAHInQKWaHjdsFdu0Bs1nHgx7whSxpSrxw0kEZb1fyHNDIAp4UFQgwMq8Or7k8BT6nqtgIR9DP-A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8fClenpMw4CId9wJVlfWB61mVbc_d1iaB1gMacwbGeoDJ5fhM_mgImeTwc4FAs7RtqrMITzxAezFFQqh3Gnj6lNLJf5qcXrCfNq8_18xAIelVUgNB-bPYYgqnCeQo9vp_Zum0JziBb7j8Flc="
+        },
+        {
+          "title": "coalitionagainsttyphoid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZz1a4eQgDyysb75-fJm7Mh-aTIdsvTrxcyrZt4NkLL3f4ViLXJXtEIeG0dsGt_SB5hKWKSAaceChQJCm-rvXAuqcDUIcEwsnyaFuiUnafvs2U7q4KFewJWPWNk3lP8Yp9LzC_oTxddWJtG1YzebQca9cxpP1OwuQMbQ6QAbRb7uEz6mFIgfm9x6QAYuRDD69YS0ts-zyCsYRJkmB4zLHzsWdM_LsWtqKzkBHGdRagkPJZ_7Gl4dUiTFFMbCajvd-Njfi1uYorcFC5QcCSxA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6iND7iF6pMSCZbaBaoNYcfGJ4eDfElWeIHqjQBCGl2GCwGJyZbeUF2m9sJ1GPv77UM1SCfwmJMgEO1p8DbJdGyJsONK9Bgx5QOe7f0asQizOdTzhczxu1LZGXfrHndU8dw0XXwWN-U1t4pxg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGHZy9-_96hsF76IniaSWlT0tMM2kmWFmCQmC-z9vClLXy4URp7V7_pErrO0kaYcqPwBV28_LcNWKtYGFXk24nIdKfNJCbnSE_9Xw55XLXq9pJsed-3lhv7Nz83QXUu1Q8GIJo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEF7vXtrZtMRMNakiE---9Wqvq4Bme4L2mTkALlSTp5qVGcxXsXFThCi5Ze-FP-h3BMIkxqRHRoCEDwRLvcfDBSzWG7Z2KK2xDZ2qy_e2mifIMnRvJWzESrh9upJx42dx9RQhl3B8LVY-bKsAEYWSilLJt2D9oLg1dGOxVC_3MaAyXY1k2Ko1rAbp8Rl75tUCqQWLy5cmv4YL-xwdpbpHmSdXJKdZDEIFCw-w2leKDsY1-AtAyDHOU7NYFN6_WYx85WWBmpGsQtCaLPJg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf-gv1uCCbD-Z4kt7-z2XGdVruvrJOYRdV9XjyHpGuQL5aJhAXQttqKXIKUa8JAE1ygidhAdN9fG03fw9lA3Bo_IU_K5pfzXuEDar_51-yvBXAxj89PQK7LT5--7csExzLTBE0QLodCw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Trimethoprim-Sulfamethoxazole (TMP-SMX) trials for Invasive Non-typhoidal Salmonella (iNTS)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Invasive%20Non-typhoidal%20Salmonella%20(iNTS)&intr=Trimethoprim-Sulfamethoxazole%20(TMP-SMX)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "160mg TMP/800mg SMX orally twice daily",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 580
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 773,
+        "costPerResponder": 773,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 30,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Trimethoprim-Sulfamethoxazole (TMP-SMX)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 4
+        },
+        {
+          "name": "Rash",
+          "percentage": 5
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 2
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "3-5 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 100
+    }
+  ]
+}

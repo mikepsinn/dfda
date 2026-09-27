@@ -1,0 +1,888 @@
+{
+  "conditionName": "ADHD",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:51:50.288Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nationalelfservice.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF700wqSagUd0H9VBVNQrL6tVCeZI5sXqdFptb3NdP-IvHRCftaqtv_4mcARGD9fxDqRZtQzlsAGk9sTB09VeFswcs5O70pQWwRHExhZ6lOw14JB5grKegxdBteXhwWYPFY-vdwRQjpT1pIo_eoR5xBJTxRgDI6mOAPIulHCffeG0S1B0wWK-37Wxt0Sgw6Qj_ixth4UT1PhIMTecvF-2I_nr2z4KuzBvi0NUdOLonfZXMLjomKxHmq4EFplkfzdq3i0fXCKyvbwA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3JK8GT6o9CbnDZVFnElCXkTuO-rjaIiZwCJfB6hRRZvhKMnmvEuS4WOSWZaIVRF-18Mby_BDJs_RJJ7e-i2Nw7NPnW4pxh0oQMeudYO3k_GnkQVs2EKDNu5rPEXoD4Dzr2svU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNAZi4GgWDalxWcuyilCtqU7fDp3zNCKwG0ZkPqCWbsSIYQvYdVQRDwGrHameNdpGqk-OBG54SOdPgto2fdPVUoCAVT54h3CG2eVgSxANhumoKE-lwuCq1H3QFbJvWU3nPjFXEglUW0q-oJgY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0-W2Vo0snYZ8d5w0PFgR9_CHfnDI81X4BmhVML2ya_ytxrcB62PvTHnrgKXTh78fiijhQr6JjnXX2i6rWCHHFE4GDI6VSzZLsDeb4o95cPglc9Q388UE21KY08RSuKx3-JL5BKhI72aYZ2mtF4uLs_uMyBK66Egdd4oOmlJsSfnXgbF7F5Cy6019Il3hJb1inbeRmJRiq0hfUggGOnYZNoZrPo3slmyu2FlD6O1yXCRSHIK-6XSDFlYgzCKpYxv0Lv6XAhlD3RZH-tp5Cz8ShB6eG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW2cadLRx2fda3MS2c40JxZiBGL6DQchKkhbTaQrGn3X7Ky4VjxidLRdAQCFiGoyKbQzCgw8fhUacQ31s-fLK8cWU8xrfR7hb9AjiPUcu9g-mNgrj2mOCgJWMUxgWwmJXEi8f1PuX2I-WOIyA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOh7MVwibGLRWYNKRtY33XMQi17WbMhhTtJO8eXSeeApciH-OZJ5tYJevELsUtQ3WUfCO-xSzxL8veHPBuHY2H9r5eoQQlMLwqgUeFmbZWrO2YMzd9ALLBh3pO7rMKIQECPRVjVSKjfWcmJEej-hC7GyHhL_uAUzhm4rk_Jj0m9w-qHDxjXJiNZY2VlThbDa7chEiy_DCmVmxzmkH0JBv3iGVqK8B9LY7za37rNXsrBSgIgOm1aIIy"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkw6s0BgqWrZKchOGZFq1_gAH_vbCxV2J-zmpkCioJXmKyd4SJd-oblz1V4RRE92Wh94sekp4bfa15jwR7Asg8YBMJg5t5ScfMhUPnk1dmo6g5bFR0uyj9mPIGtcEOxPRwdGcRAjngKrk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDUwSWrdwykhy7OnvxEmPI1oNfo3j34xnLjz83P4YQywvmkfPIggbhzRD-4Icfo_o10EqzN-xR4tNQnBLR9i4TL6lYadYWbAwDggLKm7OnB4EWQbhApSNvoRjsO-XUoehb16TtSjrhcRwIcGL-"
+        },
+        {
+          "title": "eunetworkadultadhd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDfKAPWsrlFcx_Fw9xKTpCWWff6G9gEn-Z7OHV3VRp0-JNP2FnAIeDFWb8obu6MJ4Ce-2Zx54ym0PzaqPg0KsxaUPFUiERQzBCaOPVBt5u_31dFpIYYr0DFy7kVDMorJtgvRULvyj8X0gEVNkoNgrp-Oe6wsZZyJGt12jXcIxxRhnDpyrb3ykkG2bSR9PNtOanT2wmNWx3QnuydE7FVejnSqv-DWVjNQEhvJhUQMw208Ju6tenFaxYAHsJmOQojXHwcAb8toKeC3PMdUIZhJqqMg=="
+        },
+        {
+          "title": "nihr.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNC4jDwTvJqRYk24ITI05MEjnhRZ4bC-sKMWqpZOUV48BURul72ksnWB7zIR8YLQYqD-97RFXeBp0SzKOVAmihPkNnQEY18XC-i2Y35MRZL0PYLbdXZJC6ZQ596RE1REH19i4to1ihkVFTa52qUHECStr9ecSk5XXrk7VfN_xmu3-mYNn7o4p_877fceU9c5ZIy4Ap0JKc8odmci80b_iOLrZsg5c41d0="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXxmPnPK2QaV261NCHVejQMA-X4KVoUq7iIjY5bZ9eg7X1Flql2lz3kdrs-0l5HTz4AVf3VnKA-gKod9UXCSN_YV4uPSW1g5OryRTE2arL-x3h0cJDgYgn63FtXrs4M1Wz_GVH"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsKbiDBl8oxrOg5BJE7ATZiDI5k6PZ_VO13CDN-2IYf9jw7EGnPFwAQ8k_Ln6iachkLuGL8cztt1WCM5Qhsk1-032ZCF0ZwTAHgUWHo7J1u1tec-WuIB9-GsRqPOTqTgVHWU15ntzA2Gh1"
+        },
+        {
+          "title": "ClinicalTrials.gov: Amphetamines (Mixed Amphetamine Salts, Lisdexamfetamine) trials for ADHD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=ADHD&intr=Amphetamines%20(Mixed%20Amphetamine%20Salts%2C%20Lisdexamfetamine)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "5-40mg daily (amphetamine equivalent), tailored to individual",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 75,
+          "totalAnnual": 1375
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3055.56,
+        "costPerResponder": 1718.75,
+        "icer": 18000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Amphetamines (Mixed Amphetamine Salts, Lisdexamfetamine)",
+      "nnh": 5,
+      "nnt": 2,
+      "participants": 400000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "45/54 points (moderate-severe ADHD)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD Symptom Severity (ADHD-RS-IV Total Score)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "4.5/7 (moderately ill)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S)",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-21 points",
+          "baseline": "60/100 points (significant impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment (WFIRS-S Total Score)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 80,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10.8 points",
+          "baseline": "60/100 points (below average)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (ADQoL Total Score)",
+          "percentageChange": 18
+        },
+        {
+          "absoluteChange": "-9.5 points",
+          "baseline": "25/27 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inattention Symptoms (ADHD-RS-IV Inattention Subscale)",
+          "percentageChange": -38
+        },
+        {
+          "absoluteChange": "-8.4 points",
+          "baseline": "20/27 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hyperactivity-Impulsivity Symptoms (ADHD-RS-IV Hyperactivity/Impulsivity Subscale)",
+          "percentageChange": -42
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Insomnia",
+          "percentage": 30
+        },
+        {
+          "name": "Decreased appetite/weight loss",
+          "percentage": 30
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 12
+        },
+        {
+          "name": "Irritability/anxiety",
+          "percentage": 12
+        },
+        {
+          "name": "Increased heart rate/blood pressure",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Immediate (within 30-60 minutes for IR, 1-2 hours for ER)",
+      "treatmentDuration": "Lifetime (as needed)",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHxGTLPqRhyTSroOy-23L6FOGcNfu0NqZpKTNJus95bEORixkh1cWkvoqiNk65Qnh1m61TNlFkxSikhaS8vcuPzhZ05h5k3PbqCsEHFMQEzTOiATcY6FYIK-zxMhMgJQLv82Qp"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8EizeQq4Lpm4XzlmP8oJovY4Idfn_UmICwt3AInc7enSRqTHjKSl1QXZiFBfwaEQYUZjtPhR5_iL139VLubbTPGdX3et2A23OYtFijXY_l93OcdrviYFhVwR7F2s3aUbTmNT4OMGE-z4gDl4oU4UBX-DyUTPAL_P2bwtuF2bt0BU14iFfuEnr8iv_Y22DWYdeP0aSyj9UppLEGfqe1WF0KTVBKbipYzx4xQ4g6gM1uRGGW6gQX6H5hb2qw2XDcosPQNlB9Hoz_K39H1oPKtG-7ACA7sv_XtNfJ0wO6xx5Ze8B-VZcK8ayMjXGOO1a8cUdDNX3PVWPLhgjZoBrXyl1RM6Es2EN"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoVq1KuUpyGbx6DBNy4_K8_AfTzGjyqOgffB-SrBeaNIKB52eouVariR0MsoMvN_UlApykCovCMjvtHwUefhAKWEn9j-D31TFDXXdEtrhsQYmAY5v13d1resrgxYs1HG-GMf_hI2iw3fOHUOtHpvgB5H2Nxmx8JjipRCvjE6AmexhN5cfLhw2b_VtZnMk0Z5W8rxBcLNXPNMsIVS3zYhDWpJY09_Rx_92wxyC_u73NCnrzihoHsthPd_4mu3cDV4shriTfkNBsoVecOzNbd8vpD-9Cl6gNfNKtLVVWPBeqxMnoDmLY5NcPgCBEDQD86NfdP5eMPhaYZg=="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPoQbutlhyXsa7Cs5dxwSZqdS3WKACh9FmYbycH8OtH_h7Y5mYzOvRYF4UyI2r59NnzLMIyqYGNynlR5BeZCTJ_Q5sRDHZrAC1R-Rwc3R8h76slXWAIP_O9JtYCmEsrdM9z3nSnmMT1YCIG9Mj8PpkVFPuwyZ6-s4bJVuGuG1C3av_mnQLXFXliaVEWqZGTdb06Bv6ddytPEicL0A="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh-cS_82TGTlKmu9MSQh-G0WL08Dum3q1aaWD75cq9RY495inCpSjSingaTp3H_BMWvQToIDhkzspxiudHZsfyGyKV0l0QspGk6BgstDXDccoV20AULO2MfrkW0Ynlrw7xuzbN151FHkQ2pSVj7Li3tapQdKyU24ayiJWEO5VFacUhMSi9QMCn049KiOPIGLUDqbEHoMRUTla26CV7mnQ0g5jidIPhndbMItss3iLVPvkc1N-W8A_KyrWeKuavHLgG2_QMfjSR2saEto2awtTputJXduLs7U07iQSOcWasGBm_cPlC7FXHKi_wUxXgv2jP6sHWLTE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZIsLpiBsLnv5FI1VAeieimXHW2yUpyDx943Gs13Gz1KUG1VRyooforKp8WhHBg025jJKJyBUzOzq4A67Gx5xtHxDzJ-61_VmDv2kYd8F9AHj707Y-UuqZ8G31OMssoeLJw5P5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF7kDbEt_gfQX6ipNVbDT2Dah7joa277dujZZkdbY3a_LVrShb6eP5WYBh7R2RHzfyI1WT9Vjjx3hvyrKImZmBi4UYKm8RAfBjKCP29s1SM31dZyvw4nrWNMDlbOll4LqNes5AmtUixZ7RupXpranERCSiKT24-Wep7pXsg2WszAZe_SVmC6I_I50hKdxfBKmyh1CmrYTpZNHeLCH0tkLPmhagyK2rPqoLj4VYMGvtnyM0tw10yqXUtZTxmq1jkkWE31c0GMg="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEasGeLO3-7Q4i_975tefBz71yiTTQmnlZOpFO-5dd8nrnWmJQEw9zfx7Vz0xFWO0GmOToQHXFqVBUogMD8d5SL6nRJBql0G_l5nrROWKpU2zeNn7OeDeRlV1qZg7eCbiWuyGZCK2tHIDXvOQ=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2mOdxtQBI5j3Y9NDmgCpvkXq7lejOYeQEDruH6BBpG-K1Sc4cGyaZctDRyr4puk4cw0d5P7u6eFVWW47xv0fCiPA8gvdSz5fgoj4CJXONcIrteqzR2uZHjUgni7HWNGq8FYvaOsRurg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Methylphenidate (Ritalin, Concerta) trials for ADHD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=ADHD&intr=Methylphenidate%20(Ritalin%2C%20Concerta)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10-60mg daily (methylphenidate equivalent), tailored to individual",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 300,
+          "sideEffectManagement": 75,
+          "totalAnnual": 1175
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2937.5,
+        "costPerResponder": 1567,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Methylphenidate (Ritalin, Concerta)",
+      "nnh": 5,
+      "nnt": 3,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-16.8 points",
+          "baseline": "ADHD-RS-IV Total Score: 42/54",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD Symptom Severity (ADHD-RS-IV Total Score)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "CGI-S Score: 4.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S)",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-10.8 points",
+          "baseline": "ADHD-RS-IV Inattention Subscale Score: 24/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inattention Symptoms (ADHD-RS-IV Inattention Subscale)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-6.3 points",
+          "baseline": "ADHD-RS-IV Hyperactivity/Impulsivity Subscale Score: 18/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hyperactivity/Impulsivity Symptoms (ADHD-RS-IV Hyperactivity/Impulsivity Subscale)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "WFIRS-P Total Score: 2.7/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Academic Productivity/Functional Impairment (WFIRS-P Total Score)",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "PedsQL Psychosocial Health Summary Score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (PedsQL Psychosocial Health Summary Score)",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "-10 T-score points",
+          "baseline": "BRIEF-P GEC T-score: 70",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Executive Functioning (BRIEF-P Global Executive Composite T-score)",
+          "percentageChange": -14.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Insomnia",
+          "percentage": 25
+        },
+        {
+          "name": "Decreased appetite/weight loss",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 12
+        },
+        {
+          "name": "Irritability/mood swings",
+          "percentage": 8
+        },
+        {
+          "name": "Increased heart rate/blood pressure",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Immediate (within 30-60 minutes for IR, 1-2 hours for ER)",
+      "treatmentDuration": "Lifetime (as needed)",
+      "trials": 341
+    },
+    {
+      "citations": [
+        {
+          "title": "aau.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrR043zzcKk-KrrQu-L8lNKkICMPZ7Yhv1a-vpCtWmLNjDHfoHtpkxmTElUf0_ufDe25UiN4SXfmMVGwJHGDYGqm0m4Vhv9G3gmbFrzla6GgDCCx_XkkX7QW_3iJtwwLig8n5MFocEnDe_ymyPXiPBz8PJTmTH2YvYd8_Ecar4PCLLnLQbX0ydA68y4QAjt_6IWXL-Kt3dxI2NskUGVtk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELXzGWzcbFnF-OD8MyxO2OdZrGl7Ni004ZxZz-XIzVnDroZtM07xDhLVxaXDZWDmwlnlpxPYwzKxQ_ESh1OI2Ois0_ZwXtlt7eQUjDG2bbWjRnRVxozCyO8U6sLvjjwwpKtwi2oYyXfvaYpUPxHJtxqsiotslBt-pbay9Pf96kTLNED3MiGqvgNLtB3X_BexjCkNqczO6SwKKtXJdXqHpEBIMs5iRxzpLi_ANFOiocoMUDJRTKRhdEvA-yWVbFm7YT43M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMKZcj_r2BCwIH2HMMWSAy3nCwZNm-5_OMY2RhEFcoPKaE-FC1pxMfUMboujCSd2_JknW-gaUIhEcbSpXIebc6f5cYfMNCCYyN0z9qZapRug4mdZEdBvonXrV34ZiOgFsQ7Y7m"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF9bYYWh9804Km1_Vm3EENcP2gqREN2ZNkj6aIzz7WiYKBiCZDiFPKRMb2fL2Ux2PqOW8T3jg06yTlhIrPmAIgRg_lowSQW9e_-WiF-SeyeMttoZWmiTsSgd7iw9lDneN1aHhbKjIo22OC0nmGE14w1jDALYe4Uq71mJVDKzxQlKGkNtFaqfgN92_CwOrEa9g_-t9N8D2fpNn3KasmME2-tcBiwMDk-kVkiUMqUvkP8hEoy7lJuyxZ4m_n0x1bOiyS-Dkt8INKUg=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnoZ7h9Ad2r-FsLGffLWt67G7XMfS5S8FlatqymJE1hHVgMs3cYPdSuA1lzoRym8smxJVkwbffg1K-pkrrwxCHGvQVfMkhREsgof3eq8Mz8JKwUu-DF7llEz7q3RSZGTShSDj_ks0QEu8Y1GKN8FzODDYx5G1QihKGh4rP5X_c_CjBUiCtBYIp_QFINGitoxm-ycswzNhnMmIzlvJ8zcxY7Ur9vPYfmXspYk_ws7Ws2_VHYaAJ3EgQLpJhGk58iFhl61soQrADdmZkjLMvXmC71g=="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDhkodfpK5B89oubaBxJv146NloS6lN9DikFcXL8CWcYqV6OWEa4nwpq7QqYMMIA96S2voJAB2c9gj4TA3n5MJPDqZ6mY5F0nRCI2iRerUBnT2Z4NIVdjdtYLLNBTRjqHY7B_L8nCu_p44_l5BX_FCVxc_hlc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPWdLeasaLwuEGW9jN9T7IoiV8LelHCdDGQwLKms1OJdeWCK5YYz-vF4fMhbnGpin-vgjTrtbjWJBK_X-mnNgAl4XMo2vaS242objzW4ZheUqJoaZTwWHjaWhBiWxs-CYNwybL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8OjlJc1N8ZqXqS0MPu2_h2bsCnAeXntmm1sYPTvTKUHm0oy7greUkFxCueVLT5KXgd01o8Xrajk3cKDfFHRfL34sFftHnBYk2S8tKed2ldnPs7qPz46nHKMzHftBjRNwPAAn1"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJLa0PRUgnx86upuWvLRZtFqZlPGd9U2mYevuLkrcXPvgFIrXviHttqEeVs30c7r6h4wZU4xDgRMdZ_9KWYt-KkM5SkGNiFNjp3vcAPFsNopnbTOVQcBddfHx54m1nNGzQ2azkEhLhh6YFG-Y="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZ4krr_0NAyu5cEKKVYkh4u6BbKA7T9C8bAtyFpt35-UiywOkfsjhQAfmmG-nEVQzA51B2FUaaVa-JDQh9Iis7htaHgkXapdf05FVo-B_vw45V0ACKppo_o959TFls4QNNIUglWDAVrvbeh2z4W5CPS0HB__nt7V7ypwaHmkeDOhoEa9rc53oE2CPUgOm8ZAwTIIVL_vPXZe7gCg82HnrHPOIVJZlPTpxSW_EPwFHPnlmZIu0PH0AAPiiMbEL1BSYPmUVklqgYszwc6XWuUnnUT-MHTLCUwbNvwQA1DUqrJ28z1OZmv08DtZad5Q_Wl7-jp2O0IGS9JIFTKtOIyudGPc9hTJRXD_fJSOC3m4Kg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpvDoJxTPPnlG7fmwjq8hAbr_M0QvjHMi3O0rz53HsOKmJEqd0J9VNwr1MCDNs9yYANKv7vZCv8KT7OCm5y-_DIkaAW3RXuwdzFc3hWrd4X8q8NVIkAsP5sIERjaRRkmIbzyImEUnoSTVzMJ-9HkmIYnJxfOtaDc1KZvgxjB60ipPmAYOSvKl0NeyZUaymnNlO8wCnzmr6HWce-m820w62tBBRyj71OK4vhkVr_xGQCNCK4WwJEYd5_JA209H9r0JrPjOKvXdYdGcbthFcamy_yKc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFta2yEcGWv8sQVCQ--dhrSAI8cqkXk0nPy9teIn_G1qJY5IalEHypv9zu3uNqBR06td6W_frP9w83mSiEhB5rznU-_WeWS1pjL1CpXOLldeUuabLAKkCVwHSEREcHmFXOid_nGE6vl9XFGOKE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh4MM4T69LZc-ZNPww5zJvaibmLpPCKCgYy2NgDQzYQHw6GY0WRj0SACK_pyphBlnmCTlYBYnC74QIfQBDyUY8LLZspqBTMu5zXYJmFpDWSq22EPonxgBcqS6TtSltX2fGioL0"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) for ADHD trials for ADHD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=ADHD&intr=Cognitive%20Behavioral%20Therapy%20(CBT)%20for%20ADHD"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "12-16 weekly sessions of 45-60 minutes, plus daily practice",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 16666.67,
+        "costPerResponder": 4545.45,
+        "icer": 41667,
+        "prescriptionAccess": null,
+        "qalysGained": 0.06,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT) for ADHD",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-14 points on CAARS-S:L T-score",
+          "baseline": "CAARS-S:L T-score: 72",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD Symptom Severity",
+          "percentageChange": -19.4
+        },
+        {
+          "absoluteChange": "-16 points on CAARS-S:L Inattention T-score",
+          "baseline": "CAARS-S:L Inattention T-score: 75",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inattention Symptoms",
+          "percentageChange": -21.3
+        },
+        {
+          "absoluteChange": "-13 points on BRIEF-A GEC T-score",
+          "baseline": "BRIEF-A GEC T-score: 70",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Executive Functioning Difficulties",
+          "percentageChange": -18.6
+        },
+        {
+          "absoluteChange": "-9 points on WSAS score",
+          "baseline": "WSAS score: 28/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment",
+          "percentageChange": -32.1
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 55,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points on AAQoL score",
+          "baseline": "AAQoL score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life",
+          "percentageChange": 14.5
+        },
+        {
+          "absoluteChange": "+3 points on RSES score",
+          "baseline": "RSES score: 15/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Self-Esteem",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-3 points on GAD-7 score",
+          "baseline": "GAD-7 score: 12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Initial discomfort/frustration with tasks",
+          "percentage": 8
+        },
+        {
+          "name": "Time commitment",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "8-12 weeks for noticeable improvements",
+      "treatmentDuration": "12-16 weekly sessions, then maintenance as needed",
+      "trials": 63
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2kJZZyJq04Nxd8LmWyR8lsLu6Qc2HHFjCvx0ycTNs4DCyr6tM-VfePpUVhDyYj5qF-r8Jz-1784jaWmMPOfo5mJ_CHruZVHKolNVkS0oIHLZb3tc8HwczNkP9E2lRqB2P5h0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH28anBTfTxZjVU4swDOFQmmVVYKQtguvogx4N5EyUxl1DXTYSN_GXUAv6BtDY5rAcynqSlTmWxj-1sk-bRaifQRNr8SJb75dxz-s6F9cOlSDXqT574ireIgDZqokiGVYE3W0HJst2o7qcHxlE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeEn5pTJ9g7iWpLzeeUpuC3huL96QV4pyn-5KNCR2CtVtuC4mLx0q_RpO0s1SkGzwsRdsQspW1qp5G29aRJng_Tq1kIALMHAQJhk01wM4Fhw5MTTtmbGEKKq-_0fFIpffsB6o="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwr9y09e5JVTIZDL0om2I16__9t1iqAZXB_sqM-tExcZau5yRGombx7cXYA5OrXvl7gENGb_5bb7WnMeqze_uhp_Mi-JVhqSYtsbq85CPCACWgW9z6KuHiK0Knb8Zx3fWjlAI25H851nvae3x53juWV9JQNV-s52d_zKwIQBeJLlOueJR-Yk3m-ks-5jAkNFNI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF69zQGsZk9bhgtnKeaDHLedrYnMka7w16tzrOFW2bQxc1MwbkXBwbGfYK2jY4HPuRw2MxufLqI1E5m1dNTmhpS6CJ7-blxFGH4y9Cjxs1qnAKWTbTBrNmqwVgDp3LJX-CkhR9CUNDembaopg=="
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRCM8KYRlddCwSkJ4bDEcZAG17wt_BBxkzf3jBoSKBZUdJcOgpL30AF6uOqVpSbkFwD8450aeRB_l3Pn_wYuMr3JQiG2twQlGpPAUJ6EtAN4K5FwMdpheEfdY2c5GebyKODKvhaEQwbymZzszeB3nW78crA-PvXXu6TCJnyOG71Zx-1reAc2P13k2HrSkh"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs6OCEbGUpnIC6YLml3d38zMDcTWwlQ4NcBz2-QFzB6JvcwBboSsh40uiPBqgJBQ3HTtZAE4iKZSgVX9Gi2mD1lWDvoYpWQZcRycEdt7kLnK0QrvCw9u0OWpxVqUzhqEWJtjF-AmkocwPWk_H-SFY0gIUnvLa5rDWCi0wV-X55e781zkYElPOPKI9eCCxU3w_7fXaQz6fMAVSUIwek-XagBLtmuxugLw-FWfoxsF-06ADNYAnNocZda96Sz5g6UUo3aTKEjAjF0MzjrUXpn4eRPuCKuKRECLKDse33PRmClgeAO_09fPS0nl2clTIPrkC011Xbg0hr1DeFHyl8YJGc1EVGQXNX_u8tcvzHtmrOaNS6PUoiGykjNTjHb1y0ufg_Emq8JnSNUjJAisM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4De8Z6YmaYzgojqxfESosv9XQg2Ax7Ta3jwi9tH58biY1mqWEeaE0Y4vtdtXrEk6QnyjkHCr4dq-E-YGmeSswehCUjGLQ_1zeMDiUsHrh8brkii0ltYO_OoyvlHwp8aQsbw8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Atomoxetine trials for ADHD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=ADHD&intr=Atomoxetine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "40-100mg daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 600,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4250,
+        "costPerResponder": 1888.89,
+        "icer": 21250,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Atomoxetine",
+      "nnh": 7,
+      "nnt": 7,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-13 points",
+          "baseline": "38/54 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD-RS-IV Total Score",
+          "percentageChange": -34
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "19/27 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD-RS-IV Inattention Subscale Score",
+          "percentageChange": -37
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "19/27 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD-RS-IV Hyperactivity/Impulsivity Subscale Score",
+          "percentageChange": -32
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 45,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "35/90 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WFIRS-P Total Score",
+          "percentageChange": -26
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PedsQL ADHD Module Total Score",
+          "percentageChange": 13
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "90/150 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parent Stress Index (PSI) Total Score",
+          "percentageChange": -17
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/vomiting/abdominal pain",
+          "percentage": 15
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 12
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Decreased appetite",
+          "percentage": 8
+        },
+        {
+          "name": "Increased heart rate/blood pressure",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2-4 weeks for initial effects, 6-12 weeks for full effect",
+      "treatmentDuration": "Long-term (as needed)",
+      "trials": 136
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmjE-S9WBAJoAXTFpml4Sog_D4QY6MCtf4NRMysXL6hgSinmwCqqmH2iOHty9RNggq6OZwiP6zyw2nuJF5p77insJFkni0diknHEJfL3XLBJMSsg8WeAXIqN-uKzGMZ0erUOA2DZyGW-8f-Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI9aXj8Ql4Q2DKGds1YFC5cKTmxazMbUQxb8MU_uildWylPSYuhVmwsCmMdlhBJ2sxvL72kES2XDoOdI8s-HbzPYhiH379N6kjHtW8xLgYrY32dlfUXp6ZY7h2rhWW_lYcsx7eLnwgYmDnwjvqVoiysMDxiqj8NSsC5OWF9HmJGut2H3_eUQgELHwlJ6oAxcfWkxCDPGO_JsqCfcNCv1cM71afXYyFAZWtnlgD9CNDLEkR9rRs1YeAZRwHiwEicvWdqOIxFGqFu7AfKYFlA6mZlfo6iPnRgJxfqSMJ6g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl2DhcczBTIFDqz67ivcokEk4zxfZrI4Nk164Eiif3sFE_zc4BKON8wPX1YPJm7c11JmMiyvRWCvRtCn-mhJ2tzQUNa-74SXS54ao5_Mv6tiYO97BI-RjW0C8VwqmNNp-7cSw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLrxXrPz9Zb0H-ogJb2PJsprrwuXRoSm4TcdJwC3jX4nQ2WXQIgo0XJB2H1pR4HV3puIRRk_cfRMrYktemmKpwdy4bHFHyv9aRwCg-Hw_xDkAscXCkLRossEq7_CH1icU0Xcqi5CCNwW3esw=="
+        },
+        {
+          "title": "adhdevidence.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsSOgX0DVzkfNg9tww-zJOFS3B2T-p-6rz0O1z4Jys9XjjimjcfkAQIuc9Hl2RigDUIoqD9PJAVNKx1WKJ_8iHuQjK9Qv2Haz3W8eM3m9uer6Uwj0XK4k7pxe07jSIAlyih7ftItyM6Sw36J8_BiSkrd65C0n8rXZ6OQx6ue7mkkU8ITL1u_Q-rDuHbFwVlGuX3M3Q7BkFXtYHzNMGqnRgCXg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAD34X-aPK1Drcc27uWDrLIbJao0Sn0e0COy7QZ39PAksMK44P7hYKlmg0DXIyPJzLYLyZunMXwDnsRSG3_kKiWZDdvaPmit-w8W0FPMxi1JB1ghigPxA3ygYXzu8c1OwXldU="
+        },
+        {
+          "title": "psychiatrist.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZICANrBIUj7BTke7a4lgCboLMVoJ7MMx92gCvsSTEF0PUSTidprX1XLoRG-y0nGOoi6x4Z4Xbh-RERznAcfmDPgJjImlzOtU6D7mJxGSG9AuK_sw8kF7HSwoCG8oGTu-DAn9get8GqdbnZcx5MgP3TX_jyjmTzzNTRWqBK3cAnXjgvLtMUjqWj2RjdJSpgUM4-4x4Zmzue-Yj0T7VxN7b4Q=="
+        },
+        {
+          "title": "mssm.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnSlC2YPMzBDHaU5VvhXIErtWTsADjAB7LtyXJ54mnqoJtg3Z2l_NyEEG_XlZUpohwiRQ_JYrGf6zCzDFuB_GGQb81dEWtBa1fnVEOnZYGjRZ5NL68KoSxEDKubTaqc6KZMYDyJb5748nSt9aC5ZJx4pS1b675b3TvgyWKCxg87OpI7Tf2hgHliNGMv1AGEWr9T7pILk6hVKOnk8NEiuSQHc2tA4Y="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAg3pIZT6WhTtCTFWitVx58hbYErR1qGcNiX9nE_7tmyy6ri7vsgfCh5eIS3qt_3E8Xdu_zmxulzZbwtvOw9VXD2i9iyT9UxJo_HVIbDZdLEApH5veYiGhn84qsoSXkQvlwqYNhG0PrhLtMbJ1BLHB2OzE3SMt-j0CuWTRfX_IVTjHIHKS4bpQCrX4jDXifFTBcrO7_4JuWK3BNIjrBYrbbj-z7hdKxZdp-aWbVcYDwj4PlP2aXqAgbflz-AFcRFtC6i-L3Qg-4NTsP-l03pEcmDZDCVD1Fn_6hUiKKJ2axboTu8wcbxPrWSUHTu1w07SN5NWoarn78Rq2n4VOlGh-4zXLD2aTAQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeufgDiM-0d0rm7a0U_CddenpGleqxEkqa2oPXjWsuTXzpFkHrvcIqsKQ5cfRzUQo1gVkmYFmkselSb6awGc7F-HuYDrAhJLbhOR_Q80PJ-_FzKpmu7357Klmz2-3kWyHne99aOENEqEzQpQ=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyaEHWOenlAmL-Ba1OKQDlOXMzMWF1TD89gBpBEHlTrP95T-buPtT7UctvZka0E3hvsCZ1SQd6RC-Qx2qkwQcE9f5vQ-Rudt8M7QKgsy61G5L129DQZSllGl19PssyaPAChxLXoEnTiaMAvJ0m1z9W0-xT4JZ38_EmEIFGBOSdvJvYs4yaASYBEEYxwXtltmLsOLZ_Cp6oRIBE-TIBJWLKf1oY5MSW1axRRa9KsgvZkDuIAZCk0guJB5hhgFYQBE7m2lE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWO6S037hk1FSKocn5cNYTydwARh_CqUv9ayMdjIqp11DHjqAyi7mTN4UYnh6NMtkfyowthnUJ3bR6jshVyTnHWUaF15c5IIsXYQdPTan_HCWuDhNZlmaQwe9doykPU-tZDi6AV80S"
+        },
+        {
+          "title": "ClinicalTrials.gov: Guanfacine Extended Release trials for ADHD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=ADHD&intr=Guanfacine%20Extended%20Release"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-7mg daily",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 700,
+          "monitoringCost": 250,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 6666.67,
+        "costPerResponder": 2500,
+        "icer": 33333,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Guanfacine Extended Release",
+      "nnh": 4,
+      "nnt": 8,
+      "participants": 7000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-16 points",
+          "baseline": "ADHD-RS-IV Total Score: 36/54",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD-RS-IV Total Score",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "ADHD-RS-IV Hyperactivity/Impulsivity Subscale: 18/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD-RS-IV Hyperactivity/Impulsivity Subscale",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "ADHD-RS-IV Inattention Subscale: 18/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADHD-RS-IV Inattention Subscale",
+          "percentageChange": -38.9
+        },
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "SWAN Total Score (Teacher-rated): 2.5 (mean item score, 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SWAN Total Score (Teacher-rated)",
+          "percentageChange": -24
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 40,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "CGI-S Score: 4.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CGI-S Score",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "PSI Total Stress Score: 105/150",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parent Stress Index (PSI) Total Stress Score",
+          "percentageChange": -9.5
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "Working Memory Index (WMI, Wechsler Intelligence Scale): 85/190",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Working Memory Index (WMI)",
+          "percentageChange": 7.1
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "CPRS-R:L ODD Subscale T-score: 70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CPRS-R:L Oppositional Defiant Disorder Subscale T-score",
+          "percentageChange": -11.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Sedation/somnolence",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 12
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 7
+        },
+        {
+          "name": "Hypotension/bradycardia",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "1-2 weeks for initial effects, 3-4 weeks for full effect",
+      "treatmentDuration": "Long-term (as needed)",
+      "trials": 18
+    }
+  ]
+}

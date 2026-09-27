@@ -1,0 +1,578 @@
+{
+  "conditionName": "Schistosomiasis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:45:30.130Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYMHO8ZzhVS4G25ZxN6QP0hbRPzwr-sbKWE5UzQu2yDCxJ3zqXGdD7WyPzv8KAOvlk8TLXRCG0flNjB06sjY1WyBZlRMHwjiayaYr8V9TFoizkn0EhziqxOpy7NzVtFBmLORMi9cc2e6LZMdfVoyZzXsC4JBtTqsKwDnxacw=="
+        },
+        {
+          "title": "repec.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHBcZvX0c6C61CsGX94yW5Ss7SaDy_N7_y8-yqHWiYt_4rJIgbLjnxv8i_i9JVio-Ityqw-kSAyEUlhubsMbitNdNY3Sr3f23I25bVYL1wgaeCUec2Qp8bGTlceJJ15VR5TsQc1YhCtP9T4qU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwpb5GqeqAsgOsEs9J8EM3cWd8OO305TjEhMfhAT8pi3_lPGmITg86Iom4HRfY_wdNEhTw1aS6x79p9Fk9ZkChURKrMTr2oO2lSxFlNgEc9EOMKql4nvjHfok9_NyILYzbzhE05J8nneyaX6s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt_AlRgGPOSuHk023NObCPvnZCqu2GsFuypN48CeLh1XbIkgWmUyqqtlcpQlSJYY0JS7y0nI7RKNg65ZyVQD4I8doLklWWXurC4fgfbn4BZUhthh4mUmk592OzIxPj4_srF1wdebeY6OCyAxw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBjPTeCQPJVQRdkMmSucVlQjkb_8LRyuOTTA8_C0uyVM7A4nG7-E0D0jyy0h6kOq5fG0iXYDU0e4fnQ04fzusKP283kx26uDXa0R95xaAYEc45yHL3hLA1WizzWLZIY9GE8b68"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC2rCNF7cug9PVrpvhcOa1klAms85TwBSWtqqVcx_vdEc4p3IdqD1VC0qQdmUFBAvcedO6LshhCmBT0AVU0QFWeTltRQuAxBM5P5pMgNGkW30Fix_hXcSaaaj960-dq6D8VLsN"
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEm_FUy-JHBt7r6yGgnniJl6lKTpkJ_cvIYCbyGnqeVi99vearbSNPAfBAohKEzhaEnmto2V64qQSwAnLTOeCP9_E7MWUtsQ50WSwPwl_FfCWz0ccMGEDYu6b8FDl12cw0Alh83go3Ufrav7v3OIIlyPtNT24byl0="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIUAtAZsEtTJnV-GtXvGLSGb6oubKY9c0BVm8gPflVWvmgBCAE_nknngn5DHzz3lBrgn2-acWiTyuXq-e0avmEyxiBxTuMv7Pse5ZILIYteJzvjL6zCe2UEITIzs4OcDaThFnrV9-vSQvuFvyU_gSeyEj_0yBl9NtxgIk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr393qQOSgo4Dz7P60OTyyeAniKkrVZ7EZ83QkHN8vDAd4gYfaoiSUR1J2fDrg1pDDA2R7pC9N5XTtxwI7d224yLBff6q06mAvbFAeOy6tU4kx6ju0eka0nAbBxXecqkrEgw=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS0IevfKxhzA4pddalt2lRSAeo1NvgfQZ1mQkZaB2-cngA8F2HQnTkjI3XEzs7WYt71gptXg5psXoHJJ5yczm8nFcEL14NUh-RQR7twQiL1o8515FKJxeYQEAfvlQR8zcIo_O71A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd8eicXlWnRDd4qF-AgOMetALyUEJitWa10WxpLBGtGxHyGvAElCgmKrEUOAAGz9cw961UdaT5SiX8DAJJYIxLyMFmtcRIga1FEuHZ4grnw7rKxFTRloYFEfgDuTzEooRnCJhZVKSsrEOs1imb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF93n5GoyjgkTuREsQo5tPnUSgJgUEC6L9Glr6bcZ8ORUu6vbf2Bo6pkQEGRqcYYY-ZWDPv82qVkyhIkJJLMVlncJcKOHRpGRXmd29pimX1qaYy2jawyrCl4sKUgQACf7u5cUqI"
+        },
+        {
+          "title": "ClinicalTrials.gov: Praziquantel trials for Schistosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Schistosomiasis&intr=Praziquantel"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "40 mg/kg body weight, single oral dose",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5,
+          "monitoringCost": 40,
+          "sideEffectManagement": 10,
+          "totalAnnual": 55
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 68.75,
+        "costPerResponder": 57.89,
+        "icer": 500,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 2,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 5,
+          "annualTimeCost": 40,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 188,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "No Treatment",
+          "costDifference": 55,
+          "dominates": false,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Praziquantel",
+      "nnh": 1000,
+      "nnt": 3,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-380 EPG",
+          "baseline": "400 eggs/gram (EPG)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Schistosome Egg Count (S. mansoni, EPG)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-3.9 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (NRS 0-10)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-56 RBC/HPF",
+          "baseline": "70 RBC/HPF",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hematuria Severity (RBC/HPF in urine)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-1.8 cm",
+          "baseline": "3 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Size (cm below costal margin)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 95,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Schistosomiasis-Specific Quality of Life Score (0-100)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "5.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS 1-7)",
+          "percentageChange": -36.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Abdominal pain",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Fever",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Rapid, days to weeks for symptom improvement",
+      "treatmentDuration": "Single dose",
+      "trials": 38
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsmYqidrsIuuc3UAOihUJcSds6O5yduPTBLyM2DNqntwiUxq5AaTz0ElJy88t1EDSGVnGLkhUthAT24XzKaBsUfKBtD8TkUc4e7e7NrPw-6Pn56ODjKYCT8P86w7WI2dcKHIIr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmA_4z-fCSBF-qbXwy0c3mlHBOqP9a28j8skTTldenBLE7UAeD3O_EGmdok9ekiDA0Pk68S0tOUoGgCbe3UFLzXHp0ajTOWz9jQB1J5FbOHMcbN0K09_uYXPYzl3mXTs1L4pom4GA6ZStTn0aq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjnB3Tvk8zJwD_WMSrNTJRnz2fcBvVK_VRiwITQeG1LzScDj0Ed9Ew3HY2qctCVkFQ39BfPBkMBC58ixg4630Fpf7BXOa7yjzPEyIsiWQEduizqqbcGAar7p7RJtywQtUSxUGDsej5uxIMkHM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBsM1Wxpa3_Lwgh1Ayq0NXy_VGiJFUVGHdfeCZwvRAPsnvSjN9PHLF12_TqPSK9Os42bSjyJkvz4PlRvsHVQLiwvbrSTMygqP9bmUvq3xb0VDtjaSLdWdwUBPaM7c7Rqw0_CAc"
+        },
+        {
+          "title": "scielosp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI0nGwrcFyb2-Kw0H5ouXAWrhyRnaAp3-oK9-4sm1eUqG3DBD-_84rFQbLFZs-JVwa4EmTmT0E9TM5floeHHNLZGiHGsigOZp_QaXlSurQ_Ln7xQ8UoNUPbAWGiXhJ80sL6Zqzn06v0NYKDJyRLMw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCUcLGzwB0m1uaLg_vTtoICPhLwifaz-NQx1vLMe6U7E8BFy1Pmd6EqOncEyPAz1eFzAOVvyV9kHZBkQrv7f37a8x_pHtqzKiEZSGe9O14StoG4MVTATQKr7EzXICQKU95oHBbAqccO8TPbRs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAomFn-4Be03JpYxx-LaLcXUFmkwEux21WFGzvIU28pwqDI2liGUnK04Gvc6GXx1bjevqiapm8F2FkfHg2grZ0kAqeN23p-uC8PokW5zmCY83PbwpTJriI8RMNzKziTWx_BgTS2HlGIO6MddOV9FSi3EgDqwi5LNRPSPN4E8Gs2JuEPvvLXRrC50APeZIfd0eNm6pNXQR1vKQ9_slVjkb1J4xRqUhRPVljPSZq9tL1hGYhhFFECt_H7RIIYehcKQwWB76Aoo67VVlBUBDfcdPlEaieky0i5c02iwQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtg8hfb-DL_gidUpdmpq9iOFG6f2h5F68CFR8v2R3Ig1qcixuOpB6HFzv0mP34GfaCZ0aLarb38UUjPfs5KZ8ea3LGhW74xjFiQgaB43xVIG89zFpdVuZYhU5xlztLeGoxTMO9A06UKJ8UNj-LA3RWtALQGPyu1xizGbXl_AQ5RFVbvXPrpb0vmoXNl7UZFLjOKyd22ednLdYt5pD9PmYPX8k0j3Thk8vDI8ojdnCJ-XUniJrRhg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtkmO2978IGZql9XRcCr1rvZOObteNwzW1WQ8NXlSmtnqXUTbgeTlrJyQL1Q4ANV2ZrWeeDfyW_eOX9qmASOVvlmMxjjL41S6Z-xGetkGJfC1zvykHQKSsSfslUX9aF6x4lEM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcBEYJpEOR9zL4w-0CRQEI_tJrrG-jRfKpA-KeUXin68ZGPlh36fLy8AiYRI2LDTVDqoNf8KcQy7TDjNvu-zbqugPvf2v5tBWdZdo_Glhg_9C1r328msA2eanO0EmZR9RBEA=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFKopezNkrDX_zF8QbFpzvpID1XcgXIZkzwdoNJEq_KqSaUuImZ_E_r-mQhshvJZQUG6ebek9g_Fb177T4pidBJDmBI4zhraU794Q3gJzbQYzUP237A8OtlMNEIRjf7y0z4xS5AvstyXlxs6DtlSyClA_nBuB7hIjKhCvnrOmb5DEMmSA8bhBRarg="
+        },
+        {
+          "title": "bioworld.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdVqHBlz4K9j7x7MAEoEWMKTT0Nvkk0oQUE7kGPXl6PWp5hqAX8-Wm4C_zm4QD2HaqfGk-0G32IfrURGg9oCY35MWpx3gVF-o8q7tsPrSPuuCKh_3Mw6SaHVuTdSaD6Ps7eLT335_6hwLhKk5hikqOI-gPrAV0dwnGdJ_PfMLoceSa8W_XFB_JKfuY1o5eK22X-hVwuw-Lo0hdBn3xlIuFYIgEkMF4vm1VsK-UNwhgakS-SZFNE3BDe3sgW3c="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oxamniquine trials for Schistosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Schistosomiasis&intr=Oxamniquine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "15-20 mg/kg body weight, single oral dose",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 40,
+          "sideEffectManagement": 20,
+          "totalAnnual": 70
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 87.5,
+        "costPerResponder": 73.68,
+        "icer": 600,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "Praziquantel",
+          "costDifference": 15,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Oxamniquine",
+      "nnh": 100,
+      "nnt": 3,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 95,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 8
+        },
+        {
+          "name": "Convulsions (rare)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Rapid, days to weeks for symptom improvement",
+      "treatmentDuration": "Single dose",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCPqnQFZQ1SSUQ916K_spwggJXYmMGe3YOVkPYwK1KxgB9a7z0mSbHBKZxSwPBtlUZBuV6146JrHMy9y-D0DlyNnCWXwVN0cO3wurcrGUWGK8PFLVveRewxBcH3SPLUnbzvpxyBtHPPpXiex8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF9yHy3oPdM6vhvsbUzaioW2LhODhmAv763rdVs0KpYEDfasp7Fqb3ONZtJRiYVYg1DHuPHXRAFMLoI-hL0UJfHNfp-_aRKH9ohBVuNWCBYfh5ehkQjY2VvgeCcZGoklH_Tsgw"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPaikBOTHQcYEAf_zyLmu1eXOlXk49tOtAXGzJIt6O8FFLhcgNFM1O5EB1gfkhCml4jCQaIvA2ddcfnYweFQgAMjZ6BuL1cQoO3VuKAgFq0iXBF0ix8yJsKg5WgeJQl445aMwrsDpLoSX8-2bBbOVTXm4yvYyeZ_AuE79pyobTiroR0_cZwSZabGJqEBdY58ENctJ41FWrHRx9BXO-y15mK2l1lKKz8uJt-FCqe_4cZglOqoLYveG6TPomy2ospoeOoe4LHUhOhV3q7l_juFG81CF17pQu"
+        },
+        {
+          "title": "scilit.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7rbf6ryVeFPVGn1LOYZjknW_7TfitH1bKKiRCMkudE49aAfBm-0EYIT70-DeLcvezQgVGNiOwfwy7h3vfGtpoZHjZllPNZFu2mA4KJqevZdQlA25vIWRyNFwB5QhMDT25u_R6EGqdds7LYpwC407uYJFlQ11mW0BJEakaIBie"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTw17qw6_Gbh8UTfchV7fed0DL8dXpChWuH-8Rm7LxVBGF3KLXkIvO38corN7bZ-HGsxkpX_DDpvT_4S8U87bN3zA11hJyXZbDoddvZZVPCWMrEeIXPOL0MaK3wH-F_BNP2HCRRk53lhy7BqQN-n4="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMXkQfDdwM_PCKHCFMHJOv58TkY28aTuA1ZlDrCOTsNaNpOgA8r3WTeGsTlPnS_bhKTI_kr2D05M3e43WQO8Bllnd1iCf_6UUr-N0BnLW-4XvPaVad9Y-fuG3hluVFJLWhV80Et2Srf9T6BSH9XK_dCKAg5A6t69glEs9kVX3uLik="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6Ixsy8OniiKgivNTFTlfLjnY7Bp9aRjB1ugCJxNvhwWRtJu7qDROxwQldq_BNT2L2xS-Gf9cb3URNKdI0wYNE5-vtQJwCZiDlo8tpS8BoqzupojJGXCSbLVcdgGfzeouIQHmBglmIK8sH1R0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbjYLvYinap7ChRgKVrFWJd1MTP4s7yf44pF5gn9V_Bnw4PZVxktxrxMKzPPWcQ-79eNx-61PKFrWPV4aoJq5FdND-pA6bThPZOZbvfrm6k-FBTnRh84gYmJQSwhNyCbuPPl-jqoHoSh_DcvY="
+        },
+        {
+          "title": "tghn.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEioijqGfR5vAIKVyLXtQzsoyuoMbocLmA2g1gnRFNNg4rRMclBZ003R6K3TJNHjkiCUTPzv6T96d_4qy4qXyMcAgM0VeMbuDK4YHQ1pUuO4b0QN3aZ7LqhqipCQ00x_rGZn_AhKAORPed_9DvDDvcKO6GDM6LiM0M729H0wl6CgA5ydWd8zNJnUptWb56vsWcq5e7takZ9Ew=="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOyVcM4isvzcBlgEO_ypFdruGulMm9ldD_D3KUXYUG4vGU1JO_uEGF4x7cp-Zsxa3KdlFXUk5dpsqJdx65EorwhGztGfkrPZN6TEQbxWpTYAKgVb3RXJE64gsp64ezVp1X1R_MJSVjQDyxlep5osFd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFacvQNc7Z9esUacjql7w4bS86hTnWfudG7SfrO1Q_5Luyr3k-KzNbGCr_ilqT1sz5_J7gYVV3Ig3RZwdPOcnDwwTge6sW3MaRrkj5Z9cOd0sz72LO96o2cyKiW0WcitP2dEi9CNIJA8HXaJY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tribendimidine trials for Schistosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Schistosomiasis&intr=Tribendimidine"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "200-400 mg single oral dose",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 7,
+          "monitoringCost": 40,
+          "sideEffectManagement": 15,
+          "totalAnnual": 62
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 88.57,
+        "costPerResponder": 72.94,
+        "icer": 700,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 3,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 7,
+          "annualTimeCost": 40,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 189,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "Praziquantel",
+          "costDifference": 7,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Tribendimidine",
+      "nnh": 150,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 70,
+      "responseRate": 85,
+      "safetyScore": 72,
+      "sideEffects": [
+        {
+          "name": "Abdominal discomfort",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Rapid, days to weeks",
+      "treatmentDuration": "Single dose",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHK_-q5ffXLCEFfph3IaNGTNY82_OZH-_r0c0leeoa2-GJjYlk-hFk_y5g5Ku-NAPmx1ODmofgPm3QzQIeRowUJwlk-B4W97LNgNw86DTypgqM7iShCms3k_cyKGarKiUonnGHLCgUm0wSlv1aiq3gGiVVnb1iD2JrbYFO_Xgps6VQGIVd0ck="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIKkekZzUMzFOM2tZgFk5A-fhh_5LYcCMURwulLYL3TjJr4vk015rJt6Nn1K1qTfdfPWNxCfTZbRk5xcIvF2zuAO_AdAhxtImfGWwM2JrapOphN-JS7-8qWh9xYg4e3tzYsCkx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIecyUodP1SVjjdnjDVzd-SPkyqpbNokYgV56KhXku-Nyr-64ZL6LwGjs5oB7TG__tNL_aEp4TVJgw5lVD2ZH2y1pftdoHlTxyvGNn7CIz05UE3WRYemooJIa7rlhR6ur8Vq_mEzIuaiKn7lw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-TUKJNT6HtuDZ80jjLWxXHipOxH0G1RghQxtQXAnSfy8KXVBlfxouqmF06SFg8mSkWjYYpMTFfMgxWQXRhAgJbBMhby63HbPeyK_Nr6rT5fUxOLdmIAGLxLRPJPR7BGo0cxam"
+        },
+        {
+          "title": "walshmedicalmedia.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk3OpA2uEyiN76bR8ixT5oV5u3vglqrKkpMrfaO0sHNsL3SSaQXBlD3uBWv9Lq0_M2lO8a5RVgRRp0Bqd5IehP1XfbCZVN10hr8weiAPw8lcEpFR_qxn4MWK1My1lgJ1J4saTtl3_DFqRu3IRt8bXKSVCLdsnG22kr0Z1MCr4Ut3wtsjJeTvY1E2EqNFiYyfoTbQ4fj60qtEEm7gg1XpQJx5INH-LHTCKI8_qj2fEHCkkooKFQ-blaMJBqnr1lXrQGZOXYh0YEq9Fub3pK_US9tzOV5XhLuExJcJKkYxPc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFITQpyau2M68uawbB8xHwUzo0HP9_acJJ_shPkoPFsSFJwTwwhuta44aMjR_rCq0bOAHcI9AnggcaTA6QCiA096DKt5qHz7ISMDjZ25QNsKggexLIoshIDW4G3W9IKMqwWQsiNifjohchIahDHLHQ9oKNSwe_tUpuREEBKJptWtSqTJ2pv4f5IBVA9NaYslHkZxMaVo7Lfy1H4lV8UQXRnX5uRMNnIGfDF7bvdPyQnIxLFr0kHkpOKUxEOcjU2X1qCqMvpzgovikOeRyiL0kC0u0TKpvpE_45c2cxf-BoSy67_GGMoQnN3QaTfPQBlnsCUuw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkgl9UD7P38uV4hmYmA71YbZEnmwKBrNgTGd7hOhtyS9YKn-ZQSyEuBVRJCMbnDN9N-iVC-ePwcGsW96yLjevu3w2w7XDIzRpDfoBX4Jvs8vPAxRCgHwLEmRtUNDI1GOUMca4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-x0pdZh4gJtVFEEWuKqcQfgRke5Mzy1kcF9yScEbtAuwjBfgKW3jnd-cbvGgunZFj0XkmALYtMUtB_WjOrjOKNz7bfWxpDNOSO4azCaC29wmd8Bw1VDBkv8v2ER4Xcc_O_OU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Metrifonate trials for Schistosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Schistosomiasis&intr=Metrifonate"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "7.5-10 mg/kg body weight, three doses at 2-week intervals",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 40,
+          "sideEffectManagement": 30,
+          "totalAnnual": 85
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 141.67,
+        "costPerResponder": 113.33,
+        "icer": 800,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Praziquantel",
+          "costDifference": 30,
+          "dominates": false,
+          "qalysGainedDifference": -0.3
+        }
+      },
+      "name": "Metrifonate",
+      "nnh": 50,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 60,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Abdominal pain",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 20
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 18
+        },
+        {
+          "name": "Sweating",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Rapid for parasite killing, weeks-months for symptom improvement",
+      "treatmentDuration": "3 doses over 4 weeks",
+      "trials": 50
+    }
+  ]
+}

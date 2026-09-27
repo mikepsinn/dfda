@@ -1,0 +1,877 @@
+{
+  "conditionName": "Chronic Bronchitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:06:58.323Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "canjhealthtechnol.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFENKmI1vjt9m8FXejMlU2T4f9CR5OfW6UgO535gN3NcJYcm77fB0JbY6kGZ26UM2xp-PK6S4vZpJZHytl1BUy_9sskxu6Drq8NQbGjtTvSlq25wmSRLhsxsYd8nM4UPEMVtlPQAVN520KAZXHypGRDjDVykA3Pj-WmhipVB8M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQPAFfE-pEOmFQF2ltslaJ9YPctmtItxosHl7Crpr96NhtYiBJvd0Zi3SmB1xjXn5sj_U4x7WDYyuh0rGiWdQxoR1hotGEfZ6UyYv-wqX4S7cqfEX-ru_SYg-bFlY4i4yYlXfi2GOfhN7zCKU="
+        },
+        {
+          "title": "figshare.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFEfrlGwTuo6f-pRi31OuJ8AqBh0RVchSNlYtIQxekl7-j8qZ6KpSQVNpj9E3pRwiG60RCHd3Ecdj28_6yfqe0g50clmpeKzDcd4hsUwyLb9NGDNmFtFuOMWSlJZVEv-_pkUI2PvODMEoN-_8KAhbQBk86cPeTuvK6pkKIzchsdoYCcPxF3TEr864D8koAsWCszjKu1zQ3Qp19SAw5MYfLJ7wb6D06dVjEemAeTilZJGIJ4sc="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMkiG_mA1yUnjfAzUX1fWHMdcDyhwvPMRtrnkUIPWCKCC-FivbqzbTdZPs-dyfDzY84V7lWdevjdBJdQm2cc2I-kiXy8oekTzB3DgrC8gnHpVjN4fx9OUc_S0VX8LjiYzz2er8IDqRxo1cT_8Vq_nGKuRJ0H0A-CePVy24gmscvNQ4LQmnc8T_T3j3VZxBaWcIFpen_6jWUkaX0jkMH3XVIjUCASKMYMZibWvAdDOLc-hOm8CPwbGuSMmKsZFDpSc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUF7JCzXzjeQH-R7qoiLPUwlGpWd2i-lIYW9EKsu9Zpwqb7H46BuMuLPsshizt7fNhTOJxXzFIj2ImB6w-oak8OxR2hBjcVjBFJZWL2s9CUgw-amfq74tIgrhf129tG0Xk_4ey"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWLnxE0lNmTv6NbrntWS5r6mn4wyU5hq2NMVv1t2G5aMYiOtYg9gxh5HjX9uyzu5G8-P9eidvkh9A0n7tHnEUHeQgNSSjWnjIe8OPw07c-c2TmxX1PDEv623Za0pScCB3GWTxr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9VnmKj73iK7jRKhZiQt78ySKwbw3FU3jIbEZAEWPGijeMvhkTOcRTTfnMMnHZnJE1FQqm543lMY06j039TRZjr63UuwfVMpsCed-cRCQSZDjQ3jjgkklO4NzwztjYU-PTC95lH7yI-qyxbKEFjV82sHAd9QVLaZNjQSKnXz3wDwQJcJcApP1ZVuTGFLDEbC6_1xHmRDVw1sHZaWHm9rG1inCpb8K_RzswsSv9TOJjl9NFswr0dD2b8R9jCmae93T5XP0r-C2XrrTmgaCDV4L7_7isjhyHXIqaTlhyPUOIjk81CFF-4Nj0tK4CvKlFWbjw2IrRTmU__81L9vvzWDiFRSyGRZ_LgEdjVEODwOngUB7ADQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeoIJbMuDG-yd0UYJJ0KG1AgJWFLV7FOAMec_murKXJljgmUybQ6XgNHuK1f76xyZAzfjjCgf3Nw_K5neYNU-tnP9pooPmqf3OT-saf5QwuCGEgtKVz0Zmxw-r-VkIWQI4rq1plKEP-gBBZN3EcPofbv7Zk2HMw2ujJ8BJ1Ln2WOl9OpvMa_Z35rVWu8NOzDwD-8XIar_nOcSOJ-TgI8OzQQKpfG0vRd8hm0SAs8AkNEoFhhMbCIOyvH2nNGMAOW4aEpYn5QVYT0ee7TPQc-uWAxGeCHKCxHJeEqPrLDPwMy5ErLfX6t3tp6DKLudBKLiGwxjAj5O2NW1A0FM-I-2rIcqLV_hTOh5lCHw0Lqy3eEv6VrfMePk5PoF6f1Qw825e-h7yptKLPsNsdNxIFZc19CMIXegj8g=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFfXnKSEW2m06dBPRb1YsCowGzmLxNIhHD-4YcSLQrOM1EIQjOuArLtILmlFLgck7Spt8uiqutQid0ezwint3wVuaJcqgOz4OXwFoneguCciiDOaGhe7uEu12AU5aRmgysh812fHjsPwgJ6BQoeCoEi5dbwHEj5vkDewVm_q0iLD1FXq_AtmMhwwUBj55JTtWaTkIL3QnfQ_HiJ5CjcOTNxi0jXRakESVMKG2OzDgKJ7Ysv8279W2PqJBuxofGXrI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Budesonide/Glycopyrronium/Formoterol trials for Chronic Bronchitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Bronchitis&intr=Budesonide%2FGlycopyrronium%2FFormoterol"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Specific to combination (e.g., Budesonide 160mcg / Glycopyrronium 7.2mcg / Formoterol 4.8mcg twice daily)",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 6500,
+          "monitoringCost": 600,
+          "sideEffectManagement": 200,
+          "totalAnnual": 7300
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 146000,
+        "costPerResponder": 9125,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "ICS/LABA (e.g., Fluticasone/Salmeterol)",
+          "costDifference": 2500,
+          "dominates": false,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Budesonide/Glycopyrronium/Formoterol",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 5,
+      "responseRate": 80,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 7
+        },
+        {
+          "name": "Oral candidiasis",
+          "percentage": 4
+        },
+        {
+          "name": "Pneumonia",
+          "percentage": 4
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Urinary tract infection",
+          "percentage": 2.5
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Lifetime",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH02clRZLD8JnhIFJqdjcy4ys6cYuGRIb-z6KX954uvs8Z1JQrR5D8JTh951uoO6nM_wjxrACD86rjrfuAX3TLyKIccC1xKb8By2iMKSR_pv9D1Ie46_h4KYj5DkK5b5f3HpB6d"
+        },
+        {
+          "title": "becarispublishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWmNpib9dD47vcJPVuO9E6REID0ssmGLQ8gj5QRqhMngtn3Vxig9dfs6FN2oPDgkFgpLwREAbCcUZVFEpryg7aghl1HvuIvaG0ghwSge0pTrpsGYKv_G8nKWiZB1ENoKq39OpcbYRPBjIzMhzmO1xAHJk="
+        },
+        {
+          "title": "copdfoundation.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1-mbsm3mAh5OLyeYhUWJaSnihvzNHvqt0StdJH41nYnbVkWraN32I9DYJdYw16KdnsF3zFE2XxASNs9cqM8pT_YPXGYMiPISCvxE1RXSfs2TGnagII5ASgIFWgkQ58xAtNnNM1xARrY6UPnVZx3VJM9Gx6Rsni3QDSLquCsR3gT_S34gNnrKhqevS6fKeb5df-pY_70Yw0xjRuGkqJxOBAsSrn16YhzD8veRe645UVYv7tkYkdUwvQLKezdzzUzhq_QUQoV6ZqCTCgoC_EDtY_NyBH0moYqewRsS5IalUCX-UlD7WHK29tJ65zjdeltXmvlM8teidJ_PZ4S8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDHdRuscsAPXG6Q_FElEPC4sauYUSBiQBIEJcGLlpIgZnCGZHnR806bQEKFVFdKCkWBimFm5j3XVlNPpJFujm99UV6maUY-CQmJSNKuah75gsDmQJRbaPmFglqLo4sK988xtRHUFbm2g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3Q_6pFzhq_RXDTfp5CgVGeAJcxEvfkOKdAo9BRVpwNDky2y41r0ykXtCDSV4-BCU7-6N2XtSsMxEWMXaezJA3zwwO4b7V5ZSkiLPKL-6qoL3WxlMLIvmIBb7HKFVDtmfP4JyTkEAJYbj9Irs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3JBcSuY63gm2zJQy7Oz_gNoJ6fdZ8cbUFnJVqgy6eYe3azSf9Iwzv8MU_ZsqlHjyeAbIEDd9n_r2Mniapmb0doJ9Zch2cWcquw86Rm-y8Nsmc_SNE-3D9fCuHIwujZO-FCRsHgj641cAnQIQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAWRVf4Zm6jKiiz7kv6EP-fjIsXkm-mubaIBjwxEp2kaWU2h8uIR3-xFOZejC3sQpd5ZPTVyxc3uC3_j7s6kMlMmI2i6Cd_dPUVhA6_0P6mX_yMfvsUl2lY6jI0QFSDbj3XnJk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoIkVP0dY4pQTrlv3m9H-rr_lLJ-yryXiEVLDphxy_nxPzW6MVXqiCRFdr66R_JzaJJCJrNF0UxbrYlK1l5nTtWy1gRe-woGQbABIreMg_LhGqaCrC8Rko2EtDsettC4w1h2hd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9od-JKQ53Xuo0LM_IGukI4ff2SyHowB7AEZaIvzb11F3VqRpg0x4VWfvfwd8YA-aP2rVSEc1zqW1iAf6ZVk_RTcjK8-JB7skfuGlIVEP1L7AztO4NiDiRDJnkwEV-xE6-6eA8Z4bJqrp5pw0="
+        },
+        {
+          "title": "canadacommons.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmS3s5wntWDLeOoEosDc0ohZYKxBInhhGwDL3QUEQH-w7ybMbLNkYrCXb_MNK5aPs7OBe78aF1IZ0Yj2e2Ewiwnb5Ww9w_f4UdJaBSbOj8T9ckW9M9dKyfUw_gOwbBqt4bCb9d3f4xVWVhI9QY20s49BRIUaQSzRCIWqJiJAYEuk9wsDEB3NGUcEZq1eLeBIDCCUrXO-rzHaErOD5wGA-hJYjAGrpUEmtr4Io7X4PkI9Pw1hhqqRW14QW_gSRQ4F3B7GM19w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Indacaterol/Glycopyrronium trials for Chronic Bronchitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Bronchitis&intr=Indacaterol%2FGlycopyrronium"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "27.5 mcg/15.6 mcg or 110 mcg/50 mcg once daily",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5500,
+          "monitoringCost": 600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 6200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 124000,
+        "costPerResponder": 8267,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Tiotropium",
+          "costDifference": 1000,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Indacaterol/Glycopyrronium",
+      "nnh": null,
+      "nnt": 9,
+      "participants": 25000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 5,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 6.5
+        },
+        {
+          "name": "Cough",
+          "percentage": 5.5
+        },
+        {
+          "name": "Headache",
+          "percentage": 3.5
+        },
+        {
+          "name": "Urinary tract infection",
+          "percentage": 2.5
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 1.5
+        }
+      ],
+      "timeToEffect": "Within 5 minutes",
+      "treatmentDuration": "Lifetime",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvvcwU5EC4UzElMHTjt5KBYqRxFpAgoqKJJa1ueO7f0x7mEkn-uuBlMjOfFcJUI5me10_uHLXteppnDhVlTIWBFGYKHktTiGAmvL5zBfhdxupb-NYIELwSdFGMzfxKTpgRh5xB"
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV6w9R5DVB55B3WpNpMxGx-engC-lFf_qk4YBPgdT2RiOwbbYqx81xOadPri5M-07nStXntxsWUM3dqw_8WlDH7uiCe_4_79WZkpoEiBJDookiGXZbYTd_QumRJqKYuiep2Mg-Fzqbdx3JM7IynJU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeZVWFsNeWeba34J3KHGQV3wIyF9xiPSywq88DnWzSXMAaHMT5KBrGdnUppdblVZHHWPkcDY1ZD9JLlLlahrvIv82vXYeKaOHEe2XcZvZ0hiB7sQsWIFRBoPFm_9D159ZfPlXm"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzrZVM8KRoX143ep2Kjui_DFqJjgEXqoX3aerHGGROxB995z8uhwOFZSRTHqbE_KPqEbPcdU0TEfxD3N7le_1T9s6bbRoqQZhjvfygN1bP245ODRsfFiMwBP7jZxDWE7Juhjuy"
+        },
+        {
+          "title": "clinpgx.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3LGOX8sMAxPrGjQTi1u78ijKtO6RIE0nmuN3Lf8qJrUwfRrgeZ_KBqYMAfyocYLqCyXyIH8IpRICp2YgDSxwUNTcVYEyUOmL4uvh3GW9ifChmmLiyBpxxaj6EHn7dGvo="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF743MTEhLiujt9GH-RpwzchoJYbGYWY6ey0EfzQcmXnTlzw2gHw4YBj75_Mvaj8kFHzkOXnmO2f-RoulOHdOskk3Q2xC26Sg7vO1tZSULJl11yt_pIAGludZEbv23qfSgRFzufSQuP5NZkRcydv8JTbSp7bad63bH7a21uznCxj39nYRzmNXrWkuJP_s_2xw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_vI-LmDISnag9kSi2ngpY4g8sDKbNBEIlG7HFeQxzO9RR9FBCLuo4qjQYXuJ2vBxZkZOKy8p-kXHZ7iW1kLtIzKmX5kQNolpE6dugxN9_dBsJkjyPBrPlLqHTJ_Ab3GypAPX4"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRSxQkFq9k8Kltc_7PMFJZd37E9a0Te_bOlRCFl_BnsSFmDTqf5_W58vcK7pIxeauVbvQVUGWLkBmbaMbrsw8GKAiNvUO9IlYtfT2GE4VmMXdRI7LpkdOUJ_7ZZHG8omCxlrRDaXAT1bExsynSoboURsvLuEGyDkaoJN714h8RG_I5mYj-TW4h1nWzYCRnieLyEF5GMX2P3Dn-dC9Xj_-Vfpue0g36nuThvGviSja2PwAlmTiabZ3Sr4loUmNkLk6WbvRvSt4oIcGA1vc4uQr7ps_WSRf5maGIeeWqsLqhmbwCdRgEU0apG3JqymaVw_310c8pi3V6vJ-XBz77mnMCajpa"
+        },
+        {
+          "title": "ClinicalTrials.gov: Fluticasone/Salmeterol trials for Chronic Bronchitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Bronchitis&intr=Fluticasone%2FSalmeterol"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "250 mcg/50 mcg twice daily (Diskus) or 230 mcg/21 mcg twice daily (HFA)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 200,
+          "totalAnnual": 4800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 96000,
+        "costPerResponder": 6857,
+        "icer": 65000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Salmeterol (LABA monotherapy)",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Fluticasone/Salmeterol",
+      "nnh": 25,
+      "nnt": 10,
+      "participants": 40000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.15 L",
+          "baseline": "1.25 L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FEV1 (Forced Expiratory Volume in 1 second)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-0.43 exacerbations/year",
+          "baseline": "1.6 exacerbations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Moderate-to-Severe Exacerbation Rate",
+          "percentageChange": -27
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "58 points (Scale 0-100, higher worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "St. George's Respiratory Questionnaire (SGRQ) Total Score",
+          "percentageChange": -7
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 70,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.7 puffs/day",
+          "baseline": "3.5 puffs/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Rescue Salbutamol Use",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+22 meters",
+          "baseline": "320 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance",
+          "percentageChange": 7
+        },
+        {
+          "absoluteChange": "-0.74 awakenings/week",
+          "baseline": "2.1 awakenings/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Night-time Awakenings (due to COPD symptoms) per week",
+          "percentageChange": -35
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Oral candidiasis",
+          "percentage": 7.5
+        },
+        {
+          "name": "Pneumonia",
+          "percentage": 4.5
+        },
+        {
+          "name": "Hoarseness",
+          "percentage": 3.5
+        },
+        {
+          "name": "Headache",
+          "percentage": 12.5
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 17.5
+        }
+      ],
+      "timeToEffect": "Weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8AMC6ujfAj8UwWA3RTJsn9QPJhIUcfOMxoeXk_98MuleMwRyU6GxG3coEnOjnzMCrpJaQzZfTB_ydY3h2g6FuGDNJM1aP4Uc0LLba6Wj_Td6wDpVJOJXAEdoWMuLQEK-C0rB7COPRus21EQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5scbHygc-yKU7SSUJeraopLzaSNPSOeiu94DoBY1HYJjJoNvYtSMQReYkjIFj-XsfR5mSS7s2UcQEUwv76fNRKlr4b4Sb1GYhBLKWcPM6-1cuP_7vRk1WoxWH0kPM7S4aSuV6J8hP5cA_vAj3uoXC_KfEEDdj90fZQ9awlJj8eu0w8PrOrv0ApYLy4uxzifqXDdF8afU-UCSbt_NhidN1o96oJWKojtGR_Qcd-1sXH14TXm7sAR4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0X2LnaA51WUzDVBfsenNmcWJR2q1JU_PhZeuVcZL0zn1phUQNe7_33I03ixIDLlZaWec3lFC4Xl3psYsPj-tKkJhpDjHJQ6hbjQvfQ2k78E3nqJmigFToBuy1xtec4UBxj1bV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDsdbTwQ19phGuU7KvPOJm80UU3TkGVRWLb7bpM2NZ62OJFKLsoMXtkQl21ChJ5lKHGRzjaUzVK6iaUnNkmUOlQhGz52QxBVwKCdYpMfxqQSWL5w1z6PQP6aWUhpkEVspy6fkkFFx4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB1RFPkmb6OuGKUBxXje0IOC_C7sOVo9rHZvm8bPtQQ2hYvrOW-B4yI04uJzAqLQSWVAYiZOXzNbvLAKKlTpndW3rOLXcIyL3cyALmLM_nquC0Kr4ZksAKxFEFqBWnFpHqUL44"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsgfoOts1h-xppG3DIVusFfj4ipmEtoKXz6_oFkF6AfNGdJbQMFooIM1R2f1g5NPlNbIUDOvzm_dYAh_VIIMWt57UUOHVUWhkOkFIq8dTPCZWnYQgdN9ksM9Fyy1lCCSRRffXB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXmOtrsGO8-bVt6yuWdacR0qGqoP8NBgWFyA6tFOYgfTY6H92L9bbI42jaZhA5gppNEQXjz2--6CB3eGwre0soHRBiILqjexCEjFyYVo69kSr1KXZ8D28dllOgahfhrKSvaCaC"
+        },
+        {
+          "title": "ClinicalTrials.gov: Tiotropium trials for Chronic Bronchitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Bronchitis&intr=Tiotropium"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "18 mcg once daily (HandiHaler) or 2.5 mcg (Respimat) once daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4500,
+          "monitoringCost": 600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 5200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 104000,
+        "costPerResponder": 8000,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Tiotropium",
+      "nnh": null,
+      "nnt": 13,
+      "participants": 60000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.15 L",
+          "baseline": "1.25 L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Trough FEV1",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-0.35 exacerbations/year",
+          "baseline": "1.4 exacerbations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized COPD Exacerbation Rate",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-5 units",
+          "baseline": "52 units (scale 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "St. George's Respiratory Questionnaire (SGRQ) Total Score",
+          "percentageChange": -9.6
+        },
+        {
+          "absoluteChange": "-0.5 units",
+          "baseline": "2.5 units (scale 0-4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Medical Research Council (mMRC) Dyspnea Scale Score",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 units",
+          "baseline": "25 units (scale 0-40)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "COPD Assessment Test (CAT) Score",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-1.1 puffs/day",
+          "baseline": "4.5 puffs/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rescue Medication Use",
+          "percentageChange": -24.4
+        },
+        {
+          "absoluteChange": "+17.5 meters",
+          "baseline": "350 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance (6MWD)",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 13
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 5
+        },
+        {
+          "name": "Pharyngitis",
+          "percentage": 3
+        },
+        {
+          "name": "Cough",
+          "percentage": 2.5
+        },
+        {
+          "name": "Dyspepsia",
+          "percentage": 1.5
+        }
+      ],
+      "timeToEffect": "Within 30 minutes",
+      "treatmentDuration": "Lifetime",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "ccjm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDfwveKzlppQqlSXE8MK6YKXCZji3Sc0dcKIkXaHvhtBJlP241bd_LP7IlNWs6aTzmGVqyH6U1EvRxNeuzdGA2JjhmS5NfCv05okl-BCzI2MTcmh5nN3d1S3cfdDWL1g=="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_q9KdN_jURpKGS53FVXtgSjibVp2QoCbjvfgnpN8KwDPwe1LhQMFUj8CYVALFxqBa5gu_7MkZPr2bz6Lc92LtSeA68pMRlZ34hg1M7yBULZCPiCIdWxItYPyx8Jy6n-Ob-re4M8JsYC_XoyteuMFiKTSFbmfVQ1f7mkYJCOYu0K1C6BbuOCO3x1_TB388Cg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGASX78RP_HWw20hXrFD8sF4naEO_9yhbSwJRhXI3EpFFaBPssCQ33PTpKHla71_JwYaIFW2tIVuHwbDytFcLB5rsJ8E63VGqVyCecFnyymvAK9JdQAnMonxVwrGF5R2MmM7MQNPcGxBP-nLW8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHARBsBH73djJjZCqF475aaBLZEpkcPH-5J0UJ_s6qjG443wPWuv5Otw-k9qZCLQDRR6MSLZposTEEjK_KO1r4s2n3scvHxN5Tl7CqU3T91-m56BDU-FCFenr4aiDF5N6by-u8sO5nw1UV6WG0="
+        },
+        {
+          "title": "openaccessjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpiIAHxN46ZWB6OmjEqmVNq-njU4rTu6n8rSd0XKwLyL0oc_zjCxOj92AJ8cF5YbtKxE1hVq8U0lBOKEclCIZXRF56CuMot9GzrtSW5zX0cc2Lqq_Bhjr88gddwT54-vGoIAM3sEYT8KejDL_3IDwTeXLE0w6Gi5Xsi9pSBjzOhy-JwyLv0_v6Aboyzng5It_a4v509AmAAsN53oNyvg3GrHS3TYQB-AClRDsbhbmDTXKEZjIkQ5S7wipWKrGtitEpdKehhIM="
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXUMAAJROlc8EoXfJu24BZq_0E-UFqx77A6xvH4Lg3AWqLKdAhKl88HfKbD_O0_gVX1_m-HTIEHyTijgQscgTpQL8rNM5a6PIPAVih1kPCnBXXryNyOfbPR7SNopfXuk2t83bvtx403GS98tlplPBZG5CpXpnXFY8k5-xE_RzeDIMrOThER-uSAio9vX8s_Uf-81EI6_chPSZvMkgPDC9mzBy2GR7b5MTx1rSj_5Y="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIfDZxmlow1duKnJFN22XO2_18xsWmKytrIXYG3CJfJDKKOuA9SxYLq-HmpvjGzGqRLOhsv9oR3V6yVrCoVm6dTi8PlvBfmPMCdYb5CzwHESaYHOt3obekMTn8YDHgMLa7Y_RrOeineEPU4_DWf_3dh5At"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZOBoeDIIgdHju1Y9vleIizIRJuR_vtWs2Ub2SzReTGqBZ99RuZABOqt_Y6HhzFGFlqHzo_gk82uHtzbld2bq9UdXsXnwjxua54F50fXnzo7O8tZRO0oLRZLq-6BmCrkXMO-izWdZ-b4DY2MzepM8Zuujdm3xECId95AYomYvtdjhwMd07OTi6U5Tnaxk8Sd4TJfpg6lNa5n1mynMw8M9Q4sy0q5JCthTehu-WL8bWvv3zrsMeaBXVdsY-W7BlPwJgsMvCFMPanXKoNbPPZHzb5DgqEQHI4fTih5GcFcH1mvzE5EDAQcFjzHOecqPl"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWVToQQ48-YSE0P97ILWIjaxQdrACrFs0zNEVzxHJxR3-QMH63DRyRX1BU2hG-RMhDiL1GhBiZCUsyZ75OrTwfamcedZGdWPcS88Vb0SRCGVHiSrIb0mcfuGcuhyufGYaazpJ1Hg8iBiE29b8uBmpKpIgssp6iMGvP2sL7OLrF4dziAOg01HDxYgOyn3twMFR-Kr_zCp9ZvjORUQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZzk893UYBSyi7dXrUDsjyL7DpSwZgSIhxGBALyRK5lGsgUc4Zc14iQRHqTWk8H7nCpLGeeKKCtLa_x4u5vjHD4eQc8f3ZTHD5xBYseEKVr-vcCVtPXExWfw-kS4rvIUAjA3HaU45fBtEwfms="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGf8ocdVWcKrNJMz4ZJr9L7PFqL4IhnPxwcYjct9U-nDBf9_uAAqxfLtaxZRVA525Bhb9U_vb4LjbfznOgjNhmOuYVarSKfKqwsyFnnne2RAQiABIrGKJbGoqCJ31r2xL48xkOc5zAx-gfjGjKX4c9SgCTw65UU8L08IJ5KgSKmYwN3GPK3G01CXjffT6uteoK6x9V2cXtTwwEfV9wSnGYZKChllwFf34fP2lH4D28hRLMXmfBSMcQ-gjeLyk47StEoScd3xUs0UrS18tLu4Xy3wZrS_aVZ-a8nspkJFfu8JJCTuw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Roflumilast trials for Chronic Bronchitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Bronchitis&intr=Roflumilast"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "500 mcg once daily",
+      "effectiveness": 68,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 9000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 300,
+          "totalAnnual": 9900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 18000,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Roflumilast",
+      "nnh": 13,
+      "nnt": 18,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.27 exacerbations/year",
+          "baseline": "1.6 exacerbations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Moderate-to-Severe COPD Exacerbations (Annual Rate)",
+          "percentageChange": -17
+        },
+        {
+          "absoluteChange": "+50 mL",
+          "baseline": "1.1 L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FEV1 (Forced Expiratory Volume in 1 second)",
+          "percentageChange": 4.5
+        },
+        {
+          "absoluteChange": "-0.38 points",
+          "baseline": "Average score: 2.5/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Respiratory Symptom Score (e.g., for cough and sputum severity)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 55,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "48 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "St. George's Respiratory Questionnaire (SGRQ) Total Score",
+          "percentageChange": -5.2
+        },
+        {
+          "absoluteChange": "-2.6 days/month",
+          "baseline": "22 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Days with Productive Cough/Sputum per Month",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-0.045 events/year",
+          "baseline": "0.25 hospitalizations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations due to COPD Exacerbations (Annual Rate)",
+          "percentageChange": -18
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 9
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Weight decrease",
+          "percentage": 4
+        },
+        {
+          "name": "Headache",
+          "percentage": 3.5
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 2.5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElPmLegdWxsU8gme-8_cK1WNXP6_kwKJC6qiYrFCcP_8jzIi4sVfD7g58NcTIEhPxVWud09WDFapBozQcX_p0o_S56tHfImqUTrMJ6JwLrmxf_ODLea2POiWc_eG2MLEHPsNtY7JE4NgfdZA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp2Hcq-9Asfx-b68HvEoRsrGRb4e2t2CQtdWyW1WSk-cUjlBmGfbDWjcPfMnySHgNCHeSqzNOyxmD2qGhSwQhBhnkEdAufDS-YR6W-C2XcQ8Dxc0BBlT_H0mxvxVY6wBT1ZAlElkhVohz8GQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnNC40TS4elQ72lrh-TX_TGJzsZyBc5Mi_sMvCwDbF7SuFrXW2IT95Ij9Wo7w1fUVQee6qXLgH89tqvM7FJ3WO3KuQZ0uw7_92wJlxwVZ0ekbuVHs7ZTM5hS1UwYHH_CdvP1w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd7WyR24owyLfiqEtPEuwtaiE2DsL6vYbUgbe3o6it8XIJmn3apPP7qG8t_ri-Jt--1gTLc6xIIHPbu1xLORymHzwJWla-auu94DejT5OkiK6gp89fMsRCG81BXK9NVzk4WDk__RSMquqysKk="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7LcgFkglwrmGR5Ii53TysZEFoicwxuvZpoeLysNk4KoPcZHPN2k8MVo0hko12GlR7xvEbBJ56VFFRxgKU7CUbQ8Lxze5cbfvwA9cJZkA29YiPE2iW2vTffBxOrdxti_cuQAA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvIRJ5NkM3EJkT5WL2TcwpQBL2_SZOovtyCvxBF8Rqhimoem3WTC0H7TfbX62ewrtbe0b-THE20Rp8Ns4BRcQ2YXmfEzBjrP9_NN7scy39i48vPJTtcDDs2IHJtA6Ob2C_KewmrCXM7CB4Eef2Ekd0B9vSgAZTCbIy6QHItFk09teoGZHcAQWzQUOR0LTk5VP0bSs11mN1Zu5myOIXGyoFLn-lHN3CaAne"
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAd8hHnv3AQIUhCYUmAMcde0QXTBlen7-iRFWZJc-CCL7C63K4zCtk_AnwPj9EIl0CJ6L0ww88vpq_xC7qfB3U_NfNKxURSLsi-9ztIfIcrnLXgYGUGNIAMIQXUi5w3uoa--YXH_A8aDU03lRZ3p0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin trials for Chronic Bronchitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Bronchitis&intr=Azithromycin"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "250 mg 3 times per week, or 500 mg 3 times per week",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 850,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2500,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Azithromycin",
+      "nnh": 10,
+      "nnt": 7,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.45 exacerbations/year",
+          "baseline": "1.8 exacerbations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Rate of Acute Exacerbations of COPD",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+49 days",
+          "baseline": "125 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to First COPD Exacerbation",
+          "percentageChange": 39
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "20 points (scale 0-40, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "COPD Assessment Test (CAT) Score",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 50,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.1 hospitalizations/year",
+          "baseline": "0.4 hospitalizations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations due to COPD Exacerbations",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.3 courses/year",
+          "baseline": "1.5 courses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Corticosteroid Courses for Exacerbations",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2.5 days/month",
+          "baseline": "10 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Days of Purulent Sputum per Month",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 7.5
+        },
+        {
+          "name": "Nausea/Abdominal pain",
+          "percentage": 6.5
+        },
+        {
+          "name": "Hearing impairment",
+          "percentage": 7.5
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "6-12 months, or longer",
+      "trials": 22
+    }
+  ]
+}

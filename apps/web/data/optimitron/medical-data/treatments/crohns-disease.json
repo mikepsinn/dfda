@@ -1,0 +1,1115 @@
+{
+  "conditionName": "Crohn's Disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:42:52.668Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8q5Hwzd1PbxegBR5dVyXwyNwY3WUxKB8tUgCK1yvK-BbhfJRmHiymXbfVvuoHkPRX4uiajBwbBdV2Q5X6HGemYTfrsV32QNZBGrfK7wru5imUrgf18MFFqUiR09svIKmqllo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp38QElBZxEv_r-Tnk6i538vprr1m9ykNyLm3_w1succvrcWVv2OEgTyJNcTisnXMun5IFj4_5MPNbug0zWD9Rw4VjU67G7cWmAEyT9nRJzJGbJCIHgdC_OxNbcqZJl_kZ4t4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK1pfl-iMY3wW-B3-8nlltR2lPVsSERJRACOAzn55vWsBZwnc6gGwV2pKKdO4kJBLKbceGSCpWtZRf95TDhy-lRoCODZ8gI2HZqPGB5gyW50NKAOV53ChBaR-KM244wF30bzy-cyaRJVXpxW2PVj46Twa0Ed1PDmdShK8G64GvDLul5Ev7POgBnqiVdBG6PA9i6Ja9zBwI6CxsY3qJCRg9D0K8xwFSHeR-zP4Xs0M2xQIiVhKW4Zb8uApefN0W1PwgY8n5sWztjFnxrCCv81GonLsg40AgIMieitMws9V4E7Qzp5NUVztRxYXmGg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfdKsjagS41zpSXSIlBoUuMEzBcutD2o48xhrtei26ThoqeJMCtqmr1DA--1P49bGuWnpzL6yrhcX0OmmGVwfU8YZbsJhN2LJFe9LJjdp7qiMYkupo5VpvYJUpkrW7d0Tz4tNXYBLSVINaTg=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG366Ur0LvG55JsKDcRjPSdw44l7xGg8rch_2xnM-e8kasLK9rRnRJhG6NuOfS1EDbjXUWGi36Q6rSmZ_EG4_NA9ottTBb5yo9kf4Es1bbHZsaR7O4CIhFVu3t1zrMl4GMGZmTB4g=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5WyI4c_WKiLv5wYMJIYmJU8onnEQ6CwEg36FzY4OxiRJtzpoFslrMfoy6ZdAQ4__tbfYKEPWAL5a5yKcimjkHeK9eTU6FXjG4dAlfLkjqc7c1Bdnq5FG4TctyQa29u0iQoWzI-A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHP520L2JgoGwM0sNAklHQIzbkzG9zt6HH3U5ynm2R6SEss-s3SGvCq0DfIVMf3Y8uOArjPjV6liWxcrR6BfdP5PonLER385mucnPzQz7lbXxGgBOs5ppV5gTm1EtnuuFkrxno="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENWNRPYFharS9OmRKr1Rb39-p8_ERD3IDSnRXzSQLARnogd__rzSvOTTJkru0ngcaoNSwkLzqY2NEd1cpxMj277flfn2zVm4171ayRO38ADn03svNcINm1HJl1LkazZZF01kJ0Sg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Infliximab trials for Crohn's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Crohn's%20Disease&intr=Infliximab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5 mg/kg IV at weeks 0, 2, 6, then every 8 weeks",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 1150,
+          "sideEffectManagement": 750,
+          "totalAnnual": 11900
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 29750,
+        "costPerResponder": 18308,
+        "icer": 55000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Infliximab",
+      "nnh": 30,
+      "nnt": 4,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-110 points",
+          "baseline": "CDAI score: 280 (active severe Crohn's)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Crohn's Disease Activity Index (CDAI)",
+          "percentageChange": -39
+        },
+        {
+          "absoluteChange": "-20 mg/L",
+          "baseline": "25 mg/L (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "SES-CD score: 9 (moderate-severe inflammation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Simple Endoscopic Score for Crohn's Disease (SES-CD)",
+          "percentageChange": -67
+        },
+        {
+          "absoluteChange": "-600 mcg/g",
+          "baseline": "800 mcg/g (highly elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 65,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+45 points",
+          "baseline": "IBDQ total score: 130/224 (impaired quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ) Score",
+          "percentageChange": 35
+        },
+        {
+          "absoluteChange": "+1.9 kg/m^2",
+          "baseline": "19 kg/m^2 (underweight)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "10.5 g/dL (mild anemia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 14
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 4
+        },
+        {
+          "name": "Malignancy (lymphoma, skin cancer)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 176
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNtAB2pjI5AE9If445S_gQchYZxHJCD5LaqAWGKNETcBjMXoGhRvzrzZhDgbWSPnRvR1lMosbj8fTVL90nWXD08ym7xtg3nVQPFwyy_zaQuOuuk7v9DmUYBclhcK8br0TG1weCBA0PeQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpv-moYe0jPsrZkhS93es5UUZlLtNf3efrsqB5487C09ID9QLSf7LEQ1H2RMYFDmMIJZSMaobHOCvLNCHks5w-6ZjsRa3i8osUkwdaOaYRjXeLwZl6VGcqnOQgHa_Jf6QmSSWq7Q6BNxUEcTg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlj8s6w24KvgqadYLRp3sJ-7FvWj3uJDJJ2XnNZirrBaB5GCLukhul-GiNLMO3owehoQwYsXOeRGE83qV7bBeeJ9Udz46hn9DJnXBZsd5DVqdlN66E3WdhiSepwWtj2u_SGeeHEaGpU_RzI4R4Wh2Q3zGq0SjS3JpTP0VoxzSQ7yFLEUSlqoOjI3WBGMQEQAinkd9DQWYGosxCy2SLzXFImmmhYzl-QrcyUjwxa9tllz0f-7qL3eoFEe6cbecTQvW5fMqslhNgbtx1HMVFnzWSWN9wCZM_I3XTXXo="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVO1HJR_y0FClJefQAxaLJ5XN0GHdfBpj1R9FJC1Ydlo63AQNJ17vLNCGew0XVh_jARgmJZJkCZG4fy3adQONZ4geOXfGWRn7r5TGHRwwh_vr4J3asAk21_17H9smWGOCDpwt3p4OT9KdbJMO6rBeexN9Vm33Krvs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0xnQxV9xCVUgewYzRBN0O7aYnk7WqGFvegFVO7jXxT3qFnnLPWnmtE5YSwuCZ96DsCMLL3Cbte4hg3gPvzuUCQILr-6DDY2pCR_FZdzFIdKW4VCUQFrTc995xtcSWb6tAccTRAkDsySKsly4="
+        },
+        {
+          "title": "humira.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8lxaqQgiNDh_MagvPjnNon4Sm9PVKvipUuPqzRyHYBqREJuAGk6MuUIg8QgCsX0m8dCa0jZ5DOhBfRBGQLWuEW9e-WzrO-8il0iuhj8Cnh3yQ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Adalimumab trials for Crohn's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Crohn's%20Disease&intr=Adalimumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "160 mg SC at week 0, 80 mg SC at week 2, then 40 mg SC every other week",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 12000,
+          "monitoringCost": 1150,
+          "sideEffectManagement": 750,
+          "totalAnnual": 13900
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 36579,
+        "costPerResponder": 23966,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Adalimumab",
+      "nnh": 35,
+      "nnt": 5,
+      "participants": 25000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-154 points",
+          "baseline": "CDAI Score: 280 (on a scale up to ~600)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Crohn's Disease Activity Index (CDAI)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-10.5 mg/L",
+          "baseline": "CRP: 15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-600 µg/g",
+          "baseline": "Fecal Calprotectin: 750 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "SES-CD Score: 10 (on a scale of 0-20+)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Simple Endoscopic Score for Crohn's Disease (SES-CD)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 38,
+      "responseRate": 58,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+32.5 points",
+          "baseline": "IBDQ Score: 130 (out of 224)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ) Score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-3.3 points",
+          "baseline": "Abdominal Pain Score: 6 (on a 0-10 numeric rating scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Abdominal Pain",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-12 mg/day",
+          "baseline": "Prednisone equivalent: 15 mg/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Corticosteroid Dosage (prednisone equivalent)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+1.95 kg/m²",
+          "baseline": "BMI: 19.5 kg/m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 4
+        },
+        {
+          "name": "Malignancy (lymphoma, skin cancer)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 124
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPK1eJPMecqT60XrjkJsKeqIqyHb50I-JvcgwIyE2FEZNMxLHTpgc3DBAp0OHhKAiaGjc501WKqzIGP6NH9wB5QzXgi6JbZMbA1NU6hI5jbBQh4ZC6BUpYFbxuTWzSBub2ytt-NYtaxn3LL8_v"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRkKm5mlVOEoMTiQK9i93RfGLoTdFvEtXTL66tjIlzxwGAR-RkCLamflYxAj4j7a0gXnj9t3Ss4ZV-LG6r6iahwyD8xWhedoAgJ2cw0cWQxjo0ORFvitQBlcz6JX17QLhi_Crq"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbCzz6IfXZDRRS44XovxZmy9RaD2NfJdKrRSSlY41OKcOlsljBPtJjtv_aZYwk8dlBJHxwLCEjpGBVRTObKW9zGUYxka9fyE93aX-FAt9Z4_LK7J9D1jOAX0TiGxD2tDxJD2r5Ot95rtoW-iI8GPD5BwgVx4HJtoaj9GgwHNNVyjM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPsN_4kLnp36YAdVHT9F-MvZ1_otT0gvv09pEJqTRvmpVoSNyGs5U2s2_jpt2Ab0Gp21sQWdCsGzMLD38lPqQT-vnHbPplnmsyQ6EPh2AqMbuEZzRJ78Gr-V05AoKC1qVYm5sWvwbPr5t2iu8="
+        },
+        {
+          "title": "becarispublishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTsafq9TNLRjbBSwSh-XZdhe3vQCAR929VeWJE3sANDDHTxYf4zeu3eDHJLrJKKbhaH2hSzwKeSsAT69UOnGiq5S0cGCmHsguARTfP4N3QVYnYi6K25Nhns187XUSpzJG2VZP6-WHrpGM4xvrYxaRl_Rc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL9xkaOVMKCVziNo2NaGTE-bVIfmuBAj-wOQo-lTUfFn-gsj7lVRBZtKhwnAUE5O2NR_re3fONYD3Q5FlabKMqlbG-I1Pt7MX9jpUnrJdQRbnK-Loxhwx22vlHvFPd4ICKUakFfQ5VVxZtDdA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ustekinumab trials for Crohn's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Crohn's%20Disease&intr=Ustekinumab"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Initial IV dose based on weight (e.g., 260, 390, or 520mg), then 90 mg SC every 8 weeks",
+      "effectiveness": 72,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 32000,
+          "monitoringCost": 1150,
+          "sideEffectManagement": 500,
+          "totalAnnual": 33650
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 112167,
+        "costPerResponder": 61182,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Ustekinumab",
+      "nnh": 75,
+      "nnt": 6,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-120 points",
+          "baseline": "280 points (CDAI)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Disease Activity Index (CDAI)",
+          "percentageChange": -42.86
+        },
+        {
+          "absoluteChange": "-650 µg/g",
+          "baseline": "1100 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -59.09
+        },
+        {
+          "absoluteChange": "-9 mg/L",
+          "baseline": "18 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "16 points (SES-CD)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endoscopic Score (SES-CD)",
+          "percentageChange": -56.25
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 55,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "135 points (IBDQ, range 32-224)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ)",
+          "percentageChange": 22.22
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "6.5/10 (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Score",
+          "percentageChange": -46.15
+        },
+        {
+          "absoluteChange": "-2.5 stools/day",
+          "baseline": "5.5 stools/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stool Frequency",
+          "percentageChange": -45.45
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 12
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 4
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 7
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 78
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgwUln5EYAuJFAE5sotC69IkOaKeV6dGDg88Af70IiJ9mGJHKslXuA9Q29cqm7NkmOrpDub9Gn4dDNkxa1gMKrxpOJ8e5f3oLa2DXp4_Dxq5HfYQKhofiEP5urupMrBSeURU3nSRQkUDEf5v-I"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsuv0JrJ8neJ8Q5gUeUj45IRbu6VQQYvpGidQaRtfhL7I7kSo11e4ZboHrmxsO7elUMtrtNUwGWrlQA2tpE9xnNgf62JpOdVgb10PAA4nyzZx2UW-wkOXqaflHB5Kd4LFnkBdv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFc4UUd4Lk5VGgGKuI8FbPR6JGMxoyQyTNbWt6W25oy3cOulb6JZZ0T04voNKHo8nRHBfd4U93Wb65zxARTveYrQZKm8dv3pH7X8IcwQeiXlfey71lj-ajS5lluLZUG2L5m9a0Z"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcVSFPXvcW4HE4wvvp6ukDDcQ0kf3z8wPR6vkL7hRuGLMYDsAvBfEJUqGntowV6QTKG4M5l0oEZr7Jen3cneXwAPbTkPc4SBQmZ9dIhHNCPgMdQ0jxUFHAo2gXvVCXZ0TBnZlT"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwsVIFiShz7fS9SGukmTtLXz4gJGQs2UmMSm4ZOZTmTIBF-c7t2hOinW_1mFjMGr_47QiNZhq0ICV4kmE7kS1mYjXnM7qBZp_8W7MUaMYCxG1MfHjJ9LPXwxG29PE7ITLSpsYm"
+        },
+        {
+          "title": "researcher.life",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7twDA4EHRdN_lak0z0lQgPo_nvSVhrUJsvR4uu_mf2S02eruS4GPcPWISd7XrBjYAbaM4BqOEVMiNVdo5Pp4PNIVyQxh9YVonLVM-Aemvfl1YF9Gu38NwYzYoyUHxS7WL-QvDCawJyWhakyxfu0xu-yivc920TAtaXhCh0f7zlWs22IbulaNMQqi0Cd7U31fH6lWiA01jn66NeJVxKQca9Mktum7TQFJVihk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwdIbOeVa1nEpz05obHlhaZNxuxX67AHsuli7ghW7ugUw-sHweIsGBhxJhvLrysKM6RHJvOS0b3LVG5sZ1Amq8Pqe9yEKF9pANJ_FnBr4-9qji36otSoJAYW0cInFPtQ8TTV92"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZpSuvSSGKg_g3riRd4bDb-ZKPMqTzqvDD5Jl1ngFRkpyQjz_Q-0T4sHPbZTriapWdotQGaamXDP5aNJflxLyQQ-w3qAVfxVwT4lt8KWB_MWe6hDRhRmrl3522lRs2EUYUp1VHbQj06rCuiDQ="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZB8JlSL5YeezLawzJLCcrgsvEOLbzdoswJpS1pvvT1smBnC-MDv9Z3uFupC3XkxMs7z9Hd04hP4P9EacPx2ZvFCOTxHqta8JTQOcURPXoivZyqWvab1AwkLvL7E3aTGvB6s4F3d8ZDjDW0PEcfU_vtJNhivMG"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6YOC6-DR4LdUx0bRbOwVfobMtoLHqFGKmga7m4i-oqsSVjL6QdXAvHYC5xPK5XDo0D0RFSB4wczhnQqCcoN65qiD4rIgUJoyGhCKMVeAs4luXD-xP8O0xG36l1HOOEvYZFABLP3o="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vedolizumab trials for Crohn's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Crohn's%20Disease&intr=Vedolizumab"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "300 mg IV at weeks 0, 2, 6, then every 8 weeks",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30000,
+          "monitoringCost": 1150,
+          "sideEffectManagement": 500,
+          "totalAnnual": 31650
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 126600,
+        "costPerResponder": 70333,
+        "icer": 150000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Vedolizumab",
+      "nnh": 75,
+      "nnt": 6,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-130 points",
+          "baseline": "CDAI Score: 280 (active moderate-severe disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Crohn's Disease Activity Index (CDAI) Score",
+          "percentageChange": -46.4
+        },
+        {
+          "absoluteChange": "-20 mg/L",
+          "baseline": "25 mg/L (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "SES-CD Score: 14 (moderate-severe disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Simple Endoscopic Score for Crohn's Disease (SES-CD)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 45,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-300 µg/g",
+          "baseline": "500 µg/g (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin (FC)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+25 points",
+          "baseline": "IBD-QOL Score: 140 (out of 224, impaired)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Quality of Life (IBD-QOL) Score",
+          "percentageChange": 17.8
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Score (0-3 scale)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "6-10 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 95
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRIB-cshTytcMsUqjtCtRuxiAk9ofw6mFH6ocGcxPjkeVEOwtTGTdg_BWt3b4Wkh3WPBfchL6JnnIHEiKal2J7kEP34QyK9liY612Tov1M0WSIFt2GURV-It0DzrrXhxkm1WcB"
+        },
+        {
+          "title": "northwestern.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8bPPmScw57mxUSgzxpDGqdz67vaB0yQJnxZ7kPT7LVtr72sMFhl4NFaUAguvOPTLPvSegP3QFxc78XOGXu8vz-HExQH9-0tGSlxGuar5mkZSn5aKGFeJRpPXdP9IPQ0F9omumg9ilDmbeuQ9GYZHcBym-DgIf1R_FYhTmVRbAxqL2nJ-tK_Mq4d7uV42JHP8BBj9LkxYJ17wJdCGqDPLmBV1Gxm9LmIf3gh0n0Fo63KDb"
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAAQxG6HTji2QC8JFJTErdxHmhkEvcMXdaxoAI2XN5e_CEijgjFudB5Kh6HpOqDQ7QWU130_CKdWMhcwwqgULxJGTYqPrxDAt8s4_QudBtiIAF8kFLaQs5rrJng4zI8dTcyRbvHmYmyyS3Rws0eETU9kGpg8NqXJyDHncVQ4ZJ1qUQ17pJJ40IUidHQ4-WMI52wQqZyw2gIzdHtXHJB8YQcz1gZEDT6rujUwJnJbS6xIkjCYpwQAvNavdODvGboqebcSWhUKtJKjOZ74RXmZJXqeMdzR4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY0QCwZms6rQwDibCUzDfCB_mY0rHfCiWWzf3YCbEdFzI5_E3J-NKJHL2WWh9E-uZji9PzNyd1hOzjIZAN7c5-oFJaobCySMPm2XOLywbWauarNQEMjjk5W2ukkzK_OGictWuPLFGgNSITG08yqPaSjwnXcCAl7ZeUAzMr2aA2mrddYTzn-QIkT5Hcca1heq8grCvV4C39x1zsDayq1dOLdz5U6gyMvtDE6HcrCK2teeLARR8IPJIxLwjohIvWx2fpC09UvwhIqMGeC5rlPDpgTb_xJj2k-JScTTVfHVlLgIbwD-txvJOIopIsg1FyGZVNIdnl5GoUt9zsjXMl_Q=="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOMInNkTa7AZ3FnBEpVnoCc4rJjFXzOwQoZ3KkaK0CMla7qeVe0S4Z1WapjDxoWUYo1ObqibKUQdKVx2raLaF8khGqpYeICrIq1j1h571KjqcqnnyZOXlO4foO_WKL3Lpmi46-XkzVJkNzThgAANB77I9ioQkVr7nOASdytzb1H3cMTY8d44TuESMIqGtLhEm4tjh0O1KplwExOiSmjLykC3xleaT2OqSByoSJw9NQGap9psB0fsveKn_FnMHmAmEjvk8HPEIg75NNMyOSWg2F7WODXZI="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfNEag5XfM0-NEwkRnXHFhx8z-fzElNU6hJatODt9Y0NFVcb2aeCjxTNa8xzGps5Sjd7a9FnP3ZqxTQwRzUaiSDe7pVEoLWurslv8s592IUfQ_gZcfklnOdm-rtgWbeykXlhKfcOyeOdJCA714Fd6u"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER63hSoeBpBY72UaRzmOX83QbMvmaaK3xrBvn4BDKuaNc2FCbX55sKdkgonjMz77pLiakG4W81pcrHX5tVaO1oNP3yEqLU6BDZjcKJC1uWxn-BnPX3SXadU1gQWFF3iwsI0qgdJNcxF4DtiuQ="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOXca_6vX_9i3SHbEnUn6Hd6_hS_mypM_wZmMpmS-dozLvnDvwzZpoyfLQBZkwSE3HVoAFoYQ1B0WoEjwYAbAUJNFuwY284jPb39iYcfpWFLOT-k96F3yWfJpm3LX-C7omFcgnsCJHQtXNsA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Budesonide (controlled ileal release) trials for Crohn's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Crohn's%20Disease&intr=Budesonide%20(controlled%20ileal%20release)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "9 mg oral daily for 8 weeks, then taper",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 750,
+          "monitoringCost": 450,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3250,
+        "costPerResponder": 2364,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.01,
+        "vsComparator": null
+      },
+      "name": "Budesonide (controlled ileal release)",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 4000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 40,
+      "responseRate": 55,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Acne",
+          "percentage": 7
+        },
+        {
+          "name": "Adrenal suppression",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "8-12 weeks",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEwUBSgtN-UTucq15o55MpzDtb8W-MlbHhuGOnhS2aq_A4XsAy69kyPZwA6mOpHM5PUrQuSgqTN50ZU2BI52CGgdb-7q8ivNz67a_tMKshXirOyVZ6MtZFxXKNHpdHD2Xvia6wmmF_F8jmPA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD0GXQ3ioztEE57A_epJzMJ8kHyFvVoN2JgPgevMnyrXnvKkmShl2qNXiTHlM-gjLLyiZB5_SWbr6Y1l4s1fAu8nD396TjQ2eRPHkL0W2DY5wNTzuVDxpJbC1T5PiQiPBrHNA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZTOSbPHKcc8JzmOhO-GBdV_6b_kD13V69BIUxDskjIkfJeP0iCBgwzEhYk8_LnaP5Yv-xwPiWouK6XqBckXJRtQlivr8dHM0tKZC_GKXyzbKsQJ-phRZg036D849_K6gutNXAjZoRUfOxrzxUnWpJHs0zYQ_iiVs67dXIG_StpaxmuvjaMQhimm4Tq5eHG1d8vVx9kzl8lafNs8Sda4F2srQV4qdu0wZeVXPfwtaLWDQFidLliMLuPw9Tiw=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5RhNVXFIReL38sXdcksEdem5vjM88rgvK8AoXkQgdqz7o55TZqpONuFr_o0-n_dq69J9YL7Ek39JaEN-oGTdCaagos6KF17cP1G932jyH5C11a_O_d7vtbzHcNd7AShJ6KieG_Diq7C5eiKhBiZibAkgllKkGpV2oNchaK36VrQI7iMgrSYZl-mApiBeS75EI9NVlYB77v5_gs7HZNwqtEjyJtPg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbeyWG2UEqly857iUy9wfdCinTEqXlNP9GMvIuHHlG-TztQfopeonPyTRosQGow8QWKTo-UgDJhXwEJ_Wit564ER-PcBIiETrzYvkCuLB4DL3VflEBhoD04-nVxWLKH4iwAXxXyuPSAmtJ0A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8a1-GUh9T1k2IB4RleiND_HFUMLjk1L9mk5FFSpZzPivvcegTJyTQZ_-CohhoG12WltpKeOyiUOvIyokwpfqtWVabD8IOWbTtNEGhkC7VEfB1BNdgyKPgBdstFELhhLkthQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFllCFLkI9Z6YoH3uhAvQ097jn-cnVyE0jV8uInfsMHnJajqZhO1SoXi0VcmmJfS290noPl6omwUemBhnU0u8ks5wmjsvXP51T4hDVrG3rnJZmtyxn99O85yqtYDh7U5_hkQjLEMjiQoa70Asi_-EVaxL9twa8By4geHaspRA=="
+        },
+        {
+          "title": "gutsandgrowth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGAyvYrqtBcJfErR2OkM4iGaXhLwWRu1EjRczB4v6BYKh1MEPLtLvMKLvLmzJRMTQ470UQCvyOI32-mNy18Yz8_3_lhJWJYrDfz1WlGFDxvbh-JAVqHxJ7l14hUFZheiCpj00hYZV3UpmCxCHhDoPKLsLHfdMaCRvmEZFpnHUfZWitng=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYSH2U1DNfdpmiQmf13AwsTepzXwTVocKwdG3XEs4Hcxl46OCO3oGxQr0A_xB6YL8RzixX2Tm7b3lhJG3L69Qx74BAi_GP3cffDBx3xu9FB3lr_ve6dch9ccwOQXx2nvNeTBRgNlvqImHxsfxuvoVs1aAr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErLG1QaYUW1QdaBhRsQktXYidCFFdbCNltwbN-KN23aKbLuMytmAcFk3p9FepZsdDaxtpzgVgLGV5bd9rXuQoYhmHwnukMGt45kyhxQ1BRxyoTtGGG405x2dviyH-l3ujmEul6r6phsbAWcJ9xG6t9MjeGy6QT6Lzj7He1AslPdHyG60Uh42gxiL0_UlPqPYGOrX4pIA82MPY6y0rDvCYsyTfpIdLWlmJ7eTgKR70fkIPgOL03Vh6dif1XmLk8Mt03BVjl-1qrra-1NQ=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGycxX35I_GJHes_1TiXNEFnH8xRaVOwwfIroCReEE22Pq741ywytPKdZZsDL3HeSWQqDwSx0w3nhf30DZtcUFzOMhhWKND4GSIWVmKdwfC6QFkEeLFEKnjS5FV_W379ZuanwJETg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIM7EyqlZa66330PZ710N-gEew2u3ptLc7cTaZZ-tqQXybXXRpuCcjU_lYidgANk6aE94C2ZUYdImmQIB8ieG-RlgG8fX4GqgE6nI3hGvQHO34I200u6nMyPHuxQXC7SRCvyTC38_FhkOtoA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Azathioprine / Mercaptopurine trials for Crohn's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Crohn's%20Disease&intr=Azathioprine%20%2F%20Mercaptopurine"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Azathioprine: 2-3 mg/kg daily; Mercaptopurine: 1-1.5 mg/kg daily",
+      "effectiveness": 58,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250,
+          "monitoringCost": 900,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1450
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3816,
+        "costPerResponder": 2636,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Azathioprine / Mercaptopurine",
+      "nnh": 25,
+      "nnt": 5,
+      "participants": 7000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-84 points",
+          "baseline": "280 (active disease, range 0-600)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Crohn's Disease Activity Index (CDAI)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-9 mg/L",
+          "baseline": "15 mg/L (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-600 µg/g",
+          "baseline": "800 µg/g (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 38,
+      "responseRate": 55,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+24 points",
+          "baseline": "120 (impaired QoL, range 32-224)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "9 (moderate-severe inflammation, range 0-30+)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Simple Endoscopic Score for Crohn's Disease (SES-CD)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+4 kg",
+          "baseline": "58 kg (underweight due to disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 6.9
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 8
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 8
+        },
+        {
+          "name": "Pancreatitis",
+          "percentage": 4
+        },
+        {
+          "name": "Increased lymphoma risk",
+          "percentage": 0.3
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "lifetime",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ2zxway97akUKeS0TzP30y-RntARJYxSLyEyEHBrCMwNEJDEQSMBawQyCwjNZ3vFJADYAoGPcamHbkUtpiq97neVhaApLkZ48rVCeYt3c0Nmw_2nNBhRY12RVps2cXPs0zktwzOb07oex_n4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOoEG9lr1-rwAsbjZxnQDXyWrAceWGQtm2Eg3U31jU0XTmW5k2Bv1P8vSniOJmX3Wna8mlsjuAAwewumN7G3KqZ20vbc5iyNutdHd-cx0ax-dHQccHmHa3EYHNIW3wRnbfhEbnIgYCb9vuCWg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn_MBQ7dJp9nVfoB6iDIvuYfcsdTwzSbow8cjbxEly_0WRoqI2E3XS9H5retowjeFMEQwVe5n_PzZAgUBhwubxWWx9zEpJD_us3PI12t3ehGEMgfrlCNO8Jt_zj3iS1T_NQoKg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZy6Y_TgRtU9yN05bpk67JVcIeirGCFXyGZGSfC7Cvq3uB7jB_S-RSlBC4okbqWqGjw5fB5oHip_fCeQ7bgs4X0XPwxOTQ-UUhFjwhTGCjghDCDGz7N2w5vhvWUKl8e5MhwUf8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXTB__KGx9HuzVokEmNomrXWIz9mak_l99xYO_bUpCzeOPGSfNofRbe5TAS9gdletrOS4O7pocAwASpgdZKCeN4t4ZkKJPRPWBH3Fchpz-IpgEnRBrgbHjph4fVxOLpARnzCy6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxVLksLQbN62Cy4Gz-7FNYuRrWApdJgmxC_8_v-29VuHIQ8alit-wjZVAemjKcF5vNzO3xWni5lym-6Csh7yomtfCXoJNT5cUHlBkPQaK_GyXLMkXD-kufMOEnEcljVY1H5ZAaDcHYLtErECBDvoyvWZJK4n9sHf2RNOA4AhxxN3Y7o-cxESKmPLffup699RcXypNud2URmL8S3pQWdZySaYJ6qFUiud-0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRbjYVwrez10K3X4KUy7eeRotZMw-c8-V_-YSDqyw6xWMsh1kcmF_2RcNpqDmTaw4lkuV1wjzuFzElpiv2TQmuysFddk3rjHtTkcdEoanh-9OSwBhw2-VrF_Tb4ru-TTrQxIO9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0OLBtjOLKDIQ0_wwWiUOcWQkp02HrDLVytx2ZJFBW1iJkqKPAwLOUPr5FrOFKF3i7NcGN5e6NAtkKWDkfcSAgrctozwKIoODuI2rt0-csMWbV_ESSo44uUFaACVweOnk3eUQIZadsKg_7B7A="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8gii62VMWvMc90lhXe25i0UQD-uDyxSyhFRyx76EJ-oPjlJ_OlcotiLJvv91nLbV8u-bF91Bx_ZAFTQ5YgDJSuTzb0FicPlDxQmgEiWba3jweIm3g0ZuNVkAAo873IrsFk8_CszTbp-leR94oz-3-VvY4bNo1zynFCy2Iajld0ULjY84erxo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZExdzkRfm00ZANteCYsduIEGRUSJ2Z54Gb3SAgVB25cEN9684jGRYf526i65Ope0_pPrZHeHC9hUE4ntEUiP9FSiRRjGy3DUQapGk-hVPlzIBBEGCiI6lu10DIKwEkncK58-X"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRNFvw_sGeTrmVBS1G3lKLmu5NvDmMrdkQInlXk-M8697yac2gZA10oPzKtfJmYYihyB6SODcDKIzJxs73jSD-p9xwGQve5OaqQjDGgiNgAnQFHH25Q3AMuR5QMdSMXq1uIBJQn0QdMetVbmGI2nAjINDz1ps8UnEkMm6n5Y6jTBYDrOBqA-9LdLu9a9p3cA58TuKWllB97JepWcExHFoesQJsX3QO9Zhzwftqe7zh2ZHD041xb66oj0IfWydBrC2YotbJ-zCPmZ8vzsCJbKIv3ZBaBOQiDdks4BttFAa8CQKpyBnMLPM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHapRpkNpCF59GHtq_IL4JXRqJo0v4MZx9S6yYYoeyRYpXzn5CTWA3GsewR56DXp6ynXIZE7X8L55dU4prmixxwzU_pBNh_PDCo1D-JOG44D2RXFuww9GD4-VO60hwCPQI2rDcC"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzpQi0By8J2cGj5o9uelIx1h9TV5dM3H20e06wbD7qkY-J36PeNeQ_1KTZs22TzF7UjJCeCa1xhptBSJ1HwhgsIx44JMSnYfLUEfmj6JKccih9R04edXBRTTUx9cA-TOBHlEMLwkyfMzbg7dUAXvkAp3-L13hOchhyTfCl1shQtpAc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4fuGkI2oQ7qMbcJzeRsnrpNJ54l1bRlc8spKVMhuP0A5j1gsjJxd1WTxtyzN5ZsRZGAYlQD9H_p3wH7xsJQ1nHvjlMOIChJY1d8tOYC12XG_Kupwzh2prynxqIro8ArQYuWeA5CUmEozdfGkRtXEGaGLOe_jqderLkuaSxkYpsgnid6vE3Uze1SFlXkzUwYlA102pJI96H_qPBeeGlzndbJ0NPvlKTisKUT4-sKcih2qt2vh1UGXOK5MScA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Methotrexate trials for Crohn's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Crohn's%20Disease&intr=Methotrexate"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "15-25 mg weekly, oral or subcutaneous",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 850,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5000,
+        "costPerResponder": 2778,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Methotrexate",
+      "nnh": 15,
+      "nnt": 7,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-110 points",
+          "baseline": "280 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CDAI Score",
+          "percentageChange": -39.3
+        },
+        {
+          "absoluteChange": "-6.3 mg/L",
+          "baseline": "18 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-320 µg/g",
+          "baseline": "800 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 45,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+18 points",
+          "baseline": "150 points (range 32-224)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IBDQ Score",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-10 mg/day",
+          "baseline": "15 mg/day Prednisone equivalent",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Daily Corticosteroid Dose",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-2 stools/day",
+          "baseline": "5 stools/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Liquid/Soft Stools",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 30
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 20
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 15
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 7
+        },
+        {
+          "name": "Teratogenicity",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "8-12 weeks",
+      "treatmentDuration": "long-term",
+      "trials": 24
+    }
+  ]
+}

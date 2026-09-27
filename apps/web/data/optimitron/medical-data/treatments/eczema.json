@@ -1,0 +1,998 @@
+{
+  "conditionName": "Eczema",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:01:19.794Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4We0B7BezGFnUYlDvjLvIehGKAkzCYU5inAZaN8tBPG0T_SNjJB6TWtoEwP-OusUFa2UWw2fQPbVbkOBfDL6iT7UODhDifUd7M-wcTbhTkxIDS8Bl_xYjoq12pS6g-44GSZAwDIhQEQL3RznoT4eITKLWp6EPQXtQRvq8rRapguKO7lj06xa93SWaG6Ct-YbbKRB5seGb-anhW2nY-lIkWacLPVaczTZZ82-7NEZxz3ZKZnxvflO4-ow4pE0n54U-Db75QaA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQW2_Tv9Giz98Ko0UVNpVfJvhb3gAGFeeCRk8-hmzg4gArau-j6y7Ck0qjoEvg-cUMMY_LRLMJMsIi2DQ8DA67hrbxHXcMC1nqs4-lffF2CpwwcMOONFbkL0HuY-aIFQGCcx1bp0uXHnAcXAPZtsFtDv-2wMoBAso3rYdI_Rk3zVay3GLf2SwLQlg1r1DEJk6b1k7Fg2eh5xksX7bRMShAIHP7WzbCvs7a6ksuKwXSpdS12-TJExBWX5vcQQRPJ5Nes14caYRCpzVBWC4D3_2T"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH79VzEF-9Rjgv2kaMeyLlxUMRO7x5SnUvGT3J1aPhu4L6Gb5Xt3mtrVdVumqgUd-Yr0SMLawxbvXkGqCZsIelXW-LkvM9hiKyHBy4VGf3_J93cVZ_yCX10s06rWEliud76jvy9ZTc1XILoTYc="
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1GOCnwynV_ZUaQG_6hoMYXFJ-oSoCD_UtoKOhEtDby-gzERZPWvKhgC6bfq7q4BXO84vAFuNmLkituSyJGMC6U1gk0WpeWBl1gRLqP_coL7Q3gjgOGqIXyWPsYp1808RQgJ8Uf8tLBqFuXjtn-UgPov47jYrK8vO0Ggi704QMKm4xvdguBX_slaPk_x3F3Q-xRqrhJT2dsk94gKw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3QboC2FSn4A8fYFCvRwYmqXDNh8ZdUjWG3IXVdWrll2Wnv9UX1CxkEylfH6c2I4xEzwXUdb2fFOe1JNndTPmqxb5yg0BMoinTwUKDcie19ZW1nq6F-2DdEYu_xZUU5fvdhfQ="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeCyvriC8MvW7ZRqh0SL7T0Ul54XQ88ZHvkati3S7I7glTkR7iW0fWib2Bv0WiI7ZNW6qYVcC5UKdTa6Nrh8LwD2j5k52R0aNkZq3BfXurZ_i86BS0aZoYTQH2h_7ZhodiQsw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9uQZ5QESdbAgwqdz8agCiBUkpxylq2kEkkKBt0Xey-Z_Wbey-k7xoGXrc0pYB5Wk0sdOONpoT9B7Wk6YTqUqW-2c-eg1-KwYwPtfpW43aXODpfItKQF3xbdxpTpBUxM0sqlg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc0P9zo3bzlfprpOLYq6wYtopgOGH8y0kGA0-vIzDulcP26y78e4u7qNLYe1N-YjLU6PYJOs9Ya5XC-9nT5WfNWxD1UR4tPDmKbOCEz6libycZby2WWyfu7po581LDaIbp1Fo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Upadacitinib trials for Eczema",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Eczema&intr=Upadacitinib"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "15-30 mg orally once daily",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 42000,
+          "monitoringCost": 700,
+          "sideEffectManagement": 200,
+          "totalAnnual": 42900
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 143000,
+        "costPerResponder": 63088,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": {
+          "comparatorName": "Dupilumab",
+          "costDifference": 1000,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Upadacitinib",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 5500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "25 points (0-72 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Eczema Area and Severity Index (EASI) Score",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "3.5 points (0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator's Global Assessment (IGA) Score",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "-5.0 points",
+          "baseline": "7.5 points (0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Pruritus Numerical Rating Scale (NRS)",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 68,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "18 points (0-30 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI) Score",
+          "percentageChange": -77.8
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "60 points (higher indicates more disturbance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PROMIS Sleep Disturbance T-score",
+          "percentageChange": -13.3
+        },
+        {
+          "absoluteChange": "-35 points",
+          "baseline": "50 points (0-103 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SCORAD (Scoring Atopic Dermatitis) Index",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 15
+        },
+        {
+          "name": "Acne",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Herpes zoster",
+          "percentage": 3
+        },
+        {
+          "name": "Elevated creatine phosphokinase",
+          "percentage": 6
+        },
+        {
+          "name": "Serious infections (including pneumonia)",
+          "percentage": 1
+        },
+        {
+          "name": "Major adverse cardiovascular events (MACE)",
+          "percentage": 0.5
+        },
+        {
+          "name": "Venous thromboembolism (VTE)",
+          "percentage": 0.5
+        },
+        {
+          "name": "Malignancy",
+          "percentage": 0.3
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 36
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8hHMGnFO2SnB8eOqe_6SPwaUlrZDSDzFrJrIHhGrVgvF1qwiUdgL4J4VD7BAaa70JMnxhikziRVxPxj2iGn_UQrPupKSwRccLZJrTqrzcehtPZMW4FBaxO6bDGjE3yxXJO6u_ed2OHUIl9NYuBqAcBUOJCzS3KMQBHocH0l_rlDcRimdnsfynpyzfF8G51Q6BbF2rQ8dVmp4bepmQBz5W_hNcCCbZl5V9vJ9Aj0i61YjibZ1oWXAgkE5fGyFz_1S4-lTHKOaXeyxPu6tEvw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAMeuu2ClHA2jIrwVjYN2Ud-eJxXWFXmuCpjk2cIH-NpMQ2k-TPBz4pLwBvDiaIEhHGOGOT3TQOT3_sW5Lx325hAYOzuGPfoAXV4tEeh6uZBwg_C2aqJ8ojxmvdo2APosZYw_c"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBPR4mmyq3hpF756qLWSNg1MM3LiH3E7PsPD5dKgh4P6W8ZujapMX8C4FZznbu21-yzmLHrcR3QnA2oSvgLsrj7CkRB792roOAnhyDcy9J2EpJ_B9qrfKQTTGF3FH03Hgowe8N"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8zQk_rRISNjIP9cRXPVsvcqx54BFGyVq-Qx5DpTrZyar6LjLPVz15mL6Ep3DBZ5VoT-R6x9bSBt7xERzjob18U73dS5LlvuBgST2fzJA9TuCsahGQCgxvs_BnNOw9mIrEIDv_"
+        },
+        {
+          "title": "heraldopenaccess.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHzNr4fRaDp8Px1LMF5YKS52RbOpY4npzU8bO5Mr5KSPaArjZqAeCJM0jq5bxSNixv793Ksbhfjox3PMalkNpbbhvWEfjiplPZSsuIKYXztEQnJPgmXd2VviMwQJWho972tH4-JlrZwYukJ5MxD01mV7FM9z18SGj8PR14YloaITM9CobdwJzVcJiZdiQI95URl5w9o8H8BIAMfDaj4DyvrmZeE4FMaCb5_1SVvQo4bc4ZQuO5uUDJh_sDD8qKJa2oYkyjQ60r"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn36D0dua-gSXG2FgUhTLqsmdrBXLRNzQ2GkuFsYcDwOTkw256OwHJ6D_6YFh3OZAaVZ_qtnB6fvsysSfnHZNKQyXbpknISsxuIX_1dnaW3Bh90QNXofdyWVzce4vKsRfDd_eX"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFExiP0O963ZYbXCIz9qdNZ8iPBv63XeStAktkFYoIfvIJk-2Hfa_suBL9SbwNlPtoF9ty98EdJd4mdfOCgm2MdpgriKCCXvoxxthZK3JYYs-ttEqjrneZhIlpC-bz_1sgcDl2aAaLyw4Kxs77-chA4c6lL-UV1dhuGeV18-AO9NXA_pK5h1g7mEo08sKpcpCJksHmHzVgDbk-SYwfu2UGu8yYwtVO0um-IMIz_CTqFaFfJijvQqj3qiA=="
+        },
+        {
+          "title": "dupixenthcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHANnn5qX0gdDt4sNi0RB3XCoB7AmlRIJn5KrmqbWGYEnrnNS-3C2SyzyCNyJOGhywuXBLQX7vWRRasudvVwal3psCO-Mw97kqE9yfJGobKcBngYuy9cQUpfk5sF5zxg-6DTbRdEFnK5frcwvB2ytpSFHVvVYJnHQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGab_36-KITxHsp6eA9cnjbfF1t9CrB4v_65BxRfsoov_QiKIIUKcZo2S-TP8dOCc94mWXU2JzSiJak1T4ib0JeMvFcuPjc3e4x1hcTsbPGg2Fauv3Lgsby8bCroCPMhzMnEuE6K71nZlIVWZfWHYyop1v53BE72TQjwo2TQ3MNju3xYXvBlG47lBoDczVNuuC2rMGonvo2fhM0B--IkbAADaIJma7E_c7A0KSVo8dF0uc="
+        },
+        {
+          "title": "regeneron.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEYb_YVqso4lz6cVd7tYUEjZ1RHFNcRXZZsfmGtGG__FTempGHEvftTcgx5JvTAeN32fUXtCAjqu0n5NpehkY8utYBoh7NCOODq92donehU8dBvo8q3j1JgF_V0t6-eJHa-IwQ7Ov5lMfkt7Eg87Q="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dupilumab trials for Eczema",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Eczema&intr=Dupilumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "600 mg initial, then 300 mg SC every two weeks",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 39000,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 39500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 158000,
+        "costPerResponder": 60769,
+        "icer": 135000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": {
+          "comparatorName": "Cyclosporine + Topical Corticosteroids",
+          "costDifference": 34500,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Dupilumab",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18.75 points",
+          "baseline": "25/72",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Eczema Area and Severity Index (EASI) score",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "3.5/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator's Global Assessment (IGA) score",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "7.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pruritus Numerical Rating Scale (NRS) score",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9.75 points",
+          "baseline": "15/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI) score",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-12.0 points",
+          "baseline": "20/28",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Oriented Eczema Measure (POEM) score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3.3 points",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Numerical Rating Scale (NRS) score",
+          "percentageChange": -55
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Conjunctivitis",
+          "percentage": 10
+        },
+        {
+          "name": "Oral herpes",
+          "percentage": 3
+        },
+        {
+          "name": "Eosinophilia",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 108
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3Y5sG_-UTc-MhGTRjxJRDIn1nDWzVaHXFiNH43VzfSUW1ffKCD930JtUNujubptH0SxPB67RsCjmzVCPme6YA0zpDXo3HaSCOVSQDyB6qtvpJl-KFz0G7Q7Wcl8_7uRWxlzGw"
+        },
+        {
+          "title": "york.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFifk4tqWxNxaomPCm4cO7e-DloooOxB3kMrs0DJ0tWCR5QqGvrzF0UC_sFkFqlaYOmWZr6WwqejFTrM5Y873xW8jAUyOpp345ksfoT_5mvJvHHUmcvwsKcOzfLMWE0CeCw2TcHHrdvo2a3mdnOpbVBY_1aiYLtKkQU"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAZMbVvC9xq3SEBbIl_4LSI3aAyYSobwrMJtXWiy1u7XsMMn6ngSQz5dVpAEnwI5W8erA3Yh3T_gAcHEkBAwyI62mdP0k7Jm-aP1hp8S24gAvgJyYFTi_SjuPnQ1b7-Fy832jaNdHjhaFa7gZIiH1XfdKE-uJxFP4is2tISTjI3jd7kMixY68m4xu-OqP9-qxpMi5zbEoHmsFZkpx_0B6-4flvcH7onWMSPZiKf6kvbOJxG30XUwzZA2C4o2wNqo2AAM2MWlcuj9NGwnfzDc1p"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyJbm_C6RiP61WwDzDqqOk9M26hfNqMOBHUE_85AcT0ECYUA5mKuugIWJJ2T3GXdFN053QRCzQ1eWHpQay5G8ZK8HRRHPMd2-90KvpkHpOFIJ69LkfQs-nG3QFh5X08r9uk5FJWQHtQgxCl4k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbV-bgAn0wMNX_cYO52iS0STc4pt-U209PeqQnWzVuby40irkSlSUi_UtDXtG6TEZKf171BFSBlNrz8k24PY-hYDDek-b-Q_CYPMt4-DqEx3Pye68casmAMqJghefTUa8J3KjY3IXi"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKOJWN6ueIThynTF_yR2nK6Od7uzqEoWp_KjKFwa9agQRIqiE4FoAF_DhhJTdvi8_ZwhwSGLHP4OFZEjvZG-f1saHjWpUIYXMxbPGiQ53XtMmOeFwRWWZ-NAt78Nic6SWSFSw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_MUAUZ91qI0L12fwq819sK6UKUaPKmLeKhRiXrkQACZojZudgBP0UrAIJisAZBGHouXZOrJs1vs_ptsvRhqe0uN8qfuDHfIj6Ue9vYHYYXxELRq5sZXjiWgi3VdKv0_WL2Ga1"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cyclosporine trials for Eczema",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Eczema&intr=Cyclosporine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2.5-5 mg/kg/day orally",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 3800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 7600,
+        "costPerResponder": 5067,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Cyclosporine",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "20/72",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Eczema Area and Severity Index (EASI)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-27 points",
+          "baseline": "45/103",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Scoring Atopic Dermatitis (SCORAD)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pruritus Numerical Rating Scale (NRS)",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "3.5/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator's Global Assessment (IGA)",
+          "percentageChange": -57.1
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 75,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "18/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Numerical Rating Scale (NRS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-20 percentage points",
+          "baseline": "25%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Body Surface Area (BSA) Affected",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 30
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Paresthesia",
+          "percentage": 12
+        },
+        {
+          "name": "Hypertrichosis",
+          "percentage": 8
+        },
+        {
+          "name": "Gingival hyperplasia",
+          "percentage": 7
+        },
+        {
+          "name": "Increased risk of infection",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "3-12 months",
+      "trials": 29
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzJFSnaawMHAwvDFDxuwbrK626Yjk_B-9PqoEufFNyz6tI336Paon0kXBEXLkSXQcEB9ICPedCbL7vGaoXqY7c5YgvalCpBGW9TL8fpFto5_6UJU4b5VIf0UmYD2sMnbNnfFCJ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb3SpythvmJZ-BLBRzJspEBRMWJSracg85WrRbHTZTc0D861QXQAiOYmu1Y66u4cVmsP956X66iabEADsbPo7TuNMmXioNg0OBLxb5_gwt7yd1QksFmY-wIXBYzU9PWX5KSrTJYPABOv9jx-8FY6tJXtSH5W8j5W_QXbB60msDcCDFFAs5nhre42q0BqceL5-0Mnl_TjvUWWP-r-qJNR7t8vGw0bqrFntAHlMrDewF3k5dVshvm8acqI-p2mzzuS42gJrM4H65"
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNlQONvd-wd_sUTiR4NnTcudqaA_m_pQxj5MsxLbTFeQ2uUq99g20VCzup9iAlQ0DjIZBq-ScDUIgi1FQfNjqn4XoSV9aTf8IWahpZzH_ll0eMKMGvGi6l_MibCMRphjjQu2ONhDEDKISDGKJR0SOofb2z"
+        },
+        {
+          "title": "informcompoundingpharmacy.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKwdtnbxPzMRYQYEoY95_ZjpoJMsl4s-WM_ck_L9pQAtzWIHrnlKXCe0KLtHhRH04WPMtaFPyPT9qgZIONEz8Ho66jYa3vKlEbXWZD2JwNwu5ZbYE7yqDkS2bDPxGoGhH21nqHynGYKrCsSYr1azCdBchgMLBM_BpOr0yZzJ_H5sbf8kj9dLPFAcxz_XudLWHixF_HJnRu0wCQ4VuInq6QgKLwrzKDmnAQLUqZBOR7u-2imbF00DeXYGvRKpjBPN7ifUeelmlxaEHWJ_-KoVnT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDC8t12m4PlUxuSAH_cGVYVxxExAjYno2KoXzOnKAKRSVSursyibPb5kcikBxwN24L_Hi-sBRbbEeGo16IkdfAn_ORXdRdDZyE5h7ow_fxDBWFCwUrGmVygeAau-chtSNdsZOpznZTjA=="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEONWENjTrqMuTGKP648EIgVSS-HhpK5If3Qx8JC6aYQmAPiXg9gZZbYOeLp9R_QOekFf516quTyga3mrvb8Oq_P_8zru3Tr2L-ZldF9QeZQf_Nh3IiOH8vsdE6l56_Tb8tM_cUrfG62VJ5HpYPUHInVvbYWSTXT2CeHsLQHJgutgFaa4MH6fo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM3F_SoctDX9nxawweDvnlnYKUQKc1E4II8Y2H4V2jccU4yUtYk05U9DzTR7Qz_iXdsTykjXwveJPusW9B6O7QYdLksMwB1j0J8umivlmdJMKxK6bAf_Mz7AlfT79NcAy1X9buN3muj53ktSmc9M9al4qnCmLmMLF4EwHOT15jzACBEq65QN4rVo1EKtZsEnT-yUVjRrS0sWtKTRLsTHnx6ohTcxxpvvyJXdtVXNZ2ifg2fe5pEiidQVMyo3ML2BpNgoutbEX6yu1CyawgrBhxH-X5r8lGD1Of2iVSd4IygMqTIVUWEdcZXqZbaC6qc4WTmXXzotjC1ieHm9Ih8S6b81NndpURNxHLWCY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqoxegMoLl0FSB8FDxSiuxQJPd6gtICnQgm-xghMhbPpX0aSm9QN1vMwt5_RKgUSDwXXm5U39WHkZkuHSOasDwO2XecWCd1CaWKukjdQXAg8xQrZEKbou0Tk2_xR7pvyJVTLLIbYy4yargPoo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUzukSfFofPENf396JMWF2uQ9KTzQnBEp2Bq2qPySRxVoDqTUCAfQxSqF4s4QiRa3drXH7N17csY9Yh-GBRf9UV4CynqGx9T9pRQPV9DdtevLUGm25uymRTBXgCwgHZYZCEp5r"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnyNsl-VkZc3V_SBJ77SRNJ7ym2iDkAr0LEZHmC5X7VqcwUy3KFVfmRxsa6Lixb88y4IK5VfN9D8Cx0EES8I_EwZoJ3Ypxmk5QraIGkMub66IKjA2Yh7BUvYlSIkSc7CkPbI6Vw7Pr07JHsSSx5P5pJtfbh3fuMA4vtxDNk_v1ybiZH1qYPl7WM5ZIJVjUs3AGPfyNPmDvOQMkJqy3CiaK8nWi2YwbN5xJerPB2TEPDmUMLBwG2h8GsQtG-SbMA4kw5Gtu7tUQ2Qf9jd5zK0ahRE8RwUiOupDycSeqYK4nqyuNKEK7Qg=="
+        },
+        {
+          "title": "ijdvl.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFUZpGvTbuLIg_4m6-LSslTwpWb3g1XrZYx9pR1uSajmVYdnbxT9i7mJTS2mtrEaFXndht5a_vo4xlJdeV0xpKR3vIegnXP21DoAGYnpuRknPJuPEc0v_bNt4__PWlsyJxlENIZINwIO131wJAPrAfAXYsCxZQ74N6Vvl7ze6q1lMOGCpp9g3RyfVtRn8F4Lrus7zCDyXAtJLQLSglUDZW_j4k2eNX5ft1nrSWJMYeIy6WCo0f9NHPjgIdwayuWY2OrUla0yUeEz__BYE-Ab9mH32YLtyW9LmoiRUOpdb9oNIGIxS8dx1Efwb0Yp5vGvaHmQq4qnWh9g=="
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPvvJzDjCcPtv6e_eGyyZTxLbf-Ndrk5XkauZ9iPEY5_pmuFMqx0pp5L3PyDb9smpWMJbJKcYiBycP_3waUdAmKbf9BupfpNkrPFRW3qt7_HWc3wBTCr0cttnzlHdT5_sbos9IYnFjFyf3MDZRWaC_OhCKV2H54WBuL-bBU7hFhzVqXdTHMlEaaN0vT0PG0P5A0qE6bj02-ZlcOvpV2NcvsKIDvVOrTxOQUTZO2UgKUkF25XV2d9UUD0bRpPHvKD3CbO74XTW4ycvsXW9cSxlhe5U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe-Wm-nBRxilj4ZxeXqLFwsCver4OdP5ZIKy8i0JLxSh2bs7uXyBstFf4NC5vFVOrpi54yx1Y3B488NQdmI8G-CNNwPcR-YJ9IOE6gOPmc4B5ePdFZY4QLuU65ksLSjX6Wq9g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT_sx6-iFiEYgyV0zmLZ9Ug2xnFgbfeSMXTocBC9VpWarV0vnTmqYscVtAANtrbin8iU5iaS9MHT8yvPoZ1wswyNdglyTRgLathEYFpiCXzoqJuBojtRx71fVGZ6uy_4RPqrAw"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMd3u3z20IPpWIrj0uH82HwiPY0vlo-LnCgz62CVWCUKP4yH4nRrDWg9dEbAYBSVh49sHms0QYe-r-EumIBzJUdhu_9CILPjDcwVAFk-h18aFKPGIHjGX2pKZL9i23GBom1d1iYIAX"
+        },
+        {
+          "title": "jetir.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5wQXQvMqgY_g3SbLwugQ4WQ1ka07UNNHXdfNve84vlAGnwAi4rvSvicZOK3Jqd0G1k1OSz-twJ1mUS_kgr3yfQoy3bcWx6wUXZ6PlwmjoYm1pOpgupOfsjyCCskvbZlHkOQKjJc6aAg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Corticosteroids (e.g., Clobetasol Propionate 0.05%) trials for Eczema",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Eczema&intr=Topical%20Corticosteroids%20(e.g.%2C%20Clobetasol%20Propionate%200.05%25)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Apply thinly 1-2 times daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 600,
+        "costPerResponder": 375,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Topical Corticosteroids (e.g., Clobetasol Propionate 0.05%)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 250000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 50,
+      "responseRate": 80,
+      "safetyScore": 48,
+      "sideEffects": [
+        {
+          "name": "Skin atrophy",
+          "percentage": 15
+        },
+        {
+          "name": "Striae",
+          "percentage": 10
+        },
+        {
+          "name": "Telangiectasias",
+          "percentage": 7
+        },
+        {
+          "name": "Perioral dermatitis",
+          "percentage": 3
+        },
+        {
+          "name": "Acne",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "days to 1-2 weeks",
+      "treatmentDuration": "short-term for flares, intermittent for maintenance",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXR7CmRAfoq4GG0xMG55OnTqemUG2OepdIchLdGvbDtCpA_sOeqxY_RoqifXa1Cbnw4fHagXMbokUw3ENQps2gedobxgwtbB5Ims06QDA8fRyE5BprIIERke8PDI_N3yHWeB8AZ5XIUIQTt6E="
+        },
+        {
+          "title": "caldic.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA1x4NE-JYMxQgzEdqLIqgkcPrhpTyjUsWGNB_BkfEF5fj5XZwOzJcw6ammeA1bg7ufeg7pvs5Kz27DxmCZFiPPu9_gcgMYnwDbkxK36BKp_2b2xp06O5wm-M1SZAtSJYgtHObHMXWdMaxMQpWdAMEH3tobJ0WtyaZf0o2U2c="
+        },
+        {
+          "title": "healthcentral.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhnLoZaXS-Cca-StuG8ItoWYwCGny6exomCOeCtYvMWesRL4wXkIWoKejDdG6MvPw1zvSpo8FHYrJb7l27z28l39_d075NPPhfj5ZG6sYuc7CAjaIpPzad1T4uJYgfo06_TIlyK73u-es56ZvsNhWlLc2moMVQ51pZcQwdFZFQT_VXDdBrZQFR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNNhT6KD7O425ckJm-TuLC8lLNNu-kaVN2EnP0FsaS4aLaSbX5uNNPsp5mYzpenc2oCnOiBWtc-1Km76dNtQdTPIB-vvHlgihXRe1gDPzlYvxPKZTNAg1SJdtYeRFU1uh8yK8rcvuy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8ZjQtEsIPN1gCn8a6EVrxERHt7-1WgzBGVEfSlbo9EzTp2KkyA1C0jImHDYRn22byyoLa9pTPWgpx9nRH4uPK7zHKd_lp_ms5pPWVtrIGdJi0Az4a8F5OJxscNwcVlANUIve_KnJzAAL9RHHIyFcQ5XNuwPJoEzRNnDtQXmVeJLQw4mKTG6qVh9hh-dwnDyW3662SJ2wWG-lSayZTNKdXuMXmAA3vuOEARFjRDZMGXY1sPDpo0kPRnih8yx6GmHa18nyQe1Yu"
+        },
+        {
+          "title": "rima.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTRJNaFhvsebhU4rO_C8haIj5cJ7j7RsLFOBl2YXpqd4dWRZ_W2rbWhncrh-3FNNsktMQtFGLgdO-F9K81EmMFu9xMm29uVFAaBEhL-WlGq9okaaVmXSYfZ5-TPPZ1wHLGc8pYQyHwVQBZZ8d9NNXwa4HUaJPP58FD4T7_r1bXFw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQHllrItS14knR4YEYD4XJuLoBeQWzzuJ8dk7_IFzngAnHOET5C6QAdtnP9p9ojTRwgmaagtymncJxOB5rHRHTa8df1392K-C16ZZl89gCsstyM53U05ucH5Cg1Zg9URLHjHnWX9rg60P0yGvj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGurzKOp0oqAWJb9X9RN4UpkIeskwM_gBVxLKfWCp8gP1uyNM66CR2sub4JhhZXADBHcKSYdDovOhOX88bWfDKekOiDI_xfQm3D3rt8Tqx6rla7elG8z5pL1j3PpxZfwwNm7Lu7vqZ9"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXcBRl9z5pZHoaY8OVaQyaVt4eaMxHMqA-RY3vnWa-Ltb-unCDkisS-PdhO-Cpy3Et6olJvNIDiFBdN_iOJ3eaNdZo1FekOT2VbR5hWsdYgL8mDElVFTNaE2fxcpm56dx8RwawcJL5FKp1gRC6FCXj2vFEECDL96x32JDOjq4L-0Lg9q9AnKFiRA4="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsSWEApu3Sy7wnyNHrggitD89OvzFSD82rvZLvVPYxN42ZE2pdpXmPkgDqZwURYKgZF1v-yxzny61s9vND7J09iwxGob4wy4QEH5wkwh9k5yYP3VrJrXoH6PsXq77CCBtLZXfqLTUrnRfbb7EgSPhc2GviBdkMEMuHcL34"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzyJnXt5FYrbtSeLXhfAKKw-qgP8TEPT9OkF4YkE4KJaISH4-c-ZnScXK5Ix7_ZQnD3wIYxVdJCpRCuLSuj6gmuHzook60QgZ8-ZIV85PWdi8mngKglY5sxfqujObREDbKidhC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSUBhsgttwK3hMtE2sFAtKbhQFK7uVaHLvnKTZWLm2NsmMnKhrbNHnJTg2R4Ql9yvuy5-Ik7tWmPa-flAeH48CvP-GssD5ByBLCTzsWaN4ERMe-bnz9jX5mmNx6gRmtwrpu8AY"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTmPgLnE-yhGCZZD_Qb76cUEMdviVmxr8m9ewuaCoc-teTwwJ2T5cR-4lgqRFONwyBnDkHfIHdcRRTCCSyjyVFlAl1FfTg5fLfun9s8uMMg4ErA88DK_1DPMYDkDNN5SeaF9MYAPiIvCo_fyOTC_DGzsL1nlKau9BAm2snRZs29r0U39NM0r6K44oCira5UjponYk_lGjJk11A7R2VumfYBAcmqAtNaONw_dmM-I11hQ0MYkndpyC0D_OHN7J0V7cs"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDzi1A5apkQTw3PvzVm_2Gr0m-M6RRtlqJnINzxDNLOI-rL7ZK8jgimwA4ih5CE5kouL846AI054VGUHfKwzK85xfZPGSJWx706vk0PcEgzY-cXFixnC8JAp65f6O_WNMnQ5OZdEKHHlt7icnipBKV50pAdMESwv4C"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMz7zYyUTN8wwrB53QDwBfz_-noFWoZ3s4oberWtMHeASCWt6zNjo4z16YBvUHGPC0Ydm9Abv1h3faszK6zA8_PQYlIcSW7K-Hfxlb7ZUDvxc6NLSbBMI_pYEPXuKyux6chMjfqxMXtrF8fPY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYhny46SZVLqV7S5mIIzVmuEU-QBuxaeGbg89Q_BU9oH7EkOasUtxDcfyE7aF68cd2-UF6cJ-Cu2FpNkcppD41P7fIxgvLloTA3tMoyhBwEtTADj8PykWZNkE5ExSC0s3iFCAPzcjeP1N7uLU="
+        },
+        {
+          "title": "eczema.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhRtDK-pAPpoHwHZjmVgqRYyVRKxGSGhvGKWrryz2tx2VAzxycI1lgTux08O1YskMUUl086Ws6shtxeLFcqwFidNRp75ycUcHtdMJ2EJ6-L-B0xOgf2lh1riiNtJuIb0eBSLCWIsKYAyGjyL7uwXAoFUCWb_OWwST-F9GSDU81RR4qfSmk1zObXlmegAJ22EgJRQXPCPkMZwc6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqhk-9Onpm0asePH3tGICKB2JU0Do1Y7MRYGayMWj9kzrFzArGHslcNZMCVCkLW31rg3ppIbzuCZMS2CgGrI3TBqBXIKfHtcF9sorqf5zHkif8Ag9JYMKlHiAcgh1Ev4VmJDeK"
+        },
+        {
+          "title": "jmir.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvsip-DZ4090StILOcifZcALe75N2kV_1SielO9e7Kl3beuQdryE2ij1uwbJ6tUFvu7LHGtghDhN_RAyuS0qQ5dbhWLTTDMZ4HweX8EdjwSfD7XbGQxf2N0jSl1lu4xeg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Calcineurin Inhibitors (e.g., Tacrolimus Ointment) trials for Eczema",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Eczema&intr=Topical%20Calcineurin%20Inhibitors%20(e.g.%2C%20Tacrolimus%20Ointment)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Apply thinly 2 times daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1375,
+        "costPerResponder": 786,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Topical Calcineurin Inhibitors (e.g., Tacrolimus Ointment)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 40,
+      "responseRate": 70,
+      "safetyScore": 38,
+      "sideEffects": [
+        {
+          "name": "Application site burning",
+          "percentage": 35
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 20
+        },
+        {
+          "name": "Erythema",
+          "percentage": 10
+        },
+        {
+          "name": "Skin infection",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "long-term intermittent use",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwV178owo9JYFiqqzG3LEHgvfZ5R3qryPvsP47hUXes_avRbKw6RXzBpAL8MqM3ftrZ_bJK3fFqFUdU5wFNBr04qivpRBrX03NnQ37fUcFFLsmfl8aNai0NmqAVvTDnmfKf0lLT63VwzVkCK8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnnoblBUgM0LAtDroXYPcH6TZ-QCjfkERMY8etxQaV5l1i5RskcxZcOVeuMKXRy6zlzs0gmAZm0PS_rml3iPbReEapbSqxFD-hwH0RCtbATAhtOKB7XJzu8cB_n_I8P4jU1cJ65P6YUfMLKVDE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBlYtTBZND2vUsloavBb7IO5GFhQHaC7DWBD5Y31BXmRLSVCTijBD0hKQt8zPz4iYhyttIQP6CaZbzaCiNfvtW2CfyFIf9HxUrL12OWt5_o_86X5Ug2i1cbLW9ycjvTemrRLunSA86UEyCmswRLkn74xwxkILJZKF3g6qRDG0IVai80rz0PooIpEW3b_HBBvW3KCftsSiReRn2FWuFcMQMdVEdsvjdRGqbOtHlBWhtSmPpoWTNNmm6dUxot_rf"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCJxEMIFZy_YvnXnQh14YTcX-RMewIigv0G_mKBs_iNofhITYgYOAEOmrqcQ0cNnph9-7zCSIgrtA6a-JkQsW_qb9rNroBCaEg_fX9DPYxZinMF9_0F1iXVELIveQlYRezjfZ1iS3e6bLFF0Lt9CXY4QuQBdH5gW67"
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNBrcdqe2PSvQQ5gwAGhfUfkEfVOfNeLhrVa75rym5ZtGx4w-d9F_Gf7p0fWx9_jGTpHcWgSjPsJfA2Iipl9-wXJcW7LhL0lb-urIMSwTaidlspth1rufqnACL9Sq4JwsROPfntSJHWetcN4CsJD-I4ow4toYzwLQDTJwun3UG"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkCN5ywF60ghBqe1yXv5hV6ijOWss5ic2VjXKsrdNzmyCGad8xIx8BbwqC0O-Tjwln-j1oDl26Lx7xC7RCwdG_eWhdXoufecKw65K8_a7LZL_qWhAfCzum40lhBxMBeo2SDovCh1M_n4pQBhFgwUbd6ut3gJQi7FgxWjqbpFo4V4VbZHja4OqbAMNd2jMEuboYsVJHNaWJcQVECmI2O7gnkHHPkOS-6-ZjGbw45xLXqJ4PggbnRJRHHw=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA93n2gwkZJkYR4ZTpaGuzZ6D5nwSr-HXoDWGNuX9VEhTc6Q3yxFIwSTjYa9_mCiJO3CpCudxExoq2F_3BxmqMJ3HxDkAp7ICNXsRVO0pAL-IhTIDr2McumUVyxKL8oJTNLpG-k-6MH3OK1o8FIIDwjQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhpgQ_2swEsQRpNRMKHVREdfmGcmcYxhGsbrOTDXFCtXMclqPhB82f5MZgU6ybvttv9C3PrC6vaRAXqi_2PQ75LF7c3vmrjaXeEvp3FVYCefYVpYyErC8hafduf73dvT4h3tHtEaEOUlR2Rde_r9TKqPGgSnjP_d5MDmL5L8KCcXFonsKbgjS_aiQwFgKL2xNQR92M0uxk1G2Q57lZOz7vCRi8XGU5VLPTck96BDyeUwB9dGcb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV44NS76zmam4AJ5AEi8TaATvme1iFjQ28MXM7QaQJdbHytO7dYXoTlm-9GUnETqEoEImGiy2vPaobFcH-0ifjctZF6LQqxjdBIMq97_RpP2gClktlYasMUyDZrz1E0i32GF0L6o2crAhYYv8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElQxPZ4u_SFeY2qJz1R-UIf-DDlBNIGp-lmDwTnEwx64jTbk3bSiH1xEYuBSWEXTdpy64mDv3Xd9mhJo5BxMaYuMYZMkXPTRLfemb-bTbfFXNfiyDQkrTkBCipcsj3LKRg2RVN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYeoHJeSsJIkkAWJf7bVSjlic8o5w-qj36DJajxosXzGWnndfcNgNhw2pxp2yA-wrytkhYDsLCBYmG-3tnCx8RYxqWVNPRiAwWOUpjU4YWIXjysv4DGqAwXYha49ZF_Ju0gFQ7d1S8B-GAzk8="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYo5Fd61qOuUvr0j2dFOUe_1LZflC0UTtoibENCjss3lAvLm0qvXsIDNs9Y0phb-lGJXVyq_7HhwFxW-LTHeDyI1t23FZnbz7CQZll2RI06V_RPEqtqxK8kRQ9BamN51bB1T5R_AI42_nw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFV_nKC9UWN-CHYNID6qNpITATM_L7kYzNjS-ex8xuQ81ERFkA2W2jPoP8JWLp6bgmXfQIgqmZ_eaTrsVYMIJkjyN7ANcrd2cp-CMrzYs4xq-w7niXGSmIJ-EQ--7z4QZZoeQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Narrowband UVB Phototherapy trials for Eczema",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Eczema&intr=Narrowband%20UVB%20Phototherapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Individualized, gradually increasing doses (J/cm2)",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 50,
+          "totalAnnual": 2050
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6833,
+        "costPerResponder": 3417,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Narrowband UVB Phototherapy",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10.8 points",
+          "baseline": "18/72",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Eczema Area and Severity Index (EASI)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-24.75 points",
+          "baseline": "45/103",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Scoring Atopic Dermatitis (SCORAD)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "3/5 (Moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator's Global Assessment (IGA)",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pruritus Numeric Rating Scale (NRS)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 60,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance NRS",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.5 applications/week",
+          "baseline": "5 applications/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Topical Corticosteroid Application Frequency",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Erythema (sunburn-like reaction)",
+          "percentage": 15
+        },
+        {
+          "name": "Dry skin",
+          "percentage": 7
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 7
+        },
+        {
+          "name": "Hyperpigmentation",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "induction phase (6-12 weeks), then maintenance",
+      "trials": 7
+    }
+  ]
+}

@@ -1,11 +1,12 @@
 import Link from "next/link"
-import { ArrowLeft, Beaker, FileText, BarChart, Search, Download, Share2, Code } from "lucide-react"
+import { ArrowLeft, ArrowRight, Beaker, FileText, BarChart, Search, Download, Share2, Code } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { OutcomeLabelsTabsWrapper } from "@/components/OutcomeLabelsTabsWrapper"
 import { Button } from "@/components/ui/button"
 import { OutcomeLabelSearch } from "@/components/OutcomeLabelSearch"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
+import { medicalSnapshot } from '@/lib/demo/treatment-estimates';
 import { getTreatmentVariables, getFoodVariables } from "@/lib/actions/global-variables"; // Import the actions
 
 // Generate metadata using the helper function
@@ -35,6 +36,11 @@ export default async function OutcomeLabels() {
           </div>
 
           <div className="space-y-8">
+            <div className="rounded-lg border bg-card p-5">
+              <h2 className="text-lg font-semibold">Explore treatment rankings and Outcome Labels</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{medicalSnapshot.counts.treatmentComparisons.toLocaleString("en-US")} treatment comparisons across {medicalSnapshot.counts.conditions} conditions, with estimated benefits and side effects.</p>
+              <Button asChild className="mt-4 gap-2"><Link href="/treatment-rankings">Compare treatments <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link></Button>
+            </div>
             <Card>
               <CardHeader>
                 <CardTitle>What are Outcome Labels?</CardTitle>

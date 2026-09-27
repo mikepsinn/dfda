@@ -1,0 +1,663 @@
+{
+  "conditionName": "Anorexia nervosa",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:29:07.493Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1QEsAFk3BsPrPoww7mWJTdxLIH0JFamXycNFdLV_c_ijlUXWHjP_WlMVsk04PCQ12KMCj5xz0nfZ9l4kKmPwbUMtZ9cPSdbVGAEEh6vkS8VLRPU1GfKN8sl7TypMJS6vi17YdqXJ4xtqaFc6utorZaS-kcglGj39jfm6ikjJ_2NFkKZJaLBMC89vBTe2vFzTBcOqiZhnVoZhAF-bFn_w_6lg9cwiYwR9rXNFkY1HzTJfidw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfBO2-iZotQm2ehiH5zXeHlbk90KSAp1OvVMBISLhWJwqILIKCuCFFlkotJz8qjYEzh8JSpJlrvOgGXbJ8j7nPIw6hPi6AWeL5HSzKqoR34C0ZiEZgdjntQDQNj0I5nlaaYVfmK0o6h7alRw=="
+        },
+        {
+          "title": "cypresswellnesscollective.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFILkKzQW6J3zmbK4z_hDyWYnR5GGTT5G2R1KG9dRo9yeoblisx-_djI9Ui8_evR4C_9-aByRtOYetIdZ2LGjP3JAjISFsUczTMypZpvD-RqE3gEuNqh6-FPUBCszPhXnq2SR7vRMaLfHeDErXAMF9Vg4jDCdmIfFXDeY9tFWOW53Qpz4X7yFNI1qmWXEAX1YIG5pSPU_uUhgQqTGkhs_6kEznkhjshHjjhVhfBtx03WB7LXzIPi_9pACxvRr885G2lwkvUvPG"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_2qZjSjjbfURXDE_ulcIgMolY-P9wkhNILK3I1_kOeT-ru-qZnVFSTocL6OF11uzXhObD0hhZlZTm1wt2-eQ-eLd-xSvLMengEr8F3bVSbyppD1jW2G00TcOTLX9Hfg3AAKhWucI1i4f3GErCholrTb7UJ0LZyfFUZHFx4H9zO-pggP3q6htmWw0aZ9zDyckojxnovmT9BKbZNYxbtfUrn9---xpDox1Afku_l_56R1L0rNPs"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXH2g3apTToIu5ytVb0ng1xH7gTcjhVbPUDtKx2MXelfKWM-KjbumEMHKmuWNMgkQoBg-ZEnooOmALGsofVyyy2sJKe6zLfQVBXcl3zR_YrXncnbLHIiXP5MI4svQNuTAdVcQ="
+        },
+        {
+          "title": "squarespace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZY8xW8nNoBFeklsl8JqtIzmjInuCkqh9uwdNUZXD8U5u_5fQgiYSQsBLnMOeB6C89ntfKRIFByIfuEwWx24d03xcHSrhwGzwfbG8H3hTbja9BBXCS2tluIKhZdYlZpQwRPT64PBsMoslAhFkouKPvytWr1Q=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA_v9YbVhKdsHh8tVMBNuHdFwrWuCxZTjeORdeQFrjJiy5okArPeimkyxmkUNij9tBucZ8AWEIE6eWKItL9ENWGBAz5F_xtbZ5eb3sh3vgasSk7MQLf-Cz98JQcFCGqmR86tzw1w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXNm9JUbHdbFTL5NBeE037TmhQNuOrmEbHBcamz2Bp4kJGfB8KGgxilD-s5W65W-5I8FWc_IWuuCiapG-JUeK2X3dFqlmWd4Uju0jCJAA3oo0sWG_7mGSEbINuHcAO4kBaO7m2_CqDxUao3w=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9-wih_waWKwYA12L9nEwAyDsPMW4UBTAhPvi559y2tplow7fjq1dJd4Y1nSu3iRa6ac9f1IEYWEPYb1pwfkjj3b2wijhCfdNWUDZh-PPbCZcBiHWllxST-zhdGpHS9qsgwesx3Y0RiqGbVwabngwbOXHgMIDoPE5deTqEbs1Lqe6d8WvfddX0FLQjJ1hkQkG_376Tn-wKKLwM5MBsrPlLI_ANLCDG8B_TMYNw2bHPtv7yB2wcwLq6UKJVfkyinHMV23kt6g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbRsVA4v6PA1Hp1QU8SQl5DK74E28JvDWU4rAkln6WQlb7S0flTXhdFLv468CfGyp61MSMeinDlR-J_GKZd8tislT3q1kcm5KpCU0Ne7YaZts8gTy4kaSXCB_sCxpBAotD8WUFbf36X8uOcvWiOuZ3St6dbJC3NNewuPP-IMCZ75jVrTTK8odtnJE2sPGAjqKtyvnf27ae5UFxbzKWHN7hb5J6bjIPE8vzt_ye8IjaSLhv1MbuInC4tPuRtZ8fJ7DBxwQGso3MKOFRwDrdYMGekU5ulbgquX-GhmmuDn5ZExFv_CFEiWH0NnhIhQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Family-Based Treatment (FBT) trials for Anorexia nervosa",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Anorexia%20nervosa&intr=Family-Based%20Treatment%20(FBT)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "15-20 sessions over 6-12 months",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 4500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 4500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 9000,
+        "costPerResponder": 6428,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Adolescent-Focused Psychotherapy (AFP)",
+          "costDifference": -1000,
+          "dominates": true,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Family-Based Treatment (FBT)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+3.2 kg/m²",
+          "baseline": "16.0 kg/m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "4.5/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Eating Disorder Examination Questionnaire (EDE-Q) Global Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "25/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Impairment Assessment (CIA) Global Score",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Health Questionnaire (PHQ-9) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "2.8/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Family Assessment Device (FAD) - General Functioning Subscale Score",
+          "percentageChange": -17.86
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EuroQol-5D Visual Analog Scale (EQ-VAS) Score",
+          "percentageChange": 40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Increased family conflict/stress",
+          "percentage": 20
+        },
+        {
+          "name": "Parental burden",
+          "percentage": 25
+        },
+        {
+          "name": "Patient resistance",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "6-12 months",
+      "trials": 27
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCi-ycMCs2MOWkoZ0HoJRSwlcvUuTw_cb3W2E5xWBrdWfCqDqqPH-pOa0qj3j5HIB3GLnvrUHFMllYVc-bRZS5JzrDkW9rk_w_-m30fSg7jJqGkdzyX3hXtcgNIkMCWPr35HyijKudg3BsEYEk5b9wZYoHvXQORTYIba_UwRzYVgXWZo4YZ0LmtsX4Na1cSrboTXbB0nRRniV8JYaGlzM1OqIiW6FeVkYiLkHRVxpdZkx6sp9mHV0WJs0Rv01zjGQUr2U8adI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw_OVxfA7rgfeXBthozA0dGkq_8TT-T_3akAghmY5zSVhjYQOeiJivU0t1jEi3Pt9cGdTFzZSRuHUa5hotnnnMrmuFxsZ1AJK5mfW4otquql3LmBXCyI4s3FULEjkAO8P4EzlF"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgea9L77fNTlZWjwy1fz2cv2Y7f6YANbmsaOMLC17LyOI-0VcdrgiA3ON6Ahf2qPWGyXIrGlMXGD-juLw2gzRnWKcjkBr6HYhUGVthcUXvvrZIjc0q2MKHrwfRSP5PHH236BedxcMnfHBSMAMwOWGdPtWIn3IsgC3g3iq_XkGcqgjHYDJW9hRJiSJDLOdxP5GqGYqZBrIXUHHEehw2zcmiOl0rsd0k-uwCCLtl9x8BX6Un-u3jfwM4Ul1ercrUsoOhMfqaEnIOwlzMqRw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv1r59h6yr83UPIhUMuQaVvoNkqW7iko6JfsceLMRfqSA3U8_PElzzy46ZBGL5wEHl55L_KOaicowiyOXa1UWZMqxHChE0PFV6Y8aPPv899YorHBsCM9xuLD1CtmZjK1w96xBy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ6pcJCrLvFNaxFoDhXG9FO8u60yqvvmEkpVoCdryfcUd4KntLvamihJ2MrJs2g2fbiKcvkVY088aLA3_hsfs06elwC77v86fGzqmFrxyRBnWb_8_OeGYlssT1-JbnChBb9hUx9KsB_mvaeQeK0-N1N-PWesto0p9CaaxNYJ1uJ9R2OAeIbt-YHF1r90FERogiWKeu-EquIaBXFAjS3usoQdbg9u4w5cJkrWSaA5HjTGKJtOV13_HYItH5Jmi0gSSH9racZRou55l7SM3C85-VZytxEbx1qqOZcFzqQiu6M9fwdHraEzXxQRfA8LIqpqUsfO_zt-IHcT-LEzRiygKvet0="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHB3uF8G_9njuHBoTjCjvqyFI0ypCFkW2rkUWTHSA96IENiewYMNRVH0-3FEkIGrRpDz9VANVd33XIUcgxzS1Zmsopk9_kR_GbhiBGDkk3TQNSneJihgJ28MSEyI5d8hC0iFX84FHI57x06-bKRv5rgzNTcqnK-_n1rAgkHqxbxE-V5"
+        },
+        {
+          "title": "whiterose.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKXm9_yN8J1Qd7z89hVu5NFqKSs6k98bSX-0IzqL56NkpZ0fV5BdDvh1bzdzsWo0K41Z3ppoPP2wMzCv5xrjfbIE7vzWXGJ-wgMJr5r6LarBgpDppOPnG_x59EU1VY0BLoKulpkvwfEfdq53RZjZ86B6czcmg__P8pxZeMevphDxo1XQI2vvQSxC-A-kdA1qVMr18lxKzGzZ1EmpTpLVle6_FQ9DPB6M9GI9EsmFSyzCUcONXlvsntQg7zte9L7Hs3KRAtKfu0ypbHHBYiHoP65Ee7GULM-pYpFXgj4HSg4MTnrS7VVWOL4aaTJ-v2DRXcnaBFS38TQ_40KSH7gCxriiGi9XU-_vCh2UhiIPQnGy6Kt7sRlZWej_uQj-lG8GRl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnwZnvLU5-O1ZvD6LdBzMMarfFFGLj-56ICZKxhP80aQFgJXiZ88DWfmQa1n-_BYWfIuI3xBXjChfJ3b-HJfoKGZY06i46Yl1rbQltQFX9Qyq8De5gmWLDXvzkE9QF_VDUvmeX91-os6JQ3pV2"
+        },
+        {
+          "title": "ClinicalTrials.gov: Enhanced Cognitive Behavioral Therapy (CBT-E) trials for Anorexia nervosa",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Anorexia%20nervosa&intr=Enhanced%20Cognitive%20Behavioral%20Therapy%20(CBT-E)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "20-40 sessions over 4-12 months",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 6900,
+          "sideEffectManagement": 0,
+          "totalAnnual": 6900
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 17250,
+        "costPerResponder": 11500,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Specialist Supportive Clinical Management (SSCM)",
+          "costDifference": 1500,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Enhanced Cognitive Behavioral Therapy (CBT-E)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 4000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+4.5 kg/m²",
+          "baseline": "14.5 kg/m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": 31
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "4.5/6 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Eating Disorder Examination-Questionnaire (EDE-Q) Global Score",
+          "percentageChange": -55.6
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "5.0/6 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EDE-Q Shape Concern Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "30/63 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory-II (BDI-II) Score",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "40/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D Visual Analogue Scale (VAS)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "15/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder 7-item (GAD-7) Score",
+          "percentageChange": -53.3
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "25/40 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Work and Social Adjustment Scale (WSAS) Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Distress during sessions",
+          "percentage": 10
+        },
+        {
+          "name": "Temporary increase in anxiety",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "4-12 months",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuoui1cSRP0pUaK7Izd83Zrvdso3IzVwZ4XkqwReJRQVlfORedgtEVgqrU64beRpaHwpsz9pqDYg1TeLzWydgIamDCXGRDT_fvrB4KCrUc0gKrLvIrHRDHrDEcn4Z5CkLWxv4bdYWdD3IVvtTl6QchQ7eiA_nbPsqJnKhGwo8dGQVr39q88CpeUiSckRBSzPuaggdWzD_SwUSYNQLoeBtNAs1TTmmprexHIs4hI_eqONLCVfNwqdW0j54r4LQ_lqo-69K-dKbbh29FdS2SukMUMyh96cMe0yrwfLYXdrisoIDp4b4hc1kmzpEZu1vYXw12TuwNZfXlXFw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmStCud57oW63Gxhbc8ahWlmnkjMgEP23uXRikoUsxlE9b8_O-_x54EDbb1bVf6iKZN1CPCcOnQ7lv5w9Beiej9H-myW-uqKTZbemMemXQhZnpVEvlhWQ1_5pGU5F7G5hh_xQ_JRwD-6joV2A="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2qPZxTjN0YDOhmbtj57mnjGO8L18etlCNz_dZmpbzK3r7Bgiqac9WPBnG8jNusSYdgdFh2r63wV3fuuBd0oh_1JySmU_PfixTFAzZpUXnShyAhhEPcnWdKNIfxdvq5M9aK1aki8qwECDe297rvTaqVYVi9UqBnJarWVnl5Hotitsnks0pzsts1oR1f8XfceqzfOdQErYl48noGQSCJuahM6xjDv5bCCP5IWaJu_BYf9vZIL4G912ZaT9JvkCkJgsf5CtWNkPqFUL_g_2XOpmneZEADZpsVNZm8CkkR_0HbhM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5F2WyGLR4cmP1QOcP5ZfIWluMS7piFro6_PNHRN29kGmsIh94JnBwQMkNE8QATjJKeXY0iLldDS1iy8qVMT_Ast9lyV0jJ4cYosK6mk2Af64x6vDWuyyE9-VSEPxWkPi7ZP6ehDM0jlbSA11l16s1HhgrrxpEsxmeZUIvMtSwm1P5OiNN22KAdSZCMLZ8iiwaDz2dRo8vGEIqCeD5KOFNrjLPp2cQN1tFlcY4w_STuBCkHy2DeagVDlFVk9IfVF7FFxu534mQXABTnhXkXOMKvCpEfA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMqoTXtLAcPFJXR_Oh0ui71fugDoCeeCmlvCZ3maJKt_0GaCbmX0jHBs_aOo9ydKZPOctkiWHf5XS_lqDKy-RLjTnWTXo4HuA5p332ZF8oLpAHdMK5xa4J4sONSiJgLif2vpEtRKuZaNLCvWM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMwfcke02LGxHlZ1JwLZuA_i6DrYtIWk49jvglvRbHVzok1CmFbB9Ti9goU5OI2t59UFOt_j3JrTl_RA_GYheXrApI96ngfabW8uRzcxSNoZhS7NLfusmRsFSbLe_tyyjiPjOI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjcMkSI7S58RpuBEQE8Xm-j7i1xli9eHqxOLmhJzvTe9E8p8OIAbskeiOgr-PX--0-aB1LqkT4CnaX1ydFhaN8lANkLTHrZD5vRFYHuqSziw8XE9X9-GYgXgByKOF63_bHXoOCI7etEUjPbDuw"
+        },
+        {
+          "title": "ClinicalTrials.gov: Specialist Supportive Clinical Management (SSCM) trials for Anorexia nervosa",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Anorexia%20nervosa&intr=Specialist%20Supportive%20Clinical%20Management%20(SSCM)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "20-40 sessions over 8-12 months",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 5400,
+          "sideEffectManagement": 0,
+          "totalAnnual": 5400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 15428,
+        "costPerResponder": 9818,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "Cognitive Behavioral Therapy (CBT-E)",
+          "costDifference": -1500,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Specialist Supportive Clinical Management (SSCM)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [],
+      "remissionRate": 35,
+      "responseRate": 55,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Distress during sessions",
+          "percentage": 5
+        },
+        {
+          "name": "Temporary anxiety",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "4-8 months",
+      "treatmentDuration": "8-12 months",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "bond.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpy_0DeogCemIxcV0rX5bnaxtSTs6nVjyHOHoG6CrAQz-jVg-IuLePILKcTtSUfsZNGMeVvn4bfrwmiRZj3Snzqr1873rQbvzrQXO1jmpi85AhaQFP6hCKEC52jRYSrmpEhm5OvufllB6VGqql92nVcZNPulCv_4Utw18-5FZrhkIP0GuU91CFj2NTM_vHdeRQG6hsMYsi09Uvzt1irc-UEWYpBg4K159KIf53gCtuvjq9tuS9xGvuXeHHQgVzATUch-gnYE-3aaKLFzFH9VJN9vHdhIukQq5iZWDk3BxWOb8sL8gGYKoa7zQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbhUYtsWGvveT3C82NBM-ot5i-kgvfamXB6TkVxbjaTmHeDkQpVhPlHgxRSYVR4YApD0DFw686-Y2KeU4AZC1oApAGqS1J3D34Q9svjRxOua-no98bapjrfRXfE0mdAJ1Vw0Q="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA_RuBi4ckxurX9ieEvQRp8kEaj46JHPX2ZPKFBtJiTO6Z5WHRitY0FMVpwM8KO1w0JlEAMl4mM_2VL3a3Q-iTAj2Nw0W9VvZvl7wx6pLrcDw659FARByL8TLNP8eUR3XX4NAaJs_DfHVFcY98V6cQvzU0x3OCWSl_vlk5m_ixq7W2712acjj1bN6U5zpjS8A1_NZTSe0Q0hWV6ckLhBIyqwE="
+        },
+        {
+          "title": "pbworks.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS8V-4WsDjlrF2Gr9aP1bx1PXEMwkuq8yrYfPp3o66Sd6L_M_ourQAtmd9A2GovHigCJH-FQzqxVdqmNAWBze4_VAyQoELUu4-X8q8LujhQ9CLS7AF8GlC6M61hk5LpaRCeJsVhDQY4MvKWn37UOnIgIJzWT9p2QXL2aj-M76v2ZN98TZ4lTrnnfONl-09Zi2KMfE7neU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmu_KoxdX90wG7UDaSqVJlD7SBZynJs8Q-1tGJMK3bPiE4cMD2G8uQXLFedDOJtFwex25tQSxb5b0GgqGkPoAes1OYepI1RPUUwXsLGL6ZEN_BtA9zMygDXH4qOr26zrQfJNTw642haURAlg=="
+        },
+        {
+          "title": "anorexiafamily.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETTGQFFHXTP5N4dOHe4H4eO4wq5LWF831NOPstFErGXoVg_rI6IxZtm6QhqsVs3PSRT36StckSNkoxEzNb1i1vIuuMShGwSsTqYdODaLEqUNECGZlNA3Xs8WoQyXm96hDzs5bEzhJZLY2p3x7y-6J7cC5lQ1TmHIZguzpAwpgHewRR2Xc="
+        },
+        {
+          "title": "columbuspark.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuErFlh92YlUs0zXMi1Z_Rd2VT25qESi-q-ZCFNlcEukzYP1qm87brCjzQFRcJRS8rgaEFWvAmSR5RI2cOPMISys4PeoUGtQ_C39gQWwzcsfqd7nd_fD7WpBhYD7-t5UUUtpl1HoLhZgnUp4pqz-nlNsK0Y7JluhKLmYD8O_pyTpbndpl8kQ_kiQldK97OfljKuuu69eZ5pbue2AkOv2GD6dm5Pg=="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBTh0SoC_X_va7_IHw0_X5FHEYLBcyJikliBjft7bmGart--YfK05JvSWw4ahonKp5ihcd1bjWNcbYCp1RQew8cqZey0uljBApxoHh9c-etUNgQHvzsOlQTvSlxKrrKqxQwYVB_rYCT9BF3slAQgbimg=="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQbAWPcXC2jSGymDayLvgqBbTziIRstDWz_XvAOY-jx6XaI4pkpAPlVBar6GhJt1uFCac9QQjHHO2DARnJVH1NeDeZP216Yt-7rr_fFVFj08dDWYVDXvbbUrDXHFF41xuTe7fv_OztZdhgyiQavSKK_Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Adolescent-Focused Psychotherapy (AFP) trials for Anorexia nervosa",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Anorexia%20nervosa&intr=Adolescent-Focused%20Psychotherapy%20(AFP)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "40-50 sessions over 12-18 months",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 9900,
+          "sideEffectManagement": 0,
+          "totalAnnual": 9900
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 33000,
+        "costPerResponder": 22000,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Family-Based Treatment (FBT)",
+          "costDifference": 1000,
+          "dominates": false,
+          "qalysGainedDifference": -0.3
+        }
+      },
+      "name": "Adolescent-Focused Psychotherapy (AFP)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 800,
+      "phase": [],
+      "remissionRate": 30,
+      "responseRate": 45,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Distress during sessions",
+          "percentage": 10
+        },
+        {
+          "name": "Temporary increase in anxiety",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "12-18 months",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO5P27hPy3vb65bxViSGlz8d2SI3C4j1_eJURxc0NjXTOs21R3iAskwI2Qw00EvmdxCpMD5cSLHnENJQfYUkNDgCKBNiWZfSVA2GAX8_tyPSHf2dFdvMTDCuWN_fjEJ6Grm8SKdiOdPk4AuTM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELkHM1BJNJD-RhWSc3NKJUp2bAmA9m47__nQm6qAVGGhsR9pZJJ4c-wd5GxKOcCSfpMYfVecUKXJinHCe3M4h3Ni5pv-7TIT0zCVa4OPD_f3RzmssH6RZixhYYvQvY14_7KDOw"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEezZHe0kAf11Qpski2ZIYZW6htFESAtq1yTQEZ8HonVmZaOdHS5L24n88HFZjc7r1yjPxf5GBpHG0KAdIROlt4DICJ5FiI4UyWw84xiLJweEQspXk01P5TCCpGulXTWrwlIb53-_DmTyMVUwDAvIUvS6MKQHPtBKrcgzV0yHf7cPNDhewVOv5SFsBNt6CCMoV4EdCwkuwSnn730Htp8x0NdjeNehGbeHf_cWt7kYbQGiDlMwJqenPp6tXLSci5yhpYYkiJ2kJgbqHc6X3YKrTa_S8j_hI="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJSbV7Rk3EbE7m_H6vZbSoB5ceTZp5yPDFHcGNICu2EqSbma2Rp1zQ0K9JPqWmtYfg-cS93cafWig_QODMW5iy4NOjTK8LJzhxzItH5IXhc9-FHC5vlUBX7ek0OFeDse8OPNSjb2bAxI9Bmj5ycjSEgeUg0vpx21OSTJb-x4LBDKUg2C_KIr24d6XDULUBLY4Bd6-nO2jXARDSBSEGjQ4mILQ0"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_bCp967n6PqJ6W3FMfav_ccQ-pMZ1lvjAsOmNuL_MKiXmxUYt9z0xl0AchTn1b8aaJ2NMYUUG11X2egE82v7wVlmnNJNR9qtZbPZalBNnDncwLgWL1t8IuFl7t9isz1EoCjRowJYEJKkuuYzWaS-mF6cngtuZe_AXsRdVqP_M1k51ebEDf5ixx5SJUuz-q00EGsTsR4j54pTcEgWLSiVsVrB1SGC_uvi3l-IguAsmlKc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUc604iuFX5BuGfLD8eP8kbiWyuZgj_QuYB9taZ0GmeviZ0VdGxa_uJZZ36_IMFHPm0RLvv5P7gmGpQraLQuXH72ykzpvgbhUxXWCC3XWL79FEIMau2qEpngoJwdMka4O4Pl3YcvWbKsPDARtirxwWCgLG7jYGA34pzhzXu21MIFvB029iuCzmL2yQLUzQ6iCuA6_t9G0yI64Yxi10dfmS29p7cuEZfMb5oZo="
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-geJheB31Z1YGTKJlFkqYAUAU-DMXlwHBKeyIWIsxjCeWX7veR5JCM-7yxok8b9adolXMMA0vx9ok9QhiTU_77aPtWG__zTExpcHMit8A3UtUCM0jOtcRBF7xuXNsDEm0Ex2FFQ837wT8VOrs8I-q4S9dwDlU3u5mUZbg6Whnv_-cdks24lIyS1byf5SqQJkKc3eU98tZ8UlZwyUvavgHYdY5E9SOvQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Olanzapine trials for Anorexia nervosa",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Anorexia%20nervosa&intr=Olanzapine"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "2.5-10 mg daily",
+      "effectiveness": 45,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 900,
+          "monitoringCost": 700,
+          "sideEffectManagement": 700,
+          "totalAnnual": 2300
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 6571,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Olanzapine",
+      "nnh": 7,
+      "nnt": 7,
+      "participants": 1000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+1.2 kg/m^2",
+          "baseline": "16.0 kg/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": 7.5
+        },
+        {
+          "absoluteChange": "+4.0 kg",
+          "baseline": "40 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "EDE-Q Global Score: 4.5/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Eating Disorder Examination Questionnaire (EDE-Q) Global Score",
+          "percentageChange": -17.8
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "HAM-A score: 25/56",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms (HAM-A Score)",
+          "percentageChange": -32
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 35,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "HAM-D score: 20/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (HAM-D Score)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-25 points",
+          "baseline": "BSQ score: 150/204",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Image Concerns (BSQ Score)",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "Quality of Life (0-100 scale): 40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (Generic Scale)",
+          "percentageChange": 25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Weight gain",
+          "percentage": 40
+        },
+        {
+          "name": "Sedation",
+          "percentage": 30
+        },
+        {
+          "name": "Increased appetite",
+          "percentage": 25
+        },
+        {
+          "name": "Metabolic syndrome",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "3-6 months",
+      "trials": 9
+    }
+  ]
+}

@@ -1,0 +1,976 @@
+{
+  "conditionName": "Down syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:44:15.886Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "scirp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLZd4AQk4nHWgb0wuknbXir2NDMvmETQuVG5kNzYfEL2xDHDUp5xRhc0vK6xfdkbV8zhl4yIzMuOHTglFqi4Lzd5g5F2HqvCknVftQreKYSr352XSrwSO3udsnAm0Q39hq1qa4YKaTIPVrdCVOwsQzloLNnOlVFw=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtY3MK-YWIjMfvbD4v6oxospbxaVt1me_gmr6odm2FN4DyDS9-QJZTDiKwepCnT-9aSfNRhnMPmEm80Xye8fxP_eF0WA5yjIFvCeIXz89TyTLVdk_sLseXdLe0Slw2q-5viZ2f6wqLNoqbbcL-DlzmOww="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZianTJKKsQP9hEnvtqsgOKnyVj8GGeNVLC3h3ff8BvJ5HNLSwHyEm50zMq_KHUdG_-QiwhYArhpJ9ZfnYT5g7zrYK5bn0ayZwVRxCc6wWzEb0lAO3C5_AGiQkxRDZqVt8aJf-a-lwR-mDAodrsMaA6O8vmhAyBK3J3a4at5Pg3smwHwvhEfbQIHJM0lnqUPNzZSCQrQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcEFDC2v-IB4c6vpSOTPrrqrlzY8qJvJAqWnASkae3aMJQ5XPbrT4O6xTdswwY71FZNraCKFOsdK-DCiJnrZJxnqFitOCSuh7T5zo3wggf5h7F6N6MpzrJZNsP4M5N4NQFqK5x"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgzkzAACwoeYZaL3eGIvEbrHCJspIHMBkAM0S5RwsLvcRBpVmAvbYtJOsUBNfsQZsXvLl7RIX42YCwvt80XCQQrAg83eq0pQxQPL7gqRRDMaU3KNJwQC9QlSdxAZ2oSI7quk7rAre4W7dHChYUhAWLIt67gNdo3LUbV7_HdKDHTVSEoyrpQN56dtEZC_dvCJ2oRrLNYndCT2AvB9-fGBdr-er-rrbMFS2cEO-Tqhbamb_7hqpYvJhJVXuMipz7-zK0SSOdLdPrsSiiUoiRa46D09A6ipDNCqpFMVKOAoBzOURaaVk0iVVupFo2Z-XwWifdJmj-g4s-H8iS4VL8UiMUrHY2twTlpCpNe-O94Uyh5Yl1Jc0VnNxG5pZn7Lwsi8DDmzhb-6wgfflhPZ0fHsL_36iapdNT7Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE7EwHkqt90P317aRqJapOPSudHq8gAJ3cLht18J6WcEboVTrfjs5n8Aoj5asmivM2ch_rHpBdhNeoYy-Y4WtFadhnAGkgxKnyY1KGVM4hAolWH4D4h9S9cghV6YXsI98WEFLKlInVSSkBjDI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaOZ055xX1eNKVefotnahpUaJAmDyUSlrBxtQYyOqTOdGQ-vVJKYOsxKx3IFSKJ4irX7X1TjDntr2uAlsfpQTy-ahSqQ7QDN--GmHG-nF5R4oWZyLX-4CWEhzlVKKKcYiPCOEwBoUISdvRkh-jUzuA80wjpG9DtvyiYdZExHoe59Dh3Fe2hKLyX0_zW9TBVGMh_mFo7d0tF-7Q4yfUDXj0PapGO7e57S2o5-gXw3V9XRf0Beu3fWDqkr1P6p9Xfe7K9sSOX7DV-i8-GAskipWhR3lI2OoWGnLzGJ62iRoU6zbmKFofQ7h8NG1OOqx7Fi-8gXL6nF-U_p53a-A9oHSqcia0mW_vh93QlhKtsA=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMkFbq1r3DprDw5dzhER9zDR0ozqwjFOJio-ieDytur9fvbp4DLmBZSjoDQLsEk7BR_axueLDJmz4Mc_iKpUdBMVGYAaEEmpO03w96o8GMb9dqGSJ8NZTVSgo2G87fTkvd8OJmdVktTxixkfn6pud83dEb01QQgHMPAhH0E7hrccOl5I1Qx2tnaIVonbS1XIrhqNbTsnw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF58-E592nR7sIq-HF_dSodiAlwr0Zkiv4lm_MO_ObQl04BmxjV2GP7W-nTZcvbiSAelTAiABmElKDaKTg4ALKZ6QNjrnLM9ur0UcS9kJmg6a75zIoizlmr4Plm2jvn99ZpsVPM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyoebxANvxOS7xuVXPx9PGPA9piR9x9BbRcMgYosGqKzAm8L0U8MWImo30ctyUcB5-IKg1yKo2nH7wOInbe5aToMXuqpWmmEUV2Rn6kBI12P9j-sJ6faP9q6OJz3IjWowmyJGEJ7x1grp9JEZW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-SWQZMO5v3LgF2lRtOZveY-BoJzA9P0Fc74w2_P0mDgwUresM4yywCHWIER9XPIdeJAs04saVRoElyo2n-YYj8h60Szpb4PMPxrA9aLih2NV_omSN871v3kSAkE3SxCYNgxf2PPx5e4H-6B-ebjQcEledU7EkzNdGXMo-V1oxdA5KvZ2MTbucLc7vfCMDtWMI-ggkOJ71kl4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Thyroid Hormone Replacement (Levothyroxine) for Hypothyroidism trials for Down syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Down%20syndrome&intr=Thyroid%20Hormone%20Replacement%20(Levothyroxine)%20for%20Hypothyroidism"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "2-6 mcg/kg/day, titrated to TSH levels",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 368.42,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Thyroid Hormone Replacement (Levothyroxine) for Hypothyroidism",
+      "nnh": 10,
+      "nnt": 3,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Hyperactivity (from overdose)",
+          "percentage": 5
+        },
+        {
+          "name": "Insomnia (from overdose)",
+          "percentage": 3
+        },
+        {
+          "name": "Tremors (from overdose)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0I8K00uFX6_DNheDpB4uhNXSPAkRYP1Xq4MCCEYlT4ZhyL8ZOd2Mv4Apxv9BfUklCmrSj7Sp1H7lcbwCk1eyq0Wd4H3qeGgM2vcwFci6Je-xnyXzDCghwWiIZ7B-WCiqqEgq1ezX9e795JEZxwMh20HdcuCuQc3cja5CMVxRuKV3ZXpwALd_zDMOFLx_xFdyAgb52v-HteXrNMiTSKynrDNdKvA3uXZ02PGsNiPpy6DaG_FqQqk6JgvEso6m9uuBqWiBu1ykBhNCpBaBkvNBUMwlDFda1R9PTQ7R4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-zjt4pb6WJqIhmkq6h7UkNK4mlJUR9pAbytrSLLA22M6XO-R7O5MgIW7CZfZysanhpm9FkXRCxgPX0Uf9p1VK8trfk4nX91f0paGFBm39N8gTPhM_wxAekBylsEJ9OfFmNgk0"
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmFKdVIAGqG-U-GnfHu21cHwab1vA1M4-9E2egM5F4quV328bq8It3Wr8V-ZA56KRgBpmWhTGyardW04AuKWjmoj0IIaTvrwVThBCYmjuOHoqFAhZBdgjTh96qOqe-EKPz2qCwW5XetuySJ9zGzvCd_7x2UjtKLV0wOSkRkZMSlO-iNZWRZ--PtOLEL2rJWPzEGLQd6Ay1L4-jeTbBUv6nI_sUFlWAehycjPPk"
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-Ws_scwrRKhLUPEHvB1fvnfSoTnnil5VBXGws5F6OsyK4gSQvqCBvM4n902DGduduycErTjXPZ4e1lNoyEkkcXJ_TLhiJEo_TrABhF_IjIxlKqGzgNL7oIeE2em3n1lUCtCwxwg15z9YWWg2fkuU5uyXIYlShcBksb9jT-O_LIlwGeffVfOCWTAvPlgfO8GI5GcAUZPd8zDB7R8eYZvOCYpmLoz_AzoT8nkHcqQ=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOe7ocDNLH-4o5C4-0muhq5z2fFVRWRLv1zgVPGH9u6To0osQ-QsRmTs7eGGOV1Z2iVtBQGmOFFe6QVXOa-oq6eBqre8yQWIZtaws6ApHWoCf43_JN1bq3fnVYy6UVsRXuoUdBftEKgFwfyDyt4ys71BV7XiN2JUDR36qX"
+        },
+        {
+          "title": "imrpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0HTNI9z2BFZVNnW35wq1uRbxWGyik2EtgK7SssNfFljg58oU2eBNPFuuEF4cdlH8jYjoHG2ESqGyvctfGZEP9FTgvdx-QGon-67Gm8fNYC3yJMIUcbYYrxwvRopSOLIKBqefmlpyMddHmPBDfMPsr3Yk0vDr9GU_MPP4fVMRXHlQAFQHn5J4IkMbsdMDfE3aMp5jWnKdjoY1RNA1XKeM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbPpHnUjHTTXGrf4XgmYU4CaF_b9YWdLK5IMuxZnW1y4LzK8NWZEFX4Fj7hrMKm7BrCVclxYLyi6VWl4JxyA4KPPLHmA2wypTiG6FPJQaVToKN5uiU9Ia3aC4vBkhhoG7aSONzabko42tVHsw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtE8-vd6NGonKnAEywMF21ZmUZ-uqUfBLOKk6qUpY0hLdxrbaD_oI4HeXqTW-F37kMFqo8kvY7OgSGwaj7vy_ouhZA30f0lM9hf30F2W0ky5H7hv3tHTqtaxK-UbnXLb9t06Wow0f-rPaISrqkz4Qhw9MPaVv9vAthQx3NhyW8StubKvtbIAaONV0IfOeGgxw5T0gYA9u0rAzKQFmPLJJGoQYKBisnIjKguCSUoaKdvd0qptWWfnc="
+        },
+        {
+          "title": "paediatricaindonesiana.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZWLVcSZh3qwkofehVmuMwQ7vTH0jGYrz2IIgt20d0K9leeaMIA8INfoS4bqD6CFabW06Cnk3tWmG4dpDQGzBEX4KrZFezM2LSS34omZ4ipacrSr3eBoTwzpdhjU8kk3OdPJTxywoh0BVxGr3KrV6Z0g1GXfrpBet23j5LvKLVdwAaJjLIxcR0ZzWUtUEQERS0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7q9VPZZBZjm-aQTBQ2WZwCETmms3IRFFZxw7aT8asDaYsAk0BBgIsBxO9jgLwAC5A6XTx3ONwnwRBU2JSpAv_KgfwJnsQddMHseDzieZ8Rv1MI4vE0mK5908KmUUG6PXBh2ryg72zyYMrbtY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5-U79trMd53lYkpXGM5Ip5SFHhVEoL0tuML0QxF-5ytsxO0NKk3luw7mfLHbv9Afk2Ta_kt4n8XxCcYlGqoHr6U5THBllmFWLOSkU396F2Zb4Mzp6T9BvQyC-rUat5dB0Moxjbfu3Qf2M25HsTcEHzftiEsD2_bonMA1SsvkvZQbEetOzeXcEypKKwZ6i3gVOaRSHF8WJUaex9VpVJFmkt1d97r-C6nyP-EXIUon0tkt_vxNE88ar4fn1dmDLvXY0ZwrpWXSoEKSmRd_62N1J"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Repair of Congenital Heart Defects trials for Down syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Down%20syndrome&intr=Surgical%20Repair%20of%20Congenital%20Heart%20Defects"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 3000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3529.41,
+        "costPerResponder": 3333.33,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": null
+      },
+      "name": "Surgical Repair of Congenital Heart Defects",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-30 mmHg",
+          "baseline": "60 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Pulmonary Artery Pressure",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+12%",
+          "baseline": "85%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peripheral Oxygen Saturation (SpO2)",
+          "percentageChange": 14.1
+        },
+        {
+          "absoluteChange": "+7%",
+          "baseline": "55%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction",
+          "percentageChange": 12.7
+        },
+        {
+          "absoluteChange": "-300 pg/mL",
+          "baseline": "500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NT-proBNP Level",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.0",
+          "baseline": "-1.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight-for-Age Z-score",
+          "percentageChange": 66.7
+        },
+        {
+          "absoluteChange": "-3 episodes/year",
+          "baseline": "4 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Episodes of Lower Respiratory Tract Infection",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vineland Adaptive Behavior Scales (VABS) Daily Living Skills Score",
+          "percentageChange": 13.3
+        },
+        {
+          "absoluteChange": "-15 minutes",
+          "baseline": "45 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time Taken for Typical Feed",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infection",
+          "percentage": 8
+        },
+        {
+          "name": "Arrhythmias",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 5
+        },
+        {
+          "name": "Post-operative pain",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "immediate (post-recovery)",
+      "treatmentDuration": "one-time surgery, followed by lifelong monitoring",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "copmadrid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQDe4lXl-Rg4MSTjukxSaz-aG9TXwb3OXSx5w3RlUlHm_9m0xLEH-RgxOaPPSFwtZKbTe3lCuK844jNOxyD0Xhgr_UhvagTj3muthvC3A3zDOYG7Tjy4szU1fdDAYEbU2fdGQbLcEi1hVzz8Pp"
+        },
+        {
+          "title": "colab.ws",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh6QWXHA4XMxEAnbydjNjLj5mIpUM_2BGLyvSb8uxv4RYQaAdJbn9ub_LU80Yqab_M3JWuAsVHb8uEEKMuue-qhKNtlzX7vpLh4fHlfSwSIvr1sLIkQvaW4xiRdk_ggrb-FlppCtLNa3XaOo0LhSMAgOziPiXKtnfVldnhL9rVqP6kUQuB-jSLah7ZIHFcBsqc2lhrI_43n-D2nCU605iBnggrqQ=="
+        },
+        {
+          "title": "aithor.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcpBcI3WRYUa5SK1mntLo8hKVzhjdNrewh8w6YfApROMQGx8Z4yb4p1n2BKq2jY-dbfGhPyDlOkuyIIILqK8UuOuA_S6RQy4NcbBzUkXSoRubC4l4Yvbz0L2frU9KJ9U_i-V1p9jG38rIkj4RTjFwvZzoAcDeRxhhtWZ0Eudo0KSzt6_5W50mYn6A-Opd_bf2J6uSsoravPPEvr30="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwvcyZga3xMW6LwiSTV59llJmb6NZHAmb8akFjxklX06SvPCpvEsJnuCzrOmgCwefBVcFyuK9XhGE5RF_oJQebldqGGU1WadgJIG5Qhzr-Wwwe_hqFLpLcoWQyG68m0VAdex7c"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYd8NGMgTvXaYlJSUc7IFDfcAF085pSX2At8VfU2PSwaLBBHMjjxSO88ZOzDhl51i8w4c2WTwKOQmdymHakp_PbBoswUhNVd4lcbOb9rXm7urEZnnxfrvK983wqFUbXWDAdMRTIKyZgqy2qSFqelDbnUVTFkCiP4ZGc89bpZVWXUCqF9AJy2aQ-oIsyrrZgf_HcA7h0fN6l5DTOs1r7RJE1Jj3xLu0a077FqJt47UhH_Kheg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6coIbwOtSfrsHAZ6dMjKe3ZNItDT2B_28jU7jdzdbnhH9_2pwFPoBejreZ2lHkYLjGH4z9Be1yF-NPG5agpHCqfCw_QMWhHvgnfpfsXbYDd-KXlwYk-QKvdG7JhxG5227NwdOwAlwXsQvo7s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCxQ1MNRo_vx1tkiKMb3Nlj26TLcQrEX-GdSzxyF5UV7dU3ch3TGcGOiGDZG7aUceVnkL8t4ubR9qDb1gTXTSkETuJW2pWa-z0Kmduc3v0yPI7Qd0Wv2ECnxZAagUKx9L1yRlI"
+        },
+        {
+          "title": "rsdjournal.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqUXKKCHFOaHTFuzThlDUVSSB48tO3_JsRKcbA9GcPrytWngbx7XjZ0YgDdwj5v94jiNvGj2kKferKvJF0m6xyTw56_knCZkg6VxaI__LfKJceYgSqkUmBjmLlJZ4OYpJh7vI4y7jibA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu21p4lx9EZUgfiqEuMueaFGDFdT4BjfnHtzwi5Q0qHxQOvlW9-LGHg7MiCdZtgJoevcqbZnUL9svqALKoIw0hK54cNWWyaZBpAXaUanZs2x7pCjsPhYm0bHfY0_F3vN12Pc40TIe9Idnh-CQ="
+        },
+        {
+          "title": "down-syndrome.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCColwz5peneShEOlG0NtmHeNTkdtnHvNI0YMrtXkUBMzhPfR-AmYuqAQUtPN2SAbrKu-YSGbZHUH3v84RuvlPlBdyF5DOjZXgXrGmHuiLwNVnAtyKfe2CRU2jFPoXi71AZ-kUDya7VYhEq_6hvHiY1vIAELq9PIzq_6OqYdBKtSNgYoFjDjs7XTvLZb6TQzNxY3zvPDlxCaHbDVEWOCGXndZ0iJS30BRz4_ViBMcgo0sP"
+        },
+        {
+          "title": "down-syndrome.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2XZtcdY7eeDkxbo26xLXr4-SaWaMl3NY7j478Lb0Wl6evcMKkb_zTRkIOCZS8lY6b0Z2Z7_LrNKwfW5PKF6hfzMrJsutPZmfDgMvfEtdhizcL6-M-QYz8qqcDFTnnkd_1GO0owE0W1nUmqHVyBBr5vsRXjIVlFjVWadXjcXOCG_ryUlTQbpdB4Am2-aqiXHDPx1w81tY4FVVMH4R-hYPvSnH8xkkCVm6gJgPHJ3UsC-SH"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECQmt43vESzmN9dCxtaMHhtBHmeVRnbkJs0EhBKVy4LiZS2_9Ps0SprqqlFYcsVWKGSui2rt6tugQFN_8O0lWOEITc8uXVhk8NIzTetloepf3VC1vdWCslORGNfJNc0ykx-4cRTPEp7rKLTxgLdpq7eiBUzY1U7QCoyieFs2_ovyP1Z17yV7ADnU6CZ1dobDv6JXkar2ObZW_rYESRtw1sMRu58p6qouEwrU0Sm18X7fveJebBNokg6T7g5_QvitJZlfmoFPd0iWC-RP5gieWNO33IJud8LHTvwdzqKU6dyw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkUdeBecrRxpT5Vm2ouB_GxTXSSvRC0jGVZS11qnYwX4mci_Y-bHaSLN8g2vg2gRGXkZEMJftFP_ZjWmkG8fbGMj0P5wKhrRsERNRCUzFBGDNs68P2vudUIHatH8-x-9Nu1_TmdRvj1ET7ByrmEMTzu1l16gUbvwx5w1mNWZsuFyQo6KQBmRUU4c3S9MW6gg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBf_3s0UHvcJTdb5SdOa7XN9OysAGetjMlxG-G1xrevDHHxst5KOKTZf-s6scyKHzM1qqy9Rf0ay2dxGqKmhpwG_zcEtemJF_CfPjzE8E3ljsIr7EAxEbfl-otfFbbkk2tljLN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgzKgb78Lob5OLbsTNgEqH1QSKS1SttxqBJRu_UXe7RuUR9Ed3abRhQ7f3RGYfZvXQmqMmWRsdwDCitgWQ52kg0US4zJoyv3qgT9BNj1xeJ9rtZ60v3MgUTfx1stVHYD_8kY45fycg5TAUvJop"
+        },
+        {
+          "title": "ClinicalTrials.gov: Early Intervention Programs (Comprehensive Developmental Therapies) trials for Down syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Down%20syndrome&intr=Early%20Intervention%20Programs%20(Comprehensive%20Developmental%20Therapies)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5-15 hours/week of structured therapy/support",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 18750,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Early Intervention Programs (Comprehensive Developmental Therapies)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 5
+        },
+        {
+          "name": "Temporary frustration",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "lifetime (varying intensity)",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "colab.ws",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxnmsW5UMO40U5gkik-UhHMPxdasRuFdzxChWpf9mFMM_UO3XBy0i-Q37tZH6qE_ggiRRxwlGTWDhIal4CS-Hby_oNV0MmVMtOBtqV04VA-q1k4HJcIGZyNB8zQif-Revv66zfANjOWbU0AGKW1QjwN2gwGyp8vDvautrefUUTfZnKZMy6yw0dTRU7_DH8DggmOtT03KGza-C0UsF2R9nYK-xe3w=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2Mbr8rEv8CEt8J_G6Q-xqhI6_VyoBaGhGKY9BySMJDZZ-IjOkbJjaYG5-7VxLqMIghGbXylbEb9rsbcn5UXakk1pL1M7cmtkTD6NJXCA3nzqVOWKI9_8gxXELPuRx2z0VCXrbH2mtqX_lByn8c6jGhnp6xbOnNN16p1wYdYrLX1pvmsfKrxgytqfv8PaeWFjzQihFhFO-zlkTfkhy7-Wn5Kynhmu61mz-EJlKgZ2RTHeRHAW4h4SzLXwHq6iRhDKzB3uiUBUoS9Y="
+        },
+        {
+          "title": "copmadrid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAYjpXgljALObHVhZFBCTExC8hW3yjE2lhzQEWNwpQbppw89J5msh4SRRJ1dURnBEBFwPTZ_D-R7W67JfponyhlS5qgSN_N-hMWaAiXeEVOHkuJcnY3oWHa9ymRIScwZUxzStJPBmhSvy2bWMK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5zZrVLoBf5xkHPDhC3rZ2E5uU6lsfzP_Re6ELFnKcAYdEicOQZb_gtS_CwAv5-WasqK0vm9_98HbRLJBZOYW62T-knH6M81Smw6I2gMWEVe2oJ9KMXmiLRB3ERGUc1gwghVIcp8cKFIQ57Qk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGitWY4jNYWUiyr-8AuQEdoOvADFqbNF8ir-JdMzQTCktW8cwrSmAQmetrn02w2chjqnZ-sP9eaWpQvdzjypsiDpfcJ_STFkRzbxRCw68su2RXxIvenNLO2SQECJXCSG-vh4J9HiRKzN0AgDkvqkXWtm5R1Lp18cNXb5-FhcmWf4HikE6nZ0fz9qLCmTheT0XlVnNELOyCO9mZR8tASVCMM2r--78ZgZPPJjkuNAg_MEZ9E-axf7XlhcvkZm2sn_bKJxTP_rdslx0NRD1-qLaZ2qDRinDgUg9VMu1hPVm2c94PcN5ozCjexvWYIMtilGjmMnv0fPT39aghIBnbnyB85TX3G94ESubIVrII="
+        },
+        {
+          "title": "ndss.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeTHRGiScqMaw31IH6NlhJCQMDYS0ELUIWTv3EelSuHGya6r32DxM4nwX4mLxnzrZ3pXRz53n_ovOepRCwDSbqB2AWZDCvzvC2oiy2YvW4YGlp8avurQvPIc1jBqePRAic6ox0n6LMonEK3LQnb7BDHChyi4RedSOyvoSIdE52D5NouwqlawDQSpovVk63Lx8N5yeP_rTHZeiPxK17WeJJyWX2EOOm8cWv-wqa0Q4LU3G2uloAS3l76ZLZ7JZUE0SyCzY3rejlic00cbpG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEse38kKs7ScdrSXgZDCHmP4SbLbQkcASSqyGJEACFvBd1T_HsLssg-BPZObBVuj47s180dRzB2vhgcMAYkRUj_9BX3X-7NaB51zWopnC5JQXSANyQCzz9UXSF4NBq1LDIRFOY"
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_fx_mPV3OZ2QOEWk_fCBefVDeaOOnrYcI4DdAXOJiGjaxUV-6Inu54LDd7iVt5WFQ5aur2s9HAIlIyb8lAvs0ih8yp4sHv46SgUs9C5JQS7XnupLxZm2afJ99cS_PTJLRTeg_L7YF3Y1qBR-1OUPb4iSx6JLOFu-vn8wJBku-6c7RvzEBzrw17vCxYEwszU4OANjWzKrm27nS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO9b0gZb-_4XA4NujY13uyoU-xMpcsVaiSTCkOpEzGYfsI6tV6-UfXwC107QawD0pn_-0psEQKc8Tr-IbUG8cluX8snY1DQ1mnvTATkFaGId6-Th_X4ixvKoGFp5v3OEpn0cWnltpTc3OW46QXlaQwxG-ySS_-zb1J_kF7UBDqnzJGZG5ZVOAoiAT73ENLsr-aajF9R3CWGvRb2UcGazmQ7OqcunOxvXMVw0QS6-1f7TH4B6BgxgwMFgyA8OPs3wGh8w2MtSsTggRj3x6UUq21VwE4VIEBrPgzZHYnQ1eN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg8AmGwX96t9D_mxv71XM8wp2pjeMZyVXA-xZMeBbD8h--SvlMU-nZPX--3ULf1_FFhV2Aw64ElSdRanAccqtATRW0ucnSl0rcsTYypJuo3PIR-5cvZYM7FJP62hQRN43qXAJlFAXTn1xH5bAU"
+        },
+        {
+          "title": "icdst.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFweQaBbtb1fzeSjXS8Y0x-zIl8z-rnBFdBXegrBLrP7iriEmt2-CzkGFYhXpqXFH-36Mlzh4EiSk8R6RtR-GZMBmWrkAXCZHL2mq43kMX274QGL8QOzyiHNuOqx_0cC_xpWb-O9pug7yDzwiHGlgpPzUi4z4oBsneA9sCz9AkR"
+        },
+        {
+          "title": "ClinicalTrials.gov: Special Education Services trials for Down syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Down%20syndrome&intr=Special%20Education%20Services"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "20-30 hours/week of specialized instruction/support",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 24000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Special Education Services",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Frustration with learning",
+          "percentage": 5
+        },
+        {
+          "name": "Social stigma",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "childhood through young adulthood",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEy1241Og1gP9EEjzchXrbgCtx0FyenUV9EkgPDHKUDefBTA3DwddBBQcIV7zhu3WhvccqmSqw0PmBv-9zfsO5_AByaxCdB4v9r34ZCD_EcrENPbC9uTSRqrmhCveT93nsozBP"
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmrcOq3087qQwyGXYK1xeAcxeKCQB7DbzRss-X3pFiJLiIA8a4GHZcmHdu_SjRRCKD-9BiDkdEKLmeTSYM3Ol_WUGEbZoIfC5ZEvM-gXFEBj5nqN7ird4UcqaObv6B6wfiOXmXKy8FSRuFZTdiZ6fOg3_dYE6SFQO9pPmnsUKd8X26kAsnrmTwv2qmdFC7KQdUj2X2fpOwUXTu"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm6jQqwVpFCmApM8-GPrjR-zoQzn2ClLTSWKimCoWVnWl0p3frZZJMbZd1KLK801w0B_sTQT1xqlkQuQ0BQN9dxsqVL70nGHr3FGRUJIM7dzKX7p7zQWhCOmbAqSKkwimgq3yyuVLog9AU-uGw30SQaXwFqJWtD9DKtKUbnvK57LKUuiQ1q11kdzOmQX_PhEraDaTBJrXOsMjdIUUmhUoS0rUtsxdSM7mSv-kJNcjEx3QveXR1NBVtUDIo9aUTUPtnl4oSMIBJMeHhXIztw3I0We9NunckW12x5Ud6uJmq7bWsqErN"
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGakUcOckiUD7A99ZpsdiUCXEjkviIrOuLCgmVGxdfqKc_KT6JGVOtCz_-ZCVfZvHy_uTIZzn6_9v1uKk2bmP8fAyMaBjP4UgrpalTEona9Be0uDC0GtioTDqj3DL9SCG_unhr0WaCRI9VRx7I5pDMQijttwLY8vSDbNV8unJaPIRuhTJlUNPO8noLaAOJlXJ68fM_c438vsG3O"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVmgikDSKGOTsrbLb1f9zWewxEHtAdzkBfP_aej_udvvkFg_TnnxloyF4cZj-Vdb_zqvvMn50WSd8ysDlH6kftB7pRdjwLVEpkRb7swOENs8YIc-Hwssk6veeZwT0ZWxttP8TxyFaCDVx0Q_A="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5y4grS5VS2nlpOKa5fnn_TaLunsKBju__0_uwbcyEY59YY5y9b7D1MaC7L9cjspEN1h4YzpnTamZ44mef5h_HOORoYs0jnyWZLbT3Rws3hwRnW_jpZzcMeDDS4NupNiAQGls9LNFc0pSog-1q4bIv0B3d8NoEaK4tYskWy-qeU9qeCe19_tvtsxE5PfQxkXoqxusHa1yzOqro1H54tg-0LXu9MOkgCDBAiu_-HGPRbejO4iwcYvBpVanmpW0CZcBkm84IirXgMSfNxYWrO0dx"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0wFkrUqxP9evk9aQYFoChvJeT5hMO6Ohr5tqzQiK3xyC74SSpVe_9JMMcmRb3J8IhbEcLoxpnkW9EUHUKmd3O5zm7CJ57c_lcE7rdBxVT4cmGs82l9MlglnBKDPTgeW3CuUanW3L5o4BntDYsdWKeuE6Oo3Vxi7VTnd0HSxVvZ4h3wrbOyrXbWguVuvcDvXeaWU0g4KNL7ktDpdGOumJ2bP9KRLwnk4kQ8KlY2NREMD91VV0udlhvyn7kq2t2lNctXvcfx9s2tczIh4h2yd4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGRxBW9Q63qjGO2vRG5UIfif45I8jsVGqhMAavwC82c203eSmxGm86lBMGnYE2cPYfx4lZ1ktHsPwus4w1_ndwi9Meyhro9zBwPkLEknzDxooxMlJNd34T1ZjgY7rfAUC5Ci5HX6yh2GvqbbKKuURkp1hdPxJPgZjuXk9BTYpDDKsMAgfqDR6t5MqOi2VyJfO28A0ovAb--kLQ2VK1hSu_LN_4SMqkLfeBlQlr13K8MrSs0NW8GgOPypxWTi2HLhNorX_5OFONgODjPBQOW2i-NKlZ6I7GgnLLLl6NJpD366hede9nOFM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Speech-Language Therapy trials for Down syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Down%20syndrome&intr=Speech-Language%20Therapy"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-3 sessions/week (30-60 min/session)",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 7142.86,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Speech-Language Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+15% (absolute increase)",
+          "baseline": "30% intelligible (to unfamiliar listeners)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Speech Intelligibility",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "60 points (on a standardized test, mean=100, SD=15)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Expressive Vocabulary Standard Score",
+          "percentageChange": 16.67
+        },
+        {
+          "absoluteChange": "+0.6 morphemes",
+          "baseline": "1.5 morphemes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Length of Utterance (MLU) in morphemes",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "65 points (on a standardized test, mean=100, SD=15)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Receptive Language Standard Score",
+          "percentageChange": 12.31
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "70 points (on a parent-report scale, mean=100, SD=15)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Social Communication Skills Standard Score",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+3 independent communicative acts per hour",
+          "baseline": "5 independent communicative acts per hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Communication Independent Acts",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "30 points (on a 0-60 scale, higher is more stress)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Stress (Communication-Related) Scale Score",
+          "percentageChange": -23.33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 3
+        },
+        {
+          "name": "Frustration",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "long-term (varying intensity)",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "jhrlmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZxYC4Nzlp5n8-npzOIzuFlgTCSd7Uxll95R5VR8IwBTKxw1VsikOlM9Ofi9xdSIeAb0vfG_2zm1uclM77aEg_2CMW9xPmVYT2FiC87uEwT4Y0eFKsjrOjynbduUv0Gh0DvOpMbAHA2BhfufP3B-gtdQZvJiEkQ6ub"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUt18Kfq6VaPBe7VV7knaZxz-67JxklvDeKustNl92-46-1EpkZ-OFL9RvonMBAPlkAuG2Vx2EyTzjMKDLHn2LsBAIdrPtpv3ulpQN7gAC05UJZvQE4EXnZKeFrd8DYzlQmsj1lId4l0_IKaxqSAFUnolLHUoFQxXJEXIiWF-gm6t9JQJ9Cbz7uVfMEtbIue36BlasXdHrjpdOMcU41MUdnHOpPK79pIhiKqr2x4mq6mwaSdgsE3mKHOyGm1SookMTw87xpC-YZE-Rit_PoX4LaOy-JO-1xarFEey_2g=="
+        },
+        {
+          "title": "jhrlmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESqYc-dVSm5xnWtEaQ323NmPoxtwSsxt7cYc6sfoYL7IJcYiaCIfjSv88x0tC5lq2Q5Cujn77E6YwXWCqECRV67ykHimaWxA6rBd2Xn5sz1GjezwTa_yx-Gh38Ba411iFWqZYb0xpDjw6d1ouR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZZGtNNelT3BHzhQZvEl5qQXhYzspPYWfuSSotqes1XAU_PRaLBUG4Cd3gdhdgBkHQB4wmb4H3yn8LzVJrUhhv7dAqYfyiLdNunZyUMGW3J1pG-VRXKsp5eQ42chGUoOiR1hea"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdJRriRTlH0Jfh66YW5fksCcGSX4IaGGSDK0aIfwOtkG331J9PCCsvP1W9cz0Hl_lIxc9jPoatXIkHJeuYqTjxniU2YoFORyKIawzWUiJqe6NZbAGWh8GV42BxmaWE4ggf4DJSnsQLMo1rMg68r_afbVInpBogCt1jwMgypNGnLSyhOAsP_302_qJyldeMFJmwYHtPLE_OJCWisCbSWqutnHMerzZThZ4ClBZ_sDb-EfYJ6Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzv1jaDx8CyHKkhdUXcXiXcD3DZkWB1KLjW04RUp8RoHJMiTQ3KPCmIxw6mFRJsXa-8Ly1kXHOXESml-GAH-8uYpUYrfR4WIC_lXYIdUpY1h7wV5et2GJpQOTW03WHXLo01zZRvgRnJbsr9sv8"
+        },
+        {
+          "title": "ClinicalTrials.gov: Physical Therapy trials for Down syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Down%20syndrome&intr=Physical%20Therapy"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "1-2 sessions/week (30-60 min/session)",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 6153.85,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Physical Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+7.8 percentage points",
+          "baseline": "65% of max score (for toddlers/preschoolers with Down syndrome)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gross Motor Function Measure (GMFM-88) Total Score",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60 points (age-equivalent for young children with Down syndrome)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peabody Developmental Motor Scales-2 (PDMS-2) Gross Motor Quotient (GMQ)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+3.6 points",
+          "baseline": "45/56 points (for school-aged children with Down syndrome)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Balance Scale (PBS) Score",
+          "percentageChange": 8
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100 points (for children with Down syndrome)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) - Physical Functioning Scale Score (Parent Proxy)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+37.5 meters",
+          "baseline": "250 meters (for adolescents/adults with Down syndrome)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT) Distance",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+5.2 points",
+          "baseline": "65 points (low average for functional motor skills in individuals with Down syndrome)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Adaptive Behavior Assessment System-3 (ABAS-3) - Motor Domain Standard Score",
+          "percentageChange": 8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle soreness",
+          "percentage": 5
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "long-term (varying intensity)",
+      "trials": 55
+    },
+    {
+      "citations": [
+        {
+          "title": "aota.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHSHyKv-OxEa2SIjE53o7HD_IkItQaOKm1qWXrCy-QtJvgjMXCjT6B39ZkdCiGcU2QaF_B-vYG87YC9WYuXATh2fZWxz4h0bl1BmnIJEi4OO--q5XKTdm_VDNnXNkPMPk6afp4kvscn1-zljxwgvAPpva9eE66aXTu8YtJgdEWl06A7-Pjok67_4ZDIss5d-_IqMqlO7gPCBcutH5enChAUZP_6kRW"
+        },
+        {
+          "title": "aota.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELwVvi-FrDdzKdnmoGSqy4U66Csr3NWlAHA7kZS3-fooN4d4VMpAJl1AMcsU6gxjMGOh4XBfn15L9widoCjRw7Zlv_c2_AezH9_ZHnUWJMHWIXd-FlVoBl3E0qfPkFfCvU_mqsoLjK5Uk7dX0Sm_fhkwzqhfZPike7wxvLQbZJCW-rWXkqiPi9HAC7lO5B5KZt-EDK1rCUic2XUqog7VJX2hCP6Hyhl_IJSoTXGOCnjMTe_9g3"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc5A7Sc-U3FyUMOxWoeynSOF-bAMW6BYGGMeWawPOobkn-WXUafbh17A4JYC5cBx3zSES6OY3_6BxjZkdzMU1TxdnRnQuMoCNzxOBQQZuElZwGUzKerh8chMja5_jxEwoFpENOaHl4XVpNKs0xTnZ5XraYheH2U6YTgo_dGZ2Q7k3qV7IFCw=="
+        },
+        {
+          "title": "uth.gr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6ACj8jpU_RwbMY6tjfZnweeYIgdp5bPU7eNNBa2dtPDPjH7FQygTCoW-DXcdnlaKmuIj28M7H38AnWqNVmrCVr3zTMmaMEhproaKWsJeM-VWmytwZuL6Rbz7huOanRycpWdq9s91y2xl-j5U="
+        },
+        {
+          "title": "certitude.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm04qYbz5RnLMofudEni8PVbMhEImkmk2hW_ViV8ijcbbPPh3IvdU-kMM3r_fLqhz9COBjSRqXeUzsfUa__8-F5EQIx13yQmwr-pT0h0rIuw58t8AUiFY6rpkV2wKBJsRmBUCYUeuDy25jX1q533QdlnULXdmJW1N_WUmU2qqNN8kCv1z1T_Pnl2sSuDG0lz_Le-JWkg=="
+        },
+        {
+          "title": "specialstrong.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9k3FEuDSuVws7FpAd0Z7f67Gu3pyqkJu1l_YL4-u8P70J-xpgwpgNvJTgBVlkI3VX0IniycHbF-XmzUSz-HBkDkOotOGM3bTW4aEWygGel5MEINUOCZ0hIp3Jd8lpLuGIRPEtK3FBQbMptw2_TlB18kM8xNQNFKkpjAsfhaYBRUxlDDnjHPdtKv9yJMk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBFo7c8epIaYksdgN5uOnJ473tVPxsFUOKc2Agp_t93mMlnWQwOV3QgIajPxhxOexqB_tPY0bnQVm3S3NHspKdpth58SIAbNHpMxCyKT0xoXchZC099arj14cxCta5wv-OiPl3_ltRDzqPiq4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRzL8g0NT8wKlyoDYTKIWmXeuv-tGWiawPBz4F1sK-Hg-ulVEpRG2nLUj7a_jLEFg6vQSqqP59Y0BtkEJrqEQrNBA5BP-GK7YFmaAJF1WZ3LmgCmekB7SRWR3Ma40l4PRSbW5Z3oCb6myedQ=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5nONNtE0TSc8pt7aOFw6YYmrZcrFp4cjikFxxFALgDmmtGUV10k8g85sbTlphsHk8AL3M0AG47f3Uy07b2V5PmhiMyOsXJv0bUDbTG01U1u9ZUTATjCn-M-_5I3ZQxOk-jDqBfBVKSLo7EdNZR2JY15pI01hHmuJQ6g=="
+        },
+        {
+          "title": "aota.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwJczaFFEqVR5NrLDHadq7vtbhCnnHH8yR8BjY09a3d1kkwdviQjfLpC2VXK9JfU-DSfhMNOtwDY3-p7iGc93wsnUcq71rqwImrjS7dvWLwkr9BrVTjLPHOdIz7gRtspH1r58ysfA4xrBidbn6Dyp2EIBNrmIWEIQkU2_zamUD8FbvavdJUIFAVzCZAvInGK6SSReX-tINQmho5Deo"
+        },
+        {
+          "title": "ClinicalTrials.gov: Occupational Therapy trials for Down syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Down%20syndrome&intr=Occupational%20Therapy"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "1-2 sessions/week (30-60 min/session)",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 6153.85,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Occupational Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+5 standard score points",
+          "baseline": "Vineland Adaptive Behavior Scales (VABS-3), Daily Living Skills domain: 65 (standard score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Adaptive Behavior (Daily Living Skills)",
+          "percentageChange": 7.7
+        },
+        {
+          "absoluteChange": "+5 standard score points",
+          "baseline": "Bruininks-Oseretsky Test of Motor Proficiency (BOT-2), Fine Motor Control composite: 35 (standard score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fine Motor Skills",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "+5 standard score points",
+          "baseline": "Bruininks-Oseretsky Test of Motor Proficiency (BOT-2), Gross Motor Composite: 38 (standard score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gross Motor Skills",
+          "percentageChange": 13.2
+        },
+        {
+          "absoluteChange": "+5 scaled score points",
+          "baseline": "Pediatric Evaluation of Disability Inventory - Computer Adaptive Test (PEDI-CAT), Participation domain: 20 (scaled score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Participation in Play/School Activities",
+          "percentageChange": 25
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points on PEDI Functional Skills score",
+          "baseline": "Pediatric Evaluation of Disability Inventory (PEDI), Self-Care Functional Skills score: 25/100 (lower score indicates more assistance needed)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Caregiver Assistance Required for Daily Tasks",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+5 scaled score points",
+          "baseline": "Pediatric Evaluation of Disability Inventory - Computer Adaptive Test (PEDI-CAT), Social/Cognitive domain: 22 (scaled score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Social Participation",
+          "percentageChange": 22.7
+        },
+        {
+          "absoluteChange": "-5 standard score points",
+          "baseline": "Sensory Profile 2, Overall Sensory Processing Score: 70 (higher score indicates more difficulties)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sensory Processing Difficulties",
+          "percentageChange": -7.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Frustration",
+          "percentage": 3
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "long-term (varying intensity)",
+      "trials": 1
+    }
+  ]
+}

@@ -1,0 +1,1015 @@
+{
+  "conditionName": "Multiple myeloma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:49:34.997Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "oncologytube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNMr5zu0mIs41krP9R4T6OM6Y-KZBmDwDlh3wAxrC4JVq0NNWK85_Jxym7IvyMs06JM-_e7h9hVCFc72OgFGdUhOxCjqjtnfm5w2Rr1fUDgsn9DaDhj4Q43zz1WJKQDE20rUMckXE5pmVcjhOspjhfFuvqmMp-g3TpB5gaB4qkO7S6oM2ShwZktvt4rzrkU8LQf21374m3-Ye3dojJawVDNshegFlQ8bpYg8MBhE3Vzepg8kcBQXDaFW-tvHGxvn65"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl10X2t1_Y8diXQk_NwjHLhi4izWDfQhVd8EqtfjaCkuAjFRcs5FHM2iele2qKaI3HbsykU7nvsTfN4WmxrrUNPQYem8O2onyn3Zh_6PHTfEfpLyHFgXMbqO5rQgwLidK-fANDQl2OtyYZrGpq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLGwTFkcmDxmrGN57s9uJpcBgdytERpBCYHc50Hj_sjcWMNmZO1wCeWW7McS8TdnAUOe-y7xv3bmKRhO3Z0qDZFFGD_s2vIaoFm3cT8QEZz8vvlwvQUp7AdbOG-C6GUR5xNGZ6Puz1kqrrRzHjMzjacOzCPc2FI4h7yEwkhuU7iqYyj-26USPg0anouIr0ss3MvXAWi6az_kPGR7MmnL5YG3e8mwyw0_syl72OKoQO8xIzz5Sj0X8Z18YqBVznY_NLJ0oq_a9ppU0XQSMvJtC110FE30OCS-8q3tpuQOOCcFJmRkKj11nUDBAl7chhv2wo1kwxBqFMnp5odDu2QVof5SR9Uy2QpPcSpqDmdDm-jkwS7ogVn14="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjdCiSMiIo1dVbE97vCVV5ZV3TwmXyWtNLtr2rqv4nZLKfpD1Qj9DTMs7gG6yRNwK0HQH0xyX5TWblfMhk2-yL8YZP6hGgFcySwVGdXpaKgV0CL-apCQtSof5R9s_gKNN566b7RCgqbEfOu5RJ1BFQgJu5jfhFgI9i8pJgFQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW9103MACdAEIYoqbIXEiEsRnUdrPx5nULtpxsSyYNXZGgBCuXLelNRreaZtGJmRv1XDLn-O8XTSNyAg0mQ9-Xl66XN2AV97taAxh8J-z_X6FyHZjyRu284sjnRC6vuh7ctdOI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHCotNJyNpq7ht-YYbQl9COOi3-hqYJlEJoLXjSzybQAtX_y_k1hbpwJt6h28v-F8UyxGuyqUb1HnElmcNBNGvAcNAdp8pl_BQ9g_GqlgSsFKg10GNwz668hWS9vx5wNM4iTpqSt3nNuwVdGY="
+        },
+        {
+          "title": "pharmacytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxN13WVBYKivWxdCGpedgeKlBi0Dl2RfEecffa5Afd42mn5nbOkk3yeSCeg3G1jyGeXS4kZZVyYs7b8Lsb7_Wn7WxW2XlyzmEd6lUZjiz6qwbedTyaVL4YtT79JokU2cBBUcGumOYtkk-7f7NpFEeHcHG6zNlpDuC6ReXJ97jT8u-K0BdJ90EYp_9h2_RMlq3zo6jqFWo3_n9sMylDykr_3k7zxO2bujVtfIaNZXQXavTcWg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbOqa4YWqVBgcnwKj1-rptGKaZ3mI2gAV_wiM6OYWBkPsAXeOQxxBDNM7cM_bxPvePzKCt5ETMAbjwaCEA4N-4Cmgz1o94_pojJsIP_i3Efz9z0ImdBK6ypedbIeKDqkDwsoyiyJxIbMQBIuQc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYOpuJhXGqMoEuZFU_kgDr7O24KrMNR5N8E_p8yvqiJNd_cNjLhfS1uVhfsqTZpnAnxxkit-ufNv94-IGV6YYFoLSQHDt7x6A7y1R1iWK7t1xx-0w5gwJxWL-XM80q-pg99VIp"
+        },
+        {
+          "title": "ClinicalTrials.gov: Idecabtagene vicleucel (ide-cel) trials for Multiple myeloma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20myeloma&intr=Idecabtagene%20vicleucel%20(ide-cel)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Single intravenous infusion of 150-450 × 10^6 CAR-positive T cells",
+      "effectiveness": 95,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 419500,
+          "monitoringCost": 50000,
+          "sideEffectManagement": 70000,
+          "totalAnnual": 539500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1348750,
+        "costPerResponder": 674375,
+        "icer": 475000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.25,
+        "vsComparator": {
+          "comparatorName": "Standard of Care (SOC) for triple-class refractory MM",
+          "costDifference": 450000,
+          "dominates": false,
+          "qalysGainedDifference": 1.25
+        }
+      },
+      "name": "Idecabtagene vicleucel (ide-cel)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.4 g/dL",
+          "baseline": "2.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "M-protein (Monoclonal Protein) Level",
+          "percentageChange": -96
+        },
+        {
+          "absoluteChange": "-69.65%",
+          "baseline": "70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Marrow Plasma Cell Infiltration",
+          "percentageChange": -99.5
+        },
+        {
+          "absoluteChange": "-2970 mg/L",
+          "baseline": "3000 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Involved Serum Free Light Chain (sFLC)",
+          "percentageChange": -99
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 80,
+      "safetyScore": 20,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.165",
+          "baseline": "0.55",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D-5L Index Score",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "7/10 (Numeric Rating Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS)",
+          "percentageChange": -57
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.0/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) Score",
+          "percentageChange": -33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Cytokine Release Syndrome (CRS)",
+          "percentage": 85
+        },
+        {
+          "name": "Immune effector Cell-Associated Neurotoxicity Syndrome (ICANS)",
+          "percentage": 30
+        },
+        {
+          "name": "Myelosuppression (prolonged)",
+          "percentage": 85
+        },
+        {
+          "name": "Infections",
+          "percentage": 40
+        },
+        {
+          "name": "Hypogammaglobulinemia",
+          "percentage": 50
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "One-time infusion, followed by long-term monitoring",
+      "trials": 28
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7yVK6joTE7IezN_tHQ1IS1NJqT_f6Zk_HbuU9pxRb-ErTSrAGn7vWI0ugxXmxArlGNQC1YJ1S8fxv1JNeD0h_m3DPlcpzE_vllP0KeA8kWV_WpMs7pyEVo_gTXaRrra7Xj-tO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX_lFVQ4NBeDuTjDYBYFn8U8WHnMrTRImSpA74iYhmeyaBzvebWUKxAP6PLV8cfW0qTClatULatDs1KIjdymY00nNdaWdRrEP1GUCRn1NeW-F0U5umExMBU2_gNnLjY_uiI-Am_zY3m_TbF0aKg67ZheCvG8yTq4MFQpQjl1nOaNXaMOjp8ed98DRo6cShGlXre7MgPXFGWcH-3fYze07DsN_4wJjD0WjrAWxIhuAV1G_nXNaMaaHYHOWx0wTiVM9uZIEfVzi8op87LNQafP4kUXwNSUzejzJqAmPG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4uxhx9g5JUlOU-zAChvt9Qydbmj9odMpuYYHBVdSF45fVQGrdKh3JKpJIZup274aJYxZk8fTisd-zOQyRP06JZ8aEsKTDAvE3qr5waAf_1zJ803XKWo1rhyi_-ssp_il4ClrpGV7UQN0R69Ak"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGiNBaMLq6DGqvcYVrhY66NjpNnsUY1Gxkj_Mz_bfTBYUr9V2BpHkCKEHNijlzcbbdDT4fZr0hwXuDzRAwW5inX-uP7GRaZIj2Q6MwCjpS-B2JwI40E_QPJXe2oVuVdI-Demo="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3fPgcLwVMEh_P9dz6sYKVnwIlE7QC0BLcqF1n84eal9oXsM_gfaX9sCNF5fnb25bAdLvnlPaHg3rXyKvAufoVKmqarhGKNXJtqgxharYO08oQZ5cUzb71dURdMhjpah8pFEc0EElO0hnHmsDznrx07mrrTAXeFzHNuJ4H5wWbgYxnzjd-LHtpyxI18PR3eHHSPDi8eyTmom3CXqYtQbnEvXAp0OjCV6I8X6ZMaH3NT4c="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGfEwu3ONzebFr-mVu_djfz1_dzYHgzyHwy36DeXrvm3jvrHqFxXA5F_3zQeRmRZvrVl2D5Pn9hc2WLQBzal0OvNkoojpXjgcAo5BAUT0CvwkU8kcs2mMIqj08_PTcghVFGjAZqGOeB2KXUcohAnpkl_FdVI-7JzbgDhzHCnkgnr-deqFNtC5dfxXeg0q4SBQ67y3J8zlTk9RMjimjDewXBcIWz2TGD48buJf3oTsYONmLgZi_lOgsdszTm8jyVRA01bJdZLDXQzOMmBNYiPEz0unCheup9srTrqyNceyGBEcS6VUQqEt86nwA"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtyMZK-uvUUigeZfQprpN2BUX_4SB55KLQfPIQTKNZPdr_01sD8orCeIw9ApQ7bvFXKTrwkXKzF58-KR2904YHUX6grLlOX_pENUizirsXrn6E11oIBS3padlB0hLPQPWCCK32SmOCAOqMGsTA8wOw4086dWV-usk9TE8Y3W7bbRHtH93wQxrTHh3KlBNpHo8JAwu3BB9w1YyeJf2zH2EbB0ae1nxS8K5o55T0pcADrGOG-SMC"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKR2NGuQduHLZ5mOhJekyP9xTnk_jX98gZkn-iDiKHViMP6Gwhba-crH_7n-OblS33XLvdVZdNrord7fFyW4AroXURoT13k5A5N0I5xCUm1Mkisi8FI0deQLC3OE1fykUR_xZ8QX3MN-5d6jTEtA3L8_F3A-Rssv2svbTPkegJK7OozMQqPZsLNZ5ZIi8I9tTMEu2Q66hQeQP_zWaKygKdlHD5wTMGwPTIs4xF6-vcXirDoVn8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1rwY-cl9lo48B3_qo4C_1EJ8LFwFxJANFm_FRiluVKmygViME9xl5K5Xo72XLW5utn32pRBvJhslVX-3I7-YNhtGeMVYu0Vhs6GeeSSEpAePqR4mZxr4UOlPi5TobUXGD8YIt"
+        },
+        {
+          "title": "ClinicalTrials.gov: Daratumumab trials for Multiple myeloma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20myeloma&intr=Daratumumab"
+        }
+      ],
+      "confidenceScore": 93,
+      "dosageRange": "16 mg/kg IV or SC weekly for first few weeks, then every 2-4 weeks",
+      "effectiveness": 92,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 198000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 330000,
+        "costPerResponder": 220000,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Lenalidomide + Dexamethasone (Rd)",
+          "costDifference": 70000,
+          "dominates": false,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Daratumumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.75 g/dL",
+          "baseline": "5.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum M-protein concentration",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-40 percentage points",
+          "baseline": "60%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Marrow Plasma Cell Infiltration",
+          "percentageChange": -66
+        },
+        {
+          "absoluteChange": "+35 percentage points",
+          "baseline": "0% of patients achieving MRD negativity",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MRD Negativity Rate (10^-5 sensitivity)",
+          "percentageChange": 35
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 90,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2.0 g/dL",
+          "baseline": "9.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 21
+        },
+        {
+          "absoluteChange": "-2 points on a 0-10 scale",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Brief Pain Inventory (BPI) Worst Pain Score",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "+0.10 points",
+          "baseline": "0.75",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D Utility Score",
+          "percentageChange": 13
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion Reactions",
+          "percentage": 40
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea/Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Neutropenia",
+          "percentage": 30
+        },
+        {
+          "name": "Upper Respiratory Tract Infection",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "Years to lifetime",
+      "trials": 293
+    },
+    {
+      "citations": [
+        {
+          "title": "oncotarget.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQLULXIu3JzPu0lATUPUJbQ312-7Wf1u-7jTp7JM4eAf_xe4xb7eUpo572Eas5eY0PSK70thhiGnLbqIirpqjIL9mH15YL0bMtCb0Si65cP-W3g5Ei9iuh9lTvz00DopPcs6TTxLS5oA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo28HM7ASNE1mFauD1S3L3gkKmi5kzxZ-uxYY1V3_MvrThsIymatvlDZiB160pJG-1vMeygIV_dE-uAlHGcqz_tarQ0QGGxPIdWGFfyiTlQSkbzgEMoucIHMhbqgHDbxhrAjU="
+        },
+        {
+          "title": "houstonmethodist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4KpgKa02Z3QTd8lC144pDYsC8Pcp5r9UR94zJPmxn3EwIXqEereUJ95l5eGavX-P-xArmnRoMcjgoXm2Mj49EhwQRrSYbmqKa-tOc5etliP5fX4o_CcngUXEdhgSRbO-z9fnIP5Sj7thco9gHM8pIaDyjioCeIj8x4BXs8HkRRPDbSxxlzdf2Gr83eKw33BCnzqyrzko4eYilS84xCi7v6QnFv-UD5vSVzm6v4fomJFbk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlSoEa-ElFsC9DDhwCb0YR7WlR-QjsNXK9nJxo3vP-EOg2R8L-5UYLG0_u6E2_Ef6Arp1eGvaC9BxxBeLvRgK_v0h2xqOAgzlSIxCRHTqF_au7GP1x8-hH31Bdj2n-cFOiCy4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJQVkhakCjGgjyDk0LoI2hCbjrBTwR3_CiwqkbiDRNW-Zvb4QJudjjXnnc2Qg1_r_rVSj0MRHzfAcKRAWCAqXl_CrtnpVBUW13zm03o2CeMjmaKtwi04Wl_OqEO4ukdmVR7T2fmqx1cwoo8Ik="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYsfXof-mEsZU0O7hN-XKJ84a_MPlm9Xt_pqLQfFyy8qJGgeLJUpqOCCcxyqs8cgIQoHAaAgXWvvcIkTcjArzyIK2LxlexIwBET91BVTA6FdmyMSN0-R5W9vdSp8N0VDi4Ew048GVnysK-3g=="
+        },
+        {
+          "title": "ecancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV1ChnoaXuf1jK7XhVl8hY7cerXj1HSDLTnXkliZOPllM1jOF7M41Sd5jfJgBNiq2xO4mCaMs2GiAF6gxMZ0ZRJamEMVaWw6SSZoBZKKFt2xuUPoJohKzImq-tpjMBsE1nmWHGHJzMwKs0p2LkCcvn4CLHGmC7-TIlWutNNe2aArOFUBhJ6xP4bdjn4CUflPCEv3IncM2rHRIJpuHubcVfaHZuCcT5IU0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQmoQ-F4WSHtijrpHIRmQP4C48KhF8LoonMn_hs9CbLeYjoBufAvk76xyC2a5eBJ21EL34AOUY7RAgv2qAHnl99GvKan3oIsgnfHenx9ZfsCiv_Vbmp8l7PjFuaA54iCkUrOI="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0vRL2h2milbBXXXvab6YuJjuVtOVIXenmEg27smB5hVUS9brGXmax-yCD7BmploT7AXlwW9pP5jkPccPCRAe5Qj1n3vnvR7LlQ-taELYHsQLEF2fsrpsVTsfgl7iFIbSwSODq2W6eM3TQcVcXUzUhpJPCE8yM0D9x8ucd8wGvM-r2pXlAqRCPg5OEP3IipJ8K02ijynSd3q3m719nTUjFRANYqKFphZVacWVWhowXBKPCDtD5BDPsb6vQaqrdu_vt4R_wVxFyXvj5BjYiLdsEWPnRpA=="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvd64N8xLYiR596KxgCF9wTA9-pkYgZqIfBooP_n5HmFkVsdttzokWWbT8MT-jZW1s9AM9n1_tv4KOMC-pcDwgQ7XkMMuh2Auiw5JAExRZyW7U1GGrpNx0f8ZyLP3u2Bth8gcI5SQ8oX_vZDk-zaBolDTpAj1iA4fsPGjSl8HKHy5Dg3oJ8lNRkxStszl5eao7KInpbgdQFtpp3DXnCzhjiwvqucLhQ_iESkGCMP1mIUQbNNwSoQtUmxosHwIumYPgr2j-gAQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJemzoBw5anZj9SgVS71AGDaTxU9YJwE9b3o-8D08YJHtPsRNy5LnkeTOXL5kC2DK6yj0MCN5HayeHnzJ5gGEur18BGxP5lHRlipQGeAC5Z6_FfrY81ItLdTUzJW2oF2TqVa4="
+        },
+        {
+          "title": "bloodcancerstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9bcx6PHOyvLEarbWRT5TQY-AtS3RKEPo2LVhsn97uM9g2KJxWqT282xTz8GCTSwe9XAGjJAD9uIr9WppM5B9YxEWlkiz9_H-tcueJEf10wijxERqfJgdR_nPtHognvnhb3TB8F_gqA7BwP4P69b2C6_70ATTXPaD9aApRe3JAFyL6lAQNHzsR3-tI0H6yI_Wq5ZypzjRETdyjTMzqY2dbKK7OgYkvA-L_OvUbwZgE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4PtLbn68vF3bS45A9qh_XgZwcR8erwUiEj4qi0n8NBuPxTg1EQAJ7_3uLO5TKSDq69BWV8DJ4DwLi-cq8bNsIBPXqKGJ7x9-QIA9NAYRM0QvFYtdsvucTu0U8ejFGuSvcyt0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Carfilzomib trials for Multiple myeloma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20myeloma&intr=Carfilzomib"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "20-56 mg/m² IV, typically twice weekly in 28-day cycles",
+      "effectiveness": 90,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 225000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 450000,
+        "costPerResponder": 264706,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Bortezomib + Dexamethasone",
+          "costDifference": 80000,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Carfilzomib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 g/dL",
+          "baseline": "2.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "M-protein Reduction",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-105 mg/L",
+          "baseline": "150 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Free Light Chain (Involved) Reduction",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-54 percentage points",
+          "baseline": "60% of marrow cells",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Marrow Plasma Cell Infiltration",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "BPI pain intensity (worst pain) score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (Worst Pain) Score",
+          "percentageChange": -42.86
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 85,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "9.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 15.79
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "PROMIS Fatigue T-score: 60 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Score",
+          "percentageChange": -11.67
+        },
+        {
+          "absoluteChange": "+7 mL/min/1.73m²",
+          "baseline": "45 mL/min/1.73m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Estimated Glomerular Filtration Rate (eGFR)",
+          "percentageChange": 15.56
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypertension",
+          "percentage": 25
+        },
+        {
+          "name": "Cardiac Events (heart failure, ischemia)",
+          "percentage": 10
+        },
+        {
+          "name": "Thrombocytopenia",
+          "percentage": 40
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Renal Toxicity",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "6-18 months",
+      "trials": 219
+    },
+    {
+      "citations": [
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_PuQ_uY-44PNB7tDZ1tDk-AWFFqkGhHWlCP0yUVxRaRHV27WtWON8mzXahzorXSXVW7UG6y_hNaPguEG8tEUlrSuBHLQ1b-0pL8K1FneNYSvduihNZZltbwciRegXCpSu060BmWKV_MiKvrE5NPnMhXD2DpGJuXBkq4U0RBfBtGI_NaOYZnUrO9IAo8NYY64c_DqAfiPoKD383pUiqMSzWsf5nDBUBRDzBJBUVbEUMkrR"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9xBTO_wPyZVLG7rU0-K4wMKvSFjTaizyft747oqLupFuLNDiXVjefzp8ME2RqCXdhlmNPGE89K6LYladCklETMcCzWWuvKSTcDhBfCb-syluWiXoitnvUQ2kiqIIWICCZZpiFSZvCQOQPFqVicLfypTd2vAFCcPV60XffEoF9rCzIMGc6M4ZbJo2dwtBZyuxfwujUcL1Kylf8D8YK4e96Iqe_g9VI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0pCYYdlCNHUtj0t0ubbgr_LKWkzZXMHa2jM7sb7dUyJqpQTZD74T8GRR7dk2A8mK8NSKSlTiX4W9GIMM-VKgv4owWn06yMs_XqL9nHiY84PHbbp97e22RbUvIlREmlo4XwA4="
+        },
+        {
+          "title": "dana-farber.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWI-xqkNkOs7-lskZoER2pKVJPG87Ww3Lhk_57rHSdCaU-ZeK-C3joBUMpxwBpbR8z_6NNuuIj4H5JTJPcCEhC7W03h0QJmjZAw1KheX4Ao7ZNsux8E6TBOslijUAkKtqKZGTsdrgsO-f7KiUbP3zVb-5wxr6TUy4ruqboPELK1rVcQHCxPyGUrbcZ-XXr-bKQ82hpB2SqXY7basTVOAHPqoB1gl2r3huichjt9yUg9ErVIWOzpehl5qnQVYfpDO_PEFx48L2EV0x8hJX7t6P35GFCw1U7497K9_srnPXVcMYb0Y5MJyK7Nup6Ma_AwKSzGsiI7xNbBQQ="
+        },
+        {
+          "title": "ecancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2wu78r9ARC4qxZrepXtHXNT3VW3AjvfGM7KQG4ONKE3hnPh9AtH_CL9DS_Of_viUrA2j1jZ5afW8FCbYDgEQVqt64MDkPyd4tJBXFdwU5eFLpvIpdPZwKutSnbq3FVQV_4V3lR9HgmKAPrbsxlaJLm4wcyUrLLu5_DRo0_5isDDRbKBPDC7h1niQRsWi1-VzV-rI8VU0wgcLDXJLoX9AtjSeqZNo2Rzid8iPQMGacQFw3EhqTG_APqYGKrlKDkQssxGttCUAy4MuyERFisudvhDvCyCoR9W9BBMsxcQ=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHphvOHgXlr0Y2MbtwCKwBTvjiUuaUlWw09f1XduPKLwWP1C1pcNbFjgasrPfoZNciuZjrayZseaS6t-5m5TCqOaMnCddF8G0oIbRLgwz1udfrPGKydLvEYVV3hSANmC4vZbM9R_jQfXpRKaQB-9ijbGEvY2JE_vEyDIsuSFJuebsxasJ06qXM3EGL3VkD7taSTGn2qIWuO2GqW2-2Z1VtKI4rVQ8WIS0Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF65616bpjSA_ykJ_ntXxEM00lMtOxi2ZryzdffHa83TEe9YrdTNe9VDr3IKGpyLKZyLsP82v7jPEfLMTDfjyMr4c8d07f7OYQVaYLKVHcatW-L4g1jbsXeSG_K1JdQ-w-jye7snmeBekdkCw=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS424obumxTAG1mQDbixi4bOSwegrx9S609rCEfRa_GQDfqqaqPFPp2uf2qYFG36GIfsmETBqeVcSzpXtUDFMVmz6hiIKMwmZXlNEWXa9Ia42CXYZeXiOPDyqsR1Mtf4TSsAYR0GhOPx42sh-NKzxOUnGAOxZZOIn-hztB"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFg0Na8nD3Tlt6yu7orC1ky_Iws64a3VzTjXJBcN2OAqoaIlQSpgc8YoqNGOJJgmcZzvP2LWD7mZdSoJds4yizZaGrtUnUgO7k49JGka6IiNm8z70UJahjP4Z-8GGy5a2jido6bRarRHw_5RucMYiG-ULuKNOzddB41xfX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq-6MzTabExRwLsjNmWetxE3o8ulDzRBnVb9H6IVl4DKZSiF89pxY_ihmg6ox67OToCf6QPPuCiOXfx1UeUzy6FhNVTphlByoJJqqPqVyv3vrQtriNaExLlsETsdjjK8UY6kyEjj5EDysnrsM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGebSmm0o1UbHXX7GBKzHonLxatKDNf1_71jaGY1Dky07ftV7EjOwcg9xoBWQPDpTUsgPKROaCHcG1BS00MIAta9viOs4CitUJTX4M_AhuWmHFp2TL52W0pEjH1PFd47ZDjTOw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERfB6mdt8Adft8jWha5uTbkYI9ZR8t3ozO-PPbPQPSd7EfOdHuWqJ_q05PehMOIWr4B3CO7GcQsl7k-qHLcA_jTgmeUDOEERcgujOpYfeNETcS7USKiN8qiVRt_xhMIlsr0xs3E8GpUeWGCS0TRr-YdJTNYn6u1X5LB2SBIjn6v4wEd8Q8lj0WXcr7oRU0cFgzJfkixtQwlsLBCVXDfpTO6_bV3H6gV0LCVRzIAirM30eUVUBOvxJTjGaCdiQ5ljUEWp4wUOSvcj2IeaVT-B6nLLT-lZYX"
+        },
+        {
+          "title": "ClinicalTrials.gov: Autologous Stem Cell Transplantation (ASCT) trials for Multiple myeloma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20myeloma&intr=Autologous%20Stem%20Cell%20Transplantation%20(ASCT)"
+        }
+      ],
+      "confidenceScore": 94,
+      "dosageRange": "High-dose Melphalan (e.g., 200 mg/m² IV) single dose",
+      "effectiveness": 90,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 120000,
+          "sideEffectManagement": 25000,
+          "totalAnnual": 150000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 250000,
+        "costPerResponder": 176471,
+        "icer": 130000,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": {
+          "comparatorName": "Conventional Chemotherapy without transplant",
+          "costDifference": 70000,
+          "dominates": false,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Autologous Stem Cell Transplantation (ASCT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.0 Participants",
+          "baseline": "4 Participants",
+          "dataSource": "trial",
+          "name": "Primary Myeloma Endpoint",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 85,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (severe neutropenia, thrombocytopenia)",
+          "percentage": 90
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 80
+        },
+        {
+          "name": "Infections (bacterial, viral, fungal)",
+          "percentage": 60
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Nausea/Vomiting/Diarrhea",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Initial phase 1-2 months, then maintenance for years",
+      "trials": 144
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrdthk-QzXAKB-1mXZtzd7-AFgQo-PskOr3YFmGlNjdihzYwkXA20TTU9g5GVVxNHL0RmTvtl0f2_6GejNORJqv0bLwIMxt4oRxhM3A5e82Eb-_072EotlGf8hH31XY5h0IQvxN2Nz_Z0zLQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY9ns-sIbjLhq_1OWEOrfwKs5Tufegb0hUxy4No1BVH3w4XYDSoVtZAPvidtH_1IIlWCK8zC3p3GGBXowfmkY2hQv7pBydI6SL0KStRU7agqhaoYhW7F6w68TfOSK2_0mg8tXeGOy_zqcCw5x9ZGMp2rZp08uEBWou12TbHkOnYqyE_0jBqBkzs0bM23nz36MLRNmHInX-ZW5P6LlsefZTQwFENKf7RyuzYVDpo8xUQBrFh_i69bNfSA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTFBuIi7RV31YT4H5X7UBCPp9qsLgZ4eZf9puEnLvT58zmDgWllwS_vfKnJQXKmhR6Z5ifD59e8FqTxsZO2qNsLTA1nTz2KREcWjGoqVAOrqr7tHUMnNKiPLb7d0iP4hVobuo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEstxmtX7qhgPYxhLMh9kJYH9a9g-Uxaf8HFAT767d0oSjxQrBmZvGEMeo_VpOdcHd8-bKjQaVuV3ay-PbGBiLUOYQem9522W-fgoSeGjI5-CsZnojzkOmRozm-iA7DEiGmjRI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbmSyKDGDOBYjpfCLmju_e4lUyX0E1tHdU21kO8LxrvwZo7N64WklTRPgR_rHPSgxAE5Sh8rwGVin0rnA3uUNHI9Q5f_TBO7hXu-7UNejXaD6uOW56ibelmyBNJOM5OGMb6PQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZbmz1Pc8LqXpk6QAewMso2Nugr7TcG8LEgESTEmn-fSY12cybSLEeE6dvlYvz8d3_our11qgbe6Hb6wziarDSKfv8EmB2Er8uuGn4DTFicOBYdHTPzrWA9xPkkEwVpG4PZ7ieRrsoNeueNA=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAzkgyjvfkPIlH_J67sowWx5WVZ6kiK61ol8FpTJaEfpfj8uJkn7CzehgqqNfteVp90aeExttrbA6Wto-BriDdnjZEyoHDW3jlvkqFj2dWpnogyqHpdW2XqjDlyZ0ARkz2wWbALB4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Bortezomib trials for Multiple myeloma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20myeloma&intr=Bortezomib"
+        }
+      ],
+      "confidenceScore": 96,
+      "dosageRange": "1.3 mg/m² IV or SC on days 1, 4, 8, 11 of a 21-day cycle",
+      "effectiveness": 88,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80000,
+          "monitoringCost": 7500,
+          "sideEffectManagement": 12000,
+          "totalAnnual": 99500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 221111,
+        "costPerResponder": 124375,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": {
+          "comparatorName": "Thalidomide + Dexamethasone",
+          "costDifference": 30000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Bortezomib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.45 g/dL",
+          "baseline": "3.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum M-protein",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-0.8 g/24hr",
+          "baseline": "1.0 g/24hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine M-protein (Bence Jones protein)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-50 percentage points",
+          "baseline": "60%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Marrow Plasma Cells",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-49.0",
+          "baseline": "50.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Free Light Chain Ratio (Involved/Uninvolved)",
+          "percentageChange": -98
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 80,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Score (NRS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status Score",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Peripheral Neuropathy",
+          "percentage": 60
+        },
+        {
+          "name": "Thrombocytopenia",
+          "percentage": 50
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea/Diarrhea/Constipation",
+          "percentage": 40
+        },
+        {
+          "name": "Herpes Zoster reactivation",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "6-18 months",
+      "trials": 591
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKXLjijl6XCqkHIvSd4UHhrBUJgvYPxMZAoPQ743wgNyMQgVyIZHIWShPNjjIcD42dA8W80mSWIaTzESPAUepHhtCSJUunnVbkylJcqDDx0jNAMhfWjYZdhjqyrG4-bnrLoQ4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGovhGvsqtTEJ7f09JisECzsRer8EG79tKanAF9KJCiVM2qHrPO0tBPpuEzga4hFQzZis6JYiGR-6yax7hLxgVrwc8BIwTk60G9z2-z90t90xy9_DlW8h2Y31RT9Rb2eDLSArGhJvpj39DEyr7pr1xV23SbAq-06xTcIehnmWYJGP029nZ5I4eTGgv-RNYGgfH3Z8X1CUOg27lPaEJ4GvhjBaLXnm8Csx_3ErKVNU1CPiM5xJjRFAravDTH4o4dcnToJi5cSVQSrckElnuVRRPoBJYNRFgAKyvuvxcpvw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVts6NBKNgQGta9QlfLJEKJkKAhFglmaUNsZYM8pi48DfLuWcWgKQJBZiTM_F2AsIV0-J-yLQcis140svlDjcRrDHcA0KVhTQH8ByI1zNiSVpubDv0eCwytwfQ1hKLqHKPEge_awYALOVQJQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdPzx_dTsQLmbw4igW2ZOQ2CR_4CPDboK00ad_hKUGO9eDojZQ_3Q6IvMrgcQrKWcqCXlrTmBPPSPnw2GoXDsanNB0ATCf0Q1KI1ha3a8Rn6jhEoqyC25Mu9O8B-Op5epqJ7piqVsOJvAUuQ=="
+        },
+        {
+          "title": "drugbank.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETD5sfK4TaABWs6Dba-cHMKT1ZJzhrygIQafYF2GGBwJyHqRmeJ-Lbof8KS8shY-VIGbOOlt0uIkYGULgw8vsldspx_t7YfjklzuX5FuWGsHV9ocH0-WBELaWhS-_kad4A6A=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiBpHOh0YM-xdoM8PbM7KtZKJFt0yZlRCSZvM_62JNxWjbbljlPX5vPOFWQ_Sz6LQOSb1nmEhDVUf4njcSokmWAGutUxiVZ4_J3gPW5eNCBvXoiowv2S-L2s0Oet0vEYkEq0-Z0T2NgmFQEQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTq_TZgk_Nz--DgeNDam6g8OdEDZUjYtwfUPZuqi4BQ5Q3XtoSN9pGtnWrSyJrEKz6hF2EpZzIP5u5LRZLJjhn-gZRi5tiA9l_5yXG0ZdLO37jnAUM_Uo_IvK3YbKNoKOO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk9vqbVARj2VvtDl2HzkfOQjdC_sJrwRx9r953BDBaPSENByuhcrvBzM0acBbWzZ7wBdH0gLC34KxuPHaeo-lug6FNB9upWb3y5ETy1EB8lV69G7YQYkd2w3iP2v6Cw7LiscQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lenalidomide trials for Multiple myeloma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20myeloma&intr=Lenalidomide"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "5-25 mg orally daily for 21 days of a 28-day cycle",
+      "effectiveness": 85,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120000,
+          "monitoringCost": 7500,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 137500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 343750,
+        "costPerResponder": 183333,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Bortezomib + Dexamethasone",
+          "costDifference": 30000,
+          "dominates": false,
+          "qalysGainedDifference": 0.92
+        }
+      },
+      "name": "Lenalidomide",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "name": "Number of Patients With Combined Complete Response and Very Good Partial Response"
+        },
+        {
+          "absoluteChange": "-3.0 Participants",
+          "baseline": "4 Participants",
+          "dataSource": "trial",
+          "name": "Primary Myeloma Endpoint",
+          "percentageChange": -75
+        },
+        {
+          "name": "Number of Participants With Serious Adverse Events (SAEs), Adverse Events (AEs) Leading to Discontinuation, Deaths"
+        },
+        {
+          "name": "Number of Participants With Clinically Relevant Vital Sign Findings"
+        },
+        {
+          "name": "Number of Participants With Worst Toxicity Grade Hematology Laboratory Tests"
+        },
+        {
+          "name": "Number of Participants With Worst Toxicity Grade Renal and Liver Function Laboratory Tests"
+        },
+        {
+          "name": "Number of Participants With Worst Toxicity Grade Chemistry Laboratory Tests"
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 75,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "name": "Number of Patients With Adverse Events (AEs)"
+        },
+        {
+          "name": "Number of Patients With Overall Response"
+        },
+        {
+          "name": "Number of Patients With Stringent Complete Response Rate"
+        },
+        {
+          "name": "Number of Patients With Complete Response Rate + Near Complete Response Rate"
+        },
+        {
+          "name": "Duration of Response"
+        },
+        {
+          "name": "Time to Disease Progression"
+        },
+        {
+          "name": "Time to Response"
+        },
+        {
+          "name": "Progression-free Survival"
+        },
+        {
+          "name": "Probability of 1-year Survival"
+        },
+        {
+          "name": "Overall Survival"
+        },
+        {
+          "name": "Number of Participants With Best Overall Response - Treated Participants"
+        },
+        {
+          "name": "Geometric Mean Maximum Observed Serum Elotuzumab Concentration (Cmax) During Cycles 1, 2, and 3"
+        },
+        {
+          "name": "Geometric Mean Minimum Observed Serum Elotuzumab Concentration (Cmin) During Cycles 1, 2, and 3"
+        },
+        {
+          "name": "Number of Participants Positive for Anti-Elotuzumab Anti-drug Antibodies - Treated Participants"
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Neutropenia, Thrombocytopenia)",
+          "percentage": 60
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 50
+        },
+        {
+          "name": "Diarrhea/Constipation",
+          "percentage": 40
+        },
+        {
+          "name": "Rash",
+          "percentage": 30
+        },
+        {
+          "name": "Thromboembolism (DVT/PE)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Years to lifetime",
+      "trials": 599
+    }
+  ]
+}

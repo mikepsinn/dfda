@@ -1,0 +1,1154 @@
+{
+  "conditionName": "Peripheral Neuropathy",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:57:12.069Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtaTvYOaXeZ7e5Y_kgx4B45q4pcxU9AI6wZAs7g_s2OwEkcke7yxq-N0IxwhFO5qzXifhnWVj1bCx4lX572l59K3UcvsUTu3LxnVJ3IgxF-xhMV-mG9mAEPfarMvnwoql-7VPy"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWcR3dvEa4JI3VPHL798QCQOLWu-XR7gkFx4SojdCdfTkmxOtJ6Mdy2KKsAuhff4FsuSoEnQ1WdP2HfapmDsVpZbnI9bpN3kgsAshowtc-M_uuHJ1YHh0c4xQI6zaGWjWhfQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh94bxrdJp1sxiS2V-bj6X9Rl5P5Abu8a0o7LxbAfAfbl0jjWA9fzZAFT_BC1BSNjlmxZQdQslEtrRJCx0OYaIbkMs2E6_cZCAq_fPUCnCX34S-NozD3KzVGqfo0fvwDUbTrFfw3Y2h7p7DbU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoUDJWlce5RE9Lkdw8hyPvmhr32Fu2zHhUEVmw3Xo2XKrEHujQdAmD0fyIVFNCTaslNX6Eh8pMT0ntjR8K9KmVqwuouuYatY8YOl71UgXHhe7Q4RauMGqXYD9GoM6jcs-lf43c"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2SWKN3EMGkU5MCyVK_2_ZzWw-iRJoG6dtaI8TCvI55XEl5rds41GcmfkFxK0TJoQ3I4WIf4IuOZz1Kl2KAIYn4BDqbNypozj2SyqYEBKNVBk49Fk4KljJzTFy05qyXGzXjxBJ40IhLlMKmyGtIB3sVCf-Rr-7vT-0PCCe_PdNJaFVuySNsANy8L8sKM0LqiPBZAq91xIWE_YT-7hi5__U39duy7_5-lyObu2ERGaR_P9ZwB-s"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGal-5SYaEXaYrjpznirILSnn19b6fZxHADUisTBN301pjYRLs8U3Gqeox9xVPjm-yiV1AloS3c6sH8y7M471K7-5zQtw2rKCWkMMgQXzCor5tmNaEjgsze_d9fp0FMQYlwbZ3E9jBCqmwmDHe9wPr9mn-o_c5HHZR4DQ4_ev-0vZOYBEicRG6Qpuh96RynOzlkJCkpx4ejLlYXYhcEdU4gZfWT27rfooMbjej9p5lIpxCZbauPuNHMoUh5YJ343is0LWCzpGw="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKg8cXU9X4SqTBxXVWOY1N6eRRor4yz-vQkKAm5UVBj40086lBATQyf7jAXzbnoXI_Nj2POEAcvv4Mg6TtqJe1S2Z1soYryqSe2mn6qXvPVBhv55KkC2vs8LlrkpooVXwm"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnWzShiNhrZeFUxPs_OWaMmZhGPYqDfh6J1_2Cvga9eYt9BZn54hEJJCHLtG6yqEG1NGnt224DShRBKYDHjV8zRvd4euqVscTnfr-KS_ihDSMceZg0emKkMM1YPqFiN_loODMC9Gn0acw1UB0skDI7w5NFDA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Duloxetine trials for Peripheral Neuropathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peripheral%20Neuropathy&intr=Duloxetine"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "30-60 mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250,
+          "monitoringCost": 250,
+          "sideEffectManagement": 100,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5000,
+        "costPerResponder": 1090.91,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Duloxetine",
+      "nnh": 10,
+      "nnt": 7,
+      "participants": 25000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "6.8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Daily Pain Score (NRS 0-10)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "8.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Worst Pain Score (NRS 0-10)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference with Sleep (BPI-SF 0-10)",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 12,
+      "responseRate": 55,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 Bodily Pain subscale)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-3.6 points",
+          "baseline": "12/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (PHQ-9 score 0-27)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning (SF-36 Physical Functioning subscale)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 12
+        },
+        {
+          "name": "Constipation",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 43
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQnh7D14qc2WHdsI0qwRobqF8KeWrojjV1L61p9ZDjmmmqViDUpbDBzgNUGDVNbMzt-2npk1z7K8PbGc6nswiv3F87Y2iIMp5CD8ODTKcB1y_ETQ80H-38cPrK3EPNu8fY-RQ="
+        },
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLBWrf_oTJFSNQKmddjVAi9hZqv7boy8vxRtHdlJnBwUwLYa7F3q4kbCz77RGP4fw7T67GfzHdCGTUC6U3Z47aL6-0JQIP0ZWYhCSEH3Hy0Brrf5Dgq-1rD7KI5OLm-ejYdSxSAeQWu7fWKfDdic-q"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdQsygG4gulYysq-AFSO4TRts2ERVbkNNpC43r_l0F-glODJXdbOy9LWv8-i0UJenTDHAH0ObZtTKgxc7SbKgyuDSwiOQb9DegMfr5nzn1841RiwyZF0R8ayqIKUHUh3VQ-l5ReA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0UkJgijKvH_wI8Rc_Cxu81sMKoF_0eO184skQ7p9YqE6CCH7jRwK0UzMVCzQOBEbHafRxBwU5Wg32KwsvrKABxRd5DH8XTcc8S4hHtl245f7aRcIhUTHLXMQqZ05OKEkqPXjTpsejhKyXuG1KhLRx7XKhWx_PMkEHZbBHkI2ewlzz9T_Ax_p_MMYyTQvrKhHZsq7oTN7_nJ5BMR8aUDdzD-tg7fy8JU_Zk3Dnl4L3nDKo3-PcjDIhFwSkBNS1pgUC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL4FxpIqcjKppwn9rLn8dIDZv_elMU8hmaOrX0K2IVcmnI7OhOeN_bATj60gpUjulYLKZjQVMJlZ9bQ0WPup7KHgtU_38R8A7aqkbrYEhZ6tdFlUM-Wyt8HF8Ch1LMy2U9on41qgNFHl33vg=="
+        },
+        {
+          "title": "neurology-asia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9ZIHAgNgxSXJLVs8ufkzj0fe-GIHTOXpgpXhlD7xOBq3yYjTLraEKxlgmYsPI_cvB4prjiRSCQUZ_LGiTknvmlxIT2zEnbO7WYeZDygPxPNMxTtxeOmgg6kijizKkjEQ3-X6qHHX1Xty5rsrNAMx685JBjpR-EXozDaIIxGM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVXUMFT-if03uU6RXcA0nK1tQ3nwXdAvCqxmbr4ut-jAK3ZooRs9wazbiZ43tjIOMhBXuUbk7V28HJ0hlMstnGaeAhLTx1tLbmLLMWbWo5o5szZxWCuoCYkQdOMGey29EZca2mNGgozMg7uZE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOPUQWPIP5NqQgGqNKHLuMcGXwAqaM-3l-x0yIhA2SE2KU2Pg6SGN_nh7TkIA0kc7BkyYSDsKRkS-GaO9l84Al0CPJ7awwKXSZTGlXzuChPqwDruzRaLKMKWfRS5aKPaW3tKd9Hy-0bh4XOBw="
+        },
+        {
+          "title": "europeanreview.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1-r0WlnqD6MZ1MnzelhcrMpjCHqJ5zMHikiJ9fyvcRfOG5vdybxHV07QPYj4ACd6mqYCrsnH1TCzf62_bNDe176GD7opUlKHuKrtXnNs_JgUm56keEH46Szrgs_oK9BKqPUcO_rQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pregabalin trials for Peripheral Neuropathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peripheral%20Neuropathy&intr=Pregabalin"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "150-600 mg daily in 2-3 divided doses",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 250,
+          "sideEffectManagement": 100,
+          "totalAnnual": 750
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 9375,
+        "costPerResponder": 1500,
+        "icer": 65000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Gabapentin",
+          "costDifference": 220,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Pregabalin",
+      "nnh": 8,
+      "nnt": 8,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.3 points",
+          "baseline": "6.5/10 (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Pain Score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "6.0/10 (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Interference Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-8.8 points",
+          "baseline": "25/45 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Short-form McGill Pain Questionnaire (SF-MPQ) Total Score",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 50,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4.2 points",
+          "baseline": "35/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "12/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Severity (HADS-A)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6.0/10 (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Activity Interference Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 25
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 25
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 8
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1 week",
+      "treatmentDuration": "lifetime",
+      "trials": 154
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaTiS6U30TMfz0RAZ-btmlxe4fqPZYzQMYQ2NJm2NLwnVktY_vab1-BLqQ3-0xK89PlNCOwfbRxbsNlFNzcNymQ-5FWojwdQxuTmqk_0GIWEFND1kKcP-wMfpE46rq5exbFw0IZyu_Wq8SllTXdIvnYiZazWVFISeO_BgQsqYBznOH8ko6ZZtM9y8W"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGYS0RLJfj7nMw05oyDSQXbyr1h0KdQab7Wj_p2WBCD-q4bKhDUvm_xbyqcy9i4YaDoGWyEf9rwYbSju4OKI4xUcvvzmJiPtlg9xtvKRjKnu2Se_ZqIDETBLDZoDDjJLKy1X7ip04p-2FhZigZkFgMGIs2hkUk0GDQuDLFBc_vQaEgcNVYARemd8St_B6iNyVmp90MonLMsHLV2HDzYpINCa14RrJ5gj-2XygW4ZdJFQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR3MkkF5Ysw81oVABxzW9CJ83N_SgmMfBIb2VP8SUqHYIOxKG-uY1eeCrj5u2GeU5d-zX3YMjsqC8kqATtYDDW6K5dgVH4xBms23Cu9jSz9YBaWsgGWDQSJXrs3ID0OjgrDwdwLIqvkmE92k751C_cRBuJgBlbDg0Fkxk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFddxBc8VQUSlF8yDlvW_O8BfAIpcWJfGZGEpBXG5huu3U4KG-fmHsx-_AHLofyVPSgc7ddrxvNOmiH-lmXBlTe8fn7gVAobPRp8XrCBDxlOg87VaN6Y-QlOWGFe6grUM3QSpE38zH0y9Ve3AA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBxq8LuRO9oMz9CwuOMteXkQfqk9-MBQz-lWbOYO7KMDTyhJuATHr5trISlQ8P6_1CPlWemiXdhe6GAo0LnvH_f711_kpbGLQ8h8-2rsenlSJ2eILUfbzkC92oCP-8hBN2MrMdFLrea6daRo7gtUi1g_jPubtct7djZUshVjEW3tcBCzE38Jv-h6iv9lnuF_WgpLi56OLqxyrYiFLHRxuMlRAvhhB4InuUZ2_PaWz49e6gMrQcwWcz6gidxo-IBxgxBLCYponPpnhD5JhWu1YaFfQ_QAt0uq5KwNhESXS9SvQ="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPyLzk4qaKFhyNEKSMaZp0cvqHCWQcIG2dm5qCiDbWT4S7M06tMVkvc6Ga4fjTFG0bFdiYTV1rrAgmDjSZUBG-1cA_MY2FCI20siTGFBfksQfP2MUVN4IVYHs9rgb8xBVAtLDWgt1GIrmBqxJ-LfYh3w77lgBJPM_jNTIqAe_cJmeJHOyM0Yrh1g=="
+        },
+        {
+          "title": "painphysicianjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG39Oi1sUdE3VM0zhE3B9P6sOVasX3BNK9gZGqz-q8WugIncgO8d51UvDGW1_nWsyWpPKNfk42AswP_yUqXx1w2OYe3NGVUPR_7ZEMQF9d55Fth3Q2FPJ5cATtxMF5hR1PMRAKOmuWGq0zl4cRwmAywSMRgvTLIW92t8Wzn3uEnIcheheztPYT52nFS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNxy92SoMC6Fp6K9TWLa3L9akcJtbzsaek2hz5bde_bo4oIJWVCEH0VhJxII-b-dIJdYnpxotKsYUUoATk_hsy3UtmXnug0MT2ya5ajAWYNrJTp6_s_4AJQ2AKvviOFr8kGFH-x9FpS2e2UlU="
+        },
+        {
+          "title": "banglajol.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzyUonKwfsMq5y6yTqo2eflmPR8sliYMA2EmqTG15mXnbL1xG6is_17zzDeLtOPP4T5HogdC2gGXFV6RzX_KCMKr7F1lg4KrxjhUfe-PYHkB4xRjRQ7DgGvsC8wQgyP6JAHqL31NkVV73e1pdZqQawO9VTEPXSAwsSQUSAc31R"
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiLFIzT9MjpPI-6iZrgJ3QCMaS-V8JIO-33qxAb9OHkSg4WjhypFFDNyfKuxZKPagpN5B6-miSczCUyXR6iAxDgKnKQBHRjKQ8OGOl-hJn4ke6wdf8P18iO0hgkGLjSrkuhef3fU5GYoiP1uSpc8a0xTRdGUUoyv4PwNJTsC4yMffneoAGE9i1OmCnLiqYl7HGU0R3Cfzozmg6Hv11OamOWoak1Do-5K5rfTMPScDHFUhB7vin9bQ1sg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfxQiWVVhJaj7YfX1MyaovOu4NH94UqeAWmZEcuY5aEfiXybQWScHDcPwzilR-Js3k49zmYT92r5yvzRxbKBRiu1xo2T0sCDLyJc8mChQlTCYKrtIAg1tvRKq64KT5leeSqc-V"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2PhxvrwNT8uxDOhewO8qg7tIslFdOg7SweEnn_XRxrCFhAd71M_-Nu_rsmVPEaXWpeLdsL55UNjQbartcXqf6L3-RStc4qMC7greodfNrzDtcm3lVklxUow10UwshIyltHbW0"
+        },
+        {
+          "title": "ClinicalTrials.gov: Venlafaxine trials for Peripheral Neuropathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peripheral%20Neuropathy&intr=Venlafaxine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "75-225 mg daily (extended-release)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 250,
+          "sideEffectManagement": 100,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4583.33,
+        "costPerResponder": 1000,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Duloxetine",
+          "costDifference": -50,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Venlafaxine",
+      "nnh": 10,
+      "nnt": 7,
+      "participants": 18000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "NRS (0-10) score: 6.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Pain Intensity",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "NRS (0-10) score: 8.2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Worst Pain Intensity",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "BPI-SF Pain Interference (0-10): 6.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 12,
+      "responseRate": 55,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "BPI-SF Sleep Interference (0-10): 7.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Interference",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+5.5 points",
+          "baseline": "EQ-5D-5L VAS (0-100) score: 55",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "PHQ-9 score (0-27): 12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Symptoms",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 20
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Increased blood pressure",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZOFsaGr5VT7jURZ8y6W6svYKAhfoc2JyZ7elF6801Mb4SAQzsOhGABjrGhQ3M3b-3ww_cWTd2JqKkbB3rxON-75LTJUyeutIZdyrzPLNM2CsJT-PuQH8ac2EdyNnX4Tz3nkas"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX0qNtYrdtnguQq6evITmTV0SkoaNDSewEIKHoHJ_tiVbKvgPcyNafxaVdoQOk5dCC8m-5-wDvXiiEKjn82k-ho4vXAmmFI9XK0xpLEETuQgvONDbpjyf_7Hhx9yzqrIO4lXQ="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW91u_uYIYuUxQf2VXtwOxAT6gnybSuu6wo6v5MyKdUa_CN8f6svAZcG4YkOwxRzOGVT3o6Y1C7J_9QhsWWMll6OmiHktSLUa3Cp9CBU2DGI1d6CvMUhso4jU5LxM1-KtLxJZI9zg2JEUs7O2tj0VnLQlVIhGeqPyk5pTR5kEbn9YuAk8zmgY="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEtQCB4A1a3NROrRXRbDkYcXrgsnvVKxaOjGxrTK9QH9TpLtjoxRnKWrkNlezRVBadNOU0Dgoy6HHoyUeITTboOr7ZwSbLTgbZA7uYqcMFCi3Ew7u7VGpl76YlDkWcweGeWkMUQj8caG0wrDmc3u5Telvl5A3sl10W5_72w-2vs9fc9ih8n3n-YKRBvYdcn7k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWZQjfvTyHks5qTfCo8aBfH9QshomVb-lhYxbogEsY7_AXoWIpW70wTKaGlabnRnyDr8famYY0kqNih0f26MtqI0gRPXz-6teM6qej9ALPQ0FeXfQrzVwztHDbIZakZzyhQMVz1kBwGIg2syU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbcyS-TkFYstHtODZcElvLgcnbxAYSzNzvp_1lXL5CKjGIl6p_d4Y3hcNF2SuSJ3DVV1hS_DrB-Hxfi8QdLPT_rhLddArQ6bvEVs09gW0PnUBOsoVCevdL0pn9O2DvwEmuAFHRDQdFycK_NR3GLM84Je1a5DahM2z6_jitO_pGzkriLRfpZv6eSSw0Ck_8hh4y47FcWMpsEk4liFLFW-pKjzcUYKEDg-IvwJsDw9hEXIthE8cqKh7H6G5R8Md2qECC0BmQ1sKMrdMP-ov2k5f7ym3rofFLlm_u0A=="
+        },
+        {
+          "title": "ijbpsa.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJZatxGXn3t69IbTF1OGuYJQpcYUxVtDbvhM4JqLDj7rPlCQdF9Eobbw85jg5tbmGZlG71sfAL75PuNxGcBxAG9bMdkgqpemt5O-JBbEOu4Yzg2kQTaFvc98Klq6oFJe0frU83J4Z85MT1KQzT74iyG3WxRBm-"
+        },
+        {
+          "title": "scilit.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHly4dRpgBTbdB7Aa6WmMmGHyop4Z1SYAfgGWPBbnzOQtyWG6DS2wAxeZp2Hdmx_zaKN8QiqzD85aCT2IdfXRSbo1yEZQcD5JPJQb_V5XtyWxhQMlQfwh5gyYZt-ZZzzMP5C6GIxEfXGEF8zlGXAJ7dVm8qWN7F831irFyMoRHP"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-BEUk4VXnyr1GRokbwXZROrCZ9UAOKrG3xfvwoPIC0B9Z8GE-L5kR7KqUTapgsc5FLsr2CQHjWjRjmRoKRPzPyLEB4wAsPlv9vnO_QiP5VZE7fVvuCxGzY7NEff3Ou6dnSzot_fPZUd_b28mlUg7gnqyPV2E="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNOaRsCRvU3XsSCwUkvwR2yypSbaQCS1iDXm1IztgAmtiu6ZjxqLPS5Tz8e7CvzruGi7EWOG2LC2U9oQZDAYn9joEpbq5KZLPN3-kWXKMA8wtfOoEsqRYHeCc4GAzrKTQlX5ZvvC559c8FqznhS8IiKfK58F_ccPc7At-2iWoziUDFfh-XLIXY26xTnrrfcmtx-xnHtbM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIOmsh2E16uBpxUdWnCe-HjGhkye3fuLu45EDiPTe_phAwQzpDByOj2puaf89BdBrH5KXJeoYYcVCWIcnV6ikqbzFQDYUMY_ORTC_JRG7Az56ahlQPDcHP3p3vfItgtB8D1z3m9x11uQmiXYkY"
+        },
+        {
+          "title": "ClinicalTrials.gov: Gabapentin trials for Peripheral Neuropathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peripheral%20Neuropathy&intr=Gabapentin"
+        }
+      ],
+      "confidenceScore": 83,
+      "dosageRange": "900-3600 mg daily in 3 divided doses",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 250,
+          "sideEffectManagement": 100,
+          "totalAnnual": 530
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 7571.43,
+        "costPerResponder": 1104.17,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.06,
+        "vsComparator": {
+          "comparatorName": "Pregabalin",
+          "costDifference": -220,
+          "dominates": false,
+          "qalysGainedDifference": -0.01
+        }
+      },
+      "name": "Gabapentin",
+      "nnh": 8,
+      "nnt": 8,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "6.8 points on an 11-point scale (0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Daily Pain Score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-1.9 points",
+          "baseline": "6.2 points on an 11-point scale (0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference with Sleep",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "8.5 points on an 11-point scale (0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Worst Pain Score",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 7,
+      "responseRate": 48,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5.5 points",
+          "baseline": "55/100 on EQ-5D Visual Analogue Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+4.8 points",
+          "baseline": "40/100 on SF-36 Physical Functioning subscale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-5 days/month",
+          "baseline": "25 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Painful Days per Month",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 20
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 20
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 7
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 72
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHiSnG-EZ7XdYvs30gsRG_mrFsg15bX7XsoJSvK_46YGnF2f3ZDLON54X6g32b6OtgO3XlIoicsaS1t3rixz3jQS6LPOL4boQ0mHJ8gZAsCsX9M3BpJ5bIWZPNXNxvudRbit5tIKWzktJKvO0="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn-2jb0-UQ45ejDuNkGVWhuCwUioE4eyqGZIDK9ZbEm6Ubp6k2cewq1GttNSPMB52DDpZz3vweVgccUh_0a5d8rGcTAWpsa3A-TVincyHG0InEapI5qL5jN0MrmTS0mwhqxokpg5bh0uCeubhumVJjYBj4onZuLV_fViNt39ML_Qe37d3L1sOKo_l4"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDbjZsCJqZNgf2tQ0xKGtmPSlATw0MDqiIg8xasrkCasxZY0b6rXgHzIQQl5mExmqmWx2NtvIprp1_JWFcsqFHwyWeDOqA0VsoOHh5FW738olazpavOoJOBeokfWRnCcqpxvGAGQ44Paj_wQG7CrJ1ywrrw2O_1oUsbM0T5ZD9gHQHSDXIRZP-aQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMc2fiwklIgVaYckaurRlKlSY05VzLQJUEkTW4YBIr39da_uMVsy3tHjmeyuFJEYWdE1K7bOXVLMAkw4yRazyUPXK2ScIPIcVLXwtfOnrm9a5NNjuRTCQ3zgg7bYbe1UKxzDrcO_43uLyB6JoN7BhEbhfPCJpvDI2BaKx2GrDM8RVlBbhdpLAGB-4nLnygJeUyS4UQNmZmBcHVPgDn_MW7wQ5L5G31cqHrnRyDD2Cso34oeCEHKrbBO8t9vVkoDy5k3rClGt4-oYSwiKt7hll8qy6aSq9nd5BFOSC22rwnxh9CpaowPdBxaWdNAwBVBUZTZxQ0JZM-kQU="
+        },
+        {
+          "title": "europeanreview.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7CMTkIpi6tVenItPUue9ygvuVZ1Ac38YbQKOD7ul7roAsCQwL_q_hHx3Rvhbo1CywHdeWrD5aT4dbQSjiNYnBGF_z_Qg3LMI1ikN1fIS-Eh-EJMBkXbKRjTV5CFq0xEZrOX8T0ztY"
+        },
+        {
+          "title": "ClinicalTrials.gov: Amitriptyline trials for Peripheral Neuropathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peripheral%20Neuropathy&intr=Amitriptyline"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "10-150 mg daily",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 90,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 590
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4916.67,
+        "costPerResponder": 1072.73,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.06,
+        "vsComparator": {
+          "comparatorName": "Duloxetine",
+          "costDifference": -10,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Amitriptyline",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 35000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.3 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "7.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Interference due to Pain (NRS 0-10)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neuropathic Pain Symptom Inventory (NPSI) Total Score",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 12,
+      "responseRate": 55,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Bodily Pain Scale)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-5.5 points",
+          "baseline": "22/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (BDI-II Total Score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "7.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference with General Activity (PEG scale 0-10)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 40
+        },
+        {
+          "name": "Sedation/Drowsiness",
+          "percentage": 30
+        },
+        {
+          "name": "Constipation",
+          "percentage": 20
+        },
+        {
+          "name": "Dizziness/Orthostatic hypotension",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8p5IEKigFXbMrRekFaUDkTm5NCgvX-uYe8jB9cXUVNH9kup_u1gDE5xjCeGafmJSXzCfI2Divt9qh0FUUV7TDV05ITild5iB5k8PWDKZuY8pFvAn5N42JCuJ-Z5cwKrk51r9yZLmCZKCbdIZH9JZ_tbR-IN5bKmDoU7uw3Xri8hyAK6XITljBbuxEMTYGASHdoJCC9jqV-uWJEmJ7f5JdJxJ9jlVHeZLXK7AsI4eo"
+        },
+        {
+          "title": "metajournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4tAvRab-TIuQnM29lkAXoYc3oVl1LOqjElm4R9y2QEI3OyWPwm70iL0SEG3OfMwTf3uZXCc58dUN2CcKXjkO9NuZQZGS-9Ddcmwdxmv73X19mNV1gj0OzVPG-NlNNX_-2L_PkvVlJtmLqzk6S26PDNALnqKfYqXRisfw_YFRfMU5QLrMVBPOOuDQazSaof7tCIfSeAIvb0SINda0z_EaRT2dD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD4gGAqFZyBQkVWbOS4-g397cWA9tyY-uWkjOa0c0McgOsPqlXt2vTF08JcnYGIW0YHgW4fcF1EEry4RR0bxbB8hkfnobctSq4vURqa9HPsN7JyI8ur1g-LO6RE9ZtgIDZewuGdyl-L1QV8lRJ"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_PpfFJAk4h_5kOjshb8UEQPbPtG0JkksYP4mMg9L0-ieTay2rtc6B1MIluCUK4U_z9zM3yZ04jVMPWbf1p3BEnmCYOWWmzvwpTic55H3D2BGKGpdWXlkE-snAZ6Rm-vqVQPPH9Bl-hy154lQR62pl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl9SG00W9uWQYLMbYllt7iP-VAZ4SqE_NQkdGP58-Qj8vUrVeJABhrHGri7YwnrUjlnEda8BmMxc_8Nq6d6gcVAsvVyHftWEg68zwPI5hbeI2BEIHM2cYecGhaEqkIvTKJtR4jAk2B-HOqqaM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdPe_jzyxqwxiJulC5fZ5PTXfHNBVqDzx7iZDhRwg-fIg4tYgkb2H_jeQk9DpULd9m80uOQyKtbSyD2u10Mid0XVIhxb4Bz7sIbePOQORl49YBXNl4JvvAKUoqVXkh0_luJO6W"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcaawtw8-wB1QAUHZvVpmVwlFkvqt0Uprg25Dna4-Ewnh_D3o2v5t-6AfF-XiLjFhW-n8sk1iSrzoKLMDb0bbqQ6jgR-n-ehd14ureGXB7K1UqcrcX3GKA_MHPFoOawOK8b8y3qSALrWZYJ6Yz5ILZBOrgyPCUkMegY1zV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEmS91RjhpxzgANI-f-Z4zCqnmy7uPKqyNLgjcXXyT7bjH9sbcamqNz1WPXZuMeEy4AUoljJtTm6k-0-c7Zpd-k2YXK1X8BI_egxnAXObHBz9GXCF6Q4XYhGE8iililUn604a-"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZvzU0EHI3-Xfglj2HTkIRjqHBBm_9Iv_T0MshEXho2HnZ4BNmeGlsr-KrBNFfvQpkBQB-KJM6vw11qOqh0YGALhBGfB7a8hocppblPbmxnchn4m_tpa6FuV9qRvoYxucj58NLlstPRWGSeA-NRx8PHmQCIZNhf6G7rizQwU6W_53QVa17oPpz"
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAdV8AvkKb3o_SVsO5niXtE-bMKzj_jt-L7AueD6sU3flXPoxBSXRsEyCYgHSJSc-Ky88E5Df13T8AELafKFeRTUcrVG-w4joY7vp8k7VUrKBWtlVhgSwRV6jMiAoVn5HjpG_rOocXJkdMipa-pi28Ktw_juy8KsH5m-v5y9bASFma_9CevW6LN77zBl9i6s-LyUbmS-p8x5sFi--Ilvh2gCRTWPhSwAA="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3HB0T0apGtXBtPzm3wAAUZu-LS2H7nrLchFwRrnTF9FwSd0db8QKMyJOC8Woq78mjYKtNTOhEmUiRTELSqVyNBylHGXt4B1YzOLNQzqmOdJFpwAiJC3uAi_LnrbWN6fX5FSi6j6r2rB51uB5b7_MlrdOXLfYjSvbMyTjnLerLltjstrteADpnOOo5oiHeTuGMDS-zbp1iIZV9xnXY4BGkYhPDq5c_oV-Q1771_kPLzygBG_qJ-CB5vd3QaXRwtw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Capsaicin (8% patch) trials for Peripheral Neuropathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peripheral%20Neuropathy&intr=Topical%20Capsaicin%20(8%25%20patch)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "One 8% patch applied for 60 minutes",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 3600,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 4850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 161666.67,
+        "costPerResponder": 10777.78,
+        "icer": 40000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": 200,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Topical Capsaicin (8% patch)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "7.0/10 NRS (0=no pain, 10=worst possible pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Daily Pain Score",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "8.0/10 NRS (0=no pain, 10=worst possible pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Worst Pain Score (BPI-SF)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-17.5 points",
+          "baseline": "50/100 NPSI score (0=no symptoms, 100=worst symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neuropathic Pain Symptom Inventory (NPSI) Total Score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.5/10 NRS (0=no interference, 10=complete interference)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference with General Activity (BPI-SF)",
+          "percentageChange": -30.8
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 45,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "7.0/10 NRS (0=no interference, 10=complete interference)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference with Sleep (BPI-SF)",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100 EQ-5D VAS (0=worst health, 100=best health)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EQ-5D VAS)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "10/21 HADS-D score (0-7=normal, 8-10=mild, 11-14=moderate, 15-21=severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Score (HADS-D)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Application site pain",
+          "percentage": 70
+        },
+        {
+          "name": "Application site erythema",
+          "percentage": 60
+        },
+        {
+          "name": "Burning sensation",
+          "percentage": 50
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Applied every 3 months",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFUdivtSoWvzFuXwsAlnQjXCrLNTNOnqC7lbwhPQUJBMgWaVsZD52q_oWdKqCZyTETBxc0d8SnvzrMBuHEXSdXDn0NHJ-OUs21BK8-b54sW4HSKqzrDWnKkzRgBq1R1k2wS7quwytnfkXZio4="
+        },
+        {
+          "title": "england.nhs.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkM5xyR2U4NwJ2kY6vd_5d4b7kFv2f5MLrNkYKXI27ABwaKc7tHU51QltMFAUC1Dc9IJ3qBlcpFWQdU-lUgLJZW5YyDOfYHLoVvDQSv-XHl9782ui7pox-ofdjR4BxpDgeLTex2e9SgC7HpQ6QxIv9VoRTgpcBwAfjmqnr6PdJEnOFwQTGQyVOGhBk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF97-_ueuZMD_OBcHey0RWe000rYLLHB3Iac5rLXQ8JgKNRVCC0oAVaHnUw7SF0LsH_g97UZ9qzFgWrzH-X28TVP7KxqbinPUgVKP4kQugsFYoq2XA-eWvH8qr3XSDkbgeq_jjeADaQ"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5vjYSmGbPfNzgSnCo12IIJXfk4Ocxs8Lj8vz13RPTNk-3F3N7n9YCqUB_YZn3k85WM7lvcEEDOo1_yQ3981pez8i8TfvWnwW-rBLXdm-oKf-iSStR9Xc9OjH7GFIi9KbTc2FLxstGPmidW9wYW3kEyk7Slv8qzBdPD2g46g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCe1Pu6jSjsOumRYrMHjjAJ5tIrNGtK_IMi0CMfrfEVrBTfg1XGQWiGbYzll2RITHpKHN9iyaewNjhuRHdY1YEgR98pZ6f0GDP11RXmdGEy-1WPshvRnHGHwMjbgje7uxzGNen"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWJ7MxQE6hPDqd6fSAkPuBSBGKxrMlXyrrQuI9YEoMEKNDWrS7iGX0wbDut0shYFeXZW6lEnOCQC0Cc-fSwny5m914HUijCVco0gacimkL7ywKXtjm4iuBssgMMeqKfRV9cspejFcC3y-HEv4tjCuYcXn3IgbKRAyYJNV4t0urRDECheVgahGM3AVBMlLTOPVjbtt7Doe3lPk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDn0v9s4cryXV3GXa8tOA8TVtzd7HiSk21mPEbadVvLgT6H3oTCXAa4TLLeE84v73G9cDm58RSi0tjOB0o-NLU4XPHny9ZxSBtGbS1u4tBFjSEAyKF86b4gGs7v-ngcuTPpNNwZT8unbH68FflK57pJVMqFCjGYE-XEdO8YDZcjyspBojmH7bocefTKh-utTTF4LNH5MXVkR9Hk70I4lGXSbYVpf3KAqlR72LvbuyYbh1tA7O8klXgEk6-3zsFFNzf31AheOMGByRVnTFQNMqFIQNWCSHXL_iSVrSrRH3-IsqZwQjty1n2N6z5nLc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Lidocaine (5% patch) trials for Peripheral Neuropathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Peripheral%20Neuropathy&intr=Topical%20Lidocaine%20(5%25%20patch)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "Up to 3 patches for up to 12 hours/day",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2400,
+          "monitoringCost": 150,
+          "sideEffectManagement": 20,
+          "totalAnnual": 2570
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 128500,
+        "costPerResponder": 6763.16,
+        "icer": 35000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 60,
+          "annualOtcCost": 1200,
+          "annualPhysicianVisitCost": 375,
+          "annualPrescriptionCost": 2400,
+          "annualTimeCost": 112.5,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 1247.5,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "Topical Lidocaine (5% patch)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 9000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.1/10",
+          "baseline": "6.8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NRS (Numeric Rating Scale) for Average Pain Intensity",
+          "percentageChange": -30.9
+        },
+        {
+          "absoluteChange": "-1.8/10",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Brief Pain Inventory (BPI) - Average Pain Severity",
+          "percentageChange": -27.7
+        },
+        {
+          "absoluteChange": "-7.0/45",
+          "baseline": "25/45",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Short-form McGill Pain Questionnaire (SF-MPQ) - Pain Rating Index (PRI) total score",
+          "percentageChange": -28
+        }
+      ],
+      "remissionRate": 2,
+      "responseRate": 38,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5/10",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Brief Pain Inventory (BPI) - Pain Interference with General Activity",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.8/10",
+          "baseline": "7.2/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Brief Pain Inventory (BPI) - Pain Interference with Sleep",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+0.08",
+          "baseline": "0.65",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D-5L Health State Index (Quality of Life)",
+          "percentageChange": 12.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Application site erythema",
+          "percentage": 8
+        },
+        {
+          "name": "Application site edema",
+          "percentage": 5
+        },
+        {
+          "name": "Application site pruritus",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "30 minutes to 2 hours",
+      "treatmentDuration": "Applied daily as needed",
+      "trials": 7
+    }
+  ]
+}

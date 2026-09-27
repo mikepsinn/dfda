@@ -1,0 +1,602 @@
+{
+  "conditionName": "Drug-susceptible tuberculosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:47:35.368Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw-Vg-VCkB6VtGL_pKi27IbBK_nGxjTuQppOhfzACCqFacWS0_SHZInucLdo9831z65GSPgafNxS3iPf8ac9TYrxx4hn17OmsKsRbv_TnxDBsLvb3s17YGfcfyVeA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeZgwLUJxzqHe-UWK9Ew0f0A1P1SSuHYxJjyJPU5DjGmz_iSXV-tzwo2dL2D3UrWZmF5HAS1NadGs3orUbMQCJylvWsufyTASKwXXJTO411b2vNyH4Th1i4CMLsmMxgGwB_JlSMOlHbrqruR-h"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYB0sx9tBhL9S82VuriKtXJZMLcIaB0sv-1MKjKEwTFQhKgFoyDfkARwh1XlvvztpTSxQEsuZqqrt6qVId_Hh_KEPZXj1b1p2l-vS_dOz5uSWeG79tN7H4pYjgkZmLQLkpzKCWz04NEzz-7xQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUUE6tTYM3E6kq4M7shjXm0Q7-fifABg_6BTW2Ni7rDcuRS9razGcV8L5FuqwzGVhZvtUmYOG1WU9VLB_fbTh2Cwcqg4Umzqz0wsdfbR3Qd3Kw95bBEqBgBnfL05Y5uX9ZOFSUe-M9YY48_p_voxTKNF0ZQNz8IJgkag8FX2emQGACs9CzPjEa9lbllEyz253ByCz8mlT_GkJr63GEhx4lqcVaKxMEDpTqOhXZh84NL7ggbeQ8Sgb5AejmFl8vOJDDn8mHWxe8XeBuT84gPexuEQ=="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeqObG-H26_YR-VUgUs4xh7PTC_MMFwDsmmVe_G5yUdFfV9sDsMupzTMrhpsAjmmWeUYuREYclroE3D6rUWzcqjlyaMaV_nbPsLzv6nW_x94pHbO6tGfyF6nDxvN55fi0rrMnUIWdRC9qED1l1RT_n1uuiGlA9pFI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9iinPO0OkEhIuBSObRod4EqGPlMPhS_ywsmr0v9WNoBlVYfynJINX593-G9V6Y3UtXYupqVBq9J2Ei9STO2IsqpIPk4nwAJmekFN_313nJXpWOdIhC78rWSOryl9mw4uy4De317FKdw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwWhn39yX9UhhyWJHVJoM3BKvQ9nR7dsLWH1U7Cjpndfs0NbJNRo0WtZ1aHCxG88CcjSFqXr9HSyj3ldZ6i1xvjZX1BrrwGcMA076i-0w9ydy68L6W5WBYYFY8wfAj9YUEon64RjYIXMQW4BM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Standard 6-Month Regimen (Isoniazid, Rifampicin, Pyrazinamide, Ethambutol then Isoniazid, Rifampicin for active TB) trials for Drug-susceptible tuberculosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Drug-susceptible%20tuberculosis&intr=Standard%206-Month%20Regimen%20(Isoniazid%2C%20Rifampicin%2C%20Pyrazinamide%2C%20Ethambutol%20then%20Isoniazid%2C%20Rifampicin%20for%20active%20TB)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "Isoniazid 300mg daily, Rifampicin 600mg daily, Pyrazinamide 1500-2000mg daily, Ethambutol 800-1200mg daily",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 2200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2391,
+        "costPerResponder": 2316,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Standard 6-Month Regimen (Isoniazid, Rifampicin, Pyrazinamide, Ethambutol then Isoniazid, Rifampicin for active TB)",
+      "nnh": 35,
+      "nnt": null,
+      "participants": 200000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 92,
+      "responseRate": 95,
+      "safetyScore": 58,
+      "sideEffects": [
+        {
+          "name": "Hepatotoxicity (elevated LFTs, clinical hepatitis)",
+          "percentage": 20
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 20
+        },
+        {
+          "name": "GI upset (nausea, vomiting, abdominal pain)",
+          "percentage": 15
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 20
+        },
+        {
+          "name": "Optic neuritis",
+          "percentage": 5
+        },
+        {
+          "name": "Orange/red discoloration of body fluids",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "2-4 weeks for clinical improvement, 2 months for sputum conversion",
+      "treatmentDuration": "6 months",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsVKqWw_k5d7B39iCPhn7ByWdJemdpXqRnFl-z9CBXdF9zVW_uaSH3sV6MA69tmkjTz_GygB8oB0cLpdxbl9qIP8E2rflL42aw457SgZmofbs91VWz9HObvztN6hY1_EXeW32jEKFbuq4F2gTXXw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtZLtunyHe58-rDz33iZs3BH84LUN-0G4es6eCtYSEPSos9_ViOH-5qt57gkYroKHztvHoouQIg131wu-euMt4C7EldHtNBS9ZvM6CXDq3PTv8mINSAQshA1WLAQffFfnT-7EWTFoD2Q=="
+        },
+        {
+          "title": "medicaldialogues.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd4pNS1InFKcqgG86cRCRquuAEdqk4KBVQzSca7eOEo59DRv8r8etb65dhzKnt5oXjo_fsaGxmnXDX6jtSR1EjXKYkEtw2sLJyMoApryOkLM_7PJ6euwt3DGwGPpkZAB0s7i-NAtUdRiP0_6JpNFTv6lcDvITZPvzeJ9UuW4rKtM_yjNiiGvPKr6aJ3Uyw6hz2mSZyfSHeLmtp8SDjM2ClK6i_y_9hrgvJzKn4fl09frLK"
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzVpDmnV1xy0K6EzgvN49g6LE_8Cq5uAGpe91bwKm2i8_NAwUsLBxuufpAb37yV293boJNnRPO3FamIQOwFqaq66YrHb3OX-cGvhGY6_a3ig61oiPBFYLQI8h1P5RFUDUeKxcRr9Ko0F3JHOtnBfIkQ8sNW4HJr3ZPwre9XYTliGPhoCShl4mFogschg8x6MOxkWcowv6cu92rSsAjCzLZbtQ-y0iDwK6KLg=="
+        },
+        {
+          "title": "respiratory-therapy.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZUEYfAQx74Z11Hu_5bXtB-8Z6GlL_yoTO3k0TyQsgVjlOr0iTKGuTBbjd9JoPDGZpMgx5eRUdcIgvmjNGYgTEEkYt0EsGEAvbRs7bOxFrBBq2_5PUc7axNoIF3-WUgRZ7skKLNhTpD-YZUOYibZWhhR_FiwkHUChacjP0DTRkxFQfiMFc5bTKiKlHipHjvb9-gm3tfT38TsM7VIADlMKEJ333Rp4lqtSUDpPixgWldz_WHbex-z-JM8loTiGnEOPUxsJxlRcllo-MrxgFevxkrRzsCg=="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6MGzSKfDHZwlpFjrVatz7KG_3xxjXKjXviBk9g7C4zSXTmZU83L2xbsgUN5oOcVKnDqKAEx276ZZYeDNLq1mtYzaj9Y7JqD4FZCK3gK5T2p513ijwsnEELbqmxbN1B_Rn8QYh-MaTFFjN0f4wWzrh45A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8jvtdnrgBup8IBRRopQHwg2Uk6pW-Vrkxb7HttcnkSEkQnnGBASP0ivrBAx7CIFKEEtp-trPuDaA_jeS5-0S5L9wU0_OJFbV-1-iqUw3--Hv0HpPUc3Y4ooxBsw6CDSCuAFvzenZ1XUe80nE="
+        },
+        {
+          "title": "vitalstrategies.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjIF5EO2hdQt4IlDcarFpE3g9uKBpsKjiq8rpXgsevpIAlSskwFlpR4oulcY9J8r06RcPEKXHix2-IlI5hB9I9Hm2YDw3v5ij4rMV-GL3GNHJTQj_l6A8Zq0WJuBeqt98NZGHaxwr1tBibab-MkOZProi8WHHkHZNKRwnpKZHvqEe9vVyid52RS3rticIpuWY9kZSj15AAyX8Y9q8AINSNHlneSxl-Q0E7xn1KCIE5FabrYb--TEfLIuIJjdfptO3IW07cD-6zF9ohU6OI2k_zUH997GUW9HRj2IfO6Tyg01_Nbuq_ZNm-E8gvRoTB-gEALHvozhUtzLC4-Ps="
+        },
+        {
+          "title": "theunion.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuLnkPIwUcyXmqTVglf_a7eZ2F_iyX1sj0X7NlABCPj2AU04lsTptgTAdufJUnq_feZwWGlBpeZYHACD2aP_VRmk7yT97xubuAqfeWVVp3uFa3fnOBuxF2PUZGOH-fUjGktvHLizhu-wim6BjM2njyqz4UNcUMg_9DzXD25BfNl_vCW06UYU-pesiIiffWd9fiz4CTyOh578GUcUiQEDS-61zBP3wDUmv80OGRtAOur9H2qGAoqmkyQtV1ZooRacJMwt8IhuK3MgYuqt0_3TiR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoVCnohKlB7JpHTT8AVk9TlUd1CXhBuM82HzXTER5b9h0XM2fwCrKqSsPcXKRmrY-7p-37kQNMm1YSGlGjhdh20nj-JP9vFL6cH9WIVWYjT5UuwXn5vzz1znagTxFTnaHfBUtU"
+        },
+        {
+          "title": "ClinicalTrials.gov: Shorter 4-Month Regimen (High-dose Rifapentine, Isoniazid, Pyrazinamide, Moxifloxacin then High-dose Rifapentine, Isoniazid, Moxifloxacin for active TB) trials for Drug-susceptible tuberculosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Drug-susceptible%20tuberculosis&intr=Shorter%204-Month%20Regimen%20(High-dose%20Rifapentine%2C%20Isoniazid%2C%20Pyrazinamide%2C%20Moxifloxacin%20then%20High-dose%20Rifapentine%2C%20Isoniazid%2C%20Moxifloxacin%20for%20active%20TB)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Rifapentine 1200mg daily, Isoniazid 300mg daily, Pyrazinamide 1000-1500mg daily, Moxifloxacin 400mg daily",
+      "effectiveness": 94,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2300,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 450,
+          "totalAnnual": 3750
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4167,
+        "costPerResponder": 3989,
+        "icer": 12000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Standard 6-Month Regimen (2HRZE/4HR)",
+          "costDifference": 1550,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Shorter 4-Month Regimen (High-dose Rifapentine, Isoniazid, Pyrazinamide, Moxifloxacin then High-dose Rifapentine, Isoniazid, Moxifloxacin for active TB)",
+      "nnh": 20,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 94,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Hepatotoxicity (Grade 1-4)",
+          "percentage": 15
+        },
+        {
+          "name": "GI upset (nausea, vomiting, diarrhea)",
+          "percentage": 25
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 15
+        },
+        {
+          "name": "Rash",
+          "percentage": 10
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 20
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 3
+        },
+        {
+          "name": "Tendinopathy",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks for clinical improvement, 2 months for sputum conversion",
+      "treatmentDuration": "4 months",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJMQo4ZrTk8pwZc8Xuzl9PvRHM59PX6ugGG9AnbxFH1wWBpVYgrZLvfFL11rFD6G9VxzmqytLra8l1LeEvJtBAwmGrvWCwCKFP_VpXJwZehgDCVZwTT_tX-ZJ0oAVzsd4jnG7OSvtFjScOulg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUr4lahXFCKhMzyHfEhOEDBHAhVdZxXvFoj_KWcjEFQril5gMtMD6CvPptCQF3m72t8fK2vCGdxUx4B6qTGhOiCBYWxs9gE1eN2eZ5e3fnU3K28GsN4-pvW6c0Xw3ghNCxs5J5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb9KSBp1aejIsPY1jo0PKw8n-o1VEcFW_WPijPnQUTgkiDSz8WTWos_fwTsU0VolEY0p0vduIK6fSTvHJ-_P6xPWD5j1WvwJiJTmvnMlOiWZHVDvDH8jw77UNnDm8ZgxPYA6GL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHgT_Y7mc9KsVQIfKSeiznHZBMmOiDvH73F8zazwlmbkG5IAMoDK5L4iKp-FQWmx0Azja-DL3vvW8zbBb76hOWLMTwHXsh31zclQdDniCPg3VoL07e7Dsk7kgsH-7RH370c3GpBQQMKpvlVSf6Cqsxr_HvkuCjF6iGJlNjMN09S6TaAs2zKL8esD2Ww6iusHT3iXJI0kyh6KF93u6Se8I11EOrxF3NtUj7SDZHgJrus0SePVU4YnZGQcRrODehY9FcONe7KpzszZ7sj0agwDzebcxR8J8TlSjLM-OvTHeHxnUeyEO-BGvXShhjK0cWC8kvgm9SFZafZBLfUai134627MolmPMaKbg3VHBRJERWnWA1AHeBux_L6_uX3_rJCG62EtI="
+        },
+        {
+          "title": "medaccess.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxQJukEFk08QyTSEsBeq-U0dO5_g90KyDSfc6MlC4zeuc5GrnRVz-1X7BcSh3SxRggBOYn228rwH5p-u5JX8_QjDoebNag4jW40LTAmvVpwt7S-sH_0_gbvuK1VIUj2dR3u6BdeY7_x8_3vWIil870G-qdBIaC6vJ_MwtHZucHizrTLA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ-XglK-f1DZuzAbKlzZnl0KqG9ccfgvUkabXPHlzXXK1phqLA2yKmBtBQ5j800tFT0pj8ehPf_leL5ZZDTFg6vNM38sUqDzjLN1uSsVjYKwLXWQ78gSSEnDaHGODql_SFhdF6-lNpxfcT7quc2dhDz-Hx"
+        },
+        {
+          "title": "impaact4tb.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFyuf44u1CrlP1LO3HJ81YL-3k-u4_dpydjF0s3ktFeKgJgqEPOyVukxYYt8OT37_5BHIftsC8BY7OBc8mbXNYg8npanRFqUu4vymzaumJ9sLli4YvdwPFyDAqkgwlVTGgjD0opSG0X-jvlH7jqsFx9GV-l0njKi_cddU1EdG0XT3h9kaFCUvAir2ASw2xcw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHvTnuqSsGU3xwjC2W-ELh506Wlf5EVRc9ckLGVGQEYs6KEXd9-S4-ko46XlQ_rPmqQ3N3sTdUGDYpaR8n3NouixlLOHh5RBlDEZYi3G52dso9Y26Iled_50wkvtE4GjE_NLA0CpvYqsmAAwPJ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLs8e29mVeUiOxsKmOPFuggIBjdq4Kk-gI92u3re-EU4FSgDvlCpu8Hcs2oyz2JJN8W6RE8wokS64YoJx6vAstFJdu01o3b4zK0ifCzfHY_eVxF04VNhwCcMI09Bg-y2qw5SWdINWYLtFttjpTjlImuh9YXj-Gs3gCCySPKdGEXvcesxVVV1ObMTg4Ard09W3K8PfWPr8G5KHx8hVAesgPXfdQBnq_VvGwmFeU1OF2ozUXm1OvTv8ZxBLqVE9vZz9wtA7mL0LccTYRyuI="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpYiPLdOIQSO3MBcjn472leXW_r0pqbF9aPKd0KQjizGpVaMDlquuNs1v9m01TmD1AnJvqE_POYGAQjkI9UUFxqwfQWo0m_VlKtOlPzHcg6Qs1xbrM4mBwlv_TbWq8vZWE_Q24r97FFc4eikQpBg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQgm-Jh1qRCSikbweFkZ2VG1CQjZvKtUkzAqXh8ZG6H4L0G7LXGzJl_zTIcxOxbslWAFSXtnUxAOV4EaoexPdNS2-E9kpKsRqaolY8PsA_dhs1AUFuZnFDIMWm_kFpeLGr94NtO6i6zl4YthsniapTImyQYD71Rp0pYbkmVuawWou1AKoMi_NbCuZ3CYyIFS_mtIHHboebWsn60Rbsm8kJGthg0UPA85apTlwteWopOh-KIgSE3BsC201abvtzTOsQx512sbfSpFWXNFMalL7-pwo0n6aqV6wqfcrH7VZmA7TePMHe2kxY33R73qkUAQbh8-UzAuBu"
+        },
+        {
+          "title": "ClinicalTrials.gov: 3HP Regimen (Isoniazid + Rifapentine weekly for 3 months for Latent TB Infection) trials for Drug-susceptible tuberculosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Drug-susceptible%20tuberculosis&intr=3HP%20Regimen%20(Isoniazid%20%2B%20Rifapentine%20weekly%20for%203%20months%20for%20Latent%20TB%20Infection)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Isoniazid 900mg weekly, Rifapentine 900mg weekly",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1300,
+          "monitoringCost": 150,
+          "sideEffectManagement": 75,
+          "totalAnnual": 1525
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.12,
+        "vsComparator": {
+          "comparatorName": "Isoniazid (INH) Monotherapy (9 months)",
+          "costDifference": 1200,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "3HP Regimen (Isoniazid + Rifapentine weekly for 3 months for Latent TB Infection)",
+      "nnh": 35,
+      "nnt": 12,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Flu-like syndrome",
+          "percentage": 10
+        },
+        {
+          "name": "Rash",
+          "percentage": 10
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 5
+        },
+        {
+          "name": "GI upset",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Prevention initiated within weeks, protective effect over years",
+      "treatmentDuration": "3 months (weekly)",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHui1qDsYDa7GN4FXOzHWgSx6PgIAjZSBupWYu7dDmWoJJF9Uz2yw4N7zh--GKD9SVnnYILmOCVhLMYK2l29p3mFZv6MJf25XMgz0tW5x2LFxivXhJ3zzLWBiUVwsLxHP3maKtE2E21ZG3uUM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOB-7d2Rizdn40X-ay5LU4_hkKDTJbwx4X7dhne9NlLLWWqkSxbWOpqyCG6aH9cHmLifEz5Crmu1Qfpq8T3bhnQjNEsOcuMy0PTg5jZfMOBGD_d9Y5otlbQxqaBdrtYuLn_T-tgtmrRzcZW8R6NDLvSpN2TqZDrWe-poSfbN0afTtX2mI_jzxML-Yv6Q7h4gW5asjT0O2Eum9uKIVv_9bWsjoTuqCfnRw9CzdVBmz3BpKCNNg0Mm7GugpbWWj-yHBBRA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhvgqVsTq7oJHUd7I4BzdDqHVA1ApbcDqzbsvW7i0RRTtOpuJsgKsQ6CLTBmO7VmZxrWvlCjrONH1CsTOUF3LEwOQZT6GU4sphsC6l_H74h7ltjwrHG5yb3uOyE2UvVUDQG_DC6sdfmIJP_Bw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVimfHYs7OTUl1juFpUZIf0YNPRDCfCvV5NkiLhVIk_3QcKzGE-co0EJagWj2xY0VguT7wSMpSHmO7tF0rJrjk6RqOQuM-_yAlM0nB6XhS-Pao866E0ths202KTN6hMVihFbYKh4nfTu3kN8M="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLy74jdFtHyFbk42OQZjVAxTSRYxBAibKNVDB8fqzfFqjpC0a29TEa7WCprbam4MddMOFJ_JGyjpSEpgdoZCpveGaQpwJVYH_KP3VrogQmksMew-aPCd2faQQ1luFQMje5crlKx6X4mBIP6L23KCYOqQ=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6Qz6nLnzJu_zxP_7WVZcvC89cXJn_6I9CdX6_t8u3m2F-AkyrhZ6Ky70V5u9o-a0UgawuCTx-LUn0v3qEc2N4wQIqARco-I8jZ8b4h2XFatPrxCR5bKGGr32EFwVfLHouQLo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs0JdHB2SR8YTIF-cj2Fq5aEipISVWyWtxDNff0kS6PCifajAkXHNCzSuGNJnzq9eO1VU0X7WrPXAZu9v5wg2dw1cnDVCAy6ZBa7vKeom5Iag521qXDlNnfTjl83P4KsiDkTICrlKyP1jdNrFs2g=="
+        },
+        {
+          "title": "rutgers.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaUe9lPOyAUjJYUarO_x_7hIRXSxO8Ot9wfKoYo9XY5DmBybGvmZnVmzDSzg5uU587wvZouH0wZn_YNEdPmJVu2-D6MPHT6yeTURL_uMzy1jtzkxAnNoZPQDeuVtGOnbdSY02ir6NqH4aqmEXOfp7afw_ydhZqmxvGaUTMfF0ppBikR6wg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJiu3GReGN7Qsn3UjTiMPI9UHqsfH9zPBCVHmOSWWJ9086G3EMUGBLfQupDeNO_cZ1gkyY-7iUdxQPAyG-rfuuEUE9bc1XXSWVPzTo0DBOD0-oxG1xzwLZlZqo5pTdKldiMPcSB9jeqVUqdWBswyCK7nwXIAR68WRxz5y_j8JcTZUt8p2AsYo1ppJCvw9F0zT9hQvvAGRz5tM2U7mMdhBZXs37DBbdT8SikV6WgjrY_jL5J7SE2NmBVaZE_g7l3CYaVknphAdrR55PZnP5RuV84x9QTtXyRi_D6bOJ0qvBaBoXylKeamM4ORX5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRG1Ho0jCBuxhoyHRn1z3OACA9VvLNKy2qeL8Iw7eyBwTTu-tFVnu-9ANLLZU2h8Xgvrdc3bO6mF0UQ0noQAiOQwlV41SpniORMKgCG3tN0-DqrxZ7-1uClfu-H_vSfJ-h9f8d"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG74wf7bmFhAFF4Jf_YehDNlY6E3W4Frx_57LnfSGMbBY8HetYiyA3LqL-e_sjUTEIi817W0-yo5LXJwhGHKvRrf351jvkSjfML_8jmDpNPKLc0SWN7BsFW0j9qvoHbVVG7Ye1U"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzQa0PaD_XmVPabELwUaI71H5bHVh8Pm_KSRdUU6Fc9B_JcROmK6epIeZdjsj7huQkfJlcaIpdzL-KDymB5kCk9Sj3robzoYZ6-OFkpApk94ikrzz1ZhzmX8j4O_53pGNa1bnQm28WjJzdBdId_dMqsQcVbCcCuYufR8Uy7IsPo6qtR-LnK_q9Ltgem3-LbsNv5dpH5K713wcRnXiyF2RQ3phIjm2t7URZwQ2xTTgMLEKjNp6e2oZWaVjavVtp70wXgZSqA2tOiQp2SeoXylC0ij4O3D3Szf--A-wfTO-GrqefAw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rifampicin (RIF) Monotherapy (4 months for Latent TB Infection) trials for Drug-susceptible tuberculosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Drug-susceptible%20tuberculosis&intr=Rifampicin%20(RIF)%20Monotherapy%20(4%20months%20for%20Latent%20TB%20Infection)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Rifampicin 600mg daily",
+      "effectiveness": 77,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 320
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Isoniazid (INH) Monotherapy (9 months)",
+          "costDifference": -5,
+          "dominates": true,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Rifampicin (RIF) Monotherapy (4 months for Latent TB Infection)",
+      "nnh": 150,
+      "nnt": 15,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "GI upset",
+          "percentage": 10
+        },
+        {
+          "name": "Orange/red discoloration of body fluids",
+          "percentage": 100
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 3
+        },
+        {
+          "name": "Rash",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Prevention initiated within weeks, protective effect over years",
+      "treatmentDuration": "4 months",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHITAaO2nDt3rjlFxvTHgLY6jnKCwoHljNO4ToKjxAMoTh2J_fgUxMsmeAKyrz1OFulI0pUPnHXW5bjzx0YCyel6W8f3L-8ziGuIGKfDbkFml1rcVs-C5VhYVlknSO6R2DL2WPHvXOva3QCJhI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF96OeZjvAIs_7UCbGOtvYJG4PqEa53X9LYjT_NMlmc2FwnFp0ZQt6GII2_9yKx5h3JjvGg6MBIGxr4khILmwtiFap1Hb5iqpsnvpVffhwpHiEar_RkdAfQ-4WI8Obf4E7WQ9RQbFlqwdtNIes="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRFk4Ul0j4nDZNx8AXIWrQXCkTnCU_HOQLzSy151tVhdBp07xtcnrmZa4JjFC7iN3ApEldSId-k_AmufGnEDtV-_myi7CUV5U-fwAsTXZOeusNnIpY_U-dvNi16BYDb8K25aSI9XN2s9F2-mY="
+        },
+        {
+          "title": "ukhsa.gov.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEExQCnEHotrrLRMarbKbeNYl6PiHI4EsP5nkQb99Sdphye-J09RWN0Zmu2jlLOnng91q2FdjLHbH3QLurNXjN8mt26Pp7yceR17xLwsaSqvNdg2VO2ZdR46AvWrvZWJci65bajcfb1POUI9XJW-1rzpo-K9s_3xFMeJ18quGkvmqxbrh1XbWSPXpZu1r6-qPH04G2FEffKX1bsSPazbXj4joY9Fb3hnRFMEEQV_YHBPA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFBBY5hEnfz5SVhkThw_S-DmeE3H_MSbIuNB_ESXdW3wtPBT2oKagkNNQc5CfbK4iuI44FktuaU_MtWvuE3nlVLVqAMBNEUXmJqfcCSqDB1wUqiTrg19srxmH6qByxAtx0-KRRaM4Eu76uhtcC"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxFlF5voVWOwsMUFnPVKa0BAiUwc5upI24FNQ2gvk4KGT7WrE9i1VBsrRP5fppQjkNGgWem53yEmLEHp-VDy7OT7Y5ZqEJ7w2BtZTBC_P1gZydGq31S3gxALgm7rlnhcqm7-UONGXU6th2YpPooR8AWuJq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5panH8kDxj6uMMhpGr5JsFb04bbXKW1K459UaEwplICbHxHiyz7I_562CCvew7K8k4XJa-M1QpBoztr1mjPGRPIULlO1BRnAjI8-JKUbB2c48Pyqb8NNZ4xP-t4-jziYHR69PnE2GwGIrk_Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9-J9nffLbVzs55g8iRYAbxsHjaeAyI46vFj4sZMDISL33x4rXZUtSNQWyQfM_PbpxZhr7o-uOXEG5tNCnjDZa3idAAS0BjfileaVcvXaYM6ob2OWJdFP1nqmQDHfeYYwyBy2Q8-H-iHWFDens"
+        },
+        {
+          "title": "h1.co",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIb9XaSzhCfqgIrbYG61YZohzerQoHMwxP_h-wdVKrM769Hm6gk8oPUzytuTO8zmixJ4u0xrJjX86meeJJsPT6VfIgWd8Rj0bXl_ULwkqwnc41P2F8af6cLglMzOkOYxg92f-ZDHaVXg=="
+        },
+        {
+          "title": "muhc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyRpTMNuxFDPr2Kenkwec1eog6s5M54Vj65K1849ECdX4ohSMI2a8RpWXFSLT493pe4S2LqXxTL1zmUN0Xcg5YG__4pA56Y2-LEGyporKUOZIeetNueJ_c-548ZjaUC2nyve9aT0W11kFs1q-BDoyENXpe-0eGOPLmBW8="
+        },
+        {
+          "title": "mcgill.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhAVDaXFo8EwvEXf-t4Cy98r80rPeaC7yxKNQSEacDMbi9XmqESYO7CrMtZd6ehrD80n2gRgPi3bxGbCycco_ARVT6Luj2k_xCp-s25j_uiscr37uWbOH_3t0hfSH5XE1UWAUhMbc7QaeF3K9Qh4AV4krxEZLaHbqqqsRYNXDO"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_UOwl5K8VaOagRhfNhZge5oF85344IykVadOQPaM-XtO5e4XVqM59zIJjNmDAQrTzCCJ22N6IwRUeSgBcO2Bq0PmtcSIQNSmTt9Yd3s4RJ92lU5SAXzSdeum41CmLfhEDw7rF_6kg_ir8lPFTvQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Isoniazid (INH) Monotherapy (9 months for Latent TB Infection) trials for Drug-susceptible tuberculosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Drug-susceptible%20tuberculosis&intr=Isoniazid%20(INH)%20Monotherapy%20(9%20months%20for%20Latent%20TB%20Infection)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Isoniazid 300mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 325
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Isoniazid (INH) Monotherapy (9 months for Latent TB Infection)",
+      "nnh": 200,
+      "nnt": 15,
+      "participants": 100000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Hepatotoxicity (clinical hepatitis)",
+          "percentage": 10
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 20
+        },
+        {
+          "name": "GI upset",
+          "percentage": 5
+        },
+        {
+          "name": "Rash",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Prevention initiated within weeks, protective effect over years",
+      "treatmentDuration": "9 months",
+      "trials": 300
+    }
+  ]
+}

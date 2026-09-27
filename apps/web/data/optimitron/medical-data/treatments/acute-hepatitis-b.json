@@ -1,0 +1,507 @@
+{
+  "conditionName": "Acute hepatitis B",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:23:16.995Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJKWyto62RgXwy02WhE0UpYNBIULwfjFHJAurbt95Ozm_3wo5EFNJOCLsq2s8tEZNy1qOo3C4KPEBYZbVl2s6vaVXBZmfpukOSArTOIY_bwn8xOikmyEKNZmZOe4DjIWhB_UVuW4v9e1ToHNFsHw39XhowW3p17HW9BfVNXJ6DP_OPwgbHhULrq2vEtgeXDQY76RyG3A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu_UZe7JNeeG8CwVQu_9pPG7JDjtxCAPKDmf7YHZxsbgajlHDqxcgXkI-FmW5qZ60h9YpBoG2GRi382edKQUfCOIVUPmzVu4JBmVVwfEz_Smg1j_hwxqDE4UewbSd9W-pCBi29slPCSUK5tlKj"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd-RytMT3YKcFdEJmeao_7h_zDQbbtLn1b1_qAuRn95IUb-3V3NWrbvOdsADUps0-PHKXIubuKx57dR47metOzCQCJQJKx8GDkBcIbAe18eCxyvUPTj34bF8tiW6DpffODXRf8X081VzKd810DwxOJ1ADDYtDhTRo6Xx9cByrIENzDBeplIg0jOpglC8ApzscaDRsawHOiDLk5IsszlPnXGo44o8HoZTMIrsRqJonK_EXp9i_1_KdYNGqYMlSbxQO2TX9KyS73iWiwp140tn5df91_shy00UxYRQvib0RXJa3r"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz09mkziICreCtiynau6QgkFPYj1tQDU9zGqt3P7gE_8ebsgpecvtxBa526aJYPGCu1fqjBb4vqi8HQinogiYFBbTt_Hw8zMDMoXHWdkoKRK766AJ0_S0fR69Qz5XkNgKT_LTA7h64O9GFfPE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOCRA-fFoM5kEs7BVlbodHsyzQPrAVkTNFR6DIcOsY1rmwkSvc7oiQ0a2SxsfU5WxWlkVxmSRxvR6Buk1-r2_3qCRWysHisy0YD447HZRpUnlDIOuMnjGlrO7oiWMkNEbQtUl-dEjRPxGhPFMW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPf6fnpiu6gPO35hQxBvDHJHw8WeK2Ifx4E3oGu6u9LrrOQWf0JRZ2u8Mm3H1gNsu7WbQtAl65_8nOXbJizn54UZpAYjILXI5NpCjdeNJ2nChEkhbMcVszPkPVEljf24Z3eviHLRMECQygxrrV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkAzMm5L6nh-vlnvttTmk5z88lvwOZnQvDEbWQ0EXKuCo-ld1SBG8LW6RoLJS-h7h55DtsoBE4U69ewS3rsuUhyogpvF-Xnnh-lHNQiqjrRifvhQk0akjZcF5LOtcKMcaUQeyMjxKsPMOQZZ54"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBUwUJG_d2JSGw5a2wK5WzfiZFm4OgXEryOVzTZYtEA7iJI3iNiPLxfPfdP_2G4CxWpp4lVCka2svZOIC1LGejO-4nIw-wflWflyIU5AwUcw7lXFKizdGe2T_Q8JonLE82WTKWPnUh1f42HBA8peqdJgSw1ig0QC9PlOzRDnE9KzJaI7Zqyxi4n2OIFJ_L1cVbgH25me3OA9a-epKeiEd3D5ietAElxKvgVnbjTZ1VEWJIAvNq_xUskvZLYupAMK8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYnh3XBRTZxrXyvjf4KuNAzomYu24Rz0WV5S8bbncijUNqNnnTkm2QRWHUI8mHngyMjmmrOr1LVxYWrBi9EyhDCrNusHoXFw2AqQnc8msbTNglDCtQAi5E33ZZ6yEZKi_WErhX"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKn0svS7P-_TUycOjQif8CNIDxIfN0NSNyAnz2kC0wczG6lMUvr9AWuqBFxkPgM8dJNpmuYd8MP7CVJ_9oDZEnM5tQLmbcwEaNmtgMWxY_0SY7MX5wD69pll-60t4aSBc4QJWzxiyMLT82sK4HgLoOOJPewhqu73ZARKpYjbdKz7gKgaPtrqPg0b9N2Rs8P_sQBs4M9w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tenofovir alafenamide (TAF) trials for Acute hepatitis B",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20B&intr=Tenofovir%20alafenamide%20(TAF)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "25 mg orally once daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 18000,
+          "monitoringCost": 750,
+          "sideEffectManagement": 100,
+          "totalAnnual": 18850
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 26928,
+        "costPerResponder": 23562,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 4000,
+          "annualPhysicianVisitCost": 500,
+          "annualPrescriptionCost": 18000,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 14860,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 0,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Tenofovir disoproxil fumarate",
+          "costDifference": 17150,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Tenofovir alafenamide (TAF)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 400,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.0 log10 IU/mL",
+          "baseline": "7.5 log10 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HBV DNA Viral Load",
+          "percentageChange": -99.999
+        },
+        {
+          "absoluteChange": "-770 IU/L",
+          "baseline": "800 IU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT)",
+          "percentageChange": -96.25
+        },
+        {
+          "absoluteChange": "+55% of patients",
+          "baseline": "0% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HBeAg Seroconversion Rate",
+          "percentageChange": 55
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 80,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-14.2 mg/dL",
+          "baseline": "15 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -94.67
+        },
+        {
+          "absoluteChange": "-1.5",
+          "baseline": "2.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Normalized Ratio (INR)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+0.95 mL/min/1.73m^2",
+          "baseline": "95 mL/min/1.73m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Estimated Glomerular Filtration Rate (eGFR)",
+          "percentageChange": 1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 3
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        },
+        {
+          "name": "Renal impairment (less common than TDF)",
+          "percentage": 0.5
+        },
+        {
+          "name": "Bone mineral density loss (less common than TDF)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-4 weeks for initial viral response, clinical improvement varies",
+      "treatmentDuration": "Variable, typically 6-12 months post HBsAg seroconversion or longer in severe cases",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8OEfW9mMPr27bQDCxkEQuVaRE8X0miMJtOXYVBCQSwqxiELzbTPeqeGMIh1sIqH_kvnKuT7-mx1SA8vc0i26OY4GZ2vd-62F_GsHPi8lJY9OQwBJfoTLykSla-gLrL2fQpfzHQgrcA_-kMl0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS9QILf5-EOm0M8F18vWdRaalIfrDeNdQig-xfuX0kGuLSURR3cxSVJbwtpIzL7eKLapR1f07hB-wi7TAWojSqQhIXSEdsGYnZPM43ef9GfAS2-uVNekFwP93WWkQESK9tvFUJChQ6TpntHYJQfYtvOnsHx6dGtvBGnIlDZvn9VXkJ8aCrot4vB3GNanEfIYEbB9AQ-Xk-E-QH4dMD2pubf7UO0Ik4huwzaIoo2wt5mXyjbUU52Wfp2V_7vfrMfV1pZg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1IUt32jtt2AcfPIFdut8XGd2ApsGGY8qabaUaVdAU3L93LR17jnW9Tn3T65aQXGehCe2oiqa6Mus8W2qy0vkSg80RYdy8nlaaOPrJVqoNmJRSo93vGHtwEQINC2HrGHemxwY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Entecavir trials for Acute hepatitis B",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20B&intr=Entecavir"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "0.5 mg orally once daily",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 600,
+          "monitoringCost": 750,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1450
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2231,
+        "costPerResponder": 1933,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Entecavir",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduced to Undetectable (<20 IU/mL)",
+          "baseline": "1.0 x 10^8 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HBV DNA Level",
+          "percentageChange": -99.99
+        },
+        {
+          "absoluteChange": "-1750 U/L (to normalization)",
+          "baseline": "1800 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ALT (Alanine Aminotransferase) Level",
+          "percentageChange": -97.22
+        },
+        {
+          "absoluteChange": "-1.0 (towards normal)",
+          "baseline": "2.1",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "INR (International Normalized Ratio)",
+          "percentageChange": -47.62
+        },
+        {
+          "absoluteChange": "-6.5 mg/dL (towards normal)",
+          "baseline": "8.0 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin Level",
+          "percentageChange": -81.25
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 percentage points (from 60% to 80%)",
+          "baseline": "60% (expected without treatment in severe cases)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival Rate (in severe/fulminant acute HBV)",
+          "percentageChange": 33.33
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "14 days (for severe acute HBV)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospitalization",
+          "percentageChange": -35.71
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "35 points (lower scores indicate poorer physical health)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 42.86
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 6
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 4
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        },
+        {
+          "name": "Lactic acidosis (rare)",
+          "percentage": 0.1
+        },
+        {
+          "name": "Renal impairment (less common than TDF)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks for initial viral response, clinical improvement varies",
+      "treatmentDuration": "Variable, typically 6-12 months post HBsAg seroconversion or longer in severe cases",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwIFEAi0d3O0QldybmhnYmNeDyW81OAt2hFfbdm2G11X3fkbgMyaJUi0kPisxNpitVjXUBGDOToVHf2AHsLRk9A0PcytioNvTSPFY4aXQwXsTxzp_xyge9nb9L91xpfr7wDV4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3rXnrfvkTX96D5O9br1uqbvaz-ZrXflTWs4V6kcH202PfwoJzo6llPAdzKNrERQ6cX2_PzrGyM2M2eDrjh_sZZSLfc0MDf68lpKL6n9VJrlEeXJWyHbLQz5j-ASWN71FlZPZLONYB9kPE-NQOfnlqBd96IWFkrQLw4OswWMXxTawEKLGMOGsvvthKDfPtRkdWT-tY2-z1lqKthF6x3MOidGkJ35af5pVYFazDWJ0hLCGEGdEWgjHfFcAGyiEC2WMTtWHvT7he-bQjkcLoZLeU7QoG23BmqfKg1uP_1DhBM4jZ9r9eJwu8IratcvRTCAoxnkXh6a6yknXQNZRAMVuDtvgkOReigdKyMqwcKfL4Jn5hF2-InaaMCoqC-Ag="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqueKhIrTj9roiyybBy-40Uk1llP1QzJu1TPs6CDAivwsD-Z9zcR2WkpUj-Lj8F4HpAAda_dyAAVQGguakZBaLw7W8L6mS3rSkiY1NM7RW71EtF5BGAVvCXjQVNP2IRgZbWSM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6SMiJY6HpnTpe__W-gkhFbyfb0hwctn54b2fKUGAlvXakvB5H36ncd2zsteS6Z9IYGrxEvqn04pA64s6MdaCEafYSTi5Dgwz0wloATPyiM8EOeg80s-4FD75qr01LgYf6jYI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0LZysV4yohA8UfCUQYikmh-Int-EcZwDeiB-gfmAIO0oh-sIUpSOC7FrSXcSgaMSMC8zKTi1jvjxc0AdeZyqdDWQW6fUT_CntyMr8ODwWEDuX57UIsSuf9ydOrmYqxhxcw4O6d_HhcufTGg=="
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_k3EDVyHOhRPY2bU3x6LzI3j_WRa6hJLx-SJezV6O4z1GSRr5D65DiFLJKVwged1LGasOJDqAfKXCuzgrmAwj2h6Kcan7yTsXXP3rNvi91LheMX7j6rhGUATCY35CbcvfEUEQ3u4YMmQkodtO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn3w5EkfeRSe28dZdJ6uSJOFMilTiZOWIUcgC5E4imh9GG0LmMoLhZ9t64i9UbSDdPGl9U8PAxS5aD-lL1Dp-DoDFu6KVZM_UbGjpZjUNW4Jm4iOWwfcFWFRJl7-3VksW2D0o="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8f4iJuMfHPnA9mgmUQ2j2NyEW4Me0uv_Dv21CjzBicL4Fs7B8X6c1AgHO45Pv3tYw9FCgRzGYcKz7c3vV4opUvxYUZS_21xoDp3l7O7Ehh1NbbuFy76y5m_cNpAxMwITcPEEji5abXDETKDPBY3sFI46rYz52NoxLelqDaygaR_vdasE4pvpS15Hxlxz64myu2GNfNbMpNu0yf82CpwAjfAAXeWZbyBCdTh-0irSoZjzESMReWKqk0DIJUP9udiuTmZu3eqDzwzSgljjPytfGTUQfjR8spooVefGR-71eCKdZyRj5dZgi7elX0Nms6P0OvxHU"
+        },
+        {
+          "title": "ClinicalTrials.gov: Tenofovir disoproxil fumarate (TDF) trials for Acute hepatitis B",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20hepatitis%20B&intr=Tenofovir%20disoproxil%20fumarate%20(TDF)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "300 mg orally once daily",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 480,
+          "monitoringCost": 900,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1580
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2431,
+        "costPerResponder": 2107,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Tenofovir disoproxil fumarate (TDF)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction of approximately 6 log10 IU/mL",
+          "baseline": "1.0 x 10^8 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HBV DNA Viral Load",
+          "percentageChange": -99.999
+        },
+        {
+          "absoluteChange": "-760 IU/L",
+          "baseline": "800 IU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-4.0 mg/dL",
+          "baseline": "5.0 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.7",
+          "baseline": "1.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prothrombin Time (INR)",
+          "percentageChange": -39
+        },
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "3.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 33
+        },
+        {
+          "absoluteChange": "-150 IU/L",
+          "baseline": "200 IU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gamma-Glutamyl Transferase (GGT)",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 6
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        },
+        {
+          "name": "Renal impairment",
+          "percentage": 3
+        },
+        {
+          "name": "Bone mineral density loss",
+          "percentage": 3
+        },
+        {
+          "name": "Lactic acidosis (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "2-4 weeks for initial viral response, clinical improvement varies",
+      "treatmentDuration": "Variable, typically 6-12 months post HBsAg seroconversion or longer in severe cases",
+      "trials": 3
+    }
+  ]
+}

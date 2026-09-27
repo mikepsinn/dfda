@@ -1,0 +1,580 @@
+{
+  "conditionName": "Non-rheumatic degenerative mitral valve disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:16:42.869Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxOVOB-lyF61vF4olhiJQrtnZzGb3EfpuLrn1ZjX5707-FA4CeGiUbKOlr28ISZQshQ6Y7m_VsESM3PB7EJtK_s_DK3R_z0eHVQmf7vdCoXjOvPzcyL8ExMLbfiRVpfzgAk0QUdj_4Egj4Q5c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjUNIEde6r8krvS4WSrBNl6_VhaUVADGBrJ31vhdPZ0qPxft4bnBoewLvoBsduUVtaXm57bz66kk33qdmGxAQr7nE_o7ClDR8-jDQnkc4zvcnx0W4Bh9rN15NURYwx859MmA6s"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmmUQMDK8hi9y-UncDZRQhZooTYBWepo9QmuDXGXjVO4QXCMVPbahXtsS5b0BVAinsLn4qxqipVFPkGlkDBgWgbOLHmBgogQi9M_tGAEi4FVKqMn2r_xQ8CFqpPVQE1pME8qhl0Nif"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMMqkl3N0yJhyQ8LZuwTyS_rRvjq-x_cTAP0yynfsrqYBjKm9oj-fEA11y-COq-mFijLInV_xP4C1cPn4PNzbEO25IHR_zj4Z6aWZZmwClrx9HIsawgYcxH83qQsNoao1zQU6yxFQnQ9E3cZNJ3vE3nBIl4f7diTxZhZQRnAhM3tIemhCwwuMzvJ6mAhv0_g-Zal-DFB6UlWnVPENYk7qD5CG4KTX7YJavOCB4C7PDKHV82wekot9PBFT98P2ovYLfZwtOVRdphnUfgUFxkIJCL4gzmDolPLXdux24Qex7rUECFQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6L9HDebaJRpgVtRj6hqNsaNTGIYKd2wLImIbNTNasnpWBgwzxSFcRSjiIZfkrUdQUqBlWugs3gD7OJfWgBsMHUlKAbiR06qz5H5BRyP2Pxt_Ka__01wiwx5spRNlLLqRQlGDcYcA6w7bMXArF"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqZE26JgjBZNLKySEgPXYoYtsag1Iwyrgmb8HRdhYiBOO13uyn9ooRtBmTta1aBceLCeNgaC1pqunj1Vu40VQBN0OpMjGf8pEakCAywbbwwKiB05d8R38bhw4zRSFmV7ZhsCHIbNJ3tl9balIuyAe_9FfzVMQTrPUU9-Ne"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG51LnVk1tBNWqHl7KdDwI07W53zRSsEZMwn1GKgnxaQX-45s0TVA6FoBVARk87j-SPfFjmTAUAhtWu6Ylx65oPxq4gakbgCY6Ii5z0haCa0uT7Oo4FWSSwYteU3-8zI0-MdIdG8ESFh_pdmQs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ0I3qYe6j2vOchO97-Yz2ZmiddqV9el6nWMd5bW8yYp7cx5OPapPKwVMhHydpxNUorgm3bmKlolvI7OBNgkCwrcgDfBBLnkIp-4yJJSQF1B9ElepdUgSBgNTSVFLAMBvpPMfq"
+        },
+        {
+          "title": "annalscts.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2ngVYd9JukqHQ7_iTrG7tGhAI1v_mY68NJqnTarV3g4h-RGS6pYNDC3JolFbLvjOnQPVjPv28sDNe04HrDUkOFOlKDx7BMXn1Cf8TjVDEJ9q1TfqgJ-P6cNqCvHMPUtNj4y1jrhWoglTbWA=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoPKrihxHsz24YNZcGspP0vkTyfpWmMPnTGnxEmQqtPUD-1aWKtvXgvgpkNSI7uKDeWnwuX-hcKQyzlDz9oOe9Lmqs4L4zwWrv9MOnNsgBP4G2NfNSOpYClbgLu8mLD07Z2T1G5VY="
+        },
+        {
+          "title": "annalscts.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN7nNSqHRR-lKVpy0kgCT661dVMgZSbdosdHrn2nkSRP7l_iMN3DVCFyWexGH_cJHBCR5UeHZRwucJkx4cTBuFFN3G0qN3kDnZfolK6HEde7jZqt_IXLhSvOhjiFR1zrGKobKdCVTp8Hzg"
+        },
+        {
+          "title": "annalscts.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_AjW9CqpmRyfd6skeR9MFlE8j4pc1NQcNnko4-0zNQ9TVEuTst9mXW8q753-BAXSDrd-1Jj0F_69wdVx5qD2ehmU0LsuwdJX9MMY7Ag9UPLfDTCuwfitc971cusqOhZ2o1C-sNDHWcyMhHA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO3WUzY4oRzVGsCyo-NPbKHFKQeoIrKuoP4IsRjXRW1_triLJgDJbDxcm3Eas3xDJ0395q0VotimLS48J_xdsMCUqjzbvAWgY8Pq9Y60vQ0ELxTGXI6tMhuWCGAuNr5vKzTAcQXEhopw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mitral Valve Repair (Surgical) trials for Non-rheumatic degenerative mitral valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20degenerative%20mitral%20valve%20disease&intr=Mitral%20Valve%20Repair%20(Surgical)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2222.22,
+        "costPerResponder": 2105.26,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 4.5,
+        "vsComparator": {
+          "comparatorName": "Mitral Valve Replacement",
+          "costDifference": -10000,
+          "dominates": true,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Mitral Valve Repair (Surgical)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Arrhythmias (e.g., Atrial Fibrillation)",
+          "percentage": 30
+        },
+        {
+          "name": "Bleeding/Transfusion",
+          "percentage": 10
+        },
+        {
+          "name": "Stroke",
+          "percentage": 2
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        },
+        {
+          "name": "Acute Kidney Injury",
+          "percentage": 7
+        },
+        {
+          "name": "In-hospital Mortality",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate symptom relief post-recovery (full recovery 3-6 months)",
+      "treatmentDuration": "One-time procedure",
+      "trials": 1500
+    },
+    {
+      "citations": [
+        {
+          "title": "amegroups.cn",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9cG_Z5rYiv06lydWxFVP2bN8EqIDuu0BzT_6kkCeaiFmejupfK4zLoOiYHLFED330aPU9108Unvf-8R9llRAdLQ-xsdraPRMU1hl3DwMg23_iogTwZsFjwA7ZvZXz_fCU7SDcXHGdWZSBng58CT6YdJOqcdLqPMmIVwRrR-9pn5gwLyryNrgPX5hDDFg13fUNUx1msI3PMg4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZQ1EZY2yiwGRsNiOyBzSQxBdDYgZOjex4r5sVFgCHx-98XIG8TTUX-WlJNvKpi0NSJAn80qwGwLXpgSRz-1J84B0aXBrpH_ZRxxTmfecwb4t_IrlgVrVJpsgRzEnvwSgJwRw2TbnN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhqRcXJA1wVRMUsDRz3iZFSid0p1ZKGftyfKglEe1KTEUf-Ph_XS_CsbQESnxJHAb1Rb6kSM-qcmSPL0Bo7m9qRDRprqCcouZlWcAul1C8d6ph2j0L2jpGQ3NFkUIchl5hjP06--f12gYWfB-u9tc0PMjs3Hw1Q3kGqLY5Hk5AnAvI7LA1gdqhCGOqbelaadA7trEOt9nj4kD-VL1_XDRud4AnI3jIkJaCnQtsW0koYlkuLcQbckFv8eibBX3xd3K4stfORov5ySRRg70s9Z-wRpE89B8mDc_bijZ86r3hEBrq4w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgCLMoIP3rQdao0RcfK6P6oBTawQMyj_vRu1pYYX7qxJvZB1w1y9m4943lL-dgRb1P3kaud9yDlr9xT_VXl_J6EVbOReUcJUg8RKDh1-jHYqM4z9rj0c7lfzEZvjR4DKqVf0RO"
+        },
+        {
+          "title": "pcronline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExQQIDYlT_cvzQ5pbrfqImgUkWWrjMuNRceTCuAYD2jAPOdk3D4tLTglkUU-pYISObhhCEjJbSpN_O5HsVi1FEMWj5l3lxk5OdwNXn4XQq_-sqxpOxLb9SV2egVbtVChNg0sXnkfBLUBzUXs1amc7RAWlXTh_W0qedFqEdJhm7-bsbhOvVPooBQpsFynFS1WeLUwJJfgYmCRI-TgBgfJqJJ-VqToEjn-MHXDVM4v5AYEzAZDQ28oiS60BqY09S0IFsIvLK2NByWVb1Wx-_KGje-pjsxf5zj4qN3qu3k7e8z_dJY0jBEmNEDW8z7udI_psmECiyJAc2Nlp8VV-YEqwqe9sfaiD3F_H91gHg2Vm_"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHygBXn8hpEIhX06BqD4uYfNHXo3xLZfx8vQlYUhPBkedbhhqZlYZekO3gSaRUO-AO8B0JThBqFQXolY1NYCCTWiCYr-4SHTWKIziRpxZri7sEEL_WlxUSOLkT-FsonLTbPwNVP_lifjjLrNRuTf2fMoQt0OrppxIlAPpb3pV6JEWsQuWImBJBeWT4J8E04ANW0-Qw92oJ7QTgqddWOlYD6HPUm9kthhll6m8Ap7f0AucRkvpyrGVAQonIW05KsOuC7N10nlHeXeFHxhmCdPA78dbzH-uPown3vfE66SBFrwKqrlbOi4-8DCvjRXejdk10cqt4Vvzhd2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMYvKwUpVnNch6xyQBj-TNTAlnQBnqspVzW_qVyEhfp40bSwlsxtVWyskdFiGGjt33ZqsN2_gQBJVjWAlfcjRGWvcg0hM0u0cPIp2-vmGPLn1q2vWDlSI1Cb523_u6kmnacI1yBnyIbUI1eBc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl-pJY9sJq1DsBGVV-RjN5nEqo_YJFu9ubiGgnuZv-XYaKdaDYIdQovEA9HcrE_tSE1z5QUeSB90xvtpd1dEjndITyOIesqCbTrfu5sonDcYJ03YsCeCDnx9bels9hRcB34c718T1Um2JFHuA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxfasqO7B-mDapOXAAcmYRKCFgIobY0SI0rYeDeHmDbjICA013Cwao3AiHSU_fJ6TafR-jT3Pf4IE1YKNMMndCBLIBzng-PL9KacG5i02Gs_KAtPbbvHLvRIEthfJshlMv9a_ASFQV5MNNwJg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSfLX4l7p8tdcHYoXw25jdqpOIrt3EoK86dgpaV8PDXLOkx3D7WqSljN3eM8PzMtTgKZvKoighfaS3D-9n224o8dxjWH3bL_uxS0ZEKSc4Dik_NfbiQQMAS_1b72nGRXkeKhoK5voNQ3dLuXFbCKmCm0vr2imX0QfXl5Rcbm6zPkUEYo37Y7hKLcb-AoTetmxMBEHi"
+        },
+        {
+          "title": "ClinicalTrials.gov: Mitral Valve Replacement (Surgical) trials for Non-rheumatic degenerative mitral valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20degenerative%20mitral%20valve%20disease&intr=Mitral%20Valve%20Replacement%20(Surgical)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 750,
+          "totalAnnual": 3250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3611.11,
+        "costPerResponder": 3421.05,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 4,
+        "vsComparator": {
+          "comparatorName": "Mitral Valve Repair",
+          "costDifference": 10000,
+          "dominates": false,
+          "qalysGainedDifference": -0.5
+        }
+      },
+      "name": "Mitral Valve Replacement (Surgical)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 400000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Arrhythmias (e.g., Atrial Fibrillation)",
+          "percentage": 28
+        },
+        {
+          "name": "Bleeding/Transfusion",
+          "percentage": 10
+        },
+        {
+          "name": "Stroke",
+          "percentage": 2.5
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        },
+        {
+          "name": "Acute Kidney Injury",
+          "percentage": 7
+        },
+        {
+          "name": "In-hospital Mortality",
+          "percentage": 3.5
+        },
+        {
+          "name": "Anticoagulation-related bleeding (with mechanical valve)",
+          "percentage": 2.5
+        },
+        {
+          "name": "Bioprosthetic valve degeneration/re-operation",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Immediate symptom relief post-recovery (full recovery 3-6 months)",
+      "treatmentDuration": "One-time procedure (lifelong anticoagulation for mechanical valve)",
+      "trials": 1200
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7GWpv5CE5sSMZA3mOOXeetDWu6pURL0opX0X8rdMmI0ab0VMERuUT3yqV8rAKeKrGbjZnCOASBWBS0pOpEUFuct3xNrIm2j-giunV9_9n6y71l1Xtu48yhWdp6UyHlO9KujlsnHjzgWIQxU802Jk5ZfXyDz3scV7iiEXFkI0JzGWuD5Y_-d--rv_sKLlgBWHf3bDd7Mw-yUjZ5RJfU4J7t4y5lkCpxeAIwx1W4jQqSdg3oJzquUDAPH7Pldaycp6FOkh-gpum8lL0szTjGc6Z0dYurGVo1EuMn0l3xHPnO2mcgDKXgBIEc2Rjm-Hg50c8UJsGsc4vTT86jAhgnYtIeh6i423t611UjmSsstdW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTnhj_PDv8r6wlgba465TYxSt1FmtqCjIx0LZ2dA5pA911ihRmQh-DNEt1ILAEUekOviTnDnFyk0Ctsp9xC7sCXByUFtxLZk4w1wSyo5dlQ1MW4kVbC85QSPFYgBuv3KXRNb9SmZWqaXsDvuJb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOhrVaQm9UMOJ-yvSM2kOsIjJ3O6GvcNUK6uWsE88IlTV71NN7nwpnmzla8p3SJg9mvcg-csaI9U0g1i9cvqPLzNEZ45nR0jNZB8lxPvWfN19gruC2PaYC72FYQBaEThDL2PRD"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9RmkKDMCtwcmALi-TcZ42zXZI3ee0BYKn9rU0Fr9Or5Rif3X74dSF4KVu4gARanvwT3bIYzI5kwLcM_Fls-KTMACWdNuEaBgMd_POUGLipOaSpKPMIRDYtU7lj7eKp9u8VMpH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcTzAYMZCXuvsJbaTK1J8rRELknMo1293ZNgWPDwxZjlnnS9_inNAMHwtcMs1zyuzd9YwNuA640parOIozh7B0ylGFuRk4T5L3DglmxPp5_N3-rnSVE3Kktauo55LsocznUeH-8pRqcQ7FGjQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEn8vV-r0aLAuTRVq6l1Bn5X8P7Xu41EGn4LyBsknatO4hB9f7isC6R45ZHfiUQBARbT5sbGT1kXMzgTpK_-1OjtcBLySP2DVlaY65LGjOPKFJHf7B6LAwvJ1JZ4VJwqJ6-obk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmN4CbQVpiyNNS8h7MTF7g67efYGy1FZUKIW1KVchVFQRGEQyQw3j3ZJ3PBJQ-q7uJSqvJy6CiEJ7CojelOZKdFGl0S21bDHGk8APaLq-2GqbCiZ-AieakInF-qmJKFW2t1renMPaCUNjwSPOT"
+        },
+        {
+          "title": "ClinicalTrials.gov: Transcatheter Edge-to-Edge Repair (TEER) trials for Non-rheumatic degenerative mitral valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20degenerative%20mitral%20valve%20disease&intr=Transcatheter%20Edge-to-Edge%20Repair%20(TEER)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 750,
+          "totalAnnual": 2750
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5000,
+        "costPerResponder": 3437.5,
+        "icer": 90000,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": {
+          "comparatorName": "Medical Management",
+          "costDifference": 90000,
+          "dominates": false,
+          "qalysGainedDifference": 2
+        }
+      },
+      "name": "Transcatheter Edge-to-Edge Repair (TEER)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 55,
+      "responseRate": 80,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Vascular complications (access site)",
+          "percentage": 7
+        },
+        {
+          "name": "New-onset Atrial Fibrillation",
+          "percentage": 7
+        },
+        {
+          "name": "MR recurrence/residual MR",
+          "percentage": 15
+        },
+        {
+          "name": "Single-leaflet device thrombosis",
+          "percentage": 0.5
+        },
+        {
+          "name": "In-hospital Mortality",
+          "percentage": 3.5
+        }
+      ],
+      "timeToEffect": "1-3 months for symptom improvement",
+      "treatmentDuration": "One-time procedure",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ9BY9Tp6E2EZktf19A03JYRhueg8_w9bDgZ2bNuNHVIeEkpIZh6m2iWX4lZd3hIw_eIbT5bo1t9ou3LniKwGcxDGelG0CWMKrBXbIjEqLuVF_W4phKK-2a6hrs039kAO6Pf51"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTHM3hw5hDqSMfn98NbvypnqcHN3kIWIDLEizVLtI0gv70V6RTDxdzwu4q7KTtskwTybOtdU3VEAPprvqwNH3umgh9AuKSEeQMZKztSUUPwjUuaNAhY5wPTbHOw37FbrqLJrCPxdFGiqZje10iKkqb30EXPi86qorSz7GDEs08qZJirEFDtMtsqda8LDoNIofM5HA5eGE-x2MoSLVLMam9fhvfDhRYPUnnRDoqEwryHLuzN0drtjKTQ9tNu9ZYAKhrpbG_o9UYejOBT-d5v3WIxMFNYgnj3BhM9-CY_28AMRkLvIeCbdA5EjPDaE-kLiADBX5l06Snw4Yu9pdNXJJ0HOqzazaEf6D25HClV_2sWsSNgxxG"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlCh2-8WjmeO4Y4iW8lRJScTPLpQ2gZ-leWpjLFU8NGQEXhNVaU2WFDFyqxb7Rx5jrxP520Yc-FxMUmC_TCnfiwX0_aWGE9VXagZAVIMc5LiQuC9d8KPtnvJBtcdhXHUC--cP3BeOhjwLbNbZxLRtJWN3qtmomPkBKKenHHPiYJ-L-43BIAyPtFHU0cE5sLO9ZzaS27Z5M5PI_mE8Ulrd3cS0d2xMpG8jwgwdmIvw48dpodAozUluHH0docU_Wa11T6WIgIzXZsX4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGctNwRTBXMLbswLFsU9g4_R0euYn3rqiki3JL_Y-HaVrT5Mzn8-fM4TvUhhC1OmX-2WROSMoqFeINPEWqmTCvE0DOEXrXmWE22NSdLAaiCovpgDLKt5Fq0-wi5K1xVdGwTfEtjxIcmP2uE_Xyyjzi4287l08bSZhMg3PKj-0-jSO0HhSpCEJ2ty4PUbp8E1Q9wbccTX3fuDcJZjCMydXrZUZqYrhTOJmjualaaULAVBW4URNHwmHNZl9vnKrZlnwEDAIVeURZoGZSL4n7BRmFrRJ9NqHTt7Q6RIQp6K-gT6EWV5ZfAP42Z33dQjYTODcQoxu4FQVPLY-2HSzETofYVLN_FalRvH1TAh98W0DTSkN6lpsV9fmQTTErHkgm1byA4q2g_aem-F32n-0pT5r4LJB2DskRook8cq_qod03fS47zO1ZbHMtCg8D_CQgKmK9g3awFJEY8Ykuwke21eJxf5XXS54CI5RLtJswc-Pu5YmaJ_8GqgzuInZ3QtR6VdcjUNdJsKGI4SnATyye5DV8o8DoLMNgbEp4iPbsbZDf0HxBTuqD2L6EWFCLdLpunzV1CZFYTM6MzituDC3T_uFT1wocn9pMvd3Edu1USVXeYxOWSg-lhXSGRXf3R_Y3ZaiL3OO0ME0xsGxroQbmSrwauH-cldDRO2Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz5Ux8U-iezIGBtqHE6Xwe_EsEcM_x3040xPaxU84Q2fGHExoFRzs2YiJLCb4RB0MleFIlmDYTRL5GXGQ7TzI_7BpBrefoNZ8BRGNbDFxqdrFgOxxLcgpXpoowu-CeDAo0qquwQ2JArh8F0sg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRDQr97CGatSoEvtlGxu0bdV9Gya9lonWeqnzUp9Tn64HgOLyXwWsKtM75JsEgK7Ap2PLHJHP9rOzcuwTTfZUiW2_I_VujlGBZ2HSbPp9dYmNLuDXlQ73nhh7z-RpBGcLAd3YA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHFfUpsNE7JSE3mmb4jRgVCWZgipRKgmj8jOfeSZ_SIvgMTXU4OYVUKA1dMnkK0_O7BLMKYHLr0jkmceKrCsIAz-3psgWSj7OcTbi71DwX53z-y8OpJdyHV2fYxg8suEWn_BowKoY-2xT-1xhSy5J-tpCMfZ49xkW_0t5b-4f91K2Mvu0gEKGaD7tJpsgyL4E_7M5Rte5usqi02KScgkKX1enDPoWhZWwTshSW5vpu33Qd4BjO0kDFwdJA-vDWIr2_Np2DBahzd6GLJCVMV7dR5yLySZsT5BVGjBCOwaFd4zeKPlV7wT_MEClvH7dJ9nc-RqaxXvDp8CLGR9zMfBoW2oSnUAM8K5qnV_xCwe8wa0I42A5Uq-PBzis="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFrBoqfpS2d99MmOLu_437fFRFh-sduV02-7oGOkXRCjE_HNP2KRBPUlAqwK7hU7KjzqOfu7ZsBLJrLJSRqybh1YdJoShxwSs4HjO09tbHGmaERXY_2o_mTrFtg67sKFcA1NaaOoM4bQlATvY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Diuretics (e.g., Furosemide) for Symptom Management trials for Non-rheumatic degenerative mitral valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20degenerative%20mitral%20valve%20disease&intr=Diuretics%20(e.g.%2C%20Furosemide)%20for%20Symptom%20Management"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Furosemide 20-80mg daily/BID",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 500,
+          "sideEffectManagement": 100,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 823.53,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2
+      },
+      "name": "Diuretics (e.g., Furosemide) for Symptom Management",
+      "nnh": null,
+      "nnt": null,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Electrolyte imbalance (e.g., hypokalemia)",
+          "percentage": 20
+        },
+        {
+          "name": "Dehydration/Hypotension",
+          "percentage": 10
+        },
+        {
+          "name": "Renal dysfunction",
+          "percentage": 7
+        },
+        {
+          "name": "Ototoxicity (with high doses)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Hours",
+      "treatmentDuration": "Lifetime",
+      "trials": 800
+    },
+    {
+      "citations": [
+        {
+          "title": "mitralvalverepair.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE30uVYtPJliJzLyFnoOCDI8gmfEQV3FzSyJW5BtWzdDoL0c--t2gEY2Hl7KpnewwFHfnpmE6pjFs5mAs8GwwXLa2dQN45pVOJtH2bDLNUl8cKXlQki0j7s2vveP3eQfweyP7y7KSUe6u5CmqonTnyyG8oKyQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExJCTa-KtUnqQjvGbpM222QEgs2cKMs-8x5a4azcC45ChCNLPMo_eOFmXS-2doKq8G8wJkBJqzO2f08uu220pzFDC5ZuI59GQwHmsXrDUx1CbXD-4LdqVwJEyyrHOKEwr6SWRV0_z0tfMAUTc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdKpCuNcid9B4dSu0QAubKv7qp47IMYo4jGsH4SlrWKy35IdE2sPcIkuAXsGaemFwAYYLNkXkIoQk7psLHX5Cd4TiMPjaaei9g5JgOXksXWPlowbOQmcBs5E2pWdWnSPSsW48om932vnNLG_Y="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUyxvMhOkFvCLXiA6BHtnAZpnTLTvJbZZKvT4FOGDBDCpEMWetonkjHCEgvRNnga1d6DRyqoRwhsep7bxLYuCNBXXlbZMrKoYBT7eGjW0oGht_FQzpNNFWTtlsgqmp-X1oR0Z16jtbhALoabHFIjm08OQ7xWYTvRlCWoPlSVnw6TGoRbEsB0BjBlN_8F_nwmXQJr_e579mZSWs0CcYw3OBK-ZZZFq_Slivzv9HdqnfJltS0-nnqKRfSHm7HSm6z1s4GYg-GmFVdRzYEL-HAs1-mFYR0ngpYkoaiibg2b21AkNtsSIFqS4ryUqXoHlU8mbW_ebz-jMrYGCymKs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGV0hUNRmQ78yR2Nz-Fyc02PAs4xcy3iXLy3KURdRTnigkO67XOVRR_QFUK-R_Ddbo0nk3MOt7L4DtEeicysLA0HpoCCQwhb4P5uyc5GHdaqWvkN8s0ckD7l986BTMYddfyEp7y"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_8tLL7tL5Vhi9PTnyOsTTvme4FykxyW90dGpLowGZKrA_x9tdFyRGTehRxHyW8vpX4VQErP61TZGcqjfbe8gLWhoj0I0iUOyrQjvxJiCD0lcDqjjnveBfMOqyuBUkFFCtZA4OcQb53VCChPz61HgnnsXvVb66MKwP0_DK"
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg0Qw79k4NpGfLq-UHw8yvBwiGijw0KUXEl-dUsEKlO6EiC22UY7Kzw7hS4uLJ19RClPn-lzMFR2cjPJ1fR5McdbzTpyxh1km9RKS_DhxI-9fli4txJPY51Zi8vHGz9nV03GMdhtM_6BvGdEB0U0Ufbe58NLPjxMV456o5wM2zbSjbr83-zLDOS2mtuSOEfrx5TsFkNIQWYv4MPGst96k="
+        },
+        {
+          "title": "clinconnect.io",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo9WCwmz6qxk671nmhyf0kcYESqcZJCcirpDGOFleFMKVS_Vo7xeH6jTDDOmmmNe0wBFoDQVljYOHNMDqD9eKqpkcniL0T5KoZZ0Fzip9INOGs1woBG1DNJVsjYx3RQsPP91nX"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLvWkaWT0ZWW5-kErYvVAQ57ewi5SJGOEW2V76Wzmh_Z27zR-lmueO1_7ZcNaL_wXKKy6IRXGhGgz8oZwbosiedCG8P4w7t_19SJS73xKg9kq7TI2zp0L3o6V6GQXT3NojA4CoJ5pI"
+        },
+        {
+          "title": "medpath.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuKHF44D0MErLY2HmWwLiyVdTNBO5lM897mRk-1ea9ZcGk2IbRCJ2Vq6wbo6rWf-RiKirzSNuMCwVkKlwXqYW2KFMVxptEgYO0PG-cuePwXS7P9ZdBSEqi5Nqg2W69zn-m8VO1b7RnnD7rf3YH7Jfnw5DkXIcqpNy9kOOx6WC_O5P0sSKrYAo3b4NzLrAniXIHinh4OGkJ15JptyGRDwSZaoSMvmkVh7p3ZLV8D0cc"
+        },
+        {
+          "title": "ClinicalTrials.gov: Medical Management / Watchful Waiting trials for Non-rheumatic degenerative mitral valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20degenerative%20mitral%20valve%20disease&intr=Medical%20Management%20%2F%20Watchful%20Waiting"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Varies by medication (e.g., Lisinopril 5-40mg daily, Metoprolol 25-200mg daily)",
+      "effectiveness": 40,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 2700
+        },
+        "costEffectivenessRating": null,
+        "costPerRemission": null,
+        "costPerResponder": 4153.85,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0
+      },
+      "name": "Medical Management / Watchful Waiting",
+      "nnh": null,
+      "nnt": null,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 65,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Fatigue (from beta-blockers)",
+          "percentage": 15
+        },
+        {
+          "name": "Cough (from ACE inhibitors)",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness/Hypotension",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days to weeks for symptom management",
+      "treatmentDuration": "Lifetime",
+      "trials": 500
+    }
+  ]
+}

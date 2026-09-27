@@ -1,0 +1,1115 @@
+{
+  "conditionName": "Fibromyalgia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:34:23.196Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKmd3ji3amrGre0NV-PIFqiwwzKO3LBEq80O7BhmMsdr_EHZwcD92BMyFaGMruwBOMzSQkeS9VOBWYGnLzbSDlcou5E7usoogeLA8ZRRUQTFBpreYMHw21t1QZ5nk4WgVPnDOc"
+        },
+        {
+          "title": "scirp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHI6zblIlHwoBJFQwsRtkxrr8Y7edlYT-QKT0dTglWTHXHFV3ajeg1xDC3W0DZ2yWdwWi2gCDfSizN-qQKPeD5VTDvzBfLkRQEAjqLSja6JQQ19VXpK4UHaSgXbep6K7MS5PJTgkBForHhrqugPTi3B7LAxeGsc9qQ="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP21fd3W5xTcmJiGe4YDi3wWg8-A_itCcgP9BzAuKo4xmVqdgTbec2-x5ST-Nq51NkkMP4c_q48_oyOPEnSZgbOPx8LqaDjMOMetWqSnY1gN_obzp9a-qidlZuaaWy10McKmRWGlhdlkLoMzADormPgze8gb4rAqdQuUmc"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSPrmbsc4QyXfn7whxtMfEWF_vt1NHeeB8NOdhK7cfmJf15tvzuq_m-TMxZE2JPDBu0cTi3hNBRpNcp--FVVUng7OcfgDwjaCj1nrFZEfMEUKABYDQKpPHApo6W2uuR__NHAoYxgbxS_G1gt3BmrSrqA5apg5JQCQ4O2GJkg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe7BoQeY0up0Hv3XHbZzHmV77wHtQwot2dByJyKqXvpIZZlzm_FVi4mdqC8g9yBa0uVEjU-KiQ9Mi0xCVtvWkdP3lMjuqUoQN3tMqRI2SWTrgrdc-hvGPvhvJuSIoyKLodYzj62OS1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKtAr7SDTqCNutgRogFLEHvBNR_55amvjzbmhxIgtSoyDD8bdKjXwb1F66yJOfkw3xKcxwDRNeyPP2ey6waNiSPINvOHEmdpnm_32X5LOsR1nGIZviDdOLmkOr91t3TYbbedHz_lpcvPcuTn9y"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR2KeiY4OhTKs0REmkA618vDXlpMfq3aogfXHjWRhTPf2QyDdKIQJ0oYiqeuwlVNJwZGP3kshHkHGgPQZzYiYC7JBh2BsnZoBUlQRncdudil-D-xstvhlw-_3WgLmSuZX-yMrDELv30G6L1ariDS26e2qk3ghIFvH_Fk1UqBb6poukJeacovsNImpgmiL1ySZv4uQiOnozhV6qs1Z57aVVZU9B_DCa0LxygyCf7u9a99rJndS7O50DwKhBol66L2z2sd_lzOgvC1j8yLBwHpli0ArMUL-2aVImGHNinxgE0KlI-lRHspSM9BqCGZPlERpZxINd18myqQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) trials for Fibromyalgia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Fibromyalgia&intr=Cognitive%20Behavioral%20Therapy%20(CBT)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "1-hour sessions, 8-12 weeks",
+      "effectiveness": 72,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 51666.67,
+        "costPerResponder": 2818.18,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.09,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT)",
+      "nnh": 9,
+      "nnt": 5,
+      "participants": 10000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "7.0 (NRS 0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "-12.5 points",
+          "baseline": "65.0 (FIQ-R 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fibromyalgia Impact (FIQ-R)",
+          "percentageChange": -19.2
+        },
+        {
+          "absoluteChange": "-5.0 points",
+          "baseline": "16.0 (PHQ-9 0-27, moderate-severe depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Severity (PHQ-9)",
+          "percentageChange": -31.3
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "5.5 (FSS 1-7)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (FSS)",
+          "percentageChange": -14.5
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "13.0 (PSQI 0-21, poor sleep quality)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (PSQI)",
+          "percentageChange": -23.1
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 55,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "12.0 (GAD-7 0-21, moderate anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Severity (GAD-7)",
+          "percentageChange": -29.2
+        },
+        {
+          "absoluteChange": "+10.0 points",
+          "baseline": "30.0 (SF-36 PF 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning (SF-36)",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "+15.0 points",
+          "baseline": "40.0 (SF-36 MH 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 Mental Health)",
+          "percentageChange": 37.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Initial emotional discomfort",
+          "percentage": 20
+        },
+        {
+          "name": "Time commitment",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "8-12 weeks",
+      "treatmentDuration": "8-12 weekly sessions, then maintenance",
+      "trials": 55
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1Ej9C0LRmdcArgYo7JYIp5YMYPV1g7KvxraCto7a8EC8kM53pCH_q4AU75tnkxRiloQzd4-zP3Rzmo_7TAU3k3fs7Ko_4prBjJp-LJKPA3ozFNtOFxtP9c05kmIjWsy0vDfU="
+        },
+        {
+          "title": "hmlfunctionalcare.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpXXKYo4ExnLmo2iTqAr_81gzsl_2dGa8mkI2InXdu20jZMZYxSzXuqH45C8AqOC_UjzuMOe58K81FOpUMmKWATjn5jUstxe9UGIa7PsLiMnytlXcXZbiYJzZ_sPKqKlo4KAQnGFU23U_i6155wpON_LPkwyR6TCcv5BkFfmL9TZXpX1Pr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIqPVCAnHJ-_99GJjVr9Is6c91fIq7iaUAJpCdTR3Uhh_47VkBytSUPm6RYHFjmF7yr1KluGr2FKLVxkW8JWsS6fVinu-t8SutbSmcROw-YlHvUxzegDRJ60G_J6VbcFhHdi8="
+        },
+        {
+          "title": "pagepressjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHT3gb_1lZUGJv-CZN2h0WIUWxkGn8Nc_eNtDWVDH2EeTNuNnK_MWb7JC7p9qQsxOc9-4_qIXZvyeGxKXgqbmR4wHFsGQW4jfL-Izuv8GRpthqZu-VhJTNoWVrBpTPnPhUQm1AhqtcsnHZl4RhdIGfUBIZ_aEYyqQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRVminfhDCAkzFjBUn2RAKzwYtMVDWw0jvWq0_wlRQIqnL4Gcm2qDh1_wTOAScF7xRk2ed1uHU2T76JZitWl5nrYt9nZ5M2-s_5QEH_MHCZPTgEEnipGv-27-us1QHgvIOR28gbEK1dHxGLHc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQZwhxJF1xJIF0Yv1OYPbcLV29FgkXqzGdbcEphWEkaHSazaRwThGUsYV0C-DvZ0YFg_H5VJb8ZgjgK98UzvRDtMMaHtcI_lrplm9iN5viDhwCoq2Ws-eTLMZ9qoJFUip_H0H0ok4RtS0c9w=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxXFEfpED_MqRJ6Wj2__xo0DxhXHE37sKidiTLf3ui0N1rI5P2fgDM4LKo-OlcXe3_Ti4PNrQQoLVx7y8myu2MYeod88HwW8UtKfOGyjaEJ-XFQeCe8p1F7KHIdv8N8ieilrZtjEfYad2le5gtACQc5ikiFlBYqps3o0YazmtHl-UzyNLMDuir1A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4u8x5RZTeV7X6on0ZEsB1Sf1g0SSi2oK1dOrZ_5gKdMbe9d0IFq0FVzjkdk202wYvrg2qlHSn8IltLVu5ahkSKLQQT_lzXWFlaBq6wBuLEvzWQR5QWvJyPy2ER9oov3OJDrU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp7J-fQ5VqtdMnC_lMGCsimFPjXpq_U7K_pJIZWN_Kocnjvighd56XTOeSgPW1X6iMdPROQqRQg6f6dxSuk0Gvj5qbKIx7-S-HVQWSFa40j2HJgMLom9RvOlvTJ2R_bXFz5os="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE7axn-ECP2Ko8pBq79SJTXzk4VGdO5jYhZUtgyg75AhtRoshQ7zdmnXfeCe6miOoNVHXGLwcuxErbxo3ZFFSGiJKEOfk-JsKdCjJUiQX6-3wok5pqAidwFCAE_UZoodgwJXKMZfjnEqA2S8XZ-Xu2QD5ntw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiD_JEZgh8mvPjdbsHoe_dxM-HJPmJ2BgKA5t02grHT59gMcANeCD2lFjqOpSlYLp1EfY4VcTWQFgrlpPOuWcXacpU6EFftb6_UoQRbwLpmdixUs9b_EM4ym69oE6-bqT-9aD9Uy5TyZhdiiLJjzQz9Kg-0YEBUGmj59aA10H6NF9bCp85K_4U-3lXADQaoUjuvOSiVPkQ9Rcj7Ndf77-lYK50bhk8KU5dAOQ5id0FqkykG3KVPAWkbgpiP1Y6RaBL7bt2WA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Aerobic Exercise trials for Fibromyalgia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Fibromyalgia&intr=Aerobic%20Exercise"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "30-60 minutes, 3-5 times per week",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 11666.67,
+        "costPerResponder": 700,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Aerobic Exercise",
+      "nnh": 12,
+      "nnt": 4,
+      "participants": 15000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10)",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "55/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS)",
+          "percentageChange": -14.5
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fibromyalgia Impact Questionnaire (FIQ)",
+          "percentageChange": -15.4
+        },
+        {
+          "absoluteChange": "-0.3 points",
+          "baseline": "2.0/3.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health Assessment Questionnaire-Disability Index (HAQ-DI)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 50,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "14/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI)",
+          "percentageChange": -17.9
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "25/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory-II (BDI-II)",
+          "percentageChange": -16
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "30/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary muscle soreness",
+          "percentage": 40
+        },
+        {
+          "name": "Initial fatigue",
+          "percentage": 20
+        },
+        {
+          "name": "Low risk of injury (e.g., sprains)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "6-12 weeks",
+      "treatmentDuration": "Lifetime maintenance",
+      "trials": 74
+    },
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOXs-cGa-1PLguELaoojUxJcHg3I2x3BDv-P0JumhjTW1StcHOs5uUX17wCAM01_OimwC6xxY3NRDwnz4cwCBpaBij2JV7EmmrNI-woaF373CuPcPagu4wgDMQyPkjA7Mz59gieUxCJUs7Tc3TYP9sGNiiG4VURtuIr063SA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWDiSlOjNz8qLss2zByh_QWXfv3LWc17QvL3ui3IqIJZT586kJcy_T0s225xS9nKdjxpujiP4JxWaeK5i0CahoM6WC2ma6bRRMWXQOi1ppr_l2A1ASQ6uFb6BkiO9eCg7d_N-c"
+        },
+        {
+          "title": "tib.eu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVQX9BoeTYdPeFo11ST9pNlQYeO-sbHYzB79H4mqZpFeLC67tIpS9f7VpP6PdTXlFfO4CRj-RGdJDWBqzQAxLRTqPtLlDFDlAbRx5kH25B0iI1-Yxeam0m-20sjBX-yjpNlg0jWy0Jf_HVDodsTSpPLxwsl4gvNemwm3QYiXwXiEx70gnP2Kyg31yAw_R1uM_B0Jd9yE_9vO2NNjJ2P5gj-Xz1ldSq8zivy0hI9t9-MKcwIP8sUfevrb3CV953EywjPbflNDOBFten1kHUBOFC-3tEVz1QScOmNxQNUMQpWfU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcz1G6nvCKgI0HgsPRkO7w4OkNHblqgJe0Z178UVFwbGXpO53SvHDsn-8y9CUwv7QWO7yXMm26HtCEpZzhTkhKXSlw7Hsh4YKkI4iYPu6XdYueTFtZS06bxmKZ-56V6qMfnn83W2puJnaJIkbS_RcEvV7R8g7plv2q_gcDA926-6TYf-O_nRpwgxAP6j3Fj3xzNXT8M13BpQELuRerGt_XE50eWBDQirh5M3ZisoKWmh-pFZYhbQHH5nykCjKpF3Kk_Ou1cFE="
+        },
+        {
+          "title": "medscape.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5BU_pU6QGSDzJP0g7iFgjBBDzpz8f5YBlHrq54StwRuRZCYPiLGXvNl0_ZXX-1Hi7_QKL_7Kucg1g1xoAGbUAgYjKFxpZB0rBgZAumZtkaf6okPJ0hFpAdqWzCX6DlqjfbZOBTD0F_hlfptBQJvhmMbQP4fx82ZUW_8B6rlb2_xSF64nIgK1LnD43rgO6BlnhG_0Oyt7zmMgWsjdoMFQExs8OKQ=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEEeFPK8PWfvw5dKsL2rcQ1rQDwoVI5pzAAHA2ev-ScAkEe9fFFjiFvBESiKuZekO1PWaSdYU4NBTQqXnGL5fRq_MMH-u7vaw-z_NvgaLjmagm-_Y-rjY7WU52SEvHRlbkEKI49cIs2252Oehb57wNz_aLNkXQ92rA0xR33geXC1BrKb6fmuqJ_ugSUrxuEmqQJPwSpdgR0gcsg-bJRxvKhCXPcTnioQS-qqBXEPHq9e58BwimC3ZrAd4aIQPztkrvINLe9Onjw_s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlgwdSA-IE_7fKX9GEbM32lkJ-M35u6nTkZaM5w_KlJYmk6CeWjICjCoP3s0D3BbywIL4hhZPS3cNvY5eOxvgsu1Tzverpis5cM42bJqpYExpOxhW6yElklFH7GuKHXP8gggZA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUCle8FIjb-copCMzMQSADy0rwhSefz9VieHTacX4tgLnnOqjgWjv43hW3rennqvrtmCoxyvgM_8E_6v1ZBwwHR-vhZVG5dTcZBTedj8d7q0IjhVRffWyrl29CEYD3qOmzwpFj-ESgA8T65U1UrIXQFViu_0u2LWNpcw--qCgD2X_MNKSDgkhcTDXDoDn0nK4K56jp8UdDjoamAJvXlQ2NnrANfVgP3ng3qqhYvzUyTsKKCEpl3Z6S"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb-n9luZ8y-v0Xq5XFKmcFL17zqDhQztYUPqT0igtdG2v08MVrHlM29PfcuDBYNRdVNPvrfDRjcqNb-2tdu5SGQ3FZMD1u19uGDGbdPOw7hvf7_8R-uJDZCE52_L_kmfWD9JB0bFYOB4FwSi8="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfC2UpKGw4p7RPEQmg_KkdDnWPJgOdPcIOEjtn4jyNBFPEj_yQYpF5gFlNprToIzXALn8aaBhMrjO35oRaIGAhRca4bBb9MpZY5SErZNQyCKk-VVWc5wHPrTTaq2zLi8RjltA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Duloxetine trials for Fibromyalgia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Fibromyalgia&intr=Duloxetine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "30-60mg daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 480,
+          "monitoringCost": 500,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1130
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 22600,
+        "costPerResponder": 2825,
+        "icer": 48000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Duloxetine",
+      "nnh": 7,
+      "nnt": 8,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "7.2 on 0-10 Numeric Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "61 on 0-100 FIQ-R scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fibromyalgia Impact Questionnaire (FIQ-R Total Score)",
+          "percentageChange": -13.1
+        },
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "78 on 20-100 Multidimensional Fatigue Inventory-20 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity",
+          "percentageChange": -11.5
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 40,
+      "safetyScore": 59,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "15 on 0-21 Pittsburgh Sleep Quality Index",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "22 on 0-52 Hamilton Depression Rating Scale-17",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms",
+          "percentageChange": -27.3
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "32 on 0-100 SF-36 Physical Component Summary",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Function",
+          "percentageChange": 12.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 30
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 25
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 20
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 15
+        },
+        {
+          "name": "Constipation",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 32
+    },
+    {
+      "citations": [
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLggvYLaGtZLJ52gz-syJlVueaPUD1CHGU0xihtVFTEKoA1d58EdyWt3RPIFk7XaXVnmMJdfJElkPWkUG7-lNAqp2Qifjt_-eul9L7PW7zEBReaD8wCFo873VLar0k3cpAK-anKTzZwjItqDGZ5PZLLfyF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVFq_wVnl8Pb_AMUksEh6wjGugpt_jsNbaCkVdZhbspWIdqOLeDxA1QagEl4e3FzTSjFOPJ_U99D-TboCvigUyvYvWmyUvD_4kGgyPcpnOBgOrju9jyWHM0NRWkyHvDb0P4et2"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcEpvyWb4hB49tAp83zYXSb_iWYDICXMuvQhlsqzVcAaTvPNr1VQzrJvUigiuC1UMp7HXgTzZBy-ywoRu_vwj7k6cwCeLA8-PAdOpOH1pkVUl1MnKR0qctcYCpmAlmzzCSBze0wUQNZKrjqjYBjUnJBTMGHzvdGLR6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_WJmvDDVjZORPhPBOvnVzjFZq2fUpjzzFt34k_uoAuzy5cDLcTqSHtCp_D5ZvdCAOIKVVhXIVee4ycKH0vmXh-ys6xWWyzEe6IJVLG-uYurrYSax0JI3jAricZ5UvIw2BbUNMkvNIcGUlEPfrlA2TqJdDtZFcI8rMpmVkXLX68mQFn5QjuqCxRWbqJ7UA7acnmK9nDMI0AWiLNrwjPRnE9tzry80x-FKKWPQRiwZlsG2gPwlA9cmcsj8G8aV-511-fwgtqFNsAXn1TXhH0wswGQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgHaxePDyx9Y7j_an1h-Sk_92_mmIANAnjz5yVi8JsZWwJLMJR04tpDNHXNm9dNfUk8IdOTrO4Z66s39aRGrIsr04t3XdB63v1OMtfVQhKsG6QKUrQs9gBP_7_sbnagol0I_8GzEZiYzT-bN4="
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGt44OpeH5YLXJ0j_3ZTordca54y7SiVPQeoYfx48w5cdLwds7MeLmfP1wEsQeDeBnA4UsG8d4uW4wGABZr1SNBy2TupA0W1Dp63uDzGOakbg55aUGePuj0cIFDJDinmVHAJtYzwS55a1kUvENJTsq403aqk5wV-Q=="
+        },
+        {
+          "title": "york.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZmLAXd3Dy-7m-Dd76zVPUShuEJ1VeTpwBOhDieNftoAN28A3eSgnAy542l2G-7CrVK2pdV7xa7Z62Jm0Bd4uasltEaokpGxU9TU7_U61pff79mKvkORIBILK67ED__qLQ9h7R5Xl2hhtO_sh25kDL1esmL0SWZA5H"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8WpVJyKqIwC_JCRzIxBRmRdIKxuLMupypV_M8CHEfYXgGLkw632_toysfedjLWixSUv5qCdnNMNDQNWzzmz7E3nJkoVJYg5EeRX127PWoXm9v88pJAENVdLEszcbOSpFoV__G"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pregabalin trials for Fibromyalgia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Fibromyalgia&intr=Pregabalin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "150-450mg daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 720,
+          "monitoringCost": 500,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1370
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 27400,
+        "costPerResponder": 3425,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Pregabalin",
+      "nnh": 8,
+      "nnt": 9,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "7.0 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (0-10 NRS)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-13.0 points",
+          "baseline": "65 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fibromyalgia Impact Questionnaire (FIQ) Total Score (0-100 scale)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.65 points",
+          "baseline": "7.5 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance (0-10 scale, higher is worse)",
+          "percentageChange": -22
+        },
+        {
+          "absoluteChange": "-1.26 points",
+          "baseline": "7.0 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (0-10 scale)",
+          "percentageChange": -18
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 40,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3.0 points",
+          "baseline": "30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "12 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HADS-Anxiety Score (0-21 scale)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.1 points",
+          "baseline": "11 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HADS-Depression Score (0-21 scale)",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 30
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 25
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 10
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 57
+    },
+    {
+      "citations": [
+        {
+          "title": "medcentral.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPd8ALTJXchVAoMCLL8akrUIT67kMV2s2BqrHOuFGx_T96yCiEYQz_Kq1WynvSqjAqmgirJ8wmrk8E2yPAGFaqGuf7qShojYUUmgdXn3Wyrp3wcbxiuCQV6uEp3qmw5DuCteWF4lp1poKIPxDeJIR0h7lU0Z0wduzutsMwC1wW7zp8WJjldQUbU20ROfmGBYE="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGA4SIn0sVfb152hF7uBaDnOopLMlnawSKzfNXg7CYyh8L7Y0vTyQ2GfxdvxUuvfJfdefJyee_BMC9FwFAijXXvEr8Q3HMUHVW5Gv1_kEAZP8vbRtZTJUwq6mGHKgks5f50KHJY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh7dXZT0tmMbtHA0W1Ya_Zbc7cs3IVxi75TyMW802ALRl8ulNLbXKTpD4_OZoDi6mtVYqgLcNh9V7xtMAP8fLPdvu8Pg-PMyikTexHRfxbl57YjGkdXFlmHAxNiACeGvXa0ySm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSMFTl5Sjgt_Z4D5lbENpQ3e9cm-Z44jULbfw3ZabyNQ0TrTOd_r56HJSoaLr4FNmtSPGcb-2_CgUfDVBUlqX2LAV6ecgf31f_n64ViyiPWRKD7of9HQuyW6tntIvCAPly9yZK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2FkSOx0_ZagoeBWn3VFK_FmfLDN4Ml71e9KfOqV4EG7sVJpGmVsOeg74vXZuNU882mIRl2pfe5abybN-104Ey5F5J6Iv9sdw4bXA1TAz_tznsX64orgq9kFrJ8ba8YaMTiVQETjE-"
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5r68Z7fqYKeltzrVfL3Qpa6fiSqLATfxgZVHjyF3jrF7bAOV5Tbmj8R9-vNkk1VrgrUivsXp8_jil40X63qGSGqxvpONEW2Eef2BifdFmQjFfMAYyv8XDv1049JY39n0fuA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuILv5HDw7aCA5oi1wz57ec0u96DZB8xOkMmybGk4Cx_jq82xwJxeSbh59_W58-dzCvOSCxifVqzhbCjpcMNZDulOFlOAEaAqhiRhDbUTh19zMPsab7EF2kOAvckKHRvpEfxOO"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtD5EAs1YthnlTWf3vhuVDrMhc7wJ_6wW7bDYntqo_iVPH-_u0x7AQx2meIVRPnd79Y4D4ftq1sL4k0yXy6lRYNeEMBgG3KChNilcz9ah3jprAQxejEAHOD0Re3gmzwcfD-E41ogduSeWKwcvyryrN24fwuPn5eeGtQfkN5NdNl6a-yxM="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT_a_Rp7Rema8zPnCmD_QjqtubVvj6c1zcyPQHglCIY9UTSkz56WOiHzwpyzuxbPQgI0-TomakaCCDKz6v-C3tmY0SXCCZc8QbMlCk8yowr4Iz4LtiyjfAFLHcE9g_HcbnYp16rkLuk0OLHvu6n9TtH6T2kQsw3v-oO8JQABbr9p84"
+        },
+        {
+          "title": "ClinicalTrials.gov: Milnacipran trials for Fibromyalgia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Fibromyalgia&intr=Milnacipran"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "50-100mg daily",
+      "effectiveness": 63,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 900,
+          "monitoringCost": 500,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1550
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 38750,
+        "costPerResponder": 4428.57,
+        "icer": 65000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.035,
+        "vsComparator": null
+      },
+      "name": "Milnacipran",
+      "nnh": 8,
+      "nnt": 10,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.6 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-10.8 points",
+          "baseline": "60/80",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fibromyalgia Impact Questionnaire (FIQ) Total Score",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-7 mm",
+          "baseline": "70/100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (Visual Analog Scale)",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": 4,
+      "responseRate": 35,
+      "safetyScore": 59,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "15/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (PSQI Score)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "30/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "25/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory-II (BDI-II) Score",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 40
+        },
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Constipation",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 15
+        },
+        {
+          "name": "Hyperhidrosis (sweating)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 28
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxQtWWPzvTuCJ8HjAfSbG4LnL4odlm74HwjOvfC80LjByQg9Rx32zyM9c3YPSU9CoJu_7LGpsPZUe-gNjJALMLxuZUJDvCO-VBNotLnZp0kQGzAk3TODymaZ3HQSu2cFbwkAhcfskZ-zbHbk0OutbXNH_YaeIYmDJrp-aAxcNt-oWndeR6kA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmkUj7uETITUu5X0GFTeqHJhr6uNq0BbBmWyNyvnPxnPYMjWyVTolLcBbzZORR2UueUH-7FhhMHUmJonFFzlPwPQq67An_OqLRHew6Q0fsN0vNbEfz9dZYXvHeZYJsTnXMabs="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSkuUUDvfpMQQmEsLKbakXqskLe6yL1-mf5VD19WI04TA1DTBDi5ETjPiJSEhMdHl1larfe0AmxKYcrDCvOniIYiCF7LGl8RofFqadFA48NR4uMRQcqPY2ML2WLVnM2QQxnrWDD7MHvtcrX5bOSFyEFkdjqQNPAIk2xQ=="
+        },
+        {
+          "title": "medicaldialogues.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLaTnlY9WLWZ3AgWEYExVMI-UAiTad_DDTs8jAYCeMsGz111B32dTKfQOMY18tD__aD_73HncEbAFR6Ea18wAGlcTPzouLUsJ3Ti42sYzNSUfhq06jv5-64cua78jYRqEEesLk2ZM4dkWvkTmH9BaDw38TZp_FyL7tIyu-jkuArpv-BdcZ5RCjE2XTgPCqxEDVS-EzBRMEjHbBOvQgnv0go1is2lGvwHtQu3ytKdIo7Hetg7Q6G3y0w4jKvSA="
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4N0I0J0QC1t1zEIBxfj5MdE5Ou39AfeFvJpQzAM3EWG4qeiEfFL4bIBNKlC9BkwTaRXLZa_ERXCzybNy7QaEj6EB_Nj52xg8wSiUCTCwkuu1oZrgGXcLMnMQ8i6KBaICBMc_GSb5WDaaX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYjHk_Q5F1_Pnaia_p9mKMwogF8NezPT4iciVIWaNkLIz1iZv8tLlruqiPW48WG1IttIVX2sULFUfwFqZb6bqZ1GU3uF4DbzdSBZcMiwPa9znAXXhLN6jmMGJ3sO75gWd49tI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Amitriptyline trials for Fibromyalgia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Fibromyalgia&intr=Amitriptyline"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "10-50mg daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 500,
+          "sideEffectManagement": 150,
+          "totalAnnual": 830
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 27666.67,
+        "costPerResponder": 2371.43,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Amitriptyline",
+      "nnh": 4,
+      "nnt": 6,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.6 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-9.9 points",
+          "baseline": "55/80",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fibromyalgia Impact Questionnaire (FIQ) Total Score",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "7.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance (NRS 0-10)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 35,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.9 points",
+          "baseline": "7.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (NRS 0-10)",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "+3.0 points",
+          "baseline": "35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 8.6
+        },
+        {
+          "absoluteChange": "-6.3 points",
+          "baseline": "25/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (BDI-II Score)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 50
+        },
+        {
+          "name": "Sedation",
+          "percentage": 40
+        },
+        {
+          "name": "Constipation",
+          "percentage": 25
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 20
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "2-6 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "medpagetoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzz3KMLqoC1DikuoBOUvUe3Pjfl-PKDINo5FwAgqF-TE1R2SW90EojSA3hW7Y5SadDtOTKm3oC09O9_BCGKEw9-pvbC3dmH0KEi-hJXyGg2OMW2ruZOSZVBg4tdfxQ8q7WddziZgAS6MdgtdRJ9O6lqN1p"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHShwdkg7VWGwoE7U-Ru5VHFLafu3QNlPKSlh8L3Zvsz8rEbc1btdxa1AMxMi56FiOKC0rWvK7MRHj4Xxk668R5EPBZAAqmnTwteVfSUC6kWJHwX6CgXml0jT1S9S5STKAyfbFs"
+        },
+        {
+          "title": "jsfcp.jp",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNa-0k-AmSVQvzDaHuL_HW7TdKf-cCUUWtz6Nb4QhFSXI0QUqYO5MAmpYKMAIWgrSBvhrLziHAMQq1hJ0q4OtH7ybuInprkfRSMSXsz5dskCalYD18e9gZjhZIHBQdnULoPL4-BQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOl40qRCegj1Oh0hEzHBlQXIH8FH1b0EmJRuW8DZxNPkiHtIaJXfLA8wep869DaIezx2JSuQzx1wgUzHdN4m81Tw1b95jf1FNz62qzQKJz9Na-FWDlFd86iibLjGCreOtE39oCn80ddyO3hdY="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_ncKMVPFe3V5uhbOAyxEoXbYfpmnk8qX3rLLCuc-mkDEc5cfjh2pJZpSkK80JeaNieYA54FLgzBG_OmBFJ9n4rpXWaig16JmjwXZALHU_lIMy-Jl5c4GyM_XsyZjDe0xW2llgeUxpXE5htwUkr_dHdMFnXoRbFIxvHZleBtmUemhHO3fnt9s="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQBq4WwQLSt7JttgxuUXxaDBag_bfWDIY27Gwqx9r5QSSbsdGpyjkInhEzlG1eIPRr4en3xapjFNEPilYikko-I03StIqUZVSXNRN_gnWNYzoK0YwcCR9iKPpk-EyDS4ofNcWtKkfMg1NT3P020tO_PLw0fxTUsle7TUdSpUtwqxvjLXnX8HNpBA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsTmUWuViXAfBudX_5tJk1ucHPApwWXlEZRL-JRJ1fuNKoh4YuD63kqmNQOKjsfSwV33kohSTh5FPj4IVE48Ykf959TadclvVHfTUm4fvwpiseLtk72F6nprd9KnmKVZ1tS048"
+        },
+        {
+          "title": "york.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlVjMfzel71bUgw2s5jy_FlYfQ6pIlWYDEwPi7AwW-A-e402qJnRUl2RKKJpPF4uwqCb5pXv2bZS_n4OqXTUCpeb7xFWTFVodf0lUxa3I7PBgvLSbpc-TEFgmsLvLlQdp8XH9323eDJLTsJipE5BuyCaiWNu6FrAop"
+        },
+        {
+          "title": "verywellhealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUTcLiTWdWNzqjCeTCPtncRnF_DdaHRU6tWxo_DNjIxqR9h9CO08bF1QcWhTWMzqpVQdHeI4OV0HOJkjTrhMyraQIWlz_SCcwHiAIG9w2RY27zFs7SWD21WqFCaxvLXrVFr7v-fzM3BALVDNNiXUKa50lWIan4QvB2Yq4Rqw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gabapentin trials for Fibromyalgia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Fibromyalgia&intr=Gabapentin"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "900-2400mg daily",
+      "effectiveness": 58,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 360,
+          "monitoringCost": 500,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1010
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 33666.67,
+        "costPerResponder": 3366.67,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Gabapentin",
+      "nnh": 8,
+      "nnt": 10,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6.5/10 (NPRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity",
+          "percentageChange": -23
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "14.5/21 (PSQI)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance",
+          "percentageChange": -17
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "55/84 (FIS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity",
+          "percentageChange": -13
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 30,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "65/100 (FIQ-R)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fibromyalgia Impact",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "35/100 (SF-36 PCS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (Physical Component)",
+          "percentageChange": 14
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 25
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 20
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 10
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 10
+    }
+  ]
+}

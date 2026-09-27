@@ -1,0 +1,802 @@
+{
+  "conditionName": "Acute glomerulonephritis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:17:25.701Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "renalfellow.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHcyHCX04xAUoFmIcVkwnzpfL77TZNH3pUs-cNd65jUjam7Aq4Oh5rlqmdLmMmxjXWYWuDOKYXmFFYzBPCG0Ig-1zKFYtQW6XoO9RQl2T2rRFsfuOvD9BCXFwYHgzSue_3UeVKr351-8z5kBSfpD_y4n83aOisn7QdRCjpbw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyeB9rXX-N0AH4YOfD9K185tAYGNXWI-tbilc2cBYGPqYzucYHpcDvMYhn9RYIsy8IVChxafoC5b2U-J7251gdx-XglVyXQQH8au1sxepnnxSTFJQtZOuF2Peo9EZXQF245CefFZI00TOJ9gs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8kOLh_m6yE5LEhkPz_AcgVkWxBqdgYcid6LU_n6ZA49GqdNFoC2BpqOetBPCJAOoCKqpBlkb0w0xXc0i0opG5m8XAhAAXU3IOkmnrCbXoYPOgmiQGQvxT9bsVtc3CPzynkYewBm0m4BN5QzQ="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKe3C1t83dtA-PHxz3b4BqSjCMI3rzmKiRGQqvm8Ov8EsjiCl8MVFkJSAgqVd2mKtDRtmA25UqSleAGSuUosCuvFirnFA_KG4yhXkithgxyKFgxuli3pzY30DMfN3zcG4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1sqxmLyUPUvKTQkLKCk1f-XzJhYkBvTG8qGVkcG2Df0YZDhmSKMh1-ulKrSZBPxJJMTVFRDFLw3dnpNDmMtUjwWMogMEGGUWrzvciBzoEXUzYZJa9Y7rXpZyyLeAvU1tUaO1APzGNKYdy4co="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqE9hYcMYr9Ty0mOFgCjLb0WrgemaoRzA9O60fTL6y90GMVelFJ-4Q-R9G-OAJWKmVugULjTtnX8ou84ZqRdIFzou6Pt4RU9DY8gTLBokM17W-w3APGz9I5iDy3tYdXbmLqgkI1Y4fEZt6FT0sA1nWtZoqCgJH_h3E"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPmP_RF4KTIfjqz21czQ7aQt3K7FpVipjTaPidyZ3Xlhp3iA3HQsi-xCJB8p3CRZAMMtTdvTw9SQuMDhJAJHOtbay6gSolLMRAl39DP1n7-759nZoMLya_5nRs6X7qCiqzVYjnzUrNcYXR7EeZuayVihus3M9UP6nU7PsjeQRaM7RVoG1jfbtJImVwcJIJuRaUQfUCug4AcBnOgUTzPX7v1tLKHBkV4o8GSbJ3ekJyAOzCxArRW0JXPJxn_4tRttTAoNjF1xsAi3WdQUVNbDrVBxlWm5DIGt2ycPUbnX-kBIUjjmk6lDBbeQsBkKVbGagxNiTobLyvQ5xISH2mLONLh4b3qzV6EGplaPY4pTy8njU="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuqaKnB-nskXpmHfsZ0toq3K7n1PuK3EdMXIqpcrS5oZKAzxH0sJOWVte_aIwhVK-RVSh-78L-ftUbogy_ezRlgLV0jfR5YEHfVxd0YumTz_xmaKLFPPlrxP-KM2Ukv8HeZA0="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5fZ0d7rReKsjcCv2rAd09_tC-3gKUm8ow_y4xEIMrtrWRsZU7BfB5k1ZvGphnozgRAJkA6APhXcb-xmjDJQT_NvbIrqu06ZGgnmHKVFeCG5E5wlAQ47JxF1VKAdUZlbIzq7A7qyuRIhjbIkzduq8bJGeKmo3KVbJtNghURqa7Ux4d9FUmY90sPw0qDNFy-V5cPlNf2wxzjWnZ1m9qArOsSp7iclqpwAFwN1oEZUvj7PO96IznnFXAB29_rp1lvTn6IAHaxGMDaorfb_k="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIbk2iRFo4mVm034360wSfPhicj3h7DNbPuBU0Eh6FfDniHBudrBxLHjejyWnzm3v_iRjAe4Guzm-BvKr6e6u-gIBBEFApG57IgD1D2NzaUn2yor0QL5dvdm9Gjo8rpSDXSrQ0JRxMR3W3A1O5iLlZaMz09Z9ViIjHhKbGJ1gFTzkfwDbxY1ZU1LO2M-nJlUziSVJ9Px0U"
+        },
+        {
+          "title": "ClinicalTrials.gov: Plasma Exchange trials for Acute glomerulonephritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20glomerulonephritis&intr=Plasma%20Exchange"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Typically 5-7 sessions of 1-1.5 plasma volumes exchange",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 7500,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 9500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 17273,
+        "costPerResponder": 12667,
+        "icer": 2714,
+        "prescriptionAccess": null,
+        "qalysGained": 3.5,
+        "vsComparator": null
+      },
+      "name": "Plasma Exchange",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.6 mg/dL",
+          "baseline": "4.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Creatinine",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-90 U/mL",
+          "baseline": "Anti-GBM antibody: 150 U/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anti-GBM Antibody Titer",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+3.8 mL/min/1.73m2",
+          "baseline": "15 mL/min/1.73m2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Estimated Glomerular Filtration Rate (eGFR)",
+          "percentageChange": 25
+        }
+      ],
+      "remissionRate": 55,
+      "responseRate": 75,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 g/g",
+          "baseline": "5.0 g/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Protein-to-Creatinine Ratio",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-20 mg/L",
+          "baseline": "40 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10.8 points",
+          "baseline": "BVAS score: 18/33",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Birmingham Vasculitis Activity Score (BVAS)",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 15
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 8
+        },
+        {
+          "name": "Catheter-related complications (infection, bleeding)",
+          "percentage": 7
+        },
+        {
+          "name": "Coagulopathy",
+          "percentage": 7
+        },
+        {
+          "name": "Electrolyte disturbances",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days to 1-2 weeks",
+      "treatmentDuration": "5-10 sessions over 1-2 weeks",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGnP46IVot4RYRn8GcV7BG55GBQBCYoMeRjRmbKoA51E5vYF0Q-xX9k87KW1bQ4R0iirg3It68Zw04KBjIn8nnZX1TaJCkge5fu1iTXPu5FtjC87NR8e6R90_LQ0qWLykRNWlztFDdY71UWkU="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUw4CkjNNkk5xZK3oFxHdS5oo7JTQoRHUoeJ_8gIFENwVcHzq6EIuGT4XKm8wjA7lUYSu94UD5hBW0EZ6FyLKVxHMUialdwBJWPuj2wLXzslblYG76Rp20_ZbdckS5Nc6shet5V4_aNScMeXhVPTs5a-A="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEo-3BQQab6vrJlHOA_IdIAQeF2rZkO2dvoNSe7zFJX06XrV_5jcrvk3t4r8sVjetw3YXt9fBTWsGuuwyHRjuyq5T4q4x1atH9GxnyeGVRg491ED185kUMORa9HCitHcSS35xT9Q9JZY15oQg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCJY_9wJeUspjQ4SYoQs0zkdCvBpr53IHXgPc7PHp6Gwv2XypAF1OBftSFEzm0YAYolGc52bUwTYZbSn0Xiex7ZnRQAqXmmC4IVim-PGz-ukpRa9eqHu7Ow1YlVKRv5Qrt0hG_vZrOaDk9NQXFBcqrf95TbHAwPFO2KtE8QO06agQmUZQf3VT_bi3EXecH9cB3UM12TtmYL6QtcgMRYRk-q7M8_PuOhIFSN-faz3ZFzON-0VLSo__eIHd1AJjPd4uGLQJTtCsiCgM8nB5N7weGUU0TUrqO3FoJoHHTuLHtmpHR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU-AsksbcV0_329LHMHiqKfzjz4NguywtjB1J3p5Z7cdkmD8sioER6JFxr4sGeHOAaVvhEYy_ix99sTIeNAn40AVhJifYcNRtmFQ0uVe4eiMXecKJdvQEupyXsiboVeIhKs5pClHjXJQ_T7co="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXZAntnl5Lk4sYAa5N6NPGDeSE2YRxZoLRhRmOmO20-yKsSeDPrcqKGj4uqiyo2t3WtjVyAN2ZnvRYfiSfh_j4W4AeZvApIWgbiT5pD8nOEEpg7EWhHYT3QKn1_RtyE66OaTzu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1sin0euUsGNF4T3uyNSXerwdpmVPvAEpVs-IuqToBG0Bij0jRzuhA9Ty7uAal4FlLEwUBK9WIu-LUTiWhasCsXylfJOnayJMHMU6aQWlm_7MvMlY_6ByUGwneaUu9EcOqrheK"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAtZlBJtse4C7iZ7gEXwIVWNYVfzW-OUx3Vba5f4J8FOKJ5F7mqv3A-JW2q6qHleH40wqM3IijujE-Rk68jIBNN9HsyAjXUNdo_dKVBScTo2luSw7rPXkqvZJ9y-7MsYcAfOkuwOMSGGiO3OcVaODNPg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEps8dACsogS6xhIkUM3hfimoAG-AbL9QpCIuhK4tnJRnhJwHgeYBEDNlNNosmyrBwL8WrLqTyzsxTaGxvel15hPCVJDMfajPQMOWeGuHPS10WyvHPYTQ_zfFQyG0oDcghsEur17m3mn9jVRYrn2ZjFPCWBQbIzRyDL4VZlcA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPhkm-QcW7GKNG9k_7msTEeZDKv-68hUGXbufDKFKxXRhQhhYxfmHhGz5r4vYLrmB0hpQBG83TyPmoMVOCS6Miaj7CIvH2rM4c8seME6epqCgLPsqR_lZRS7zKO90Z-3VVJpXui7yUwI4kvAY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEECbo48QetoJXaMiDfhbN8MN93a_NRy62323kBtS4GQYPcjMwcw7rkQh_J9kEkQ2-If9OxtPJi09FVt8XQlHJ02EK3_SdWtsc0Fs2Qut-wmdoaPLLlUTbYgWYqPLxQg5-AMihZCD9b-D8N20U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbCBXGqhnS2yTUl6tHA3b6ApUss_gZTv3Eg2q3XUWmFB0oTxf9kwXKh3-YfZ5UaJd4ZBjT6qgOuxcYWdRDHeBVjBky5YSuD5wITd5cYzaAian4-FVKx0bwhXNrXnzdP81zkdgc"
+        },
+        {
+          "title": "glomcon.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3Af5oDWXNr8dNgcqCukv6jMOqAxCQurdNK8OVjVgi_CPfegfm6SmQkANVPuVblRNw34agNl_sbEj1bRrvcs7mzwpXfp1ciHp1MKGWxFbgMlfqn9anO-C8DacQQiXdj8LH2usm9ChwFLBqp9cQ5DCsfhYL65AtyAnV1LkjdntxfwvBXqmcCNIaEX5fbA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBH6N05zqXMU0tX0er-fM4ajL2_g7vtw5lOQfE00sDAY1sjzOahFkgJtGE2XfSZp_Tylp3r9KaxlMf9EspkyTw9zlZOcTvlanviiRlK6hAfDOfzcV8cf0ftqtJtbZm4svawExJl1h95x7OM5Q="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cyclophosphamide trials for Acute glomerulonephritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20glomerulonephritis&intr=Cyclophosphamide"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "0.5-1 g/m² IV monthly, or daily oral 1-2 mg/kg",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 6000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 10000,
+        "costPerResponder": 7500,
+        "icer": 2400,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Mycophenolate Mofetil",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Cyclophosphamide",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.1 g/24h",
+          "baseline": "3.5 g/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "24-hour Urine Protein",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.5 mg/dL",
+          "baseline": "2.0 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Creatinine",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+9 mL/min/1.73m²",
+          "baseline": "45 mL/min/1.73m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Estimated Glomerular Filtration Rate (eGFR)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-40 RBCs/HPF",
+          "baseline": "50 RBCs/HPF",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hematuria (Red Blood Cells per High Power Field)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 80,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.6 g/dL",
+          "baseline": "3.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-14.5 mmHg",
+          "baseline": "145 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "20/52 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Assessment Scale (FACIT-Fatigue)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15/105 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Lupus Erythematosus Disease Activity Index (SLEDAI) Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bone marrow suppression (leukopenia, anemia, thrombocytopenia)",
+          "percentage": 40
+        },
+        {
+          "name": "Infections",
+          "percentage": 25
+        },
+        {
+          "name": "Hemorrhagic cystitis",
+          "percentage": 15
+        },
+        {
+          "name": "Infertility",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea, vomiting, alopecia",
+          "percentage": 35
+        }
+      ],
+      "timeToEffect": "Weeks to 2 months",
+      "treatmentDuration": "3-6 months induction, then switch to maintenance",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFboLsajfHNYXZ-epInCB5KhYPYCoXgPnANxFdzSPDfA2fpGT9jkGEI0LbKjJSkaG3rFYF36XY2T135TlmpaVq8bs5IG02T48VsJpdRYvA2Fk5bUxUTQ-lxzmEm-Krff3RAKaD9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb06UwajuuWSVW-NLMV828Apl0CzbyM3BsMWkx2yszZkQBjasaZUaez92seo8nA84VdMjsShQ2wcIWvUY7OUUPKysi_NosMzcl0xLRFPwnfBcXuoWf2o6Yx0xRnb3G6q4WfdSWjScDYww1G_k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkQhy8tnHOEN5mPDpZNiEEgOIZi4Lg8k1V9IIA6x5mJWSFS3betuT39QgoO4L6E5AyrWklAar7nRt2iza80x_e3N-6pIEfCeT5KVSVZSDtcO2mRNARIRCSho_dXTQhYIpg5oS2"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBiwoWRESSUUZ4YJ5Jhe8OCHXqH1yH5NJkCUB5wSwbmfOOiviQDPFa6GaDZET2IyJjgfQ0hMRNTxTOFmZwwg2xvk__uV4VknpopgDytMXer6YGxaXoIamXNMs9ti8xpnKjFmBmCDtePXbuXWx6lHhA8pc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFFt8mxWz2F6zad5YYebRwxZhSCbbnK4qh2nOGc62M1hZYGo4LJEx0bVTtcivqZ3nyTjcJpt0ieDOJfrQEx5oeJ972cNPRiwZ70SWZa3WD42-H6xVkKFjzHjfjFA2BDEt-vNoAOKuxK4XhMhg="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE51PEYwGLSoPLClfM1EceQNhkPfHZN_QokxU4_p-sebxK5ZYkB0jXztktcy3OjNyq8H4xybV8HuThVE3MRgCCNLt7xsenyAuiWMBJtWwz73JPjd6bGsLTkSlXn5fDrPHy_nVl0yKaDxev_urBNtZLCjAo9xyKOfpIG"
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrKoH75zTTnyAw-g_07ETYKbZL3RsM7AkRmWhOWInmUSrj55OSBVLLX4ZZN2u11FuPh46aKA8Jz9EMzW82iJcF1z1HHG1kPlFsyr2vfmqKxPhHUHDZoklpufJvjLZrCdtpT_Tm9KPVwWkfJQ1RLIPv4M8="
+        },
+        {
+          "title": "bpac.org.nz",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj2MWRCCNaZccZtP5mXTD_1k32RaPhdGTnBQFINVMlFMMmpElY3Orv_f6_coRC0E8OndW0ru6Ia517YVtOut5S4jdaW8mjD0mtosgoVHQdWd5nEVLIl-HX-cRevnuR"
+        },
+        {
+          "title": "eco-vector.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpIc9Et66RnQmiiszPPMBdIEc5qHrUX2OHvbLnaeFcwH6nU_S0CUP2iPAQArBQE5uzcexwS8xy-2zl6s1B__d1tzpMaWlS4yQRqQFLXnSozt7Ca7RgChTl5OQr4yCoTky51dNOao6kxVaRSaLNTuC1TenfTWz_VnY="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE38lcJ7aVwUfXS8HDMROlBUWnGQTOr3z0zTI9Qifw98cWsF7yHKzsPC6-1wUu-qBffvtRYbv4kXz55TabF6gYA4pQKnCIF_wEojH4b-1zeyOaMnwWou5wRXDL8G0HChId7qUNW0-ZLAI5x6beW"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhavBieeqLh5GbUaCmo7pB5Yj7QuKYhwtpFxb7FgFGw_nEN1wt66UyTLVPw3atdLWFn5RJhpnPIEX132F4StRaYL-iCIjNQjZGJ8JCM-75bFlXXhmFTEYWKKI-r75RjxKCoVrdQBbY"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsU4olflzPEGiPxHDA0iIDVmBvkLqAjyXxGn4FO3nZ1UggjRWOpg4ZlsZ_Tu0sTgDJqBNLRar60l7BmaKJQfW7koFUqdqYaK0X24KXuonjOGpj8Da3FMilfJc5cJm2cxYoYDHwXfNa6mHilELotyNotXkhqkuKTGK9Rk7ZVFRlkzUwJ2sYbY0HylNPdtSpQnroxOQFxvE1v_reG9AnaYCZtXHx9MXBvcam1T-g84rlcWGrZtJ-kibRGJDl6K-4tLdMk3NuA9FzMVow-augOcmwZjfAlWwRcSkbMayR4FpByN5jy0O7rncgM682WcLsmktg7THkkbfbUYyO3Wc2bM9vmYnTQKb7"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lisinopril trials for Acute glomerulonephritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20glomerulonephritis&intr=Lisinopril"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5-40 mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 300,
+          "sideEffectManagement": 75,
+          "totalAnnual": 450
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 600,
+        "icer": 180,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Beta-blockers or Calcium Channel Blockers",
+          "costDifference": 0,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Lisinopril",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Cough",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness/Hypotension",
+          "percentage": 7
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 7
+        },
+        {
+          "name": "Angioedema",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days to 1-2 weeks",
+      "treatmentDuration": "Long-term, often lifetime",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBCWPEWQkZgnZRaw1bOwZ_kbVcfTR-K20ykRIcZ_nDJhIbSsX1XbgLToSYtp12k1jLV9-rTP6T8y5Y-_tTEsbWK3FZTrJ9_IgXkTV-k3iT0cGNB0HG_Woj1N-URBP2PwbKvfpFaVXma0dTTveLxZPLTi012qRn2rBDQytY9OYG_d3e-KPMflDb9RmGuJpk5AZg3iUUSyvjp-TTpj-5HztNCQhDK9Tz6a3Lh3JNeZ32F8Eo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTgZ9LcZMJnpP8uXQijDELSxChaQKeqTzQUwAGTVWUhBOoBiINQQ0yrQKo_AsZEURWB9vb7VNoi6RTmF8Hwkb4Qz62b1bV8PliEMX3mFlhF0GtxVN_mEHpZvxn6AJWzvLkFtZIbL7OAU0RA4gDR_HifQcA-X33bMKC_8rtdx8RfddJFHO6_oiVXJ3p6L2MCnKmQ8QOXGAswh8FNgsuRAK90QbmLTeZNFaCmxTp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKv3uVzRFCbEyT4VUl2Oi1-GfbGHkJl-D66Yrq98ZsnoPBoR-zaMq1MU_wBhIswd34jyTnQq0-HYoLAEuBCLhF0aV9qGGoO6YDHq_nHPA6fLgRbL0ZS5paMFAvBpPSEQiayxR2xDMxd2YMzA=="
+        },
+        {
+          "title": "ucl.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT9CGiFlhHaPLG3dzwMB3gKlxv53rWTbB23RRS3j5bkl8aG7Wg2j6IxPDt4RmczXk-OnHFUfYDP0jJs-UxPr3pzP7VkjPiiYRcmNp8yruRfY_OV8D25oMjeW51rk5xC8jGyHfhBvV87LqyAaS6oKT57VKlELoHMk1gl8T7fBvht_gSgQlXaEDjvD8YuVh7oq0ryKpNftmZhjTZeL6Oa6Lq15u_RA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzEJCfu9PHGvN-o0CW556hVyly_uS7zjdMflvYLZzn-4C6LLA-Rj52x5fxPe_GYrbFaUMq_wVqJ9mKvUJ-EQihwPY7xU_S4_hXCyiy3SQp1O0d2daguOwYc63bZ9KzqCF_dOEUoiOJdnI11Q=="
+        },
+        {
+          "title": "kidneynews.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET-0kzfqIKbDaLVhEHHvftcKDbVUCwXb6j8rrcmS9Uv_9EKHXPhDBHPNt94PYX7RgKknLWiy2hqhy6BzKih-DnqUbTP1VxGyPm0JeKR7ibT0Xr-5rBDUug2jvOsKtuORTX4L2SAXEazfyBoFNPj5fgJXdCWGGCgVIXIWJtqRloZaJDwBRi9w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe5aRYCz0S-0-rcdpIGEuKWHiODJ0no_maeNvLpmlBSVb9NmLvr0cGkocuaO60Kd-xE3Y3lWFGdAzmMeT8b_LY2J_DE6KCBTEb03suSX_S7wMkW4t4xvodYQlrMu7bH4zl2FVbX3rbsl09Ge-xrlULwmXNRCksnU5IUfbgc-4hVo6wInlQRZDa5O1VlfN_Ets9sU_y5W5EwW4NBOgs4KGq6Sxh3TJ3qOgv3y2_r_odltLr46j7Jm2c3vaN_XAlO24="
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZaxRNLCwl0M5QXdx5ia5_srvVPa34fY1xOfmWeg7HaHsbXe_dhrota_vsamL0kyYYOuxiU_DzGZVBNVVdgsX4L-6YTIIdyQps9wjoEmXYwafHnSoF6oOtFw6tHGJKjXh-Gtg_96O81AYtQXqZc_qlhCNJW-ziojbjws6TUY4XJ9zUt2jvjaj5cCpUs_VaPOuSO4Cs1V5I6yPvwKNVPkMFE2bvavdzVXqQjI1rtqhejg=="
+        },
+        {
+          "title": "scienmag.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwprYewXxXcWObvyaUs7UquWraxrrDmjTp1j1CrZnFcrOHS78MzRbDUSzYZzNy-lgqxaJjyWMXzEfKEzdoJK6GV37WKnFKORHRBuYRs-q_4Xj1z9kw5PR0JsINKE1T2dlWXUcmriUME9IV1aNuTFmXQTVotWkPY_Yx4xCXhD5NJE5zjYC60G15ZYPNxo6PjhvVhBemvQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgYB2KdSh69HkES3_Jm-MOLpkDapFPuyYHiwBY9dbJT3cTHr7SFuH3-YZuRH08J92SQdvnFU97-OXj_XXxaosB3jCxG82TaQGXtDNgz8cxkqLLZx8lOJfUf-zXRpZVNqci8ZM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Prednisone trials for Acute glomerulonephritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20glomerulonephritis&intr=Prednisone"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "30-60 mg daily, tapered",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 750,
+          "sideEffectManagement": 750,
+          "totalAnnual": 1700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3400,
+        "costPerResponder": 2428,
+        "icer": 1700,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Prednisone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 g/day",
+          "baseline": "2.5 g/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "24-hour Urine Protein Excretion",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.6 mg/dL",
+          "baseline": "2.0 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Creatinine",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-108 RBCs/HPF",
+          "baseline": "120 RBCs/HPF",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Red Blood Cell Count",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-20/10 mmHg",
+          "baseline": "145/90 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood Pressure",
+          "percentageChange": -13.8
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 70,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.48 g/dL",
+          "baseline": "3.2 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+12.5 mL/min/1.73m²",
+          "baseline": "50 mL/min/1.73m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Estimated Glomerular Filtration Rate (eGFR)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "25/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Score",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Weight gain",
+          "percentage": 70
+        },
+        {
+          "name": "Fluid retention",
+          "percentage": 60
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 50
+        },
+        {
+          "name": "Increased appetite",
+          "percentage": 70
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 30
+        },
+        {
+          "name": "Hyperglycemia",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Days to 1-2 weeks",
+      "treatmentDuration": "Weeks to several months, tapering",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCe3lduYz7FAI19Y7Vj05_eaHvsBsrZcVX_kEWc4kXSU_O_jXxyB6MoGFy8G1pnoiC3tGPXA-DdOOsWPBvllagb4Bpi1PatqJcmFMtvietiuVxc_MAjcOpHn3slzEiYFZwlM3tgylF4Dy5APU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkchkjDfqi-sp4s0nhCH3NdzrSiXQSSn6VhtSgiJf3ksoiq0n8AqmxIEnyWNSNsgym3Bxqeh09Al3iyQy9uwQGB52s0CzkdayuEDL7cxLeginALYgdAjy6fPfrDGkLcE-5eUi9_E_xrE1nA60="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvawPCyyLmKLjQDgLB1cbbikwdov2DDVr54brqWjwCWaTJN1OWM3nZftmNQzEfsh74eouWUwfHlgLz9Y3IoHWf_diYtts7pZHomS7R-7Pq7lzMh9QnElmUuydDr1tvRecWLau2c6orirXFSjAL"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqkHE2mLgjX2_a5PWIuOduAn_jfwPaSaqOTRn5fog-QAkdovraQk97v50MtUBLMbClihmLdnnvlvkB0L8xSxrraxy6FwBJA7oEYhB5JTsD0q6R_8d5SuHzjNxS9GrHVCs9i76T0KuSxyX4XwkMDuQUiegf8TjiNW0C0wsPTl7TMzWXXCIM-IvOLxQR7gKNA3s="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEULCAgY8-3BgxVQ-ZSCvHPJMcy65Kw65msAkGXCSHw4GdqLrK1Rnwaf-tdlhZk_sjqZVAjXBCE9StUeMniUfFiYJLaLC7k4QwsHVOj3-LBo_ZyMeURwzfp134JWGusf843LweCkMRj8qJAp9C3s4lIJ0cXSbDFz-ATPN0eTexKL4_pttA4eW__0OulFog9CK_v3cBqGooWZtiTuOFmI0VG7SF22wiUqmRkiTSJqyUA3A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUe5dHHdz2pwwf3SiH8fKm5ASrr8SQ-HhbFlqf3wckskMWtosyIlSaafj9wsQQYZ8LZGDx5U1lsyd6BZB8qvUl4zXu3WdaZDnso4RwYbtUsVIgMKgi2ol-vML231hoTaWetXdJE9wTVbFPC1VQoq90go-32aIg8CO2eEpwaTT4cyJYv_lYeGL4bGMPW5jGdj47ktA07LRdOy1eJuvl9ZfdH47PD0RyrSC9JW0SKMRP8GC8gH5aWDnHiXZc-yQhw7IJcWd6sw=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGIfvI4flEcl7kKURN_5mM7swUldIam17XOq95DE4nf5a41MY_yzxnUswTOaN9Dev2oFvk7JTTQ6ydOeB2BT2egmeWS4IzIBdADW9B0r3kEAyNiwQcJvTxHjO6dFx6--FhslBGMSFseqNaYuzmENJetXY4DYg_9xscKJIQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHHOu0Ld6Q73lHxENlyD6Au-SB4gTeX-SGLpI4bKGO7-EboP98aCZG352Bz0D0KG3uhq5Ek94UZmRPXs7YLqqr9T12FkeCKdLnSn8i_L_wUNzDAJa5xR96ejcUGU7Qmp8Zjp-3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLEy5WPlG2QAj4ga-OcryWpS_YsXfcnorAbT6SX8iUI266GTOqyh0UkHajwXOu_U7nRW0iknNtz28Mjz3TY10JIQbR7NNsFCc2_APH46DUR65peK4IwkUkdcQBqY9lJVkcfKmTDv_MVISdODL5Eb1q6fxKrP6n0wuv1gmSxYj5fS4zHqBzDqi32zCNRYkfSEjJo4k_ny1tioY10bIRBWA_OIIEEKPmJcjlWLnyXA=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuiaa-P_ftClffJ_axd60eCGciwP_VLq6oMIVSZGucGy8RtV_Z0vPNDpj-ypnsABHzr1FVA0RHZH9i6LcSL_4XLOQCuV3RzAYqHfPE5wDnyEFyOGV4TWKYUBWTMWnSM7k9OtnvB8mBtRJP5UbbNPtX6FLMKrPULBM="
+        },
+        {
+          "title": "revistanefrologia.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv-EiVpGrgOh5zd1-MTwzhI3zTNjxKGZj1pmR9XcUF7VComv8W8CBAeu9m51tVIlLRIp95VJFI3Afyl4Hl3EmHWld5Fvfgl0T4wTKSjWspG-a8euwzYZQb09-uPh6UYcJlt_FzCnYBHlYRT3hlVk-TcAecISZBEPV2IfzsTO37CZ3CGWeb_Ss_iov4Z-2k5ywzwwY-ZXRv0qGz3Daxigd-AL-NZvYK"
+        },
+        {
+          "title": "ClinicalTrials.gov: Mycophenolate Mofetil trials for Acute glomerulonephritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acute%20glomerulonephritis&intr=Mycophenolate%20Mofetil"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "1-1.5 g twice daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 5500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 13750,
+        "costPerResponder": 9167,
+        "icer": 3056,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": {
+          "comparatorName": "Cyclophosphamide",
+          "costDifference": -500,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Mycophenolate Mofetil",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 38,
+      "sideEffects": [
+        {
+          "name": "GI disturbances (nausea, diarrhea, abdominal pain)",
+          "percentage": 40
+        },
+        {
+          "name": "Leukopenia",
+          "percentage": 18
+        },
+        {
+          "name": "Increased risk of infection",
+          "percentage": 18
+        },
+        {
+          "name": "Anemia",
+          "percentage": 8
+        },
+        {
+          "name": "Teratogenic",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "Weeks to 3 months",
+      "treatmentDuration": "Months to years, often long-term",
+      "trials": 100
+    }
+  ]
+}

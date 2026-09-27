@@ -1,0 +1,861 @@
+{
+  "conditionName": "Esophageal cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:25:25.220Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjmAUHF3HWIiyi4St5WX5WW-eZyVWwZhgxC_c8xhxICVnXOQDUKwIVMUyQDtMoINDvr3y4O4FOOKRNW4t1WJYUEMn33Mm9hpcPkh8U9-9EUiMkJ9F5U5uVlUABTLy1mE85IBHY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEALpyTrfAmZYh5V7d65_fQ4AaV4vI2Ep6nKPr5cF_POFXYEHZd03HlDgjQfEFtwJt_FYJdS-RXQ4sPPD2Cvr0zp0Hsnukto52YrBEuAOPYEcZEx1ybbN5YXD5fsVpE7-luWRyj8sHPDD4JRL8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiE4JpkkWYFB01XW5JeDfelUGv21DISGG4h4t14ldyJjoTd9pHbuzcamP3Ff9f9bIylY_I7by0Wc-nq2v28QNigChknbisL4z_0f3xO8sptjeoFWSjH1nYbALkkD78dK2MVYlI"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMiySYLxPYM51c1UAy-ruj50qBbedzkKHqZ6EmeU6BwFiBdZ7VhzUrmMYBUlJIzIWJZLECCciRUestyqJiMw9LEcKnTL6WoSHUkRebeU7Up6bapSFSKpondTQJ6qULU9bvykrX8F8QW3XuvkTJdYUxMJgczZHbhlgBf7wX9o45zdFYaTtO9NQqL0Q7f-s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrzd_iK2_soQAg8AlwH8QeFC31DdF5ob2EeEhfJIGsFSdgR0fKBcR9AebMP7f25ehefHHMx7SUi_ho42B7lVhS6hW__RpSMMe6utVfpog-4hJV6T3Vv4jqubDnXGGMGc4cRDNvcdBKbsOKxJjQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHVtYd2cQ3dvJdhgpVAaiRFdS8nIzbkecSuuejivmru5I8AhqObeE2W_IIn52GNEknKysk7UvKvnY_goJftO-2uQ9bkV7qFhu0KgsM-KhXFj7syBAf0sza1ZNDIuMTqcHUpDYoAah9zG-CdQk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Concurrent Chemoradiation trials for Esophageal cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Esophageal%20cancer&intr=Concurrent%20Chemoradiation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Chemotherapy: e.g., Cisplatin 75 mg/m2 D1, 5-FU 1000 mg/m2/day D1-4 (every 3 weeks for 2-3 cycles) OR Carboplatin AUC 2 + Paclitaxel 50 mg/m2 weekly. Radiation: 50.4 Gy in 28 fractions.",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 50000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 80000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 266666.67,
+        "costPerResponder": 114285.71,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": null
+      },
+      "name": "Concurrent Chemoradiation",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.0 cm",
+          "baseline": "5.0 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Max Diameter",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "2.5 points (0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysphagia Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+1.0 cm",
+          "baseline": "0.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Esophageal Lumen Diameter at Stricture Site",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "6/10 (VAS scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Score (VAS)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 kg",
+          "baseline": "60 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "1.5 points (ECOG 0-5 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL Score (EORTC QLQ-C30)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Acute Esophagitis",
+          "percentage": 60
+        },
+        {
+          "name": "Dysphagia",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 50
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 70
+        },
+        {
+          "name": "Myelosuppression (Neutropenia)",
+          "percentage": 35
+        },
+        {
+          "name": "Radiation Pneumonitis",
+          "percentage": 10
+        },
+        {
+          "name": "Stricture",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "5-6 weeks",
+      "trials": 196
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERWWTRX9tRVBmDXrF5_FcxWDo_jp1GMDVWJyYbb68J-l1S-_5AzhZMsuz6ZyxWaxwfdnRbjd_mGufDW3-ZZE3HSNGi4fZhe39SXDKTemJem6NkNRAVexvMQhgmX3y4SiRiCUeRZ-fH36b6NjY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwngx6KUBC1EMbxUAWKcm1HjYMufk4rZRpVQcjEPJ-mgoFRxSngx5Y6oVWWufyvFf5piN6Itl8ob__dfSrlUjUuGCDM2JOUm5ViJeuQA1iAcJ_Nsf4aJUmY2R7LI6ul_RRawaZdi2ORoseBDo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi57TGM7poy-AaVnC5vUp88XLfEG51B6IsKfbz3xWiOYhUsX3Vlxr16kykkv7xQT2NG3AjJCkP1gR7oWcypL7hh8R_ckizTtIgeyxxYEN7WN3ST1Sz8IaMcXNz5Aa-j1tYDDXia5ebFgpecvI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe8BVUBoZ-PejgWKzFHRPOUPf1mFbRsDV4yxfsN0RyNJofONgX_hCj4txWpGiGwfOEW6mZjHkpwQfVdLTZcsbDhAbTZQrfntqWdVBECWNv8KaOUVD8nn8ZOS9fKaYntUr8Ki6eKsU0YGkXQogi"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMIHIQkI1vm_pgh88QDAylijg5vnQf7h038l5dagEd15A4MCLnfhTsUTQqeZP-1_bP2dyWZic0TW_e4CnPp1pTV6Lq4rKtv8MXrW2AzQzrOeF4XCrAW64y7Bd_M3ww4TvRCCmVbWQz1nm4lHFMiR6Og-OOdktxDIO2sDBdUVpI5kKv5IVmOSnZ1zr9LXccU1t0QDe7gcFqyf6uhxIUyzh1BwFO0SY-Pqig7nMvATFV-lh5xym6D9QR1fx8ZWc43r0HxCd7J0zL0_HcYRJXkjE6sfjMc66wnvT43xsRjc0ol1BZkyDlxiG92FIWN7Wm-SvNe8uvDVXUMP8ttWnuoeXok1wbz9nYB2S4TXggwV7kGIeSK2Ip2-A2"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsPx2R9j3AJu77lutTT6e3wU6KUaotqTqStQi5moKfisQyCyRJwgj8BbRZgG7AeyNABgLfHyIXUp-dvAKcgK4e5d9RmxRh9CbSdSvYb1mw3F6u6A_dnrQjWPqH_aYDElzfpcDYp6p2ljzyTSO2U16PzoXL5rkThsMYTF82D3Kxn01-fH19XxS07BNSTJIRW0s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8oGlu4DjlayjWI3lPHsBttz8OwGFoFZ5XTjKYPjhf9Z3o8L5xfdxqfIyNy4VPeNmf2VkP1dknbRnOp51KXOo3fAOTSoJia01UcGlQdGOauP3UqoeooVFIDNofCQDwQCD2PcKZPGMJsUUqIF8z"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBTL8GTbEBQfjDWdVlvkkpVDu2SiZjIRYyJUi3qi688Ujd_vGQ_viOgFMjmhxfPGQfhKb7TlMKMxJrpkMo9o553q6sya-e64CCixEBSR-Jq8ygvkeolfgNLoPS7blLCpu5zw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuZtkw-GOJnzTTtBPuaSzx32TpkBaXltEvF9j42EwKz_8FzaYXOeLNfsbKc6nWmADG-r38BQ7gjB21nPlVOMi1VBbmhVjuNmybDdnM-iJkyosutlaGbU6VEVrSM30fwTLl6idjcS15H0GkCET6"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgnBz6IRg9EdbhE5-9XOdj2fA3RVNf8wQAdOvu2ygLhYnqmKlFfAakRPWpJnW8Aica2ITbdE0t84rYqUwmiKXzyElDU7a_2wiEZTRKMQAqpcuBxlgr8caz80NshydBTRrakfg="
+        },
+        {
+          "title": "jchestsurg.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNjewO9TlH43sAnd0EkjFvbC3TzCRu7bZPEjR2GEi33S8V080jZUI-p5qF_ksjSmy5hkWb3cyhOnQff92Lmlk2GNIWSlb5AKj39aLPtncqaAXBWPmGtkjF9G8w-d5eKGfw8ia-xm8wXPRulteMYGlxYWVlpQzjbvQM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE63NY2wZV8w_DPiqQf9n3Ff8tZiHPsnLjb61pNJBnkEt1CMmMP189w_Ka5lrdYJhe9lMFEjJlSmtKj96mluRkt4e7MXHBPrKMsR7qXAl9NFYFT2r4k1Vk5cFqNFvbX-5sR4L01"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4RC017XS9wjNaMeJIH_KUQcrjlecGBWIZDZRHYWMCC0Vw2c-CV9kSzOCOT-0qtvYKDms3ciCiWb-_fuXODjQ3J2JN_PxctCZ4bOhiUW23RioYJJq5ejLBlOp7qIzS9hmZgV2K0WWiB9w3ZvteFdjjMQ2QQ5I-LFPqGTUvEdM_jMvpNtDkJNbRKXb3hd2jdnYclxLUKsr8n3bRPV6MsOybBVvU0SJNsMx6WONG2Sp3tOzPY1lHjrdUgMXz51ddYPHM-xahuQsIgUOaDA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF94WFKvZFge3pEHm7lY-q1J4jxuJleaOrnz_ThgxPBz_VmKuZHs3pPH3gPd5UuttfNGl6FlO0NMU1_SDqG-f14KZoYKMS0bawiIRD68H5zJ7eZzhediBZT7ZD81zLj-oIw-GCj"
+        },
+        {
+          "title": "asco.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJIkS5A-kKR7t6EBq2_X9Tdx5q8m5V5cU5iXb8QKhrw0nPrjgDN4YEXroS5px0RK01uaABoYpYpb8IkWSTaKdqTn5SNv1IOsHZXzUgOtp42gV2Ghhi0cGE4qpq1XgjD2UptXU0EDtRysPA-uvfAxxosWLDhq8_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG52WVz6TNBZ-J6ETxtXXG4dh_t3qvLefjcpbI5zszAZVJeckvDw3efCbILtfowqVS9fQ6784rgqlwjhJFWpGZ7ZHI-T1RgsljIDwmTxLwc6Uh-irxJIDUgOPCTPaJbDsolRdm-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYrNrs3uHtrc845IeDrs3ujoRqkF3w2huGRDNp4SzDg1FxPjcxixJ1ths0KcRa8Pd-KMULfeldYo6E3ZHLVnGBCAjcRbeFCtsuAX_XOzpiO3hu6fXJWPW_hICOPCUBGjeRS4zt"
+        },
+        {
+          "title": "ClinicalTrials.gov: Esophagectomy (Surgery) trials for Esophageal cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Esophageal%20cancer&intr=Esophagectomy%20(Surgery)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 130000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": null
+      },
+      "name": "Esophagectomy (Surgery)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "Expected 5-year OS rate with definitive chemoradiation only for resectable EC: 30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Overall Survival Rate",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-23 percentage points",
+          "baseline": "Loco-regional recurrence rate after definitive chemoradiation only: 35%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Loco-regional Recurrence Rate",
+          "percentageChange": -65.7
+        },
+        {
+          "absoluteChange": "-50 points",
+          "baseline": "Dysphagia score (EORTC QLQ-OES18, 0-100, higher is worse): 70",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysphagia Severity",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "+25 percentage points",
+          "baseline": "Expected R0 resection rate for resectable EC without optimal neoadjuvant therapy: 60%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "R0 Resection Rate (Complete Microscopic Tumor Removal)",
+          "percentageChange": 41.7
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": null,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+25 points",
+          "baseline": "Global Health Status/QoL score (EORTC QLQ-C30, 0-100, higher is better): 40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/Quality of Life",
+          "percentageChange": 62.5
+        },
+        {
+          "absoluteChange": "-45 points",
+          "baseline": "Pain score (EORTC QLQ-C30, 0-100, higher is worse): 60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cancer-related Pain Severity",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+0.8 g/dL",
+          "baseline": "Serum Albumin: 3.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nutritional Status (Serum Albumin)",
+          "percentageChange": 26.7
+        },
+        {
+          "absoluteChange": "+65 percentage points",
+          "baseline": "Patients able to tolerate full oral diet pre-operatively: 10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ability to Tolerate Full Oral Diet",
+          "percentageChange": 650
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Anastomotic Leak",
+          "percentage": 10
+        },
+        {
+          "name": "Pulmonary Complications",
+          "percentage": 20
+        },
+        {
+          "name": "Cardiac Complications",
+          "percentage": 10
+        },
+        {
+          "name": "Infection",
+          "percentage": 15
+        },
+        {
+          "name": "Dysphagia (long-term)",
+          "percentage": 30
+        },
+        {
+          "name": "Reflux",
+          "percentage": 40
+        },
+        {
+          "name": "Mortality (hospital)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "immediate tumor removal",
+      "treatmentDuration": "single event, weeks to months recovery",
+      "trials": 195
+    },
+    {
+      "citations": [
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwd7lFFmtN4AxEewPWe5dmF542N2NQsnGtnTeSpoKjso5BV596pM45takXqjvUU0_lY-UruppzIL6DKXuuV2_x1s1Wevit20XgwWr2X7TYspbmkudyA13aBIHW_Lde0S3gOnsx1Hh_1QwJqQ=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFyI9-0Zd_J1ptQ8QQdtEhGvrNLb8yjo6kDs_kQkI-RvTMBk7-5OVeoNKL237EgG7sqAmYZk91rPKw_uCnOwKct7QN0f95NYHfQfLrNcRzUn1qXpX9t6DIPdm6mLWxVwy3DP8nMQoPHaTyuQ=="
+        },
+        {
+          "title": "georgetown.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwtEeNdTy03Dwr3JFM3o8759EgE8RYTUapdGaU1ECbsEvpDJHEwqpbPZsS8tKc5_fEasEZTfg6iUGCFwtGDhI-3W8vK919ml7yRjlIepIefn3ceSTcU9B31209823f0nA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZY1QMxsksRXOujWCZU3Jq57CK5sKwHV9MHHToqhViHEsMB-4c4kghDBYedgI5_rnExm2Z3WoceC6ZjTXLV3KJnPvbqPHUgBG1LNze1NJ1ttkoz8DEp3xhbvS8NnaMwpsauJiLQIGTeT1Arg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlyu2LP69NFMxjuTJAv5-Ms_FeJ_B2foq1l8rEIKByiyxIUt4Kg9YBKUM0iUovaWWlwhLZxZ73d-GNQsVir1dmwsA2kTELa4JQz0ujCU8IQHhSmkX_WT6Pm8LkZYuFabA51NmhnZDj9G5qLg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHomFevFb-Bv9NEBFE52vhfjiNnEI_DHo6QCbV8n2SKM_fLOzwzJIEe-1JlKJG7GKoy_dT3D63Ia10H-GALT8RBVZLEjg9EZDcUqiof0JIwtJ_8w4iESaxXCJMpkjCXWxlMR-e5VZ9Y9htR2A=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK3SMBRGg8d8oDBpBWtlGo5s4XAf8QtDdSuvH0wXaCVNIl8ZqCCOzQTuQvqF0pNMXCpl8wlYDKtkr4Sy8F4UbeTWGBY7eMRgLBxDFOYqVcsQzKetLz0X49HO4CG53uLFc1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEedDUO4AkbLUcqKLWZWXoH8d9fHmi81QQwh63Kdmz7hEBOWFB5VDrC2tFBU2jr8aGXIn6rRaAX5DPL8UY88z38F08yDZfgKJfAWlSCCLbNoBnv9dAeEGQm3wWkQvTs0-zFMsvxuCM_D47BmQ=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEG8_DQ_ISIkbNaeFKONGHEYw4I1ptbZ_yNYSp7RPJ0IJv2K7PgLE0QvPsW3KScvd1BNGcoHokvstQWL7ffE8LPuPqaVl7UblUttPRSEhb1PyfIsU1JRJmxLzRph8tPkh-jM73Lg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5vR_TGamlofZes0M1BrSMbGqTVeKpGAHlf7ztsO8Re3zh_U05xfhdlgJoZEKhZZPFHnsFbC17654tA9MezloxV0fXTXBFyvMABjIhJipqCePZVQJDZZd9M04rrUxDOCWzhlaWVkUNkGux-Q=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsiJwrpluhBqcS3rfhIgikDL5Unaq4WtRIfZm52bTercCA0ggbtBfVyXQDGClDsQcje_ogvtGCXFTNnnWPiDSnvcGqccW7Vp8VMQFkhRLVXWqwFtg8CMJF6Qeo39iY49CTEMKuEjRJ2xxc3ibFPIoDYJQLZLjz"
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrJ_C964tDwx2qIOyrQiweUkBZeX2TDYzVuX4jlVQ3mpqZM3gazsU37B7SOvDxjIGQ5Tj44d7_ifonQ-N7qQADnNQP7n6m2vLdBZ5C2N32nb_wjyHc9XHafjOtynlKWM0xj0KWe8w1Wj0Zl7DGCdHEkE0sehv-fug9eAwGow=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0MeOJBO-uZxTsTVZTQR1oimQzcWm6A11occ4p50IDuzbC_Z2kvUtblUEKWTyFyJV9yLrcZHFmVOCMzzrGNCQJUBwImAcm3CcKlg8mlEPA0mVPgcaw5aipD5F9qz8AJBQZuXnsqthHfGZy3_s="
+        },
+        {
+          "title": "ClinicalTrials.gov: Systemic Chemotherapy (e.g., FOLFOX/CAPOX) trials for Esophageal cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Esophageal%20cancer&intr=Systemic%20Chemotherapy%20(e.g.%2C%20FOLFOX%2FCAPOX)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "e.g., FOLFOX: Oxaliplatin 85 mg/m2, Leucovorin 400 mg/m2, 5-FU 400 mg/m2 bolus then 2400 mg/m2 over 46 hours every 2 weeks.",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 65000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1300000,
+        "costPerResponder": 162500,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Systemic Chemotherapy (e.g., FOLFOX/CAPOX)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 5,
+      "responseRate": 40,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 70
+        },
+        {
+          "name": "Myelosuppression (Neutropenia)",
+          "percentage": 50
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Peripheral Neuropathy",
+          "percentage": 25
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 40
+        },
+        {
+          "name": "Hair Loss",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "multiple cycles, until progression or toxicity",
+      "trials": 3000
+    },
+    {
+      "citations": [
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDZ6NDO45AUQ8umLisTj9xauB9oeS46t-TXpCXUh4rdy7uUDXC6gkukhqrdtICP0JpjWKSGCvvuGC0vz5kozmJ93BroxCeBHsdTjXz5uKU6fqpyJ00qpaKv9dDqkSuq4ffTvqsn8_uDoYyVqyx87Yezb2n9IV_6YMnFMD1RQ=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcHc87HpIJtZlx4F7ziNru1GJTJPZ8rmVfWz1Ln9zihwuLL8g7KIqwW75VF--X7mPbtWvuMogjlhqMFvQXNlY9DW2xFfc0AIoLipOW5T8uRtU4rQZEzSHrYgpjlENAK3FC4KwA2N0aJ18vXSQzSFwi-aLY"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXIRwbKCgV9pB_DToIVsKob4npj8PdgWZsld-2QurH4HEEy387NI4UajVBwBMPh0gieYmyE9gb85b0T2JCEjgManUayai4mzUthT2rnmevJ-7NMDKhSjiiT1HXCXwqGKsU5bM6ZJLvnJMQ8QfdkDOZDWqmv2PWxz_nRnOAy7_xnU17cP7HIMpwcYL8MAyVU9xHGD1BAx_ZXK3QH-Rtqnd-ggLo8Y2OHjalW14RG_L8qlc3e8VeKrPQCePYoE8FT5LBETUFdE152bN1keQ4GJU="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8Z2f3fKNBA0Z-ED7rsb4o9PKIG9dhyV1QCl_Pyb0fieR7hmwC0qWbiykoQYj3TH-MB0fmDJkd1XJe3vAz6sU--ceHMs9GSbg49Rz3UwIEw7a6XcgnCBENR7EtgZ8tSB3z-zk6p0V3"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERzzVIeqoirDx9qRnV897JshWRJoL1w6OH0V4ztTjI0eTZ8dMhjJo0HLNsxZFDfGgoAEv8k-hfLvoqg1XUK8B6mDaf2oaU8jDFQGMbyZBzxoyBKLGCbuUUuCtEGWNUmGHYfswpyakcgx2A0oJQfA6brsDDhyU="
+        },
+        {
+          "title": "cancerresearch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6JKfhyG5TwgUVVwRSKOirai06UoaFrYCmsbM0RX8lx-NN1M4xwD-wZ2o7o93kMzz-_o8VI74fCnG8C6bSB4eAQSG-Kv5P0PdFMuAyuDQfet72ZI7Epb9T69hyVCWMhZ5L6ahH0vp6B2u1RVt-0bunJQqKnD2pKnDbVMB7hMF-X-nb4dK-YGwLPcWQnb59"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV58J1dKwCZ8qoH1buX9uc09du0sL6-KWD9I_V3Cv-eK-I85p2Lp8eFQDyFE_-FXJfN_SUIhWs_BLCri7i_PP5ldbKC9Oh6kUZevSaaGyuOw9ePG-cskD7dOvRrZhYCOeI7-ZrQAksE7zqbB4="
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExF4G_DZgqtHoq3q5H3yhhzXiHn9amY3TpTb6_3_mpQbMOMEJmKQf6PKEiTITXrC1UA2kGtizPaaC9NUCPKNvCd_2fi5Q3dRL65UUtHwIPaQkjJaBR0YUqY_8V1K-lendLs7uRA5DUHfpYT6U_y-1Ond3HzNVa-XB8q26LBWmX1AXYtgFrNmz6u3hlZvt2xoF2WBCUfwqtHFFfAeFD5uJm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVsf6Ln9twWsBlE39Ogg6wY-Q3Up1dzNsFPcT-BS7RHD48owC5A-TtF_sPv-La6aJpy7TQhyjsrGQiHs5WlljNoDVrDCZ8jNqRSS6_h0hP1Mxn3bDXgbheUnlm15mMOuZcQUsCA0t3CXavQq1D"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5mPwmlAgH9y8o3iFND8y2WcTBBfPvhxEyyZG2PAMBBL7eOPghsfIHQhc4fZBQbYMDKC9DB9oC1nh4ennhZj8A3ZtHzEkp3OVEY4OuEtQ5H0RMEjeZ-UmOVet1wFk8-m14_XWg76MNhvnj3mSE"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIyEjtrFPCaL7Rt8BlDJ97H025-Z69fASjgMUT9Yw-cp5ssDmAy0DjQKUF45Pi0WBHz4fH3YZARX7dXeX-VhMkhGHfu3gFE_LaIfP3HlTT-MLySfV-hPYcuU-mfp3_Wg7U8rSlx9P-P6rqPzuBZbvAHd-9MMCs7A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnRYz72EYwin-BghD_-ysm-iUdYjXK5p1nM8jA1pX_PqVGSblnIuIpV4ZzuUl68UrU2D7maRXplsOLzPXM6ZGZtLjyOcieqFLrScXtsLqM5zk83wmubdm77KZOp_3OlHkhEE0YZepPyWQ-MFIN"
+        },
+        {
+          "title": "acpnj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFum-Isa-SvHfOImMTbe8xi0u70T1Mx6AP1HSOsfoya6qf-a5zXIePvpvN9pRITTV-ipw_mS2Cx6n7WntFfj75cKkh-OHSvNk4Mo4y7uN0gKrlYBm0MuGBI0bb3Tf6ZjrFmw-uKM7jGqZXyjlp8VDFq5YriJtJ5Z9UFGa2_TukXo5576_6ZerHB-D86hx2R_WzzeSI="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV8Et1QwGveydbbND2cxoIO79QR7fr-t84nSMkq-uo66tyBTL96LX7l3kc7Q0KPUOUX7TUJ4-S0sha7kF2avWvG4C7fsHAdq8ZrDgbMFYSQmhTbwwH_3zUtwGY3XgwidXJNuhqWGLs7yEovPc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHdhQwCK1ZvympgZiuevfgr_2IJwohuz-lOagaI-2ig9Wd9PD2yj3LdrVqjiZiQTxdm5GRRPxxlhXeJ8qw3O1h8zHLC4ZyX44iyrra6Tz0x6zrJR19wH4aB1P9_4dudlvTYnGl"
+        },
+        {
+          "title": "medpath.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqfkEgs1HAeBOIC40246dhvOa22tYx5ppv5cw7aa_V7zc-IqKj7UJpEYecY0N_HWHkgty8xtS-XzQCtMuIdm3x_xC0ZoxkEQBPoxEQhbqrzoPsnaUm8sgia1vJQUebUzsM4xv-qnYN_yFNrDix049iBdrKzDye-wpAsg_K4sypySSGCcOHw24ZJ0a5OLXVsnobDzxEu3xO8mMWa3TxUOHCEd6FtfK8hgBG3rkrCrP1lfe8YnlwXfkMFnDaxwr0XW0HUSg5HSpykvG0cQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjPEsN93VHWD6eckIEtj-m_6RTRrOsw3EUgpKkyyVhC-KFlGnF0wnbrntWOYqsxw7Tw9RQFYFDDwIAEgrffjEW41LPlf_eEMdpV5268xoptbnbMGdiUdendr9kl24OspjvGgBI7JLribarNXk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Immunotherapy (e.g., Pembrolizumab, Nivolumab) trials for Esophageal cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Esophageal%20cancer&intr=Immunotherapy%20(e.g.%2C%20Pembrolizumab%2C%20Nivolumab)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Pembrolizumab 200 mg IV every 3 weeks or 400 mg IV every 6 weeks.",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 165000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 5500000,
+        "costPerResponder": 825000,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.35,
+        "vsComparator": null
+      },
+      "name": "Immunotherapy (e.g., Pembrolizumab, Nivolumab)",
+      "nnh": null,
+      "nnt": 9,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 3,
+      "responseRate": 20,
+      "safetyScore": 45,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Rash",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea/Colitis (immune-related)",
+          "percentage": 10
+        },
+        {
+          "name": "Endocrinopathies (e.g., Hypothyroidism)",
+          "percentage": 7
+        },
+        {
+          "name": "Pneumonitis (immune-related)",
+          "percentage": 3
+        },
+        {
+          "name": "Hepatitis (immune-related)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "until progression or unacceptable toxicity (months to 2 years)",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nrgoncology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYqP8XoNyoBX5Oy8S0l-JFJYCMlsY-0CPAEsvgnsqIHhFOzOTzYH3px1SsSll9uUZDM1v4dtSzOxvovg8VxEOv902fMeGdKM8qVDu5f5XjobwJBwsCvLXbhb42kXaQ5Ll47bEQ8z12b0_YWX8yBaRQN4UomhdxKJYRAn9H8FSJDQgF2CBgZQPRToRfniUVIa-cG0EbuuGpf2D1H7ez4RnuMsHEu9bbyAFNmWhJt59HXFRyM8ofyNEgGCeVgcwmtutddpooAhQElV2rJA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPtPk4gzqu4IdKyOsTZ0b9i8oZnPdXvIBusjQNFnoFovA-YnDEBiq5FoJq5hcvz8Tjmlie5G1SPRd1YlbaPZluGBMT4OSVV0_wcyp3N7wPQFU3f9l84l5qFfiBCDKZc8D5sspy"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnJv8DJ7vD8rHxeezXKFQj_146BY_RrnJHpOLb5UAqi3ETI8s0rGS9FyDS4Ptt0bZ-DAW-3Zoja7Ro63cfIDDl3GZ9JZdukSK0rUrgPZITRv7ut4WAmBPj8ui_YBYYTR9lW4U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGvyAOTzznl49UJdGrmCrQaCaz3FpMa1VOZRmodxLB_ZotD0227AzzXKZpVcdl5oEeve3TooLH6v6728apeBTcrN22tUa8q-Vc8sTqJYTnrOOI9trguXY66ErwPsHdN1NqA1U-giF7ZSIskqE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYiS9a3I4BPvhY1sw8OUi-iUtdpd2zFttVt6lP3Bhmtubmk9j1RfkX5y6SH9Bkk8bcQsBMjibZ9luRpZYs0_cRVtxfu0Is_Xd_i692nZrCG94Ip4RWMV2tT79Oy1wcOlrJehwIsZT3MPxPYko="
+        },
+        {
+          "title": "researchtopractice.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDwdSNZWFyj1a8tbAUb4emaWd75w2YE1duaOf8OwR0FP-JfI-_D0yJZ65VvsaYDD7u3mxSYKC51mUmsOOxL9LctGKgYrhVNsrZ8pqMoed7jWC9EgWwQtykPvhgI17Onl9yI2-vQdjn_Ybd6Xwbynb21n5RO20wOTvOocHBAbIG45RJ1QT-hQnxBEpg1ZU7c6OIPntS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxN8NfriHf_KqD9soj0sUynEHTAassdFVU6h1EM52SttWmoXU3YJC-mkkMNrOwq9KOU8UBj9Dp8nAcAToYK7Am21DCDTPySPK1zIU1DiLuo6WHw9ovgo5i5Uwi5WCKSKzcqdd7wD8HCidYwPwX"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2a4Q77KzpTgSZbOrGmCGGZ6ZRY9V8WPl0DKIXKItDzMv-9mMAOWRT53QJW0jvaeZRETdk9PwPklgUbkYFI2MU6ctrHuKuk2k-TtwGYvuBprfmRw595JmEE6fCv30tBJL-ohdseR1n1kJEfQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD09BpBCFTLUAy8x2tkYMYXuL4NEGMG8bjguTG5kaRgWzyw31IZNE-ZXqYpg7CMA6_0QqeOrmvI3JnLlxGROIiPK5JuUgNP6qzBxl9jLMb7GWKihb8-kX6pH1BJHyQg8KAM6SqVlDOmrl0SxU="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV_qyhhw9owx4s2Rg36MsOK_56_C2_98yq5ISzT33TtIB37WAqmP7FAdsBtP5ezjzjBKwwEueoMBdl2mizJZ7lUJTzw5bB5gZPEyFWn_v6LQTM7IZ7z5Z_bgbZAJuY3kYQ7g47O4MWOGKAk6VUuUlZKQXU8kWcKBiiQOwl78wS2TX88qY-amr3DOhU-BGU3R_qd6P0nzJMr4Z0OUnzaMySarR23rVoWm5nKjQlaB5T6TQZO3PiLHZEZons6PzFHRzF60H3ekSceWbFy8lK5E7m8N85wGi6CgfQsAXNFxptLTb5aXdWZRc="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsTu8in4t8Lo3QxgVI8MQCJ20NpmPapHLHC7TE-tQbyf3qmWnoPdncbpxR19Fvp4SXArGdv6DbtzFWyOAU-YXQogFwLijHGcMkg5dFMH89AuCQdIEK6Jz1mnLB63JBlahsAusMO3WILNugHcxe85LguHl8KbUOPbWVX3Kq-ChwmeC0PmyE5TTmo7lXaN-HbMWIMni5rRd5GQR2Q7_1TEzPIQRr7XWGIpDEpStnn9NB"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSyO4h-1R7u4uSn_FBViR1pdIoljRR1gbDW4xjpN9Ou601LcZPv1Hhk-twuSH1mXiIoEu1TYorejABdWTy8i0GUy06MxnwG74Ere21NdF_fmdETaq4c0m9f7ELsm5pw2XJQ0HRJE20NA03W6OJYMCXhUO4y6I-pQ2WYR49O52zZXWvtm3dUBwJbt_dJgd0W89-e-pRCXsQpQc="
+        },
+        {
+          "title": "2minutemedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPNuEgvDZqBlQa-EwGuHU-nzRjcPjY6dll_xZHJeq2hnn3AT0bEr5yMKSlxppV1E2YgH9jAPg2IC7zGz58eXopCjj7_N48aoHikydW-pD9YJDqLst01ljQHiLiV3-W9uA04L1BZhrgaBmvDPr3jjQqM0-uA9sjLYh_MbqDSu8O3TvzbQ-R0XRHVKPbRJFvH8ippOa2zJ6v1NFn53vywGxPIXlOuix7iNEksL3YSWJMRR7RSgDl8JWpdSAHmz8UxG80lpUVvEPW_DWj6f6XqUQaKYNEc4Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMa2XHCmkUEd3xaAWis_2Vls-9jnHBdPARjyL7uRhNThD7NOOarUCGxHzL6cBqXR29afCEJpHUDajJWCtSIcfp975bjmTfMm1pNg0bwCxAVs_2UBqRYtLhaEyFhw2mTs1ligBy"
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuUkUWErUh3N0FVJiXQIHiqG0myE1dyVUBhpJIQRlYuPJzzaDMA78y8TfRGNaIoghJqDPvbprpbE3mz3ADGDNVhPOUL3wU1tisWOt3g5kXkAdksSrWYDcuE1InYhpaOga5PHQAcbc8KodX9RccOXpBNd5IWuJ3mTFc3UxMEJ2rFxamKNnT-0uBpCYdNxaXCmsMKGcMQMaUQDJ4AfIVdQyr7nf2wOav5AkKDGgciGnqGy18Q1RltziD8mBLVw=="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhQXTczrcaHghiLBfbuALKWf66x2a1llLxsXy4QszU7sB026T4wr0fM3uu4AQRB4YFzoBcljFgqzFcm4ZDAgPZSNTmyY1xkupm2zwQUhlMvaHTkpLvXFLR2meeYKNfTqliQCfzrkS9e-flR1ABpR3NDWYbV0TITI_sVhxlpfXZWzBcxqiQ8RZtp4WAo-Y8pJAOUqU8QiYbKZIRp3CCvGCZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa7NIJudHXOBkbAEJeckcwC8FmxaV1ewTNV9wf6fRhMkU7u_F_-8NdjoLFVHYiF9wgMBLw3FdlUjkqMea6IMivW1zgAw3ea1d865OQ1ijn_R0bYL7s6jq6xLX6tc56Tmw9Sz_Fhl0-kqA_JaJd"
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo2UYvstkAWNNFmRTbPkUpuv5Q6UH4_g4JTLPncpz8lxbKv9tzLyKUxDq_XnxIDUqDyua36Zc1HJWKRpVYEPFL1rfv_wq79LXXKamU83o5WengU2lck4U8sfDJQrKHFlpICOMqtaVUzC2xBsMJsnZETzxZvddxVggG03SFTckTGKhFh9ETNVFyMDNYmA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Trastuzumab (for HER2+ Adenocarcinoma) trials for Esophageal cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Esophageal%20cancer&intr=Trastuzumab%20(for%20HER2%2B%20Adenocarcinoma)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Trastuzumab 8 mg/kg loading dose IV, then 6 mg/kg IV every 3 weeks.",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 70000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 81000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1012500,
+        "costPerResponder": 172340.43,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.45,
+        "vsComparator": null
+      },
+      "name": "Trastuzumab (for HER2+ Adenocarcinoma)",
+      "nnh": null,
+      "nnt": 12,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "name": "Percentage of Participants With Objective Response Rate (ORR) Based on Independent Central Review Following Treatment With DS8201a in Participants With HER2-Positive Unresectable or Metastatic Gastric or Gastro-Esophageal Junction (GEJ) Adenocarcinoma"
+        },
+        {
+          "absoluteChange": "+14.0 Participants",
+          "baseline": "4 Participants",
+          "dataSource": "trial",
+          "name": "Efficacy",
+          "percentageChange": 350
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 47,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "name": "Progression-Free Survival (PFS) Based on Independent Central Review Following Treatment With DS8201a in Participants With HER2-Positive Unresectable or Metastatic Gastric or Gastro-Esophageal Junction (GEJ) Adenocarcinoma"
+        },
+        {
+          "name": "Progression-Free Survival (PFS) Based on Investigator Assessment Following Treatment With DS8201a in Participants With HER2-Positive Unresectable or Metastatic Gastric or Gastro-Esophageal Junction (GEJ) Adenocarcinoma"
+        },
+        {
+          "name": "Objective Response Rate (ORR) Based on Investigator Assessment Following Treatment With DS8201a in Participants With HER2-Positive Unresectable or Metastatic Gastric or Gastro-Esophageal Junction (GEJ) Adenocarcinoma"
+        },
+        {
+          "name": "Overall Survival (OS) Following Treatment With DS8201a in Participants With HER2-Positive Unresectable or Metastatic Gastric or Gastro-Esophageal Junction (GEJ) Adenocarcinoma"
+        },
+        {
+          "name": "Duration of Response (DoR) Following Treatment With DS8201a in Participants With HER2-Positive Unresectable or Metastatic Gastric or Gastro-Esophageal Junction (GEJ) Adenocarcinoma"
+        },
+        {
+          "name": "Number of Participants Evaluated for Toxicity"
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion Reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Cardiotoxicity (LVEF decrease)",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "until progression or unacceptable toxicity (months to 1-2 years)",
+      "trials": 15
+    }
+  ]
+}

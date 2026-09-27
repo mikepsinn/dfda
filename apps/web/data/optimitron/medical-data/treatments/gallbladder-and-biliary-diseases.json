@@ -1,0 +1,896 @@
+{
+  "conditionName": "Gallbladder and biliary diseases",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:42:32.568Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtSZ05x862jLjFq8osAJ3GQtkPSWQwUEQN0mj1KpfGIHoNhVJNrQ7wBb6e1TPCNyTweLpp7Ea-1v_zSzmISDB8TvJHgySsKJ3wkOo03HcFVHmCTVf4vuohwRa_zG9pi6JoDq8zi62SDc9guXJz"
+        },
+        {
+          "title": "thieme-connect.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFczRrap3oDBWalfwKp3gODOlOqFOwc1NclA9DoeBrSVXNoYcITo3NLnDzjOrKIlwSAM1IUEoUZTY1hcMI1sVBEGTRphKQ0d1r04AN0INUwyF1D7vkuEId3IUOIyYO90wsDtJjEivL80aSuiU6zURC1nuSBKFDUjU2ZpvuPyJ_0ajN2xBUZSbusvdw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESUpQfs2n46abR1JVbmR5xUpxcnqIHw4YIJpzyK10F7FNgdW50oRmXZ1fv9Bp2MzJJgOdFtFQylznC2j-K5EsqX7IoqoyD4nYbcYGny1BimG3aOImI-KiabO77jhEdmx8EX6i1YETjX6FQ4-SCA6gFmk_JlpQYiYqCVA3lZePT-vGpdUi2hZbcVjf_Pt0molhjsvyKmK4A7XOz3HUP2cWyenYoY5xxWBuw_fEJhfxZJEH3I9RUu0FtFlPX-CKjNTAxJiSHLB75Aq_7DJ9nknMgC2zZbNU4r1o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr4vV9oykN80M71iyjR5mKIZbHyu2xk6vmO5SCADceMf9wKo0aFOd0fdK2R1I-OQ4mXf_tDpGXFQbm4_5MOCg8Z86sRvISde1afucjxXcMpN4aRL7p_S7psBSGXZBH6L-YbEE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx5-Qvl3TnuSMi9fSBQdsUlHb-_j11sECHzukThQ4S_FGZHE7_iNOz0jtb-0vVisEPb71cU46194lSnlQHlWviWB87AzEb6lYZZYoV4mrEHMHL7X069TeYxz8iZfIhOl3OaiyNo81RrMjDFkY="
+        },
+        {
+          "title": "alliedacademies.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkgcFuqknCmSajzWTvgoLV7ENFuH27BXgrl9_F2b6nyd6tpjGcaOM5VC_v9hCLhAACb3wCa2XvAecQKtDJK1_M7vn1-MwY3NGwHi5YpKNQV3pJrKQartY7CeZwTTYJqcfIMLqE_4gEcDpsYX3wnEX17X07fl0gpLt4WhrCCt8v0tzSmHPavzWfJycaXcFe-V0wlUi7FoAmXMyM3H6XurW0VcsZXuudcf-84FWF1QuQrIPrYYTu-cdDQiU7F26jh5gRyw=="
+        },
+        {
+          "title": "alliedacademies.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmyvDafJLpjnd6g4Y3uZFCZMnRO5NiCoN3s-P0qhZDwMa9OcZpau2gpfAfqWkqqVbrkw-79W4QABDgEDtz3PMvOun-jpJYp67IXGfhBSQqKjGH9UMKk4W4RKDigWlMrHNR-SfaZ6adLmHdt9fz4TDnmjgx0Xyke4sUxdoIpe0Olk0s9SzfsA-_WXgvwVilNUwpwWD6oCXfxeJtwdY8KlcsruBM1b9efXCsvrS99z9wf4pF_29Qb8A19BQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMTiAi1sPHFEus_PgZ5-7lneAn5bvBCVfiv7gkgRWsM84cmSVOxWOw8zo0e5PP9lu_K6QkaplGfXzCdCQUsC-3zqpMg7SJZsC_fyyqCL-5gxXjVGW-at_7PZJ0EXmD9qnXdiuk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXZh8HJWHp58vYwWlmsxzEO1toW-p9i0jsjd1rTijdGw-wmX0xouD1ghJie6FTsQZRMB5SyG75hbYjNj8scwM0vzC83H3lyNJAPU5K0wxdcrorNCZer3S1Lu4Pney4ArD7pI4u"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPbbY_tnpxogvTaGVYGdsg8zbytYwCH1E7vBGQ4Kl_nfGp6vUNnDWGTA9Oe4xmsh0KLlQyAq46ugMJv4Dep72t8Q9EbNM5qApuqnoGili9N5FzNwGb8yfJ59wh3-bH0gc51EqpBD5JtGiJjdA_s9eZtSCRvJTPVI85Jo5T8tPmx6SXpdamOPVOX7j2bgnvWrMpVtfjhWglPqCWdb5imvoLW2EVgVSGcEqTJPIf7r7ry7muxdSDPbzJ"
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErYgO9x-3Zg-A0pjDobotnTMEPFzf87PFFhUET8TGtxmmwdwxCNB5pJAcX_ccHPeGZcQcCytdXiaQQ7THGEwP9CxqUSr1Cjvzm0w3WqOTdG4BUByxZgx0mEuEpiKIQ38CJ6H5bOzg6F7aLybg7cA9td0wo-SSHtivJ8ETMDTa6ZluFtyaUU4eVf-9HCyqDd9OtS6T4aPkD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEODgYhOUb91S9bQfCPBgMyjAt-qFdgbp5iwlGL2GTsjdK71Sq9qOHE6Q8hjm53sa0qDEz5wahA30Nt_5CWndmlQmBpWiunIXHBMRuPvwNqRVQ6G1vsRklEo-WWPLt1rRHIpFnY"
+        },
+        {
+          "title": "ClinicalTrials.gov: Laparoscopic Cholecystectomy trials for Gallbladder and biliary diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gallbladder%20and%20biliary%20diseases&intr=Laparoscopic%20Cholecystectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 15000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 16667,
+        "costPerResponder": 15789,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Open Cholecystectomy",
+          "costDifference": -5000,
+          "dominates": true,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Laparoscopic Cholecystectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction to <1 episode per 3 months",
+          "baseline": "Average 3-4 episodes per month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Biliary Colic Episode Frequency",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "Elimination of gallbladder-related acute cholecystitis (reduction to <1% annual risk)",
+          "baseline": "Annual recurrence rate of 30-50% without surgery",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Recurrence of Acute Cholecystitis",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "Reduction of annual incidence by 10-15 percentage points",
+          "baseline": "Annual incidence of 10-15% for high-risk patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Gallstone-Related Pancreatitis or Cholangitis",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-6 points on VAS scale",
+          "baseline": "VAS score: 7/10 (average during symptomatic periods)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (VAS scale)",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+17-20 points",
+          "baseline": "GIQLI Score: 70/144 (lower scores mean worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gastrointestinal Quality of Life Index (GIQLI) Score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-1.5 visits/year (reduction to near zero)",
+          "baseline": "Average 1.5 visits/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ER Visits/Hospitalizations for Biliary Symptoms",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "-4-5 points",
+          "baseline": "Average 6/10 (0=none, 10=severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Meal Discomfort/Food Intolerance Score",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 90
+        },
+        {
+          "name": "Nausea and vomiting",
+          "percentage": 40
+        },
+        {
+          "name": "Shoulder pain (referred)",
+          "percentage": 50
+        },
+        {
+          "name": "Bile duct injury",
+          "percentage": 0.5
+        },
+        {
+          "name": "Infection (wound/abdominal)",
+          "percentage": 3
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 0.2
+        },
+        {
+          "name": "Post-cholecystectomy syndrome",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Immediate post-recovery",
+      "treatmentDuration": "One-time procedure, 2-4 week recovery",
+      "trials": 139
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6H_gz0c_pMuit3P98yCAS28cVnBTqriWThCp9PTvDxaw2g-1H7KW9MWjaq8pfd_JsjA3WwmGvfFzqmUjcZ1nVX8-wCgHWE5_1v_MG31iSpoZ5h6hNgjHm5TQ5WrYIOiIgL_wq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi94YFSYbZhpZ-TEZIKZ6rgWdyX4_oLdK62U-C4gruQGhWoDofD15dbAAbcyQCE5pERFgz8_fwg8V82Nf2d1z6gSZdjUFZT2UjGbMLqEK98QAOVapuIXN5L3UNdo2t42-EYWqJi4oXpNSMumo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCS1dVJP0f2vmuJHQjXTgtGsAa5FPcC6DT8LeQQiJcMXlJfRrqV6S_XWugKFZ_Hclr2_xleBgDv9vVxK058gjL6Nmv5re2byrlnwyKEpF-vZK_PmDa8mfGav7IsBKDewTQi7WYcYBbKIzwkWM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjoUcyrdp-J51B2O3oJS6TgFQfZ2RfTquvHqf3bFmix9uyCRsv_3adQumG75T2M_JM75FeHLU7AOBEBHNOxGw8K8uLdCrYNlKWGqu5y0X6389PE9meeDy6FmSH4-DstaZ8BiMS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK8gdUpt5ugiDNA7PPTg8VntVHunPi9OGb67Hl5CkaGLZrCtVis_qve8ipCvTFH7A3IrXcloPLk1rNN7l_Rk7_YsqeeylG5lrtBCqz1Wn_Uzkcn_Zpt2aWPMW81rBd3MlGy8a8u_IEwbGDmp-9lrmdIMsjP8qQB5MAMK6x0S6rIKc_Dkzu4tS3YJWR_JxMjTypTpGsQCpV7-Q8IgHs7cHXDMwZBKEWIrTTrK-4crIWPP7IO3yjuIfklWrW9h6pTPna3bpwy30BAf-G1rf8OtabR4LJSZGa3rfCQJACsM0QGADPl_XybZIZeO_IMaPp5jvdT_0QMUwTv76sUsisshHsha2p3pDnf6q8SHKfpvZ8ASCADA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaUJfv90VCM-La_abu74t0EqVBBsyQowPM8laZFWWOMBZAtlLNtssZtVp78F2bQw-ap5ox50rMdtvQwn71o9-lCEj8uBKWkxF091J2Yg7E5K2mmzG0X_Y0mlcVk-zfgpxqsyOOxYHM_uOgqVgnwbezzjoqx7W7QykSYfbtn2qvpqES3dtjTMOEyZwipwkiWwnWGymv666YDfS9TAKA82_ZNXFdlKuui_eQCr8kBnDIbGuBR6M5HHl-v-t9OfeQKnxCVRDyWMGQ4fGbjR9PQCJZpdsy6nT0nqD_yY0Nz2bxGAUzayiobEF6hMrj2UgJdpIYMlrKqWFGsHje9iFVD3ForuZ-c4CbiPRye25zaocXviDg7R8eJjmFy4ACCElRjUv4Epq6RM5afKgSWNMHh6Oygx1zvzs4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5YMtJUwADeEKDSArJYZLlendfOO9_CyRGHx7vmE-UdYH1crxhB4slrFSXV_U9t6PQRB1uPWjsUbYK2hvcivbRr3LuzYbfd2h5DitE-c92ImeFPeiFDxsmoK4cRbkSx9BzRE2_A9Cvvq0brA0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp9OmhKn8EFn3IhUQ2R7zEeAyOJG47Gsyz4kle8iuuzyPpVcUVR4dRc4koeLW3Zi3WK7hZpR3YpaF3p2tIpdWUFoG5dKC4BiNN6IGY-kjr1yK3-MHtgsIr3QPlqG0Ho72WjQMb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgmua7QE21qTAfLniAW8GRPBHExdqkM0l2ukkVgUkU4hKB-R14tS5HC4tLb0ITm8KbfTSHE_81Cn8wwjm12Je6-2YkBD7w5n6IwCraeXbIFAuNtuos4JMrb04YgOEicBguKsmBLOd7eSsEQRE="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj8rOUJkSENb5u11ieUax53lP6BBbPQ4-rNEzWBRbavfyRcAO50kehY1xc4cgWw5dR6W7QN1Z7T8U80k7nTp9B4JEIW2m6QOX00mCi1DjVTJTn7RTPfVXAiFlQm_9VOV_C9iOILSqDHZ2yotj3sj-xt_7xq1sYTzB0Dn603E2BF8WxqunOmat7G1aO0nFyGsCA83kMdUe2yb-sEQS_TXfxTDIZTuzEsU4ahoCe60dF7Lz2Owv7R8yLTFQuwLcc_ILSLOxYVyaJ6d__hlw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_0anzgdTPZj3SzhOyMQM7zr70YoYGGRlyd6-DNU_kyUhnsUG0bbR9I0ro1EkRUfdISdJRNKMq0Pl9AgaqlZOwhIuxZFGnUqghiHznNO5lUBFoeY1owuyH-s10_uQ6UhijVIenccl0KV71NfFzRuB87RTdOK5JbnlwymjXHPi3GJdcIjdC2E1GuAQyK8d6IfnSeIcgtEuhJvg_NdjO9zZzePz8lNjA0jRN3gHg3fojtJxHAvL6rLRYma_w0uhEBXBjW3mPFng9IWBnNPW7ijLX6uoZLbXK4A2lPNlPBZZQV3mOzY0TGEqcYAOY6EbJoJKQy-Y2ubwpx3Gav5KlTJKytHa_RBGZQXhOsKIinDKhWOoKTtGrXlNDFzIgAT_g3OmIdMcDzIByeE2xgC6eYSaLT21jin3weQ=="
+        },
+        {
+          "title": "thieme-connect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuCO4x75EehBMTCyFTFrFhTpbTCWmyY0IpfqRz4LgIe9fk89g0r3-rJWxHb6BKIluWfpvgpOTdaklB-PFgKNYnmUSpXYByrfJa8b9KC2y_XGJzjqfxMu__SkvlKsIH6ETfknnAAOu3DdKCQDqHr8p4mN_u4QPQBH10tt-2wYdwmbiTKcxti_w5p1b_EepwH222FXejupmsN7IYDO3UldPmwYPmPIUJSrcb-4GhXKLqQp_gyFo7WY7QTdfLd4-WIF3dJ_A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0Kol8w1qX_thgwU5iSBckYIDwOZkgc_Wb_I83NbLajEF8c_R-a_1eUYow5E9apRywXVx-Uu-wzvKf7BDuGtl99VrDiHOV91_i57IGmh1IAzUsRy4iC9Ol9yPvrYi7KYU4p3qeC1AhMRthe9s="
+        },
+        {
+          "title": "amhsr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQCRI6ZuhmZUmII0w8eKirdviyctpwgoI8ofEKg_K4uVaUppWQtQ1Mv6gFKr6K0Kej421bd-oQ5h_NMaANB2h6rYGKQNFMdu4RQFDn-TfiOwUDAgnA82O6TMf_JzJJ_DT7CdGId0lE61sDdzUWTyaDQWJnQ4ep2-GxNyuqES5zO2mXcGQNra58UhHpi840OmwgRYT7NXLh7M6fzduF9Bmv59OiGBP2-47ckFr2GY6fmWg1MG46LW3xsvC83_fDaCXdHYMzIAg="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEKLqGOLG1mMbJKvT1z6rAioJbHFdiEwqlQBmb77Icxm4CO3_N75WdXF6Mn0qb6-wPm928N6Sy2rS2WJnkS38QiTwviPUpRlVJLOdz_NpfTMpBopulPoWQE2k9uLbBrAeoVP2L9TXQwxmUVZbOIy0ra3zc42iSIn8BRouwf_oy9B3FfK3kR7RSscFHDg6RhTFDcZ78SL0cTFG3BE3kFHzP0YQV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxxOMKLFKpcO_-kgDXAOGgH3SgOAPrnoGuGBIZshS8-mSd-Qe6GCyDCjtyStnjTqLN1luUfTAgYBTv8JCG9tqikqI93Uja9cEuNd08y0amkBgKoeUfD8vyTiguboWVJ0D4An8mQC4YR4BlyDk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEThJmVdm1PFwnr4tlBY64tSpNt1Tk8nQ0hg5iZJfSWCDwDd_4dFszqbpWMIsADW4kw1vln79zuGLmOUUkCUEp43eHCIEgIX94uaAZLd87d22Lv4-05DkCrH1EqKgTGXOX-wMB1W6JxooQtPsMFEmaVAbcfIs4KKqZHssghkNR2HQBDBF531KdDwebsxl_7EKmOt6IgU2RPCfYj0vmMmu7pgmEix-yI3HiQZXFWkH_bmgpv55q6-OQ24WRDcEhiTVgZyBqQq1jvsRi6TvoN1HVKNgQ="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMFDqXRR4CWU-Z_CwdC9Msjxuh-8XriOf0BDBGLJWrlP1ZuCOeTZWZ6n_5HugsOartvvc3aoCQ_sbBgzHPrJxuo7haXK4PtDSpuYNReudTwMXiZHw2vqZzpL_XP7pwWeIA_oB6crWY9_NoA-32OdHM"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy3JWDI7gWccw445a8PS2Rz8tiY1C5DuNYLFhjN-FZN2zu8v64djaVL64A1gGVxZk0G3J0KvhPhaYW-NbqXPW3RlVxdxNt-Ky0GGgXPA2KBjWpzYtDS5AyM3w3aJh0-4cITn2hVBPbdpcYyLsKJd8PVlfEIj14RIsbfSK4nvlStYMdbJz_m9_3ireDwrmzqeYb-VlNvJ6tsXrA670_aPk9zQCBfW-7xxVhiIEajsxZ8CjykDh0q6RfTuLRAAe0vUJzvkjzL1a5to1vWTlAXW-KWEsK_Os_9PGYSk_wfdigtLm0FNu8cg1kUTG78D3LQvk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Endoscopic Retrograde Cholangiopancreatography (ERCP) trials for Gallbladder and biliary diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gallbladder%20and%20biliary%20diseases&intr=Endoscopic%20Retrograde%20Cholangiopancreatography%20(ERCP)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 250,
+          "sideEffectManagement": 500,
+          "totalAnnual": 10000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 11111,
+        "costPerResponder": 10526,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Surgical Common Bile Duct Exploration",
+          "costDifference": -7000,
+          "dominates": true,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Endoscopic Retrograde Cholangiopancreatography (ERCP)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.8 mg/dL",
+          "baseline": "8.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-455 U/L",
+          "baseline": "650 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alkaline Phosphatase",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-6 points on VAS",
+          "baseline": "VAS Score: 8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (VAS Scale)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-8 x10^9/L",
+          "baseline": "16 x10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+28 points on GIQOL",
+          "baseline": "GIQOL Score: 70/144",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gastrointestinal Quality of Life Index (GIQOL)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-1080 U/L",
+          "baseline": "1200 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Amylase",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-6 points on NRS",
+          "baseline": "NRS Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pruritus Severity (NRS)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-120 U/L",
+          "baseline": "150 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-ERCP pancreatitis",
+          "percentage": 7
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 1.5
+        },
+        {
+          "name": "Perforation",
+          "percentage": 0.3
+        },
+        {
+          "name": "Cholangitis",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "One-time procedure (may require repeat)",
+      "trials": 33
+    },
+    {
+      "citations": [
+        {
+          "title": "surgeon.co.za",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQZSESTZ0bDi7-uQBrTNEJSK4CgpQdZ5iEVJRzPPqpK-tpCZHe7gDjpnSXxlJekZ4wcKd9bhu00cidpJuCliVwBIuJJ-i4EW7N8L94Dm-5bzemRB7q1FwYTCNu3axPYd97iPK9psCDd7flaEeyccnFuO_r_1E4fhDQLll3vPWP9yujgrSSYekJib9eIJKTryaEpgAHEMO-ddl47CF02g=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIylc_9QUTVCsA0T5uug4Q-IF7aeiaNZ7GcRvxGX_h5YtHfU-iRot0Bv9WRR2XW9fZG43JNBxWUFjNNswY5HYjkxH3DtrBfqqiGHqdr0VfrV6ddsmMt49tF6n6qzqdgdXn50MJDMGGlgdKZ6sHU1b3W-ubwkw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2KmBqB1d_nWJRXIcyEbmSFAOxmBV5d7DgjZJTsvJBBTBMoXUkF5iYZJwqwDjNJdvxKpJck5UCr9iNtpRQIsgmFMeh-PToWYHsUxWoMU7QmBTGrbhd9J1C_pSkvEprS5EOofHEXV3Gw3U0wRbSs6W1zLNyGBxWf5L0-jj2Ebz799aC-7ZdlI3E9JIKgC8iFMdMFHvio0500A2loCPif-j6LhkUzaXqd0aHwhcrmejbHcS_aSGLowMpKA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaK2dsbxZdNs000P11EE0BNM3l86DPeHbMXKCjxRWi90rP6DYKL4geYL_BJMim6Q7ZY-2Mll0omst2Yy70R6fDi1M4Q1ugrxaIJFG1HMQkTGoCrLP00_JAzL_LtQ7Wp6P03MD3wTBV5SvF_vA="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpl8cTdGfWoelgKSr12T38bgdlxGRhCU89lOvV-xEMwIT2GZTuGN_E-Jbm3HyohijoctJOZrnsrk9WGyugb55WMgSrVupTg1DKSQkoHqM-nQn555P1ukx_3CVWwkAyL1Qy5kACGFKykXZOgZKIJkVAY_s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtE8Yi0ov0EpAKoT3bjnxG_Xw6SfWjmAOHStW57V0YqvJP_W2Z3TaHsIqH6HUnsI8OgEh77esHFFCaxBZgq4zPB7xM5FLSlR8-Lsgj369wCowrf_ZLiuCPMvNHsU1NyTSF_CalvEhe43e8iH0="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_AmgvhVEOiLMXaAs-AJxWp68K1hpmlAsVMbI0Hqd0WrymmgnMAHCf5d77lhbJK5dYagS81laB7p2qeD_o_7LfErt4Akyvaoqxt5oielSyRHiqEkDSnc-YbmlunqmT7_IXhvE2C87Y0VELzT_mCB6Mr2ZMxFpOTV1FBtI34rCqAfw3QVCRo7wxJxxWJW1f_OYcsBb2v5i-rGc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZZHlzh9B_IgjKuE60PZOhDA10oazpnpYDjIyO2VAzS0Mu91dziglLaL1I9YPWnpUsFZA3Bos1qTkSjAFUugtUHr1WcBPH2HuebnbhrRxBORERA2ZbbcSmOqetK5DSTUv8b8aBq6ZtiUb_0K0="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqF2omxwxOAp-8kGsF_fEwVN73EuIsT0fCGjb1H_sQiSzD6XqP5Zkkm-m5mZu7Cj3cJe2CVZ1HqNRHbx2C_lv_op5rWseYWwblNMrngbWJAs3WXxquTCXVBVw0ahYEJYkWsuXU17_IhSrY9VP8DL_P7gk9"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESooD8o_VHU7jpc5KYfG8zx5x0uvWd8IluxK_JcQfGJHK49VuQubnB9zl8oTPPlq458Fj7UEGJt2U4YdN3r2lMWl2OPkWNsMMSlZT0_wvaQE3fiXXDlJ_H6i3wn9grBHdiA-hcCC4ipMW5uCwG65w8XXojWxesFYoXxcKPdL6H3wJ6RZ4yf0J0XaAaqFXELqP5UfhHEAi0CeXF2q5QU22-K5qfSY5bA_kpmPJd9JYalxc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1lEMnsmh7uGTAQZYy-5DkVktbRTtNfyPaEHFbyOr7k_-zOS9MhE2VBoIV-G6a2b394tBRW9grO7ELviphhC3j7stS5hcfE3-CANPLNRnkf8aZi_4BtqNo1Ph8IGQ54-NSh0Zbv-dYhM6CJ4U="
+        },
+        {
+          "title": "umdaa.co",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGRq42Ln8Bv36c0map0W8bvhYGwWB2IeFLj7Yq8BHo6H3vqjILhyEjr_pnGzZXPTxm6yVNUTug5LRsw1oPEU7Ex1mOPmwwFBc9s21Js7QqJSieqMwBbBPVrEKlgolQrG2sE9WVhcjNSGCA7tKGaVoVpfYi3P_JkXkkjFRZH00g0-rjlJfS3IVscG43SHL8FXUf2OiudKziH0nMDaqnCr0OcdDSr14YYyNNiLAWr5DUzjEH-34tLiNnMoPLG6e54ptitps3BKE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM3usdypraPadoiBjsS5iWNsgtYm0EPLKK_fh5LPlrL74bbXESiOcDalisBhi3sbkdLPaQN0RHILuKdXFbwUZ_CpZTHdb8-v-3d_hbFqOZ3xEzuYlSJD-4MgGuE8gY4jHdsVT0K7j9disexQcs"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPAnVAcJGYzm06baXLV0schRyJv2eqcUMVzTt6Q3wvx9FqAn-kOsKE2DcW40HYEjzu03kisK5x8kwq7rH3trhNnuF_dRF3TliTkAYt0FHGxj6Ih22uF9PO1i6KOV5kLI9q_A6MqGvWCzMQLDmxeFUt82PPCK9I9Kzqsw3ePhKeR_tglEeKVYno8yackto-QS1McT2FudjAryrlfGNWdkfrUrHZs5ucMHQ6vhZbWoCbntjWUVkBVX5HIXDtlEKv3E2FSG8M45cKaAV8wUOCXUwJVhS8CReTzPDUOMYQ7XdWlbF_WYRtoONe4eUIiaAqd_-RCVoapxB2bj0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcyTDcaJCPsifHg9fR2eJvAap1jwPO0sZ1za-B62TIzmo3-QRU53SrD-WdoFq36_x7SqWLsMAI1ZOiL6_V3mC0086ciLmdzvB-t2OCMOECy3ifeanqXUEXW-ZPwY-C1coMok8="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaEsz-Hf0K6c8Rlex-8mv4i-qSdkieNYOVckvjr10I3WcBncQ3m5kbib_A2fhq29Gh2OjJe4gv8raVFtIgHMGIaLXCIH2y8vHgbftyxDL6l934fvao-i9Xmbun-exrcp3_pF0QEn1jCPVwMy63Bfds"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnH5IinKqq7JHv5_cre23SwtEP_Hpy1fyutvbNEBOvh0fm0IT4nI21gdsTQ0PYRKpZ3ReZsxGA1lXnMwZNP4eIGlq8vE2DJovMyC0i9vYQTmyIrVMEf4me6WmqzeLk111DEjMj_bK8ErmIQt5wxDaAcpygBa39IqXJvOt8c5XMcxRW9fpFrti68gNYNJGtCPlqvS7q9WDIZIAmHezDByneyBh02vyJrZegiW5u-f42TroqY34bO05qWKBsr5xxgy726Ec8YDdkAm5XPZax1udzJF1nyS51pyebnWwWywqX5_G-ec3Fg3cviKaY-oijgziRgK6-rvUBFX3MlalC_Vs="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhsfSDASKPmxLLvoqZVY551965GMJ7mK47h17Eh_UFM7aq6W6Awis_xF4OubtUtTxmcXWQKYF787QdED-C7y09511458qww9XsYdiB_-IVk7eltF7GhB4Q0YncB_h6ic5IOm_igfUuCLcrgts="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhS_QmR0vR8SUnhH1wXhDor6Kv-xZQt_Hq9FqGQ7s4WDxPvOayRaOivZyDLE4gJnWBU9gNZuWsrTJYWn-EjLnTfhQ6PPOXs1Y2_R4v8gotwXhyUXuejzJMJzj_CmPdMOxl4JddAJoeCYvE_w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Antibiotics (e.g., Piperacillin-tazobactam) trials for Gallbladder and biliary diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gallbladder%20and%20biliary%20diseases&intr=Antibiotics%20(e.g.%2C%20Piperacillin-tazobactam)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Piperacillin-tazobactam 3.375g IV q6h",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 100,
+          "sideEffectManagement": 200,
+          "totalAnnual": 5000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 5556,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Antibiotics (e.g., Piperacillin-tazobactam)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "NRS 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity",
+          "percentageChange": -71.43
+        },
+        {
+          "absoluteChange": "-7 x 10^9/L",
+          "baseline": "15 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": -46.67
+        },
+        {
+          "absoluteChange": "-40 mg/L",
+          "baseline": "50 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-2.0 °C",
+          "baseline": "39.0 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -5.13
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "NRS 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nausea Severity",
+          "percentageChange": -83.33
+        },
+        {
+          "absoluteChange": "-2.2 mg/dL",
+          "baseline": "3.0 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin Level",
+          "percentageChange": -73.33
+        },
+        {
+          "absoluteChange": "-4 days",
+          "baseline": "7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Hospital Stay",
+          "percentageChange": -57.14
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea and vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Allergic reaction (rash)",
+          "percentage": 3
+        },
+        {
+          "name": "Clostridioides difficile infection",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "7-14 days per episode",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBldfr5V3EDTPuRTcMPRY1A4E9yl4AHSEfC3AhCqz1DjQ-tXhcKaCcEta4WyegQpqLP3kVLjWi0bKN-WpF7Kb9W8t5_-GwpWZb8j3nt7pXjRgzCrwGhwx3pjfkRlm-ZINtLISKYZbqa79-MAesdHOyp5s7z7vDKu1-fv9yoOp67tveMEjSsMOfnvkBBdkzxBjRKV32VUy9EHUOj37eFoLZdWINO36nEcjUKCpe8pPP0VKoK2Ee_na01bY7TZn6W0v1vzfJmeIRbuEg_nTho0CWmzTxCoEWYXKrAAjiUg=="
+        },
+        {
+          "title": "falkfoundation.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx7hiCWmu3Nh43795FFtnmImg-NuWUe6AQlpkUpkGtE8U5U4Ovo8lRimmW29uaHjlztsF2zxDwYhBD4VdClKYJGpTj9IBgQCrCIFgyhor2TXpd5-zCNXalAX_DOZe3FerStkqNTfRXAvLZr_bbyXsza9QM0yF4uIvbBosNu2Tw3See3kSKbdMKKkH-wJ00kdjwf79YsizEa_vaqUW8fdkaa0ZfLnKLhojIF31z-dL_xMQ8ujyyd4yNyiboEqgM5fKMJmW0ARs7rb_uKLe3bsTzopHBbQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfW3UDgnWxVtvK7R9gxLXw8tqLaumik_VYcTPGlJgCfg_XTjA7xlW0A0Be44SIlUwgDyxh5myMAalsNfqcVS6wHicdyGCh0sismOCi-TmqPLujJnDNt6Qx113XEcj111NYBZe2yUGun1KBWQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErcgjLeoem2LzcX6fPQCKvG_lcL18wGi2D9WWfxi6VfQmhLPDGLO5cLP3gK5vF4KQHasVaOr_1Uk-96Ev39p8VYACP_LiSXLhWt8uFbgyTeU2JfsnAavFG-VnR70j8NaRYyu0="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoMFHCSz6rBT1RP6MwgvZJfTXmqBtpsnd_X-B6ZnzdgdwtcJfzy0tYSUQDXK7_l8b5ndH7N2ZEIobxIqWhfT4X3jw3cGtRNDkDY1vZ-ASkml-abzgxvFex7Dt2uuweeEfiLSBVmNxCmwst1hg="
+        },
+        {
+          "title": "ecstep.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE85uyX4ir5P0T-b3tsD2n-VezE6HeIlEur7psUv-FiFQdfGwXvBj3z7_9AVlBxPzJRN_6b5BseT-4-iD4jSPSDCxYfk6qoLhzb4btOg-SPqvsBY5L4kcKKAsuQsOph0lDhBdEpyt3jD786iEck2_HqySPJflHbqqG8oyF_fX5oOeB2cLVpLBjAyDUBN_JwEyleR49_9Snmh1Q5EtjiEjjVMX0AqFizqqBsHCnfh_UixW9uHhHNJl-ep8CWqS-2tVIfJVgCQrepioMjayP4Hnx0PUsbcCLLmq22tO8gxhBey_Q1vOy0guG0yU2tDarPCjeXava4sXyF7YdqQeM8OXrh6T3lHXlt5mUvVc1v7nSNRl93TWYiZ8GrIs58Vwg6qcjNhnwuFGcT9pZV"
+        },
+        {
+          "title": "sigmaaldrich.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPWrAPqZ8Zto_djrsaQtqHMkzL9nCyYxXaFm6a7IVWgnh0hQ4UIqw0DLipR8gG9gAKJ4J68o_n_3MhZIAu5PiqCYNcvbDY9caCZKpv6b8FHiqHpNC98R1CsQQ5TPqOs2WCPD4t1DlIqcELHIazpheepcWE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWzOZ4TB0UXIkYppXA2uyqGa9CYX5uGVowBcFpnQvwq91bL1NVCWRM55TUO9D3TnVDsmMlwQ-XInhkBskh3b0mx2Awm9el-9HZxqiEkyt3bI52twTKKeSg2BbENJrovFj_A7M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOlcaTp3n958M19FsnaMb4Pom_EZfMNp5vhU_wkLRbnU5WDpnSDfnkBUsMb3BxEm2NYUD8wOWPPjhlsTsxPzPnAeM1-75p7SsKb8ox8BU2YO_GjGWsvtBiKcmgoj9uMmRQUdc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh6w9Fkrjj7i1he5uf4HyH9VIPC2a7IM53Gd7VYvcvG9tkA9rIVXRLyDDq_UsudTLvNcvR7kom0C6A7OUREP1nN21nh7Vi3o9DVkKdCHFENeDeUzpBT-jOIQdpZ0gyfEC6vMc="
+        },
+        {
+          "title": "pscsupport.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCivFA3ypVzwH8npQqRniWs9On6SkWa1HbljJhbrSP9DbErMEjeiCOZK4uTdEAZrJkqBIN2b2r-U6ZLcT6ktI3DB08vXcvwH7W5K3KPe3MV7AIC2e-7ip27A1FA3cCacALspnaJYvu3oZP5xY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwB_0-EgcIxhIMnfbzRqizBXC4JSPDTkjvgMg9VcnU2c0K1awjW_kbda61GvoScBj7mPzYF1CdxcPbvImbXrxx_eRpkRr01gLRccTEShtiGwYNQufR6em1GSp8_WG7nDy6VrC0baznUlTcJ1ItxJizMC9uipzV5vZl1ub533y3Kd4XvNLpEZEeTlO_e3AVHHhk2ch2CJtfp0N4-tcnXJ89UUjX7uFqBl6k"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoNyMjMhucuiyDlQ4OTMm5jiY4p1wZRuPSrKIv4VnPNEnXhOPhXelL8fxrGX992mOpF5DvAWlxld2hPSZyDY0lyMrrTnKeKlMM1OYbhjWfiWvrIGpvhtbkH-kAt1xgNGaVCQ=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3OWopBPw4rY6xjpIMGw08slt8cUYP7hM7HcomcncXgOI-lDsRciFrF1L10zrL3rrtwT7a2-l02yTUXK3X9XH_tQjDxHQ8KSnsOT2oSX-0eT3CEmIwgKOSHwvBVS40ocW5_B9KSQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaRRqhnTkT28KpB1HrqWHYwaah_wwNKf9lgnO2YC0m-XFfibXyIl8Mi8SVwfjl0PW7bl_TlCYzedwZ_BUG5u4TJU45oRWSn2SNLIUjAGa-5qpGK9VDEGrH9vUBZvOyTQT-r1hLVd98_Ot70sO55eOjuhvbC1b2oyS3kX_n4eRzAUt9pZDL_QoWsUrUjwh6TzNYPtT7IWJ2xzCpEk-icCTdQgrjGY3LWX9FJ_XiNrYdnLHMIq9d-CopcFU4ZgCX9bJRJvPGCSXrtMKBwum9o2H5AAbEqTWIgfIwGNLtR_UmS2NxRUqilkOpm1s7gm_JoExEHMrhylhN7BTfo_dOKVRWtOiFbpJAI3w-u__7oAsLEHMsR25RAPMrDdIPSPJfyksQ-O1dwE3SoUlL"
+        },
+        {
+          "title": "sochob.cl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoHiewV7c2EaSZFs_YgnAeeC5a8MwCWf7c7HxiBDkFPK73e92MDnqeWcUhDCKFFmvmYs8C1dz7ZlZ0bWWLCAuiQChxSOCGpMzfpnM5zwBtD1_NGBsWz889IdNLOe7-HQq2pOB2jc4LNZzhpLiyyYxgBrjNvVUMabhvarr9nHIYwEWXzaA1OrBho0zXjtF15mjP0UgeQm_FEYP7cCaBVKGt-9W5CStl9vkPumULABySD40qbP0OWkzFG1-RkhbG7vycm07ezRw_X-hs6EbKAeNUxBD5Uv4enif0MbpzwK4r-l0Xs221tT0J6hjW4GIPjLgdduD3_hBQQqHGylyK7pABFN2-1-W8ILM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBg0CLWggQzW_F2o43CAt3wm7lm0r7KizK8FvHehnoNHEONFLrvkWO72XzHrs387yi_rO3NCKH5XFunFr84BpdPYxPd5qFl8SKPxvZovZMlb4O6WXui-3hXmVwapSMJ3K0NFsVkPcj6Iw5e-k="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUr_syiJtGNak2dx6TwsaaL9FBYcfYwb49HJRNawvHKVBaJ7LqIUesN2-PLbg53YMuh5Jm7LtqJGPM8g601LrA6aeJIdRKJJ6coWKQ46PL96AnRwQcqNUsGhwnurbiKsYALqbvjaXrmuia3HE6lnAt8vQs76GJWqSeWIilIvOR"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNKcQMgfd7dZXbHeIGTP7q_Iu1La1AYEnX1_dqnTWXf82fXUT2ecX1WyEpfbtJ2BF_LdpmuOrGPYiFt1fZer07ah7visZIgpEZuCz0Wkj2Gr-84MoT3BVVIKrqZnr3QNX4jihJVnV-5cb8UeF2xC4a-KxSov_LxS0RIJL9S0cEhS7GB9jDA6jmuPSG8JoA3Ug7APVl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5OHzNrHxhDCqVRqShrA1AE4wyJOJ6uCP-TNTmxWyQdXUJDdkI8Rir92PmrgTRDacR_1r6vE1KNqDNw0zJ9ApN9Z0peAjNQO57ctfMAvBq9cU4Pllos4DVyUpcfTwQv063j_A="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ursodeoxycholic Acid (UDCA) trials for Gallbladder and biliary diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gallbladder%20and%20biliary%20diseases&intr=Ursodeoxycholic%20Acid%20(UDCA)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "8-10 mg/kg/day, usually 300-600mg BID",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 780,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1330
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 2418,
+        "costPerResponder": 2418,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 300,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 780,
+          "annualTimeCost": 80,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 950,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 150,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Laparoscopic Cholecystectomy",
+          "costDifference": -13670,
+          "dominates": false,
+          "qalysGainedDifference": -0.8
+        }
+      },
+      "name": "Ursodeoxycholic Acid (UDCA)",
+      "nnh": 500,
+      "nnt": 7,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-150 U/L",
+          "baseline": "350 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Alkaline Phosphatase (ALP)",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "-0.3 mg/dL",
+          "baseline": "1.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2.5 points on NRS",
+          "baseline": "Pruritus severity (NRS 0-10): 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pruritus Severity",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-4 mm diameter",
+          "baseline": "10 mm diameter",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cholesterol Gallstone Size",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 55,
+      "responseRate": 55,
+      "safetyScore": 88,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-70 U/L",
+          "baseline": "200 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Gamma-Glutamyl Transferase (GGT)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-0.9 points on NRS",
+          "baseline": "Fatigue severity (NRS 0-10): 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-20 µmol/L",
+          "baseline": "40 µmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Serum Bile Acids",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Pruritus (itching)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "6-12 months for dissolution",
+      "treatmentDuration": "6 months - 2 years for dissolution, long-term for prevention",
+      "trials": 8
+    }
+  ]
+}

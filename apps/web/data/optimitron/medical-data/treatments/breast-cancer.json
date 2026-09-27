@@ -1,0 +1,1078 @@
+{
+  "conditionName": "Breast cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:29:14.925Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEufolh3dAj_Oqh6CKTjKatG0pUQpcdkI_vJgPDRJ-bj3vfB8QUAgS4dWzMOwqBsEfFxHAle1FDql4Abk86h1DgefNX6AhtTVV60_eZhBZKazF2sfi69feAnxdG6DSTAqPoJQmn-LDKID58dBtXQ4auii4XMltrUOtpbrhSDEd5so26OLjFfIAmdio1Y94VJ_Q8WmIjVQo0FnvUd8pIjYmnR2eXS7a6mtFWb_B1cSV5HiU-NhOEy73BarTUeNBTtkfVt3bIqGsSXDgT17iJmWRECb7cct0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8c1j2Dg_jmT9IHYzV_EqJRPsLR06lSyQmGWVQeqsgl8E75DhZzbPWCUrH7SXDFgw5kel99pmxgrWJqI7U-G9alDoHEOyuie_Y3EShoz4Wkfq-1JDu7DkPYo1054rbu4sqLydx-eOy10CKMw=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdUYrypw6XqvrbiC_zzOe5AcSqGtWOCCJ0amP9h3wud9hzNrpJ_y-lLS4n_Ug1s6nxBTPg3KC0S-kDqknZzd87Dsa2WkBp3B8OIOMwOXzgqa1Evrqf4XpBrT5vHLYU_oltAVYzkJcl0kkeRuWMcCVWM1gLH6p1k-AXNcQ_"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqvCcuTMskY1n-N-azdtoAuToGjoEbbHupfjKuYPlHadluEYkZbUpc-yRlDp19e6K3si1uk-Do4hmgxttwfMn6FPLgEAX8AEZyNw2rP0VWRb1SFnemXlGPYXaJFMtYv5oSoKxf2dDl6f32a7EQfA2WfHc8IRQkjrFZY3qEQed8OK3-cw=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdow82deAmyXSg2qmwFvo5iGo27G7ZlpIlATsqLiC0A-iqiny2edZ9_6UccpWzR54Ah6rJhtP_x0oxf3WA3l_AI1X7-IXGOjzrap_allSoFfR2id6MZ_mNfN3Kst3J9ILgxJwF4GeUEmBeDVR6-Ialg9w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYeH2n4x2_jQr7o9GY4QOIdRW3Kjfn60whgPOiWXqwC4I3ijIj7KkTnr18rXN-AVOdekP2HiCOqtc5lkYV8XovPGASkhIAA5t2gIZAhgqFdt-XnquVW9hlID8GlUrxeR_N3vuieM4-MtuJLg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPLaUew6uEC5GCLY5ZSggZ-EPeG5Ze-MDOz5NMR69bKzq6qovZScx9U1RFW1A_ZSRGYH0l6v2O2vBTGJEBXW2gpbP9oTFWtGdOiDP76ZFRn_2ckMtspiGLxhMlmWDdFOXXC_KVSHyV9L-F65pQrLK5vagMi68X_0tRerLkwShMfbjbbdp_l9-h74ZbZT43UpkGFsmybS5eXKBqE8FWzFlWOn9rx-b11cs7Ok7kcjhmL2c0lt9DJhvCDXUFN2pCdxvHPcUxQC84oaH2mVM1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgYeod0B6ep3jSCZa3W8JkgMXBT3PeaOoIDXMAPC0Ni2AkFxeGRL3GMJOqGuYwQSHFHhubGjYPT_41bUD3t8L8FcwzPAMHzG9S0vp10pyJB8M9Oi6IiX1t4weMc-YwgmhKn28="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2lmb_F-gjqV1s5XfRN7FzCOMHveKlGDWlXXMiHsZymOsfZG91DLnTB04OF6sEJ5IFsMtJSkmt8PzRn9RBMZvfniZaPe0-a0do6f2NiC3A-E80p_g4-FTl0VIg9euWEnrE_21JHp8Gg6ujb_opV_7iCv3WHen-b7vtItQ4KAg-Ioz_CQ1bUMMtTYbo10wHbImp25kUJkET214x82lKxpD5-mJZRj8mUzVz-GVycN4EHN8dxaA9SuVCRnVTZtkzPY7yb9ahaOQ4DWbM3iGPlDOkEmMrcDPq-vip-oCEHtvbHLWa"
+        },
+        {
+          "title": "ClinicalTrials.gov: Trastuzumab (HER2-targeted therapy) trials for Breast cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Breast%20cancer&intr=Trastuzumab%20(HER2-targeted%20therapy)"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "4 mg/kg loading dose, then 2 mg/kg weekly or 8 mg/kg loading, then 6 mg/kg every 3 weeks",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 56000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 186667,
+        "costPerResponder": 93333,
+        "icer": 85000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Chemotherapy alone",
+          "costDifference": 30000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Trastuzumab (HER2-targeted therapy)",
+      "nnh": 50,
+      "nnt": 8,
+      "participants": 75000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+8 percentage points",
+          "baseline": "78%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Disease-Free Survival Rate",
+          "percentageChange": 10.3
+        },
+        {
+          "absoluteChange": "+8 percentage points",
+          "baseline": "85%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Overall Survival Rate",
+          "percentageChange": 9.4
+        },
+        {
+          "absoluteChange": "+25 percentage points",
+          "baseline": "30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pathologic Complete Response (pCR) Rate",
+          "percentageChange": 83.3
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 60,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 percentage points",
+          "baseline": "35%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate (ORR)",
+          "percentageChange": 57.1
+        },
+        {
+          "absoluteChange": "+6.5 months",
+          "baseline": "7.4 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival (PFS)",
+          "percentageChange": 87.8
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status (EORTC QLQ-C30 score)",
+          "percentageChange": 15.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Cardiotoxicity (decreased LVEF)",
+          "percentage": 5
+        },
+        {
+          "name": "Infusion-related reactions",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Typically 1 year (adjuvant)",
+      "trials": 89
+    },
+    {
+      "citations": [
+        {
+          "title": "breastcancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGcCDxTxd75EMC95s9uBmTKBXVMd3tiDZiObKvM4v_xlT4blbWWrTUNxCKXo8PRgNCAygPYWp0XJbRQZXYBfeIA41ZNhaoRdLMGoIjc-Hu2oXhB1ibLeVvtmL9fBogOx1aUsSL9G4p"
+        },
+        {
+          "title": "lbbc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxyyk1rG2JauInOP3e9AeIOEejKni-CHRdE1s65qq9waXQC6Ag2jkZ3rxo_IROK2BuLL0_PmUKrMAlcgDTeAVuk4-UQjPJEkS1UR2_5Q_9vlv7avw5anZ8486JxleAthfvpzV9VFwz7TXCyOzp0qcW6Nn2J9w3PbXBGXILXDrGA3FeU1zMZKtGDRHai4SAXioRkxPd4gBZZtXnSRc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPAeRjOysqRViJ_LInxXbc8lDLrmsbh8k_oSNqX0tDweF4UvAzugpJWlEc6zVcRjTpgGGQ9-OsMTGMPgi--zL49hT0o7NVOPHx1TyDsjw05531gHbMkabJhU_CR05dnTxuRALi4ig_jgPYMBY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHipqx0RWxdc8Cv82G_4iZhn4FyWW4SkdnxuM3dvhm0zt--fOEc7DAIYamnOx7iVLr0_ynSggYQ-yK11msEPKdr2HSex4qf8i1XgSSdzT-CE_q2YzdcQtkgCGrd2gVD4JGf2uBx"
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkDCcByKtvuGbyiGql7cV7cNBq58nuvPFRUgiH7oRyZNJF8BymjaKE5x9F2BEfhT2YpiDuqoaweaKqdjjUoypOybHN9N7gpnbZzSndCAd1H3AL-KYaXX7x-JI="
+        },
+        {
+          "title": "asco.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt9PfOE3DWF-JczVMt6-CZu7d2j4hZXl7ZUnh_fUnd9TBihGq1aTiYytP62J1eYEyaM2SzjjoFPaM61cA3k7Ss8drYKJ0Cnm0Ng8XuyzwZ8iKjjc6aI4-wWWvU-ATQ8mkOlHvoJ6zE7MbyyvDUj0RfxCMoODLr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDhvujfCrY7uoKMY2rXUGlZAeX-XFruxaNB6oVcilvD93W2_Qczk9Uw0eh7JzRFPgunJ0zp7AlcLK9sFdFMzaNSw1DApAw-cbznxDkS1uUHgT9OwTztlwSYBNwj431gagucqt2zfGz-eBQZLDitFH_dZvO6OnPOmZDt2tFDAhZblXtl1-yWW5DVVnDpGAuepSsBe8zLrgC4SA8B7BJWxyXPlJtWOKp3MPqYzngQpy1RLgw5Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLmSnx1399o0ZkwRCNY-vbxSE4iDlZ0gBGp_Ycg1llCNOfQhY-IFgr5pBWLaXbVZF08YiBanji2AgHrY9MwQmV-iwNQdmsexkRyA8fHxoUE-BmMx3hB2Zxaz8KfkVRt0ETLHgn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERmzoLkU_XPC-DLXtlUUKJxZp22rx99qlCzeFy0VThG98-7bUU9Mihgfk0EHAf9ShvrzbYaJlFunrbzrPdRjSnZngoXN9QH8-P4_T9W0llVFayEVKPnfUstTdFbhXZQH3zBi_DRf0aFH-yxcI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExpPmGRplGwZBvPjnqkoE0g_-jJykeQ1O1F7Z2tpnfuvBJoL1lKUMEz0u-O5bzj5NjATDLHDRAbNXAYbAlDDi7Z1fCPZBi61O7Ys3IBzpFXXU4juoX7SLyKUcq-i3nkvbWBbGYc430-o0MFTtQ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxorubicin + Cyclophosphamide + Paclitaxel (AC-T Chemotherapy Regimen) trials for Breast cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Breast%20cancer&intr=Doxorubicin%20%2B%20Cyclophosphamide%20%2B%20Paclitaxel%20(AC-T%20Chemotherapy%20Regimen)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Doxorubicin 60 mg/m2, Cyclophosphamide 600 mg/m2 (every 2-3 weeks); Paclitaxel 80 mg/m2 weekly or 175 mg/m2 every 3 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 28000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 70000,
+        "costPerResponder": 40000,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Doxorubicin + Cyclophosphamide + Paclitaxel (AC-T Chemotherapy Regimen)",
+      "nnh": 3,
+      "nnt": 6,
+      "participants": 150000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.45 cm",
+          "baseline": "3.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Size (Longest Diameter)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-18%",
+          "baseline": "30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ki-67 Proliferation Index",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.5 nodes",
+          "baseline": "2 nodes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Positive Axillary Lymph Nodes",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-35 U/mL",
+          "baseline": "50 U/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CA 15-3 Tumor Marker",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Pain Score (BPI Scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status (EORTC QLQ-C30)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea and vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Hair loss",
+          "percentage": 100
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 90
+        },
+        {
+          "name": "Neutropenia/Infection",
+          "percentage": 40
+        },
+        {
+          "name": "Cardiotoxicity (Doxorubicin)",
+          "percentage": 5
+        },
+        {
+          "name": "Peripheral neuropathy (Paclitaxel)",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "Weeks",
+      "treatmentDuration": "3-6 months",
+      "trials": 21
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL0J30eBStr5uUnIZH6iKwyHM0kFhurI6jt4AS7vRXN_Jfp7w5Ux_rqVY2w-KnUqxYuWJr-CzxLJwCcsmdr84RLeO0RBoE16tk_aF9DySBnffPDZhvz99puQ9JNks5IqQKwR4u"
+        },
+        {
+          "title": "medicaljournalssweden.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx74CySYg_NQxwYFSVM_QkKydYFkbrxZLcrISIa-fM21NoZf9Gq-eLc2LdQ8apKfbwIiWQNxcfp6cP38CPcp6Nk87FTwJx62BXadWdqMy2AT8bkbc2JqVOD8siMAYOxH8GDpdgXTGhUgzf6rKdjWZyRSkmxzAY1ivA9anHTWQgGcDVAQ=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRkrqXeLsm60bcvGZDsZ6JV1jy6J1SUWgGH-S4FPWnuU14yq2wKYGNhO9i82L-zGQgrbZu6_np5UROFRCtIHQOegD29Hec7IBUlPDGHt_hfTWOYLJ_0-5hUGD5Yjdap3GmFSW_WfXz85xbWelCgJb9emgX7b3qPuQGOP5ns10lmarU_iFjs4Wjgw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdfbvokMjnqQ-aog7VlQ9tJVONdXLSFWlB30vLrNeRTAqkaO401lgiGiFqGDa0fuVe-EohaQzV0b5PnXjbDyUcWJXe2rdIdJSWAuJulV4gUa-LBJAVEM2f0rfAhZmhhca9rpccN1nY"
+        },
+        {
+          "title": "ed.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4TY6YJc0JJ1Vfnk0tAurmVNqVjG9WWDUkvYuWwh3xSdkAA6BJtlf_CNQuC7-Hyar9hTonS_EfcsSdDCBe-lKBD_CnEkzc1-7t4vGAoVYdapo-XtlvsaV12PsJk_52pbL7k6mytdU84t82xWZKbaHEM20ApOpmJ5ft1WyIlBjxjihmnmYAxAEdTa8h"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ6q2b6gUPqhocHUc2NlRq-tgKOfeij6kaAFcO6H7bwnWtKliVkx_5PLJmjnvDM40crfN3gDsFPNJitJIGAZaPa7-xoMCUHwiGo7DY3Y1ehlSPSEpR53jm92dhVh5IcacUcBLgRT-zyEqLJD4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHszA7W3H5aau7q4V_K1XQPqGGpKlcB4YuMNbYCXbxZpkuWP9LbWbueG06hjPi0KKep-h8eY7H0gHiKu2pcm3fkJrbJmiG4EpjWstq-0lj8jrRANM9zYNlZSuiTvuIX56HW9XRzLBTdpSzyjnU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5ox8L2BRjE1SvyCHbwY0HiLqFTCFAvXbTPonoeY9xfDTuvXNMj-1JCbnoxW95nLY8VQ_Cl2-mX3nYPXnoPSzcKREs6uVQHBOSPRWFRIVheMZB05NShsdutDJGZ2JX5Smr5hYPEWs9avFRX_M="
+        },
+        {
+          "title": "medicaljournalinternational.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUAXYV8hXfBP64CxuUCu7LcBa1SS1Wj8a3rIow9QIfxRzNjY-z-NUiKs3vQTkjE8kgBD5MqmfhRwxvgY9T7_Bkt_pe3RVz_rdkqurOrpIKx66izGoZ1gOqfk1b37qx7K81wu030i3LjE6gBp317S6X-EMx80ULVH-Qdugott1g0g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXN1isAS28doFrXgMgNMXgE_v7Y5iCg9Lh_HCnOUni7OcQprGkQqOqQP6XVFIbcyBkBrGra07Zgfkp_KjaaTJSCcDccUcYxF6yVPJMTfDqhDtZZQt_BWyi9FIgBLDEIugrz85Uif-3VUoOOZmVZGeb1qArwfAdr3p7R51-4CSDyryPjls2h5V4aswQFxtGd7ZYfhrDRD-BUBoqCUBIwENvMvs0C97qA2ivgoTuXnpHgb7iQX1q7AnRlp0SKd13"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEW2LwG1eX9CooPeX4s-RBtnAZV6pbOHy-fq3A-DhxXfNUiKmxqa9diUKwcoAkQZuk0IdHrdPgH_3FfqCOlVbMsfLP6asOgqYrwdZiFe5bJwp_EWHggivalN1m14erOe0hWZ4LQ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbq7zO71mW-hz0W6wgD5vxV9qJPyzSRMd2E-hHzXV698XglV7HeyEeRs8WJ0u6GAH3CqX_W51xUsi8nfL4Xg_7oJKQzdvJA1rEKZbFWgC2JuT12k6aMmT7kAnXkPjhaqRgow6V2TYfXLyTV6dwnpMItBUXquOUVe7BRQ09tNhkDotRHiF67MAiqLubWJDYeW-lsLG4CBUdU9PDnXolCIWEF4f2q5oshededdFbF40G6UiROJbCzBDmMcs8d084WziuL1jpmd7XT3o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx5pmrhGrSm-JJOtoNCHN1_aBYpky3pVOm5JdCgYl9R_o_mKdQFxNOU10Y6m-0YsyvgeqFiSVRpG4d5X9IplH0EzclYJ5zP_YwEC__F7NJBEQWcC7rCYn4Ciy-yjOLLIWxIC7q"
+        },
+        {
+          "title": "jefferson.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3IsPWH7GyiaJHk5vtxgLfiTtqt4iqNYLzcNY6y5-4R6uC9SkLY3CYybxKqcoNH9C6VQrsUurRv1xhNw550Ph4b7a_nHXyFVZAYCIRy9Gk-B8UAptp53StZp_SXMRdF0vSLsIY45uduGLC87aG5lGgugMNQ4LM3hub0V33kiqYpx84UxMtZw=="
+        },
+        {
+          "title": "sciencepublishinggroup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFJb5TdAxoYPrjhwgB0PrYWqKpItx11mYm_EPdQNNTUWSOgmbyGIiX7xPBeewcBMYRxHrv7n9BW2tDK86L3wWFX4pOHJXQje1uY7WZNMicz_rBFQIo_0acPUzA7FXOasQVO7lGDtLDmfw9-MozAM-943B8AdiJ3NB8WhtruYwlhxFzXvZn"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZdoXpOfNwHC73WokASGLl1fpxzEnaHeuCi7dUBitpDY5jdquOX7tL8r5oY36xmxMCC9H5OlvqJRQwC9I5evkrhAKG3TVouvj1uDIRBWOHMF-v8EAiY8rpiyPhM3-dNKGSoS7Fc0M="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiation Therapy trials for Breast cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Breast%20cancer&intr=Radiation%20Therapy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Typically 40-50 Gy in 15-25 fractions, or hypofractionated regimens",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 60000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 120000,
+        "costPerResponder": 75000,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Radiation Therapy",
+      "nnh": 5,
+      "nnt": 10,
+      "participants": 120000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9 percentage points",
+          "baseline": "15% without radiation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Local Recurrence Rate (after lumpectomy)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+7 percentage points",
+          "baseline": "70% without radiation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Disease-Free Survival",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+3 percentage points",
+          "baseline": "75% without radiation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "10-year Overall Survival",
+          "percentageChange": 4
+        },
+        {
+          "absoluteChange": "-6 percentage points",
+          "baseline": "8% without regional nodal radiation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Regional Nodal Recurrence Rate",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 80,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 percentage points",
+          "baseline": "20% without radiation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "10-year Breast Cancer Specific Mortality",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-7 percentage points",
+          "baseline": "10% without radiation post-lumpectomy",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Salvage Mastectomy (due to local recurrence, 10-year)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "BREAST-Q Score: 60/100 (post-surgery)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Body Image (BREAST-Q Satisfaction with Breasts, 1-year post-RT)",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin irritation/redness",
+          "percentage": 85
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 70
+        },
+        {
+          "name": "Breast pain/swelling",
+          "percentage": 50
+        },
+        {
+          "name": "Lung inflammation (radiation pneumonitis)",
+          "percentage": 5
+        },
+        {
+          "name": "Lymphedema",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Weeks to months post-treatment",
+      "treatmentDuration": "3-6 weeks",
+      "trials": 1471
+    },
+    {
+      "citations": [
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrrJRx0p9k1fBbKqQNs8Ptv-V1BqpLLx_iAuDwD7RI6vXDZZKVJ8CtozCQ0PN-qjhvLINrEo2Q6eBfhzzKvyzJ1IF8HYyK5mddqkEzW3cwFrZSpX7jZ3O58XBIyAxrBQXDnIzxKG8qUDJWAD6zE_FFU6R6J6-rtoFYe93kv7xapOov7gJyhg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuQQnVgEd1zzZnQCAwLh-YSbItKd5RnByBDV1LHubuv6J1iVg7UVXt9NoCMgJK8_3U5Cg-ZE_1EhJogVEyIgKQ2Ql939sMRhAZUHr6l3J_JbhNd5eUir6HPmih3RIU2OmrhhiFhp7F44_Npzk="
+        },
+        {
+          "title": "oncology-central.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwMOItzT7IW6jPTjQyiq5WOPBwRSoqQICumkahusnhgpue55mblcBPl02Clcylkjmp8EZqA8TaHpkpflh-oAmMbQthrYk6Ap9Oa91xaJ2cR8Ru3qOUKoUOsa2a_itYv4cflYLYZ8lCAw8FZDMisE1sYKQBhDdQmwkM9uKeXDIjfngCaTriFXXWN_Wok6z4r1hszZ3rOwcrlZsqBOXxDohh7vmEDlpqqi80_TXQ_iC1g7Xey6eb95nKw-3zThq2"
+        },
+        {
+          "title": "pcom.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbq-0lc_ffavO0sKdae3iYbRks2qV1oi0p5pyC79VcXsN0NUxcH7hyYvWiS3W36aAQ-W_YReEw3Fxyfn14O06P_bkuJkI40sdOWPZr-x9vlYBuk328telye8XGFtKvfshIrf5EIvpDMw05hq0cV0vo5BjxTGJqECEtZW6ybJXrBTO7OGlRVwaLMT6lwkcQDjytMN4k2IxTtG0="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUqXd4KG9isxVn9LpO2jH-MfmJGXMFi2f0t1H1s7Q7Lze45lqKyrVGSWBToQrdcxU-XFGtWd_hBTDu4SreaPm-llL5wplUWXIdEq3f4buGEi8UL7qDm2-dm3cHw_xFBuT6vQUkEHP0XA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOwTnKqtpCjyEasnzpJR7_mR5OnTDCFQX4Lg00PO6aWfw2rwXqsto2LvBsO7IRGGhILToj0XB0UVHp2kjqH3_BmPZciv0auZmgNIrtR1yE3zBp37obAk2mg4oAkSPT-chzjSIH"
+        },
+        {
+          "title": "ClinicalTrials.gov: Tamoxifen (Hormone Therapy) trials for Breast cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Breast%20cancer&intr=Tamoxifen%20(Hormone%20Therapy)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "20 mg daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4500,
+        "costPerResponder": 1800,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Tamoxifen (Hormone Therapy)",
+      "nnh": 150,
+      "nnt": 8,
+      "participants": 200000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 percentage points (from 25% to 15%)",
+          "baseline": "10-year cumulative recurrence risk: 25%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Breast Cancer Recurrence (ER-positive)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-3.6 percentage points (from 12% to 8.4%)",
+          "baseline": "10-year cumulative breast cancer mortality risk: 12%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Breast Cancer Mortality (ER-positive)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.8 percentage points (from 7% to 4.2%)",
+          "baseline": "10-year cumulative risk of contralateral breast cancer: 7%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Contralateral Breast Cancer (ER-positive)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 50,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-19.5 mg/dL",
+          "baseline": "130 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "LDL Cholesterol",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+0.0135 g/cm²",
+          "baseline": "BMD (Lumbar Spine) 0.900 g/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Mineral Density (Lumbar Spine) in Post-menopausal Women",
+          "percentageChange": 1.5
+        },
+        {
+          "absoluteChange": "-21 mg/dL",
+          "baseline": "210 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Cholesterol",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 80
+        },
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Vaginal discharge/dryness",
+          "percentage": 20
+        },
+        {
+          "name": "Endometrial cancer",
+          "percentage": 0.2
+        },
+        {
+          "name": "Deep vein thrombosis",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Months to years (for recurrence prevention)",
+      "treatmentDuration": "5-10 years",
+      "trials": 251
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCoM6c4YhVjiakPHL4bR3rmEz1NEKWsOm3Ngs1akJIhFichDBZwlHQDyqdbeaAeIc_bPAzF2tGaV6Kpo7Gbh62o-AtfeCSHhDiVckcQcQhjfiovQEUr8-huvQgArMhIXzHXeu_XHrfhy4vhhM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMO4Vi_Rw40w_ORuOz4nI-PaP9NdA3iV90iS9PGkod3D7WkWbJysRh-D7vkKA8l3V_HvVplBTCaUA1s2lzbPkKpUmvDzdmrTNGUiJV643FfxAAF13xCdMLZ9NLh-0A1_unNg6n"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqRoYMHmE4PeIjyb6DtJ1Su7ZRVAL8oFzucZOePAhmGMcYDH2x-KHs1ybT45pWXUeYIsIMNOhw-Lg7q8Req328T1vGSVvdGMnfPchN_JZ8B3kUbG9VhAynAmNy7-g0NvKr6AwpRlhF_GVRh0dqNOy9Q7Gj4gfb7VAluxYVTgqgkztxIRZm51fvBRn2_W5jpQbckOY53MEvPIwROCnvQZE4eGhaMMnbFpKanbb4rM9d33nfHUkFAvVz3Z6TIqdQ7oCelekrsB_nBRB69p_PJ0dvbmfnTyfmNJ9BeNFDkDemKuyegJIWQtSO_YgX9gTUtyLB331ZQYzLcYXG6YiGCcH_tc4NI2RpZBByutpRCIosyV3PtlwZ77RTOHEd-vn4tMeoMQ9dH77wPimZwKY5chy2MISAO7vtZQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE6_yQRlSWqUKWYhFjAFWz4J-lQYuM8QhjLGubJC2ivvyQ-AqMw2WhF6B3JkIWrQFUSCNaIY8AY-YHXlB099Txxe18Gt9YsXbPoGItpSc6qtrNvrCLB6q5gIxtVP-3QmaZ1hU9nCq9rueBKFar"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaHAZUCI0uSnDH2BcUtg1xJ7Bf2EFBesxfv1tzgATzshGE9JHCmNuB1lABG30Wouw-mzOC_rpT9-8DjE0AScoBnh_yOVI8zNywn1kAHlBv9It1cEGfXSgEQdFz7req4SpKoWXx"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyt3gXryTc0WmyT9-UskJb7-NEhWX9RBVom6amSI8InEMWfbQwIbL_Jc2ILrNBp_cYW-ESDuXHwKkJ_vKKeuBFn2bbl4NzhtYCVWNz9P3J-MVWafzV_acXgUOdX8tb9boRMhdo7JUiVjCM9KsfzTurMsJCu9c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ6ckBlmBkbqmV48J56zIQhGpiO3wk6Yf_Yp5mc3zJezVrBqUWqvWW5U18Sk-owtP6sXlHFcDauOZFrJli7atX6uEWgvZYhNkf6ubyAYBqjkkFmyW9KsTKoCPjZPOGxJuIyPvq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWDDDu0mOA1fmbHsVmD4agLFYxrSl4zP3yfgGFj39x9UGc7XX3RzSIj3E9DFnQggrNPPt7dgit7bGyMSjXhx-T6Ao28fTtbcfI5Afx7fyeGiN-1UCsaCIeMOyPpYycjZrPfHg9KC5nzg3VqXX5y9cYLnHYVYYrAx2O9YgmAvNaHor5G1ERDCIkjVi1NdEdEr6BO8QfjsdmX95lNCjUTexN7V8kh5ebwz8W0yF_FV7dk_4z7SRaDX0wcU8g7ZfYSs_1guy4IpM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkIEZ83NcG7cPV_lR-QGzeymSc0Iroe0bb2_wzFrn93Vvy-_jRoY2Dpjk-GEN79dtar0kacEhRFJ8bEngd7IpCk65jg1ag9fV1vwzGXm6SQrtxcnnHfEhEk4kVPB3xKPZB2p8F"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1AD6hePE0NvqKUTXhlJKRuyCkRlTay1tgHzdFwAJjvqrQjTTPz790cKSuBFO2Nsr2FDVCaPsJ0cDrVSmCeqHf0BA_eBY3unAreFOpMa6xUfeqXAymz2k5stbJ5Xfm7b5z8Wdq7pqAGuNcAP0htrm0VHWj_dq57K2de6PHYfGW9er56g0OjndRIb6bRepbVhkmKyOmXnzUB6TSkOY3qLPt-8UiHn2DLrneMVvkfEVAiKHvdr8qpoz8QQ_zPBAmjQ4="
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt1u0ZcGmAbrTkoyyoPqNIU6Y6V1UA6hGsrceVLJuqFEixlnxxjhZ4rWvGMUeUaTLxuzY7xGz1vEgEHNbx0BEwb0npefgDVT9hD6RnK-wlM6Oks-AROZOiN42VhZFn0hSdLKZnURn_amUgjuEosJ0Nlx-M8gWKYYUCEBQ9O0hMLxrC2rpoUodfhyPSBng3KmCmZLGDuQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Palbociclib (CDK4/6 Inhibitor) trials for Breast cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Breast%20cancer&intr=Palbociclib%20(CDK4%2F6%20Inhibitor)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "125 mg daily for 21 days, followed by 7 days off, in combination with endocrine therapy",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 140000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 148000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 740000,
+        "costPerResponder": 246667,
+        "icer": 350000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Endocrine therapy alone",
+          "costDifference": 120000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Palbociclib (CDK4/6 Inhibitor)",
+      "nnh": 5,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+13.1 months",
+          "baseline": "Median 14.5 months (endocrine therapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival (PFS)",
+          "percentageChange": 90.3
+        },
+        {
+          "absoluteChange": "+19.4%",
+          "baseline": "28.0% (endocrine therapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Response Rate (ORR)",
+          "percentageChange": 69.3
+        },
+        {
+          "absoluteChange": "+21.9%",
+          "baseline": "60.7% (endocrine therapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Benefit Rate (CBR)",
+          "percentageChange": 36.1
+        },
+        {
+          "absoluteChange": "+12.0 months",
+          "baseline": "Median 41.7 months (endocrine therapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival (OS)",
+          "percentageChange": 28.8
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 60,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8.6 months",
+          "baseline": "Median 17.6 months (endocrine therapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Chemotherapy",
+          "percentageChange": 48.9
+        },
+        {
+          "absoluteChange": "+8.2 months",
+          "baseline": "Median 13.9 months (endocrine therapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Definitive Deterioration in QoL (EORTC QLQ-C30 Global Health Status)",
+          "percentageChange": 59
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Score (BPI-SF Worst Pain; scale 0-10)",
+          "percentageChange": -27.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Neutropenia",
+          "percentage": 80
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Until disease progression or unacceptable toxicity",
+      "trials": 74
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiAR3aNThTbwW_FEfTxKlXhHVX6UeX3O3HsI7MhUKlGI57nZyxTkJTpz6jGH9QazTKlZME62I6RS3wkBbmHxn-aA1exFavbure8-kiTK28g7FnUhNEkECj7YfjS-5-xCfVXSA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1PTq0mdczK29HsaWyqsjmmaCASkOoqN_oJ7BNYd4dETrDSNedxAzp3mZGmFqvoOPG3lh9yyJFcvxZAzDjAoKvFPgZlFZB_2G50MrQmAsdgnB5ZEmGS2OIx5qfcMkfR42CIZU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4i1lG7nNdfkS3_gGsw7VesEVr8D68jAI9p6FCykqgH12u_3ZfonQKeBRm9GS96P4PWhFcsLgyRl6f7F7Xm-R2ARqK3friw20c2eSfibnvVqEIMhWx7Cw8iT4Jy0IuVE3NMI39wAr6Mt2SVirAr_vQBr9s2_mtZV3M1lYSaeYLr1Efmt3enStFq-V7KlIvhSCs5mlLZQzpGZcgSZSvGUozx9kmtPTFjUZhOhUiyUxLelJ6cAQU1SeLrmps-YzS3uKuws4Czd4W-EKnLxFPtzjYBUMlyDwORsJhccb7tM1qHeXL42SZw4pr7yE="
+        },
+        {
+          "title": "valuebasedcancer.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHrOAw-BO93mNS3szVs7nPw-0969U_96f-cUNu37gheL-4dhPaHZoxLE52dxCJCUqsKZ2ZTFwEOYPTeGkFl_7I496UP8ne7a2oULHePMdE-We6af_4ges7DzSkDpp64rRoFnS02Qfqde-8DFYv6kiY8ddVHQq2_zx1BGSlp6MrpivE092un4gUW1Kvo-DnPJuh7nYJwmh09IlDUE7uE3_mUTrZUrpl1N04POuTuhEvCUwWSIopj5RQl-OMNaecundI4s-qIfc0m6FC13qejsh4gHqyOjLd4N2kOtkUeTPADmURSbo4bufi-ury53nI9nNnAm-qjp4ICuX8FQSWKI0TVRQKZ8mXFaoVbe7La4RDRVssarYWikwt_HJgspDw"
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl4IofQ8QwruSxUEoqiNy06J0iuzjZwEI0Qrv2hKn46DXr6UsMWEs6bvBmsZNnl2I39npBxWByFq4ftad0GSIbt9P-5qAOBa2eX4k5DAo_mNDC9lAOR6s_3pz2HtirAld0iA6gj5SUuH-1ivAvC7LiC2toByqAbiu4qn0ZOrZEHkn8ywxIo-DxmDKtD4jaowgjg61KarEvM-cttH3Wev6Z4m81zgGG7GAXJSuuktTL5n2Jwhs="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH6vE5bgJPNwaxO75HLbNUp87HX2QSab0C7SQjavoh7BqSTlynUccpWmlyxjcSodD8QvqINPNHGNZW-pkn_kYcROQUf2JvLt5SBtZue3IjD7-1uVp03QVuKEFmFiDd9taDKvAIQ9x1B1rUYDmGJG_WGIAioAmYDuRcyw_K_rK_sc1BbLXpcENOf7XoPG6Bzs-3_BObAKbgqV0aqh0eJuIIr_iHJcE4b71WtristHljD1FyqOtAL_mpT60xrssFyFxSnasGqdZAK4O6an-ve-np"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOHPBg3azVE7__PpAWLyi3kQqQqAxynWiftsKY3b9O1vOIuAdt9XCGURRfElmkQ5LzDyQe31v4TGPFilajcUNP-OPuTA7t1btAMgCMusi_SqwEzlL9-_B8KW1JDV42zEzgQmHZBhwFf8RrQa_XAv_6Y6vNfUhmSIlasV0r2A=="
+        },
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4UQof9_wesQh1koIGliOTHWXXdrUYpx8JgMdujM-s6s1Xzg9DKeQl7KGT2m3ABcP7lSlL-oEhRLIkUCgIWA4mUAH9Pvsj0vrAocdEb3Hk5hLcuptBi4pCaDvEHb6zihbCcSZAdBALRhXa0bCEFZ4A_HLKViFPKj0WjI8JcIrGB0rgKASqI4V6e4CAQuRKTnDZG5hFqLdVFwRj21Eod9tfjes_3w=="
+        },
+        {
+          "title": "merck.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9NTsMNIltiF1_5ekAPZ89ncxGljZ5t1OmnDv1tWDlWA-v0kG_Prcns7Wz74fzN1bBFUTFAeR_pGayHCaYyeNR5DOFKArNQxeQbzxbPaV19nOWNRK0Nyww5vytvZHxsY11qRWHVsFBerehCzBUtCZO_4t1i0gUnPBv4543CI7HJ5_ANDokYKalmXHAZcEpV5PZdSpIyq20_fG0ri84sEtlYMnTYVycLus6R4YSW24CTYOmsylXlt_POpl2tRvk1Ey8lDCpZR20xEMlKpJF1QDJoqAaqQZJrj_8a4WqLRJ4Mem_qP85CZz9kjgZrgjy3tzYeBQv_u24FS9DlWmOsvd2s1ocyqjuuXQ8q1-0g7N1oiwZwA3ErA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBFOuo6BSUrvo4thNcxeE4dF22kxko99BOgQ5Iw5rJWnVyS_9CGnoVrfkLqOE5kWdGZdDqimlso48OGMN9AtURdcbIuFM1oShrO57uqyqoEbjiJs9HxsDTv1X7xnE5bP4-KNE="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb0NDrd7RPTyaJRAQsPQtodW7B0yeaX-zQ7pVQhZd1j6kP1P96kXzXPer7WrLCzJhQPmYx0aFrRCJB_oCeUQyET-XFoEkdX-XBLfYgIs5W3sjfEC-NJXdbH71FZdZvrKAaFmhiEWqWvmJZF92yXlpBx62B6TRXP62wMZJqH_rG4qF5k1HcCoVna2y8DTe9C_VYqVIOCi1h24CJ5VUvZIEEPoa4KGe29G4NRLGG"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuRjw-jUXt3YoNu-9iT6ZyI8KD9ks1SDFK9vv3oXS_no3UCB_YtautvSdqdxfH2anr8EkGZ1LNB-Aa8SaW8Q8Ga694Jl_21XJaXUSrWkMdEgCuz7hm8f9Scpu1oWxj1VLqi5LDbddATEYtGn3uTcKLbdXQCpR7"
+        },
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH8EbGFWeblDgckgK8TdsDGyRiiouSSVrs8S7v0uhCB6CFBpF7MR4z_Wvz2wxU7do5MuCTewcmFOlc-Fd457fRAh3NffsFYEwq-VdUHRsPzv5QRDIvc0W2m6pAkdPoh6L2XWR1ERdEFhHhDIS9otI39i3X_J2Fqa2ZykAjx-CZfN39bSrPi6bM1V3YKhXDVAjUQMkNwcYwUuF6ggAgp_v9ehqAMN7ZDR7BZFZKLg=="
+        },
+        {
+          "title": "aacr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-mdVOfswuRHxrztri356MZn9xLmkpzKGYpnCgKxYbly3P88YfTxaNs9qLtwIxCWjBq4CUg8Z3IeknqrAWhhUs-O2R_6BBcgoz1UYs8bolq9zWicCON8Y3iId_DiO3568pOLVPBRH6f0Ou_Shw647yMUj9jqIm5hZH1m7j_P_gWJYHZ3ixtRAAFzVUY1W_zy4GKDC-YCL_mEjngppnt7QVDOxIIPMyD3JbdBWYOurAl8so-T0rmZDSN6wZB2faTlsX5VRK5zNPsprRFgRdIsK8WGU3hi5jr6k6zQlsl2frfdtu4BwQIEhjmsVulFXIWwQxNAQWHgAJN_HB13p-SyFswSTfFnH-kG_vLLixfJ_ZNfrZa_OSOug="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2S-udx83i9H9XY8jGcXtz_O6yfTxZX8qja3MtCP2TqtwtMg7djbOonqm8xTIZc6gydU6imtQmWZoVv7oNk6AXK0CYb0_Xyd2aYS0blt5Rum-JgQ_UqRIW3PFrOpGssTRgkK5a0sYucVuxUw=="
+        },
+        {
+          "title": "merck.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx89aFmtr3RhaJLPzzCXvmG2Y9FyqNgDPPSL0143ltbVLvNP4G-Xal2Wzx6ZCpS1JUr2gZtdBpb6S_KnKsThTlxfD40rZuFMBwKp2Yl7eFIK2q5QgfJLBjVePE80X0N4RJH2G7nRuLIcRFHgErW8y3QXQzdN1SAFxOTpyyTzxRKhysjpBKgzaAB-T0F1N9hHusQqYzUFFfpv8LSTsZFGOJRIawfqJ7YbgK0nb10OO0Hf8RatevDR3D4MEXFX6NDaypzdyrPjPCe2vtIGbneRuNldM6UrMf5mWnpm3ytP-jB3WjAOsATMESmQtwxnjz2acVJDSp2slUxYspOoNaS9mQ2ASduvRx9M-K4_LJ2Yydf3DQZg=="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEokwWYGogb8PWcMRgTXZTPSEdx4ZxCjr5wDZS2smaraeywuc9WGZ56_wxNoT9mpiiEcoI6JueHpD8_9ZXaU5T78db-vAwNLFx0GhMO7EBDxfrvww4l61TYr3UudrSkUZK49psAnpntdczrakdZOlPxO1iOouzZzyQaItBSWsPSR4k7pDhNSpUmbQ_aQHpoXF9wTU-GixQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pembrolizumab (Immunotherapy) trials for Breast cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Breast%20cancer&intr=Pembrolizumab%20(Immunotherapy)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "200 mg every 3 weeks or 400 mg every 6 weeks",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180000,
+          "monitoringCost": 6000,
+          "sideEffectManagement": 4000,
+          "totalAnnual": 190000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1900000,
+        "costPerResponder": 633333,
+        "icer": 400000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Chemotherapy alone",
+          "costDifference": 160000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Pembrolizumab (Immunotherapy)",
+      "nnh": 10,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-33.75 mm",
+          "baseline": "75 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Size Reduction (Sum of Longest Diameters of Target Lesions)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Pain NRS score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Pain Severity",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+50 cells/mm²",
+          "baseline": "CD8+ T-cell density: 50 cells/mm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intra-tumoral CD8+ T-cell Density",
+          "percentageChange": 100
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 30,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "EORTC QLQ-C30 GHS/QoL score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (Global Health Status)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "EORTC QLQ-C30 Fatigue score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-6",
+          "baseline": "SUVmax from PET scan: 12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Metabolic Activity",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 20
+        },
+        {
+          "name": "Immune-related adverse events (colitis, hepatitis, pneumonitis, endocrinopathies)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Up to 2 years or until disease progression/unacceptable toxicity",
+      "trials": 72
+    }
+  ]
+}

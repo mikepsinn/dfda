@@ -1,0 +1,869 @@
+{
+  "conditionName": "Hepatoblastoma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:46:07.884Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKk45MCPj7nzztSLNJOeDBjgxPkfFlc5kCG-rViwiDFFQJMQJXLWseuu0FW9N1b6wrlWpsjGSpiYfFVx9uJVuSGZtO80gIyOJ6a9zezQjoW-e6xRnbIQbUzktANQNGA1Z4hONe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUPjImb5odQOwIs7BlSXecOhqNVG2Q7tQzt3_XK5SkY9PmjZfClLG-pmfYezLAORNN99lDMn1Yl9oDuptw3GwAUYivRg0mnd2gk7tUYypxzsQE0ZhhWNjb9j4yEBl7LQ1iqawaKnKQn2Cnb9c="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhNo1GiR9n7_lTIMh8YJRoxyA3PGjEFD1--NOeybnsm6oP4G0Zm5gcyQzGeEzBeEOHlrYvwbJ2v6AzhIO4L5n8IM3VWmethRvvkK9VHk-9kk-zqjF2xkP2Vjysz_1vv5oLExUjaHrSngAqsomdd6sK6xzC-q_4FgV3gQOJzWTNWSCJgC_LXOCyTcVt8opPzuybC1iYcQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGElszYbTKwg6QiaWs0CvJx-0E3zf0V6VG8pemmoLsxmsJ3qPgnSaJuX5fPv4sQe-JiA8IQRQjX9oTruUnGMCs4pJ5iI8azG7Fv0yZYYAF9NSoXKBXQP7zXM6YlwI5fKAQt6Xej"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJREi2dVY2976ken5Sf-E0PUxxe41IEnSzrtHcUzb5firycLWvizecEWQ9SU6VnCx4MG3-6mCFIJ9Im0RdthqPw4yowth6-j1LG4YkvUR0brgDVBEiTzZLBXnrmo16RZ64ybrzccQHPFBJcK3a_tp_vWtAZEy-jr2YldGqkOHyVYxSBv6C8kmiOgRM0sQc4yD2_nBA7wAX4T5BFjmyYcfmVaqLRpv3dg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-xh3y7UGCM4AjZ5oJvCW39z3OjFP1j82LYmAFjJcOiIWcfs2yWl2TcckElN2nI0L737nhbdgD-ZiMOHMfSWI8ScZ9gs17mVKiHR_e10FTqQdYY-gGts74niqU9gpwgzoYYk952TmpQbRHeNQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMwCb7b7uDU5H1sugY3FSsJYkjKDFtcEkbm_Ij2QhbQjhFG5Av2HnKhOoA66TsBIpCsTAEaFvyxSvUakzLUk_5TZ6wNf34TJo7pjFU9wCYv-pgZ5CnByBQreaM-KUOO2-M3L2w"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Resection (Partial Hepatectomy) trials for Hepatoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hepatoblastoma&intr=Surgical%20Resection%20(Partial%20Hepatectomy)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 120500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 150625,
+        "costPerResponder": 141764.7,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 20,
+        "vsComparator": null
+      },
+      "name": "Surgical Resection (Partial Hepatectomy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 100
+        },
+        {
+          "name": "Infection",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding (requiring transfusion)",
+          "percentage": 8
+        },
+        {
+          "name": "Bile leak",
+          "percentage": 7
+        },
+        {
+          "name": "Liver insufficiency",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "Acute event, weeks to months recovery",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6o1Y6pqhzNJDxxgJ-F2_IBDMFejFsM3HKpNmDBzI9LVkJVZuJQfeaKJX9ZBDb6LjQ8375MI3_RWCYgpNkMBOgyTCm-eu6Miw4JEDhJipMJ4zlAan3wooQ-bXBQjSMRuTbQN26o6Vk8mgm3t2fRd0B57Ui9ODkSh6GQPeV6g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpNI6YG0kbTwSZzYsVd9H0msQCHZy76X_WreEaPwPohf2N3vMN7eFCknCGi9rjOh5MyRaThp9jckef2iduxg5YrY3xChaaCC-CLCQlTFmcez1BJPCyLbdImUuTpnEsIEdgwAU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt_8bVBS3fH9hwZND3_sla8ugSEo993Lp4QAkv76l2TUmC3zMR5SRWXMGRJrBMmDq_eWsiTtypAynQy2hz5_U8EJ7WpEHmcmRcUiTP7bID_LXwsp0c3HauLnEJjajA0zDMzl1ODHknl78lx_kMI7aS9qZ0Iw17N4-Jv0KgeBWir4yfjDYj8ZwnMzekqQSCnkmryht5GaRif1qwAAYv8NGqupqdZoH-0MSjoMMLV_25YrH_XuiTvXfLyIeIzQidrstQMwgfdE9I72MsKxIIKFlpYLhhB65AsKEuTvJQ_ZSwuYwiC7P6aXAi66mU"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtZOJ7gCUAfRFGJC8kv5b6GDuy1pwurciuY1W4poB4YQLtXkxlKfOfGJVdkfyIbUgj-YbI-os0JvWPj_qH0vesRDjDcTKtbIBy4NUQZqNaXPjhC3Ya5HMlHzKJsJcIK1GvZi2IJoXQv_BVtVyZOso9hA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPBDe36t5C3cYQOq35ESDJewhgwlujrQL1-ocwCbNVT5eIRHNA0QJkNK2PnulpCFvb_xDMPzVWMi0eKNq74krQs_IUQsPuOQwnKyGI-zrJMWrySYKLOSlDg9WQKqDwje2_Lpt8KW2weJQazg=="
+        },
+        {
+          "title": "oaepublish.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRTUk-UZIvNrvps5wM1o0XnKGf4SuI-sKIs8ev-g9bqykLw8rolgQ57I3g9Ddq-jVDve_CSNQMGwyUQTP_yj44D1RX6cGtqgDY11NtK5bfGtk7o6AhX8X-gUnRTRqxiJvwNcyuRUHUzd4k5b_dEaA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFh0y0oyffvDENixZUkJNGtwl-BDKJvf8QU4BIVJkgz8JiUGJPu7N1jGoaGIcQnIUklqHr6Gnjtu72HAt6AhcdpctmlxlzOrHj6tE9gN8fSloCLwWjlf-DSDucyh3dAn_2EroZgDcCiTS4QsJEOwfXvGp7nMeCtH5rqdaLId4HYeyFXiGGeqw9GeRZQIlC_wmAikL5b8sSVvou2qJ6-JlWXA7v0uQf-gIDSuINhdOoSMt7i85_B74nkQHV7BBNoo7wkzvEQXQbaZpP-umpazwA_0xc6bSWNfsuah2t21g_VAOwTRTi8s_Z51c="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cisplatin-based Chemotherapy trials for Hepatoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hepatoblastoma&intr=Cisplatin-based%20Chemotherapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Various regimens, e.g., Cisplatin 80-100 mg/m2 per cycle",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 40000,
+          "sideEffectManagement": 50000,
+          "totalAnnual": 95000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 135714.28,
+        "costPerResponder": 135714.28,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 18,
+        "vsComparator": null
+      },
+      "name": "Cisplatin-based Chemotherapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-47,500 ng/mL",
+          "baseline": "50,000 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Alpha-fetoprotein (AFP)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-4 cm",
+          "baseline": "8 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Diameter (Largest Dimension)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-85 percentage points",
+          "baseline": "100% (before chemotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Viable Tumor Percentage in Resected Specimen",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "15% (for primary complex liver resections)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-operative Complications (Grade III-V)",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "60/100 (reflecting impact of disease and initial treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PedsQL Cancer Module Score (Age 8-12)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "14 days (for complex liver resection)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Hospital Stay (Post-Resection)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea and vomiting",
+          "percentage": 85
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 80
+        },
+        {
+          "name": "Ototoxicity",
+          "percentage": 40
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 35
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "4-6 months",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "oaepublish.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoKVMAZsEDGHQO8UaSp-SvwJ8kp5EgUuh2rfqx-YeZrcBRsFudSlffsR7ujPcWILDAcQnQ6nY5XZlbwNQnSZeVkzjIraXUIhKYuziOTZgUw0xBHkmvtAjCGHzVC4uiRhZh7OGREgtP87cowzqOSNp5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGabwTAYbySLKREFXZuIXQ3D5SD6QeDXP3psv_fX2canig1rJqMIr21EonDK7cYtsxp-_zFeUqZr4IwN27kCi4l_BG2NmBFviFBZsCXpMAX7OWkR4AM6lTHMbj4p7zzJYHYquuJ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqNoJ0SyhEo9Zr3AVyStrxYbghYP0VzC3zdEGAT_enZp2hBeYgLC0fzpwAqO96xCpdw8bpe8CWD_aZylhxV2c_Nm-G2nAHEsQIP9brZ8Q0JTFh-NnzZ7fcS2duAlS2W4MAeeH5_6eXl2-cOwtVtPDWXPJkBr2_jbuqu4mKBADOiTllPn5oRl9co37h7xnb68IVnHtWoytN9q3PU_A5JEq3Q6WLr12hyf47zQVX9jZEGxrj923goT25XC5KJsEpySTnc-oTnxpqhYK40vSe5ztTsTiu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOR4LUsLVfUJCeOMY1fOohHEpBYoqHVot6uV7azqf55o2d2U9b5VsCWendZz7L2gs5iAl7l_RjaGJ85_6L3_1WSjLylGVemrbdHMh_zLct4LzSneAY16o5kmVdYVkV2WLi4oAREmO7M4Wzt58="
+        },
+        {
+          "title": "oaepublish.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiOKl1wTuqAyYNmBhKKTIKF-mtqSDvSWjwj5atGfge5dc3sVkIuTWnHTmETC8jrWAjVwbsO-BfJ01VBU5gnCDykiLXzqkteKWoswTpXod4aFUM8GdgpyXTZM93TIRthRKnTG_QtJQ-EflfYR1iXZLT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjiPsgMxWm22OROgQJSO0MOf0GeMPMh00s6i_-s10Giznd3-97bUgR-79Lqsxb1RWLe0u6GI72V-918UXWxnIYnoq0UefshuDhVtilL9kW7Yb5UaX52Lizafx3g4DWzn-39shUgfZZhBxs3dZ3"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFywJSXEjLosy79gj-wny_kc1QMx1SwpDFSh4S47xn6Y9BBJYKGvehz5rUot_C0SVc0TqFa8D3NbSVVoxiyvynvyLPxRl_T-hYCEz2yDrkebgt96mRSzH3-o4UFwdDLiH7hpD6C8JuQC_i13K-sAJtp6yCjWAg1OfPaxjH1XDaiT2FAmJzA3ieV36FVZGzl7HUK8w=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDL-dxfGhl2zbvrvE4SptGo1JiY_HsZjgEiv4iUz3IW_5bXE0dlbMlwcBWE7pC-a3CFvtg55NtkruCQVVRhL5qDnkibGSko8hE9tOLy6oX4yxMukgEMAYvB4H_l3cbQJmZ-E-U7HV2nypSbg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQT4Vzve2QjYl-m0g4UK_TyqnEi3ADgtYjCW2RWeVE86UyecWCZwvPLY_a3N1xEOVwopTbK3sOsjpcrBm_7TR76Wyzi0YQzCxAYgxuozS_6DTK3zRR-awGxx2vXL2nBEDTgh2ipU7DlavVWPQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Liver Transplantation trials for Hepatoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hepatoblastoma&intr=Liver%20Transplantation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30000,
+          "monitoringCost": 30000,
+          "sideEffectManagement": 20000,
+          "totalAnnual": 580000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 773333.33,
+        "costPerResponder": 725000,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 20,
+        "vsComparator": null
+      },
+      "name": "Liver Transplantation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+65 percentage points (e.g., from 10% to 75%)",
+          "baseline": "Expected 5-year survival <10% (for advanced hepatoblastoma requiring LT)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Overall Survival",
+          "percentageChange": 650
+        },
+        {
+          "absoluteChange": "+60 percentage points (e.g., from 5% to 65%)",
+          "baseline": "Expected 5-year EFS <5% (for advanced hepatoblastoma requiring LT)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Event-Free Survival",
+          "percentageChange": 1200
+        },
+        {
+          "absoluteChange": "-63 percentage points (e.g., from 90% to 27%)",
+          "baseline": "Expected 5-year recurrence rate >90% (without definitive resection/LT)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Recurrence Rate",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-49,980 ng/mL (e.g., from 50,000 ng/mL to 20 ng/mL)",
+          "baseline": "Median 50,000 ng/mL (pre-treatment, often >1000 ng/mL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alpha-fetoprotein (AFP) Level",
+          "percentageChange": -99.9
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 80,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points (e.g., from 50 to 70)",
+          "baseline": "PedsQL score: 50/100 (for children with severe chronic illness)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Total Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+25 points (e.g., from 45 to 70)",
+          "baseline": "PedsQL Physical Functioning: 45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PedsQL Physical Functioning Score",
+          "percentageChange": 55.56
+        },
+        {
+          "absoluteChange": "+35 percentage points (e.g., from 50% to 85%)",
+          "baseline": "50% of school days attended (due to illness/hospitalization)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "School Participation Days",
+          "percentageChange": 70
+        },
+        {
+          "absoluteChange": "-5.5 mg/dL (e.g., from 6.0 mg/dL to 0.5 mg/dL)",
+          "baseline": "Median 6.0 mg/dL (prior to transplant, due to liver failure)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Bilirubin",
+          "percentageChange": -91.67
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Organ rejection",
+          "percentage": 20
+        },
+        {
+          "name": "Infection",
+          "percentage": 50
+        },
+        {
+          "name": "Biliary complications",
+          "percentage": 15
+        },
+        {
+          "name": "Kidney dysfunction",
+          "percentage": 30
+        },
+        {
+          "name": "Post-transplant lymphoproliferative disorder (PTLD)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "immediate (tumor removal), long recovery",
+      "treatmentDuration": "Acute event, lifelong immunosuppression",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "northwestern.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRht1HevzyFM7Tv849csjYWM1N8SUYaWPD3T2OpTs--2PamfuTWGuv5gE25UGOJDuszuINZybyH_dSPVmhjlXnA2TRxgE9x6nVyF_2g5WHFfqgP-jIYJFOdKwHDHTCMqEdhA352obhZb7kJe6kt3vpJE0wjNt87HGDFn6684Rhxz-0DEjFObbCh8T4r4Vl35oPnmxeECrPRy0QpTrhsn2RjY-1cCkpahkqSjXbavdWiKD6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBtpikk3dAba9O3owLn33BAcnaK5LVdzzRolEEubYm13D1wuet7VNgdKiT58uerawf6uHDDemRy50ajc0HCVsCGoqhdd4j0GyBSMSZ0VFMHa9tFjxjqHZv8Baezw6ka_ouBm4DrEg7y9A-5A=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWUat_srfdVcKDoK4Li14U68SIBKApG39Aq9KtzhxLUUoof6tyIAu7tADi9AHoitHEvyPslmnD0h-6b02WbGNdZL8UK_O2VXfWm1ikkAVGBglct53LHJgGA0oDOo0f3FfIobYzzVGYl603uULMxx8="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgyZ23nvWijJkKM9ZFfn9cxDNGPbEouWjJB_C5hP26B-F61PHbe-NaQLpIOUUjyRNLqkaXsdmSTJS6SEralDsqIQBs7V6WIMzxFzhCEWcL0h5txeHRsrzi_Wk75iAZ1eYGApQTKDirLnudUBm-XhJdmQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl80EIzWgG5kz_XMqnFTfXqI6FUhwQrryKSoWm7MU1RHt6IrJyvPS-QJ3p7mzGHTLRaRF5f3ql__PRkNfNggo8lasRe229WSzn8E0Aik_0Y-rVpfsLpEZU8HbKvDv2Drj6YigPj3DouD-T0A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhrCKQi-iuWyePT2BtGMpDmtP5_SFPO9wijR7qD7Hdv2eDrk5VlkjsthpXV5GiJgcYFXpqRGICdRGWb37jIiGl-IV0t8LWvbqBj7LKqxFQELqLr5-CFSygRywwrjr5nVUtDmU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcWnrPwtO4o87YyGkjfP9e8EGtHHhpcZE2lyAutiWYFnu2oXM4TbKLSd0Sg2HoGvSolGqZwbovziR_JFd4SP8SsbAIT5TYXvo6HSt6nD7NHh-mboYok46pT7qgECFyV5b3wiuVMlNIkR3evQ=="
+        },
+        {
+          "title": "nii.ac.jp",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGz2Gd_-CmgNG3ZX3Iv7GZjC_bLWxGbUyGmbCL4dTESLtzp9eOAPxD4XcIv2IMaA7-gGgtf0VU-dCFq1HJEKiTiXO5B4KqAwSPuX527_wtpOkCgSzOzQ-UEqmXleC1QgiEzdrkWaHZ_8g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxorubicin (as part of multi-agent chemotherapy) trials for Hepatoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hepatoblastoma&intr=Doxorubicin%20(as%20part%20of%20multi-agent%20chemotherapy)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Various regimens, e.g., 30-60 mg/m2 per cycle",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 17000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 24285.71,
+        "costPerResponder": 24285.71,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 15,
+        "vsComparator": null
+      },
+      "name": "Doxorubicin (as part of multi-agent chemotherapy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 70,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Myelosuppression",
+          "percentage": 85
+        },
+        {
+          "name": "Nausea and vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Hair loss",
+          "percentage": 95
+        },
+        {
+          "name": "Cardiotoxicity (cumulative dose)",
+          "percentage": 20
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 50
+        }
+      ],
+      "timeToEffect": "weeks",
+      "treatmentDuration": "Part of a 4-6 month regimen",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJmML_roxHOL219K9JhcvZOFpnhlP2cyZGF9EkLtJEeXdUkmk2PtkASw36yKf9pd_Ie6Ljy2hkefbWIXB7220Ruyv20DX91rIIHUo8_xCbK0y-oDGr2PHGXiI_NBqR-Q--smc4TqPhvnvK43M="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFofN1Fa5CQqapfsaY7zB2Up1cHpMUoHKho-Vi50AepTeHl3EB2oHXt6NEndAlS3I2xmj2xLDifWgP7UIfzGDqk663egNN-eWHYXWmlV2XfZ8yv9BjlIuzIwxjsK3VKWWSwVBvz"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhYWnb24fD6TR3NQltYqWKc2i6OSavkZCvm5mGPi8uV0yjs_zCLazY_atwabni3RqwxzApmCqhjjD7B82tBrEcZJqwbCYz8R2vnLs2OL1K5ZzOscSoIZl1kKVrqZ-29UjlMA7g"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCDHaJ_x7lmT007D5VTyFYRrMc4oXkp2DvEYMX-xuSrVZhYT9L0T35ZTLzblAzsJs8K47PYKYIZS7AgGrKsNGYTtRsU5D2FjmP3U6zelVyOqgQyiCnGjYxkVFm-O4kbJuwHXXvbjOpCHH4N2GC"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiOXQJg552kV95X2u7P5KoGpg47IecgxknENJRmOncI9Sy_AGNf-b8zZw51xk9mDb6xLvvRw0dQ3K67MXMNV3SPXJWQVN2822pjlxYv53xt5fKk_zpxGY717aL6KNfBUPool8tpi8s"
+        },
+        {
+          "title": "centerwatch.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm2mLSZ9qjfLhpK2msaB2ire-MipP2ttWn04DIGanqTNqe9ggnQqWg0jAoIeZfW5_aw8cq2-qOMptxxMOoMeOKcShCTyHLJItIWeVLg2Uk7oIXSYtBraUCVt4Q9e6qlO2s75Ou2Xi-P_G7QloNG3MuTq4jVQGnb1F2BYMUKPeR5ly-8e51tk-JTkbBAjmVDfXJK7I1u_Nc9E2SlrGI1oe1Bd3jQ0qozEiuP58tKvqAtRTJj8sUoaF4r3Ijbzhrr9y2wY1G"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsNkfoRrnOi-NYZuarMnmFFSZNu-EHIJk7ecwPIznrwe7T4bEshWMlwmaHfPu-gTWTstU_CgV_Iv7kgYH9sw3nb3a-1fCh6-JM923AawJAbidBVLYae9ZaQQ-bPBAHRME2xQdXoeq-nKP2Rw=="
+        },
+        {
+          "title": "rhochistj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_zTG0ommwpcQLIYrPTn7M-04JJUYZuOyS9ErDEp1P2w4KtPyt6f69Nh8IqsQsB_jpr9bU2WAku69SLjr0CXn-j-zSJjxyrYiaIWF9WGLlj4So1_m9yhY-mumZXepYczUyfChQbGIhI9yRtqz46_YbIrXYjywQWP-KrDPM248SbH7eMA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Liposomal Doxorubicin trials for Hepatoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hepatoblastoma&intr=Liposomal%20Doxorubicin"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "Various regimens, e.g., 20-30 mg/m2 per cycle",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 30000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 42857.14,
+        "costPerResponder": 42857.14,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 15.5,
+        "vsComparator": {
+          "comparatorName": "Conventional Doxorubicin",
+          "costDifference": 13000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Liposomal Doxorubicin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-135,000 ng/mL",
+          "baseline": "150,000 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alpha-fetoprotein (AFP) Levels",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-4 cm",
+          "baseline": "8 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Size (Largest Diameter)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2 nodules",
+          "baseline": "3 nodules",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Hepatic Tumor Nodules",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 70,
+      "safetyScore": 28,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "PedsQL score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life (PedsQL) Score",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-3.25%",
+          "baseline": "65%",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "WHO Oral Mucositis Scale: 2/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WHO Oral Mucositis Scale Score",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression",
+          "percentage": 75
+        },
+        {
+          "name": "Hand-foot syndrome",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea and vomiting",
+          "percentage": 70
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 45
+        },
+        {
+          "name": "Cardiotoxicity (reduced)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "weeks",
+      "treatmentDuration": "Part of a 4-6 month regimen",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE24IyTsZz-2qKJxDGhYaxjwit0lgtBT0BBeeUz-hkUq1ei4BeySA95DvMWg_eNEYdjkUxmuxt7zZJzszQN3CnkKD8aS_ydryGRHiOPPVJCvFMJRIeWsckzKgn_jJwzDsr_XN_BCBLsMRQMd2P0Ha9Q880="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYn9_kmR2htYMUYgka0Po1q_bzeIK1r1yTFFPx7HZU2McpJWkSLlrPPCMNap1g7W7_c_zEsT_heXpGbQ9y2ghlD7FYFJUwgNhMm9VQ-HfsMQSkbpeucOyeWsV-NNxlKT05I6EFUjcGifu7u_qs"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFigOx8ljP-ONeSlIqkEueqmdailY_HV2Vwb3U-PrMl70OPBJbYzrElSiqiZlBUZSmeNR-KKdxzkLDj6fMbHrCsnBJI0IhuO_042JLsS6sTqir7XlRQghFUDLoKu1rrffe5kK9cgaju67IAH3SjYD31uVPNBUN52nCMZUBWm4WhTWHFSQIQAGHRA1tyCIz1PEPXKbuaNguhgoB5WZg0A5LUXUbKXaApNRNh_MfZfZoAs8J7vrRNK1vDP70poNoiC5zl4cEYiTxLCOStl0BP7NqeIWSbdob4iPukIDHFyk1mvWrflvjuXSSZl6K0P1hSVhEJYJ2QtiEYOizSnL1DAvNaDuSlDNum3HxpgDX9GQP546hl"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF17zKFtXsyl_l6fhtQmPFugaaAzB195TRkU8DVvHFYg4n-GIpmpJ8YB7JKVVVfV3D9vIoKBB9uADr2e-XzeHeKM2QozZ2VLiqv_l6YDiUP7WotI_WjsX307kvFKkPawox38yck7hsZvIATIXhBvHcupiJjZOGlutqhOrFvkH0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgDxDAmtsXBXYKc1OaUuVgkdXfDG-ho8wkH0EoxsDxMqjWIQ6BwAc08hvf_IA9vW55x6o__sAOBOR4tStZCm_--s_QIvnR5oTTVYaPFO4HgMktQy-ANelukAckiBbQIdI_SD0="
+        },
+        {
+          "title": "northwestern.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6jmnZTJl9LpT36amP8ZvfNe93pV3lM5On8aZ9XHd2ClCqKruS4hO2wdZc78i2qGiHA30VvujKDMI4_4pSMIv9YYtYaxZmfGait0SMJjJtJbMcDWnURFkmUkdkKbPuABatp93beyqXMSWDsZ57EynQOpjQQLSXdz3RSen-0f5UR41c5qXvpjijxuEpcOPBZ0pIp33NG88wxPjdAE1FYX28AJ0ylHAn1HsFsaE_SkT0NJeE"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiSYgQE-dLQ7TmTGAqw_rjnySzSSFFknNB6TIthtJevDYFF5sWOtfcLCLKX2ZUoGS74z6Eva9a8di9EX8rMt1gMuLa2QuNBtTBmalm4lYBQlovjRQBQlZ0TUnOZS6PdaJZhx3AUaHAmmAqq2t2mJZs"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrYUFE12Qy2Rb60nmu9HgADILSN9NDl-ijOrm8Jh6mdivRnA2JdBSsVSUJ32XBl2e9J1VxtV79miIVdAyX7fDh3rznoDn1_KOVu5zchaxnLsOOqmyd5eEpRw8sEL5Tyd8N9RO1dgYS"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx2SE4d7buas6O04vWr75fdqcIi5mMl4nsgNAODgiRqXDTtJkr-9E_DoyTmZgz2Ks0OE4sPdS0TMAV8te9rABqi47h3tlpMF-nXnR-onQU38DOvgCQHlvc2ta4_JJFUKwPKzw0CM4="
+        },
+        {
+          "title": "pjms.org.pk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9EBljjzjnTg9ZNyk3sKDiFln1V5l3G5TYbP3bxJKs2EyDdSC4aoJd4EDqASVXSuNas4T7wufnfOihVkMD1azwvWY6QUEyYj5Y200kV4RzPxiAc0li1iuR8-F4L9G5Es52xmnbEBuUQmSEdyJMq8XjgNUN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2G-LodZrwKYn7IXzEWz7956tOMRifFDzEZfRBRs2FGqtucoCWtQuk0hHcyS6pe9KaRsUhCLtKf13CVvo8i-g9XI_tEm7zH7j8FcMyzZ7LY63vVaHJo8ayds4z9vjyJgcNqtBD"
+        },
+        {
+          "title": "ClinicalTrials.gov: Vincristine + 5-Fluorouracil (5-FU) trials for Hepatoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hepatoblastoma&intr=Vincristine%20%2B%205-Fluorouracil%20(5-FU)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "Vincristine 1.5-2 mg/m2; 5-FU 500 mg/m2",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 7000,
+          "totalAnnual": 13000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 32500,
+        "costPerResponder": 32500,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 8,
+        "vsComparator": null
+      },
+      "name": "Vincristine + 5-Fluorouracil (5-FU)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-950,000 ng/mL",
+          "baseline": "1,000,000 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alpha-Fetoprotein (AFP) Levels",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-100 cm³",
+          "baseline": "200 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Volume Reduction (based on imaging)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+70% (from 10% to 80%)",
+          "baseline": "10% necrotic tissue",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pathologic Necrosis in Resected Tumor",
+          "percentageChange": 700
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 40,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points (from 6 to 3)",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Score (Wong-Baker FACES Scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.5 mg/dL",
+          "baseline": "2.5 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Bilirubin",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+1.5 kg",
+          "baseline": "15 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Peripheral neuropathy (Vincristine)",
+          "percentage": 60
+        },
+        {
+          "name": "Myelosuppression (5-FU)",
+          "percentage": 60
+        },
+        {
+          "name": "Mucositis (5-FU)",
+          "percentage": 45
+        },
+        {
+          "name": "Constipation (Vincristine)",
+          "percentage": 40
+        },
+        {
+          "name": "Diarrhea (5-FU)",
+          "percentage": 40
+        }
+      ],
+      "timeToEffect": "weeks",
+      "treatmentDuration": "Variable, often in specific protocols",
+      "trials": 5
+    }
+  ]
+}

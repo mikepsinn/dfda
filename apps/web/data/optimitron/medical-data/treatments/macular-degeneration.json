@@ -1,0 +1,1000 @@
+{
+  "conditionName": "Macular Degeneration",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:58:40.022Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "ophthalmologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPLy3meqa0q0gvwJgQtVLar9yxxgBXPZZIX6U-SD-j597JfGoBFbZ4mCjHYVJ1YLCaS701XFZZcqThD-Hc_lLdZBJX_UpTwZ1GCnc8XV-jR0MGgKjv9VwbPQNvB7C-_pfUBriquJZsnI_wFYsEYFHtwqB2rmNqTGFxhlYrZ7FlfRHvvrSYLQwjDbESiOkl74Gippiw6w9xqBAoU2Y="
+        },
+        {
+          "title": "austinpublishinggroup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyzvHfyiUfT0Rsjl0oyHnD-4JNefXbK0tEcW09UAYxa7jaXP1Pew8makc23bVFXrRHT1Ps3tn5gUbzPh5XQ7ZCB7WewbQq5T3Vp609S5clC92j_j5PnkpCP2c-DmihBHpLb2nl1Bvj4sUJ6mk-_iqE5uyLwejY9THnwzWwjd741tj2q_W8aNfO6v4S-PqOmA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_34eLRmVSonIRS0xu2ier6MST7GWmSrmtvVN0nQGCFkOaCJLEycW53lXRD7rxIlQRK5bsTemlyd2fGjVths2qIN4An4LM2o5QdfnG16hz1nf-uYkOTku8jYKPLDOvxLxGfFpCE0QKe4LHy5A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEacgmSWqIbJXGvzcpQ3k6FgsUOggXFwuVM8hBIeiQ2XOrfwzt6K22y4RfcnCMc_Q6IJpU513cT5mPffRoxylC3-poD0l4qGyEUOk6xLqADvEJ67ljYZQgxBf0R1dI7KnvNFSgh"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUx16tQ8Z0OeZURJSNvJlVgI97rFYKAuHfsgr4rbce2c93GGeRTksgtCZOug31gQ-QEjb2LeAFduTbm058cuE8QiyfOKd5Y8Ctrv_NhNHi0SH8anKz6DAPqpphGIIspvAc9hTdse5PdY4DNSTeXFLKL5vjHU2eQ_QOY4QrTX31RBjy2AiDK4G2IHKtjkc9Gdl9Gdtkm9w_CwiTlKHOlXClD5ZhlyYjTnlsv7aYi-ZtB-Ci0iE6pSoKBS4IzBcLRSiGgpu10F8sceethDjuhi4SFUNPjigbYTEOtnq8vvNA-ObLTyikoWzMOb57b2Mc3N7hWJROXj2pLqxSZF5P-tmM1Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEeYVfbQV32D81i32tY4tRRFbelpEUxh-SMN5yqDFidbL85cQjdr6y8tFdQyqkvg5MUe2YDbHVDr0Y8XI24qbtpmX6j9mRXzg_l1rRAdUTH3SLshm4EGZ0Ei9G10LvPfR7FzwhlgFfb-44EDA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKfKjSWoZ6jfTooKe63KreoUf2ix2rZsiRz5x_e_6d6XFYSssZFY1PDhQ9tO1DhwaFtMSgo4S2EcEfThsDbEjLrsw06uSS_mt0NoKslmKZCXreykH7_Z9rR9GSWS8wtd5vGxc7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0qUKmY1DWmG7-Yx7OM678g-gMvyvAMIUZk4UhaLjhhowfo5W4emVfx_PDZbQBpW1n9f2FZ2jwW1ag06ug_MqwSwoD-V6-wrnDVfuz_Yh14f7un5YpMcevvIcqbANitG-fwptZWHOPps3lYk2CaPcD1b-M31exx3ELUndM47P-PsTPsO2UWvEGO-5omn1ZU3kOk1oNDcDk-9QOTtigpDZZ1FchPcc37HJJkS2K7XAoT5MbzAskztWPSzgB0bADtrwyrmrGPpdmpel4eRvzN8CrTIZQAGWXO6xWAeg93Fp_XU3v7VgOXiI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE32iiazr7klT5t1AdpV9-n3DI2D4f3JmtYA6a72ukkAubsrOoM1b4nNfmheIP1MulmnS2MQzfUUWU4gw6b435B49Bam0SS6zivWGyWOj5oeU1GCwixkQwYwAyCRsHNjZqTaQyA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjX5rtro3dF8Q3OFgeuWmXcyOAiti7FbscCruVgh2Ku1Xla43BKEw_E4h32v8uIqVSvM5m-UpF5gISzczp-InCt90R015Su3v5jiKTc6_-qcnyGmvx4SFdBp-DhS6Pc1BF1eHRUv3cWo7sOHny"
+        },
+        {
+          "title": "ClinicalTrials.gov: Aflibercept trials for Macular Degeneration",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Macular%20Degeneration&intr=Aflibercept"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "2 mg intravitreal injection every 4 weeks for 3 months, then every 8 weeks",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 12000,
+          "monitoringCost": 750,
+          "sideEffectManagement": 300,
+          "totalAnnual": 13050
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 14032.26,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.85,
+        "vsComparator": {
+          "comparatorName": "Bevacizumab",
+          "costDifference": 11200,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Aflibercept",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+12.5 ETDRS letters",
+          "baseline": "58 ETDRS letters (approx. 20/70 vision)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Best Corrected Visual Acuity (BCVA)",
+          "percentageChange": 21.55
+        },
+        {
+          "absoluteChange": "-105 µm",
+          "baseline": "420 µm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Central Retinal Thickness (CRT)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.225 mm²",
+          "baseline": "1.5 mm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Choroidal Neovascularization (CNV) Lesion Area",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 93,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "72 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NEI VFQ-25 Composite Score",
+          "percentageChange": 8.33
+        },
+        {
+          "absoluteChange": "+15 WPM",
+          "baseline": "70 words per minute (WPM)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reading Speed",
+          "percentageChange": 21.43
+        },
+        {
+          "absoluteChange": "+0.15 log units",
+          "baseline": "1.5 log units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Contrast Sensitivity",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Conjunctival hemorrhage",
+          "percentage": 15
+        },
+        {
+          "name": "Eye pain",
+          "percentage": 8
+        },
+        {
+          "name": "Vitreous floaters",
+          "percentage": 7
+        },
+        {
+          "name": "Increased intraocular pressure",
+          "percentage": 3
+        },
+        {
+          "name": "Endophthalmitis",
+          "percentage": 0.05
+        },
+        {
+          "name": "Retinal detachment",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 280
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrNN36gIKtDZN9WZaQkVRtY66B9wbMI2XrcLxwOUyjN0rvtRpXao594pJzQEOSys4q5kHYAkLpt7pscNoGfui2K2i6dMbjhZVjwM4fNfRkLoOpDGfFW00OwPZUaQgL4vK0GGgk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBNqVNzfPBOR291oDhTIgZDk1SUC8FKtHNm0mm0ibeMPrU3XxdudHMLzMJQw7qCkpz7GnjuWe5te0-voOsiN_amNiwrgoygFmNZqAMV9tLH16CJoshGxQS9D3nyhqCYHmc5P7TPOxu2XDvyh7KaN9Ea5_6wP4MydpYd15tLoJRSgT717fVU9CjxWSQM-F7vJa_AQYP3wN8XbOtfYhP4XmXiMeJTEGzqwh22JPwlzCw9F3aSTkM8TP4Lpb7YvfkOlJq3MXuJU-_cEaghzVYJwXj427HZ6TiKYYJJvvpatH62sD_MVV9aA90LAp8b-YO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyxB9I_3_X5gyULEps74_ALqvtzRrSak1waqFrnjvk3ltRGgUHUOBr0pzAsRMZIL4ULH3nOs67SG1XQy9qRoWOiUuHHU7JhTgLIOxoZEKC8tUTSWntg0Bc4LSfn1aCioOr5nW9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsfdLbumIjUUHzL68mO0uLiv7S55jP06DwtzauX0Ql_kmz4uVTOgGpfvyiRaWc6fkw9Hs9QMkq7PwYju72nCKW1l_jQZqBQO5Ihgk1XyOpAWav0P-aC5zn0qvgcuzyllLgwSSO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELhA9ieFfe6aZZsp2JCPDgxwdvx9kvEYkj2ftymunMtCclAzOphuiB24J3ey4NZQgrN7XKWcgOAKIa7_1gJ4RDuYxWHe-hivYtqvD6Ni2B9yfiokOgqw3EXZ4uA2Dos9cj9zgh"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHUrKu0zdWJyMmLCOfSvCMYhDTYaiS6_QT5yL9o5TytwnLjY7thv0eJvCL40APe9Yk58tX8A5pR97nDZuRbve058UFvObNcPX7MuWYLsVqJSWJKxs9ETkylzC0Twl9dnmsrU8A7s3Qvs5kWSViQg1DQx9JSLUQiqiSGL-YQNUkk9mx5wAWGyo6aU1nclA1gVy_P8bh4sPlGLHPC_9_bvFXzlCV_h9ehh73vkwwrNRLdJAHqBSRU0xX5c9d_hKVOpXynfLiEoXZRULecQHzwnO9DWfixL1WD-3AuIdAjVWZk5FX3FsIgMRByqMj5qT_ABbFlvnSMAQR056vl9oiz0pfi9IWioKkb9jqBCIyLo_3cH_gJH65acUI5AzDsqbpe_p-p7w5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH-t91GRUC04b_Rf3MVk3UJdLABoN-IXhuJlHJtzP25cIKGLwyXIyf9d6KX-w_YMCD3kzL7eh1R-0tsk7Gn2e9gEgoqdatnsFG_EPE1LpplDHTWdEnCWT-9h-GfRhgyANR3nyF"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH0ZLwAa90tQzY-hsxRdxnfwIkpGr0b9IhH2tFJ552HbbqI3AAdgPL_h_-qi1x-aDGiWawTjNuVdzD_14ByO-n8lTq6hqqcOajoA17qF9dGoV2ooV59tlO40nNOGP4rzE4oo9NQLMQ6jNncE5yj8Yc4QaaRpwlLmxE75X3lsOPWWuWUkhz6T4O84LBX3_f_sD1gh0SeganAUASPw5WxlOqNwtFF7kGLddlwhuhsBtrgiF2FLkGphYRqZUjb1tZ9pXP3KhwSF6-0Mn6_8BhfX9HpEwe-IM-nm_V63uX22e7_h40Fgix69m1WN5mHLzaUcEPv2vA-GFj6hsbeF47R6KOHg_Nf87gnQT9GHrL"
+        },
+        {
+          "title": "ClinicalTrials.gov: Faricimab trials for Macular Degeneration",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Macular%20Degeneration&intr=Faricimab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "6 mg intravitreal injection monthly for 4 doses, then extended up to every 16 weeks",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 700,
+          "sideEffectManagement": 300,
+          "totalAnnual": 11000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 11827.96,
+        "icer": 85000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.85,
+        "vsComparator": {
+          "comparatorName": "Aflibercept",
+          "costDifference": -2000,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Faricimab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+6 letters",
+          "baseline": "58 letters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Best Corrected Visual Acuity (BCVA)",
+          "percentageChange": 11
+        },
+        {
+          "absoluteChange": "-160 µm",
+          "baseline": "430 µm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Central Subfield Thickness (CST)",
+          "percentageChange": -37
+        },
+        {
+          "absoluteChange": "-60 µm",
+          "baseline": "250 µm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pigment Epithelial Detachment (PED) Height",
+          "percentageChange": -24
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 93,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 injections/year",
+          "baseline": "7 injections/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Ocular Injections (after stabilization)",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "National Eye Institute Visual Function Questionnaire-25 (NEI VFQ-25) Total Score",
+          "percentageChange": 9
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NEI VFQ-25 Near Vision Activities Score",
+          "percentageChange": 12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Conjunctival hemorrhage",
+          "percentage": 15
+        },
+        {
+          "name": "Eye pain",
+          "percentage": 8
+        },
+        {
+          "name": "Vitreous floaters",
+          "percentage": 7
+        },
+        {
+          "name": "Increased intraocular pressure",
+          "percentage": 3
+        },
+        {
+          "name": "Endophthalmitis",
+          "percentage": 0.05
+        },
+        {
+          "name": "Retinal detachment",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 26
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5qUDfjH7XShWTFQoNdlNRltR13POS9Y5V2V9V3wAoU3GmSQ3LFhyc-_JLGwttsBdyBbAJ-dbkJ2h1QSjZyCOycxoGkZKNReAkga4AGGbvBeJPCNMhPBI1-gfEb0Vf1hInnKU="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIB1P4ppiGIBw6sjNVVQwPkI1SDp0tVPBZrjJddxe8f_TucLVC9KtiitoVU-2_769PiJCKOg47149LnDL1GJ4TTk4E7DTFaqt4Q3wX7VrbzytK1dsFWVCVE1KvTtjTTbIbU3f5YOU="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGf8yWSms5D5i6C9KTAAh8TxPY9enKR-L66vXkgRKAkLmePxE4z9tcW3vHfFAXm6F-ylSvOtm9fLYNGUS7m7usnJaBiwdRyqpw7Q5CLIrbCtGaK462xNajST-3Z1auaVTkbzeTOew=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8Bkv8uoEh15P-3V3uwEpe1ujh__LrR4_lpH4SuicEUPbjbG9sIxuN00ArhYMFjFh81eN6CZRO7TCzECCKtmZvNPh5aAax9TChV13YkBTUqxnZrsO25L7AbPGq34WrfQIbqRg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlD5em377IyswA-9rFDrDnx5PvVmeJA7IPJGT5yioQ9UUC9qo8K0B4RlVupoklXbjR0XxUrXEw2nI_WHJAd3sQP-3QkRK74vjaVcKJTQlOJvIWneLrEO40h9AZbDGdfFWq3DmAdDPaUCeYQu8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVeHownIaGPK9JhpeW7bRp7EIgfAiDNAXQ2vcbd0d95wRXviONLMGjA9bkhR_uG0qYEfCcxYFtSTpqDRkbB95AU5BrAi86qe1nnaThvp-877Lc2WC5KIbosAWjw2xUnEjX4TefTPMG5rgAwA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9ZBd2Ywyt_mGaVCQrgQRnVkvtXFOvyNwWVRmT1JaIPiv6FOy-DKG5AQCsN69QqIbOfDJ7HyPldLzB2qn94i-s5Y57mdHkyrsL_nXeokZ6smhPzv8Lbw3WHTHIy2ygC20Lu-Y="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ranibizumab trials for Macular Degeneration",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Macular%20Degeneration&intr=Ranibizumab"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "0.5 mg intravitreal injection every 4 weeks, then individualized",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 16000,
+          "monitoringCost": 750,
+          "sideEffectManagement": 300,
+          "totalAnnual": 17050
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 18532.61,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Bevacizumab",
+          "costDifference": 15200,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Ranibizumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 60000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+12 ETDRS letters",
+          "baseline": "55 ETDRS letters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Best-Corrected Visual Acuity (BCVA)",
+          "percentageChange": 22
+        },
+        {
+          "absoluteChange": "-120 µm",
+          "baseline": "400 µm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Central Subfield Thickness (CST) on OCT",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+0.1 log units",
+          "baseline": "1.2 log units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Contrast Sensitivity (Pelli-Robson chart)",
+          "percentageChange": 8
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 92,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "National Eye Institute Visual Function Questionnaire (NEI VFQ-25) Score",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+1.5 dB",
+          "baseline": "15 dB",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Microperimetry Mean Sensitivity",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+12 words/minute",
+          "baseline": "80 words/minute",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reading Speed (MNREAD Acuity Chart)",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Conjunctival hemorrhage",
+          "percentage": 15
+        },
+        {
+          "name": "Eye pain",
+          "percentage": 8
+        },
+        {
+          "name": "Vitreous floaters",
+          "percentage": 7
+        },
+        {
+          "name": "Increased intraocular pressure",
+          "percentage": 3
+        },
+        {
+          "name": "Endophthalmitis",
+          "percentage": 0.05
+        },
+        {
+          "name": "Retinal detachment",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 381
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-E-_RcOX56fdYiD4dT0RR2xYOzp5JYMfJJCeNwOpHqmK4dUeKKHvwbvcUgHsbEn4mV2WthwScr41Yb7rxA-MWw_DxQwPumuqjsn58T-kkGPy5Acr-WWdg9sr9L6Tlc7MTIlA8N-h1VALcfQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0UhMICNqTjgfC9zyH00ZX1w42PjYi3xaStvH71ZspnT_1c1cnTxe-rJ635rzcZ--PgCeVm3SxELMPiKVx_RM9ymx-_Ci-Tw-NIDuj0W8o6c82mkRpeuuXfTgcdbbtHFN3HEjKUFYIDLk7ZQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYnxHxRK77BwIU33VzVjfg7O9603waBcJx2w53zK1hRsJk3KTzcDG0gdld7r6fNyJsU9bMy1hd7Jq9_7cyXgq3-lZMIx39p4ASVmnvyxMmc8Ce0Vu2uZ4LqHinn-ySOwhF3eo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGt7f2UK8JKhbuL8FoARevCoi5egiRptF_p-ea1YhALneoOvqH65sb5MG1OSz7YQU5BVGCTcCAD0Ux2c8Vjm97xI0b3WFLc_J2fbDLpnBBxSjr1dLoMjvpaxZj_Pqc5cNaDjaI="
+        },
+        {
+          "title": "healio.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrEbUF7LAO9VRnle5D-2oJWEudXIjwYXXnZCRliI-KBUt8iOKXx3g6FF4WqdT1fZMJW9TmV7g42X_tOmhRLrMOEdvMYs6-l52CIogNDlBAPi7Rf4h-MkcY77bmC-DDHkvIuHsG8MB1tqwtLBlx6c5g7cXguBX4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5OOrY4DPry9mQSLUnXUICPr63Y6pmYiJciIyuM5nlDj6YVgnyPOsWUQ6O5qX_uNK5EbxhlbalFJMcgoG5GVrA30GgEhVftpWV4L7KTdQ_Oi0LU5cdncSzWKgaaI1S7oOt_AQ="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESW9gs1QEgzjiIaJsiRm0Xsf-GjWjoPDk_3kn3Pw3erKjvZu-yhp-ei3IU9OxTmK2BT-rhkpIzTMUCXDIPFEJeORzMxLUKELjycHDvnlcS7PswvMWngYlZVJ99YuSFE9Ea"
+        },
+        {
+          "title": "ClinicalTrials.gov: Bevacizumab trials for Macular Degeneration",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Macular%20Degeneration&intr=Bevacizumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "1.25 mg intravitreal injection every 4-8 weeks",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 750,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2010.87,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Bevacizumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 55000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+10 Letters",
+          "baseline": "55 ETDRS Letters (approx. 20/80 Snellen equivalent)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Best Corrected Visual Acuity (BCVA)",
+          "percentageChange": 18.2
+        },
+        {
+          "absoluteChange": "-120 µm",
+          "baseline": "400 µm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Central Retinal Thickness (CRT)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-0.8 mm²",
+          "baseline": "2.5 mm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Choroidal Neovascularization (CNV) Lesion Area",
+          "percentageChange": -32
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 92,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "65 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "National Eye Institute Visual Function Questionnaire (NEI VFQ-25) Composite Score",
+          "percentageChange": 10.8
+        },
+        {
+          "absoluteChange": "+0.15 Log Contrast Sensitivity units",
+          "baseline": "1.5 Log Contrast Sensitivity units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Contrast Sensitivity",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Conjunctival hemorrhage",
+          "percentage": 15
+        },
+        {
+          "name": "Eye pain",
+          "percentage": 8
+        },
+        {
+          "name": "Vitreous floaters",
+          "percentage": 7
+        },
+        {
+          "name": "Increased intraocular pressure",
+          "percentage": 3
+        },
+        {
+          "name": "Endophthalmitis",
+          "percentage": 0.05
+        },
+        {
+          "name": "Retinal detachment",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 130
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzz79WxKGgVchol0sOM9f1HGsojq8ixANChI9SA05kdwbbhW1DE902lzNFcDn_RwGPhTyYVjVqH3uJ_e21ZyLi8i6GlkzMMP9XzeWEPorUJy-O6rwZiqLR1txbpVXsQ2eYpsEtMy_C6JUP4EVArcfIF5OmiAOKjZ_3s81sNStc8OTJA2ao4vg_PfSL13oZ-YStWprIYxP93XVihVC8rvhJXEdGMJDk0Vjw_X-MdLMvQtIZzodKKX-ePRDp_71psDIp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzaRm3-Cm0gvmdNloIKqqHJltFrfrcNd2igMuQTf0aBYFJfJrAKY2sa-omaLS1zWFBxvHVQQq6fJJLSjsJhbWQ4Ayoegyp_5CkP7c5ygs3t4l9knCawc665W2FSItgqrJ9utz0cWv7IvnwMNc="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl4rZnMKUCWH77eG31Z7Fw21jMCB1ZsSITDbqykw3CGMSv0OjwdVN397SlDYsmC_zn8L_3WVQnyob_eR69Wa2lES_6HVJdxnUNgKuofmyAQHdARrjWYoRyFUQ1QHV4wKcbJ3BoYkU4cu2s9TC782wShuOoRo2ebBfITe5Npu-1alrMQ8eGxPpCouoUdTOwOZjx-kH7E3mDJfkLfEliq4JBvANU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNdbjcEuhvUPuUL_FPTFq4YHTenDZYLnhd1pjy2oW3DXqjOsGYkj2WMcF6ZBxI52h6AbkcmRuZajZVNehK9Y9e23wavUdWyktVKpmAqV1P7ohIx57IMwUMJskhjkSIEj7gFuIv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlXv0IHBKNK1GPEEmRt1sDsAd-_YlkPSmMOtFXHFwXrbR3H9jFs8cNI1CcD4IDLn44Iid0zXzNxCtOLr_IUAHzAnw6CrDlT7bBuSFqK4IbIZYTvu6IN00q0ZwvC_n3czVed3se"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFjqrj3378RUm2pVpBshH6GbthNY2FvCJsbDtTEPS2ogEbz3lu-Kd6KYdH-8wN6H4CFnHBY5B5HSKSTeCLr7_Hf5pLjmySlPFE6_sG_KAONCgM1DmD6hiEG9bdZiS1q-G-9e6oZxSeS6Zpddy3YsFm5h-Ul3x7KDf0rdd-s6AIQLFwQ5qExiV4ywDBDkQFQeCt9Dts0YsKv0CEhkDh_EeaR6uFaa0WNf1aQmjDnPCNGeK7jyZ0k1SC6NkxeDboNjRoDnFl3uBcgBNrzU-WIjgt3B3tbbQt"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtx5Jt24sGG43VeZrrpNQWyDit0aWpNO4N_GgzE8btgRnHwHkLKmjxUwT-RlUpySixFFfkFfRJ49ceYbbNonkMOksdcOGzxHAkkxoDD-kxUfQsIO8VtRWS2u8e5i6qqvDPpguz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc2JMRUxuOhzZ4z4U3eraMsknvPXV03Trq4RsiNR4XC6TplNMaj2vD5Up7akYCacVkAHu0O_UqpXMJlQ3BYzuqbVva0ASlmQim_gweFi8bMa0Qn8jwglPGZBblPsqc6shwyyzy"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVNaVy1nS7Zvdxd-PndPg4DKnYPiLqgcSPgtz4eswkHVmQU6KD4L5_EMh0FJ9gVWFZ4Ydgul5uSBFQdQplpQGmAdRxNoOnOE4kWaGqQ5WFVZ6nH_bwEcTjnz06BRv94rtA0ejnLtleA8wW4dkM_xhzqKBDUhwFzRTLnCHdVe0PA0bO86fl-iA7ip1VMi_3W-0C-3wB9HFukgif65mbX9cSXGaoLBljE8WyJFRGBh0ztoQRpKI5lZYT1U7gtK0D2mk="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQewT_7RGlcAD2scv2cCOmYiSU0aiQ7HsBAM3WNWGG_ChxvFiyqHmtyFfv5b92wbeVl6DMwuNJc4WQunLa133JE23lovI0mUEJOpVfD_0Y72SXhvPhyLhghUCXVi-9cbkfWUlKppU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Brolucizumab trials for Macular Degeneration",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Macular%20Degeneration&intr=Brolucizumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "6 mg intravitreal injection monthly for 3 doses, then every 8-12 weeks",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 12000,
+          "monitoringCost": 800,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 14300
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 15888.89,
+        "icer": 90000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.75,
+        "vsComparator": {
+          "comparatorName": "Aflibercept",
+          "costDifference": 1250,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Brolucizumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+6 letters",
+          "baseline": "58 letters (approx. 20/80 Snellen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Best Corrected Visual Acuity (ETDRS letters)",
+          "percentageChange": 10.3
+        },
+        {
+          "absoluteChange": "-120 µm",
+          "baseline": "385 µm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Central Subfield Thickness (CST)",
+          "percentageChange": -31.2
+        },
+        {
+          "absoluteChange": "-50 percentage points",
+          "baseline": "75% of eyes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of eyes with intraretinal or subretinal fluid",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "70 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NEI VFQ-25 Composite Score",
+          "percentageChange": 7.1
+        },
+        {
+          "absoluteChange": "+30 percentage points",
+          "baseline": "20% of eyes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of eyes without any retinal fluid (IRF or SRF)",
+          "percentageChange": 150
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Intraocular inflammation",
+          "percentage": 5
+        },
+        {
+          "name": "Retinal vasculitis/occlusion",
+          "percentage": 3
+        },
+        {
+          "name": "Conjunctival hemorrhage",
+          "percentage": 15
+        },
+        {
+          "name": "Eye pain",
+          "percentage": 8
+        },
+        {
+          "name": "Vitreous floaters",
+          "percentage": 7
+        },
+        {
+          "name": "Increased intraocular pressure",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "areds.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAQkxmwl1rImnC1xZtg_Z1FO2tvcDm9-VKWwWNK7uyGqcdi3Z5UHYe-T213BhnZ_XZzWJ9D7TVvlbEdB_feopr3UU2lA7qmC0TiLM4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL4-t10q39REnCqZ9DxRrMORJeYGjzt21pgYm7ZEqRI2Ov1lNNu8FXcP0FKne4qIaNtUYvXSiUZ7ZdnWgtDpX2aSD6Gx_Cm9W3FA-o8fpjlAlqCFEYAMasJYAT40C6ndjnJWbk7UHajCVQU74kjkXwuA8XEzhh3c-5Mz_gRqa--fOOq0btW8gQzfk3Tq6Kyi78RxdUyAcpW9jSSP5d5feg5srfy8QqLfOrpl5fLg=="
+        },
+        {
+          "title": "brightfocus.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1gCq9DbExXbzX3imSGHGS3TNpPRsZtNl-rG8pnqjemI5lk8Qcw_XpwQ1hZ6ekdHJ8JkYrHqr9OkAsZq3vBRi7xkXrBg5EQB37oPxFGwRoycFlbRFQ4cMVjVcXD2I2EgMTCVjJqp_w95xMyaokU5sT2D8qAju6QO9WNey7JBR0CEmy8LOM3AcSBsgwNBXJwGXBv6wHq6QcWH1NLBt59kEUn0Rtm-kE5nLuP9YjOmz9WUTf1nBgUUM1DTdJ8FDYOLLLhh1p9XTYevhPMYUpvA=="
+        },
+        {
+          "title": "eurekalert.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHu5VHDX8j14DRdBe__YyX1a8jqFLoieMxQUwRp897lKV77RDLtp1kDrvPIbgDpoI1qcPNF2hd3JRt6ElP6Ra4lmu3WOWPcZF-hTnhUDsQ0C5_VJDdA9gwHaFYJN5mUp-FPvPRlm4Lrbjk="
+        },
+        {
+          "title": "nutraceuticalsworld.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL_9_40k69zzS_hxPmvr7xsT7wlWNNsbh09eu0-dTceEF_CzIMYl4piMoU8YzklIiLakOtzk8atR_I_OxVUj-SYx75WzX7EeCHwqxz_TqRs0aX989qjEPTlidREmaTeo8NofEXwMbbOTwmN20FNzpUm0MOz-LrFZ0nmU-Du-Ntjn1clgofvjeK1iV_qNxvwTyPVC6NCg1fR7Y1dU3GYbtJCvc4uSo-kqYutqL0ZXA9ysM="
+        },
+        {
+          "title": "mdfoundation.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfvuqtJg2sFgxC4FJtZvPmJziZmznM7nsFgM6TAYUeO5QzTPudQzly7k7K3BZTEw4ymAwvOUmdM7fkZ-dwZ_9d3_hzXW0Ac4a-z0OtgZ4BVBAgehwMMF_xIcNkmU5v3uqAnXplA4LbtrjIvBJIugycwJpx9vIPzhY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUc8vmaUbr0L1qV_D0Xn5bTrvN8Tq-um1ehnaXsQU-UADg5VY77qLMtB0RTmiuHLONmh4R7I35PBWqk1OHc2gvZvoJFRYVmWxivl5G3XCINyijxUlvzo1aRHqKUk58BJn8hDM6Im9Mu2exkQs="
+        },
+        {
+          "title": "preservision.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR8NUwsJAB5Ynt9dbEroJIojNRRFzuffLywGOOTz_bFC0wzCEAk4sfhDOkxAIMktgMaZM09OOPEUaetKLBQ1XDsYZaQnwiVAODaQaKNAvfWFj838_6-gwofr_SkM9Q86e3I8F408_9C1wkwWioTJUmq11cn_VjZ6HuIzHiLcKSKAwYt81V"
+        },
+        {
+          "title": "reviewofophthalmology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqumHA9wEAHweZOyY0HqB16FOJ7SVBQhU8-4z0z1-EkupLMaAA9zTZ4l_u7CFga9nDEhLfsZMcnm3SxQVDIaD3xrv0V5yDtw-GE5UchBzgJjSaGzIPQo-BPX4SxqIuOp33v8Apu9sutw3oqM6raa5PA5l2-vNq4tFq_Qqe6FHQmBK7bfVoV7PDXlaZ4eaZYItnWddXf-ykUrYwSHF6WA=="
+        },
+        {
+          "title": "coriell.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEkt30OneBukinrkno9qroXHWpnYbeE0zO_XD3ertiqf36AWgMtvd2r7TLtAGYqAKKdfZ6Z93q-jd7r1l2_qMOiF8bPwdgRlY4EIMjagsWuU82IC2FXacrDaCydoAOuDeCLIs2uEuHfW4XrnwAx6I3hRF2"
+        },
+        {
+          "title": "garetina.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSxkYV2w78bSbgQMAf-CZMxIqdttoDttT46LraPOL5oM-tbCvsMp6tRltdpUyyDXpv72RuHlumqpzMcNYxtX8xA24OJSoxmxYDylQZHGejoantaUEU_tn-by2zyVwqweKMwQ-3ubo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRs5h0PM6UI4nZ4PVD93bCzYHAqTQrvjz-a5IHp8Lk8nHZKwr9c_2wUdsWNc7vqt0j1xFZwIGXDQ8uwtBuybYKeA0NuIU3c3CtZiyYiwUn2WrCsyhpDvZPUctrzkHhwg2e0pbcXdm1CDP9NQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRi273RAVFHDsGLPbjePQcuqYBFE0SYv4FXmQe8ix5NBMCoGvmXkzuowbJrsEcfspjKbFbGiGEvw2eBs0j5-nH_7mEB6Lqd3OVjZvEVnIxs8J6bCOpVtOthPjlOjZR5W97M3S1SXl_dkEnxQ=="
+        },
+        {
+          "title": "macularsociety.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHILA8YoqJE5jGtrs2adcz-KCji0mxFxOStfM-ZiRFYAvd6jhPHF2eYUwY1hGOnw3vMUgAHuKCOE2agbYoD6qv6dEgSteR75O8l5qjiXrPRiaA6FiHwsX6h9j0kTTA-LDqJ2syY-lK409Oouy3lchsQ5jh6dxPPhKiCfemuHwxtdKjgzETk4C1b6OM-NB8uojnJRRxcZfHZafp6SESVy6kdD6rmZBor4GIfXB1xww=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-XeWfOyBwmsNfer3nayciKkDaNu0L4OFBLwMRyZ_Wd8w5vhqUej43109TgKEA95u0G2PYCYKDWGbFbnwBPe7iW0VvogcUSrW2mlVGGV0ZwO9oZhkEw2WrVDBoQucnznA4izhM6Uhm3voV-A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: AREDS2 Formula Supplements trials for Macular Degeneration",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Macular%20Degeneration&intr=AREDS2%20Formula%20Supplements"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Vitamin C 500 mg, Vitamin E 400 IU, Zinc 80 mg, Copper 2 mg, Lutein 10 mg, Zeaxanthin 2 mg, daily",
+      "effectiveness": 30,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 500,
+          "sideEffectManagement": 15,
+          "totalAnnual": 915
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 1000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "AREDS2 Formula Supplements",
+      "nnh": null,
+      "nnt": 15,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7.5 percentage points",
+          "baseline": "5-year cumulative risk of progression: 30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression to Advanced Age-Related Macular Degeneration (AMD)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4 percentage points",
+          "baseline": "5-year cumulative incidence: 20%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Neovascular (Wet) AMD",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2.85 percentage points",
+          "baseline": "5-year cumulative risk: 15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Severe Vision Loss (≥15 ETDRS letters)",
+          "percentageChange": -19
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.07 optical density units",
+          "baseline": "0.35 optical density units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Macular Pigment Optical Density (MPOD)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+0.15 log CS units",
+          "baseline": "1.5 log CS units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Contrast Sensitivity (log CS)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+3.25 points",
+          "baseline": "65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NEI VFQ-25 Composite Score",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Upset stomach/diarrhea",
+          "percentage": 5
+        },
+        {
+          "name": "Yellowing of skin (harmless)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "5+ years",
+      "treatmentDuration": "lifetime",
+      "trials": 1
+    }
+  ]
+}

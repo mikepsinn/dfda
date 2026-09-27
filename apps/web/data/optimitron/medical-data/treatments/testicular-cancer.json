@@ -1,0 +1,1069 @@
+{
+  "conditionName": "Testicular cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:22:16.082Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuu2X7qixrtzRYChoFeWwdJzSmT9gJlkPZjXcegMpFafFoR9sqPga6TlT3XSpCwqKLDIn23gjPi-SygK_3gB_-8wURsr48NTX4li-pxxI-CaTbpaU0m_Pe2Q2oSsYWOyvm33oRo4L0w0j5Cuw="
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaTJo3kSDl8QVQbzvAvRpveu7A32OAwSb_ACMr4wMHyEI7eKehnWSnV7pgAHbcdmo7XwADeqD7uLeQttip6G3Hw461HsgGsq1A4eS3h1BqMr86Mki-WAfkp2uw8hRcCyvBfVwxc7v34T_Xc-l1F00xTzX7CunY1G8dBgBl2TAkIZaA91KuVw=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3aNo4GxUcnJjA-nXCpU8_5RhlDaR4xVzEw1ojQPBBM-H04-b6KkSpVrdwwRd6ILKh6nlsg6EfgojjqmLNov9J3BdEx2kZ5bpRT5krrT_5o505tTGJFoaP5QfhP8m2ChiPiBU_vLHg2Z2EQbQ="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpG94n1F06uCMRqmB5_od8A6JebFTGJlsRpwffXDyg8Bk5RvkYOAE_aofIa5v4Rk4ZfraWIhI1YDoTFZAwIAQZttaNbbn0tA1l-5NNLcEq2iN8cRhnm1O9pniOapyVT90NIYlpyhu9DuQaQbKwwrfI2Q=="
+        },
+        {
+          "title": "doctorabad.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEheD8dbXVWnFCADEpGGAOHCcybh562DCUfIC8fSSBdXfPlpwX6TcjGqYtnpfmRPllIgm4JumLl30mRwpaNk867IY5PmLEABwoWo4A9jvMjvWYi1R7Dy46AalXea2epx8UK-uhQU-MUT9eo5cldULx--9SDIwwYkb4XDPhSG6nY0F5Al-reg6Dy1W8FSr-hIz3rqZKKZjVivBwZVpMaatuXrQ6qxtouXJ4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsBPMClH2BAHWizwckJDCc5cXFy9eum2bpJB5OXG0M9nJWmZd-rk_u0dKyQkSp2g5XRrSjE4LDJVuW0SRN7amTSaFgTzbWXPjr2rKG0ORSRRgRPUUwjghfxjViJNjg39fCGWzQx4MInA=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1IfWqMmBfq_7Nmx7gzYO_uDnN3bax_Pj6sH6ZtGlg-EwyW07vuvfK5CC_KMpTgz3nLT5_11qSChpjgemTDPwvkDbkJ13WLgnwB3Me4gLH9dJLOgFqSZNecIdvqcwuRpD9CCYNwTcDbrj69OU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radical Inguinal Orchiectomy trials for Testicular cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Testicular%20cancer&intr=Radical%20Inguinal%20Orchiectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 13700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 16118,
+        "costPerResponder": null,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 25,
+        "vsComparator": null
+      },
+      "name": "Radical Inguinal Orchiectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "to <10 ng/mL",
+          "baseline": "500 ng/mL (median pre-orchiectomy for elevated cases)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alpha-fetoprotein (AFP) Level",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "to <5 mIU/mL",
+          "baseline": "200 mIU/mL (median pre-orchiectomy for elevated cases)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Human Chorionic Gonadotropin (HCG) Level",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "to <250 U/L",
+          "baseline": "400 U/L (median pre-orchiectomy for elevated cases)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lactate Dehydrogenase (LDH) Level",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "0 cm³ (complete surgical resection)",
+          "baseline": "25 cm³ (e.g., 3.6 cm diameter sphere)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Primary Tumor Volume (measured by ultrasound)",
+          "percentageChange": -100
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 100,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "60/100 (pre-treatment, affected by diagnosis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL Score (EORTC QLQ-C30)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "50/100 (pre-treatment, moderate fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cancer-Related Fatigue Score (EORTC QLQ-C30 Fatigue Subscale)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "10/21 (moderate anxiety due to diagnosis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Anxiety and Depression Scale (HADS) Anxiety Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "20/25 (mild dysfunction due to stress/anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erectile Function Score (IIEF-5)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 80
+        },
+        {
+          "name": "Scrotal swelling/hematoma",
+          "percentage": 10
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 3
+        },
+        {
+          "name": "Nerve damage/numbness",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (tumor removal)",
+      "treatmentDuration": "Single procedure",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "uspharmacist.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrkw0C1fOcnPAc0Bfz8ErAHWiDGyFgfqqtbez5s9AbIHZ6WJUtXpuEW8kgafFkvomCyTRQTQ8N8mAPsekFYEmhOyxKNTlIT5ILaGdiBsijxfZYgBqWyX35_1SyoIAtmNbDuUdXUZVTvkySaByJg4sXzGMv_guCzO8_c2s8Yg=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLNxqN8tuqspFOZAKNGA53XZRPcBztDBVvrRUCT2y24ZS6GqjGGuTDHUeJTHeWUSoRcZFBEPAUxbq6dEAyd9GOyf92cPsi5hspu5qQV6e0mQw3a7_iVmrsKIhUk6wRpnlrz8_BfsXgT_IOrk5WFeJMV2Tt4WfsPqUrs_YBz3RRQDFxVn9SKhD4uYYRy5FPlct-2sPkMIMlPrKlWV1drbyu6fnGSS-4k6MLpiKvyzFprjMH1aPcMWJStdsYYD9-C_9zTRegT34mCyp-DIKwoQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOkkmT3pMzWeWJiSYqAc5XqlTUNScfHs4LWQ1Dd5r1Ycnajlz_GxeNY-BzTDxaIv_r_cgs3J_W4uNsrM3dkRaiRCEMeLRil9rQlDPOLXSINbzXTv1ooBwWiv9c8D4i-SPQxJ8HmzwiqtVfrVOgD3vO3aYaIhY="
+        },
+        {
+          "title": "eviq.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX8CF71_H51bCowoUp2PJfzJxgWwGkULQfgLuZIChMX2O2p1NmTvtnIezfaoWfAFW5ASVfu7GIh4cWA_l7BcbSIWwu8I9DDEkY3IwmtFpCuOcHPkaWddLCHwjUXydu0gn22Ufi3Ci5573eysL4Mud7_EGXDH6PzTqkZmpsBSHiIwof6NPVJmgFuDQl0VmiT0dfwxgnH3WQTOKT8mp1Uk6NtjSu9ulQ8BcxGd0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEspQ9DWN4cpkk00baNt1MFN0oIallgv9Hfjbsjtie-yJ0ZBLOc8VcyqH0kY17bJonjVvTEQvwhihebTh3Kgj4ApN7kP6bTeQj-5JQrNf0L9Y9N0XgYCxJJX82c58i_hs-JV53IhOcxQCbhd50="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEomR-tQ_lAPLt85QBCbDPgI7QRBUsykzywS45cfPJwc88SINdXLdl4TFMHZdHwGzwuwJ-rLypquRc3UBYeKxrkS5aDUop4MOuszISVSBJ90z0PnDHYOpo3Ptckhz9A_L7Sya-R-3tvgKEnYesc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHES9kcbFU7yAQkmZcphqIfC1bxWLXKAoFdBVfjP-FvoWDO4SFe4r2t7paDxCutqSDH1SHB28UWthPx1jJytK5M3Q9TfOxmRapW9ddxkvx3aqDotepFPnbp6NWlRKPaTK0A5i7osxbuMm76Row="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOXo29Wl2Bs_TwUOiK5hV7uep-7SPAyGBf7xzFWiw1aNSgUp8qtKEUMz64hOG1y0kkneLCjtuJWItBz8UQBN_NUB_E7TZsHj_uPsm3TOrNX2WCmw8skU4qpblQHMj-MCBDg64NW0xuEywusUlEgo4MS8VizYeIy6-tdZB6e2usLM7scRzXFRPeva8fsx0l3exsxoOvc4T7zGex"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHxX6AKDld60FAhaPipvrKdOFKiybreAkWKJAsEWjH0JjEB_0kYyVAxDAXy9q4WirOA5y5sb5rIzOw0w11XUWhBHaJCm8RUgVYuWwaQb9rZLT7ectVW3Lz3_KU5BmY4oLMKRj4kPY6CsYRJZSQ7jWJrPL3R34ChE7llx5ACIm6XT2FhgjFx5FWDsQrvu-ecn34WY6codHJ4Lrc4T6RjJtWk2T7oJtTvTwFmSGVwgWDoMGVsSH_d-OAkehBiYKJjbbEuBVuXMR_avm1rfv-Tl_lLFFI3d8zwQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERoiHA_FwAqU8HvKwIvOAhZtnfJo7clrF5dio06alQyAu3c6-HuTdf_qXK1FtSJxjqVyEg1s_DZWc52J7KvwrtO7uL7GwxbOPrlweWLl213djJyR2LURVERlhTIhTOZYizdkopHoqVcFCclQCDrOI_xYL_DKahULjoE1iQrnvEyPU9iXZdMbUv5iUvzZr_QbDXQOTa_fSoMf-1bnmfbR5DouQ-ZJeH6nTo2bf-BUiO7bggugpPjIfDCHLiqHFbbp_aiw1LzxOgh9xYiuzQ0MxzeZ3UbuFt3AyD4GObt_dSkl3mn3dTRr4ARENHRiuE9IA1jXSYaiQ="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3M1B4ofSzs9bQu3iDqRmctEGNauRYyJ8vwCZCaf6sFal0CljimpFhAqu-txJthtf_MPDihLmK1KOqtj70kX3HNyGM_sBeNgvQ2I2nVXy6U8xT76eR0ctY1I27-ZOdv_S1QdSC_77zL-MPisP9K16ItUcKWt3jTikQKYS5EpCP2PjzKAxPaJRHW606RM4-IE72qTU="
+        },
+        {
+          "title": "ClinicalTrials.gov: BEP Chemotherapy (Bleomycin, Etoposide, Cisplatin) trials for Testicular cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Testicular%20cancer&intr=BEP%20Chemotherapy%20(Bleomycin%2C%20Etoposide%2C%20Cisplatin)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Cisplatin 20mg/m2 days 1-5; Etoposide 100mg/m2 days 1-5; Bleomycin 30 units days 1, 8, 15 (every 21 days)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25000,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 42000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 52500,
+        "costPerResponder": 49412,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 20,
+        "vsComparator": null
+      },
+      "name": "BEP Chemotherapy (Bleomycin, Etoposide, Cisplatin)",
+      "nnh": 10,
+      "nnt": 3,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-490 ng/mL",
+          "baseline": "500 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Alpha-fetoprotein (AFP)",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "-995 mIU/mL",
+          "baseline": "1000 mIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Human Chorionic Gonadotropin (hCG)",
+          "percentageChange": -99.5
+        },
+        {
+          "absoluteChange": "-4.5 cm",
+          "baseline": "5.0 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Longest Diameter of Target Tumor Lesion",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "ECOG Performance Status: 1/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "EORTC QLQ-C30 Global Health Status score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status score",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "FACT-G Fatigue Subscale score: 12/28",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-G Fatigue Subscale score",
+          "percentageChange": 66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 85
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 90
+        },
+        {
+          "name": "Hair Loss",
+          "percentage": 100
+        },
+        {
+          "name": "Myelosuppression (Neutropenia)",
+          "percentage": 70
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 40
+        },
+        {
+          "name": "Ototoxicity",
+          "percentage": 40
+        },
+        {
+          "name": "Neuropathy (peripheral)",
+          "percentage": 40
+        },
+        {
+          "name": "Pulmonary fibrosis (Bleomycin)",
+          "percentage": 5
+        },
+        {
+          "name": "Infertility",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "9-12 weeks (3-4 cycles)",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtOifyaGBCWG2rz9HpHtIcX9qLNZGr4H-W55z1UPP8X_ssqRQUBz1AfZRIRKeAJHw62B_wJSlPpyoqaYouRmZFaUbgbD8iOeu0dECH1h4yNxwupI6pGn9WO9qUr6QQ544J6D4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRS8yRsqMUz_aw6DUnSk6WY4eH0-gSj4kTE2EeCEXXwqyuswUT8RqNFlJAww9Y4gzBV5_ZjgpkM5VUofJ4XUUjCGcskZL7BjggliXlxwBNW414LAsY8XGkv9xHIeC4a7pE5thxoCHaVm19uFq8os8HzgpnhlsZyANM2carG2Pf5-qb5XpyKuhxHOcF-XZErM9FLdW9urE8psGwGz2MqtqCbXnaiZHWwnrqapDiGLjAlkjeEteCwLnttuUKdWKeBTwUZoVkVw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmPj7iByVgfB-kZlRXrNOWWo5Kz6ziFKj8PIutLiZPbOv1hrO77Nz3e7QpqnQTqLFxvuvGlfY8wR1PNzohXPJ2iXoFGnHmxOgeagTN0JA-bl-scSpnZPtdnrLuaOfmxEiHuvM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGckqUHxHopdllki_v6PFuSlqoAzcyb9ijZZNK40gW9YS4eASM2smkO-dbGWKUFFeBIZ_3L6I7ty3OWNJdRmpYfYvWkc9WEyRvjXcAUEgpK6QVeD9q2fslOcJocsAX398s8Tf_fkO2StQMUD5nWcoY_hhOs_QaMqd9H8mGc99L_NN-xNHUdoUwwOV7puDr4K0dTirBOwqCq4fDR6ghRoRCHBjTow851nmzmiqLuUNhDajK58_ZD3E8PkwXZ6CHkZ7vS-XQMx-2mB5PFt7OrjDGWoG5xq46aSPb8axufYPEs3N227H7sy4LnzBDZ_YqyqOAQnNnKz53BEqM7RYnsN3adZ__cvScNAbllkkGVSw6Nn7bGGf9IcPJ1CYQYdHH6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqmHNSvyke1gfjYng3CMi3EtuUOL8jBF1fdENWwYbLY43WnpYiiZhZevHAhwPekk6W8IeQgOzaevkh6Y6t3W3g4_LAsXCb7GLs75WVhpxke7KBhMY_4BnYuJukLlb8Eh0_tPeXFngVbCs_fg=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbUZ8Tq_0s1EApkOFm3qi-FFLh0E9H-RY6sZd19z2YpcvvDawxpoQChaT3--TX_4mMYINNiRwNp7lL_dv7e5Dv9snoMkMlbwoFyuiMDSeEx6rpinOL5E0gImVhxPSx5ZN5GtJN33-VOY1XZrxQi74ChOA="
+        },
+        {
+          "title": "uc.pt",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwuYj70loQLBGxeuItuYG23sGewYS1S79P6PrJ-7x-50AlTs_5-jfURYyt4IFcb0Sn_KM_Gd7xNfdMEuHjcvh88TJj2fbiYLv6Gorm5UbCBB4ZhKwn0pv3C7j8NPiREiabYh8ikDvV3yCF80KYBXl8FCwwdY6G-5p31l2FSrnVjkxLQN2-AXm4ZqS5DFRo6HNr94SoOaslWfo5HdmQX8vglmFOtQe4ujyxGg9bIR_IM8AU3Y2d4CpyuS_G39XGc-bYff_zvjelXxJRMkL70orllW3Rdu9KGgh-vuXv_Mm-TbSBSRYXAyfZJQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4Pq69fVQZhUX74snzjoY5q1ltbW0Na37lMCZVX5NYYZLojBNjftQFQ7go0_U-cWdLY5621blL-HgqPdXoy91So-Du76DuJXQW0BlGV7v-Hos8to8vkROURZn8LdnL90qRc-Mx-3uAjXMGN5fCsesPsVn3SIkolrgoNBLC4uP04-gmV0JtqVCIS4towOODWEuQMSQ1cV5NXrpOIGS1KwKkBYsc1aLUe8Ph1H3KbcoPk2ZJoxYkgBaI4EArquTosP94"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSkXChFt-0vUUMIZVX4KayqJfyKeXh8MPEcE5BcRCkNkUgv27A6FqoLlUPdfC_5cNyg7ioElZ9ZIRhQP_yWWAsR41-tEJg5SCyx10M8kpXDUTtJUlFIxuUqFcRmn-KuEA7oKRkPKU_wfFkzLYoRl5u4OeDjXKZMDKSwbDfHzH_LPHkocBmIrntxmHqhcVfTlA4xfyZNBE3YBJJesSuXxJtTchMT9G-Ovxd18JdOEa78KB9GlSc6ISZMPDLMnHIVjpBPmMsEDlgldsFzMZ7PPjfpsuyd9mIYElb7k8a5VxliJQ1YTc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Active Surveillance (for Stage I) trials for Testicular cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Testicular%20cancer&intr=Active%20Surveillance%20(for%20Stage%20I)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Close monitoring (imaging, tumor markers, physical exam)",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 100,
+          "totalAnnual": 3100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 20,
+        "vsComparator": {
+          "comparatorName": "Primary RPLND (for Stage I NSGCT)",
+          "costDifference": -30000,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Active Surveillance (for Stage I)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+15% (percentage points)",
+          "baseline": "0% (at initiation of active surveillance)",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "5-Year Disease Recurrence Rate (Stage I Seminoma)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-15% (percentage points)",
+          "baseline": "100% (at initiation of active surveillance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Adjuvant Therapy Avoidance Rate (Stage I Seminoma)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-0.5% (percentage points)",
+          "baseline": "100% (expected optimal survival for Stage I TC)",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "5-Year Overall Survival (Stage I Testicular Cancer)",
+          "percentageChange": -0.5
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": null,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+85% (percentage points)",
+          "baseline": "0% (at initiation of active surveillance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Patients Avoiding Chemotherapy-Related Toxicities (Grade 3/4)",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "+2.7 (scale points)",
+          "baseline": "90/100 (high baseline score at diagnosis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning Score (EORTC QLQ-C30 Global Health Status)",
+          "percentageChange": 3
+        },
+        {
+          "absoluteChange": "0 million/mL",
+          "baseline": "40 million/mL (typical fertile range)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maintenance of Pre-Treatment Sperm Count",
+          "percentageChange": 0
+        },
+        {
+          "absoluteChange": "+85% (percentage points)",
+          "baseline": "0% (at initiation of active surveillance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Patients Avoiding Radiation Exposure (Stage I Seminoma)",
+          "percentageChange": 85
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Anxiety/Psychological stress",
+          "percentage": 60
+        },
+        {
+          "name": "Need for subsequent treatment",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Ongoing strategy",
+      "treatmentDuration": "5-10 years",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM-8lg-QSdWwZEG5vQa6xJhE9xL8caagImd9GOIRMmV5ukXcA7LXgOAiGcSIOifHeDuJQ2Loxvk1BN8xntl5CEmXbJ2yl-EjbGsg5AGhe12xSMt8EtcI_40kvR_UKreMPHhkyoEkwnmfVLnly_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX74Uv7IoJ_WU_q6pTj6M_Dc8lmiKIQt53Q5FsuUMjMYEJYBbYeg5AviYelB31HdrJDAjb-2G1KesZIT5YjeRbpM5ISrAUEvieKJiy5BZS4290ZLrig5FON5SmliLOBAHm-dc4iO892dLL6Po="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-nkLDOZPa7Q7fj6pBT-DMrSNcy47yUZR7mCaz7lWTfLxFnt_1eJ4xK_DdqslO6NrUz3W_uIpAugR_86x4APU1Lc6iSNCsOpu9Mz6Cy6rd0MJSPrNAWb-041yZxfUQWZDeHYJB"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxU6gg0r5tu6how5OJ3dWMMEU1mozdAWlxKv33n41I3y-O4bjVvkksWa88SvpV2b2a95drlQuFc_LKnJlBjV3xKB0BzIbeb6XBiGbaYKTbYJTWQaKhJDBBobrX1NkRbeSjv3tPmRoyv5ivmODs1vOpuZaFmMGLsJRm4lF-xhAOuizp5DpUv_jQZa8AtddtZoXrSvjWsPrNEHIOuQAbja66HmZUyXtYYSCBmhYkG28guZl7Nlk50G-lQUQ9egqWBL-xOwFc6p6arnk7SE5n2i6sYUhnaa76aUc2E6aPqxaXZcS80GgorsV4U8nQkjPnyM4dWbnX7LlwPIGWKf4nAkNMt6Sp3I09iMSSQsFY8SsmBI7Wtu0SuRTQX_wf1zxSfqm2D4fVXbxBdxbNIEAggBbTMRK8Jx4c"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXM-VJqFdVwRGLUGiftNWUc6_sTnhClI4rLcyxxI4G4DMgNpZaTac38-qsXM38ik_WZe547Rgru496G4DXWrPPSAX6Vh0QSLsQnOQ3qiY9qvpqqiUIfbngPcvuvZZeeB30pIcPpcxJ6ZJ_SyZY"
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVVhxvCozBtK2IQ3XDOjL2ko1nzWovlwWiT7UlpJvHxn5IXgtieVQifXA6FHDDzZG1Gs1AW7aVke3qdIws-Ot4cbipIsyRdT7Os0jMYJQ7UMeoZKmSWNneR5KZuEXH2GaIkQmTy_DwjWS1HOtvltxyTVy5bP91RQEQop61tngaWIKEdVXlsC7AEwbAAStqxdIV1WxWwhZRZ6dRP1b81pEin-bRrvnehqSO_dxs-QaX"
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqxrsSUEAxzE1mlKWA4wsW214hRlU0PKSiEfbG1lcwuMDBgFk8oG9nPlu4AKqO0hZp0H_QrD3AOpA0NHUNljU_GAAA9wEnV5SW1U9rI2otj8lfQ_z4Qyi9ZrqLroRAStEgCoR-R0taHBglAALFNv9LFi31bFHhMbvziYEsjNvjXZ6X6qlBqYfRf6N7eq_CyI0n3jc83H55whIVbU6r-Ge7UHx9v1EtDKp3m7Gfwm7G"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl2BN-vanpU7tfvUTz2H2HV8JPncMwCq7pDXT0gs6NRiNcxnh6BvKj-uU25GeVjNcAG0MZTEhAbt01h2pDdBhGomgu7BJSVGNeVoMkOoGK23x1hwJ203sYJf7-5DiEjYD523OKBppyUXnmJnI="
+        },
+        {
+          "title": "guoncologynow.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1gXOTvPQMrXiIQ79I46KmNsmkOvbuCMOxv2REFdMLTTCdfS3Q_dNDNviOiMn-LdLgNyuOFk9XQ7O8fVKoRgRRAd6tfDfx7-DMwnBsfzIzaciJwb-T3Ft21METAOO4YBZcuH9ryn_RHNPyXVIFycAddoTOIQ_3OtCjjTdxQUkJx30A8c5S6NIY-e3APaNiaxwTAigxR9kF5qEkcJ9rwe7TxNeDZdfDDEXp8bM="
+        },
+        {
+          "title": "duke.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3XvCjgdCRCDQ1IRcw5Nv7cshw71Azz75Zchz4_DSJSTdzrAE8YDXDkHccK-AXp9hiw7MhWyB4kfKvN7SrT7FHiiTuHHmEFTSKAFLceafPYqIQHevTP66JzbAzBcGT4M6zxFtupkhC"
+        },
+        {
+          "title": "rcsi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH62ijF1D7bh6jgu7QQ_XqXvDf8tiNq_uevpFnRMlWlXYe2Q0yOjWZPvQxXD8-P4exRd3tGM_SjpOI4nEgqrNRbyml5ZlDEtKCh1c4UFYxIsF3-lSk7PENZUFCMrpm-0SH0a2wluVfluqaKH4cgSu0oqePgPtAGiChWwcHG8I7XpR6wq9wximsfwsjBjSrfdzHXl4TcTlDCnpWs4ISPG3g-oUDum1QKZJWz2WCuz1plhqR3UTCPHK3ZyfEIhgL7sboeQ0aaDVRmI-5C_gEzosjfjWIzXD6uv8NYH0Aj2YOpdVNKu5OciRC1SRAw"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHend0zo5LwkTN3Jn_2JGphnpqNvMxy-xuljTGHo8nBP__ED0ZfZx0aNjDzsRXMg_B8hIWDYdgL4kUvclFLNmHJkHSaHWB_JU9I8yh_6_zLTgbV2LA_-aioJb6rrUzEaoTpAQHOrdpLX5caBu6RrfK1nUKP4ItCwV9JPl5FkKBra4t4adovgjQEvRHnzZoC0rx0H5wRs-A11zox-r_T9s9wHPx8oSLPe5AeyFlVTii9Tj-XxQ2tbpNIF_HXdUYnnRBQ3uxZCxhRh1uuguHs5OyHepiZbQIsmgRoagA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Retroperitoneal Lymph Node Dissection (RPLND) trials for Testicular cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Testicular%20cancer&intr=Retroperitoneal%20Lymph%20Node%20Dissection%20(RPLND)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 44200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 49111,
+        "costPerResponder": null,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 20,
+        "vsComparator": {
+          "comparatorName": "Active Surveillance",
+          "costDifference": 30000,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Retroperitoneal Lymph Node Dissection (RPLND)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "To <8.5 ng/mL (normal range)",
+          "baseline": "200 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alpha-Fetoprotein (AFP) Level",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "To <5 mIU/mL (normal range)",
+          "baseline": "150 mIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Human Chorionic Gonadotropin (hCG) Level",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "To 0 cm³ (complete surgical resection)",
+          "baseline": "15 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Retroperitoneal Lymph Node Residual Mass Volume",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "Reduced from 15% to 3%",
+          "baseline": "Risk after orchiectomy and surveillance for Stage I/II NSGCT (e.g., 15%)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Local/Regional Recurrence",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 100,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "Increased by 5 points (from 70 to 75)",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status Score (EORTC QLQ-C30)",
+          "percentageChange": 7
+        },
+        {
+          "absoluteChange": "Reduced by 5 weeks (from 10 to 5 weeks with minimally invasive approach)",
+          "baseline": "10 weeks (for open RPLND)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Full Physical Activity",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "Reduced from 10% to 2%",
+          "baseline": "Risk of repeat surgery (e.g., 10% in some surveillance scenarios)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Repeat Surgery for Recurrence",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "Reduced from 100% to 90% (meaning 90% of patients preserve function)",
+          "baseline": "100% (pre-operative normal function)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Antegrade Ejaculation Preservation Rate (post nerve-sparing RPLND)",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 90
+        },
+        {
+          "name": "Ileus (bowel paralysis)",
+          "percentage": 30
+        },
+        {
+          "name": "Retrograde ejaculation",
+          "percentage": 25
+        },
+        {
+          "name": "Lymphocele",
+          "percentage": 10
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 7
+        },
+        {
+          "name": "Small bowel obstruction",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate (tumor removal)",
+      "treatmentDuration": "Single procedure",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiQrJ-sdWwPpC6Axty_Edvz4CMJyGDgm8SmcE3FuqL_O4nKU9bPxS0tpN77YMgmh9Dv5dTMh1fqHZfegXRK63HctH_UvcMoNw1eFqy6lwF01DisJgfffN4pTpHYrMP4Y6uCpoc68UIx0Eaze1LIowC19RYSIXYPb-tHipZvhm5QhhroKMDxuRmAd4cNucXMMQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt_dnLcqi3PhbZAZ4uL068n8BaIyzkrZHFkjEkADpzVc6mLQips9w_S53-tEXtAnqnNoIk_j8M4LwFbRBnNYfXUVNdP3N3fjt-EaGvTFj5CidomRYjCtSjvs9j_3QQ0jeKxixCqVQaXggxVEs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG12_Mz34-DF6if_HTu5-hJH46Jm4EnE8lCmnuiGJV6wCdx_74fox5AG1Lo-hGypuX3lSMNSZvxGZ_CuFVTmcr6MaqSSd4Oo7VTXR_t-ZFC2apI3K8I2Qe9F0g0mAJrBvPpu_I7joCQA-PLQvVRWws_fXw_RsGEzkX-e2AL3vq7rWAJofmUrFIO0Orxa5l-E-R60P0htlPtJig4YY9SHBr0fbxZzWDWCnoU7JgvXw5D3sAj7TSMoS50QQFKY4PJhLwJNg=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmBQPcKTtcfpMkXGia4wtvYXmQuCgyinTVEvnFon0M1OcI-PHYqbFhzOsZ7SgoHU50hmwzVjMqKcx6I47G0YFT3k8_iBl3CLXuNCwvZvUG5_qYkE1kkAj1Bbrmmt0Q--jvcw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEktoA7APXcbwOzs0ob3308s0bdhxD5MjTrQ2_od1kOGeKP0HPi5_7APHmUa3yha4yA4FdI7FTCXQKJ6oq9-D64k1lRdNLo4c_AJ-dY_y1_YNu1p1o4V9INBe3xepKFT0m1b7M="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYlKXWc-ML4lgnXXsvGAJOo_3De2nc5MNBJC1KGg0E7hRfRgheqBgNA49PO-WwXyUOBLrF9ockf6KJTpA-vFlVFBISMnfdvZL-1r-oKk4a0dnHBUZhgcBEka58T7bGjhemVkb6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvut5zOVyPXWGs2Kxn57YRBKbONzqSj4s_hhqLsWBRsNprNVhuvvP7DRbMJFiordizK3OlgdEepR5uNDE7IbzkAFBy7xa2CCZ_f4If_LKhal8c2BF0ErxyrJIAOO7f4h40pVY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm9Jv9YpWQk2LwYF8buxZ-IgdZzmUiYseW92fIdgJ2u8OXVMxDlqOjg3iUec4upvE1VNjknPhyp_4U7tUmZnQ0su3l7EXQLzXdwkh5bm1dh4HklYymFDeLMV3qdseoxLhsrizlLPVKM9rVG3hL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgUfJkGN0K2T_C5u1IG6UFKMVHBvfbBEXR-h8f4Rtb1jc9-hSNhtqohJPx7ryBAmcFhl9bWK0WnTdBFkBbTYfkaLlBp9God9bZ7B47bIcFjG3SmCfBZzjrxkB76_2XKkXqxnJQ1gVgOuQEDg32thnNmaDRqsLyqIEDjOJY70HS517KUImVwDhPrbySS_yLC4PzMgUEt7D4gASgyQv-8lFxoZsMcaRjFREeR7rAIN04Cz5qAb_pRxLtw9krkj6FYYkG0Qlav62BEmWReZ9Ofg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Adjuvant Carboplatin (for Stage I Seminoma) trials for Testicular cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Testicular%20cancer&intr=Adjuvant%20Carboplatin%20(for%20Stage%20I%20Seminoma)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "AUC 7 (one dose) or AUC 7 x 2 doses (3 weeks apart)",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 7000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 63000,
+        "prescriptionAccess": null,
+        "qalysGained": 24,
+        "vsComparator": {
+          "comparatorName": "Active Surveillance",
+          "costDifference": 3900,
+          "dominates": false,
+          "qalysGainedDifference": 0.002
+        }
+      },
+      "name": "Adjuvant Carboplatin (for Stage I Seminoma)",
+      "nnh": 25,
+      "nnt": 7,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+10 percentage points (from 85% to 95%)",
+          "baseline": "85% (for surveillance in high-risk Stage I seminoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Relapse-Free Survival Rate",
+          "percentageChange": 11.76
+        },
+        {
+          "absoluteChange": "-10 percentage points (from 15% to 5%)",
+          "baseline": "15% (for surveillance in high-risk Stage I seminoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Disease Relapse (5-year)",
+          "percentageChange": -66.67
+        },
+        {
+          "absoluteChange": "+0.25 percentage points (from 99.5% to 99.75%)",
+          "baseline": "99.5% (due to effective salvage therapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Overall Survival Rate",
+          "percentageChange": 0.25
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points (to 80/100)",
+          "baseline": "70/100 (reflecting moderate anxiety under surveillance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Psychological Well-being Score (EORTC QLQ-C30 Emotional Functioning scale, 0-100)",
+          "percentageChange": 14.29
+        },
+        {
+          "absoluteChange": "-2 points (to 4/10)",
+          "baseline": "6/10 (moderate burden with active surveillance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Burden of Surveillance (Patient-Reported Outcome Scale, 0-10, higher is worse)",
+          "percentageChange": -33.33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 60
+        },
+        {
+          "name": "Myelosuppression (Thrombocytopenia)",
+          "percentage": 70
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 65
+        },
+        {
+          "name": "Hair thinning",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Weeks (to prevent recurrence)",
+      "treatmentDuration": "3-8 weeks (1-2 cycles)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV5nfz6Bc5CZjQIpQ35EnbXmk5jrzdBlTA5GbIV81_pfZ1c_L7-ql6c7RjT4SOCGohd8mZvaylT0jWiYesrv0cSzsaEIVSMU6VdEFESNRbTj3MC0tXtt7u3Gb3RdcVSxkd0V8-2fd-ZOfYKxk="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3I2T9FPxJ-EkRGQRvs1kJSvcwrJuaV1slht_jHcWV3PRwDERXP21cQh2vlDy9L7TI2rGCrzdS5tDgJrmi3AHMSIaANoniNdPcI8PkY-PvBjXDlP8T43_DoUOeYUO6ZRpoLEu111z-AeHMDdNMPL_6YHVpcpVUoXNOPkbTQmYEMQHvZrr9S0hPGEC5BAoAwdmethrwMpkhf7twvy4GsSmQBXDoUmWgXIJEHgH3YwKSvKpdFTDWLMtSoKo9cwX7FiAelyTLmEQ="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK_vv_RHsew4lHrfs3FAxWaQmdm_DJsmrOQKQ77kWWy-deWjun710J2bVel2OsTeogBWJ9Lb5s_AHbjPQvIk84w-EgUJy-9jQfMlHG7AO2Lj4dDCg8rwhN9-dVFtajKTQJvfYcKAFsvpLdY7SnD8VPvhMkP9ltCCjS2W976B8yzntfIC70NsjRmQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFihE3MR2VgGD6pECWC8aNfhCYeg1fHvocnpjelev6HgWvyDW9z4WNo5LD_8cFk5P4_DFh5s0bnC7pPMMLwgakv-42yA27x-O135Vi8Ar7FFnBAHI3CWbqKjx0dIoPrRlrkv76ntluFUpZDYkw="
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3giGJ47nwAZUEwVm9_7s_cfrl5aPw-uyuj13bR6SaOHXcVP_clwsdnOYw2fGUywd4gwjRwTy6dz1xj08q0QSF6c-EohXZPARsysI-klRI5oo4iIbgYCfMcAmUlJ6YlvQ-zAqlNl3v0VdWvhnz359_1no1g8Pbim_C01rAwQqSxRRtjnDadeLkHiWpUFJAQBY="
+        },
+        {
+          "title": "medcraveonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_arYXuIWFkXPU9lL9eFimpRFUkA1B95AzDdTmH7Khd6Q813LZerLTFoNMcnugC_Q74OwcQt5-4-d7dkNJvGZNwR96bOWLLn-CTmhLITkwjO-kRqumObLlv-QF25ELpnarvwZRe8q0L8z-Pm0IwgYSnaZ8Tfw34kwTFX0mIrT4Xpg8zDtLWcGTwK3I9VPP2kAfFHJrLYnkn07gAhSaRjLCIQZIMcX0ncOjtf8viFNFEjXr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8GmdgZ6O_Dr_88lV_gNqke7mhkhB-K4s38npeu22bV9Vua6N8b40EuQAuAVnyNETLN1LGldb1B505fEdnSxc1dKwKOSlBGGmOFLv_60mgukjJZSWOJDPoJzEKPFvKInWyWRE5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbUxNDZ84drAYEzz0rEcVVSZfHqZgOeKvLPNcRiTvswhqhLE-T8XKWdV7upsLE4J_kqKWf8ERqfGLSD2GXGzD9YEisknqtgQaKD8G0pbqFw6pT6e3YdhF_vRKzKkCm3m8oAe7WJs3gR4Tme5aSpoQsvM9ljYfPCo_SS_EXz7KMs96UhJFnpdvUQtwGxkdd3h854ZtTrhGPvKjqLS3Qw3e6PcGh"
+        },
+        {
+          "title": "pharmacytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAqcDHo979Ow6RT9I8jKPTp2Ebqs6Y1RLOQwmL42kvW5aTLYQja2jaQejIro0Yxxq0hTB2AOFGGZQ2VE1mW_U4YiEMZimC5PIEV8jHk6DO-6WEuxOOJO3vWppK2WA55nKgxum7WieRMGXYXjXtfjxfLPzTBAvh70ZnhDeitA6M9KzM-Y6vLD4hTR6sEu_g1eo_gnW52RwhU1FdJ7eT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmLNIZnvGzFX2BC4hSKoVygcNXE4WnkICl1b6kTdm8vxxKhwcS26ZCw7Q1jpmS-5375_BTTx--8Vuo_J7NIK00peP3CGc_P11jlJCkDAJScpbq6zntqbnMpRBKD3GzCU2FIUdgCPjKtoWqiwc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYFJtqvhXiSOr5VWJ1ZQ4YhVNaNFVdv7s_RM6R5DslXB8ioQ1RVePkLT0PKIkkgpXmqTVAGAebQMrnEpnz3tKlLvvFUpoe9Ct9OlasK3-HvLATj5ZedyrILzpAKZ5HlLFLKZqzPbQqfaxC0j4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy8kti6CvP9fCnqK9uDrVSSf5BPjn6oLnFL595dMa2Iv5KlpIqUJUjqPyMsBFbwctl7xgbvcjNvMp7cM8ynfrGUTgSMZvGa2srqWaEV17TjMYnZuHwWRgy368r0Dxh1VCSFNhzbU27"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfB-DzgHu4urBrAosbTF8-TJOFLZnbJP1N5yWt52rD_Brmq8PltVQyMlpxifnSH0pJ46gTLUjFuD-0iQFiyhfUUDMsuoGPWHMv_94pQAYzZP6LV_LbY1xN1eZpZlf5yPxUGGeCFQXiesw7EyMM6kWP742Bq9DLqsyylTlPButRlLK1Sl5ODt5DCb0aYb60_SCN_KRBj49phDUSRSyZQ9VvH59nabPo3CL8rKlQnwY2BvI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiation Therapy (for Seminoma) trials for Testicular cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Testicular%20cancer&intr=Radiation%20Therapy%20(for%20Seminoma)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "20-30 Gy in 10-15 fractions",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 23100
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 23,
+        "vsComparator": {
+          "comparatorName": "Adjuvant Carboplatin",
+          "costDifference": 16100,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Radiation Therapy (for Seminoma)",
+      "nnh": 15,
+      "nnt": 8,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12 percentage points",
+          "baseline": "15% (for Stage I Seminoma with surveillance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Risk of Disease Recurrence",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-498 mIU/mL",
+          "baseline": "500 mIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beta-hCG Level",
+          "percentageChange": -99.6
+        },
+        {
+          "absoluteChange": "-250 U/L",
+          "baseline": "400 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "LDH Level",
+          "percentageChange": -62.5
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 100,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "20/100 (low fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Fatigue (EORTC QLQ-C30 Scale)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "5/100 (minimal symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Nausea/Vomiting (EORTC QLQ-C30 Scale)",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "-20 million/mL",
+          "baseline": "40 million/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Sperm Concentration",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-100 ng/dL",
+          "baseline": "550 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Total Testosterone Level",
+          "percentageChange": -18.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 60
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 40
+        },
+        {
+          "name": "Skin irritation",
+          "percentage": 60
+        },
+        {
+          "name": "Secondary malignancies (long-term)",
+          "percentage": 3
+        },
+        {
+          "name": "Infertility",
+          "percentage": 50
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "2-3 weeks (10-15 fractions)",
+      "trials": 4
+    }
+  ]
+}

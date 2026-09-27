@@ -1,0 +1,920 @@
+{
+  "conditionName": "Varicella and herpes zoster",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T02:10:51.533Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTvrX-7C_N92stN_Grs6irrbFCFiB0vzku-WYRd-N_TLAJo3bLYxulGwV6kKi3LHlbCtP29adPMtHFVosQG_vPmWop_KYs8dGZKboeLT2h1NX8nS_BqHPlFBWoI39eJvKs75H22ruxr7Ro-zkYqmRduTSeDkMW7o1pz1srjgmSUh3_6uIWUg=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4XjuEG98yIU7xyPUwXYyR0lLC-BYG9Yjgvh7mRigcc7C25zt-cNP0HiZ4mDctIQqIVfbwNW2VE86GEEm4UwtZi8bKcM72mM2_zh4B69dzDUOlRslD1yME7sYn4wvxOhnr01LC58vHOtRCV4tAa3T4GQsvG3sJHEUa25XIN-h_ZOexitZLSiUI-RB1LOaMz1GS"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYgffxHczvaF700tusxivSJhCSF-CjhTvBfpvzBWfuyLnkEGpkLmikHrs0t0UfMob0l7KHbJLC9mJo3ov8eviZihjA1joRwn_JXXSANLwiwRtcmF1ETI6cob_7XPTUUCNvSNRzF2GPIVkld9c4FmYXCVaz"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjE9_58wl9zXpGY0CZiFavxNLExswgZ6IFboZFFDzBqt73abI8iFJzt15WxrVrFDAAhtuqD6zxCOmhrIm9Z6SAMEYAqb59g_HSrqG3XYWDNGupRmoem20BSocwb3Dj3sWHwN_Dv7Okj-srQxg9qLEYdS7PfZPpQczDCQFuEuKJswXVI33TWQYUajeZtVd3OlY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH03JuAZzgL2QjGOJ-buHbmOfkrPDRHcq52hfpCt76w7px-attBfJTQSNJ-FYtB0ELjzLMTu-KgFIXEoBbSYQYCpemg17grelNU8qZ2JTsPEjbqqjUgc71lrxiQm_8s6hDmJPDk1t7brEEGUCw="
+        },
+        {
+          "title": "drugdocs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQe3NvLIewSysopJdbPgP71H8CfdHKnr7mmg67ohSMTaBcJ8_ckqLv9dRZTjkVuq62TUfN-sV8q8snsfq8g5dLBJVjKLCKa45sfg5jISr1RowmUfNL3_FuAsKUZVW_hCLfTOoeg7VqORjUA7m72zwDHiJgr-yDplQuvw=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkesY6x5HPmN_BvH95OhegGukTywWta11X2q18_3WXQZiYW55QBvMKiNYR4gGaceeGgPltMeXr5hcHct3fR5mH2zI4SEHprHXv4UGYXf5r9LOZbMZWBPrHoH4VFhkvzEL2Z28rzUU6dnYJrvYWg42MIpb1m6VjEDstZUZ8T58KjJFg9kjtQA=="
+        },
+        {
+          "title": "clinician.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-0EjZXKe5PEQo8nEjJ7pKUrbj_yJuj_bewUIykVrkg7jPZTjk1ySA4_FsnWQenXbCfjaZE-FtjoyibVMkNgCSSPdCQRwoT331VRL_FDT03Z3PK-Mzst6_lJ0KQpkAijspkQrDtwoYUXn5FOHVQSykj6G03Im2shgln81ld2Q7lSOAZqVHQSrt16Viz-wTQT6_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQHIQr1OkNem-SrHtsefVnincE3R5ZZ3oDoZCju7t6wMqG5GO54jCSHoGvkCq-wXa2faSifrZkXwIUS00El5IKRI72y0rQfXDV3fKjjS4zBkJqsRbkzYM9OhgRLwPrEDQ9-WwFpr9kgnpeBtM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeyW-K9GQkpLJvKbZbVhlSJcCCaVt4vjBuPvOFUO5s7LMvnWvIyFkaTuWv7vOyaSLp6GV_K9Y30Ha0kkTjk6WoEm8q7-Kc6pEeBniM-HXk4Wwqd93nsdCqh_hcEFMBfUPBmvx2pe4c8GCR1cA="
+        },
+        {
+          "title": "shingrixhcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE33yLfUE00eaM17-FdIJgXSrUGnefwdN1CReB27s6S5UyrRXM0SKHKt3UvOKIWdoK4vGWdniL3yTihMjtsleLqmdO-66VcgxgEwuaEk5HQRdnesQ0NhNJqf6oNJP5dT4slfHU4B1ch-IOluXxbuh3o"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFONfh7nZkbdmMR3Pm0jiTmfGLkaA4aLjyn_5DmqyO-12ou9NDEgFC2W2iGRvduJU0P3iCwuHfbOjzYo0Zmg_DzZqBGZ2uIXmY-f7z6xIRRm7tiCI6UKU0HjahJax7zp1XjwQqfL9sThuDyMacHDTqxbGMqxEFVW-KdV0f87vnsEq4tbWBjNzsfJBAYsJJEMGUqGNaRpficXyK-7InFocHDybAQrFLCQUV7filIpweZKYpwWbxLFrQItuF1fgJoRKhieGQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRAzM6g6IhnlbJjAVa9NRnA2czK9Ei-_adWRED5rmU-quB5lEhM5tYKDfFDGTWoLCeKZT_y7cFkAE1Kvv5hsHT8tVCdqYpZBk-tpnKkqLaS9KXR0tKU_73u1HJANnUOd0nU5MguevmkXiAiIttru8P79DDIJEkbWO_wNYhqnBEYmKzROCaFX51p0-dPLproRU4MFUCtk-pPirAcyDPXSOCT8dURoY88s9ZFhLhRiODQjLzjL_E_tI00sNc5USBvA=="
+        },
+        {
+          "title": "vaccinesafety.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtQdW-xuEZh9DKCSUuWz8A_jYmbpgF9polQHLEKfiIEGUAxRqKK3Nev1-fI5VrOUMNlzhsMmG3GmXTfcYJU-fXcEnNtZ0SlBM9d12Hr9F46psIpPLlPMmZreWxgYNbB7_NRhYkFMkZ3CKP14dQ3xWSA4BoWgugu0Er"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5k3bWXVqHJfz1uTYpxAu0nhMbcW94wAVCQeTHnWz4D0TO2UB9wGceUVD7r83kxRK0cROq_nLoAmwZ-dleNpn8wRAthr7HFxejyJ7gskGWgZYCRaZCV4DPhQQkOH3EAGuXsEbCg4rnS9WZBg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Zoster Vaccine, Recombinant, Adjuvanted (Shingrix) trials for Varicella and herpes zoster",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicella%20and%20herpes%20zoster&intr=Zoster%20Vaccine%2C%20Recombinant%2C%20Adjuvanted%20(Shingrix)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "0.5 mL IM, 2 doses 2-6 months apart",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 320,
+          "monitoringCost": 100,
+          "sideEffectManagement": 5,
+          "totalAnnual": 42.5
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 24000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 1,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 25,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": 6,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.057,
+        "vsComparator": {
+          "comparatorName": "Zostavax",
+          "costDifference": 125,
+          "dominates": false,
+          "qalysGainedDifference": 0.04
+        }
+      },
+      "name": "Zoster Vaccine, Recombinant, Adjuvanted (Shingrix)",
+      "nnh": 100000,
+      "nnt": 10,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8.3 cases per 1,000 person-years",
+          "baseline": "9.1 cases per 1,000 person-years (in unvaccinated adults ≥50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Herpes Zoster",
+          "percentageChange": -91.3
+        },
+        {
+          "absoluteChange": "-1.2 cases per 1,000 person-years",
+          "baseline": "Estimated 1.4 cases per 1,000 person-years (overall PHN risk in unvaccinated adults ≥50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Post-Herpetic Neuralgia (PHN)",
+          "percentageChange": -88.8
+        },
+        {
+          "absoluteChange": "-2.7 cases per 1,000 person-years",
+          "baseline": "Estimated 3.0 cases per 1,000 person-years (in unvaccinated adults ≥50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of severe HZ-related pain (MZPS ≥ 7)",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4.05 points on HZ Burden of Illness score",
+          "baseline": "Average HZ Burden of Illness (BOI) score: 4.5 points (unvaccinated adults ≥50, higher score indicates worse burden)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall burden of Herpes Zoster disease",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-0.18 visits per person-year",
+          "baseline": "0.2 HZ-related healthcare visits per person-year (in unvaccinated adults ≥50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HZ-related healthcare visits (physician, emergency department, hospitalization)",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 80
+        },
+        {
+          "name": "Myalgia",
+          "percentage": 40
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Headache",
+          "percentage": 35
+        },
+        {
+          "name": "Fever",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "1 month after second dose",
+      "treatmentDuration": "Two-dose series, protection >10 years",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFXjHFxwArfa_tsaUtkPmlvCT5akHqoDNNoM_hPV1m2yzm2NbfJNc64Yqu0ubbR1HHCJMjq5Is0-1eDVDeS01jpqYew6lA_pUmL99CpwKKdfuoSLOp3zRCJ2_MgInLQZ6_SXXU"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUswNoQAMENF8993mZ05aYPVf19QOdMcQPwn4QqW2B6HdnIzA-fBiZc_4rNlut179bfy9FM-4lRKlpJdPYj1wH55V4b8kZ542DFtOPPN9T-3Q0hr8XD4xldGOveMHMS52DCUEjmV5v5SUB-bqFiz8_kFZZ9zxHGLi6vlvBWw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb51iJ-vWUEB07wYtHDbWq3H8GySuwBQjNiWh50nV6pgR2bhJzmi099rMKSC9uaK9VtnjyOb1xwLLdEJoWgZ92i4UKiZzox0tGnFkiI74a-dwpdGcMvgUTY9gUhpojT3HRiFKvq8EEEJNTI8Cu"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiuaKIacju4riMz33cHxycwWllDbT5STUMj68_9jm4aZTVoBDcPhjaPDz6nP1J_Of_4VwF0_KcgAV2Nqih-EfgVvfFpaJi6WSpSjBxMcSO0p9Igl261KyFCESmyTvIiM93PULgnqbUw13_WivZYKi9xfUa8bgolLmLbOZG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkWQnE4vyH44APrBLqA6abRp9Tc8INIc2mvRhSYOshx4fdHDkYn7Ko3tal5eT-d6ASUP1b4d_lh-Soch0zhn6NuV-vN3u0eBrsXps0Q36tr3uXxzKq3aEzNYLUCJBy-0TP9qXX"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFitlnU8sJKc3Rd_e-AhxIfx1cQKRsVxEapRmWQ4NPue1UYHh7m2f7aeIjv2UWBe9VKLEefZ250Ke6wSMvCkc9_2qMU_zkvjt-bnpCPcf7evenWy-zUecGFiW4WfIGcRRd4uGqmjZyFrSxHtVkfURgKNRS1gwDVKkopjIq_sg=="
+        },
+        {
+          "title": "mednexus.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5fSLGTwKXx-hd7iSLh0RKm9YhVhY-yfCkSVGoa6W_cWwzKiuG64ZUIdxp1RsQF-cPY4_gnDa9yx5z0-Idg7uEop_gFhCB_1UEMpSqIgwTNg8kzl6x8720c3frbb2pRwUTDuLJzBmm7FpyG8yJCiGJ"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp0mDPX2rStf6z5kKjK6HMna9I-GSzs7ViVPDdf4QBwVS3NbTVbR4tQaJEiTVJ3B0DDxvZrmVI7OMtSFBuA3ATUknQWbcrjdWpimSLltz19yEeamOpYtBiqBuANI_ELUhiukbzAL3nalyzhhZxw-nzESrHID-ZOe6KkrdnEhXISh5w3Lo1v24C0vKvM5FGuc01Hg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa4SPqwqlVpWrXJkZsDPLU8KejUC5udCnS8z3qYRdS454qILV0anWPss347c9aGlD2UhQPngqI9zVLkauyWprUo-82SRRaxQc09uhIPv7Tre7v-0ivzp1Gs9UYaOl2By6vf6hDcRZnNNmGOy0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuT24jqKAeQNeOXFuDk-mAMsg6ge-R894TV2-lFaiPa6Z80mopqNdUElgKHRkkui_ryOgBNh5dMq3U05AIAfuxrq7T1trO-M71kQRF3ojImYnsA11_aCheoxv4xzc6OFdkKeRZigLq8su7YGY="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-3_nbAkGspL7pyjmUKrsW5kWju19DzfRA7Hbmk-IXnJb_qjCFNX-I91R_FoAi63vhCJZsNvox_ru-IivlsFtm5dvqXxgB2LEjz6VxTiG4e1uuaJRlT_mafxsrpxLpNAk9PFM0"
+        },
+        {
+          "title": "ClinicalTrials.gov: Varicella Vaccine (Chickenpox Vaccine) trials for Varicella and herpes zoster",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicella%20and%20herpes%20zoster&intr=Varicella%20Vaccine%20(Chickenpox%20Vaccine)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "0.5 mL SC, 2 doses (12-15 months, 4-6 years)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 100,
+          "sideEffectManagement": 5,
+          "totalAnnual": 8.1
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 45000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 0.4,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 5,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": 1,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.004,
+        "vsComparator": null
+      },
+      "name": "Varicella Vaccine (Chickenpox Vaccine)",
+      "nnh": 100000,
+      "nnt": 12,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-42.5 cases per 1000 children annually",
+          "baseline": "Expected annual incidence in unvaccinated children: 50 cases per 1000 children",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Varicella Infection",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-4.9 cases per 1000 children annually",
+          "baseline": "Expected annual incidence of severe Varicella in unvaccinated children: 5 cases per 1000 children",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Severe Varicella",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "-1.37 cases per 1000 person-years",
+          "baseline": "Annual HZ incidence in children after natural Varicella: 2.14 cases per 1000 person-years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Herpes Zoster Incidence in Childhood",
+          "percentageChange": -64
+        },
+        {
+          "absoluteChange": "-0.45 hospitalizations per 1000 children annually",
+          "baseline": "Expected annual hospitalization rate for Varicella in unvaccinated children: 0.5 per 1000 children",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Varicella-related Hospitalization Rate",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-80 visits per 1000 children annually",
+          "baseline": "Average annual visits for Varicella in unvaccinated children: 100 visits per 1000 children",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Varicella-related Healthcare Provider Visits",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-212.5 days per 1000 children annually",
+          "baseline": "Average total school/work days lost due to Varicella in unvaccinated population: 250 days per 1000 children annually",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Varicella-related School/Work Days Lost",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-8.5 prescriptions per 1000 children annually",
+          "baseline": "Annual antibiotic prescription rate for Varicella complications in unvaccinated children: 10 prescriptions per 1000 children",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Antibiotic Prescriptions for Varicella Complications",
+          "percentageChange": -85
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain/redness",
+          "percentage": 20
+        },
+        {
+          "name": "Fever",
+          "percentage": 15
+        },
+        {
+          "name": "Mild rash",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2-4 weeks after first dose",
+      "treatmentDuration": "Two-dose series, lifelong protection",
+      "trials": 188
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMcoLV_MlQXTokghdPj0Wl-SGq1KPWui33XbZrLjPl38puxpCtdFCcggNAN0Ry2a8NWZpIxBl3M3cbpR6kGH7OrrkGG6jU_fW_tMISH06kOiNzJtSQblatyEAR8Irajxvy6OkYLa3EgwvVe2h2RloHpk3dTrboKPy_AabXmWShKFWopN8SjxPM3uWJZGOk9d1M7urEO9lsGkKG2uwlwq6g2eWkpXTq4alA6zYJwSVrh_Ov5UZLRjT0rWn9e25Z2JE8vIvw9gD5f9iXTOmwruyGXY75DqZhJKsvBP4S"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTU8uxUyWCiRXAbFd0dxFEcKIupijIHmbT8nl6I3_encGcBU4g5bck0Fja6BKIBuKfR2b1h5PKEDKAcQmBsGj4d_rDHT5OoXj9X3WDB1f5OdSe2RsEtCghSftTDQ3muL13ZsM3OZRnjagUuWE_nT_rv37r_Azk7NFnofdxmtW_lHDL0aVaQJBsp4E-ZteLCe6VNIlWHgjbHo3wXXRLg--1XsOXgKhdH7xOkf1BBYqA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWOTPkp4Zren5JmVX19wjGe-e8G2C_0YJTI_JK_5w77pmuVEoR9kkDg_LJZmmGAHzXumms5FFTxs8ir4udppOrQIymc7KTQCOIiF3zXnD-JXmbODRxdwAljJBkz3kpuHqOKZGY0pQ="
+        },
+        {
+          "title": "data.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8YBbXw6WR93mcG5pv_bOt7mY0vomfOol4Z_FDnvlx2U5mbY3qiT-mHOIzvvOBGoa-rl_qTnx2kyUizh3qPa0vQx5dWsCgSW0BOukNY-BZGPADNxjRuoNNePGeUqLmrvTNifveosK49vHtppzUO_W0iZlxbyF-8AeOOlOrz9Kd34sirTXdrQciRaXCUr96eC8KZG0G6PlrR5Jp22E3HwB8AE8UumtSsS1ce1CiS2qq8fNvCsD5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHu05zcSR4DyIAdVfpjpDNcv3Oej1MYypCPuwQEiMYnzjPewSMMYhB1hq8Zsp3b_Oqj81e-UD_2TPXXA4ltYc8Jz6awTFvOAETErrJLk7vYBU6SAKn6aMb9vo6paCfQCZO7Eg_spIviJLh1uQwJg4XOU0akWGIy3QmLaAkTlp20z1SQP1dU7DLytdx_qnzSNur0giZMEX3NIInBkefObftuDzs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcZFvQ3fzT3H9SRq4JPkh3fD7wvHv1jMNKEfWsYV0CMg0sJ35B_dYLC_3ql__bfYNnhCoEp5NnFyHxMoRbb2Z7mszkztNLz2-rkoUMPpnA3fo-qIytdIHYReVFlh6B2lWdaYM="
+        },
+        {
+          "title": "painphysicianjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmXpHhVssVttRJNgaXItR6g7qQ_FUQbO0WNLNJg-4-GJi7vZ7MVWK16sYQ-omNo-nc5ROqgYL3vdUMw3FkNRIkMNcDwa2Dfxiu8uA5tR5lv84k1onHqrHdyw_Qkwafxofgvg3IM-rhpbBrHhG5nNza0dDJXh0nm5dS5hHWQ9FNVzdbMFN4XM2ckgkJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeT4Qf4uRwMg2jGWIGG8OWwLO0VMbLf3lQXGkE63FaCwTfcZIjO1jJLW0wsyUi0mIWzo18VtPlZaixv-zxay3a24htNFf6srX26RT0xm6i3d_vA7XV1Mmz3TiDN4rjCrW3IaoK5a1Gq3A6kA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Valacyclovir trials for Varicella and herpes zoster",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicella%20and%20herpes%20zoster&intr=Valacyclovir"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1000mg three times daily for 7 days",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 100,
+          "sideEffectManagement": 10,
+          "totalAnnual": 150
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 167,
+        "costPerResponder": 200,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": {
+          "comparatorName": "Acyclovir",
+          "costDifference": 10,
+          "dominates": false,
+          "qalysGainedDifference": 0.005
+        }
+      },
+      "name": "Valacyclovir",
+      "nnh": 1000,
+      "nnt": 12,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "6.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Full Crusting of Lesions (Varicella/Zoster)",
+          "percentageChange": -23.1
+        },
+        {
+          "absoluteChange": "-7.0 days",
+          "baseline": "28.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Zoster-Associated Pain (acute)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.0 day",
+          "baseline": "5.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to First Zoster-Associated Pain Relief",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-3.0 days",
+          "baseline": "7.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Viral Shedding (Varicella-Zoster Virus)",
+          "percentageChange": -42.9
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 75,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 percentage points",
+          "baseline": "15% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Post-Herpetic Neuralgia (>90 days)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "7.2 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Acute Zoster Pain (NRS 0-10 scale)",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "-5.0 days",
+          "baseline": "21 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Return to Normal Daily Activities",
+          "percentageChange": -23.8
+        },
+        {
+          "absoluteChange": "-60 lesions",
+          "baseline": "300 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum Number of Varicella Lesions",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 6
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "7 days",
+      "trials": 13
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuJDOK85QNC0bc85oQnTjyAiP7XYXyuNMLdtMroV2KROrgI3kjWaqUe7lASWklhnUj-BZDRtadzp5RDzSRvPa14Ue-5OqxszD2tKTjJLL2bmGxkvlxYJqHskCI9zS9skX7IqY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc__J7m_28ECmNZrcQkMODVzUVWGQF0sgVe3414iseO3Hs4BRdobEcWasHUb66Gzi5JHaM80J2pc9FsETyQ5mzA1sM7GUDb3jikCLK_bLVsR5S69fHNeycxS-WVq_J15aVvkANBY5klTP_cmhebTyTJm8uzLwm4f-g6LS_Bxx27BfHknIozW4Ee5O7oYi_EyR-87kULQuUYLqwFZmUZ0og6x7Tr6A9LCRLqk8_nY-yJxNu1OzBUH-vaLIdg79v"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR6pmcXQtTy1xtyjJ3W6tfwkbvb5JD8EgOKGEOiFBWQn0zY2P-BtzB5Gqp0syfc4zMgLY0iLBKdOTYx52X80t5FpF1U9EmWIXdRjaGmp4l-ykvlg8Xq4Xth5E5a_eyUQubL2-h3SqIgkQlENXSU7_ofbXgxSKpGb0iYtoAcu9Qt6xFBNW1yEmVYxEP34n0NyFxD6CW5BU6MJTz_6FK1rqS9FRghBGOzdFP91TzFWefzw-8rUR1z6vo09RtdhT1SVdTt5PkWBDyYzk3gyR8ANe1yHgwhd7MvvnxBsLnsWBiDYoneXv58Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI_GQVFOjs18dbyUNmcnhYxJcGUFtTYDcviWb2j0hcCHzsEs8M1OI6OzRUdyLXvkA6xX-ghz9YLOT1gDqoowmzLE7vgocIQ4aZRuBAuwuPifjZOm_y6E0-fkDJ-Euwq0hjyQwG"
+        },
+        {
+          "title": "ubc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBjbwypMjkC_-sKdlU08ESu_MLJOTOyVT8CEXMacjaoiXILXLxK28nPJlD4Uxfk-l2AMFbtiYGCzVa8UG8_Mb5-mJXZ-PsPeVacF-diz98rom_l4FI5lZ15tF6Dn4pwLl4Qn_UMcuDxpl72TzhfPoMLe3JAAgnGqgxDm0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh3_iO25Tq8PXsyItzpHfKr06dfURgtoYJP5ifApFEUUDARQzmBxCjSJo9HwBGs58l-In9qnEPE7QUzawSzl0e-fIBoJibcDiuQLeForUz2Hn9qxxNGWsjnHqtPj-PhS_5q2Ib"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYYuS5UEfVMKEqaTvr94bNU4xIWH8Xb0HVb_oVVOFK7Ma1UOjYevp3SpF0hJkq8wACBDfzd-glGQ1K9KX7qgz0sNhBh6J4QrvKrUfT9udR7wF6fk2QcgrfRcZWOA-61pRXdeT87pXcmxLuxJiJtP8qQ_OaLpp40rbcvzpvvdRF3f9XWuB7r9PEjCMRruRILKrnnctM5DVS3INdgLTph4Wc_jELfyBLeX5C67HnG_6r_xFEk1Xtqzf_nrA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHptna7JihwUGDNgeWD489hIoGS16eoEfynPotjUfpXriZWFgvsK4gr_25dRmu1xCCYEcDmuuL0YxPd8PdsjNMzCw47ucQUCaKHvX0smOTmTdInjGwJJLk4EEU21pxIxGdzgN5UdilqHMUtFw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2-bEtHHX5TihNr2dZwK4zhxTzuVnlkapGZZELkWJXPBeFCZjNX88P03PkYRR-Tk7voUBsa6OWPbAc-DWVFAP4ais5ung4Af3qKP9mkS_qEQUpZs0-627LEsztkWIDmCuXwrrIyyyFLvK9LMlecUbouwOh1sWh0n2T6z-fjoD5C7ZNXQieXljfxkYqsMClQyWdIW7Sl0xaN6pN8OFE3nLKCF5Mjw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnoCcBDjXgKk2J2pI6M6igJgdUJ45ze53C67--SbvzYxYj88Oak_LWlO95YI4hCwQo-2KUYGjxL4bdescWNIqWqu8Um8yK9tXZ0cIRiaxbGfWqV34OmkTeABhcRRkCfEvbyF0u"
+        },
+        {
+          "title": "ClinicalTrials.gov: Famciclovir trials for Varicella and herpes zoster",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicella%20and%20herpes%20zoster&intr=Famciclovir"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500mg three times daily for 7 days",
+      "effectiveness": 86,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 100,
+          "sideEffectManagement": 10,
+          "totalAnnual": 160
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 178,
+        "costPerResponder": 213,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": {
+          "comparatorName": "Acyclovir",
+          "costDifference": 20,
+          "dominates": false,
+          "qalysGainedDifference": 0.005
+        }
+      },
+      "name": "Famciclovir",
+      "nnh": 1000,
+      "nnt": 12,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 days",
+          "baseline": "Median 7.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to full crusting of lesions",
+          "percentageChange": -28.57
+        },
+        {
+          "absoluteChange": "-10.0 days",
+          "baseline": "Median 30.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to 50% resolution of zoster-associated pain",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "NRS score: 7.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak pain severity (NRS 0-10) during acute phase",
+          "percentageChange": -24
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 75,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9.0 percentage points",
+          "baseline": "20.0% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Postherpetic Neuralgia (PHN) at 6 months",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-7.0 days",
+          "baseline": "Median 30.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to return to normal daily activities",
+          "percentageChange": -23.33
+        },
+        {
+          "absoluteChange": "-8.0 days",
+          "baseline": "Median 25.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of analgesic use",
+          "percentageChange": -32
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "7 days",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjy05KdlGWbepH4LsyrGkEaKEYYSa2bKAjeWFeg-VY2ZUUKshbbUqjVWThLhDJHiWWGy0ZG4MnTbFZs5srE-CoTXC_mXdipfkQtnsvT5f5jdhrSp1dSW9ZGalWcPNuGnVPFfEKbDF-_KmoYNk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHhAafH-J4KqoTrpOKtF9hSFM-NBoxFnDvVdMleDnF423Fb9kIoNpByNqmk4oOYb3zJoPGuQZ_ocX42O1Lc2Z9kOr-xr99DtBglxDTmDTV6RKUhENpwlji2Mh0jj0__n1h3Je9BdxV1uFDPtUG24uDuj3d2a9TTDytSGZ7_9ssPlgaGsCwP4ZyYr3zxoEV9PDefbXCvWW80F74UEZ3bK5ezPNuVGdfiv0tzwpe0mJnYJm10OgH8ClSrF9Lf671TwIy_0Q6KmwGMMegFX-E_EsymFM5COEVm3ADUSWTmR6U2uvpJr4-RunswTkolNAXbUs="
+        },
+        {
+          "title": "data.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxV1fQ28-xgyAfNQ0lJ6PZlkdNUliFnGFq899VmjJTsYHtiKQjDw_cNSFStBuhNWW5IqD-jngzl5xnEj77mBuUI9jrUFHvCSflVN8hZSgzhKBAZjqSWNRHIWpII1wCIDZk4ncwJHRvGhI2WagphXYYU-fnETFY6ehYonrz9eKOpaOu9b77gVIuSBszbFvzNy-uaJ82wksIvJ6h2KppgT-qN3wzlwJG7LhdNVxdkBOh9E5-ZGS38Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2FgAzGPS3sYZrWWDq9yf0_IUWZd1c0wj4lWty10gG_UfNxSxHhbTPG7O9mFmcvKfZxdcI_VN5V3A2jjjgJ0IOggT3PYQF31Ai6AEIImuch5HBGLHZycPWng_9SoPHNPboyGk5G1-iPr4Vghg7RaTbRwDPAkZ7v3KjwTgTbD7FcFPf1dJgDyLEkf6rLL3tp_q6WIdQ1xaUEpxhrPhzOP22SzFYz2yc_NsMGcQDvt55TI8pTzwlglHfxGM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjDJQ29MATxUoXxVujtl7J4996mnn_r5NZ_5A9iM_aGy37dwi4uW0EukRq_W8jCkWWZ2yDkr1S8LkZTkHE8_y3txwiefXAltN56WXrRqEvcBKzNw0_qCw1unoU_7jvD2T9rVcx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMkoF5r2lIrt-bLRrdT9W0trFoLs06Kgzhh54dEVJ32JcnS0976Wn5xh8la3xh4QfyCCk2WyvDqDJ_OwALfdvCcq1zGRkJBDcyU6_1rmASZxqMmJUOxiRBCwbnDIrly_bMkVhr"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2dHC5q_lDbVmP3KKQoV0pjVJQ_WM63rH5mUaAUZVxJv-K91RdEeD2rMRsLC_ncBm_nxl-DvOsjclweVz_taeY_t49CCRaOlWWU7g7Lp16UcOWoxdAEbeUgZVfnWnFG_TnX6Jr5Oy6WbLe1PuJrKuDLwVLPMQdxjKZHQTMRaoLdyEyKzyKD4tfX__0K7PxvrGx851H_Nv0A-RmvoxXXPKuST3QbVVjHmqyHelXgNoU-2aX"
+        },
+        {
+          "title": "dermnetnz.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWSI3c_O0QyywfEvp47mXNuiUiQg5UZY8dKsFe7ctPECnh-dA14RQRmhuyQXNbpkNlWV00KBV-MriZTYeU0uBcG8qnYlWobchxV9nIRjqx62Ggo4VOXV9q4xgBqKv1IkF-"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnNj8Bg5MxUEBGQhUZG42dZjYVuoJTGCXVOS8MJf8Got4Wt0Dc25mpaS_h1bwWbZ_E2pD6HrhHX1qD28P-A2VcO9cuDwhsz6JkmHf3yOZLqRHzN8hbjWbpDmGeQgGxHxn3JT0iixnfgukNJ4Vx3wUnzxU9JIrFsHJii_-lB56BPdnYo5-PGjS9hssOqqi7-T-Dh7LC1yyjBP14HS0DquaMqk7AxL7IUVt50zN50rbMagbkdLXCYHg_zOKTGKeDQ9jVZvVYkFCWPXrCaviqJgiQM7_WBtnDrnuX5VMwGapna1ZCMsFuwVfnDh7YPQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9B2oTiQvE_QkbtnudNbdLtdlF9QJIKSQwRuE5cKsoXQN1Gh03wBu9u4Psdwv4KR4Hb2maHsjfHYR0nX9oDeG0CDmyRUr-YKuF_zwz_DkkwUzxCmN7vu8Alo0ZS_cRZ5aVpGf9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjrr_I5e3u8-ix7pkUsx39QgGwk7-A6QDNSm2vxRpWXdXz3XHqi-zTxmHhmCJ2fMlqN0SleytuxnVqZo8x00Ojd7igMDp2JP6IbXs8Ne3ZJGXVCrcikehI-Eg8jOMTnl0iPuAgkA7We64U7ZA="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMTgSu-a91uNmvn8MiKsmZ5OO9D2kt9x6Fi7zrio4d8jVZ0PXlTGVL_F0XPwkpThjnGdht8239BuwvaUNGqdyfW-aXOjzb5X4pEr1odqLR4Bh_jfnHClkn4aNgKHohLPjjm5I="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESiiD0vF-QgrIy4ko6Pn80ka4heK4O2vKgc5scirN2-LhKCDJP8XNPefqTsc1S8DiL0tfsA1EL3AfI6DLT4zVU7mTFlOneYifQr278G8tjLjbw6-mSjfIf21mleZtqzWLhEcY9XW4avNJH2A0knefK1hJFWb5S810F-v0JnEqsOr-zB1jDA7CWU3y7_700bktrlIxYw040WXNEdFum_mBWTbUaw8NmpZk-UB_5opjQ7zcnAADX_zoMDTQhJatiEbuiX5oMN_UZjGFIbWI6C6Huut0xCXdnIwTd3BphMYC-csWxy_6DG4sM5u6wKkLx7RNXu1SzHtWw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoj0cYgwecXInCP6ZidxY6YrHa_eBcxUBOIY5yqedQli3pvZRf_9BuwPLz123uE0pN7JJo_teKLVE12NbX4ul9VLAJVuKNDKKyr8ojEm37GiyzGXW-iSxwUsXFqS6XERJhXLxV"
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQVSQoc9ph2riA5fQGYai7hv76D9HHEpid5jjTOl2nHLk7Nst6xjoXw2shDTxoOxauHSiOYGgGvFf8Gzp46WkqmvESpDiURfj4f1HFa8tsK6lg16IPzue0H-3BzHorQTS7PPFFbuQAxs1UzSeYfDE67lch"
+        },
+        {
+          "title": "ClinicalTrials.gov: Acyclovir trials for Varicella and herpes zoster",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicella%20and%20herpes%20zoster&intr=Acyclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "800mg five times daily for 7-10 days",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 100,
+          "sideEffectManagement": 10,
+          "totalAnnual": 140
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 159,
+        "costPerResponder": 200,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Acyclovir",
+      "nnh": 1000,
+      "nnt": 15,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "7.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to full crusting of lesions",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-10 days",
+          "baseline": "40 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of acute pain",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1 day",
+          "baseline": "3 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to cessation of new lesion formation",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-60 lesions",
+          "baseline": "300 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum number of lesions",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 88,
+      "responseRate": 70,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1 day",
+          "baseline": "5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of pruritus",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-3% absolute risk",
+          "baseline": "20% incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Postherpetic Neuralgia (PHN)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6/10 on NRS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of systemic symptoms (e.g., malaise, fatigue)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "7-10 days",
+      "trials": 17
+    }
+  ]
+}

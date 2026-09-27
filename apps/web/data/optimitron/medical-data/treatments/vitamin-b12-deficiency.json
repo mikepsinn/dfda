@@ -1,0 +1,657 @@
+{
+  "conditionName": "Vitamin B12 Deficiency",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T02:27:06.941Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbMTXV7sN-gfs0R-DxjvG4-UIbyOJ87avjNNfNlge_wbit3lhTNuOW8FwdI_B7b4sZdZY6cjELy5Z01vB6nc8sxA6rl_ZhHznY9d7gTEjKCwNYGGvA7hienAc8rZmzj8Cq5J_om5Q3zEjKI9Q="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdR_choJDoyxnqyOhc62hd9-JC7sBoVh6-2WpN6s_jkTQRVf0ru6OlYZ3DYMcf_F4VqrBYP8VI6Akm3vd72YCa3wwWIYB1DTZP2EaXvCZSs5fGNU_yzNRmHB54ewCDXluV6skMo84H5ZVmW95upS1UHUGSyCkmFpMUEC1Inydld4swmgcDlKVOTsU-JjacbcuaJ7p5m54ChNkIHXxSe_YUZV2pASd_TbmhhcuGtkbaPBhmDcw7LMKKJ2NtcNGwFIFBv4tDl9rU21uvFk4cYvmL78EoDP5ZBcRXwrcnQ__lCXoNdJvcIuFfuFQcCEdTtVDkduVIRpTjSH5pOPOVCdGvbu2wpMFhy67jYQubY4VfE08="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm8PXCD8doSHXOONAlPaOx3c0Tm5TeoKKaeTomsn_QZXm-UTwRPVTTxl7zhtJVq_3VNUfCh0Y2wxEtrt59S_Jyj2nq1FlW8T1qpQQNol5a8mURKKPE4cZhQcLaH4SwtsWWLVq-KzR3"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWK9A2dF3APuaUjFbc3MsGujCuAvaOniOlOdg-FzvJYKygeGX6qc3B493FBHvLVJmAHgRn-YKh-fRUdJQxNfdcwVdMlB7E6k8S4HA-SZBBc_0YclxMHNqLU_4m88LE_rwkU9oJs8bpKEBlRlqVPGIH7Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENfMLgm15gBcHLiaz_pIhWtWD8j06gPzPMPzjTXTVfzHvy8ho11shFOIrv2AbeJHMdYcWALKPyHH0eJknTCIqCZVagAiCmbInin2vAsMTCxe_e2mDLFL224c3lWs5R9krHUhQ="
+        },
+        {
+          "title": "rheumaterx.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG01Ao2K23wOETmnWBGbmGHI_XXqLgUT-NZ7NIA2SNmFqxSKe8IgonDYKvLaBLbnDdscbcI_EqbLWsK5Ao3S7aDG7Ol0d9jtM_f-dv9YL7uPf3Y-CA3dZObRIgMWet7NuIIfOH4DPL4ClA7qQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETcVfj-pdyyXuLuyyerLJtPHrdA0-tpbobop0pt4sa1S4v7VLCJnmvZnK0LLWkukP1-XlZ9Plagf-i2Qj5PSXjXWTVO5fFgSO5tJCW50oOHkT45q4FRtnT5yjvRbHZj3KZ"
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGj5jOYSH6J5qrGqr_B0L1sLRe6VqG0xu03tEPoD7IjrgHB8EqR5CWSmke-Oyj1UAeYUIOVL7-4EwPGSWbNkP26KugGZnS3fe49zctS24AClKIt73ZMsNQo0_oPnzpGZguQ_Pm8vpBrpUEaFWh_Jwvip-4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8BSECUuipwI1QCDKFWfz4UcUaQvbGP1PUrDUqYtdmvUGoQ10hXqiYqZHboJFEdgSsEkKhH_GdCxAFA-g8cpS-LegXN8k4fFi9pjOmBrjlX21oCh_qF-iVTcyDUABHj9WxNooMpzugbkMlfpkrFu-MTjUTq9jKkuxVZ0fzY7nYNPf6LfYBuZPKGYbPxc4_2ETQVgB8yPTPe9q-48oe_4-zKHtcEqWvM_SXMqPTwA2f3NQoxc_fk2c1K1_y1ygYwKEB6Mrs"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGoZmGtk51MqF4lnZfDNeR0EhDxzAv7WJWeF-De9XkXbsZAsYK1wIN7IlWSuP9bYCKVa_PhnRi68CVt27E9arpOVImsfq7GlNUXxUZI6EAxA3k0x_zTi8RTie8yk3ZscUqCJUuBmG5WKAnlb9S0eY-zVnFJ8jMlFTdCUAZa4OpxVP7BPQ="
+        },
+        {
+          "title": "seattlebeauty.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZqjDV0WOfy3y5ApCFFdb4OQz5n_R0jte54Vq7dm3kLNqjc1Iey36IGZAuAm8zptTlBXqs_I7yIzS2v1Cde_Hhhzm01lGN6Pvu2fuyxLt4E6ZULS7CAduKO8WmwFKdpj6PxBTTVsX2s-IhRGgvk5HDSWsqw6ajJHxHwie6volKBC06WTWAeWSFLQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgMG3o2yL2CQXdW5mn5OYcMyZsXdYF3uOOw4Mu0DJ0z4aKAFNwCMt0NEFzgjkCsmDrEALPNKwQcAuNEKafCIDeQ6jh4D2iZbVDvDcimARrJPjZZQ-VcKjFVI3m46VVleGlzIKjj1rpXijioyOUeF078Ad21_w60INXcjVZkDYC-ME6GXTIV6cHs_WTowTv4_OgmL4d8OkVsr0JSDrkvR9ZxhgcL0opbKMs744SzzSYE7obdHJ1kwe9kYM7Yl62lZyZ8zEQIv0Tl5qw9fL252FJR0AlC7O87Pu2zlwg_Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intramuscular Cobalamin (Cyanocobalamin/Hydroxocobalamin) trials for Vitamin B12 Deficiency",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitamin%20B12%20Deficiency&intr=Intramuscular%20Cobalamin%20(Cyanocobalamin%2FHydroxocobalamin)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "1000 mcg IM daily/EOD for 1-2 weeks, then 1000 mcg IM monthly",
+      "effectiveness": 99,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 150,
+          "sideEffectManagement": 10,
+          "totalAnnual": 260
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 273.68,
+        "costPerResponder": 262.63,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 60,
+          "annualOtcCost": 150,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 150,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 260,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 250,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "Oral Cobalamin",
+          "costDifference": 125,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Intramuscular Cobalamin (Cyanocobalamin/Hydroxocobalamin)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+420 pg/mL",
+          "baseline": "80 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Vitamin B12 Levels",
+          "percentageChange": 525
+        },
+        {
+          "absoluteChange": "-18 fL",
+          "baseline": "115 fL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Corpuscular Volume (MCV)",
+          "percentageChange": -15.65
+        },
+        {
+          "absoluteChange": "+3.5 g/dL",
+          "baseline": "9.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin (Hb) Levels",
+          "percentageChange": 36.84
+        },
+        {
+          "absoluteChange": "-550 nmol/L",
+          "baseline": "800 nmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Methylmalonic Acid (MMA) Levels",
+          "percentageChange": -68.75
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 99,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "FACIT-Fatigue score: 25/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue Scale)",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "VAS for paresthesia: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neuropathic Symptoms (Visual Analog Scale for Paresthesia)",
+          "percentageChange": -57.14
+        },
+        {
+          "absoluteChange": "-12 µmol/L",
+          "baseline": "25 µmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Homocysteine Levels",
+          "percentageChange": -48
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain/redness/swelling",
+          "percentage": 15
+        },
+        {
+          "name": "Itching, mild diarrhea",
+          "percentage": 3
+        },
+        {
+          "name": "Allergic reactions (anaphylaxis)",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "Hematologic: 2-3 days; Symptomatic: 1-2 weeks; Neurological: Weeks to months",
+      "treatmentDuration": "Initial loading then lifetime maintenance",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOkHqy0lMVy5aelpJkjJfIIwtvk_hNILp4kdSQ0yMP3i0ra6zsV2wLY-ZOleRQJPfgtuyb4DB9sO_6Rao6ZIWLNXF0Ltv6sYDoPQhiIIBEsJUS0T0pSjb4IxafPrDEo_f4IfWuo1D-DDjS7Vw="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVweJsQGbvD6f2QsqJDmFpZRdAheVF-G-UfK9phJ_F5Kpv0xHC_xDftZsdptlpjWKxOutjIfDoF3gq04G9qEUtTEoTe2UK4fd1_-5yDkUOgf0dxjfc5E1gb4JMvYukSHUp"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6g0fQWVvdT89nBpHWaGQorYwR5UcIBz_u3jvdrZqHLtCFC5FEmOGAdluwN1A6CpXzK-2zH_-52qn7S0msxMYE6SwasfLfjCVnHWbDDBJFBHzZU3dLPFh0kp_2Z5RihxbGo7TbCw9NtP1yzrkKnoeoKQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMug3qZXfDuWpGJ-AmDvG0R5ZZFHk4KBcFvmZJNTTH-iQGM-OKhYCIAGqFa0dQKGWFYCRLEEbCB-NtVnJtimug5F-Dc7XsK8SKcNuOKNrttGSkfLOgnjbIYpA1qozOcjAgVzuorIyCn14O-mDSEoaQdA5HPe00ah1XL6vZgVBWzzH8NE0Luky2vGDFlJ57VdSPIaxRQGOAFpJnDnITLO05YK1DzkwpJdWL3ZSZUEPuZuIRYbrod_PHcHjFtguDCu8P2zcPc9u6CrHXYxOWnNvHrLutUYyoIKtEgPfg4XY0uzm7bpJDSh-Ds2tq_VjR8GCyA084EXqWmInnU0WHUUL4J64A2V39U_vCTXdhR2G-ECt7BU3hG939VoysJh7f7w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGncmR_ZNmHMSPCROh2wTgOnditiALBLCrRYXIb00wvvvd0KMEtGn9v6OSRZS-oWTkWKnrAOVItNIBLAqnInHN0Of374hXo6n92hFXUhzSabh6j8uLcobknhR9NM5tokiNhZ4CcN4eEs4tAAg=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI8vhOrTbHBEMh-1Qd86aQq7qUua3arq3W55m2OnlTDhWMEk1fqygxfxKh4nKSuBbIvBewhZz6prKB8FB35eSqcGOxax4dZjiAS3qlEKOk6cz9RcjlEe97IQmNCpHLZn923ygBBty3FClhvBuxMiv160PPA0h2O73-v48t0ztU1tc9WPeqmVPB4viIxB-PGTGpyVoWzwqj6eoIBD4GfhHUO0WlTl9l5o2En-_SUjY2F0mQcShFEKCvnY7JvOx0lkm2tu-YhUQVTpyM5shrXzIT"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVtOQnu9TMXjUFeWAxHG1f0morwV8vtS9t3WpVpTKJq-iFY6ScTeTdXSCXOR5vtahCu92VzyK7No68Ca-lmQfXYt59vwiIy5zBUPNZvKRlh3QPpsUXUrTc4soRa1aBYYmRE0eWVm7XJhtCmq5vd2TQw-J6SZa2Nd8JTG1mnmWnxtGIUHRv7WyGFdSAn20CR0FE-W6mS2RDaHqmvZux2QjXbATuxaTOCrWclaHeR6lHKRzuv7xU2GJmWBtxOg649PPC306cK0c20wcIj8Upxks5q5UP"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkKQ5Z7b6ZrCZB3h_939lJak6V2fNH3YguHtIbbEE7OWl_m5sU5qrBcKWrqwwV7Wtj5WXijVOuWv8HbWZPaTIVsYML8yATghoNN6Ve2bax1chHVa8BBN7GdVQk3zAx2wvuOE55Eyoj2QJij2dSwVMjkZ0mZ1tS2MOW5tPuGaibMEGa61tbcKBxM1U-J9NkcXXK4LIjde1iw_YyrB51DbUagP961WKDf7w_y0nfQkdEhvzZW0Ww3-JtWmMaynhR79u3sPl-1RxH2uMl7g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Cobalamin (Cyanocobalamin/Methylcobalamin) trials for Vitamin B12 Deficiency",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitamin%20B12%20Deficiency&intr=Oral%20Cobalamin%20(Cyanocobalamin%2FMethylcobalamin)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "1000-2000 mcg daily initially, then 1000 mcg daily for maintenance",
+      "effectiveness": 98,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 100,
+          "sideEffectManagement": 5,
+          "totalAnnual": 135
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 150,
+        "costPerResponder": 137.76,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": -135,
+          "dominates": true,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Oral Cobalamin (Cyanocobalamin/Methylcobalamin)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+300 pg/mL",
+          "baseline": "150 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Cobalamin",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "-500 nmol/L",
+          "baseline": "800 nmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Methylmalonic Acid (MMA)",
+          "percentageChange": -62.5
+        },
+        {
+          "absoluteChange": "-10 µmol/L",
+          "baseline": "25 µmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Homocysteine",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-10 fL",
+          "baseline": "110 fL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Corpuscular Volume (MCV)",
+          "percentageChange": -9.1
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "10/30 points (MNSI)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neuropathy Symptom Score (e.g., MNSI)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 98,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.65 points",
+          "baseline": "5.5/7 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Score (FSS)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "24/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Function Score (MoCA)",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "+2.0 g/dL",
+          "baseline": "10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Assessment of Functioning (GAF) Score",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea/mild GI upset (at very high doses)",
+          "percentage": 1.5
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "Hematologic: 5-7 days; Symptomatic: 1-4 weeks; Neurological: Weeks to months",
+      "treatmentDuration": "Lifetime for chronic deficiency",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkL0eb2Y1NzVWJfXlL8E8gxKCtDjKHKoiDfJ1MqVWt6NcxJDa5SZnGG2beq3VDZcn0SzZWOlEg_OxxlULqlkkP5h3oX_A4L4qNPuJ_9KoCNu7RnjgvGaUhhStqAL4lkvZsl72UYfIQINECW4E1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5ZOjIzsRlck07P4EpptMeQy3bgP_GBZqXM8aaIqKfVFmcKasUg0omVocMZPP0NJy4iMlzyHWq33KJbG8uaaH_xL4Vze7PEgKXCnIDHW32p2F-V8lrMQHmy1HuW-VwsDUlRUfg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMmOK0qkgls9OWa3GzIIrcqvlSVSWudCy5km8QULc91rUVyuZ26jscSxyJBwJbkta1Lx-JKfM6NVE8ehHWed9L8N5R3S0DAG6Sb9B827bAdVtLJJO8YhN9q7_CIqWOgDQqYuNzVXEGcf0yLypyJUKPG3eKp-tsiWHxTqOl1323rQICxmbsFIl5Xwus46iDXBj3pFvdI3uOiem7cIOeaESXQcXExS-s_gz8bBIUJhdIhKrjkdY1hcXgZWey3d2ecwcP-li2nkJ-4mONxMzlJwHPSjVI6aepABn_eY5iTJmGndi0yYBk0grHMURAkmY5FOfCwu2am3jiolUigcM6xVUwl0Mh1VVYHhDjcWOArklFfVjm"
+        },
+        {
+          "title": "nmi.health",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN1wsY1phVRtiibHhzZjNbm456BeC0OPy6b14lNerPsy4QOMPF2qbt_hu57RO8-48eGWhJQpM3xFjGamgVdkojDsTYUnJbcf1GAXKQMrvEm_VdVSM0YFU3A7sHCb3R-XouAjBJOee7pymk5NExxAXGA0ZKAtU5mz0-ouek2vB2fwlVd14="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbQ1CWVxF5C_XjF9Ei7ev1SV3nRWbCzqcoCfInam6PolJnv3Ove-UR3Lk5oX9gHPk4zXXzAYSs3bfDJ7xhk8yzyal6oR3ndwLlFuu2KkeLNwzTgFdiPEHUALAC68l4IjcZcTlAZ7bw9GoFxeurXr46gtR0ssuUQ4TS1_5sgV2UAy6sET_t6VofucKwJVN8_3pNTmiQ_FyuDZuTAZLJQiEEBNethpQ4kLq31PM86Ckxjw-eLX4ZXuvxihTxxVfJXjXC2ZsU_rjgJ-FgzYs="
+        },
+        {
+          "title": "scielo.org.mx",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs1Fe9WDw-1a6gDfoJt1qHTg9EQLp6dZ2OSuEeedSoLnXhHSYYxSmFoKj4iB1MlNsrKPub-Q40mFkmYa4hhPyRWeWvwEqZpsi4Dvhiv0jDUC1_NfKYt7TlfNgLUaaRoGvw4CsJdMFm3THh3RuNWrEo-srfvkYHHs13CzdP7ZyiIQ79kyVleHjPit4usW7E"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDKFHKeeuxS5fFp2zVMnXe7IHEYfN7vaZNCXvUtctp64ffowdJXWdeOSjgvxUSfJnjUqqNQvGy0pLlzv9RcrgTwNZYBvC-pq2qJJV-2El84U39YvQlyC4ovhHhvt0L3QHr6y69FBm4hhAQXiAJqL95AXfWLPcUALwb_qB5Ww=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkfAluaLVa1ACi2YgxreHBthj6uK6ieoq9bJw3B2NX4LajpsmQkMGb97PpTnQwtbhV0ZwzbIf7XBCdY5NDBPZr0XZhZfsKl8WhbWRG-Kqu2N361UqWXljfSkFvpSdsmQBmdaHpE0tcAv8RWkLJaNBkTP-rnyH1gOYTxEPGwFxgz9r2slG6QTWqYgSH6wOb6FDAl_WN_Exqp2ff9KbKruNlXZye-dHTuxtWqBkXpZsGn5wKRcszZYCprKJfmYvLnAcG_Jti4_hBhUwLX3xsfwj76iPcPg3FdCqLD59NOYcPQu91zFygJFIqbA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3pbsJp3JYfhce3dbDpk66J6DvN9jnnDnr7sv6zv5EXVNelK02y-suAW1nREyyhIeQ2BLx8iBj0Atlo-bFlgqEmowu-v9L19iz1j5SrDOZD2UJqcsB7OtsTJOrY84EEI4uBQFAjPA_d0m0U2cateq3SZDpEYIFDAbBNN1k84T0vADU5YArmgXNeBSJ-6XOd2cn2DhxYlanI64LhLpqxbVaXXPHIHrAS0cuwMnDu2-yxsFepPkCcyANXAkQ2fX_Pxg2PQ2joZd8J29iH-XPd7kolLi40hoXTLFwp8rLnm0whtY9krblBXC-4ogyEI_qeg=="
+        },
+        {
+          "title": "verywellhealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8X9z3ioN5ZDbpb8jJ5kvtI9TRrhshPNRjkwWbpOMwspHjuhM85mhFF6_wDB2T-Q9ongKOWB9_5UKybrP7uVHrfwi-qtpI-CR6i-Zz8JM733utTDiyuDsnX5I6SCUlAHMFvNDxTRjFiS2m256AVf7RIJrYP3XyUIt_a1K8NhEMITV4fA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sublingual Cobalamin (Cyanocobalamin/Methylcobalamin) trials for Vitamin B12 Deficiency",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitamin%20B12%20Deficiency&intr=Sublingual%20Cobalamin%20(Cyanocobalamin%2FMethylcobalamin)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1000-2000 mcg daily",
+      "effectiveness": 97,
+      "evidenceQuality": "Moderate to High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 100,
+          "sideEffectManagement": 5,
+          "totalAnnual": 155
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 172.22,
+        "costPerResponder": 159.79,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": -155,
+          "dominates": true,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Sublingual Cobalamin (Cyanocobalamin/Methylcobalamin)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+300 pg/mL",
+          "baseline": "150 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Vitamin B12 Levels",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "-0.375 umol/L",
+          "baseline": "0.75 umol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Methylmalonic Acid (MMA) Levels",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10 umol/L",
+          "baseline": "25 umol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Homocysteine Levels",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+2.0 g/dL",
+          "baseline": "9.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Levels",
+          "percentageChange": 22.2
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "Neuropathy Symptom Score (0-10): 7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neuropathy Symptom Score",
+          "percentageChange": -42.8
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 97,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "Fatigue Severity Scale (1-7): 5.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Score",
+          "percentageChange": -27.2
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "MoCA score (0-30): 21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Function (MoCA score)",
+          "percentageChange": 14.2
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "PHQ-9 score (0-27): 15",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (PHQ-9 score)",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Mild GI upset",
+          "percentage": 1
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "Hematologic: 5-7 days; Symptomatic: 1-4 weeks; Neurological: Weeks to months",
+      "treatmentDuration": "Lifetime for chronic deficiency",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDMtLJtx8Z08pLlueLCbI_LVOS8Nn8Czvu_0L_qJmyrvZJopF1slipQcz_EYaHKff6qBMvABrZitsscunkDizk62dNbGqMNDy0gN49jx_nVONaaF91HrAkDNL1ffi2AlxLIhZmVf6QpTBT3g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJBXMT4NsQfDYwdRyhbzvnzhEyjDGw7Oi6UTjibatZDn3SjRV0jHFa2_h8rCNaFsw0MrM7gVyukefkVM4LDchrtaEFTNQwq5-2WX2hQ_Szqvf6L2BBDRZlEl4GuGB8wXB2me6R9MzV65uScSjODxejjwA9Kc4bxTaSFdpaMLJm9BGgWebAHi6PulPgoB5iJZ-0825XMobWipA-A3YmeBQWRQ0TqYFn4XaYNnUcogL4gYWZQLZ68DaO1ZHikkH9mMTZ8C_0RVKPviv89xyw2AW16ghBi8igSyekzrdf_SplgvFpUIozN-CofQ1scqi2kdUDRQzyPzWjF2D9wdEMJFsSUeStip4q4nOpWTOSNHBIhSeq4z4jeT3VXx_Ds9QPiw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJGymk3DLnFqLuEbKJo_1Q0XHZw5lA2B42AoZ3BRd0mjJte8LRN25_uHfutQ3J1erEP55qoYa1ONEA0x0YGEOY2AOGLEvC5hfLDLdEZWXdYhLR3URYwlK8BUh3qr6OMRikqy8="
+        },
+        {
+          "title": "austinpublishinggroup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIXaP5jS96EVKZptRIw-bj8K0AFewTfFz2jt7g-48SVh0stWRFmo4dWXi4xx_YXaIv-rxq9-3iDQjxCF1GPyAOt9kuzMfLae4e0i-I18aKRmx5SSFZXDIHDm6lYaovtyu70y0Cp7m78VdguAhMTYzIYjbRLDFQB6luoFM4ume5mIQINdms5DypbAYsrA=="
+        },
+        {
+          "title": "uu.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk-fyxBN3Fb-yVdfFBm5QKrg3anyFGxYQCZ90B0TGSAsfWtBQN-M1SosipvFsA61tfuXEri6eCgr2v0BKkv7DT2iTYkVbmXQvAvmkugSrEm_A7AGo95AiA9opJOW4CM6BbHJnCBx1o-lo-6bz_n70eZwdwtCNxgBkXFo_2rSWMx_3B_XmpMcq1n4m2PlSwZsEE99Uyy3ge3aOAdc0bQjU10UTb_sEFVXaxPV6-3vV4WSEqw-WUJokIXOil02vFNdK4aA8LOinW_Uvt6BTpoYbirEnudw9fkVax47DA2aqg"
+        },
+        {
+          "title": "eur.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9udso2Iv7IRxJbe8t0dfcjZXGGWB7KPp4iosFlhnPr0DNuXHKlFxjibxYrQJ788G_35i3NA1HxNcMPS_SyxB0Ntb62xVA1hiHse2BfJpCpDs5qrPmm_OoejI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvVSst9c-lRe6YiXG5F7UOF43nunLpKlUGrUiVHeg--qAoMep49uwQGPZfqq_ZGCnaLAI64chLyFMKfzwm7xrANJYXXuNVV3TGZXJ-Vf88VonXgPgSfdhGKBrlHT-LiSwrbiU="
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7T66eQqzojHAOUuCyb9lS8TcO5sJcFHYWOOyUBgOGEr5an_Pf2iaAwmnLrA3pgKgWVGT_KqMP46qHO1F1bvgR4MGmgysRgIsI8lVqZhWirttBux4YCtGluqjKGf1oRzeKpbvO6iRXjQbleRAjBj8Kozw3HYCjnheiTRSgEXeGN2N2ukRLf7qDA_nAoUar3qlMYNlxfotpWP4GafJBZVSD"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intranasal Cobalamin (Cyanocobalamin) trials for Vitamin B12 Deficiency",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitamin%20B12%20Deficiency&intr=Intranasal%20Cobalamin%20(Cyanocobalamin)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "500 mcg once weekly",
+      "effectiveness": 90,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 100,
+          "sideEffectManagement": 20,
+          "totalAnnual": 620
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 775,
+        "costPerResponder": 688.89,
+        "icer": 5000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 30,
+          "annualOtcCost": 200,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 500,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 430,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Oral Cobalamin",
+          "costDifference": 485,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Intranasal Cobalamin (Cyanocobalamin)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 90,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Rhinitis, nasal irritation, headache",
+          "percentage": 7
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "Hematologic: 5-7 days; Symptomatic: 1-4 weeks",
+      "treatmentDuration": "Lifetime for chronic deficiency (maintenance)",
+      "trials": 20
+    }
+  ]
+}

@@ -1,0 +1,799 @@
+{
+  "conditionName": "Maternal hypertensive disorders",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:14:04.666Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "viamedica.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFoCMfO1dYAYXSRd2JqMJlXEhSQAsKHORnGdOxZl2QYNHS2sVKf1GNVbGRO3Vg-7fVYNKXbwj5fwHZkXBppCGnwFjiv575yBemzw3eEh6G44DGsJlUR7MjqsUS-wAZMwDnvaGVUnLsM_qvRO0bDh2rv307oNIv8JMcWifWnd8qXvk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM-deLoWRKnQPSUt5q9DW_XbVohKKPuXF5qZwElPGJtVfV5jcCp-miPlysFPTE4pmBGVimyvinAyGXyqTykx57pUQtMn6bxsgtC-D4unx7P93ABo6vy5mpVWNUOWp-v3eedRQNLMZl9MUBqOetNfza0erSYe-OZhkD026llKsbD1FCjr_eRD4yF7dIqBcywZdntf87cVzdthKpq2bIyYIEx5s6Tu0yS9V4YAzosY4pHzyMyAPKZInmafEZTGYhtp8pMfEhLzUq2ZbiEhQnXwXZ"
+        },
+        {
+          "title": "viamedica.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9tr6wiX7GplkrcddlLbndUMFtl14j966S0SVCX7jb2R8EXXE-a08VFSIWglt1TI92ykGcwgV4ESDuGQIkp29XD3rICBuFcAnjKY7_l40OkXIeXyFDDLuTya3WjJgjGkptV_Wc0fMyMYmofS-sZrEuShR9T26Sk5Ytdnf_Muboe08="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSVHW2O4kabk2lCYYwd-hDkNNsdgaaP8DQXb9YlO7C_LI2wBOqq_OFgEoHAe9HztchjwhoePkC3TwmZOgCnY663y5mZ3nQNHXcDEsQCxEgzv4_XwtgXCKprNVowk835p2CvbtXMunU-zUkML28WJqVCmdnXmRZQiNo8S5XYVgsJCW3rMm6ob9SegkCrxEh09qMuEWzm_IVPqiWKYqkAlCOVWg4YPXdtDryUQM7Hu9y-NVk-M9fhwYMuhhEHnknNg-NiVIr6ukkbx_jkz__MnrykofWAQ-cMMPqJnU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-3aWlnbqm0fIrZotkVuDplwN0Lk0Pr1U-twBLzsd7F79NiWIpSKQvojfvcMcwNd1eu0ieNXazYPLQ0HweWzArX8O854wlacl7XYo0ps3ktkBE5Lhg0jn_YbOPCTyiHyPMpI59BbRdpGw7VwsRg7dDAVB_fZGdJND9Qh3jrT61QpKLzNzP3QSxzNM03TPWNOcGMoae-xobLhYglu0iSegmCaDdMokAfsBRtx68nLQIBu7yjxWOtD36fh5m_Pe-nzjnnWq9eAxDoZAuMx9vC4kVMORLBJXztzkJbFmuUlb6fp3MTNHKU4w08Vf9dNZ43-xLCXTVyOcnEfGgNJB3s4L6mcLCmTEGkhg6c6ZEe1VI6ziI_jFlKYBskkPTZpDGpfrbUA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaMcVpbTSdgm-BvuL2-IQwmWbsy9UKzOIDeImWEEF8Tx5_gVrF2eKw6F7bsUugiNCdqhdHNGMP_24Kx4GO8UWN8c884s4y_eTavdfLMqfYHwdqAowFUCphdplJ_WOj7rvt2oU3"
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJsejOZJBVidz2kWiuJMMcFSBoHQ3dO6rxE_MO4Tu0EX1OJKEZwspK10cDNVhR5QqjIq5NzSjOEx18P_fGHJc0WDbNdYmhbyLnW_CogYiMmuYIo_5rgxyoGw4pfT-SmwpzmZ_Bbsp6hSHksMk1StyX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZZ8x_uVEj-Kme0w-hVdi4gg7b1uIwvbZIX_wmzx0rLYTn-drsYnDi1KJ8cn6hxc7psksyiQX8CGNJJzbvTavs-XpTi8GadVzeSOenGBwgjVhpPbiElDG02W1-r73wZAo8Xq95dJVCDCul5D8g"
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDAtLp1D3BOXlvv16sEufy8L_UZwjj_PuE148blbohfHGVAMLgFPAsAS3r4oUMhQ11ffBB0G6XPjV58eR5wTr0C-1Z4m_oQoehGTphjlwMwFa2jOhqAmefxpvCOSFICdUszoOL50wu34gZLIGiG5ophFEgkbn4cLwrL7OHujY-m8bwWe-Cszj9l6paXd2YBWVLACp13vkHcowlhRpTcDyJ23o5lFAdPrhrxd-_bS-jPkFYSUTDFByFDsMmdoc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH-_FH2c_ICx_h_bLxBKQU06P99pFE0ts5H511Q7YWoGrfIkSDx4AvtmNEgW9m2ziP2lbn4y3L9KbRbafLtSMzf-MzT85wyaiOYUcLJMfcu0L33Lxrer9VsMjhbESXJ5dlakI1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPwoafQUYLeyMDvZEvis1dSN5wqsu0J4PFL5dHRu_KGCX6ew4R8uDwOE3fTx727Wg8xZEhBV8y_Vlu-2Cb5j9PdmQdvokAX9ihwYUe1-cEoK_GUjJjcAjAQLRelJVmQGRoo85Q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG46Gg1vQJz-wLONMtwdb9tcPSOUdrmpEvTCPSwvIJ977AsUjA4kcsnUoINZc443gsCt0TmHheI10QLXTxew_0Aq1op3YTi2KEQPiGfzHPaVkh37Qtutd2KijFEFm_xRHuyHSjx4mkJ5XQOat4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Labetalol trials for Maternal hypertensive disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Maternal%20hypertensive%20disorders&intr=Labetalol"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "100-400 mg 2-3 times daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1588,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 1000,
+          "annualPrescriptionCost": 150,
+          "annualTimeCost": 240,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Labetalol",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 72,
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 6
+        },
+        {
+          "name": "Scalp tingling",
+          "percentage": 3
+        },
+        {
+          "name": "Fetal bradycardia",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "30-90 minutes (oral)",
+      "treatmentDuration": "Until delivery",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbZBD8TAwzU3sO364Y7zjgbxi9MLzA2H9g4riNwYMR3mb1nDsJ2Q8Ty4jy7Ch_YuxxZFPDIRuZokUVg-68x52uLRhdYO3LK193fvXvxrIylmH1NOCb9fhcNDDKmBmHG2Iq7NPOGRYieA30jPfSB-nbXRnvv7ayKugRZPc="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXX9bBc0KRCZ220O54pn4YoEEuf4G9GptVq5vDyTmWI77G5qepo3WRwI__QJLTG-gE8fqkP0_2yNds-ArTsb6Gmen1OKDLnROglHYneO17Xhbpa9gqLqxfvyxD0lRouVlIr3OgkBFyFG2wwe_Ti3eCN0J8e4AdIItxxvxSoEKXbh_JglbYzeH99Lysw89WeU66w1Gj2Rfa1NImOjcDvJk5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjuEX3nsSCof5jrN04x8mUdUsFSYbncQsSgXIAkvhL5vyjgk1S5A6Do963x5onBiaoBj69onCCvBGxkac8YllQMNHnSTRlkDWFy5LwtcDPfquwgWRvZAC3WfmP4t_XJ9cfNNs="
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtITe6OHWFWb6-Y87i3x1Oh-v-B7P5BDvPc5cEW9eun4fc0n9qX-xcPweRX9udG1XcmWQCZsVaROQE9QoU7rC6_TD_tOnPT43EK-m7vwTbzGJ2QCzSUyOkmLkQbC6IRAwSj1w-My3v1sRm6xl7xZorh9U53GkrbzbmAm5lDiNYa-K1BB7fVfB6Ijr462H4Obe1Q8k2484NAvPcF3CnKgQJcP4GtYFGfkkr8LyGg7Z0-Dl4I5TU8FxSR9Stbc77WhfuavJ7HE3xZSRB0X32BvY="
+        },
+        {
+          "title": "the-hospitalist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOV3Lx8Bb0i7abqp4eaunRss3u3CI-T4efDRWlVLUWBUw65LocfK1uMxZ7WnO0xgm_8oMGdEBBLXSk2Ij34_K6h0HqKqSgBDKt1OZq_AECuq6DWbeZrz6stletjG30Wx0eB8eY8_9plY0ZrmeHrkSMkvtLakCW89bFQlzOqjOSOaFnxYxOGtEBb-V6nhdaM_FUp3pkJeXdXqXNlfHw3OxDdB3fCLf3J7ecRoQ="
+        },
+        {
+          "title": "heart.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHXOmxBAMSJJR-SNpg6n6z8l_fQRpQzpFZNXOIstJzyXMYptT3HMLc-9tky-a0cmFwFc0S6fGkOj0r45aagqY5D7gSRjisBFo8ImXk0OKhb6tfjehBEDhyojbZQvoZep2Mh8W75IxICWKSQW1D8XFFsksP0KrHNfjmnXTsDI1P8jwRoL5JVIrZTSeSVR7DmojLELJNoLGVpGAqP8ZLZeZDFyrUeuzQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJRwQWz2Qp9QYBHPf-QNg5HqBj8EJb8wC4BHIA5OaOo7d4v6ECxXbYG1JDeJXYPXOkj3KcmjASF-LG01IaFJ7PipgumDHP4Z156cnX9yNTB4fQn2vLpu1n8aHbfKg1Ea1lcww="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGz8n2i-Hnl3DCwLqjy5BVtQs7zoa3PbapSSTOspL3mDqZ7rkctFETr0K19XudNhaY-edPfKqTv3DZVlSYdaNYluddWkFzw1idhXqqcMOB70v4SArX9FUxaNjpJ_7gQJUfbpejcaykzAcQS5cBVQ5apoeILMQwJg6o2mqoorSBxeBXtJoX1DUpbOnvwrYHROr1iip3IPLhA85lbg1_rffv1yacUaG7E1Scz2TTnYqmwDvJ565ug66roi5YVjqdGzvuqfOnt_7o8FnIIseg8kHOGicI_ZOlpDCeD9k7dMlY3NiVfWicdldvM8PKVPeLWW47ppeCevmUuMlnf9MkIIxI8r3lZLUw-yRNkY9gjelqvNLgb-TErUIYGMCAHulk59uc5djLSC44_8n7JutVtbNljw9bm4vFn"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCGwaTPcmt7xlB9OsjwmsWSAfOesLUD7JX6VgJAZGJLSyAYf9sCdtcL8YbamtPBykYQR2aazTsluKvXLodC3HEQyoH5u0xZPw7yNm_djUsDBZJeoKuFEDOqtsSeMKE56u1"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw1Rd9Z1w1p0hBSydXpWjHLsHyeljlBzHxJFf2H96yhxCkYA-oMmTcdyV102LHkQfOBpxX-8WTYTB37rHfBSxy29QeuVOugXxVgLxjrpmWcjgHnzXlMS18xtKNm2ZLm80Jj9qjOrBexLnkj9Elte3962aYRUG-TVzahUqEiXomY183aYiMWZgGfgI0dhoYNj8a7mNlwRYFQwyQ7WQkchHFeS4bIUl-5dxTP26krq3HtyGIVYPZDwijipPI6V68SKPb8g-kBHo8iEIUZAiBdwnS__Vu-hw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKIG9TuKYditQD-0o923ALxKKMKMUuSLLX7GtFUb-oi8DzCf4MKcnAFGbSa-SnDxLpFuA2mgbsR3phReECZe_hDDvHerRJ_xIe_Fr47EAYvxK5SHPfQIvB-zZybYXJQuPX01QDi-_7T5NTcXU="
+        },
+        {
+          "title": "ijscia.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvBXN5fxX3xsmZDAYrclLjPVzLMQTBc02dBOisOCPuwheWD1d7tTx2BNOIZknRBSLbMVzIyoG6Cm7NBzlDF1jbJl8ICNXkRLfRddXxsNjHi-SwiNSM9GXH5t7QoJ0o8fpQVv6xg157RHbMOXyvStrgZu_33rR--Dziivd24q0bRUmWx-2PKbKbpqWc16l44JoHnx1Tcg3X"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_GxdhvfeTh0XzN2RfxRRjI_hMQnbTkwyq-8KdNGiK4be2nzUlqnA_5eoqYv-917oUW8cdaRQJRPKB_LlGcGl18cXbD19H0JlorLavPyGS7F4DuA7iVuY45EdiRoR0GibYL9Et-huQss8lCkJ3a7gMtMqeVIjW_6hdESVojOyTlFeqRsV7hwlWvCsuzZG6f-JkS_PYV1mYMc82-txyKD79SgStDzIvJI0skgpTtRGHXP-XsJRvebad-n-QD_t-WqGFLIu2_6FbEZXkW4ddLa2TuB8Rdwf6Yv0B"
+        },
+        {
+          "title": "ClinicalTrials.gov: Nifedipine (extended-release) trials for Maternal hypertensive disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Maternal%20hypertensive%20disorders&intr=Nifedipine%20(extended-release)"
+        }
+      ],
+      "confidenceScore": 91,
+      "dosageRange": "30-90 mg once daily",
+      "effectiveness": 87,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1588,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 1000,
+          "annualPrescriptionCost": 150,
+          "annualTimeCost": 240,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Nifedipine (extended-release)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 71,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Flushing",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "30-60 minutes (oral)",
+      "treatmentDuration": "Until delivery",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "iiste.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs4EcoXIX9TFbvg17DJQ6WGtB8NmE2-0lowsupMRTi5ZU3xQWJ4Lk5M0VMz7Og_JpOQXAk2GDWNSBVEEOOO8DqClfg7eMr-lotv8qIRWagKXixZS6wXMYZvKU4et6HOFotWcJ3Yu1WtB2QXARkUWgo1HcQM6zGkaNIw0FN_HImCg=="
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4qncpjxzvEa9xesF3ts68jPXLs3ULi4P54HmkdzRvGe5omquogzGq0-PPExCTHbIcNKgav0yz7F4VMi1htgZN8QtrpRb0L_3ttQlzqECr8D8czzw6xlCjEPvgxqotOWMsK5VJARn-hNof8a9ejf0V6eS8TLh9VRCGI0rUGzqR2c7vht-VIy6O-VpAYerMHCItGZvpiTa0sUStdEHlNbEbxEhPwMoWKi832jIbVUpu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1LwSQyvov688WqZX796zifhj-7cURJ5XF2FdLXTXxB-idhk63zNR4clA4d2Sim6rYUEIJtiO1QLBbVF2bLQHwkRhHpem4werKLgZ9bYldlBEZ8P741_ObUSEm3N7zL0FVRFfvbJ1WvK0cZA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtTX0192QKxO2w_J_qqiSlWyCW8jyKswFa_jWwva7kW8pKiObrmrSpObGBVgnDOHv4_CE7pILC_j-U4NUjvfHZH6QvBoaIdlRIyhnzbRC9GJZbPGZNNxGdJH5CyaCECLkLyogJdX2mWpBc-NY9z5qoVuTCSWCd_GD0Ax27ttyDOyMeGQQoQZW7ZHLS-AIOWRmdYx27sNl793YpDlE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjmrsGaXCdtiRpbOpheDT-WpQ6FoX0Ubt21Phz4Mc5mqC6AfVZmPZ3Fh62YkDeqwdY9ykqAShVPBaPg52G5lHE5wlp6g0uPpYNe1upYyeQsHy3Sy7datCKxuBgNaAi-jtsoDo1ac40OZqYSQYTHY8-cOdF8mr-IhdNTxmxNRPARxaYygUzGUdt2s7DWMquGaKelb8Qal6XNli_prn2q-EuBy0LQXwwcsdUx0plPWVwKWgTU6VpmnnQc434BFIfpC5A840FQ5Qw-qrYdVQCFcawVWJYZigrioGNVbyT0nYORomNIowkFE2iiXHIOFlh-g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-Gx7QL4XI3YSevNwI1Er1LGj0kmI3a5f2WfveAGn1_ELrsFZN66o4vj3cDuT-6nd10fx0JSSp7L79LRPAWd3AqIizEv3Iqx7hTYbQC8FmE2ltSHL1CgQNgQ9gwRTYMV5PcDaKHUIP0dlqybcxP878Z7KTTm_RXf2oGR7pva6nLRKwYK48s4unsicBg66ZiXKjluJiRZCFXyN-D9ZuE5od7I8jlGhKDeBNVT_MAxR9iFpsqXV5SebUJZcyu3IL9GGSG3w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlflik0ntBpHcKh1l4LyllVSvRsqFd3zTst7gFhB-ghj5vsTxwjw8-IYhuzdAT3udEAh8V1kXY_UDuwo_-sl4fB3S6-CJHqkPuBj9ZssbQRtuKIRc22lCh-Hltz-t4qvp4nfWSv-lKx5J646AQu5YzjdnbBaKKmQwdN6geiWNa4-ANFsRuUDauhbUaXiUtpby584WzoZn7cE91xV7BdNHZo6F_wdx4AknI_FR54JP-t57LkHx6QRzQcz74nnU71aGKJsQ-py3xZijSVW3GMRkAhhQu0qt6-47dyVqMbNjA63aMTO-e8rFwNKs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcOFrx3DGdpRR_xqL4tMg_y1h7ax6S39Qk3FhOL8bYeiT2gVOvDqhPQkVA52v_iT9JrUI_RMusLf_nPrO037eXiXOuYHfiTQwkbjj0gLwdHPRGnXbAt3oz7JGU0WqJbcCRL3Ltt95nK3UkHh4="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1SowM6tSOU84qqcX5OUO_HBO2JbCwxMMV5k_V60xBx8CYu1owYFjJVVNIov24I28h6umlqRv4g9pcJtL9uQOBb_5Nkgz_VnSQPhg-0DCswgmiLf3yQX2Bv3zSl1F_qpgNcpOSKWcUU-5bYuFt15Tj434="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFcCc6bc3EZW5uwGCaXUm5XQFXe7LhP3a2OLKBkrotbkO5iO2DUyHHh8iiHftg-HUuzwVb5TlC-6dTnT5qIlAiFepoTuMHp2TmObrQ2PCeQZHy4xoR-568TwmuY4ywsSFmzUecAcfnKlVhSs0="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6F5TGm-ROEBQKJASClv8jlNQ1Oy7vYyzweYS7KZQzsMuodkw9iy6YF_5c8At55ifra8Joa6fxOKBOIlp2pKrL3dE8Thc8x6k1OZAhBkqB9dxZe4ZMStnhiuTUWPLr2fONDFTOeOzEtc3ShDSs5WzLK4_Y7IGvZywcXEiT0L873QpNRjD4XW3_c8AysXBRJ-W6wW6PP_GTP-naFyBjtZ4X-BOXkhY1PD3TyR55psOHibmOezJtKdySOMtJBlWtMtJ5hjOnveWA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Magnesium Sulfate trials for Maternal hypertensive disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Maternal%20hypertensive%20disorders&intr=Magnesium%20Sulfate"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "4-6 g IV loading dose, then 1-2 g/hour infusion",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Magnesium Sulfate",
+      "nnh": null,
+      "nnt": 18,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.45% absolute risk reduction",
+          "baseline": "Estimated risk in severe preeclampsia without MgSO4: 2.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Eclamptic Seizures",
+          "percentageChange": -58
+        },
+        {
+          "absoluteChange": "-1.75% absolute risk reduction",
+          "baseline": "Estimated risk in severe preeclampsia: 5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Severe Maternal Morbidity (e.g., pulmonary edema, renal failure)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-15 mmHg",
+          "baseline": "160 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -9.4
+        },
+        {
+          "absoluteChange": "-12 mmHg",
+          "baseline": "110 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diastolic Blood Pressure",
+          "percentageChange": -10.9
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.2% absolute risk reduction",
+          "baseline": "Estimated risk in preterm births <34 weeks: 10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Cerebral Palsy in preterm offspring (<34 weeks gestation)",
+          "percentageChange": -32
+        },
+        {
+          "absoluteChange": "-3.75% absolute risk reduction",
+          "baseline": "Estimated risk in severe preeclampsia: 15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Hypertensive Crisis Requiring Acute Intervention",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity (NRS 0-10 scale)",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Flushing",
+          "percentage": 15
+        },
+        {
+          "name": "Warmth",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Muscle weakness",
+          "percentage": 5
+        },
+        {
+          "name": "Respiratory depression",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "immediate (IV)",
+      "treatmentDuration": "24 hours post-delivery or post-seizure",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSyT0ZVDGOXSl5vcfHyFaomcsUBF7UmljwbG4fMY4s_vVMGPIRtRxTp-FT4w3sTnLmcTKLwXszdnIdO4MGZnx5tt6a3dAMWxOo-1jOHq3dN-i4CNFIc_d9HRFt_i5cygx0j-A="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDw4BvAdZMaqF8OGlmT8OOy05xEFxHkbSs8XiWHy21L2gLHyFuF1TpRpH5UOgDtxrxYHLDh3SWy0Yl1dAmaMnQg27tG_JgbnB3CiIN8BbXQSL-OSvduFJe2X7stKmo2ZvbLmhGyZ1aG7TDimlVpR1lFzcTMe_9iJETtsvhm_5LbaA4Hkw69SSJWcnozftcCkV19pl1x6WygseJeM5Wy3Ld1dxEhJ5YiY_Vz4XvkXgV_gFzYXcStaICESp3Dg=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGD2ngwL3pnU1YD9RGZ8Qvzi-oevPRg9vh6Ph4i0zBXzs4wIwIbRI0JttbzanHp7hALmBKziyWb5LEGle1DFVIZZptPa8YswwqbaubVGYDiArgAGqGZAySygYMAxRDOdy92"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4xvUUUDGnA380iPdniww6ws7ffshP_BcFjIJkJ15FgbHSQQ5qCipgjbiBBgrz5RAPtopTQKI2jw_UcXuEu0K9ulg0-zcwpWDuBUxuBg7y9iBH2XGIi7mM9mVOySBkNw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOH1khx6CpeR5qJQ-MEzu0UYmjiDfsXcRHtEhPWRyl35RUYRycal_HXRotaF3bbKmq1P1lBuZgB56mgeDOviasV292mVEiDMiYGqWzK7B_x1Mp8fZOmI50wwnHuMJ4ENXTnio="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGr5OFAhTySc7DUKljWAaorzrUcViJqvFRTZVSRWg89oVoV3HXWy5qDP2T4Y7CMic4Q3PNTI2W8PqPIN9YJXDwZ8l7vr6HAp5zy6jnDZkY-CFPI0xnFK746BOXbiw2D3EZO5F4ZfJRPWYo69g2k9tZ5KH2AuFUItzg92r2OCETPQGAMnOKz_uLpc47IOpUS77JSQT_Ass1p5U-cMwJapgxRn9zhbYVhWbqNhzr0V3HjVxFMxqwiyQgxWxCNMpUCsxLGjvn95VRk4Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3_SJTyr4HrK5kR9Rykfp9cFcAIQ8ECBc8sb8Vy3xFGxmBHxLKCn8GFnjv4vG2wWIveU-i6gwkhHWE9z4PvlT_ppA47IIUaRv1pZZRiScE0-5PUJxTQIklbexPTRg5Z8Bq0OyWNSiODjzCk-qxSatts7fIs5bwDR8cKlxubFl6sfCqILMG8ovqGgNddast3xCTsvh6oEAztOD9DJos7mTMbVAm5v0E-ZH0mL5M3T0rr0o1RJQ__w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiCWDt5uyb9KzZzHaBu0tXaqw5qfoL3jkYbNgZ1heLtkAx6aPAsy6IpwdXL5sDFMSwm81VC1quNHxmvWCN48Ofc8XnaX6kO_OREDyIrQzSi4bVM6cyMqreMYDCL3ACb4UwPWYdgigI34US"
+        },
+        {
+          "title": "ClinicalTrials.gov: Hydralazine (IV) trials for Maternal hypertensive disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Maternal%20hypertensive%20disorders&intr=Hydralazine%20(IV)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5 mg IV bolus, then 5-10 mg every 20-30 min",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Hydralazine (IV)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Flushing",
+          "percentage": 10
+        },
+        {
+          "name": "Tachycardia",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "10-20 minutes (IV)",
+      "treatmentDuration": "Short-term, acute management",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8hDaW3Wgm0Lcl2er4Yjzi0cimbrwa0PX2sIhNjGTAizunxjgAkLIkFR0a8TtCMxhufKdsbPcXmfhfSOsIT22Ag2dR00TYHyCOEDAajg41WXHXa1gZTQrfTFdEecu4j4GUv1ADoESl2tOwF5E79rcXvP35WAzRyoV2mJ0D0SrbE08hdakPqzt7V1gQ293qgzR6FKm-3Fdi2VfBNvxrrYwjq6nUMtE2R7ZISneg3hjs1qTiguUG_iikJdpa3JjeOHigHjPcSU_rcuzf6LxBwodnI2j-dAEplg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1VCnLqWdYVQFn2wJmimjt-PpRINqKxXlHhLa_tbhzLlko_OZxLoPlKMqvlABCiVobws7MBc3Pvt54gqqVF4_XJkYWilpjNhzMIQJozqMDG5vDn1BR4TP_bh_krZ5XPICrFOsJujWe55rLTw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhA3qr5SBV07yvYvWs2ecFpZUe7z-VPrxSa6GCggyM7wDUPZAaM8j5kXNp6iB25GMlW52Rjj16v-98ic9jvf107DSm31o0u4Zg_QiKlaIJz_MgodmJmK8KVajSMAMpm5AFap5OXuJ50O2pyiO7xPt5ShcCbVXz-3YQlVKBQl3IDo14oGyM1rGX_yBWrGrwqCvtYfuh03kGV-jR5KvEgNULCfk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhvzAXegiGe_CcC4A0I1sazk9TbERCPG-bDynJRJFFkfTQNSt6f_ATBKAFnrFvBYww2GURYQOWi6HaLaVjGphIxO2wUXsRRB5MovcDUiD5vSy7G4phqLfl4vpc0cTiw5Fjr4g="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDXEEE443Yg--L9wnlshNGvUuEi-KvmGXfkCmwEzhtvQQ9hJJ6roRrYLI8-ljEta7YT74kXhhpsE0ND8dLfZT4gPcPP8rh4igAni1uMMV0S9MR8rj03muPrw3BnTdOc8Ra"
+        },
+        {
+          "title": "gynaecologyjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-8MfWYInF93nmVSEbwqYfS0vjO8qZ-DLTcWYp8jGbhS6cngqNK2Ee0s1XUDBDksv78QM1jfDAmW1JqeHusll6jVu-t8Y49JlA5JoSsMI-aCxjYhM3BuLQOk7NJXDV0HqpNNUGmpsJsqB_VkjL-mDbJkO7V9pLsOy3"
+        },
+        {
+          "title": "pjmhsonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_qOM1QGyhsSqZiuXF0zdT2vddMm6t0mYrdMq_8HSxFrBv3ToAN5_JBS3CYUpdwaMj9fc6E35zOwmpM5smxhoKny_U9VynayHMN2MBJ5fmxWIhJjsYBbmPhGWFifjwX96SRIMkVNtb7BuEihcxuQDeyVuk5YgXFnrtuqKU_wEIHHhKuhrUAQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU7h2IuL6nehbhxxj-JfzzQtzQ-jOtHY1doTO3YchB4Qu6sg-kZZ5nh2-7ea06PiPhZ3Icaucs5bZejB7UV79RxrWHO5jjCEE5fyuz2W0hmuT-9upU-lIiPutePS7U01p8H74="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKBfXxKOfyy5JUtM4sXnVROHrUSYMgeAE3_DOp5Iv-O0YdaWpzkKFfvKzyWvxdbO-kumoAYwEiG1APJ2-ZYR5w1BFYU6liTp9tstnulGny7fDAlzah2UDLYq31Lt0d89HP_XiiaYwoUrody3hFRUDS-9TTSPun28yJuaNfW9NFMOWIV9AlLmvKhMm69-ZPXCiHOQxyAyzgtZRn9qwIWzNyp-rKNc6KwTh70WBQYlH-oiUqc77ob6VMj7EGn51MMQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Methyldopa trials for Maternal hypertensive disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Maternal%20hypertensive%20disorders&intr=Methyldopa"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "250-500 mg 2-4 times daily",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 250,
+          "totalAnnual": 1300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1625,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 1000,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 240,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Methyldopa",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 69,
+      "sideEffects": [
+        {
+          "name": "Drowsiness",
+          "percentage": 25
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 12
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "2-6 hours (oral)",
+      "treatmentDuration": "Until delivery",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbBriHeGu9O7MS-WvKWCp69TLVKrtZ_s7fflsQkO3M09MNsXEZGfQaHz3ymeOaAQnp_-g6UFnHkiynluNh59SkwA5cqFQkPiRnDJ4ReW4I1sdbwIy7p7dVi5SMzch_V9E_EhLm9pz__VZCKGvW94qCqa6Hx5-Byj-apFI7a7KlY08bLZOIqwAEz7V8savKcL3te4axTXmfd9d1N8jfvyXm7Qt9s6RtVDVUy7f7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGBtdFqIF9nQ1u2TYvjX9N7Is3t5RevkbzvSKL0g2LUfQ7nCCJIORgh1gdtLXDuw-FDjnjR_pe4m8lhVexmL_Vqz4ZDIQHOqfuNcEKyVJyG_HZX6av2e4-DQtK1Q81bLvwSNYnv2nFCu3We77IRxL3i4w1ioTJgAsHiNg35Ac2FScoYgW73oaRP8b0yR3JKmpxs-7taYTT1BbuqbkP0y-lvfX8fMrpEhqNY-EESxsCEpvHgH8qQ-oOsuCY4ODfoPnEBvvBbXM63cnVpE9HK2SzytPyGQyFDGQ_z0hVQJWVhOa9Cjnp0eOnv58sJg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCQDb3YcLzgm2DFex_R3Rb8f4pAQ8wTSoToFAg-M6RUKPJbFaHUWOTMl_Bzv8uw5Ry2LdLQsmyyAI0242e58vQsAPQuH6Gi767bJDug801XHkX9BbsCwsv3gJmz1xwlgs-I9F2Z2TIX_ueuSnwCPCtMHeFrA1MbBvmqF5WmStB5nIep17VQ2QQXlDYZTxjkrhBK1Wu-ZtvSIr8uMY8UxlD6TaVXKlJhfcVi8rajN5q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOv8tXa1sQRlYclJmpfK7gS19KXNl9MDKTqDNGfGb8PJfhClenZuiTwsbL_oie-zrjQVK8wTAd8soEELNlTFpVJbvcc8POkyLGxkc7Vnv4a5eOpZmLeZAP-r-ETIiwWaxyLhx4b9XC3imHGLfD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMa110AzKSUdmn-ts0Oh7OmZUi8uHA9w-wye_Og4_2GS_tOHSJw-yEByB_VASlAFPtEh6cdt5n3-0CFHPz994ty9SsU48BGUb4ivyFI8NT7MjoeOw5byjCurhq5vGYXM1KUqN9"
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYVepVvSpCyTO2IglGhskHynDRbF5E0dhIsUcBH-h4EuX59ZK7A4Fyk9nB4i4WTFohRRUspq6TqbvYFgggF29NhhuqF_A7cCCHgG9aOfW-9QUdVCqMzcHsK_Ac5uwKSzRTQX_5cdREawGx8hPDnMQlDr9To1WhBqQIgDo_Tnhm39oFe4y6KgJepwa-oFwIzeXCzpvHAGbbDmAAOnwQQTmczmcwiairjQglGFHq8wSVL1mptxTmgCO_Qbrbp7NeVoff5ZAZgZN73aQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-D4y__gyBXnT2N9OI-6l4vCChMTqr93LytNN169Qb4yC3CRWKZyxjB_AkEj551xkUBwRDeMs7Eap2Y52zIsEQhCrDGxwhK7XisU8DnZAMUbwD3EWlRwLKEiuFK-GALesurdY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvp-fG0BV4e8mv0jVtDbNjhEYS70sFqtsup7V-ad0Pkm9yd11rdUJpSSTNrSjc_Yz_CipZd0p4xCqIYP9ZicDp2V2wZpGYT4n1pE-Mbl_uCX0hu6cVgGWZ0eXJppS9ccXiyc8QMz6D5MwE4EUd"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDdmMxrZPoj5ecAwC0ER5fsjHLmuKpIxy9-j1Qsgh2sJnYWKUQbEYDVWukve8HlhF8-Kl2DtPCUnP8GMp9ZS0_Y-M-FMSD7Fr1TnaG6m2V0PUpPVordrqM9ds0ZnHnqlwNWIDYtBpAK_47WlRegAwqGDlIULzZpR6hbk-Hs3vvVn551Bmuoh1hczf63hvlnJZcUFu6zwIPLk5ZF3OPTHDxm674d6WQDsgWLKGKKu4AdsKeDum-A1b26K4bz0Y9j4-fda0WDP9r3gAj5mJ9"
+        },
+        {
+          "title": "ClinicalTrials.gov: Low-dose Aspirin trials for Maternal hypertensive disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Maternal%20hypertensive%20disorders&intr=Low-dose%20Aspirin"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "81-150 mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 25,
+          "sideEffectManagement": 25,
+          "totalAnnual": 70
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 467,
+        "icer": 5000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.005,
+        "vsComparator": null
+      },
+      "name": "Low-dose Aspirin",
+      "nnh": 1000,
+      "nnt": 30,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 15,
+      "safetyScore": 81,
+      "sideEffects": [
+        {
+          "name": "Minor bleeding (nosebleeds, bruising)",
+          "percentage": 7
+        },
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 3
+        },
+        {
+          "name": "Major bleeding",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Weeks-months (preventive effect)",
+      "treatmentDuration": "12-16 weeks gestation until delivery",
+      "trials": 100
+    }
+  ]
+}

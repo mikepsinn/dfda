@@ -1,0 +1,1050 @@
+{
+  "conditionName": "Osteoporosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:29:21.184Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDrNoGYD2Mhqu_xJlwHsDhTnXKM-TsTVthef5VgX4UYF0YruARajNm-JrVgsw5XTjSHOhO7DvNT07f8gwLVb2RbgYPoPcKydfQhSJ1efe568L9dZ4XKFr5FGrSO7Dc0k_NjDMg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlTteIkrr2k9Z7KEt7BmsYgcbeNlnjDU8wgqyUYrJtmf0Sx8rlwyKlZHxF32esIpE82Shuy5-mVMKEI49RW_TwhJzxUO7dmA50a3RJw7yVIW3LiahW_bO-lJRve8fdKHiaRjKQlYPNtA72HlSFAQOjeOqZPvKw8IE_OfTFWwPVLjasIec52LaMll2X2AW9aiINv_2PrlO0W_XrzpAAgUGCu1BdHNtlb-qFVXivCrmzQ1Cld71u33ISvruf2sLkh8fKmmsFHtyoD3pNaoASYbzEBRf8F779Tk7v"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJYvbwJSC0uzBcQfJ9-N2jNl2B5lU5ymEvXI7u2NXL8PKKf9hBo4pz_lkRKAuHTTcZvt2ehnlUg97kqWeclH-DbLcpqE8op3P9PCMHFKd55tHDcnEYl6WJDIS58__ISgXQlpei"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0JD3Ga2Or0s6j4BtGuQPo5v4gMKaKQ7PepjGrXCjiPbVZrlNLc09YUFCwFfMDnw6ADbIEgsNJ_hPVF7epXKY_IPnHuXRMySG3mybR7QG1wyCnopSB8PkvDR7QQtZ8bI7Ov51IvibMaIsHBdE3-t4Vq3Szz2RqOIIk-bWQAHBohn2nglk_iOg9oOcjhaMa_gtYj-5MklSxfttohC_5VPPvz39Aqnc8k2raKAxsQkYCxeQ="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjAFzx0U7fK5e3iEGiR0A2NKMdc2yQtUuNfopNwPq8uAzFlg0wghJbd1zXq3WOzdvJKpUfvW7FbqI4ag1XptzZvvENqrSTEH0Ja4drBZdFxDLTzf3wKboBxgZd3sDb5CYUxD1lSn-y2k21"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNFa4SmbLMcQmtwBxb-S2Y1fdQnaAgz7NVSTxnT8XHi9CBMlYUHCtzowIWwk7Z7CXXPU93BH1viGzsb-hcYPIMrn77FsmQjvp57T6Edgbqm-MNUvWQQ65B-vNmHs04xf0A9ZdWNU6clf3TyTGux8GyFj_ZiN1KuLXFSnYlLAB1G1DpfbYD_73cieDkgOd8D3CJVjngdaM="
+        },
+        {
+          "title": "springermedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTAb7EqxKljyFwHAnOndE1ai37Lrrz1NCMoLa8JsLDSXQjnYN3lLUDbL4yaV4hSTCM1XIvGc-Yp8HPv-HBilgKxtWwnwD2asxFpz_JVpHk1S8cu8h1gYlVXD6Ox-jRgrcyBO1VRJfziMbipoPf_ty4VGDs1d6zd4NdR76wGThoUK6zUz3TB7ZPzh-cQCQOuB_b1zGtZgiS_tB5OBdlaZSHUGTwv4ziJjfjho8fDnpwKcfQpn4JV2np71cLq6D4J6hZ3wb1Bcto6dOnL4kHO0f4SNP72UM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Romosozumab trials for Osteoporosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoporosis&intr=Romosozumab"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "210 mg subcutaneous injection once monthly",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 27000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 27700
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Romosozumab",
+      "nnh": 200,
+      "nnt": 10,
+      "participants": 12000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.115 g/cm^2",
+          "baseline": "0.850 g/cm^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine Bone Mineral Density (BMD)",
+          "percentageChange": 13.5
+        },
+        {
+          "absoluteChange": "+0.049 g/cm^2",
+          "baseline": "0.750 g/cm^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Hip Bone Mineral Density (BMD)",
+          "percentageChange": 6.5
+        },
+        {
+          "absoluteChange": "+0.034 g/cm^2",
+          "baseline": "0.650 g/cm^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Femoral Neck Bone Mineral Density (BMD)",
+          "percentageChange": 5.3
+        },
+        {
+          "absoluteChange": "-1.3 percentage points annual incidence",
+          "baseline": "1.8% annual incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "New Vertebral Fracture Incidence (12 months)",
+          "percentageChange": -73
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+80 ng/mL",
+          "baseline": "55 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "P1NP (Procollagen Type 1 N-terminal Propeptide) (peak at Month 1)",
+          "percentageChange": 145
+        },
+        {
+          "absoluteChange": "-0.10 ng/mL",
+          "baseline": "0.40 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CTX (C-telopeptide of Type 1 Collagen) (nadir at Month 1)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2.6 percentage points annual incidence",
+          "baseline": "4.0% annual incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Fracture Incidence (12 months)",
+          "percentageChange": -66
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Arthralgia",
+          "percentage": 14
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 7
+        },
+        {
+          "name": "Myocardial infarction",
+          "percentage": 0.8
+        },
+        {
+          "name": "Stroke",
+          "percentage": 0.8
+        },
+        {
+          "name": "Osteonecrosis of the jaw (ONJ)",
+          "percentage": 0.05
+        },
+        {
+          "name": "Atypical femoral fracture (AFF)",
+          "percentage": 0.01
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "12 months (followed by anti-resorptive)",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0d4kOImGSTePFOBQMGtVmYUF-uVzyHyU8Kjs7v1u0ZUm1kc-WcB9bZC5jccSWiU1VCCwULX4fv8Cb1hDLyc_I-Aiej6Afq2VDelgVbk6ZNnhVpuus8xUQ85Vvr_I3fy3i1X_Oc_vMB_0-9oY="
+        },
+        {
+          "title": "jabfm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI4wBlIeQxcy-CPqw7LsNX5sWIyMjEeSYgSUJCR8ex-GC3rbOu5KmpGtms6ez6zVeYpS-WpqgWP19DeOlLet1WNYPcYiNRK8geNdMbOFEpnUOEtxkUCodmZHbYOxg8_OuF9UddTg0aAZ7r1Sl2Fi9XWs0iPwa4PkFvqPgvlnqLznT0ZAoGU91Ui-fYy2ru"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxy9XfKCvLRgRkg2TpjEINdx9-_PIXWmAHMFUF5R2iCUVkdLYaqm9o7_OendWQLM7ro1_qMFNhh91pmWAuBIeQSEK1kzu_qnumjbpXAs0431IBCy4D9g_33W56RIcOBhslaTp2hJj5hknLaKiE_-e-iCKt"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxYQTifIwUpQzXd9meJIeQkMezqX7wM3MEFSgFUwkc_tOVlkZXzRpzmc-7-Ya6yu7xa75Gs_s1vDwma1LAMZF490EjhnjKdhT2YfoMV60xxaazEi5kGUn3YQcvUlbSKgrwmDHE6JnXwplePbejpnHzpEAB6vzxF9h3jiS71I6jJTb5yYgtWg9No_zO5AUZi4KjyDVe3kIVgvsfMT12RYdrk_72w-V9Ytvj9s94F74nYpeE52Z0bIqQtJa51KqMt_2PjdXCbhEE-E0QoKjyhINpmJqCxY8MO_Nx2yKIyYrb2Ptu"
+        },
+        {
+          "title": "reumatologiaclinica.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV7wPV4rXbbJzyfJ2ZepKjAVW-5LuhUu6RVgtLlzm45SZ8JG8NID_RKyQ47CAljmqVckpU8ugcI_CzSeF0pmbxONXzQFEDtdND5bziVA6cn2iIN-pqFIPOv0FK_f9eNa5vHSB4KXD-ahOaSA9bvH_Dj7taBmddJhUHkQIwtEsBg0yYXkee5jqOC2DwdtKg4OjnmJjZF7rUq9qPkrSi3NvYRJqQVDprXTD6YWA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFic3-iggGMc8c_brmWnXxDHivrUgdJmUmmpGL8AkDrR-90CLbSp0d-deXU00kPamk86UwUDT446z_2-_hbW-3mwaEBdSCyMUEjh7dqLBskRmW2IRlmkFKhFqNrLFa881YTVbZ8Bg0UtCLhDow="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZRRy0KoTpfqtJ-K7zd2T1lTcHv4v52o7cQp2pNO7lABQbgqp5uDByjX4-r52DLrerypZ7ORX6IaDikpFpz0P1H5dHnsIEnbGnLEO9Pt64FfFjg8aw9gExJ5qfCbXl0YmiHHbyEUffJpBl"
+        },
+        {
+          "title": "psu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF72Z_noGyft8yUG4xGVAgoTkp4n4hMCvQObZiXo7b6ROYAz2nwZD0o51NmBBohKR47Q9V2se6VcPgXrzl6nTv5fVHvvG8ZzmE7ZuVBs9oOZtPianxVwbYM6b3c0SIYZuvp2XZbeXpEjbMSKwxgt6M_-DVjXkOperyf6P0l45B6XDLme2ozWvfmDJrBp69KiApTYqjkuKU8eh5ONwApbLnAIg=="
+        },
+        {
+          "title": "researcher.life",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLDuw91fFe5-oRlqnntwnksc4swpebPMwgQLEt7xvvsCALHUKkY-2NdZclnBjPg9CXXNjBRMixooXkh7OT19ITDN6KABKGtNykNdzZ3T2dml7OpSvAJJfksqv-D6O5SAFjMCeBKyUevj2_qJL1A2scK7G064yUAG9z26l2de-P-re3n1pGMjIWf6bMSpwDbPg9mJaXduZNXNO-6XtOPHKz0D3qRfT7B0J0w857grUpLxTYwMvilM6_RpbuDgrUls0AKnSkThNrhJ2Nob0zU4tnf8JhHszXwH7sKafObg1LaOWSGleDJfetFvlHGHmz3WDOa6o0BK2XWQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzJ4Qg6TNRmnYNd5Md1em6erl6koQk2mXeS6K2D8zxA8unVqYJRA62d5GuOlDSpaT1utfdOqRKkFsm8sH2BiWagUluqM8kM1_mmcYix3HKFfqQub1tIitXWcajpj6P3PIkF12uFD_XTBk0uv64YeCLp-B6OUDu_2d3KUQnRSJUtibygd9Ws6jQHOUSRUiEkz5hmNJm7v0K0mWxy75APhEkfXEXUwL-JEimyuAxGSZO3azzGMcKPu52YhzTUeBFkEveqDQUWzf2ZyfaB7Yg-X5lE1MmOllR8GSI1RGggr67hg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjIksh6GEWVeM9Kgy9KFXZAbrphHYgP4fwlvfrSMQXFQXOorBgGa06OPx4pVp3VVQS9vlVecXU6rdY40vj3lK_feYjS914yZ39OHl28vh3IrsDX5gIAam4TuvhzUUMeXKlymEjKo6UdZdZcemCgVDF4A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEhTZITscKAdYV7Xdbep0aFVae_ubukg4alsFMPH8Ti-ehiuSviN1WEW83iJgMyOqPzBRPcUB5MEXGBnsn5N9RciKc7AdlH5mYJbUC7C5wi3FIER_s94rGCQk3P7rIfgfMn_dU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG_-Y6k0y4tUvwc5oYFTt9rkEsx83nzEOw46ni0_gtVXThoneDa4MgESEfp9cbKIxts4FjXrNDQuetls0Ue0XNzwTjd9dhQfEDPr7eiD0oIXmZ5EPCXQt_0MACkByudsjVtkvv8n8o2Ug87KI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE79kzF6ZZbBxBWx0ruq2wBIz0pUpNo1D0r-Kubhb9LpFuZ3MpmsuOM_FfVsrXiCGXBcvIsJjHy4bMXtyXQEeHrLaSjRgnhsXf1IYj0qW227UbOAEgWNJPKcFlbwPqT0A3ErgdF"
+        },
+        {
+          "title": "ClinicalTrials.gov: Denosumab trials for Osteoporosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoporosis&intr=Denosumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "60 mg subcutaneous injection every 6 months",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2250,
+          "monitoringCost": 300,
+          "sideEffectManagement": 150,
+          "totalAnnual": 2700
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Denosumab",
+      "nnh": 500,
+      "nnt": 12,
+      "participants": 22000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.064 g/cm²",
+          "baseline": "0.850 g/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine Bone Mineral Density",
+          "percentageChange": 7.5
+        },
+        {
+          "absoluteChange": "+0.041 g/cm²",
+          "baseline": "0.750 g/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Hip Bone Mineral Density",
+          "percentageChange": 5.5
+        },
+        {
+          "absoluteChange": "-0.35 ng/mL",
+          "baseline": "0.5 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum C-telopeptide (CTX)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-1.7 percentage points",
+          "baseline": "2.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Vertebral Fracture Rate",
+          "percentageChange": -68
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.018 g/cm²",
+          "baseline": "0.600 g/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Forearm Bone Mineral Density",
+          "percentageChange": 3
+        },
+        {
+          "absoluteChange": "-30 ng/mL",
+          "baseline": "50 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum P1NP (Bone Formation Marker)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.0 percentage points",
+          "baseline": "5.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Non-vertebral Fracture Rate",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Back pain",
+          "percentage": 18
+        },
+        {
+          "name": "Musculoskeletal pain",
+          "percentage": 15
+        },
+        {
+          "name": "Hypercholesterolemia",
+          "percentage": 12
+        },
+        {
+          "name": "Infection (e.g., cellulitis, UTI)",
+          "percentage": 8
+        },
+        {
+          "name": "Hypocalcemia",
+          "percentage": 3
+        },
+        {
+          "name": "Osteonecrosis of the jaw (ONJ)",
+          "percentage": 0.05
+        },
+        {
+          "name": "Atypical femoral fracture (AFF)",
+          "percentage": 0.01
+        },
+        {
+          "name": "Rebound vertebral fractures upon discontinuation",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "Long-term (often continued beyond 5 years)",
+      "trials": 151
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrz18AGaCXfd9Q6Ehqy2TTJv47RqRDaWpr4Sv2121LASmb6ajQcT2QQPlzDFYT6O3jBoYhg7F01ELulHapu5X3MbaB531mTF9ttnzA9YE6FhZpX59pUlsr7bb_asPti-VsLYg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjoATl92GtKk7mAkjtRaCH61Cotty2yzXAb3KoUYGMNwTAQKZcjd3nTMaLvkoxwUCG85AqWDGK12_jRx9iazFYiVOS6ZivVQXUe9KlS_u65ULOuk8aRY7RkOEhnnyK7fO0Fpt8jl_ypossA8emIFTDeUDXOm7E_7pWoNqZvSNJ0KvfKmboQabjvF0EOcGuURBmN33uCNdjzW2TuTQxK3VMUA4fpaCfBsvzYwaOrSxna409y_IlfbOR2df-YKWZCWwnyFEltm4Umk40gVAPMz_z3anoU60zl5mX3IYoD60qpok="
+        },
+        {
+          "title": "bioscientifica.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_GqBWBNvvkjt1RI9WmN8NH4MuHgQ7I-2zGo_RP8bJiapVG2c-DRXthSPmVrkDxKJia2bhnRWMnCbljpm7Ac3h5frOoUy778ZP92xOEItzMqMy0L4c5pDDerau9WC40w2CRFKfxAKyLBSkpRD9JapSPRIH40O4qGqdH_9wVnlk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtpcumX-gzrCmhK-ulBzmVNqIxy-8YpVkQfNky8tf9MasiSKMxk_eymQDKcTxUQLZFxaDrtYJYPKofVZiNmzGxwo10tVNHgxPBKR4wxW1DBqQasufSlpySUYNTl36_2atHFZbv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD82S_rvGN24o0tsZqWBagIP4WLJJnUzgvvzpc-6wGpQh4XaPwKJRVraWdaJHRTiwmD0ZxlG98jFuOXKDM4rf9xnppAHOVN7L4x6L0u37VbD2JY0AR3M1VWknyu8BJ9zRo_wEj"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWIfd1VA1U6H91Q4QUN6WEJmW_xmWmvZLfdWT0qb5znnr7-vAxHA4czqY3Ek6NZOVRna1hhWqRwP6gH-Km-SOcZkxOj4p7CspwZxDMM0Vt4ak1VDBPc8fOiwkmW2801Odmf9X5EWptu8PYug=="
+        },
+        {
+          "title": "clinicaltrial.be",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPCVU5EsJ_20YtJwoprG0jVo4wEbBbTUmJy762FpfSdvbxQKuNA9umCSb_tvu8YJ4dutvKy2oRiXaHMQTEhGfW4FySWx81q59q-OGyq6ZOblCfPbGbWEuh67M1r3DEu6rmTkWORrj2tQS6xpGEjO5QgDxflDH7sbI2N9SU7i-VnsHnlF-Cf8iG2RLtR5Wl64TK3-_wvAikycl3f3--YqmCNkVP9F4edxqYrm8zc1QvBrVqO5sVkFdH3FcXcXS1gfAzjPmQvRJDUIxtFJ2uxosxm9u0PWLwmtZ0gpSmjVOh6pXiHYJJO-d35Q7G367PPvGr4l8="
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFphVlcY25cWSnmk3qyb35yTy2lm5-qOt8LxBYcjIbfMSa1qv1710WuqkJihEi9aT2U-ekXTXFRfps0zvU66MIyQRyoTY9b5MOVFEOZYWF9pUUtbYMUcOg2PpuiMQF4bJRGdY5iQBtH3NxCyBDhTNAEEstQ889xKeN6th2c"
+        },
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5CgLAqsEOQDxZdtlcTt3Bgs6OdxjE_PSmnqNrwi97KdgdlGVDA_4i5c-aQGs5ejCwSIJcgUCPERd1mev25I7x3oUkHFI3Oktz-ua1gN43uEagzSsstKRuNZCRcPH2ONh3P3kS_bYjqQqboY0u8ViJXw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Teriparatide trials for Osteoporosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoporosis&intr=Teriparatide"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "20 mcg subcutaneous injection once daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 8000,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 8500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Teriparatide",
+      "nnh": 500,
+      "nnt": 11,
+      "participants": 5500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.3 percentage points over 19 months",
+          "baseline": "14.3% over 19 months (placebo incidence)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of new vertebral fractures",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "+0.075 g/cm²",
+          "baseline": "0.75 g/cm² (average baseline T-score -2.5)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine BMD",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+0.018 g/cm²",
+          "baseline": "0.60 g/cm² (average baseline T-score -2.5)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Femoral Neck BMD",
+          "percentageChange": 3
+        },
+        {
+          "absoluteChange": "+82.5 µg/L",
+          "baseline": "55 µg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "P1NP (Bone Formation Marker)",
+          "percentageChange": 150
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.9 percentage points over 19 months",
+          "baseline": "5.6% over 19 months (placebo incidence)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of new non-vertebral fractures",
+          "percentageChange": -52
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6/10 (VAS scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Back Pain Severity (VAS)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.75 cm per year",
+          "baseline": "1.5 cm per year (in severe osteoporosis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Height Loss",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 9
+        },
+        {
+          "name": "Leg cramps",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 9
+        },
+        {
+          "name": "Hypercalcemia",
+          "percentage": 7
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "Up to 2 years lifetime maximum",
+      "trials": 131
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7t66jCDfYr3bf2I3D1XRVld7Mo7KshkzcffTHALikhVqyvffBqGM9VRNZcKeCNZTFSQLgT3V9dc9mj6PqmwzEY9D-t61Qh1mrFMY4Q180jsgJ20WEX1HKMKdoIrt4aCwvSdkz"
+        },
+        {
+          "title": "jclinque.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMHBmv41uVYTNCdJY9MzLf7xcLS1rzTZEvfNNSMDdvCkoBKcUH-C74I99Hb_Iit5DrKHKww5zTyTrv7grtUxKy2Tp_Gg6VhwpmrLLxqZlObbBwW_4Kwd61V_BE0hqbX_8AlA1d6q7toGpQFq4L73XxGV8B3u0hdXLXvIPjlM6brMGseWbtYjN554rJpLsT3oPM_wLfPp4Z4_biXK9rqGn_V97PIPyarLeeZYDiMtn77epW8wETvUmhkE9WCUCGAiZs6GdsWL9sEB707LzbB-yWqUBaKpZzFvMr3TnUOwrSM0zqSU6Uf1ftzoLSjxTneMUMhE28FBe5Khg="
+        },
+        {
+          "title": "europeanreview.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQyatqhbG9QZpraG6fATGt8TcbhMHZEp7G9jIInlo3zlhbi-BKpvevaOLFJoQ_7qdJSAgkLtgW4Kr71KiC90UxCUM_lasWfvAX5lue1swjuMvdEWCDqc6eoi5Q1OzLHOrjH18LKRNq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvwMBddb_desEQ8IxN4ADKzs-FF3vK5ec36QCfcPeb19PMuGwxpZIFTRGT8mKDHN6O2BjE-Nz7CJ8_Id8feJMLVS5q-qZLzjRQLhZn0dRAcj8Sh5IzxbGPSGQDWKWbYEka47A5MuYqaI5laRBMSa1y0EFWAcem9x7e9s6FQByjHbRIqW_Kg1OjGolA-FET4kxvbHiTWeP4ZhjHNLdfrCotfI6p8wBd3hH-5DyYzncvemf9AW7CZifIblFmwYKNZnLnoo4ivEY5qId2JtI_wKBTLBHfLpRyqHJR2WTcZeuc8qFIO7A5hn1vWiwKnkVr3tuY6U9Vi4tXtXBvtSsrVwYvJFzokV7unosz-Ytlfovc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYvb98VqvbteQArN8pKRnDdJbviP4v1rdTkxE5YCjNBcOk1nMXkfvlCDppgSWX1OitZdJBXqknWbm78D_I81X5d3pxSyQqbW05rb6LVv3Ho-Jz28RnZVBDC9RLybxVpLdykrWyLlfdxUvM514X"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHB505yafiW0lHer9oQt6o44XGnXdG4HF9Eog_2L5e9ZNdU4LJK-32HLIh1XuauRHVCGP1qyV6YNYLRo9qZ-cpvbiKwPMtYFX34UleGBuZ8mnNt85K4f3uGiJu5swgsjfjDbCck"
+        },
+        {
+          "title": "ClinicalTrials.gov: Zoledronic Acid trials for Osteoporosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoporosis&intr=Zoledronic%20Acid"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5 mg intravenous infusion once yearly",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250,
+          "monitoringCost": 250,
+          "sideEffectManagement": 50,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": -3000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.18,
+        "vsComparator": null
+      },
+      "name": "Zoledronic Acid",
+      "nnh": 1000,
+      "nnt": 15,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7.5% (absolute reduction in incidence)",
+          "baseline": "Placebo rate: 10.7% over 3 years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "New Vertebral Fracture Incidence",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-1.0% (absolute reduction in incidence)",
+          "baseline": "Placebo rate: 2.5% over 3 years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "New Hip Fracture Incidence",
+          "percentageChange": -41
+        },
+        {
+          "absoluteChange": "+0.057 g/cm²",
+          "baseline": "0.850 g/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine Bone Mineral Density (BMD)",
+          "percentageChange": 6.7
+        },
+        {
+          "absoluteChange": "+0.031 g/cm²",
+          "baseline": "0.600 g/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Femoral Neck Bone Mineral Density (BMD)",
+          "percentageChange": 5.1
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.0% (absolute reduction in incidence)",
+          "baseline": "Placebo rate: 12.2% over 3 years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "New Non-Vertebral Fracture Incidence",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+0.035 g/cm²",
+          "baseline": "0.700 g/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Hip Bone Mineral Density (BMD)",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-0.35 ng/mL",
+          "baseline": "0.5 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum C-Telopeptide (CTX) - Bone Resorption Marker",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Acute phase reaction (fever, myalgia, arthralgia)",
+          "percentage": 25
+        },
+        {
+          "name": "Hypocalcemia",
+          "percentage": 3
+        },
+        {
+          "name": "Renal impairment",
+          "percentage": 2
+        },
+        {
+          "name": "Osteonecrosis of the jaw (ONJ)",
+          "percentage": 0.05
+        },
+        {
+          "name": "Atypical femoral fracture (AFF)",
+          "percentage": 0.01
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "3-6 years",
+      "trials": 112
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbIqE6IGjdSkC9gMgucMspQh8TDVL8jM_jq9WpRCUmh6bng3HLuVbpUZ5W7tepJFymDrPi9qMslZlpkOmnDJwmKRwEX7ctzNRtvVtBZXlFPIzAL1v9u2Vz_De0UtIabhbULMfmoA7tsOe6Kec="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8Ltf49-Jk1tZErZ5W7Gf0mCPonC9oNXUt6rEl2CVYYWHOJqDU97kdoqrCsaxWYIrrp9Zbcg5A8hkOoPsRq6ukA7dWEgMycWcYYzak1g5pkLDBjm8VOWfZMB5SGlYkzIJNLDNuxtb3OWhMTJY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGApX9rHnqLJjcOqOCYR4FkHePCyvFc57B3Zaqzbdkujwkq1eP5iMB0Nd9jAp7VV4T97iv2ec1KHB5R4nUKaxbrntZgIEHa4h_849-g6dVJlNKExzZLk4wY2IKm_o7APEjqzAZSyXM5Lw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo3--58FvJASx5P0ZhA_DzOlLvqdTW4VCJFJlXnXyziyEdCUrp0Ezyuw_nKKrGWNmbCLBXDubETA3eDT-pkvwNEaBGR2ZQBhKHxhYB96TKc3XGXiozbUf-m8IabaZO4LqV8eK5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMVMtccdwaWYeLwWNup4se9yHp4tgO0Bvdg4YR2MfUD7lllplIMjKTxgj8Qk6Q8wQ0KHVWUfvH7nRLfVMv_yIMh0AB4KcVhtJjcviJp4xPw1sHFII87Yo7tbFQUVg533JPicPYqXJKrrqkagol"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHisOYH5hq0Z_nUuA0EuMWj3YopA4xRubyN4_ql3iVXcyBpv6_3NRX2mIU-Llq9YlE3RsNK9ivV7XbRD_3Sw-nOmlASLT2B88AVYTpWi5iz38t7W4-blkRqe9eloldynOpLws_KYsd8eonsU_ax"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGItmr1MtTc094OrVSH_lxubm3xsd6k9CJvYH7DQtEuBaosjPnMUvfa9TQk7dWB_OT2Ii5p7Ab4GFe7wGKWR_8vjwSnRnXgxLubSuymHl6J99h_7dtbYjz1xytx_K9Bo0D-281qPG-ehqjFuK7S2tTfExysqt6KDgO8XDNMWDpI-FihL17k98hZ7O4a4ug90CGZZ-IGPJFTZ5mQRnpMV_v8Hodqukqk7dvqEAphwe1q5Raml6b5rfLQz9sPLF7ME4JGa584oWbzRbCJCw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj7LWybs_45CftNX75NMosUmF5LPBT7k9sCRDN9y0EqfWQ8u9MBgsG1pl7VjByltKH7LiWb9gw0EH3hP54K6gc8wea30IboS8lgke4NCwEMv8AyXrF3sq7FgVC0Gs1xurgnB8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlBEWX0OmvE_LxDJxFXaFCJuhscryjWbhWnrCq17qN5BWF0SFrhho-pvCiRj0hqlgNfU09EYywdM_zF1R8AZcBO_Hh1PC__WOgJ89VZZDhqVwPy_D1sCsLOnS6tJWeogGqCLiT"
+        },
+        {
+          "title": "ClinicalTrials.gov: Alendronate trials for Osteoporosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoporosis&intr=Alendronate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "70 mg orally once weekly or 10 mg orally once daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 250,
+          "sideEffectManagement": 50,
+          "totalAnnual": 375
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": -5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Alendronate",
+      "nnh": 1000,
+      "nnt": 15,
+      "participants": 100000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.053 g/cm²",
+          "baseline": "0.750 g/cm² (equivalent to T-score approx. -2.5)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine Bone Mineral Density (BMD)",
+          "percentageChange": 7
+        },
+        {
+          "absoluteChange": "+0.027 g/cm²",
+          "baseline": "0.680 g/cm² (equivalent to T-score approx. -2.0)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Hip Bone Mineral Density (BMD)",
+          "percentageChange": 4
+        },
+        {
+          "absoluteChange": "-7.2% (absolute reduction in cumulative incidence)",
+          "baseline": "Cumulative incidence of vertebral fractures over 3 years: 15% in placebo group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Incident Vertebral Fractures (Relative Risk)",
+          "percentageChange": -48
+        },
+        {
+          "absoluteChange": "-1.26% (absolute reduction in cumulative incidence)",
+          "baseline": "Cumulative incidence of hip fractures over 3 years: 2.8% in placebo group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Incident Hip Fractures (Relative Risk)",
+          "percentageChange": -45
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.330 ng/mL",
+          "baseline": "0.600 ng/mL (upper normal range for postmenopausal women)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum C-telopeptide (CTX)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6.0/10 (Visual Analog Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Back Pain Severity (VAS Score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+0.0544 points",
+          "baseline": "0.68 (EQ-5D Index, range 0-1)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D Index Score)",
+          "percentageChange": 8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Esophageal irritation/ulcer",
+          "percentage": 5
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 8
+        },
+        {
+          "name": "Musculoskeletal pain",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 2
+        },
+        {
+          "name": "Osteonecrosis of the jaw (ONJ)",
+          "percentage": 0.005
+        },
+        {
+          "name": "Atypical femoral fracture (AFF)",
+          "percentage": 0.005
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "3-5 years (re-evaluation after)",
+      "trials": 154
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkDTANkon0AzyEJwfKLhQPoZ4etvu2NLp5j7RjTahGwHZ_uxykyY5WAiyauzYCbOFEqCahgWLI2FwXUBlF5aWbNjReZxUOI3iuSsPpJXhgh5gU31eLYRY5C6oSoeKB9VSGWJtOYP7xspE3cpxR2Lgacw=="
+        },
+        {
+          "title": "farmacoterapia-sanidadmadrid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERD3nIz9Rf8rFgAIVISD_XLdS1jSqJpU-b0kDi006WxwT23I0I3syWsomRZSENbmg_F6azc0P9fccveYltzQDsrXWBdRIttr0fz_Z6Bs840ivF0dY_HPDrHPWJCYBbvX0axqqhqYWgmaH8RVbaGuUINPLEkLWN-7hyT0eJXBMVYNdNlNJdSvbnCvBufCGxGso8ZvvY_LkXmIezweOvvmmQLgbj2DjrghJazpBBJdO0K6Pw4FeLjV6YpK07CQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtszvIqJs36MoK-FOOmLukS-tEuk-LJxpNiX2csiXfIUnrLQu2o2qk8UqN3OsYz_sRf1XfKXVrDg-VzgLMfLznxRoaL8WkDF61zRa2LbaOWunVJsoIQWNmLNsYxpPhdqOuRM9t"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG57I8xT_KiEJU9nEts5XqctSxHITmWZn0Nm-xJuaJpnFrmqPa68qOX6XAwHQp_Zs9EZMmV261_JlhQeQHOuxIACjNnUZN8HnPrfeUIq0CSNnZlqEc0yBnw4o6_qKz7iYkkAEvB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0bxr2CU5-ipMclvIJw3O1gJNHTGf3fc512wFZ2COHDPGH7mppw8oDHcinaDzh2Ks3IxBDjjIZTc-paECVPGzZo6Rn6mno-xPRUW7jjzw6WcE6ocYfFFbjJuoz8XTjRGAaqNaLiElk9mSNmLY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6ZNDrplN_lNP_ByITOwMcLo8FvTnXjNLNkfoLgaHHd69aVgBMzXAvSO1XgajkwS-rZpX73mDwIlJlF0HQESoOKsd_5sA0IlFafHtwGS-UbY4b6X9f273giMcGPCmZLFHGfath"
+        },
+        {
+          "title": "thieme-connect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM96tWXVcTvAVxzENYO1m7wqdiih2vKLNWaqq0LNd1JtqGhZMzhFwaGQpmsE3kkVlS-L4ndJj1Cybm_Q36qEEWrILNnSA832hM_SRV6cF-AgdatPiiK16Onc2GJ1aUzaXWFwFR2r3mZnsNKXklkfnxCb907jzcSFYyQePE_pVbEZxWZAwu8zcA"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy56szMfM6PjxhB8zjIktbuf-SgQPgK9-QrqnFJmqclAJG2hYy8uKSIYoTpQYE4NAV6W5JxelgksMmAI_TLu1TQ5WkVvi-afLtQGyaEycBrC2zPBrCghg8QetDMH-EqMsEZgb2fgGP4Qa3RAYvjUac8lQpayliO1Guc6JNDGdnmacQiRtWYys9YB4ijg61Njd8qLc182YaaJ_3fZraLQqQc-EFEfaIEmSDQpOajP76YrhQXT8YsencuEnrnLW5Tg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzjTNYyGpBLzabg-KWhkq38BNEin01Tus_dq4M_1JJAIgQq9J4eAl-eMDVYrZrMr2UEGQQIa4_FDOu2FdYOEWpEgrivTsfXEKclBYoryUu3HVGTgyRd5d2MI66DaWGuGQdmLrmLCJLFcpBcUU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo7fDadoBXljsfR60QprDjDHDiD1gkHQEvziM6oZlWU9kNysHqYIG-SE0AFmvsfItHXYjicn-wclQVMCq1Bc4YQS2UIVhwZeENNFFkZ3eY5saX78lfdqM8kgJdRP2FYPHu50lE"
+        },
+        {
+          "title": "ClinicalTrials.gov: Raloxifene trials for Osteoporosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoporosis&intr=Raloxifene"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "60 mg orally once daily",
+      "effectiveness": 45,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 250,
+          "sideEffectManagement": 50,
+          "totalAnnual": 450
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Raloxifene",
+      "nnh": 150,
+      "nnt": 20,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.6% (from 14% to 8.4%)",
+          "baseline": "14% over 3 years (placebo-controlled trials)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of New Vertebral Fractures",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+0.021 g/cm²",
+          "baseline": "0.850 g/cm² (T-score -2.8)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine Bone Mineral Density (BMD)",
+          "percentageChange": 2.5
+        },
+        {
+          "absoluteChange": "+0.015 g/cm²",
+          "baseline": "0.750 g/cm² (T-score -2.5)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Femoral Neck Bone Mineral Density (BMD)",
+          "percentageChange": 2
+        },
+        {
+          "absoluteChange": "-0.125 ng/mL",
+          "baseline": "0.5 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum C-telopeptide (CTX)",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-16.8 mg/dL",
+          "baseline": "140 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "LDL Cholesterol",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-15.4 mg/dL",
+          "baseline": "220 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Cholesterol",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-0.9% (from 1.5% to 0.6%)",
+          "baseline": "1.5% over 8 years (placebo in high-risk women)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Invasive Breast Cancer",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 20
+        },
+        {
+          "name": "Leg cramps",
+          "percentage": 8
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 7
+        },
+        {
+          "name": "Venous thromboembolism (DVT, PE)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "Long-term",
+      "trials": 35
+    }
+  ]
+}

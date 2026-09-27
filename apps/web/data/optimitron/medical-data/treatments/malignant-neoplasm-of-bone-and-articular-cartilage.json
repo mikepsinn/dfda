@@ -1,0 +1,886 @@
+{
+  "conditionName": "Malignant neoplasm of bone and articular cartilage",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:06:08.358Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHU3Fxx_bQ-zYwzouwypN8dn-ev6NoXSm5jruekCLQo5pRh9TNyMk1uhkGhoIQ2T6QDiqMYlt_d1J2sZ7y18tLREu3Y34UFlGBv0X_ImrZ-ObdUPiHD858RNriiJ4rrQtfl0scA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_ZmP_GHv0YqiE-DWq6Y-HwhfQOJFAxAdiAI5TKNk1B-sPu6WnQ87PPY34Cy3EGULvEv9JoMPWt2qg1j9JAgbZQvT81wM5MBK_vj0jqyeF9fmvk5cABFWkyWzCiK41CCYSXO1NeQZuqjSLEZBx5irrEyagaFGTNUK4xSUuyv9S991Sp7N4edJ-F6CiQxui_2cvez9Z3EA6XFkRW0N5t0XZ-A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpVaRDlpfpXQtOCHeyPhkJNfIjjbGvQsBGvH03SnlYJkfIpsWWeBYwIqqQHmFMKbWTug6aBgxCG7kNtn8q6UyGEqq_XQ-1sIgwvdn-IpXLXMtSYqPP1aHcR0l-lNKKGIgwtgetxucR57eataQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHU7QD0hjEU4RNCfVXgL2DcUbWocXN9pCGEoLIfpDRHV1QLcE6mjjVkMV2RRx79P-eVrZBJsl62ekRW0mYlrKiV8wLqSeFZ2X0hnpGZFA55HIvCTgZGu94aKiJzHkH2hUZ0EeTMvDuki-UsWfXLrvgEGdI3nmsjHKlP6yoHRAwqIlQmdBuwoGB2k27xjEnJWIyuwxDqk5qlOupMnVp5KE1exUBGOCQ6v-z_4UUlniU2QJ0HCXhkpS-bETJDwBT_jVpxiXcSPvT__yWG5tzxmcu3QeuF_XRjhEvxV9LNO32tx5k="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDLfhfEiUWK-IRgbDtn0emm7frHXFTfELiCgzm1fhUhWYI5Y2Ir7LAqb0dQVmGR-07Vd8yRnudNklsLYsTPXo-xgp-aeCtrGXRIaLRKRgW3oRkU2mf8IGsKHCCFltd1LGXqVjrn7GJCB9TN7rgrv6qIMvn4hP8Hog9q_yFm5NhgkYB7IxfTtoYC2x2DL2jxmaUWkrwwZJe32gULoJcxHRohsr7eH53_LW85N3lAOVMPqAa0M1PbY32Y_hrSJptuuvISxFEJULnlJBZD0gI39K7GcbWzuJ6nea9Ar3IoGgk0p6RdCja_c_JH8uiznqqTW-li6s9gcT2BoTTskL7-4C04DpZqcc843qPJmqv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExD7B7yh6sFlKnXK_imagdL5Ueif26eoQRMGjafvJ2uBQo36_Y1bc4iB_q7cU3aTK_meLgajZJVejJqxaMoiVvtbrxlmBu8k9EX7FsopDdDLh7y2_UvHaYuCBPLffzFjLQ3j805p7NFwl83uM="
+        },
+        {
+          "title": "confex.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdxOtrk4n6zokLJ_cGUlUpboxbmNxY5Pahi6m1igOX-l4rxWKb7Yg6qTq65tFP0Phy8_hQac7qShYrbRVYe98deuCMKpNJizuorgRst9BLA9YQzVyp-zF0kE-aicd1UCv8VD0mQXyhAP0NJ-gJWGty5mfRF1cmm38ktw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8GkZfGSvzHMpuIx9zA8llVgHPS3d3UIoMf3IocHypOwgaN4QLyIoM9n_u0bA8uAPNbJwcu4N_7RcX-XwO9jx7LLORi5OTnnLzkKqceq1UneFdNp8cQ0Ihr27Ih7qOzimWvzZo4I5KeQsX9d5WopnzeQo7K6wrf23NITpcNawdocPkz9zr5s_CrvG24U1QfLCDzMRyUSM_nuGMiJXOfnyH_ODLN1vtBsv0qc6xYzLcHOD1y9l8KJT0NpZOYr92FmQ1n8CcYeDioIDCchfUshMgQ9NzC2YK"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgery (Limb-Sparing Resection/Amputation) trials for Malignant neoplasm of bone and articular cartilage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20neoplasm%20of%20bone%20and%20articular%20cartilage&intr=Surgery%20(Limb-Sparing%20Resection%2FAmputation)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 20000,
+          "totalAnnual": 35500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 39444,
+        "costPerResponder": 37368,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 4.5,
+        "vsComparator": null
+      },
+      "name": "Surgery (Limb-Sparing Resection/Amputation)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Infection",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding/Hematoma",
+          "percentage": 7
+        },
+        {
+          "name": "Nerve damage/Neuropathy",
+          "percentage": 10
+        },
+        {
+          "name": "Post-operative pain",
+          "percentage": 35
+        },
+        {
+          "name": "Implant failure/Loosening (for prostheses)",
+          "percentage": 7
+        },
+        {
+          "name": "Loss of function/mobility",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "Immediate (tumor removal), 3-12 months for recovery/rehabilitation",
+      "treatmentDuration": "Single procedure, followed by rehabilitation for months to years",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "umw.edu.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5Zz_sFwFaFvqbRn4B7cq6WJIM3t16GvMnlHKZJ3ElJxXw99qUx4AF3Gjbd_8wiWSsQD8bneH_CEkQJSS55bWG-5qXaGRcNhrlHKpgCTk5ozGv7LMQWyBGoA1ZROgPq9OEIy2jgA_7x0YwWShZvFbJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZhrwl4xq5Yc7WSR8t6lOUDXvcT_-Xpclr6OJN5gukkiHoSONvOJfcskiSivi4U-85eocxzrkwtUQ6isLI-MFBlzdATBa5ZKASEvp2e6igv5TeTFJ41yMFFFaGZwuA31_9Wrnf6EIj6p9uPII="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXGTHDcjakbrYWobm2VqElsZp4TS7vtC6CqmarGpa57gY2lfl4vawANapZEWTvWzvwagrtBrOZ8hJsJRDGLRXr7QWqagA9Zb2Y31LAXWYMZn3rqAd7pj64HC6o8CjHGoHXp0babQymRz9DrbU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-NOlDk11fy5RI3_Yh62vb1cPbsIhownFG0vntLCdE76DYakBLrVBPhnOIatJpYnuLDfHe2k3Ul33zAlX9VL4txQJack9wwmQjQcwwWMNWQFoSMFhP-N3P8zv2ERlVvZps5Xse"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH50nYkEdLDg7-3buvnRAmji1VdRtu3lFUOL_mLZ_tL_OCUMmZlzSFhnhZflSuvKFBnT0f_TmmubY21rG6Dgvwx9552sg1FF__mt6mGQ9rPefFmW20Y67KYUwzJk3yGVflh0z__SCFDe7Etx7M="
+        },
+        {
+          "title": "umw.edu.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERpM60LvtHj3Ykb0OLkl1fWmIlChqWGQjEiKsxQ1E9ItKIT1gtyIT1AZzbaneYpBGtltcQb5dxHjevZ5OGhpBQtHUaBssoBfsYYofjiKSXirqMWpXVohvEBuEOaitldFxJh45jskL_wLLXWi4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJH0p4fS2LCn5HyF8C-PPQAag7YOgHoQ-tIjpFJEdoued5qa11lYD5Y2S-1YwE3gbW8lwJbK7aXMRp0Ej-TVTzquOXG0IxYcsK1iiTXuBpc91wZ6EDR5IxJAUZKnSsxKG2DN6eWnPXJWy9-E8m1KmzNjoISeHIvg2fDTTPBVxdHR8GFZ2Ck6KSVbqgTptdSNMT4XXtg6T1S8AtuN3bKlCrx3b3dkOTiFRq5V2YbDldAEfV79j5NloBl7__N0P0CzQDGTu1pTTPqpScGQy9msrwxqOyDRJqgeH8Tn85OIfIfYuBht56hoMuVxLCq8Pa_XOuko2NicXLqklWs6QaBacdsDYh4z-DGc6SO5wRBPP267uezZYiseSxusIBtw=="
+        },
+        {
+          "title": "waocp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErG34jUtSAs2cEDZ6RfCkF1v4AOtF7ALj4qOGbAoODSRPf3rve9g9c-ex43JegdGj9OqsDDuMZbSTMWJ_n3gqWGiI1o8yxcvFXUPNZGoic9OCyjkmpWbK6jXd-8mZYMsZqHWXEMSo17DpBUH6moI3h-EZXk6c5YDpJCsmxKqVdOQkpFcws1gWtOJSm0Mq8yiXzzHdKblDFMGJIhXxgIRP3AuF_utp3qxF9ojxg0AXKdGiFKvah_PnWZjA_KXTbTCAMNTAZzJMkPUaqDq2qA7f6n_BpGH-Z18hmaFcHrLmkh1ta3k6XcQ5ebL-cUmqx2v1-MsPGTs3gW5SDDEhcXcOZersbOKjy7ils0Mro0IzgfCqtXU-b7HhixuW7qkhhP0Oqx9cZTn4QpqrMILL9ZjuejC8b7DEbVEAsosOVK1LHd0ytOYOUNT5O5IwuZmNhN8Zy_kid7La3HM2yGGA="
+        },
+        {
+          "title": "jbuon.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4IBRN-XtjVm7nAnbCJKL0z9oOnSaw_Xvo8H7YcmxrNm5fPemfGWJJD3AR-MrEowPbBwdE-GmDqicc4oDW_xfl5kUvXKpzJoKKIl0aunxWf-oiGGbHIH6P3rW5nGyYWaO9PQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHerIwHvFjhNec5i3JlCQaoXsRJpSpnaS5VPch4dqCA_8MfmowARX_7aKx7vHKj2g7ECwjuxmL1zzqd2x_aerSDvWxVrnvJQvtAxdWcLiEk75IlBRsHWB6m5H8Hcbb_UIcr1syMht3BcqVHZFXbx_ziYRcwWwTiPjhznpNyuqte0bwjYDwZkmIyUYjMwxsPsk9ZgHqqhgoGxMNbiEGBf0TVKLt0ls6SLEz_kQWZaoPsWS3yIwnliipqHyfx3VGYaEmCzNc6zCt6bbyEZHg3CJybOX7uwI1UtH4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6J1tQfJQRG78pcb6SW-rrjBIS6SfRoWJbifI8yujyOamlDB8GW3rDTAu-jdvpCSPdyhl_CXpr77-Ezvx-McNLT33u-OXmLQZwuaXoOmPcesCgucueXKfnlNRotV3pJYxWkEMkaYmPDW_yUxw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0bWN2U8Lx8zXGUwKPPeHAQwm9ptOsEq6ljqEtsuABD1LnIzCjnc0JINhU62uiSkBXOH9fjEnUlInZFCPFAuwNixWVNv4jPfBJHjsJmQvCd-M3AEqdxjFzs_SuES05e21V22CJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDFVx-r5wTNJyTVgnTz-FlqjBDBj0lAnJ_TjzYrwAirgUJLMUAbV3BUt2-nHiuxhm9sbSj8hvD2tAzb6DgsqhQY0Sdw3B7pnOgQ9ZKMb5PoMko8LyoQGvA7x-mabkwFX3Tmuo_nCV_Rjc8FMw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG79F3kANv4RUkvTdA_mtS1YUg0mchwReTjZk0wzLGsXyyeIeAQmWt9bKnp09mQrezoOSHMKhsVjtX_lx0hxpvpEnHvHQ5TFP6RYa2Om0ulLjR0UwTJoVJntLY2JP_D32NuFm9boGJO4i0A1xi5DXQ0QhsN8XUwAz5a73W-VgZtSd9ZnN6yVJBi28CXViplFMpAL1C49vNvj3OAo5OQMFCMiTCLnz6IWyUaBR8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdujnuUFKbJu6rjIbOvrQeGMr7jfl6l3B4t30LqgVW9HzcqDNAfpVNqMRTSkpVLQUnrC6WqFz8kPTkN0330lQIviLoVGS7PbzcwF0u1RO1kDaal42B8_7CI-nMeIHdiuSuVoHd5kDKiw=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUcrijcecy2ak_vo5mY3eqKKPazOW_ZeUOQNClfKr2Fj2H4CHLoi3WehisPT-J9VJAQyvNYsuHydbR8Yzf0Rlc3s8K_9b_Vkvkvp7M-LB64TDIP7S-1Mw07U2dIrqgmbB2o8k8vjI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Multi-agent Chemotherapy (e.g., Methotrexate, Doxorubicin, Cisplatin, Ifosfamide) trials for Malignant neoplasm of bone and articular cartilage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20neoplasm%20of%20bone%20and%20articular%20cartilage&intr=Multi-agent%20Chemotherapy%20(e.g.%2C%20Methotrexate%2C%20Doxorubicin%2C%20Cisplatin%2C%20Ifosfamide)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Highly specific to regimen (e.g., Cisplatin 75-120 mg/m2, Doxorubicin 75-90 mg/m2, Methotrexate high-dose)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100000,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 60000,
+          "totalAnnual": 180000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 360000,
+        "costPerResponder": 257143,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 3.5,
+        "vsComparator": null
+      },
+      "name": "Multi-agent Chemotherapy (e.g., Methotrexate, Doxorubicin, Cisplatin, Ifosfamide)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 50,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Myelosuppression (low blood counts, infection risk)",
+          "percentage": 90
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 85
+        },
+        {
+          "name": "Hair Loss",
+          "percentage": 90
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 55
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 30
+        },
+        {
+          "name": "Cardiotoxicity (e.g., Doxorubicin)",
+          "percentage": 3
+        },
+        {
+          "name": "Neurotoxicity",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "Weeks to months (during treatment cycles)",
+      "treatmentDuration": "6-12 months typically",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt_a_A0T6QlywlNF_DiDorVp7vXhhLlV3Jd7MwPAYtT5VJljsXzrlVuUNVuAc2uzfBULRlFbNB01bWFN_apkGXSz_nn39UUJ3x-oulzbAyrrOPaXV8UBlOolRZe3yP8ubNJhQ="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdPeZq6fyn5TJefZgjLNT6jvmR4pFoDNLpavNL9cZypS_hzMGihJLNCcGPfk3MIFzJivxUr_wSBFb4hgIP6EIxsic_lYVe9k1phUh7226b_fLrJASVxNYczRv42m6EycNNTGVEUJkWYXL6xQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0lBIMTntAjKV32ONQy7CG6Io2I02I09tJuWsUs0iDcWIhWjcGpS4ClsQVyPFtgjPE3hwhQbT2hFsLvIZekDTYdtFvW6fFHKdOfaYP766GypQelmdp3QDsVajXHKYb7VrX6i4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhOXos9W6HqGSnSeCOCjk2FLsSTsHgSTcUqwyAuLysVbSEcjf9fB945M3aorv4Rjce_U4lVA-ku5miH3kIaKMyh7LZlwz4NVpedtBz2rRJ4czO0OZ9spEyVGs5ogNGzQV1NVxVHsG1SEJWzOQ1p2vitAyTM69eIEnNJswhsTxItcRjLCyVJwAYwvig3H0XL9xAawBPE7LNlQBN1i1KlO3GyJvrzJbrr-Rb0eeotY7G8GAP--d2juB6Xv29rGtGqgfKOOF7oP1Ur3m3N4rOueU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyuVSoSABBWorC_WUCL6o-3EU4j32Luj7m5gyQO2ZbTaJSsfau_Qzyj37Bjs_XNekXyekynlAYWtcQO_QnmzZ0BvY78PpArLbhaJKAtmQlW0SdpX19v0yXQMRdgftGwsoG3dLdTLVz90qxieLjqwZXobDUc0x6qmqQLZqj_nRW2uP4Rd3x-wfPDylJ6VjRFArI_JD1BLkY1BeggmrF9UEpxIHDcaUiDv2T621bY8tUoHliTO1H0SQLdV3iTO8h4iNlbA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd11QSW_Qg5LwEqCQWvSJ-frFLKTJwGB_rrp62zDoXnfxqj8ezbimmB9w9KXSqP5WVr-AJWiOpHhBIj3gJds88G8OWL0M8GzmIN3Row722gIYiBbINaAS1QTEvWhdEtpm2cSY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-avKKoQDF_Ie00y6wqOKmq3_lLX5_3xXvUQ3h0-ZRnJ1PbegffsV8MDrihMYDaaJoLn7hDuCvPRqVSTbNeD9hBz7Y6wmltfnuPtDMw2SUoGZKojGFCK5za13ApkANzdso9kfkKITMIRZkAg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyDaUM1qDl34WaYjvRu_oMhjCXwCWNJOqahm8GtMj3GGoIRVNJmaLEhfRYrP7LrX-VJhzmVQzoV4BJFXwjy5Dg4S9lHuqCR9rufnlC9o-ve8MbXxUgyjow7LYqVdtA7y01ol3f40lwzAAlDiDH1N8g5gTa5UX11l3x2BCczbaZGpt9lsIhPWcQgjORVJ6eskE3iUJOlj7wCRgRRdV80CW5885au40Rf4985KomwPP6c_zmIUg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0QNgWnpVOYqTUgVDcUCjYzatpL9R8qzbqfWvWev8U78sWefk4ADOXGrtiWRjXbNWuCaR6Ujh2XE-S7tYCkBOWR9VQjuRPIxxaZnZfxkcn594uup2HU82RbgcmH1ONbOfdNZs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpKMxfBRs5tsgKMO-QvmFrWjbqpCEUYoH0FLRjUyN5rLisXXgyFAGN9J_EWU6MnGzkHyJuqycd71AiVp6RY46cd02J31ai9ohJQY0NBG7NTvsxDZO5BOLhc5nQxTGqF0OzkU7mbjGCJRLbEg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfU46P2fBirEWi8TtEVliDesGzfPN5T2hD5XsjrIHKqKws2ml2iYhyj10IEMJcqu3iC4rIj_bijQ5Mz9spD9A6CTJf7K7JhdSzSsYlJmMYLifNw5kMy2dNkuW69532N71TTZ6mAL3JvcyIny0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQmXUzsWRj8-RS2c79q_sB0qdINeJkUJ3R2w6_jrj_aJKmhvWk_M_C0-OtQM6b7L-L2zU66qMiiXx1NhQNJCn0mP4BiOEZtVguIpLhZ96ZYrWr2zmjjNGr7FQ-FInQfXVWS-ADNgdV1c6sd8I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt8KpsCYDpyxYL8ZDUQ9kCizqHwBWsPixq8Ck666KfkzWU_IJ4za6M3ZQCJ8PeFxAkm_re7lYEwLPi56xEK7twXSiJWiWfVElEKHIRt9NSMydHhdr1CJkeF0twpEVHyviYNyY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwk5eMg36vZhcrnpiV-En_bRBIHP3mgl3xrMfZBDNJLE1AJEgx9-Q2mhAX5RB2qMxx18ZxeJ7nijQc7jbWheDTa0YyKLLjc-x6iV2TqcSzGFMW9rugRllL1kiY2dURsSiZkuod8BYoHE95Ig=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJPZU0XwftETDjb7c9C866d73Re6El52vJ2kuJmx7PnTLN3YdX7LlHAd13L41J6L2Yj9JX2WTojUkn_SM7oNPnztvjU44QKKT0T8_wfNSEwtP_kU9B1LnqzK47F9y25DGdyIYImK6QjFNYXzhtLUQq1JCPJe5LfoNyEKeDcwzeOF7L2wpLmV9esUUtSEN4ttvL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSwFvty28xYFGF6Mb0f4dBYWCkC11AVBndGpiXjiKRbvXWphvK-NBCzH6Fkni8i_yHT14IwQbCI-h_AnOziJPpVjgD--zmcOM2oEvgUOjEgcJ1YxOdBNi36wF-LngUbCgmu2u4lNqcZ5jla86aBhsG-Lb1mhh1wIYebhETmI4KsqDY_166AzcyzghLOG466C5TUzeWpZYIqAvTNz4n93-1lfZaJwToQ05dOp7OwSGd"
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8D4rmkkMZt7A1A-3Ukw67j1Ol-d9VFdsIS1HGZZ0nbI6WSIfJfL9B30c5qCncR1EGZTzW8VdAGuSEPNjlBIaSQCbZZKGglCF1pRq-G-dG13BF3OUGyAEulyrbtU5vrDf1baRGUWs8Yi82HXIuBy0RzKT-CSjmjtvPRK7HBTE5k6ngMW4QH3zuZPIrR2kf7Ta2Cs6HqXw__mzE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUp6N92OFzBPWHDT07BUnAat3Ow5Fa7_xZMg48BEa4cKZYCosSw8NrK7cFUjHUA0jkaNIQUANBSxL7CRXGN6hm6r18wVIRFcySsQUXib_izpPCZgmLTVyTST7sNujkDqVwqOvArAakH74uuA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDZMLtiuC4bkGx4tBNvCIU4C8j3hRppN-IB-yk_DrAdvsZnPlqk4UCCK1qTTvDezmXx_PUazpfK6vlk2iFR2dLcguozgbBqv14YDC7ea7zdQAofXw8_ilE-213Q2qymnH5VRX9p60XsjHZvGo40CWmXkj6HVEXt4-V7GR5y2D7m0Fg9fIVLPQwkU5RnOJV5qT_yIrV4DPIxN4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrvWo4vgi-Jna2MWc-hfYkvBVQLv0Ogg_uPMqOviI7KGt26aV172EpM9B6D49tAJCfRPknNM1UfdJ7r7qnpTlGmYP6iMhPsW16obFClrQoD6NQx1ir2l4UVFU-Qs3ndOTOU8cBsutm8vsX3Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7v-prHlgACk2wnO7woC2zI_v48x6q83iZDFV7WRRLidq-zsHPtjxXeoOMXhlLxm8W-HDoToaHlTZwLj-KzERXyIDL0WdrXj2jlOkMwRGe9p4eeJDu4QRubZOF70hVqLRvtRL2D7EIV5EdTOQrotQ8RLVrQ3oZgm4FKp9moWXYAm2qygPVG1rLTcEHbi7JT3Ekp6jqiAMBV0E-o-HTuM97BkHrKybOdHJWWSZvSZLS2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcTeY6IpuI7rq0mo3x7u0Yxaer6uJ3QJtCHgOMoTleJf1Eh6e2_NtKU2WRB2mv0YRoPdwP-lGjX8NtkP_poI5urZ0kAZaPPXumLVq0NWZZWr2I566QhpDb4iYJLJtDjwmgTf0Lnt7-hGf-s14="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiation Therapy trials for Malignant neoplasm of bone and articular cartilage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20neoplasm%20of%20bone%20and%20articular%20cartilage&intr=Radiation%20Therapy"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "50-70 Gy in 1.8-2 Gy fractions (specific to tumor type/location)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 25200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 42000,
+        "costPerResponder": 36000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": null
+      },
+      "name": "Radiation Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 65
+        },
+        {
+          "name": "Skin reactions (redness, peeling)",
+          "percentage": 80
+        },
+        {
+          "name": "Nausea/Vomiting (if abdomen/pelvis involved)",
+          "percentage": 35
+        },
+        {
+          "name": "Mucositis (if head/neck/chest involved)",
+          "percentage": 30
+        },
+        {
+          "name": "Bone weakness/fracture (long term)",
+          "percentage": 15
+        },
+        {
+          "name": "Secondary malignancy (long term)",
+          "percentage": 3
+        },
+        {
+          "name": "Fibrosis of soft tissues (long term)",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "Weeks to months (during and after treatment course)",
+      "treatmentDuration": "4-8 weeks (daily fractions)",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfZ-4KsYAl9v_whmi1vlpsmWWSL3E7RSMpgaS90sv25qkvbPwSnvttsif-F3MK7rr_TcpNIdD_H_Q8hdLX7wBsnEgiC7wpweGVjNDAz8H68DVUm_VDI2bhgTh0ycX_kteT7lzq"
+        },
+        {
+          "title": "h1.co",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk8mCCdKecqrpt_UmKv9hSOFQkeRAwu5emIEeG0Pr4571z_viEBVjQe1Dwep0cPdSzMVTLLR5CLMrEI_ZNdxk6hjur-DfbiYDXaE2LkL5R4rv-BdNy5A7tOS_W5IE72KwkukiNJwy9_SDg"
+        },
+        {
+          "title": "sci-hub.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGysFoKqhHL_3vB6bqa2aVOM8OXjgAnMJHgPZyLrvOFEQNXYZZWTlDCiwE3AksblO6IINaq66_B-_IDRpu-SqZPw5xiwiZXfPdNIKs4O784LlgUR79XgG1drcL3-C7j5xL2okBSR6HUpnlCx0_ePcIfDMLLIppHJjHeGsiolH6AnblVqpXV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWyxYzRkMfBxIlxZxFKEsXlDN4e7THYTZkrQLgA7EaZ_9fIlIKoM3zbpX73df2IwT6w57MnPvbwlBnWOabFKRPnxAwYmbnttBSvQqr8KokljFVAsv5NLxSjeqh5-g4Q97bSW8w"
+        },
+        {
+          "title": "skku.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGzktz2f1fHBCqDmGdsbOwo1Gq-csqdgiAgA3qM377cy2zD8PcjVR3tHiqxf3XcJjVPT9IEtswbOQbPWNArPRXPwOkU-wp9seOiQygDj4_ZkLIZgXER1nuxNbQhVH9CyAnb67-Vn-ZOWamJAgd_MHReVkpFgPrHMqu0qGezLIzlGZAkCY9mJ4snTaKO9IBQO1AX7NbPCz88QFHl4nZ-hG3iJI="
+        },
+        {
+          "title": "vghtpe.gov.tw",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhMerdj_0xq2v_T22w-nXtO3OA2nGOIeUzSr0QkRKZt4JehjnAU7dD5U99clEyPIa5sJrm6WGC8seAYj1MBEmcZpNGrsfKuNn0O9Vn8AELCVbXr7RWHZRKoaQSkpZgL0ZfxE7_t1KNHznE"
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVAmhDtoOkylo9pATNchev0jetsRlyv-DxiK_ZilGMt3Au5fPFBABof3ZFnWlXN6XeR6WHzha5Yn9kfrRndNlxoHSLaxLVA-ZVw7O1idwTfQLxVo4gHca-qvJLaoC80hAZGeVGGcqUwvxnYmuExFumyJ_Gf-mvuKMgyudXr7_1o9bIs0p81tB2b7CVbm9k6VLcmA=="
+        },
+        {
+          "title": "stanfordchildrens.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKx22A8OPxzmY9jqlT7NTMY6MME7KF6rH6DpSI7wQYd1f0Oy9muOnf3Y8lHuyBOqR7NSHY_Rb3n5U5xghBVe32C5Rj8m7oskxAcGTTIakOiizZqXvy-seIguju9BbcUuD9PSpMWjjfYGWrBPpLv2H42YjXLsFFHwZlYzVi6YOv9Pxlf3NIgc-FdmqBU4Q9RSj1i8RqkOnRqx0WrsC4lNkNpouHsFKTRDbv3kiy0uaodlQ305GpxQ62Q1o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm8r1vYRqZC7HZuYvqCBTzRIBdmWVE50E0UdAJ3ZLozgyL_hTFKrnsPvH7rkJduaudcbM8lLNfBdodrYkYn2VWu0UXSAsiSFdNYi0dKwSUoG3WOOL8UMjdHNCDC2eWbQBvAROU"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYx9wzE9gM-u8ry8CLTEn_KSCB6Z_Wc7yWAQFl6gseWpKEhJ3xg2kBfQOtNx3C3Csu6GY6TiE7-UM8T3ikkWvKm_5wfPCIgxrZg4FUXHZ40szWDjINQyS4hVLITBXoA9W3ZxCMyNjfBLA0GEzMAbh8ErdH4oZ0wBs7vg9OENJnU4Bbg8R1IS5PR8Wk4sk9FG2vqS4V8wib9As6PH4ru8HwZ2BRYBexLgptG3I5aNbeuYI2j0kGSIBo_ebOnLzBjyhOP10EFgkAe-K3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeHVgSdByHsLQsEzVz2m3xG3cWxGN8IZJtjXv4Kpsxe1v1c4F_yhvXzHOyLUCutGYTerTXkWdi4lwCOlsEuNjU1lYnYUkc-hYh6j9_PiG4GJRAoPQbYNEOdYbnAu5CDCXDECdtSaw8oq6_4HM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMzTXdbABHP4BXQDYXeeNlMRtYCdz4WvcyENy1irj6tWrkzV82wvcSvXWOo9_yT7S6QOnFF68XlevhcrUE1WRVYj1s4i2LypSvgKVqo0OgGU76VAAsnEHmAutkRgUcimy8xR82UAQdOR6Z6uw="
+        },
+        {
+          "title": "ijoro.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcIe2rvxoVTJzlbo25ppUB-vHpdCS2MsDL_BzYoAjihZb3iYaq1g1BQvg1PNrWlzongzOEiuTDi6Rj3c4YRGMYS6fcAkRrJy3NvTncAii83EjrrsFAdjr17VKRsfz2QUL2is4hf1HtGt0K4SUstMOmsY4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV14BnrDVmaRSQP2jFe_SbN6igA-F0bFrWC0WPKOBMEqsA9rQRARQQ6RJojgERshvFoy-4bReuokHUzi2_dnMkGgct5gXmi2QNT4GwpEPE3siWyAd0ljvgoNcfXtixPpZ_3R8GDzIksxS-lqJTBB0FrWPUvLU6jaa3wguJHt2jebuG3ncL4h8JnqeY94QsL0JlNaFDWryHQ_dNPX2w0VU6gMv5tJMAjpKFJsAgZZzRtqU--OK58xh7QbVXA__ipYUmPjOiwbIG7e7Cn8sJAlV-zLZTODWB8Qcx0ns4zr4VR2qyXZR4ZC2N"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNtPISu3sPRb5zE4pk-5Pdf3BInQ70DG1V6_zO1PSvLtrujqDQPvnLVZF78fG7R67anQ2cNqUx_PdM_2Cu_IPidaP5BeRUVIuEXHTW-r422iW13jvhmGet1jqG9g2nnKWeqbvCzB0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ-W49arz6xlokXoAWLNiGrYsjZC1HXD3XdHfKIpDv8xcmqYEO_dJ8Ui5z39kAZKpU8Nc2SG9aRc5Tk6LTBsotNA-BYPau2w29FcsJmoLJZ2I2jmM3yTCqagntQsDOliYW-YnT6bU6FQt4HqVc"
+        },
+        {
+          "title": "ClinicalTrials.gov: High-Dose Chemotherapy with Stem Cell Rescue trials for Malignant neoplasm of bone and articular cartilage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20neoplasm%20of%20bone%20and%20articular%20cartilage&intr=High-Dose%20Chemotherapy%20with%20Stem%20Cell%20Rescue"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "Supra-myeloablative doses of various chemotherapeutics",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75000,
+          "monitoringCost": 75000,
+          "sideEffectManagement": 50000,
+          "totalAnnual": 200000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 666667,
+        "costPerResponder": 500000,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Conventional Salvage Chemotherapy",
+          "costDifference": 100000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "High-Dose Chemotherapy with Stem Cell Rescue",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "remissionRate": 30,
+      "responseRate": 40,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Profound Myelosuppression (infection, bleeding)",
+          "percentage": 95
+        },
+        {
+          "name": "Severe Mucositis",
+          "percentage": 80
+        },
+        {
+          "name": "Organ Toxicity (cardiac, renal, hepatic)",
+          "percentage": 40
+        },
+        {
+          "name": "Graft-versus-host disease (allogeneic transplant)",
+          "percentage": 50
+        },
+        {
+          "name": "Mortality",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Weeks (engraftment and initial recovery), months for full recovery",
+      "treatmentDuration": "1-3 months inpatient, prolonged outpatient recovery",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbEG5S6f59dmvbloIh2rueFxkC2GjcaKtz1kX4zlBoGCmm0HteHFsE3I9iI-xk06ZdJn8WFIcEP1sTXGOUkbBe2eOo1VIJmDXEnSKnSDeIRhwBMuwAvdkq8Kg9E1tBG_mAAF0="
+        },
+        {
+          "title": "drugbank.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOO8E7-4wKaiBtPM5tukeSd_ZxbEfAFzT5UMOztwiCLUqrQG0DePw3d9lN6fEG7Gc3ZApH8_4FxODJRGyQ-i6m3P7GCytT8EkrFfGviJmxI846GmVMaBNLiE7awEnO4w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1HCqla0LBAqgdKnz-XOmlN-304BsZ7dzrYy0vuxMtyFpa4j8lKu4fLeGrJ9XydQm2yY3IX_IolUN2FI5D0XCaYUkfaDkYcIJu1QA6ohWB-ClzbxS50pojrl2VBN6vAGdghLiLRIqFDBZjS31PvsdclFey5uvhdr2g5poVGK4fhAEe0YT1sBk2FXi6eQg0NferwkS19LQbE9NQ7a4nn-Hr89hNjD0GF6FdMKFb"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYdybDMDSUE6Ej5PxIQVLl5iCi82klDzlooGOxxclrWZi9IxuWOyTBaW3Pym_pxmNwzvdSAtRlgYjNs9zC4hyfmNf2YAMWyuewfe8xZwOmpCOk2ZKM8-D_WqngCzLb4NOcJDlZSlFOwRcjJ7BHg8c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMVhK9KEve5eRsWJmn4ZCV4j_xaKhXERvS_zB_cKu5x-_fZL_bOCrS3kw7-94FqeVcnVlcA2JqA4EEmrJUCPdFye4Y3xVkfWgL_JMUcv31EIG7AnJk_2hZz5MvdfaEDRlwql7Kbkj_nCdogg=="
+        },
+        {
+          "title": "portico.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdWQg7vFnKo0QwE5EFQfaLqXcwf96UTe2jnObCQeETQNnWBSemc1vDljnkpGPAjEWH_KfKEKDJPXZ4jNut7jcVQ60DgS4ruw7QxSOHT8Tb72I63s2E2dUQSc4nPoE-IuzVkmnY8VXKPWLoCuKOWGJcpqVQ55A8dyS5xpK2gWK8"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHayZoItqXIQKOr7IW4zfXZ2NOhoyNNQO6gr049X4WIM8nDf2gc56dUylOrQ4dg1507y8nMYkw4RqDyQhdr4TIkVBzwMeILhuzjJFmFCVafNmNz-RQ5L09ZJ734sKLi8XobsFQ98EStT1GF34hlW-7n6mX2VvWXkzOa2sDPMlqRufH3YbKeOUDkB0OWVWtrirK3xOpH6BM4kq23Y1s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVBzWYCqnRpWL48YKmfQz02t0MYp4NQNTlVR1Hhtbiri6ZOORWtvW_pR5idt-OSMMo3sxsg55uvo4sTUV9-RT4tMhkwd4a3Asmsl5tuWPygOAgi1xBGa6fqMlRak2dPpsTE5I="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIvLWqjA1Q1LpEce40UTpeVyZXy9bAC4xCpFohP2LmD1ZkmbC76YbpEhYAYDAtFmRsnDtkePwuZz8w1ylz7jm-dqghCVvtzVT98LaYZzRSLfIDCmlsMVEAs97shJlNViqZpYT3RfadTjjrRJUPGSr6pTJ0GrT3XedcvTK_lgko65PWLq8fr53NHe-6Wha8Wgjk0aG6xgBdXs0uSLjCchTGV5D0y2FUTd8qnI8n1Gld4zFKte7GEttzTBU6VVp98W7hDAlmqYes"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXACMhcjnelS6aBeUdw3rKKKQ0ZVNUaPxSTPSt5IC1-z_i4HVpr_Rd-H1U4-WK0CKSvVvIDx9A8FR2hZi-eRXtHh3jHzatytfF1yX6sHtOGEpYx0xYX2YwvSpYrcP0PfvflXQBtokoAdPtCuELOv66duxNy_5Vyy-9rQ1WdQXH2Ot8qZ7OJooZW6qG5mdts5ymzYHT2So5S9kJQlc3sGM8_ZDQbQqBsJyg9hbZJkJHtpqcTuIcFmTz-14jKH_URMvT_08_7-wG848wHd_cyD8i3dUGSGHBDwnWlw8Dx1pU"
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-Ftcn3j5PKj9NeTOd4pYXeJ1l4sO3WIHrP7tK8Pc3nhlRV3NtNfyTi-z4cibe5aaaAz6snRvppfqH7b_zDEvV7GNhZMkzfteOSUAnHqRp6wTrdwKLm8EOIzbx3O6TLNoESdhlEi6rJ0iAAkAVul6EdyYg-3Ey9o1wL1z5ML4Yd6R2wBirlP3F0aVLwPFcUMejb0iB4PCbhkTk93AQ4m-weBSR-5l6D5U="
+        },
+        {
+          "title": "docwirenews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxnW8CXIcC-t3R4HRiAXmmTDa4f2oUmODw2Rpdu0QIrPd_crodVPey7JHZbBDzSrbpdPCg5FLwkP__-q3rkyDCwwjKvMkYG-0tb0gem3Zm6-p3BFklvVq9iVEIbtY0Gas5EhCsEsU2YwFsA3yxOfUXbtj9VPd3i7MFhrCvmtGPNbKxXV3tag44or93ofbCzZFwqkCx9KeVh1k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZxgsRUxhR6be7WgSaDYy9tu5uRHzVyIXBNYtJobOCYAhtqguUiqe_XNSV_hrOFhHTNoqf9kF-NgLQepJZsYUb78DiLFhMZW5yDwDl_O1S92iKkzGQcEtM7J7nqgO_pebFzUw="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOHLkTs1h1ksKpGn7QT6CQOE_CUnbXqUv_sPLD6lQ6QSzLXpgNgwEkFpVGlIpawKUOkvh8VP9ExkIoiZ6I-rEiLxGVjlMVthIeaPDu2VqJDUSXlFlHz_B7WXEdQiYVBjGw6nBeG6QN89Y="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mifamurtide (Adjuvant for High-Grade Osteosarcoma, non-US approval) trials for Malignant neoplasm of bone and articular cartilage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20neoplasm%20of%20bone%20and%20articular%20cartilage&intr=Mifamurtide%20(Adjuvant%20for%20High-Grade%20Osteosarcoma%2C%20non-US%20approval)"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "2 mg liposomal muramyl tripeptide intravenously",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 123000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Standard Chemotherapy Alone",
+          "costDifference": 123000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Mifamurtide (Adjuvant for High-Grade Osteosarcoma, non-US approval)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Fever/Chills",
+          "percentage": 50
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 25
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Months (during treatment course)",
+      "treatmentDuration": "48 weeks (twice weekly for 24 weeks, then weekly for 24 weeks)",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9zsg1BBiW5shZUYPqkuu9Emj5FqFCOpCIWYtNelIfTmk0M7JHcetRr6txFE-qwhnCk63AidNho7HT-0qcmFQFNwmYhGDO7wznyyYArmo51gsXtiUeI_ewSjs3wK1vme5TWwoSp6Gv2y7bv8pk"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH391moUOVx63cbXzVzBpSy8pfe-eLhpmC-5FO2GN81SuyjNxVIZ14bwvXsWzhUTtcCzRD8RG5zkgDJZxmbipIiIQiMYRnnAvbInK_5DWWOYpVAz5fvkPxeJE58xLkGoAk89kp2d4NcmKLHvmrzuvlTXB1H19dmUA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs6EByWE-NZYmfVyi-RdtG8TqAUgPPpQ0KVxybWLeqwqdE-BHAA5X6yfgMHjm2XtnlCMqKoTeejNNNEZZVXeGQLO1Eyk4-zqRrsMbCTOFsljdigFdiWVcE7zXs9RlwC8XJvzeu"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzeD8uJ7KOQklQlcTmeMoXFpgQCOcr1P4QsEc4RGLoR3ny8sP8TksD5RX4TdAroybw4HzaWkWbdDsw3SFRuN0g5UL_Fb8Xq17qfGLk_7I7cTC1iL8R21vqKmYqZ0Kiez7hVp0fKbaz9XnC3NnqHzBkR-otadyrW2Fn1gRtuBw6kfP0I68h565nvoiXtGrgN_Yrt7AeQs9GiT7zUsCF4JNN0w8C2zg0IVz7KaaQoXCZ_PPABxE5OJ-kkA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElkxgIysL3QFyIavMzSL9MP22p5p7_cQAMICbZDgnkRnxdw4F8AqwoZmTF3ld8TQ1k_io-5Ld3QVAU2MBrVTRc-5kmeKZ2c4B_DUHT6e5kXvJgjB1kn-BwYyb59LHb8zkpos9MQPv3WQlXcEen"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0BedrVO5t87FTaYawzt85f_85bq3fekNXLFLVxl8BVu43TrEg7J6aG7BhFGKv6sqlGcnrVy4t4C2tT2f4dqp-M6mIdt2bBfQLTFxYh-xdPTftQBch0v6pQcOw6tAF2vUYuOaF_9R_0uaZB0AJ0vJOJCHPO5OkcvQ0tOj8rpFQFYRBerHmhJP8-zAu3PpNNcMR1CWrXkqD"
+        },
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuNPjWZY-70T_wFRsI_QTbmk0aCssrwzbKIQcA1-sfL2_pjBu5Kes88wEx3f_gz13FYpNRK8B3_bZAuKdIEbfk1RoDFp3x2TOsEZzGs6bcyUkKmxA5KJJHNr_YPYsZWDejRBPAwBFMWQG62n3x5LBtPqTbLdX39jWMX9PeAGfXuqd_"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY_lnaxd5SH3-17DPzxoUVl9Y6Rt829vobPTzAf637SVOR66PAkcUpfz9m7o-foC6XS6vB9bUE8un6JBhJfACLwpYmugbcCUw5gxDOjjagWaSOYLbJrD3XaCLdlP4-4EqEWgRQLI7Bej9iWbB_WxjevenoLmUlvjeiNNOcsoyhyzEhZnNjpK0FNtVvE12N6zt2Ww6xCgEb23TiXT920mEvjoOS-_RRNYztxTRk9HXS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt52zCNxa9apWwV1R5vnvvZzUXLddNBeqDLa7aS2DA5P7daadAhbgzXHpJHc6OduuCXJdKDoySIKyUXiWHKZS9S_AtEzsm9-j-c_jeVL0ewgokTVBpgnph_zO_5sb4pEDPMAJOL3E5d6iKa6bS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLZGu3m_SmWoE7pXD2GOe1ARIcRElQdbHdpJMQc0vt95ZFiz5UxHcKJg1DIpNW4Ve7R4-hv4g43bryQ23e7q-CnYLi4et7IUKwjbU98UwKNNB0MrnvNP24Md0Qk6529XQiJIu4gEMfyzORK81E"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl6gFfozqgGTfygLqXZ8W_0sVfIxxhU6me5vAwzIhHweN373VNRmDzKxCeyb-8PLj1rH7O6041MTSt3gstH-KHgb8aoGWYsmXXaJB4aZ-TnqYStLMBsdokYOKGBZiup-Y82FFdSYiPwHhaKZMb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf4is3gddZsXI2dOdFsytRUmcuGumYA7SguNFnRxvGwyEJbAMiskaxWvT4CmggCrZZBtX1KZ1Y8B-g6hb1cKojcwa4XQjfE1xWyXkr-uKTD7Aad0wZjbnxXukD6kGRKDcgJdw2MH1yk9ijwfs="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkYKVaJ4KqDcCUU1nUkKme4zUB4nWe62QmZJRdn95qC46MByQxZ2PmCM1a7-T4j6QvRjERWyKemhHwR3qVWZuL5qSdSF7BDlwqXD0zjofay79SNWyyYxkS6GupNgAV1xsju-2H-7axSUVVWC6zMxFwfStx3UmMDQRKurX3E06yoMf0xLZfw7i2RGOt97H5YA=="
+        },
+        {
+          "title": "advancedpractitioner.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIqmjhZWEBfWzPJEjWyg8Kq3-84qt3Kny5nZMvNUWW74hYyp5p0tKM9GUHd03FTJ81pkoPE3XIalbQ3FmdV5mXOzgvoKdpUVlvl64JUeTMDNNfvh6k_XdJPSL_QU3IsCPm7bZOh1zmnvS_omAjMkInnCqFW0_uS8C7F0JoVx5qBTVT3BUi13nPa4mcuVsLKkZr_1eurLL-KymqrFSUoJmIRGpIKp3oXzz4tWvJwZkjmmYd8X1kFDzYhdXUkWNGEmqEg3fMpvohiB5cGYkcQmqYJ8uWYuTPJJyjvE8g41IJF7kxlJKSU-qklZJP0ubItfT38ZVwS0vpVsiM03K3X9OXAssgSe78w1I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpKgiMj4fiLzb0N7aUaElmwoGzh3qAEeJWrD7hSaJl0RSYbqdEZX4Zb0ngrcW23V5Do2_G4wP8FB2vo7f3C4zCDmcrWQbU-K7jZNuE9yMPsxOWSPXKQic3zZ3h_Fhpyed0bboA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Immunotherapy (PD-1 Inhibitors e.g., Pembrolizumab/Nivolumab) trials for Malignant neoplasm of bone and articular cartilage",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malignant%20neoplasm%20of%20bone%20and%20articular%20cartilage&intr=Immunotherapy%20(PD-1%20Inhibitors%20e.g.%2C%20Pembrolizumab%2FNivolumab)"
+        }
+      ],
+      "confidenceScore": 40,
+      "dosageRange": "e.g., Pembrolizumab 200 mg IV every 3 weeks",
+      "effectiveness": 40,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 195000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 6500000,
+        "costPerResponder": 1300000,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Chemotherapy (second-line)",
+          "costDifference": 50000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Immunotherapy (PD-1 Inhibitors e.g., Pembrolizumab/Nivolumab)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000,
+      "phase": [
+        "Phase 1",
+        "Phase 2"
+      ],
+      "remissionRate": 3,
+      "responseRate": 15,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Rash/Pruritus",
+          "percentage": 30
+        },
+        {
+          "name": "Diarrhea/Colitis",
+          "percentage": 15
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 10
+        },
+        {
+          "name": "Pneumonitis",
+          "percentage": 3
+        },
+        {
+          "name": "Other immune-related adverse events",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Until progression or unacceptable toxicity (months to years)",
+      "trials": 20
+    }
+  ]
+}
