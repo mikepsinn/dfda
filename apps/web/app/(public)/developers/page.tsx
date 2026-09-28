@@ -27,11 +27,11 @@ export default function DeveloperPortal() {
             <div className="rounded-lg bg-primary/5 p-8">
               <div className="mx-auto max-w-3xl text-center">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Supercharge Your Health App with the dFDA API
+                  A Universal Database of What Works
                 </h2>
                 <p className="mt-4 text-muted-foreground md:text-xl">
-                  Integrate real-world clinical data, personalized insights, and trial access directly into your health
-                  applications
+                  Treatment rankings and Outcome Labels for every condition and treatment, open to any app through the
+                  dFDA API
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
                   <Link href="/register?role=developer">
