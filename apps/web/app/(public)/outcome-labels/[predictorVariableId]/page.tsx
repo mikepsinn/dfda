@@ -39,6 +39,6 @@ export async function generateMetadata({ params }: { params: { predictorVariable
         .single<{name: string | null}>();
 
     return {
-        title: `${predictorData?.name || 'Outcome Label'} | Decentralized FDA`,
+        title: `${predictorData?.name || 'Outcome Label'} | dFDA`,
     };
 } 

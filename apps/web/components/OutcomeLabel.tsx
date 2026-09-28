@@ -116,11 +116,7 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer, classNam
              {/* Render the CitationDisplay component */}
              <CitationDisplay citation={footer.sourceCitation} />
 
-             {/* Display Last Updated and NNH Description separately */}
-             <div className="flex justify-between">
-                {footer.lastUpdated && <span>{footer.lastUpdated}</span>}
-                {footer.nnhDescription && <span>{footer.nnhDescription}</span>}
-             </div>
+             {footer.lastUpdated && <div>{footer.lastUpdated}</div>}
              {footer.nnhDescription && (
                <div className="mt-1">
                  <span>{footer.nnhDescription}</span>
