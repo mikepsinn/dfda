@@ -370,7 +370,7 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
                       <div>
                         <h3 className="font-medium">Pragmatic Design</h3>
                         <p className="text-sm text-muted-foreground">
-                          The Decentralized FDA trials integrate with your existing workflow and clinical practice.
+                          dFDA trials integrate with your existing workflow and clinical practice.
                         </p>
                       </div>
                     </div>

@@ -257,7 +257,7 @@ The platform supports:
 
 #### Implementation:
 
-- **The Decentralized FDA tracks long-term health outcomes** 📊
+- **dFDA tracks long-term health outcomes** 📊
 - **Transparent savings calculations** 🧮
 - **Independent verification of results** ✅
 - **Automated payment distribution** 💸

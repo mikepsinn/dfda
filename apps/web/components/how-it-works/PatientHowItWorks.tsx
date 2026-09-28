@@ -14,14 +14,13 @@ export function PatientHowItWorks() {
         <PatientSteps />
 
         <div className="flex justify-center mt-12">
-          <Link href="/patient/find-trials">
-            <Button size="lg" variant="outline" className="gap-1">
-              Find a Trial <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
+          <Button asChild size="lg" variant="outline" className="gap-1">
+            <Link href="/find-trials">
+              Find a Trial <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </div>
   )
 }
-

@@ -26,7 +26,7 @@ export function Step4CoordinateCare() {
                     <div className="text-sm text-muted-foreground">Neurology Center</div>
                   </div>
                   <div className="text-sm text-right">
-                    <div>May 15, 2023</div>
+                    <div>May 15</div>
                     <div>9:30 AM</div>
                   </div>
                 </div>
@@ -38,7 +38,7 @@ export function Step4CoordinateCare() {
                     <div className="text-sm text-muted-foreground">Dr. Robert Chen, Neurologist</div>
                   </div>
                   <div className="text-sm text-right">
-                    <div>May 22, 2023</div>
+                    <div>May 22</div>
                     <div>2:00 PM</div>
                   </div>
                 </div>

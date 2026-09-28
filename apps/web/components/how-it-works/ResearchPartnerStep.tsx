@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import { ArrowRight } from "lucide-react"
+import { ExampleDataTag } from "./ExampleDataTag"
 
 interface ResearchPartnerStepProps {
   stepNumber: number
@@ -32,12 +33,13 @@ export function ResearchPartnerStep({ stepNumber, title, icon, description, bene
         </div>
       </div>
       <div className={`order-1 ${reverse ? "md:order-1" : "md:order-2"} flex justify-center`}>
-        <div className="relative">
+        <div className="relative flex flex-col items-center gap-2">
           <div
             className={`absolute ${reverse ? "-right-4" : "-left-4"} top-1/2 -translate-y-1/2 rounded-full bg-primary text-primary-foreground w-8 h-8 flex items-center justify-center font-bold text-sm z-10 hidden md:flex`}
           >
             {stepNumber}
           </div>
+          <ExampleDataTag />
           {preview}
         </div>
       </div>

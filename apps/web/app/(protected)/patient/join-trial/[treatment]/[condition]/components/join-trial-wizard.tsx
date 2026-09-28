@@ -83,7 +83,7 @@ const knownTrialData: KnownTrialDataType = {
       ],
       cost: 199,
       refundPolicy: "80% refund if all data submissions are completed",
-      research_partners: "FDA v2 Diabetes Research Consortium",
+      research_partners: "dFDA Diabetes Research Consortium",
     },
   },
   "TNF Inhibitors": {
@@ -114,7 +114,7 @@ const knownTrialData: KnownTrialDataType = {
       ],
       cost: 299,
       refundPolicy: "75% refund if all data submissions are completed",
-      research_partners: "FDA v2 Rheumatology Research Network",
+      research_partners: "dFDA Rheumatology Research Network",
     },
   },
 };
@@ -185,7 +185,7 @@ export default function JoinTrialWizard({ treatment, condition }: JoinTrialWizar
       ],
       cost: Math.floor(Math.random() * 200) + 99,
       refundPolicy: "75% refund if all data submissions are completed",
-      research_partners: "FDA v2 Research Consortium",
+      research_partners: "dFDA Research Consortium",
     }
   }
 

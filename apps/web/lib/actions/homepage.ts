@@ -37,69 +37,6 @@ export async function getFeaturedTrialsAction() {
   return handleDatabaseCollectionResponse<Database['public']['Tables']['trials']['Row']>(response)
 }
 
-export async function getStatisticsAction() {
-  // Return hardcoded statistics since the platform_statistics table doesn't exist
-  return {
-    trialsLaunched: 245,
-    patientsEnrolled: 18500,
-    costSavings: 278000000,
-    successfulTreatments: 37,
-  }
-}
-
-// Alternatively, if you want to calculate statistics from existing data:
-export async function calculateStatisticsAction() {
-  const supabase = await createClient()
-
-  // Count total trials
-  const { count: trialsCount, error: trialsError } = await supabase
-    .from('trials')
-    .select('*', { count: 'exact', head: true })
-
-  // Count total enrolled patients
-  const { data: enrollmentsData, error: enrollmentsError } = await supabase
-    .from('trial_enrollments')
-    .select('patient_id', { count: 'exact' })
-
-  if (trialsError) {
-    logger.error('Error counting trials:', { error: trialsError })
-  }
-
-  if (enrollmentsError) {
-    logger.error('Error counting enrollments:', { error: enrollmentsError })
-  }
-
-  // For now, use hardcoded values for metrics we can't easily calculate
-  return {
-    trialsLaunched: trialsError ? 245 : trialsCount || 0,
-    patientsEnrolled: enrollmentsError ? 18500 : enrollmentsData?.length || 0,
-    costSavings: 278000000, // Hardcoded as this is difficult to calculate
-    successfulTreatments: 37, // Hardcoded as this is difficult to calculate
-  }
-}
-
-export type HomepageData = {
-  featuredTrials: Database['public']['Tables']['trials']['Row'][]
-  statistics: {
-    trialsLaunched: number
-    patientsEnrolled: number
-    costSavings: number
-    successfulTreatments: number
-  }
-}
-
-export async function getHomepageDataAction(): Promise<HomepageData> {
-  const [featuredTrials, statistics] = await Promise.all([
-    getFeaturedTrialsAction(),
-    getStatisticsAction(),
-  ])
-
-  return {
-    featuredTrials,
-    statistics,
-  }
-}
-
 export type PatientDashboardData = {
   enrollments: Database['public']['Tables']['trial_enrollments']['Row'][]
   submissions: Database['public']['Tables']['data_submissions']['Row'][]

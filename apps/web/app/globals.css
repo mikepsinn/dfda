@@ -103,3 +103,21 @@
   }
 }
 
+@layer components {
+  /* Full-width background bands for sections inside the page container.
+     Border-image outsets are ink overflow, so a band reaches the window edges
+     without widening the page or adding horizontal scrolling. */
+  .band-muted {
+    border-image: linear-gradient(hsl(var(--muted)), hsl(var(--muted))) fill 0 / 0 / 0 100vmax;
+  }
+  .band-muted-fade {
+    border-image: linear-gradient(hsl(var(--muted) / 0.5), hsl(var(--muted))) fill 0 / 0 / 0 100vmax;
+  }
+  .band-soft {
+    border-image: linear-gradient(hsl(var(--muted) / 0.5), hsl(var(--muted) / 0.5)) fill 0 / 0 / 0 100vmax;
+  }
+  .band-fade {
+    border-image: linear-gradient(hsl(var(--background)), hsl(var(--muted) / 0.5)) fill 0 / 0 / 0 100vmax;
+  }
+}
+

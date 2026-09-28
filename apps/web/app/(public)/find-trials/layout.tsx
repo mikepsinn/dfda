@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Find Clinical Trials | FDA v2",
+  title: "Find Clinical Trials | dFDA",
   description: "Search for clinical trials by medical condition",
 }
 
