@@ -30,8 +30,8 @@ export default function DeveloperPortal() {
                   A Universal Database of What Works
                 </h2>
                 <p className="mt-4 text-muted-foreground md:text-xl">
-                  Treatment rankings and Outcome Labels for every condition and treatment, open to any app through the
-                  dFDA API
+                  We are building treatment rankings and Outcome Labels for every condition and treatment, open to any
+                  app through the dFDA API
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
                   <Link href="/register?role=developer">
