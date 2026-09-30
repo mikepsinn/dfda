@@ -294,46 +294,53 @@ export async function getResearchPartnerTrialsAction(researchPartnerId: string):
   }
 }
 
-// Get trial by ID with all relations for metadata
-export async function getTrialForMetadataAction(trialId: string) {
-  const supabase = await createClient()
-  
-  const { data: trial, error } = await supabase
-    .from("trials")
-    .select("*")
-    .eq("id", trialId)
-    .single()
-
-  if (error && error.code !== 'PGRST116') { // Ignore not found error
-    logger.error("Error fetching trial for metadata:", error)
-    throw new Error("Failed to fetch trial metadata")
-  }
-
-  return trial
+export type TrialDetails = Trial & {
+  condition_name: string | null
+  treatment_name: string | null
+  research_partner_name: string | null
 }
 
-// Get detailed trial data with all relations
-export async function getTrialDetailsAction(trialId: string) {
+// Get one trial with the names of its condition, treatment and sponsor.
+// Returns null when no trial has this id or the visitor may not read it.
+export async function getTrialDetailsAction(trialId: string): Promise<TrialDetails | null> {
+  // Trial ids are UUIDs; the database rejects other values with an error, not an empty result.
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(trialId)) {
+    return null
+  }
+
   const supabase = await createClient()
-  
+
   const { data: trial, error } = await supabase
     .from("trials")
     .select(`
       *,
-      research_partner:research_partner_id(name),
-      condition:condition_id(name),
-      treatment:treatment_id(name),
-      protocol_versions(*)
+      condition:global_conditions!trials_condition_id_fkey(global_variables(name)),
+      treatment:global_treatments!trials_treatment_id_fkey(global_variables(name)),
+      research_partner:profiles!trials_research_partner_id_fkey(first_name, last_name)
     `)
     .eq("id", trialId)
-    .single()
+    .maybeSingle()
 
   if (error) {
-    logger.error("Error fetching trial details:", error)
+    logger.error("Error fetching trial details:", { trialId, error })
     throw new Error("Failed to fetch trial details")
   }
 
-  return trial
+  if (!trial) {
+    return null
+  }
+
+  const { condition, treatment, research_partner, ...row } = trial
+  const partnerName = research_partner
+    ? `${research_partner.first_name ?? ""} ${research_partner.last_name ?? ""}`.trim()
+    : ""
+
+  return {
+    ...row,
+    condition_name: condition?.global_variables?.name ?? null,
+    treatment_name: treatment?.global_variables?.name ?? null,
+    research_partner_name: partnerName || null,
+  }
 }
 
 // Get active trials with enrollments and actions for provider dashboard
