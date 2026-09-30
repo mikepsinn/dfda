@@ -39,8 +39,8 @@ export function ResearchPartnerStep({ stepNumber, title, icon, description, bene
           >
             {stepNumber}
           </div>
-          <ExampleDataTag />
           {preview}
+          <ExampleDataTag />
         </div>
       </div>
     </div>
