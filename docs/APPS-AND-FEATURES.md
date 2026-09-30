@@ -218,7 +218,7 @@ boundary for source ingestion or public publication.
 - Optimitron's old trial-results parser remains excluded because it mismatches table values; the migration plan calls for a new parser. Its AI-estimated numbers and useful condition/treatment content are now explicit labeled-demo migration candidates, not excluded by origin.
 - Optimitron keeps shared `tracking`, `db`, and `data` packages used by its other sites, its own MCP server, and economic-model constants. Extract the selected functionality rather than moving those entire packages.
 - Crowdsourcing Cures keeps its organization pages. Legacy-data proxy code is not copied wholesale, but its tracking, charts, predictor search and population-study behavior is part of the replacement baseline; redirect/remove routes only after equivalent behavior or explicit exceptions are accepted. Selected AI-written analyses are eligible demo content to improve; drug registration and the muscle-mass cost-benefit page remain outside the extraction scope.
-- Referendum voting is optional public advocacy functionality, not a required clinic module.
+- Referendum voting is optional public advocacy functionality, not a required clinic module. The landing page's "Sign to Support" button and its thank-you page were removed, because the button only wrote a log line and stored no signature.
 
 ## Sequence and migration dependencies
 
