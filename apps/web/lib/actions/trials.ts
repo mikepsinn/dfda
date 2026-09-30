@@ -132,7 +132,9 @@ export async function getTrialsByConditionAction(conditionId: string) {
       )
     `)
     .eq("condition_id", conditionId)
-    .eq("status", "active")
+    // Recruiting trials are the ones patients can join and the only joinable status
+    // that public visitors may read (see the trials row-level security policy).
+    .eq("status", "recruiting")
 
   if (error) {
     logger.error("Error fetching trials by condition:", { error, conditionId })

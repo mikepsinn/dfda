@@ -44,7 +44,7 @@ export default async function ConditionTrialsPage({
           <CardHeader>
             <CardTitle>No Trials Found</CardTitle>
             <CardDescription>
-              There are currently no active clinical trials for this condition.
+              There are currently no recruiting clinical trials for this condition.
             </CardDescription>
           </CardHeader>
         </Card>
