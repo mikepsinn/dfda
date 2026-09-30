@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import ConditionTrialsPage from "@/app/(public)/conditions/[globalVariableId]/trials/page";
 import { getGlobalConditionByIdAction } from "@/lib/actions/conditions";
 import { getTrialsByConditionAction } from "@/lib/actions/trials";
+import { createClient } from "@/utils/supabase/server";
 
 vi.mock("next/navigation", () => ({
   notFound: () => {
@@ -11,6 +12,7 @@ vi.mock("next/navigation", () => ({
 }));
 vi.mock("@/lib/actions/conditions", () => ({ getGlobalConditionByIdAction: vi.fn() }));
 vi.mock("@/lib/actions/trials", () => ({ getTrialsByConditionAction: vi.fn() }));
+vi.mock("@/utils/supabase/server", () => ({ createClient: vi.fn() }));
 
 const getCondition = vi.mocked(getGlobalConditionByIdAction);
 const getTrials = vi.mocked(getTrialsByConditionAction);
@@ -42,12 +44,31 @@ describe("condition trials page", () => {
     expect(getTrials).not.toHaveBeenCalled();
   });
 
-  it("shows an empty state when the condition has no active trials", async () => {
+  it("shows an empty state when the condition has no recruiting trials", async () => {
     getCondition.mockResolvedValue(depression);
     getTrials.mockResolvedValue([]);
 
     render(await ConditionTrialsPage({ params: params("major-depressive-disorder") }));
 
     expect(screen.getByText("No Trials Found")).toBeInTheDocument();
+  });
+});
+
+describe("getTrialsByConditionAction", () => {
+  it("queries the recruiting trials that public visitors are allowed to read", async () => {
+    const filters: [string, unknown][] = [];
+    const query = {
+      select: () => query,
+      eq(column: string, value: unknown) {
+        filters.push([column, value]);
+        return filters.length === 2 ? Promise.resolve({ data: [], error: null }) : query;
+      },
+    };
+    vi.mocked(createClient).mockResolvedValue({ from: () => query } as unknown as Awaited<ReturnType<typeof createClient>>);
+    const { getTrialsByConditionAction: queryTrials } =
+      await vi.importActual<typeof import("@/lib/actions/trials")>("@/lib/actions/trials");
+
+    await expect(queryTrials("major-depressive-disorder")).resolves.toEqual([]);
+    expect(filters).toEqual([["condition_id", "major-depressive-disorder"], ["status", "recruiting"]]);
   });
 });
