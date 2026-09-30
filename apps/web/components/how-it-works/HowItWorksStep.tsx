@@ -39,8 +39,8 @@ export function HowItWorksStep({ stepNumber, title, icon, description, benefits,
           >
             {stepNumber}
           </div>
-          <ExampleDataTag />
           {preview}
+          <ExampleDataTag />
         </div>
       </div>
     </div>
