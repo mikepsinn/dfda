@@ -79,17 +79,9 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
               </p>
             </div>
           ) : (
-            <div className="space-y-2">
-              <p className="text-sm">
-                Join this trial to contribute to medical research and potentially benefit from innovative treatments.
-              </p>
-              <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                <li>Access to experimental treatments</li>
-                <li>Regular health monitoring</li>
-                <li>Contribute to medical advances</li>
-                <li>Potential compensation for participation</li>
-              </ul>
-            </div>
+            <p className="text-sm text-muted-foreground">
+              Check the eligibility criteria before you enroll. A new enrollment starts as pending.
+            </p>
           )}
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
@@ -108,31 +100,10 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
             </>
           ) : (
             <Button className="w-full" onClick={handleEnroll} disabled={isLoading}>
-              {isLoading ? "Processing..." : "Enroll in Trial"}
+              {isLoading ? "Processing..." : userId ? "Enroll in Trial" : "Log In to Enroll"}
             </Button>
           )}
         </CardFooter>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Compensation</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <span className="text-sm font-medium">Per Visit</span>
-              <span className="text-sm">$50</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-sm font-medium">Completion Bonus</span>
-              <span className="text-sm">$200</span>
-            </div>
-            <p className="text-xs text-muted-foreground mt-2">
-              Compensation may vary based on your participation level and completion of required activities.
-            </p>
-          </div>
-        </CardContent>
       </Card>
     </div>
   )
