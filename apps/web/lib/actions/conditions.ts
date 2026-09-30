@@ -71,49 +71,39 @@ export async function getConditionByIdAction(id: string): Promise<ConditionView 
   return response.data
 }
 
-// Get a condition by name/slug, ensuring it exists in the conditions table
-export async function getConditionByNameAction(name: string) {
+// Get a public condition by its global variable id (the id used in condition URLs)
+export async function getGlobalConditionByIdAction(id: string) {
   const supabase = await createClient();
-  logger.info('Fetching condition by name:', { name });
 
-  try {
-    const { data: condition, error } = await supabase
-      .from('global_conditions')
-      .select(`
-        id,
-        global_variables!inner(
-          name,
-          description,
-          emoji
-        )
-      `)
-      .ilike('global_variables.name', name) // Case-insensitive match for the name
-      .maybeSingle(); // Use maybeSingle() in case name isn't found
+  const { data: condition, error } = await supabase
+    .from('global_conditions')
+    .select(`
+      id,
+      global_variables!inner(
+        name,
+        description,
+        emoji
+      )
+    `)
+    .eq('id', id)
+    .maybeSingle();
 
-    if (error) {
-      logger.error('Error fetching condition by name:', { error });
-      throw error;
-    }
-
-    if (!condition) {
-      logger.warn('Condition not found by name:', { name });
-      return null;
-    }
-
-    // Map the response to flatten the structure
-    const result = {
-      id: condition.id,
-      name: condition.global_variables.name,
-      description: condition.global_variables.description,
-      emoji: condition.global_variables.emoji
-    };
-
-    logger.info('Found condition by name:', { condition: result });
-    return result;
-  } catch (error) {
-    logger.error('Error in getConditionByNameAction:', { error });
-    throw new Error(`Failed to fetch condition by name: ${name}`);
+  if (error) {
+    logger.error('Error fetching condition by id:', { id, error });
+    throw new Error(`Failed to fetch condition: ${id}`);
   }
+
+  if (!condition) {
+    logger.warn('Condition not found by id:', { id });
+    return null;
+  }
+
+  return {
+    id: condition.id,
+    name: condition.global_variables.name,
+    description: condition.global_variables.description,
+    emoji: condition.global_variables.emoji
+  };
 }
 
 // Search conditions by name, ensuring they exist in the conditions table
