@@ -25,7 +25,7 @@ describe("landing page", () => {
     render(await Home());
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Decentralized Framework for Drug Assessment");
     expect(screen.getByRole("heading", { name: "How the data flows" })).toBeInTheDocument();
-    for (const removed of [/FDA v2/, /Decentralized FDA/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/]) {
+    for (const removed of [/FDA v2/, /Decentralized FDA/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/, /Help Build It/, /Support the dFDA Initiative/, /Sign to Support/]) {
       expect(screen.queryByText(removed)).not.toBeInTheDocument();
     }
   });
