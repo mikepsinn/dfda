@@ -43,6 +43,10 @@ and this guide in the same change instead of creating a one-off competing patter
 - Theme tokens live in `apps/web/app/globals.css` and the app's Tailwind config.
   Use `primary`, `background`, `card`, `muted`, `foreground` and their matching
   foreground tokens. Keep emphasis, borders and spacing consistent in both themes.
+- The brand mark is the Outcome Label card in `apps/web/components/BrandMark.tsx`, in
+  theme colors for the header, menu and footer, or fixed colors for generated images.
+  `apps/web/app/icon.svg` is the same drawing for the browser icon; a unit test keeps
+  the two in step. Do not use "FDA" in the product name or logo.
 - Shared primitives live in `apps/web/components/ui`. Use `Button`, `Card`,
   `Popover` and `Command` before creating feature-specific alternatives.
 - Public comparison pages use a `max-w-5xl` reading width, rounded cards, restrained
