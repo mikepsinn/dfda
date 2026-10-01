@@ -4,6 +4,7 @@ import { HowItWorksStep } from "../HowItWorksStep"
 export function Step6GainInsights() {
   return (
     <HowItWorksStep
+      exampleData
       stepNumber={6}
       title="Gain Personal Insights"
       icon={<Lightbulb className="h-5 w-5 text-primary" />}

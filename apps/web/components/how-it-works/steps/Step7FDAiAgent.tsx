@@ -5,9 +5,9 @@ export function Step7FDAiAgent() {
   return (
     <HowItWorksStep
       stepNumber={7}
-      title="Connect with Your FDAi AI Agent"
+      title="Connect with Your AI Health Agent"
       icon={<Bot className="h-5 w-5 text-primary" />}
-      description="Receive personalized daily check-ins from your FDAi AI agent that monitors your progress, collects data, and provides insights in a conversational way."
+      description="Receive personalized daily check-ins from your AI health agent that monitors your progress, collects data, and provides insights in a conversational way."
       benefits={[
         "Daily check-ins via phone or text to monitor your well-being",
         "Natural conversation interface for easy data collection",
@@ -22,7 +22,7 @@ export function Step7FDAiAgent() {
               <Bot className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-medium">FDAi Agent</h4>
+              <h4 className="font-medium">Health Agent</h4>
               <p className="text-sm text-muted-foreground">Your personal health assistant</p>
             </div>
           </div>
