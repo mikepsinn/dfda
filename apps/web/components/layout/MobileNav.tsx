@@ -1,9 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { useState } from "react"
-import { Menu } from "lucide-react"
+import { Beaker, Menu } from "lucide-react"
 import {
   Sheet,
   SheetContent,
@@ -26,7 +25,7 @@ export function MobileNav({ navItems, siteName }: MobileNavProps) {
       <Button
         variant="ghost"
         size="icon"
-        className="md:hidden" // Only show on mobile
+        className="lg:hidden" // Phones and tablets: the desktop links need about 1,000 px
         onClick={() => setIsOpen(true)}
       >
         <Menu className="h-6 w-6" />
@@ -42,13 +41,7 @@ export function MobileNav({ navItems, siteName }: MobileNavProps) {
                 className="flex items-center gap-2"
                 onClick={() => setIsOpen(false)} // Close sheet on logo click
               >
-                <Image
-                  src="/images/dfda-logo.png"
-                  alt="dFDA Logo"
-                  width={24}
-                  height={24}
-                  className="h-6 w-6"
-                />
+                <Beaker aria-hidden="true" className="h-6 w-6 flex-shrink-0 text-primary" />
                 <span>{siteName}</span>
               </Link>
             </SheetTitle>

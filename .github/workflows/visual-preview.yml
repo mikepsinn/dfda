@@ -44,7 +44,7 @@ jobs:
       SUPABASE_JWT_SECRET: test-jwt-secret-with-at-least-32-characters
       NEXT_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321
       NEXT_PUBLIC_SUPABASE_ANON_KEY: test-anon-key
-      NEXT_PUBLIC_SITE_NAME: dFDA
+      NEXT_PUBLIC_SITE_NAME: Open Treatments Evidence Network
       NEXT_PUBLIC_SITE_DESCRIPTION: Decentralized clinical trials and health research
       NEXT_PUBLIC_SITE_URL: http://localhost:3000
       NEXT_TELEMETRY_DISABLED: 1

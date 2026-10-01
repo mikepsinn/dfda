@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og"
 import { env } from "@/lib/env"
 
@@ -25,22 +24,6 @@ export default async function Image() {
           padding: "48px",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "24px",
-          }}
-        >
-          <img
-            src={`${env.NEXT_PUBLIC_SITE_URL}/images/dfda-logo.png`}
-            alt="DFDA Logo"
-            width={100}
-            height={100}
-            style={{ marginRight: "24px" }}
-          />
-        </div>
         <h1
           style={{
             fontSize: "56px",

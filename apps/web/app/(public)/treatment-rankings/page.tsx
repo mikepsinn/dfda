@@ -11,7 +11,7 @@ import { getTrialComparisons } from "@/lib/evidence/trial-comparisons";
 import { outcomeLabelHref, rankTreatments, conditionCatalog, getConditionEstimate } from "@/lib/demo/treatment-estimates";
 
 export const metadata: Metadata = {
-  title: "Treatment Rankings Demo | dFDA",
+  title: "Treatment Rankings Demo | Open Treatments Evidence Network",
   description: "Compare treatment estimates, explore benefits and side effects, and find related trials.",
 };
 
