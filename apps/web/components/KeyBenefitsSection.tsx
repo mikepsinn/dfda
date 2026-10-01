@@ -51,7 +51,8 @@ const benefits = [
 
 export function KeyBenefitsSection() {
   return (
-    <section id="key-benefits" className="band-fade w-full py-12 md:py-24 lg:py-32">
+    // The last landing section: the negative margin runs its band over the page's bottom padding to the footer.
+    <section id="key-benefits" className="band-fade -mb-6 w-full py-12 md:-mb-10 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium">

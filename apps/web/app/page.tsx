@@ -3,8 +3,6 @@ import { ComparativeEffectivenessSection } from "@/components/ComparativeEffecti
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { KeyBenefitsSection } from "@/components/KeyBenefitsSection";
 import { OutcomeLabelsSection } from "@/components/OutcomeLabelsSection";
-import { GetInvolvedSection } from "@/components/GetInvolvedSection";
-import { ReferendumSection } from "@/components/ReferendumSection";
 import { conditionCatalog } from "@/lib/demo/treatment-estimates";
 import { getLandingOutcomeLabel, getRankingsPreview } from "@/lib/demo/landing-preview";
 
@@ -23,8 +21,6 @@ export default async function Home() {
       <OutcomeLabelsSection example={outcomeLabelExample} />
       <HowItWorksSection />
       <KeyBenefitsSection />
-      <GetInvolvedSection />
-      <ReferendumSection />
     </>
   );
 }
