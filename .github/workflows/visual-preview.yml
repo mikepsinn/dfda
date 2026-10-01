@@ -136,9 +136,15 @@ jobs:
             else
               git checkout -q --orphan "$PREVIEW_BRANCH"
             fi
+            # Vercel deploys every pushed branch. This branch holds only images and has no app to
+            # build, so its own vercel.json turns its deployments off (root and app directory).
+            for config in vercel.json apps/web/vercel.json; do
+              mkdir -p "$(dirname "$config")"
+              printf '{ "git": { "deploymentEnabled": false } }\n' > "$config"
+            done
             mkdir -p "pr-$PR_NUMBER/$short"
             cp "$OUT_DIR"/*.jpg "pr-$PR_NUMBER/$short/"
-            git add "pr-$PR_NUMBER/$short"
+            git add vercel.json apps/web/vercel.json "pr-$PR_NUMBER/$short"
             # A re-run can produce identical images; then the branch already has them.
             if git diff --cached --quiet; then break; fi
             git commit -q -m "Visual preview for #$PR_NUMBER at $short"
