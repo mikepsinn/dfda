@@ -1,4 +1,4 @@
-import { getConditionByNameAction } from "@/lib/actions/conditions"
+import { getGlobalConditionByIdAction } from "@/lib/actions/conditions"
 import { getTrialsByConditionAction } from "@/lib/actions/trials"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,17 +10,18 @@ import { notFound } from "next/navigation"
 export default async function ConditionTrialsPage({
   params,
 }: {
-  params: { conditionId: string }
+  params: Promise<{ globalVariableId: string }>
 }) {
-  const conditionSlug = decodeURIComponent(params.conditionId);
+  // The segment is the condition's global variable id, as linked from /conditions and /find-trials.
+  const conditionId = decodeURIComponent((await params).globalVariableId);
 
-  const condition = await getConditionByNameAction(conditionSlug);
+  const condition = await getGlobalConditionByIdAction(conditionId);
 
   if (!condition) {
     notFound();
   }
 
-  const trials = await getTrialsByConditionAction(conditionSlug);
+  const trials = await getTrialsByConditionAction(conditionId);
 
   return (
     <div className="container max-w-4xl py-6 space-y-6">
@@ -43,7 +44,7 @@ export default async function ConditionTrialsPage({
           <CardHeader>
             <CardTitle>No Trials Found</CardTitle>
             <CardDescription>
-              There are currently no active clinical trials for this condition.
+              There are currently no recruiting clinical trials for this condition.
             </CardDescription>
           </CardHeader>
         </Card>
@@ -65,7 +66,7 @@ export default async function ConditionTrialsPage({
                   <p>{trial.description || 'No description available.'}</p>
                   <div className="flex gap-2">
                     <Button asChild>
-                      <Link href={`/trials/${trial.id}`}>View Details</Link>
+                      <Link href={`/patient/trial-details/${trial.id}`}>View Details</Link>
                     </Button>
                   </div>
                 </div>

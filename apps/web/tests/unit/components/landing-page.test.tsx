@@ -25,7 +25,7 @@ describe("landing page", () => {
     render(await Home());
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Decentralized Framework for Drug Assessment");
     expect(screen.getByRole("heading", { name: "How the data flows" })).toBeInTheDocument();
-    for (const removed of [/FDA v2/, /Decentralized FDA/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/]) {
+    for (const removed of [/FDA v2/, /Decentralized FDA/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/, /Help Build It/, /Support the dFDA Initiative/, /Sign to Support/]) {
       expect(screen.queryByText(removed)).not.toBeInTheDocument();
     }
   });
@@ -55,8 +55,15 @@ describe("landing page", () => {
     expect(screen.getByText("Suvorexant")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /posted trial result \(NCT01097616\)/ }))
       .toHaveAttribute("href", "/outcome-labels/demo/insomnia/suvorexant#trial-results");
-    // 7 patient, 3 provider and 5 research-partner steps.
-    expect(screen.getAllByText("Example data")).toHaveLength(15);
+    // 7 patient, 3 provider and 5 research-partner steps, each captioned under its mock-up.
+    const captions = screen.getAllByText("Example data");
+    expect(captions).toHaveLength(15);
+    for (const caption of captions) {
+      expect(caption.previousElementSibling).not.toBeNull();
+      expect(caption.nextElementSibling).toBeNull();
+    }
+    expect(screen.queryByText("Simple & Streamlined Process")).not.toBeInTheDocument();
+    expect(screen.queryByText(/preview of the planned platform/)).not.toBeInTheDocument();
   });
 
   it("links only to existing routes and to anchors that exist on the page", async () => {
