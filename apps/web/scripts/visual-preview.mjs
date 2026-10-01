@@ -8,6 +8,8 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 // Pages that render without a database. Add a route when a change affects a page that is not listed.
+// /conditions and /conditions/{id}/trials are not listed: they need the database, and the trial list
+// shows live ClinicalTrials.gov data, which would differ between the before and after captures.
 const routes = [
   { name: "home", path: "/" },
   { name: "treatment-rankings", path: "/treatment-rankings?condition=insomnia" },
@@ -15,6 +17,7 @@ const routes = [
   { name: "providers", path: "/providers" },
   { name: "developers", path: "/developers" },
   { name: "impact", path: "/impact" },
+  { name: "find-trials", path: "/find-trials" },
 ];
 const viewports = [
   { name: "desktop", width: 1280, height: 800 },
