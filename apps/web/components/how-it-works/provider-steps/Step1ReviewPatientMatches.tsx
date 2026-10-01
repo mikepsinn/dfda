@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 export function Step1ReviewPatientMatches() {
   return (
     <HowItWorksStep
+      exampleData
       stepNumber={1}
       title="Review AI-Ranked Trial Matches for Your Patients"
       icon={<Users className="h-5 w-5 text-primary" />}

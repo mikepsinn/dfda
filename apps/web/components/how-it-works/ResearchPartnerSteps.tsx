@@ -248,6 +248,7 @@ export function ResearchPartnerSteps() {
 
       {/* Step 5: Manage Your Trial */}
       <ResearchPartnerStep
+        exampleData
         stepNumber={5}
         title="Analyze Trial Data"
         icon={<BarChart3 className="h-5 w-5 text-primary" />}

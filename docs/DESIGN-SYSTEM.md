@@ -93,7 +93,9 @@ and this guide in the same change instead of creating a one-off competing patter
   estimates for a few example conditions. `lib/demo/landing-preview.ts` passes only
   summary rows to the client; the full rankings stay on `/treatment-rankings`.
 - `components/how-it-works/ExampleDataTag.tsx`: small “Example data” caption under
-  each illustrative mock-up screen, so previews of planned features are not read as real data.
+  a mock-up screen that shows outcome or effectiveness numbers, so previews of planned
+  features are not read as real evidence. Steps opt in with `exampleData`; forms,
+  schedules, chats and operational screens need no caption.
 - `components/demo/estimate-notice.tsx`: one compact “Current best estimates”
   notice per page. Source metadata stays in the data/manifest and technical notes,
   not a repetitive provenance wall.
