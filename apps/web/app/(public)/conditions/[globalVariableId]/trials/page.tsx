@@ -47,7 +47,7 @@ export default async function ConditionTrialsPage({
       (pageToken && Number.isInteger(carriedTotal) && carriedTotal >= 0 && carriedTotal <= 1_000_000 ? carriedTotal : null);
 
   return (
-    <div className="container max-w-4xl py-6 space-y-8">
+    <div className="container mx-auto max-w-5xl py-6 space-y-8">
       <header className="band-soft space-y-4 py-8">
         <Button variant="ghost" size="sm" asChild className="-ml-3">
           <Link href="/conditions">
