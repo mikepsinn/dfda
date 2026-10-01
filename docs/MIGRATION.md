@@ -155,6 +155,13 @@ migrations or a new audit of every dependency:
 2. **Trial discovery:** extract `packages/data/src/fetchers/clinical-trials-gov.ts`
    with its focused tests and relevant app search/filter components. This is registry
    discovery, separate from the new posted-results extractor and meta-analysis work.
+   **Started:** the client and its tests are copied unchanged into
+   `apps/web/lib/trials/clinical-trials-gov.ts` (source commit `700dcbc`).
+   `/conditions/{id}/trials` lists recruiting registry studies for the condition, 10 per
+   page, with links to each record and to the full registry search. Its paging follows
+   crowdsourcing-cures' trial search: the registry's forward cursor, a way back to the
+   first page, and recovery from an expired cursor. The search filters (location, age,
+   sex, study type) are not ported yet.
 3. **Tracking, reminders and MCP/REST:** adapt `apps/dfda/lib/mcp/`, `app/api/v1/`,
    the generated OpenAPI contract and their tests. The source's tracking provider
    injects Optimitron's Prisma database and its MCP auth uses the shared issuer.
