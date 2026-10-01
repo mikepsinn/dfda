@@ -2,7 +2,8 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Beaker, Menu } from "lucide-react"
+import { Menu } from "lucide-react"
+import { BrandMark } from "@/components/BrandMark"
 import {
   Sheet,
   SheetContent,
@@ -41,7 +42,7 @@ export function MobileNav({ navItems, siteName }: MobileNavProps) {
                 className="flex items-center gap-2"
                 onClick={() => setIsOpen(false)} // Close sheet on logo click
               >
-                <Beaker aria-hidden="true" className="h-6 w-6 flex-shrink-0 text-primary" />
+                <BrandMark className="h-7 w-7 flex-shrink-0" />
                 <span>{siteName}</span>
               </Link>
             </SheetTitle>

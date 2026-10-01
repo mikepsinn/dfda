@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og"
 import { env } from "@/lib/env"
+import { BrandMark, fixedBrandMarkColors } from "@/components/BrandMark"
 
 export const runtime = "edge"
 export const alt = env.NEXT_PUBLIC_SITE_NAME
@@ -24,6 +25,9 @@ export default async function Image() {
           padding: "48px",
         }}
       >
+        <div style={{ display: "flex", width: "120px", height: "120px", marginBottom: "24px" }}>
+          <BrandMark colors={fixedBrandMarkColors} size={120} />
+        </div>
         <h1
           style={{
             fontSize: "64px",

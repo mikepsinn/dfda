@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Beaker } from "lucide-react"
+import { BrandMark } from "./BrandMark"
 import type { User } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react';
 import type { Profile } from "@/lib/actions/profiles";
@@ -91,12 +91,12 @@ export function Header({ initialUser, initialProfile, siteName }: HeaderProps) {
         <MobileNav navItems={mobileNavItems} siteName={siteName} />
 
         {/* Logo and Desktop Nav container */}
-        <div className="flex flex-1 items-center">
+        <div className="flex flex-1 items-center lg:gap-6">
           {/* Logo - always visible */}
           <Link href="/" className="flex items-center gap-2">
-            <Beaker aria-hidden="true" className="hidden h-7 w-7 flex-shrink-0 text-primary min-[380px]:block" />
-            {/* A long name wraps to a two-line wordmark below xl, so it does not crowd the links. */}
-            <span className="max-w-[8.5rem] text-xs font-bold leading-tight min-[380px]:text-sm sm:max-w-[10rem] sm:text-base xl:max-w-none xl:text-xl">
+            <BrandMark className="hidden h-8 w-8 flex-shrink-0 min-[370px]:block" />
+            {/* A long name wraps to a two-line wordmark below 2xl, so it does not crowd the links. */}
+            <span className="max-w-[8.5rem] text-xs font-bold leading-tight min-[370px]:text-sm sm:max-w-[10rem] sm:text-base 2xl:max-w-none 2xl:text-xl">
               {siteName}
             </span>
           </Link>
