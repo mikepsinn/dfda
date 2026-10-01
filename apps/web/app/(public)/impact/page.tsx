@@ -20,7 +20,7 @@ export default function ImpactPage() {
           <h1 className="text-4xl font-bold mb-4">Impact of Efficient Trials: Lessons from RECOVERY</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             The groundbreaking RECOVERY trial showcases how pragmatic, decentralized approaches can revolutionize
-            medical research, aligning with the vision of the Open Treatments Evidence Network.
+            medical research, aligning with the vision of the Open Treatment Evidence Network.
           </p>
         </div>
 
@@ -171,7 +171,7 @@ export default function ImpactPage() {
           <h2 className="text-2xl font-bold mb-4">Building on Proven Success</h2>
           <p className="text-lg mb-6 max-w-2xl mx-auto">
             The RECOVERY trial demonstrates that faster, cheaper, more accessible clinical research is achievable.
-            The Open Treatments Evidence Network aims to scale these principles globally, empowering patients, providers, and researchers to accelerate
+            The Open Treatment Evidence Network aims to scale these principles globally, empowering patients, providers, and researchers to accelerate
             medical progress together.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
