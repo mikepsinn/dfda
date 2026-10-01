@@ -6,7 +6,7 @@ export function DocAuthenticationSection() {
     <section id="authentication" className="mb-10">
       <h2 className="text-3xl font-bold mb-4">Authentication</h2>
       <p className="text-muted-foreground mb-4">
-        The dFDA API supports two authentication methods: API keys for accessing public data and OAuth 2.0 for
+        The API supports two authentication methods: API keys for accessing public data and OAuth 2.0 for
         accessing user-specific data.
       </p>
 

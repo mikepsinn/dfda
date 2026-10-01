@@ -14,7 +14,7 @@ export function ResearchPartnerSteps() {
         stepNumber={1}
         title="Create a Trial"
         icon={<Upload className="h-5 w-5 text-primary" />}
-        description="Upload protocols, pre/post-clinical data, and register your supply chain through dFDA's intuitive interface."
+        description="Upload protocols, pre/post-clinical data, and register your supply chain in one place."
         benefits={[
           "Simple protocol builder with templates",
           "Automated regulatory compliance checks",

@@ -209,7 +209,7 @@ export default async function OutcomeLabels() {
                 <h3 className="text-2xl font-bold">Contribute to Outcome Labels</h3>
                 <p className="text-muted-foreground max-w-2xl">
                   Outcome Labels are continuously improved through new clinical trials, real-world evidence, and
-                  patient-reported outcomes. Join dFDA to contribute data and help create the most
+                  patient-reported outcomes. Join the Open Treatments Evidence Network to contribute data and help create the most
                   comprehensive health information resource available.
                 </p>
                 <div className="flex flex-col gap-2 sm:flex-row">

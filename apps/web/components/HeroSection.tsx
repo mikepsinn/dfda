@@ -43,11 +43,11 @@ export function HeroSection() {
             <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
               Accelerating Discovery
             </div>
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Decentralized Framework for <span className="text-primary">Drug Assessment</span>
+            <h1 className="text-3xl font-bold tracking-tighter min-[380px]:text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+              Open Treatments <span className="text-primary">Evidence Network</span>
             </h1>
             <p className="max-w-[600px] text-muted-foreground md:text-xl">
-              Rank treatments by real-world outcomes and publish an Outcome Label for each one. dFDA is
+              Rank treatments by real-world outcomes and publish an Outcome Label for each one. The network is
               designed so patient records stay with patients and clinics, and only aggregate results are shared.
             </p>
 

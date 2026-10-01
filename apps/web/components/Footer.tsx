@@ -28,7 +28,7 @@ export function Footer({ siteName }: FooterProps) {
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} {siteName}. All rights reserved.</p>
         </div>
         <p className="max-w-2xl text-center text-xs text-muted-foreground">
-          dFDA (Decentralized Framework for Drug Assessment) is an independent project. It is not affiliated with,
+          {siteName} is an independent project. It is not affiliated with,
           endorsed by, or acting on behalf of the U.S. Food and Drug Administration.
         </p>
       </div>

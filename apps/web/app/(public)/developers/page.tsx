@@ -31,7 +31,7 @@ export default function DeveloperPortal() {
                 </h2>
                 <p className="mt-4 text-muted-foreground md:text-xl">
                   We are building treatment rankings and Outcome Labels for every condition and treatment, open to any
-                  app through the dFDA API
+                  app through one public API
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
                   <Link href="/register?role=developer">
@@ -138,7 +138,7 @@ export default function DeveloperPortal() {
               <TabsContent value="get-started" className="space-y-6 pt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Getting Started with the dFDA API</CardTitle>
+                    <CardTitle>Getting Started with the API</CardTitle>
                     <CardDescription>Follow these steps to start using our API in your applications</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
@@ -206,11 +206,11 @@ export default function DeveloperPortal() {
                 <Card>
                   <CardHeader>
                     <CardTitle>API Documentation</CardTitle>
-                    <CardDescription>Comprehensive documentation for the dFDA API</CardDescription>
+                    <CardDescription>Comprehensive documentation for the API</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <p className="text-muted-foreground">
-                      Our detailed documentation covers everything you need to know about using the dFDA API,
+                      Our detailed documentation covers everything you need to know about using the API,
                       including authentication, endpoints, error handling, and more.
                     </p>
                     <div className="grid gap-6 md:grid-cols-2">
@@ -270,7 +270,7 @@ export default function DeveloperPortal() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Code Examples</CardTitle>
-                    <CardDescription>Sample code for using the dFDA API in different languages</CardDescription>
+                    <CardDescription>Sample code for using the API in different languages</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <CodeExampleTabs />

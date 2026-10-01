@@ -9,10 +9,11 @@ export function HowItWorksSection() {
       <div className="container px-0 sm:px-4 md:px-6">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            How dFDA Works
+            How It Works
           </h2>
           <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            dFDA connects patients, clinicians and research partners through one streamlined process
+            Patients report outcomes, clinicians see what has worked for patients like theirs, and research partners
+            run trials on the same network.
           </p>
         </div>
 

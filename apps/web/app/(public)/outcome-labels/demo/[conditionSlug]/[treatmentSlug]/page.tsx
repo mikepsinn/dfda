@@ -24,7 +24,7 @@ async function lookup(params: Props["params"]) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { condition, treatment } = await lookup(params);
-  return { title: `${treatment.name} for ${condition.name}: Outcome Label | dFDA` };
+  return { title: `${treatment.name} for ${condition.name}: Outcome Label | Open Treatments Evidence Network` };
 }
 
 export default async function DemoOutcomeLabel({ params }: Props) {

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
+import { Beaker } from "lucide-react"
 import type { User } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react';
 import type { Profile } from "@/lib/actions/profiles";
@@ -87,21 +87,18 @@ export function Header({ initialUser, initialProfile, siteName }: HeaderProps) {
       <div className="container px-4 md:px-6 mx-auto flex h-16 items-center justify-between">
         
         {/* Mobile Nav Button (now first on mobile) */}
-        {/* Rendered via MobileNav, which handles the md:hidden internally */}
+        {/* Rendered via MobileNav, which handles the lg:hidden internally */}
         <MobileNav navItems={mobileNavItems} siteName={siteName} />
 
         {/* Logo and Desktop Nav container */}
         <div className="flex flex-1 items-center">
           {/* Logo - always visible */}
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/dfda-logo.png"
-              alt="dFDA Logo"
-              width={28}
-              height={28}
-              className="h-7 w-7"
-            />
-            <span className="text-xl font-bold">{siteName}</span>
+            <Beaker aria-hidden="true" className="hidden h-7 w-7 flex-shrink-0 text-primary min-[380px]:block" />
+            {/* A long name wraps to a two-line wordmark below xl, so it does not crowd the links. */}
+            <span className="max-w-[8.5rem] text-xs font-bold leading-tight min-[380px]:text-sm sm:max-w-[10rem] sm:text-base xl:max-w-none xl:text-xl">
+              {siteName}
+            </span>
           </Link>
 
           {/* Center the DesktopNav */}
