@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
+import { BrandMark } from "./BrandMark"
 import type { User } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react';
 import type { Profile } from "@/lib/actions/profiles";
@@ -87,21 +87,18 @@ export function Header({ initialUser, initialProfile, siteName }: HeaderProps) {
       <div className="container px-4 md:px-6 mx-auto flex h-16 items-center justify-between">
         
         {/* Mobile Nav Button (now first on mobile) */}
-        {/* Rendered via MobileNav, which handles the md:hidden internally */}
+        {/* Rendered via MobileNav, which handles the lg:hidden internally */}
         <MobileNav navItems={mobileNavItems} siteName={siteName} />
 
         {/* Logo and Desktop Nav container */}
-        <div className="flex flex-1 items-center">
+        <div className="flex flex-1 items-center lg:gap-6">
           {/* Logo - always visible */}
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/dfda-logo.png"
-              alt="dFDA Logo"
-              width={28}
-              height={28}
-              className="h-7 w-7"
-            />
-            <span className="text-xl font-bold">{siteName}</span>
+            <BrandMark className="hidden h-8 w-8 flex-shrink-0 min-[370px]:block" />
+            {/* A long name wraps to a two-line wordmark below 2xl, so it does not crowd the links. */}
+            <span className="max-w-[8.5rem] text-xs font-bold leading-tight min-[370px]:text-sm sm:max-w-[10rem] sm:text-base 2xl:max-w-none 2xl:text-xl">
+              {siteName}
+            </span>
           </Link>
 
           {/* Center the DesktopNav */}

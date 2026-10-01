@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function ConditionsPage() {
   return (
-    <div className="container max-w-2xl py-8">
+    <div className="container mx-auto max-w-2xl py-8">
       <h1 className="text-3xl font-bold mb-2">Find Trials by Condition</h1>
       <p className="text-muted-foreground mb-6">
         Select a condition below to view available clinical trials.

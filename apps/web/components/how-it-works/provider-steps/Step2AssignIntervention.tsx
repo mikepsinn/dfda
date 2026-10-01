@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 export function Step2AssignIntervention() {
   return (
     <HowItWorksStep
+      exampleData
       stepNumber={2}
       title="Assign Patients to Trial Arms with Confidence"
       icon={<FlaskConical className="h-5 w-5 text-primary" />}

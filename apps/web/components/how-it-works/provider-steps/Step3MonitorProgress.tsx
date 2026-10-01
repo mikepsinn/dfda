@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export function Step3MonitorProgress() {
   return (
     <HowItWorksStep
+      exampleData
       stepNumber={3}
       title="Monitor Patient Progress & Trial Performance"
       icon={<TrendingUp className="h-5 w-5 text-primary" />}

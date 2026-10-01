@@ -10,9 +10,11 @@ interface ResearchPartnerStepProps {
   benefits: string[]
   preview: ReactNode
   reverse: boolean
+  // Set when the mock-up shows outcome or effectiveness numbers that could be read as real evidence.
+  exampleData?: boolean
 }
 
-export function ResearchPartnerStep({ stepNumber, title, icon, description, benefits, preview, reverse }: ResearchPartnerStepProps) {
+export function ResearchPartnerStep({ stepNumber, title, icon, description, benefits, preview, reverse, exampleData = false }: ResearchPartnerStepProps) {
   return (
     <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
       <div className={`order-2 ${reverse ? "md:order-2" : "md:order-1"}`}>
@@ -40,7 +42,7 @@ export function ResearchPartnerStep({ stepNumber, title, icon, description, bene
             {stepNumber}
           </div>
           {preview}
-          <ExampleDataTag />
+          {exampleData && <ExampleDataTag />}
         </div>
       </div>
     </div>

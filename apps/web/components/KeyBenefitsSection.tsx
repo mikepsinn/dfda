@@ -60,7 +60,7 @@ export function KeyBenefitsSection() {
           </div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Key Benefits</h2>
           <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            What dFDA is designed to deliver for patients, clinicians and researchers
+            What the network is designed to deliver for patients, clinicians and researchers
           </p>
         </div>
 
