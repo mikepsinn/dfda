@@ -41,7 +41,7 @@ function _cleanSpec(spec: any, options: _InternalOpenApiCleanerOptions): any {
     if (newSpec.servers && newSpec.servers.length > 0) {
       newSpec.servers[0].url = options.proxyUrl;
     } else {
-      newSpec.servers = [{ url: options.proxyUrl, description: 'DFDA API Proxy' }];
+      newSpec.servers = [{ url: options.proxyUrl, description: 'API proxy' }];
     }
     if (newSpec.servers.length > 1) {
       newSpec.servers = [newSpec.servers[0]]; // Keep only the first (proxy) server

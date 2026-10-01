@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og"
 import { env } from "@/lib/env"
+import { BrandMark, fixedBrandMarkColors } from "@/components/BrandMark"
 
 export const runtime = "edge"
 export const alt = env.NEXT_PUBLIC_SITE_NAME
@@ -25,21 +25,8 @@ export default async function Image() {
           padding: "48px",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "24px",
-          }}
-        >
-          <img
-            src={`${env.NEXT_PUBLIC_SITE_URL}/images/dfda-logo.png`}
-            alt="DFDA Logo"
-            width={100}
-            height={100}
-            style={{ marginRight: "24px" }}
-          />
+        <div style={{ display: "flex", width: "100px", height: "100px", marginBottom: "24px" }}>
+          <BrandMark colors={fixedBrandMarkColors} size={100} />
         </div>
         <h1
           style={{

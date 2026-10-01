@@ -15,7 +15,7 @@ import { PatientManagement } from "./components/patient-management"
 import { PendingActions } from "./components/pending-actions"
 
 export const metadata: Metadata = {
-  title: "Provider Dashboard | dFDA",
+  title: "Provider Dashboard | Open Treatment Evidence Network",
   description: "Manage your clinical trials, patients, and interventions",
 }
 

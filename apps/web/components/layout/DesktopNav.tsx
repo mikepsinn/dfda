@@ -26,14 +26,14 @@ export function DesktopNav({
   const [isMoreOpen, setIsMoreOpen] = useState(false)
 
   return (
-    <nav className="hidden md:flex items-center justify-center gap-6 bg-background">
+    <nav className="hidden lg:flex items-center justify-center gap-4 xl:gap-6 bg-background">
       {/* Always show Primary Nav Items */}
       {primaryNavItems.map((item) => (
         !item.hideInNav && (
           <Link
             key={item.href}
             href={item.href}
-            className="text-sm font-medium flex items-center gap-2"
+            className="text-sm font-medium flex items-center gap-2 whitespace-nowrap"
           >
             {item.emoji && <span>{item.emoji}</span>}
             {item.title}

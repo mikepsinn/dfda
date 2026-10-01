@@ -79,7 +79,7 @@ export function Step4Review({ prevStep }: Step4Props) {
             <div>
               <h4 className="font-medium">Next Steps</h4>
               <p className="text-sm text-muted-foreground">
-                After submission, your trial will be reviewed for compliance with dFDA standards. Once
+                After submission, your trial will be reviewed for compliance with the network's standards. Once
                 approved, it will be listed in the marketplace for patient enrollment.
               </p>
             </div>

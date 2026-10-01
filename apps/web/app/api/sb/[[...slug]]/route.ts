@@ -50,7 +50,7 @@ async function handler(req: NextRequest, { params }: { params: { slug: string[] 
 
             // Modify the servers URL
             const proxyApiBaseUrl = `${siteUrl.replace(/\/$/, '')}/api/sb`;
-            spec.servers = [{ url: proxyApiBaseUrl, description: 'DFDA API Proxy' }];
+            spec.servers = [{ url: proxyApiBaseUrl, description: 'API proxy' }];
             
             // Modify paths to be relative to the new server URL if necessary (OpenAPI v3 usually handles this with server URL)
             // For example, if paths were /rest/v1/table, they might need to become /table.

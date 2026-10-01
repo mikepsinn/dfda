@@ -32,6 +32,7 @@ const klothoGeneTherapyData = {
 export function Step2ViewOutcomeLabels() {
   return (
     <HowItWorksStep
+      exampleData
       stepNumber={2}
       title="View Outcome Labels"
       icon={<FileText className="h-5 w-5 text-primary" />}

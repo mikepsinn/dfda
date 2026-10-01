@@ -23,9 +23,9 @@ function pageRoutes(dir = path.join(process.cwd(), "app"), prefix = ""): RegExp[
 describe("landing page", () => {
   it("presents the framework without invented testimonials, metrics or claims", async () => {
     render(await Home());
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Decentralized Framework for Drug Assessment");
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Open Treatment Evidence Network");
     expect(screen.getByRole("heading", { name: "How the data flows" })).toBeInTheDocument();
-    for (const removed of [/FDA v2/, /Decentralized FDA/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/, /Help Build It/, /Support the dFDA Initiative/, /Sign to Support/]) {
+    for (const removed of [/FDA v2/, /Decentralized FDA/, /dFDA/, /FDAi/, /Drug Assessment/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/, /Help Build It/, /Support the dFDA Initiative/, /Sign to Support/]) {
       expect(screen.queryByText(removed)).not.toBeInTheDocument();
     }
   });
@@ -55,9 +55,10 @@ describe("landing page", () => {
     expect(screen.getByText("Suvorexant")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /posted trial result \(NCT01097616\)/ }))
       .toHaveAttribute("href", "/outcome-labels/demo/insomnia/suvorexant#trial-results");
-    // 7 patient, 3 provider and 5 research-partner steps, each captioned under its mock-up.
+    // Only mock-ups that show outcome or effectiveness numbers carry the caption, under the mock-up:
+    // 3 patient (rankings, Outcome Label, insights), 3 provider and 1 research-partner (trial analytics).
     const captions = screen.getAllByText("Example data");
-    expect(captions).toHaveLength(15);
+    expect(captions).toHaveLength(7);
     for (const caption of captions) {
       expect(caption.previousElementSibling).not.toBeNull();
       expect(caption.nextElementSibling).toBeNull();

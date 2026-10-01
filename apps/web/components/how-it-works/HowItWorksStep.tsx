@@ -10,9 +10,11 @@ interface HowItWorksStepProps {
   benefits: string[]
   preview: ReactNode
   reverse: boolean
+  // Set when the mock-up shows outcome or effectiveness numbers that could be read as real evidence.
+  exampleData?: boolean
 }
 
-export function HowItWorksStep({ stepNumber, title, icon, description, benefits, preview, reverse }: HowItWorksStepProps) {
+export function HowItWorksStep({ stepNumber, title, icon, description, benefits, preview, reverse, exampleData = false }: HowItWorksStepProps) {
   return (
     <div className="grid md:grid-cols-2 gap-4 md:gap-12 items-center">
       <div className={`order-2 ${reverse ? "md:order-2" : "md:order-1"}`}>
@@ -40,7 +42,7 @@ export function HowItWorksStep({ stepNumber, title, icon, description, benefits,
             {stepNumber}
           </div>
           {preview}
-          <ExampleDataTag />
+          {exampleData && <ExampleDataTag />}
         </div>
       </div>
     </div>
