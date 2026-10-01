@@ -1,6 +1,8 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import ConditionTrialsPage from "@/app/(public)/conditions/[globalVariableId]/trials/page";
+import { RegistryTrialList } from "@/app/(public)/conditions/[globalVariableId]/trials/registry-trial-list";
+import { env } from "@/lib/env";
 import { getGlobalConditionByIdAction } from "@/lib/actions/conditions";
 import { getTrialsByConditionAction } from "@/lib/actions/trials";
 import { getRecruitingRegistryTrials, registrySearchUrl, type RegistryTrial } from "@/lib/trials/registry-trials";
@@ -83,6 +85,14 @@ describe("condition trials page", () => {
     expect(screen.getByText("Hong Kong, Hong Kong and 1 more location")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /View on ClinicalTrials.gov/ })).toHaveAttribute("href", registryTrial.url);
     expect(screen.getByRole("link", { name: /See all 458 on ClinicalTrials.gov/ })).toHaveAttribute("href", searchUrl);
+    expect(screen.getByText(new RegExp(`${env.NEXT_PUBLIC_SITE_NAME} has not reviewed these studies`))).toBeInTheDocument();
+  });
+
+  it("names the configured installation, not the default brand, in the registry disclaimer", () => {
+    render(<RegistryTrialList condition="Asthma" result={{ ok: true, total: 0, trials: [], searchUrl }} siteName="Riverside Clinic" />);
+
+    expect(screen.getByText(/Riverside Clinic has not reviewed these studies/)).toBeInTheDocument();
+    expect(screen.queryByText(/dFDA has not reviewed/)).not.toBeInTheDocument();
   });
 
   it("says when the registry has no recruiting studies", async () => {
