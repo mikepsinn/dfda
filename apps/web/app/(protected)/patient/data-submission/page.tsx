@@ -22,7 +22,7 @@ interface TrialSubmissionData {
 }
 
 export const metadata: Metadata = {
-  title: "Submit Trial Data | Open Treatments Evidence Network",
+  title: "Submit Trial Data | Open Treatment Evidence Network",
   description: "Submit your clinical trial data and track your progress in the trial.",
 }
 

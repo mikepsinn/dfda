@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Clinical Trials | Open Treatments Evidence Network",
+  title: "Clinical Trials | Open Treatment Evidence Network",
   description: "View clinical trials for a specific medical condition",
 }
 

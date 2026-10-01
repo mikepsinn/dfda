@@ -23,7 +23,7 @@ function pageRoutes(dir = path.join(process.cwd(), "app"), prefix = ""): RegExp[
 describe("landing page", () => {
   it("presents the framework without invented testimonials, metrics or claims", async () => {
     render(await Home());
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Open Treatments Evidence Network");
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Open Treatment Evidence Network");
     expect(screen.getByRole("heading", { name: "How the data flows" })).toBeInTheDocument();
     for (const removed of [/FDA v2/, /Decentralized FDA/, /dFDA/, /FDAi/, /Drug Assessment/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/, /Help Build It/, /Support the dFDA Initiative/, /Sign to Support/]) {
       expect(screen.queryByText(removed)).not.toBeInTheDocument();
