@@ -77,7 +77,7 @@ export default async function ConditionTrialsPage({
         </section>
       )}
 
-      <RegistryTrialList condition={condition.name} result={registry} />
+      <RegistryTrialList condition={condition.name} result={registry} siteName={env.NEXT_PUBLIC_SITE_NAME} />
     </div>
   )
 }

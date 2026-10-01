@@ -13,10 +13,12 @@ import {
 interface RegistryTrialListProps {
   condition: string
   result: RegistryTrialsResult
+  // The installation's configured name, which the disclaimer names as the operator.
+  siteName: string
 }
 
 // Recruiting studies registered on ClinicalTrials.gov. Each links to its registry record.
-export function RegistryTrialList({ condition, result }: RegistryTrialListProps) {
+export function RegistryTrialList({ condition, result, siteName }: RegistryTrialListProps) {
   return (
     <section aria-labelledby="registry-trials" className="space-y-4">
       <div className="space-y-1">
@@ -25,7 +27,7 @@ export function RegistryTrialList({ condition, result }: RegistryTrialListProps)
         </h2>
         <p className="text-sm text-muted-foreground">
           Studies registered on ClinicalTrials.gov, the U.S. National Library of Medicine&apos;s trial registry. A
-          listing is not a recommendation: dFDA has not reviewed these studies.
+          listing is not a recommendation: {siteName} has not reviewed these studies.
         </p>
       </div>
 
