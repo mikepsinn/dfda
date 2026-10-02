@@ -45,7 +45,7 @@ const benefits = [
       "Outcome data from the first patients, not only at the end of a multi-year trial",
       "Rankings update as new evidence arrives",
     ],
-    link: { href: "/impact", label: "Learn about our impact" },
+    link: { href: "/impact", label: "See the potential impact" },
   },
 ]
 
