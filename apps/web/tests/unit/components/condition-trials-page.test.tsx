@@ -72,6 +72,8 @@ describe("condition trials page", () => {
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Major depressive disorder");
     expect(screen.getByRole("heading", { level: 2, name: /^Trials on / })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "View Details" })).toHaveAttribute("href", "/patient/trial-details/trial-1");
+    expect(screen.getByRole("link", { name: /Filter by location, age and more/ }))
+      .toHaveAttribute("href", "/find-trials?condition=Major%20depressive%20disorder");
   });
 
   it("returns not found for an unknown condition without querying trials", async () => {

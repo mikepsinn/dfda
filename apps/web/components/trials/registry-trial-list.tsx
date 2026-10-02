@@ -15,23 +15,43 @@ import {
 import { ExpandableSummary } from "./expandable-summary"
 
 interface RegistryTrialListProps {
-  condition: string
   result: RegistryTrialsResult
-  // 1-based number of the page shown, and the path that the page links go to.
+  // 1-based number of the page shown.
   page: number
-  basePath: string
   // Matching studies in the registry. Only the first page reports it, so later pages
   // get it from the page link; null when it is unknown.
   total: number | null
+  // The page links go to this path, with these search parameters and the page cursor.
+  basePath: string
+  query?: URLSearchParams
+  heading: string
+  // What the studies are, in the count: "Showing 1–10 of 458 recruiting studies".
+  countNoun: string
+  // Shown when the registry finds no studies.
+  emptyText: string
+  // The link to the registry's own search: under the results, and when the registry does not respond.
+  registryLinkText: string
+  failedLinkText: string
 }
 
-// Recruiting studies registered on ClinicalTrials.gov, one page at a time. Each links to its registry record.
-export function RegistryTrialList({ condition, result, page, basePath, total }: RegistryTrialListProps) {
+// Studies registered on ClinicalTrials.gov, one page at a time. Each links to its registry record.
+export function RegistryTrialList({
+  result,
+  page,
+  total,
+  basePath,
+  query,
+  heading,
+  countNoun,
+  emptyText,
+  registryLinkText,
+  failedLinkText,
+}: RegistryTrialListProps) {
   return (
     <section aria-labelledby="registry-trials" className="space-y-4">
       <div className="space-y-1">
         <h2 id="registry-trials" className="text-2xl font-semibold">
-          Recruiting on ClinicalTrials.gov
+          {heading}
         </h2>
         <p className="text-sm text-muted-foreground">
           Studies registered on ClinicalTrials.gov, the U.S. National Library of Medicine&apos;s trial registry. A
@@ -43,14 +63,12 @@ export function RegistryTrialList({ condition, result, page, basePath, total }: 
         <Card>
           <CardContent className="space-y-3 p-6">
             <p className="text-sm">ClinicalTrials.gov did not respond. You can search the registry directly.</p>
-            <SearchLink href={result.searchUrl}>Search ClinicalTrials.gov for {condition}</SearchLink>
+            <SearchLink href={result.searchUrl}>{failedLinkText}</SearchLink>
           </CardContent>
         </Card>
       ) : result.trials.length === 0 ? (
         <Card>
-          <CardContent className="p-6 text-sm text-muted-foreground">
-            ClinicalTrials.gov lists no recruiting studies for {condition}.
-          </CardContent>
+          <CardContent className="p-6 text-sm text-muted-foreground">{emptyText}</CardContent>
         </Card>
       ) : (
         <>
@@ -61,7 +79,7 @@ export function RegistryTrialList({ condition, result, page, basePath, total }: 
           )}
           <p className="text-sm tabular-nums text-muted-foreground">
             Showing {(page - 1) * REGISTRY_PAGE_SIZE + 1}–{(page - 1) * REGISTRY_PAGE_SIZE + result.trials.length}
-            {total !== null && ` of ${total.toLocaleString("en-US")}`} recruiting studies, most relevant first.
+            {total !== null && ` of ${total.toLocaleString("en-US")}`} {countNoun}, most relevant first.
           </p>
           <ul className="space-y-4">
             {result.trials.map(trial => (
@@ -75,8 +93,9 @@ export function RegistryTrialList({ condition, result, page, basePath, total }: 
             total={total}
             nextPageToken={result.nextPageToken}
             basePath={basePath}
+            query={query}
           />
-          <SearchLink href={result.searchUrl}>Search and filter all of them on ClinicalTrials.gov</SearchLink>
+          <SearchLink href={result.searchUrl}>{registryLinkText}</SearchLink>
         </>
       )}
     </section>
@@ -184,22 +203,29 @@ function Pagination({
   total,
   nextPageToken,
   basePath,
+  query,
 }: {
   page: number
   total: number | null
   nextPageToken: string | null
   basePath: string
+  query?: URLSearchParams
 }) {
   const totalPages = total === null ? null : Math.max(page, Math.ceil(total / REGISTRY_PAGE_SIZE))
-  const nextQuery = new URLSearchParams({ page: String(page + 1), pageToken: nextPageToken ?? "" })
+  const firstHref = query?.size ? `${basePath}?${query}` : basePath
+  const nextQuery = new URLSearchParams(query)
+  nextQuery.set("page", String(page + 1))
+  nextQuery.set("pageToken", nextPageToken ?? "")
   if (total !== null) nextQuery.set("total", String(total))
-  const nextHref = nextPageToken ? `${basePath}?${nextQuery}` : null
+  // The registry can return a cursor even when this page holds the last match.
+  const hasNext = nextPageToken !== null && (total === null || page * REGISTRY_PAGE_SIZE < total)
+  const nextHref = hasNext ? `${basePath}?${nextQuery}` : null
 
   return (
     <nav aria-label="Result pages" className="flex items-center justify-between gap-4">
       {page > 1 ? (
         <Button variant="outline" asChild>
-          <Link href={basePath} prefetch={false}>
+          <Link href={firstHref} prefetch={false}>
             <ChevronLeft aria-hidden="true" className="mr-1 h-4 w-4" />
             First page
           </Link>

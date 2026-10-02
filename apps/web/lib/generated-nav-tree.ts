@@ -113,7 +113,7 @@ export const navigationTreeObject: GeneratedNavTree = {
   "find_trials": {
     "title": "Find Trials",
     "href": "/find-trials",
-    "description": "Search for clinical trials.",
+    "description": "Search clinical trials by condition, treatment and location.",
     "emoji": "🔍"
   },
   "forgot_password": {

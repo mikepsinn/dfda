@@ -5,8 +5,13 @@ import {
   formatRegistryPhases,
   getRecruitingRegistryTrials,
   isRegistryPageToken,
+  quoteLocationText,
   quoteSearchText,
+  registryApiUrl,
+  registryPagePosition,
+  registrySearchPageUrl,
   registrySearchUrl,
+  searchRegistryTrials,
   toRegistryTrial,
 } from "@/lib/trials/registry-trials";
 
@@ -174,5 +179,58 @@ describe("registry display text", () => {
     expect(formatRegistryDate("2024-01-08")).toBe("Jan 8, 2024");
     expect(formatRegistryDate("2024-01")).toBe("Jan 2024");
     expect(formatRegistryDate("soon")).toBe("soon");
+  });
+});
+
+describe("searchRegistryTrials", () => {
+  it("sends names as quoted phrases and each comma-separated place as its own phrase", () => {
+    const url = registryApiUrl({ condition: "Asthma", treatment: "Montelukast", location: " Boston,  Massachusetts ,", status: "completed" });
+    expect(url.searchParams.get("query.cond")).toBe('"Asthma"');
+    expect(url.searchParams.get("query.intr")).toBe('"Montelukast"');
+    expect(url.searchParams.get("query.locn")).toBe('"Boston" AND "Massachusetts"');
+    expect(url.searchParams.get("filter.overallStatus")).toBe("COMPLETED");
+    expect(url.searchParams.has("filter.advanced")).toBe(false);
+    expect(quoteLocationText(" , ")).toBe("");
+  });
+
+  it("keeps studies open to the participant's sex, including studies open to all sexes", () => {
+    // AREA[Sex]FEMALE would keep only the studies limited to women.
+    expect(registryApiUrl({ condition: "Asthma", sex: "female" }).searchParams.get("filter.advanced")).toBe("NOT AREA[Sex]MALE");
+    const url = registryApiUrl({ condition: "Asthma", sex: "male", studyType: "int", ageGroups: ["child", "older_adult"] });
+    expect(url.searchParams.get("filter.advanced")).toBe(
+      "AREA[StudyType]INTERVENTIONAL AND AREA[StdAge](CHILD OR OLDER_ADULT) AND NOT AREA[Sex]FEMALE",
+    );
+  });
+
+  it("searches any status when none is given, and links to the registry search with the terms it supports", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(respond({ totalCount: 3, studies: [study] }));
+    vi.stubGlobal("fetch", fetchMock);
+
+    const result = await searchRegistryTrials({ treatment: "Metformin", location: "Germany" });
+
+    const [url] = fetchMock.mock.calls[0] as [URL];
+    expect(url.searchParams.has("filter.overallStatus")).toBe(false);
+    expect(url.searchParams.has("query.cond")).toBe(false);
+    expect(result).toMatchObject({ ok: true, total: 3, searchUrl: registrySearchPageUrl({ treatment: "Metformin" }) });
+    const link = new URL(registrySearchPageUrl({ condition: "Asthma", treatment: "Metformin", status: "completed" }));
+    expect([...link.searchParams]).toEqual([["cond", "Asthma"], ["intr", "Metformin"]]);
+  });
+});
+
+describe("registryPagePosition", () => {
+  const page = (overrides = {}) => ({
+    ok: true as const, total: null, trials: [], searchUrl: "", nextPageToken: null, paginationReset: false, ...overrides,
+  });
+
+  it("uses the first page's count, and the number and count carried to a later page", () => {
+    expect(registryPagePosition(page({ total: 458 }), {})).toEqual({ page: 1, total: 458 });
+    expect(registryPagePosition(page(), { pageToken: "Next2", page: "3", total: "458" })).toEqual({ page: 3, total: 458 });
+  });
+
+  it("restarts at page 1 after an expired cursor, and ignores carried values that are not counts", () => {
+    expect(registryPagePosition(page({ total: 458, paginationReset: true }), { pageToken: "Old", page: "3" })).toEqual({ page: 1, total: 458 });
+    expect(registryPagePosition(page(), { pageToken: "Next2", page: "2.5", total: "-1" })).toEqual({ page: 1, total: null });
+    expect(registryPagePosition(page(), { page: "4", total: "458" })).toEqual({ page: 1, total: null });
+    expect(registryPagePosition({ ok: false, searchUrl: "" }, { pageToken: "Next2", page: "2", total: "9" })).toEqual({ page: 1, total: null });
   });
 });
