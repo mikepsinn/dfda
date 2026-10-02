@@ -70,8 +70,9 @@ describe("find trials page", () => {
     expect(screen.getByLabelText("Condition")).toHaveValue("Asthma");
     expect(screen.getByLabelText("Participant's sex")).toHaveValue("female");
     expect(screen.getByRole("checkbox", { name: "Child (0–17)" })).toBeChecked();
-    expect(screen.getByRole("heading", { level: 2, name: "Results from ClinicalTrials.gov" })).toBeInTheDocument();
-    expect(screen.getByText(/of 25 matching studies/)).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "Trials" })).toHaveAttribute("id", "registry-trials");
+    expect(screen.getByText(/of 25 matching studies on ClinicalTrials.gov/)).toBeInTheDocument();
+    expect(screen.queryByText(/have not reviewed|National Library of Medicine/)).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute(
       "href", "/find-trials?condition=Asthma&location=Boston&sex=female&age=child&page=2&pageToken=Next2&total=25#registry-trials",
     );

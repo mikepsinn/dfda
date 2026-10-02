@@ -103,7 +103,7 @@ describe("condition trials page", () => {
     expect(screen.getByRole("button", { name: "Show more" })).toHaveAttribute("aria-expanded", "false");
     expect(screen.getByRole("link", { name: /Learn more and join/ })).toHaveAttribute("href", registryTrial.url);
     expect(screen.getByRole("link", { name: /Search and filter all of them/ })).toHaveAttribute("href", searchUrl);
-    expect(screen.getByText(/we have not reviewed these studies/)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: "Recruiting on ClinicalTrials.gov" })).toBeInTheDocument();
   });
 
   it("pages forward with the registry cursor and back to the first page", async () => {

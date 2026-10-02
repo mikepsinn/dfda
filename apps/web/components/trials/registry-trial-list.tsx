@@ -24,7 +24,8 @@ interface RegistryTrialListProps {
   // The page links go to this path, with these search parameters and the page cursor.
   basePath: string
   query?: URLSearchParams
-  heading: string
+  // A visible heading; without one, the section is named "Trials" for screen readers.
+  heading?: string
   // What the studies are, in the count: "Showing 1–10 of 458 recruiting studies".
   countNoun: string
   // Shown when the registry finds no studies.
@@ -48,16 +49,14 @@ export function RegistryTrialList({
   failedLinkText,
 }: RegistryTrialListProps) {
   return (
-    <section aria-labelledby="registry-trials" className="space-y-4">
-      <div className="space-y-1">
-        <h2 id="registry-trials" className="scroll-mt-24 text-2xl font-semibold">
+    // The page links scroll to this section; the margin keeps it below the sticky header.
+    <section id="registry-trials" aria-labelledby={heading ? "registry-trials-heading" : undefined}
+      aria-label={heading ? undefined : "Trials"} className="scroll-mt-24 space-y-4">
+      {heading && (
+        <h2 id="registry-trials-heading" className="text-2xl font-semibold">
           {heading}
         </h2>
-        <p className="text-sm text-muted-foreground">
-          Studies registered on ClinicalTrials.gov, the U.S. National Library of Medicine&apos;s trial registry. A
-          listing is not a recommendation: we have not reviewed these studies.
-        </p>
-      </div>
+      )}
 
       {!result.ok ? (
         <Card>
