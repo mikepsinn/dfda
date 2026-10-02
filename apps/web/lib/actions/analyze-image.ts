@@ -46,7 +46,6 @@ export const TreatmentSchema = BaseSchema.extend({
 });
 
 // --- Supplement Schema (NEW) ---
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const SupplementSchema = BaseSchema.extend({
   type: z.literal('supplement').describe("Use ONLY for dietary supplements (e.g., vitamins, minerals, herbs, amino acids like Taurine, protein powders, creatine). These are distinct from food and medication."),
   dosage_form: z.string().optional().describe("Form of the supplement (e.g., 'capsule', 'tablet', 'powder', 'liquid', 'gummy')."),
