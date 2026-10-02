@@ -64,8 +64,7 @@ export default async function FindTrialsPage({
               total={position.total}
               basePath="/find-trials"
               query={trialSearchQuery(form)}
-              heading="Results from ClinicalTrials.gov"
-              countNoun="matching studies"
+              countNoun="matching studies on ClinicalTrials.gov"
               emptyText="ClinicalTrials.gov lists no studies that match this search. Try another spelling, fewer filters or a wider location."
               registryLinkText="Search ClinicalTrials.gov directly"
               failedLinkText="Search ClinicalTrials.gov directly"
