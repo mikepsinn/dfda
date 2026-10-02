@@ -17,9 +17,9 @@ export function Step5TrackData() {
   return (
     <HowItWorksStep
       stepNumber={5}
-      title="Track Your Data"
+      title="Track Outcomes"
       icon={<LineChart className="h-5 w-5 text-primary" />}
-      description="Record your diet, treatment adherence, symptoms, and more."
+      description="Quick check-ins record how you're doing. Every result, good or bad, improves the outcome labels for the next patient."
       benefits={[
         "Simple mobile app for daily tracking",
         "Automatic data collection from wearables",
