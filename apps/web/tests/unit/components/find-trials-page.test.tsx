@@ -2,6 +2,7 @@ import { act, cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import FindTrialsPage from "@/app/(public)/find-trials/page";
+import { LocationField } from "@/components/trials/location-field";
 import { RegistrySuggestInput } from "@/components/trials/registry-suggest-input";
 import { searchRegistryTrials, type RegistryTrial } from "@/lib/trials/registry-trials";
 
@@ -45,11 +46,11 @@ describe("find trials page", () => {
     await renderPage();
     expect(screen.getByRole("heading", { level: 1, name: "Find Clinical Trials" })).toBeInTheDocument();
     const form = screen.getByRole("search", { name: "Search clinical trials" });
-    expect(form).toHaveAttribute("action", "/find-trials");
+    expect(form).toHaveAttribute("action", "/find-trials#results");
     expect(form).toHaveAttribute("method", "get");
     expect(within(form).getByLabelText("Study status")).toHaveValue("recruiting");
     expect(screen.getByText(/Enter a condition, a treatment or a location/)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Metformin" })).toHaveAttribute("href", "/find-trials?treatment=Metformin");
+    expect(screen.getByRole("link", { name: "Metformin" })).toHaveAttribute("href", "/find-trials?treatment=Metformin#results");
     expect(search).not.toHaveBeenCalled();
   });
 
@@ -57,16 +58,22 @@ describe("find trials page", () => {
     await renderPage({ condition: "Asthma", location: "Boston", sex: "female", age: "child" });
 
     expect(search).toHaveBeenCalledWith(
-      { condition: "Asthma", treatment: undefined, location: "Boston", status: "recruiting", studyType: undefined, sex: "female", ageGroups: ["child"] },
+      {
+        condition: "Asthma", treatment: undefined, location: "Boston", near: undefined, status: "recruiting",
+        studyType: undefined, sex: "female", ageGroups: ["child"],
+      },
       { pageToken: undefined },
     );
+    expect(within(screen.getByRole("list", { name: "Search criteria" })).getAllByRole("listitem").map(item => item.textContent))
+      .toEqual(["Condition: Asthma", "Location: Boston", "Recruiting", "Open to women", "Open to ages: child"]);
+    expect(screen.getByRole("link", { name: "Change search" })).toHaveAttribute("href", "#trial-search");
     expect(screen.getByLabelText("Condition")).toHaveValue("Asthma");
     expect(screen.getByLabelText("Participant's sex")).toHaveValue("female");
     expect(screen.getByRole("checkbox", { name: "Child (0–17)" })).toBeChecked();
     expect(screen.getByRole("heading", { level: 2, name: "Results from ClinicalTrials.gov" })).toBeInTheDocument();
     expect(screen.getByText(/of 25 matching studies/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute(
-      "href", "/find-trials?condition=Asthma&location=Boston&sex=female&age=child&page=2&pageToken=Next2&total=25",
+      "href", "/find-trials?condition=Asthma&location=Boston&sex=female&age=child&page=2&pageToken=Next2&total=25#registry-trials",
     );
     expect(screen.getByRole("link", { name: /Clear search/ })).toHaveAttribute("href", "/find-trials");
   });
@@ -77,7 +84,7 @@ describe("find trials page", () => {
 
     expect(search).toHaveBeenCalledWith(expect.objectContaining({ treatment: "Montelukast" }), { pageToken: "Next2" });
     expect(screen.getByText("Page 2 of 3")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /First page/ })).toHaveAttribute("href", "/find-trials?treatment=Montelukast");
+    expect(screen.getByRole("link", { name: /First page/ })).toHaveAttribute("href", "/find-trials?treatment=Montelukast#registry-trials");
   });
 
   it("offers no next page when this page holds the last match, even with a registry cursor", async () => {
@@ -122,5 +129,48 @@ describe("RegistrySuggestInput", () => {
     expect(url.toString()).toBe("https://clinicaltrials.gov/api/int/suggest?input=Asth&dictionary=Condition");
     const options = [...container.querySelectorAll("datalist option")].map(option => option.getAttribute("value"));
     expect(options).toEqual(["Asthma", "Asthma (Diagnosis)"]);
+  });
+});
+
+describe("LocationField", () => {
+  const renderField = (defaultNear = "") =>
+    render(
+      <form aria-label="search">
+        <LocationField defaultLocation="" defaultNear={defaultNear} defaultDistance="50" maxLength={200} />
+      </form>,
+    );
+  const stubLocation = (getCurrentPosition: (ok: PositionCallback, fail: PositionErrorCallback) => void) =>
+    vi.stubGlobal("navigator", { ...navigator, geolocation: { getCurrentPosition } });
+
+  it("replaces the place field with the rounded browser location and a distance", async () => {
+    stubLocation(ok => ok({ coords: { latitude: 42.360123, longitude: -71.058912 } } as GeolocationPosition));
+    const user = userEvent.setup();
+    renderField();
+
+    await user.click(await screen.findByRole("button", { name: "Use my location" }));
+
+    const form = screen.getByRole("form", { name: "search" }) as HTMLFormElement;
+    expect(Object.fromEntries(new FormData(form))).toEqual({ near: "42.36,-71.06", distance: "50" });
+    expect(screen.getByLabelText("Distance from your location")).toHaveValue("50");
+
+    await user.click(screen.getByRole("button", { name: "Remove your location" }));
+    expect(Object.fromEntries(new FormData(form))).toEqual({ location: "" });
+  });
+
+  it("asks for a typed place when location access is blocked", async () => {
+    stubLocation((_ok, fail) => fail({ code: 1, PERMISSION_DENIED: 1 } as GeolocationPositionError));
+    const user = userEvent.setup();
+    renderField();
+
+    await user.click(await screen.findByRole("button", { name: "Use my location" }));
+
+    expect(screen.getByRole("status")).toHaveTextContent("Location access is blocked. Type a city");
+    expect(screen.getByLabelText("Location")).toBeInTheDocument();
+  });
+
+  it("offers no location button when the browser has no location service", () => {
+    vi.stubGlobal("navigator", { userAgent: "test" });
+    renderField();
+    expect(screen.queryByRole("button", { name: "Use my location" })).not.toBeInTheDocument();
   });
 });

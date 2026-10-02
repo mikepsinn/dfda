@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { MAX_SEARCH_TEXT_LENGTH, defaultTrialSearchForm, parseTrialSearch, trialSearchQuery } from "@/lib/trials/trial-search";
+import {
+  MAX_SEARCH_TEXT_LENGTH,
+  defaultTrialSearchForm,
+  describeTrialSearch,
+  parseNear,
+  parseTrialSearch,
+  trialSearchQuery,
+} from "@/lib/trials/trial-search";
 
 describe("parseTrialSearch", () => {
   it("shows the default form and searches nothing without a condition, treatment or location", () => {
@@ -21,6 +28,7 @@ describe("parseTrialSearch", () => {
       condition: "Asthma",
       treatment: undefined,
       location: "Boston, Massachusetts",
+      near: undefined,
       status: "not yet recruiting",
       studyType: "int",
       sex: "female",
@@ -49,5 +57,37 @@ describe("trialSearchQuery", () => {
     const query = trialSearchQuery(form);
     expect(query.toString()).toBe("condition=Asthma&status=all&sex=male&age=child&age=adult");
     expect(parseTrialSearch(Object.fromEntries([...new Set(query.keys())].map(key => [key, query.getAll(key)]))).form).toEqual(form);
+  });
+});
+
+describe("searching near the browser's location", () => {
+  it("rounds the point to about 1 km and rejects anything that is not a point on Earth", () => {
+    expect(parseNear("42.36012,-71.05891")).toEqual({ lat: 42.36, lng: -71.06 });
+    expect(parseNear(" 42.36, -71.06 ")).toEqual({ lat: 42.36, lng: -71.06 });
+    for (const value of ["", "42.36", "91,0", "0,181", "a,b", "42.36,-71.06,5"]) expect(parseNear(value)).toBeNull();
+  });
+
+  it("searches near the point instead of the typed place, and keeps the point and distance in links", () => {
+    const { form, search } = parseTrialSearch({ near: "42.3601,-71.0589", distance: "25", location: "Paris" });
+    expect(form).toMatchObject({ near: "42.36,-71.06", distance: "25", location: "" });
+    expect(search).toMatchObject({ near: { lat: 42.36, lng: -71.06, miles: 25 }, location: undefined });
+    expect(trialSearchQuery(form).toString()).toBe("near=42.36%2C-71.06&distance=25");
+    expect(parseTrialSearch({ near: "42.36,-71.06", distance: "7" }).form.distance).toBe("50");
+    expect(trialSearchQuery(parseTrialSearch({ near: "42.36,-71.06" }).form).toString()).toBe("near=42.36%2C-71.06");
+  });
+});
+
+describe("describeTrialSearch", () => {
+  it("names each part of the search in a short phrase", () => {
+    expect(describeTrialSearch(parseTrialSearch({ condition: "Asthma", location: "Boston" }).form)).toEqual([
+      "Condition: Asthma", "Location: Boston", "Recruiting",
+    ]);
+    const { form } = parseTrialSearch({
+      treatment: "Metformin", near: "42.36,-71.06", distance: "100", status: "all", type: "int", sex: "female", age: ["child", "older_adult"],
+    });
+    expect(describeTrialSearch(form)).toEqual([
+      "Treatment: Metformin", "Within 100 miles of your location", "Any status", "Interventional studies",
+      "Open to women", "Open to ages: child, older adult",
+    ]);
   });
 });

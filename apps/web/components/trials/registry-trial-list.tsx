@@ -50,7 +50,7 @@ export function RegistryTrialList({
   return (
     <section aria-labelledby="registry-trials" className="space-y-4">
       <div className="space-y-1">
-        <h2 id="registry-trials" className="text-2xl font-semibold">
+        <h2 id="registry-trials" className="scroll-mt-24 text-2xl font-semibold">
           {heading}
         </h2>
         <p className="text-sm text-muted-foreground">
@@ -212,14 +212,15 @@ function Pagination({
   query?: URLSearchParams
 }) {
   const totalPages = total === null ? null : Math.max(page, Math.ceil(total / REGISTRY_PAGE_SIZE))
-  const firstHref = query?.size ? `${basePath}?${query}` : basePath
+  // The links go to the list itself, below the sticky header, not to the top of the page.
+  const firstHref = `${query?.size ? `${basePath}?${query}` : basePath}#registry-trials`
   const nextQuery = new URLSearchParams(query)
   nextQuery.set("page", String(page + 1))
   nextQuery.set("pageToken", nextPageToken ?? "")
   if (total !== null) nextQuery.set("total", String(total))
   // The registry can return a cursor even when this page holds the last match.
   const hasNext = nextPageToken !== null && (total === null || page * REGISTRY_PAGE_SIZE < total)
-  const nextHref = hasNext ? `${basePath}?${nextQuery}` : null
+  const nextHref = hasNext ? `${basePath}?${nextQuery}#registry-trials` : null
 
   return (
     <nav aria-label="Result pages" className="flex items-center justify-between gap-4">
