@@ -24,7 +24,7 @@ export function TreatmentOutcomes({ treatment }: { treatment: TreatmentEstimate 
   return (
     <section aria-labelledby="outcome-estimates-heading">
       <h2 id="outcome-estimates-heading" className="mb-4 text-xl font-semibold">Benefits & side effects</h2>
-      <OutcomeLabel title={treatment.name} subtitle="Estimated outcome changes relative to the baselines shown."
+      <OutcomeLabel title={treatment.name} subtitle="Estimated changes with treatment. Each row's detail says what the change is compared with."
         data={treatmentOutcomeCategories(treatment)} showBars={false} className="max-w-none p-5 sm:p-6" />
     </section>
   );

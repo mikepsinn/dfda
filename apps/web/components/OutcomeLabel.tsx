@@ -56,9 +56,11 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer, classNam
 
     const percentage = item.value.percentage;
     const hasPercentage = percentage != null && Number.isFinite(percentage);
+    // Without a percentage, an absolute change (e.g. "-0.78 pg/mL compared with placebo") is the value itself.
+    const absoluteOnly = !hasPercentage && Boolean(item.value.absolute);
     const valueString = hasPercentage
       ? `${percentage > 0 && item.value.kind !== 'frequency' ? '+' : ''}${percentage}%`
-      : 'Not provided';
+      : absoluteOnly ? item.value.absolute : 'Not provided';
 
     return (
       <div key={item.name} className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
@@ -68,8 +70,8 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer, classNam
         </div>
         <div className="flex items-center sm:max-w-[48%] sm:text-right">
           <div className="text-sm">
-            <span className={cn("font-medium tabular-nums", hasPercentage ? textColorClass : "text-muted-foreground")}>{valueString}</span>
-            {item.value.absolute && <span className="ml-1 text-muted-foreground">({item.value.absolute})</span>}
+            <span className={cn("font-medium tabular-nums", hasPercentage || absoluteOnly ? textColorClass : "text-muted-foreground")}>{valueString}</span>
+            {item.value.absolute && !absoluteOnly && <span className="ml-1 text-muted-foreground">({item.value.absolute})</span>}
             {item.value.nnh != null && <span className="ml-1 text-muted-foreground">(NNH: {item.value.nnh})</span>}
           </div>
           {/* Simple visual bar, matching the example's style */}

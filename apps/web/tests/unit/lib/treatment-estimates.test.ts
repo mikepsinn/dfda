@@ -9,24 +9,66 @@ import {
 
 const sourceDirectory = resolve(process.cwd(), "data/optimitron/medical-data");
 const readSource = (path: string) => JSON.parse(readFileSync(resolve(sourceDirectory, path), "utf8"));
+const corrections = JSON.parse(readFileSync(resolve(process.cwd(), "data/optimitron/corrections.json"), "utf8"));
+const checkableUrl = /^https:\/\/(?!vertexaisearch\.cloud\.google\.com\/)[^\s]+$/;
+const outcomeLists = ["primaryOutcomes", "secondaryOutcomes", "sideEffects"] as const;
 
-describe("complete Optimitron medical snapshot", () => {
-  it("retains every source file byte for byte with a complete inventory", () => {
-    expect(medicalSnapshot.files).toHaveLength(221);
-    for (const file of medicalSnapshot.files) {
-      const bytes = readFileSync(resolve(sourceDirectory, file.path));
-      expect(bytes.length, file.path).toBe(file.bytes);
-      expect(createHash("sha256").update(bytes).digest("hex"), file.path).toBe(file.sha256);
-    }
+type Correction = {
+  kind: "correction" | "verification"; file: string; treatment: string; list: string | null;
+  item: string | null; field: string; to: unknown; sourceUrl: string;
+};
+
+function correctedValue(entry: Correction) {
+  const treatment = readSource(entry.file).treatments.find((t: { name: string }) => t.name === entry.treatment);
+  const owner = entry.list ? treatment?.[entry.list]?.find((i: { name: string }) => i.name === entry.item) : treatment;
+  expect(owner, `${entry.file} ${entry.treatment} ${entry.item ?? ""}`).toBeDefined();
+  return owner[entry.field];
+}
+
+describe("medical dataset fork", () => {
+  it("records its Optimitron origin and logs a correction for every edited file", () => {
+    const { forkedFrom } = medicalSnapshot;
+    expect(medicalSnapshot.status).toBe("fork");
+    expect(forkedFrom.commit).toMatch(/^[0-9a-f]{40}$/);
+    expect(forkedFrom.files).toHaveLength(221);
     expect(readdirSync(resolve(sourceDirectory, "treatments")).sort()).toEqual(
-      medicalSnapshot.files.filter(f => f.path.startsWith("treatments/"))
+      forkedFrom.files.filter(f => f.path.startsWith("treatments/"))
         .map(f => f.path.slice("treatments/".length)).sort(),
     );
+    const logged = new Set((corrections.entries as Correction[]).map(e => e.file));
+    for (const file of forkedFrom.files) {
+      const bytes = readFileSync(resolve(sourceDirectory, file.path));
+      if (createHash("sha256").update(bytes).digest("hex") !== file.sha256) {
+        expect(logged.has(file.path), `${file.path} changed without a corrections.json entry`).toBe(true);
+      }
+    }
     expect(readSource("treatments.json")).toHaveLength(969);
     expect(readSource("references.json").references).toHaveLength(536);
   });
 
-  it("loads all 216 conditions and 1,214 comparisons without losing any upstream field", async () => {
+  it("applies every logged correction and cites a checkable source", () => {
+    expect(corrections.entries.length).toBeGreaterThan(0);
+    for (const entry of corrections.entries as Correction[]) {
+      expect(entry.sourceUrl, `${entry.treatment} ${entry.item} ${entry.field}`).toMatch(checkableUrl);
+      expect(correctedValue(entry), `${entry.treatment} ${entry.item} ${entry.field}`).toEqual(entry.to);
+    }
+  });
+
+  it("requires a checkable source on every value marked as verified", () => {
+    for (const condition of conditionCatalog) {
+      for (const treatment of readSource(`treatments/${condition.slug}.json`).treatments) {
+        for (const list of outcomeLists) {
+          for (const item of treatment[list] ?? []) {
+            if (item.sourceUrl !== undefined || !["ai-estimated", "trial", null, undefined].includes(item.dataSource)) {
+              expect(item.sourceUrl, `${condition.slug} ${treatment.name} ${item.name}`).toMatch(checkableUrl);
+            }
+          }
+        }
+      }
+    }
+  });
+
+  it("loads all 216 conditions and 1,214 comparisons without losing any source field", async () => {
     expect(conditionCatalog).toHaveLength(216);
     const loaded = await Promise.all(conditionCatalog.map(c => getConditionEstimate(c.slug)));
     expect(loaded.flatMap(c => c!.treatments)).toHaveLength(1214);
@@ -40,7 +82,9 @@ describe("complete Optimitron medical snapshot", () => {
           /^\/outcome-labels\/demo\/[a-z0-9-]+\/[a-z0-9-]+$/,
         );
       });
-      expect(sourceHref(condition!)).toContain(`/blob/${medicalSnapshot.sourceCommit}/`);
+      expect(sourceHref(condition!)).toBe(
+        `https://github.com/mikepsinn/dfda/blob/master/apps/web/data/optimitron/medical-data/treatments/${condition!.slug}.json`,
+      );
     }
     const originals = readSource("conditions.json");
     for (const condition of conditionCatalog) {

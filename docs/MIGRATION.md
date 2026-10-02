@@ -180,7 +180,7 @@ datasets or the old trial-percentage aggregation algorithm wholesale.
 **What stays in optimitron**
 
 - `packages/tracking`, `packages/db` and `packages/data`, which optimitron.com and the other sites use. dfda doesn't depend on them; they aren't published.
-- The original shared medical dataset in `packages/data`, which optimitron's database seed also uses. dFDA takes a versioned copy of useful estimates and their available metadata, plus the condition list and ICD-10 codes, without deleting the shared source or depending on Optimitron's runtime database.
+- The original shared medical dataset in `packages/data`, which optimitron's database seed also uses. dFDA forked the dataset on 2026-10-02 (from commit `06ffef0`) and now corrects it here, logging each change with a source in `apps/web/data/optimitron/corrections.json`; optimitron keeps its original copy, and the two are expected to diverge. dFDA does not depend on Optimitron's runtime database.
 - The `DFDA_*` constants in the `packages/data` parameters. They are economic-model inputs used by several optimitron sites, not app code.
 - The site-kit "how it works" sections that other optimitron sites render. Their links keep pointing at dfda.earth.
 
@@ -380,7 +380,7 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
 | Automated personal and population time-series studies (historically ~15,800 published analyses; recount and reconcile at migration) | curedao-api analysis records and generated static site | Integrate eligible historical results as source-backed observational findings; preserve provenance and unknowns, then reproduce/improve calculations, charts and reports. Separate imported, reproduced and corrected versions; keep old links usable until continuity is tested. |
 | AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the health vocabulary. |
-| `apps/web` demo data | Existing Supabase seeds; complete source-pinned Optimitron medical directory under `apps/web/data/optimitron/` | Exact file copy and local edit protection are implemented. General-purpose database contracts/importer remain planned; preserve labels, source permissions and separation from live records. Do not clear the demo or patient tables. |
+| `apps/web` demo data | Existing Supabase seeds; complete source-pinned Optimitron medical directory under `apps/web/data/optimitron/` | Forked copy with a recorded origin, a sourced corrections log and tests that every edit is logged. General-purpose database contracts/importer remain planned; preserve labels, source permissions and separation from live records. Do not clear the demo or patient tables. |
 
 ## Order
 
@@ -402,8 +402,8 @@ Local progress, 2026-09-27: the complete Optimitron medical dataset now supplies
 1,214 treatment comparisons across all 216 conditions at `/treatment-rankings`,
 linking to dedicated demo Outcome Labels. All 221 original files are copied intact,
 including catalogs, references and previously omitted dose/cost/citation metadata.
-The thin runtime adapter, full-inventory tests and exact-copy/check script are
-implemented; see the [snapshot notes](../apps/web/data/optimitron/README.md).
+The thin runtime adapter, full-inventory tests and a read-only comparison script are
+implemented; see the [dataset notes](../apps/web/data/optimitron/README.md).
 The old three-condition projection is removed, not maintained alongside the source.
 This comes before the full importer and tracking backend. No database records
 were imported, and no clinical source validation or publication approval is claimed.
@@ -483,8 +483,8 @@ TypeScript checking pass. The existing lint command fails loading
 open tooling issue, not a passing lint result. Production compilation and static-page generation completed,
 but standalone packaging failed with Windows `EPERM` creating dependency symlinks;
 the full build is not passing. Fix the local packaging environment and re-run
-before claiming a release-ready build. The source snapshot matches its
-pinned upstream commit byte for byte across all 221 files. All 216 condition files
+before claiming a release-ready build. The dataset was forked from its
+upstream commit, whose 221 files are recorded in the manifest; edits since are logged in `corrections.json`. All 216 condition files
 were validated; selected UI, trial-search and tracking/MCP dependencies were spot-checked.
 Other external repositories and live deployments were not re-audited. Local generated directories under retired app/package names are
 not additional maintained applications and must not be deleted as part of this work.
