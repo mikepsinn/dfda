@@ -123,9 +123,9 @@ export const navigationTreeObject: GeneratedNavTree = {
     "emoji": "🔑"
   },
   "impact": {
-    "title": "Impact",
+    "title": "Impact of Pragmatic Trials",
     "href": "/impact",
-    "description": "See our impact.",
+    "description": "What universal pragmatic clinical trials could achieve.",
     "emoji": "📊"
   },
   "login": {
