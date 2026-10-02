@@ -1,7 +1,6 @@
 import { getGlobalConditionByIdAction } from "@/lib/actions/conditions"
 import { getTrialsByConditionAction } from "@/lib/actions/trials"
 import { getRecruitingRegistryTrials, isRegistryPageToken } from "@/lib/trials/registry-trials"
-import { env } from "@/lib/env"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -73,7 +72,7 @@ export default async function ConditionTrialsPage({
       {trials.length > 0 && (
         <section aria-labelledby="site-trials" className="space-y-4">
           <h2 id="site-trials" className="text-2xl font-semibold">
-            Trials on {env.NEXT_PUBLIC_SITE_NAME}
+            Trials on our network
           </h2>
           {trials.map((trial) => (
             <Card key={trial.id}>
@@ -104,7 +103,6 @@ export default async function ConditionTrialsPage({
       <RegistryTrialList
         condition={condition.name}
         result={registry}
-        siteName={env.NEXT_PUBLIC_SITE_NAME}
         page={page}
         total={total}
         basePath={`/conditions/${encodeURIComponent(conditionId)}/trials`}

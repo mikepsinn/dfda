@@ -17,8 +17,6 @@ import { ExpandableSummary } from "./expandable-summary"
 interface RegistryTrialListProps {
   condition: string
   result: RegistryTrialsResult
-  // The installation's configured name, which the disclaimer names as the operator.
-  siteName: string
   // 1-based number of the page shown, and the path that the page links go to.
   page: number
   basePath: string
@@ -28,7 +26,7 @@ interface RegistryTrialListProps {
 }
 
 // Recruiting studies registered on ClinicalTrials.gov, one page at a time. Each links to its registry record.
-export function RegistryTrialList({ condition, result, siteName, page, basePath, total }: RegistryTrialListProps) {
+export function RegistryTrialList({ condition, result, page, basePath, total }: RegistryTrialListProps) {
   return (
     <section aria-labelledby="registry-trials" className="space-y-4">
       <div className="space-y-1">
@@ -37,7 +35,7 @@ export function RegistryTrialList({ condition, result, siteName, page, basePath,
         </h2>
         <p className="text-sm text-muted-foreground">
           Studies registered on ClinicalTrials.gov, the U.S. National Library of Medicine&apos;s trial registry. A
-          listing is not a recommendation: {siteName} has not reviewed these studies.
+          listing is not a recommendation: we have not reviewed these studies.
         </p>
       </div>
 

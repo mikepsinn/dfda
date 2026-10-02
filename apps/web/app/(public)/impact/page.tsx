@@ -78,8 +78,8 @@ export default function ImpactPage() {
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">The Impact of Universal Pragmatic Trials</h1>
         <p className="max-w-3xl text-muted-foreground sm:text-lg">
           What if every patient could join a clinical trial as part of their normal care? This page shows what that
-          could achieve. It is the goal of the Open Treatment Evidence Network. The network is a prototype and has no
-          results of its own yet.
+          could achieve. This is what we are working toward. Our network is a prototype and has no results of its own
+          yet.
         </p>
       </header>
 
@@ -132,8 +132,8 @@ export default function ImpactPage() {
       <section aria-labelledby="goal-heading" className="space-y-4 rounded-2xl bg-muted p-6 text-center sm:p-8">
         <h2 id="goal-heading" className="text-2xl font-semibold tracking-tight">From goal to reality</h2>
         <p className="mx-auto max-w-2xl sm:text-lg">
-          RECOVERY showed what one pragmatic trial can do. The Open Treatment Evidence Network aims to make pragmatic
-          trials available to every patient, for every condition, and to publish every result.
+          RECOVERY showed what one pragmatic trial can do. We aim to make pragmatic trials available to every patient, for
+          every condition, and to publish every result.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <InternalLinkButton navKey="find_trials" variant="default" />
