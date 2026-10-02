@@ -1,5 +1,17 @@
-import { LineChart } from "lucide-react"
+import { Check, LineChart, Phone } from "lucide-react"
 import { HowItWorksStep } from "../HowItWorksStep"
+
+// Example memory-test scores (0–30 scale) for the last six weekly check-ins.
+const memoryScores = [26, 27, 27, 28, 27, 28]
+const sparklineWidth = 120
+const sparklineHeight = 32
+const sparklinePoints = memoryScores
+  .map((score, index) => {
+    const x = (index / (memoryScores.length - 1)) * sparklineWidth
+    const y = sparklineHeight - ((score - 24) / (30 - 24)) * sparklineHeight
+    return `${x.toFixed(1)},${y.toFixed(1)}`
+  })
+  .join(" ")
 
 export function Step5TrackData() {
   return (
@@ -17,43 +29,53 @@ export function Step5TrackData() {
       preview={
         <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
           <div className="space-y-4">
-            <div className="font-bold">Daily Tracking</div>
+            <div className="flex items-baseline justify-between gap-2">
+              <div className="font-bold">Daily Tracking</div>
+              <div className="text-xs text-muted-foreground">Week 6 · Today</div>
+            </div>
             <div className="space-y-3">
               <div className="rounded-lg border p-3 bg-card">
-                <div className="font-medium">Cognitive Function</div>
-                <div className="flex items-center gap-2 mt-2">
-                  <div className="text-sm">Today's score:</div>
-                  <input type="text" className="border rounded px-2 py-1 w-20 text-sm" placeholder="28" />
-                  <span className="text-sm text-muted-foreground">/ 30</span>
+                <div className="font-medium">Memory test</div>
+                <div className="mt-2 flex items-end justify-between gap-3">
+                  <div>
+                    <div className="text-2xl font-semibold tabular-nums text-primary">
+                      28<span className="text-sm font-normal text-muted-foreground"> / 30</span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">Steady over 6 weeks</div>
+                  </div>
+                  <svg
+                    role="img"
+                    aria-label={`Memory test scores over six weeks: ${memoryScores.join(", ")}`}
+                    viewBox={`-2 -2 ${sparklineWidth + 4} ${sparklineHeight + 4}`}
+                    className="h-8 w-28 shrink-0 text-primary"
+                  >
+                    <polyline points={sparklinePoints} fill="none" stroke="currentColor" strokeWidth="2.5"
+                      strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </div>
               </div>
               <div className="rounded-lg border p-3 bg-card">
-                <div className="font-medium">Medication Taken</div>
-                <div className="flex items-center gap-2 mt-2">
-                  <div className="h-5 w-5 rounded border flex items-center justify-center">
-                    <div className="h-3 w-3 bg-primary rounded-sm"></div>
-                  </div>
-                  <span className="text-sm">Morning dose</span>
+                <div className="font-medium">Doses</div>
+                <div className="mt-2 flex items-center gap-2 text-sm">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <Check aria-hidden="true" className="h-3 w-3" />
+                  </span>
+                  <span>Morning dose</span>
+                  <span className="ml-auto text-muted-foreground tabular-nums">Taken 8:02 AM</span>
                 </div>
-                <div className="flex items-center gap-2 mt-1">
-                  <div className="h-5 w-5 rounded border flex items-center justify-center">
-                    <div className="h-3 w-3 bg-primary rounded-sm"></div>
-                  </div>
-                  <span className="text-sm">Evening dose</span>
+                <div className="mt-1.5 flex items-center gap-2 text-sm">
+                  <span aria-hidden="true" className="h-5 w-5 rounded-full border" />
+                  <span>Evening dose</span>
+                  <span className="ml-auto text-muted-foreground tabular-nums">Due 8:00 PM</span>
                 </div>
               </div>
               <div className="rounded-lg border p-3 bg-card">
-                <div className="font-medium">Daily Activities</div>
-                <div className="flex items-center gap-2 mt-2">
-                  <div className="h-5 w-5 rounded border flex items-center justify-center">
-                    <div className="h-3 w-3 bg-primary rounded-sm"></div>
-                  </div>
-                  <span className="text-sm">Completed memory exercises</span>
+                <div className="font-medium">Check-in</div>
+                <div className="mt-2 flex items-center gap-2 text-sm">
+                  <Phone aria-hidden="true" className="h-4 w-4 text-primary" />
+                  <span>Answered by phone, no side effects</span>
                 </div>
-                <div className="flex items-center gap-2 mt-1">
-                  <div className="h-5 w-5 rounded border"></div>
-                  <span className="text-sm">Completed physical activity</span>
-                </div>
+                <div className="mt-1 text-xs text-muted-foreground">Next check-in tomorrow at 9:00 AM</div>
               </div>
             </div>
           </div>
@@ -63,4 +85,3 @@ export function Step5TrackData() {
     />
   )
 }
-
