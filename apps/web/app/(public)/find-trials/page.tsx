@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { FlaskConical } from "lucide-react"
 import { RegistryTrialList } from "@/components/trials/registry-trial-list"
 import { TrialSearchForm } from "@/components/trials/trial-search-form"
 import { getMetadataFromNavKey } from "@/lib/metadata"
@@ -32,13 +31,9 @@ export default async function FindTrialsPage({
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-4 rounded-2xl bg-gradient-to-br from-primary/5 to-muted/50 p-6 sm:p-8">
-        <p className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1 text-sm font-medium text-primary">
-          <FlaskConical aria-hidden="true" className="h-4 w-4" /> Clinical trials
-        </p>
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Find Clinical Trials</h1>
         <p className="max-w-2xl text-muted-foreground sm:text-lg">
-          Search the studies registered on ClinicalTrials.gov by condition, treatment and location. Then filter by who
-          can join.
+          Search for clinical trials by condition, treatment and location.
         </p>
       </header>
 
