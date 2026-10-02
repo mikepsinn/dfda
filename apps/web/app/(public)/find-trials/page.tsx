@@ -5,16 +5,16 @@ import { RegistryTrialList } from "@/components/trials/registry-trial-list"
 import { TrialSearchForm } from "@/components/trials/trial-search-form"
 import { getMetadataFromNavKey } from "@/lib/metadata"
 import { isRegistryPageToken, registryPagePosition, searchRegistryTrials } from "@/lib/trials/registry-trials"
-import { parseTrialSearch, trialSearchQuery } from "@/lib/trials/trial-search"
+import { describeTrialSearch, parseTrialSearch, trialSearchQuery } from "@/lib/trials/trial-search"
 
 export async function generateMetadata(): Promise<Metadata> {
   return getMetadataFromNavKey("find_trials")
 }
 
 const examples = [
-  { label: "Asthma", href: "/find-trials?condition=Asthma" },
-  { label: "Migraine trials in Germany", href: "/find-trials?condition=Migraine&location=Germany" },
-  { label: "Metformin", href: "/find-trials?treatment=Metformin" },
+  { label: "Asthma", href: "/find-trials?condition=Asthma#results" },
+  { label: "Migraine trials in Germany", href: "/find-trials?condition=Migraine&location=Germany#results" },
+  { label: "Metformin", href: "/find-trials?treatment=Metformin#results" },
 ]
 
 export default async function FindTrialsPage({
@@ -44,41 +44,55 @@ export default async function FindTrialsPage({
 
       <TrialSearchForm form={form} />
 
-      {error && (
-        <p role="alert" className="rounded-lg border border-destructive/50 bg-destructive/5 p-4 text-sm">
-          {error}
-        </p>
-      )}
+      {/* The form's action and the page links scroll here; the margin keeps it below the sticky header. */}
+      <div id="results" className="scroll-mt-24 space-y-8">
+        {error && (
+          <p role="alert" className="rounded-lg border border-destructive/50 bg-destructive/5 p-4 text-sm">
+            {error}
+          </p>
+        )}
 
-      {registry && position ? (
-        <RegistryTrialList
-          result={registry}
-          page={position.page}
-          total={position.total}
-          basePath="/find-trials"
-          query={trialSearchQuery(form)}
-          heading="Results from ClinicalTrials.gov"
-          countNoun="matching studies"
-          emptyText="ClinicalTrials.gov lists no studies that match this search. Try another spelling, fewer filters or a wider location."
-          registryLinkText="Search ClinicalTrials.gov directly"
-          failedLinkText="Search ClinicalTrials.gov directly"
-        />
-      ) : (
-        !error && (
-          <div className="space-y-3 rounded-xl border border-dashed p-6 text-sm text-muted-foreground">
-            <p>Enter a condition, a treatment or a location to see matching studies.</p>
-            <p className="flex flex-wrap items-center gap-2">
-              <span>Examples:</span>
-              {examples.map(example => (
-                <Link key={example.href} href={example.href}
-                  className="rounded-full bg-primary/10 px-3 py-1 font-medium text-primary hover:bg-primary/15">
-                  {example.label}
-                </Link>
-              ))}
-            </p>
-          </div>
-        )
-      )}
+        {registry && position ? (
+          <>
+            <div className="flex flex-wrap items-center gap-2 text-sm">
+              <span className="text-muted-foreground">Showing studies for:</span>
+              <ul aria-label="Search criteria" className="flex flex-wrap gap-2">
+                {describeTrialSearch(form).map(phrase => (
+                  <li key={phrase} className="rounded-full bg-primary/10 px-3 py-1 font-medium text-primary">{phrase}</li>
+                ))}
+              </ul>
+              <a href="#trial-search" className="font-medium text-primary underline-offset-4 hover:underline">Change search</a>
+            </div>
+            <RegistryTrialList
+              result={registry}
+              page={position.page}
+              total={position.total}
+              basePath="/find-trials"
+              query={trialSearchQuery(form)}
+              heading="Results from ClinicalTrials.gov"
+              countNoun="matching studies"
+              emptyText="ClinicalTrials.gov lists no studies that match this search. Try another spelling, fewer filters or a wider location."
+              registryLinkText="Search ClinicalTrials.gov directly"
+              failedLinkText="Search ClinicalTrials.gov directly"
+            />
+          </>
+        ) : (
+          !error && (
+            <div className="space-y-3 rounded-xl border border-dashed p-6 text-sm text-muted-foreground">
+              <p>Enter a condition, a treatment or a location to see matching studies.</p>
+              <p className="flex flex-wrap items-center gap-2">
+                <span>Examples:</span>
+                {examples.map(example => (
+                  <Link key={example.href} href={example.href}
+                    className="rounded-full bg-primary/10 px-3 py-1 font-medium text-primary hover:bg-primary/15">
+                    {example.label}
+                  </Link>
+                ))}
+              </p>
+            </div>
+          )
+        )}
+      </div>
     </div>
   )
 }

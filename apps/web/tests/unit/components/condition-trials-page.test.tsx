@@ -112,7 +112,7 @@ describe("condition trials page", () => {
 
     expect(screen.getByText("Page 1 of 46")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "First page" })).toBeDisabled();
-    expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute("href", `${basePath}?page=2&pageToken=NextToken2&total=458`);
+    expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute("href", `${basePath}?page=2&pageToken=NextToken2&total=458#registry-trials`);
     cleanup();
 
     // Later pages do not report a total, so the page link carries the first page's.
@@ -123,7 +123,7 @@ describe("condition trials page", () => {
     expect(getTrials).toHaveBeenCalledTimes(1);
     expect(screen.getByText("Showing 11–11 of 458 recruiting studies, most relevant first.")).toBeInTheDocument();
     expect(screen.getByText("Page 2 of 46")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "First page" })).toHaveAttribute("href", basePath);
+    expect(screen.getByRole("link", { name: "First page" })).toHaveAttribute("href", `${basePath}#registry-trials`);
     expect(screen.getByRole("button", { name: "Next" })).toBeDisabled();
   });
 
@@ -134,7 +134,7 @@ describe("condition trials page", () => {
 
     expect(screen.getByText("Showing 21–21 recruiting studies, most relevant first.")).toBeInTheDocument();
     expect(screen.getByText("Page 3")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute("href", `${basePath}?page=4&pageToken=NextToken2`);
+    expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute("href", `${basePath}?page=4&pageToken=NextToken2#registry-trials`);
     expect(screen.queryByText(/recruiting studies on/)).not.toBeInTheDocument();
   });
 

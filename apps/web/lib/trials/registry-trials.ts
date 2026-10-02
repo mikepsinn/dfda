@@ -71,6 +71,8 @@ export interface RegistrySearch {
   treatment?: string
   // Place names separated by commas, for example "Boston, Massachusetts" or a postal code.
   location?: string
+  // A point and a radius in miles; it replaces the place names.
+  near?: { lat: number; lng: number; miles: number }
   // One study status; none means any status.
   status?: RegistryStatus
   studyType?: "int" | "obs"
@@ -169,7 +171,10 @@ export function registryApiUrl(search: RegistrySearch, limit = REGISTRY_PAGE_SIZ
   const url = buildClinicalTrialsSearchUrl({
     condition: search.condition ? quoteSearchText(search.condition) : undefined,
     intervention: search.treatment ? quoteSearchText(search.treatment) : undefined,
-    locStr: search.location ? quoteLocationText(search.location) || undefined : undefined,
+    lat: search.near?.lat,
+    lng: search.near?.lng,
+    distance: search.near?.miles,
+    locStr: !search.near && search.location ? quoteLocationText(search.location) || undefined : undefined,
     studyStatus: search.status,
     studyType: search.studyType,
     ageGroups: search.ageGroups,

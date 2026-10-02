@@ -55,6 +55,7 @@ export function RegistrySuggestInput({
         maxLength={maxLength}
         list={listId}
         autoComplete="off"
+        enterKeyHint="search"
         className="h-11"
       />
       <datalist id={listId}>

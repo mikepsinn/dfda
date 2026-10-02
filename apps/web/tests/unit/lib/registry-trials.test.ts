@@ -193,6 +193,12 @@ describe("searchRegistryTrials", () => {
     expect(quoteLocationText(" , ")).toBe("");
   });
 
+  it("searches within a distance of a point instead of the place names", () => {
+    const url = registryApiUrl({ condition: "Asthma", location: "Paris", near: { lat: 42.36, lng: -71.06, miles: 25 } });
+    expect(url.searchParams.get("filter.geo")).toBe("distance(42.36,-71.06,25mi)");
+    expect(url.searchParams.has("query.locn")).toBe(false);
+  });
+
   it("keeps studies open to the participant's sex, including studies open to all sexes", () => {
     // AREA[Sex]FEMALE would keep only the studies limited to women.
     expect(registryApiUrl({ condition: "Asthma", sex: "female" }).searchParams.get("filter.advanced")).toBe("NOT AREA[Sex]MALE");

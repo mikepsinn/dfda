@@ -54,7 +54,7 @@ export default async function TreatmentPage({ params }: { params: Promise<{ glob
           <h1 className="text-3xl font-bold mb-2">{treatment.name}</h1>
           <p className="text-lg text-muted-foreground">{treatment.description}</p>
           <Button variant="outline" size="sm" asChild className="mt-4">
-            <Link href={`/find-trials?treatment=${encodeURIComponent(treatment.name)}`}>
+            <Link href={`/find-trials?treatment=${encodeURIComponent(treatment.name)}#results`}>
               <FlaskConical aria-hidden="true" className="mr-2 h-4 w-4" />
               Find trials testing {treatment.name}
             </Link>
