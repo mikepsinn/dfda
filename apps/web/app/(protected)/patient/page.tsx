@@ -10,7 +10,6 @@ import { getAllUserVariablesAction } from "@/lib/actions/user-variables";
 import { getMeasurementsForDateAction } from '@/lib/actions/measurements';
 import type { MeasurementCardData } from "@/components/measurement-card"; // ADD THIS
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables"; // Import necessary type
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { PatientConditionRow } from "@/lib/actions/conditions"; // Import necessary type
 import type { ReminderNotificationDetails } from "@/lib/database.types.custom"; // UPDATE to new name
 
