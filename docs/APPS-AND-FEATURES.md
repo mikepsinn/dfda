@@ -15,14 +15,15 @@ records the demo-first execution order and current verification results. History
 parked; current product quality is the priority.
 
 Implementation, 2026-09-27 (deployment not verified): `/treatment-rankings`
-and `/outcome-labels/demo/[conditionSlug]/[treatmentSlug]` display a pinned
-Optimitron snapshot: 1,214 comparisons across all 216 conditions. All 221 source
-files are copied intact, including the 969-entry treatment catalog, 536-entry
+and `/outcome-labels/demo/[conditionSlug]/[treatmentSlug]` display the medical
+dataset forked from Optimitron: 1,214 comparisons across all 216 conditions. All 221 source
+files were copied intact, including the 969-entry treatment catalog, 536-entry
 reference collection and all dose/cost/citation metadata. Sortable estimate scores, primary/secondary outcomes, side effects,
 origin labels, source links and external trial discovery are present. These are
-unverified AI estimates, not patient ratings or verified clinical results. The
-[snapshot notes](../apps/web/data/optimitron/README.md) describe provenance, exact-copy
-verification and remaining redistribution review. The former 19-comparison projection
+mostly unverified AI estimates, not patient ratings or verified clinical results; values
+corrected against primary sources are logged in `corrections.json`. The
+[dataset notes](../apps/web/data/optimitron/README.md) describe its origin, the correction
+process and remaining redistribution review. The former 19-comparison projection
 was replaced, not retained as a second dataset. Condition/synonym search, comparison
 cards, the existing landing-page Outcome Label renderer, annual cost breakdowns,
 expandable cost-effectiveness details and snapshot regimens now use the shared
@@ -192,7 +193,7 @@ for every planned package. See the [next implementation slice](MIGRATION.md#next
 
 | Product component | Features still to build | Intended location |
 | --- | --- | --- |
-| Demo data and agent curation | Complete Optimitron file snapshot and bounded trial-result snapshot present; common database importer, scoped MCP tools and admin batch review planned | Present `apps/web/data/optimitron/` and `apps/web/data/evidence/`; planned `apps/web/lib/evidence/import`, restricted jobs and thin CLI/MCP/admin adapters; shared record schemas remain in `packages/evidence` and their other designated owners |
+| Demo data and agent curation | Medical dataset forked from Optimitron (edited here) and bounded trial-result snapshot present; common database importer, scoped MCP tools and admin batch review planned | Present `apps/web/data/optimitron/` and `apps/web/data/evidence/`; planned `apps/web/lib/evidence/import`, restricted jobs and thin CLI/MCP/admin adapters; shared record schemas remain in `packages/evidence` and their other designated owners |
 | Legacy app and study parity | Tracking-to-study journey, predictor search, charts, imported/reproduced/corrected personal/population reports, and migration reconciliation | Existing patient/public routes and restricted app analysis jobs; shared `analysis` and `evidence` packages; [acceptance baseline](MIGRATION.md#what-comes-from-curedao-api) |
 | Community evidence | Permitted source adapters, source-linked extraction/review, separate scores, corrections and deletion propagation | `apps/web/lib/evidence`, existing worker and planned evidence/analysis packages |
 | Create/join studies | Personal tracking, observational protocols and interventional proposals; versioned review/consent/enrollment flow | `apps/web/lib/studies` extending current trial/enrollment actions and UI |

@@ -33,8 +33,8 @@ const outcome = z.object({
   isPositive: z.boolean().optional(),
 }).passthrough();
 
-// Validate fields consumed by this view. Other upstream fields remain intact;
-// source classifications do not make these estimates verified trial evidence.
+// Validate fields consumed by this view. Other source fields remain intact. Only values
+// with a checked sourceUrl (see data/optimitron/corrections.json) count as verified.
 export const sourceTreatmentSchema = z.object({
   name: z.string().min(1),
   effectiveness: score,
@@ -109,7 +109,7 @@ export const getConditionEstimate = cache(async (conditionSlug: string) => {
     ...condition,
     ...data,
     origin: "model-estimate" as const,
-    sourcePath: `${manifest.sourceRoot}/treatments/${conditionSlug}.json`,
+    sourcePath: `${manifest.root}/treatments/${conditionSlug}.json`,
     treatments: data.treatments.map(toView),
   };
 });
@@ -126,5 +126,5 @@ export function outcomeLabelHref(condition: string, treatment: string) {
 }
 
 export function sourceHref(condition: DemoCondition) {
-  return `https://github.com/${manifest.sourceRepository}/blob/${manifest.sourceCommit}/${condition.sourcePath}`;
+  return `https://github.com/${manifest.repository}/blob/${manifest.ref}/${condition.sourcePath}`;
 }

@@ -74,8 +74,11 @@ describe("treatment presentation", () => {
       { name: "No change", value: { percentage: 0 } },
       { name: "Increase", value: { percentage: 150 } },
       { name: "Frequency", value: { percentage: 10, kind: "frequency" } },
+      { name: "Absolute only", value: { percentage: null, absolute: "-0.78 pg/mL compared with placebo" } },
     ] }]} />);
     expect(screen.getByText("Not provided")).toBeInTheDocument();
+    expect(screen.getByText("-0.78 pg/mL compared with placebo")).toBeInTheDocument();
+    expect(screen.queryByText("(-0.78 pg/mL compared with placebo)")).not.toBeInTheDocument();
     expect(screen.getByText("0%")).toBeInTheDocument();
     expect(screen.getByText("+150%")).toBeInTheDocument();
     expect(screen.getByText("10%")).toBeInTheDocument();

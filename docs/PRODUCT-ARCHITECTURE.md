@@ -140,7 +140,7 @@ create empty packages just to match this table.
 | `apps/web/app` | Existing public, patient, provider, researcher, and admin routes; extend these instead of duplicating sites |
 | `apps/web/lib/evidence` | Source access adapters (including legacy study imports and approved Reddit ingestion), estimate generation/import and revision, analysis orchestration, review, persistence and publication; calls shared parsers/methods and renders approved result projections |
 | `apps/web/lib/evidence/import` | Planned shared validate/preview/apply/status service, manifest handling, batch audit/replay protection and publication-policy enforcement; CLI, MCP and admin/API clients call the same service |
-| `apps/web/data/optimitron` and `apps/web/data/evidence` | Complete source-pinned Optimitron medical files and a separate posted-trial snapshot are present. Explicit origins; only non-sensitive content cleared for redistribution before publication, not private patient records or restricted source payloads |
+| `apps/web/data/optimitron` and `apps/web/data/evidence` | Medical dataset forked from Optimitron (corrected here, with a sourced log) and a separate posted-trial snapshot are present. Explicit origins; only non-sensitive content cleared for redistribution before publication, not private patient records or restricted source payloads |
 | `apps/web/lib/studies` | Study wizard, eligibility, consent/enrollment state machine, protocol review and publication; reuse existing trial/enrollment actions and tables where appropriate |
 | `apps/web/lib/instance` | Validated branding/module configuration and operator administration |
 | `apps/web/lib/data-export` | Authorized personal export/import orchestration and transfer audit |

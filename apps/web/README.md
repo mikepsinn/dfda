@@ -40,11 +40,11 @@ targets, not a claim that this app already matches the legacy system.
 
 For data population, start with versioned JSON/JSONL demo packs and one validated
 importer, then expose the same service through scoped MCP tools and an admin review
-screen. The complete pinned Optimitron medical dataset now lives in `data/optimitron/` and powers
+screen. The medical dataset forked from Optimitron now lives in `data/optimitron/` and powers
 `/treatment-rankings` and `/outcome-labels/demo/...` without database or paid AI
 calls for all 216 conditions and 1,214 treatment comparisons. See
-[snapshot notes](data/optimitron/README.md) for the full file inventory, exact-copy checks and
-redistribution review. The general-purpose `lib/evidence/import` service remains
+[dataset notes](data/optimitron/README.md) for its origin, how to correct values with sources,
+and redistribution review. The general-purpose `lib/evidence/import` service remains
 planned. A separate [posted-trial snapshot](data/evidence/README.md) now adds
 one source-linked suvorexant/placebo comparison to the insomnia Outcome Label;
 its reported effect and interval do not alter the provisional scores. Keep private/restricted source data out of Git and keep
