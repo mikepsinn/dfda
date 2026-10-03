@@ -6,8 +6,9 @@ import { SearchModal } from "@/components/SearchModal";
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn() }) }));
 vi.mock("@/lib/actions/search", () => ({
   searchVariablesAction: vi.fn(async () => [
-    { id: "1", name: "Insomnia", href: "/conditions/1", category: "Global Variables", variableCategoryId: "health-and-physiology" },
-    { id: "2", name: "Melatonin", href: "/treatments/2", category: "My Variables", variableCategoryId: "intake-and-interventions" },
+    { id: "1", name: "Insomnia", href: "/conditions/1", category: "Global Variables", variableCategoryId: "health-and-physiology", kind: "condition" },
+    { id: "2", name: "Melatonin", href: "/treatments/2", category: "My Variables", variableCategoryId: "intake-and-interventions", kind: "treatment" },
+    { id: "4", name: "Blood Pressure", href: "/conditions/4", category: "Global Variables", variableCategoryId: "health-and-physiology" },
     { id: "3", name: "Walking", href: "/variables/3", category: "Global Variables", variableCategoryId: "activity-and-behavior" },
   ]),
 }));
@@ -27,11 +28,14 @@ afterAll(() => {
 describe("site search", () => {
   it("says what it searches and labels results in plain words", async () => {
     render(<SearchModal isOpen onClose={() => {}} user={null} />);
-    expect(screen.getByPlaceholderText("Search treatments and conditions...")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Search treatments, conditions and more...")).toBeInTheDocument();
     expect(await screen.findByText("Insomnia")).toBeInTheDocument();
     expect(screen.getByText("Condition")).toBeInTheDocument();
     expect(screen.getByText("Treatment · yours")).toBeInTheDocument();
     expect(screen.getByText("Activity and Behavior")).toBeInTheDocument();
+    // A vital sign is in the health category but is not a condition.
+    expect(screen.getByText("Blood Pressure").parentElement).toHaveTextContent("Health and Physiology");
+    expect(screen.getAllByText("Condition")).toHaveLength(1);
     expect(screen.queryByText(/variables/i)).not.toBeInTheDocument();
   });
 });

@@ -117,7 +117,7 @@ export function Header({ initialUser, initialProfile, siteName }: HeaderProps) {
             variant="ghost"
             size="icon"
             onClick={() => setIsSearchOpen(true)}
-            aria-label="Search treatments and conditions"
+            aria-label="Search treatments, conditions and more"
           >
             <MagnifyingGlassIcon className="h-5 w-5" />
           </Button>
