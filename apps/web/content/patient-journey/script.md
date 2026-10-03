@@ -224,7 +224,7 @@ reduced deaths by up to a third in hospitalized patients with severe breathing p
 NHS treatment recommendations within hours. NHS England estimates it saved about a million lives
 worldwide in the following nine months, 22,000 of them in the UK. It also cost a fraction of a
 conventional trial: about $500 per patient, against about $41,000 for a typical Phase III trial
-(War on Disease manual). Care-integrated clinical trials apply the same idea to everyday care, for
+(How to End War and Disease). Care-integrated clinical trials apply the same idea to everyday care, for
 every disease.
 
 **Video narration:** It doesn't have to be this way. In 2020, Britain built a clinical trial into
@@ -669,7 +669,7 @@ patients get compounds that passed Phase I but are not yet approved, and they re
 every treatment so the evidence builds. Source:
 https://manual.warondisease.org/knowledge/problem/untapped-therapeutic-frontier.html
 
-**Source line:** Source: War on Disease manual, The Untapped Therapeutic Frontier (FDA, GRAS,
+**Source line:** Source: How to End War and Disease, "The Untapped Therapeutic Frontier" (FDA, GRAS,
 ICD-10 and ClinicalTrials.gov data).
 
 ## B2. When every disease could have a first treatment
@@ -707,7 +707,7 @@ the impact paper states and tests this. Source:
 https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html
 
 **Source line:** Assumes 2% of willing patients join and discoveries rise with patients studied.
-Source: War on Disease manual, impact paper.
+Source: How to End War and Disease, impact paper.
 
 ## B3. Value for money
 
@@ -735,10 +735,10 @@ so the empty space is the point. Care-integrated trials at scale, meaning pragma
 into everyday care: about $9.50 per healthy year. The cost counts the full research cost of the
 trials, whoever pays: about 23.4 million patients a year at about $929 each, for the 36 years it
 takes to give every untreated disease a first treatment. The benefit is the healthy years gained
-because treatments arrive sooner (War on Disease manual, impact paper). Both costs and health are
+because treatments arrive sooner (How to End War and Disease, impact paper). Both costs and health are
 discounted at the standard 3% a year. If asked: with no discounting at all, it is about $1.39 per
 healthy year. The impact paper's headline of $0.84 discounts costs but not health, so we do not
-lead with it. Malaria bed nets: about $89 per healthy year (War on Disease manual parameter). That
+lead with it. Malaria bed nets: about $89 per healthy year (How to End War and Disease). That
 is about 9 times more than $9.50. A typical new drug: the usual U.S. limit is $100,000 to $150,000
 per quality-adjusted life year (Institute for Clinical and Economic Review). $100,000 divided by
 $9.50 is about 10,500, so over 10,000 times more. Even if only half of disease deaths can ever be
@@ -746,7 +746,7 @@ avoided (the manual's low estimate), the cost is still about $17.50 per healthy 
 https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html
 
 **Source line:** A year of healthy life = one year without early death or disability.
-Conservative: costs and health both discounted 3% a year. Sources: War on Disease manual, impact
+Conservative: costs and health both discounted 3% a year. Sources: How to End War and Disease, impact
 paper; ICER.
 
 ---
