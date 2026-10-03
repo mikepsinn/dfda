@@ -113,7 +113,7 @@ export const navigationTreeObject: GeneratedNavTree = {
   "find_trials": {
     "title": "Find Trials",
     "href": "/find-trials",
-    "description": "Search for clinical trials.",
+    "description": "Search clinical trials by condition, treatment and location.",
     "emoji": "🔍"
   },
   "forgot_password": {
@@ -123,9 +123,9 @@ export const navigationTreeObject: GeneratedNavTree = {
     "emoji": "🔑"
   },
   "impact": {
-    "title": "Impact",
+    "title": "Impact of Pragmatic Trials",
     "href": "/impact",
-    "description": "See our impact.",
+    "description": "What universal pragmatic clinical trials could achieve.",
     "emoji": "📊"
   },
   "login": {
