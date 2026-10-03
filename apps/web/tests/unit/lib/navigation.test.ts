@@ -9,9 +9,8 @@ describe("phone menu", () => {
     expect(new Set(hrefs).size).toBe(hrefs.length);
     expect(new Set(titles).size).toBe(titles.length);
     expect(items.slice(0, loggedOutPrimaryNavItems.length)).toEqual(loggedOutPrimaryNavItems);
-    // Every secondary page is still reachable, unless a primary link already covers it.
-    for (const item of secondaryNavItems) {
-      expect(items.some(shown => shown.href === item.href || shown.title === item.title), item.title).toBe(true);
-    }
+    // Every secondary page is still reachable, including the Providers page.
+    for (const item of secondaryNavItems) expect(hrefs, item.title).toContain(item.href);
+    expect(hrefs).toContain("/providers");
   });
 });
