@@ -15,6 +15,7 @@ export interface OutcomeItem {
   baseline?: string; // e.g., "(baseline: 160 mg/dL)"
   value: OutcomeValue;
   isPositive?: boolean; // Green if true, Red if false, Amber if undefined (for side effects)
+  source?: { label: string; href: string }; // Set when the value is taken from a cited source, not estimated
 }
 
 export interface OutcomeCategory {
@@ -56,20 +57,30 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer, classNam
 
     const percentage = item.value.percentage;
     const hasPercentage = percentage != null && Number.isFinite(percentage);
+    // Without a percentage, an absolute change (e.g. "-0.78 pg/mL compared with placebo") is the value itself.
+    const absoluteOnly = !hasPercentage && Boolean(item.value.absolute);
     const valueString = hasPercentage
       ? `${percentage > 0 && item.value.kind !== 'frequency' ? '+' : ''}${percentage}%`
-      : 'Not provided';
+      : absoluteOnly ? item.value.absolute : 'Not provided';
 
     return (
       <div key={item.name} className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
         <div className="min-w-0">
           <span className="text-sm">{item.name}</span>
           {item.baseline && <span className="mt-1 block text-xs text-muted-foreground">{item.baseline}</span>}
+          {item.source && (
+            <span className="mt-1 block text-xs">
+              <a href={item.source.href} target="_blank" rel="noopener noreferrer"
+                className="font-medium text-primary underline-offset-2 hover:underline">
+                Source: {item.source.label}<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </span>
+          )}
         </div>
         <div className="flex items-center sm:max-w-[48%] sm:text-right">
           <div className="text-sm">
-            <span className={cn("font-medium tabular-nums", hasPercentage ? textColorClass : "text-muted-foreground")}>{valueString}</span>
-            {item.value.absolute && <span className="ml-1 text-muted-foreground">({item.value.absolute})</span>}
+            <span className={cn("font-medium tabular-nums", hasPercentage || absoluteOnly ? textColorClass : "text-muted-foreground")}>{valueString}</span>
+            {item.value.absolute && !absoluteOnly && <span className="ml-1 text-muted-foreground">({item.value.absolute})</span>}
             {item.value.nnh != null && <span className="ml-1 text-muted-foreground">(NNH: {item.value.nnh})</span>}
           </div>
           {/* Simple visual bar, matching the example's style */}

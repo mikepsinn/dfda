@@ -1,2 +1,2 @@
-# Preserve the checksummed upstream files exactly on Windows and other hosts.
+# Keep the dataset's line endings stable on every host so diffs stay readable.
 medical-data/** -text

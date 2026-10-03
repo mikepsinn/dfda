@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { EstimateNotice } from "@/components/demo/estimate-notice";
 import { TrialResult } from "@/components/demo/trial-result";
 import { TreatmentScores } from "@/components/demo/treatment-scores";
-import { TreatmentOutcomes } from "@/components/demo/treatment-outcomes";
+import { TreatmentOutcomes, hasCitedValues } from "@/components/demo/treatment-outcomes";
 import { HealthEconomics } from "@/components/demo/health-economics";
 import { getTrialComparisons } from "@/lib/evidence/trial-comparisons";
 import { getConditionEstimate } from "@/lib/demo/treatment-estimates";
@@ -53,7 +53,7 @@ export default async function DemoOutcomeLabel({ params }: Props) {
           </Button>}
         </div>
       </header>
-      <EstimateNotice />
+      <EstimateNotice cited={hasCitedValues(treatment)} />
       <Card>
         <CardContent className="space-y-4 p-5 sm:p-6">
           <TreatmentScores effectiveness={treatment.effectiveness} safetyScore={treatment.safetyScore} />

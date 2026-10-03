@@ -282,35 +282,39 @@
       "primaryOutcomes": [
         {
           "absoluteChange": "-0.45 points (less increase compared to placebo's change from baseline)",
-          "baseline": "3.2 points (CDR-SB 0-18 scale)",
-          "dataSource": "ai-estimated",
+          "baseline": "3.17 points (CDR-SB 0-18 scale)",
+          "dataSource": "fda-label",
           "isPositive": true,
           "name": "Clinical Dementia Rating-Sum of Boxes (CDR-SB)",
-          "percentageChange": 27
+          "percentageChange": 27,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         },
         {
           "absoluteChange": "-1.44 points (less increase compared to placebo's change from baseline)",
-          "baseline": "27.0 points (ADAS-Cog 0-90 scale)",
-          "dataSource": "ai-estimated",
+          "baseline": "24.45 points (ADAS-Cog14 0-90 scale)",
+          "dataSource": "fda-label",
           "isPositive": true,
           "name": "Alzheimer's Disease Assessment Scale-Cognitive Subscale 14 (ADAS-Cog14)",
-          "percentageChange": 26
+          "percentageChange": 26,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         },
         {
           "absoluteChange": "+2.0 points (less decrease compared to placebo's change from baseline)",
-          "baseline": "78.0 points (ADCS-MCI-ADL 0-87 scale)",
-          "dataSource": "ai-estimated",
+          "baseline": "41.2 points (ADCS-MCI-ADL 0-53 scale)",
+          "dataSource": "fda-label",
           "isPositive": true,
           "name": "Alzheimer's Disease Cooperative Study-Activities of Daily Living (ADCS-MCI-ADL)",
-          "percentageChange": 37
+          "percentageChange": 37,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         },
         {
-          "absoluteChange": "-55.5 Centiloids",
-          "baseline": "79.0 Centiloids",
-          "dataSource": "ai-estimated",
+          "absoluteChange": "-59.1 Centiloids compared with placebo",
+          "baseline": null,
+          "dataSource": "publication",
           "isPositive": true,
           "name": "Brain Amyloid Plaque (PET Centiloids)",
-          "percentageChange": -70.3
+          "percentageChange": null,
+          "sourceUrl": "https://doi.org/10.1056/NEJMoa2212948"
         }
       ],
       "remissionRate": null,
@@ -326,38 +330,48 @@
           "percentageChange": -20.6
         },
         {
-          "absoluteChange": "+0.006",
-          "baseline": "0.09",
-          "dataSource": "ai-estimated",
+          "absoluteChange": "+0.007 compared with placebo",
+          "baseline": "0.088",
+          "dataSource": "fda-label",
           "isPositive": true,
-          "name": "CSF Aβ42/40 ratio",
-          "percentageChange": 6.6
+          "name": "Plasma Aβ42/40 ratio",
+          "percentageChange": null,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         },
         {
-          "absoluteChange": "-2.8 pg/mL",
-          "baseline": "20.0 pg/mL",
-          "dataSource": "ai-estimated",
+          "absoluteChange": "-0.78 pg/mL compared with placebo",
+          "baseline": "3.70 pg/mL",
+          "dataSource": "fda-label",
           "isPositive": true,
           "name": "Plasma p-tau181",
-          "percentageChange": -14
+          "percentageChange": null,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         }
       ],
       "sideEffects": [
         {
+          "dataSource": "fda-label",
           "name": "Infusion-related reactions",
-          "percentage": 26
+          "percentage": 26,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         },
         {
+          "dataSource": "fda-label",
           "name": "ARIA-E (edema)",
-          "percentage": 13
+          "percentage": 13,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         },
         {
+          "dataSource": "fda-label",
           "name": "ARIA-H (hemorrhage)",
-          "percentage": 17
+          "percentage": 17,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         },
         {
+          "dataSource": "fda-label",
           "name": "Headache",
-          "percentage": 13
+          "percentage": 11,
+          "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf"
         }
       ],
       "timeToEffect": "6-12 months",
