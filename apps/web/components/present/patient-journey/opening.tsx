@@ -12,8 +12,9 @@ export function TitleSlide({ s }: Props) {
     <SlideFrame s={s} tone="dark" header={false}>
       <PatientPath className="mx-auto mt-8" />
       <div className="absolute bottom-[40px] left-0 max-w-[1500px]">
-        <Eyebrow dark>{s.eyebrow}</Eyebrow>
-        <h2 className="mt-6 text-[96px] font-bold leading-[1.04] tracking-tight">{s.title}</h2>
+        {/* The initiative's name: second only to the headline. */}
+        <Eyebrow dark className="text-[44px] font-bold tracking-[0.06em]">{s.eyebrow}</Eyebrow>
+        <h2 className="mt-8 text-[96px] font-bold leading-[1.04] tracking-tight">{s.title}</h2>
         <p className="mt-8 max-w-[1350px] text-[36px] leading-snug text-muted-foreground">{s.subtitle}</p>
       </div>
     </SlideFrame>
@@ -36,7 +37,7 @@ export function MargaretSlide({ s }: Props) {
           </p>
         </Card>
         <div className="flex flex-col gap-10">
-          <Card className="flex-1 p-12">
+          <Card className="flex-1 px-12 py-10">
             <div className="flex items-center gap-5">
               <IconBadge icon={Lock} size={64} />
               <Eyebrow>Today</Eyebrow>
@@ -47,7 +48,7 @@ export function MargaretSlide({ s }: Props) {
               573, and if she takes one, nobody records what happens.
             </p>
           </Card>
-          <Card className="flex-1 border-primary/30 bg-primary/10 p-12">
+          <Card className="flex-1 border-primary/30 bg-primary/10 px-12 py-10">
             <div className="flex items-center gap-5">
               <IconBadge icon={Sparkles} size={64} tone="solid" />
               <Eyebrow>With care-integrated trials</Eyebrow>
