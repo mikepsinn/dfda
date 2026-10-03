@@ -39,8 +39,11 @@ if (mode === "--check") {
   console.log(`Added here since the fork: ${addedHere.length ? addedHere.join(", ") : "none"}`);
   if (upstreamRef) {
     const later = upstreamFiles(upstreamRef);
-    const changedUpstream = [...later].filter(([path, hash]) => files.find(f => f.path === path)?.sha256 !== hash)
-      .map(([path]) => path);
+    const forked = new Map(files.map(f => [f.path, f.sha256]));
+    // Compare every path in either tree, so files deleted or added upstream are reported too.
+    const changedUpstream = [...new Set([...forked.keys(), ...later.keys()])].sort()
+      .filter(path => forked.get(path) !== later.get(path))
+      .map(path => !later.has(path) ? `${path} (deleted)` : !forked.has(path) ? `${path} (added)` : path);
     console.log(`Changed in Optimitron between the fork and ${upstreamRef}: ${changedUpstream.join(", ") || "none"}`);
     console.log("Review upstream changes by hand; nothing is copied automatically.");
   }

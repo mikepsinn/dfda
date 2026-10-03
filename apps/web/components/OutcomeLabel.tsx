@@ -15,6 +15,7 @@ export interface OutcomeItem {
   baseline?: string; // e.g., "(baseline: 160 mg/dL)"
   value: OutcomeValue;
   isPositive?: boolean; // Green if true, Red if false, Amber if undefined (for side effects)
+  source?: { label: string; href: string }; // Set when the value is taken from a cited source, not estimated
 }
 
 export interface OutcomeCategory {
@@ -67,6 +68,14 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer, classNam
         <div className="min-w-0">
           <span className="text-sm">{item.name}</span>
           {item.baseline && <span className="mt-1 block text-xs text-muted-foreground">{item.baseline}</span>}
+          {item.source && (
+            <span className="mt-1 block text-xs">
+              <a href={item.source.href} target="_blank" rel="noopener noreferrer"
+                className="font-medium text-primary underline-offset-2 hover:underline">
+                Source: {item.source.label}<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </span>
+          )}
         </div>
         <div className="flex items-center sm:max-w-[48%] sm:text-right">
           <div className="text-sm">

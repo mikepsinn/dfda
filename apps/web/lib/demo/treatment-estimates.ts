@@ -30,6 +30,7 @@ const outcome = z.object({
   percentageChange: z.number().finite().nullish(),
   absoluteChange: z.string().nullish(),
   dataSource: z.string().nullish(),
+  sourceUrl: z.string().nullish(),
   isPositive: z.boolean().optional(),
 }).passthrough();
 
@@ -47,6 +48,7 @@ export const sourceTreatmentSchema = z.object({
   secondaryOutcomes: z.array(outcome).optional(),
   sideEffects: z.array(z.object({
     name: z.string().min(1), percentage: score.nullish(),
+    dataSource: z.string().nullish(), sourceUrl: z.string().nullish(),
   }).passthrough()).optional(),
 }).passthrough();
 
@@ -80,6 +82,19 @@ if (conditionBySlug.size !== conditionCatalog.length || available.size !== condi
 
 export const medicalSnapshot = { ...manifest, origin: manifest.displayOrigin };
 export const estimateLabel = "Current best estimates";
+
+// A public link someone can check, not an AI search redirect.
+export const checkableSourceUrl = /^https:\/\/(?!vertexaisearch\.cloud\.google\.com\/)[^\s]+$/;
+const sourceNames: Record<string, string> = { "fda-label": "FDA label", publication: "Published study" };
+
+// The cited source of a value taken from one (see data/optimitron/corrections.json); null for
+// an estimate.
+export function citedSource(item: { dataSource?: string | null; sourceUrl?: string | null }) {
+  if (!item.sourceUrl || !checkableSourceUrl.test(item.sourceUrl) || item.dataSource === "ai-estimated") {
+    return null;
+  }
+  return { label: sourceNames[item.dataSource ?? ""] ?? "Source", href: item.sourceUrl };
+}
 
 // Matches Optimitron's medicalNameToSlug convention (including apostrophes).
 export function treatmentSlug(name: string) {

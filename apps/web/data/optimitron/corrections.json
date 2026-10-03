@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "description": "Every value changed or verified in this fork since it was copied from Optimitron. Each entry names a checkable source.",
+  "description": "Every value changed or verified in this fork since it was copied from Optimitron. Each entry names a checkable source. Items are named as they are now. An entry without \"from\" added the field, and one without \"to\" removed it. Undoing every entry, newest first, gives back the forked file exactly; tests/unit/lib/treatment-estimates.test.ts checks this.",
   "entries": [
     {
       "date": "2026-10-02",
@@ -34,6 +34,31 @@
       "file": "treatments/alzheimers-disease.json",
       "treatment": "Lecanemab",
       "list": "primaryOutcomes",
+      "item": "Clinical Dementia Rating-Sum of Boxes (CDR-SB)",
+      "field": "dataSource",
+      "from": "ai-estimated",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "primaryOutcomes",
+      "item": "Clinical Dementia Rating-Sum of Boxes (CDR-SB)",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "primaryOutcomes",
       "item": "Alzheimer's Disease Assessment Scale-Cognitive Subscale 14 (ADAS-Cog14)",
       "field": "baseline",
       "from": "27.0 points (ADAS-Cog 0-90 scale)",
@@ -60,6 +85,31 @@
       "file": "treatments/alzheimers-disease.json",
       "treatment": "Lecanemab",
       "list": "primaryOutcomes",
+      "item": "Alzheimer's Disease Assessment Scale-Cognitive Subscale 14 (ADAS-Cog14)",
+      "field": "dataSource",
+      "from": "ai-estimated",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "primaryOutcomes",
+      "item": "Alzheimer's Disease Assessment Scale-Cognitive Subscale 14 (ADAS-Cog14)",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "primaryOutcomes",
       "item": "Alzheimer's Disease Cooperative Study-Activities of Daily Living (ADCS-MCI-ADL)",
       "field": "baseline",
       "from": "78.0 points (ADCS-MCI-ADL 0-87 scale)",
@@ -79,6 +129,31 @@
       "to": 37,
       "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
       "note": "FDA label (July 2023), Table 8, Study 2 (Clarity AD), lecanemab group. Difference from placebo 2.0 (37% less decline)."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "primaryOutcomes",
+      "item": "Alzheimer's Disease Cooperative Study-Activities of Daily Living (ADCS-MCI-ADL)",
+      "field": "dataSource",
+      "from": "ai-estimated",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "primaryOutcomes",
+      "item": "Alzheimer's Disease Cooperative Study-Activities of Daily Living (ADCS-MCI-ADL)",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
     },
     {
       "date": "2026-10-02",
@@ -118,6 +193,31 @@
       "to": null,
       "sourceUrl": "https://doi.org/10.1056/NEJMoa2212948",
       "note": "Derived from the unverified baseline and the within-group change; removed."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "primaryOutcomes",
+      "item": "Brain Amyloid Plaque (PET Centiloids)",
+      "field": "dataSource",
+      "from": "ai-estimated",
+      "to": "publication",
+      "sourceUrl": "https://doi.org/10.1056/NEJMoa2212948",
+      "note": "Marks the value as taken from the Clarity AD publication rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "primaryOutcomes",
+      "item": "Brain Amyloid Plaque (PET Centiloids)",
+      "field": "sourceUrl",
+      "to": "https://doi.org/10.1056/NEJMoa2212948",
+      "sourceUrl": "https://doi.org/10.1056/NEJMoa2212948",
+      "note": "Links the value to its source."
     },
     {
       "date": "2026-10-02",
@@ -177,6 +277,31 @@
       "file": "treatments/alzheimers-disease.json",
       "treatment": "Lecanemab",
       "list": "secondaryOutcomes",
+      "item": "Plasma Aβ42/40 ratio",
+      "field": "dataSource",
+      "from": "ai-estimated",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "secondaryOutcomes",
+      "item": "Plasma Aβ42/40 ratio",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "secondaryOutcomes",
       "item": "Plasma p-tau181",
       "field": "baseline",
       "from": "20.0 pg/mL",
@@ -212,6 +337,31 @@
     },
     {
       "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "secondaryOutcomes",
+      "item": "Plasma p-tau181",
+      "field": "dataSource",
+      "from": "ai-estimated",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "secondaryOutcomes",
+      "item": "Plasma p-tau181",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
+    },
+    {
+      "date": "2026-10-02",
       "kind": "verification",
       "file": "treatments/alzheimers-disease.json",
       "treatment": "Lecanemab",
@@ -225,6 +375,30 @@
     },
     {
       "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "sideEffects",
+      "item": "Infusion-related reactions",
+      "field": "dataSource",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "sideEffects",
+      "item": "Infusion-related reactions",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
+    },
+    {
+      "date": "2026-10-02",
       "kind": "verification",
       "file": "treatments/alzheimers-disease.json",
       "treatment": "Lecanemab",
@@ -235,6 +409,30 @@
       "to": 13,
       "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
       "note": "FDA label (July 2023), section 6.1 adverse reactions table, Study 2. 13% vs 2% placebo."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "sideEffects",
+      "item": "ARIA-E (edema)",
+      "field": "dataSource",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "sideEffects",
+      "item": "ARIA-E (edema)",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
     },
     {
       "date": "2026-10-02",
@@ -255,12 +453,60 @@
       "file": "treatments/alzheimers-disease.json",
       "treatment": "Lecanemab",
       "list": "sideEffects",
+      "item": "ARIA-H (hemorrhage)",
+      "field": "dataSource",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "sideEffects",
+      "item": "ARIA-H (hemorrhage)",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "sideEffects",
       "item": "Headache",
       "field": "percentage",
       "from": 13,
       "to": 11,
       "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
       "note": "FDA label (July 2023), section 6.1 adverse reactions table, Study 2. 11% vs 8% placebo."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "sideEffects",
+      "item": "Headache",
+      "field": "dataSource",
+      "to": "fda-label",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Marks the value as taken from the FDA label rather than estimated."
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "correction",
+      "file": "treatments/alzheimers-disease.json",
+      "treatment": "Lecanemab",
+      "list": "sideEffects",
+      "item": "Headache",
+      "field": "sourceUrl",
+      "to": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/761269Orig1s001lbl.pdf",
+      "note": "Links the value to its source."
     }
   ]
 }
