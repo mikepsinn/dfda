@@ -15,6 +15,8 @@ narration and captions, and no music.
 | `public/app/*.png` | Captures of the web app used as footage (`tools/capture-app-screens.mjs`) |
 | `timing/authored-words.json` | Word timings each scene was built against |
 | `tools/retime-to-narration.py` | Re-times scenes to new narration without rebuilding them |
+| `tools/use-local-gsap.py` | Points the generated HTML at the vendored GSAP instead of the CDN |
+| `assets/vendor/gsap.min.js` | GSAP 3.15.0, vendored so previews and renders work offline ([license](https://gsap.com/standard-license)) |
 | `user_script.txt` | The full narration, with sources for the scale figures |
 
 Rendered MP4s, snapshots, voice samples and generated audio are not committed
@@ -42,6 +44,7 @@ node "$PR/skills/hyperframes/scripts/plugin-cli.mjs" --script "$PR/skills/facele
   --storyboard ./STORYBOARD.md --hyperframes .
 node "$PR/skills/hyperframes/scripts/plugin-cli.mjs" --script "$PR/skills/faceless-explainer/scripts/transitions.mjs" \
   inject --storyboard ./STORYBOARD.md --hyperframes .
+python tools/use-local-gsap.py  # the generators write a CDN <script> tag for GSAP
 node "$PR/skills/hyperframes/scripts/plugin-cli.mjs" check --timeout 60000
 node "$PR/skills/hyperframes/scripts/plugin-cli.mjs" render --quality high --output renders/video.mp4
 ```
@@ -49,6 +52,10 @@ node "$PR/skills/hyperframes/scripts/plugin-cli.mjs" render --quality high --out
 To swap in a recorded voice (for example your own reading of `SCRIPT.md`), produce one
 file per line with word timings in `audio_meta.json`, then run steps 2–3. Scenes whose
 spoken words changed must be rebuilt rather than re-timed.
+
+`python tools/retime-to-narration.py --check` and `python tools/use-local-gsap.py --check`
+change nothing, and exit 1 if a scene is out of sync with the narration or still loads GSAP
+from the network.
 
 ## Accuracy
 

@@ -10,6 +10,8 @@ the same words at the new pace. Scenes whose words changed must be rebuilt inste
 Usage (from the project root, after the audio step):
     python tools/retime-to-narration.py [--check]
 Then: audio.mjs sync-durations, assemble-index, transitions inject/verify, check, render.
+--check changes nothing and exits 1 if any scene is out of sync with audio_meta.json. It allows
+the up-to-a-second longer clip that transitions inject adds for a scene's outgoing transition.
 """
 import json
 import re
@@ -18,6 +20,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MIN_GAP = 0.5  # seconds between anchors in the new narration
+MAX_TRANSITION = 1.0  # seconds transitions inject may add to a scene's clip
+DURATION = re.compile(r'data-duration="([0-9.]+)"')
 BLOCK = re.compile(r"\n  <script>\n    // retime-to-new-voice:.*?</script>\n", re.S)
 check_only = "--check" in sys.argv[1:]
 
@@ -90,9 +94,10 @@ for frame_id, scene in authored.items():
         problems.append(f"{frame_id}: the spoken words changed; rebuild this scene instead")
         continue
     path = ROOT / "compositions/frames" / f"{frame_id}.html"
-    html = BLOCK.sub("\n", path.read_text(encoding="utf8"))
+    original = path.read_text(encoding="utf8")
+    html = BLOCK.sub("", original)
     duration = voice["duration_s"]
-    durations = set(re.findall(r'data-duration="([0-9.]+)"', html))
+    durations = set(DURATION.findall(html))
     if len(durations) != 1:
         problems.append(f"{frame_id}: expected one full-length clip duration, found {sorted(durations)}")
         continue
@@ -104,7 +109,13 @@ for frame_id, scene in authored.items():
         html = html[:idx] + wrapper(frame_id, anchors, duration) + html[idx:]
     state = "unchanged timing" if same else f"re-timed with {len(anchors)} anchors"
     if check_only:
-        print(f"{frame_id}: would be {state}")
+        clip = float(DURATION.findall(original)[0])
+        in_sync = DURATION.sub("", html) == DURATION.sub("", original) \
+            and duration <= clip <= duration + MAX_TRANSITION
+        if in_sync:
+            print(f"{frame_id}: in sync ({state})")
+        else:
+            problems.append(f"{frame_id}: out of sync with audio_meta.json; run without --check")
     else:
         path.write_text(html, encoding="utf8")
         print(f"{frame_id}: {state}, {duration}s")
