@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 // The site header, page container and footer, left out on full-screen presentations (/present).
 export function SiteChrome({ header, footer, children }: { header: ReactNode; footer: ReactNode; children: ReactNode }) {
   const pathname = usePathname()
-  if (pathname?.startsWith("/present/")) return <>{children}</>
+  if (pathname?.startsWith("/present/")) return <main>{children}</main>
   return (
     <div className="min-h-screen flex flex-col">
       {header}
