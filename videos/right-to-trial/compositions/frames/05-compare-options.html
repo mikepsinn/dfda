@@ -1,0 +1,733 @@
+<template>
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+  #root {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    container-type: size;
+    font-family: "Inter", sans-serif;
+    color: #0F172A;
+  }
+
+  /* full-bleed cream ground (its own clip, lowest track) */
+  #f05-ground {
+    position: absolute;
+    inset: 0;
+    background: #F8F6F1;
+  }
+  #f05-stage {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* ---------- slide header: mini path + eyebrow, short headline (top-left) ---------- */
+  #f05-eyebrow {
+    position: absolute;
+    left: 96px;
+    top: 70px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  #f05-minipath {
+    display: block;
+    width: 176px;
+    height: 32px;
+    overflow: visible;
+  }
+  #f05-eyebrow-text {
+    font-size: 1.05cqw;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #694CFA;
+    white-space: nowrap;
+  }
+  #f05-headline {
+    position: absolute;
+    left: 96px;
+    top: 114px;
+    margin: 0;
+    font-size: 2cqw;
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  .f05-word {
+    display: inline-block;
+  }
+
+  /* ---------- outcome-label anatomy list (left column, builds with the tour) ---------- */
+  #f05-list {
+    position: absolute;
+    left: 96px;
+    top: 372px;
+    width: 344px;
+    height: 320px;
+  }
+  #f05-list-pill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 18px 8px 14px;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.08);
+    color: #694CFA;
+    font-size: 0.95cqw;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  #f05-list-pill svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  #f05-rows {
+    position: absolute;
+    left: 0;
+    top: 68px;
+    width: 344px;
+    height: 248px;
+  }
+  .f05-row {
+    position: absolute;
+    left: 0;
+    width: 344px;
+    height: 44px;
+  }
+  .f05-row-dot {
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #694CFA;
+  }
+  .f05-row-text {
+    position: absolute;
+    left: 36px;
+    top: 0;
+    font-size: 1.7cqw;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -0.01em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  .f05-link {
+    position: absolute;
+    left: 7px;
+    width: 2px;
+    height: 44px;
+    border-radius: 2px;
+    background: rgba(105, 76, 250, 0.3);
+    transform-origin: 50% 0%;
+  }
+  #f05-list-halo {
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid rgba(105, 76, 250, 0.35);
+  }
+
+  /* ---------- floating browser window (foreground subject) ---------- */
+  #f05-window {
+    position: absolute;
+    left: 488px;
+    top: 180px;
+    width: 1360px;
+    height: 692px;
+    box-sizing: border-box;
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    border-radius: 14px;
+    background: #FFFFFF;
+    overflow: hidden;
+  }
+  #f05-titlebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1357px;
+    height: 52px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(105, 76, 250, 0.16);
+    background: #F9F8FF;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 92px;
+  }
+  #f05-lights {
+    position: absolute;
+    left: 20px;
+    top: 19px;
+    height: 12px;
+    display: flex;
+    gap: 8px;
+  }
+  .f05-light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(105, 76, 250, 0.18);
+  }
+  #f05-url {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    height: 34px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background: #FFFFFF;
+    border: 1px solid rgba(105, 76, 250, 0.2);
+    color: #475569;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  #f05-url svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: #475569;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  #f05-proto {
+    position: absolute;
+    right: 14px;
+    top: 9px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px 0 13px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background: #FDF1E3;
+    border: 1.5px solid rgba(166, 78, 22, 0.35);
+    color: #A64E16;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  #f05-proto-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #A64E16;
+  }
+
+  /* clipped viewport: 1357 x 637 screen px; page captures ride a virtual camera inside it */
+  #f05-viewport {
+    position: absolute;
+    left: 0;
+    top: 52px;
+    width: 1357px;
+    height: 637px;
+    overflow: hidden;
+    background: #FFFFFF;
+  }
+  .f05-screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1357px;
+    height: 637px;
+  }
+  /* coordinate-target-zoom: outer scales about the viewport centre, inner counter-translates */
+  .f05-cam-outer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1357px;
+    height: 637px;
+    transform-origin: 50% 50%;
+  }
+  .f05-cam-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1357px;
+    height: 637px;
+  }
+  /* page box is laid out at the capture's native pixels (2x CSS) and only ever scaled DOWN,
+     so the screenshots stay crisp at every camera zoom (max total scale 0.85 of native) */
+  .f05-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2880px;
+    transform-origin: 0 0;
+    transform: scale(0.4711806);
+  }
+  #f05-page-a {
+    height: 4182px;
+  }
+  #f05-page-b {
+    height: 3748px;
+  }
+  .f05-shot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 2880px;
+  }
+  #f05-shot-a {
+    height: 4182px;
+  }
+  #f05-shot-b {
+    height: 3748px;
+  }
+  /* highlight rings (css-marker-patterns, rounded-rect outline) + hover states, in capture px */
+  .f05-ring {
+    position: absolute;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #694CFA;
+    background: rgba(105, 76, 250, 0.04);
+  }
+  .f05-hover {
+    position: absolute;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #694CFA;
+    background: rgba(105, 76, 250, 0.08);
+  }
+
+  /* cursor + click ripple live in viewport (screen) space, above both screens */
+  .f05-ripple {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 3px solid #694CFA;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #f05-cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 38px;
+    pointer-events: none;
+  }
+  #f05-cursor-art {
+    position: absolute;
+    left: -1.3px;
+    top: -1.3px;
+    width: 26px;
+    height: 38px;
+    transform-origin: 1.3px 1.3px;
+  }
+  #f05-cursor-art svg {
+    display: block;
+    width: 26px;
+    height: 38px;
+  }
+</style>
+
+<div id="root" data-composition-id="05-compare-options" data-width="1920" data-height="1080" data-start="0" data-duration="11.845">
+  <div id="f05-ground" class="clip" data-start="0" data-duration="11.845" data-track-index="0"></div>
+
+  <div id="f05-stage" class="clip" data-start="0" data-duration="11.845" data-track-index="1">
+
+    <div id="f05-eyebrow">
+      <svg id="f05-minipath" viewBox="0 0 176 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 22C23 22 23 10 36 10S49 22 62 22S75 10 88 10S101 22 114 22S127 10 140 10S153 22 166 22" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.6" stroke-dasharray="3 4" stroke-linecap="round" />
+        <circle cx="36" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="62" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="88" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="114" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="140" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="166" cy="22" r="5" fill="#F0A050" fill-opacity="0.3" />
+        <g id="f05-dot1">
+          <circle cx="10" cy="22" r="9" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <circle cx="10" cy="22" r="5.5" fill="#694CFA" />
+        </g>
+      </svg>
+      <div id="f05-eyebrow-text">Step 1 · Explore options</div>
+    </div>
+
+    <h3 id="f05-headline"><span class="f05-word">Compare</span> <span class="f05-word">every</span> <span class="f05-word">option</span></h3>
+
+    <div id="f05-list">
+      <div id="f05-list-pill">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="4" width="14" height="17" rx="2" />
+          <path d="M9 4V3h6v1" />
+          <path d="M8.5 10h7M8.5 14h7M8.5 18h4" />
+        </svg>
+        <span>Outcome label</span>
+      </div>
+      <div id="f05-rows">
+        <div id="f05-link-1" class="f05-link" style="top: 34px;"></div>
+        <div id="f05-link-2" class="f05-link" style="top: 102px;"></div>
+        <div id="f05-link-3" class="f05-link" style="top: 170px;"></div>
+        <div id="f05-list-halo"></div>
+        <div id="f05-row-1" class="f05-row" style="top: 0px;">
+          <div class="f05-row-dot"></div>
+          <div id="f05-row-1-text" class="f05-row-text">Benefits</div>
+        </div>
+        <div id="f05-row-2" class="f05-row" style="top: 68px;">
+          <div class="f05-row-dot"></div>
+          <div id="f05-row-2-text" class="f05-row-text">Side effects</div>
+        </div>
+        <div id="f05-row-3" class="f05-row" style="top: 136px;">
+          <div class="f05-row-dot"></div>
+          <div id="f05-row-3-text" class="f05-row-text">Cost</div>
+        </div>
+        <div id="f05-row-4" class="f05-row" style="top: 204px;">
+          <div class="f05-row-dot"></div>
+          <div id="f05-row-4-text" class="f05-row-text">Evidence</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="f05-window">
+      <div id="f05-titlebar">
+        <div id="f05-lights"><span class="f05-light"></span><span class="f05-light"></span><span class="f05-light"></span></div>
+        <div id="f05-url">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="11" width="14" height="10" rx="2" />
+            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+          </svg>
+          <span>Open Treatment Evidence Network</span>
+        </div>
+        <div id="f05-proto"><span id="f05-proto-dot"></span><span>Prototype · example estimates, not medical advice</span></div>
+      </div>
+
+      <div id="f05-viewport">
+        <div id="f05-screen-a" class="f05-screen" data-layout-allow-overflow>
+          <div id="f05-cam-a-outer" class="f05-cam-outer" data-layout-allow-overflow>
+            <div id="f05-cam-a-inner" class="f05-cam-inner" data-layout-allow-overflow>
+              <div id="f05-page-a" class="f05-page" data-layout-allow-overflow>
+                <img id="f05-shot-a" class="f05-shot" src="public/app/rankings-alzheimers.png" width="2880" height="4182" alt="Prototype treatment rankings for Alzheimer's Disease" />
+                <div id="f05-hover-select" class="f05-hover"></div>
+                <div id="f05-ring-pair" class="f05-ring"></div>
+                <div id="f05-hover-btn" class="f05-hover"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="f05-screen-b" class="f05-screen" data-layout-allow-overflow>
+          <div id="f05-cam-b-outer" class="f05-cam-outer" data-layout-allow-overflow>
+            <div id="f05-cam-b-inner" class="f05-cam-inner" data-layout-allow-overflow>
+              <div id="f05-page-b" class="f05-page" data-layout-allow-overflow>
+                <img id="f05-shot-b" class="f05-shot" src="public/app/label-lecanemab.png" width="2880" height="3748" alt="Prototype outcome label for Lecanemab" />
+                <div id="f05-ring-outcome" class="f05-ring"></div>
+                <div id="f05-ring-side" class="f05-ring"></div>
+                <div id="f05-ring-cost" class="f05-ring"></div>
+                <div id="f05-ring-banner" class="f05-ring"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="f05-ripple-1" class="f05-ripple"></div>
+        <div id="f05-ripple-2" class="f05-ripple"></div>
+
+        <div id="f05-cursor">
+          <div id="f05-cursor-art">
+            <svg viewBox="0 0 20 29.2" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L1 23.5L6.6 18.3L10.4 27.2L14.2 25.6L10.5 16.9L18 16.9Z" fill="#0F172A" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    // ---------- camera geometry (all page coordinates are CSS px of the 1440-wide captures) ----------
+    var VW = 1357; // clipped viewport width (screen px)
+    var VH = 637; // clipped viewport height (screen px)
+    var S0 = VW / 1440; // screen px per page CSS px at camera scale 1
+    var K0 = VW / 2880; // screen px per capture px (captures are 2x)
+    var CX = VW / 2;
+    var CY = VH / 2;
+
+    // coordinate-target-zoom (nested form): outer scale s about the viewport centre,
+    // inner translate T = centre - S0 * target  (independent of s)
+    function cam(cx, cy, s) {
+      return { cx: cx, cy: cy, s: s, x: CX - S0 * cx, y: CY - S0 * cy };
+    }
+    // where a page point lands in the viewport under a camera state
+    function view(px, py, c) {
+      return { x: CX + c.s * S0 * (px - c.cx), y: CY + c.s * S0 * (py - c.cy) };
+    }
+
+    var R0 = cam(720, CY / S0, 1); // rankings: top of page (identity)
+    var R1 = cam(720, 830, 1.2); // rankings: heading + Donanemab / Lecanemab cards
+    var L1 = cam(513, 1038, 1.8); // label: primary outcome estimates (+27 / +26 / +37%)
+    var L2 = cam(513, 1548, 1.8); // label: side-effect estimates
+    var L3 = cam(974, 901, 1.55); // label: cost card ($36,500)
+    var L4 = cam(720, 462, 1.15); // label: pull back to the "Current best estimates" banner
+
+    // ---------- place rings / hover states on the captures (capture px = 2 x CSS px) ----------
+    function place(id, b, strokeScreen, radiusScreen, s) {
+      var el = document.getElementById(id);
+      var z = K0 * s; // screen px per capture px while this mark is on screen
+      el.style.left = b[0] * 2 + "px";
+      el.style.top = b[1] * 2 + "px";
+      el.style.width = (b[2] - b[0]) * 2 + "px";
+      el.style.height = (b[3] - b[1]) * 2 + "px";
+      el.style.borderWidth = (strokeScreen / z).toFixed(2) + "px";
+      el.style.borderRadius = (radiusScreen / z).toFixed(2) + "px";
+    }
+    place("f05-hover-select", [229, 406, 750, 450], 2, 8, R0.s);
+    place("f05-hover-btn", [755, 963, 1207, 1003], 2, 8, R1.s);
+    place("f05-ring-pair", [196, 668, 1244, 1040], 3, 16, R1.s);
+    place("f05-ring-outcome", [220, 878, 806, 1198], 3, 14, L1.s);
+    place("f05-ring-side", [220, 1468, 806, 1662], 3, 14, L2.s);
+    place("f05-ring-cost", [842, 718, 1240, 1084], 3, 14, L3.s);
+    place("f05-ring-banner", [200, 449, 1240, 509], 3, 12, L4.s);
+
+    // cursor targets in viewport space
+    var CUR_IN = { x: 760, y: 600 };
+    var CUR_SELECT = view(600, 428, R0); // resting on the "Alzheimer's Disease" condition field
+    var CUR_BTN = view(981, 983, R1); // Lecanemab "View Outcome Label" button centre
+    var rip1 = document.getElementById("f05-ripple-1");
+    var rip2 = document.getElementById("f05-ripple-2");
+    rip1.style.left = CUR_BTN.x - 32 + "px";
+    rip1.style.top = CUR_BTN.y - 32 + "px";
+    rip2.style.left = CUR_BTN.x - 32 + "px";
+    rip2.style.top = CUR_BTN.y - 32 + "px";
+
+    var MUTED = "#475569";
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true, defaults: { force3D: false } });
+
+    // ===== Scene 1 (0.0-2.6s): header reveals, the window rises in flat on the rankings page =====
+    tl.fromTo(
+      "#f05-window",
+      { opacity: 0, y: 70 },
+      { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" },
+      0.05
+    );
+    tl.fromTo(
+      "#f05-minipath",
+      { clipPath: "inset(0% 100% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.out" },
+      0.1
+    );
+    tl.fromTo(
+      "#f05-dot1",
+      { scale: 0.3, transformOrigin: "50% 50%" },
+      { scale: 1, duration: 0.45, ease: "back.out(2.2)" },
+      0.16
+    );
+    tl.fromTo(
+      "#f05-eyebrow-text",
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      0.2
+    );
+    tl.fromTo(
+      ".f05-word",
+      { opacity: 0, y: 26 },
+      { opacity: 1, y: 0, duration: 0.65, ease: "power3.out", stagger: 0.1 },
+      0.62
+    );
+    tl.fromTo("#f05-url", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0.55);
+    tl.fromTo(
+      "#f05-proto",
+      { opacity: 0, x: 14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      0.85
+    );
+    // cursor drifts in and rests on the condition field
+    tl.fromTo(
+      "#f05-cursor",
+      { x: CUR_IN.x, y: CUR_IN.y },
+      { x: CUR_SELECT.x, y: CUR_SELECT.y, duration: 0.75, ease: "power2.inOut" },
+      1.55
+    );
+    tl.fromTo("#f05-cursor-art", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 1.55);
+    tl.fromTo("#f05-hover-select", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, 2.2);
+
+    // ===== Scene 2 (2.6-4.9s): "treatments ranked" -> page scrolls to the cards; "side by side" -> ring =====
+    tl.to("#f05-cam-a-outer", { scale: R1.s, duration: 0.85, ease: "power2.inOut" }, 2.62);
+    tl.to("#f05-cam-a-inner", { x: R1.x, y: R1.y, duration: 0.85, ease: "power2.inOut" }, 2.62);
+    tl.fromTo(
+      "#f05-ring-pair",
+      { opacity: 0, scale: 0.92, rotation: -2.5 },
+      { opacity: 1, scale: 1, rotation: -0.35, duration: 0.55, ease: "back.out(1.4)" },
+      3.3
+    );
+
+    // ===== Scene 3 (4.9-6.3s): cursor glides to Lecanemab's "View Outcome Label", clicks, page swaps =====
+    tl.to("#f05-cursor", { x: CUR_BTN.x, y: CUR_BTN.y, duration: 0.48, ease: "power2.inOut" }, 4.88);
+    tl.fromTo("#f05-hover-btn", { opacity: 0 }, { opacity: 1, duration: 0.16, ease: "power1.out" }, 5.24);
+    // click: cursor + button depress together, then release (no yoyo)
+    tl.to("#f05-cursor-art", { scale: 0.85, duration: 0.08, ease: "power2.in" }, 5.42);
+    tl.to("#f05-cursor-art", { scale: 1, duration: 0.08, ease: "power2.out" }, 5.5);
+    tl.to("#f05-hover-btn", { scale: 0.96, duration: 0.08, ease: "power2.in" }, 5.42);
+    tl.to("#f05-hover-btn", { scale: 1, duration: 0.08, ease: "power2.out" }, 5.5);
+    tl.fromTo(
+      ".f05-ripple",
+      { opacity: 0.9, scale: 0.2 },
+      { opacity: 0, scale: 3.4, duration: 0.7, ease: "power2.out", stagger: 0.09, immediateRender: false },
+      5.44
+    );
+    tl.fromTo(
+      "#f05-list-pill",
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+      5.56
+    );
+    // short push-up (cut-the-curve, upward): rankings accelerate out, label continues in
+    tl.to("#f05-screen-a", { y: -220, duration: 0.3, ease: "power4.in" }, 5.62);
+    tl.to("#f05-screen-a", { opacity: 0, duration: 0.22, ease: "power1.in" }, 5.68);
+    tl.fromTo(
+      "#f05-screen-b",
+      { opacity: 0, y: 220 },
+      { opacity: 1, y: 0, duration: 0.38, ease: "power4.out" },
+      5.92
+    );
+    tl.to("#f05-cursor-art", { opacity: 0, duration: 0.25, ease: "power1.in" }, 5.95);
+
+    // ===== Scene 4 (6.3-9.4s): camera tours the label — who improved, then side effects =====
+    tl.to("#f05-cam-b-outer", { scale: L1.s, duration: 0.95, ease: "power3.inOut" }, 6.72);
+    tl.to("#f05-cam-b-inner", { x: L1.x, y: L1.y, duration: 0.95, ease: "power3.inOut" }, 6.72);
+    tl.fromTo(
+      "#f05-row-1",
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      6.78
+    );
+    tl.fromTo(
+      "#f05-list-halo",
+      { opacity: 0, scale: 0.5 },
+      { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" },
+      6.82
+    );
+    tl.fromTo(
+      "#f05-ring-outcome",
+      { opacity: 0, scale: 0.92, rotation: -2.5 },
+      { opacity: 1, scale: 1, rotation: -0.35, duration: 0.55, ease: "back.out(1.4)" },
+      7.3
+    );
+
+    tl.to("#f05-ring-outcome", { opacity: 0, duration: 0.3, ease: "power1.in" }, 7.98);
+    tl.to("#f05-cam-b-inner", { x: L2.x, y: L2.y, duration: 0.8, ease: "power3.inOut" }, 7.98);
+    tl.fromTo("#f05-link-1", { scaleY: 0 }, { scaleY: 1, duration: 0.35, ease: "power2.out" }, 8.05);
+    tl.to("#f05-list-halo", { y: 68, duration: 0.4, ease: "power3.inOut" }, 8.08);
+    tl.to("#f05-row-1-text", { color: MUTED, duration: 0.4, ease: "power1.out" }, 8.08);
+    tl.fromTo(
+      "#f05-row-2",
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      8.14
+    );
+    tl.fromTo(
+      "#f05-ring-side",
+      { opacity: 0, scale: 0.92, rotation: -2.5 },
+      { opacity: 1, scale: 1, rotation: -0.35, duration: 0.55, ease: "back.out(1.4)" },
+      8.5
+    );
+
+    // ===== Scene 5 (9.4-12.0s): the cost, then pull back to the evidence banner and hold =====
+    tl.to("#f05-ring-side", { opacity: 0, duration: 0.3, ease: "power1.in" }, 9.3);
+    tl.to("#f05-cam-b-outer", { scale: L3.s, duration: 0.75, ease: "power3.inOut" }, 9.3);
+    tl.to("#f05-cam-b-inner", { x: L3.x, y: L3.y, duration: 0.75, ease: "power3.inOut" }, 9.3);
+    tl.fromTo("#f05-link-2", { scaleY: 0 }, { scaleY: 1, duration: 0.35, ease: "power2.out" }, 9.5);
+    tl.to("#f05-list-halo", { y: 136, duration: 0.4, ease: "power3.inOut" }, 9.52);
+    tl.to("#f05-row-2-text", { color: MUTED, duration: 0.4, ease: "power1.out" }, 9.52);
+    tl.fromTo(
+      "#f05-row-3",
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      9.58
+    );
+    tl.fromTo(
+      "#f05-ring-cost",
+      { opacity: 0, scale: 0.92, rotation: -2.5 },
+      { opacity: 1, scale: 1, rotation: -0.35, duration: 0.5, ease: "back.out(1.4)" },
+      9.8
+    );
+
+    tl.to("#f05-ring-cost", { opacity: 0, duration: 0.3, ease: "power1.in" }, 10.55);
+    tl.to("#f05-cam-b-outer", { scale: L4.s, duration: 0.95, ease: "power3.inOut" }, 10.55);
+    tl.to("#f05-cam-b-inner", { x: L4.x, y: L4.y, duration: 0.95, ease: "power3.inOut" }, 10.55);
+    tl.fromTo("#f05-link-3", { scaleY: 0 }, { scaleY: 1, duration: 0.35, ease: "power2.out" }, 10.72);
+    tl.to("#f05-list-halo", { y: 204, duration: 0.4, ease: "power3.inOut" }, 10.74);
+    tl.to("#f05-row-3-text", { color: MUTED, duration: 0.4, ease: "power1.out" }, 10.74);
+    tl.fromTo(
+      "#f05-row-4",
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      10.8
+    );
+    tl.fromTo(
+      "#f05-ring-banner",
+      { opacity: 0, scale: 0.92, rotation: -1.5 },
+      { opacity: 1, scale: 1, rotation: -0.2, duration: 0.55, ease: "back.out(1.4)" },
+      11.1
+    );
+    // hold still on the banner to the end (11.989s) — no exit
+
+    window.__timelines["05-compare-options"] = tl;
+  })();
+</script>
+
+
+  <script>
+    // retime-to-new-voice: drive this scene's original timeline through a map from the
+    // new narration's time to the old narration's time, anchored on matching spoken cues.
+    (function () {
+      var ID = "05-compare-options";
+      var inner = window.__timelines[ID];
+      var MAP = [[0.000,0.000],[2.640,2.773],[4.900,4.779],[7.980,7.552],[9.480,8.619],[11.780,10.710]]; // [old seconds, new seconds]
+      var NEW_DURATION = 11.345;
+      function toOld(t) {
+        for (var i = 1; i < MAP.length; i++) {
+          if (t <= MAP[i][1]) {
+            var a = MAP[i - 1], b = MAP[i];
+            return a[0] + (t - a[1]) * (b[0] - a[0]) / (b[1] - a[1]);
+          }
+        }
+        var last = MAP[MAP.length - 1];
+        return last[0] + (t - last[1]); // after the last cue, real time (holds stay holds)
+      }
+      var OLD_END = toOld(NEW_DURATION);
+      var outer = gsap.timeline({ paused: true });
+      outer.fromTo(inner, { time: 0 }, {
+        time: OLD_END, duration: NEW_DURATION,
+        ease: function (p) { return toOld(p * NEW_DURATION) / OLD_END; },
+      }, 0);
+      window.__timelines[ID] = outer;
+    })();
+  </script>
+</template>

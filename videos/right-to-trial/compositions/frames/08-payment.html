@@ -1,0 +1,676 @@
+<template id="08-payment-template">
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  #root {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    container-type: size;
+    font-family: "Inter", sans-serif;
+    color: #0F172A;
+  }
+
+  /* full-bleed cream ground (its own clip, lowest track) */
+  [id="08-payment-ground"] {
+    position: absolute;
+    inset: 0;
+    background: #F8F6F1;
+  }
+  [id="08-payment-stage"] {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* ---------- slide header: mini patient path + eyebrow (top-left) ---------- */
+  [id="08-payment-eyebrow"] {
+    position: absolute;
+    left: 96px;
+    top: 70px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  [id="08-payment-minipath"] {
+    display: block;
+    width: 176px;
+    height: 32px;
+    overflow: visible;
+  }
+  [id="08-payment-eyebrow-text"] {
+    font-size: 1.05cqw;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #694CFA;
+    white-space: nowrap;
+  }
+
+  /* ---------- "before" card: right-to-try today (grey, reduced) ---------- */
+  [id="08-payment-grey"] {
+    position: absolute;
+    left: 96px;
+    top: 150px;
+    width: 600px;
+    height: 276px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    border: 1.5px solid rgba(15, 23, 42, 0.12);
+    background: #EFEDE9;
+    transform-origin: 50% 0%;
+    z-index: 1;
+  }
+  [id="08-payment-grey-label"] {
+    position: absolute;
+    left: 28px;
+    top: 26px;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: #475569;
+    white-space: nowrap;
+  }
+  [id="08-payment-num"] {
+    position: absolute;
+    left: 24px;
+    top: 66px;
+    font-size: 124px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #94A3B8;
+    white-space: nowrap;
+    transform-origin: 100% 85%;
+  }
+  [id="08-payment-num-unit"] {
+    position: absolute;
+    left: 196px;
+    top: 90px;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    color: #475569;
+    white-space: nowrap;
+  }
+  [id="08-payment-num-years"] {
+    position: absolute;
+    left: 196px;
+    top: 136px;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 32px;
+    color: #94A3B8;
+    white-space: nowrap;
+  }
+  [id="08-payment-grey-note"] {
+    position: absolute;
+    left: 28px;
+    top: 212px;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #475569;
+    white-space: nowrap;
+  }
+
+  /* ---------- "after" card: care-integrated trials (purple tint, slides on top) ---------- */
+  [id="08-payment-purple"] {
+    position: absolute;
+    left: 144px;
+    top: 390px;
+    width: 592px;
+    height: 196px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    background: linear-gradient(rgba(105, 76, 250, 0.06), rgba(105, 76, 250, 0.06)), #F8F6F1;
+    z-index: 2;
+  }
+  [id="08-payment-purple-icon"] {
+    position: absolute;
+    left: 28px;
+    top: 28px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(105, 76, 250, 0.12);
+  }
+  [id="08-payment-purple-icon"] svg {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+  }
+  [id="08-payment-purple-title"] {
+    position: absolute;
+    left: 96px;
+    top: 32px;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  [id="08-payment-purple-line"] {
+    position: absolute;
+    left: 30px;
+    top: 112px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    color: #475569;
+    white-space: nowrap;
+  }
+  [id="08-payment-fair"] {
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    color: #694CFA;
+  }
+  [id="08-payment-underline"] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 4px;
+    border-radius: 2px;
+    background: #694CFA;
+    transform-origin: 0% 50%;
+  }
+
+  /* causal hinge: fair price -> clinics offer it */
+  [id="08-payment-arrow"] {
+    position: absolute;
+    left: 744px;
+    top: 464px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #694CFA;
+    z-index: 3;
+  }
+  [id="08-payment-arrow"] svg {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: #F8F6F1;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ---------- the map field (hero): abstract rounded region + faint dot grid ---------- */
+  [id="08-payment-map"] {
+    position: absolute;
+    left: 800px;
+    top: 150px;
+    width: 1024px;
+    height: 520px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    background: rgba(105, 76, 250, 0.04);
+    overflow: hidden;
+  }
+  [id="08-payment-cam"] {
+    position: absolute;
+    left: -1.5px;
+    top: -1.5px;
+    width: 1024px;
+    height: 520px;
+    transform-origin: 50% 50%;
+  }
+  [id="08-payment-field"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1024px;
+    height: 520px;
+    display: block;
+  }
+  [class~="08-payment-pin"] {
+    position: absolute;
+    width: 32px;
+    height: 42px;
+    transform-origin: 50% 100%;
+  }
+  [class~="08-payment-pin"] svg {
+    display: block;
+    width: 32px;
+    height: 42px;
+  }
+  /* Margaret's clinic: halo + one-shot pulse ring, centred on the (scaled) pin head */
+  [id="08-payment-halo"],
+  [id="08-payment-ring"] {
+    position: absolute;
+    left: 719px;
+    top: 230px;
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+    border-radius: 50%;
+  }
+  [id="08-payment-halo"] {
+    border: 2px solid rgba(105, 76, 250, 0.35);
+    background: rgba(105, 76, 250, 0.08);
+  }
+  [id="08-payment-ring"] {
+    border: 3px solid #694CFA;
+    opacity: 0;
+  }
+  [id="08-payment-stem"] {
+    position: absolute;
+    left: 750px;
+    top: 206px;
+    width: 2px;
+    height: 24px;
+    border-radius: 2px;
+    background: rgba(105, 76, 250, 0.5);
+    transform-origin: 50% 100%;
+  }
+
+  /* bill card (callout from Margaret's clinic pin) */
+  [id="08-payment-bill"] {
+    position: absolute;
+    left: 608px;
+    top: 24px;
+    width: 388px;
+    height: 182px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    background: #FFFFFF;
+    transform-origin: 37% 100%;
+  }
+  [id="08-payment-bill-head"] {
+    position: absolute;
+    left: 22px;
+    top: 20px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  [id="08-payment-bill-head"] svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="08-payment-bill-title"] {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  [class~="08-payment-bar"] {
+    position: absolute;
+    height: 8px;
+    border-radius: 6px;
+    background: rgba(15, 23, 42, 0.09);
+    transform-origin: 0% 50%;
+  }
+  [id="08-payment-bill-rule"] {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    top: 116px;
+    height: 1px;
+    background: rgba(105, 76, 250, 0.15);
+  }
+  [id="08-payment-chip"] {
+    position: absolute;
+    left: 22px;
+    top: 126px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 18px 0 13px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.08);
+    color: #694CFA;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  [id="08-payment-heart"] {
+    display: block;
+    width: 22px;
+    height: 22px;
+    transform-origin: 50% 55%;
+  }
+
+  /* ---------- payoff statement (bottom band, above the caption keep-out) ---------- */
+  [id="08-payment-rule"] {
+    position: absolute;
+    left: 96px;
+    top: 696px;
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: #694CFA;
+    transform-origin: 0% 50%;
+  }
+  [id="08-payment-statement"] {
+    position: absolute;
+    left: 96px;
+    top: 718px;
+    height: 152px;
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+    white-space: nowrap;
+  }
+  [id="08-payment-zero"] {
+    display: block;
+    font-size: 152px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #694CFA;
+    transform-origin: 0% 85%;
+  }
+  [id="08-payment-claim"] {
+    display: block;
+    font-size: 58px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+  }
+  [class~="08-payment-word"] {
+    display: inline-block;
+  }
+</style>
+
+<div id="root" data-composition-id="08-payment" data-width="1920" data-height="1080" data-duration="7.927">
+  <div id="08-payment-ground" class="clip" data-start="0" data-duration="7.927" data-track-index="0"></div>
+
+  <div id="08-payment-stage" class="clip" data-start="0" data-duration="7.927" data-track-index="1">
+
+    <div id="08-payment-eyebrow">
+      <svg id="08-payment-minipath" viewBox="0 0 176 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 22C23 22 23 10 36 10S49 22 62 22S75 10 88 10S101 22 114 22S127 10 140 10S153 22 166 22" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.6" stroke-dasharray="3 4" stroke-linecap="round" />
+        <circle cx="10" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="36" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="62" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="114" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="140" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="166" cy="22" r="5" fill="#F0A050" fill-opacity="0.3" />
+        <g id="08-payment-dot4">
+          <circle cx="88" cy="10" r="9" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <circle cx="88" cy="10" r="5.5" fill="#694CFA" />
+        </g>
+      </svg>
+      <div id="08-payment-eyebrow-text">Step 4 · Payment</div>
+    </div>
+
+    <div id="08-payment-grey">
+      <div id="08-payment-grey-label">Right-to-try today</div>
+      <div id="08-payment-num">21</div>
+      <div id="08-payment-num-unit">drugs used</div>
+      <div id="08-payment-num-years">2018–2024</div>
+      <div id="08-payment-grey-note">Makers may charge only their costs</div>
+    </div>
+
+    <div id="08-payment-purple">
+      <div id="08-payment-purple-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5v14M5 12h14" />
+        </svg>
+      </div>
+      <div id="08-payment-purple-title">Care-integrated trials</div>
+      <div id="08-payment-purple-line">Clinics can charge a <span id="08-payment-fair">fair price<span id="08-payment-underline"></span></span></div>
+    </div>
+
+    <div id="08-payment-arrow">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12h13M13 7l5 5-5 5" />
+      </svg>
+    </div>
+
+    <div id="08-payment-map">
+      <div id="08-payment-cam" data-layout-allow-overflow>
+        <!-- abstract field: no real geography. Pin tips are fixed coordinates in this 1024x520
+             space, listed in cascade-index order (nearest the left edge first). -->
+        <svg id="08-payment-field" viewBox="0 0 1024 520" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="08-payment-dotgrid" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="11" cy="11" r="1.7" fill="#694CFA" fill-opacity="0.24" />
+            </pattern>
+            <clipPath id="08-payment-blobclip">
+              <path d="M160 60C310 28 520 58 650 46C800 32 950 56 982 150C1010 236 966 300 984 376C1002 456 912 492 784 482C644 470 566 500 424 488C280 476 116 494 66 410C26 342 70 276 50 204C32 124 80 78 160 60Z" />
+            </clipPath>
+          </defs>
+          <path d="M160 60C310 28 520 58 650 46C800 32 950 56 982 150C1010 236 966 300 984 376C1002 456 912 492 784 482C644 470 566 500 424 488C280 476 116 494 66 410C26 342 70 276 50 204C32 124 80 78 160 60Z" fill="#694CFA" fill-opacity="0.06" stroke="#694CFA" stroke-opacity="0.22" stroke-width="1.5" />
+          <path d="M160 60C310 28 520 58 650 46C800 32 950 56 982 150C1010 236 966 300 984 376C1002 456 912 492 784 482C644 470 566 500 424 488C280 476 116 494 66 410C26 342 70 276 50 204C32 124 80 78 160 60Z" fill="url(#08-payment-dotgrid)" />
+          <g clip-path="url(#08-payment-blobclip)" fill="none" stroke="#694CFA" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="5 7" stroke-linecap="round">
+            <path d="M330 20C352 170 296 310 362 520" />
+            <path d="M700 20C664 190 736 330 690 520" />
+            <path d="M20 268C240 236 470 312 700 262S900 236 1010 262" />
+          </g>
+        </svg>
+
+        <div id="08-payment-halo"></div>
+        <div id="08-payment-ring"></div>
+        <div id="08-payment-stem"></div>
+
+        <div class="08-payment-pin" style="left: 127px; top: 185px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 132px; top: 327px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 206px; top: 260px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 201px; top: 92px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 254px; top: 174px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 204px; top: 386px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 266px; top: 318px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 317px; top: 243px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 300px; top: 107px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 358px; top: 173px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 320px; top: 401px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 397px; top: 87px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 454px; top: 176px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 452px; top: 312px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 524px; top: 258px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 500px; top: 396px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 523px; top: 108px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 570px; top: 180px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 619px; top: 251px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 661px; top: 336px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div id="08-payment-pin-m" class="08-payment-pin" style="left: 735px; top: 255px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 732px; top: 387px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 822px; top: 258px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 828px; top: 388px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+        <div class="08-payment-pin" style="left: 877px; top: 318px;"><svg viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg"><path d="M16 1.5C8.3 1.5 2.5 7.4 2.5 14.8C2.5 24.6 16 40.5 16 40.5S29.5 24.6 29.5 14.8C29.5 7.4 23.7 1.5 16 1.5Z" fill="#694CFA" /><circle cx="16" cy="14.6" r="5.2" fill="#F8F6F1" /></svg></div>
+
+        <div id="08-payment-bill">
+          <div id="08-payment-bill-head">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 3h12v18l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4L6 21Z" />
+              <path d="M9 8h6M9 12h6M9 16h3" />
+            </svg>
+            <div id="08-payment-bill-title">Margaret’s treatment</div>
+          </div>
+          <div class="08-payment-bar" style="left: 22px; top: 70px; width: 172px;"></div>
+          <div class="08-payment-bar" style="right: 22px; top: 70px; width: 64px; transform-origin: 100% 50%;"></div>
+          <div class="08-payment-bar" style="left: 22px; top: 92px; width: 128px;"></div>
+          <div class="08-payment-bar" style="right: 22px; top: 92px; width: 52px; transform-origin: 100% 50%;"></div>
+          <div id="08-payment-bill-rule"></div>
+          <div id="08-payment-chip">
+            <svg id="08-payment-heart" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 20.5S3.5 15.2 3.5 9.1C3.5 6.3 5.6 4.2 8.2 4.2c1.6 0 3 .8 3.8 2.1.8-1.3 2.2-2.1 3.8-2.1 2.6 0 4.7 2.1 4.7 4.9 0 6.1-8.5 11.4-8.5 11.4Z" fill="#694CFA" />
+            </svg>
+            <span>Paid with charity help</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="08-payment-rule"></div>
+    <div id="08-payment-statement">
+      <div id="08-payment-zero">$0</div>
+      <div id="08-payment-claim"><span class="08-payment-word">required</span> <span class="08-payment-word">from</span> <span class="08-payment-word">any</span> <span class="08-payment-word">insurer</span> <span class="08-payment-word">or</span> <span class="08-payment-word">state</span> <span class="08-payment-word">program</span></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var P = "08-payment-";
+    function byId(id) {
+      return document.getElementById(P + id);
+    }
+    function byClass(cls, scope) {
+      return Array.prototype.slice.call((scope || document).getElementsByClassName(P + cls));
+    }
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true, defaults: { force3D: false } });
+
+    // ===== Scene 1 (0.0-2.1s): header, empty field, "before" card; "fair price" -> purple card on top
+    tl.fromTo(
+      byId("minipath"),
+      { clipPath: "inset(0% 100% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.out" },
+      0.05
+    );
+    tl.fromTo(
+      byId("dot4"),
+      { scale: 0.3, transformOrigin: "50% 50%" },
+      { scale: 1, duration: 0.45, ease: "back.out(2.2)" },
+      0.24
+    );
+    tl.fromTo(
+      byId("eyebrow-text"),
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      0.15
+    );
+
+    // hero field settles in early, then a slow camera push runs under the whole shot
+    tl.fromTo(byId("map"), { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.12);
+    tl.fromTo(byId("cam"), { scale: 1 }, { scale: 1.035, duration: 7.1, ease: "sine.inOut" }, 0.3);
+
+    // "before": on screen by 0.34s, at reduced opacity
+    tl.fromTo(byId("grey"), { opacity: 0, y: 18 }, { opacity: 0.85, y: 0, duration: 0.45, ease: "power3.out" }, 0.06);
+
+    // "fair price" (1.28s): the purple card slides up onto the grey one, which recedes
+    tl.fromTo(
+      byId("purple"),
+      { opacity: 0, x: -20, y: 72 },
+      { opacity: 1, x: 0, y: 0, duration: 0.65, ease: "power3.out" },
+      1.24
+    );
+    tl.to(byId("grey"), { opacity: 0.62, scale: 0.97, duration: 0.6, ease: "power2.out" }, 1.3);
+    tl.fromTo(byId("underline"), { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, 1.68);
+
+    // ===== Scene 2 (2.1-3.6s): "so they actually offer it" -> pins cascade across the field, "21" shrinks away
+    tl.fromTo(
+      byId("arrow"),
+      { opacity: 0, scale: 0.4 },
+      { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(2)" },
+      1.98
+    );
+    var pins = byClass("pin");
+    pins.forEach(function (pin, i) {
+      var at = 2.13 + i * 0.03; // index-ordered cascade
+      tl.fromTo(pin, { scale: 0.2, y: -22 }, { scale: 1, y: 0, duration: 0.5, ease: "back.out(1.9)" }, at);
+      tl.fromTo(pin, { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power1.out" }, at);
+    });
+    tl.to(byId("num"), { scale: 0.55, opacity: 0.45, duration: 0.8, ease: "power2.inOut" }, 2.15);
+    tl.to(byId("grey"), { opacity: 0.45, duration: 0.8, ease: "power1.inOut" }, 2.15);
+
+    // ===== Scene 3 (3.6-7.4s): "A charity helps Margaret pay" -> her clinic, her bill, the chip
+    var mPin = byId("pin-m");
+    var others = pins.filter(function (p) {
+      return p !== mPin;
+    });
+    tl.to(others, { opacity: 0.4, duration: 0.45, ease: "power1.out" }, 3.63);
+    tl.to(mPin, { scale: 1.28, duration: 0.5, ease: "back.out(2)" }, 3.63);
+    tl.fromTo(
+      byId("halo"),
+      { opacity: 0, scale: 0.5 },
+      { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" },
+      3.66
+    );
+    tl.fromTo(
+      byId("ring"),
+      { opacity: 0.8, scale: 0.6 },
+      { opacity: 0, scale: 2, duration: 0.9, ease: "power2.out", immediateRender: false },
+      3.68
+    );
+    tl.fromTo(byId("stem"), { scaleY: 0 }, { scaleY: 1, duration: 0.25, ease: "power2.out" }, 3.76);
+    tl.fromTo(
+      byId("bill"),
+      { opacity: 0, y: 18, scale: 0.94 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "power3.out" },
+      3.84
+    );
+    byClass("bar").forEach(function (bar, i) {
+      tl.fromTo(bar, { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 4.06 + i * 0.06);
+    });
+    tl.fromTo(
+      byId("chip"),
+      { clipPath: "inset(0% 100% 0% 0% round 100px)" },
+      { clipPath: "inset(0% 0% 0% 0% round 100px)", duration: 0.6, ease: "power2.out" },
+      4.34
+    );
+    tl.fromTo(byId("chip"), { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, 4.34);
+    tl.fromTo(byId("heart"), { scale: 0.2 }, { scale: 1, duration: 0.4, ease: "back.out(3)" }, 4.5);
+    tl.to(byId("heart"), { scale: 1.2, duration: 0.12, ease: "power2.out" }, 4.98);
+    tl.to(byId("heart"), { scale: 1, duration: 0.3, ease: "power2.inOut" }, 5.1);
+
+    // "No insurer has to" (5.72s): the payoff lands large, "$0" in purple
+    tl.fromTo(byId("rule"), { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.out" }, 5.6);
+    tl.fromTo(
+      byId("zero"),
+      { opacity: 0, scale: 0.72, filter: "blur(14px)" },
+      { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.6, ease: "power3.out" },
+      5.72
+    );
+    byClass("word").forEach(function (w, i) {
+      tl.fromTo(
+        w,
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+        5.86 + i * 0.055
+      );
+    });
+
+    // hold to the frame's fixed length — no exit
+    tl.set({}, {}, 7.427);
+
+    window.__timelines["08-payment"] = tl;
+  })();
+</script>
+</template>

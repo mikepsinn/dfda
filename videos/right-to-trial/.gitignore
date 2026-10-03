@@ -1,0 +1,15 @@
+# Generated outputs and review artifacts
+renders/
+snapshots/
+voice-samples/
+
+# Generated audio: regenerate with the audio step in README.md
+assets/voice/
+assets/bgm/
+audio_engine_meta.json
+audio_request.json
+
+# HyperFrames working state (packets, backups, caches, media index); keep the caption skin the build needs
+.media/
+.hyperframes/*
+!.hyperframes/caption-skin.html
