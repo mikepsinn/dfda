@@ -5,6 +5,7 @@ import "./globals.css"
 import { ScrollToHashElement } from "@/components/ScrollToHashElement"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
+import { SiteChrome } from "@/components/SiteChrome"
 import { getServerUser } from "@/lib/server-auth"
 import { getProfileByIdAction } from "../lib/actions/profiles"
 import type { Profile } from "../lib/actions/profiles"
@@ -89,15 +90,12 @@ export default async function RootLayout({
       <body className={inter.className}>
         <TooltipProvider>
           <ScrollToHashElement />
-          <div className="min-h-screen flex flex-col">
-            <Header initialUser={user} initialProfile={profile} siteName={env.NEXT_PUBLIC_SITE_NAME} />
-            <main className="flex-1 py-6 md:py-10 w-full bg-background">
-              <div className="container px-4 md:px-6 mx-auto">
-                {children}
-              </div>
-            </main>
-            <Footer siteName={env.NEXT_PUBLIC_SITE_NAME} />
-          </div>
+          <SiteChrome
+            header={<Header initialUser={user} initialProfile={profile} siteName={env.NEXT_PUBLIC_SITE_NAME} />}
+            footer={<Footer siteName={env.NEXT_PUBLIC_SITE_NAME} />}
+          >
+            {children}
+          </SiteChrome>
         </TooltipProvider>
       </body>
     </html>

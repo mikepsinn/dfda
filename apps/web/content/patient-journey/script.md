@@ -1,8 +1,16 @@
 # The patient journey: presentation script
 
 The single source for the Care-Integrated Clinical Trials patient journey deck and the explainer
-video in [`videos/right-to-trial`](../../videos/right-to-trial/README.md). Change the story here
-first, then rebuild the deck and the video from it.
+video in [`videos/right-to-trial`](../../../../videos/right-to-trial/README.md). Change the story
+here first, then rebuild the deck and the video from it.
+
+The deck is the web app page `/present/patient-journey`
+([slides](../../components/present/patient-journey/slides.tsx)). It reads each slide's eyebrow,
+title (or headline), subtitle, speaker notes and source line from this file, so edits to those show
+up on the next build. The rest of each slide's text is in its component. Keep slide numbers in
+step: the page fails to build if a slide here has no component or a component has no slide here.
+Keys: arrows or space move between slides, N shows the speaker notes, F goes full screen, and
+printing saves a PDF with one page per slide.
 
 **This version:** improved draft 1, for legislators and advocates (October 2, 2026). The git
 history has the earlier versions: the original deck, "Right to Trial: The Patient Journey"
@@ -18,10 +26,11 @@ Each slide has:
 - **Video narration:** the voiceover, for slides the video uses.
 - **Source line:** the citation printed on the slide, if any.
 
-Recurring design: a cream ground for content slides and dark navy for the title, the statistics
-slide and the close. Purple is the primary color and orange the highlight. Headings are serif and
-body text sans-serif. A "patient path" (a dashed zigzag line through icon circles, ending in an
-orange star) stands for the seven steps.
+Recurring design: the web app's theme and font (Inter), with a soft purple gradient on content
+slides and the app's dark theme for the title, the statistics slide and the close. Purple is the
+primary color and amber the highlight. A "patient path" (a dotted zigzag line through seven icon
+circles, one per step, ending in an amber star) stands for the seven steps. Slides showing the
+prototype render the app's own components with its data, not screenshots.
 
 ## Brief
 
@@ -86,9 +95,8 @@ orange star) stands for the seven steps.
 - Subtitle: Radically accelerating medical discovery by letting any patient join trials of the
   most promising treatments.
 
-**Visual:** Dark navy. The patient path runs across the top: eight purple icon circles on a dashed
-zigzag line, the last one an orange star. Orange eyebrow, large cream serif title, muted subtitle,
-all left-aligned in the lower half.
+**Visual:** Dark. The patient path runs across the top. Amber eyebrow, large white title and a
+muted subtitle, left-aligned in the lower half.
 
 **Speaker notes:** This deck shows what care-integrated clinical trials would mean for one patient,
 Margaret, and why they would help everyone after her. There are three ideas: any patient can get a
@@ -111,8 +119,8 @@ every result is published, so the next patient chooses better.
   screened treatment at a local clinic, with her consent, and her result is published.
 
 **Visual:** Left, a large white card with a round cartoon avatar of an older woman (grey hair,
-glasses, purple top), her name in serif, and the body text with "573 existing drugs" and "Few have
-ever been tested" in bold. Right, two stacked cards: a cream "Today" card with a lock icon, and a
+glasses, purple top), her name in large type, and the body text with "573 existing drugs" and "Few have
+ever been tested" in bold. Right, two stacked cards: a white "Today" card with a lock icon, and a
 lavender "With care-integrated trials" card.
 
 **Speaker notes:** Margaret is a composite, made up to make the journey concrete, but her situation
@@ -142,8 +150,8 @@ Alzheimer's. Margaret is a composite patient.
 - 2.1M: new cancer cases every year
 - 95%: of rare diseases have no FDA-approved treatment
 
-**Visual:** Dark navy. Under the serif title, a band of faint dots suggesting a crowd. Four
-columns, each with an orange rule above a large orange serif number and a cream label.
+**Visual:** Dark. Under the title, a band of faint dots suggesting a crowd. Four columns, each
+with an amber rule above a large amber number and a white label.
 
 **Speaker notes:** An estimated 7.4 million Americans aged 65 or older live with Alzheimer's
 (Alzheimer's Association, 2026 Facts and Figures), about 30 million Americans live with a rare
@@ -168,7 +176,7 @@ Society, Cancer Statistics 2026.
 - Right to Try wasn't built for this. 21: drugs used under the federal law from 2018 to 2024. It
   covers only drugs still in testing, and the maker can say no.
 
-**Visual:** Three white cards side by side, each with a serif heading, a large purple number and
+**Visual:** Three white cards side by side, each with a heading, a large purple number and
 one sentence.
 
 **Speaker notes:** One: no financial incentive. Many of the 573 drugs are off patent, so no company
@@ -291,12 +299,11 @@ Margaret had.
 - Pre-screened: an independent board approves every treatment first.
 - Tag: Prototype · preliminary estimates, not medical advice
 
-**Visual:** Right two-thirds, a screenshot of the prototype's Alzheimer's rankings
-(`videos/right-to-trial/public/app/rankings-alzheimers.png`), cropped to the six treatment cards:
-Donanemab (effectiveness 57, safety 48, $38,000 a year), Lecanemab (55, 50, $36,500), Donepezil
-(45, 60, $525), Rivastigmine (43, 58, $600), Galantamine (42, 58, $550) and Memantine (40, 68,
-$550). Left third, the three features as short rows with lavender icons. The prototype tag sits
-above the screenshot.
+**Visual:** The prototype tag and a caption ("the top 3 of 6 treatments by estimated
+effectiveness"), then the prototype's own ranking cards for the top three Alzheimer's treatments,
+large enough to read: Donanemab (effectiveness 57, safety 48, $38,000 a year), Lecanemab (55, 50,
+$36,500) and Donepezil (45, 60, $525). The three features run along the bottom with lavender
+icons.
 
 **Speaker notes:** This is the working prototype. It ranks Alzheimer's treatments by estimated
 effectiveness and safety, on 0 to 100 scores rather than response percentages, and labels them as
@@ -322,11 +329,12 @@ an outcome label showing who improved, the side effects, the cost and how strong
   adverse-event systems). Updated as data arrives (each new result changes the label).
 - Caption: Lecanemab's label in the prototype, from its FDA label and published trial.
 
-**Visual:** Left, a crop of the prototype's Lecanemab outcome label
-(`videos/right-to-trial/public/app/label-lecanemab.png`): effectiveness 55/100 and safety 50/100;
-CDR-SB +27% (0.45 points less decline than placebo); side effects: infusion reactions 26%, brain
-swelling (ARIA-E) 13%, brain bleeding (ARIA-H) 17%, headache 11%; $36,500 a year. Right, the
-evidence sources as a list with orange icons.
+**Visual:** The prototype's Lecanemab outcome label, drawn by its own components: effectiveness
+55/100 and safety 50/100 across the top, the primary outcomes on the left (CDR-SB +27%, 0.45 points
+less decline than placebo) and the side effects on the right (infusion reactions 26%, brain
+swelling (ARIA-E) 13%, brain bleeding (ARIA-H) 17%, headache 11%), each with its "Source: FDA
+label" link. The caption sits under the label, and the four evidence sources run along the bottom
+with amber icons.
 
 **Speaker notes:** An outcome label puts what is known about a treatment on one page: how much it
 helps and compared with what, its side effects, its cost, and how strong the evidence is. This one
@@ -350,7 +358,7 @@ old drugs that nobody would fund a trial for.
 - What qualifies: Passed Phase I or similar. A documented human safety record. A well-studied
   platform therapy. Device evidence.
 
-**Visual:** Three white cards side by side, each with a small round icon, a serif heading and a
+**Visual:** Three white cards side by side, each with a small round icon, a heading and a
 bulleted list.
 
 **Speaker notes:** Margaret never has to do this herself: every treatment is screened before it is
@@ -567,7 +575,7 @@ at step 1.
 - Margaret got treatment through her own doctor, and the next patient learns from her.
 
 **Visual:** A horizontal timeline with six icon stops; the line runs purple, then orange into the
-final orange star stop. Below, Margaret's small avatar beside the closing line in italic serif.
+final orange star stop. Below, Margaret's small avatar beside the closing line in italics.
 
 **Speaker notes:** Putting it together on one timeline. The key idea: the outcome is reported
 whether it's good, bad, or neutral, so the evidence base reflects reality.
@@ -604,10 +612,9 @@ against the current bill text before presenting, and name the bill and the state
 - **Every result is published,** producing treatment rankings and outcome labels.
 - Ask: Patients, families, doctors and clinics: register your interest at acceleratedmedicine.org
 
-**Visual:** Dark navy, with the patient path across the top: eight purple icon circles on a dashed
-zigzag line, the last one an orange star. Large cream serif headline; three lines below it with
-bold lead-ins and the icons from slide 6. At the bottom, an orange-outlined panel with the ask and
-the web address.
+**Visual:** Dark, with the patient path across the top. A large white headline; three lines below
+it with bold lead-ins and the icons from slide 6. At the bottom, an amber-outlined panel with the
+ask and the web address.
 
 **Speaker notes:** Close on the three changes. Then the ask: patients, families, doctors and
 clinics can register their interest at acceleratedmedicine.org. Registrations show legislators and

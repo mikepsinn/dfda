@@ -18,10 +18,13 @@ const routes = [
   { name: "developers", path: "/developers" },
   { name: "impact", path: "/impact" },
   { name: "find-trials", path: "/find-trials" },
+  // The deck's outcome-label slide: the app's own components on the scaled presentation canvas.
+  { name: "presentation", path: "/present/patient-journey#9" },
 ];
 const viewports = [
   { name: "desktop", width: 1280, height: 800 },
-  { name: "mobile", width: 390, height: 844 },
+  // A phone, not a narrow desktop window: no scrollbar, and the page's viewport tag applies.
+  { name: "mobile", width: 390, height: 844, isMobile: true, hasTouch: true },
 ];
 const marker = "<!-- visual-preview -->";
 const sha256 = bytes => createHash("sha256").update(bytes).digest("hex");
@@ -53,7 +56,8 @@ async function capture(outDir) {
 }
 
 async function screenshot(browser, url, viewport, outDir, file) {
-  const page = await browser.newPage({ viewport, reducedMotion: "reduce" });
+  const { width, height, isMobile = false, hasTouch = false } = viewport;
+  const page = await browser.newPage({ viewport: { width, height }, isMobile, hasTouch, reducedMotion: "reduce" });
   try {
     const response = await page.goto(url, { waitUntil: "load", timeout: 60_000 });
     // Link prefetches can keep the network busy; they do not change what the page shows.
