@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Deck } from "@/components/present/deck";
 import { patientJourneySlides } from "@/components/present/patient-journey/slides";
 import { getConditionEstimate } from "@/lib/demo/treatment-estimates";
@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   // A working draft (see content/patient-journey/script.md); share the link directly for now.
   robots: { index: false, follow: false },
 };
+
+// The reused components' responsive classes follow the window, and their phone layouts would not
+// fit a slide. A 1280-pixel layout keeps their desktop layouts on phones, which zoom out to show it
+// (Chrome zooms out to 25% at most, so wider layouts would not fit a phone screen).
+export const viewport: Viewport = { width: 1280, initialScale: undefined };
 
 // Arrow keys or space move between slides, N shows speaker notes, F goes full screen,
 // and printing saves a PDF with one page per slide.
