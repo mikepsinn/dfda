@@ -4,9 +4,10 @@ The single source for the Care-Integrated Clinical Trials patient journey deck a
 video in [`videos/right-to-trial`](../../videos/right-to-trial/README.md). Change the story here
 first, then rebuild the deck and the video from it.
 
-**This version:** the original deck, "Right to Trial: The Patient Journey" (October 1, 2026),
-transcribed as it was, typos included, so later commits show every change. The file itself is in
-[`original/`](original/).
+**This version:** the deck as published on claude.ai (version 8, October 2, 2026): the original
+with the new name throughout, a new cover, typo fixes, and "example" tags on illustrative figures.
+The original deck, "Right to Trial: The Patient Journey" (October 1, 2026), is in
+[`original/`](original/), and the first commit of this file transcribes it.
 
 Each slide has:
 
@@ -26,18 +27,29 @@ orange star) stands for the seven steps.
 
 **On screen**
 
+- Chart label: YEARS UNTIL EVERY DISEASE HAS A TREATMENT
+- At today's pace: 443 years
+- With care-integrated trials: 36 years
 - Eyebrow: THE CARE-INTEGRATED CLINICAL TRIALS INITIATIVE
-- Title: From first question to outcome label
-- Subtitle: What a patient experiences when seeking an experimental treatment, and how every
-  result helps the next person.
+- Title: Your grandmother doesn't have 443 years.
+- Subtitle: Radically accelerating medical discovery by letting any patient join trials of the
+  most promising treatments.
 
-**Visual:** Dark navy. The patient path runs across the top: eight purple icon circles on a
-dashed zigzag line, the last one an orange star. Orange eyebrow, large cream serif title, muted
-subtitle, all left-aligned in the lower half.
+**Visual:** Dark navy. Across the top, two bars: a long slate bar labeled "443 years" and a short
+orange bar labeled "36 years". Below, the orange eyebrow, a very large cream serif title and a
+muted subtitle, left-aligned. The model footnote runs along the bottom.
 
-**Speaker notes:** This deck walks through the full patient experience in a care-integrated
-clinical trial system, from exploring options to public results and outcome labels. We follow one
-illustrative patient, Margaret, throughout. The path across the top shows the seven steps.
+**Speaker notes:** Open on urgency. About 6,650 diseases have no approved treatment, and today
+about 15 a year get their first one, so the last would get it in about 443 years, roughly 18
+generations. Letting any willing patient join trials of the most promising treatments, through
+their own doctor and inside everyday care, raises research capacity about 12 times, so the backlog
+clears in about 36 years, within one lifetime. This is a model estimate (War on Disease manual,
+impact paper) that assumes about 2% of willing patients join and that discoveries rise with the
+number of patients studied. The deck then follows one illustrative patient, Margaret, from
+exploring options to public results and outcome labels.
+
+**Source line:** Model estimate: assumes about 2% of willing patients join and discoveries rise
+with patients studied. Source: War on Disease manual, impact paper.
 
 ## 2. Meet Margaret
 
@@ -45,7 +57,7 @@ illustrative patient, Margaret, throughout. The path across the top shows the se
 
 - Eyebrow: MEET MARGARET
 - Margaret, 68
-- Margaret has Alzheimer's disease. There 573 potentially effective drugs for Alzheimer's. She
+- Margaret has Alzheimer's disease. There are 573 potentially effective drugs for Alzheimer's. She
   cannot get any of them.
 - Card "TODAY": No options. No approved drug has helped her. No trial is open near her.
   Right-to-try covers only the dying.
@@ -130,8 +142,9 @@ Pharmacology, 2023; USC Schaeffer Center; Alzheimer's Association, 2026 Facts an
   at today's pace.
 - Card: Most pairs will not work. If only 1 in 1,000 works, that is about 9,500 treatments nobody
   is looking for.
-- Card: What Right to Trial changes. Doctors can already use approved drugs off-label, but nobody
-  tracks the results. Right to Trial adds drugs still in testing and tracks every outcome.
+- Card: What care-integrated trials change. Doctors can already use approved drugs off-label, but
+  nobody tracks the results. Care-integrated trials add drugs still in testing and track every
+  outcome.
 
 **Visual:** The equation in large purple numerals across the top. Below, a wide grid of 300 small
 beige squares with a single purple square (the tested part). A legend with an orange clock icon,
@@ -148,9 +161,9 @@ Expect the objection that most pairs make no sense. That is true, and it does no
 1 in 1,000 pairs works, that is about 9,500 treatments that nobody is testing. Most of these
 compounds are off patent, so no company has a reason to pay for the tests. Expect the objection
 that doctors can already prescribe approved drugs off-label. That is true, but nobody tracks what
-happens, so nobody learns which uses work. Right to Trial does two things here: it lets patients
-get compounds that passed Phase I but are not yet approved, and it records the outcome of every
-treatment so the evidence builds. Source:
+happens, so nobody learns which uses work. Care-integrated trials do two things here: they let
+patients get compounds that passed Phase I but are not yet approved, and they record the outcome of
+every treatment so the evidence builds. Source:
 https://manual.warondisease.org/knowledge/problem/untapped-therapeutic-frontier.html
 
 **Source line:** Source: War on Disease manual, The Untapped Therapeutic Frontier (FDA, GRAS,
@@ -232,7 +245,7 @@ platform or individualized treatment, or device-specific evidence.
 
 **On screen**
 
-- Eyebrow: PROTOTYPE TREATMENT RANKING FOR DEPRESSION
+- Eyebrow: PROTOTYPE RANKING FOR DEPRESSION · UNVERIFIED ESTIMATES
 - Title: Comparative Effectiveness Treatment Rankings
 - Table (# · Treatment · Effectiveness · Safety · Cost/yr · Takes effect):
   1. Electroconvulsive therapy · 90 · 40 · $25,500 · 1-2 weeks
@@ -256,7 +269,8 @@ next to approved ones, with its evidence strength clearly shown.
 
 - Eyebrow: OUTCOME LABELS
 - Title: A label that gets better with every patient
-- Label: Treatment X for early Alzheimer's. Updated monthly · 2 trials + 48 real-world patients.
+- Label: Treatment X for early Alzheimer's. Illustrative example · 2 trials + 48 real-world
+  patients.
   Effectiveness estimate 58 / 100. Safety estimate 82 / 100. Results · 358 patients: Better 44%,
   Same 29%, Worse 13%, Stopped 8%, Lost 6%. Side effects: Nausea 12%, Headache 9%, Fatigue 7%,
   Serious 4%. Cost: $329 / year. Evidence strength: Early, growing.
@@ -327,18 +341,19 @@ representative consents for her.
   research sponsors pay.
 - RIGHT-TO-TRY TODAY. 21: drugs used from 2018 to 2024. Makers may charge only their costs, so
   almost no one offers it.
-- RIGHT TO TRIAL: Clinics can charge a fair price, so they have a real reason to offer new
-  treatments.
+- CARE-INTEGRATED TRIALS: Clinics can charge a fair price, so they have a real reason to offer
+  new treatments.
 
 **Visual:** Left, a large white card with "$0" in huge purple numerals. Right, two stacked cards:
-a grey "Right-to-try today" card with an orange "21", and a lavender "Right to Trial" card.
+a grey "Right-to-try today" card with an orange "21", and a lavender "Care-integrated trials"
+card.
 
 **Speaker notes:** Today, under federal right-to-try, the drug maker decides whether to provide
 the drug and may charge only its direct costs (21 CFR 312.8(d)(1)). Nobody can earn anything from
 offering it, so almost nobody does. FDA reports only 21 investigational drugs used under the
 federal law from May 2018 to December 2024, and it does not publish patient counts
-(https://www.factcheck.org/2026/06/no-evidence-for-trumps-right-to-try-claim/). Under Right to
-Trial, clinics can charge a fair price, so they have a real reason to offer new treatments, and
+(https://www.factcheck.org/2026/06/no-evidence-for-trumps-right-to-try-claim/). Under
+care-integrated trials, clinics can charge a fair price, so they have a real reason to offer new treatments, and
 one board approval can cover many clinics. No insurer or state program is required to pay. The
 patient, family, charities, employers, research sponsors, and insurers that choose to can pay. If
 asked about liability: federal right-to-try already protects makers and doctors from lawsuits,
@@ -393,7 +408,7 @@ may continue if stopping suddenly is more dangerous.
 
 - Eyebrow: STEP 6 · RESULTS GO PUBLIC
 - Title: Every result is published
-- ANNUAL BOARD REPORT · 48 PATIENTS: Improved 21 · 44%. No real change 14 · 29%. Worsened 6 · 13%.
+- EXAMPLE ANNUAL BOARD REPORT · 48 PATIENTS: Improved 21 · 44%. No real change 14 · 29%. Worsened 6 · 13%.
   Stopped 4 · 8%. Died 0 · 0%. Lost to follow-up 3 · 6%. Serious side effects 2 · 4%.
 - Nothing hidden: Bad, null and unclear results must be published.
 - Privacy first: Tiny groups combined for privacy.
@@ -416,7 +431,7 @@ the format.
 - Her clinic: Data stays with her doctor → Outcome report: Coded and de-identified → Board report:
   Yearly public results → Evidence system: Combines all clinics → Rankings and Outcome labels:
   Compare benefits and harms
-- Her result improve the next patient's decision
+- Her result improves the next patient's decision
 - Every clinic reports in one open format, so any evidence system can combine the results.
 
 **Visual:** Five boxes in a row joined by purple arrows; the last is filled purple with an orange
@@ -487,10 +502,9 @@ Source: War on Disease manual, impact paper.
 
 - Eyebrow: VALUE FOR MONEY
 - Title: A year of healthy life for under $10
-- Cost per year of healthy life: $9.50 (Right to Trial at scale; trials built into everyday
-  care). $89 (Malaria bed nets; one of the best charities known). $100,000+ (A typical new drug;
+- Cost per year of healthy life: $9.50 (Care-integrated trials; at scale, in everyday care). $89 (Malaria bed nets; one of the best charities known). $100,000+ (A typical new drug;
   at the usual U.S. price limit).
-- Bar strip: Right to Trial at scale, $9.50: too small to see at this scale. Malaria bed nets,
+- Bar strip: Care-integrated trials, $9.50: too small to see at this scale. Malaria bed nets,
   $89: about 1 pixel wide. A typical new drug, $100,000+.
 - About 9 times cheaper than bed nets. Over 10,000 times cheaper than a typical new drug.
 
@@ -500,9 +514,9 @@ navy on white. Beneath, a to-scale bar strip in which only the drug's dark bar i
 **Speaker notes:** This is the standard cost-effectiveness test every new drug must pass: what it
 costs to gain one year of healthy life (one disability-adjusted life year, or DALY: a year without
 early death or disability). Lower is better. The bar strip is drawn to scale: if the drug bar is
-1,220 pixels, bed nets are about 1 pixel and Right to Trial about one tenth of a pixel, so the
-empty space is the point. Right to Trial at scale, meaning pragmatic trials built into everyday
-care: about $9.50 per healthy year. The cost counts the full research cost of the trials, whoever
+1,220 pixels, bed nets are about 1 pixel and care-integrated trials about one tenth of a pixel,
+so the empty space is the point. Care-integrated trials at scale, meaning pragmatic trials built
+into everyday care: about $9.50 per healthy year. The cost counts the full research cost of the trials, whoever
 pays: about 23.4 million patients a year at about $929 each, for the 36 years it takes to give
 every untreated disease a first treatment. The benefit is the healthy years gained because
 treatments arrive sooner (War on Disease manual, impact paper). Both costs and health are
@@ -527,10 +541,10 @@ paper; ICER.
 - **Any patient can participate** in trials for the most promising treatments, not only the dying.
 - **Clinics can charge fairly,** incentivizing them to offer otherwise unprofitable treatments.
 - **Every result is published,** producing treatment rankings and outcome labels.
-- Link: Explore the prototype (https://prototype.dfda.earth)
 
-**Visual:** Dark navy, with the patient path across the top again. Large cream serif headline;
-three lines below it with bold lead-ins; a small link at the bottom.
+**Visual:** Dark navy, with the patient path across the top: eight purple icon circles on a dashed
+zigzag line, the last one an orange star. Large cream serif headline; three lines below it with
+bold lead-ins.
 
 **Speaker notes:** Close on the three fixes: any patient can try, clinics can charge fairly so
 they offer treatment, and every result is published to produce treatment rankings and outcome
