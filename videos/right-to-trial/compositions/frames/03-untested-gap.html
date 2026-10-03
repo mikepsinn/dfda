@@ -1,0 +1,510 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+      color: #0f172a;
+    }
+    #f03-untested-gap-bg {
+      position: absolute;
+      inset: 0;
+      background: #f8f6f1;
+    }
+    #f03-untested-gap-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      container-type: size;
+    }
+    #f03-untested-gap-world {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 42%;
+    }
+
+    /* ── equation strip (top third) ── */
+    #f03-untested-gap-eq {
+      position: absolute;
+      top: 128px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 36px;
+    }
+    .f03-untested-gap-term {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #f03-untested-gap-t1 {
+      width: 380px;
+    }
+    #f03-untested-gap-t2 {
+      width: 330px;
+    }
+    #f03-untested-gap-t3 {
+      width: 600px;
+    }
+    .f03-untested-gap-numline {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      white-space: nowrap;
+      font-size: 6cqw;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #694cfa;
+      font-variant-numeric: tabular-nums;
+    }
+    .f03-untested-gap-num {
+      display: inline-block;
+      transform-origin: 50% 60%;
+    }
+    .f03-untested-gap-suffix {
+      display: inline-block;
+      margin-left: 0.26em;
+    }
+    .f03-untested-gap-op {
+      flex: 0 0 72px;
+      width: 72px;
+      text-align: center;
+      font-size: 6cqw;
+      font-weight: 400;
+      line-height: 1;
+      color: rgba(105, 76, 250, 0.75);
+    }
+    .f03-untested-gap-label {
+      margin-top: 18px;
+      font-size: 1.45cqw;
+      font-weight: 400;
+      line-height: 1.3;
+      color: #475569;
+    }
+
+    /* ── grid note ── */
+    #f03-untested-gap-note {
+      position: absolute;
+      top: 368px;
+      right: 153px;
+      font-size: 1.4cqw;
+      line-height: 1.3;
+      color: #475569;
+      white-space: nowrap;
+    }
+    #f03-untested-gap-note b {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* ── 60 × 5 grid (hero data-viz) ── */
+    #f03-untested-gap-gridwrap {
+      position: absolute;
+      left: 152px;
+      top: 420px;
+      width: 1615px;
+      height: 130px;
+      isolation: isolate;
+    }
+    #f03-untested-gap-glow {
+      position: absolute;
+      left: -109px;
+      top: -109px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      z-index: 0;
+      background: radial-gradient(
+        circle closest-side,
+        rgba(74, 44, 235, 1) 0%,
+        rgba(92, 62, 246, 0.5) 40%,
+        rgba(105, 76, 250, 0) 100%
+      );
+    }
+    #f03-untested-gap-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-rows: repeat(5, 22px);
+      grid-auto-flow: column;
+      grid-auto-columns: 22px;
+      gap: 5px;
+    }
+    #f03-untested-gap-grid > i {
+      display: block;
+      width: 22px;
+      height: 22px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      background: rgba(105, 76, 250, 0.08);
+      border: 1px solid rgba(105, 76, 250, 0.2);
+    }
+    #f03-untested-gap-lit {
+      position: relative;
+    }
+    #f03-untested-gap-litfill {
+      position: absolute;
+      inset: -1px;
+      display: block;
+      border-radius: 5px;
+      background: #694cfa;
+    }
+
+    /* ── legend row ── */
+    #f03-untested-gap-legend {
+      position: absolute;
+      left: 152px;
+      top: 588px;
+      width: 1615px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .f03-untested-gap-lg {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1.45cqw;
+      line-height: 1.3;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    .f03-untested-gap-lg b {
+      font-weight: 700;
+    }
+    .f03-untested-gap-accent {
+      color: #694cfa;
+    }
+    .f03-untested-gap-sw {
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+    .f03-untested-gap-sw-on {
+      background: #694cfa;
+    }
+    .f03-untested-gap-sw-off {
+      background: rgba(105, 76, 250, 0.08);
+      border: 1px solid rgba(105, 76, 250, 0.2);
+    }
+
+    /* ── pace pill ── */
+    #f03-untested-gap-pillrow {
+      position: absolute;
+      top: 664px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+    }
+    #f03-untested-gap-pill {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 34px 14px 26px;
+      border-radius: 100px;
+      background: rgba(105, 76, 250, 0.08);
+      color: #694cfa;
+      font-size: 1.45cqw;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    #f03-untested-gap-clock {
+      display: block;
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+    }
+
+    /* ── source line (chrome) ── */
+    #f03-untested-gap-src {
+      position: absolute;
+      top: 796px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 1.05cqw;
+      line-height: 1.4;
+      color: #475569;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="03-untested-gap"
+    data-start="0"
+    data-duration="13.055"
+    data-width="1920"
+    data-height="1080"
+  >
+    <div
+      id="f03-untested-gap-bg"
+      class="clip"
+      data-start="0"
+      data-duration="13.055"
+      data-track-index="0"
+    ></div>
+
+    <div
+      id="f03-untested-gap-stage"
+      class="clip"
+      data-start="0"
+      data-duration="13.055"
+      data-track-index="1"
+    >
+      <div id="f03-untested-gap-world">
+        <div id="f03-untested-gap-eq">
+          <div id="f03-untested-gap-t1" class="f03-untested-gap-term">
+            <div id="f03-untested-gap-n1line" class="f03-untested-gap-numline">
+              <span id="f03-untested-gap-n1" class="f03-untested-gap-num">0</span>
+            </div>
+            <div id="f03-untested-gap-l1" class="f03-untested-gap-label">
+              compounds with a human safety record
+            </div>
+          </div>
+          <div id="f03-untested-gap-op1" class="f03-untested-gap-op">×</div>
+          <div id="f03-untested-gap-t2" class="f03-untested-gap-term">
+            <div id="f03-untested-gap-n2line" class="f03-untested-gap-numline">
+              <span class="f03-untested-gap-num">1,000</span>
+            </div>
+            <div id="f03-untested-gap-l2" class="f03-untested-gap-label">diseases</div>
+          </div>
+          <div id="f03-untested-gap-op2" class="f03-untested-gap-op">=</div>
+          <div id="f03-untested-gap-t3" class="f03-untested-gap-term">
+            <div id="f03-untested-gap-n3line" class="f03-untested-gap-numline">
+              <span id="f03-untested-gap-n3" class="f03-untested-gap-num">0.0</span
+              ><span id="f03-untested-gap-mil" class="f03-untested-gap-suffix">million</span>
+            </div>
+            <div id="f03-untested-gap-l3" class="f03-untested-gap-label">
+              possible drug–disease pairs
+            </div>
+          </div>
+        </div>
+
+        <div id="f03-untested-gap-note">Each square: about <b>31,700</b> pairs</div>
+
+        <div id="f03-untested-gap-gridwrap">
+          <div id="f03-untested-gap-glow"></div>
+          <div id="f03-untested-gap-grid">
+            <i id="f03-untested-gap-lit"><b id="f03-untested-gap-litfill"></b></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+
+        <div id="f03-untested-gap-legend">
+          <div id="f03-untested-gap-lg1" class="f03-untested-gap-lg">
+            <span class="f03-untested-gap-sw f03-untested-gap-sw-on"></span>
+            <span><b>Tested:</b> about 32,500 pairs <b class="f03-untested-gap-accent">(0.34%)</b></span>
+          </div>
+          <div id="f03-untested-gap-lg2" class="f03-untested-gap-lg">
+            <span class="f03-untested-gap-sw f03-untested-gap-sw-off"></span>
+            <span><b>Never tested:</b> about 9.47 million</span>
+          </div>
+        </div>
+
+        <div id="f03-untested-gap-pillrow">
+          <div id="f03-untested-gap-pill">
+            <svg id="f03-untested-gap-clock" viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="13" fill="none" stroke="#694CFA" stroke-width="2.6" />
+              <line
+                x1="16"
+                y1="16"
+                x2="21.5"
+                y2="16"
+                stroke="#694CFA"
+                stroke-width="2.6"
+                stroke-linecap="round"
+              />
+              <line
+                id="f03-untested-gap-hand"
+                x1="16"
+                y1="16"
+                x2="16"
+                y2="7.5"
+                stroke="#694CFA"
+                stroke-width="2.6"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span>Over 2,000 years at today’s pace</span>
+          </div>
+        </div>
+
+        <div id="f03-untested-gap-src">
+          Source: War on Disease manual (FDA, GRAS, ICD-10 and ClinicalTrials.gov data)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    {
+      const byId = (name) => document.getElementById("f03-untested-gap-" + name);
+      const withCommas = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      const FRAME_DUR = 14.016;
+
+      // Equation-row geometry: must match the CSS widths of t1 / op / t2 / op / t3 + gap.
+      const W = [380, 72, 330, 72, 600];
+      const GAP = 36;
+      const ROW = W[0] + W[1] + W[2] + W[3] + W[4] + GAP * 4;
+      const LEFT = (1920 - ROW) / 2;
+      const END_T2 = LEFT + W[0] + GAP + W[1] + GAP + W[2];
+      const SHIFT_T1 = 960 - (LEFT + W[0] / 2); // only "9,500" on screen -> centred
+      const SHIFT_T2 = 960 - (LEFT + END_T2) / 2; // "9,500 × 1,000" -> centred
+
+      const world = byId("world");
+      const eq = byId("eq");
+      const n1 = byId("n1");
+      const n3 = byId("n3");
+      const wipeFrom = { opacity: 0, y: 10, clipPath: "inset(0% 100% 0% 0%)" };
+      const wipeTo = { opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)", duration: 0.7, ease: "power2.out" };
+
+      const tl = gsap.timeline({ paused: true });
+
+      // Macro camera: one slow push under the whole shot, settling before the final hold.
+      tl.fromTo(world, { scale: 1 }, { scale: 1.02, duration: 13.0, ease: "sine.inOut" }, 0);
+
+      // ── Scene 1 (0.0–5.6s): "9,500" counts up, label on "safety record" ──
+      tl.fromTo(eq, { x: SHIFT_T1 }, { x: SHIFT_T2, duration: 0.8, ease: "power3.inOut" }, 5.6);
+      tl.fromTo(byId("n1line"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 0.12);
+      const c1 = { v: 0 };
+      tl.fromTo(
+        c1,
+        { v: 0 },
+        {
+          v: 9500,
+          duration: 1.65,
+          ease: "power3.out",
+          onUpdate: () => {
+            n1.textContent = withCommas(Math.round(c1.v));
+          },
+        },
+        0.2,
+      );
+      tl.fromTo(n1, { scale: 0.55 }, { scale: 1, duration: 1.65, ease: "power3.out" }, 0.2);
+      tl.fromTo(byId("l1"), wipeFrom, wipeTo, 3.86);
+
+      // ── Scene 2 (5.6–7.8s): "×" on "Paired", "1,000" lands on "thousand" ──
+      tl.fromTo(byId("op1"), { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power2.out" }, 5.64);
+      tl.fromTo(
+        byId("n2line"),
+        { opacity: 0, y: 28, scale: 0.92 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "power3.out" },
+        6.3,
+      );
+      tl.fromTo(byId("l2"), wipeFrom, wipeTo, 6.64);
+
+      // ── Scene 3 (7.8–11.4s): "=" on "that's", "9.5 million" lands, grid assembles ──
+      tl.to(eq, { x: 0, duration: 0.8, ease: "power3.inOut" }, 7.78);
+      tl.fromTo(byId("op2"), { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power2.out" }, 7.8);
+      tl.fromTo(byId("n3line"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 7.98);
+      const c3 = { v: 0 };
+      tl.fromTo(
+        c3,
+        { v: 0 },
+        {
+          v: 9.5,
+          duration: 1.05,
+          ease: "power3.out",
+          onUpdate: () => {
+            n3.textContent = c3.v.toFixed(1);
+          },
+        },
+        7.98,
+      );
+      tl.fromTo(n3, { scale: 0.6 }, { scale: 1, duration: 1.05, ease: "power3.out" }, 7.98);
+      tl.fromTo(byId("mil"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, 9.1);
+      tl.fromTo(byId("l3"), wipeFrom, wipeTo, 9.4);
+
+      // 300 squares, DOM is column-major -> index order = left-to-right column cascade.
+      const squares = Array.prototype.slice.call(byId("grid").children);
+      tl.fromTo(
+        squares,
+        { opacity: 0, y: 14, scale: 0.4 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.36, ease: "power2.out", stagger: { each: 0.0024 } },
+        9.5,
+      );
+      tl.fromTo(byId("note"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 10.6);
+
+      // ── Scene 4 (11.4–14.0s): one square lights on "tested" + single bounded bloom ──
+      tl.fromTo(byId("litfill"), { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2.2)" }, 11.72);
+      tl.fromTo(byId("glow"), { opacity: 0, scale: 0.8 }, { opacity: 0.42, scale: 1, duration: 0.6, ease: "power2.out" }, 11.72);
+
+      // Legend left-to-right on "a third of one percent", then the pill, then the source.
+      const lgFrom = { opacity: 0, x: -14, clipPath: "inset(0% 100% 0% 0%)" };
+      const lgTo = { opacity: 1, x: 0, clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.out" };
+      tl.fromTo(byId("lg1"), lgFrom, lgTo, 12.4);
+      tl.fromTo(byId("lg2"), lgFrom, lgTo, 12.7);
+      tl.fromTo(
+        byId("pill"),
+        { opacity: 0, y: 14, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" },
+        12.98,
+      );
+      tl.fromTo(
+        byId("hand"),
+        { rotation: -360, svgOrigin: "16 16" },
+        { rotation: 0, svgOrigin: "16 16", duration: 0.8, ease: "power2.inOut" },
+        12.98,
+      );
+      tl.fromTo(byId("src"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 13.25);
+
+      // Hold still to the frame's exact length.
+      tl.set({}, {}, FRAME_DUR);
+
+      window.__timelines["03-untested-gap"] = tl;
+    }
+  </script>
+
+
+  <script>
+    // retime-to-new-voice: drive this scene's original timeline through a map from the
+    // new narration's time to the old narration's time, anchored on matching spoken cues.
+    (function () {
+      var ID = "03-untested-gap";
+      var inner = window.__timelines[ID];
+      var MAP = [[0.000,0.000],[0.340,0.597],[5.640,4.821],[7.780,6.656],[11.460,9.643],[13.800,11.723]]; // [old seconds, new seconds]
+      var NEW_DURATION = 12.455;
+      function toOld(t) {
+        for (var i = 1; i < MAP.length; i++) {
+          if (t <= MAP[i][1]) {
+            var a = MAP[i - 1], b = MAP[i];
+            return a[0] + (t - a[1]) * (b[0] - a[0]) / (b[1] - a[1]);
+          }
+        }
+        var last = MAP[MAP.length - 1];
+        return last[0] + (t - last[1]); // after the last cue, real time (holds stay holds)
+      }
+      var OLD_END = toOld(NEW_DURATION);
+      var outer = gsap.timeline({ paused: true });
+      outer.fromTo(inner, { time: 0 }, {
+        time: OLD_END, duration: NEW_DURATION,
+        ease: function (p) { return toOld(p * NEW_DURATION) / OLD_END; },
+      }, 0);
+      window.__timelines[ID] = outer;
+    })();
+  </script>
+</template>

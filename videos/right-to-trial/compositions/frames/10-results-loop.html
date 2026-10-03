@@ -1,0 +1,997 @@
+<template id="10-results-loop-template">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  #root {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    container-type: size;
+    font-family: "Inter", sans-serif;
+    color: #0F172A;
+  }
+
+  /* full-bleed cream ground (its own clip, lowest track) */
+  [id="10-results-loop-bg"] {
+    position: absolute;
+    inset: 0;
+    background: #F8F6F1;
+  }
+  [id="10-results-loop-stage"] {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* ---------- slide header: mini patient path + eyebrow (top-left) ---------- */
+  [id="10-results-loop-eyebrow"] {
+    position: absolute;
+    left: 96px;
+    top: 70px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  [id="10-results-loop-minipath"] {
+    display: block;
+    width: 176px;
+    height: 32px;
+    overflow: visible;
+  }
+  [id="10-results-loop-eyebrow-text"] {
+    font-size: 1.05cqw;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #694CFA;
+    white-space: nowrap;
+  }
+
+  /* ---------- Margaret's record chip: pops centre, then docks top-right as the tag pill ---------- */
+  [id="10-results-loop-chip-dock"] {
+    position: absolute;
+    left: 590px;
+    top: 402px;
+    width: 740px;
+    height: 76px;
+  }
+  [id="10-results-loop-chip"] {
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 28px;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.08);
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    font-size: 32px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  [id="10-results-loop-chip-icon"] {
+    display: block;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    margin-right: 4px;
+  }
+  [id="10-results-loop-chip-name"] {
+    position: relative;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  [id="10-results-loop-redact"] {
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    top: 50%;
+    height: 38px;
+    margin-top: -19px;
+    border-radius: 8px;
+    background: #0F172A;
+    transform-origin: 0% 50%;
+  }
+  [id="10-results-loop-chip-rest"] {
+    font-weight: 500;
+    color: #475569;
+  }
+
+  /* ---------- example board report (hero) ---------- */
+  [id="10-results-loop-report"] {
+    position: absolute;
+    inset: 0;
+  }
+  [id="10-results-loop-card"] {
+    position: absolute;
+    left: 96px;
+    top: 212px;
+    width: 900px;
+    height: 644px;
+    box-sizing: border-box;
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    border-radius: 14px;
+    background: rgba(105, 76, 250, 0.04);
+  }
+  [id="10-results-loop-tag"] {
+    position: absolute;
+    left: 44px;
+    top: 40px;
+    height: 38px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 18px 0 13px;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.1);
+    color: #5B3FE6;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  [id="10-results-loop-tag"] svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+  }
+  [id="10-results-loop-title"] {
+    position: absolute;
+    left: 44px;
+    top: 94px;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  [id="10-results-loop-rows"] {
+    position: absolute;
+    left: 44px;
+    top: 172px;
+    width: 812px;
+    height: 336px;
+  }
+  [class~="10-results-loop-row"] {
+    position: absolute;
+    left: 0;
+    width: 812px;
+    height: 56px;
+  }
+  [class~="10-results-loop-row-label"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 290px;
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+    color: #475569;
+    white-space: nowrap;
+  }
+  [class~="10-results-loop-track"] {
+    position: absolute;
+    left: 300px;
+    top: 15px;
+    width: 380px;
+    height: 26px;
+    border-radius: 6px;
+    background: rgba(105, 76, 250, 0.1);
+  }
+  [class~="10-results-loop-fill"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 6px;
+    background: #694CFA;
+  }
+  [class~="10-results-loop-val"] {
+    position: absolute;
+    left: 692px;
+    top: 0;
+    width: 120px;
+    height: 56px;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 10px;
+    line-height: 56px;
+    white-space: nowrap;
+  }
+  [class~="10-results-loop-n"] {
+    font-size: 22px;
+    font-weight: 500;
+    color: #475569;
+  }
+  [class~="10-results-loop-p"] {
+    font-size: 30px;
+    font-weight: 700;
+    color: #694CFA;
+  }
+  [id="10-results-loop-divider"] {
+    position: absolute;
+    left: 44px;
+    top: 532px;
+    width: 812px;
+    height: 1.5px;
+    background: rgba(105, 76, 250, 0.14);
+  }
+  [id="10-results-loop-foot"] {
+    position: absolute;
+    left: 44px;
+    top: 556px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  [class~="10-results-loop-fchip"] {
+    height: 48px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 22px 0 15px;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.1);
+    color: #694CFA;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  [class~="10-results-loop-fchip"] svg {
+    display: block;
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="10-results-loop-foot-arrow"] {
+    display: block;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: #94A3B8;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* "Nothing hidden" stamp — lands across the report's top-right corner */
+  [id="10-results-loop-stamp"] {
+    position: absolute;
+    left: 780px;
+    top: 182px;
+    width: 340px;
+    height: 72px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 100px;
+    background: #694CFA;
+    color: #F8F6F1;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  [id="10-results-loop-stamp-ring"] {
+    position: absolute;
+    inset: 6px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(248, 246, 241, 0.45);
+  }
+  [id="10-results-loop-stamp"] svg {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: #F8F6F1;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="10-results-loop-stamp-text"] {
+    position: relative;
+  }
+
+  /* ---------- outcome label (real prototype capture, cropped) ---------- */
+  [id="10-results-loop-label"] {
+    position: absolute;
+    left: 1121px;
+    top: 320px;
+    width: 703px;
+    height: 256px;
+    box-sizing: border-box;
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    border-radius: 14px;
+    background: #FFFFFF;
+    overflow: hidden;
+  }
+  /* 2880x3748 capture shown at 700 px wide (0.243x of native, always downscaled = crisp);
+     top offset -87.5 px = capture px 360 (CSS px 180), the 253 px window ends at capture px ~1400 */
+  [id="10-results-loop-label-img"] {
+    position: absolute;
+    left: 0;
+    top: -87.5px;
+    display: block;
+    width: 700px;
+    height: 911px;
+    max-width: none;
+  }
+  [id="10-results-loop-sheen"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(105, 76, 250, 0) 0%, rgba(105, 76, 250, 0.14) 50%, rgba(105, 76, 250, 0) 100%);
+  }
+  [id="10-results-loop-updated"] {
+    position: absolute;
+    left: 1660px;
+    top: 298px;
+    width: 176px;
+    height: 46px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 100px;
+    background: #ECE7FD;
+    border: 1.5px solid rgba(105, 76, 250, 0.3);
+    color: #694CFA;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  [id="10-results-loop-updated-icon"] {
+    display: block;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ---------- other clinics pooling in from below ---------- */
+  [class~="10-results-loop-clinic"] {
+    position: absolute;
+    top: 678px;
+    width: 56px;
+    height: 56px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: rgba(105, 76, 250, 0.08);
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  [class~="10-results-loop-clinic"] svg {
+    display: block;
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="10-results-loop-clinics-cap"] {
+    position: absolute;
+    left: 1272px;
+    top: 748px;
+    width: 400px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #475569;
+    white-space: nowrap;
+  }
+
+  /* ---------- flow layer: guides + streaming result dots ---------- */
+  [id="10-results-loop-flow"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: visible;
+  }
+  [id="10-results-loop-flow"] path {
+    fill: none;
+    stroke: rgba(105, 76, 250, 0.22);
+    stroke-width: 2;
+    stroke-linecap: butt;
+  }
+  [id="10-results-loop-dots"] {
+    position: absolute;
+    inset: 0;
+  }
+  [class~="10-results-loop-dot"] {
+    position: absolute;
+    border-radius: 50%;
+    background: #694CFA;
+  }
+
+  /* ---------- loop arrow back to step 1 + the next patient ---------- */
+  [id="10-results-loop-arrow-svg"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: visible;
+  }
+  [id="10-results-loop-connector"] {
+    position: absolute;
+    left: 105px;
+    top: 109px;
+    width: 2px;
+    height: 14px;
+    border-radius: 2px;
+    background: rgba(105, 76, 250, 0.35);
+    transform-origin: 50% 0%;
+  }
+  [id="10-results-loop-avatar"] {
+    position: absolute;
+    left: 78px;
+    top: 124px;
+    width: 56px;
+    height: 56px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(105, 76, 250, 0.15);
+    border: 1.5px solid rgba(105, 76, 250, 0.3);
+  }
+  [id="10-results-loop-avatar"] svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  [id="10-results-loop-next"] {
+    position: absolute;
+    left: 150px;
+    top: 124px;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+</style>
+
+<div id="root" data-composition-id="10-results-loop" data-width="1920" data-height="1080" data-duration="15.002">
+  <div id="10-results-loop-bg" class="clip" data-start="0" data-duration="15.002" data-track-index="0"></div>
+
+  <div id="10-results-loop-stage" class="clip" data-start="0" data-duration="15.002" data-track-index="1">
+
+    <!-- slide header: mini patient path (steps 6 + 7 active) + eyebrow -->
+    <div id="10-results-loop-eyebrow">
+      <svg id="10-results-loop-minipath" viewBox="0 0 176 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 22C23 22 23 10 36 10S49 22 62 22S75 10 88 10S101 22 114 22S127 10 140 10S153 22 166 22" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.6" stroke-dasharray="3 4" stroke-linecap="round" />
+        <circle cx="10" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="36" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="62" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="88" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="114" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <g id="10-results-loop-dot6">
+          <circle cx="140" cy="10" r="9" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <circle cx="140" cy="10" r="5.5" fill="#694CFA" />
+        </g>
+        <g id="10-results-loop-dot7">
+          <circle cx="166" cy="22" r="9" fill="none" stroke="#F0A050" stroke-opacity="0.55" stroke-width="1.5" />
+          <circle cx="166" cy="22" r="5.5" fill="#F0A050" />
+        </g>
+        <g id="10-results-loop-dot1-on">
+          <circle cx="10" cy="22" r="9" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <circle cx="10" cy="22" r="5.5" fill="#694CFA" />
+        </g>
+      </svg>
+      <div id="10-results-loop-eyebrow-text">Steps 6–7 · Results go public</div>
+    </div>
+
+    <!-- example board report: card + stamp ride one wrapper (centred first, then slides left) -->
+    <div id="10-results-loop-report">
+      <div id="10-results-loop-card">
+        <div id="10-results-loop-tag">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 20V13M12 20V5M19 20V10" />
+          </svg>
+          <span>Example report · 48 patients</span>
+        </div>
+        <h3 id="10-results-loop-title">6-month outcomes</h3>
+
+        <div id="10-results-loop-rows">
+          <div class="10-results-loop-row" style="top: 0px;">
+            <div id="10-results-loop-label-0" class="10-results-loop-row-label">Improved</div>
+            <div class="10-results-loop-track"><div id="10-results-loop-fill-0" class="10-results-loop-fill" style="width: 44%;"></div></div>
+            <div id="10-results-loop-val-0" class="10-results-loop-val"><span class="10-results-loop-n">21</span><span class="10-results-loop-p">44%</span></div>
+          </div>
+          <div class="10-results-loop-row" style="top: 70px;">
+            <div id="10-results-loop-label-1" class="10-results-loop-row-label">No real change</div>
+            <div class="10-results-loop-track"><div id="10-results-loop-fill-1" class="10-results-loop-fill" style="width: 29%;"></div></div>
+            <div id="10-results-loop-val-1" class="10-results-loop-val"><span class="10-results-loop-n">14</span><span class="10-results-loop-p">29%</span></div>
+          </div>
+          <div class="10-results-loop-row" style="top: 140px;">
+            <div id="10-results-loop-label-2" class="10-results-loop-row-label">Worsened</div>
+            <div class="10-results-loop-track"><div id="10-results-loop-fill-2" class="10-results-loop-fill" style="width: 13%;"></div></div>
+            <div id="10-results-loop-val-2" class="10-results-loop-val"><span class="10-results-loop-n">6</span><span class="10-results-loop-p">13%</span></div>
+          </div>
+          <div class="10-results-loop-row" style="top: 210px;">
+            <div id="10-results-loop-label-3" class="10-results-loop-row-label">Stopped</div>
+            <div class="10-results-loop-track"><div id="10-results-loop-fill-3" class="10-results-loop-fill" style="width: 8%;"></div></div>
+            <div id="10-results-loop-val-3" class="10-results-loop-val"><span class="10-results-loop-n">4</span><span class="10-results-loop-p">8%</span></div>
+          </div>
+          <div class="10-results-loop-row" style="top: 280px;">
+            <div id="10-results-loop-label-4" class="10-results-loop-row-label">Lost to follow-up</div>
+            <div class="10-results-loop-track"><div id="10-results-loop-fill-4" class="10-results-loop-fill" style="width: 6%;"></div></div>
+            <div id="10-results-loop-val-4" class="10-results-loop-val"><span class="10-results-loop-n">3</span><span class="10-results-loop-p">6%</span></div>
+          </div>
+        </div>
+
+        <div id="10-results-loop-divider"></div>
+        <div id="10-results-loop-foot">
+          <div id="10-results-loop-chip-deid" class="10-results-loop-fchip">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2.5" y="5" width="19" height="14" rx="2.5" />
+              <circle cx="8.5" cy="10.5" r="2" />
+              <path d="M5.5 15.5c.6-1.4 1.7-2 3-2s2.4.6 3 2" />
+              <path d="M14.5 10h4M14.5 14h3" />
+              <path d="M3 3l18 18" />
+            </svg>
+            <span>De-identified</span>
+          </div>
+          <svg id="10-results-loop-foot-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+          <div id="10-results-loop-chip-pub" class="10-results-loop-fchip">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9" />
+              <ellipse cx="12" cy="12" rx="4" ry="9" />
+              <path d="M3.5 9h17M3.5 15h17" />
+            </svg>
+            <span>Public registry</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="10-results-loop-stamp">
+        <div id="10-results-loop-stamp-ring"></div>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+        <span id="10-results-loop-stamp-text">Nothing hidden</span>
+      </div>
+    </div>
+
+    <!-- outcome label: crop of the real prototype capture (CSS px y 180-700, full width) -->
+    <div id="10-results-loop-label">
+      <img id="10-results-loop-label-img" src="public/app/label-lecanemab.png" width="700" height="911" alt="Prototype outcome label for Lecanemab: title, current best estimates banner and score card" data-layout-allow-overflow />
+      <div id="10-results-loop-sheen" data-layout-allow-overflow></div>
+    </div>
+    <div id="10-results-loop-updated">
+      <svg id="10-results-loop-updated-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12a8 8 0 1 1-2.35-5.65" />
+        <path d="M20 4v4.5h-4.5" />
+      </svg>
+      <span>Updated</span>
+    </div>
+
+    <!-- other clinics pooling into the same label -->
+    <div id="10-results-loop-clinic-0" class="10-results-loop-clinic" style="left: 1282px;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 21V9l8-5 8 5v12" />
+        <path d="M12 9v5M9.5 11.5h5" />
+        <path d="M3 21h18" />
+      </svg>
+    </div>
+    <div id="10-results-loop-clinic-1" class="10-results-loop-clinic" style="left: 1444px;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 21V9l8-5 8 5v12" />
+        <path d="M12 9v5M9.5 11.5h5" />
+        <path d="M3 21h18" />
+      </svg>
+    </div>
+    <div id="10-results-loop-clinic-2" class="10-results-loop-clinic" style="left: 1606px;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 21V9l8-5 8 5v12" />
+        <path d="M12 9v5M9.5 11.5h5" />
+        <path d="M3 21h18" />
+      </svg>
+    </div>
+    <div id="10-results-loop-clinics-cap">Other clinics</div>
+
+    <!-- flow guides: report rows -> label, clinics -> label -->
+    <svg id="10-results-loop-flow" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+      <path id="10-results-loop-guide-0" d="M1000 414C1060 414 1060 404 1119 404" />
+      <path id="10-results-loop-guide-1" d="M1000 484C1060 484 1060 426 1119 426" />
+      <path id="10-results-loop-guide-2" d="M1000 554C1060 554 1060 448 1119 448" />
+      <path id="10-results-loop-guide-3" d="M1000 624C1060 624 1060 470 1119 470" />
+      <path id="10-results-loop-guide-4" d="M1000 694C1060 694 1060 492 1119 492" />
+      <path id="10-results-loop-cguide-0" d="M1310 676L1366.7 578" />
+      <path id="10-results-loop-cguide-1" d="M1472 676L1472 578" />
+      <path id="10-results-loop-cguide-2" d="M1634 676L1577.3 578" />
+    </svg>
+    <div id="10-results-loop-dots"></div>
+
+    <!-- orange loop arrow from the label back to step 1, then the next patient -->
+    <svg id="10-results-loop-arrow-svg" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <mask id="10-results-loop-arrow-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+          <path id="10-results-loop-arrow-reveal" d="M1200 314C1200 150 1060 36 880 36L200 36C136 36 106 50 106 76" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+        </mask>
+      </defs>
+      <path id="10-results-loop-arrow" d="M1200 314C1200 150 1060 36 880 36L200 36C136 36 106 50 106 76" fill="none" stroke="#F0A050" stroke-width="4" stroke-dasharray="14 12" stroke-linecap="round" mask="url(#10-results-loop-arrow-mask)" />
+      <path id="10-results-loop-arrow-head" d="M96 65L106 77L116 65" fill="none" stroke="#F0A050" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      <circle id="10-results-loop-halo" cx="106" cy="92" r="16" fill="#694CFA" fill-opacity="0.08" stroke="#694CFA" stroke-opacity="0.4" stroke-width="2" />
+    </svg>
+    <div id="10-results-loop-connector"></div>
+    <div id="10-results-loop-avatar">
+      <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="28" cy="21" r="9.5" fill="#694CFA" fill-opacity="0.7" />
+        <path d="M8 58C8 42 17 34 28 34S48 42 48 58Z" fill="#694CFA" fill-opacity="0.7" />
+      </svg>
+    </div>
+    <div id="10-results-loop-next">Next patient</div>
+
+    <!-- Margaret's record chip (topmost while it docks) -->
+    <div id="10-results-loop-chip-dock">
+      <div id="10-results-loop-chip">
+        <svg id="10-results-loop-chip-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="16" fill="#694CFA" />
+          <path id="10-results-loop-chip-check" d="M11 18.5l4.6 4.6L25.5 13" fill="none" stroke="#F8F6F1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span id="10-results-loop-chip-name">Margaret<span id="10-results-loop-redact" data-layout-allow-occlusion></span></span>
+        <span id="10-results-loop-chip-rest">· month 6 · outcome recorded</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var P = "10-results-loop-";
+    function byId(id) {
+      return document.getElementById(P + id);
+    }
+    var TEXT = "#0F172A";
+    var MUTED = "#475569";
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true, defaults: { force3D: false } });
+
+    // svg-path-draw: dash = measured length; offset parked past the cap so nothing shows at t0
+    function draw(path, at, dur, ease) {
+      var len = Math.ceil(path.getTotalLength()) + 2;
+      var pad = 24;
+      path.style.strokeDasharray = len + " " + (len * 2 + pad);
+      tl.fromTo(
+        path,
+        { strokeDashoffset: len + pad },
+        { strokeDashoffset: 0, duration: dur, ease: ease || "power2.out" },
+        at
+      );
+    }
+
+    // ===== Scene 1 (0.0-2.6s): header reveals; Margaret's record chip pops on "six months" =====
+    tl.fromTo(
+      byId("minipath"),
+      { clipPath: "inset(0% 100% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.out" },
+      0.08
+    );
+    tl.fromTo(
+      byId("dot6"),
+      { scale: 0.3, transformOrigin: "50% 50%" },
+      { scale: 1, duration: 0.45, ease: "back.out(2.2)" },
+      0.34
+    );
+    tl.fromTo(
+      byId("dot7"),
+      { scale: 0.3, transformOrigin: "50% 50%" },
+      { scale: 1, duration: 0.45, ease: "back.out(2.2)" },
+      0.46
+    );
+    tl.fromTo(
+      byId("eyebrow-text"),
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      0.18
+    );
+    tl.fromTo(
+      byId("chip"),
+      { opacity: 0, scale: 0.86, y: 18 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "power3.out" },
+      0.47
+    );
+    draw(byId("chip-check"), 0.72, 0.42, "power2.out");
+    // dock: centre (960,440) -> top-right tag position, right edge on the 1824 margin
+    tl.fromTo(
+      byId("chip-dock"),
+      { x: 0, y: 0, scale: 1 },
+      { x: 612.4, y: -354, scale: 0.68, duration: 0.75, ease: "power3.inOut", immediateRender: false },
+      1.98
+    );
+
+    // ===== Scene 2 (2.6-6.6s): the example report rises; bars grow on their words =====
+    tl.fromTo(
+      byId("report"),
+      { x: 414 },
+      { x: 0, duration: 0.85, ease: "power3.inOut" },
+      7.42
+    );
+    tl.fromTo(
+      byId("card"),
+      { opacity: 0, y: 56 },
+      { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" },
+      2.2
+    );
+    tl.fromTo(
+      byId("title"),
+      { opacity: 0, y: 14 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+      2.36
+    );
+    tl.fromTo(
+      byId("tag"),
+      { opacity: 0, x: -12 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      2.44
+    );
+
+    // stat-bars-and-fills (progress-fill bar form): authored widths, revealed from the left edge
+    var BARS = [
+      { i: 0, at: 2.65 }, // "good"      -> Improved 44%
+      { i: 2, at: 3.07 }, // "bad"       -> Worsened 13%
+      { i: 1, at: 3.54 }, // "no change" -> No real change 29%
+      { i: 3, at: 4.0 }, //                 Stopped 8%
+      { i: 4, at: 4.14 } //                 Lost to follow-up 6%
+    ];
+    BARS.forEach(function (b) {
+      tl.fromTo(
+        byId("fill-" + b.i),
+        { clipPath: "inset(0% 100% 0% 0%)" },
+        { clipPath: "inset(0% 0% 0% 0%)", duration: 0.8, ease: "power2.out" },
+        b.at
+      );
+      tl.fromTo(
+        byId("label-" + b.i),
+        { color: MUTED },
+        { color: TEXT, duration: 0.3, ease: "power1.out" },
+        b.at
+      );
+      tl.fromTo(
+        byId("val-" + b.i),
+        { opacity: 0, x: -12 },
+        { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" },
+        b.at + 0.22
+      );
+    });
+
+    // "de-identified" (4.82s): chip + Margaret's name is redacted on her record
+    tl.fromTo(
+      byId("chip-deid"),
+      { opacity: 0, scale: 0.85, y: 10 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" },
+      4.82
+    );
+    tl.fromTo(
+      byId("redact"),
+      { scaleX: 0 },
+      { scaleX: 1, duration: 0.42, ease: "power2.inOut" },
+      4.92
+    );
+    // "published" (5.80s): public registry chip
+    tl.fromTo(
+      byId("foot-arrow"),
+      { opacity: 0, x: -8 },
+      { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" },
+      5.66
+    );
+    tl.fromTo(
+      byId("chip-pub"),
+      { opacity: 0, scale: 0.85, y: 10 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" },
+      5.8
+    );
+
+    // ===== Scene 3 (6.6-8.0s): "Nothing hidden" stamp, one smooth scale settle =====
+    tl.fromTo(
+      byId("stamp"),
+      { opacity: 0, scale: 1.45, rotation: -7 },
+      { opacity: 1, scale: 1, rotation: -7, duration: 0.5, ease: "power3.out" },
+      6.7
+    );
+
+    // ===== Scene 4 (8.0-11.1s): report slides left, label enters, results pool into it =====
+    // (report wrapper x 414 -> 0 at 7.42 is registered above)
+    tl.fromTo(
+      byId("label"),
+      { opacity: 0, x: 70 },
+      { opacity: 1, x: 0, duration: 0.85, ease: "power3.out" },
+      7.62
+    );
+    var i, k, j;
+    for (i = 0; i < 5; i++) {
+      draw(byId("guide-" + i), 8.0 + i * 0.04, 0.4, "power2.out");
+    }
+
+    var dotsHost = byId("dots");
+    function makeDot(x, y, size) {
+      var d = document.createElement("div");
+      d.className = P + "dot";
+      d.style.left = x - size / 2 + "px";
+      d.style.top = y - size / 2 + "px";
+      d.style.width = size + "px";
+      d.style.height = size + "px";
+      dotsHost.appendChild(d);
+      return d;
+    }
+    function fadeInOut(d, at, dur) {
+      tl.fromTo(d, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power1.out" }, at);
+      tl.fromTo(
+        d,
+        { opacity: 1 },
+        { opacity: 0, duration: 0.14, ease: "power1.in", immediateRender: false },
+        at + dur - 0.14
+      );
+    }
+
+    // report rows -> label (two results per row, staggered)
+    for (i = 0; i < 5; i++) {
+      var y0 = 414 + 70 * i;
+      var y1 = 404 + 22 * i;
+      for (k = 0; k < 2; k++) {
+        var at = 8.12 + i * 0.09 + k * 0.42;
+        var dur = 0.62;
+        var d = makeDot(1000, y0, 12);
+        tl.fromTo(d, { x: 0 }, { x: 119, duration: dur, ease: "none" }, at);
+        tl.fromTo(d, { y: 0 }, { y: y1 - y0, duration: dur, ease: "sine.inOut" }, at);
+        fadeInOut(d, at, dur);
+      }
+    }
+
+    // other clinics pop in and pool into the same label
+    var CLINICS = [1310, 1472, 1634];
+    for (j = 0; j < 3; j++) {
+      tl.fromTo(
+        byId("clinic-" + j),
+        { opacity: 0, scale: 0.6 },
+        { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" },
+        8.3 + j * 0.12
+      );
+      draw(byId("cguide-" + j), 8.5 + j * 0.08, 0.35, "power2.out");
+    }
+    tl.fromTo(
+      byId("clinics-cap"),
+      { opacity: 0, y: 8 },
+      { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+      8.62
+    );
+    for (j = 0; j < 3; j++) {
+      var xc = CLINICS[j];
+      var xe = xc + (1472 - xc) * 0.35;
+      for (k = 0; k < 3; k++) {
+        var cat = 8.72 + j * 0.1 + k * 0.26;
+        var cdur = 0.5;
+        var cd = makeDot(xc, 674, 10);
+        tl.fromTo(
+          cd,
+          { x: 0, y: 0 },
+          { x: xe - xc, y: -96, duration: cdur, ease: "power1.inOut" },
+          cat
+        );
+        fadeInOut(cd, cat, cdur);
+      }
+    }
+
+    // "updates the label" (9.73s): Updated chip, border warms, a sheen passes over the label
+    tl.fromTo(
+      byId("updated"),
+      { opacity: 0, scale: 0.7 },
+      { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" },
+      9.73
+    );
+    tl.fromTo(
+      byId("updated-icon"),
+      { rotation: -140, transformOrigin: "50% 50%" },
+      { rotation: 0, duration: 0.7, ease: "power2.out" },
+      9.73
+    );
+    tl.fromTo(
+      byId("label"),
+      { borderColor: "rgba(105, 76, 250, 0.2)" },
+      { borderColor: "rgba(105, 76, 250, 0.55)", duration: 0.45, ease: "power1.out", immediateRender: false },
+      9.75
+    );
+    tl.fromTo(
+      byId("sheen"),
+      { x: -220 },
+      { x: 760, duration: 0.9, ease: "power1.inOut" },
+      9.8
+    );
+
+    // ===== Scene 5 (11.1-14.6s): orange loop arrow back to step 1; the next patient appears =====
+    draw(byId("arrow-reveal"), 11.28, 1.5, "power2.out");
+    tl.fromTo(
+      byId("arrow-head"),
+      { opacity: 0, scale: 0.4, transformOrigin: "50% 100%" },
+      { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" },
+      12.55
+    );
+    tl.fromTo(
+      byId("dot1-on"),
+      { opacity: 0, scale: 0.3, transformOrigin: "50% 50%" },
+      { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)" },
+      12.66
+    );
+    tl.fromTo(
+      byId("halo"),
+      { opacity: 0, scale: 0.5, transformOrigin: "50% 50%" },
+      { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" },
+      12.7
+    );
+    tl.fromTo(
+      byId("connector"),
+      { scaleY: 0 },
+      { scaleY: 1, duration: 0.3, ease: "power2.out" },
+      12.84
+    );
+    tl.fromTo(
+      byId("avatar"),
+      { opacity: 0, scale: 0.6, y: -10 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "power3.out" },
+      12.92
+    );
+    tl.fromTo(
+      byId("next"),
+      { opacity: 0, x: -12 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      13.12
+    );
+    // hold to the end of the frame (no exit)
+    tl.set({}, {}, 14.602);
+
+    window.__timelines["10-results-loop"] = tl;
+  })();
+</script>
+</template>

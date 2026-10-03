@@ -1,0 +1,570 @@
+<template id="04-the-fix-template">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    #root {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      container-type: size;
+      font-family: "Inter", sans-serif;
+    }
+
+    /* full-bleed night ground: very faint cream dot grid + a barely-there purple lift behind the path */
+    [class~="04-the-fix-ground"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      background-color: #1e2842;
+      background-image:
+        radial-gradient(
+          ellipse 62% 48% at 50% 34%,
+          rgba(105, 76, 250, 0.1) 0%,
+          rgba(105, 76, 250, 0) 70%
+        ),
+        radial-gradient(circle, rgba(248, 246, 241, 0.07) 1.6px, rgba(248, 246, 241, 0) 2.2px);
+      background-size:
+        100% 100%,
+        40px 40px;
+      background-position:
+        0 0,
+        20px 20px;
+    }
+
+    /* camera layer — eases toward step 1 underneath the back half */
+    [class~="04-the-fix-stage"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      transform-origin: 204px 390px;
+    }
+
+    [class~="04-the-fix-path"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: visible;
+    }
+
+    /* mask reveal strokes: one solid segment per step, normalized length */
+    [class~="04-the-fix-seg"] {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 18;
+      stroke-linecap: round;
+      stroke-dasharray: 1 2;
+    }
+
+    [class~="04-the-fix-dash"] {
+      fill: none;
+      stroke: #94a3b8;
+      stroke-opacity: 0.55;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 14 12;
+    }
+
+    /* soft glow ring on step 1 (final beat) */
+    [class~="04-the-fix-halo"] {
+      position: absolute;
+      left: 64px;
+      top: 250px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(105, 76, 250, 0.5) 0%,
+        rgba(105, 76, 250, 0.22) 38%,
+        rgba(105, 76, 250, 0) 70%
+      );
+    }
+
+    [class~="04-the-fix-ring"] {
+      position: absolute;
+      left: 128px;
+      top: 314px;
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+      border: 3px solid rgba(105, 76, 250, 0.9);
+      box-sizing: border-box;
+    }
+
+    /* step nodes: wrapper (dims in the final beat) + circle (pops in) */
+    [class~="04-the-fix-node"] {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+    }
+
+    [class~="04-the-fix-dot"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #694cfa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [class~="04-the-fix-dot-star"] {
+      background: #f0a050;
+    }
+
+    [class~="04-the-fix-icon"] {
+      width: 54px;
+      height: 54px;
+      overflow: visible;
+    }
+
+    [class~="04-the-fix-stroke"] {
+      fill: none;
+      stroke: #f8f6f1;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1 2;
+    }
+
+    [class~="04-the-fix-star-shape"] {
+      fill: #f8f6f1;
+      fill-opacity: 0;
+    }
+
+    [class~="04-the-fix-avatar"] {
+      position: absolute;
+      left: 156px;
+      top: 252px;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 4px solid #1e2842;
+      box-sizing: border-box;
+      display: block;
+    }
+
+    /* title lockup — lower left, aligned to the path's first step; bottom lands ~y 790 (< 896 keep-out) */
+    [class~="04-the-fix-lockup"] {
+      position: absolute;
+      left: 144px;
+      top: 548px;
+      width: 1560px;
+    }
+
+    [class~="04-the-fix-accent"] {
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: #694cfa;
+      transform-origin: 0 50%;
+    }
+
+    [class~="04-the-fix-title"] {
+      margin: 28px 0 0 0;
+      font-family: "Inter", sans-serif;
+      font-size: 4.2cqw;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #f8f6f1;
+      white-space: nowrap;
+    }
+
+    [class~="04-the-fix-word"] {
+      display: inline-block;
+    }
+
+    /* the two promises */
+    [class~="04-the-fix-promise"] {
+      position: relative;
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      font-size: 1.7cqw;
+      line-height: 1.3;
+      letter-spacing: -0.005em;
+      white-space: nowrap;
+    }
+
+    [class~="04-the-fix-promise-1"] {
+      margin-top: 20px;
+      font-weight: 400;
+      color: rgba(248, 246, 241, 0.68);
+    }
+
+    [class~="04-the-fix-promise-2"] {
+      margin-top: 12px;
+      font-weight: 600;
+      color: rgba(248, 246, 241, 0.94);
+    }
+
+    /* small check, hung in the left margin so both promise lines share one text edge */
+    [class~="04-the-fix-check"] {
+      position: absolute;
+      left: -48px;
+      top: 4px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #694cfa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [class~="04-the-fix-check-icon"] {
+      width: 20px;
+      height: 20px;
+      overflow: visible;
+    }
+
+    [class~="04-the-fix-check-stroke"] {
+      fill: none;
+      stroke: #f8f6f1;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1 2;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="04-the-fix"
+    data-width="1920"
+    data-height="1080"
+    data-start="0"
+    data-duration="9.146"
+  >
+    <div
+      id="04-the-fix-ground"
+      class="clip 04-the-fix-ground"
+      data-start="0"
+      data-duration="9.146"
+      data-track-index="0"
+    ></div>
+
+    <div id="04-the-fix-stage" class="04-the-fix-stage">
+      <!-- the patient path: a dashed wave revealed left→right through a drawn mask -->
+      <svg
+        class="04-the-fix-path"
+        viewBox="0 0 1920 1080"
+        width="1920"
+        height="1080"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <mask
+            id="04-the-fix-path-mask"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            width="1920"
+            height="1080"
+          >
+            <path id="04-the-fix-seg-0" class="04-the-fix-seg" pathLength="1" d="M204 390 C305 390 355 290 456 290" />
+            <path id="04-the-fix-seg-1" class="04-the-fix-seg" pathLength="1" d="M456 290 C557 290 607 390 708 390" />
+            <path id="04-the-fix-seg-2" class="04-the-fix-seg" pathLength="1" d="M708 390 C809 390 859 290 960 290" />
+            <path id="04-the-fix-seg-3" class="04-the-fix-seg" pathLength="1" d="M960 290 C1061 290 1111 390 1212 390" />
+            <path id="04-the-fix-seg-4" class="04-the-fix-seg" pathLength="1" d="M1212 390 C1313 390 1363 290 1464 290" />
+            <path id="04-the-fix-seg-5" class="04-the-fix-seg" pathLength="1" d="M1464 290 C1548 334 1632 334 1716 290" />
+          </mask>
+        </defs>
+        <path
+          class="04-the-fix-dash"
+          mask="url(#04-the-fix-path-mask)"
+          d="M204 390 C305 390 355 290 456 290 C557 290 607 390 708 390 C809 390 859 290 960 290 C1061 290 1111 390 1212 390 C1313 390 1363 290 1464 290 C1548 334 1632 334 1716 290"
+        />
+      </svg>
+
+      <!-- step-1 glow (final beat), behind the circles -->
+      <div id="04-the-fix-halo" class="04-the-fix-halo"></div>
+      <div id="04-the-fix-ring" class="04-the-fix-ring"></div>
+
+      <!-- 1 · search (low) -->
+      <div id="04-the-fix-node-1" class="04-the-fix-node" style="left: 144px; top: 330px">
+        <div id="04-the-fix-dot-1" class="04-the-fix-dot">
+          <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="04-the-fix-icon-1a" class="04-the-fix-stroke" pathLength="1" d="M11 4a7 7 0 1 1 0 14a7 7 0 1 1 0-14z" />
+            <path id="04-the-fix-icon-1b" class="04-the-fix-stroke" pathLength="1" d="M16 16l5 5" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 2 · chat bubble (high) -->
+      <div id="04-the-fix-node-2" class="04-the-fix-node" style="left: 396px; top: 230px">
+        <div id="04-the-fix-dot-2" class="04-the-fix-dot">
+          <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="04-the-fix-icon-2a" class="04-the-fix-stroke" pathLength="1" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            <path id="04-the-fix-icon-2b" class="04-the-fix-stroke" pathLength="1" d="M7.5 8.5h9" />
+            <path id="04-the-fix-icon-2c" class="04-the-fix-stroke" pathLength="1" d="M7.5 12.5h5.5" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 3 · open book (low) -->
+      <div id="04-the-fix-node-3" class="04-the-fix-node" style="left: 648px; top: 330px">
+        <div id="04-the-fix-dot-3" class="04-the-fix-dot">
+          <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="04-the-fix-icon-3a" class="04-the-fix-stroke" pathLength="1" d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path id="04-the-fix-icon-3b" class="04-the-fix-stroke" pathLength="1" d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 4 · shield-check (high) -->
+      <div id="04-the-fix-node-4" class="04-the-fix-node" style="left: 900px; top: 230px">
+        <div id="04-the-fix-dot-4" class="04-the-fix-dot">
+          <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="04-the-fix-icon-4a" class="04-the-fix-stroke" pathLength="1" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path id="04-the-fix-icon-4b" class="04-the-fix-stroke" pathLength="1" d="M9 12l2 2 4-4" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 5 · line chart (low) -->
+      <div id="04-the-fix-node-5" class="04-the-fix-node" style="left: 1152px; top: 330px">
+        <div id="04-the-fix-dot-5" class="04-the-fix-dot">
+          <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="04-the-fix-icon-5a" class="04-the-fix-stroke" pathLength="1" d="M3 3v18h18" />
+            <path id="04-the-fix-icon-5b" class="04-the-fix-stroke" pathLength="1" d="M7 15l3-3 4 4 5-6" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 6 · bar chart (high) -->
+      <div id="04-the-fix-node-6" class="04-the-fix-node" style="left: 1404px; top: 230px">
+        <div id="04-the-fix-dot-6" class="04-the-fix-dot">
+          <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="04-the-fix-icon-6a" class="04-the-fix-stroke" pathLength="1" d="M3 3v18h18" />
+            <path id="04-the-fix-icon-6b" class="04-the-fix-stroke" pathLength="1" d="M8 17v-3" />
+            <path id="04-the-fix-icon-6c" class="04-the-fix-stroke" pathLength="1" d="M13 17V5" />
+            <path id="04-the-fix-icon-6d" class="04-the-fix-stroke" pathLength="1" d="M18 17V9" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- 7 · star, highlight orange (high) -->
+      <div id="04-the-fix-node-7" class="04-the-fix-node" style="left: 1656px; top: 230px">
+        <div id="04-the-fix-dot-7" class="04-the-fix-dot 04-the-fix-dot-star">
+          <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              id="04-the-fix-icon-7a"
+              class="04-the-fix-stroke 04-the-fix-star-shape"
+              pathLength="1"
+              d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.49l-5.87 3.09 1.12-6.54L2.5 9.41l6.56-.95z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Margaret settles onto step 1 (final beat) -->
+      <img id="04-the-fix-avatar" class="04-the-fix-avatar" src="public/margaret.png" alt="" />
+
+      <!-- title lockup -->
+      <div class="04-the-fix-lockup">
+        <div id="04-the-fix-accent" class="04-the-fix-accent"></div>
+        <h1 class="04-the-fix-title">
+          <span id="04-the-fix-word-1" class="04-the-fix-word">Care-Integrated</span>
+          <span id="04-the-fix-word-2" class="04-the-fix-word">Clinical</span>
+          <span id="04-the-fix-word-3" class="04-the-fix-word">Trials</span>
+        </h1>
+        <p id="04-the-fix-promise-1" class="04-the-fix-promise 04-the-fix-promise-1">
+          Treatment through your own doctor.
+        </p>
+        <p id="04-the-fix-promise-2" class="04-the-fix-promise 04-the-fix-promise-2">
+          <span id="04-the-fix-check" class="04-the-fix-check">
+            <svg class="04-the-fix-check-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path id="04-the-fix-check-mark" class="04-the-fix-check-stroke" pathLength="1" d="M5 12.5l4.5 4.5L19 7.5" />
+            </svg>
+          </span>
+          <span id="04-the-fix-promise-2-text">Every result published.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var ID = "04-the-fix";
+      var DURATION = 8.746;
+      var el = function (name) {
+        return document.getElementById(ID + "-" + name);
+      };
+
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // ---- Scene 1 (0.0–3.3s): the path draws itself 0.2–3.0s, steps pop on as the line reaches them ----
+      var SEG_START = 0.2; // first segment leaves step 1
+      var SEG_END = 3.0; // the line lands on the star
+      var SEG_DUR = (SEG_END - SEG_START) / 6; // constant-speed pen per segment (ease: none)
+      var EDGE_LEAD = SEG_DUR * 0.75; // line reaches the next circle's edge ~75% into its segment
+      var POP_DUR = 0.55;
+      var ICON_DELAY = 0.1;
+      var ICON_DUR = 0.45;
+
+      var icons = {
+        1: ["icon-1a", "icon-1b"],
+        2: ["icon-2a", "icon-2b", "icon-2c"],
+        3: ["icon-3a", "icon-3b"],
+        4: ["icon-4a", "icon-4b"],
+        5: ["icon-5a", "icon-5b"],
+        6: ["icon-6a", "icon-6b", "icon-6c", "icon-6d"],
+        7: ["icon-7a"],
+      };
+
+      // dash offsets tween as SVG attributes: the CSS route rounds px to whole
+      // numbers, which would turn a 0–1 normalized (pathLength="1") draw into a jump
+      function popStep(n, at) {
+        tl.fromTo(
+          el("dot-" + n),
+          { scale: 0.6 },
+          { scale: 1, duration: POP_DUR, ease: "power3.out" },
+          at,
+        );
+        // opacity lands fast so the line passing under the circle is covered early
+        tl.fromTo(
+          el("dot-" + n),
+          { opacity: 0 },
+          { opacity: 1, duration: 0.2, ease: "power2.out" },
+          at,
+        );
+        icons[n].forEach(function (name, i) {
+          tl.fromTo(
+            el(name),
+            { attr: { "stroke-dashoffset": 1.05 } },
+            { attr: { "stroke-dashoffset": 0 }, duration: ICON_DUR, ease: "power2.out" },
+            at + ICON_DELAY + i * 0.1,
+          );
+        });
+      }
+
+      // step 1 is on screen first, then the line leaves it
+      popStep(1, 0.08);
+
+      for (var k = 0; k < 6; k++) {
+        var segAt = SEG_START + k * SEG_DUR;
+        tl.fromTo(
+          el("seg-" + k),
+          { attr: { "stroke-dashoffset": 1.05 } },
+          { attr: { "stroke-dashoffset": 0 }, duration: SEG_DUR, ease: "none" },
+          segAt,
+        );
+        popStep(k + 2, segAt + EDGE_LEAD);
+      }
+
+      // the seventh step: orange circle, star outline draws, then fills
+      var STAR_AT = SEG_START + 5 * SEG_DUR + EDGE_LEAD;
+      tl.fromTo(
+        el("icon-7a"),
+        { fillOpacity: 0 },
+        { fillOpacity: 1, duration: 0.35, ease: "power1.out" },
+        STAR_AT + ICON_DELAY + ICON_DUR - 0.05,
+      );
+
+      // title lockup on its voiceover cues: "care-integrated" 1.02 · "clinical" 2.09 · "trials" 2.48
+      tl.fromTo(
+        el("accent"),
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.5, ease: "power3.out" },
+        0.86,
+      );
+      [
+        ["word-1", 1.0],
+        ["word-2", 2.07],
+        ["word-3", 2.46],
+      ].forEach(function (w) {
+        tl.fromTo(
+          el(w[0]),
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+          w[1],
+        );
+      });
+
+      // ---- Scene 2 (3.3–6.9s): the two promises under the title ----
+      // "treatment" (3.41)
+      tl.fromTo(
+        el("promise-1"),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+        3.38,
+      );
+      // "every result" (5.04) — slightly bolder line, small check pops and draws
+      var P2_AT = 5.0;
+      tl.fromTo(
+        el("promise-2"),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+        P2_AT,
+      );
+      tl.fromTo(
+        el("check"),
+        { scale: 0.6 },
+        { scale: 1, duration: POP_DUR, ease: "power3.out" },
+        P2_AT + 0.04,
+      );
+      tl.fromTo(
+        el("check-mark"),
+        { attr: { "stroke-dashoffset": 1.05 } },
+        { attr: { "stroke-dashoffset": 0 }, duration: 0.4, ease: "power2.out" },
+        P2_AT + 0.16,
+      );
+
+      // ---- Scene 3 (6.9–8.7s): "Here's Margaret's year" (6.96) — she settles onto step 1 ----
+      var M_AT = 6.92;
+      tl.fromTo(
+        el("avatar"),
+        { opacity: 0, y: -40, scale: 0.7 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" },
+        M_AT,
+      );
+      // one bounded glow fade-up on step 1
+      tl.fromTo(
+        [el("halo"), el("ring")],
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" },
+        M_AT + 0.12,
+      );
+      // the other six steps dim slightly
+      tl.fromTo(
+        [el("node-2"), el("node-3"), el("node-4"), el("node-5"), el("node-6"), el("node-7")],
+        { opacity: 1 },
+        { opacity: 0.6, duration: 0.6, ease: "power1.inOut" },
+        M_AT + 0.12,
+      );
+
+      // near-imperceptible push toward step 1 under the back half (hands off to the next frame);
+      // ends exactly at the frame length, anchoring the timeline to DURATION
+      var PUSH_AT = 3.3;
+      tl.fromTo(
+        el("stage"),
+        { scale: 1 },
+        { scale: 1.04, duration: DURATION - PUSH_AT, ease: "power1.in" },
+        PUSH_AT,
+      );
+
+      window.__timelines["04-the-fix"] = tl;
+    })();
+  </script>
+</template>
