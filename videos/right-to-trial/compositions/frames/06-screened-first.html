@@ -1,0 +1,535 @@
+<template id="06-screened-first-template">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  #root {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    container-type: size;
+    font-family: "Inter", sans-serif;
+    color: #0F172A;
+  }
+
+  /* full-bleed cream ground (its own clip, lowest track) */
+  [id="06-screened-first-bg"] {
+    position: absolute;
+    inset: 0;
+    background: #F8F6F1;
+  }
+  [id="06-screened-first-stage"] {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* slide-header: eyebrow + mini path (left), tag pill (right), h2 */
+  [id="06-screened-first-eyebrow"] {
+    position: absolute;
+    left: 96px;
+    top: 70px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 5;
+  }
+  [id="06-screened-first-minipath"] {
+    display: block;
+    width: 176px;
+    height: 32px;
+    overflow: visible;
+  }
+  [id="06-screened-first-eyebrow-text"] {
+    font-size: 1.05cqw;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #694CFA;
+    white-space: nowrap;
+  }
+  [id="06-screened-first-tag"] {
+    position: absolute;
+    right: 96px;
+    top: 69px;
+    padding: 8px 18px;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.08);
+    color: #5B3FE6;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    z-index: 5;
+  }
+  [id="06-screened-first-h2"] {
+    position: absolute;
+    left: 96px;
+    top: 112px;
+    margin: 0;
+    font-size: 2.6cqw;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+    white-space: nowrap;
+    z-index: 5;
+  }
+  [class~="06-screened-first-word"] {
+    display: inline-block;
+  }
+
+  /* the board ring: a U-arc tying the three reviewers together */
+  [id="06-screened-first-arc-svg"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: visible;
+    z-index: 1;
+  }
+  [id="06-screened-first-arc"] {
+    fill: none;
+    stroke: rgba(105, 76, 250, 0.35);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+  }
+
+  /* reviewer cards — center-outward burst wrap anchored on the shield axis */
+  [id="06-screened-first-hub"] {
+    position: absolute;
+    left: 960px;
+    top: 400px;
+    width: 0;
+    height: 0;
+    z-index: 2;
+  }
+  [class~="06-screened-first-card"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 440px;
+    height: 112px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 28px;
+    background-color: #F8F6F1;
+    background-image: linear-gradient(rgba(105, 76, 250, 0.04), rgba(105, 76, 250, 0.04));
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    border-radius: 14px;
+  }
+  [class~="06-screened-first-icon"] {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: rgba(105, 76, 250, 0.08);
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  [class~="06-screened-first-icon"] svg {
+    display: block;
+    width: 34px;
+    height: 34px;
+  }
+  [class~="06-screened-first-ico"] {
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [class~="06-screened-first-role"] {
+    font-size: 1.4cqw;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+
+  /* hero: shield-check */
+  [id="06-screened-first-halo"] {
+    position: absolute;
+    left: 795px;
+    top: 227px;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(105, 76, 250, 0.11) 0%, rgba(105, 76, 250, 0.05) 45%, rgba(105, 76, 250, 0) 70%);
+    z-index: 3;
+  }
+  [id="06-screened-first-ring"] {
+    position: absolute;
+    left: 810px;
+    top: 242px;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid #694CFA;
+    z-index: 3;
+  }
+  [id="06-screened-first-shield"] {
+    position: absolute;
+    left: 840px;
+    top: 252px;
+    width: 240px;
+    height: 280px;
+    overflow: visible;
+    transform-origin: 50% 55%;
+    z-index: 4;
+  }
+  [id="06-screened-first-shield-fill"] {
+    fill: #694CFA;
+    stroke: none;
+  }
+  [id="06-screened-first-shield-outline"] {
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="06-screened-first-shield-inner"] {
+    fill: none;
+    stroke: rgba(105, 76, 250, 0.35);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="06-screened-first-check"] {
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="06-screened-first-board"] {
+    position: absolute;
+    left: 0;
+    top: 552px;
+    width: 1920px;
+    text-align: center;
+    font-size: 1.0cqw;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    color: #475569;
+    white-space: nowrap;
+    z-index: 5;
+  }
+
+  /* payoff pills */
+  [id="06-screened-first-pills"] {
+    position: absolute;
+    left: 0;
+    top: 784px;
+    width: 1920px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    z-index: 5;
+  }
+  [class~="06-screened-first-pill"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 30px 14px 18px;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.08);
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    color: #694CFA;
+    font-size: 1.4cqw;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+  [class~="06-screened-first-pill"] svg {
+    display: block;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+  }
+  [class~="06-screened-first-pill-dot"] {
+    fill: #694CFA;
+  }
+  [class~="06-screened-first-pill-check"] {
+    fill: none;
+    stroke: #F8F6F1;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+</style>
+
+<div id="root" data-composition-id="06-screened-first" data-width="1920" data-height="1080" data-duration="5.679">
+  <div id="06-screened-first-bg" class="clip" data-start="0" data-duration="5.679" data-track-index="0"></div>
+
+  <div id="06-screened-first-stage" class="clip" data-start="0" data-duration="5.679" data-track-index="1">
+
+    <div id="06-screened-first-eyebrow">
+      <svg id="06-screened-first-minipath" viewBox="0 0 176 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 22C23 22 23 10 36 10S49 22 62 22S75 10 88 10S101 22 114 22S127 10 140 10S153 22 166 22" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.6" stroke-dasharray="3 4" stroke-linecap="round" />
+        <circle cx="36" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="62" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="88" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="114" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="140" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="166" cy="22" r="5" fill="#F0A050" fill-opacity="0.3" />
+        <g id="06-screened-first-dot1">
+          <circle cx="10" cy="22" r="9" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <circle cx="10" cy="22" r="5.5" fill="#694CFA" />
+        </g>
+      </svg>
+      <div id="06-screened-first-eyebrow-text">Step 1 · Explore options</div>
+    </div>
+
+    <div id="06-screened-first-tag">Independent review</div>
+
+    <h2 id="06-screened-first-h2"><span class="06-screened-first-word">Every</span> <span class="06-screened-first-word">option</span> <span class="06-screened-first-word">is</span> <span class="06-screened-first-word">screened</span> <span class="06-screened-first-word">first</span></h2>
+
+    <svg id="06-screened-first-arc-svg" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+      <path id="06-screened-first-arc" d="M460 400A500 280 0 0 0 1460 400" />
+    </svg>
+
+    <div id="06-screened-first-hub">
+      <div class="06-screened-first-card" data-target-x="-500" data-target-y="0">
+        <div class="06-screened-first-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path class="06-screened-first-ico" d="M4.5 3h3M12.5 3h3" />
+            <path class="06-screened-first-ico" d="M6 3v5a4 4 0 0 0 8 0V3" />
+            <path class="06-screened-first-ico" d="M10 12v2.5a5 5 0 0 0 10 0V13" />
+            <path class="06-screened-first-ico" d="M20 9a2 2 0 1 1 0 4a2 2 0 1 1 0-4" />
+          </svg>
+        </div>
+        <div class="06-screened-first-role">Physician</div>
+      </div>
+      <div class="06-screened-first-card" data-target-x="0" data-target-y="280">
+        <div class="06-screened-first-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path class="06-screened-first-ico" d="M4 4v16h16" />
+            <path class="06-screened-first-ico" d="M7.5 15.5l3.5-4 3 2.5 5-6" />
+            <path class="06-screened-first-ico" d="M15.5 8h3.5v3.5" />
+          </svg>
+        </div>
+        <div class="06-screened-first-role">Outcomes researcher</div>
+      </div>
+      <div class="06-screened-first-card" data-target-x="500" data-target-y="0">
+        <div class="06-screened-first-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path class="06-screened-first-ico" d="M12 3v17M8.5 20h7" />
+            <path class="06-screened-first-ico" d="M5 7h14" />
+            <path class="06-screened-first-ico" d="M5 7l-2.5 6M5 7l2.5 6M2.5 13h5a2.5 2.5 0 0 1-5 0" />
+            <path class="06-screened-first-ico" d="M19 7l-2.5 6M19 7l2.5 6M16.5 13h5a2.5 2.5 0 0 1-5 0" />
+          </svg>
+        </div>
+        <div class="06-screened-first-role">Ethicist</div>
+      </div>
+    </div>
+
+    <div id="06-screened-first-halo"></div>
+    <div id="06-screened-first-ring"></div>
+
+    <svg id="06-screened-first-shield" viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg">
+      <path id="06-screened-first-shield-fill" d="M120 16L212 50V130C212 196 172 242 120 266C68 242 28 196 28 130V50Z" />
+      <path id="06-screened-first-shield-inner" d="M120 38L192 65V130C192 184 160 222 120 242C80 222 48 184 48 130V65Z" />
+      <path id="06-screened-first-shield-outline" d="M120 16L212 50V130C212 196 172 242 120 266C68 242 28 196 28 130V50Z" />
+      <path id="06-screened-first-check" d="M80 142L108 170L162 112" />
+    </svg>
+
+    <div id="06-screened-first-board">Experimental Treatment Review Board (ETRB)</div>
+
+    <div id="06-screened-first-pills">
+      <div id="06-screened-first-pill1" class="06-screened-first-pill">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle class="06-screened-first-pill-dot" cx="12" cy="12" r="11" />
+          <path class="06-screened-first-pill-check" d="M7 12.4l3.3 3.3L17 9" />
+        </svg>
+        <span>No financial ties to the clinic or maker</span>
+      </div>
+      <div id="06-screened-first-pill2" class="06-screened-first-pill">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle class="06-screened-first-pill-dot" cx="12" cy="12" r="11" />
+          <path class="06-screened-first-pill-check" d="M7 12.4l3.3 3.3L17 9" />
+        </svg>
+        <span>Flat fees, never paid per approval</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var P = "06-screened-first-";
+    function byId(id) {
+      return document.getElementById(P + id);
+    }
+    function byClass(cls, scope) {
+      return Array.prototype.slice.call((scope || document).getElementsByClassName(P + cls));
+    }
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    // svg-path-draw: dash = measured length, offset length -> 0
+    function draw(path, at, dur, ease) {
+      var len = Math.ceil(path.getTotalLength()) + 1;
+      path.style.strokeDasharray = len + " " + len;
+      tl.fromTo(
+        path,
+        { strokeDashoffset: len },
+        { strokeDashoffset: 0, duration: dur, ease: ease || "power2.out" },
+        at
+      );
+    }
+
+    // ---- Scene 1 (0.0-1.8s): header + the shield draws itself on "independent board"
+    tl.fromTo(
+      byId("minipath"),
+      { clipPath: "inset(0% 100% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.out" },
+      0.05
+    );
+    tl.fromTo(
+      byId("dot1"),
+      { scale: 0.3, transformOrigin: "50% 50%" },
+      { scale: 1, duration: 0.45, ease: "back.out(2.2)" },
+      0.12
+    );
+    tl.fromTo(
+      byId("eyebrow-text"),
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      0.15
+    );
+    tl.fromTo(
+      byId("tag"),
+      { opacity: 0, y: -8 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+      0.3
+    );
+
+    tl.fromTo(
+      byId("halo"),
+      { opacity: 0, scale: 0.85 },
+      { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" },
+      0.15
+    );
+    draw(byId("shield-outline"), 0.2, 0.65, "power2.out");
+    draw(byId("shield-inner"), 0.66, 0.5, "power2.out");
+    tl.fromTo(
+      byId("shield-fill"),
+      { fillOpacity: 0 },
+      { fillOpacity: 0.08, duration: 0.45, ease: "power1.out" },
+      0.8
+    );
+    tl.fromTo(
+      byId("board"),
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power1.out" },
+      0.9
+    );
+
+    byClass("word").forEach(function (w, i) {
+      tl.fromTo(
+        w,
+        { opacity: 0, y: 26 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+        1.0 + i * 0.06
+      );
+    });
+
+    // ---- Scene 2 (1.8-3.2s): reviewers assemble around the shield, left to right;
+    // check draws on "option" (2.8s)
+    var START_PROGRESS = 0.6;
+    byClass("card").forEach(function (card, i) {
+      var tx = Number(card.dataset.targetX);
+      var ty = Number(card.dataset.targetY);
+      var at = 1.9 + i * 0.2;
+      tl.fromTo(
+        card,
+        { xPercent: -50, yPercent: -50, x: tx * START_PROGRESS, y: ty * START_PROGRESS, scale: 0.85 },
+        { xPercent: -50, yPercent: -50, x: tx, y: ty, scale: 1, duration: 1.0, ease: "power3.out" },
+        at
+      );
+      tl.fromTo(card, { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, at);
+      byClass("ico", card).forEach(function (p, k) {
+        draw(p, at + 0.35 + k * 0.1, 0.45, "power2.out");
+      });
+    });
+    draw(byId("arc"), 2.02, 0.9, "none");
+
+    draw(byId("check"), 2.8, 0.38, "power2.out");
+    tl.fromTo(
+      byId("ring"),
+      { opacity: 0, scale: 0.92 },
+      { opacity: 0.5, scale: 1, duration: 0.12, ease: "power1.out" },
+      2.9
+    );
+    tl.to(byId("ring"), { opacity: 0, scale: 1.3, duration: 0.8, ease: "power2.out" }, 3.02);
+    tl.to(byId("shield"), { scale: 1.04, duration: 0.14, ease: "power2.out" }, 2.92);
+    tl.to(byId("shield"), { scale: 1, duration: 0.45, ease: "power2.inOut" }, 3.06);
+    tl.to(byId("shield-fill"), { fillOpacity: 0.15, duration: 0.5, ease: "power1.out" }, 2.95);
+
+    // ---- Scene 3 (after "every option"): payoff pills mask-wipe in beneath, then hold
+    function pill(id, at) {
+      var el = byId(id);
+      tl.fromTo(
+        el,
+        { clipPath: "inset(0% 100% 0% 0% round 100px)" },
+        { clipPath: "inset(0% 0% 0% 0% round 100px)", duration: 0.7, ease: "power2.out" },
+        at
+      );
+      tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, at);
+      byClass("pill-check", el).forEach(function (p) {
+        draw(p, at + 0.35, 0.35, "power2.out");
+      });
+    }
+    pill("pill1", 3.3); // right after "every option" (the spoken line no longer names them)
+    pill("pill2", 3.9);
+
+    // hold to the frame's fixed length
+    tl.set({}, {}, 6.123);
+
+    window.__timelines["06-screened-first"] = tl;
+  })();
+</script>
+
+
+  <script>
+    // retime-to-new-voice: drive this scene's original timeline through a map from the
+    // new narration's time to the old narration's time, anchored on matching spoken cues.
+    (function () {
+      var ID = "06-screened-first";
+      var inner = window.__timelines[ID];
+      var MAP = [[0.000,0.000],[3.240,3.355]]; // [old seconds, new seconds]
+      var NEW_DURATION = 5.179;
+      function toOld(t) {
+        for (var i = 1; i < MAP.length; i++) {
+          if (t <= MAP[i][1]) {
+            var a = MAP[i - 1], b = MAP[i];
+            return a[0] + (t - a[1]) * (b[0] - a[0]) / (b[1] - a[1]);
+          }
+        }
+        var last = MAP[MAP.length - 1];
+        return last[0] + (t - last[1]); // after the last cue, real time (holds stay holds)
+      }
+      var OLD_END = toOld(NEW_DURATION);
+      var outer = gsap.timeline({ paused: true });
+      outer.fromTo(inner, { time: 0 }, {
+        time: OLD_END, duration: NEW_DURATION,
+        ease: function (p) { return toOld(p * NEW_DURATION) / OLD_END; },
+      }, 0);
+      window.__timelines[ID] = outer;
+    })();
+  </script>
+</template>

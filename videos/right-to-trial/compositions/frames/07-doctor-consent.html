@@ -1,0 +1,789 @@
+<template id="07-doctor-consent-template">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  #root {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    container-type: size;
+    font-family: "Inter", sans-serif;
+    color: #0F172A;
+  }
+
+  /* full-bleed cream ground (its own clip, lowest track) */
+  [id="07-doctor-consent-bg"] {
+    position: absolute;
+    inset: 0;
+    background: #F8F6F1;
+  }
+  [id="07-doctor-consent-stage"] {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* ---------- slide header: mini path + eyebrow, h2 that swaps step 2 -> step 3 ---------- */
+  [id="07-doctor-consent-eyebrow"] {
+    position: absolute;
+    left: 96px;
+    top: 70px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 5;
+  }
+  [id="07-doctor-consent-minipath"] {
+    display: block;
+    width: 176px;
+    height: 32px;
+    overflow: visible;
+  }
+  [id="07-doctor-consent-eyebrow-text"] {
+    font-size: 1.05cqw;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #694CFA;
+    white-space: nowrap;
+  }
+  [id="07-doctor-consent-h2"] {
+    position: absolute;
+    left: 96px;
+    top: 112px;
+    width: 1100px;
+    height: 60px;
+    z-index: 5;
+  }
+  [class~="07-doctor-consent-h2-line"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    font-size: 2.6cqw;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  [class~="07-doctor-consent-word"] {
+    display: inline-block;
+  }
+
+  /* ---------- left ~40%: the video-visit illustration (foreground subject) ---------- */
+  [id="07-doctor-consent-illo"] {
+    position: absolute;
+    left: 96px;
+    top: 214px;
+    width: 700px;
+    height: 600px;
+    z-index: 2;
+  }
+  [id="07-doctor-consent-illo-push"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 700px;
+    height: 600px;
+    transform-origin: 50% 55%;
+  }
+  [id="07-doctor-consent-glow"] {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+    width: 620px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(105, 76, 250, 0.1) 0%, rgba(105, 76, 250, 0.04) 55%, rgba(105, 76, 250, 0) 100%);
+  }
+  [id="07-doctor-consent-visit"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 700px;
+    height: 600px;
+    overflow: visible;
+  }
+
+  /* "Telemedicine is fine" pill, centred beneath the illustration */
+  [id="07-doctor-consent-pill-row"] {
+    position: absolute;
+    left: 96px;
+    top: 776px;
+    width: 700px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+  [id="07-doctor-consent-pill"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 30px 14px 18px;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.08);
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    color: #694CFA;
+    font-size: 1.4cqw;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    transform-origin: 50% 50%;
+  }
+  [id="07-doctor-consent-pill"] svg {
+    display: block;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+  }
+  [id="07-doctor-consent-pill-dot"] {
+    fill: #694CFA;
+  }
+  [id="07-doctor-consent-pill-check"] {
+    fill: none;
+    stroke: #F8F6F1;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ---------- right: tinted cards ("Not required", then "Consent form") ---------- */
+  [class~="07-doctor-consent-card"] {
+    position: absolute;
+    left: 960px;
+    top: 240px;
+    width: 864px;
+    box-sizing: border-box;
+    background-color: #F8F6F1;
+    background-image: linear-gradient(rgba(105, 76, 250, 0.04), rgba(105, 76, 250, 0.04));
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    border-radius: 14px;
+    z-index: 4;
+  }
+  [id="07-doctor-consent-nr-card"] {
+    height: 448px;
+  }
+  [id="07-doctor-consent-cf-card"] {
+    height: 600px;
+  }
+  [class~="07-doctor-consent-icon"] {
+    position: absolute;
+    left: 44px;
+    top: 40px;
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: rgba(105, 76, 250, 0.08);
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  [class~="07-doctor-consent-icon"] svg {
+    display: block;
+    width: 34px;
+    height: 34px;
+  }
+  [class~="07-doctor-consent-ico"] {
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [class~="07-doctor-consent-card-title"] {
+    position: absolute;
+    left: 128px;
+    font-size: 1.9cqw;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  [id="07-doctor-consent-nr-title"] {
+    top: 51px;
+  }
+  [id="07-doctor-consent-cf-title"] {
+    top: 34px;
+  }
+  [id="07-doctor-consent-cf-sub"] {
+    position: absolute;
+    left: 128px;
+    top: 82px;
+    font-size: 1.4cqw;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #475569;
+    white-space: nowrap;
+  }
+  [class~="07-doctor-consent-divider"] {
+    position: absolute;
+    left: 44px;
+    top: 140px;
+    width: 776px;
+    height: 1.5px;
+    background: rgba(105, 76, 250, 0.16);
+    transform-origin: 0% 50%;
+  }
+
+  /* "Not required" rows: ring marker + label, struck through as each lands */
+  [class~="07-doctor-consent-nr-row"] {
+    position: absolute;
+    left: 44px;
+    width: 776px;
+    height: 84px;
+  }
+  [class~="07-doctor-consent-nr-mark"] {
+    position: absolute;
+    left: 0;
+    top: 22px;
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+  [class~="07-doctor-consent-nr-x"] {
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+  }
+  [class~="07-doctor-consent-label"] {
+    position: absolute;
+    left: 68px;
+    top: 0;
+    font-size: 1.75cqw;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  [class~="07-doctor-consent-nr-row"] [class~="07-doctor-consent-label"] {
+    line-height: 84px;
+    color: #0F172A;
+  }
+  [class~="07-doctor-consent-label-text"] {
+    position: relative;
+    display: inline-block;
+    line-height: 1.2;
+    vertical-align: middle;
+  }
+  [class~="07-doctor-consent-strike"] {
+    position: absolute;
+    left: -6px;
+    right: -6px;
+    top: 50%;
+    height: 3px;
+    margin-top: -1px;
+    border-radius: 2px;
+    background: #694CFA;
+    transform-origin: 0% 50%;
+  }
+
+  /* consent checklist rows: box + label, ticked on cue */
+  [class~="07-doctor-consent-cf-row"] {
+    position: absolute;
+    left: 44px;
+    width: 776px;
+    height: 76px;
+  }
+  [class~="07-doctor-consent-box"] {
+    position: absolute;
+    left: 0;
+    top: 18px;
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+  [class~="07-doctor-consent-box-check"] {
+    fill: none;
+    stroke: #F8F6F1;
+    stroke-width: 3.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [class~="07-doctor-consent-ripple"] {
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: 2px solid #694CFA;
+  }
+  [class~="07-doctor-consent-cf-row"] [class~="07-doctor-consent-label"] {
+    line-height: 76px;
+    color: #475569;
+  }
+
+  /* e-signature: baseline + ink scribble */
+  [id="07-doctor-consent-sig"] {
+    position: absolute;
+    left: 60px;
+    top: 478px;
+    display: block;
+    width: 300px;
+    height: 84px;
+    overflow: visible;
+  }
+  [id="07-doctor-consent-sig-ink"] {
+    fill: none;
+    stroke: #0F172A;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="07-doctor-consent-sig-line"] {
+    position: absolute;
+    left: 44px;
+    top: 566px;
+    width: 776px;
+    height: 1.5px;
+    background: rgba(105, 76, 250, 0.3);
+    transform-origin: 0% 50%;
+  }
+</style>
+
+<div id="root" data-composition-id="07-doctor-consent" data-width="1920" data-height="1080" data-start="0" data-duration="13.857">
+  <div id="07-doctor-consent-bg" class="clip" data-start="0" data-duration="13.857" data-track-index="0"></div>
+
+  <div id="07-doctor-consent-stage" class="clip" data-start="0" data-duration="13.857" data-track-index="1">
+
+    <div id="07-doctor-consent-eyebrow">
+      <svg id="07-doctor-consent-minipath" viewBox="0 0 176 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 22C23 22 23 10 36 10S49 22 62 22S75 10 88 10S101 22 114 22S127 10 140 10S153 22 166 22" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.6" stroke-dasharray="3 4" stroke-linecap="round" />
+        <circle cx="10" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="88" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="114" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="140" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="166" cy="22" r="5" fill="#F0A050" fill-opacity="0.3" />
+        <g id="07-doctor-consent-dot2">
+          <circle cx="36" cy="10" r="9" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <circle cx="36" cy="10" r="5.5" fill="#694CFA" />
+        </g>
+        <g id="07-doctor-consent-dot3">
+          <circle cx="62" cy="22" r="9" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <circle cx="62" cy="22" r="5.5" fill="#694CFA" />
+        </g>
+        <circle id="07-doctor-consent-dot3-pulse" cx="62" cy="22" r="9" fill="none" stroke="#694CFA" stroke-width="1.5" />
+      </svg>
+      <div id="07-doctor-consent-eyebrow-text">Steps 2–3 · Doctor and consent</div>
+    </div>
+
+    <div id="07-doctor-consent-h2">
+      <div id="07-doctor-consent-h2-a" class="07-doctor-consent-h2-line"><span class="07-doctor-consent-word">Her</span> <span class="07-doctor-consent-word">doctor’s</span> <span class="07-doctor-consent-word">recommendation</span></div>
+      <div id="07-doctor-consent-h2-b" class="07-doctor-consent-h2-line"><span class="07-doctor-consent-word">Her</span> <span class="07-doctor-consent-word">written</span> <span class="07-doctor-consent-word">consent</span></div>
+    </div>
+
+    <!-- video-visit illustration (public/deck/video-visit.svg, inlined so the call can connect) -->
+    <div id="07-doctor-consent-illo">
+      <div id="07-doctor-consent-illo-push">
+        <div id="07-doctor-consent-glow"></div>
+        <svg id="07-doctor-consent-visit" viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" aria-label="Illustration of a video visit with a doctor">
+          <defs>
+            <clipPath id="07-doctor-consent-scr"><rect x="36" y="36" width="348" height="218" rx="10" /></clipPath>
+          </defs>
+          <rect x="20" y="20" width="380" height="250" rx="20" fill="#1F2A44" />
+          <rect x="36" y="36" width="348" height="218" rx="10" fill="#ECE9FB" />
+          <g clip-path="url(#07-doctor-consent-scr)">
+            <g id="07-doctor-consent-doc">
+              <path d="M120 260 C120 190 160 172 210 172 C260 172 300 190 300 260 Z" fill="#FFFDF9" />
+              <path d="M210 172 L190 260 M210 172 L230 260" fill="none" stroke="#E4DED3" stroke-width="4" />
+              <path d="M175 185 C170 225 190 238 210 232 C230 238 250 225 245 185" fill="none" stroke="#5B47D6" stroke-width="5" />
+              <circle cx="210" cy="234" r="8" fill="#5B47D6" />
+              <rect x="198" y="140" width="24" height="34" fill="#B97A55" />
+              <circle cx="210" cy="118" r="38" fill="#C98B63" />
+              <path d="M172 112 C172 78 248 78 248 112 C236 96 190 94 172 112 Z" fill="#3A2E28" />
+              <path d="M198 132 Q210 140 222 132" fill="none" stroke="#6E3F2A" stroke-width="3" stroke-linecap="round" />
+            </g>
+            <g id="07-doctor-consent-inset">
+              <rect x="282" y="176" width="88" height="66" rx="8" fill="#FFFDF9" stroke="#5B47D6" stroke-width="3" />
+              <circle cx="326" cy="202" r="14" fill="#F0C8A4" />
+              <path d="M302 242 C302 222 314 216 326 216 C338 216 350 222 350 242 Z" fill="#5B47D6" />
+              <path d="M311 198 C311 180 341 180 341 198 C334 190 318 189 311 198 Z" fill="#B3ABA0" />
+            </g>
+          </g>
+          <path d="M0 286 L420 286 L396 316 L24 316 Z" fill="#3A4766" />
+          <rect x="170" y="286" width="80" height="10" rx="5" fill="#6B7A9C" />
+        </svg>
+      </div>
+    </div>
+
+    <div id="07-doctor-consent-pill-row">
+      <div id="07-doctor-consent-pill">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle id="07-doctor-consent-pill-dot" cx="12" cy="12" r="11" />
+          <path id="07-doctor-consent-pill-check" d="M7 12.4l3.3 3.3L17 9" />
+        </svg>
+        <span>Telemedicine is fine</span>
+      </div>
+    </div>
+
+    <!-- "Not required" card: three rows, each struck through as it lands -->
+    <div id="07-doctor-consent-nr-card" class="07-doctor-consent-card">
+      <div class="07-doctor-consent-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path class="07-doctor-consent-ico" d="M12 3a9 9 0 1 1 0 18a9 9 0 1 1 0-18" />
+          <path class="07-doctor-consent-ico" d="M5.7 5.7l12.6 12.6" />
+        </svg>
+      </div>
+      <div id="07-doctor-consent-nr-title" class="07-doctor-consent-card-title">Not required</div>
+      <div id="07-doctor-consent-nr-divider" class="07-doctor-consent-divider"></div>
+
+      <div class="07-doctor-consent-nr-row" style="top: 160px;">
+        <svg class="07-doctor-consent-nr-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" fill="#694CFA" fill-opacity="0.08" stroke="#694CFA" stroke-opacity="0.2" stroke-width="1.5" />
+          <path class="07-doctor-consent-nr-x" d="M14.5 14.5l11 11M25.5 14.5l-11 11" />
+        </svg>
+        <div class="07-doctor-consent-label"><span class="07-doctor-consent-label-text">Terminal illness<span class="07-doctor-consent-strike"></span></span></div>
+      </div>
+      <div class="07-doctor-consent-nr-row" style="top: 244px;">
+        <svg class="07-doctor-consent-nr-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" fill="#694CFA" fill-opacity="0.08" stroke="#694CFA" stroke-opacity="0.2" stroke-width="1.5" />
+          <path class="07-doctor-consent-nr-x" d="M14.5 14.5l11 11M25.5 14.5l-11 11" />
+        </svg>
+        <div class="07-doctor-consent-label"><span class="07-doctor-consent-label-text">Trying approved drugs first<span class="07-doctor-consent-strike"></span></span></div>
+      </div>
+      <div class="07-doctor-consent-nr-row" style="top: 328px;">
+        <svg class="07-doctor-consent-nr-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" fill="#694CFA" fill-opacity="0.08" stroke="#694CFA" stroke-opacity="0.2" stroke-width="1.5" />
+          <path class="07-doctor-consent-nr-x" d="M14.5 14.5l11 11M25.5 14.5l-11 11" />
+        </svg>
+        <div class="07-doctor-consent-label"><span class="07-doctor-consent-label-text">Trial ineligibility<span class="07-doctor-consent-strike"></span></span></div>
+      </div>
+    </div>
+
+    <!-- "Consent form" card: replaces the card above on "She signs" -->
+    <div id="07-doctor-consent-cf-card" class="07-doctor-consent-card">
+      <div class="07-doctor-consent-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path class="07-doctor-consent-ico" d="M5 18.5V4.5A1.5 1.5 0 0 1 6.5 3H19v14H6.5A1.5 1.5 0 0 0 5 18.5A1.5 1.5 0 0 0 6.5 20H19" />
+          <path class="07-doctor-consent-ico" d="M9 7.5h6M9 11h4" />
+        </svg>
+      </div>
+      <div id="07-doctor-consent-cf-title" class="07-doctor-consent-card-title">Consent form</div>
+      <div id="07-doctor-consent-cf-sub">Plain language · e-signed</div>
+      <div id="07-doctor-consent-cf-divider" class="07-doctor-consent-divider"></div>
+
+      <div class="07-doctor-consent-cf-row" style="top: 160px;">
+        <div class="07-doctor-consent-ripple"></div>
+        <svg class="07-doctor-consent-box" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="38" height="38" rx="10" fill="#694CFA" fill-opacity="0.06" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <rect class="07-doctor-consent-box-fill" x="1" y="1" width="38" height="38" rx="10" fill="#694CFA" />
+          <path class="07-doctor-consent-box-check" d="M11.5 20.5l5.6 5.6L28.5 14.2" />
+        </svg>
+        <div class="07-doctor-consent-label">Known risks</div>
+      </div>
+      <div class="07-doctor-consent-cf-row" style="top: 236px;">
+        <div class="07-doctor-consent-ripple"></div>
+        <svg class="07-doctor-consent-box" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="38" height="38" rx="10" fill="#694CFA" fill-opacity="0.06" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <rect class="07-doctor-consent-box-fill" x="1" y="1" width="38" height="38" rx="10" fill="#694CFA" />
+          <path class="07-doctor-consent-box-check" d="M11.5 20.5l5.6 5.6L28.5 14.2" />
+        </svg>
+        <div class="07-doctor-consent-label">What’s unknown</div>
+      </div>
+      <div class="07-doctor-consent-cf-row" style="top: 312px;">
+        <div class="07-doctor-consent-ripple"></div>
+        <svg class="07-doctor-consent-box" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="38" height="38" rx="10" fill="#694CFA" fill-opacity="0.06" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <rect class="07-doctor-consent-box-fill" x="1" y="1" width="38" height="38" rx="10" fill="#694CFA" />
+          <path class="07-doctor-consent-box-check" d="M11.5 20.5l5.6 5.6L28.5 14.2" />
+        </svg>
+        <div class="07-doctor-consent-label">Who pays</div>
+      </div>
+      <div class="07-doctor-consent-cf-row" style="top: 388px;">
+        <div class="07-doctor-consent-ripple"></div>
+        <svg class="07-doctor-consent-box" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="38" height="38" rx="10" fill="#694CFA" fill-opacity="0.06" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <rect class="07-doctor-consent-box-fill" x="1" y="1" width="38" height="38" rx="10" fill="#694CFA" />
+          <path class="07-doctor-consent-box-check" d="M11.5 20.5l5.6 5.6L28.5 14.2" />
+        </svg>
+        <div class="07-doctor-consent-label">Clearly experimental</div>
+      </div>
+
+      <svg id="07-doctor-consent-sig" viewBox="0 0 300 84" xmlns="http://www.w3.org/2000/svg">
+        <path id="07-doctor-consent-sig-ink" d="M8 58C18 30 30 14 36 26C42 38 26 66 38 64C50 62 58 30 66 34C74 38 64 60 74 58C86 56 92 36 100 40C108 44 100 60 110 58C122 56 128 30 140 22C150 16 150 40 144 56C140 66 156 58 166 46C176 34 184 44 190 50C198 58 210 40 222 42C236 44 250 50 288 36" />
+      </svg>
+      <div id="07-doctor-consent-sig-line"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var P = "07-doctor-consent-";
+    function byId(id) {
+      return document.getElementById(P + id);
+    }
+    function byClass(cls, scope) {
+      return Array.prototype.slice.call((scope || document).getElementsByClassName(P + cls));
+    }
+    var INK = "#0F172A";
+    var MUTED = "#475569";
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    // svg-path-draw: dash = measured length, offset length -> 0
+    function draw(path, at, dur, ease) {
+      var len = Math.ceil(path.getTotalLength()) + 1;
+      path.style.strokeDasharray = len + " " + len;
+      tl.fromTo(
+        path,
+        { strokeDashoffset: len },
+        { strokeDashoffset: 0, duration: dur, ease: ease || "power2.out" },
+        at
+      );
+    }
+
+    // ===== Scene 1 (0.0-3.1s): header, the video visit rises in on "Her own doctor",
+    // the call connects, and "Telemedicine is fine" pops beneath on "video visit" =====
+    tl.fromTo(
+      byId("minipath"),
+      { clipPath: "inset(0% 100% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.out" },
+      0.05
+    );
+    tl.fromTo(
+      byId("dot2"),
+      { scale: 0.3, svgOrigin: "36 10" },
+      { scale: 1, svgOrigin: "36 10", duration: 0.45, ease: "back.out(2.2)" },
+      0.12
+    );
+    tl.fromTo(
+      byId("dot3"),
+      { scale: 0.3, svgOrigin: "62 22" },
+      { scale: 1, svgOrigin: "62 22", duration: 0.45, ease: "back.out(2.2)" },
+      0.2
+    );
+    tl.fromTo(
+      byId("eyebrow-text"),
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      0.15
+    );
+
+    tl.fromTo(
+      byId("illo"),
+      { opacity: 0, y: 70 },
+      { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
+      0.22
+    );
+    tl.fromTo(
+      byId("glow"),
+      { opacity: 0, scale: 0.85 },
+      { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" },
+      0.3
+    );
+    // the call connects: the doctor rises into frame on the laptop screen
+    tl.fromTo(
+      byId("doc"),
+      { opacity: 0, y: 46 },
+      { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" },
+      0.45
+    );
+
+    // h2 (step 2) on "recommends"
+    var wordsA = byClass("word", byId("h2-a"));
+    wordsA.forEach(function (w, i) {
+      tl.fromTo(
+        w,
+        { opacity: 0, y: 26 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+        0.95 + i * 0.08
+      );
+    });
+
+    // Margaret's inset pops in on "over a video"
+    tl.fromTo(
+      byId("inset"),
+      { opacity: 0, scale: 0, svgOrigin: "326 209" },
+      { opacity: 1, scale: 1, svgOrigin: "326 209", duration: 0.5, ease: "power3.out" },
+      1.55
+    );
+
+    // spring-pop (smooth settle) on "video visit"
+    tl.fromTo(
+      byId("pill"),
+      { opacity: 0, scale: 0, y: 12 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: "power3.out" },
+      1.95
+    );
+    draw(byId("pill-check"), 2.22, 0.32, "power2.out");
+
+    // macro move underneath: slow push on the illustration for the rest of the shot
+    tl.fromTo(
+      byId("illo-push"),
+      { scale: 1 },
+      { scale: 1.035, duration: 12.157, ease: "sine.inOut" },
+      1.2
+    );
+
+    // ===== Scene 2 (3.1-6.6s): "Not required" card builds; each row strikes through as it lands =====
+    var nrCard = byId("nr-card");
+    tl.fromTo(
+      nrCard,
+      { opacity: 0, y: 28 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+      3.1
+    );
+    byClass("ico", nrCard).forEach(function (p, k) {
+      draw(p, 3.3 + k * 0.28, 0.45, "power2.out");
+    });
+    tl.fromTo(
+      byId("nr-title"),
+      { opacity: 0, x: -12 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      3.2
+    );
+    tl.fromTo(
+      byId("nr-divider"),
+      { scaleX: 0 },
+      { scaleX: 1, duration: 0.55, ease: "power2.out" },
+      3.3
+    );
+
+    var NR_AT = [3.8, 4.74, 5.44]; // "dying" 3.92 · "approved drugs" 4.86 · ~5.6
+    byClass("nr-row", nrCard).forEach(function (row, i) {
+      var at = NR_AT[i];
+      tl.fromTo(
+        row,
+        { opacity: 0, x: 28 },
+        { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" },
+        at
+      );
+      tl.fromTo(
+        byClass("strike", row)[0],
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.32, ease: "power2.inOut" },
+        at + 0.3
+      );
+      draw(byClass("nr-x", row)[0], at + 0.3, 0.3, "power2.out");
+      tl.to(byClass("label", row)[0], { color: MUTED, duration: 0.3, ease: "power1.out" }, at + 0.3);
+    });
+
+    // ===== Scene 3 (6.6-13.4s): on "She signs" the card cuts left (cut-the-curve) and the
+    // consent form takes its place; the h2 waterfalls to step 3; rows tick on their cues =====
+    var CUT = 6.72;
+    tl.to(nrCard, { x: -230, duration: 0.3, ease: "power4.in" }, CUT - 0.3);
+    tl.to(nrCard, { opacity: 0, duration: 0.24, ease: "power1.in" }, CUT - 0.26);
+
+    // waterfall cut on the headline: per-word exit, last word dies at the cut
+    var EXIT_STAGGER = 0.022;
+    var exitStart = CUT - 0.18 - (wordsA.length - 1) * EXIT_STAGGER;
+    wordsA.forEach(function (w, i) {
+      var s = exitStart + i * EXIT_STAGGER;
+      tl.to(w, { x: -230, duration: 0.34, ease: "power4.in" }, s);
+      tl.to(w, { opacity: 0, duration: 0.18, ease: "power1.in" }, s);
+    });
+    var wordsB = byClass("word", byId("h2-b"));
+    var gap = 0.05;
+    var entryAt = CUT;
+    wordsB.forEach(function (w) {
+      tl.fromTo(
+        w,
+        { opacity: 0, x: 230 },
+        { opacity: 1, x: 0, duration: 0.3, ease: "power4.out" },
+        entryAt
+      );
+      entryAt += gap;
+      gap *= 0.84;
+    });
+
+    // step 3 dot answers with a single pulse
+    tl.fromTo(
+      byId("dot3-pulse"),
+      { opacity: 0, scale: 1, svgOrigin: "62 22" },
+      { opacity: 0.8, scale: 1.15, svgOrigin: "62 22", duration: 0.08, ease: "power1.out" },
+      6.64
+    );
+    tl.to(byId("dot3-pulse"), { opacity: 0, scale: 2.4, svgOrigin: "62 22", duration: 0.6, ease: "power2.out" }, 6.72);
+
+    var cfCard = byId("cf-card");
+    tl.fromTo(
+      cfCard,
+      { opacity: 0, x: 230 },
+      { opacity: 1, x: 0, duration: 0.38, ease: "power4.out" },
+      CUT
+    );
+    byClass("ico", cfCard).forEach(function (p, k) {
+      draw(p, 6.92 + k * 0.3, 0.5, "power2.out");
+    });
+    tl.fromTo(
+      byId("cf-divider"),
+      { scaleX: 0 },
+      { scaleX: 1, duration: 0.55, ease: "power2.out" },
+      6.95
+    );
+    // "plain-language" (7.13)
+    tl.fromTo(
+      byId("cf-sub"),
+      { opacity: 0, x: -10 },
+      { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" },
+      7.08
+    );
+
+    // checklist rows assemble unticked (staggered stack into slot)
+    var cfRows = byClass("cf-row", cfCard);
+    cfRows.forEach(function (row, i) {
+      tl.fromTo(
+        row,
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+        7.05 + i * 0.1
+      );
+    });
+
+    // the e-signature writes itself on "consent:"
+    tl.fromTo(
+      byId("sig-line"),
+      { scaleX: 0 },
+      { scaleX: 1, duration: 0.5, ease: "power2.out" },
+      7.4
+    );
+    draw(byId("sig-ink"), 7.85, 0.85, "power1.inOut");
+
+    // ticks on their cues: "risks" 9.04 · "unknowns" 9.86 · "pays" 10.79 · "experimental" 12.12
+    var TICK_AT = [9.0, 9.82, 10.75, 12.08];
+    cfRows.forEach(function (row, i) {
+      var at = TICK_AT[i];
+      tl.fromTo(
+        byClass("box-fill", row)[0],
+        { opacity: 0, scale: 0.5, svgOrigin: "20 20" },
+        { opacity: 1, scale: 1, svgOrigin: "20 20", duration: 0.28, ease: "power3.out" },
+        at
+      );
+      draw(byClass("box-check", row)[0], at + 0.08, 0.26, "power2.out");
+      var ripple = byClass("ripple", row)[0];
+      tl.fromTo(
+        ripple,
+        { opacity: 0, scale: 1 },
+        { opacity: 0.7, scale: 1.12, duration: 0.08, ease: "power1.out" },
+        at + 0.04
+      );
+      tl.to(ripple, { opacity: 0, scale: 1.9, duration: 0.55, ease: "power2.out" }, at + 0.12);
+      tl.to(byClass("label", row)[0], { color: INK, duration: 0.3, ease: "power1.out" }, at);
+    });
+
+    // hold on the fully ticked form to the frame's fixed length (13.357s) — no exit
+    window.__timelines["07-doctor-consent"] = tl;
+  })();
+</script>
+</template>

@@ -1,0 +1,389 @@
+SOURCE: 'Right to Trial: The Patient Journey' slide deck (The Care-Integrated Clinical Trials Initiative). Slide text followed by speaker notes.
+
+=== Slide 1
+THE CARE-INTEGRATED CLINICAL TRIALS INITIATIVE
+From first question
+to outcome label
+What a patient experiences when seeking an experimental treatment, and how every result helps the next person.
+NOTES: This deck walks through the full patient experience in a care-integrated clinical trial system, from exploring options to public results and outcome labels. We follow one illustrative patient, Margaret, throughout. The path across the top shows the seven steps.
+
+=== Slide 2
+MEET MARGARET
+Margaret, 68
+Margaret has Alzheimer's disease. There 573 potentially effective drugs for Alzheimer's. She cannot get any of them.
+TODAY
+No options
+No approved drug has helped her. No trial is open near her. Right-to-try covers only the dying.
+WITH CARE-INTEGRATED TRIALS
+Treatment through her own doctor
+She can try the most promising treatments at a local clinic, after independent board review, with her consent.
+Source: Frontiers in Pharmacology, 2023, ten-year review of drug repurposing for Alzheimer's. Margaret is a composite patient.
+NOTES: Margaret is a made-up composite to make the journey concrete. Her situation is common: a progressive condition, approved drugs that did not help, many promising but unsponsored generics, and no eligibility under current right-to-try because she is not terminally ill. In a care-integrated trial system, her own doctor can recommend a treatment that an independent board has already reviewed, and she can get it at a local clinic.
+
+=== Slide 3
+Millions of Patients Are Unnecessarily Suffering
+7.4M
+Americans Suffering from Alzheimer's Disease
+30M
+Americans with a rare disease
+2.1M
+new cancer cases every year
+95%
+of rare diseases have ZERO FDA-approved treatments
+Sources: Alzheimer's Association, 2026 Facts and Figures; NIH; American Cancer Society, Cancer Statistics 2026.
+NOTES: An estimated 7.4 million Americans aged 65 or older live with Alzheimer's (Alzheimer's Association, 2026 Facts and Figures), about 30 million Americans live with a rare disease (NIH), and about 2.11 million new cancer cases are projected in the U.S. in 2026 (American Cancer Society, Cancer Statistics 2026). Fewer than 5% of more than 10,000 known rare diseases have an approved treatment.
+
+=== Slide 4
+Three problems block medical progress
+You have to be dying
+drugs used under federal right-to-try from 2018 to 2024. Patients who are sick but not dying cannot use it.
+No financial incentive
+drugs proposed for Alzheimer's are still untested. Nobody can patent an old drug, so nobody pays for a trial.
+No one publishes outcomes
+99.8%
+of Alzheimer's patients are in no study. Nobody records, pools or publishes what happens to them.
+Sources: FDA right-to-try summary, via FactCheck.org, 2026; Frontiers in Pharmacology, 2023; USC Schaeffer Center; Alzheimer's Association, 2026 Facts and Figures.
+NOTES: Three problems. One: you have to be dying. Right-to-try covers only patients with a terminal or life-threatening illness who used up approved options and cannot join a trial, and the maker must agree. FDA reports only 21 investigational drugs used under the federal law from May 30, 2018 to December 31, 2024, and does not publish how many patients got them (https://www.factcheck.org/2026/06/no-evidence-for-trumps-right-to-try-claim/). Margaret is sick but not dying, so she cannot use it. Two: no financial incentive. A ten-year literature review (Frontiers in Pharmacology, 2023) found 573 existing, prescribable drugs proposed for Alzheimer's. Few have been tested. Many are off patent, so no company pays for a trial, and under right-to-try the maker can charge only its direct costs. Three: no one publishes outcomes. Only about 12,000 of about 7.4 million Americans with Alzheimer's join a trial each year (USC Schaeffer Center; Alzheimer's Association, 2026), so about 99.8% are treated outside any study, and nobody records, pools or publishes their results.
+
+=== Slide 5
+We have tested 0.34% of what we already have
+9,500
+compounds with a human safety record
+×
+1,000
+diseases
+=
+9.5 million
+possible drug-disease pairs
+Tested: about 32,500 pairs (0.34%)
+Never tested: about 9.47 million
+Over 2,000 years at today's pace
+Most pairs will not work
+If only 1 in 1,000 works, that is about 9,500 treatments nobody is looking for.
+What Right to Trial changes
+Doctors can already use approved drugs off-label, but nobody tracks the results. Right to Trial adds drugs still in testing and tracks every outcome.
+Source: War on Disease manual, The Untapped Therapeutic Frontier (FDA, GRAS, ICD-10 and ClinicalTrials.gov data).
+NOTES: About 9,500 compounds (range 7,000 to 12,000) already have a human safety record: approved drug ingredients, investigational compounds that passed Phase I, and GRAS substances. The roughly 14,000 ICD-10 diagnosis codes group into about 1,000 diseases that trials can target. 9,500 times 1,000 gives about 9.5 million possible drug-disease pairs. Only about 32,500 pairs have ever been tested (range 15,000 to 50,000), which is 0.34%. Each square in the grid is about 31,700 pairs, so one square of 300 is the whole tested part. At about 3,300 to 4,400 completed trials a year, testing every pair one trial at a time would take 2,000 to 2,900 years. Expect the objection that most pairs make no sense. That is true, and it does not matter: if only 1 in 1,000 pairs works, that is about 9,500 treatments that nobody is testing. Most of these compounds are off patent, so no company has a reason to pay for the tests. Expect the objection that doctors can already prescribe approved drugs off-label. That is true, but nobody tracks what happens, so nobody learns which uses work. Right to Trial does two things here: it lets patients get compounds that passed Phase I but are not yet approved, and it records the outcome of every treatment so the evidence builds. Source: https://manual.warondisease.org/knowledge/problem/untapped-therapeutic-frontier.html
+
+=== Slide 6
+A CONTINUOUSLY LEARNING SYSTEM FOR DISEASE ERADICATION
+Seven steps that help the next patient
+Explore options
+View treatment rankings and outcome labels to compare your options
+Talk with your doctor
+Get a recommendation and decide on a treatment plan
+Informed consent
+Decide in writing
+Arrange payment
+Many ways to pay incentivizing more treatment providers
+Treatment and tracking
+Share positive and negative outcome data
+Results reported
+De-identified, in a public registry
+Rankings and labels improve
+Next patient chooses better
+Then it starts again, with better data
+NOTES: Here is the whole path. Steps 1 to 5 are what Margaret does and feels. Every treatment she can choose has already been pre-screened by an independent review board (ETRB). In step 6, her results are de-identified and go to a public registry. In step 7, everyone's pooled results update the treatment rankings and outcome labels. The next patient starts at step 1 with better data than Margaret had.
+
+=== Slide 7
+STEP 1 · EXPLORE OPTIONS
+Margaret starts by comparing her options
+Outcome labels and rankings
+Compare quantitative benefits, side effects and costs from the universe of clinical and real-world data.
+Public directory of providers
+Every participating provider, with location and status.
+Pre-screened by an independent board
+A doctor, a researcher and an ethicist approve every treatment before any patient can choose it.
+NOTES: Outcome labels and treatment rankings come from the pooled, de-identified results, so Margaret can compare benefits, side effects and costs. A public directory lists every participating provider, with location, review board, protocol and status. Every treatment offered has already been pre-screened: an independent review board (the Experimental Treatment Review Board, or ETRB), with at least a physician, an outcomes researcher and an ethicist, reviewed the evidence, the treatment plan, each clinic's competence, conflicts of interest and the consent form before any patient can choose it.
+
+=== Slide 8
+INDEPENDENT TREATMENT REVIEW
+An Experimental Treatment Review Board (ETRB) reviews and approves safe treatments
+Who reviews
+A physician, an outcomes researcher and an ethicist
+No financial ties to the clinic or maker
+Flat fees, never paid per approval
+What they check
+The evidence
+The treatment plan
+Each provider's competence
+Conflicts of interest
+The consent form
+What qualifies
+Passed Phase I or similar
+A documented human safety record
+A well-studied platform therapy
+Device evidence
+NOTES: Margaret never has to do this herself: every treatment is pre-screened before it is offered to any patient. The Experimental Treatment Review Board, or ETRB, has at least three members, including a physician, an outcomes researcher and an ethicist, with no financial ties to the provider or manufacturer. One approval can cover many qualified clinics. Qualifying pathways: a Phase I or comparable early human study, a documented human safety record, a well-characterized platform or individualized treatment, or device-specific evidence.
+
+=== Slide 9
+PROTOTYPE TREATMENT RANKING FOR DEPRESSION
+Comparative Effectiveness Treatment Rankings
+#
+Treatment
+Effectiveness
+Safety
+Cost/yr
+Takes effect
+Electroconvulsive therapy
+$25,500
+1-2 weeks
+Venlafaxine (SNRI)
+$1,500
+2-4 weeks
+Cognitive behavioral therapy
+$2,250
+6-12 weeks
+Sertraline (SSRI)
+$1,350
+2-4 weeks
+Mirtazapine
+$1,300
+1-4 weeks
+Esketamine (nasal)
+$40,800
+Hours to days
+NOTES: These are the prototype's actual demo figures for depression, which the site labels as preliminary estimates. Effectiveness and safety are 0 to 100 scores, not response percentages. The idea is that Margaret, or her doctor, could see an experimental treatment ranked next to approved ones, with its evidence strength clearly shown.
+
+=== Slide 10
+OUTCOME LABELS
+A label that gets better with every patient
+Treatment X for early Alzheimer's
+Updated monthly · 2 trials + 48 real-world patients
+Effectiveness estimate
+58 / 100
+Safety estimate
+82 / 100
+RESULTS · 358 PATIENTS
+44%
+29%
+13%
+8%
+6%
+Better
+Same
+Worse
+Stopped
+Lost
+SIDE EFFECTS
+Nausea
+12%
+Headache
+9%
+Fatigue
+7%
+Serious
+4%
+COST
+$329 / year
+EVIDENCE STRENGTH
+Early, growing
+WHERE THE EVIDENCE COMES FROM
+Clinical trials
+Published results, including failed trials
+Real-world outcomes
+Every patient treated in the system
+Side-effect reports
+From clinics and adverse-event systems
+Updated as data arrives
+Each new result changes the label
+NOTES: An outcome label is not a fixed document. It combines published clinical trial results with real-world outcomes from every patient treated in the system, plus side-effect reports, and it updates as new data arrives. All numbers here are invented for illustration.
+
+=== Slide 11
+STEP 2 · TALK WITH YOUR DOCTOR
+Her own doctor recommends it, even by video
+Required
+Her treating doctor's recommendation
+Her written consent (e-sign is fine)
+Can happen by telemedicine
+Not required
+A specific diagnosis
+Medical necessity
+Minimum severity
+Terminal illness
+Trial ineligibility
+Trying approved drugs
+NOTES: The bar is deliberately simple: a treating physician's recommendation plus written consent, which can happen by telemedicine and be signed electronically. No diagnosis, medical necessity, severity, terminal condition, treatment purpose, trial ineligibility, or exhaustion of approved options is required. A doctor who only recommends or discusses the treatment does not have to register or appear in the directory.
+
+=== Slide 12
+STEP 3 · INFORMED CONSENT
+She decides with the full picture in writing
+CONSENT FORM · EXPERIMENTAL TREATMENT
+The exact treatment
+Her doctor's view of realistic outcomes
+Other options, including none
+Known risks and benefits
+What's unknown, and FDA status
+Her choice is voluntary
+Who pays, and what she may owe
+What data is collected, and how it's coded
+A clear "experimental" statement
+Recording only if she agrees
+Family can consent for her
+Kept on file
+NOTES: The nine items in the written consent, in plain language: the specific treatment; the doctor's view of realistic outcomes; alternatives, including no treatment; known risks and benefits; unknown risks, regulatory status, and that early evidence does not prove safety or effectiveness; that the choice is voluntary; who pays and what she may owe; what outcome data is collected, coded and published only de-identified; and a clear statement that this is experimental treatment. Recording needs separate agreement. If a patient cannot consent, a legal representative consents for her.
+
+=== Slide 13
+STEP 4 · ARRANGE PAYMENT
+Providers can charge fairly, so clinics will offer it
+$0
+required from any insurer or state program
+Patients, families, charities, employers or research sponsors pay.
+RIGHT-TO-TRY TODAY
+drugs used from 2018 to 2024. Makers may charge only their costs, so almost no one offers it.
+RIGHT TO TRIAL
+Clinics can charge a fair price, so they have a real reason to offer new treatments.
+NOTES: Today, under federal right-to-try, the drug maker decides whether to provide the drug and may charge only its direct costs (21 CFR 312.8(d)(1)). Nobody can earn anything from offering it, so almost nobody does. FDA reports only 21 investigational drugs used under the federal law from May 2018 to December 2024, and it does not publish patient counts (https://www.factcheck.org/2026/06/no-evidence-for-trumps-right-to-try-claim/). Under Right to Trial, clinics can charge a fair price, so they have a real reason to offer new treatments, and one board approval can cover many clinics. No insurer or state program is required to pay. The patient, family, charities, employers, research sponsors, and insurers that choose to can pay. If asked about liability: federal right-to-try already protects makers and doctors from lawsuits, except for gross negligence or willful misconduct, so the main barrier is money, not liability. If asked, other payment options also exist: installments or memberships, crowdfunding, patient-aid groups, free supply from the maker, and lower prices for patients who share outcome data.
+
+=== Slide 14
+STEP 5 · TREATMENT AND TRACKING
+Care close to home, with outcomes measured
+What her clinic records
+A coded ID, not her name
+Her goal and starting condition
+Treatment, dose and dates
+Outcomes on a set schedule
+Better, same, worse, stopped or died
+Side effects
+Missed follow-ups, and why
+OPTIONAL
+Easier tracking
+Daily phone check-ins
+Wearables sync automatically
+AI assistant calls or texts
+Reminders for labs and visits
+No required app or vendor. Normal medical records count.
+NOTES: The required outcome record is short and can come straight from ordinary medical records, with no duplicate entry. Tools like a tracking app, wearable integration and AI check-ins are optional extras that can make tracking easier and richer.
+
+=== Slide 15
+SAFETY NET
+If something goes wrong, the system reacts
+Serious side effect
+Reported to the board within days.
+Board reassesses
+Also if a trial elsewhere stops for safety.
+New patients paused
+Unresolved serious toxicity halts new starts.
+Careful continuation
+Current patients may continue if safer.
+Every protocol is also reviewed at least once a year.
+NOTES: Serious side effects go to the review board within days. The board must reassess if a trial of the same treatment elsewhere stops for safety or lack of effect, and an unresolved serious safety finding immediately stops treatment of new patients. Current patients may continue if stopping suddenly is more dangerous.
+
+=== Slide 16
+STEP 6 · RESULTS GO PUBLIC
+Every result is published
+ANNUAL BOARD REPORT · 48 PATIENTS
+Improved
+21 · 44%
+No real change
+14 · 29%
+Worsened
+6 · 13%
+Stopped
+4 · 8%
+Died
+0 · 0%
+Lost to follow-up
+3 · 6%
+Serious side effects
+2 · 4%
+Nothing hidden
+Bad, null and unclear results must be published.
+Privacy first
+Tiny groups combined for privacy.
+NOTES: Each review board publishes a de-identified annual report for each protocol: how many improved, had no real change, worsened, stopped, died, had side effects, or were lost to follow-up. Boards may not omit bad, null or unclear results. The numbers here are made up to show the format.
+
+=== Slide 17
+STEP 7 · FROM REPORTS TO OUTCOME LABELS AND TREATMENT RANKINGS
+How one result becomes shared evidence
+Her clinic
+Data stays with her doctor
+Outcome report
+Coded and de-identified
+Board report
+Yearly public results
+Evidence system
+Combines all clinics
+Rankings and Outcome labels
+Compare benefits and harms
+Her result improve the next patient's decision
+Every clinic reports in one open format, so any evidence system can combine the results.
+NOTES: This is how one patient's result becomes shared evidence. Each clinic files standardized, de-identified outcome reports in an open format. Evidence systems pool the reports across all clinics and publish outcome labels and treatment rankings, which the next patient uses at step 1.
+
+=== Slide 18
+MARGARET'S FIRST YEAR
+One patient's path, start to finish
+Week 0
+Explores
+Compares labels; video visit with her doctor.
+Week 1
+Consents
+Signs the form; a charity helps pay.
+Week 2
+First dose
+At a clinic near home.
+Months 1-6
+Tracked
+Memory tests and phone check-ins.
+Month 6
+Recorded
+Coded outcome filed, good or bad.
+Year 1
+Label updated
+Her result joins the evidence.
+She didn't have to be dying to try. And the next patient learns from her.
+NOTES: Putting it together on one timeline. The key idea: the outcome is reported whether it's good, bad, or neutral, so the evidence base reflects reality.
+
+=== Slide 19
+WHAT BECOMES POSSIBLE
+Every disease could have a treatment in 36 years, not 443
+6,650 diseases have no treatment today. When does the last one get its first treatment?
+At today's pace
+15 diseases a year
+443 years
+With the system
+about 185 diseases a year
+36 years
+12×
+more patients in trials
+1.9 million to 23 million a year
+44×
+lower cost per patient
+$41,000 to under $1,000
+8 years
+less waiting after safety tests
+available after board review
+Assumes 2% of willing patients join and discoveries rise with patients studied. Source: War on Disease manual, impact paper.
+NOTES: Scale it up from Margaret to everyone. About 6,650 diseases have no approved treatment. Today about 15 diseases get their first treatment each year, so the last one would get it about 443 years from now, about 18 generations. Today about 1.9 million people join a clinical trial each year worldwide (IQVIA). About 2.4 billion people have a chronic disease, and about 44.8% say they would join a trial, about 1.08 billion people. If only 23 million join each year, about 2%, research capacity rises about 12 times, to about 185 diseases a year, and the backlog clears in about 36 years, within one lifetime. Cost: a traditional Phase III trial costs about $41,000 per patient; embedded pragmatic trials such as RECOVERY (about $500) and ADAPTABLE (about $929) cost under $1,000, about 44 times less. Waiting: today a treatment that passes Phase I safety testing waits about 8.2 years for efficacy proof; here, patients can choose it after independent board review. Key assumption: discoveries rise in proportion to the number of patients studied; the impact paper states and tests this. Source: https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html
+
+=== Slide 20
+VALUE FOR MONEY
+A year of healthy life for under $10
+Cost per year of healthy life
+$9.50
+Right to Trial at scale
+trials built into everyday care
+$89
+Malaria bed nets
+one of the best charities known
+$100,000+
+A typical new drug
+at the usual U.S. price limit
+Right to Trial at scale
+$9.50: too small to see at this scale
+Malaria bed nets
+$89: about 1 pixel wide
+A typical new drug
+$100,000+
+About 9 times cheaper than bed nets. Over 10,000 times cheaper than a typical new drug.
+A year of healthy life = one year without early death or disability. Conservative: costs and health both discounted 3% a year. Sources: War on Disease manual, impact paper; ICER.
+NOTES: This is the standard cost-effectiveness test every new drug must pass: what it costs to gain one year of healthy life (one disability-adjusted life year, or DALY: a year without early death or disability). Lower is better. The bar strip is drawn to scale: if the drug bar is 1,220 pixels, bed nets are about 1 pixel and Right to Trial about one tenth of a pixel, so the empty space is the point. Right to Trial at scale, meaning pragmatic trials built into everyday care: about $9.50 per healthy year. The cost counts the full research cost of the trials, whoever pays: about 23.4 million patients a year at about $929 each, for the 36 years it takes to give every untreated disease a first treatment. The benefit is the healthy years gained because treatments arrive sooner (War on Disease manual, impact paper). Both costs and health are discounted at the standard 3% a year. If asked: with no discounting at all, it is about $1.39 per healthy year. The impact paper's headline of $0.84 discounts costs but not health, so we do not lead with it. Malaria bed nets: about $89 per healthy year (War on Disease manual parameter). That is about 9 times more than $9.50. A typical new drug: the usual U.S. limit is $100,000 to $150,000 per quality-adjusted life year (Institute for Clinical and Economic Review). $100,000 divided by $9.50 is about 10,500, so over 10,000 times more. Even if only half of disease deaths can ever be avoided (the manual's low estimate), the cost is still about $17.50 per healthy year. Source: https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html
+
+=== Slide 21
+Every patient's experience becomes evidence for the next.
+Any patient can participate in trials for the most promising treatments, not only the dying.
+Clinics can charge fairly, incentivizing them to offer otherwise unprofitable  treatments.
+Every result is published, producing treatment rankings and outcome labels.
+Explore the prototype
+NOTES: Close on the three fixes: any patient can try, clinics can charge fairly so they offer treatment, and every result is published to produce treatment rankings and outcome labels. Point people to the prototype to see outcome labels in action.
+

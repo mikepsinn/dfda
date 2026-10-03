@@ -1,0 +1,27 @@
+CARE-INTEGRATED CLINICAL TRIALS: MARGARET'S YEAR — full narration (v3, Oct 2 2026).
+Changes from v2: no cold open and no music, the original's tone; the board line is shortened; the scale line and close are back to the original wording, with "try" replaced by "get treatment" so it isn't confused with the existing right-to-try law.
+Voice: HeyGen "Nadine" (calm & gentle).
+
+1 Margaret: Margaret is 68 and has Alzheimer's. Researchers have flagged 573 existing drugs that might help her. She can't get a single one.
+
+2 Three problems: Federal right-to-try covers only the dying. From 2018 to 2024, just 21 drugs were used under it. Old drugs can't be patented, so nobody pays to test them. And almost no Alzheimer's patients are in any study, so nobody learns from what happens to them.
+
+3 The gap: About 9,500 compounds already have a human safety record. Paired with a thousand diseases, that's 9.5 million possible treatments. We've tested about a third of one percent.
+
+4 The fix: The fix is care-integrated clinical trials: treatment through your own doctor, and every result published. Here's Margaret's year.
+
+5 Explore (Step 1): She starts by comparing her options: treatments ranked side by side, each with an outcome label showing who improved, the side effects, the cost and how strong the evidence is. An independent board has already screened every option.
+
+6 Doctor and consent (Steps 2-3): Her own doctor recommends one over a video visit. She doesn't have to be dying or fail approved drugs first. She signs a plain-language consent: the risks, the unknowns, who pays, and that it's experimental.
+
+7 Payment (Step 4): Clinics can charge a fair price, so they actually offer it. A charity helps Margaret pay. No insurer has to.
+
+8 Treatment and safety (Step 5): Her first dose is in week two, at a clinic near home. Memory tests and quick phone check-ins track how she's doing. Any serious side effect reaches the board within days, and it can pause new patients.
+
+9 Results and the loop (Steps 6-7): At six months her outcome is recorded, good, bad or no change, then de-identified and published. Nothing is hidden. Pooled with every other clinic, it updates the label. The next patient starts with better data than Margaret had.
+
+10 Scale: Scale that up. If just 2% of willing patients joined, our model says every disease without a treatment could get its first one in about 36 years instead of 443, at roughly $9.50 per year of healthy life.
+
+11 Close: Any patient can get treatment. Clinics can afford to offer it. Every result is published. Margaret didn't have to be dying to get treatment, and the next patient learns from her.
+
+Sources for the scale figures: 443 / 36 years, 2%, $9.50 per healthy year — War on Disease manual and dFDA impact paper (model estimates). $89 per healthy year (malaria bed nets) and $100,000+ (typical new drug) — as cited on screen (War on Disease manual; ICER). "Willing patients" — Research!America / Zogby, Oct 2023: 79% of US adults very or somewhat likely to join a trial if their doctor recommended it.
