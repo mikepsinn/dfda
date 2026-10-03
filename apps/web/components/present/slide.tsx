@@ -4,7 +4,8 @@ import type { ScriptSlide } from "@/lib/present/script";
 import { cn } from "@/lib/utils";
 
 // A 1920 × 1080 slide. Light slides use the site's theme; dark ones switch to its dark tokens.
-// The eyebrow, title and source line come from the script.
+// The eyebrow, title and source line come from the script. The source line sits near the bottom
+// edge, below the content area.
 export function SlideFrame({ s, tone = "light", header = true, className, children }: {
   s: ScriptSlide;
   tone?: "light" | "dark";
@@ -14,8 +15,8 @@ export function SlideFrame({ s, tone = "light", header = true, className, childr
 }) {
   const dark = tone === "dark";
   return (
-    <div className={cn("relative flex h-full w-full flex-col bg-background px-[120px] pb-[64px] pt-[88px] text-foreground",
-      dark && "dark", className)}>
+    <div className={cn("relative flex h-full w-full flex-col bg-background px-[120px] pt-[88px] text-foreground",
+      s.sourceLine ? "pb-[100px]" : "pb-[64px]", dark && "dark", className)}>
       <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0",
         dark ? "bg-[radial-gradient(ellipse_70%_55%_at_50%_20%,hsl(var(--primary)/0.22),transparent_70%)]"
           : "bg-gradient-to-br from-primary/5 via-background to-muted/60")} />
@@ -23,8 +24,14 @@ export function SlideFrame({ s, tone = "light", header = true, className, childr
       {header && s.title && (
         <h2 className="relative mt-4 max-w-[1600px] text-[60px] font-bold leading-[1.1] tracking-tight">{s.title}</h2>
       )}
-      <div className={cn("relative min-h-0 flex-1", header && (s.eyebrow || s.title) && "mt-12")}>{children}</div>
-      {s.sourceLine && <p className="relative mt-8 text-[19px] leading-snug text-muted-foreground">{s.sourceLine}</p>}
+      <div data-slide-content className={cn("relative min-h-0 flex-1", header && (s.eyebrow || s.title) && "mt-12")}>
+        {children}
+      </div>
+      {s.sourceLine && (
+        <p data-slide-source className="absolute inset-x-[120px] bottom-[30px] text-[19px] leading-snug text-muted-foreground">
+          {s.sourceLine}
+        </p>
+      )}
     </div>
   );
 }

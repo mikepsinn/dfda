@@ -24,4 +24,4 @@ Voice: HeyGen "Nadine" (calm & gentle).
 
 11 Close: Any patient can get treatment. Clinics can afford to offer it. Every result is published. Margaret didn't have to be dying to get treatment, and the next patient learns from her.
 
-Sources for the scale figures: 443 / 36 years, 2%, $9.50 per healthy year — War on Disease manual and dFDA impact paper (model estimates). $89 per healthy year (malaria bed nets) and $100,000+ (typical new drug) — as cited on screen (War on Disease manual; ICER). "Willing patients" — Research!America / Zogby, Oct 2023: 79% of US adults very or somewhat likely to join a trial if their doctor recommended it.
+Sources for the scale figures: 443 / 36 years, 2%, $9.50 per healthy year — How to End War and Disease and its dFDA impact paper (model estimates). $89 per healthy year (malaria bed nets) and $100,000+ (typical new drug) — as cited on screen (How to End War and Disease; ICER). "Willing patients" — Research!America / Zogby, Oct 2023: 79% of US adults very or somewhat likely to join a trial if their doctor recommended it.
