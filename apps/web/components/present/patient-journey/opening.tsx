@@ -12,8 +12,9 @@ export function TitleSlide({ s }: Props) {
     <SlideFrame s={s} tone="dark" header={false}>
       <PatientPath className="mx-auto mt-8" />
       <div className="absolute bottom-[40px] left-0 max-w-[1500px]">
-        <Eyebrow dark>{s.eyebrow}</Eyebrow>
-        <h2 className="mt-6 text-[96px] font-bold leading-[1.04] tracking-tight">{s.title}</h2>
+        {/* The initiative's name: second only to the headline. */}
+        <Eyebrow dark className="text-[44px] font-bold tracking-[0.06em]">{s.eyebrow}</Eyebrow>
+        <h2 className="mt-8 text-[96px] font-bold leading-[1.04] tracking-tight">{s.title}</h2>
         <p className="mt-8 max-w-[1350px] text-[36px] leading-snug text-muted-foreground">{s.subtitle}</p>
       </div>
     </SlideFrame>
