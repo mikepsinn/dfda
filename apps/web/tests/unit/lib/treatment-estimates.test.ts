@@ -3,30 +3,86 @@ import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
-  conditionCatalog, conditionTreatmentsSchema, getConditionEstimate,
+  checkableSourceUrl as checkableUrl, conditionCatalog, conditionTreatmentsSchema, getConditionEstimate,
   medicalSnapshot, outcomeLabelHref, rankTreatments, sourceHref, treatmentSlug,
 } from "@/lib/demo/treatment-estimates";
 
 const sourceDirectory = resolve(process.cwd(), "data/optimitron/medical-data");
 const readSource = (path: string) => JSON.parse(readFileSync(resolve(sourceDirectory, path), "utf8"));
+const corrections = JSON.parse(readFileSync(resolve(process.cwd(), "data/optimitron/corrections.json"), "utf8"));
+const entries = corrections.entries as Correction[];
+const outcomeLists = ["primaryOutcomes", "secondaryOutcomes", "sideEffects"] as const;
+const sha256 = (data: string | Buffer) => createHash("sha256").update(data).digest("hex");
 
-describe("complete Optimitron medical snapshot", () => {
-  it("retains every source file byte for byte with a complete inventory", () => {
-    expect(medicalSnapshot.files).toHaveLength(221);
-    for (const file of medicalSnapshot.files) {
-      const bytes = readFileSync(resolve(sourceDirectory, file.path));
-      expect(bytes.length, file.path).toBe(file.bytes);
-      expect(createHash("sha256").update(bytes).digest("hex"), file.path).toBe(file.sha256);
-    }
+// An entry without `from` added the field; one without `to` removed it.
+type Correction = {
+  kind: "correction" | "verification"; file: string; treatment: string; list: string | null;
+  item: string | null; field: string; from?: unknown; to?: unknown; sourceUrl: string;
+};
+type Owner = Record<string, unknown> & { name: string };
+
+// The treatment or list item an entry names, by its current name.
+function owner(data: { treatments: Owner[] }, entry: Correction): Owner | undefined {
+  const treatment = data.treatments.find(t => t.name === entry.treatment);
+  return entry.list ? (treatment?.[entry.list] as Owner[] | undefined)?.find(i => i.name === entry.item) : treatment;
+}
+
+const describeEntry = (entry: Correction) => `${entry.file} ${entry.treatment} ${entry.item ?? ""} ${entry.field}`;
+
+describe("medical dataset fork", () => {
+  it("records its Optimitron origin and logs every change made since the fork", () => {
+    const { forkedFrom } = medicalSnapshot;
+    expect(medicalSnapshot.status).toBe("fork");
+    expect(forkedFrom.commit).toMatch(/^[0-9a-f]{40}$/);
+    expect(forkedFrom.files).toHaveLength(221);
     expect(readdirSync(resolve(sourceDirectory, "treatments")).sort()).toEqual(
-      medicalSnapshot.files.filter(f => f.path.startsWith("treatments/"))
+      forkedFrom.files.filter(f => f.path.startsWith("treatments/"))
         .map(f => f.path.slice("treatments/".length)).sort(),
     );
+    for (const file of forkedFrom.files) {
+      if (sha256(readFileSync(resolve(sourceDirectory, file.path))) === file.sha256) continue;
+      // Undo the logged changes, newest first: the result must be the forked file, byte for byte,
+      // so any change the log leaves out fails here.
+      const data = readSource(file.path);
+      for (const entry of [...entries].reverse().filter(e => e.file === file.path)) {
+        const target = owner(data, entry);
+        expect(target, describeEntry(entry)).toBeDefined();
+        if ("from" in entry) target![entry.field] = entry.from;
+        else delete target![entry.field];
+      }
+      expect(sha256(JSON.stringify(data, null, 2) + "\n"),
+        `${file.path} has changes that corrections.json does not log`).toBe(file.sha256);
+    }
     expect(readSource("treatments.json")).toHaveLength(969);
     expect(readSource("references.json").references).toHaveLength(536);
   });
 
-  it("loads all 216 conditions and 1,214 comparisons without losing any upstream field", async () => {
+  it("applies every logged correction and cites a checkable source", () => {
+    expect(entries.length).toBeGreaterThan(0);
+    for (const entry of entries) {
+      expect(entry.sourceUrl, describeEntry(entry)).toMatch(checkableUrl);
+      const target = owner(readSource(entry.file), entry);
+      expect(target, describeEntry(entry)).toBeDefined();
+      if ("to" in entry) expect(target![entry.field], describeEntry(entry)).toEqual(entry.to);
+      else expect(target, describeEntry(entry)).not.toHaveProperty(entry.field);
+    }
+  });
+
+  it("requires a checkable source on every value marked as verified", () => {
+    for (const condition of conditionCatalog) {
+      for (const treatment of readSource(`treatments/${condition.slug}.json`).treatments) {
+        for (const list of outcomeLists) {
+          for (const item of treatment[list] ?? []) {
+            if (item.sourceUrl !== undefined || !["ai-estimated", "trial", null, undefined].includes(item.dataSource)) {
+              expect(item.sourceUrl, `${condition.slug} ${treatment.name} ${item.name}`).toMatch(checkableUrl);
+            }
+          }
+        }
+      }
+    }
+  });
+
+  it("loads all 216 conditions and 1,214 comparisons without losing any source field", async () => {
     expect(conditionCatalog).toHaveLength(216);
     const loaded = await Promise.all(conditionCatalog.map(c => getConditionEstimate(c.slug)));
     expect(loaded.flatMap(c => c!.treatments)).toHaveLength(1214);
@@ -40,7 +96,9 @@ describe("complete Optimitron medical snapshot", () => {
           /^\/outcome-labels\/demo\/[a-z0-9-]+\/[a-z0-9-]+$/,
         );
       });
-      expect(sourceHref(condition!)).toContain(`/blob/${medicalSnapshot.sourceCommit}/`);
+      expect(sourceHref(condition!)).toBe(
+        `https://github.com/mikepsinn/dfda/blob/master/apps/web/data/optimitron/medical-data/treatments/${condition!.slug}.json`,
+      );
     }
     const originals = readSource("conditions.json");
     for (const condition of conditionCatalog) {

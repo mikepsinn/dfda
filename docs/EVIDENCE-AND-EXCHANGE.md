@@ -247,7 +247,9 @@ is copied under `apps/web/data/optimitron/`: 221 source files, 216 conditions an
 1,214 treatment comparisons, with the original catalogs, references and metadata.
 The old three-condition projection is removed. The adapter loads one condition's
 file at a time; validation covers all displayed fields and the complete byte inventory.
-See the [snapshot notes](../apps/web/data/optimitron/README.md). It does not write database
+On 2026-10-02 the copy became a fork owned here: values are corrected in place with a
+`corrections.json` entry citing a checkable source. See the
+[dataset notes](../apps/web/data/optimitron/README.md). It does not write database
 records, establish source validation or implement the service below.
 
 A separate `apps/web/data/evidence/` snapshot and bounded adapter under

@@ -1,11 +1,13 @@
-# Complete Optimitron medical dataset
+# Medical dataset (forked from Optimitron)
 
-`medical-data/` is a byte-for-byte copy of the **entire** upstream directory
+This repository now owns and edits this dataset. `medical-data/` started as a
+byte-for-byte copy of the **entire** upstream directory
 `packages/data/src/datasets/medical-data` at `mikepsinn/optimitron` commit
-`06ffef0fa4d9e00dde304c30bf8a8213297cb45b`. All 221 files are retained, including
-the upstream README. `manifest.json` records the source, file sizes, SHA-256 hashes
-and counts. The directory was unchanged between that pin and the source checkout
-inspected on 2026-09-27 (`36f72dfca45987e336f33adea3880d54a1b2db4b`).
+`06ffef0fa4d9e00dde304c30bf8a8213297cb45b`, and was forked on 2026-10-02. Fixes
+are made here; Optimitron keeps its original copy for its own database seed, and the
+two are expected to diverge. `manifest.json` records the fork's origin (`forkedFrom`:
+source commit, root, and the SHA-256 and size of all 221 original files) and the
+current counts.
 
 | Source | Contents |
 | --- | --- |
@@ -14,55 +16,60 @@ inspected on 2026-09-27 (`36f72dfca45987e336f33adea3880d54a1b2db4b`).
 | `medical-data/treatments/index.json` | Original condition-file index |
 | `medical-data/treatments.json` | Original 969-entry cross-condition treatment catalog |
 | `medical-data/references.json` | Original 536-entry reference collection, including broader War on Disease policy sources |
-
-This replaces the discarded three-condition projection. There is no second
-generated subset to keep synchronized. The former 19 comparisons are preserved
-in the complete source files, not deleted from the product.
+| `corrections.json` | Every value changed or verified since the fork, each with a checkable source |
 
 ## What the app uses
 
 `lib/demo/treatment-estimates.ts` reads the condition catalog and loads only the
 selected condition's treatment file. It validates displayed fields, preserves
 other fields, derives URL slugs, and defaults missing outcome lists to empty.
-Source JSON is never rewritten by the app. All 216 conditions and 1,214 labels
+The app never rewrites these files. All 216 conditions and 1,214 labels
 are available through `/treatment-rankings` and `/outcome-labels/demo/...`.
 
 The comparison UI includes annual costs and breakdowns, selected cost-effectiveness
 details, dose/schedule, time to effect and treatment duration. Cross-condition
 catalog/reference pages and the remaining response/access metadata displays still
-need integration; copying their data alone does not implement those features.
-No source citations are silently promoted to
-verified supporting evidence. The independently imported ClinicalTrials.gov
-comparison remains in `../evidence/`, separate from these estimates.
+need integration. The independently imported ClinicalTrials.gov comparison remains
+in `../evidence/`, separate from these estimates.
 
-All original origin labels, dates and citations remain intact. The display policy
-is still **Current best estimates**; these numbers do not enter empirical pooling
-or real participant counts. Source `mixed` / `trial` classifications and claimed
+Most values are still unverified AI estimates (`dataSource: "ai-estimated"` or no
+source), and most citations are expiring search-redirect links rather than papers.
+The display policy is **Current best estimates**; these numbers do not enter empirical
+pooling or real participant counts. Source `mixed` / `trial` classifications and claimed
 confidence/counts are metadata, not proof of validation. The reference collection
 is broader than medicine; do not cite unrelated entries as treatment evidence.
 
-## Preview, copy and verify
+## Correcting a value
 
-From `apps/web`:
+1. Find the value in a primary source (FDA label, journal article, registry record).
+2. Edit the JSON in place. On the corrected or confirmed outcome or side effect, set
+   `dataSource` to the source type (for example `fda-label` or `publication`) and
+   `sourceUrl` to a checkable `https://` link. Remove a value rather than keep one
+   you cannot source.
+3. Add an entry to `corrections.json` (`kind`: `correction` or `verification`) with
+   the file, treatment, list, item, field, old and new values, `sourceUrl` and a note
+   naming the table or section.
+4. Run `pnpm test:unit` and `pnpm type-check` from `apps/web`.
+
+The tests require that every file changed since the fork has a corrections entry,
+that every entry's new value is what the file contains, and that every value marked
+as verified has a checkable source (search-redirect links do not count).
+
+## Comparing with Optimitron
+
+From `apps/web`, read-only (nothing is copied automatically):
 
 ```powershell
-node scripts/import-optimitron-medical-data.mjs E:\code\optimitron --preview
-node scripts/import-optimitron-medical-data.mjs E:\code\optimitron --write
-node scripts/import-optimitron-medical-data.mjs E:\code\optimitron --check
-pnpm test:unit
-pnpm type-check
+node scripts/compare-optimitron-medical-data.mjs E:\code\optimitron --check
+node scripts/compare-optimitron-medical-data.mjs E:\code\optimitron --diff
+node scripts/compare-optimitron-medical-data.mjs E:\code\optimitron --diff origin/main
 ```
 
-No flag means preview. `--write` copies the pinned files without stripping fields;
-it refuses to overwrite locally edited/unrecorded files or silently delete files
-removed upstream. `--check` compares the complete inventory and bytes with Git.
-Unit tests verify the saved checksums offline and load every condition/comparison.
-The scoped `.gitattributes` prevents Windows line-ending changes to source bytes.
-
-To revise numbers, update the upstream generator/source or build an explicitly
-versioned correction layer. Do not silently hand-edit this checksummed snapshot.
-Changing the source pin requires reviewing its file inventory, data and manifest.
-This copy mechanism is not the future authenticated database/MCP importer.
+`--check` confirms the recorded origin matches the source commit byte for byte.
+`--diff` lists files changed or added here since the fork and, given a later
+Optimitron ref, files changed there; review those by hand. The scoped
+`.gitattributes` keeps line endings stable so diffs stay readable.
+This is not the future authenticated database/MCP importer.
 
 The source was previously public and copying was requested by its owner. The
 inspected source checkout did not have a root license; review redistribution terms
