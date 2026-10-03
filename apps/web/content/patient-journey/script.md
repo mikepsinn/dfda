@@ -12,7 +12,8 @@ step: the page fails to build if a slide here has no component or a component ha
 Keys: arrows or space move between slides, N shows the speaker notes, F goes full screen, and
 printing saves a PDF with one page per slide.
 
-**This version:** improved draft 1, for legislators and advocates (October 2, 2026). The git
+**This version:** improved draft 2, for legislators and advocates (October 3, 2026), with plainer
+slide text. The git
 history has the earlier versions: the original deck, "Right to Trial: The Patient Journey"
 (October 1, 2026, in [`original/`](original/)), transcribed as it was, then the deck as published
 on claude.ai.
@@ -51,8 +52,12 @@ prototype render the app's own components with its data, not screenshots.
   to contact legislators would be grassroots lobbying, so the public materials do not. Confirm with
   counsel.
 - **Tone:** plain and factual. No music in the video and no dramatic openers.
-- **Numbers:** only sourced, checkable figures in the main story, and at most one headline number
-  per slide. Model estimates go in the backup slides, labeled as model estimates.
+- **Numbers:** only sourced, checkable figures in the main story, each shown against today where
+  that tells its size ("82 times less than a typical trial"). Model estimates go in the backup
+  slides, labeled as model estimates.
+- **Slide text:** say why in one plain sentence ("X, so Y"). Cut what does not change the meaning,
+  such as ages, places, dates and "estimate", and leave it to the speaker notes. Eyebrows name the
+  idea ("Proof pragmatic trials work", not "Proof it works").
 - **Words:** "care-integrated clinical trials". Use "try" only for the federal Right to Try law,
   and describe that law accurately ("life-threatening", not "dying").
 
@@ -116,7 +121,7 @@ every result is published, so the next patient chooses better.
 - Card "TODAY": No evidence. No approved drug has helped her, and no trial is open near her. Her
   doctor has no evidence for any of the 573, and if she takes one, nobody records what happens.
 - Card "WITH CARE-INTEGRATED TRIALS": Treatment through her own doctor. Her doctor can recommend a
-  screened treatment at a local clinic, with her consent, and her result is published.
+  screened treatment at a local clinic, and her result helps the next patient.
 
 **Visual:** Left, a large white card with a round cartoon avatar of an older woman (grey hair,
 glasses, purple top), her name in large type, and the body text with "573 existing drugs" and "Few have
@@ -145,9 +150,9 @@ Alzheimer's. Margaret is a composite patient.
 **On screen**
 
 - Title: Millions of patients are waiting
-- 7.4M: Americans 65 and older with Alzheimer's
+- 7.4M: Americans with Alzheimer's
 - 30M: Americans with a rare disease
-- 2.1M: new cancer cases every year
+- 2.1M: Americans diagnosed with cancer each year
 - 95%: of rare diseases have no FDA-approved treatment
 
 **Visual:** Dark. Under the title, a band of faint dots suggesting a crowd. Four columns, each
@@ -169,12 +174,12 @@ Society, Cancer Statistics 2026.
 **On screen**
 
 - Title: Why promising treatments go untested
-- No one pays to test old drugs. 573: drugs proposed for Alzheimer's, mostly untested. Old drugs
-  can't be patented, so no company pays for a trial.
-- No one learns from patients. 99.8%: of Alzheimer's patients are in no study. Nobody records,
-  pools or publishes what happens to them.
-- Right to Try wasn't built for this. 21: drugs used under the federal law from 2018 to 2024. It
-  covers only drugs still in testing, and the maker can say no.
+- No one pays to test old drugs. 573: drugs proposed for Alzheimer's are mostly untested, because
+  no company can profit from testing a drug it can't patent.
+- No one learns from patients. 99.8%: of Alzheimer's patients are in no study, so nothing is
+  learned from their treatment.
+- Right to Try gives makers no incentive. 21: drugs made available to patients in over six years,
+  because the federal law lets drug makers charge only their costs.
 
 **Visual:** Three white cards side by side, each with a heading, a large purple number and
 one sentence.
@@ -193,7 +198,8 @@ existing drugs like the 573 at all.
 
 **Video narration:** There are three reasons. Old drugs can't be patented, so no company pays to
 test them. Almost no Alzheimer's patients are in any study, so nobody learns from their treatment.
-And the federal Right to Try law covers only drugs still in testing, and the maker can say no.
+And the federal Right to Try law lets drug makers charge only their costs, so they have no reason
+to take part: only 21 drugs have been made available in over six years.
 
 **Source line:** Sources: Frontiers in Pharmacology, 2023; USC Schaeffer Center; Alzheimer's
 Association, 2026 Facts and Figures; FDA right-to-try summary, via FactCheck.org, 2026.
@@ -204,36 +210,40 @@ Association, 2026 Facts and Figures; FDA right-to-try summary, via FactCheck.org
 
 **On screen**
 
-- Eyebrow: PROOF IT WORKS
+- Eyebrow: PROOF PRAGMATIC TRIALS WORK
 - Title: A trial built into everyday care saved a million lives
-- RECOVERY trial, United Kingdom, 2020: run inside ordinary NHS hospital care
-- 100 days: to show that dexamethasone, a cheap steroid used for decades, cuts deaths among the
-  sickest COVID patients by up to a third
-- Hours: until it was in NHS treatment guidance
-- 1 million: lives saved worldwide in the next nine months (estimate)
+- How RECOVERY worked: any NHS hospital could enroll patients during their normal care, with little
+  extra paperwork, and outcomes came from routine health records.
+- 89 days: to show that a cheap steroid cuts deaths among the sickest COVID patients by up to a
+  third. Typical trials take years.
+- 4: treatments found that save lives, out of more than a dozen tested side by side.
+- $500: per patient, 82 times less than the $41,000 of a typical trial.
 
-**Visual:** Cream. A horizontal timeline with three stops, each with a large number above a short
-label: "100 days" (purple) at "March to June 2020: trial to result", "Hours" (purple) at "June 16,
-2020: in NHS guidance", and "1 million" (orange) at "By March 2021: lives saved worldwide". The
-RECOVERY line sits above the timeline as a small caption.
+**Visual:** Cream. The "How RECOVERY worked" line as a caption, then three white cards side by
+side, each with a large number and one sentence: "89 days" and "4" in purple, "$500" in amber.
 
-**Speaker notes:** RECOVERY (Randomised Evaluation of COVID-19 Therapy) enrolled patients as part
-of their normal hospital care across the NHS. Within its first 100 days it produced three major
-results. On June 16, 2020 it showed that dexamethasone, an inexpensive, widely available steroid,
-reduced deaths by up to a third in hospitalized patients with severe breathing problems. It was in
-NHS treatment recommendations within hours. NHS England estimates it saved about a million lives
-worldwide in the following nine months, 22,000 of them in the UK. It also cost a fraction of a
-conventional trial: about $500 per patient, against about $41,000 for a typical Phase III trial
-(How to End War and Disease). Care-integrated clinical trials apply the same idea to everyday care, for
-every disease.
+**Speaker notes:** RECOVERY (Randomised Evaluation of COVID-19 Therapy) was a pragmatic trial: it
+was built into normal hospital care across the NHS. Any hospital could join, enrolling a patient
+took little extra work, and outcomes such as death came from routine NHS records, so patients
+needed no extra visits. The first patient joined on March 19, 2020, about nine days after the
+protocol was drafted, and over 11,000 had joined by early June. On June 16, 89 days after the
+first patient, it showed that dexamethasone, an inexpensive steroid used for decades, cut deaths by
+a third in patients on ventilators and by a fifth in those on oxygen. It was in NHS treatment
+guidance within hours, and NHS England estimates it saved about a million lives worldwide by March
+2021. RECOVERY tested treatments side by side, dropping those that failed and adding new ones. Of
+more than a dozen tested for COVID-19, four save lives: dexamethasone, tocilizumab, baricitinib and
+an antibody combination (casirivimab and imdevimab). Others, including hydroxychloroquine, did
+not help. It cost about $500 per patient, 82 times less than the median of about $41,000 per
+patient in the trials behind new FDA approvals. Care-integrated clinical trials apply the same idea
+to everyday care, for every disease.
 
 **Video narration:** It doesn't have to be this way. In 2020, Britain built a clinical trial into
-ordinary hospital care. Within 100 days, it showed that dexamethasone, a cheap steroid used for
-decades, cut deaths among the sickest COVID patients by up to a third. In the next nine months, it
-saved an estimated million lives.
+ordinary hospital care. In under three months, it showed that dexamethasone, a cheap steroid used
+for decades, cut deaths among the sickest COVID patients by up to a third. It saved about a million
+lives.
 
-**Source line:** Sources: NHS England, March 2021; UK Research and Innovation, 2022; RECOVERY
-trial.
+**Source line:** Sources: RECOVERY Collaborative Group, New England Journal of Medicine, 2021;
+NHS England, 2021; Manhattan Institute, 2023; Moore et al., JAMA Internal Medicine, 2018.
 
 ## 6. The idea
 
@@ -324,17 +334,16 @@ an outcome label showing who improved, the side effects, the cost and how strong
 
 - Eyebrow: OUTCOME LABELS
 - Title: A label that gets better with every patient
-- Where the evidence comes from: Clinical trials (published results, including failed trials).
-  Real-world outcomes (every patient treated in the system). Side-effect reports (from clinics and
-  adverse-event systems). Updated as data arrives (each new result changes the label).
+- Where the evidence comes from: Clinical trials, including the ones that failed. Every treated
+  patient's real-world outcome. Side-effect reports from clinics and doctors.
 - Caption: Lecanemab's label in the prototype, from its FDA label and published trial.
 
 **Visual:** The prototype's Lecanemab outcome label, drawn by its own components: effectiveness
 55/100 and safety 50/100 across the top, the primary outcomes on the left (CDR-SB +27%, 0.45 points
 less decline than placebo) and the side effects on the right (infusion reactions 26%, brain
 swelling (ARIA-E) 13%, brain bleeding (ARIA-H) 17%, headache 11%), each with its "Source: FDA
-label" link. The caption sits under the label, and the four evidence sources run along the bottom
-with amber icons.
+label" link. The caption sits under the label, and the three evidence sources run along the
+bottom with amber icons.
 
 **Speaker notes:** An outcome label puts what is known about a treatment on one page: how much it
 helps and compared with what, its side effects, its cost, and how strong the evidence is. This one
@@ -355,8 +364,8 @@ old drugs that nobody would fund a trial for.
   clinic or maker. Flat fees, never paid per approval.
 - What they check: The evidence. The treatment plan. Each provider's competence. Conflicts of
   interest. The consent form.
-- What qualifies: Passed Phase I or similar. A documented human safety record. A well-studied
-  platform therapy. Device evidence.
+- What qualifies: Passed Phase I safety testing in people. Or a documented record of safe use in
+  people.
 
 **Visual:** Three white cards side by side, each with a small round icon, a heading and a
 bulleted list.
@@ -378,10 +387,9 @@ platform or individualized treatment, or device-specific evidence.
 
 - Eyebrow: STEP 2 · TALK WITH YOUR DOCTOR
 - Title: Her own doctor recommends it, even by video
-- Required: Her treating doctor's recommendation. Her written consent (e-sign is fine). Can
-  happen by telemedicine.
-- Not required: A specific diagnosis. Medical necessity. Minimum severity. Terminal illness. Trial
-  ineligibility. Trying approved drugs.
+- Required: Her doctor's recommendation. Her written consent, which she can sign online.
+- Not required: A life-threatening illness. Being unable to join a trial. Using up approved drugs
+  first.
 
 **Visual:** Left, an illustration of a laptop showing a video call between a doctor and a patient.
 Middle, a lavender "Required" card with a check icon. Right, a white "Not required" card with an
@@ -390,8 +398,9 @@ orange prohibition sign.
 **Speaker notes:** The bar is deliberately simple: a treating physician's recommendation plus
 written consent, which can happen by telemedicine and be signed electronically. No diagnosis,
 medical necessity, severity, terminal condition, treatment purpose, trial ineligibility, or
-exhaustion of approved options is required. A doctor who only recommends or discusses the
-treatment does not have to register or appear in the directory.
+exhaustion of approved options is required. The slide shows the three that federal Right to Try
+requires. A doctor who only recommends or discusses the treatment does not have to register or
+appear in the directory.
 
 **Video narration** (covers slides 11 and 12): Her own doctor recommends one over a video visit,
 and she signs a plain-language consent: the risks, the unknowns, who pays, and that it's
@@ -407,15 +416,14 @@ experimental.
 - Title: She decides with the full picture in writing
 - Form header: CONSENT FORM · EXPERIMENTAL TREATMENT
 - 1 The exact treatment. 2 Her doctor's view of realistic outcomes. 3 Other options, including
-  none. 4 Known risks and benefits. 5 What's unknown, and FDA status. 6 Her choice is voluntary.
-  7 Who pays, and what she may owe. 8 What data is collected, and how it's coded. 9 A clear
-  "experimental" statement.
-- Chips: Recording only if she agrees. Family can consent for her. Kept on file.
+  none. 4 Known and unknown risks. 5 Who pays, and what she may owe. 6 What data is collected, and
+  how it's protected.
+- Chip: If she can't consent, a legal representative can.
 
-**Visual:** A wide white form card with the nine items in a numbered three-by-three grid, and
-three rounded chips with small icons beneath it.
+**Visual:** A wide white form card with the six items in a numbered three-by-two grid, and a
+rounded chip with a small icon beneath it.
 
-**Speaker notes:** The nine items in the written consent, in plain language: the specific
+**Speaker notes:** The slide groups the nine items in the written consent. In plain language: the specific
 treatment; the doctor's view of realistic outcomes; alternatives, including no treatment; known
 risks and benefits; unknown risks, regulatory status, and that early evidence does not prove
 safety or effectiveness; that the choice is voluntary; who pays and what she may owe; what outcome
@@ -431,15 +439,12 @@ representative consents for her.
 
 - Eyebrow: STEP 4 · ARRANGE PAYMENT
 - Title: Clinics can charge fairly, so they will offer it
-- $0: required from any insurer or state program. Patients, families, charities, employers or
-  research sponsors pay.
-- RIGHT TO TRY TODAY. 21: drugs used from 2018 to 2024. Makers may charge only their costs, so
-  almost no one offers it.
-- CARE-INTEGRATED TRIALS: Clinics can charge a fair price, so they have a real reason to offer
-  new treatments.
+- $0: required from insurers or the state.
+- Who pays instead: Patients and families. Charities, like the one helping Margaret. Employers.
+  Research sponsors.
 
-**Visual:** Left, a large white card with "$0" in huge purple numerals. Right, two stacked cards:
-a grey "Right to Try today" card with an orange "21", and a lavender "Care-integrated trials" card.
+**Visual:** Left, a large white card with "$0" in huge purple numerals. Right, a lavender "Who pays
+instead" card with four rows, each with a small icon.
 
 **Speaker notes:** Today, under federal Right to Try, the drug maker decides whether to provide the
 drug and may charge only its direct costs (21 CFR 312.8(d)(1)). Nobody can earn anything from
@@ -467,11 +472,9 @@ Margaret pay, and no insurer or state program has to.
 
 - Eyebrow: STEP 5 · TREATMENT AND TRACKING
 - Title: Care close to home, with outcomes measured
-- What her clinic records: 1 A coded ID, not her name. 2 Her goal and starting condition.
-  3 Treatment, dose and dates. 4 Outcomes on a set schedule. 5 Better, same, worse, stopped or
-  died. 6 Side effects. 7 Missed follow-ups, and why.
-- OPTIONAL · Easier tracking: Daily phone check-ins. Wearables sync automatically. AI assistant
-  calls or texts. Reminders for labs and visits.
+- What her clinic records: 1 Her treatment and dose. 2 Her starting condition. 3 Better, same,
+  worse, stopped or died, on a set schedule. 4 Side effects. 5 A coded ID, not her name.
+- OPTIONAL · Easier tracking: Phone check-ins. Wearables. AI calls or texts.
 - No required app or vendor. Normal medical records count.
 
 **Visual:** Left, a white card with the numbered list. Right, a lavender card with a phone icon
@@ -495,8 +498,8 @@ the board within days, and it can pause new patients. (Existing v3 audio.)
 - Title: If something goes wrong, the system reacts
 - 1 Serious side effect: Reported to the board within days.
 - 2 Board reassesses: Also if a trial elsewhere stops for safety.
-- 3 New patients paused: Unresolved serious toxicity halts new starts.
-- 4 Careful continuation: Current patients may continue if safer.
+- 3 New patients paused: Until a serious safety problem is resolved.
+- 4 Current patients protected: They can continue if stopping is riskier.
 - Every protocol is also reviewed at least once a year.
 
 **Visual:** Four numbered step cards in a row joined by orange arrows, each with a small orange
@@ -518,8 +521,8 @@ may continue if stopping suddenly is more dangerous.
 - EXAMPLE ANNUAL BOARD REPORT · 48 PATIENTS: Improved 21 · 44%. No real change 14 · 29%.
   Worsened 6 · 13%. Stopped 4 · 8%. Died 0 · 0%. Lost to follow-up 3 · 6%. Serious side effects
   2 · 4%.
-- Nothing hidden: Bad, null and unclear results must be published.
-- Privacy first: Tiny groups combined for privacy.
+- Nothing hidden: Bad and unclear results must be published too.
+- Privacy first: Small groups are combined so no one can be identified.
 
 **Visual:** Left, a white report card with a horizontal bar per outcome (purple for improved and
 no change, orange and brown for worsened, stopped and serious side effects, grey for lost to
@@ -541,7 +544,7 @@ audio.)
 
 **On screen**
 
-- Eyebrow: STEP 7 · FROM REPORTS TO OUTCOME LABELS AND TREATMENT RANKINGS
+- Eyebrow: STEP 7 · RANKINGS AND LABELS IMPROVE
 - Title: How one result becomes shared evidence
 - Her clinic: Data stays with her doctor → Outcome report: Coded and de-identified → Board report:
   Yearly public results → Evidence system: Combines all clinics → Rankings and Outcome labels:
