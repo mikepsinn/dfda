@@ -14,9 +14,19 @@ export interface SearchResult {
   href: string;
   category: "Global Variables" | "My Variables"; // Category for display grouping
   variableCategoryId?: string; // Store the category ID if needed later
+  kind?: "condition" | "treatment"; // Set when the variable is a known condition or treatment
 }
 
 type GlobalVar = Database["public"]["Tables"]["global_variables"]["Row"];
+// Conditions and treatments are variables with a row in global_conditions or global_treatments.
+type Subtypes = { global_conditions?: unknown; global_treatments?: unknown };
+const SUBTYPES = "global_conditions(id), global_treatments(id)";
+const present = (row: unknown) => Array.isArray(row) ? row.length > 0 : row != null;
+function kindOf(variable: Subtypes): SearchResult["kind"] {
+  if (present(variable.global_conditions)) return "condition";
+  if (present(variable.global_treatments)) return "treatment";
+  return undefined;
+}
 // Assuming user_variables joins with global_variables to get the name
 type UserVarJoin = {
   id: string; // user_variable id
@@ -26,7 +36,7 @@ type UserVarJoin = {
     id: string; // global_variable id
     name: string;
     variable_category_id: string; // Added category ID
-  } | null;
+  } & Subtypes | null;
 };
 
 // Helper function to determine the correct href based on variable category
@@ -72,7 +82,7 @@ export async function searchVariablesAction(
     // Using ilike for case-insensitive search
     const globalVariablesQuery = supabase
       .from("global_variables")
-      .select("id, name, variable_category_id") // Select category ID
+      .select(`id, name, variable_category_id, ${SUBTYPES}`) // Category, and whether it is a condition or treatment
       .ilike("name", `%${searchTerm}%`)
       .limit(10); // Limit results
 
@@ -82,13 +92,14 @@ export async function searchVariablesAction(
       logger.error("searchVariablesAction: Error fetching global variables", { error: globalError });
       // Decide if you want to throw or return partial/empty results
     } else if (globalVars) {
-      globalResults = globalVars.map((variable: Pick<GlobalVar, 'id' | 'name' | 'variable_category_id'>) => ({
+      globalResults = globalVars.map((variable: Pick<GlobalVar, 'id' | 'name' | 'variable_category_id'> & Subtypes) => ({
         id: variable.id,
         name: variable.name,
         // Generate href based on the category ID
         href: getHrefForVariable(variable.id, variable.variable_category_id),
         category: "Global Variables",
         variableCategoryId: variable.variable_category_id,
+        kind: kindOf(variable),
       }));
     }
 
@@ -100,7 +111,7 @@ export async function searchVariablesAction(
           id,
           global_variable_id,
           user_id,
-          global_variables!inner( id, name, variable_category_id ) 
+          global_variables!inner( id, name, variable_category_id, ${SUBTYPES} ) 
         `)
         .eq("user_id", userId)
         .ilike("global_variables.name", `%${searchTerm}%`) // Filter on joined table
@@ -124,6 +135,7 @@ export async function searchVariablesAction(
             href: getHrefForVariable(userVariable.global_variables.id, userVariable.global_variables.variable_category_id),
             category: "My Variables", // Display category
             variableCategoryId: userVariable.global_variables.variable_category_id,
+            kind: kindOf(userVariable.global_variables),
           }));
       }
     }
