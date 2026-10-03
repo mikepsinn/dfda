@@ -26,7 +26,7 @@
   solid cobalt chip — the brand's signature single-accent gesture, a pill-rounded fill
   with cream reading on top; spoken words settle to near-black ink, chip cleared.
 -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script src="assets/vendor/gsap.min.js"></script>
 
 <!-- captions.mjs injects the project's :root tokens here -->
 <style data-brand-tokens></style>
@@ -189,7 +189,9 @@
       var next = GROUPS[g + 1];
       var isLast = g === GROUPS.length - 1;
       var start = Math.max(0, Number(group.start));
-      var end = isLast ? DURATION : Math.min(Number(next.start), Number(group.end) + 0.3);
+      var end = isLast
+        ? Math.min(DURATION, Number(group.end) + 0.3)
+        : Math.min(Number(next.start), Number(group.end) + 0.3);
       if (end <= start) end = start + 0.01;
 
       // group on/off — exactly one group visible at a time
