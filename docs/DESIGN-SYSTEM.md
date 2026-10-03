@@ -100,6 +100,8 @@ and this guide in the same change instead of creating a one-off competing patter
   a mock-up screen that shows outcome or effectiveness numbers, so previews of planned
   features are not read as real evidence. Steps opt in with `exampleData`; forms,
   schedules, chats and operational screens need no caption.
+- `components/demo/treatment-ranking-card.tsx`: one treatment in a condition's ranking,
+  shared by `/treatment-rankings` and presentations.
 - `components/demo/estimate-notice.tsx`: one compact “Current best estimates”
   notice per page. Source metadata stays in the data/manifest and technical notes,
   not a repetitive provenance wall.
@@ -110,6 +112,17 @@ and this guide in the same change instead of creating a one-off competing patter
 The working examples are `/treatment-rankings?condition=insomnia`,
 `/outcome-labels/demo/insomnia/suvorexant`, and the landing page's existing label.
 These render local files without model calls. No dependency or theme reset is needed.
+
+## Presentations
+
+Slide decks are web app pages under `/present/<deck>`, such as
+[`/present/patient-journey`](../apps/web/app/present/patient-journey/page.tsx).
+`components/present/deck.tsx` draws them on a 1920 × 1080 canvas scaled to the window,
+without the site header and footer (`components/SiteChrome.tsx`), and prints one page per
+slide. Slides use this theme (the `dark` class for dark slides) and render the real feature
+components, such as the ranking card, Outcome Label and tracking preview, with real data
+instead of screenshots. Each deck's titles, speaker notes and sources come from its script,
+`apps/web/content/<deck>/script.md`.
 
 ## Definition of done
 
