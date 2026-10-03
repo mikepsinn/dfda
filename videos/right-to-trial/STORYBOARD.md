@@ -92,7 +92,7 @@ Scene 4 (13.6–19.6s): on "And almost no" (13.6s) card 2 de-emphasizes and card
 narrativeRole: Zooms out from Margaret to show the whole untested space, so the problem reads as systemic, not one bad case.
 keyMessage: We already have 9.5 million possible drug–disease pairs with safety data, and have tested only 0.34% of them.
 
-Legend (from the deck): "Tested: about 32,500 pairs (0.34%)" · "Never tested: about 9.47 million" · "Over 2,000 years at today's pace". Each square ≈ 31,700 pairs. Source: War on Disease manual (FDA, GRAS, ICD-10 and ClinicalTrials.gov data).
+Legend (from the deck): "Tested: about 32,500 pairs (0.34%)" · "Never tested: about 9.47 million" · "Over 2,000 years at today's pace". Each square ≈ 31,700 pairs. Source: How to End War and Disease (FDA, GRAS, ICD-10 and ClinicalTrials.gov data).
 
 - focal: the single lit purple square in a 300-square grid
 - roles: equation strip (9,500 × 1,000 = 9.5 million) = foreground type, top · 60×5 grid of rounded squares = hero data-viz, middle band (~85% width) · legend row + "Over 2,000 years at today's pace" pill = supporting · source line = chrome
@@ -315,17 +315,17 @@ Scene 5 (11.1–14.6s): on "The next patient" (11.26s) an orange dashed arrow dr
 narrativeRole: Pays off the cold open: the same mechanism at scale turns centuries into a lifetime, cheaply.
 keyMessage: If even a small share of willing patients could join, every disease could get a treatment within our lifetime.
 
-Copy and sources: "2% of willing patients" · "443 years → 36 years" · "$9.50 per healthy year vs $89 (bed nets) and $100,000+ (typical new drug)". Model figures carry "Model estimate · War on Disease manual".
+Copy and sources: "2% of willing patients" · "443 years → 36 years" · "$9.50 per healthy year vs $89 (bed nets) and $100,000+ (typical new drug)". Model figures carry "Model estimate · How to End War and Disease".
 
 - focal: the short 36-year bar against the long 443-year bar
-- roles: cream ground = background · dot field of ~600 small dots = hero in Scenes 1–2 · the 36/443 bar pair = hero in Scene 3 · cost strip ($9.50 vs $89 vs $100,000+) = foreground in Scene 4 · "Model estimate · War on Disease manual" and the cost sources = chrome
+- roles: cream ground = background · dot field of ~600 small dots = hero in Scenes 1–2 · the 36/443 bar pair = hero in Scene 3 · cost strip ($9.50 vs $89 vs $100,000+) = foreground in Scene 4 · "Model estimate · How to End War and Disease" and the cost sources = chrome
 - sfx: none
 
 Adapt (dataviz-countup): numbers carry the shot; instruments replace each other on their cues with no camera move. This scene replaces an earlier version that also showed "79%" and "12×"; those beats are gone because the narration no longer says them.
 Scene 1 (0.0–1.6s): a single purple dot at center multiplies outward into a field of ~600 small dots on "Scale that up" (0.30–0.85s), index-ordered stagger.
 Scene 2 (1.6–4.1s): on "2%" (1.96s) the field dims except a small lit share (2% of the dots, brighter purple); the label "2% of willing patients" appears on "willing patients" (2.77s).
-Scene 3 (4.1–11.4s): the field clears on "our model says" (4.10s). A heading "Years until every disease has a first treatment" appears on "every disease" (4.99s). On "36" (8.28s) a short `highlight` orange bar grows labeled "36 years · with care-integrated trials"; on "443" (9.90s) a long grey bar appears beneath it labeled "443 years · today's pace". "Model estimate · War on Disease manual" fades in under the bars.
-Scene 4 (11.4–16.1s): the bars clear; on "$9.50" (11.88s) "$9.50 per healthy year" lands large in purple; on "per year of healthy life" (13.51s) two smaller comparisons appear beside it: "$89 · malaria bed nets" and "$100,000+ · typical new drug"; the footnote "Model estimates · War on Disease manual, impact paper; ICER" fades in. Hold.
+Scene 3 (4.1–11.4s): the field clears on "our model says" (4.10s). A heading "Years until every disease has a first treatment" appears on "every disease" (4.99s). On "36" (8.28s) a short `highlight` orange bar grows labeled "36 years · with care-integrated trials"; on "443" (9.90s) a long grey bar appears beneath it labeled "443 years · today's pace". "Model estimate · How to End War and Disease" fades in under the bars.
+Scene 4 (11.4–16.1s): the bars clear; on "$9.50" (11.88s) "$9.50 per healthy year" lands large in purple; on "per year of healthy life" (13.51s) two smaller comparisons appear beside it: "$89 · malaria bed nets" and "$100,000+ · typical new drug"; the footnote "Model estimates · How to End War and Disease, impact paper; ICER" fades in. Hold.
 
 ## Frame 12 — Close
 
