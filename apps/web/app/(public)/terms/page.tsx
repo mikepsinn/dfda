@@ -28,13 +28,13 @@ export default async function TermsPage() {
               <p className="lead">Last Updated: March 1, 2025</p>
 
               <p>
-                Welcome to {env.NEXT_PUBLIC_SITE_NAME}. These Terms of Service ("Terms") govern your access to and use of the {env.NEXT_PUBLIC_SITE_NAME}
+                Welcome to {env.NEXT_PUBLIC_SITE_NAME} (&quot;we&quot;, &quot;us&quot; or &quot;our&quot;). These Terms of Service ("Terms") govern your access to and use of our
                 platform, including any content, functionality, and services offered on or through the platform.
               </p>
 
               <h2>1. Acceptance of Terms</h2>
               <p>
-                By accessing or using the {env.NEXT_PUBLIC_SITE_NAME} platform, you agree to be bound by these Terms. If you do not agree
+                By accessing or using our platform, you agree to be bound by these Terms. If you do not agree
                 to these Terms, you must not access or use the platform.
               </p>
 
@@ -52,7 +52,7 @@ export default async function TermsPage() {
               </p>
 
               <h2>4. User Responsibilities</h2>
-              <p>All users of the {env.NEXT_PUBLIC_SITE_NAME} platform must adhere to the following responsibilities:</p>
+              <p>All users of our platform must adhere to the following responsibilities:</p>
 
               <h3>4.1 For Research Partners</h3>
               <p>As a research partner, you are responsible for:</p>
@@ -82,7 +82,7 @@ export default async function TermsPage() {
 
               <h2>6. Intellectual Property</h2>
               <p>
-                The {env.NEXT_PUBLIC_SITE_NAME} platform and its original content, features, and functionality are owned by {env.NEXT_PUBLIC_SITE_NAME}
+                Our platform and its original content, features, and functionality are owned by us
                 and are protected by international copyright, trademark, patent, trade secret, and other intellectual
                 property laws.
               </p>
@@ -95,7 +95,7 @@ export default async function TermsPage() {
               </p>
 
               <h2>8. Prohibited Uses</h2>
-              <p>You may not use the {env.NEXT_PUBLIC_SITE_NAME} platform:</p>
+              <p>You may not use our platform:</p>
               <ul>
                 <li>In any way that violates applicable laws or regulations</li>
                 <li>To impersonate or attempt to impersonate another person or entity</li>
@@ -106,7 +106,7 @@ export default async function TermsPage() {
 
               <h2>9. Limitation of Liability</h2>
               <p>
-                {env.NEXT_PUBLIC_SITE_NAME} shall not be liable for any indirect, incidental, special, consequential, or punitive damages
+                We shall not be liable for any indirect, incidental, special, consequential, or punitive damages
                 resulting from your access to or use of, or inability to access or use, the platform or any content
                 thereon.
               </p>
