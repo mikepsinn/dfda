@@ -49,7 +49,7 @@ export const loggedOutPrimaryNavItems: NavItem[] = [
   { title: "Treatments", href: "/treatment-rankings" },
   { title: "Patients", href: "/#how-it-works-patient" },
   { title: "Research Partners", href: "/#how-it-works-research-partner" },
-  { title: "Providers", href: "/#how-it-works-provider" },
+  { title: "Providers", href: "/providers" }, // its page includes the provider how-it-works section
   { title: "Developers", href: "/developers" },
 ]
 
@@ -96,7 +96,13 @@ export const getAllMobileNavItems = (userType: UserType | null): NavItem[] => {
     // Logged-in: Only show role-specific primary items
     return getLoggedInPrimaryNavItems(userType)
   } else {
-    // Logged-out: Show primary public links + secondary public links
-    return [...loggedOutPrimaryNavItems, ...secondaryNavItems]
+    // Logged-out: the primary public links, then the secondary ones not already shown, so a page
+    // in both lists appears once.
+    const shown = new Set<string>()
+    return [...loggedOutPrimaryNavItems, ...secondaryNavItems].filter(item => {
+      if (shown.has(item.href)) return false
+      shown.add(item.href)
+      return true
+    })
   }
 }
