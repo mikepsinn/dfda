@@ -54,7 +54,7 @@ export function ExploreSlide({ s, condition }: Props & { condition: DemoConditio
           </li>
         ))}
       </ol>
-      <ul className="mt-10 grid grid-cols-3 gap-10">
+      <ul className="mt-8 grid grid-cols-3 gap-10">
         {exploreFeatures.map(feature => (
           <li key={feature.title} className="flex gap-6">
             <IconBadge icon={feature.icon} size={64} />
@@ -80,7 +80,7 @@ export function LabelSlide({ s, treatment }: Props & { treatment: TreatmentEstim
   const [primary, , sideEffects] = treatmentOutcomeCategories(treatment);
   return (
     <SlideFrame s={s}>
-      <div className="[zoom:1.15]">
+      <div className="[zoom:1.08]">
         <Card className="p-6">
           <div className="flex items-start justify-between gap-8 border-b pb-4">
             <div>
@@ -96,7 +96,7 @@ export function LabelSlide({ s, treatment }: Props & { treatment: TreatmentEstim
         </Card>
         <p className="mt-2 text-sm text-muted-foreground">Lecanemab's label in the prototype, from its FDA label and published trial.</p>
       </div>
-      <Eyebrow className="mt-6">Where the evidence comes from</Eyebrow>
+      <Eyebrow className="mt-5">Where the evidence comes from</Eyebrow>
       <ul className="mt-4 grid grid-cols-4 gap-8">
         {evidenceSources.map(source => (
           <li key={source.title} className="flex gap-5">
