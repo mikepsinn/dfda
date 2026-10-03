@@ -1,37 +1,12 @@
 import Link from "next/link"
-import { ArrowDown, ArrowRight, CheckCircle2, ClipboardList, Network, ShieldCheck, Stethoscope } from "lucide-react"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { LearningLoop } from "./LearningLoop"
 
 const highlights = [
   "Treatment rankings based on real-world outcomes",
   "An Outcome Label for every treatment",
   "Patient data stays with patients and their clinics",
-]
-
-// The planned architecture from the repository README; federation is not built yet.
-const dataFlow = [
-  {
-    name: "Digital Twin Safe",
-    description: "The patient's own data",
-    icon: ShieldCheck,
-    handoff: "The patient shares it with their doctor",
-  },
-  {
-    name: "Clinic Node",
-    description: "Runs at the clinic",
-    icon: Stethoscope,
-    handoff: "Summary file: aggregates only",
-  },
-  {
-    name: "Global Aggregator",
-    description: "Combines summaries from many clinics",
-    icon: Network,
-  },
-  {
-    name: "Treatment Rankings + Outcome Labels",
-    description: "Published for everyone",
-    icon: ClipboardList,
-  },
 ]
 
 export function HeroSection() {
@@ -74,30 +49,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="rounded-xl border bg-background p-6 shadow-lg">
-            <h2 className="text-xl font-bold">How the data flows</h2>
-            <ol className="mt-6">
-              {dataFlow.map((step) => (
-                <li key={step.name}>
-                  <div className="flex items-center gap-4 rounded-lg border bg-card p-4">
-                    <div className="rounded-full bg-primary/10 p-2 shrink-0">
-                      <step.icon aria-hidden="true" className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="min-w-0">
-                      <div className="font-semibold">{step.name}</div>
-                      <div className="text-sm text-muted-foreground">{step.description}</div>
-                    </div>
-                  </div>
-                  {step.name !== dataFlow[dataFlow.length - 1].name && (
-                    <div className="flex items-center gap-2 py-2 pl-7 text-xs text-muted-foreground">
-                      <ArrowDown aria-hidden="true" className="h-4 w-4 shrink-0 text-primary" />
-                      {step.handoff && <span>{step.handoff}</span>}
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </div>
+          <LearningLoop />
         </div>
       </div>
     </section>

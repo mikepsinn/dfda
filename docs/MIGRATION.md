@@ -160,8 +160,15 @@ migrations or a new audit of every dependency:
    `/conditions/{id}/trials` lists recruiting registry studies for the condition, 10 per
    page, with links to each record and to the full registry search. Its paging follows
    crowdsourcing-cures' trial search: the registry's forward cursor, a way back to the
-   first page, and recovery from an expired cursor. The search filters (location, age,
-   sex, study type) are not ported yet.
+   first page, and recovery from an expired cursor. `/find-trials` is the full registry
+   search: condition, treatment and location (typed, or the browser's location rounded to
+   about 1 km, with a distance), and under "More filters" the study status and the type,
+   sex and age of who can join. Results show the search as chips, as crowdsourcing-cures
+   did, and the search and page links scroll to the results. The condition trials page and the treatment pages
+   link to it. The sex filter keeps studies open to the participant's sex, including
+   studies open to all; the client's own sex filter keeps only single-sex studies. Name
+   suggestions come from ClinicalTrials.gov's undocumented `/api/int/suggest` endpoint,
+   called from the browser as an optional aid: when it fails, the form works without them.
 3. **Tracking, reminders and MCP/REST:** adapt `apps/dfda/lib/mcp/`, `app/api/v1/`,
    the generated OpenAPI contract and their tests. The source's tracking provider
    injects Optimitron's Prisma database and its MCP auth uses the shared issuer.
@@ -279,7 +286,7 @@ crowdsourcingcures.org keeps the organization pages (home, initiatives, docs). T
 | --- | --- | --- |
 | Patient-rating Treatment Rankings: the treatments ranked for each condition, and each treatment's ratings across conditions | The existing condition and treatment pages, which have a ranking component but show demo data | The ratings data moves too (see Data). Rankings follow the rules for published numbers below. |
 | Logging measurements by typing: a person writes something like "took 200 mg magnesium, slept badly" and an AI turns it into measurements | Next to the existing photo-to-measurements action | The AI only reads the person's own words and produces no evidence numbers. It saves to the old app today, so it is rewired to the base app's own tables. |
-| Trial search | Not moved | It has its own tested ClinicalTrials.gov client; `packages/trials` uses optimitron's instead. |
+| Trial search | `/find-trials` | Its search behavior is ported: condition, treatment and status, name suggestions, and cursor paging. Its own ClinicalTrials.gov client is not moved; the web app uses optimitron's. |
 | AI-written condition analyses, cost-benefit explanations and research articles | Select useful content for the existing public/demo pages | Retain and improve as labeled AI-generated drafts or modeled estimates, check citations, and distinguish illustrative synthesis from a completed systematic review/meta-analysis. Not a requirement to port every article before cutover. |
 
 **Not moved**

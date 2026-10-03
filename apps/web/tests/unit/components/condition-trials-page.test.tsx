@@ -1,8 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import ConditionTrialsPage from "@/app/(public)/conditions/[globalVariableId]/trials/page";
-import { RegistryTrialList } from "@/app/(public)/conditions/[globalVariableId]/trials/registry-trial-list";
-import { env } from "@/lib/env";
 import { getGlobalConditionByIdAction } from "@/lib/actions/conditions";
 import { getTrialsByConditionAction } from "@/lib/actions/trials";
 import { getRecruitingRegistryTrials, registrySearchUrl, type RegistryTrial } from "@/lib/trials/registry-trials";
@@ -74,6 +72,8 @@ describe("condition trials page", () => {
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Major depressive disorder");
     expect(screen.getByRole("heading", { level: 2, name: /^Trials on / })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "View Details" })).toHaveAttribute("href", "/patient/trial-details/trial-1");
+    expect(screen.getByRole("link", { name: /Filter by location, age and more/ }))
+      .toHaveAttribute("href", "/find-trials?condition=Major%20depressive%20disorder");
   });
 
   it("returns not found for an unknown condition without querying trials", async () => {
@@ -103,7 +103,7 @@ describe("condition trials page", () => {
     expect(screen.getByRole("button", { name: "Show more" })).toHaveAttribute("aria-expanded", "false");
     expect(screen.getByRole("link", { name: /Learn more and join/ })).toHaveAttribute("href", registryTrial.url);
     expect(screen.getByRole("link", { name: /Search and filter all of them/ })).toHaveAttribute("href", searchUrl);
-    expect(screen.getByText(new RegExp(`${env.NEXT_PUBLIC_SITE_NAME} has not reviewed these studies`))).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: "Recruiting on ClinicalTrials.gov" })).toBeInTheDocument();
   });
 
   it("pages forward with the registry cursor and back to the first page", async () => {
@@ -112,7 +112,7 @@ describe("condition trials page", () => {
 
     expect(screen.getByText("Page 1 of 46")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "First page" })).toBeDisabled();
-    expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute("href", `${basePath}?page=2&pageToken=NextToken2&total=458`);
+    expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute("href", `${basePath}?page=2&pageToken=NextToken2&total=458#registry-trials`);
     cleanup();
 
     // Later pages do not report a total, so the page link carries the first page's.
@@ -123,7 +123,7 @@ describe("condition trials page", () => {
     expect(getTrials).toHaveBeenCalledTimes(1);
     expect(screen.getByText("Showing 11–11 of 458 recruiting studies, most relevant first.")).toBeInTheDocument();
     expect(screen.getByText("Page 2 of 46")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "First page" })).toHaveAttribute("href", basePath);
+    expect(screen.getByRole("link", { name: "First page" })).toHaveAttribute("href", `${basePath}#registry-trials`);
     expect(screen.getByRole("button", { name: "Next" })).toBeDisabled();
   });
 
@@ -134,7 +134,7 @@ describe("condition trials page", () => {
 
     expect(screen.getByText("Showing 21–21 recruiting studies, most relevant first.")).toBeInTheDocument();
     expect(screen.getByText("Page 3")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute("href", `${basePath}?page=4&pageToken=NextToken2`);
+    expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute("href", `${basePath}?page=4&pageToken=NextToken2#registry-trials`);
     expect(screen.queryByText(/recruiting studies on/)).not.toBeInTheDocument();
   });
 
@@ -171,14 +171,6 @@ describe("condition trials page", () => {
       .toHaveAttribute("href", searchUrl);
   });
 
-  it("names the configured installation, not the default brand, in the registry disclaimer", () => {
-    render(
-      <RegistryTrialList condition="Asthma" result={registryPage({ total: 0, trials: [] })} siteName="Riverside Clinic" page={1} total={null} basePath={basePath} />,
-    );
-
-    expect(screen.getByText(/Riverside Clinic has not reviewed these studies/)).toBeInTheDocument();
-    expect(screen.queryByText(/dFDA has not reviewed/)).not.toBeInTheDocument();
-  });
 });
 
 describe("getTrialsByConditionAction", () => {

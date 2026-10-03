@@ -1,193 +1,159 @@
 import type { Metadata } from "next"
+import { ExternalLink, FlaskConical, LineChart, Target, TriangleAlert } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
+import type { ReactNode } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { DollarSign, Clock, Users, Globe } from "lucide-react"
-import { InternalLinkButton } from "@/components/internal-link-button";
-import { getMetadataFromNavKey } from "@/lib/metadata";
-// import { ArrowRightIcon } from "lucide-react"; // Unused
+import { InternalLinkButton } from "@/components/internal-link-button"
+import { getMetadataFromNavKey } from "@/lib/metadata"
+import {
+  impactSources,
+  modelEstimates,
+  pragmaticCostReview,
+  problemFigures,
+  recoveryFigures,
+  sourceNumber,
+  type ImpactFigure,
+  type ImpactSourceId,
+} from "@/lib/impact/pragmatic-trial-impact"
 
-// Generate metadata using the helper function
 export async function generateMetadata(): Promise<Metadata> {
-  return getMetadataFromNavKey('impact');
+  return getMetadataFromNavKey("impact")
+}
+
+const paper = impactSources.find(source => source.id === "impact-paper")!
+
+function Citations({ sourceIds }: { sourceIds: readonly ImpactSourceId[] }) {
+  return (
+    <>
+      {sourceIds.map(id => {
+        const number = sourceNumber(id)
+        return (
+          <sup key={id} className="ml-0.5">
+            <a href={`#source-${number}`} aria-label={`Source ${number}`} className="text-primary hover:underline">
+              [{number}]
+            </a>
+          </sup>
+        )
+      })}
+    </>
+  )
+}
+
+// Four figures fit a 2 × 2 grid; other counts use three columns on wide screens.
+function FigureList({ figures, label }: { figures: readonly ImpactFigure[]; label: string }) {
+  return (
+    <ul aria-label={label} className={`grid gap-4 sm:grid-cols-2 ${figures.length === 4 ? "" : "lg:grid-cols-3"}`}>
+      {figures.map(figure => (
+        <li key={figure.value} className="flex flex-col gap-2 rounded-xl border bg-card p-5 shadow-sm">
+          <p className="text-2xl font-bold tabular-nums text-primary sm:text-3xl">{figure.value}</p>
+          <p className="text-sm text-muted-foreground sm:text-base">
+            {figure.text}
+            <Citations sourceIds={figure.sourceIds} />
+          </p>
+          {figure.range && (
+            <p className="mt-auto text-xs text-muted-foreground">90% range: {figure.range}</p>
+          )}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function SectionHeading({ id, icon: Icon, children }: { id: string; icon: LucideIcon; children: ReactNode }) {
+  return (
+    <h2 id={id} className="flex items-center gap-2 text-2xl font-semibold tracking-tight">
+      <Icon aria-hidden="true" className="h-6 w-6 shrink-0 text-primary" />
+      {children}
+    </h2>
+  )
 }
 
 export default function ImpactPage() {
   return (
-    <div className="w-full py-12 md:py-16 lg:py-20">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Impact of Efficient Trials: Lessons from RECOVERY</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            The groundbreaking RECOVERY trial showcases how pragmatic, decentralized approaches can revolutionize
-            medical research, aligning with the vision of the Open Treatment Evidence Network.
+    <div className="mx-auto max-w-5xl space-y-12">
+      <header className="space-y-4 rounded-2xl bg-gradient-to-br from-primary/5 to-muted/50 p-6 sm:p-8">
+        <p className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1 text-sm font-medium text-primary">
+          <Target aria-hidden="true" className="h-4 w-4" /> The goal
+        </p>
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">The Impact of Universal Pragmatic Trials</h1>
+        <p className="max-w-3xl text-muted-foreground sm:text-lg">
+          What if every patient could join a clinical trial as part of their normal care? This page shows what that
+          could achieve. This is what we are working toward. Our network is a prototype and has no results of its own
+          yet.
+        </p>
+      </header>
+
+      <section aria-labelledby="pragmatic-heading" className="space-y-4">
+        <h2 id="pragmatic-heading" className="text-2xl font-semibold tracking-tight">What is a pragmatic trial?</h2>
+        <div className="space-y-3 rounded-xl border bg-card p-5 shadow-sm sm:p-6 sm:text-lg">
+          <p>
+            A pragmatic trial compares treatments inside routine care. Patients stay with their own doctors. Outcomes
+            come from health records and patient reports, not from extra visits to a trial site. Most patients can take
+            part, so the results apply to the people who actually get the treatment.
+          </p>
+          <p className="text-muted-foreground">
+            In a universal system, any patient with any condition can join a pragmatic trial, and every result goes into
+            public Treatment Rankings and Outcome Labels.
           </p>
         </div>
+      </section>
 
-        <Tabs defaultValue="patients" className="mb-12">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="patients">For Patients</TabsTrigger>
-            <TabsTrigger value="providers">For Providers</TabsTrigger>
-            <TabsTrigger value="research-partners">For Research Partners</TabsTrigger>
-          </TabsList>
+      <section aria-labelledby="problem-heading" className="space-y-4">
+        <SectionHeading id="problem-heading" icon={TriangleAlert}>The problem today</SectionHeading>
+        <FigureList figures={problemFigures} label="The problem today" />
+      </section>
 
-          <TabsContent value="patients" className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Easier Participation, Faster Access</h2>
-                <p className="text-muted-foreground mb-4">
-                  The RECOVERY trial prioritized patient access and convenience. By using local hospitals instead of
-                  specialized centers and integrating with routine care, it drastically reduced the burden on
-                  participants.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Reduced travel time and costs for trial visits.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Enabled participation for a massive scale of 49,000+ patients.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Led to rapid discovery of effective treatments (like dexamethasone), speeding access.</span>
-                  </li>
-                </ul>
-                <InternalLinkButton navKey="find_trials">
-                  {/* Content generated by button */}
-                </InternalLinkButton>
-              </div>
-              {/* Placeholder removed */}
-            </div>
-          </TabsContent>
+      <section aria-labelledby="recovery-heading" className="space-y-4">
+        <SectionHeading id="recovery-heading" icon={FlaskConical}>Proof that it works: the RECOVERY trial</SectionHeading>
+        <FigureList figures={recoveryFigures} label="RECOVERY trial results" />
+        <p className="text-muted-foreground">
+          {pragmaticCostReview.text}
+          <Citations sourceIds={pragmaticCostReview.sourceIds} />
+        </p>
+      </section>
 
-          <TabsContent value="providers" className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Streamlined Research in Practice</h2>
-                <p className="text-muted-foreground mb-4">
-                  RECOVERY demonstrated that complex research can be efficiently conducted within existing healthcare
-                  infrastructure, empowering providers at 186 hospitals.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Simplified data collection using existing hospital systems.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Reduced administrative burden through pragmatic design and streamlined forms.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Allowed local hospitals to contribute significantly to globally impactful research.</span>
-                  </li>
-                </ul>
-                <Button asChild>
-                    <a href="/provider-resources">Provider Resources</a>
-                </Button>
-              </div>
-              {/* Placeholder removed */}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="research-partners" className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-2xl font-bold mb-4">Faster, Cheaper, High-Impact Results</h2>
-                <p className="text-muted-foreground mb-4">
-                  For researchers and sponsors, RECOVERY proved the immense value of efficient, pragmatic trial
-                  design.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Achieved ~750x cost reduction per patient (~$500 vs ~$41k traditional).</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Delivered first major results in under 100 days.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Successfully evaluated 12 potential treatments, identifying 4 effective ones.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary font-bold">✓</span>
-                    <span>Generated globally impactful data saving an estimated 1M+ lives.</span>
-                  </li>
-                </ul>
-                <InternalLinkButton navKey="research_partner_create_trial">
-                   {/* Content generated by button */}
-                </InternalLinkButton>
-              </div>
-              {/* Placeholder removed */}
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">RECOVERY Trial: Impact by the Numbers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card>
-              <CardContent className="pt-6 flex flex-col items-center text-center">
-                <DollarSign className="h-8 w-8 text-primary mb-3" />
-                <div className="text-4xl font-bold text-primary mb-2">~$500</div>
-                <div className="text-lg font-medium">Cost Per Patient</div>
-                <p className="text-sm text-muted-foreground mt-2">vs. ~$41k for traditional trials (Source: NCBI)</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 flex flex-col items-center text-center">
-                <Clock className="h-8 w-8 text-primary mb-3" />
-                <div className="text-4xl font-bold text-primary mb-2">&lt;100 Days</div>
-                <div className="text-lg font-medium">To First Results</div>
-                <p className="text-sm text-muted-foreground mt-2">Time to identify life-saving treatments.</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 flex flex-col items-center text-center">
-                <Users className="h-8 w-8 text-primary mb-3" />
-                <div className="text-4xl font-bold text-primary mb-2">49,000+</div>
-                <div className="text-lg font-medium">Patients Enrolled</div>
-                <p className="text-sm text-muted-foreground mt-2">Demonstrating massive scale and accessibility.</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6 flex flex-col items-center text-center">
-                <Globe className="h-8 w-8 text-primary mb-3" />
-                <div className="text-4xl font-bold text-primary mb-2">1M+</div>
-                <div className="text-lg font-medium">Global Lives Saved</div>
-                <p className="text-sm text-muted-foreground mt-2">Estimated impact by March 2021 (Source: UKRI).</p>
-              </CardContent>
-            </Card>
-          </div>
+      <section aria-labelledby="estimates-heading" className="space-y-4">
+        <SectionHeading id="estimates-heading" icon={LineChart}>What universal pragmatic trials could do</SectionHeading>
+        <p className="max-w-3xl text-muted-foreground">
+          These are model estimates from <cite>{paper.label}</cite>, not results. The ranges are 90% confidence
+          intervals.
+        </p>
+        <FigureList figures={modelEstimates} label="Model estimates" />
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <p className="text-muted-foreground">The paper gives the full method, inputs and sources.</p>
+          <Button asChild variant="outline" className="gap-2 self-start">
+            <a href={paper.url} target="_blank" rel="noopener noreferrer">
+              Read the analysis <ExternalLink aria-hidden="true" className="h-4 w-4" />
+            </a>
+          </Button>
         </div>
+      </section>
 
-        {/* Optional: Add Key Success Factors Section here if desired */}
-
-        <div className="bg-muted rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Building on Proven Success</h2>
-          <p className="text-lg mb-6 max-w-2xl mx-auto">
-            The RECOVERY trial demonstrates that faster, cheaper, more accessible clinical research is achievable.
-            The Open Treatment Evidence Network aims to scale these principles globally, empowering patients, providers, and researchers to accelerate
-            medical progress together.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <InternalLinkButton navKey="find_trials" variant="default">
-               {/* Content generated by button */}
-            </InternalLinkButton>
-            <InternalLinkButton navKey="research_partner_create_trial" variant="outline">
-               {/* Content generated by button */}
-            </InternalLinkButton>
-            <InternalLinkButton navKey="developers" variant="outline">
-               {/* Content generated by button */}
-            </InternalLinkButton>
-          </div>
+      <section aria-labelledby="goal-heading" className="space-y-4 rounded-2xl bg-muted p-6 text-center sm:p-8">
+        <h2 id="goal-heading" className="text-2xl font-semibold tracking-tight">From goal to reality</h2>
+        <p className="mx-auto max-w-2xl sm:text-lg">
+          RECOVERY showed what one pragmatic trial can do. We aim to make pragmatic trials available to every patient, for
+          every condition, and to publish every result.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <InternalLinkButton navKey="find_trials" variant="default" />
+          <InternalLinkButton navKey="research_partner_create_trial" variant="outline" />
+          <InternalLinkButton navKey="developers" variant="outline" />
         </div>
-      </div>
+      </section>
+
+      <section aria-labelledby="sources-heading" className="space-y-3">
+        <h2 id="sources-heading" className="text-xl font-semibold tracking-tight">Sources</h2>
+        <ol aria-labelledby="sources-heading" className="list-decimal space-y-2 pl-6 text-sm text-muted-foreground">
+          {impactSources.map((source, index) => (
+            <li key={source.id} id={`source-${index + 1}`} className="scroll-mt-24">
+              <a href={source.url} target="_blank" rel="noopener noreferrer" className="break-words hover:text-foreground hover:underline">
+                {source.label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
     </div>
   )
 }
-

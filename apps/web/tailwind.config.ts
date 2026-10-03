@@ -83,11 +83,23 @@ const config: Config = {
   				to: {
   					height: '0'
   				}
+  			},
+  			// The landing page's learning loop: each of its four steps is highlighted for a quarter of the cycle.
+  			'loop-step': {
+  				'0%, 20%': {
+  					borderColor: 'hsl(var(--primary))',
+  					backgroundColor: 'hsl(var(--primary) / 0.06)'
+  				},
+  				'25%, 100%': {
+  					borderColor: 'hsl(var(--border))',
+  					backgroundColor: 'hsl(var(--card))'
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'loop-step': 'loop-step 10s ease-in-out infinite'
   		}
   	}
   },

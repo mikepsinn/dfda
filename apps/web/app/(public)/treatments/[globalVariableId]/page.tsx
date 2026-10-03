@@ -6,6 +6,8 @@ import { OutcomeLabel } from "@/components/OutcomeLabel";
 import { getGroundedAnswerAction, type GroundedSearchResult } from "@/lib/actions/google-grounded-search";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from 'next/link';
+import { FlaskConical } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default async function TreatmentPage({ params }: { params: Promise<{ globalVariableId: string }> }) {
 
@@ -51,6 +53,12 @@ export default async function TreatmentPage({ params }: { params: Promise<{ glob
       <div className="w-full max-w-4xl">
           <h1 className="text-3xl font-bold mb-2">{treatment.name}</h1>
           <p className="text-lg text-muted-foreground">{treatment.description}</p>
+          <Button variant="outline" size="sm" asChild className="mt-4">
+            <Link href={`/find-trials?treatment=${encodeURIComponent(treatment.name)}#results`}>
+              <FlaskConical aria-hidden="true" className="mr-2 h-4 w-4" />
+              Find trials testing {treatment.name}
+            </Link>
+          </Button>
       <Separator className="my-4" />
       </div>
 
