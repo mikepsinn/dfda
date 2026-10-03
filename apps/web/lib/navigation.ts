@@ -96,7 +96,14 @@ export const getAllMobileNavItems = (userType: UserType | null): NavItem[] => {
     // Logged-in: Only show role-specific primary items
     return getLoggedInPrimaryNavItems(userType)
   } else {
-    // Logged-out: Show primary public links + secondary public links
-    return [...loggedOutPrimaryNavItems, ...secondaryNavItems]
+    // Logged-out: the primary public links, then the secondary ones not already shown. A page in
+    // both lists (the same link, or the same name) appears once, as its primary entry.
+    const shown = new Set<string>()
+    return [...loggedOutPrimaryNavItems, ...secondaryNavItems].filter(item => {
+      const ids = [item.href, item.title.toLowerCase()]
+      if (ids.some(id => shown.has(id))) return false
+      ids.forEach(id => shown.add(id))
+      return true
+    })
   }
 }
