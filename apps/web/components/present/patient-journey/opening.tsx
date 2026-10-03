@@ -37,7 +37,7 @@ export function MargaretSlide({ s }: Props) {
           </p>
         </Card>
         <div className="flex flex-col gap-10">
-          <Card className="flex-1 p-12">
+          <Card className="flex-1 px-12 py-10">
             <div className="flex items-center gap-5">
               <IconBadge icon={Lock} size={64} />
               <Eyebrow>Today</Eyebrow>
@@ -48,7 +48,7 @@ export function MargaretSlide({ s }: Props) {
               573, and if she takes one, nobody records what happens.
             </p>
           </Card>
-          <Card className="flex-1 border-primary/30 bg-primary/10 p-12">
+          <Card className="flex-1 border-primary/30 bg-primary/10 px-12 py-10">
             <div className="flex items-center gap-5">
               <IconBadge icon={Sparkles} size={64} tone="solid" />
               <Eyebrow>With care-integrated trials</Eyebrow>
