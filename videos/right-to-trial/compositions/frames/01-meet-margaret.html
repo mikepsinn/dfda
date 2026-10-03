@@ -1,0 +1,489 @@
+<template id="01-meet-margaret-template">
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+      color: #0f172a;
+    }
+    #root * {
+      box-sizing: border-box;
+    }
+
+    /* full-bleed ground: cream + faint purple dot-grid texture */
+    [id="01-meet-margaret-bg"] {
+      position: absolute;
+      inset: 0;
+      background-color: #f8f6f1;
+      background-image: radial-gradient(
+        circle,
+        rgba(105, 76, 250, 0.11) 0,
+        rgba(105, 76, 250, 0.11) 1.6px,
+        rgba(105, 76, 250, 0) 2.4px
+      );
+      background-size: 40px 40px;
+      background-position: 20px 20px;
+    }
+
+    /* slow lean-in camera wrapper (content only; chrome stays locked) */
+    [id="01-meet-margaret-camera"] {
+      position: absolute;
+      inset: 0;
+      transform-origin: 960px 460px;
+    }
+
+    /* ---- left 40%: Margaret ---- */
+    [id="01-meet-margaret-portrait"] {
+      position: absolute;
+      left: 194px;
+      top: 190px;
+      width: 380px;
+      height: 380px;
+    }
+    [id="01-meet-margaret-portrait"] img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    [id="01-meet-margaret-name"] {
+      position: absolute;
+      left: 0;
+      top: 604px;
+      width: 768px;
+      text-align: center;
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    [id="01-meet-margaret-tag"] {
+      position: absolute;
+      left: 0;
+      top: 716px;
+      width: 768px;
+      text-align: center;
+    }
+    [id="01-meet-margaret-tag"] span {
+      display: inline-block;
+      padding: 11px 28px;
+      border-radius: 100px;
+      background: rgba(105, 76, 250, 0.08);
+      color: #694cfa;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    /* ---- right 60%: the 573 field + counter ---- */
+    [id="01-meet-margaret-field"] {
+      position: absolute;
+      left: 1214px;
+      top: 100px;
+      width: 610px;
+      height: 610px;
+      display: grid;
+      grid-template-columns: repeat(24, 12px);
+      grid-auto-rows: 12px;
+      gap: 14px;
+    }
+    [id="01-meet-margaret-field"] > span {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(105, 76, 250, 0.18);
+    }
+
+    [id="01-meet-margaret-card"] {
+      position: absolute;
+      left: 868px;
+      top: 270px;
+      width: 540px;
+      height: 360px;
+      background: #f2eff1;
+      border: 1.5px solid rgba(105, 76, 250, 0.2);
+      border-radius: 14px;
+    }
+    [id="01-meet-margaret-numwrap"] {
+      position: absolute;
+      left: 0;
+      top: 24px;
+      width: 100%;
+      height: 220px;
+      text-align: center;
+    }
+    [id="01-meet-margaret-num"] {
+      display: inline-block;
+      font-size: 220px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+      color: #694cfa;
+      transform-origin: 50% 50%;
+    }
+    [id="01-meet-margaret-label"] {
+      position: absolute;
+      left: 0;
+      top: 252px;
+      width: 100%;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #475569;
+    }
+
+    [id="01-meet-margaret-lockbody"],
+    [id="01-meet-margaret-shackle"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: visible;
+      pointer-events: none;
+    }
+    [id="01-meet-margaret-lockbody"] path,
+    [id="01-meet-margaret-shackle"] path {
+      fill: none;
+      stroke: #694cfa;
+      stroke-width: 14;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    [id="01-meet-margaret-final"] {
+      position: absolute;
+      left: 868px;
+      top: 744px;
+      font-size: 54px;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+
+    /* ---- chrome (outside the camera) ---- */
+    [id="01-meet-margaret-composite"] {
+      position: absolute;
+      left: 96px;
+      top: 60px;
+      padding: 9px 22px;
+      border-radius: 100px;
+      background: rgba(105, 76, 250, 0.08);
+      color: #5B3FE6;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    [id="01-meet-margaret-source"] {
+      position: absolute;
+      left: 96px;
+      top: 846px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #475569;
+      white-space: nowrap;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="01-meet-margaret"
+    data-width="1920"
+    data-height="1080"
+    data-start="0"
+    data-duration="10.068"
+  >
+    <div
+      id="01-meet-margaret-bg"
+      class="clip"
+      data-start="0"
+      data-duration="10.068"
+      data-track-index="0"
+    ></div>
+
+    <div id="01-meet-margaret-camera">
+      <div id="01-meet-margaret-portrait">
+        <img src="public/margaret.png" alt="Illustration of Margaret" />
+      </div>
+      <div id="01-meet-margaret-name">Margaret, 68</div>
+      <div id="01-meet-margaret-tag"><span>Alzheimer's disease</span></div>
+
+      <div id="01-meet-margaret-field"></div>
+
+      <div id="01-meet-margaret-card">
+        <div id="01-meet-margaret-numwrap"><span id="01-meet-margaret-num">0</span></div>
+        <div id="01-meet-margaret-label">existing drugs<br />that might help her</div>
+      </div>
+
+      <svg id="01-meet-margaret-lockbody" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <path
+          id="01-meet-margaret-lockbody-path"
+          d="M 1138 270 H 1394 A 14 14 0 0 1 1408 284 V 616 A 14 14 0 0 1 1394 630 H 882 A 14 14 0 0 1 868 616 V 284 A 14 14 0 0 1 882 270 Z"
+        />
+      </svg>
+      <svg id="01-meet-margaret-shackle" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <path
+          id="01-meet-margaret-shackle-path"
+          d="M 1013 270 V 205 A 125 125 0 0 1 1263 205 V 270"
+        />
+      </svg>
+
+      <div id="01-meet-margaret-final">She can't get any of them.</div>
+    </div>
+
+    <div id="01-meet-margaret-composite">Margaret is a composite patient</div>
+    <div id="01-meet-margaret-source">Source: Frontiers in Pharmacology, 2023</div>
+  </div>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script>
+    (function () {
+      var P = "01-meet-margaret-";
+      var byId = function (s) {
+        return document.getElementById(P + s);
+      };
+
+      var PRIMARY = "#694CFA";
+      var LIGHT = "#94A3B8";
+      var SLOT = "rgba(105, 76, 250, 0.18)";
+      var TOTAL = 573; // one dot per candidate drug (24 columns)
+
+      // build the dot field deterministically, index order = row-major
+      var field = byId("field");
+      field.textContent = "";
+      var dots = [];
+      for (var i = 0; i < TOTAL; i++) {
+        var d = document.createElement("span");
+        field.appendChild(d);
+        dots.push(d);
+      }
+
+      var num = byId("num");
+      num.textContent = "0";
+
+      // svg-path-draw setup: measured length, dash parked fully off the path
+      function prepDraw(path, fallback) {
+        var len = 0;
+        try {
+          len = path.getTotalLength();
+        } catch (e) {
+          len = 0;
+        }
+        if (!(len > 0)) len = fallback;
+        path.style.strokeDasharray = len + " " + (len + 40);
+        path.style.strokeDashoffset = String(len + 20);
+        return len;
+      }
+      var bodyPath = byId("lockbody-path");
+      var shacklePath = byId("shackle-path");
+      var bodyLen = prepDraw(bodyPath, 1776);
+      var shackleLen = prepDraw(shacklePath, 523);
+
+      var tl = gsap.timeline({ paused: true });
+
+      // macro camera: very slow lean-in that settles before the held silence
+      tl.fromTo(
+        byId("camera"),
+        { scale: 1 },
+        { scale: 1.025, duration: 9.6, ease: "sine.inOut" },
+        0
+      );
+
+      // ---- Scene 1 (0.0-1.7): portrait settles, composite pill, name on "68" ----
+      tl.fromTo(
+        byId("portrait"),
+        { opacity: 0, y: 36, scale: 0.94 },
+        { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: "power3.out" },
+        0.05
+      );
+      tl.fromTo(
+        byId("composite"),
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+        0.2
+      );
+      tl.fromTo(
+        byId("name"),
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
+        0.62
+      );
+
+      // ---- Scene 2 (1.7-3.3): condition pill on "Alzheimer's", then hold ----
+      tl.fromTo(
+        byId("tag"),
+        { opacity: 0, y: 16, scale: 0.94 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" },
+        1.7
+      );
+
+      // ---- Scene 3 (3.3-7.9): right half opens on "flagged", count on "573" ----
+      // empty slots wave in (index order)
+      tl.fromTo(
+        dots,
+        { opacity: 0, scale: 0.3 },
+        { opacity: 1, scale: 0.55, duration: 0.35, ease: "power2.out", stagger: { amount: 0.5 } },
+        4.05
+      );
+      tl.fromTo(
+        byId("card"),
+        { opacity: 0, y: 24, scale: 0.97 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" },
+        4.25
+      );
+      tl.fromTo(num, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 4.45);
+
+      // counting-dynamic-scale: value + transform scale share timing and ease
+      // (direct innerText tween + snap — no callback, so it stays correct under
+      // any seek mode, including seeks that suppress events)
+      var COUNT_AT = 4.6;
+      var COUNT_DUR = 1.6;
+      var COUNT_EASE = "power2.out";
+      tl.fromTo(
+        num,
+        { innerText: 0 },
+        {
+          innerText: TOTAL,
+          snap: { innerText: 1 },
+          duration: COUNT_DUR,
+          ease: COUNT_EASE,
+        },
+        COUNT_AT
+      );
+      tl.fromTo(num, { scale: 0.45 }, { scale: 1, duration: COUNT_DUR, ease: COUNT_EASE }, COUNT_AT);
+
+      // stat fill: dot n lands exactly when the shared power2.out count reaches n
+      // (inverse of power2.out: x = 1 - sqrt(1 - p)) — deterministic stagger
+      for (var k = 0; k < TOTAL; k++) {
+        var p = (k + 1) / TOTAL;
+        var at = COUNT_AT + COUNT_DUR * (1 - Math.sqrt(1 - p));
+        tl.fromTo(
+          dots[k],
+          { scale: 0.55, backgroundColor: SLOT },
+          {
+            scale: 1,
+            backgroundColor: PRIMARY,
+            duration: 0.28,
+            ease: "power2.out",
+            immediateRender: false,
+          },
+          at
+        );
+      }
+
+      // label on "existing drugs"
+      tl.fromTo(
+        byId("label"),
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+        6.05
+      );
+      // source line
+      tl.fromTo(
+        byId("source"),
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+        7.5
+      );
+
+      // ---- Scene 4 (7.9-10.133): "She can't get" -> grey wave + lock ----
+      tl.fromTo(
+        dots,
+        { backgroundColor: PRIMARY },
+        {
+          backgroundColor: LIGHT,
+          duration: 0.3,
+          ease: "power1.out",
+          stagger: { amount: 0.45 },
+          immediateRender: false,
+        },
+        8.68
+      );
+      tl.fromTo(
+        num,
+        { color: PRIMARY },
+        { color: LIGHT, duration: 0.5, ease: "power1.out", immediateRender: false },
+        8.7
+      );
+      // lock body traces the counter card, then the (open) shackle, then it clicks shut
+      tl.fromTo(
+        bodyPath,
+        { strokeDashoffset: bodyLen + 20 },
+        { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" },
+        8.75
+      );
+      tl.fromTo(
+        shacklePath,
+        { strokeDashoffset: shackleLen + 20 },
+        { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" },
+        9.16
+      );
+      tl.fromTo(byId("shackle"), { y: -30 }, { y: 0, duration: 0.18, ease: "power2.in" }, 9.56);
+
+      // closing line on "single one", then hold still
+      tl.fromTo(
+        byId("final"),
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+        9.3
+      );
+
+      // anchor the held silence to the fixed frame length
+      tl.set({}, {}, 10.133);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["01-meet-margaret"] = tl;
+    })();
+  </script>
+
+
+  <script>
+    // retime-to-new-voice: drive this scene's original timeline through a map from the
+    // new narration's time to the old narration's time, anchored on matching spoken cues.
+    (function () {
+      var ID = "01-meet-margaret";
+      var inner = window.__timelines[ID];
+      var MAP = [[0.000,0.000],[0.700,0.811],[3.380,2.816],[4.600,3.840],[8.680,7.083],[9.980,8.324]]; // [old seconds, new seconds]
+      var NEW_DURATION = 9.568;
+      function toOld(t) {
+        for (var i = 1; i < MAP.length; i++) {
+          if (t <= MAP[i][1]) {
+            var a = MAP[i - 1], b = MAP[i];
+            return a[0] + (t - a[1]) * (b[0] - a[0]) / (b[1] - a[1]);
+          }
+        }
+        var last = MAP[MAP.length - 1];
+        return last[0] + (t - last[1]); // after the last cue, real time (holds stay holds)
+      }
+      var OLD_END = toOld(NEW_DURATION);
+      var outer = gsap.timeline({ paused: true });
+      outer.fromTo(inner, { time: 0 }, {
+        time: OLD_END, duration: NEW_DURATION,
+        ease: function (p) { return toOld(p * NEW_DURATION) / OLD_END; },
+      }, 0);
+      window.__timelines[ID] = outer;
+    })();
+  </script>
+</template>

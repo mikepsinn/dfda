@@ -1,0 +1,651 @@
+<template id="09-treatment-safety-template">
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  #root {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    container-type: size;
+    font-family: "Inter", sans-serif;
+    color: #0F172A;
+  }
+
+  /* full-bleed cream ground (its own clip, lowest track) */
+  [id="09-treatment-safety-bg"] {
+    position: absolute;
+    inset: 0;
+    background: #F8F6F1;
+  }
+  [id="09-treatment-safety-stage"] {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* ---------- slide header: mini path + eyebrow (matches 05 / 06) ---------- */
+  [id="09-treatment-safety-eyebrow"] {
+    position: absolute;
+    left: 96px;
+    top: 70px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 6;
+  }
+  [id="09-treatment-safety-minipath"] {
+    display: block;
+    width: 176px;
+    height: 32px;
+    overflow: visible;
+  }
+  [id="09-treatment-safety-eyebrow-text"] {
+    font-size: 1.05cqw;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #694CFA;
+    white-space: nowrap;
+  }
+
+  /* ---------- context chips (centre in Scene 1, beside the phone in Scene 2, docked top-right in Scene 3) ---------- */
+  [class~="09-treatment-safety-chip-pos"] {
+    position: absolute;
+    top: 150px;
+    height: 60px;
+    transform-origin: 0 0;
+    z-index: 5;
+  }
+  [id="09-treatment-safety-chip-a-pos"] {
+    left: 864px;
+    width: 360px;
+  }
+  [id="09-treatment-safety-chip-b-pos"] {
+    left: 1240px;
+    width: 330px;
+  }
+  [class~="09-treatment-safety-chip"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 24px 0 14px;
+    border-radius: 100px;
+    background: rgba(105, 76, 250, 0.08);
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    color: #694CFA;
+    font-size: 1.4cqw;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+    transform-origin: 50% 50%;
+  }
+  [class~="09-treatment-safety-chip"] svg {
+    display: block;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    overflow: visible;
+  }
+  [class~="09-treatment-safety-chip-dot"] {
+    fill: #694CFA;
+  }
+  [class~="09-treatment-safety-chip-glyph"] {
+    fill: none;
+    stroke: #F8F6F1;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ---------- device surface (foreground subject, left) ---------- */
+  [id="09-treatment-safety-disc"] {
+    position: absolute;
+    left: 120px;
+    top: 170px;
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(105, 76, 250, 0.11) 0%, rgba(105, 76, 250, 0.06) 42%, rgba(105, 76, 250, 0) 70%);
+    z-index: 1;
+  }
+  [id="09-treatment-safety-phone"] {
+    position: absolute;
+    left: 236px;
+    top: 140px;
+    width: 448px;
+    height: 740px;
+    border-radius: 66px;
+    background: #0F172A;
+    z-index: 2;
+  }
+  [class~="09-treatment-safety-btn"] {
+    position: absolute;
+    width: 4px;
+    border-radius: 2px;
+    background: #0F172A;
+  }
+  [id="09-treatment-safety-screen"] {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 424px;
+    height: 716px;
+    border-radius: 54px;
+    background: #FFFFFF;
+    overflow: hidden;
+  }
+  [id="09-treatment-safety-island"] {
+    position: absolute;
+    left: 160px;
+    top: 12px;
+    width: 104px;
+    height: 30px;
+    border-radius: 100px;
+    background: #0F172A;
+  }
+  /* fixed-size image box: object-fit contain + white ground, so a re-captured card of another size drops in without relayout */
+  [id="09-treatment-safety-shot"] {
+    position: absolute;
+    left: 10px;
+    top: 158px;
+    width: 404px;
+    height: 367px;
+    background: #FFFFFF;
+  }
+  [id="09-treatment-safety-shot-img"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 50%;
+  }
+  /* highlight rings, positioned as % of the image box (Memory test ~13-39%, Check-in ~70-93% of image height) */
+  [class~="09-treatment-safety-ring"] {
+    position: absolute;
+    left: 2.3%;
+    width: 95.4%;
+    box-sizing: border-box;
+    border: 3px solid #694CFA;
+    border-radius: 14px;
+    background: rgba(105, 76, 250, 0.05);
+    transform-origin: 50% 50%;
+  }
+  [id="09-treatment-safety-ring-memory"] {
+    top: 12.8%;
+    height: 28.8%;
+  }
+  [id="09-treatment-safety-ring-checkin"] {
+    top: 70.3%;
+    height: 26.8%;
+  }
+  /* call ripples on the check-in row's phone glyph */
+  [class~="09-treatment-safety-ripple"] {
+    position: absolute;
+    left: calc(8.4% - 18px);
+    top: calc(85.1% - 18px);
+    width: 36px;
+    height: 36px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid #694CFA;
+  }
+  [id="09-treatment-safety-urlbar"] {
+    position: absolute;
+    left: 0;
+    top: 634px;
+    width: 424px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+  }
+  [id="09-treatment-safety-url"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    padding: 0 18px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    background: #FFFFFF;
+    border: 1px solid rgba(105, 76, 250, 0.2);
+    color: #475569;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  [id="09-treatment-safety-url"] svg {
+    display: block;
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: #475569;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [id="09-treatment-safety-home"] {
+    position: absolute;
+    left: 146px;
+    top: 698px;
+    width: 132px;
+    height: 5px;
+    border-radius: 3px;
+    background: #0F172A;
+  }
+
+  /* ---------- safety chain (supporting, right column) ---------- */
+  [class~="09-treatment-safety-seg"] {
+    position: absolute;
+    left: 899px;
+    width: 2px;
+    height: 140px;
+    border-radius: 2px;
+    background: rgba(105, 76, 250, 0.3);
+    transform-origin: 50% 0%;
+    z-index: 2;
+  }
+  [class~="09-treatment-safety-node"] {
+    position: absolute;
+    left: 862px;
+    width: 76px;
+    height: 76px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: #F8F6F1;
+    background-image: linear-gradient(rgba(105, 76, 250, 0.08), rgba(105, 76, 250, 0.08));
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: 50% 50%;
+    z-index: 3;
+  }
+  [class~="09-treatment-safety-node"] svg {
+    display: block;
+    width: 36px;
+    height: 36px;
+    overflow: visible;
+  }
+  [class~="09-treatment-safety-ico"] {
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [class~="09-treatment-safety-ico-bold"] {
+    fill: none;
+    stroke: #694CFA;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  [class~="09-treatment-safety-card"] {
+    position: absolute;
+    left: 968px;
+    width: 732px;
+    height: 108px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    background-color: #F8F6F1;
+    background-image: linear-gradient(rgba(105, 76, 250, 0.04), rgba(105, 76, 250, 0.04));
+    border: 1.5px solid rgba(105, 76, 250, 0.2);
+    border-radius: 14px;
+    z-index: 3;
+  }
+  [class~="09-treatment-safety-title"] {
+    font-size: 1.5cqw;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #0F172A;
+    white-space: nowrap;
+  }
+  [class~="09-treatment-safety-sub"] {
+    font-size: 1.2cqw;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #dc2626;
+    white-space: nowrap;
+  }
+  /* negative tint: row 1 only */
+  [id="09-treatment-safety-node-1"] {
+    background-image: linear-gradient(rgba(220, 38, 38, 0.08), rgba(220, 38, 38, 0.08));
+    border-color: rgba(220, 38, 38, 0.3);
+  }
+  [id="09-treatment-safety-node-1"] [class~="09-treatment-safety-ico"] {
+    stroke: #dc2626;
+  }
+  [id="09-treatment-safety-card-1"] {
+    background-image: linear-gradient(rgba(220, 38, 38, 0.04), rgba(220, 38, 38, 0.04));
+    border-color: rgba(220, 38, 38, 0.28);
+  }
+  [id="09-treatment-safety-alert"] {
+    position: absolute;
+    left: 862px;
+    top: 316px;
+    width: 76px;
+    height: 76px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid #dc2626;
+    transform-origin: 50% 50%;
+    z-index: 2;
+  }
+</style>
+
+<div id="root" data-composition-id="09-treatment-safety" data-width="1920" data-height="1080" data-start="0" data-duration="13.016">
+  <div id="09-treatment-safety-bg" class="clip" data-start="0" data-duration="13.016" data-track-index="0"></div>
+
+  <div id="09-treatment-safety-stage" class="clip" data-start="0" data-duration="13.016" data-track-index="1">
+
+    <div id="09-treatment-safety-eyebrow">
+      <svg id="09-treatment-safety-minipath" viewBox="0 0 176 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 22C23 22 23 10 36 10S49 22 62 22S75 10 88 10S101 22 114 22S127 10 140 10S153 22 166 22" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.6" stroke-dasharray="3 4" stroke-linecap="round" />
+        <circle cx="10" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="36" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="62" cy="22" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="88" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="140" cy="10" r="5" fill="#694CFA" fill-opacity="0.3" />
+        <circle cx="166" cy="22" r="5" fill="#F0A050" fill-opacity="0.3" />
+        <g id="09-treatment-safety-dot5">
+          <circle cx="114" cy="22" r="9" fill="none" stroke="#694CFA" stroke-opacity="0.35" stroke-width="1.5" />
+          <circle cx="114" cy="22" r="5.5" fill="#694CFA" />
+        </g>
+      </svg>
+      <div id="09-treatment-safety-eyebrow-text">Step 5 · Treatment and tracking</div>
+    </div>
+
+    <!-- device surface -->
+    <div id="09-treatment-safety-disc"></div>
+    <div id="09-treatment-safety-phone">
+      <div class="09-treatment-safety-btn" style="left: -4px; top: 168px; height: 54px;"></div>
+      <div class="09-treatment-safety-btn" style="left: -4px; top: 236px; height: 54px;"></div>
+      <div class="09-treatment-safety-btn" style="left: 448px; top: 206px; height: 92px;"></div>
+      <div id="09-treatment-safety-screen">
+        <div id="09-treatment-safety-island"></div>
+        <div id="09-treatment-safety-shot">
+          <img id="09-treatment-safety-shot-img" src="public/app/tracking-mockup.png" alt="Daily tracking screen with example data" />
+          <div id="09-treatment-safety-ring-memory" class="09-treatment-safety-ring"></div>
+          <div id="09-treatment-safety-ring-checkin" class="09-treatment-safety-ring"></div>
+          <div id="09-treatment-safety-ripple-1" class="09-treatment-safety-ripple"></div>
+          <div id="09-treatment-safety-ripple-2" class="09-treatment-safety-ripple"></div>
+        </div>
+        <div id="09-treatment-safety-urlbar">
+          <div id="09-treatment-safety-url">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="11" width="14" height="10" rx="2" />
+              <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+            </svg>
+            <span>Open Treatment Evidence Network</span>
+          </div>
+        </div>
+        <div id="09-treatment-safety-home"></div>
+      </div>
+    </div>
+
+    <!-- context chips -->
+    <div id="09-treatment-safety-chip-a-pos" class="09-treatment-safety-chip-pos">
+      <div id="09-treatment-safety-chip-a" class="09-treatment-safety-chip">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle class="09-treatment-safety-chip-dot" cx="12" cy="12" r="12" />
+          <rect class="09-treatment-safety-chip-glyph" x="6.5" y="7.5" width="11" height="10" rx="1.6" />
+          <path class="09-treatment-safety-chip-glyph" d="M6.5 10.8h11M9.5 5.8v2.6M14.5 5.8v2.6" />
+        </svg>
+        <span>Week 2 · first dose</span>
+      </div>
+    </div>
+    <div id="09-treatment-safety-chip-b-pos" class="09-treatment-safety-chip-pos">
+      <div id="09-treatment-safety-chip-b" class="09-treatment-safety-chip">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle class="09-treatment-safety-chip-dot" cx="12" cy="12" r="12" />
+          <g id="09-treatment-safety-pin">
+            <path class="09-treatment-safety-chip-glyph" d="M12 18.4s-4.6-4-4.6-7.8a4.6 4.6 0 0 1 9.2 0c0 3.8-4.6 7.8-4.6 7.8Z" />
+            <path class="09-treatment-safety-chip-glyph" d="M12 9a1.6 1.6 0 1 1 0 3.2a1.6 1.6 0 1 1 0-3.2Z" />
+          </g>
+        </svg>
+        <span>Clinic near home</span>
+      </div>
+    </div>
+
+    <!-- safety chain: rail segments, nodes, cards -->
+    <div id="09-treatment-safety-seg-1" class="09-treatment-safety-seg" style="top: 354px;"></div>
+    <div id="09-treatment-safety-seg-2" class="09-treatment-safety-seg" style="top: 494px;"></div>
+    <div id="09-treatment-safety-seg-3" class="09-treatment-safety-seg" style="top: 634px;"></div>
+    <div id="09-treatment-safety-alert"></div>
+
+    <div id="09-treatment-safety-node-1" class="09-treatment-safety-node" style="top: 316px;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path class="09-treatment-safety-ico" d="M12 3.6L21.4 19.8H2.6Z" />
+        <path class="09-treatment-safety-ico" d="M12 9.6v4.6" />
+        <path class="09-treatment-safety-ico" d="M12 16.9v0.2" />
+      </svg>
+    </div>
+    <div id="09-treatment-safety-card-1" class="09-treatment-safety-card" style="top: 300px;">
+      <div class="09-treatment-safety-title">Serious side effect</div>
+      <div class="09-treatment-safety-sub">Reported within days</div>
+    </div>
+
+    <div id="09-treatment-safety-node-2" class="09-treatment-safety-node" style="top: 456px;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path class="09-treatment-safety-ico" d="M9 11.2a3 3 0 1 0 0-6a3 3 0 1 0 0 6Z" />
+        <path class="09-treatment-safety-ico" d="M3.6 19.4c0-3.1 2.4-5.2 5.4-5.2s5.4 2.1 5.4 5.2" />
+        <path class="09-treatment-safety-ico" d="M15.6 5.5a2.8 2.8 0 0 1 0 5.4" />
+        <path class="09-treatment-safety-ico" d="M17.2 14.5c1.9 0.5 3.2 2.3 3.2 4.9" />
+      </svg>
+    </div>
+    <div id="09-treatment-safety-card-2" class="09-treatment-safety-card" style="top: 440px;">
+      <div class="09-treatment-safety-title">Board reassesses</div>
+    </div>
+
+    <div id="09-treatment-safety-node-3" class="09-treatment-safety-node" style="top: 596px;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path class="09-treatment-safety-ico-bold" d="M9 6.5v11" />
+        <path class="09-treatment-safety-ico-bold" d="M15 6.5v11" />
+      </svg>
+    </div>
+    <div id="09-treatment-safety-card-3" class="09-treatment-safety-card" style="top: 580px;">
+      <div class="09-treatment-safety-title">New patients paused</div>
+    </div>
+
+    <div id="09-treatment-safety-node-4" class="09-treatment-safety-node" style="top: 736px;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path class="09-treatment-safety-ico" d="M10 11.2a3.4 3.4 0 1 0 0-6.8a3.4 3.4 0 1 0 0 6.8Z" />
+        <path class="09-treatment-safety-ico" d="M3.8 19.8c0-3.5 2.8-5.8 6.2-5.8c1.3 0 2.5 0.3 3.5 0.9" />
+        <path class="09-treatment-safety-ico" d="M15.2 17.6l2.1 2.1l4-4.2" />
+      </svg>
+    </div>
+    <div id="09-treatment-safety-card-4" class="09-treatment-safety-card" style="top: 720px;">
+      <div class="09-treatment-safety-title">Current patients may continue if safer</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var P = "09-treatment-safety-";
+    function byId(id) {
+      return document.getElementById(P + id);
+    }
+    function byClass(cls, scope) {
+      return Array.prototype.slice.call((scope || document).getElementsByClassName(P + cls));
+    }
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    // svg-path-draw: dash = measured length, offset length -> 0
+    function draw(path, at, dur, ease) {
+      var len = Math.ceil(path.getTotalLength()) + 1;
+      path.style.strokeDasharray = len + " " + len;
+      tl.fromTo(
+        path,
+        { strokeDashoffset: len },
+        { strokeDashoffset: 0, duration: dur, ease: ease || "power2.out" },
+        at
+      );
+    }
+
+    // ---------- chip layout states (wrapper transform-origin 0 0; DOM position = docked row, top-right) ----------
+    // Scene 1: stacked at canvas centre, scale 1.3 · Scene 2: stacked beside the phone, scale 1.1 · Scene 3: docked row
+    var CHIP_A = { s1: { x: -138, y: 231, scale: 1.3 }, s2: { x: 0, y: 262, scale: 1.1 } };
+    var CHIP_B = { s1: { x: -494.5, y: 331, scale: 1.3 }, s2: { x: -376, y: 344, scale: 1.1 } };
+    var DOCK = { x: 0, y: 0, scale: 1 };
+
+    // ring travel: Memory test row -> Check-in row, in image-box px (box is a fixed 367px tall)
+    var TRAVEL = (0.703 - 0.128) * 367;
+
+    // ===== Scene 1 (0.0-3.6s): header, then "Week 2 · first dose" and "Clinic near home" pop centre-stage =====
+    tl.fromTo(
+      byId("minipath"),
+      { clipPath: "inset(0% 100% 0% 0%)" },
+      { clipPath: "inset(0% 0% 0% 0%)", duration: 0.6, ease: "power2.out" },
+      0.05
+    );
+    tl.fromTo(
+      byId("dot5"),
+      { scale: 0.3, transformOrigin: "50% 50%" },
+      { scale: 1, duration: 0.45, ease: "back.out(2.2)" },
+      0.3
+    );
+    tl.fromTo(
+      byId("eyebrow-text"),
+      { opacity: 0, x: -14 },
+      { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+      0.15
+    );
+
+    // chip positions: Scene 1 centre state applied at t=0 by the fromTo
+    tl.fromTo(byId("chip-a-pos"), CHIP_A.s1, Object.assign({ duration: 0.85, ease: "power3.inOut" }, CHIP_A.s2), 3.45);
+    tl.fromTo(byId("chip-b-pos"), CHIP_B.s1, Object.assign({ duration: 0.85, ease: "power3.inOut" }, CHIP_B.s2), 3.5);
+
+    // spring-pop-entrance (calm settle) on the voiceover cues
+    tl.fromTo(
+      byId("chip-a"),
+      { scale: 0, opacity: 0, y: 12 },
+      { scale: 1, opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+      0.42
+    );
+    tl.fromTo(
+      byId("chip-b"),
+      { scale: 0, opacity: 0, y: 12 },
+      { scale: 1, opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+      2.22
+    );
+    tl.fromTo(
+      byId("pin"),
+      { opacity: 0, y: -7 },
+      { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+      2.48
+    );
+
+    // ===== Scene 2 (3.6-7.0s): the phone rises in; ring on "Memory test"; ring travels to "Check-in" =====
+    tl.fromTo(
+      byId("phone"),
+      { y: 100 },
+      { y: 0, duration: 0.95, ease: "power3.out" },
+      3.62
+    );
+    tl.fromTo(byId("phone"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, 3.62);
+    tl.fromTo(
+      byId("disc"),
+      { opacity: 0, scale: 0.82 },
+      { opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" },
+      3.72
+    );
+
+    tl.fromTo(
+      byId("ring-memory"),
+      { opacity: 0, scale: 1.06 },
+      { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" },
+      4.08
+    );
+    tl.to(byId("ring-memory"), { opacity: 0, y: TRAVEL * 0.45, duration: 0.3, ease: "power2.in" }, 4.9);
+    tl.fromTo(
+      byId("ring-checkin"),
+      { opacity: 0, y: -TRAVEL * 0.45 },
+      { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+      4.99
+    );
+    // two call ripples off the check-in row's phone glyph (each: quick in, then expand + fade)
+    [byId("ripple-1"), byId("ripple-2")].forEach(function (rip, i) {
+      var at = 5.24 + i * 0.22;
+      tl.fromTo(rip, { opacity: 0, scale: 0.4 }, { opacity: 0.85, scale: 0.85, duration: 0.12, ease: "power1.out" }, at);
+      tl.to(rip, { opacity: 0, scale: 1.75, duration: 0.7, ease: "power2.out" }, at + 0.12);
+    });
+
+    // ===== Scene 3 (7.0-12.5s): chips dock top-right; the safety chain builds one row per cue =====
+    tl.fromTo(
+      byId("chip-a-pos"),
+      CHIP_A.s2,
+      Object.assign({ duration: 0.65, ease: "power3.inOut", immediateRender: false }, DOCK),
+      6.48
+    );
+    tl.fromTo(
+      byId("chip-b-pos"),
+      CHIP_B.s2,
+      Object.assign({ duration: 0.65, ease: "power3.inOut", immediateRender: false }, DOCK),
+      6.5
+    );
+
+    function row(n, at) {
+      var node = byId("node-" + n);
+      tl.fromTo(node, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, at - 0.06);
+      byClass("ico", node).concat(byClass("ico-bold", node)).forEach(function (p, k) {
+        draw(p, at + 0.12 + k * 0.08, 0.4, "power2.out");
+      });
+      tl.fromTo(
+        byId("card-" + n),
+        { opacity: 0, x: -24 },
+        { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" },
+        at
+      );
+    }
+    function seg(n, at, dur) {
+      tl.fromTo(byId("seg-" + n), { scaleY: 0 }, { scaleY: 1, duration: dur, ease: "power2.inOut" }, at);
+    }
+
+    row(1, 7.17);
+    // one alert pulse off the side-effect node
+    tl.fromTo(byId("alert"), { opacity: 0, scale: 1 }, { opacity: 0.7, scale: 1.08, duration: 0.12, ease: "power1.out" }, 7.42);
+    tl.to(byId("alert"), { opacity: 0, scale: 1.75, duration: 0.75, ease: "power2.out" }, 7.54);
+
+    seg(1, 8.83, 0.32);
+    row(2, 9.13);
+    seg(2, 10.37, 0.32);
+    row(3, 10.67);
+    seg(3, 10.9, 0.28);
+    row(4, 11.18);
+
+    // hold to the frame's fixed length — no exit
+    tl.set({}, {}, 12.516);
+
+    window.__timelines["09-treatment-safety"] = tl;
+  })();
+</script>
+</template>

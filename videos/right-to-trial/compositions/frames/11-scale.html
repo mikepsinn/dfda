@@ -1,0 +1,652 @@
+<template id="11-scale-template">
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      container-type: size;
+      font-family: "Inter", sans-serif;
+      color: #0f172a;
+    }
+    #root * {
+      box-sizing: border-box;
+    }
+
+    /* full-bleed cream ground: its own clip on the lowest track */
+    [id="11-scale-bg"] {
+      position: absolute;
+      inset: 0;
+      background: #f8f6f1;
+    }
+    /* content layer (untimed); the camera stays still, instruments replace each other */
+    [id="11-scale-stage"] {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    /* ── slide-header eyebrow ── */
+    [id="11-scale-eyebrow-row"] {
+      position: absolute;
+      left: 96px;
+      top: 70px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    [id="11-scale-accent"] {
+      display: block;
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: #694cfa;
+      transform-origin: 0% 50%;
+    }
+    [id="11-scale-eyebrow"] {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #694cfa;
+      white-space: nowrap;
+    }
+
+    /* ── dot field (35 × 17 = 595 people, 26px pitch) ── */
+    [id="11-scale-fieldwrap"] {
+      position: absolute;
+      left: 512px;
+      top: 256px;
+      width: 896px;
+      height: 428px;
+      transform-origin: 448px 214px;
+    }
+    [id="11-scale-fieldcam"] {
+      position: absolute;
+      inset: 0;
+      transform-origin: 448px 214px;
+    }
+    [id="11-scale-field"],
+    [id="11-scale-lit"] {
+      position: absolute;
+      inset: 0;
+    }
+    [id="11-scale-field"] > span {
+      position: absolute;
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(148, 163, 184, 0.6);
+    }
+    /* the lit 2%: brighter, a touch larger, with a soft purple halo ring */
+    [id="11-scale-lit"] > span {
+      position: absolute;
+      display: block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #694cfa;
+      outline: 6px solid rgba(105, 76, 250, 0.2);
+    }
+    /* Margaret: one dot, a ring that keeps finding her in the crowd */
+    [id="11-scale-mdot"] {
+      position: absolute;
+      left: 428px;
+      top: 194px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #694cfa;
+    }
+    [id="11-scale-mring"] {
+      position: absolute;
+      left: 435px;
+      top: 201px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid #694cfa;
+    }
+    [id="11-scale-mname"] {
+      position: absolute;
+      left: 298px;
+      top: 248px;
+      width: 300px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    /* "2% of them" lockup above the field */
+    [id="11-scale-two"] {
+      position: absolute;
+      left: 0;
+      top: -96px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      white-space: nowrap;
+    }
+    [id="11-scale-two-num"] {
+      display: inline-block;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #694cfa;
+    }
+    [id="11-scale-two-txt"] {
+      display: inline-block;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1;
+      color: #475569;
+    }
+
+    /* shared big-number label (used under $9.50) */
+    [class~="11-scale-label"] {
+      position: absolute;
+      left: 0;
+      top: 232px;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #475569;
+      white-space: nowrap;
+    }
+
+    /* ── scene 3: years until every untreated disease has a first treatment ── */
+    [id="11-scale-s4"],
+    [id="11-scale-s5"] {
+      position: absolute;
+      inset: 0;
+    }
+    [id="11-scale-s4"] {
+      transform-origin: 960px 520px;
+    }
+    [id="11-scale-head"] {
+      position: absolute;
+      left: 96px;
+      top: 290px;
+      margin: 0;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    [class~="11-scale-yr"] {
+      position: absolute;
+      left: 96px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      white-space: nowrap;
+    }
+    [id="11-scale-lbl36"] {
+      top: 410px;
+      color: #a64e16;
+    }
+    [id="11-scale-lbl443"] {
+      top: 590px;
+      color: #475569;
+    }
+    [class~="11-scale-yrnum"] {
+      display: inline-block;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    /* reserve each number's final width so "years" stays put while it counts up */
+    [id="11-scale-n36"] {
+      min-width: 1.25em;
+    }
+    [id="11-scale-n443"] {
+      min-width: 1.85em;
+    }
+    [class~="11-scale-yrunit"] {
+      display: inline-block;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1;
+    }
+    [class~="11-scale-yrnote"] {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1;
+      color: #475569;
+    }
+    [class~="11-scale-bar"] {
+      position: absolute;
+      left: 96px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    /* faint full-width rails: the scale both bars are drawn against */
+    [class~="11-scale-rail"] {
+      width: 1728px;
+      background: rgba(148, 163, 184, 0.2);
+    }
+    [id="11-scale-rail36"],
+    [id="11-scale-bar36"] {
+      top: 498px;
+    }
+    [id="11-scale-rail443"],
+    [id="11-scale-bar443"] {
+      top: 678px;
+    }
+    [id="11-scale-bar36"] {
+      width: 140px;
+      background: #f0a050;
+    }
+    [id="11-scale-bar443"] {
+      width: 1728px;
+      background: #94a3b8;
+    }
+
+    /* ── scene 5: cost strip ── */
+    [id="11-scale-hero"] {
+      position: absolute;
+      left: 96px;
+      top: 270px;
+      width: 800px;
+      height: 320px;
+      transform-origin: 320px 140px;
+    }
+    [id="11-scale-heronum"] {
+      font-size: 240px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #694cfa;
+      white-space: nowrap;
+    }
+    [id="11-scale-herolab"] {
+      top: 250px;
+    }
+    [id="11-scale-vs"] {
+      position: absolute;
+      left: 830px;
+      top: 414px;
+      width: 100px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+    [class~="11-scale-card"] {
+      position: absolute;
+      left: 1000px;
+      width: 824px;
+      height: 120px;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      background: rgba(105, 76, 250, 0.04);
+      border: 1.5px solid rgba(105, 76, 250, 0.2);
+      border-radius: 14px;
+    }
+    [id="11-scale-card1"] {
+      top: 298px;
+    }
+    [id="11-scale-card2"] {
+      top: 442px;
+    }
+    [class~="11-scale-cnum"] {
+      flex: 0 0 380px;
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    [class~="11-scale-clab"] {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #475569;
+      white-space: nowrap;
+    }
+
+    /* ── chrome: model / source footnotes ── */
+    [class~="11-scale-chrome"] {
+      position: absolute;
+      left: 96px;
+      top: 836px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      color: #475569;
+      white-space: nowrap;
+    }
+  </style>
+
+  <div id="root" data-composition-id="11-scale" data-width="1920" data-height="1080" data-duration="16.703">
+    <div id="11-scale-bg" class="clip" data-start="0" data-duration="16.703" data-track-index="0"></div>
+
+    <div id="11-scale-stage">
+      <!-- slide-header eyebrow -->
+      <div id="11-scale-eyebrow-row">
+        <span id="11-scale-accent"></span>
+        <span id="11-scale-eyebrow">At scale</span>
+      </div>
+
+      <!-- dot field: Margaret multiplies into ~600 people -->
+      <div id="11-scale-fieldwrap">
+        <div id="11-scale-fieldcam">
+          <div id="11-scale-field"></div>
+          <div id="11-scale-lit"></div>
+          <div id="11-scale-mring"></div>
+          <div id="11-scale-mdot"></div>
+          <div id="11-scale-mname">Margaret</div>
+        </div>
+        <div id="11-scale-two"><span id="11-scale-two-num">2%</span><span id="11-scale-two-txt">of willing patients</span></div>
+      </div>
+
+      <!-- scene 3: 36 years instead of 443 -->
+      <div id="11-scale-s4">
+        <p id="11-scale-head">Until every untreated disease has a first treatment</p>
+        <div id="11-scale-lbl36" class="11-scale-yr"><span id="11-scale-n36" class="11-scale-yrnum">36</span><span class="11-scale-yrunit">years</span><span class="11-scale-yrnote">with care-integrated trials</span></div>
+        <div id="11-scale-rail36" class="11-scale-bar 11-scale-rail"></div>
+        <div id="11-scale-bar36" class="11-scale-bar"></div>
+        <div id="11-scale-lbl443" class="11-scale-yr"><span id="11-scale-n443" class="11-scale-yrnum">443</span><span class="11-scale-yrunit">years</span><span class="11-scale-yrnote">at today's pace</span></div>
+        <div id="11-scale-rail443" class="11-scale-bar 11-scale-rail"></div>
+        <div id="11-scale-bar443" class="11-scale-bar"></div>
+      </div>
+
+      <!-- scene 5: cost strip -->
+      <div id="11-scale-s5">
+        <div id="11-scale-hero">
+          <div id="11-scale-heronum" data-layout-allow-overlap>$9.50</div>
+          <div id="11-scale-herolab" class="11-scale-label">per healthy year</div>
+        </div>
+        <div id="11-scale-vs">vs</div>
+        <div id="11-scale-card1" class="11-scale-card"><span class="11-scale-cnum">$89</span><span class="11-scale-clab">malaria bed nets</span></div>
+        <div id="11-scale-card2" class="11-scale-card"><span class="11-scale-cnum">$100,000+</span><span class="11-scale-clab">typical new drug</span></div>
+      </div>
+
+      <!-- chrome -->
+      <div id="11-scale-cm" class="11-scale-chrome">Model estimate · War on Disease manual</div>
+      <div id="11-scale-cf" class="11-scale-chrome">Model estimates · War on Disease manual, impact paper; ICER</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var P = "11-scale-";
+      function el(id) {
+        return document.getElementById(P + id);
+      }
+      var DUR = 16.103;
+
+      // ── deterministic dot field: index → (row, col); no randomness anywhere ──
+      var COLS = 35;
+      var ROWS = 17;
+      var PITCH = 26;
+      var TOTAL = COLS * ROWS; // 595
+      var MC = 17;
+      var MR = 8;
+      var MI = MR * COLS + MC; // Margaret's index (dead center)
+
+      // integer hash (index → scatter rank), pure function of the index
+      function hash(n) {
+        var h = Math.imul(n ^ 0x5bd1e995, 0x9e3779b1);
+        h ^= h >>> 15;
+        h = Math.imul(h, 0x85ebca6b);
+        h ^= h >>> 13;
+        h = Math.imul(h, 0xc2b2ae35);
+        h ^= h >>> 16;
+        return h >>> 0;
+      }
+      function colOf(i) {
+        return i % COLS;
+      }
+      function rowOf(i) {
+        return (i - (i % COLS)) / COLS;
+      }
+
+      var field = el("field");
+      field.textContent = "";
+      var dots = [];
+      for (var i = 0; i < TOTAL; i++) {
+        var d = document.createElement("span");
+        d.style.left = colOf(i) * PITCH + "px";
+        d.style.top = rowOf(i) * PITCH + "px";
+        field.appendChild(d);
+        dots.push(d);
+      }
+      // Margaret is drawn by her own marker on top
+      dots[MI].style.opacity = "0";
+
+      // spray geometry: each dot unfolds outward from Margaret, delay = its distance from her
+      var crowd = [];
+      var sx = [];
+      var sy = [];
+      var sd = [];
+      var MAXD = Math.sqrt(Math.pow(MC * PITCH, 2) + Math.pow(MR * PITCH, 2));
+      for (i = 0; i < TOTAL; i++) {
+        if (i === MI) continue;
+        var dx = (colOf(i) - MC) * PITCH;
+        var dy = (rowOf(i) - MR) * PITCH;
+        crowd.push(dots[i]);
+        sx.push(-dx * 0.4);
+        sy.push(-dy * 0.4);
+        sd.push((Math.sqrt(dx * dx + dy * dy) / MAXD) * 0.62);
+      }
+
+      // the willing crowd (79%, never drawn): Margaret first, then a hash-scattered crowd;
+      // the lit dots are picked from it
+      var others = [];
+      for (i = 0; i < TOTAL; i++) if (i !== MI) others.push(i);
+      others.sort(function (a, b) {
+        return hash(a) - hash(b);
+      });
+      var TINTED = Math.round(TOTAL * 0.79); // 470
+      var tintSet = [MI].concat(others.slice(0, TINTED - 1));
+      var isTinted = {};
+      for (i = 0; i < tintSet.length; i++) isTinted[tintSet[i]] = true;
+
+      // the lit 2% (12 of 595): Margaret + one willing dot per stratum of a 4×3 split
+      var CB = [[1, 7], [10, 16], [19, 25], [28, 33]];
+      var RB = [[1, 4], [7, 10], [13, 15]];
+      var litIdx = [];
+      for (var br = 0; br < RB.length; br++) {
+        for (var bc = 0; bc < CB.length; bc++) {
+          if (br === 1 && bc === 1) continue; // Margaret's stratum: she is its lit dot
+          var r0 = RB[br][0];
+          var c0 = CB[bc][0];
+          var rh = RB[br][1] - r0 + 1;
+          var cw = CB[bc][1] - c0 + 1;
+          var n = rh * cw;
+          var start = hash(1000 + br * 4 + bc) % n;
+          for (var s = 0; s < n; s++) {
+            var q = (start + s) % n;
+            var idx = (r0 + Math.floor(q / cw)) * COLS + (c0 + (q % cw));
+            if (isTinted[idx] && idx !== MI) {
+              litIdx.push(idx);
+              break;
+            }
+          }
+        }
+      }
+      function distM(i) {
+        var a = colOf(i) - MC;
+        var b = rowOf(i) - MR;
+        return a * a + b * b;
+      }
+      litIdx.sort(function (a, b) {
+        return distM(a) - distM(b) || a - b;
+      });
+      var lit = el("lit");
+      lit.textContent = "";
+      var litDots = [];
+      for (i = 0; i < litIdx.length; i++) {
+        var ld = document.createElement("span");
+        ld.style.left = colOf(litIdx[i]) * PITCH - 1 + "px";
+        ld.style.top = rowOf(litIdx[i]) * PITCH - 1 + "px";
+        lit.appendChild(ld);
+        litDots.push(ld);
+      }
+
+      // count-up whose value lives behind a setter, so every render (incl. event-suppressed seeks) writes the text
+      function counter(numEl) {
+        var cur = 0;
+        var state = {};
+        Object.defineProperty(state, "v", {
+          get: function () {
+            return cur;
+          },
+          set: function (x) {
+            cur = x;
+            numEl.textContent = String(Math.round(x));
+          },
+        });
+        return state;
+      }
+
+      var tl = gsap.timeline({ paused: true });
+
+      // ── chrome eyebrow ──
+      tl.fromTo(el("accent"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.2);
+      tl.fromTo(el("eyebrow"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.25);
+
+      // ── Scene 1 (0.0–1.8): Margaret's dot, then she multiplies outward on "scale that up" ──
+      tl.fromTo(el("mdot"), { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(1.6)" }, 0);
+      tl.fromTo(el("mname"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.12);
+      tl.fromTo(el("mdot"), { scale: 1 }, { scale: 0.3, duration: 0.45, ease: "power3.inOut", immediateRender: false }, 0.6);
+      tl.fromTo(el("mname"), { opacity: 1, y: 0 }, { opacity: 0, y: 8, duration: 0.25, ease: "power2.in", immediateRender: false }, 0.6);
+      tl.fromTo(
+        crowd,
+        {
+          x: function (k) {
+            return sx[k];
+          },
+          y: function (k) {
+            return sy[k];
+          },
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.55,
+          ease: "power3.out",
+          stagger: function (k) {
+            return sd[k];
+          },
+        },
+        0.62
+      );
+      tl.fromTo(el("mring"), { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" }, 1.05);
+
+      // ── Scene 2 (1.6–4.1): on "2%" the field dims and a small share lights ──
+      tl.fromTo(el("fieldcam"), { scale: 1 }, { scale: 1.025, duration: 3.0, ease: "sine.inOut" }, 1.2);
+      tl.fromTo(el("field"), { opacity: 1 }, { opacity: 0.2, duration: 0.7, ease: "power2.inOut", immediateRender: false }, 1.96);
+      tl.fromTo(litDots, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(2.2)", stagger: 0.06 }, 2.0);
+      tl.fromTo(el("two-num"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.96);
+      tl.fromTo(el("two-txt"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.77);
+
+      // ── Scene 3 (4.1–11.4): the field clears on "our model says"; 36 years, then 443 ──
+      tl.fromTo(
+        el("fieldwrap"),
+        { opacity: 1, scale: 1 },
+        { opacity: 0, scale: 0.96, duration: 0.42, ease: "power2.in", immediateRender: false },
+        4.1
+      );
+      tl.fromTo(el("cm"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 4.74);
+      tl.fromTo(el("head"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 4.99);
+      tl.fromTo(
+        [el("rail36"), el("rail443")],
+        { clipPath: "inset(0px 100% 0px 0px round 8px)" },
+        { clipPath: "inset(0px 0% 0px 0px round 8px)", duration: 0.9, ease: "power2.inOut", stagger: 0.15 },
+        5.42
+      );
+
+      // "36": the short orange bar grows while its number counts up
+      var T36 = 8.28;
+      tl.fromTo(el("lbl36"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, T36);
+      tl.fromTo(counter(el("n36")), { v: 0 }, { v: 36, duration: 0.8, ease: "power3.out" }, T36);
+      tl.fromTo(
+        el("bar36"),
+        { clipPath: "inset(0px 100% 0px 0px round 8px)" },
+        { clipPath: "inset(0px 0% 0px 0px round 8px)", duration: 0.8, ease: "power3.out" },
+        T36
+      );
+
+      // "443": the long grey bar takes its time across the whole width
+      var T443 = 9.9;
+      tl.fromTo(el("lbl443"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, T443);
+      tl.fromTo(counter(el("n443")), { v: 0 }, { v: 443, duration: 1.3, ease: "power2.inOut" }, T443);
+      tl.fromTo(
+        el("bar443"),
+        { clipPath: "inset(0px 100% 0px 0px round 8px)" },
+        { clipPath: "inset(0px 0% 0px 0px round 8px)", duration: 1.3, ease: "power2.inOut" },
+        T443
+      );
+
+      // ── Scene 4 (11.4–16.1): inverse zoom-through into the cost strip ──
+      tl.fromTo(
+        el("s4"),
+        { scale: 1, filter: "blur(0px)" },
+        { scale: 0.8, filter: "blur(10px)", duration: 0.2, ease: "power3.in", immediateRender: false },
+        11.45
+      );
+      tl.fromTo(el("s4"), { opacity: 1 }, { opacity: 0.15, duration: 0.2, ease: "none", immediateRender: false }, 11.45);
+      tl.fromTo(el("s4"), { opacity: 0.15 }, { opacity: 0, duration: 0.01, ease: "none", immediateRender: false }, 11.65);
+      tl.fromTo(el("s5"), { opacity: 0 }, { opacity: 1, duration: 0.01, ease: "none" }, 11.65);
+      tl.fromTo(
+        el("hero"),
+        { opacity: 0.15, scale: 1.25, filter: "blur(10px)" },
+        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.6, ease: "expo.out" },
+        11.65
+      );
+      tl.fromTo(el("herolab"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 12.7);
+
+      // the two comparisons arrive beside it, early enough to read before the cut
+      tl.fromTo(el("vs"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 13.3);
+      tl.fromTo(el("card1"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 13.4);
+      tl.fromTo(el("card2"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 13.66);
+
+      // footnote widens to the full source list; then hold
+      tl.fromTo(el("cm"), { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "power1.in", immediateRender: false }, 14.2);
+      tl.fromTo(el("cf"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 14.35);
+
+      // anchor the held end to the fixed frame length
+      tl.set({}, {}, DUR);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["11-scale"] = tl;
+    })();
+  </script>
+</template>
