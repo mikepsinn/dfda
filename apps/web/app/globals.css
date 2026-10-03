@@ -121,3 +121,39 @@
   }
 }
 
+
+/* Presentations (components/present/deck.tsx): print or save as PDF with one
+   1920 × 1080 page per slide, without the controls. */
+@media print {
+  @page {
+    size: 1920px 1080px;
+    margin: 0;
+  }
+  .deck {
+    display: block;
+    height: auto;
+    background: none;
+  }
+  .deck-chrome {
+    display: none !important;
+  }
+  .deck-stage {
+    overflow: visible;
+  }
+  .deck-canvas {
+    position: static !important;
+    height: auto !important;
+    transform: none !important;
+  }
+  .deck-slide {
+    position: relative !important;
+    display: block !important;
+    height: 1080px;
+    break-after: page;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .deck-slide:last-child {
+    break-after: auto;
+  }
+}
