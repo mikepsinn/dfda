@@ -174,7 +174,25 @@ export async function compareImages({
     box(context2d, area.left - left - 3, y0 - top - 3, area.right - area.left + 6, Math.min(y1, bottom) - y0 + 6, 1, 3);
     return { image: await jpeg(canvas), truncated: y1 + context > bottom && bottom < image.height };
   };
-  if (!areas.length) return { areaCount: 0, closeUps: [] };
+  // The rows above compare only the columns both screenshots have. A page that got wider or
+  // narrower (say, something now sticks out past the side of the screen) changed even when those
+  // columns did not; where it got wider, the new strip is boxed in the overview.
+  const widthChange = old.width === now.width ? null : { before: old.width, after: now.width };
+  let wider = null;
+  if (now.width > old.width) {
+    let first = -1, last = -1;
+    for (let y = 0; y < now.height; y++) {
+      const row = y * now.width * 4, edge = row + width * 4;
+      for (let p = edge + 4; p < row + now.width * 4; p += 4) {
+        if (now.pixels[p] === now.pixels[edge] && now.pixels[p + 1] === now.pixels[edge + 1] && now.pixels[p + 2] === now.pixels[edge + 2]) continue;
+        if (first < 0) first = y;
+        last = y;
+        break;
+      }
+    }
+    wider = first < 0 ? { top: 0, bottom: now.height } : { top: first, bottom: last + 1 }; // a blank strip still scrolls
+  }
+  if (!areas.length && !widthChange) return { areaCount: 0, closeUps: [] };
   const shown = areas.slice(0, maxAreas);
   const closeUps = [];
   for (const area of shown) {
@@ -203,10 +221,11 @@ export async function compareImages({
     context2d.drawImage(now.bitmap, 0, top, now.width, height, columnLeft(column), 0, columnWidth, height * scale);
   }
   const columnAt = y => Math.min(columns - 1, Math.max(0, Math.floor(y / columnHeight)));
-  areas.forEach((area, index) => {
+  // Boxes a part of the page given in page pixels, numbered if it has a close-up.
+  const outline = (left, right, top, bottom, number) => {
     // The box in overview pixels, as if the columns were one long strip, kept inside the page's sides.
-    const x0 = Math.max(1.5, (area.left - 6) * scale), x1 = Math.min(columnWidth - 1.5, (area.right + 6) * scale);
-    const y0 = (area.afterStart - 6) * scale, y1 = Math.max(area.afterEnd + 6, area.afterStart + 10) * scale;
+    const x0 = Math.max(1.5, (left - 6) * scale), x1 = Math.min(columnWidth - 1.5, (right + 6) * scale);
+    const y0 = (top - 6) * scale, y1 = Math.max(bottom + 6, top + 10) * scale;
     for (let column = columnAt(y0); column <= columnAt(y1); column++) { // each column the box falls in
       context2d.save();
       context2d.beginPath();
@@ -217,7 +236,7 @@ export async function compareImages({
       context2d.strokeRect(columnLeft(column) + x0, y0 - column * columnHeight, x1 - x0, y1 - y0);
       context2d.restore();
     }
-    if (index >= shown.length) return;
+    if (!number) return;
     const column = columnAt(y0);
     const x = columnLeft(column) + Math.min(Math.max(12, x0), columnWidth - 12);
     const y = Math.min(Math.max(12, y0 - column * columnHeight), columnHeight - 12);
@@ -229,9 +248,12 @@ export async function compareImages({
     context2d.font = "bold 14px sans-serif";
     context2d.textAlign = "center";
     context2d.textBaseline = "middle";
-    context2d.fillText(String(index + 1), x, y + 1);
-  });
-  return { areaCount: areas.length, closeUps, overview: await jpeg(canvas), columns };
+    context2d.fillText(String(number), x, y + 1);
+  };
+  areas.forEach((area, index) =>
+    outline(area.left, area.right, area.afterStart, area.afterEnd, index < shown.length ? index + 1 : 0));
+  if (wider) outline(width, now.width, wider.top, wider.bottom, 0);
+  return { areaCount: areas.length, widthChange, closeUps, overview: await jpeg(canvas), columns };
 }
 
 // A screenshot scaled to the given width, as a JPEG (for slides added or removed).
