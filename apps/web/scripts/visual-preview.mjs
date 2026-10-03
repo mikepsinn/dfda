@@ -107,7 +107,7 @@ async function screenshot(browser, lab, url, viewport, outDir, file) {
 // and before/after close-ups of the first few changed areas.
 async function describeChange(lab, before, after, outDir, name) {
   const result = await lab.evaluate(compareImages, { before: before.toString("base64"), after: after.toString("base64") });
-  if (!result.areaCount) return { areaCount: 0 }; // only rendering noise
+  if (!result.areaCount && !result.widthChange) return { areaCount: 0 }; // only rendering noise
   writeJpeg(outDir, `${name}-overview.jpg`, result.overview);
   const areas = result.closeUps.map((closeUp, index) => {
     const files = { before: `${name}-area${index + 1}-before.jpg`, after: `${name}-area${index + 1}-after.jpg` };
@@ -115,7 +115,7 @@ async function describeChange(lab, before, after, outDir, name) {
     writeJpeg(outDir, files.after, closeUp.after);
     return { ...files, truncated: closeUp.truncated };
   });
-  return { overview: `${name}-overview.jpg`, columns: result.columns, areas, areaCount: result.areaCount };
+  return { overview: `${name}-overview.jpg`, columns: result.columns, areas, areaCount: result.areaCount, widthChange: result.widthChange };
 }
 
 // Every slide of a deck on one side, by its key in the address (#1, #B2), as lossless images.
@@ -156,7 +156,7 @@ async function captureDeck(browser, lab, deck, sides, outDir) {
   for (const slide of after) {
     const old = before.get(slide.key);
     const entry = { key: slide.key, label: slide.label };
-    if (!captured.before) {
+    if (!captured.before?.slides) { // no base branch, or its deck failed (shown as beforeError)
       entry.change = "unknown";
     } else if (!old) {
       entry.change = "added";
@@ -213,7 +213,7 @@ function comment(outDir, imageBaseUrl, beforeLabel, afterLabel) {
   const byRoute = Map.groupBy(shots, shot => shot.route);
   // A view changed if a side failed or is missing, or its screenshots differ by more than rendering noise.
   const differs = view => !view.before?.hash || !view.after?.hash ||
-    (view.before.hash !== view.after.hash && view.diff?.areaCount !== 0);
+    (view.before.hash !== view.after.hash && !(view.diff?.areaCount === 0 && !view.diff.widthChange));
   const changed = [...byRoute].filter(([, views]) => views.some(differs));
   const unchanged = [...byRoute.keys()].filter(route => !changed.some(([changedRoute]) => changedRoute === route));
 
@@ -236,14 +236,17 @@ function comment(outDir, imageBaseUrl, beforeLabel, afterLabel) {
           `<tr><td>${top(view.before, alt("before"))}</td><td>${top(view.after, alt("after"))}</td></tr></table>`, "");
         continue;
       }
-      const { overview, columns, areas, areaCount } = view.diff;
+      const { overview, columns, areas, areaCount, widthChange } = view.diff;
       const more = areaCount > areas.length ? ` (close-ups of the first ${areas.length}; the overview boxes all of them)` : "";
-      lines.push(`**${label}** · ${areaCount} changed ${areaCount === 1 ? "area" : "areas"}${more} · full page: ` +
+      const summary = areaCount ? [`${areaCount} changed ${areaCount === 1 ? "area" : "areas"}${more}`] : [];
+      if (widthChange) summary.push(`page width ${widthChange.before} → ${widthChange.after} pixels`);
+      lines.push(`**${label}** · ${summary.join(" · ")} · full page: ` +
         `<a href="${imageBaseUrl}/${view.before.fullImage}">before</a>, <a href="${imageBaseUrl}/${view.after.fullImage}">after</a>`, "",
         image(overview, alt("overview")), "",
-        `<sub>The whole page after the change${columns > 1 ? ", cut into columns that read left to right" : ""}; ` +
-        "the numbers match the close-ups.</sub>", "",
-        "<table><tr><th></th><th>Before</th><th>After</th></tr>");
+        `<sub>The whole page after the change${columns > 1 ? ", cut into columns that read left to right" : ""}` +
+        `${areas.length ? "; the numbers match the close-ups" : ""}.</sub>`, "");
+      if (!areas.length) continue;
+      lines.push("<table><tr><th></th><th>Before</th><th>After</th></tr>");
       areas.forEach((area, index) => {
         const note = area.truncated ? "<br><sub>Continues below; see the full page.</sub>" : "";
         lines.push(`<tr><td valign="top"><b>${index + 1}</b></td><td valign="top">${image(area.before, alt(`area ${index + 1} before`), 400)}</td>` +
