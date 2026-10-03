@@ -16,6 +16,16 @@ import { logger } from "@/lib/logger"
 import { searchVariablesAction } from "@/lib/actions/search"
 import type { SearchResult } from "@/lib/actions/search"
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
+import { VARIABLE_CATEGORIES_DATA, VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories"
+
+// What a result is, in plain words: a condition, a treatment, or another kind of tracked
+// variable; the user's own are marked.
+function resultLabel(result: SearchResult) {
+  const kind = result.variableCategoryId === VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY ? "Condition"
+    : result.variableCategoryId === VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS ? "Treatment"
+    : VARIABLE_CATEGORIES_DATA[result.variableCategoryId ?? ""]?.name ?? ""
+  return result.category === "My Variables" ? [kind, "yours"].filter(Boolean).join(" · ") : kind
+}
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -62,10 +72,10 @@ export function SearchModal({ isOpen, onClose, user }: SearchModalProps) {
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
       <VisuallyHidden>
-        <DialogTitle>Search Variables</DialogTitle>
+        <DialogTitle>Search treatments and conditions</DialogTitle>
       </VisuallyHidden>
       <CommandInput 
-        placeholder="Search variables..." 
+        placeholder="Search treatments and conditions..."
         value={query}
         onValueChange={(search) => {
             setQuery(search);
@@ -79,7 +89,7 @@ export function SearchModal({ isOpen, onClose, user }: SearchModalProps) {
           <CommandEmpty>No results found for "{query}".</CommandEmpty>
         )}
         {!loading && results.length === 0 && query.length === 0 && (
-            <CommandEmpty>Start typing to search variables.</CommandEmpty> // Initial state
+            <CommandEmpty>Start typing to search treatments and conditions.</CommandEmpty> // Initial state
         )}
         {!loading && results.length > 0 && (
            <CommandGroup heading="Suggestions">
@@ -92,7 +102,7 @@ export function SearchModal({ isOpen, onClose, user }: SearchModalProps) {
                 >
                   {/* Add an icon maybe based on category? */} 
                   <span>{result.name}</span>
-                  <span className="text-xs text-muted-foreground ml-auto">{result.category}</span>
+                  <span className="text-xs text-muted-foreground ml-auto">{resultLabel(result)}</span>
                 </CommandItem>
               ))}
             </CommandGroup>
