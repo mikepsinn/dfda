@@ -2,9 +2,11 @@ import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { ConditionPicker } from "@/components/demo/condition-picker";
+import { EstimateNotice } from "@/components/demo/estimate-notice";
 import { HealthEconomics } from "@/components/demo/health-economics";
+import { TreatmentOutcomes, hasCitedValues } from "@/components/demo/treatment-outcomes";
 import { OutcomeLabel } from "@/components/OutcomeLabel";
-import { conditionCatalog } from "@/lib/demo/treatment-estimates";
+import { citedSource, conditionCatalog, getConditionEstimate } from "@/lib/demo/treatment-estimates";
 import { formatEstimatedCost } from "@/lib/demo/format-estimate";
 
 const originalScroll = Element.prototype.scrollIntoView;
@@ -83,5 +85,25 @@ describe("treatment presentation", () => {
     expect(screen.getByText("+150%")).toBeInTheDocument();
     expect(screen.getByText("10%")).toBeInTheDocument();
     expect(screen.queryByText("+10%")).not.toBeInTheDocument();
+  });
+  it("links values taken from a cited source and leaves estimates unlinked", async () => {
+    expect(citedSource({ dataSource: "ai-estimated", sourceUrl: "https://example.org" })).toBeNull();
+    expect(citedSource({ dataSource: "fda-label", sourceUrl: "https://vertexaisearch.cloud.google.com/x" })).toBeNull();
+    const { treatments } = (await getConditionEstimate("alzheimers-disease"))!;
+    const lecanemab = treatments.find(t => t.slug === "lecanemab")!;
+    expect(hasCitedValues(lecanemab)).toBe(true);
+    expect(hasCitedValues(treatments.find(t => t.slug === "donanemab")!)).toBe(false);
+
+    render(<TreatmentOutcomes treatment={lecanemab} />);
+    const links = screen.getAllByRole("link", { name: /^Source:/ });
+    expect(links).toHaveLength(10);
+    expect(links.filter(link => link.textContent?.startsWith("Source: FDA label"))).toHaveLength(9);
+    expect(screen.getByRole("link", { name: /^Source: Published study/ }))
+      .toHaveAttribute("href", "https://doi.org/10.1056/NEJMoa2212948");
+    expect(screen.getByText("Frequency, from the cited source where one is shown.")).toBeInTheDocument();
+
+    cleanup();
+    render(<EstimateNotice cited />);
+    expect(screen.getByText(/Values marked with a source are taken from it\./)).toBeInTheDocument();
   });
 });

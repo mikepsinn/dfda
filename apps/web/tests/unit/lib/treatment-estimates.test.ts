@@ -3,30 +3,34 @@ import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
-  conditionCatalog, conditionTreatmentsSchema, getConditionEstimate,
+  checkableSourceUrl as checkableUrl, conditionCatalog, conditionTreatmentsSchema, getConditionEstimate,
   medicalSnapshot, outcomeLabelHref, rankTreatments, sourceHref, treatmentSlug,
 } from "@/lib/demo/treatment-estimates";
 
 const sourceDirectory = resolve(process.cwd(), "data/optimitron/medical-data");
 const readSource = (path: string) => JSON.parse(readFileSync(resolve(sourceDirectory, path), "utf8"));
 const corrections = JSON.parse(readFileSync(resolve(process.cwd(), "data/optimitron/corrections.json"), "utf8"));
-const checkableUrl = /^https:\/\/(?!vertexaisearch\.cloud\.google\.com\/)[^\s]+$/;
+const entries = corrections.entries as Correction[];
 const outcomeLists = ["primaryOutcomes", "secondaryOutcomes", "sideEffects"] as const;
+const sha256 = (data: string | Buffer) => createHash("sha256").update(data).digest("hex");
 
+// An entry without `from` added the field; one without `to` removed it.
 type Correction = {
   kind: "correction" | "verification"; file: string; treatment: string; list: string | null;
-  item: string | null; field: string; to: unknown; sourceUrl: string;
+  item: string | null; field: string; from?: unknown; to?: unknown; sourceUrl: string;
 };
+type Owner = Record<string, unknown> & { name: string };
 
-function correctedValue(entry: Correction) {
-  const treatment = readSource(entry.file).treatments.find((t: { name: string }) => t.name === entry.treatment);
-  const owner = entry.list ? treatment?.[entry.list]?.find((i: { name: string }) => i.name === entry.item) : treatment;
-  expect(owner, `${entry.file} ${entry.treatment} ${entry.item ?? ""}`).toBeDefined();
-  return owner[entry.field];
+// The treatment or list item an entry names, by its current name.
+function owner(data: { treatments: Owner[] }, entry: Correction): Owner | undefined {
+  const treatment = data.treatments.find(t => t.name === entry.treatment);
+  return entry.list ? (treatment?.[entry.list] as Owner[] | undefined)?.find(i => i.name === entry.item) : treatment;
 }
 
+const describeEntry = (entry: Correction) => `${entry.file} ${entry.treatment} ${entry.item ?? ""} ${entry.field}`;
+
 describe("medical dataset fork", () => {
-  it("records its Optimitron origin and logs a correction for every edited file", () => {
+  it("records its Optimitron origin and logs every change made since the fork", () => {
     const { forkedFrom } = medicalSnapshot;
     expect(medicalSnapshot.status).toBe("fork");
     expect(forkedFrom.commit).toMatch(/^[0-9a-f]{40}$/);
@@ -35,22 +39,32 @@ describe("medical dataset fork", () => {
       forkedFrom.files.filter(f => f.path.startsWith("treatments/"))
         .map(f => f.path.slice("treatments/".length)).sort(),
     );
-    const logged = new Set((corrections.entries as Correction[]).map(e => e.file));
     for (const file of forkedFrom.files) {
-      const bytes = readFileSync(resolve(sourceDirectory, file.path));
-      if (createHash("sha256").update(bytes).digest("hex") !== file.sha256) {
-        expect(logged.has(file.path), `${file.path} changed without a corrections.json entry`).toBe(true);
+      if (sha256(readFileSync(resolve(sourceDirectory, file.path))) === file.sha256) continue;
+      // Undo the logged changes, newest first: the result must be the forked file, byte for byte,
+      // so any change the log leaves out fails here.
+      const data = readSource(file.path);
+      for (const entry of [...entries].reverse().filter(e => e.file === file.path)) {
+        const target = owner(data, entry);
+        expect(target, describeEntry(entry)).toBeDefined();
+        if ("from" in entry) target![entry.field] = entry.from;
+        else delete target![entry.field];
       }
+      expect(sha256(JSON.stringify(data, null, 2) + "\n"),
+        `${file.path} has changes that corrections.json does not log`).toBe(file.sha256);
     }
     expect(readSource("treatments.json")).toHaveLength(969);
     expect(readSource("references.json").references).toHaveLength(536);
   });
 
   it("applies every logged correction and cites a checkable source", () => {
-    expect(corrections.entries.length).toBeGreaterThan(0);
-    for (const entry of corrections.entries as Correction[]) {
-      expect(entry.sourceUrl, `${entry.treatment} ${entry.item} ${entry.field}`).toMatch(checkableUrl);
-      expect(correctedValue(entry), `${entry.treatment} ${entry.item} ${entry.field}`).toEqual(entry.to);
+    expect(entries.length).toBeGreaterThan(0);
+    for (const entry of entries) {
+      expect(entry.sourceUrl, describeEntry(entry)).toMatch(checkableUrl);
+      const target = owner(readSource(entry.file), entry);
+      expect(target, describeEntry(entry)).toBeDefined();
+      if ("to" in entry) expect(target![entry.field], describeEntry(entry)).toEqual(entry.to);
+      else expect(target, describeEntry(entry)).not.toHaveProperty(entry.field);
     }
   });
 
