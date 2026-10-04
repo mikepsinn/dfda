@@ -1,8 +1,7 @@
 import Image from "next/image";
 import {
-  AlertTriangle, ArrowRight, Ban, BookOpen, Briefcase, Building2, CalendarClock, Check, ClipboardCheck, Clock, Eye,
-  FileBarChart, FileText, FlaskConical, HandHeart, Layers, LineChart, Lock, Microscope, PauseCircle, Search, ShieldCheck,
-  Star, Stethoscope, Users, Video,
+  AlertTriangle, ArrowRight, Ban, BookOpen, Building2, CalendarClock, Check, ClipboardCheck, Clock, Eye, FileBarChart,
+  FileText, FlaskConical, Layers, LineChart, Lock, PauseCircle, Search, ShieldCheck, Star, Stethoscope, Users, Video,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { OutcomeLabel } from "@/components/OutcomeLabel";
@@ -193,36 +192,6 @@ export function ConsentSlide({ s }: Props) {
       <p className="mt-10 inline-flex items-center gap-4 rounded-full border bg-card px-9 py-5 text-[32px] shadow-sm">
         <Users aria-hidden="true" className="h-8 w-8 text-primary" />If she can't consent, a legal representative can.
       </p>
-    </SlideFrame>
-  );
-}
-
-const payers = [
-  { icon: Users, text: "Patients and families" },
-  { icon: HandHeart, text: "Charities, like the one helping Margaret" },
-  { icon: Briefcase, text: "Employers" },
-  { icon: Microscope, text: "Research sponsors" },
-];
-
-export function PaymentSlide({ s }: Props) {
-  return (
-    <SlideFrame s={s}>
-      <div className="grid h-full grid-cols-[1fr_1.1fr] gap-12">
-        <Card className="flex flex-col justify-center p-16">
-          <p className="text-[200px] font-bold leading-none tracking-tight text-primary">$0</p>
-          <p className="mt-8 text-[48px] font-semibold leading-tight">required from insurers or the state</p>
-        </Card>
-        <Card className="flex flex-col justify-center border-primary/30 bg-primary/10 p-16">
-          <Eyebrow>Who pays instead</Eyebrow>
-          <ul className="mt-8 space-y-8">
-            {payers.map(payer => (
-              <li key={payer.text} className="flex items-center gap-6 text-[40px] leading-snug">
-                <IconBadge icon={payer.icon} size={64} />{payer.text}
-              </li>
-            ))}
-          </ul>
-        </Card>
-      </div>
     </SlideFrame>
   );
 }

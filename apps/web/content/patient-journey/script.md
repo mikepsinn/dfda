@@ -29,8 +29,8 @@ Each slide has:
 
 Recurring design: the web app's theme and font (Inter), with a soft purple gradient on content
 slides and the app's dark theme for the title, the statistics slide and the close. Purple is the
-primary color and amber the highlight. A "patient path" (a dotted zigzag line through seven icon
-circles, one per step, ending in an amber star) stands for the seven steps. Slides showing the
+primary color and amber the highlight. A "patient path" (a dotted zigzag line through six icon
+circles, one per step, ending in an amber star) stands for the six steps. Slides showing the
 prototype render the app's own components with its data, not screenshots.
 
 ## Brief
@@ -65,13 +65,13 @@ prototype render the app's own components with its data, not screenshots.
 
 - **Title wording** (slide 1).
 - **State figures:** add figures for the state where the deck is presented (slide 3).
-- **Bill text:** check slide 19 against the bill, and name the bill and state on it. Confirm the
-  price and liability provisions (slides 13 and 19).
+- **Bill text:** check slide 18 against the bill, and name the bill and state on it. Confirm the
+  price and liability provisions (slides 12 and 18).
 - **Backup B2:** the notes say 44.8% of people with a chronic disease would join a trial.
   Research!America (2023) found 79% of U.S. adults very or somewhat likely to join if their doctor
   recommended it. Confirm the model's source.
 - **Real people:** a real patient or caregiver could join or replace Margaret later.
-- **Length:** 20 main slides. For a 10-minute meeting, candidates to cut are 3, 7, 12 and 17.
+- **Length:** 19 main slides. For a 10-minute meeting, candidates to cut are 3, 7, 12 and 16.
 
 ## Changes from the published deck
 
@@ -86,6 +86,8 @@ prototype render the app's own components with its data, not screenshots.
 - "Dying" is gone from Margaret's year and the close.
 - The model estimates (0.34% tested, 36 vs 443 years, $9.50 per healthy year) move to backup.
 - The close asks people to register their interest.
+- The journey has six steps, not seven: the payment slide is gone, and the cost is part of the
+  consent step. Its questions (who pays, exploitation, liability) are in the notes of slide 18.
 
 ---
 
@@ -275,24 +277,23 @@ everyday care. Here's Margaret's year.
 **On screen**
 
 - Eyebrow: HOW IT WORKS
-- Title: Seven steps that help the next patient
+- Title: Six steps that help the next patient
 - 1 Explore options: Compare treatment rankings and outcome labels
 - 2 Talk with your doctor: Get a recommendation and decide on a treatment plan
-- 3 Informed consent: Decide in writing
-- 4 Arrange payment: Fair prices, so clinics offer it
-- 5 Treatment and tracking: Share good and bad outcomes
-- 6 Results reported: De-identified, in a public registry
-- 7 Rankings and labels improve: The next patient chooses better
+- 3 Consent and cost: Decide in writing, knowing the price
+- 4 Treatment and tracking: Share good and bad outcomes
+- 5 Results reported: De-identified, in a public registry
+- 6 Rankings and labels improve: The next patient chooses better
 - Then it starts again, with better data
 
-**Visual:** Seven numbered cards in a U-shaped flow joined by purple arrows: steps 1 to 4 left to
-right on the top row, down to step 5, then right to left through 6 and 7 on the bottom row. Step 7
-is filled purple with an orange star. An orange dashed arrow loops from step 7 back up to step 1,
-labeled "Then it starts again, with better data".
+**Visual:** Six numbered cards in a U-shaped flow joined by purple arrows: steps 1 to 3 left to
+right on the top row, down to step 4, then right to left through 5 and 6 on the bottom row. Step 6
+is filled purple with an orange star. An orange arrow leads from step 6 back up to step 1, labeled
+"Then it starts again, with better data".
 
-**Speaker notes:** Here is the whole path. Steps 1 to 5 are what Margaret does. Every treatment she
-can choose has already been screened by an independent review board. In step 6, her results are
-de-identified and go to a public registry. In step 7, everyone's pooled results update the
+**Speaker notes:** Here is the whole path. Steps 1 to 4 are what Margaret does. Every treatment she
+can choose has already been screened by an independent review board. In step 5, her results are
+de-identified and go to a public registry. In step 6, everyone's pooled results update the
 treatment rankings and outcome labels. The next patient starts at step 1 with better data than
 Margaret had.
 
@@ -404,16 +405,16 @@ appear in the directory.
 
 **Video narration** (covers slides 11 and 12): Her own doctor recommends one over a video visit,
 and she signs a plain-language consent: the risks, the unknowns, who pays, and that it's
-experimental.
+experimental. A charity helps her pay, and no insurer or state program has to.
 
-## 12. Step 3: informed consent
+## 12. Step 3: consent and cost
 
-**Purpose:** Show that she decides with the full picture.
+**Purpose:** Show that she decides with the full picture, including the price.
 
 **On screen**
 
-- Eyebrow: STEP 3 · INFORMED CONSENT
-- Title: She decides with the full picture in writing
+- Eyebrow: STEP 3 · CONSENT AND COST
+- Title: She decides in writing, knowing the price
 - Form header: CONSENT FORM · EXPERIMENTAL TREATMENT
 - 1 The exact treatment. 2 Her doctor's view of realistic outcomes. 3 Other options, including
   none. 4 Known and unknown risks. 5 Who pays, and what she may owe. 6 What data is collected, and
@@ -431,46 +432,13 @@ data is collected, coded and published only de-identified; and a clear statement
 experimental treatment. Recording needs separate agreement. If a patient cannot consent, a legal
 representative consents for her.
 
-## 13. Step 4: arrange payment
-
-**Purpose:** Answer "who pays, and why would clinics offer it?"
-
-**On screen**
-
-- Eyebrow: STEP 4 · ARRANGE PAYMENT
-- Title: Clinics can charge fairly, so they will offer it
-- $0: required from insurers or the state.
-- Who pays instead: Patients and families. Charities, like the one helping Margaret. Employers.
-  Research sponsors.
-
-**Visual:** Left, a large white card with "$0" in huge purple numerals. Right, a lavender "Who pays
-instead" card with four rows, each with a small icon.
-
-**Speaker notes:** Today, under federal Right to Try, the drug maker decides whether to provide the
-drug and may charge only its direct costs (21 CFR 312.8(d)(1)). Nobody can earn anything from
-offering it, so almost nobody does. Under care-integrated trials, clinics can charge a fair price,
-so they have a real reason to offer new treatments, and one board approval can cover many clinics.
-No insurer or state program is required to pay. The patient, family, charities, employers,
-research sponsors, and insurers that choose to can pay. Expect the concern that charging patients
-for experimental treatment invites exploitation, as with unproven stem-cell clinics. The
-safeguards: the board approves each clinic and protocol; the consent form states the cost and that
-the treatment is experimental; serious side effects can pause new patients; and every result,
-including failures, is published, so a clinic cannot hide poor results. If asked about liability:
-federal Right to Try already protects makers and doctors from lawsuits, except for gross
-negligence or willful misconduct, so the main barrier is money, not liability. If asked, other
-payment options also exist: installments or memberships, crowdfunding, patient-aid groups, free
-supply from the maker, and lower prices for patients who share outcome data.
-
-**Video narration:** Clinics can charge a fair price, so they actually offer it. A charity helps
-Margaret pay, and no insurer or state program has to.
-
-## 14. Step 5: treatment and tracking
+## 13. Step 4: treatment and tracking
 
 **Purpose:** Show that care happens close to home and outcomes are measured.
 
 **On screen**
 
-- Eyebrow: STEP 5 · TREATMENT AND TRACKING
+- Eyebrow: STEP 4 · TREATMENT AND TRACKING
 - Title: Care close to home, with outcomes measured
 - What her clinic records: 1 Her treatment and dose. 2 Her starting condition. 3 Better, same,
   worse, stopped or died, on a set schedule. 4 Side effects. 5 A coded ID, not her name.
@@ -484,11 +452,11 @@ showing a small bar chart, the optional tools as bullets, and the bold footer li
 medical records, with no duplicate entry. Tools like a tracking app, wearable integration and AI
 check-ins are optional extras that can make tracking easier and richer.
 
-**Video narration** (covers slides 14 and 15): Her first dose is in week two, at a clinic near
+**Video narration** (covers slides 13 and 14): Her first dose is in week two, at a clinic near
 home. Memory tests and quick phone check-ins track how she's doing. Any serious side effect reaches
 the board within days, and it can pause new patients. (Existing v3 audio.)
 
-## 15. Safety net
+## 14. Safety net
 
 **Purpose:** Answer "what happens if something goes wrong?"
 
@@ -510,13 +478,13 @@ reassess if a trial of the same treatment elsewhere stops for safety or lack of 
 unresolved serious safety finding immediately stops treatment of new patients. Current patients
 may continue if stopping suddenly is more dangerous.
 
-## 16. Step 6: results go public
+## 15. Step 5: results go public
 
 **Purpose:** Show that every result, good or bad, is published.
 
 **On screen**
 
-- Eyebrow: STEP 6 · RESULTS GO PUBLIC
+- Eyebrow: STEP 5 · RESULTS GO PUBLIC
 - Title: Every result is published
 - EXAMPLE ANNUAL BOARD REPORT · 48 PATIENTS: Improved 21 · 44%. No real change 14 · 29%.
   Worsened 6 · 13%. Stopped 4 · 8%. Died 0 · 0%. Lost to follow-up 3 · 6%. Serious side effects
@@ -533,18 +501,18 @@ how many improved, had no real change, worsened, stopped, died, had side effects
 follow-up. Boards may not omit bad, null or unclear results. The numbers here are made up to show
 the format.
 
-**Video narration** (covers slides 16 and 17): At six months her outcome is recorded, good, bad or
+**Video narration** (covers slides 15 and 16): At six months her outcome is recorded, good, bad or
 no change, then de-identified and published. Nothing is hidden. Pooled with every other clinic, it
 updates the label. The next patient starts with better data than Margaret had. (Existing v3
 audio.)
 
-## 17. Step 7: from reports to labels
+## 16. Step 6: from reports to labels
 
 **Purpose:** Show how one result becomes shared evidence.
 
 **On screen**
 
-- Eyebrow: STEP 7 · RANKINGS AND LABELS IMPROVE
+- Eyebrow: STEP 6 · RANKINGS AND LABELS IMPROVE
 - Title: How one result becomes shared evidence
 - Her clinic: Data stays with her doctor → Outcome report: Coded and de-identified → Board report:
   Yearly public results → Evidence system: Combines all clinics → Rankings and Outcome labels:
@@ -561,7 +529,7 @@ standardized, de-identified outcome reports in an open format. Evidence systems 
 across all clinics and publish outcome labels and treatment rankings, which the next patient uses
 at step 1.
 
-## 18. Margaret's first year
+## 17. Margaret's first year
 
 **Purpose:** Put the journey on one timeline.
 
@@ -583,7 +551,7 @@ final orange star stop. Below, Margaret's small avatar beside the closing line i
 **Speaker notes:** Putting it together on one timeline. The key idea: the outcome is reported
 whether it's good, bad, or neutral, so the evidence base reflects reality.
 
-## 19. What the act does
+## 18. What the act does
 
 **Purpose:** For legislators, what changes in law, on one slide.
 
@@ -603,7 +571,21 @@ sentence.
 **Speaker notes:** Each line sums up a provision shown earlier in the deck. Check every line
 against the current bill text before presenting, and name the bill and the state on the slide.
 
-## 20. Close
+If asked who pays: no insurer or state program is required to. The patient, family, charities,
+employers, research sponsors, and insurers that choose to can pay. Clinics can charge a fair price,
+so they have a reason to offer new treatments, and one board approval can cover many clinics. Under
+federal Right to Try, by contrast, the drug maker may charge only its direct costs (21 CFR
+312.8(d)(1)), so almost nobody offers drugs. Expect the concern that charging patients for
+experimental treatment invites exploitation, as with unproven stem-cell clinics. The safeguards:
+the board approves each clinic and protocol; the consent form states the cost and that the
+treatment is experimental; serious side effects can pause new patients; and every result,
+including failures, is published, so a clinic cannot hide poor results. If asked about liability:
+federal Right to Try already protects makers and doctors from lawsuits, except for gross
+negligence or willful misconduct, so the main barrier is money, not liability. Other payment
+options: installments or memberships, crowdfunding, patient-aid groups, free supply from the
+maker, and lower prices for patients who share outcome data.
+
+## 19. Close
 
 **Purpose:** Restate the three changes and give one action.
 
@@ -757,7 +739,7 @@ paper; ICER.
 # Video cut
 
 About 2:30, calm, narrated, captioned, no music. The video opens on Margaret and uses these slides
-in order: 2, 4, 5, 6 (with the patient path from slide 7), 8, 10, 11 and 12, 13, 14 and 15, 16
-and 17, and 20, ending on an acceleratedmedicine.org end card. The narration is under each slide.
-Lines marked "existing v3 audio" can reuse the v3 recordings; the other seven need new narration
+in order: 2, 4, 5, 6 (with the patient path from slide 7), 8, 10, 11 and 12, 13 and 14, 15 and
+16, and 19, ending on an acceleratedmedicine.org end card. The narration is under each slide.
+Lines marked "existing v3 audio" can reuse the v3 recordings; the other six need new narration
 (about 1.8 minutes).
