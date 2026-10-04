@@ -4,8 +4,8 @@ import {
   IdeaSlide, MargaretSlide, MillionsSlide, ReasonsSlide, RecoverySlide, StepsSlide, TitleSlide,
 } from "@/components/present/patient-journey/opening";
 import {
-  ConsentSlide, DoctorSlide, ExploreSlide, LabelSlide, PaymentSlide, PipelineSlide, ResultsSlide, ReviewSlide,
-  SafetySlide, TrackingSlide, YearSlide,
+  ConsentSlide, DoctorSlide, ExploreSlide, LabelSlide, PipelineSlide, ResultsSlide, ReviewSlide, SafetySlide,
+  TrackingSlide, YearSlide,
 } from "@/components/present/patient-journey/journey";
 import {
   ActSlide, CloseSlide, FrontierSlide, PossibleSlide, ValueSlide,
@@ -30,14 +30,13 @@ export function patientJourneySlides(script: ScriptSlide[], alzheimers: DemoCond
     "10": s => <ReviewSlide s={s} />,
     "11": s => <DoctorSlide s={s} />,
     "12": s => <ConsentSlide s={s} />,
-    "13": s => <PaymentSlide s={s} />,
-    "14": s => <TrackingSlide s={s} />,
-    "15": s => <SafetySlide s={s} />,
-    "16": s => <ResultsSlide s={s} />,
-    "17": s => <PipelineSlide s={s} />,
-    "18": s => <YearSlide s={s} />,
-    "19": s => <ActSlide s={s} />,
-    "20": s => <CloseSlide s={s} />,
+    "13": s => <TrackingSlide s={s} />,
+    "14": s => <SafetySlide s={s} />,
+    "15": s => <ResultsSlide s={s} />,
+    "16": s => <PipelineSlide s={s} />,
+    "17": s => <YearSlide s={s} />,
+    "18": s => <ActSlide s={s} />,
+    "19": s => <CloseSlide s={s} />,
     "B1": s => <FrontierSlide s={s} />,
     "B2": s => <PossibleSlide s={s} />,
     "B3": s => <ValueSlide s={s} />,

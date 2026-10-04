@@ -1,8 +1,7 @@
 import Image from "next/image";
 import {
   AlertTriangle, ArrowRight, Ban, BookOpen, Building2, CalendarClock, Check, ClipboardCheck, Clock, Eye, FileBarChart,
-  FileText, FlaskConical, Layers, LineChart, Lock, PauseCircle, RefreshCw, Search, ShieldCheck, Star, Stethoscope,
-  Users, Video,
+  FileText, FlaskConical, Layers, LineChart, Lock, PauseCircle, Search, ShieldCheck, Star, Stethoscope, Users, Video,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { OutcomeLabel } from "@/components/OutcomeLabel";
@@ -21,7 +20,7 @@ function Bullets({ items, className }: { items: string[]; className?: string }) 
   return (
     <ul className={cn("space-y-3 text-[27px] leading-snug", className)}>
       {items.map(item => (
-        <li key={item} className="flex gap-4"><span aria-hidden="true" className="mt-[15px] h-2 w-2 shrink-0 rounded-full bg-primary" />{item}</li>
+        <li key={item} className="flex gap-4"><span aria-hidden="true" className="mt-[0.55em] h-2 w-2 shrink-0 rounded-full bg-primary" />{item}</li>
       ))}
     </ul>
   );
@@ -70,10 +69,9 @@ export function ExploreSlide({ s, condition }: Props & { condition: DemoConditio
 }
 
 const evidenceSources = [
-  { icon: FlaskConical, title: "Clinical trials", text: "Published results, including failed trials" },
-  { icon: Users, title: "Real-world outcomes", text: "Every patient treated in the system" },
-  { icon: AlertTriangle, title: "Side-effect reports", text: "From clinics and adverse-event systems" },
-  { icon: RefreshCw, title: "Updated as data arrives", text: "Each new result changes the label" },
+  { icon: FlaskConical, title: "Clinical trials", text: "Including the ones that failed" },
+  { icon: Users, title: "Every treated patient", text: "Their real-world outcome" },
+  { icon: AlertTriangle, title: "Side-effect reports", text: "From clinics and doctors" },
 ];
 
 export function LabelSlide({ s, treatment }: Props & { treatment: TreatmentEstimate }) {
@@ -97,15 +95,15 @@ export function LabelSlide({ s, treatment }: Props & { treatment: TreatmentEstim
         <p className="mt-2 text-sm text-muted-foreground">Lecanemab's label in the prototype, from its FDA label and published trial.</p>
       </div>
       <Eyebrow className="mt-5">Where the evidence comes from</Eyebrow>
-      <ul className="mt-4 grid grid-cols-4 gap-8">
+      <ul className="mt-4 grid grid-cols-3 gap-8">
         {evidenceSources.map(source => (
           <li key={source.title} className="flex gap-5">
             <span aria-hidden="true" className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
               <source.icon className="h-7 w-7" />
             </span>
             <div>
-              <h3 className="text-[26px] font-semibold leading-tight">{source.title}</h3>
-              <p className="mt-1 text-[21px] leading-snug text-muted-foreground">{source.text}</p>
+              <h3 className="text-[30px] font-semibold leading-tight">{source.title}</h3>
+              <p className="mt-1 text-[24px] leading-snug text-muted-foreground">{source.text}</p>
             </div>
           </li>
         ))}
@@ -117,7 +115,7 @@ export function LabelSlide({ s, treatment }: Props & { treatment: TreatmentEstim
 const review = [
   { icon: Users, title: "Who reviews", items: ["A physician, an outcomes researcher and an ethicist", "No financial ties to the clinic or maker", "Flat fees, never paid per approval"] },
   { icon: Search, title: "What they check", items: ["The evidence", "The treatment plan", "Each provider's competence", "Conflicts of interest", "The consent form"] },
-  { icon: ClipboardCheck, title: "What qualifies", items: ["Passed Phase I or similar", "A documented human safety record", "A well-studied platform therapy", "Device evidence"] },
+  { icon: ClipboardCheck, title: "What qualifies", items: ["Passed Phase I safety testing in people", "Or a documented record of safe use in people"] },
 ];
 
 export function ReviewSlide({ s }: Props) {
@@ -128,9 +126,9 @@ export function ReviewSlide({ s }: Props) {
           <Card key={column.title} className="p-12">
             <div className="flex items-center gap-5">
               <IconBadge icon={column.icon} size={64} />
-              <h3 className="text-[36px] font-semibold">{column.title}</h3>
+              <h3 className="text-[42px] font-semibold">{column.title}</h3>
             </div>
-            <Bullets items={column.items} className="mt-8" />
+            <Bullets items={column.items} className="mt-10 space-y-5 text-[36px]" />
           </Card>
         ))}
       </div>
@@ -156,15 +154,15 @@ export function DoctorSlide({ s }: Props) {
           </div>
         </Card>
         <Card className="border-primary/30 bg-primary/10 p-12">
-          <div className="flex items-center gap-5"><IconBadge icon={Check} size={64} tone="solid" /><h3 className="text-[38px] font-semibold">Required</h3></div>
-          <Bullets className="mt-8" items={["Her treating doctor's recommendation", "Her written consent (e-sign is fine)", "Can happen by telemedicine"]} />
+          <div className="flex items-center gap-5"><IconBadge icon={Check} size={64} tone="solid" /><h3 className="text-[42px] font-semibold">Required</h3></div>
+          <Bullets className="mt-10 space-y-5 text-[36px]" items={["Her doctor's recommendation", "Her written consent, which she can sign online"]} />
         </Card>
         <Card className="p-12">
           <div className="flex items-center gap-5">
             <span aria-hidden="true" className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-amber-700"><Ban className="h-8 w-8" /></span>
-            <h3 className="text-[38px] font-semibold">Not required</h3>
+            <h3 className="text-[42px] font-semibold">Not required</h3>
           </div>
-          <Bullets className="mt-8" items={["A specific diagnosis", "Medical necessity", "Minimum severity", "Terminal illness", "Trial ineligibility", "Trying approved drugs"]} />
+          <Bullets className="mt-10 space-y-5 text-[36px]" items={["A life-threatening illness", "Being unable to join a trial", "Using up approved drugs first"]} />
         </Card>
       </div>
     </SlideFrame>
@@ -173,66 +171,34 @@ export function DoctorSlide({ s }: Props) {
 
 const consentItems = [
   "The exact treatment", "Her doctor's view of realistic outcomes", "Other options, including none",
-  "Known risks and benefits", "What's unknown, and FDA status", "Her choice is voluntary",
-  "Who pays, and what she may owe", "What data is collected, and how it's coded", "A clear \"experimental\" statement",
+  "Known and unknown risks", "Who pays, and what she may owe", "What data is collected, and how it's protected",
 ];
 
 export function ConsentSlide({ s }: Props) {
   return (
     <SlideFrame s={s}>
       <Card className="p-12">
-        <p className="flex items-center gap-4 text-[22px] font-semibold uppercase tracking-[0.12em] text-primary">
-          <FileText aria-hidden="true" className="h-7 w-7" /> Consent form · Experimental treatment
+        <p className="flex items-center gap-4 text-[26px] font-semibold uppercase tracking-[0.12em] text-primary">
+          <FileText aria-hidden="true" className="h-8 w-8" /> Consent form · Experimental treatment
         </p>
-        <ol className="mt-10 grid grid-cols-3 gap-x-12 gap-y-10">
+        <ol className="mt-12 grid grid-cols-2 gap-x-16 gap-y-12">
           {consentItems.map((item, index) => (
-            <li key={item} className="flex gap-5 text-[30px] leading-snug">
-              <span className="w-8 shrink-0 font-bold text-primary tabular-nums">{index + 1}</span>{item}
+            <li key={item} className="flex gap-6 text-[40px] leading-snug">
+              <span className="w-9 shrink-0 font-bold text-primary tabular-nums">{index + 1}</span>{item}
             </li>
           ))}
         </ol>
       </Card>
-      <ul className="mt-10 flex gap-6">
-        {[{ icon: Video, text: "Recording only if she agrees" }, { icon: Users, text: "Family can consent for her" }, { icon: Lock, text: "Kept on file" }].map(chip => (
-          <li key={chip.text} className="flex items-center gap-4 rounded-full border bg-card px-8 py-4 text-[26px] shadow-sm">
-            <chip.icon aria-hidden="true" className="h-7 w-7 text-primary" />{chip.text}
-          </li>
-        ))}
-      </ul>
-    </SlideFrame>
-  );
-}
-
-export function PaymentSlide({ s }: Props) {
-  return (
-    <SlideFrame s={s}>
-      <div className="grid h-full grid-cols-[1fr_1.1fr] gap-12">
-        <Card className="flex flex-col justify-center p-16">
-          <p className="text-[200px] font-bold leading-none tracking-tight text-primary">$0</p>
-          <p className="mt-8 text-[40px] font-semibold leading-tight">required from any insurer or state program</p>
-          <p className="mt-6 text-[30px] leading-snug text-muted-foreground">Patients, families, charities, employers or research sponsors pay.</p>
-        </Card>
-        <div className="flex flex-col gap-10">
-          <Card className="flex-1 bg-muted/70 p-12">
-            <Eyebrow className="text-muted-foreground">Right to Try today</Eyebrow>
-            <div className="mt-6 flex items-baseline gap-6">
-              <span className="text-[110px] font-bold leading-none text-amber-500">21</span>
-              <p className="text-[30px] leading-snug">drugs used from 2018 to 2024. Makers may charge only their costs, so almost no one offers it.</p>
-            </div>
-          </Card>
-          <Card className="flex-1 border-primary/30 bg-primary/10 p-12">
-            <Eyebrow>Care-integrated trials</Eyebrow>
-            <p className="mt-6 text-[36px] font-semibold leading-snug">Clinics can charge a fair price, so they have a real reason to offer new treatments.</p>
-          </Card>
-        </div>
-      </div>
+      <p className="mt-10 inline-flex items-center gap-4 rounded-full border bg-card px-9 py-5 text-[32px] shadow-sm">
+        <Users aria-hidden="true" className="h-8 w-8 text-primary" />If she can't consent, a legal representative can.
+      </p>
     </SlideFrame>
   );
 }
 
 const clinicRecords = [
-  "A coded ID, not her name", "Her goal and starting condition", "Treatment, dose and dates", "Outcomes on a set schedule",
-  "Better, same, worse, stopped or died", "Side effects", "Missed follow-ups, and why",
+  "Her treatment and dose", "Her starting condition", "Better, same, worse, stopped or died, on a set schedule", "Side effects",
+  "A coded ID, not her name",
 ];
 
 export function TrackingSlide({ s }: Props) {
@@ -240,10 +206,10 @@ export function TrackingSlide({ s }: Props) {
     <SlideFrame s={s}>
       <div className="grid h-full grid-cols-[1fr_1.35fr] gap-12">
         <Card className="p-12">
-          <h3 className="text-[36px] font-semibold">What her clinic records</h3>
-          <ol className="mt-8 space-y-4">
+          <h3 className="text-[40px] font-semibold">What her clinic records</h3>
+          <ol className="mt-10 space-y-6">
             {clinicRecords.map((item, index) => (
-              <li key={item} className="flex gap-5 text-[28px] leading-snug">
+              <li key={item} className="flex gap-5 text-[34px] leading-snug">
                 <span className="w-7 shrink-0 font-bold text-primary tabular-nums">{index + 1}</span>{item}
               </li>
             ))}
@@ -253,7 +219,7 @@ export function TrackingSlide({ s }: Props) {
           <Eyebrow>Optional · Easier tracking</Eyebrow>
           <div className="mt-6 grid flex-1 grid-cols-[1fr_1fr] items-center gap-10">
             <div className="[zoom:1.25]"><TrackOutcomesPreview /></div>
-            <Bullets items={["Daily phone check-ins", "Wearables sync automatically", "AI assistant calls or texts", "Reminders for labs and visits"]} />
+            <Bullets className="space-y-5 text-[32px]" items={["Phone check-ins", "Wearables", "AI calls or texts"]} />
           </div>
           <p className="mt-6 text-[26px] font-semibold">No required app or vendor. Normal medical records count.</p>
         </Card>
@@ -265,8 +231,8 @@ export function TrackingSlide({ s }: Props) {
 const safetySteps = [
   { icon: AlertTriangle, title: "Serious side effect", text: "Reported to the board within days." },
   { icon: Eye, title: "Board reassesses", text: "Also if a trial elsewhere stops for safety." },
-  { icon: PauseCircle, title: "New patients paused", text: "Unresolved serious toxicity halts new starts." },
-  { icon: ShieldCheck, title: "Careful continuation", text: "Current patients may continue if safer." },
+  { icon: PauseCircle, title: "New patients paused", text: "Until a serious safety problem is resolved." },
+  { icon: ShieldCheck, title: "Current patients protected", text: "They can continue if stopping is riskier." },
 ];
 
 export function SafetySlide({ s }: Props) {
@@ -280,8 +246,8 @@ export function SafetySlide({ s }: Props) {
                 <span aria-hidden="true" className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-amber-700"><step.icon className="h-8 w-8" /></span>
                 <span className="text-[34px] font-bold text-primary/60 tabular-nums">{index + 1}</span>
               </div>
-              <h3 className="mt-8 text-[34px] font-semibold leading-tight">{step.title}</h3>
-              <p className="mt-3 text-[27px] leading-snug text-muted-foreground">{step.text}</p>
+              <h3 className="mt-8 text-[38px] font-semibold leading-tight">{step.title}</h3>
+              <p className="mt-4 text-[32px] leading-snug text-muted-foreground">{step.text}</p>
             </Card>
           </li>,
           index < safetySteps.length - 1 && (
@@ -326,12 +292,12 @@ export function ResultsSlide({ s }: Props) {
           </dl>
         </Card>
         <div className="flex flex-col gap-10">
-          {[{ icon: Eye, title: "Nothing hidden", text: "Bad, null and unclear results must be published." },
-            { icon: Lock, title: "Privacy first", text: "Tiny groups combined for privacy." }].map(card => (
+          {[{ icon: Eye, title: "Nothing hidden", text: "Bad and unclear results must be published too." },
+            { icon: Lock, title: "Privacy first", text: "Small groups are combined so no one can be identified." }].map(card => (
             <Card key={card.title} className="flex-1 p-12">
               <IconBadge icon={card.icon} size={64} />
-              <h3 className="mt-6 text-[36px] font-semibold">{card.title}</h3>
-              <p className="mt-3 text-[28px] leading-snug text-muted-foreground">{card.text}</p>
+              <h3 className="mt-6 text-[40px] font-semibold">{card.title}</h3>
+              <p className="mt-3 text-[34px] leading-snug text-muted-foreground">{card.text}</p>
             </Card>
           ))}
         </div>
@@ -358,8 +324,8 @@ export function PipelineSlide({ s }: Props) {
             <li key={box.title}>
               <Card className={cn("h-full p-9", last && "border-primary bg-primary text-primary-foreground")}>
                 <IconBadge icon={box.icon} size={64} tone={last ? "highlight" : "soft"} />
-                <h3 className="mt-6 text-[30px] font-semibold leading-tight">{box.title}</h3>
-                <p className={cn("mt-2 text-[24px] leading-snug", last ? "text-primary-foreground/85" : "text-muted-foreground")}>{box.text}</p>
+                <h3 className="mt-6 text-[34px] font-semibold leading-tight">{box.title}</h3>
+                <p className={cn("mt-3 text-[28px] leading-snug", last ? "text-primary-foreground/85" : "text-muted-foreground")}>{box.text}</p>
               </Card>
             </li>,
             !last && (
@@ -369,8 +335,8 @@ export function PipelineSlide({ s }: Props) {
         })}
       </ol>
       <div aria-hidden="true" className="mx-[8%] h-20 rounded-b-[48px] border-x-4 border-b-4 border-dashed border-amber-400" />
-      <p className="mt-6 text-center text-[32px] font-semibold text-amber-600">Her result improves the next patient's decision</p>
-      <p className="mt-10 text-center text-[27px] text-muted-foreground">Every clinic reports in one open format, so any evidence system can combine the results.</p>
+      <p className="mt-6 text-center text-[38px] font-semibold text-amber-600">Her result improves the next patient's decision</p>
+      <p className="mt-10 text-center text-[32px] text-muted-foreground">Every clinic reports in one open format, so any evidence system can combine the results.</p>
     </SlideFrame>
   );
 }
