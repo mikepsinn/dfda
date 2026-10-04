@@ -165,8 +165,7 @@ export function IdeaSlide({ s }: Props) {
 const steps = [
   { title: "Explore options", text: "Compare treatment rankings and outcome labels" },
   { title: "Talk with your doctor", text: "Get a recommendation and decide on a treatment plan" },
-  { title: "Informed consent", text: "Decide in writing" },
-  { title: "Arrange payment", text: "Fair prices, so clinics offer it" },
+  { title: "Consent and cost", text: "Decide in writing, knowing the price" },
   { title: "Treatment and tracking", text: "Share good and bad outcomes" },
   { title: "Results reported", text: "De-identified, in a public registry" },
   { title: "Rankings and labels improve", text: "The next patient chooses better" },
@@ -176,13 +175,13 @@ function StepCard({ n }: { n: number }) {
   const step = steps[n - 1];
   const last = n === steps.length;
   return (
-    <Card className={cn("h-full p-8", last && "border-primary bg-primary text-primary-foreground")}>
+    <Card className={cn("h-full p-10", last && "border-primary bg-primary text-primary-foreground")}>
       <div className="flex items-center justify-between">
-        <IconBadge icon={journeyIcons[n - 1]} size={64} tone={last ? "highlight" : "soft"} />
-        <span className={cn("text-[34px] font-bold tabular-nums", last ? "text-primary-foreground/80" : "text-primary/60")}>{n}</span>
+        <IconBadge icon={journeyIcons[n - 1]} size={72} tone={last ? "highlight" : "soft"} />
+        <span className={cn("text-[40px] font-bold tabular-nums", last ? "text-primary-foreground/80" : "text-primary/60")}>{n}</span>
       </div>
-      <h3 className="mt-6 text-[32px] font-semibold leading-tight">{step.title}</h3>
-      <p className={cn("mt-2 text-[24px] leading-snug", last ? "text-primary-foreground/85" : "text-muted-foreground")}>{step.text}</p>
+      <h3 className="mt-6 text-[40px] font-semibold leading-tight">{step.title}</h3>
+      <p className={cn("mt-3 text-[30px] leading-snug", last ? "text-primary-foreground/85" : "text-muted-foreground")}>{step.text}</p>
     </Card>
   );
 }
@@ -193,14 +192,13 @@ export function StepsSlide({ s }: Props) {
   return (
     <SlideFrame s={s}>
       <ol className="sr-only">{steps.map(step => <li key={step.title}>{step.title}: {step.text}</li>)}</ol>
-      <div aria-hidden="true" className="grid h-full grid-cols-[1fr_56px_1fr_56px_1fr_56px_1fr] grid-rows-[1fr_64px_1fr] items-stretch">
-        <StepCard n={1} /><ArrowRight className={arrow} /><StepCard n={2} /><ArrowRight className={arrow} />
-        <StepCard n={3} /><ArrowRight className={arrow} /><StepCard n={4} />
-        <ArrowUp className="m-auto h-10 w-10 text-amber-500" /><span /><span /><span /><span /><span />
+      {/* Three steps across the top, down, three back along the bottom, and up to the start again. */}
+      <div aria-hidden="true" className="grid h-full grid-cols-[1fr_64px_1fr_64px_1fr] grid-rows-[1fr_72px_1fr] items-stretch">
+        <StepCard n={1} /><ArrowRight className={arrow} /><StepCard n={2} /><ArrowRight className={arrow} /><StepCard n={3} />
+        <ArrowUp className="m-auto h-10 w-10 text-amber-500" />
+        <p className="col-span-3 self-center text-[30px] font-semibold leading-snug text-amber-600">Then it starts again, with better data</p>
         <ArrowDown className={arrow} />
-        <p className="self-center text-center text-[26px] font-semibold leading-snug text-amber-600">Then it starts again, with better data</p>
-        <ArrowLeft className="m-auto h-10 w-10 text-amber-500" />
-        <StepCard n={7} /><ArrowLeft className={arrow} /><StepCard n={6} /><ArrowLeft className={arrow} /><StepCard n={5} />
+        <StepCard n={6} /><ArrowLeft className={arrow} /><StepCard n={5} /><ArrowLeft className={arrow} /><StepCard n={4} />
       </div>
     </SlideFrame>
   );
