@@ -68,7 +68,7 @@
       );
     }
 
-    /* ---------- the patient path (geometry from the Right-to-Trial frame, drawn at 0.6×) ---------- */
+    /* ---------- the patient path (geometry from Frame 4, drawn at 0.6×) ---------- */
     [id="12-close-pathgroup"] {
       position: absolute;
       left: 0;
@@ -170,7 +170,7 @@
       fill-opacity: 0;
     }
 
-    /* ---------- title → end card (same center line) ---------- */
+    /* ---------- title → end card (same center line, y ≈ 319) ---------- */
     [id="12-close-title"] {
       position: absolute;
       left: 0;
@@ -192,16 +192,21 @@
       display: inline-block;
     }
 
+    /* end card: "Learn more at" + the address in the one solid purple pill */
     [id="12-close-endcard"] {
       position: absolute;
       left: 0;
-      top: 290px;
+      top: 277px;
       width: 1920px;
-      text-align: center;
-      transform-origin: 960px 31px;
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      transform-origin: 960px 42px;
     }
 
-    [id="12-close-end-title"] {
+    [id="12-close-end-lead"] {
       margin: 0;
       font-family: "Inter", sans-serif;
       font-size: 3cqw;
@@ -212,31 +217,34 @@
       white-space: nowrap;
     }
 
-    [id="12-close-end-sub"] {
-      margin: 16px 0 0 0;
+    [id="12-close-end-url"] {
+      margin: 0;
+      padding: 10px 36px 12px 36px;
+      border-radius: 100px;
+      background: #694cfa;
       font-family: "Inter", sans-serif;
-      font-size: 1.9cqw;
-      font-weight: 600;
-      line-height: 1.3;
-      letter-spacing: -0.005em;
-      color: rgba(248, 246, 241, 0.94);
+      font-size: 3cqw;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #f8f6f1;
       white-space: nowrap;
     }
 
-    /* ---------- body: three lines (left) + Margaret → next patient (right) ---------- */
+    /* ---------- body: four lines (left) + Margaret → next patient (right) ---------- */
     [id="12-close-body"] {
       position: absolute;
       left: 0;
       top: 0;
       width: 1920px;
       height: 1080px;
-      transform-origin: 960px 640px;
+      transform-origin: 960px 580px;
     }
 
     [id="12-close-glow-3"] {
       position: absolute;
       left: 170px;
-      top: 646px;
+      top: 510px;
       width: 840px;
       height: 200px;
       border-radius: 50%;
@@ -251,16 +259,16 @@
     [class~="12-close-row"] {
       position: absolute;
       left: 250px;
-      height: 68px;
-      width: 780px;
+      height: 64px;
+      width: 1300px;
     }
 
     [class~="12-close-chip"] {
       position: absolute;
       left: 0;
       top: 0;
-      width: 68px;
-      height: 68px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       background: #694cfa;
       display: flex;
@@ -269,8 +277,8 @@
     }
 
     [class~="12-close-chip-icon"] {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       overflow: visible;
     }
 
@@ -287,8 +295,8 @@
       position: absolute;
       left: -10px;
       top: -10px;
-      width: 88px;
-      height: 88px;
+      width: 84px;
+      height: 84px;
       box-sizing: border-box;
       border-radius: 50%;
       border: 2.5px solid rgba(168, 150, 255, 0.9);
@@ -296,13 +304,13 @@
 
     [class~="12-close-line"] {
       position: absolute;
-      left: 96px;
+      left: 92px;
       top: 0;
       margin: 0;
       font-family: "Inter", sans-serif;
-      font-size: 2.4cqw;
+      font-size: 2cqw;
       font-weight: 600;
-      line-height: 68px;
+      line-height: 64px;
       letter-spacing: -0.015em;
       color: #f8f6f1;
       white-space: nowrap;
@@ -310,20 +318,20 @@
 
     [id="12-close-margaret"] {
       position: absolute;
-      left: 982px;
-      top: 528px;
-      width: 216px;
-      height: 216px;
+      left: 1235px;
+      top: 519px;
+      width: 178px;
+      height: 178px;
       border-radius: 50%;
       display: block;
     }
 
     [id="12-close-margaret-ring"] {
       position: absolute;
-      left: 966px;
-      top: 512px;
-      width: 248px;
-      height: 248px;
+      left: 1222px;
+      top: 506px;
+      width: 204px;
+      height: 204px;
       overflow: visible;
     }
 
@@ -336,7 +344,7 @@
 
     [class~="12-close-label"] {
       position: absolute;
-      top: 768px;
+      top: 720px;
       width: 320px;
       margin: 0;
       text-align: center;
@@ -368,19 +376,19 @@
 
     [id="12-close-next"] {
       position: absolute;
-      left: 1446px;
-      top: 512px;
-      width: 248px;
-      height: 248px;
+      left: 1544px;
+      top: 506px;
+      width: 204px;
+      height: 204px;
       overflow: visible;
     }
 
     [id="12-close-badge"] {
       position: absolute;
-      left: 1626px;
-      top: 522px;
-      width: 58px;
-      height: 58px;
+      left: 1692px;
+      top: 514px;
+      width: 48px;
+      height: 48px;
       box-sizing: border-box;
       border-radius: 50%;
       border: 4px solid #1e2842;
@@ -391,8 +399,8 @@
     }
 
     [id="12-close-badge"] svg {
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
       display: block;
     }
 
@@ -407,20 +415,20 @@
     data-width="1920"
     data-height="1080"
     data-start="0"
-    data-duration="14.71"
+    data-duration="14.18"
   >
     <div
       id="12-close-ground"
       class="clip"
       data-start="0"
-      data-duration="14.71"
+      data-duration="14.18"
       data-track-index="0"
     ></div>
 
     <div id="12-close-stage">
       <div id="12-close-bloom"></div>
 
-      <!-- the patient path, every dot lit (original 1920-space geometry, scaled by the wrapper) -->
+      <!-- the patient path, six steps, every dot lit (Frame 4's 1920-space geometry, scaled by the wrapper) -->
       <div id="12-close-pathgroup">
         <svg
           class="12-close-path"
@@ -438,31 +446,29 @@
               width="1920"
               height="1080"
             >
-              <path id="12-close-seg-0" class="12-close-seg" pathLength="1" d="M204 390 C305 390 355 290 456 290" />
-              <path id="12-close-seg-1" class="12-close-seg" pathLength="1" d="M456 290 C557 290 607 390 708 390" />
-              <path id="12-close-seg-2" class="12-close-seg" pathLength="1" d="M708 390 C809 390 859 290 960 290" />
-              <path id="12-close-seg-3" class="12-close-seg" pathLength="1" d="M960 290 C1061 290 1111 390 1212 390" />
-              <path id="12-close-seg-4" class="12-close-seg" pathLength="1" d="M1212 390 C1313 390 1363 290 1464 290" />
-              <path id="12-close-seg-5" class="12-close-seg" pathLength="1" d="M1464 290 C1548 334 1632 334 1716 290" />
+              <path id="12-close-seg-0" class="12-close-seg" pathLength="1" d="M204 390 C325 390 385.4 290 506.4 290" />
+              <path id="12-close-seg-1" class="12-close-seg" pathLength="1" d="M506.4 290 C627.4 290 687.8 390 808.8 390" />
+              <path id="12-close-seg-2" class="12-close-seg" pathLength="1" d="M808.8 390 C929.8 390 990.2 290 1111.2 290" />
+              <path id="12-close-seg-3" class="12-close-seg" pathLength="1" d="M1111.2 290 C1232.2 290 1292.6 390 1413.6 390" />
+              <path id="12-close-seg-4" class="12-close-seg" pathLength="1" d="M1413.6 390 C1534.6 390 1595 290 1716 290" />
             </mask>
           </defs>
           <path
             class="12-close-dash"
             mask="url(#12-close-path-mask)"
-            d="M204 390 C305 390 355 290 456 290 C557 290 607 390 708 390 C809 390 859 290 960 290 C1061 290 1111 390 1212 390 C1313 390 1363 290 1464 290 C1548 334 1632 334 1716 290"
+            d="M204 390 C325 390 385.4 290 506.4 290 C627.4 290 687.8 390 808.8 390 C929.8 390 990.2 290 1111.2 290 C1232.2 290 1292.6 390 1413.6 390 C1534.6 390 1595 290 1716 290"
           />
         </svg>
 
-        <!-- lit halos (glow wave on "Any patient") -->
+        <!-- lit halos (glow wave on "treatment") -->
         <div id="12-close-halo-1" class="12-close-halo" style="left: 104px; top: 290px"></div>
-        <div id="12-close-halo-2" class="12-close-halo" style="left: 356px; top: 190px"></div>
-        <div id="12-close-halo-3" class="12-close-halo" style="left: 608px; top: 290px"></div>
-        <div id="12-close-halo-4" class="12-close-halo" style="left: 860px; top: 190px"></div>
-        <div id="12-close-halo-5" class="12-close-halo" style="left: 1112px; top: 290px"></div>
-        <div id="12-close-halo-6" class="12-close-halo" style="left: 1364px; top: 190px"></div>
-        <div id="12-close-halo-7" class="12-close-halo 12-close-halo-star" style="left: 1616px; top: 190px"></div>
+        <div id="12-close-halo-2" class="12-close-halo" style="left: 406.4px; top: 190px"></div>
+        <div id="12-close-halo-3" class="12-close-halo" style="left: 708.8px; top: 290px"></div>
+        <div id="12-close-halo-4" class="12-close-halo" style="left: 1011.2px; top: 190px"></div>
+        <div id="12-close-halo-5" class="12-close-halo" style="left: 1313.6px; top: 290px"></div>
+        <div id="12-close-halo-6" class="12-close-halo 12-close-halo-star" style="left: 1616px; top: 190px"></div>
 
-        <!-- 1 · search (low) -->
+        <!-- 1 · explore options: search (low) -->
         <div class="12-close-node" style="left: 144px; top: 330px">
           <div id="12-close-dot-1" class="12-close-dot">
             <svg class="12-close-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -472,8 +478,8 @@
           </div>
         </div>
 
-        <!-- 2 · chat bubble (high) -->
-        <div class="12-close-node" style="left: 396px; top: 230px">
+        <!-- 2 · talk with your doctor: chat bubble (high) -->
+        <div class="12-close-node" style="left: 446.4px; top: 230px">
           <div id="12-close-dot-2" class="12-close-dot">
             <svg class="12-close-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path id="12-close-icon-2a" class="12-close-stroke" pathLength="1" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -483,8 +489,8 @@
           </div>
         </div>
 
-        <!-- 3 · open book (low) -->
-        <div class="12-close-node" style="left: 648px; top: 330px">
+        <!-- 3 · consent and cost: open book (low) -->
+        <div class="12-close-node" style="left: 748.8px; top: 330px">
           <div id="12-close-dot-3" class="12-close-dot">
             <svg class="12-close-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path id="12-close-icon-3a" class="12-close-stroke" pathLength="1" d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -493,44 +499,34 @@
           </div>
         </div>
 
-        <!-- 4 · shield-check (high) -->
-        <div class="12-close-node" style="left: 900px; top: 230px">
+        <!-- 4 · treatment and tracking: line chart (high) -->
+        <div class="12-close-node" style="left: 1051.2px; top: 230px">
           <div id="12-close-dot-4" class="12-close-dot">
             <svg class="12-close-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path id="12-close-icon-4a" class="12-close-stroke" pathLength="1" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              <path id="12-close-icon-4b" class="12-close-stroke" pathLength="1" d="M9 12l2 2 4-4" />
+              <path id="12-close-icon-4a" class="12-close-stroke" pathLength="1" d="M3 3v18h18" />
+              <path id="12-close-icon-4b" class="12-close-stroke" pathLength="1" d="M7 15l3-3 4 4 5-6" />
             </svg>
           </div>
         </div>
 
-        <!-- 5 · line chart (low) -->
-        <div class="12-close-node" style="left: 1152px; top: 330px">
+        <!-- 5 · results reported: bar chart (low) -->
+        <div class="12-close-node" style="left: 1353.6px; top: 330px">
           <div id="12-close-dot-5" class="12-close-dot">
             <svg class="12-close-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path id="12-close-icon-5a" class="12-close-stroke" pathLength="1" d="M3 3v18h18" />
-              <path id="12-close-icon-5b" class="12-close-stroke" pathLength="1" d="M7 15l3-3 4 4 5-6" />
+              <path id="12-close-icon-5b" class="12-close-stroke" pathLength="1" d="M8 17v-3" />
+              <path id="12-close-icon-5c" class="12-close-stroke" pathLength="1" d="M13 17V5" />
+              <path id="12-close-icon-5d" class="12-close-stroke" pathLength="1" d="M18 17V9" />
             </svg>
           </div>
         </div>
 
-        <!-- 6 · bar chart (high) -->
-        <div class="12-close-node" style="left: 1404px; top: 230px">
-          <div id="12-close-dot-6" class="12-close-dot">
-            <svg class="12-close-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path id="12-close-icon-6a" class="12-close-stroke" pathLength="1" d="M3 3v18h18" />
-              <path id="12-close-icon-6b" class="12-close-stroke" pathLength="1" d="M8 17v-3" />
-              <path id="12-close-icon-6c" class="12-close-stroke" pathLength="1" d="M13 17V5" />
-              <path id="12-close-icon-6d" class="12-close-stroke" pathLength="1" d="M18 17V9" />
-            </svg>
-          </div>
-        </div>
-
-        <!-- 7 · star, highlight orange (high) -->
+        <!-- 6 · rankings and labels improve: star, highlight orange (high) -->
         <div class="12-close-node" style="left: 1656px; top: 230px">
-          <div id="12-close-dot-7" class="12-close-dot 12-close-dot-star">
+          <div id="12-close-dot-6" class="12-close-dot 12-close-dot-star">
             <svg class="12-close-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path
-                id="12-close-icon-7a"
+                id="12-close-icon-6a"
                 class="12-close-stroke 12-close-star-shape"
                 pathLength="1"
                 d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.49l-5.87 3.09 1.12-6.54L2.5 9.41l6.56-.95z"
@@ -540,30 +536,30 @@
         </div>
       </div>
 
-      <!-- foreground type (Scenes 1–4) -->
+      <!-- the initiative's name (not spoken here; on screen from the start, replaced by the end card) -->
       <h1 id="12-close-title">
         <span id="12-close-word-1" class="12-close-word">Care-Integrated</span>
         <span id="12-close-word-2" class="12-close-word">Clinical</span>
         <span id="12-close-word-3" class="12-close-word">Trials</span>
       </h1>
 
-      <!-- three lines + Margaret → next patient -->
+      <!-- four lines + Margaret → next patient -->
       <div id="12-close-body">
         <div id="12-close-glow-3"></div>
 
-        <!-- 1 · any patient -->
-        <div class="12-close-row" style="top: 492px">
+        <!-- 1 · any patient, their own doctor -->
+        <div class="12-close-row" style="top: 410px">
           <div id="12-close-chip-1" class="12-close-chip">
             <svg class="12-close-chip-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path id="12-close-chip-1a" class="12-close-chip-stroke" pathLength="1" d="M12 3.5a4 4 0 1 1 0 8a4 4 0 1 1 0-8z" />
               <path id="12-close-chip-1b" class="12-close-chip-stroke" pathLength="1" d="M4.5 20.5v-.5a6 6 0 0 1 6-6h3a6 6 0 0 1 6 6v.5" />
             </svg>
           </div>
-          <p id="12-close-line-1" class="12-close-line">Any patient</p>
+          <p id="12-close-line-1" class="12-close-line">Any patient can get treatment through their own doctor.</p>
         </div>
 
-        <!-- 2 · clinics can offer it -->
-        <div class="12-close-row" style="top: 602px">
+        <!-- 2 · clinics can afford it -->
+        <div class="12-close-row" style="top: 494px">
           <div id="12-close-chip-2" class="12-close-chip">
             <svg class="12-close-chip-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path id="12-close-chip-2a" class="12-close-chip-stroke" pathLength="1" d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16" />
@@ -573,11 +569,11 @@
               <path id="12-close-chip-2e" class="12-close-chip-stroke" pathLength="1" d="M10 21v-4h4v4" />
             </svg>
           </div>
-          <p id="12-close-line-2" class="12-close-line">Clinics can offer it</p>
+          <p id="12-close-line-2" class="12-close-line">Clinics can afford to offer it.</p>
         </div>
 
         <!-- 3 · every result published -->
-        <div class="12-close-row" style="top: 712px">
+        <div class="12-close-row" style="top: 578px">
           <div id="12-close-chip-ring-3"></div>
           <div id="12-close-chip-3" class="12-close-chip">
             <svg class="12-close-chip-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -587,7 +583,20 @@
               <path id="12-close-chip-3d" class="12-close-chip-stroke" pathLength="1" d="M9 17h6" />
             </svg>
           </div>
-          <p id="12-close-line-3" class="12-close-line">Every result published</p>
+          <p id="12-close-line-3" class="12-close-line">Every result is published.</p>
+        </div>
+
+        <!-- 4 · the next patient learns -->
+        <div class="12-close-row" style="top: 662px">
+          <div id="12-close-chip-4" class="12-close-chip">
+            <svg class="12-close-chip-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path id="12-close-chip-4a" class="12-close-chip-stroke" pathLength="1" d="M9 3.5a3.5 3.5 0 1 1 0 7a3.5 3.5 0 1 1 0-7z" />
+              <path id="12-close-chip-4b" class="12-close-chip-stroke" pathLength="1" d="M2.5 20.5v-1a5 5 0 0 1 5-5h3a5 5 0 0 1 5 5v1" />
+              <path id="12-close-chip-4c" class="12-close-chip-stroke" pathLength="1" d="M16 3.6a3.5 3.5 0 0 1 0 6.8" />
+              <path id="12-close-chip-4d" class="12-close-chip-stroke" pathLength="1" d="M18.5 14.7a5 5 0 0 1 3 4.8v1" />
+            </svg>
+          </div>
+          <p id="12-close-line-4" class="12-close-line">The next patient learns from Margaret.</p>
         </div>
 
         <!-- Margaret -->
@@ -604,12 +613,12 @@
           />
         </svg>
         <img id="12-close-margaret" src="public/margaret.png" alt="" />
-        <p id="12-close-label-margaret" class="12-close-label" style="left: 930px">Margaret</p>
+        <p id="12-close-label-margaret" class="12-close-label" style="left: 1164px">Margaret</p>
 
         <!-- orange arrow: Margaret → the next patient -->
         <svg class="12-close-arrow-svg" viewBox="0 0 1920 1080" width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
-          <path id="12-close-arrow-line" class="12-close-arrow" pathLength="1" d="M1226 636 L1430 636" />
-          <path id="12-close-arrow-head" class="12-close-arrow" pathLength="1" d="M1408 614 L1432 636 L1408 658" />
+          <path id="12-close-arrow-line" class="12-close-arrow" pathLength="1" d="M1434 608 L1530 608" />
+          <path id="12-close-arrow-head" class="12-close-arrow" pathLength="1" d="M1510 588 L1532 608 L1510 628" />
         </svg>
 
         <!-- the next patient: a generic silhouette -->
@@ -643,13 +652,13 @@
             />
           </svg>
         </div>
-        <p id="12-close-label-next" class="12-close-label" style="left: 1410px">Next patient</p>
+        <p id="12-close-label-next" class="12-close-label" style="left: 1486px">Next patient</p>
       </div>
 
-      <!-- end card (Scene 5) -->
+      <!-- end card -->
       <div id="12-close-endcard">
-        <p id="12-close-end-title">The Care-Integrated Clinical Trials Initiative</p>
-        <p id="12-close-end-sub">acceleratedmedicine.org</p>
+        <p id="12-close-end-lead">Learn more at</p>
+        <p id="12-close-end-url">acceleratedmedicine.org</p>
       </div>
     </div>
   </div>
@@ -657,13 +666,14 @@
   <script>
     (function () {
       var ID = "12-close";
-      var DURATION = 14.71;
       var el = function (name) {
         return document.getElementById(ID + "-" + name);
       };
 
       window.__timelines = window.__timelines || {};
       var tl = gsap.timeline({ paused: true });
+
+      // Cues are word starts from timing/v4-estimated.json (frame 10); each reveal lands ~0.02s before its word.
 
       // Dash offsets tween as SVG attributes on pathLength="1" strokes: the CSS route
       // rounds px to whole numbers, which would turn a 0–1 normalized draw into a jump.
@@ -676,18 +686,18 @@
         );
       }
 
-      // ---- Scene 1 (0.0–2.0s): the path draws across the top, every dot lit ----
+      // ---- Scene 1 (0.0–2.1s): the six-step path draws across the top, every dot lit ----
       var SEG_START = 0.2;
       var SEG_DUR = 0.3; // constant-speed pen per segment
+      var SEG_COUNT = 5;
       var EDGE_LEAD = 0.22; // line reaches the next circle ~75% into its segment
       var icons = {
         1: ["icon-1a", "icon-1b"],
         2: ["icon-2a", "icon-2b", "icon-2c"],
         3: ["icon-3a", "icon-3b"],
         4: ["icon-4a", "icon-4b"],
-        5: ["icon-5a", "icon-5b"],
-        6: ["icon-6a", "icon-6b", "icon-6c", "icon-6d"],
-        7: ["icon-7a"],
+        5: ["icon-5a", "icon-5b", "icon-5c", "icon-5d"],
+        6: ["icon-6a"],
       };
 
       function popStep(n, at) {
@@ -699,14 +709,14 @@
       }
 
       popStep(1, 0.06);
-      for (var k = 0; k < 6; k++) {
+      for (var k = 0; k < SEG_COUNT; k++) {
         var segAt = SEG_START + k * SEG_DUR;
         draw("seg-" + k, segAt, SEG_DUR, "none");
         popStep(k + 2, segAt + EDGE_LEAD);
       }
-      var STAR_AT = SEG_START + 5 * SEG_DUR + EDGE_LEAD;
+      var STAR_AT = SEG_START + (SEG_COUNT - 1) * SEG_DUR + EDGE_LEAD;
       tl.fromTo(
-        el("icon-7a"),
+        el("icon-6a"),
         { fillOpacity: 0 },
         { fillOpacity: 1, duration: 0.35, ease: "power1.out" },
         STAR_AT + 0.45,
@@ -726,11 +736,12 @@
         );
       });
 
-      // ---- Scene 2 (0.4–6.4s): three lines, one per cue ----
+      // ---- Scene 2 (0.3–10.0s): four lines, one per sentence ----
       var chipIcons = {
         1: ["chip-1a", "chip-1b"],
         2: ["chip-2a", "chip-2b", "chip-2c", "chip-2d", "chip-2e"],
         3: ["chip-3a", "chip-3b", "chip-3c", "chip-3d"],
+        4: ["chip-4a", "chip-4b", "chip-4c", "chip-4d"],
       };
       function revealLine(n, cue) {
         tl.fromTo(el("chip-" + n), { scale: 0.6 }, { scale: 1, duration: 0.5, ease: "power3.out" }, cue - 0.04);
@@ -745,13 +756,14 @@
           cue,
         );
       }
-      revealLine(1, 0.42); // "Any patient"
-      revealLine(2, 2.35); // "Clinics"
-      revealLine(3, 4.39); // "Every result"
+      revealLine(1, 0.29); // "Any" 0.309
+      revealLine(2, 3.79); // "Clinics" 3.811
+      revealLine(3, 5.92); // "Every" 5.944
+      revealLine(4, 7.83); // "the" 7.853 (… next patient learns from Margaret)
 
-      // under "Any patient": a lit wave runs the whole path (bounded fade-up, settles lit)
-      for (var h = 1; h <= 7; h++) {
-        var hAt = 1.0 + (h - 1) * 0.12;
+      // on "treatment" (1.527): a lit wave runs the whole path (bounded fade-up, settles lit)
+      for (var h = 1; h <= 6; h++) {
+        var hAt = 1.5 + (h - 1) * 0.12;
         tl.fromTo(el("halo-" + h), { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, hAt);
         tl.fromTo(
           el("halo-" + h),
@@ -761,111 +773,100 @@
         );
       }
 
-      // ---- on "published" (5.38s): line 3 glows, settles ----
-      tl.fromTo(el("glow-3"), { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.out" }, 5.38);
+      // ---- on "published" (6.924): line 3 glows, settles ----
+      var PUB_AT = 6.9;
+      tl.fromTo(el("glow-3"), { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.out" }, PUB_AT);
       tl.fromTo(
         el("glow-3"),
         { opacity: 1 },
         { opacity: 0.3, duration: 1.0, ease: "power1.inOut", immediateRender: false },
-        5.95,
+        PUB_AT + 0.57,
       );
       tl.fromTo(
         el("chip-ring-3"),
         { opacity: 0, scale: 0.8 },
         { opacity: 1, scale: 1, duration: 0.55, ease: "power2.out" },
-        5.38,
+        PUB_AT,
       );
       tl.fromTo(
         el("chip-ring-3"),
         { opacity: 1 },
         { opacity: 0.35, duration: 1.0, ease: "power1.inOut", immediateRender: false },
-        5.95,
+        PUB_AT + 0.57,
       );
 
-      // ---- Scene 3 (6.4–10.4s): Margaret, then the arrow to the next patient ----
-      tl.fromTo(
-        el("margaret"),
-        { opacity: 0, scale: 0.75, y: 24 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "power3.out" },
-        6.49,
-      );
-      draw("margaret-ring-stroke", 6.62, 0.7);
-      tl.fromTo(
-        el("label-margaret"),
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        6.8,
-      );
-
-      // "the next patient" (9.04): a faint placeholder appears, the arrow draws to it, it lands
+      // ---- Scene 3 (8.1–10.3s): the next patient, then Margaret, joined by the arrow ----
+      // "next patient" (8.104): the silhouette settles in with its orange ring
+      var NEXT_AT = 8.08;
       tl.fromTo(
         el("next"),
         { opacity: 0, scale: 0.9 },
-        { opacity: 0.4, scale: 0.96, duration: 0.4, ease: "power2.out" },
-        9.04,
+        { opacity: 1, scale: 1, duration: 0.55, ease: "power3.out" },
+        NEXT_AT,
       );
-      draw("arrow-line", 9.06, 0.5, "power2.inOut");
-      draw("arrow-head", 9.46, 0.2, "power2.out");
-      tl.fromTo(
-        el("next"),
-        { opacity: 0.4, scale: 0.96 },
-        { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out", immediateRender: false },
-        9.52,
-      );
-      draw("next-ring-stroke", 9.52, 0.6);
-      tl.fromTo(el("badge"), { scale: 0.4 }, { scale: 1, duration: 0.5, ease: "back.out(2)" }, 9.79);
-      tl.fromTo(el("badge"), { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 9.79);
+      draw("next-ring-stroke", NEXT_AT + 0.12, 0.6);
       tl.fromTo(
         el("label-next"),
         { opacity: 0, y: 12 },
         { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-        9.89,
+        NEXT_AT + 0.22,
       );
+
+      // "Margaret" (9.59): her avatar, then the arrow draws from her to the next patient
+      var MARG_AT = 9.57;
+      tl.fromTo(
+        el("margaret"),
+        { opacity: 0, scale: 0.75, y: 24 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "power3.out" },
+        MARG_AT,
+      );
+      draw("margaret-ring-stroke", MARG_AT + 0.11, 0.6);
+      tl.fromTo(
+        el("label-margaret"),
+        { opacity: 0, y: 12 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+        MARG_AT + 0.18,
+      );
+      draw("arrow-line", MARG_AT + 0.15, 0.4, "power2.inOut");
+      draw("arrow-head", MARG_AT + 0.49, 0.2, "power2.out");
+      tl.fromTo(el("badge"), { scale: 0.4 }, { scale: 1, duration: 0.45, ease: "power3.out" }, MARG_AT + 0.53);
+      tl.fromTo(el("badge"), { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, MARG_AT + 0.53);
 
       // slow camera push under the build; still once the end card lands
-      tl.fromTo(el("stage"), { scale: 1 }, { scale: 1.02, duration: 10.7, ease: "sine.inOut" }, 0);
+      tl.fromTo(el("stage"), { scale: 1 }, { scale: 1.02, duration: 10.3, ease: "sine.inOut" }, 0);
 
-      // ---- Scene 4 (10.7–14.7s): lines + avatars fall back to 35%, the end card settles ----
-      tl.fromTo(
-        el("body"),
-        { opacity: 1, scale: 1 },
-        { opacity: 0.35, scale: 0.97, duration: 0.9, ease: "power2.inOut", immediateRender: false },
-        10.7,
-      );
-      // inverse zoom-through: the title recedes, the full name arrives from just behind the camera
+      // ---- Scene 4 (10.3–14.18s): "Learn more" (10.335) — the end card settles and holds to the end ----
+      var END_AT = 10.31;
+      // inverse zoom-through: the name recedes, the end card arrives from just behind the camera
       tl.fromTo(
         el("title"),
         { scale: 1, filter: "blur(0px)" },
         { scale: 0.8, filter: "blur(10px)", duration: 0.2, ease: "power3.in", immediateRender: false },
-        10.75,
+        END_AT - 0.06,
       );
       tl.fromTo(
         el("title"),
         { opacity: 1 },
         { opacity: 0, duration: 0.2, ease: "none", immediateRender: false },
-        10.75,
+        END_AT - 0.06,
       );
       tl.fromTo(
         el("endcard"),
         { opacity: 0, scale: 1.25, filter: "blur(10px)" },
         { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" },
-        10.95,
+        END_AT,
       );
+      tl.fromTo(el("bloom"), { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power1.out" }, END_AT);
+      // the lines and avatars fall back to 35% once the card has landed ("at" 10.997)
       tl.fromTo(
-        el("end-sub"),
-        { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-        11.35,
+        el("body"),
+        { opacity: 1, scale: 1 },
+        { opacity: 0.35, scale: 0.97, duration: 0.9, ease: "power2.inOut", immediateRender: false },
+        10.98,
       );
-      tl.fromTo(el("bloom"), { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power1.out" }, 10.85);
 
-      // final frame: gentle fade to the night ground over the last 0.6s
-      tl.fromTo(
-        el("stage"),
-        { opacity: 1 },
-        { opacity: 0, duration: 0.6, ease: "power1.inOut", immediateRender: false },
-        DURATION - 0.6,
-      );
+      // hold the end card, still, to the last frame (no fade-out)
+      tl.set({}, {}, 14.18);
 
       window.__timelines["12-close"] = tl;
     })();
