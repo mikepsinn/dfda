@@ -21,7 +21,7 @@ describe("presentation script", () => {
     expect(title.title).toBe("Every patient's treatment can help the next patient");
     expect(title.subtitle).toMatch(/^Radically accelerating medical discovery/);
     expect(margaret.sourceLine).toBe(
-      "Frontiers in Pharmacology, 2023, ten-year review of drug repurposing for Alzheimer's. Margaret is a composite patient.");
+      "Frontiers in Pharmacology, 2023, ten-year review of drug repurposing for Alzheimer's.");
     expect(slides.find(s => s.key === "19")!.title).toBe("Every patient's experience becomes evidence for the next.");
     expect(slides.find(s => s.key === "11")!.narration).toMatch(/^Her own doctor recommends one/);
     // The last main slide stops at the "Backup slides" heading.
