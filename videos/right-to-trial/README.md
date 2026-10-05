@@ -1,8 +1,8 @@
 # Care-Integrated Clinical Trials: Margaret's year (explainer video)
 
-A 2:24 explainer for the Care-Integrated Clinical Trials Initiative, built with
+A 2:10 explainer for the Care-Integrated Clinical Trials Initiative, built with
 [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML + GSAP rendered to MP4).
-It follows Margaret, a composite Alzheimer's patient, through the seven-step patient
+It follows Margaret, a composite Alzheimer's patient, through the six-step patient
 journey, using real footage of the web app's treatment rankings and Outcome Label. It has
 narration and captions, and no music.
 
@@ -11,10 +11,11 @@ narration and captions, and no music.
 | `SCRIPT.md` | Locked narration, one line per scene (voice: HeyGen "Nadine") |
 | `STORYBOARD.md` | Scene-by-scene plan: voiceover, timing, shot sequence, sources |
 | `BRIEF.md`, `frame.md` | Intent, audience and the visual design system |
-| `compositions/frames/*.html` | The 12 scenes; `index.html` assembles them with captions and audio |
+| `compositions/frames/*.html` | The 10 scenes; `index.html` assembles them with captions and audio |
 | `public/app/*.png` | Captures of the web app used as footage (`tools/capture-app-screens.mjs`) |
 | `timing/authored-words.json` | Word timings each scene was built against |
 | `tools/retime-to-narration.py` | Re-times scenes to new narration without rebuilding them |
+| `tools/estimate-narration.py` | Estimates word timings for lines not yet recorded, from the recorded voice's pace |
 | `tools/use-local-gsap.py` | Points the generated HTML at the vendored GSAP instead of the CDN |
 | `assets/vendor/gsap.min.js` | GSAP 3.15.0, vendored so previews and renders work offline ([license](https://gsap.com/standard-license)) |
 | `user_script.txt` | The full narration, with sources for the scale figures |
@@ -60,9 +61,17 @@ from the network.
 ## Accuracy
 
 Every on-screen figure comes from the Right to Trial deck (see `BRIEF.md`), the sources in
-`user_script.txt`, or the captured app pages. Model
-estimates (36 vs 443 years, $9.50 per healthy year) are labeled "Model estimate"
-with their source; illustrative board-report numbers are labeled "Example report";
-the Step 1 footage carries "Prototype · example estimates, not medical advice". The
+`user_script.txt`, or the captured app pages. Illustrative board-report numbers are labeled
+"Example report", and the Step 1 footage carries a "Prototype" pill. The
 Lecanemab label values were checked against the FDA prescribing information before
 capture (see `apps/web/data/optimitron/corrections.json`).
+
+## v4
+
+v4 follows the deck's script (apps/web/content/patient-journey/script.md). Lines 5, 6, 8 and 9
+of `SCRIPT.md` reuse v3's recordings; the other six were recorded for v4 (Nadine, HeyGen). The
+rewritten scenes were built before the new lines existed, against word timings that
+`tools/estimate-narration.py` estimated from Nadine's pace in v3 (`timing/v4-estimated.json`,
+`timing/authored-words.json`), then re-timed onto the recordings with
+`tools/retime-to-narration.py`. To record only some lines, give step 1 a script with just those
+lines and `--out` a separate file, then merge their voices into `audio_meta.json`.

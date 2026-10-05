@@ -1,0 +1,841 @@
+<template id="03-recovery-template">
+  <script src="assets/vendor/gsap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      container-type: size;
+      font-family: "Inter", sans-serif;
+      color: #0f172a;
+    }
+    #root * {
+      box-sizing: border-box;
+    }
+
+    /* full-bleed ground: cream + faint purple dot-grid texture (its own clip, lowest track) */
+    [id="03-recovery-bg"] {
+      position: absolute;
+      inset: 0;
+      background-color: #f8f6f1;
+      background-image: radial-gradient(
+        circle,
+        rgba(105, 76, 250, 0.11) 0,
+        rgba(105, 76, 250, 0.11) 1.6px,
+        rgba(105, 76, 250, 0) 2.4px
+      );
+      background-size: 40px 40px;
+      background-position: 20px 20px;
+    }
+
+    /* slow lean-in camera wrapper (content only; the source line stays locked) */
+    [id="03-recovery-camera"] {
+      position: absolute;
+      inset: 0;
+      transform-origin: 960px 470px;
+    }
+
+    /* ── slide-header: accent line + eyebrow, tag pill, h2 ── */
+    [id="03-recovery-eyebrow-row"] {
+      position: absolute;
+      left: 96px;
+      top: 70px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    [id="03-recovery-accent"] {
+      display: block;
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
+      background: #694cfa;
+      transform-origin: 0% 50%;
+    }
+    [id="03-recovery-eyebrow"] {
+      display: block;
+      font-size: 1.05cqw;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #694cfa;
+      white-space: nowrap;
+    }
+    [id="03-recovery-h2"] {
+      position: absolute;
+      left: 96px;
+      top: 112px;
+      margin: 0;
+      font-size: 2.6cqw;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+
+    /* per-word mask reveal */
+    [class~="03-recovery-w"] {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+      padding-bottom: 0.14em;
+      margin-bottom: -0.14em;
+    }
+    [class~="03-recovery-wi"] {
+      display: inline-block;
+    }
+
+    /* ── panel 1 (left slot): hospital + patients, then days to an answer ── */
+    [id="03-recovery-panel1"] {
+      position: absolute;
+      left: 96px;
+      top: 240px;
+      width: 760px;
+      height: 580px;
+    }
+    [id="03-recovery-hospital"] {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 240px;
+      height: 220px;
+      overflow: visible;
+    }
+    [class~="03-recovery-hs"] {
+      fill: none;
+      stroke: #694cfa;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    [class~="03-recovery-hw"] {
+      fill: none;
+      stroke: #694cfa;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    [id="03-recovery-h-bodyfill"] {
+      fill: rgba(105, 76, 250, 0.06);
+      stroke: none;
+    }
+    [id="03-recovery-h-towerfill"] {
+      fill: rgba(105, 76, 250, 0.15);
+      stroke: none;
+    }
+    [id="03-recovery-h-cross-v"],
+    [id="03-recovery-h-cross-h"] {
+      fill: none;
+      stroke: #694cfa;
+      stroke-width: 8;
+      stroke-linecap: round;
+    }
+    [id="03-recovery-figs"] {
+      position: absolute;
+      left: 316px;
+      top: 56px;
+      width: 444px;
+      height: 158px;
+    }
+    [class~="03-recovery-fig"] {
+      position: absolute;
+      display: block;
+      width: 44px;
+      height: 62px;
+      overflow: visible;
+    }
+    [class~="03-recovery-fig"] circle,
+    [class~="03-recovery-fig"] path {
+      fill: #694cfa;
+    }
+    [id="03-recovery-hcap"] {
+      position: absolute;
+      left: 0;
+      top: 262px;
+      font-size: 1.45cqw;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+
+    [id="03-recovery-days"] {
+      position: absolute;
+      left: 0;
+      top: 330px;
+      width: 760px;
+      height: 240px;
+    }
+    [id="03-recovery-numrow"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: baseline;
+      white-space: nowrap;
+    }
+    [id="03-recovery-days-num"] {
+      display: inline-block;
+      width: 1.24em;
+      text-align: right;
+      font-size: 5.8cqw;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #694cfa;
+      font-variant-numeric: tabular-nums;
+      transform-origin: 100% 85%;
+    }
+    [id="03-recovery-days-label"] {
+      display: inline-block;
+      margin-left: 22px;
+      font-size: 1.6cqw;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #0f172a;
+    }
+    [id="03-recovery-track"] {
+      position: absolute;
+      left: 0;
+      top: 150px;
+      width: 760px;
+      height: 22px;
+      border-radius: 6px;
+      background: rgba(105, 76, 250, 0.08);
+      overflow: hidden;
+    }
+    [id="03-recovery-fill"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 760px;
+      height: 22px;
+      border-radius: 6px;
+      background: #694cfa;
+      transform-origin: 0% 50%;
+    }
+    [class~="03-recovery-month"] {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 4px;
+      height: 22px;
+      margin-left: -2px;
+      background: #f8f6f1;
+    }
+    [id="03-recovery-endtick"] {
+      position: absolute;
+      left: 757px;
+      top: 140px;
+      display: block;
+      width: 3px;
+      height: 42px;
+      border-radius: 2px;
+      background: #694cfa;
+      transform-origin: 50% 50%;
+    }
+    [id="03-recovery-months"] {
+      position: absolute;
+      right: 0;
+      top: 192px;
+      font-size: 1.4cqw;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #475569;
+      white-space: nowrap;
+    }
+
+    /* ── panel 2 (right slot, slides to the left slot for the payoff): drug + result ── */
+    [id="03-recovery-panel2"] {
+      position: absolute;
+      left: 944px;
+      top: 240px;
+      width: 880px;
+      height: 520px;
+    }
+    [id="03-recovery-chip"] {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 30px 0 22px;
+      border-radius: 100px;
+      background: rgba(105, 76, 250, 0.08);
+      font-size: 1.45cqw;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    [id="03-recovery-capsule"] {
+      display: block;
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+    }
+    [class~="03-recovery-cap"] {
+      fill: none;
+      stroke: #694cfa;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    [id="03-recovery-caphalf"] {
+      fill: #694cfa;
+      stroke: none;
+    }
+    [id="03-recovery-chiptext"] {
+      display: block;
+      color: #475569;
+      font-weight: 500;
+    }
+    [id="03-recovery-drug"] {
+      font-weight: 700;
+      color: #694cfa;
+    }
+    [id="03-recovery-d1"],
+    [id="03-recovery-d2"] {
+      display: inline-block;
+    }
+
+    [id="03-recovery-ctitle"] {
+      position: absolute;
+      left: 0;
+      top: 140px;
+      font-size: 1.45cqw;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #475569;
+      white-space: nowrap;
+    }
+    [class~="03-recovery-rowlabel"] {
+      position: absolute;
+      left: 0;
+      font-size: 1.45cqw;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    [id="03-recovery-rl1"] {
+      top: 210px;
+    }
+    [id="03-recovery-rl2"] {
+      top: 340px;
+    }
+    [class~="03-recovery-bar"] {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 840px;
+      height: 48px;
+      border-radius: 6px;
+      transform-origin: 0% 50%;
+    }
+    [id="03-recovery-bar1"] {
+      top: 254px;
+      background: rgba(105, 76, 250, 0.3);
+    }
+    [id="03-recovery-bar2"] {
+      top: 384px;
+      background: #694cfa;
+    }
+    [id="03-recovery-ghost"] {
+      position: absolute;
+      left: 560px;
+      top: 384px;
+      display: block;
+      width: 280px;
+      height: 48px;
+      border: 2px dashed rgba(105, 76, 250, 0.5);
+      border-radius: 6px;
+    }
+    [id="03-recovery-cut"] {
+      position: absolute;
+      left: 560px;
+      top: 446px;
+      width: 280px;
+      text-align: center;
+      font-size: 1.4cqw;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #694cfa;
+      white-space: nowrap;
+    }
+
+    /* ── hero (right slot after the slide): about a million lives ── */
+    [id="03-recovery-hero"] {
+      position: absolute;
+      left: 1064px;
+      top: 400px;
+      width: 760px;
+      height: 210px;
+    }
+    [id="03-recovery-count"],
+    [id="03-recovery-final"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      font-size: 6.8cqw;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #694cfa;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    [id="03-recovery-count"] {
+      transform-origin: 0% 100%;
+    }
+    [id="03-recovery-fm"] {
+      display: inline-block;
+      margin-left: 0.26em;
+    }
+    [id="03-recovery-hlabel"] {
+      position: absolute;
+      left: 0;
+      top: 158px;
+      font-size: 1.7cqw;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    [id="03-recovery-est"] {
+      color: #475569;
+    }
+
+    /* ── chrome (outside the camera) ── */
+    [id="03-recovery-source"] {
+      position: absolute;
+      left: 96px;
+      top: 846px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #475569;
+      white-space: nowrap;
+    }
+  </style>
+
+  <div
+    id="root"
+    data-composition-id="03-recovery"
+    data-width="1920"
+    data-height="1080"
+    data-start="0"
+    data-duration="18.416"
+  >
+    <div
+      id="03-recovery-bg"
+      class="clip"
+      data-start="0"
+      data-duration="18.416"
+      data-track-index="0"
+    ></div>
+
+    <div id="03-recovery-camera">
+      <!-- slide-header -->
+      <div id="03-recovery-eyebrow-row">
+        <span id="03-recovery-accent"></span>
+        <span id="03-recovery-eyebrow">Proof pragmatic trials work</span>
+      </div>
+      <h2 id="03-recovery-h2"><span class="03-recovery-w"><span class="03-recovery-wi">A</span></span> <span class="03-recovery-w"><span class="03-recovery-wi">trial</span></span> <span class="03-recovery-w"><span class="03-recovery-wi">built</span></span> <span class="03-recovery-w"><span class="03-recovery-wi">into</span></span> <span class="03-recovery-w"><span class="03-recovery-wi">everyday</span></span> <span class="03-recovery-w"><span class="03-recovery-wi">care</span></span></h2>
+
+      <!-- panel 1: built into ordinary hospital care · days to an answer -->
+      <div id="03-recovery-panel1">
+        <svg id="03-recovery-hospital" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
+          <path id="03-recovery-h-bodyfill" d="M28 212V92a8 8 0 0 1 8-8H204a8 8 0 0 1 8 8V212Z" />
+          <path id="03-recovery-h-towerfill" d="M84 84V30a8 8 0 0 1 8-8H148a8 8 0 0 1 8 8V84Z" />
+          <path id="03-recovery-h-ground" class="03-recovery-hs" d="M8 212H232" />
+          <path id="03-recovery-h-body" class="03-recovery-hs" d="M28 212V92a8 8 0 0 1 8-8H204a8 8 0 0 1 8 8V212" />
+          <path id="03-recovery-h-tower" class="03-recovery-hs" d="M84 84V30a8 8 0 0 1 8-8H148a8 8 0 0 1 8 8V84" />
+          <path id="03-recovery-h-door" class="03-recovery-hs" d="M104 212V172a4 4 0 0 1 4-4H132a4 4 0 0 1 4 4V212M120 168V212" />
+          <rect class="03-recovery-hw" x="44" y="104" width="24" height="24" rx="3" />
+          <rect class="03-recovery-hw" x="44" y="148" width="24" height="24" rx="3" />
+          <rect class="03-recovery-hw" x="108" y="104" width="24" height="24" rx="3" />
+          <rect class="03-recovery-hw" x="172" y="104" width="24" height="24" rx="3" />
+          <rect class="03-recovery-hw" x="172" y="148" width="24" height="24" rx="3" />
+          <path id="03-recovery-h-cross-v" d="M120 37V69" />
+          <path id="03-recovery-h-cross-h" d="M104 53H136" />
+        </svg>
+        <div id="03-recovery-figs"></div>
+        <div id="03-recovery-hcap">Ordinary hospital care</div>
+
+        <div id="03-recovery-days">
+          <div id="03-recovery-numrow">
+            <span id="03-recovery-days-num">0</span>
+            <span id="03-recovery-days-label">days to an answer</span>
+          </div>
+          <div id="03-recovery-track">
+            <span id="03-recovery-fill"></span>
+            <span class="03-recovery-month" style="left: 253px"></span>
+            <span class="03-recovery-month" style="left: 507px"></span>
+          </div>
+          <span id="03-recovery-endtick"></span>
+          <div id="03-recovery-months">3 months</div>
+        </div>
+      </div>
+
+      <!-- panel 2: the drug and what it did -->
+      <div id="03-recovery-panel2">
+        <div id="03-recovery-chip">
+          <svg id="03-recovery-capsule" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="03-recovery-caphalf" d="M7.55 7.55L14.05 14.05L11 17.1a4.6 4.6 0 0 1-6.5-6.5Z" />
+            <path class="03-recovery-cap" d="M10.6 4.5a4.6 4.6 0 0 1 6.5 6.5l-6.1 6.1a4.6 4.6 0 0 1-6.5-6.5Z" />
+            <path class="03-recovery-cap" d="M7.55 7.55l6.5 6.5" />
+          </svg>
+          <span id="03-recovery-chiptext"><span id="03-recovery-drug">Dexamethasone</span> <span id="03-recovery-d1">· a cheap steroid,</span> <span id="03-recovery-d2">used for decades</span></span>
+        </div>
+
+        <div id="03-recovery-ctitle"><span class="03-recovery-w"><span class="03-recovery-wi 03-recovery-t1">Deaths</span></span> <span class="03-recovery-w"><span class="03-recovery-wi 03-recovery-t1">among</span></span> <span class="03-recovery-w"><span class="03-recovery-wi 03-recovery-t2">patients</span></span> <span class="03-recovery-w"><span class="03-recovery-wi 03-recovery-t2">on</span></span> <span class="03-recovery-w"><span class="03-recovery-wi 03-recovery-t2">ventilators</span></span></div>
+
+        <div id="03-recovery-rl1" class="03-recovery-rowlabel">Usual care</div>
+        <span id="03-recovery-bar1" class="03-recovery-bar"></span>
+        <div id="03-recovery-rl2" class="03-recovery-rowlabel">With dexamethasone</div>
+        <span id="03-recovery-ghost"></span>
+        <span id="03-recovery-bar2" class="03-recovery-bar"></span>
+        <div id="03-recovery-cut">up to a third fewer</div>
+      </div>
+
+      <!-- hero: about a million lives -->
+      <div id="03-recovery-hero">
+        <div id="03-recovery-count">0</div>
+        <div id="03-recovery-final"><span id="03-recovery-f1">1</span><span id="03-recovery-fm">million</span></div>
+        <div id="03-recovery-hlabel">lives saved worldwide <span id="03-recovery-est">(estimate)</span></div>
+      </div>
+    </div>
+
+    <div id="03-recovery-source">Sources: RECOVERY Collaborative Group, New England Journal of Medicine, 2021; NHS England, 2021</div>
+  </div>
+
+  <script>
+    (function () {
+      var P = "03-recovery-";
+      function byId(id) {
+        return document.getElementById(P + id);
+      }
+      function byClass(cls, scope) {
+        return Array.prototype.slice.call((scope || document).getElementsByClassName(P + cls));
+      }
+      function withCommas(n) {
+        return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
+      var END = 20.236; // scene length: 19.736 s narration + 0.5 s tail
+      var SVGNS = "http://www.w3.org/2000/svg";
+
+      // ---- build the 12 patient figures deterministically (2 rows x 6 columns) ----
+      var figs = byId("figs");
+      figs.textContent = "";
+      var figures = [];
+      for (var c = 0; c < 6; c++) {
+        for (var r = 0; r < 2; r++) {
+          var s = document.createElementNS(SVGNS, "svg");
+          s.setAttribute("viewBox", "0 0 44 62");
+          s.setAttribute("class", P + "fig");
+          s.style.left = c * 80 + "px";
+          s.style.top = r * 96 + "px";
+          var head = document.createElementNS(SVGNS, "circle");
+          head.setAttribute("cx", "22");
+          head.setAttribute("cy", "12");
+          head.setAttribute("r", "10");
+          var body = document.createElementNS(SVGNS, "path");
+          body.setAttribute("d", "M3 62V49C3 37 12 30 22 30S41 37 41 49V62Z");
+          s.appendChild(head);
+          s.appendChild(body);
+          figs.appendChild(s);
+          figures.push(s); // index order = column by column, nearest the hospital first
+        }
+      }
+
+      // chip wipe stops, measured from the shipped Inter at 1.45cqw (px from the chip's left edge).
+      // Re-measure if the chip copy or type size changes.
+      var CHIP_W = 797; // full chip width
+      var STOP_DRUG = 319; // pill ends just after "Dexamethasone" (text ends at 291)
+      var STOP_D1 = 555; // pill ends just after "· a cheap steroid," (text ends at 527)
+      function chipClip(stop) {
+        return "inset(0px " + (CHIP_W - stop) + "px 0px 0px round 100px)";
+      }
+
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // svg-path-draw: dash = measured length, offset length -> 0
+      function draw(path, at, dur, ease) {
+        var len = Math.ceil(path.getTotalLength()) + 1;
+        path.style.strokeDasharray = len + " " + len;
+        tl.fromTo(
+          path,
+          { strokeDashoffset: len },
+          { strokeDashoffset: 0, duration: dur, ease: ease || "power2.out" },
+          at
+        );
+      }
+      function rise(targets, at, stagger) {
+        tl.fromTo(
+          targets,
+          { yPercent: 110, opacity: 0 },
+          { yPercent: 0, opacity: 1, duration: 0.6, ease: "power3.out", stagger: stagger || 0 },
+          at
+        );
+      }
+      function settle(el, at, dist) {
+        tl.fromTo(
+          el,
+          { opacity: 0, y: dist || 14 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+          at
+        );
+      }
+
+      // macro camera: one slow lean-in under the whole shot, at rest before the final hold
+      tl.fromTo(byId("camera"), { scale: 1 }, { scale: 1.02, duration: 19.7, ease: "sine.inOut" }, 0);
+
+      // ---- Beat 1 (0.0-2.4s) "It doesn't have to be this way": slide-header ----
+      tl.fromTo(byId("accent"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.05);
+      tl.fromTo(
+        byId("eyebrow"),
+        { opacity: 0, x: -14 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+        0.1
+      );
+      rise(byClass("wi", byId("h2")), 0.309, 0.1); // "It"
+
+      // ---- Beat 2 (3.9-7.2s) "built a clinical trial into ordinary hospital care" ----
+      draw(byId("h-ground"), 3.953, 0.7); // "built"
+      draw(byId("h-body"), 3.99, 0.9);
+      tl.fromTo(
+        byId("h-bodyfill"),
+        { opacity: 0 },
+        { opacity: 1, duration: 0.6, ease: "power1.out" },
+        4.5
+      );
+      draw(byId("h-tower"), 4.22, 0.6);
+      draw(byId("h-door"), 4.45, 0.55);
+      byClass("hw").forEach(function (w, i) {
+        draw(w, 4.55 + i * 0.06, 0.45);
+      });
+      // the cross sign on the tower fills on "trial"
+      tl.fromTo(
+        byId("h-towerfill"),
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: "power1.out" },
+        5.04
+      );
+      draw(byId("h-cross-v"), 5.04, 0.35);
+      draw(byId("h-cross-h"), 5.16, 0.35);
+      // caption on "ordinary"; patients join from the right, nearest the hospital first
+      settle(byId("hcap"), 5.702, 12);
+      figures.forEach(function (f, i) {
+        tl.fromTo(
+          f,
+          { opacity: 0, x: 40 },
+          { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" },
+          5.85 + i * 0.08
+        );
+      });
+
+      // ---- Beat 3 (7.27-8.8s) "In under three months": day counter + progress line ----
+      settle(byId("days"), 7.27, 16); // "In"
+      var DAYS = 89;
+      var COUNT_AT = 7.4;
+      var COUNT_DUR = 1.35;
+      var COUNT_EASE = "power2.out";
+      tl.fromTo(
+        byId("days-num"),
+        { innerText: 0 },
+        { innerText: DAYS, snap: { innerText: 1 }, duration: COUNT_DUR, ease: COUNT_EASE },
+        COUNT_AT
+      );
+      tl.fromTo(byId("days-num"), { scale: 0.6 }, { scale: 1, duration: COUNT_DUR, ease: COUNT_EASE }, COUNT_AT);
+      // fill shares the count's timing + ease; the track is three months (~91.3 days) long
+      tl.fromTo(
+        byId("fill"),
+        { scaleX: 0 },
+        { scaleX: DAYS / 91.31, duration: COUNT_DUR, ease: COUNT_EASE },
+        COUNT_AT
+      );
+      // "three months": end tick + label
+      tl.fromTo(
+        byId("endtick"),
+        { opacity: 0, scaleY: 0.3 },
+        { opacity: 1, scaleY: 1, duration: 0.5, ease: "power3.out" },
+        7.839
+      );
+      settle(byId("months"), 7.86, 10);
+      // "months,": label lands before the count settles
+      tl.fromTo(
+        byId("days-label"),
+        { opacity: 0, x: -12 },
+        { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" },
+        8.197
+      );
+      // source line (chrome) once the first figure is on screen ("it")
+      tl.fromTo(
+        byId("source"),
+        { opacity: 0, y: 8 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+        8.714
+      );
+
+      // ---- Beat 4 (9.6-12.5s) "dexamethasone, a cheap steroid used for decades": the chip ----
+      var chip = byId("chip");
+      tl.fromTo(chip, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, 9.641);
+      tl.fromTo(
+        chip,
+        { clipPath: chipClip(0) },
+        { clipPath: chipClip(STOP_DRUG), duration: 0.7, ease: "power2.out" },
+        9.641
+      );
+      byClass("cap", chip).forEach(function (p, k) {
+        draw(p, 9.8 + k * 0.12, 0.45);
+      });
+      tl.fromTo(byId("caphalf"), { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, 10.1);
+      // "a cheap steroid," (d1 and d2 stay hidden until their words: fromTo renders opacity 0 at build)
+      tl.fromTo(
+        chip,
+        { clipPath: chipClip(STOP_DRUG) },
+        { clipPath: chipClip(STOP_D1), duration: 0.6, ease: "power2.out", immediateRender: false },
+        10.533
+      );
+      tl.fromTo(
+        byId("d1"),
+        { opacity: 0, x: -8 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+        10.6
+      );
+      // "used for decades"
+      tl.fromTo(
+        chip,
+        { clipPath: chipClip(STOP_D1) },
+        { clipPath: chipClip(CHIP_W), duration: 0.6, ease: "power2.out", immediateRender: false },
+        11.566
+      );
+      tl.fromTo(
+        byId("d2"),
+        { opacity: 0, x: -8 },
+        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+        11.63
+      );
+
+      // ---- Beat 5 (12.7-16.4s) "cut deaths among the sickest COVID patients by up to a third" ----
+      rise(byClass("t1", byId("ctitle")), 12.944, 0.08); // "deaths among"
+      settle(byId("rl1"), 13.1, 12);
+      tl.fromTo(byId("bar1"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }, 13.1);
+      settle(byId("rl2"), 13.36, 12);
+      tl.fromTo(byId("bar2"), { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power3.out" }, 13.36);
+      rise(byClass("t2", byId("ctitle")), 13.964, 0.08); // "sickest" -> patients on ventilators
+      // "by up to a third": the dexamethasone bar shrinks to two thirds, the lost third stays as a dashed ghost
+      tl.fromTo(byId("ghost"), { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 15.306);
+      tl.fromTo(
+        byId("bar2"),
+        { scaleX: 1 },
+        { scaleX: 2 / 3, duration: 0.95, ease: "power3.inOut", immediateRender: false },
+        15.306
+      );
+      settle(byId("cut"), 16.148, 10); // "third."
+
+      // ---- Beat 6 (16.4-20.2s) "It saved about a million lives." ----
+      // the story slides one slot left: panel 1 leaves, panel 2 takes the left slot, the hero takes the right
+      tl.fromTo(
+        byId("panel1"),
+        { opacity: 1, x: 0 },
+        { opacity: 0, x: -120, duration: 0.35, ease: "power2.inOut" },
+        16.4
+      );
+      tl.fromTo(byId("panel2"), { x: 0 }, { x: -848, duration: 0.8, ease: "power3.inOut" }, 16.45);
+      settle(byId("hero"), 16.98, 20); // "saved" (the bars have cleared the right slot)
+
+      // counting-dynamic-scale: 0 -> 1,000,000 (in thousands), value + scale share timing and ease
+      var count = byId("count");
+      var HERO_AT = 16.98;
+      var HERO_DUR = 1.27; // lands on "million" (ends 18.25)
+      var HERO_EASE = "power3.out";
+      // direct innerText tween + a modifier for the thousands commas (no callback, so the
+      // number stays correct under any seek mode, including seeks that suppress events)
+      tl.fromTo(
+        count,
+        { innerText: 0 },
+        {
+          innerText: 1000000,
+          duration: HERO_DUR,
+          ease: HERO_EASE,
+          modifiers: {
+            innerText: function (v) {
+              return withCommas(Math.round(v / 1000) * 1000);
+            },
+          },
+        },
+        HERO_AT
+      );
+      tl.fromTo(count, { scale: 0.55 }, { scale: 1, duration: HERO_DUR, ease: HERO_EASE }, HERO_AT);
+      // the landed "1,000,000" resolves to "1 million": an identical "1" takes over in place, the
+      // ",000,000" tail fades out, then "million" rises in where it was
+      tl.fromTo(byId("f1"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, 18.26);
+      tl.fromTo(
+        count,
+        { opacity: 1 },
+        { opacity: 0, duration: 0.18, ease: "power1.in", immediateRender: false },
+        18.27
+      );
+      tl.fromTo(
+        byId("fm"),
+        { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+        18.46
+      );
+      settle(byId("hlabel"), 18.334, 14); // "lives."
+
+      // hold still to the scene's exact length
+      tl.set({}, {}, END);
+
+      window.__timelines["03-recovery"] = tl;
+    })();
+  </script>
+
+  <script>
+    // retime-to-new-voice: drive this scene's original timeline through a map from the
+    // new narration's time to the old narration's time, anchored on matching spoken cues.
+    (function () {
+      var ID = "03-recovery";
+      var inner = window.__timelines[ID];
+      var MAP = [[0.000,0.000],[2.439,2.005],[3.488,3.413],[7.270,7.030],[8.714,8.267],[10.533,10.102],[12.693,12.235],[16.732,15.990],[18.601,17.765]]; // [old seconds, new seconds]
+      var NEW_DURATION = 17.816;
+      function toOld(t) {
+        for (var i = 1; i < MAP.length; i++) {
+          if (t <= MAP[i][1]) {
+            var a = MAP[i - 1], b = MAP[i];
+            return a[0] + (t - a[1]) * (b[0] - a[0]) / (b[1] - a[1]);
+          }
+        }
+        var last = MAP[MAP.length - 1];
+        return last[0] + (t - last[1]); // after the last cue, real time (holds stay holds)
+      }
+      var OLD_END = toOld(NEW_DURATION);
+      var outer = gsap.timeline({ paused: true });
+      outer.fromTo(inner, { time: 0 }, {
+        time: OLD_END, duration: NEW_DURATION,
+        ease: function (p) { return toOld(p * NEW_DURATION) / OLD_END; },
+      }, 0);
+      window.__timelines[ID] = outer;
+    })();
+  </script>
+</template>

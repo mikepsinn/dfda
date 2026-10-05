@@ -1,34 +1,38 @@
-# SCRIPT — care-integrated clinical trials: Margaret's year (v3)
+# SCRIPT — care-integrated clinical trials: Margaret's year (v4)
 
 **Voice:** Nadine (HeyGen, voice id 83548de556df48ba8c09c42a57c51d85)
 **Voice settings:** default
 **Voice direction:** Calm, warm, credible. Let the numbers land. Not salesy.
 
+The narration matches the "Video narration" lines in the deck's script
+(apps/web/content/patient-journey/script.md). Lines 5, 6, 8 and 9 are unchanged from v3 and can
+reuse its recordings; the others were recorded for v4.
+
 ---
 
 ## Line 1 — Meet Margaret (Frame 1)
 
-**Delivery:** Gentle introduction, then flat and quiet on the last sentence.
+**Delivery:** Gentle introduction; plain and quiet on the last two sentences.
 
-    Margaret is 68 and has Alzheimer's. Researchers have flagged 573 existing drugs that might help her. She can't get a single one.
+    Margaret is 68 and has Alzheimer's. Researchers have identified 573 existing drugs that might help her. Few have ever been tested for Alzheimer's, so her doctor has no evidence to recommend any of them. And if she takes one anyway, nobody records what happens.
 
-## Line 2 — Three locks (Frame 2)
+## Line 2 — Three reasons (Frame 2)
 
-**Delivery:** Matter-of-fact; a small pause before each problem.
+**Delivery:** Matter-of-fact; a small pause before each reason.
 
-    Federal right-to-try covers only the dying. From 2018 to 2024, just 21 drugs were used under it. Old drugs can't be patented, so nobody pays to test them. And almost no Alzheimer's patients are in any study, so nobody learns from what happens to them.
+    There are three reasons. Old drugs can't be patented, so no company pays to test them. Almost no Alzheimer's patients are in any study, so nobody learns from their treatment. And the federal Right to Try law lets drug makers charge only their costs, so they have no reason to take part: only 21 drugs have been made available in over six years.
 
-## Line 3 — The untested gap (Frame 3)
+## Line 3 — Proof: RECOVERY (Frame 3)
 
-**Delivery:** Building; land "a third of one percent" slowly.
+**Delivery:** The turn: lighter, then steady; land "a million lives" simply.
 
-    About 9,500 compounds already have a human safety record. Paired with a thousand diseases, that's 9.5 million possible treatments. We've tested about a third of one percent.
+    It doesn't have to be this way. In 2020, Britain built a clinical trial into ordinary hospital care. In under three months, it showed that dexamethasone, a cheap steroid used for decades, cut deaths among the sickest COVID patients by up to a third. It saved about a million lives.
 
-## Line 4 — The fix (Frame 4)
+## Line 4 — The idea (Frame 4)
 
-**Delivery:** The turn: lighter, hopeful.
+**Delivery:** Hopeful, unhurried.
 
-    The fix is care-integrated clinical trials: treatment through your own doctor, and every result published. Here's Margaret's year.
+    Care-integrated clinical trials would do the same for every disease, in everyday care. Here's Margaret's year.
 
 ## Line 5 — Compare options (Frame 5)
 
@@ -42,38 +46,26 @@
 
     An independent board has already screened every option.
 
-## Line 7 — Doctor and consent (Frame 7)
+## Line 7 — Doctor, consent and cost (Frame 7)
 
 **Delivery:** Plain, reassuring.
 
-    Her own doctor recommends one over a video visit. She doesn't have to be dying or fail approved drugs first. She signs a plain-language consent: the risks, the unknowns, who pays, and that it's experimental.
+    Her own doctor recommends one over a video visit, and she signs a plain-language consent: the risks, the unknowns, who pays, and that it's experimental. A charity helps her pay, and no insurer or state program has to.
 
-## Line 8 — Payment (Frame 8)
-
-**Delivery:** Brisk.
-
-    Clinics can charge a fair price, so they actually offer it. A charity helps Margaret pay. No insurer has to.
-
-## Line 9 — Treatment and safety (Frame 9)
+## Line 8 — Treatment and safety (Frame 8)
 
 **Delivery:** Steady; serious on the safety sentence.
 
     Her first dose is in week two, at a clinic near home. Memory tests and quick phone check-ins track how she's doing. Any serious side effect reaches the board within days, and it can pause new patients.
 
-## Line 10 — Results and the loop (Frame 10)
+## Line 9 — Results and the loop (Frame 9)
 
 **Delivery:** Firm on "Nothing is hidden"; warm on the last sentence.
 
     At six months her outcome is recorded, good, bad or no change, then de-identified and published. Nothing is hidden. Pooled with every other clinic, it updates the label. The next patient starts with better data than Margaret had.
 
-## Line 11 — Scale (Frame 11)
-
-**Delivery:** Plain and steady; land "36" clearly.
-
-    Scale that up. If just 2% of willing patients joined, our model says every disease without a treatment could get its first one in about 36 years instead of 443, at roughly $9.50 per year of healthy life.
-
-## Line 12 — Close (Frame 12)
+## Line 10 — Close (Frame 10)
 
 **Delivery:** Calm, resolved.
 
-    Any patient can get treatment. Clinics can afford to offer it. Every result is published. Margaret didn't have to be dying to get treatment, and the next patient learns from her.
+    Any patient can get treatment through their own doctor. Clinics can afford to offer it. Every result is published, and the next patient learns from Margaret. Learn more at acceleratedmedicine.org.
