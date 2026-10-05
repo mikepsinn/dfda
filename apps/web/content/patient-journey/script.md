@@ -130,8 +130,7 @@ glasses, purple top), her name in large type, and the body text with "573 existi
 ever been tested" in bold. Right, two stacked cards: a white "Today" card with a lock icon, and a
 lavender "With care-integrated trials" card.
 
-**Speaker notes:** Margaret is a composite, made up to make the journey concrete, but her situation
-is common: a progressive disease, approved drugs that did not help, and many promising generic
+**Speaker notes:** Margaret's situation is common: a progressive disease, approved drugs that did not help, and many promising generic
 drugs that nobody sponsors. A ten-year review (Frontiers in Pharmacology, 2023) found 573 existing,
 prescribable drugs proposed for Alzheimer's; few have been tested in trials. Expect the objection
 that her doctor can already prescribe approved drugs off-label. That is true, but without trial
