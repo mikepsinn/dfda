@@ -7,7 +7,7 @@ export const donateUrl = "https://acceleratedmedicine.org/donate"
 export const instituteEmail = "hello@acceleratedmedicine.org"
 
 const sections = [
-  { href: "#how-it-works", label: "How it would work" },
+  { href: "#how-it-works", label: "Your doctor's visit" },
   { href: "#benefits", label: "Benefits" },
   { href: "#partners", label: "Partners" },
 ]

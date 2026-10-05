@@ -34,7 +34,8 @@ export function InstituteHero() {
               <span className="text-primary">most promising treatments</span>
             </h1>
             <p className="max-w-[600px] text-muted-foreground md:text-xl">
-              This is how it would work for patients if we had a global Open Treatment Evidence Network.
+              This is how your doctor&apos;s visit should actually work, with a global Open Treatment Evidence
+              Network.
             </p>
             <ul className="space-y-4">
               {highlights.map(highlight => (
@@ -49,7 +50,7 @@ export function InstituteHero() {
                 <a href="#partner-form">Partner with us <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" /></a>
               </Button>
               <Button asChild size="lg" variant="outline" className="w-full gap-1 text-base sm:w-auto">
-                <a href="#how-it-works">See how it would work <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" /></a>
+                <a href="#how-it-works">See how it should actually work <ArrowRight aria-hidden="true" className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -142,7 +143,7 @@ export function HowItWouldWorkSection() {
     <section id="how-it-works" className="w-full scroll-mt-16 py-12 md:py-24 lg:py-32">
       {/* The page container already pads phones; the wide mock-ups need that width. */}
       <div className="container px-0 sm:px-4 md:px-6">
-        <SectionHeading title="How It Would Work">
+        <SectionHeading title="How Your Doctor's Visit Should Actually Work">
           Patients would report outcomes, clinicians would see what has worked for patients like theirs, and
           research partners would run trials on the same network.
         </SectionHeading>
