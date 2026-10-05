@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/HeroSection";
 import { ComparativeEffectivenessSection } from "@/components/ComparativeEffectivenessSection";
+import { ExplainerVideoSection } from "@/components/ExplainerVideoSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { KeyBenefitsSection } from "@/components/KeyBenefitsSection";
 import { OutcomeLabelsSection } from "@/components/OutcomeLabelsSection";
@@ -17,6 +18,7 @@ export default async function Home() {
   return (
     <>
       <HeroSection />
+      <ExplainerVideoSection />
       <ComparativeEffectivenessSection preview={rankingsPreview} conditionIndex={conditionIndex} />
       <OutcomeLabelsSection example={outcomeLabelExample} />
       <HowItWorksSection />
