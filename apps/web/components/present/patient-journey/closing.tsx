@@ -56,7 +56,7 @@ export function CloseSlide({ s }: Props) {
 }
 
 const closeText: Record<string, string> = {
-  "Any patient": "a screened treatment, or join a trial, through their own doctor.",
+  "Any patient": "the most promising treatments through their own doctor.",
   "Clinics can charge a fair price,": "so they offer treatments nobody else will fund.",
   "Every result is published,": "producing treatment rankings and outcome labels.",
 };
