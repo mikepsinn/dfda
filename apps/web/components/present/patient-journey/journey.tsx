@@ -33,19 +33,13 @@ function Tag({ children }: { children: string }) {
 const exploreFeatures = [
   { icon: LineChart, title: "Rankings and outcome labels", text: "Compare benefits, side effects and costs." },
   { icon: Search, title: "Public directory", text: "Every participating clinic, with location and status." },
-  { icon: ShieldCheck, title: "Pre-screened", text: "An independent board approves every treatment first." },
 ];
 
 export function ExploreSlide({ s, condition }: Props & { condition: DemoCondition }) {
   const ranked = rankTreatments(condition.treatments, "effectiveness");
   return (
     <SlideFrame s={s}>
-      <div className="flex items-center gap-8">
-        <Tag>Prototype · preliminary estimates, not medical advice</Tag>
-        <p className="text-[24px] text-muted-foreground">
-          {condition.name}: the top 3 of {ranked.length} treatments by estimated effectiveness
-        </p>
-      </div>
+      <Tag>Prototype</Tag>
       <ol className="mt-5 grid grid-cols-3 gap-6 [zoom:1.5]">
         {ranked.slice(0, 3).map((treatment, index) => (
           <li key={treatment.slug} className="min-w-0">
@@ -53,7 +47,7 @@ export function ExploreSlide({ s, condition }: Props & { condition: DemoConditio
           </li>
         ))}
       </ol>
-      <ul className="mt-8 grid grid-cols-3 gap-10">
+      <ul className="mt-8 grid grid-cols-2 gap-10">
         {exploreFeatures.map(feature => (
           <li key={feature.title} className="flex gap-6">
             <IconBadge icon={feature.icon} size={64} />
@@ -92,7 +86,6 @@ export function LabelSlide({ s, treatment }: Props & { treatment: TreatmentEstim
             <OutcomeLabel title="" data={[sideEffects]} showBars={false} className="max-w-none border-0 p-0" />
           </div>
         </Card>
-        <p className="mt-2 text-sm text-muted-foreground">Lecanemab's label in the prototype, from its FDA label and published trial.</p>
       </div>
       <Eyebrow className="mt-5">Where the evidence comes from</Eyebrow>
       <ul className="mt-4 grid grid-cols-3 gap-8">
