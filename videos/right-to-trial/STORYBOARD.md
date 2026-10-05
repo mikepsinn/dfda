@@ -1,6 +1,6 @@
 ---
 format: 1920x1080
-duration: 143s
+duration: 130s
 message: "Care-integrated clinical trials let any patient get promising treatments through their own doctor, and every result is published so the next patient chooses better."
 arc: story-explainer with how-to
 audience: General public, patients and families, policymakers and funders
@@ -23,7 +23,7 @@ music: none
 
 - scene: Margaret's portrait settles in; a counter runs to 573 candidate drugs; the field greys out, leaving a few, and two lines state the problem
 - voiceover: "Margaret is 68 and has Alzheimer's. Researchers have identified 573 existing drugs that might help her. Few have ever been tested for Alzheimer's, so her doctor has no evidence to recommend any of them. And if she takes one anyway, nobody records what happens."
-- duration: 18.985s
+- duration: 15.987s
 - transition_in: cut
 - status: animated
 - src: compositions/frames/01-meet-margaret.html
@@ -40,7 +40,7 @@ Beats: portrait, then "Margaret, 68" on "68"; the "Alzheimer's disease" tag on "
 
 - scene: Three cards build left to right, one per reason: a struck-through "Patent" · 99.8% · 21
 - voiceover: "There are three reasons. Old drugs can't be patented, so no company pays to test them. Almost no Alzheimer's patients are in any study, so nobody learns from their treatment. And the federal Right to Try law lets drug makers charge only their costs, so they have no reason to take part: only 21 drugs have been made available in over six years."
-- duration: 23.42s
+- duration: 19.931s
 - transition_in: crossfade
 - status: animated
 - src: compositions/frames/02-three-locks.html
@@ -57,7 +57,7 @@ Beats: heading on "three reasons"; eyebrow "Why she's stuck" and the heading "Th
 
 - scene: A trial inside ordinary hospital care: 89 days to an answer, a cheap steroid, deaths cut by up to a third, about a million lives saved
 - voiceover: "It doesn't have to be this way. In 2020, Britain built a clinical trial into ordinary hospital care. In under three months, it showed that dexamethasone, a cheap steroid used for decades, cut deaths among the sickest COVID patients by up to a third. It saved about a million lives."
-- duration: 19.736s
+- duration: 17.816s
 - transition_in: push-slide LEFT
 - status: animated
 - src: compositions/frames/03-recovery.html
@@ -74,7 +74,7 @@ Beats: eyebrow "PROOF PRAGMATIC TRIALS WORK" and the headline "A trial built int
 
 - scene: Dark breather: the title, then the six-step patient path draws on
 - voiceover: "Care-integrated clinical trials would do the same for every disease, in everyday care. Here's Margaret's year."
-- duration: 7.922s
+- duration: 6.87s
 - transition_in: blur-crossfade
 - status: animated
 - src: compositions/frames/04-the-fix.html
@@ -148,7 +148,7 @@ Scene 3 (after "every option"): right after the line ends (3.9–4.7s) the pill 
 
 - scene: A video visit with her doctor, a plain-language consent form, then a charity helping her pay
 - voiceover: "Her own doctor recommends one over a video visit, and she signs a plain-language consent: the risks, the unknowns, who pays, and that it's experimental. A charity helps her pay, and no insurer or state program has to."
-- duration: 15.169s
+- duration: 14.341s
 - transition_in: push-slide LEFT
 - status: animated
 - src: compositions/frames/07-doctor-consent.html
@@ -223,7 +223,7 @@ Scene 5 (11.1–14.6s): on "The next patient" (11.26s) an orange dashed arrow dr
 
 - scene: The three changes, the next patient, and the end card
 - voiceover: "Any patient can get treatment through their own doctor. Clinics can afford to offer it. Every result is published, and the next patient learns from Margaret. Learn more at acceleratedmedicine.org."
-- duration: 13.68s
+- duration: 11.546s
 - transition_in: blur-crossfade
 - status: animated
 - src: compositions/frames/12-close.html

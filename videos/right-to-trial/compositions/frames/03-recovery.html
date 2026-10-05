@@ -441,13 +441,13 @@
     data-width="1920"
     data-height="1080"
     data-start="0"
-    data-duration="20.336"
+    data-duration="18.416"
   >
     <div
       id="03-recovery-bg"
       class="clip"
       data-start="0"
-      data-duration="20.336"
+      data-duration="18.416"
       data-track-index="0"
     ></div>
 
@@ -808,6 +808,34 @@
       tl.set({}, {}, END);
 
       window.__timelines["03-recovery"] = tl;
+    })();
+  </script>
+
+  <script>
+    // retime-to-new-voice: drive this scene's original timeline through a map from the
+    // new narration's time to the old narration's time, anchored on matching spoken cues.
+    (function () {
+      var ID = "03-recovery";
+      var inner = window.__timelines[ID];
+      var MAP = [[0.000,0.000],[2.439,2.005],[3.488,3.413],[7.270,7.030],[8.714,8.267],[10.533,10.102],[12.693,12.235],[16.732,15.990],[18.601,17.765]]; // [old seconds, new seconds]
+      var NEW_DURATION = 17.816;
+      function toOld(t) {
+        for (var i = 1; i < MAP.length; i++) {
+          if (t <= MAP[i][1]) {
+            var a = MAP[i - 1], b = MAP[i];
+            return a[0] + (t - a[1]) * (b[0] - a[0]) / (b[1] - a[1]);
+          }
+        }
+        var last = MAP[MAP.length - 1];
+        return last[0] + (t - last[1]); // after the last cue, real time (holds stay holds)
+      }
+      var OLD_END = toOld(NEW_DURATION);
+      var outer = gsap.timeline({ paused: true });
+      outer.fromTo(inner, { time: 0 }, {
+        time: OLD_END, duration: NEW_DURATION,
+        ease: function (p) { return toOld(p * NEW_DURATION) / OLD_END; },
+      }, 0);
+      window.__timelines[ID] = outer;
     })();
   </script>
 </template>

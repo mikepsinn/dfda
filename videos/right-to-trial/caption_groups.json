@@ -1,3533 +1,3650 @@
 {
-  "total_duration_s": 142.554,
+  "total_duration_s": 130.133,
   "width": 1920,
   "height": 1080,
   "groups": [
     {
       "id": "caption-group-0",
       "frame": 1,
-      "start": 0.309,
-      "end": 1.664,
+      "start": 0.299,
+      "end": 1.485,
       "text": "Margaret is 68",
       "words": [
         {
           "id": "caption-word-0-0",
           "text": "Margaret",
-          "start": 0.309,
-          "end": 0.738
+          "start": 0.299,
+          "end": 0.683
         },
         {
           "id": "caption-word-0-1",
           "text": "is",
-          "start": 0.828,
-          "end": 0.948
+          "start": 0.725,
+          "end": 0.811
         },
         {
           "id": "caption-word-0-2",
           "text": "68",
-          "start": 1.038,
-          "end": 1.574
+          "start": 0.853,
+          "end": 1.365
         }
       ]
     },
     {
       "id": "caption-group-1",
       "frame": 1,
-      "start": 1.664,
-      "end": 2.821,
+      "start": 1.493,
+      "end": 2.723,
       "text": "and has Alzheimer's.",
       "words": [
         {
           "id": "caption-word-1-0",
           "text": "and",
-          "start": 1.664,
-          "end": 1.825
+          "start": 1.493,
+          "end": 1.536
         },
         {
           "id": "caption-word-1-1",
           "text": "has",
-          "start": 1.915,
-          "end": 2.075
+          "start": 1.579,
+          "end": 1.664
         },
         {
           "id": "caption-word-1-2",
           "text": "Alzheimer's.",
-          "start": 2.166,
-          "end": 2.701
+          "start": 1.707,
+          "end": 2.603
         }
       ]
     },
     {
       "id": "caption-group-2",
       "frame": 1,
-      "start": 3.018,
-      "end": 4.627,
+      "start": 2.859,
+      "end": 4.003,
       "text": "Researchers have identified",
       "words": [
         {
           "id": "caption-word-2-0",
           "text": "Researchers",
-          "start": 3.018,
-          "end": 3.607
+          "start": 2.859,
+          "end": 3.371
         },
         {
           "id": "caption-word-2-1",
           "text": "have",
-          "start": 3.697,
-          "end": 3.911
+          "start": 3.456,
+          "end": 3.499
         },
         {
           "id": "caption-word-2-2",
           "text": "identified",
-          "start": 4.002,
-          "end": 4.537
+          "start": 3.584,
+          "end": 3.883
         }
       ]
     },
     {
       "id": "caption-group-3",
       "frame": 1,
-      "start": 4.627,
-      "end": 7.129,
+      "start": 4.181,
+      "end": 6.443,
       "text": "573 existing drugs that",
       "words": [
         {
           "id": "caption-word-3-0",
           "text": "573",
-          "start": 4.627,
-          "end": 5.858
+          "start": 4.181,
+          "end": 5.419
         },
         {
           "id": "caption-word-3-1",
           "text": "existing",
-          "start": 5.948,
-          "end": 6.377
+          "start": 5.547,
+          "end": 5.888
         },
         {
           "id": "caption-word-3-2",
           "text": "drugs",
-          "start": 6.467,
-          "end": 6.735
+          "start": 5.973,
+          "end": 6.272
         },
         {
           "id": "caption-word-3-3",
           "text": "that",
-          "start": 6.825,
-          "end": 7.039
+          "start": 6.315,
+          "end": 6.4
         }
       ]
     },
     {
       "id": "caption-group-4",
       "frame": 1,
-      "start": 7.129,
-      "end": 8.072,
-      "text": "might help her.",
+      "start": 6.443,
+      "end": 6.869,
+      "text": "might help",
       "words": [
         {
           "id": "caption-word-4-0",
           "text": "might",
-          "start": 7.129,
-          "end": 7.397
+          "start": 6.443,
+          "end": 6.571
         },
         {
           "id": "caption-word-4-1",
           "text": "help",
-          "start": 7.487,
-          "end": 7.702
-        },
-        {
-          "id": "caption-word-4-2",
-          "text": "her.",
-          "start": 7.792,
-          "end": 7.952
+          "start": 6.613,
+          "end": 6.784
         }
       ]
     },
     {
       "id": "caption-group-5",
       "frame": 1,
-      "start": 8.269,
-      "end": 8.825,
-      "text": "Few have",
+      "start": 6.869,
+      "end": 7.285,
+      "text": "her.",
       "words": [
         {
           "id": "caption-word-5-0",
-          "text": "Few",
-          "start": 8.269,
-          "end": 8.43
-        },
-        {
-          "id": "caption-word-5-1",
-          "text": "have",
-          "start": 8.52,
-          "end": 8.734
+          "text": "her.",
+          "start": 6.869,
+          "end": 7.165
         }
       ]
     },
     {
       "id": "caption-group-6",
       "frame": 1,
-      "start": 8.825,
-      "end": 9.845,
-      "text": "ever been tested",
+      "start": 7.332,
+      "end": 7.759,
+      "text": "Few have",
       "words": [
         {
           "id": "caption-word-6-0",
-          "text": "ever",
-          "start": 8.825,
-          "end": 9.039
+          "text": "Few",
+          "start": 7.332,
+          "end": 7.588
         },
         {
           "id": "caption-word-6-1",
-          "text": "been",
-          "start": 9.129,
-          "end": 9.343
-        },
-        {
-          "id": "caption-word-6-2",
-          "text": "tested",
-          "start": 9.434,
-          "end": 9.755
+          "text": "have",
+          "start": 7.631,
+          "end": 7.716
         }
       ]
     },
     {
       "id": "caption-group-7",
       "frame": 1,
-      "start": 9.845,
-      "end": 10.751,
-      "text": "for Alzheimer's,",
+      "start": 7.759,
+      "end": 8.143,
+      "text": "ever been",
       "words": [
         {
           "id": "caption-word-7-0",
-          "text": "for",
-          "start": 9.845,
-          "end": 10.006
+          "text": "ever",
+          "start": 7.759,
+          "end": 7.887
         },
         {
           "id": "caption-word-7-1",
-          "text": "Alzheimer's,",
-          "start": 10.096,
-          "end": 10.631
+          "text": "been",
+          "start": 7.972,
+          "end": 8.1
         }
       ]
     },
     {
       "id": "caption-group-8",
       "frame": 1,
-      "start": 10.828,
-      "end": 11.289,
-      "text": "so her",
+      "start": 8.143,
+      "end": 9.522,
+      "text": "tested for Alzheimer's,",
       "words": [
         {
           "id": "caption-word-8-0",
-          "text": "so",
-          "start": 10.828,
-          "end": 10.948
+          "text": "tested",
+          "start": 8.143,
+          "end": 8.484
         },
         {
           "id": "caption-word-8-1",
-          "text": "her",
-          "start": 11.038,
-          "end": 11.199
+          "text": "for",
+          "start": 8.527,
+          "end": 8.612
+        },
+        {
+          "id": "caption-word-8-2",
+          "text": "Alzheimer's,",
+          "start": 8.655,
+          "end": 9.402
         }
       ]
     },
     {
       "id": "caption-group-9",
       "frame": 1,
-      "start": 11.289,
-      "end": 11.952,
-      "text": "doctor has",
+      "start": 9.594,
+      "end": 9.892,
+      "text": "so her",
       "words": [
         {
           "id": "caption-word-9-0",
-          "text": "doctor",
-          "start": 11.289,
-          "end": 11.61
+          "text": "so",
+          "start": 9.594,
+          "end": 9.722
         },
         {
           "id": "caption-word-9-1",
-          "text": "has",
-          "start": 11.701,
-          "end": 11.861
+          "text": "her",
+          "start": 9.764,
+          "end": 9.85
         }
       ]
     },
     {
       "id": "caption-group-10",
       "frame": 1,
-      "start": 11.952,
-      "end": 12.681,
-      "text": "no evidence",
+      "start": 9.892,
+      "end": 10.362,
+      "text": "doctor has",
       "words": [
         {
           "id": "caption-word-10-0",
-          "text": "no",
-          "start": 11.952,
-          "end": 12.072
+          "text": "doctor",
+          "start": 9.892,
+          "end": 10.02
         },
         {
           "id": "caption-word-10-1",
-          "text": "evidence",
-          "start": 12.162,
-          "end": 12.59
+          "text": "has",
+          "start": 10.191,
+          "end": 10.276
         }
       ]
     },
     {
       "id": "caption-group-11",
       "frame": 1,
-      "start": 12.681,
-      "end": 13.714,
-      "text": "to recommend any",
+      "start": 10.362,
+      "end": 10.951,
+      "text": "no evidence",
       "words": [
         {
           "id": "caption-word-11-0",
-          "text": "to",
-          "start": 12.681,
-          "end": 12.801
+          "text": "no",
+          "start": 10.362,
+          "end": 10.575
         },
         {
           "id": "caption-word-11-1",
-          "text": "recommend",
-          "start": 12.891,
-          "end": 13.373
-        },
-        {
-          "id": "caption-word-11-2",
-          "text": "any",
-          "start": 13.463,
-          "end": 13.624
+          "text": "evidence",
+          "start": 10.66,
+          "end": 10.831
         }
       ]
     },
     {
       "id": "caption-group-12",
       "frame": 1,
-      "start": 13.714,
-      "end": 14.259,
-      "text": "of them.",
+      "start": 11.087,
+      "end": 11.506,
+      "text": "to recommend",
       "words": [
         {
           "id": "caption-word-12-0",
-          "text": "of",
-          "start": 13.714,
-          "end": 13.834
+          "text": "to",
+          "start": 11.087,
+          "end": 11.215
         },
         {
           "id": "caption-word-12-1",
-          "text": "them.",
-          "start": 13.925,
-          "end": 14.139
+          "text": "recommend",
+          "start": 11.258,
+          "end": 11.386
         }
       ]
     },
     {
       "id": "caption-group-13",
       "frame": 1,
-      "start": 14.456,
-      "end": 14.917,
-      "text": "And if",
+      "start": 11.642,
+      "end": 11.983,
+      "text": "any of",
       "words": [
         {
           "id": "caption-word-13-0",
-          "text": "And",
-          "start": 14.456,
-          "end": 14.616
+          "text": "any",
+          "start": 11.642,
+          "end": 11.77
         },
         {
           "id": "caption-word-13-1",
-          "text": "if",
-          "start": 14.706,
-          "end": 14.826
+          "text": "of",
+          "start": 11.898,
+          "end": 11.94
         }
       ]
     },
     {
       "id": "caption-group-14",
       "frame": 1,
-      "start": 14.917,
-      "end": 15.526,
-      "text": "she takes",
+      "start": 11.983,
+      "end": 12.423,
+      "text": "them.",
       "words": [
         {
           "id": "caption-word-14-0",
-          "text": "she",
-          "start": 14.917,
-          "end": 15.077
-        },
-        {
-          "id": "caption-word-14-1",
-          "text": "takes",
-          "start": 15.168,
-          "end": 15.435
+          "text": "them.",
+          "start": 11.983,
+          "end": 12.303
         }
       ]
     },
     {
       "id": "caption-group-15",
       "frame": 1,
-      "start": 15.526,
-      "end": 16.218,
-      "text": "one anyway,",
+      "start": 12.495,
+      "end": 12.922,
+      "text": "And if",
       "words": [
         {
           "id": "caption-word-15-0",
-          "text": "one",
-          "start": 15.526,
-          "end": 15.686
+          "text": "And",
+          "start": 12.495,
+          "end": 12.794
         },
         {
           "id": "caption-word-15-1",
-          "text": "anyway,",
-          "start": 15.777,
-          "end": 16.098
+          "text": "if",
+          "start": 12.836,
+          "end": 12.879
         }
       ]
     },
     {
       "id": "caption-group-16",
       "frame": 1,
-      "start": 16.294,
-      "end": 17.475,
-      "text": "nobody records what",
+      "start": 12.922,
+      "end": 13.298,
+      "text": "she takes",
       "words": [
         {
           "id": "caption-word-16-0",
-          "text": "nobody",
-          "start": 16.294,
-          "end": 16.616
+          "text": "she",
+          "start": 12.922,
+          "end": 13.007
         },
         {
           "id": "caption-word-16-1",
-          "text": "records",
-          "start": 16.706,
-          "end": 17.081
-        },
-        {
-          "id": "caption-word-16-2",
-          "text": "what",
-          "start": 17.171,
-          "end": 17.385
+          "text": "takes",
+          "start": 13.05,
+          "end": 13.178
         }
       ]
     },
     {
       "id": "caption-group-17",
       "frame": 1,
-      "start": 17.475,
-      "end": 17.97,
-      "text": "happens.",
+      "start": 13.306,
+      "end": 13.98,
+      "text": "one anyway,",
       "words": [
         {
           "id": "caption-word-17-0",
-          "text": "happens.",
-          "start": 17.475,
-          "end": 17.85
+          "text": "one",
+          "start": 13.306,
+          "end": 13.391
+        },
+        {
+          "id": "caption-word-17-1",
+          "text": "anyway,",
+          "start": 13.434,
+          "end": 13.86
         }
       ]
     },
     {
       "id": "caption-group-18",
-      "frame": 2,
-      "start": 19.294,
-      "end": 19.903,
-      "text": "There are",
+      "frame": 1,
+      "start": 14.116,
+      "end": 14.927,
+      "text": "nobody records",
       "words": [
         {
           "id": "caption-word-18-0",
-          "text": "There",
-          "start": 19.294,
-          "end": 19.562
+          "text": "nobody",
+          "start": 14.116,
+          "end": 14.372
         },
         {
           "id": "caption-word-18-1",
-          "text": "are",
-          "start": 19.652,
-          "end": 19.813
+          "text": "records",
+          "start": 14.543,
+          "end": 14.842
         }
       ]
     },
     {
       "id": "caption-group-19",
-      "frame": 2,
-      "start": 19.903,
-      "end": 20.756,
-      "text": "three reasons.",
+      "frame": 1,
+      "start": 14.927,
+      "end": 15.893,
+      "text": "what happens.",
       "words": [
         {
           "id": "caption-word-19-0",
-          "text": "three",
-          "start": 19.903,
-          "end": 20.171
+          "text": "what",
+          "start": 14.927,
+          "end": 15.055
         },
         {
           "id": "caption-word-19-1",
-          "text": "reasons.",
-          "start": 20.261,
-          "end": 20.636
+          "text": "happens.",
+          "start": 15.098,
+          "end": 15.773
         }
       ]
     },
     {
       "id": "caption-group-20",
       "frame": 2,
-      "start": 20.953,
-      "end": 21.562,
-      "text": "Old drugs",
+      "start": 16.286,
+      "end": 16.584,
+      "text": "There are",
       "words": [
         {
           "id": "caption-word-20-0",
-          "text": "Old",
-          "start": 20.953,
-          "end": 21.113
+          "text": "There",
+          "start": 16.286,
+          "end": 16.414
         },
         {
           "id": "caption-word-20-1",
-          "text": "drugs",
-          "start": 21.204,
-          "end": 21.471
+          "text": "are",
+          "start": 16.456,
+          "end": 16.542
         }
       ]
     },
     {
       "id": "caption-group-21",
       "frame": 2,
-      "start": 21.562,
-      "end": 22.625,
-      "text": "can't be patented,",
+      "start": 16.584,
+      "end": 17.579,
+      "text": "three reasons.",
       "words": [
         {
           "id": "caption-word-21-0",
-          "text": "can't",
-          "start": 21.562,
-          "end": 21.776
+          "text": "three",
+          "start": 16.584,
+          "end": 16.755
         },
         {
           "id": "caption-word-21-1",
-          "text": "be",
-          "start": 21.866,
-          "end": 21.986
-        },
-        {
-          "id": "caption-word-21-2",
-          "text": "patented,",
-          "start": 22.077,
-          "end": 22.505
+          "text": "reasons.",
+          "start": 16.84,
+          "end": 17.459
         }
       ]
     },
     {
       "id": "caption-group-22",
       "frame": 2,
-      "start": 22.701,
-      "end": 23.122,
-      "text": "so no",
+      "start": 17.907,
+      "end": 18.547,
+      "text": "Old drugs",
       "words": [
         {
           "id": "caption-word-22-0",
-          "text": "so",
-          "start": 22.701,
-          "end": 22.821
+          "text": "Old",
+          "start": 17.907,
+          "end": 18.12
         },
         {
           "id": "caption-word-22-1",
-          "text": "no",
-          "start": 22.912,
-          "end": 23.032
+          "text": "drugs",
+          "start": 18.163,
+          "end": 18.462
         }
       ]
     },
     {
       "id": "caption-group-23",
       "frame": 2,
-      "start": 23.122,
-      "end": 23.892,
-      "text": "company pays",
+      "start": 18.547,
+      "end": 19.584,
+      "text": "can't be patented,",
       "words": [
         {
           "id": "caption-word-23-0",
-          "text": "company",
-          "start": 23.122,
-          "end": 23.497
+          "text": "can't",
+          "start": 18.547,
+          "end": 18.718
         },
         {
           "id": "caption-word-23-1",
-          "text": "pays",
-          "start": 23.587,
-          "end": 23.801
+          "text": "be",
+          "start": 18.76,
+          "end": 18.846
+        },
+        {
+          "id": "caption-word-23-2",
+          "text": "patented,",
+          "start": 18.888,
+          "end": 19.464
         }
       ]
     },
     {
       "id": "caption-group-24",
       "frame": 2,
-      "start": 23.892,
-      "end": 24.741,
-      "text": "to test them.",
+      "start": 19.656,
+      "end": 19.998,
+      "text": "so no",
       "words": [
         {
           "id": "caption-word-24-0",
-          "text": "to",
-          "start": 23.892,
-          "end": 24.012
+          "text": "so",
+          "start": 19.656,
+          "end": 19.784
         },
         {
           "id": "caption-word-24-1",
-          "text": "test",
-          "start": 24.102,
-          "end": 24.316
-        },
-        {
-          "id": "caption-word-24-2",
-          "text": "them.",
-          "start": 24.407,
-          "end": 24.621
+          "text": "no",
+          "start": 19.827,
+          "end": 19.955
         }
       ]
     },
     {
       "id": "caption-group-25",
       "frame": 2,
-      "start": 24.938,
-      "end": 26.185,
-      "text": "Almost no Alzheimer's",
+      "start": 19.998,
+      "end": 20.638,
+      "text": "company pays",
       "words": [
         {
           "id": "caption-word-25-0",
-          "text": "Almost",
-          "start": 24.938,
-          "end": 25.259
+          "text": "company",
+          "start": 19.998,
+          "end": 20.254
         },
         {
           "id": "caption-word-25-1",
-          "text": "no",
-          "start": 25.349,
-          "end": 25.469
-        },
-        {
-          "id": "caption-word-25-2",
-          "text": "Alzheimer's",
-          "start": 25.559,
-          "end": 26.095
+          "text": "pays",
+          "start": 20.382,
+          "end": 20.552
         }
       ]
     },
     {
       "id": "caption-group-26",
       "frame": 2,
-      "start": 26.185,
-      "end": 26.955,
-      "text": "patients are",
+      "start": 20.638,
+      "end": 21.014,
+      "text": "to test",
       "words": [
         {
           "id": "caption-word-26-0",
-          "text": "patients",
-          "start": 26.185,
-          "end": 26.613
+          "text": "to",
+          "start": 20.638,
+          "end": 20.723
         },
         {
           "id": "caption-word-26-1",
-          "text": "are",
-          "start": 26.704,
-          "end": 26.864
+          "text": "test",
+          "start": 20.766,
+          "end": 20.894
         }
       ]
     },
     {
       "id": "caption-group-27",
       "frame": 2,
-      "start": 26.955,
-      "end": 27.416,
-      "text": "in any",
+      "start": 21.022,
+      "end": 21.44,
+      "text": "them.",
       "words": [
         {
           "id": "caption-word-27-0",
-          "text": "in",
-          "start": 26.955,
-          "end": 27.075
-        },
-        {
-          "id": "caption-word-27-1",
-          "text": "any",
-          "start": 27.165,
-          "end": 27.326
+          "text": "them.",
+          "start": 21.022,
+          "end": 21.32
         }
       ]
     },
     {
       "id": "caption-group-28",
       "frame": 2,
-      "start": 27.416,
-      "end": 27.803,
-      "text": "study,",
+      "start": 21.491,
+      "end": 22.984,
+      "text": "Almost no Alzheimer's",
       "words": [
         {
           "id": "caption-word-28-0",
-          "text": "study,",
-          "start": 27.416,
-          "end": 27.683
+          "text": "Almost",
+          "start": 21.491,
+          "end": 21.96
+        },
+        {
+          "id": "caption-word-28-1",
+          "text": "no",
+          "start": 22.131,
+          "end": 22.344
+        },
+        {
+          "id": "caption-word-28-2",
+          "text": "Alzheimer's",
+          "start": 22.387,
+          "end": 22.942
         }
       ]
     },
     {
       "id": "caption-group-29",
       "frame": 2,
-      "start": 27.88,
-      "end": 28.913,
-      "text": "so nobody learns",
+      "start": 22.984,
+      "end": 23.496,
+      "text": "patients are",
       "words": [
         {
           "id": "caption-word-29-0",
-          "text": "so",
-          "start": 27.88,
-          "end": 28
+          "text": "patients",
+          "start": 22.984,
+          "end": 23.283
         },
         {
           "id": "caption-word-29-1",
-          "text": "nobody",
-          "start": 28.09,
-          "end": 28.412
-        },
-        {
-          "id": "caption-word-29-2",
-          "text": "learns",
-          "start": 28.502,
-          "end": 28.823
+          "text": "are",
+          "start": 23.368,
+          "end": 23.454
         }
       ]
     },
     {
       "id": "caption-group-30",
       "frame": 2,
-      "start": 28.913,
-      "end": 30.178,
-      "text": "from their treatment.",
+      "start": 23.496,
+      "end": 23.744,
+      "text": "in any",
       "words": [
         {
           "id": "caption-word-30-0",
-          "text": "from",
-          "start": 28.913,
-          "end": 29.128
+          "text": "in",
+          "start": 23.496,
+          "end": 23.539
         },
         {
           "id": "caption-word-30-1",
-          "text": "their",
-          "start": 29.218,
-          "end": 29.486
-        },
-        {
-          "id": "caption-word-30-2",
-          "text": "treatment.",
-          "start": 29.576,
-          "end": 30.058
+          "text": "any",
+          "start": 23.582,
+          "end": 23.624
         }
       ]
     },
     {
       "id": "caption-group-31",
       "frame": 2,
-      "start": 30.375,
-      "end": 30.876,
-      "text": "And the",
+      "start": 23.752,
+      "end": 24.342,
+      "text": "study,",
       "words": [
         {
           "id": "caption-word-31-0",
-          "text": "And",
-          "start": 30.375,
-          "end": 30.535
-        },
-        {
-          "id": "caption-word-31-1",
-          "text": "the",
-          "start": 30.625,
-          "end": 30.786
+          "text": "study,",
+          "start": 23.752,
+          "end": 24.222
         }
       ]
     },
     {
       "id": "caption-group-32",
       "frame": 2,
-      "start": 30.876,
-      "end": 31.91,
-      "text": "federal Right to",
+      "start": 24.478,
+      "end": 24.982,
+      "text": "so nobody",
       "words": [
         {
           "id": "caption-word-32-0",
-          "text": "federal",
-          "start": 30.876,
-          "end": 31.251
+          "text": "so",
+          "start": 24.478,
+          "end": 24.606
         },
         {
           "id": "caption-word-32-1",
-          "text": "Right",
-          "start": 31.341,
-          "end": 31.609
-        },
-        {
-          "id": "caption-word-32-2",
-          "text": "to",
-          "start": 31.699,
-          "end": 31.819
+          "text": "nobody",
+          "start": 24.648,
+          "end": 24.862
         }
       ]
     },
     {
       "id": "caption-group-33",
       "frame": 2,
-      "start": 31.91,
-      "end": 32.412,
-      "text": "Try law",
+      "start": 25.032,
+      "end": 25.502,
+      "text": "learns from",
       "words": [
         {
           "id": "caption-word-33-0",
-          "text": "Try",
-          "start": 31.91,
-          "end": 32.07
+          "text": "learns",
+          "start": 25.032,
+          "end": 25.288
         },
         {
           "id": "caption-word-33-1",
-          "text": "law",
-          "start": 32.161,
-          "end": 32.321
+          "text": "from",
+          "start": 25.374,
+          "end": 25.459
         }
       ]
     },
     {
       "id": "caption-group-34",
       "frame": 2,
-      "start": 32.412,
-      "end": 33.432,
-      "text": "lets drug makers",
+      "start": 25.502,
+      "end": 26.4,
+      "text": "their treatment.",
       "words": [
         {
           "id": "caption-word-34-0",
-          "text": "lets",
-          "start": 32.412,
-          "end": 32.626
+          "text": "their",
+          "start": 25.502,
+          "end": 25.587
         },
         {
           "id": "caption-word-34-1",
-          "text": "drug",
-          "start": 32.716,
-          "end": 32.93
-        },
-        {
-          "id": "caption-word-34-2",
-          "text": "makers",
-          "start": 33.021,
-          "end": 33.342
+          "text": "treatment.",
+          "start": 25.63,
+          "end": 26.28
         }
       ]
     },
     {
       "id": "caption-group-35",
       "frame": 2,
-      "start": 33.432,
-      "end": 34.506,
-      "text": "charge only their",
+      "start": 26.589,
+      "end": 26.845,
+      "text": "And the",
       "words": [
         {
           "id": "caption-word-35-0",
-          "text": "charge",
-          "start": 33.432,
-          "end": 33.753
+          "text": "And",
+          "start": 26.589,
+          "end": 26.674
         },
         {
           "id": "caption-word-35-1",
-          "text": "only",
-          "start": 33.844,
-          "end": 34.058
-        },
-        {
-          "id": "caption-word-35-2",
-          "text": "their",
-          "start": 34.148,
-          "end": 34.416
+          "text": "the",
+          "start": 26.717,
+          "end": 26.802
         }
       ]
     },
     {
       "id": "caption-group-36",
       "frame": 2,
-      "start": 34.506,
-      "end": 34.894,
-      "text": "costs,",
+      "start": 26.845,
+      "end": 27.399,
+      "text": "federal Right",
       "words": [
         {
           "id": "caption-word-36-0",
-          "text": "costs,",
-          "start": 34.506,
-          "end": 34.774
+          "text": "federal",
+          "start": 26.845,
+          "end": 27.058
+        },
+        {
+          "id": "caption-word-36-1",
+          "text": "Right",
+          "start": 27.186,
+          "end": 27.357
         }
       ]
     },
     {
       "id": "caption-group-37",
       "frame": 2,
-      "start": 34.97,
-      "end": 35.485,
-      "text": "so they",
+      "start": 27.399,
+      "end": 27.826,
+      "text": "to Try",
       "words": [
         {
           "id": "caption-word-37-0",
-          "text": "so",
-          "start": 34.97,
-          "end": 35.09
+          "text": "to",
+          "start": 27.399,
+          "end": 27.485
         },
         {
           "id": "caption-word-37-1",
-          "text": "they",
-          "start": 35.181,
-          "end": 35.395
+          "text": "Try",
+          "start": 27.527,
+          "end": 27.741
         }
       ]
     },
     {
       "id": "caption-group-38",
       "frame": 2,
-      "start": 35.485,
-      "end": 36,
-      "text": "have no",
+      "start": 27.826,
+      "end": 28.288,
+      "text": "law lets",
       "words": [
         {
           "id": "caption-word-38-0",
-          "text": "have",
-          "start": 35.485,
-          "end": 35.699
+          "text": "law",
+          "start": 27.826,
+          "end": 27.997
         },
         {
           "id": "caption-word-38-1",
-          "text": "no",
-          "start": 35.79,
-          "end": 35.91
+          "text": "lets",
+          "start": 28.082,
+          "end": 28.168
         }
       ]
     },
     {
       "id": "caption-group-39",
       "frame": 2,
-      "start": 36,
-      "end": 36.622,
-      "text": "reason to",
+      "start": 28.296,
+      "end": 28.935,
+      "text": "drug makers",
       "words": [
         {
           "id": "caption-word-39-0",
-          "text": "reason",
-          "start": 36,
-          "end": 36.321
+          "text": "drug",
+          "start": 28.296,
+          "end": 28.466
         },
         {
           "id": "caption-word-39-1",
-          "text": "to",
-          "start": 36.412,
-          "end": 36.532
+          "text": "makers",
+          "start": 28.552,
+          "end": 28.85
         }
       ]
     },
     {
       "id": "caption-group-40",
       "frame": 2,
-      "start": 36.622,
-      "end": 37.261,
-      "text": "take part:",
+      "start": 28.935,
+      "end": 29.525,
+      "text": "charge only",
       "words": [
         {
           "id": "caption-word-40-0",
-          "text": "take",
-          "start": 36.622,
-          "end": 36.836
+          "text": "charge",
+          "start": 28.935,
+          "end": 29.149
         },
         {
           "id": "caption-word-40-1",
-          "text": "part:",
-          "start": 36.926,
-          "end": 37.141
+          "text": "only",
+          "start": 29.277,
+          "end": 29.405
         }
       ]
     },
     {
       "id": "caption-group-41",
       "frame": 2,
-      "start": 37.517,
-      "end": 38.752,
-      "text": "only 21 drugs",
+      "start": 29.533,
+      "end": 30.485,
+      "text": "their costs,",
       "words": [
         {
           "id": "caption-word-41-0",
-          "text": "only",
-          "start": 37.517,
-          "end": 37.731
+          "text": "their",
+          "start": 29.533,
+          "end": 29.661
         },
         {
           "id": "caption-word-41-1",
-          "text": "21",
-          "start": 37.822,
-          "end": 38.303
-        },
-        {
-          "id": "caption-word-41-2",
-          "text": "drugs",
-          "start": 38.394,
-          "end": 38.661
+          "text": "costs,",
+          "start": 29.746,
+          "end": 30.365
         }
       ]
     },
     {
       "id": "caption-group-42",
       "frame": 2,
-      "start": 38.752,
-      "end": 39.361,
-      "text": "have been",
+      "start": 30.6,
+      "end": 30.855,
+      "text": "so they",
       "words": [
         {
           "id": "caption-word-42-0",
-          "text": "have",
-          "start": 38.752,
-          "end": 38.966
+          "text": "so",
+          "start": 30.6,
+          "end": 30.728
         },
         {
           "id": "caption-word-42-1",
-          "text": "been",
-          "start": 39.056,
-          "end": 39.27
+          "text": "they",
+          "start": 30.77,
+          "end": 30.813
         }
       ]
     },
     {
       "id": "caption-group-43",
       "frame": 2,
-      "start": 39.361,
-      "end": 40.448,
-      "text": "made available in",
+      "start": 30.855,
+      "end": 31.154,
+      "text": "have no",
       "words": [
         {
           "id": "caption-word-43-0",
-          "text": "made",
-          "start": 39.361,
-          "end": 39.575
+          "text": "have",
+          "start": 30.855,
+          "end": 30.898
         },
         {
           "id": "caption-word-43-1",
-          "text": "available",
-          "start": 39.665,
-          "end": 40.147
-        },
-        {
-          "id": "caption-word-43-2",
-          "text": "in",
-          "start": 40.237,
-          "end": 40.357
+          "text": "no",
+          "start": 30.941,
+          "end": 31.111
         }
       ]
     },
     {
       "id": "caption-group-44",
       "frame": 2,
-      "start": 40.448,
-      "end": 41.391,
-      "text": "over six years.",
+      "start": 31.154,
+      "end": 31.538,
+      "text": "reason to",
       "words": [
         {
           "id": "caption-word-44-0",
-          "text": "over",
-          "start": 40.448,
-          "end": 40.662
+          "text": "reason",
+          "start": 31.154,
+          "end": 31.282
         },
         {
           "id": "caption-word-44-1",
-          "text": "six",
-          "start": 40.752,
-          "end": 40.913
-        },
-        {
-          "id": "caption-word-44-2",
-          "text": "years.",
-          "start": 41.003,
-          "end": 41.271
+          "text": "to",
+          "start": 31.41,
+          "end": 31.495
         }
       ]
     },
     {
       "id": "caption-group-45",
-      "frame": 3,
-      "start": 42.714,
-      "end": 43.336,
-      "text": "It doesn't",
+      "frame": 2,
+      "start": 31.538,
+      "end": 32.191,
+      "text": "take part:",
       "words": [
         {
           "id": "caption-word-45-0",
-          "text": "It",
-          "start": 42.714,
-          "end": 42.834
+          "text": "take",
+          "start": 31.538,
+          "end": 31.666
         },
         {
           "id": "caption-word-45-1",
-          "text": "doesn't",
-          "start": 42.925,
-          "end": 43.246
+          "text": "part:",
+          "start": 31.751,
+          "end": 32.071
         }
       ]
     },
     {
       "id": "caption-group-46",
-      "frame": 3,
-      "start": 43.336,
-      "end": 43.851,
-      "text": "have to",
+      "frame": 2,
+      "start": 32.221,
+      "end": 33.799,
+      "text": "only 21 drugs have",
       "words": [
         {
           "id": "caption-word-46-0",
-          "text": "have",
-          "start": 43.336,
-          "end": 43.55
+          "text": "only",
+          "start": 32.221,
+          "end": 32.69
         },
         {
           "id": "caption-word-46-1",
-          "text": "to",
-          "start": 43.641,
-          "end": 43.761
+          "text": "21",
+          "start": 32.818,
+          "end": 33.33
+        },
+        {
+          "id": "caption-word-46-2",
+          "text": "drugs",
+          "start": 33.373,
+          "end": 33.671
+        },
+        {
+          "id": "caption-word-46-3",
+          "text": "have",
+          "start": 33.714,
+          "end": 33.757
         }
       ]
     },
     {
       "id": "caption-group-47",
-      "frame": 3,
-      "start": 43.851,
-      "end": 44.366,
-      "text": "be this",
+      "frame": 2,
+      "start": 33.799,
+      "end": 34.184,
+      "text": "been made",
       "words": [
         {
           "id": "caption-word-47-0",
-          "text": "be",
-          "start": 43.851,
-          "end": 43.971
+          "text": "been",
+          "start": 33.799,
+          "end": 33.885
         },
         {
           "id": "caption-word-47-1",
-          "text": "this",
-          "start": 44.062,
-          "end": 44.276
+          "text": "made",
+          "start": 33.928,
+          "end": 34.098
         }
       ]
     },
     {
       "id": "caption-group-48",
-      "frame": 3,
-      "start": 44.366,
-      "end": 44.647,
-      "text": "way.",
+      "frame": 2,
+      "start": 34.184,
+      "end": 34.474,
+      "text": "available",
       "words": [
         {
           "id": "caption-word-48-0",
-          "text": "way.",
-          "start": 44.366,
-          "end": 44.527
+          "text": "available",
+          "start": 34.184,
+          "end": 34.354
         }
       ]
     },
     {
       "id": "caption-group-49",
-      "frame": 3,
-      "start": 44.844,
-      "end": 45.816,
-      "text": "In 2020,",
+      "frame": 2,
+      "start": 34.653,
+      "end": 34.986,
+      "text": "in over",
       "words": [
         {
           "id": "caption-word-49-0",
-          "text": "In",
-          "start": 44.844,
-          "end": 44.964
+          "text": "in",
+          "start": 34.653,
+          "end": 34.738
         },
         {
           "id": "caption-word-49-1",
-          "text": "2020,",
-          "start": 45.054,
-          "end": 45.696
+          "text": "over",
+          "start": 34.781,
+          "end": 34.866
         }
       ]
     },
     {
       "id": "caption-group-50",
-      "frame": 3,
-      "start": 45.893,
-      "end": 46.926,
-      "text": "Britain built a",
+      "frame": 2,
+      "start": 34.994,
+      "end": 35.997,
+      "text": "six years.",
       "words": [
         {
           "id": "caption-word-50-0",
-          "text": "Britain",
-          "start": 45.893,
-          "end": 46.267
+          "text": "six",
+          "start": 34.994,
+          "end": 35.165
         },
         {
           "id": "caption-word-50-1",
-          "text": "built",
-          "start": 46.358,
-          "end": 46.625
-        },
-        {
-          "id": "caption-word-50-2",
-          "text": "a",
-          "start": 46.716,
-          "end": 46.836
+          "text": "years.",
+          "start": 35.336,
+          "end": 35.877
         }
       ]
     },
     {
       "id": "caption-group-51",
       "frame": 3,
-      "start": 46.926,
-      "end": 48.107,
-      "text": "clinical trial into",
+      "start": 36.217,
+      "end": 36.558,
+      "text": "It doesn't",
       "words": [
         {
           "id": "caption-word-51-0",
-          "text": "clinical",
-          "start": 46.926,
-          "end": 47.354
+          "text": "It",
+          "start": 36.217,
+          "end": 36.302
         },
         {
           "id": "caption-word-51-1",
-          "text": "trial",
-          "start": 47.445,
-          "end": 47.712
-        },
-        {
-          "id": "caption-word-51-2",
-          "text": "into",
-          "start": 47.803,
-          "end": 48.017
+          "text": "doesn't",
+          "start": 36.345,
+          "end": 36.515
         }
       ]
     },
     {
       "id": "caption-group-52",
       "frame": 3,
-      "start": 48.107,
-      "end": 49.478,
-      "text": "ordinary hospital care.",
+      "start": 36.558,
+      "end": 36.899,
+      "text": "have to",
       "words": [
         {
           "id": "caption-word-52-0",
-          "text": "ordinary",
-          "start": 48.107,
-          "end": 48.535
+          "text": "have",
+          "start": 36.558,
+          "end": 36.686
         },
         {
           "id": "caption-word-52-1",
-          "text": "hospital",
-          "start": 48.626,
-          "end": 49.054
-        },
-        {
-          "id": "caption-word-52-2",
-          "text": "care.",
-          "start": 49.144,
-          "end": 49.358
+          "text": "to",
+          "start": 36.771,
+          "end": 36.857
         }
       ]
     },
     {
       "id": "caption-group-53",
       "frame": 3,
-      "start": 49.675,
-      "end": 50.244,
-      "text": "In under",
+      "start": 36.899,
+      "end": 37.766,
+      "text": "be this way.",
       "words": [
         {
           "id": "caption-word-53-0",
-          "text": "In",
-          "start": 49.675,
-          "end": 49.795
+          "text": "be",
+          "start": 36.899,
+          "end": 37.027
         },
         {
           "id": "caption-word-53-1",
-          "text": "under",
-          "start": 49.886,
-          "end": 50.153
+          "text": "this",
+          "start": 37.07,
+          "end": 37.155
+        },
+        {
+          "id": "caption-word-53-2",
+          "text": "way.",
+          "start": 37.198,
+          "end": 37.646
         }
       ]
     },
     {
       "id": "caption-group-54",
       "frame": 3,
-      "start": 50.244,
-      "end": 51.043,
-      "text": "three months,",
+      "start": 37.923,
+      "end": 39.174,
+      "text": "In 2020,",
       "words": [
         {
           "id": "caption-word-54-0",
-          "text": "three",
-          "start": 50.244,
-          "end": 50.511
+          "text": "In",
+          "start": 37.923,
+          "end": 38.051
         },
         {
           "id": "caption-word-54-1",
-          "text": "months,",
-          "start": 50.602,
-          "end": 50.923
+          "text": "2020,",
+          "start": 38.094,
+          "end": 39.054
         }
       ]
     },
     {
       "id": "caption-group-55",
       "frame": 3,
-      "start": 51.119,
-      "end": 51.741,
-      "text": "it showed",
+      "start": 39.331,
+      "end": 40.014,
+      "text": "Britain built",
       "words": [
         {
           "id": "caption-word-55-0",
-          "text": "it",
-          "start": 51.119,
-          "end": 51.239
+          "text": "Britain",
+          "start": 39.331,
+          "end": 39.715
         },
         {
           "id": "caption-word-55-1",
-          "text": "showed",
-          "start": 51.33,
-          "end": 51.651
+          "text": "built",
+          "start": 39.758,
+          "end": 39.929
         }
       ]
     },
     {
       "id": "caption-group-56",
       "frame": 3,
-      "start": 51.741,
-      "end": 52.861,
-      "text": "that dexamethasone,",
+      "start": 40.014,
+      "end": 40.475,
+      "text": "a clinical",
       "words": [
         {
           "id": "caption-word-56-0",
-          "text": "that",
-          "start": 51.741,
-          "end": 51.955
+          "text": "a",
+          "start": 40.014,
+          "end": 40.057
         },
         {
           "id": "caption-word-56-1",
-          "text": "dexamethasone,",
-          "start": 52.046,
-          "end": 52.741
+          "text": "clinical",
+          "start": 40.099,
+          "end": 40.355
         }
       ]
     },
     {
       "id": "caption-group-57",
       "frame": 3,
-      "start": 52.938,
-      "end": 53.971,
-      "text": "a cheap steroid",
+      "start": 40.526,
+      "end": 41.755,
+      "text": "trial into ordinary",
       "words": [
         {
           "id": "caption-word-57-0",
-          "text": "a",
-          "start": 52.938,
-          "end": 53.058
+          "text": "trial",
+          "start": 40.526,
+          "end": 40.867
         },
         {
           "id": "caption-word-57-1",
-          "text": "cheap",
-          "start": 53.148,
-          "end": 53.416
+          "text": "into",
+          "start": 40.953,
+          "end": 41.081
         },
         {
           "id": "caption-word-57-2",
-          "text": "steroid",
-          "start": 53.506,
-          "end": 53.881
+          "text": "ordinary",
+          "start": 41.209,
+          "end": 41.635
         }
       ]
     },
     {
       "id": "caption-group-58",
       "frame": 3,
-      "start": 53.971,
-      "end": 55.021,
-      "text": "used for decades,",
+      "start": 41.763,
+      "end": 42.796,
+      "text": "hospital care.",
       "words": [
         {
           "id": "caption-word-58-0",
-          "text": "used",
-          "start": 53.971,
-          "end": 54.185
+          "text": "hospital",
+          "start": 41.763,
+          "end": 42.062
         },
         {
           "id": "caption-word-58-1",
-          "text": "for",
-          "start": 54.276,
-          "end": 54.436
-        },
-        {
-          "id": "caption-word-58-2",
-          "text": "decades,",
-          "start": 54.527,
-          "end": 54.901
+          "text": "care.",
+          "start": 42.233,
+          "end": 42.676
         }
       ]
     },
     {
       "id": "caption-group-59",
       "frame": 3,
-      "start": 55.098,
-      "end": 56.118,
-      "text": "cut deaths among",
+      "start": 42.948,
+      "end": 43.366,
+      "text": "In under",
       "words": [
         {
           "id": "caption-word-59-0",
-          "text": "cut",
-          "start": 55.098,
-          "end": 55.259
+          "text": "In",
+          "start": 42.948,
+          "end": 43.118
         },
         {
           "id": "caption-word-59-1",
-          "text": "deaths",
-          "start": 55.349,
-          "end": 55.67
-        },
-        {
-          "id": "caption-word-59-2",
-          "text": "among",
-          "start": 55.76,
-          "end": 56.028
+          "text": "under",
+          "start": 43.161,
+          "end": 43.246
         }
       ]
     },
     {
       "id": "caption-group-60",
       "frame": 3,
-      "start": 56.118,
-      "end": 57.192,
-      "text": "the sickest COVID",
+      "start": 43.374,
+      "end": 44.113,
+      "text": "three months,",
       "words": [
         {
           "id": "caption-word-60-0",
-          "text": "the",
-          "start": 56.118,
-          "end": 56.279
+          "text": "three",
+          "start": 43.374,
+          "end": 43.545
         },
         {
           "id": "caption-word-60-1",
-          "text": "sickest",
-          "start": 56.369,
-          "end": 56.744
-        },
-        {
-          "id": "caption-word-60-2",
-          "text": "COVID",
-          "start": 56.834,
-          "end": 57.102
+          "text": "months,",
+          "start": 43.63,
+          "end": 43.993
         }
       ]
     },
     {
       "id": "caption-group-61",
       "frame": 3,
-      "start": 57.192,
-      "end": 57.921,
-      "text": "patients by",
+      "start": 44.185,
+      "end": 44.817,
+      "text": "it showed",
       "words": [
         {
           "id": "caption-word-61-0",
-          "text": "patients",
-          "start": 57.192,
-          "end": 57.621
+          "text": "it",
+          "start": 44.185,
+          "end": 44.484
         },
         {
           "id": "caption-word-61-1",
-          "text": "by",
-          "start": 57.711,
-          "end": 57.831
+          "text": "showed",
+          "start": 44.526,
+          "end": 44.697
         }
       ]
     },
     {
       "id": "caption-group-62",
       "frame": 3,
-      "start": 57.921,
-      "end": 58.342,
-      "text": "up to",
+      "start": 44.825,
+      "end": 45.969,
+      "text": "that dexamethasone,",
       "words": [
         {
           "id": "caption-word-62-0",
-          "text": "up",
-          "start": 57.921,
-          "end": 58.041
+          "text": "that",
+          "start": 44.825,
+          "end": 44.91
         },
         {
           "id": "caption-word-62-1",
-          "text": "to",
-          "start": 58.132,
-          "end": 58.252
+          "text": "dexamethasone,",
+          "start": 44.953,
+          "end": 45.849
         }
       ]
     },
     {
       "id": "caption-group-63",
       "frame": 3,
-      "start": 58.342,
-      "end": 58.94,
-      "text": "a third.",
+      "start": 46.02,
+      "end": 46.404,
+      "text": "a cheap",
       "words": [
         {
           "id": "caption-word-63-0",
           "text": "a",
-          "start": 58.342,
-          "end": 58.462
+          "start": 46.02,
+          "end": 46.062
         },
         {
           "id": "caption-word-63-1",
-          "text": "third.",
-          "start": 58.553,
-          "end": 58.82
+          "text": "cheap",
+          "start": 46.105,
+          "end": 46.318
         }
       ]
     },
     {
       "id": "caption-group-64",
       "frame": 3,
-      "start": 59.137,
-      "end": 59.705,
-      "text": "It saved",
+      "start": 46.404,
+      "end": 47.086,
+      "text": "steroid used",
       "words": [
         {
           "id": "caption-word-64-0",
-          "text": "It",
-          "start": 59.137,
-          "end": 59.257
+          "text": "steroid",
+          "start": 46.404,
+          "end": 46.745
         },
         {
           "id": "caption-word-64-1",
-          "text": "saved",
-          "start": 59.347,
-          "end": 59.615
+          "text": "used",
+          "start": 46.873,
+          "end": 47.001
         }
       ]
     },
     {
       "id": "caption-group-65",
       "frame": 3,
-      "start": 59.705,
-      "end": 60.739,
-      "text": "about a million",
+      "start": 47.086,
+      "end": 47.996,
+      "text": "for decades,",
       "words": [
         {
           "id": "caption-word-65-0",
-          "text": "about",
-          "start": 59.705,
-          "end": 59.973
+          "text": "for",
+          "start": 47.086,
+          "end": 47.172
         },
         {
           "id": "caption-word-65-1",
-          "text": "a",
-          "start": 60.063,
-          "end": 60.183
-        },
-        {
-          "id": "caption-word-65-2",
-          "text": "million",
-          "start": 60.274,
-          "end": 60.648
+          "text": "decades,",
+          "start": 47.214,
+          "end": 47.876
         }
       ]
     },
     {
       "id": "caption-group-66",
       "frame": 3,
-      "start": 60.739,
-      "end": 61.126,
-      "text": "lives.",
+      "start": 48.153,
+      "end": 48.87,
+      "text": "cut deaths",
       "words": [
         {
           "id": "caption-word-66-0",
-          "text": "lives.",
-          "start": 60.739,
-          "end": 61.006
+          "text": "cut",
+          "start": 48.153,
+          "end": 48.324
+        },
+        {
+          "id": "caption-word-66-1",
+          "text": "deaths",
+          "start": 48.366,
+          "end": 48.75
         }
       ]
     },
     {
       "id": "caption-group-67",
-      "frame": 4,
-      "start": 62.45,
-      "end": 64.578,
-      "text": "Care-integrated clinical trials would",
+      "frame": 3,
+      "start": 48.878,
+      "end": 49.177,
+      "text": "among the",
       "words": [
         {
           "id": "caption-word-67-0",
-          "text": "Care-integrated",
-          "start": 62.45,
-          "end": 63.2
+          "text": "among",
+          "start": 48.878,
+          "end": 48.964
         },
         {
           "id": "caption-word-67-1",
-          "text": "clinical",
-          "start": 63.29,
-          "end": 63.718
-        },
-        {
-          "id": "caption-word-67-2",
-          "text": "trials",
-          "start": 63.809,
-          "end": 64.13
-        },
-        {
-          "id": "caption-word-67-3",
-          "text": "would",
-          "start": 64.22,
-          "end": 64.488
+          "text": "the",
+          "start": 49.049,
+          "end": 49.134
         }
       ]
     },
     {
       "id": "caption-group-68",
-      "frame": 4,
-      "start": 64.578,
-      "end": 65.039,
-      "text": "do the",
+      "frame": 3,
+      "start": 49.177,
+      "end": 50.449,
+      "text": "sickest COVID patients",
       "words": [
         {
           "id": "caption-word-68-0",
-          "text": "do",
-          "start": 64.578,
-          "end": 64.698
+          "text": "sickest",
+          "start": 49.177,
+          "end": 49.518
         },
         {
           "id": "caption-word-68-1",
-          "text": "the",
-          "start": 64.789,
-          "end": 64.949
+          "text": "COVID",
+          "start": 49.604,
+          "end": 49.902
+        },
+        {
+          "id": "caption-word-68-2",
+          "text": "patients",
+          "start": 49.988,
+          "end": 50.329
         }
       ]
     },
     {
       "id": "caption-group-69",
-      "frame": 4,
-      "start": 65.039,
-      "end": 65.595,
-      "text": "same for",
+      "frame": 3,
+      "start": 50.5,
+      "end": 50.798,
+      "text": "by up",
       "words": [
         {
           "id": "caption-word-69-0",
-          "text": "same",
-          "start": 65.039,
-          "end": 65.254
+          "text": "by",
+          "start": 50.5,
+          "end": 50.628
         },
         {
           "id": "caption-word-69-1",
-          "text": "for",
-          "start": 65.344,
-          "end": 65.505
+          "text": "up",
+          "start": 50.67,
+          "end": 50.756
         }
       ]
     },
     {
       "id": "caption-group-70",
-      "frame": 4,
-      "start": 65.595,
-      "end": 66.448,
-      "text": "every disease,",
+      "frame": 3,
+      "start": 50.798,
+      "end": 51.708,
+      "text": "to a third.",
       "words": [
         {
           "id": "caption-word-70-0",
-          "text": "every",
-          "start": 65.595,
-          "end": 65.862
+          "text": "to",
+          "start": 50.798,
+          "end": 50.884
         },
         {
           "id": "caption-word-70-1",
-          "text": "disease,",
-          "start": 65.953,
-          "end": 66.328
+          "text": "a",
+          "start": 50.926,
+          "end": 50.969
+        },
+        {
+          "id": "caption-word-70-2",
+          "text": "third.",
+          "start": 51.012,
+          "end": 51.588
         }
       ]
     },
     {
       "id": "caption-group-71",
-      "frame": 4,
-      "start": 66.524,
-      "end": 67.587,
-      "text": "in everyday care.",
+      "frame": 3,
+      "start": 51.908,
+      "end": 52.412,
+      "text": "It saved",
       "words": [
         {
           "id": "caption-word-71-0",
-          "text": "in",
-          "start": 66.524,
-          "end": 66.644
+          "text": "It",
+          "start": 51.908,
+          "end": 52.036
         },
         {
           "id": "caption-word-71-1",
-          "text": "everyday",
-          "start": 66.734,
-          "end": 67.163
-        },
-        {
-          "id": "caption-word-71-2",
-          "text": "care.",
-          "start": 67.253,
-          "end": 67.467
+          "text": "saved",
+          "start": 52.078,
+          "end": 52.292
         }
       ]
     },
     {
       "id": "caption-group-72",
-      "frame": 4,
-      "start": 67.784,
-      "end": 69.048,
-      "text": "Here's Margaret's year.",
+      "frame": 3,
+      "start": 52.42,
+      "end": 52.676,
+      "text": "about a",
       "words": [
         {
           "id": "caption-word-72-0",
-          "text": "Here's",
-          "start": 67.784,
-          "end": 68.052
+          "text": "about",
+          "start": 52.42,
+          "end": 52.548
         },
         {
           "id": "caption-word-72-1",
-          "text": "Margaret's",
-          "start": 68.142,
-          "end": 68.624
-        },
-        {
-          "id": "caption-word-72-2",
-          "text": "year.",
-          "start": 68.714,
-          "end": 68.928
+          "text": "a",
+          "start": 52.59,
+          "end": 52.633
         }
       ]
     },
     {
       "id": "caption-group-73",
-      "frame": 5,
-      "start": 70.362,
-      "end": 70.951,
-      "text": "She starts",
+      "frame": 3,
+      "start": 52.676,
+      "end": 52.966,
+      "text": "million",
       "words": [
         {
           "id": "caption-word-73-0",
-          "text": "She",
-          "start": 70.362,
-          "end": 70.49
-        },
-        {
-          "id": "caption-word-73-1",
-          "text": "starts",
-          "start": 70.532,
-          "end": 70.831
+          "text": "million",
+          "start": 52.676,
+          "end": 52.846
         }
       ]
     },
     {
       "id": "caption-group-74",
-      "frame": 5,
-      "start": 71.002,
-      "end": 71.634,
-      "text": "by comparing",
+      "frame": 3,
+      "start": 53.06,
+      "end": 53.803,
+      "text": "lives.",
       "words": [
         {
           "id": "caption-word-74-0",
-          "text": "by",
-          "start": 71.002,
-          "end": 71.13
-        },
-        {
-          "id": "caption-word-74-1",
-          "text": "comparing",
-          "start": 71.172,
-          "end": 71.514
+          "text": "lives.",
+          "start": 53.06,
+          "end": 53.683
         }
       ]
     },
     {
       "id": "caption-group-75",
-      "frame": 5,
-      "start": 71.642,
-      "end": 72.508,
-      "text": "her options:",
+      "frame": 4,
+      "start": 53.99,
+      "end": 55.953,
+      "text": "Care-integrated clinical trials would",
       "words": [
         {
           "id": "caption-word-75-0",
-          "text": "her",
-          "start": 71.642,
-          "end": 71.77
+          "text": "Care-integrated",
+          "start": 53.99,
+          "end": 54.758
         },
         {
           "id": "caption-word-75-1",
-          "text": "options:",
-          "start": 71.812,
-          "end": 72.388
+          "text": "clinical",
+          "start": 54.929,
+          "end": 55.185
+        },
+        {
+          "id": "caption-word-75-2",
+          "text": "trials",
+          "start": 55.313,
+          "end": 55.654
+        },
+        {
+          "id": "caption-word-75-3",
+          "text": "would",
+          "start": 55.782,
+          "end": 55.91
         }
       ]
     },
     {
       "id": "caption-group-76",
-      "frame": 5,
-      "start": 72.836,
-      "end": 74.031,
-      "text": "treatments ranked side",
+      "frame": 4,
+      "start": 55.953,
+      "end": 56.209,
+      "text": "do the",
       "words": [
         {
           "id": "caption-word-76-0",
-          "text": "treatments",
-          "start": 72.836,
-          "end": 73.22
+          "text": "do",
+          "start": 55.953,
+          "end": 56.038
         },
         {
           "id": "caption-word-76-1",
-          "text": "ranked",
-          "start": 73.348,
-          "end": 73.647
-        },
-        {
-          "id": "caption-word-76-2",
-          "text": "side",
-          "start": 73.732,
-          "end": 73.946
+          "text": "the",
+          "start": 56.081,
+          "end": 56.166
         }
       ]
     },
     {
       "id": "caption-group-77",
-      "frame": 5,
-      "start": 74.031,
-      "end": 74.77,
-      "text": "by side,",
+      "frame": 4,
+      "start": 56.209,
+      "end": 56.635,
+      "text": "same for",
       "words": [
         {
           "id": "caption-word-77-0",
-          "text": "by",
-          "start": 74.031,
-          "end": 74.116
+          "text": "same",
+          "start": 56.209,
+          "end": 56.379
         },
         {
           "id": "caption-word-77-1",
-          "text": "side,",
-          "start": 74.202,
-          "end": 74.65
+          "text": "for",
+          "start": 56.507,
+          "end": 56.593
         }
       ]
     },
     {
       "id": "caption-group-78",
-      "frame": 5,
-      "start": 74.842,
-      "end": 75.354,
-      "text": "each with",
+      "frame": 4,
+      "start": 56.635,
+      "end": 57.609,
+      "text": "every disease,",
       "words": [
         {
           "id": "caption-word-78-0",
-          "text": "each",
-          "start": 74.842,
-          "end": 75.098
+          "text": "every",
+          "start": 56.635,
+          "end": 56.891
         },
         {
           "id": "caption-word-78-1",
-          "text": "with",
-          "start": 75.226,
-          "end": 75.311
+          "text": "disease,",
+          "start": 57.062,
+          "end": 57.489
         }
       ]
     },
     {
       "id": "caption-group-79",
-      "frame": 5,
-      "start": 75.354,
-      "end": 75.866,
-      "text": "an outcome",
+      "frame": 4,
+      "start": 57.659,
+      "end": 59.166,
+      "text": "in everyday care.",
       "words": [
         {
           "id": "caption-word-79-0",
-          "text": "an",
-          "start": 75.354,
-          "end": 75.396
+          "text": "in",
+          "start": 57.659,
+          "end": 57.915
         },
         {
           "id": "caption-word-79-1",
-          "text": "outcome",
-          "start": 75.439,
-          "end": 75.78
+          "text": "everyday",
+          "start": 57.958,
+          "end": 58.385
+        },
+        {
+          "id": "caption-word-79-2",
+          "text": "care.",
+          "start": 58.47,
+          "end": 59.046
         }
       ]
     },
     {
       "id": "caption-group-80",
-      "frame": 5,
-      "start": 75.866,
-      "end": 76.498,
-      "text": "label showing",
+      "frame": 4,
+      "start": 59.451,
+      "end": 60.508,
+      "text": "Here's Margaret's year.",
       "words": [
         {
           "id": "caption-word-80-0",
-          "text": "label",
-          "start": 75.866,
-          "end": 76.079
+          "text": "Here's",
+          "start": 59.451,
+          "end": 59.665
         },
         {
           "id": "caption-word-80-1",
-          "text": "showing",
-          "start": 76.207,
-          "end": 76.378
+          "text": "Margaret's",
+          "start": 59.707,
+          "end": 60.091
+        },
+        {
+          "id": "caption-word-80-2",
+          "text": "year.",
+          "start": 60.134,
+          "end": 60.388
         }
       ]
     },
     {
       "id": "caption-group-81",
       "frame": 5,
-      "start": 76.506,
-      "end": 77.458,
-      "text": "who improved,",
+      "start": 60.903,
+      "end": 61.492,
+      "text": "She starts",
       "words": [
         {
           "id": "caption-word-81-0",
-          "text": "who",
-          "start": 76.506,
-          "end": 76.676
+          "text": "She",
+          "start": 60.903,
+          "end": 61.031
         },
         {
           "id": "caption-word-81-1",
-          "text": "improved,",
-          "start": 76.719,
-          "end": 77.338
+          "text": "starts",
+          "start": 61.073,
+          "end": 61.372
         }
       ]
     },
     {
       "id": "caption-group-82",
       "frame": 5,
-      "start": 77.615,
-      "end": 78.682,
-      "text": "the side effects,",
+      "start": 61.543,
+      "end": 62.175,
+      "text": "by comparing",
       "words": [
         {
           "id": "caption-word-82-0",
-          "text": "the",
-          "start": 77.615,
-          "end": 77.743
+          "text": "by",
+          "start": 61.543,
+          "end": 61.671
         },
         {
           "id": "caption-word-82-1",
-          "text": "side",
-          "start": 77.786,
-          "end": 77.956
-        },
-        {
-          "id": "caption-word-82-2",
-          "text": "effects,",
-          "start": 78.084,
-          "end": 78.575
+          "text": "comparing",
+          "start": 61.713,
+          "end": 62.055
         }
       ]
     },
     {
       "id": "caption-group-83",
       "frame": 5,
-      "start": 78.682,
-      "end": 79.143,
-      "text": "the cost",
+      "start": 62.183,
+      "end": 63.049,
+      "text": "her options:",
       "words": [
         {
           "id": "caption-word-83-0",
-          "text": "the",
-          "start": 78.682,
-          "end": 78.767
+          "text": "her",
+          "start": 62.183,
+          "end": 62.311
         },
         {
           "id": "caption-word-83-1",
-          "text": "cost",
-          "start": 78.81,
-          "end": 79.023
+          "text": "options:",
+          "start": 62.353,
+          "end": 62.929
         }
       ]
     },
     {
       "id": "caption-group-84",
       "frame": 5,
-      "start": 79.279,
-      "end": 79.62,
-      "text": "and how",
+      "start": 63.377,
+      "end": 64.572,
+      "text": "treatments ranked side",
       "words": [
         {
           "id": "caption-word-84-0",
-          "text": "and",
-          "start": 79.279,
-          "end": 79.407
+          "text": "treatments",
+          "start": 63.377,
+          "end": 63.761
         },
         {
           "id": "caption-word-84-1",
-          "text": "how",
-          "start": 79.45,
-          "end": 79.535
+          "text": "ranked",
+          "start": 63.889,
+          "end": 64.188
+        },
+        {
+          "id": "caption-word-84-2",
+          "text": "side",
+          "start": 64.273,
+          "end": 64.487
         }
       ]
     },
     {
       "id": "caption-group-85",
       "frame": 5,
-      "start": 79.62,
-      "end": 80.132,
-      "text": "strong the",
+      "start": 64.572,
+      "end": 65.311,
+      "text": "by side,",
       "words": [
         {
           "id": "caption-word-85-0",
-          "text": "strong",
-          "start": 79.62,
-          "end": 79.919
+          "text": "by",
+          "start": 64.572,
+          "end": 64.657
         },
         {
           "id": "caption-word-85-1",
-          "text": "the",
-          "start": 80.004,
-          "end": 80.09
+          "text": "side,",
+          "start": 64.743,
+          "end": 65.191
         }
       ]
     },
     {
       "id": "caption-group-86",
       "frame": 5,
-      "start": 80.132,
-      "end": 80.338,
-      "text": "evidence",
+      "start": 65.383,
+      "end": 65.895,
+      "text": "each with",
       "words": [
         {
           "id": "caption-word-86-0",
-          "text": "evidence",
-          "start": 80.132,
-          "end": 80.218
+          "text": "each",
+          "start": 65.383,
+          "end": 65.639
+        },
+        {
+          "id": "caption-word-86-1",
+          "text": "with",
+          "start": 65.767,
+          "end": 65.852
         }
       ]
     },
     {
       "id": "caption-group-87",
       "frame": 5,
-      "start": 80.474,
-      "end": 80.893,
-      "text": "is.",
+      "start": 65.895,
+      "end": 66.407,
+      "text": "an outcome",
       "words": [
         {
           "id": "caption-word-87-0",
-          "text": "is.",
-          "start": 80.474,
-          "end": 80.773
+          "text": "an",
+          "start": 65.895,
+          "end": 65.937
+        },
+        {
+          "id": "caption-word-87-1",
+          "text": "outcome",
+          "start": 65.98,
+          "end": 66.321
         }
       ]
     },
     {
       "id": "caption-group-88",
-      "frame": 6,
-      "start": 81.707,
-      "end": 82.851,
-      "text": "An independent board",
+      "frame": 5,
+      "start": 66.407,
+      "end": 67.039,
+      "text": "label showing",
       "words": [
         {
           "id": "caption-word-88-0",
-          "text": "An",
-          "start": 81.707,
-          "end": 81.835
+          "text": "label",
+          "start": 66.407,
+          "end": 66.62
         },
         {
           "id": "caption-word-88-1",
-          "text": "independent",
-          "start": 81.877,
-          "end": 82.432
-        },
-        {
-          "id": "caption-word-88-2",
-          "text": "board",
-          "start": 82.517,
-          "end": 82.731
+          "text": "showing",
+          "start": 66.748,
+          "end": 66.919
         }
       ]
     },
     {
       "id": "caption-group-89",
-      "frame": 6,
-      "start": 82.859,
-      "end": 83.917,
-      "text": "has already screened",
+      "frame": 5,
+      "start": 67.047,
+      "end": 67.999,
+      "text": "who improved,",
       "words": [
         {
           "id": "caption-word-89-0",
-          "text": "has",
-          "start": 82.859,
-          "end": 82.944
+          "text": "who",
+          "start": 67.047,
+          "end": 67.217
         },
         {
           "id": "caption-word-89-1",
-          "text": "already",
-          "start": 83.029,
-          "end": 83.371
-        },
-        {
-          "id": "caption-word-89-2",
-          "text": "screened",
-          "start": 83.456,
-          "end": 83.797
+          "text": "improved,",
+          "start": 67.26,
+          "end": 67.879
         }
       ]
     },
     {
       "id": "caption-group-90",
-      "frame": 6,
-      "start": 83.925,
-      "end": 84.883,
-      "text": "every option.",
+      "frame": 5,
+      "start": 68.156,
+      "end": 69.223,
+      "text": "the side effects,",
       "words": [
         {
           "id": "caption-word-90-0",
-          "text": "every",
-          "start": 83.925,
-          "end": 84.181
+          "text": "the",
+          "start": 68.156,
+          "end": 68.284
         },
         {
           "id": "caption-word-90-1",
-          "text": "option.",
-          "start": 84.352,
-          "end": 84.763
+          "text": "side",
+          "start": 68.327,
+          "end": 68.497
+        },
+        {
+          "id": "caption-word-90-2",
+          "text": "effects,",
+          "start": 68.625,
+          "end": 69.116
         }
       ]
     },
     {
       "id": "caption-group-91",
-      "frame": 7,
-      "start": 86.896,
-      "end": 87.398,
-      "text": "Her own",
+      "frame": 5,
+      "start": 69.223,
+      "end": 69.684,
+      "text": "the cost",
       "words": [
         {
           "id": "caption-word-91-0",
-          "text": "Her",
-          "start": 86.896,
-          "end": 87.057
+          "text": "the",
+          "start": 69.223,
+          "end": 69.308
         },
         {
           "id": "caption-word-91-1",
-          "text": "own",
-          "start": 87.147,
-          "end": 87.308
+          "text": "cost",
+          "start": 69.351,
+          "end": 69.564
         }
       ]
     },
     {
       "id": "caption-group-92",
-      "frame": 7,
-      "start": 87.398,
-      "end": 88.991,
-      "text": "doctor recommends one over",
+      "frame": 5,
+      "start": 69.82,
+      "end": 70.161,
+      "text": "and how",
       "words": [
         {
           "id": "caption-word-92-0",
-          "text": "doctor",
-          "start": 87.398,
-          "end": 87.719
+          "text": "and",
+          "start": 69.82,
+          "end": 69.948
         },
         {
           "id": "caption-word-92-1",
-          "text": "recommends",
-          "start": 87.81,
-          "end": 88.345
-        },
-        {
-          "id": "caption-word-92-2",
-          "text": "one",
-          "start": 88.435,
-          "end": 88.596
-        },
-        {
-          "id": "caption-word-92-3",
-          "text": "over",
-          "start": 88.686,
-          "end": 88.9
+          "text": "how",
+          "start": 69.991,
+          "end": 70.076
         }
       ]
     },
     {
       "id": "caption-group-93",
-      "frame": 7,
-      "start": 88.991,
-      "end": 89.947,
-      "text": "a video visit,",
+      "frame": 5,
+      "start": 70.161,
+      "end": 70.673,
+      "text": "strong the",
       "words": [
         {
           "id": "caption-word-93-0",
-          "text": "a",
-          "start": 88.991,
-          "end": 89.111
+          "text": "strong",
+          "start": 70.161,
+          "end": 70.46
         },
         {
           "id": "caption-word-93-1",
-          "text": "video",
-          "start": 89.201,
-          "end": 89.469
-        },
-        {
-          "id": "caption-word-93-2",
-          "text": "visit,",
-          "start": 89.559,
-          "end": 89.827
+          "text": "the",
+          "start": 70.545,
+          "end": 70.631
         }
       ]
     },
     {
       "id": "caption-group-94",
-      "frame": 7,
-      "start": 90.023,
-      "end": 90.525,
-      "text": "and she",
+      "frame": 5,
+      "start": 70.673,
+      "end": 70.879,
+      "text": "evidence",
       "words": [
         {
           "id": "caption-word-94-0",
-          "text": "and",
-          "start": 90.023,
-          "end": 90.184
-        },
-        {
-          "id": "caption-word-94-1",
-          "text": "she",
-          "start": 90.274,
-          "end": 90.435
+          "text": "evidence",
+          "start": 70.673,
+          "end": 70.759
         }
       ]
     },
     {
       "id": "caption-group-95",
-      "frame": 7,
-      "start": 90.525,
-      "end": 91.88,
-      "text": "signs a plain-language",
+      "frame": 5,
+      "start": 71.015,
+      "end": 71.434,
+      "text": "is.",
       "words": [
         {
           "id": "caption-word-95-0",
-          "text": "signs",
-          "start": 90.525,
-          "end": 90.793
-        },
-        {
-          "id": "caption-word-95-1",
-          "text": "a",
-          "start": 90.883,
-          "end": 91.003
-        },
-        {
-          "id": "caption-word-95-2",
-          "text": "plain-language",
-          "start": 91.094,
-          "end": 91.789
+          "text": "is.",
+          "start": 71.015,
+          "end": 71.314
         }
       ]
     },
     {
       "id": "caption-group-96",
-      "frame": 7,
-      "start": 91.88,
-      "end": 92.374,
-      "text": "consent:",
+      "frame": 6,
+      "start": 72.248,
+      "end": 73.392,
+      "text": "An independent board",
       "words": [
         {
           "id": "caption-word-96-0",
-          "text": "consent:",
-          "start": 91.88,
-          "end": 92.254
+          "text": "An",
+          "start": 72.248,
+          "end": 72.376
+        },
+        {
+          "id": "caption-word-96-1",
+          "text": "independent",
+          "start": 72.418,
+          "end": 72.973
+        },
+        {
+          "id": "caption-word-96-2",
+          "text": "board",
+          "start": 73.058,
+          "end": 73.272
         }
       ]
     },
     {
       "id": "caption-group-97",
-      "frame": 7,
-      "start": 92.631,
-      "end": 93.27,
-      "text": "the risks,",
+      "frame": 6,
+      "start": 73.4,
+      "end": 74.458,
+      "text": "has already screened",
       "words": [
         {
           "id": "caption-word-97-0",
-          "text": "the",
-          "start": 92.631,
-          "end": 92.792
+          "text": "has",
+          "start": 73.4,
+          "end": 73.485
         },
         {
           "id": "caption-word-97-1",
-          "text": "risks,",
-          "start": 92.882,
-          "end": 93.15
+          "text": "already",
+          "start": 73.57,
+          "end": 73.912
+        },
+        {
+          "id": "caption-word-97-2",
+          "text": "screened",
+          "start": 73.997,
+          "end": 74.338
         }
       ]
     },
     {
       "id": "caption-group-98",
-      "frame": 7,
-      "start": 93.346,
-      "end": 94.145,
-      "text": "the unknowns,",
+      "frame": 6,
+      "start": 74.466,
+      "end": 75.424,
+      "text": "every option.",
       "words": [
         {
           "id": "caption-word-98-0",
-          "text": "the",
-          "start": 93.346,
-          "end": 93.507
+          "text": "every",
+          "start": 74.466,
+          "end": 74.722
         },
         {
           "id": "caption-word-98-1",
-          "text": "unknowns,",
-          "start": 93.597,
-          "end": 94.025
+          "text": "option.",
+          "start": 74.893,
+          "end": 75.304
         }
       ]
     },
     {
       "id": "caption-group-99",
       "frame": 7,
-      "start": 94.222,
-      "end": 94.807,
-      "text": "who pays,",
+      "start": 77.469,
+      "end": 77.811,
+      "text": "Her own",
       "words": [
         {
           "id": "caption-word-99-0",
-          "text": "who",
-          "start": 94.222,
-          "end": 94.382
+          "text": "Her",
+          "start": 77.469,
+          "end": 77.597
         },
         {
           "id": "caption-word-99-1",
-          "text": "pays,",
-          "start": 94.473,
-          "end": 94.687
+          "text": "own",
+          "start": 77.64,
+          "end": 77.768
         }
       ]
     },
     {
       "id": "caption-group-100",
       "frame": 7,
-      "start": 94.884,
-      "end": 95.439,
-      "text": "and that",
+      "start": 77.811,
+      "end": 78.835,
+      "text": "doctor recommends one",
       "words": [
         {
           "id": "caption-word-100-0",
-          "text": "and",
-          "start": 94.884,
-          "end": 95.044
+          "text": "doctor",
+          "start": 77.811,
+          "end": 77.981
         },
         {
           "id": "caption-word-100-1",
-          "text": "that",
-          "start": 95.134,
-          "end": 95.349
+          "text": "recommends",
+          "start": 78.152,
+          "end": 78.493
+        },
+        {
+          "id": "caption-word-100-2",
+          "text": "one",
+          "start": 78.621,
+          "end": 78.792
         }
       ]
     },
     {
       "id": "caption-group-101",
       "frame": 7,
-      "start": 95.439,
-      "end": 96.452,
-      "text": "it's experimental.",
+      "start": 78.835,
+      "end": 79.091,
+      "text": "over a",
       "words": [
         {
           "id": "caption-word-101-0",
-          "text": "it's",
-          "start": 95.439,
-          "end": 95.6
+          "text": "over",
+          "start": 78.835,
+          "end": 78.92
         },
         {
           "id": "caption-word-101-1",
-          "text": "experimental.",
-          "start": 95.69,
-          "end": 96.332
+          "text": "a",
+          "start": 79.005,
+          "end": 79.048
         }
       ]
     },
     {
       "id": "caption-group-102",
       "frame": 7,
-      "start": 96.649,
-      "end": 97.682,
-      "text": "A charity helps",
+      "start": 79.091,
+      "end": 79.296,
+      "text": "video",
       "words": [
         {
           "id": "caption-word-102-0",
-          "text": "A",
-          "start": 96.649,
-          "end": 96.769
-        },
-        {
-          "id": "caption-word-102-1",
-          "text": "charity",
-          "start": 96.859,
-          "end": 97.234
-        },
-        {
-          "id": "caption-word-102-2",
-          "text": "helps",
-          "start": 97.324,
-          "end": 97.592
+          "text": "video",
+          "start": 79.091,
+          "end": 79.176
         }
       ]
     },
     {
       "id": "caption-group-103",
       "frame": 7,
-      "start": 97.682,
-      "end": 98.214,
-      "text": "her pay,",
+      "start": 79.389,
+      "end": 79.851,
+      "text": "visit,",
       "words": [
         {
           "id": "caption-word-103-0",
-          "text": "her",
-          "start": 97.682,
-          "end": 97.843
-        },
-        {
-          "id": "caption-word-103-1",
-          "text": "pay,",
-          "start": 97.933,
-          "end": 98.094
+          "text": "visit,",
+          "start": 79.389,
+          "end": 79.731
         }
       ]
     },
     {
       "id": "caption-group-104",
       "frame": 7,
-      "start": 98.291,
-      "end": 98.752,
-      "text": "and no",
+      "start": 79.944,
+      "end": 80.413,
+      "text": "and she",
       "words": [
         {
           "id": "caption-word-104-0",
           "text": "and",
-          "start": 98.291,
-          "end": 98.451
+          "start": 79.944,
+          "end": 80.243
         },
         {
           "id": "caption-word-104-1",
-          "text": "no",
-          "start": 98.541,
-          "end": 98.661
+          "text": "she",
+          "start": 80.285,
+          "end": 80.371
         }
       ]
     },
     {
       "id": "caption-group-105",
       "frame": 7,
-      "start": 98.752,
-      "end": 99.785,
-      "text": "insurer or state",
+      "start": 80.413,
+      "end": 81.387,
+      "text": "signs a plain-language",
       "words": [
         {
           "id": "caption-word-105-0",
-          "text": "insurer",
-          "start": 98.752,
-          "end": 99.127
+          "text": "signs",
+          "start": 80.413,
+          "end": 80.669
         },
         {
           "id": "caption-word-105-1",
-          "text": "or",
-          "start": 99.217,
-          "end": 99.337
+          "text": "a",
+          "start": 80.712,
+          "end": 80.797
         },
         {
           "id": "caption-word-105-2",
-          "text": "state",
-          "start": 99.427,
-          "end": 99.695
+          "text": "plain-language",
+          "start": 80.84,
+          "end": 81.267
         }
       ]
     },
     {
       "id": "caption-group-106",
       "frame": 7,
-      "start": 99.785,
-      "end": 100.741,
-      "text": "program has to.",
+      "start": 81.48,
+      "end": 82.283,
+      "text": "consent:",
       "words": [
         {
           "id": "caption-word-106-0",
-          "text": "program",
-          "start": 99.785,
-          "end": 100.16
-        },
-        {
-          "id": "caption-word-106-1",
-          "text": "has",
-          "start": 100.25,
-          "end": 100.411
-        },
-        {
-          "id": "caption-word-106-2",
-          "text": "to.",
-          "start": 100.501,
-          "end": 100.621
+          "text": "consent:",
+          "start": 81.48,
+          "end": 82.163
         }
       ]
     },
     {
       "id": "caption-group-107",
-      "frame": 8,
-      "start": 102.097,
-      "end": 102.559,
-      "text": "Her first",
+      "frame": 7,
+      "start": 82.461,
+      "end": 83.285,
+      "text": "the risks,",
       "words": [
         {
           "id": "caption-word-107-0",
-          "text": "Her",
-          "start": 102.097,
-          "end": 102.225
+          "text": "the",
+          "start": 82.461,
+          "end": 82.589
         },
         {
           "id": "caption-word-107-1",
-          "text": "first",
-          "start": 102.268,
-          "end": 102.439
+          "text": "risks,",
+          "start": 82.632,
+          "end": 83.165
         }
       ]
     },
     {
       "id": "caption-group-108",
-      "frame": 8,
-      "start": 102.567,
-      "end": 102.951,
-      "text": "dose is",
+      "frame": 7,
+      "start": 83.4,
+      "end": 84.352,
+      "text": "the unknowns,",
       "words": [
         {
           "id": "caption-word-108-0",
-          "text": "dose",
-          "start": 102.567,
-          "end": 102.695
+          "text": "the",
+          "start": 83.4,
+          "end": 83.528
         },
         {
           "id": "caption-word-108-1",
-          "text": "is",
-          "start": 102.823,
-          "end": 102.908
+          "text": "unknowns,",
+          "start": 83.571,
+          "end": 84.232
         }
       ]
     },
     {
       "id": "caption-group-109",
-      "frame": 8,
-      "start": 102.951,
-      "end": 103.327,
-      "text": "in week",
+      "frame": 7,
+      "start": 84.381,
+      "end": 85.333,
+      "text": "who pays,",
       "words": [
         {
           "id": "caption-word-109-0",
-          "text": "in",
-          "start": 102.951,
-          "end": 102.993
+          "text": "who",
+          "start": 84.381,
+          "end": 84.723
         },
         {
           "id": "caption-word-109-1",
-          "text": "week",
-          "start": 103.036,
-          "end": 103.207
+          "text": "pays,",
+          "start": 84.808,
+          "end": 85.213
         }
       ]
     },
     {
       "id": "caption-group-110",
-      "frame": 8,
-      "start": 103.335,
-      "end": 103.796,
-      "text": "two,",
+      "frame": 7,
+      "start": 85.363,
+      "end": 85.832,
+      "text": "and that",
       "words": [
         {
           "id": "caption-word-110-0",
-          "text": "two,",
-          "start": 103.335,
-          "end": 103.676
+          "text": "and",
+          "start": 85.363,
+          "end": 85.661
+        },
+        {
+          "id": "caption-word-110-1",
+          "text": "that",
+          "start": 85.704,
+          "end": 85.789
         }
       ]
     },
     {
       "id": "caption-group-111",
-      "frame": 8,
-      "start": 103.847,
-      "end": 104.06,
-      "text": "at a",
+      "frame": 7,
+      "start": 85.832,
+      "end": 87.083,
+      "text": "it's experimental.",
       "words": [
         {
           "id": "caption-word-111-0",
-          "text": "at",
-          "start": 103.847,
-          "end": 103.932
+          "text": "it's",
+          "start": 85.832,
+          "end": 85.96
         },
         {
           "id": "caption-word-111-1",
-          "text": "a",
-          "start": 103.975,
-          "end": 104.017
+          "text": "experimental.",
+          "start": 86.003,
+          "end": 86.963
         }
       ]
     },
     {
       "id": "caption-group-112",
-      "frame": 8,
-      "start": 104.06,
-      "end": 105.268,
-      "text": "clinic near home.",
+      "frame": 7,
+      "start": 87.411,
+      "end": 87.957,
+      "text": "A charity",
       "words": [
         {
           "id": "caption-word-112-0",
-          "text": "clinic",
-          "start": 104.06,
-          "end": 104.316
+          "text": "A",
+          "start": 87.411,
+          "end": 87.496
         },
         {
           "id": "caption-word-112-1",
-          "text": "near",
-          "start": 104.444,
-          "end": 104.572
-        },
-        {
-          "id": "caption-word-112-2",
-          "text": "home.",
-          "start": 104.615,
-          "end": 105.148
+          "text": "charity",
+          "start": 87.539,
+          "end": 87.837
         }
       ]
     },
     {
       "id": "caption-group-113",
-      "frame": 8,
-      "start": 105.511,
-      "end": 106.364,
-      "text": "Memory tests",
+      "frame": 7,
+      "start": 87.965,
+      "end": 88.349,
+      "text": "helps her",
       "words": [
         {
           "id": "caption-word-113-0",
-          "text": "Memory",
-          "start": 105.511,
-          "end": 105.809
+          "text": "helps",
+          "start": 87.965,
+          "end": 88.136
         },
         {
           "id": "caption-word-113-1",
-          "text": "tests",
-          "start": 105.895,
-          "end": 106.279
+          "text": "her",
+          "start": 88.221,
+          "end": 88.307
         }
       ]
     },
     {
       "id": "caption-group-114",
-      "frame": 8,
-      "start": 106.364,
-      "end": 106.74,
-      "text": "and quick",
+      "frame": 7,
+      "start": 88.349,
+      "end": 88.811,
+      "text": "pay,",
       "words": [
         {
           "id": "caption-word-114-0",
-          "text": "and",
-          "start": 106.364,
-          "end": 106.449
-        },
-        {
-          "id": "caption-word-114-1",
-          "text": "quick",
-          "start": 106.492,
-          "end": 106.62
+          "text": "pay,",
+          "start": 88.349,
+          "end": 88.691
         }
       ]
     },
     {
       "id": "caption-group-115",
-      "frame": 8,
-      "start": 106.748,
-      "end": 107.815,
-      "text": "phone check-ins track",
+      "frame": 7,
+      "start": 88.861,
+      "end": 89.92,
+      "text": "and no insurer",
       "words": [
         {
           "id": "caption-word-115-0",
-          "text": "phone",
-          "start": 106.748,
-          "end": 106.919
+          "text": "and",
+          "start": 88.861,
+          "end": 89.117
         },
         {
           "id": "caption-word-115-1",
-          "text": "check-ins",
-          "start": 107.004,
-          "end": 107.388
+          "text": "no",
+          "start": 89.16,
+          "end": 89.331
         },
         {
           "id": "caption-word-115-2",
-          "text": "track",
-          "start": 107.559,
-          "end": 107.772
+          "text": "insurer",
+          "start": 89.373,
+          "end": 89.8
         }
       ]
     },
     {
       "id": "caption-group-116",
-      "frame": 8,
-      "start": 107.815,
-      "end": 108.745,
-      "text": "how she's doing.",
+      "frame": 7,
+      "start": 89.928,
+      "end": 90.355,
+      "text": "or state",
       "words": [
         {
           "id": "caption-word-116-0",
-          "text": "how",
-          "start": 107.815,
-          "end": 107.943
+          "text": "or",
+          "start": 89.928,
+          "end": 90.056
         },
         {
           "id": "caption-word-116-1",
-          "text": "she's",
-          "start": 107.985,
-          "end": 108.156
-        },
-        {
-          "id": "caption-word-116-2",
-          "text": "doing.",
-          "start": 108.199,
-          "end": 108.625
+          "text": "state",
+          "start": 90.099,
+          "end": 90.312
         }
       ]
     },
     {
       "id": "caption-group-117",
-      "frame": 8,
-      "start": 108.924,
-      "end": 109.769,
-      "text": "Any serious",
+      "frame": 7,
+      "start": 90.355,
+      "end": 90.688,
+      "text": "program",
       "words": [
         {
           "id": "caption-word-117-0",
-          "text": "Any",
-          "start": 108.924,
-          "end": 109.308
-        },
-        {
-          "id": "caption-word-117-1",
-          "text": "serious",
-          "start": 109.393,
-          "end": 109.649
+          "text": "program",
+          "start": 90.355,
+          "end": 90.568
         }
       ]
     },
     {
       "id": "caption-group-118",
-      "frame": 8,
-      "start": 109.863,
-      "end": 110.452,
-      "text": "side effect",
+      "frame": 7,
+      "start": 90.781,
+      "end": 91.391,
+      "text": "has to.",
       "words": [
         {
           "id": "caption-word-118-0",
-          "text": "side",
-          "start": 109.863,
-          "end": 110.033
+          "text": "has",
+          "start": 90.781,
+          "end": 90.952
         },
         {
           "id": "caption-word-118-1",
-          "text": "effect",
-          "start": 110.161,
-          "end": 110.332
+          "text": "to.",
+          "start": 90.995,
+          "end": 91.271
         }
       ]
     },
     {
       "id": "caption-group-119",
       "frame": 8,
-      "start": 110.46,
-      "end": 110.887,
-      "text": "reaches the",
+      "start": 91.81,
+      "end": 92.272,
+      "text": "Her first",
       "words": [
         {
           "id": "caption-word-119-0",
-          "text": "reaches",
-          "start": 110.46,
-          "end": 110.588
+          "text": "Her",
+          "start": 91.81,
+          "end": 91.938
         },
         {
           "id": "caption-word-119-1",
-          "text": "the",
-          "start": 110.759,
-          "end": 110.844
+          "text": "first",
+          "start": 91.981,
+          "end": 92.152
         }
       ]
     },
     {
       "id": "caption-group-120",
       "frame": 8,
-      "start": 110.887,
-      "end": 111.881,
-      "text": "board within days,",
+      "start": 92.28,
+      "end": 92.664,
+      "text": "dose is",
       "words": [
         {
           "id": "caption-word-120-0",
-          "text": "board",
-          "start": 110.887,
-          "end": 111.1
+          "text": "dose",
+          "start": 92.28,
+          "end": 92.408
         },
         {
           "id": "caption-word-120-1",
-          "text": "within",
-          "start": 111.143,
-          "end": 111.228
-        },
-        {
-          "id": "caption-word-120-2",
-          "text": "days,",
-          "start": 111.356,
-          "end": 111.761
+          "text": "is",
+          "start": 92.536,
+          "end": 92.621
         }
       ]
     },
     {
       "id": "caption-group-121",
       "frame": 8,
-      "start": 111.911,
-      "end": 112.337,
-      "text": "and it",
+      "start": 92.664,
+      "end": 93.04,
+      "text": "in week",
       "words": [
         {
           "id": "caption-word-121-0",
-          "text": "and",
-          "start": 111.911,
-          "end": 112.209
+          "text": "in",
+          "start": 92.664,
+          "end": 92.706
         },
         {
           "id": "caption-word-121-1",
-          "text": "it",
-          "start": 112.252,
-          "end": 112.295
+          "text": "week",
+          "start": 92.749,
+          "end": 92.92
         }
       ]
     },
     {
       "id": "caption-group-122",
       "frame": 8,
-      "start": 112.337,
-      "end": 112.764,
-      "text": "can pause",
+      "start": 93.048,
+      "end": 93.509,
+      "text": "two,",
       "words": [
         {
           "id": "caption-word-122-0",
-          "text": "can",
-          "start": 112.337,
-          "end": 112.38
-        },
-        {
-          "id": "caption-word-122-1",
-          "text": "pause",
-          "start": 112.423,
-          "end": 112.679
+          "text": "two,",
+          "start": 93.048,
+          "end": 93.389
         }
       ]
     },
     {
       "id": "caption-group-123",
       "frame": 8,
-      "start": 112.764,
-      "end": 113.685,
-      "text": "new patients.",
+      "start": 93.56,
+      "end": 93.773,
+      "text": "at a",
       "words": [
         {
           "id": "caption-word-123-0",
-          "text": "new",
-          "start": 112.764,
-          "end": 112.935
+          "text": "at",
+          "start": 93.56,
+          "end": 93.645
         },
         {
           "id": "caption-word-123-1",
-          "text": "patients.",
-          "start": 112.935,
-          "end": 113.565
+          "text": "a",
+          "start": 93.688,
+          "end": 93.73
         }
       ]
     },
     {
       "id": "caption-group-124",
-      "frame": 9,
-      "start": 114.571,
-      "end": 115.032,
-      "text": "At six",
+      "frame": 8,
+      "start": 93.773,
+      "end": 94.981,
+      "text": "clinic near home.",
       "words": [
         {
           "id": "caption-word-124-0",
-          "text": "At",
-          "start": 114.571,
-          "end": 114.699
+          "text": "clinic",
+          "start": 93.773,
+          "end": 94.029
         },
         {
           "id": "caption-word-124-1",
-          "text": "six",
-          "start": 114.741,
-          "end": 114.912
+          "text": "near",
+          "start": 94.157,
+          "end": 94.285
+        },
+        {
+          "id": "caption-word-124-2",
+          "text": "home.",
+          "start": 94.328,
+          "end": 94.861
         }
       ]
     },
     {
       "id": "caption-group-125",
-      "frame": 9,
-      "start": 115.04,
-      "end": 115.467,
-      "text": "months her",
+      "frame": 8,
+      "start": 95.224,
+      "end": 96.077,
+      "text": "Memory tests",
       "words": [
         {
           "id": "caption-word-125-0",
-          "text": "months",
-          "start": 115.04,
-          "end": 115.168
+          "text": "Memory",
+          "start": 95.224,
+          "end": 95.522
         },
         {
           "id": "caption-word-125-1",
-          "text": "her",
-          "start": 115.296,
-          "end": 115.424
+          "text": "tests",
+          "start": 95.608,
+          "end": 95.992
         }
       ]
     },
     {
       "id": "caption-group-126",
-      "frame": 9,
-      "start": 115.467,
-      "end": 116.696,
-      "text": "outcome is recorded,",
+      "frame": 8,
+      "start": 96.077,
+      "end": 96.453,
+      "text": "and quick",
       "words": [
         {
           "id": "caption-word-126-0",
-          "text": "outcome",
-          "start": 115.467,
-          "end": 115.765
+          "text": "and",
+          "start": 96.077,
+          "end": 96.162
         },
         {
           "id": "caption-word-126-1",
-          "text": "is",
-          "start": 115.851,
-          "end": 115.893
-        },
-        {
-          "id": "caption-word-126-2",
-          "text": "recorded,",
-          "start": 115.936,
-          "end": 116.576
+          "text": "quick",
+          "start": 96.205,
+          "end": 96.333
         }
       ]
     },
     {
       "id": "caption-group-127",
-      "frame": 9,
-      "start": 116.917,
-      "end": 117.315,
-      "text": "good,",
+      "frame": 8,
+      "start": 96.461,
+      "end": 97.528,
+      "text": "phone check-ins track",
       "words": [
         {
           "id": "caption-word-127-0",
-          "text": "good,",
-          "start": 116.917,
-          "end": 117.195
+          "text": "phone",
+          "start": 96.461,
+          "end": 96.632
+        },
+        {
+          "id": "caption-word-127-1",
+          "text": "check-ins",
+          "start": 96.717,
+          "end": 97.101
+        },
+        {
+          "id": "caption-word-127-2",
+          "text": "track",
+          "start": 97.272,
+          "end": 97.485
         }
       ]
     },
     {
       "id": "caption-group-128",
-      "frame": 9,
-      "start": 117.344,
-      "end": 117.813,
-      "text": "bad or",
+      "frame": 8,
+      "start": 97.528,
+      "end": 98.458,
+      "text": "how she's doing.",
       "words": [
         {
           "id": "caption-word-128-0",
-          "text": "bad",
-          "start": 117.344,
-          "end": 117.515
+          "text": "how",
+          "start": 97.528,
+          "end": 97.656
         },
         {
           "id": "caption-word-128-1",
-          "text": "or",
-          "start": 117.685,
-          "end": 117.771
+          "text": "she's",
+          "start": 97.698,
+          "end": 97.869
+        },
+        {
+          "id": "caption-word-128-2",
+          "text": "doing.",
+          "start": 97.912,
+          "end": 98.338
         }
       ]
     },
     {
       "id": "caption-group-129",
-      "frame": 9,
-      "start": 117.813,
-      "end": 118.701,
-      "text": "no change,",
+      "frame": 8,
+      "start": 98.637,
+      "end": 99.482,
+      "text": "Any serious",
       "words": [
         {
           "id": "caption-word-129-0",
-          "text": "no",
-          "start": 117.813,
-          "end": 117.941
+          "text": "Any",
+          "start": 98.637,
+          "end": 99.021
         },
         {
           "id": "caption-word-129-1",
-          "text": "change,",
-          "start": 118.027,
-          "end": 118.581
+          "text": "serious",
+          "start": 99.106,
+          "end": 99.362
         }
       ]
     },
     {
       "id": "caption-group-130",
-      "frame": 9,
-      "start": 118.923,
-      "end": 119.811,
-      "text": "then de-identified",
+      "frame": 8,
+      "start": 99.576,
+      "end": 100.165,
+      "text": "side effect",
       "words": [
         {
           "id": "caption-word-130-0",
-          "text": "then",
-          "start": 118.923,
-          "end": 119.051
+          "text": "side",
+          "start": 99.576,
+          "end": 99.746
         },
         {
           "id": "caption-word-130-1",
-          "text": "de-identified",
-          "start": 119.093,
-          "end": 119.691
+          "text": "effect",
+          "start": 99.874,
+          "end": 100.045
         }
       ]
     },
     {
       "id": "caption-group-131",
-      "frame": 9,
-      "start": 119.904,
-      "end": 120.792,
-      "text": "and published.",
+      "frame": 8,
+      "start": 100.173,
+      "end": 100.6,
+      "text": "reaches the",
       "words": [
         {
           "id": "caption-word-131-0",
-          "text": "and",
-          "start": 119.904,
-          "end": 120.032
+          "text": "reaches",
+          "start": 100.173,
+          "end": 100.301
         },
         {
           "id": "caption-word-131-1",
-          "text": "published.",
-          "start": 120.075,
-          "end": 120.672
+          "text": "the",
+          "start": 100.472,
+          "end": 100.557
         }
       ]
     },
     {
       "id": "caption-group-132",
-      "frame": 9,
-      "start": 120.971,
-      "end": 122.051,
-      "text": "Nothing is hidden.",
+      "frame": 8,
+      "start": 100.6,
+      "end": 101.594,
+      "text": "board within days,",
       "words": [
         {
           "id": "caption-word-132-0",
-          "text": "Nothing",
-          "start": 120.971,
-          "end": 121.099
+          "text": "board",
+          "start": 100.6,
+          "end": 100.813
         },
         {
           "id": "caption-word-132-1",
-          "text": "is",
-          "start": 121.269,
-          "end": 121.355
+          "text": "within",
+          "start": 100.856,
+          "end": 100.941
         },
         {
           "id": "caption-word-132-2",
-          "text": "hidden.",
-          "start": 121.397,
-          "end": 121.931
+          "text": "days,",
+          "start": 101.069,
+          "end": 101.474
         }
       ]
     },
     {
       "id": "caption-group-133",
-      "frame": 9,
-      "start": 122.251,
-      "end": 122.72,
-      "text": "Pooled with",
+      "frame": 8,
+      "start": 101.624,
+      "end": 102.05,
+      "text": "and it",
       "words": [
         {
           "id": "caption-word-133-0",
-          "text": "Pooled",
-          "start": 122.251,
-          "end": 122.549
+          "text": "and",
+          "start": 101.624,
+          "end": 101.922
         },
         {
           "id": "caption-word-133-1",
-          "text": "with",
-          "start": 122.592,
-          "end": 122.677
+          "text": "it",
+          "start": 101.965,
+          "end": 102.008
         }
       ]
     },
     {
       "id": "caption-group-134",
-      "frame": 9,
-      "start": 122.72,
-      "end": 123.181,
-      "text": "every other",
+      "frame": 8,
+      "start": 102.05,
+      "end": 102.477,
+      "text": "can pause",
       "words": [
         {
           "id": "caption-word-134-0",
-          "text": "every",
-          "start": 122.72,
-          "end": 122.891
+          "text": "can",
+          "start": 102.05,
+          "end": 102.093
         },
         {
           "id": "caption-word-134-1",
-          "text": "other",
-          "start": 123.019,
-          "end": 123.061
+          "text": "pause",
+          "start": 102.136,
+          "end": 102.392
         }
       ]
     },
     {
       "id": "caption-group-135",
-      "frame": 9,
-      "start": 123.189,
-      "end": 123.701,
-      "text": "clinic,",
+      "frame": 8,
+      "start": 102.477,
+      "end": 103.398,
+      "text": "new patients.",
       "words": [
         {
           "id": "caption-word-135-0",
-          "text": "clinic,",
-          "start": 123.189,
-          "end": 123.595
+          "text": "new",
+          "start": 102.477,
+          "end": 102.648
+        },
+        {
+          "id": "caption-word-135-1",
+          "text": "patients.",
+          "start": 102.648,
+          "end": 103.278
         }
       ]
     },
     {
       "id": "caption-group-136",
       "frame": 9,
-      "start": 123.701,
-      "end": 124.384,
-      "text": "it updates",
+      "start": 104.284,
+      "end": 104.745,
+      "text": "At six",
       "words": [
         {
           "id": "caption-word-136-0",
-          "text": "it",
-          "start": 123.701,
-          "end": 123.957
+          "text": "At",
+          "start": 104.284,
+          "end": 104.412
         },
         {
           "id": "caption-word-136-1",
-          "text": "updates",
-          "start": 124,
-          "end": 124.299
+          "text": "six",
+          "start": 104.454,
+          "end": 104.625
         }
       ]
     },
     {
       "id": "caption-group-137",
       "frame": 9,
-      "start": 124.384,
-      "end": 125.208,
-      "text": "the label.",
+      "start": 104.753,
+      "end": 105.18,
+      "text": "months her",
       "words": [
         {
           "id": "caption-word-137-0",
-          "text": "the",
-          "start": 124.384,
-          "end": 124.469
+          "text": "months",
+          "start": 104.753,
+          "end": 104.881
         },
         {
           "id": "caption-word-137-1",
-          "text": "label.",
-          "start": 124.512,
-          "end": 125.088
+          "text": "her",
+          "start": 105.009,
+          "end": 105.137
         }
       ]
     },
     {
       "id": "caption-group-138",
       "frame": 9,
-      "start": 125.408,
-      "end": 125.741,
-      "text": "The next",
+      "start": 105.18,
+      "end": 106.409,
+      "text": "outcome is recorded,",
       "words": [
         {
           "id": "caption-word-138-0",
-          "text": "The",
-          "start": 125.408,
-          "end": 125.493
+          "text": "outcome",
+          "start": 105.18,
+          "end": 105.478
         },
         {
           "id": "caption-word-138-1",
-          "text": "next",
-          "start": 125.536,
-          "end": 125.621
+          "text": "is",
+          "start": 105.564,
+          "end": 105.606
+        },
+        {
+          "id": "caption-word-138-2",
+          "text": "recorded,",
+          "start": 105.649,
+          "end": 106.289
         }
       ]
     },
     {
       "id": "caption-group-139",
       "frame": 9,
-      "start": 125.749,
-      "end": 126.04,
-      "text": "patient",
+      "start": 106.63,
+      "end": 107.028,
+      "text": "good,",
       "words": [
         {
           "id": "caption-word-139-0",
-          "text": "patient",
-          "start": 125.749,
-          "end": 125.92
+          "text": "good,",
+          "start": 106.63,
+          "end": 106.908
         }
       ]
     },
     {
       "id": "caption-group-140",
       "frame": 9,
-      "start": 126.133,
-      "end": 126.645,
-      "text": "starts with",
+      "start": 107.057,
+      "end": 107.526,
+      "text": "bad or",
       "words": [
         {
           "id": "caption-word-140-0",
-          "text": "starts",
-          "start": 126.133,
-          "end": 126.389
+          "text": "bad",
+          "start": 107.057,
+          "end": 107.228
         },
         {
           "id": "caption-word-140-1",
-          "text": "with",
-          "start": 126.475,
-          "end": 126.56
+          "text": "or",
+          "start": 107.398,
+          "end": 107.484
         }
       ]
     },
     {
       "id": "caption-group-141",
       "frame": 9,
-      "start": 126.645,
-      "end": 127.192,
-      "text": "better data",
+      "start": 107.526,
+      "end": 108.414,
+      "text": "no change,",
       "words": [
         {
           "id": "caption-word-141-0",
-          "text": "better",
-          "start": 126.645,
-          "end": 126.773
+          "text": "no",
+          "start": 107.526,
+          "end": 107.654
         },
         {
           "id": "caption-word-141-1",
-          "text": "data",
-          "start": 126.901,
-          "end": 127.072
+          "text": "change,",
+          "start": 107.74,
+          "end": 108.294
         }
       ]
     },
     {
       "id": "caption-group-142",
       "frame": 9,
-      "start": 127.243,
-      "end": 128.367,
-      "text": "than Margaret had.",
+      "start": 108.636,
+      "end": 109.524,
+      "text": "then de-identified",
       "words": [
         {
           "id": "caption-word-142-0",
-          "text": "than",
-          "start": 127.243,
-          "end": 127.328
+          "text": "then",
+          "start": 108.636,
+          "end": 108.764
         },
         {
           "id": "caption-word-142-1",
-          "text": "Margaret",
-          "start": 127.371,
-          "end": 127.712
-        },
-        {
-          "id": "caption-word-142-2",
-          "text": "had.",
-          "start": 127.755,
-          "end": 128.247
+          "text": "de-identified",
+          "start": 108.806,
+          "end": 109.404
         }
       ]
     },
     {
       "id": "caption-group-143",
-      "frame": 10,
-      "start": 129.183,
-      "end": 129.899,
-      "text": "Any patient",
+      "frame": 9,
+      "start": 109.617,
+      "end": 110.505,
+      "text": "and published.",
       "words": [
         {
           "id": "caption-word-143-0",
-          "text": "Any",
-          "start": 129.183,
-          "end": 129.344
+          "text": "and",
+          "start": 109.617,
+          "end": 109.745
         },
         {
           "id": "caption-word-143-1",
-          "text": "patient",
-          "start": 129.434,
-          "end": 129.809
+          "text": "published.",
+          "start": 109.788,
+          "end": 110.385
         }
       ]
     },
     {
       "id": "caption-group-144",
-      "frame": 10,
-      "start": 129.899,
-      "end": 130.973,
-      "text": "can get treatment",
+      "frame": 9,
+      "start": 110.684,
+      "end": 111.764,
+      "text": "Nothing is hidden.",
       "words": [
         {
           "id": "caption-word-144-0",
-          "text": "can",
-          "start": 129.899,
-          "end": 130.06
+          "text": "Nothing",
+          "start": 110.684,
+          "end": 110.812
         },
         {
           "id": "caption-word-144-1",
-          "text": "get",
-          "start": 130.15,
-          "end": 130.311
+          "text": "is",
+          "start": 110.982,
+          "end": 111.068
         },
         {
           "id": "caption-word-144-2",
-          "text": "treatment",
-          "start": 130.401,
-          "end": 130.883
+          "text": "hidden.",
+          "start": 111.11,
+          "end": 111.644
         }
       ]
     },
     {
       "id": "caption-group-145",
-      "frame": 10,
-      "start": 130.973,
-      "end": 132.047,
-      "text": "through their own",
+      "frame": 9,
+      "start": 111.964,
+      "end": 112.433,
+      "text": "Pooled with",
       "words": [
         {
           "id": "caption-word-145-0",
-          "text": "through",
-          "start": 130.973,
-          "end": 131.348
+          "text": "Pooled",
+          "start": 111.964,
+          "end": 112.262
         },
         {
           "id": "caption-word-145-1",
-          "text": "their",
-          "start": 131.438,
-          "end": 131.706
-        },
-        {
-          "id": "caption-word-145-2",
-          "text": "own",
-          "start": 131.796,
-          "end": 131.957
+          "text": "with",
+          "start": 112.305,
+          "end": 112.39
         }
       ]
     },
     {
       "id": "caption-group-146",
-      "frame": 10,
-      "start": 132.047,
-      "end": 132.488,
-      "text": "doctor.",
+      "frame": 9,
+      "start": 112.433,
+      "end": 112.894,
+      "text": "every other",
       "words": [
         {
           "id": "caption-word-146-0",
-          "text": "doctor.",
-          "start": 132.047,
-          "end": 132.368
+          "text": "every",
+          "start": 112.433,
+          "end": 112.604
+        },
+        {
+          "id": "caption-word-146-1",
+          "text": "other",
+          "start": 112.732,
+          "end": 112.774
         }
       ]
     },
     {
       "id": "caption-group-147",
-      "frame": 10,
-      "start": 132.685,
-      "end": 133.813,
-      "text": "Clinics can afford",
+      "frame": 9,
+      "start": 112.902,
+      "end": 113.414,
+      "text": "clinic,",
       "words": [
         {
           "id": "caption-word-147-0",
-          "text": "Clinics",
-          "start": 132.685,
-          "end": 133.06
-        },
-        {
-          "id": "caption-word-147-1",
-          "text": "can",
-          "start": 133.15,
-          "end": 133.311
-        },
-        {
-          "id": "caption-word-147-2",
-          "text": "afford",
-          "start": 133.401,
-          "end": 133.722
+          "text": "clinic,",
+          "start": 112.902,
+          "end": 113.308
         }
       ]
     },
     {
       "id": "caption-group-148",
-      "frame": 10,
-      "start": 133.813,
-      "end": 134.621,
-      "text": "to offer it.",
+      "frame": 9,
+      "start": 113.414,
+      "end": 114.097,
+      "text": "it updates",
       "words": [
         {
           "id": "caption-word-148-0",
-          "text": "to",
-          "start": 133.813,
-          "end": 133.933
+          "text": "it",
+          "start": 113.414,
+          "end": 113.67
         },
         {
           "id": "caption-word-148-1",
-          "text": "offer",
-          "start": 134.023,
-          "end": 134.291
-        },
-        {
-          "id": "caption-word-148-2",
-          "text": "it.",
-          "start": 134.381,
-          "end": 134.501
+          "text": "updates",
+          "start": 113.713,
+          "end": 114.012
         }
       ]
     },
     {
       "id": "caption-group-149",
-      "frame": 10,
-      "start": 134.818,
-      "end": 135.588,
-      "text": "Every result",
+      "frame": 9,
+      "start": 114.097,
+      "end": 114.921,
+      "text": "the label.",
       "words": [
         {
           "id": "caption-word-149-0",
-          "text": "Every",
-          "start": 134.818,
-          "end": 135.086
+          "text": "the",
+          "start": 114.097,
+          "end": 114.182
         },
         {
           "id": "caption-word-149-1",
-          "text": "result",
-          "start": 135.176,
-          "end": 135.497
+          "text": "label.",
+          "start": 114.225,
+          "end": 114.801
         }
       ]
     },
     {
       "id": "caption-group-150",
-      "frame": 10,
-      "start": 135.588,
-      "end": 136.4,
-      "text": "is published,",
+      "frame": 9,
+      "start": 115.121,
+      "end": 115.454,
+      "text": "The next",
       "words": [
         {
           "id": "caption-word-150-0",
-          "text": "is",
-          "start": 135.588,
-          "end": 135.708
+          "text": "The",
+          "start": 115.121,
+          "end": 115.206
         },
         {
           "id": "caption-word-150-1",
-          "text": "published,",
-          "start": 135.798,
-          "end": 136.28
+          "text": "next",
+          "start": 115.249,
+          "end": 115.334
         }
       ]
     },
     {
       "id": "caption-group-151",
-      "frame": 10,
-      "start": 136.476,
-      "end": 136.978,
-      "text": "and the",
+      "frame": 9,
+      "start": 115.462,
+      "end": 115.753,
+      "text": "patient",
       "words": [
         {
           "id": "caption-word-151-0",
-          "text": "and",
-          "start": 136.476,
-          "end": 136.637
-        },
-        {
-          "id": "caption-word-151-1",
-          "text": "the",
-          "start": 136.727,
-          "end": 136.888
+          "text": "patient",
+          "start": 115.462,
+          "end": 115.633
         }
       ]
     },
     {
       "id": "caption-group-152",
-      "frame": 10,
-      "start": 136.978,
-      "end": 138.159,
-      "text": "next patient learns",
+      "frame": 9,
+      "start": 115.846,
+      "end": 116.358,
+      "text": "starts with",
       "words": [
         {
           "id": "caption-word-152-0",
-          "text": "next",
-          "start": 136.978,
-          "end": 137.192
+          "text": "starts",
+          "start": 115.846,
+          "end": 116.102
         },
         {
           "id": "caption-word-152-1",
-          "text": "patient",
-          "start": 137.283,
-          "end": 137.657
-        },
-        {
-          "id": "caption-word-152-2",
-          "text": "learns",
-          "start": 137.748,
-          "end": 138.069
+          "text": "with",
+          "start": 116.188,
+          "end": 116.273
         }
       ]
     },
     {
       "id": "caption-group-153",
-      "frame": 10,
-      "start": 138.159,
-      "end": 139.012,
-      "text": "from Margaret.",
+      "frame": 9,
+      "start": 116.358,
+      "end": 116.905,
+      "text": "better data",
       "words": [
         {
           "id": "caption-word-153-0",
-          "text": "from",
-          "start": 138.159,
-          "end": 138.373
+          "text": "better",
+          "start": 116.358,
+          "end": 116.486
         },
         {
           "id": "caption-word-153-1",
-          "text": "Margaret.",
-          "start": 138.464,
-          "end": 138.892
+          "text": "data",
+          "start": 116.614,
+          "end": 116.785
         }
       ]
     },
     {
       "id": "caption-group-154",
-      "frame": 10,
-      "start": 139.209,
-      "end": 139.871,
-      "text": "Learn more",
+      "frame": 9,
+      "start": 116.956,
+      "end": 118.08,
+      "text": "than Margaret had.",
       "words": [
         {
           "id": "caption-word-154-0",
-          "text": "Learn",
-          "start": 139.209,
-          "end": 139.476
+          "text": "than",
+          "start": 116.956,
+          "end": 117.041
         },
         {
           "id": "caption-word-154-1",
-          "text": "more",
-          "start": 139.567,
-          "end": 139.781
+          "text": "Margaret",
+          "start": 117.084,
+          "end": 117.425
+        },
+        {
+          "id": "caption-word-154-2",
+          "text": "had.",
+          "start": 117.468,
+          "end": 117.96
         }
       ]
     },
     {
       "id": "caption-group-155",
       "frame": 10,
-      "start": 139.871,
-      "end": 141.54,
-      "text": "at acceleratedmedicine.org.",
+      "start": 118.886,
+      "end": 119.432,
+      "text": "Any patient",
       "words": [
         {
           "id": "caption-word-155-0",
-          "text": "at",
-          "start": 139.871,
-          "end": 139.991
+          "text": "Any",
+          "start": 118.886,
+          "end": 119.056
         },
         {
           "id": "caption-word-155-1",
+          "text": "patient",
+          "start": 119.142,
+          "end": 119.312
+        }
+      ]
+    },
+    {
+      "id": "caption-group-156",
+      "frame": 10,
+      "start": 119.526,
+      "end": 119.824,
+      "text": "can get",
+      "words": [
+        {
+          "id": "caption-word-156-0",
+          "text": "can",
+          "start": 119.526,
+          "end": 119.611
+        },
+        {
+          "id": "caption-word-156-1",
+          "text": "get",
+          "start": 119.654,
+          "end": 119.782
+        }
+      ]
+    },
+    {
+      "id": "caption-group-157",
+      "frame": 10,
+      "start": 119.824,
+      "end": 120.422,
+      "text": "treatment through",
+      "words": [
+        {
+          "id": "caption-word-157-0",
+          "text": "treatment",
+          "start": 119.824,
+          "end": 120.166
+        },
+        {
+          "id": "caption-word-157-1",
+          "text": "through",
+          "start": 120.208,
+          "end": 120.379
+        }
+      ]
+    },
+    {
+      "id": "caption-group-158",
+      "frame": 10,
+      "start": 120.422,
+      "end": 121.374,
+      "text": "their own doctor.",
+      "words": [
+        {
+          "id": "caption-word-158-0",
+          "text": "their",
+          "start": 120.422,
+          "end": 120.507
+        },
+        {
+          "id": "caption-word-158-1",
+          "text": "own",
+          "start": 120.55,
+          "end": 120.678
+        },
+        {
+          "id": "caption-word-158-2",
+          "text": "doctor.",
+          "start": 120.72,
+          "end": 121.254
+        }
+      ]
+    },
+    {
+      "id": "caption-group-159",
+      "frame": 10,
+      "start": 121.616,
+      "end": 122.171,
+      "text": "Clinics can",
+      "words": [
+        {
+          "id": "caption-word-159-0",
+          "text": "Clinics",
+          "start": 121.616,
+          "end": 121.915
+        },
+        {
+          "id": "caption-word-159-1",
+          "text": "can",
+          "start": 122.043,
+          "end": 122.128
+        }
+      ]
+    },
+    {
+      "id": "caption-group-160",
+      "frame": 10,
+      "start": 122.171,
+      "end": 122.555,
+      "text": "afford to",
+      "words": [
+        {
+          "id": "caption-word-160-0",
+          "text": "afford",
+          "start": 122.171,
+          "end": 122.384
+        },
+        {
+          "id": "caption-word-160-1",
+          "text": "to",
+          "start": 122.427,
+          "end": 122.512
+        }
+      ]
+    },
+    {
+      "id": "caption-group-161",
+      "frame": 10,
+      "start": 122.555,
+      "end": 123.358,
+      "text": "offer it.",
+      "words": [
+        {
+          "id": "caption-word-161-0",
+          "text": "offer",
+          "start": 122.555,
+          "end": 122.64
+        },
+        {
+          "id": "caption-word-161-1",
+          "text": "it.",
+          "start": 122.768,
+          "end": 123.238
+        }
+      ]
+    },
+    {
+      "id": "caption-group-162",
+      "frame": 10,
+      "start": 123.579,
+      "end": 124.168,
+      "text": "Every result",
+      "words": [
+        {
+          "id": "caption-word-162-0",
+          "text": "Every",
+          "start": 123.579,
+          "end": 123.75
+        },
+        {
+          "id": "caption-word-162-1",
+          "text": "result",
+          "start": 123.835,
+          "end": 124.048
+        }
+      ]
+    },
+    {
+      "id": "caption-group-163",
+      "frame": 10,
+      "start": 124.219,
+      "end": 124.936,
+      "text": "is published,",
+      "words": [
+        {
+          "id": "caption-word-163-0",
+          "text": "is",
+          "start": 124.219,
+          "end": 124.304
+        },
+        {
+          "id": "caption-word-163-1",
+          "text": "published,",
+          "start": 124.347,
+          "end": 124.816
+        }
+      ]
+    },
+    {
+      "id": "caption-group-164",
+      "frame": 10,
+      "start": 124.944,
+      "end": 125.371,
+      "text": "and the",
+      "words": [
+        {
+          "id": "caption-word-164-0",
+          "text": "and",
+          "start": 124.944,
+          "end": 125.243
+        },
+        {
+          "id": "caption-word-164-1",
+          "text": "the",
+          "start": 125.286,
+          "end": 125.328
+        }
+      ]
+    },
+    {
+      "id": "caption-group-165",
+      "frame": 10,
+      "start": 125.371,
+      "end": 125.875,
+      "text": "next patient",
+      "words": [
+        {
+          "id": "caption-word-165-0",
+          "text": "next",
+          "start": 125.371,
+          "end": 125.499
+        },
+        {
+          "id": "caption-word-165-1",
+          "text": "patient",
+          "start": 125.627,
+          "end": 125.755
+        }
+      ]
+    },
+    {
+      "id": "caption-group-166",
+      "frame": 10,
+      "start": 125.968,
+      "end": 127.198,
+      "text": "learns from Margaret.",
+      "words": [
+        {
+          "id": "caption-word-166-0",
+          "text": "learns",
+          "start": 125.968,
+          "end": 126.224
+        },
+        {
+          "id": "caption-word-166-1",
+          "text": "from",
+          "start": 126.31,
+          "end": 126.395
+        },
+        {
+          "id": "caption-word-166-2",
+          "text": "Margaret.",
+          "start": 126.438,
+          "end": 127.078
+        }
+      ]
+    },
+    {
+      "id": "caption-group-167",
+      "frame": 10,
+      "start": 127.334,
+      "end": 127.966,
+      "text": "Learn more",
+      "words": [
+        {
+          "id": "caption-word-167-0",
+          "text": "Learn",
+          "start": 127.334,
+          "end": 127.632
+        },
+        {
+          "id": "caption-word-167-1",
+          "text": "more",
+          "start": 127.718,
+          "end": 127.846
+        }
+      ]
+    },
+    {
+      "id": "caption-group-168",
+      "frame": 10,
+      "start": 128.016,
+      "end": 130.056,
+      "text": "at acceleratedmedicine.org.",
+      "words": [
+        {
+          "id": "caption-word-168-0",
+          "text": "at",
+          "start": 128.016,
+          "end": 128.144
+        },
+        {
+          "id": "caption-word-168-1",
           "text": "acceleratedmedicine.org.",
-          "start": 140.082,
-          "end": 141.42
+          "start": 128.187,
+          "end": 129.936
         }
       ]
     }
