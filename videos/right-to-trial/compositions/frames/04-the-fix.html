@@ -163,7 +163,7 @@
       display: block;
     }
 
-    /* title lockup — lower left, aligned to the path's first step; bottom lands ~y 790 (< 896 keep-out) */
+    /* title lockup — lower left, aligned to the path's first step; bottom lands ~y 790 (< 890 caption band) */
     [class~="04-the-fix-lockup"] {
       position: absolute;
       left: 144px;
@@ -194,9 +194,8 @@
       display: inline-block;
     }
 
-    /* the two promises */
-    [class~="04-the-fix-promise"] {
-      position: relative;
+    /* the two lines under the title */
+    [class~="04-the-fix-line"] {
       margin: 0;
       font-family: "Inter", sans-serif;
       font-size: 1.7cqw;
@@ -205,45 +204,20 @@
       white-space: nowrap;
     }
 
-    [class~="04-the-fix-promise-1"] {
+    [class~="04-the-fix-line-1"] {
       margin-top: 20px;
       font-weight: 400;
-      color: rgba(248, 246, 241, 0.68);
+      color: rgba(248, 246, 241, 0.72);
     }
 
-    [class~="04-the-fix-promise-2"] {
+    [class~="04-the-fix-line-2"] {
       margin-top: 12px;
       font-weight: 600;
       color: rgba(248, 246, 241, 0.94);
     }
 
-    /* small check, hung in the left margin so both promise lines share one text edge */
-    [class~="04-the-fix-check"] {
-      position: absolute;
-      left: -48px;
-      top: 4px;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: #694cfa;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    [class~="04-the-fix-check-icon"] {
-      width: 20px;
-      height: 20px;
-      overflow: visible;
-    }
-
-    [class~="04-the-fix-check-stroke"] {
-      fill: none;
-      stroke: #f8f6f1;
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-dasharray: 1 2;
+    [class~="04-the-fix-phrase"] {
+      display: inline-block;
     }
   </style>
 
@@ -253,18 +227,18 @@
     data-width="1920"
     data-height="1080"
     data-start="0"
-    data-duration="9.146"
+    data-duration="7.27"
   >
     <div
       id="04-the-fix-ground"
       class="clip 04-the-fix-ground"
       data-start="0"
-      data-duration="9.146"
+      data-duration="7.27"
       data-track-index="0"
     ></div>
 
     <div id="04-the-fix-stage" class="04-the-fix-stage">
-      <!-- the patient path: a dashed wave revealed left→right through a drawn mask -->
+      <!-- the patient path: six steps on a dashed wave revealed left→right through a drawn mask -->
       <svg
         class="04-the-fix-path"
         viewBox="0 0 1920 1080"
@@ -281,18 +255,17 @@
             width="1920"
             height="1080"
           >
-            <path id="04-the-fix-seg-0" class="04-the-fix-seg" pathLength="1" d="M204 390 C305 390 355 290 456 290" />
-            <path id="04-the-fix-seg-1" class="04-the-fix-seg" pathLength="1" d="M456 290 C557 290 607 390 708 390" />
-            <path id="04-the-fix-seg-2" class="04-the-fix-seg" pathLength="1" d="M708 390 C809 390 859 290 960 290" />
-            <path id="04-the-fix-seg-3" class="04-the-fix-seg" pathLength="1" d="M960 290 C1061 290 1111 390 1212 390" />
-            <path id="04-the-fix-seg-4" class="04-the-fix-seg" pathLength="1" d="M1212 390 C1313 390 1363 290 1464 290" />
-            <path id="04-the-fix-seg-5" class="04-the-fix-seg" pathLength="1" d="M1464 290 C1548 334 1632 334 1716 290" />
+            <path id="04-the-fix-seg-0" class="04-the-fix-seg" pathLength="1" d="M204 390 C325 390 385.4 290 506.4 290" />
+            <path id="04-the-fix-seg-1" class="04-the-fix-seg" pathLength="1" d="M506.4 290 C627.4 290 687.8 390 808.8 390" />
+            <path id="04-the-fix-seg-2" class="04-the-fix-seg" pathLength="1" d="M808.8 390 C929.8 390 990.2 290 1111.2 290" />
+            <path id="04-the-fix-seg-3" class="04-the-fix-seg" pathLength="1" d="M1111.2 290 C1232.2 290 1292.6 390 1413.6 390" />
+            <path id="04-the-fix-seg-4" class="04-the-fix-seg" pathLength="1" d="M1413.6 390 C1534.6 390 1595 290 1716 290" />
           </mask>
         </defs>
         <path
           class="04-the-fix-dash"
           mask="url(#04-the-fix-path-mask)"
-          d="M204 390 C305 390 355 290 456 290 C557 290 607 390 708 390 C809 390 859 290 960 290 C1061 290 1111 390 1212 390 C1313 390 1363 290 1464 290 C1548 334 1632 334 1716 290"
+          d="M204 390 C325 390 385.4 290 506.4 290 C627.4 290 687.8 390 808.8 390 C929.8 390 990.2 290 1111.2 290 C1232.2 290 1292.6 390 1413.6 390 C1534.6 390 1595 290 1716 290"
         />
       </svg>
 
@@ -300,7 +273,7 @@
       <div id="04-the-fix-halo" class="04-the-fix-halo"></div>
       <div id="04-the-fix-ring" class="04-the-fix-ring"></div>
 
-      <!-- 1 · search (low) -->
+      <!-- 1 · explore options: search (low) -->
       <div id="04-the-fix-node-1" class="04-the-fix-node" style="left: 144px; top: 330px">
         <div id="04-the-fix-dot-1" class="04-the-fix-dot">
           <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -310,8 +283,8 @@
         </div>
       </div>
 
-      <!-- 2 · chat bubble (high) -->
-      <div id="04-the-fix-node-2" class="04-the-fix-node" style="left: 396px; top: 230px">
+      <!-- 2 · talk with your doctor: chat bubble (high) -->
+      <div id="04-the-fix-node-2" class="04-the-fix-node" style="left: 446.4px; top: 230px">
         <div id="04-the-fix-dot-2" class="04-the-fix-dot">
           <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path id="04-the-fix-icon-2a" class="04-the-fix-stroke" pathLength="1" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -321,8 +294,8 @@
         </div>
       </div>
 
-      <!-- 3 · open book (low) -->
-      <div id="04-the-fix-node-3" class="04-the-fix-node" style="left: 648px; top: 330px">
+      <!-- 3 · consent and cost: open book (low) -->
+      <div id="04-the-fix-node-3" class="04-the-fix-node" style="left: 748.8px; top: 330px">
         <div id="04-the-fix-dot-3" class="04-the-fix-dot">
           <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path id="04-the-fix-icon-3a" class="04-the-fix-stroke" pathLength="1" d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -331,44 +304,34 @@
         </div>
       </div>
 
-      <!-- 4 · shield-check (high) -->
-      <div id="04-the-fix-node-4" class="04-the-fix-node" style="left: 900px; top: 230px">
+      <!-- 4 · treatment and tracking: line chart (high) -->
+      <div id="04-the-fix-node-4" class="04-the-fix-node" style="left: 1051.2px; top: 230px">
         <div id="04-the-fix-dot-4" class="04-the-fix-dot">
           <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path id="04-the-fix-icon-4a" class="04-the-fix-stroke" pathLength="1" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            <path id="04-the-fix-icon-4b" class="04-the-fix-stroke" pathLength="1" d="M9 12l2 2 4-4" />
+            <path id="04-the-fix-icon-4a" class="04-the-fix-stroke" pathLength="1" d="M3 3v18h18" />
+            <path id="04-the-fix-icon-4b" class="04-the-fix-stroke" pathLength="1" d="M7 15l3-3 4 4 5-6" />
           </svg>
         </div>
       </div>
 
-      <!-- 5 · line chart (low) -->
-      <div id="04-the-fix-node-5" class="04-the-fix-node" style="left: 1152px; top: 330px">
+      <!-- 5 · results reported: bar chart (low) -->
+      <div id="04-the-fix-node-5" class="04-the-fix-node" style="left: 1353.6px; top: 330px">
         <div id="04-the-fix-dot-5" class="04-the-fix-dot">
           <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path id="04-the-fix-icon-5a" class="04-the-fix-stroke" pathLength="1" d="M3 3v18h18" />
-            <path id="04-the-fix-icon-5b" class="04-the-fix-stroke" pathLength="1" d="M7 15l3-3 4 4 5-6" />
+            <path id="04-the-fix-icon-5b" class="04-the-fix-stroke" pathLength="1" d="M8 17v-3" />
+            <path id="04-the-fix-icon-5c" class="04-the-fix-stroke" pathLength="1" d="M13 17V5" />
+            <path id="04-the-fix-icon-5d" class="04-the-fix-stroke" pathLength="1" d="M18 17V9" />
           </svg>
         </div>
       </div>
 
-      <!-- 6 · bar chart (high) -->
-      <div id="04-the-fix-node-6" class="04-the-fix-node" style="left: 1404px; top: 230px">
-        <div id="04-the-fix-dot-6" class="04-the-fix-dot">
-          <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path id="04-the-fix-icon-6a" class="04-the-fix-stroke" pathLength="1" d="M3 3v18h18" />
-            <path id="04-the-fix-icon-6b" class="04-the-fix-stroke" pathLength="1" d="M8 17v-3" />
-            <path id="04-the-fix-icon-6c" class="04-the-fix-stroke" pathLength="1" d="M13 17V5" />
-            <path id="04-the-fix-icon-6d" class="04-the-fix-stroke" pathLength="1" d="M18 17V9" />
-          </svg>
-        </div>
-      </div>
-
-      <!-- 7 · star, highlight orange (high) -->
-      <div id="04-the-fix-node-7" class="04-the-fix-node" style="left: 1656px; top: 230px">
-        <div id="04-the-fix-dot-7" class="04-the-fix-dot 04-the-fix-dot-star">
+      <!-- 6 · rankings and labels improve: star, highlight orange (high) -->
+      <div id="04-the-fix-node-6" class="04-the-fix-node" style="left: 1656px; top: 230px">
+        <div id="04-the-fix-dot-6" class="04-the-fix-dot 04-the-fix-dot-star">
           <svg class="04-the-fix-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
-              id="04-the-fix-icon-7a"
+              id="04-the-fix-icon-6a"
               class="04-the-fix-stroke 04-the-fix-star-shape"
               pathLength="1"
               d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.49l-5.87 3.09 1.12-6.54L2.5 9.41l6.56-.95z"
@@ -388,16 +351,12 @@
           <span id="04-the-fix-word-2" class="04-the-fix-word">Clinical</span>
           <span id="04-the-fix-word-3" class="04-the-fix-word">Trials</span>
         </h1>
-        <p id="04-the-fix-promise-1" class="04-the-fix-promise 04-the-fix-promise-1">
-          Treatment through your own doctor.
+        <p class="04-the-fix-line 04-the-fix-line-1">
+          <span id="04-the-fix-line-1a" class="04-the-fix-phrase">The same idea, for every disease,</span>
+          <span id="04-the-fix-line-1b" class="04-the-fix-phrase">in everyday care</span>
         </p>
-        <p id="04-the-fix-promise-2" class="04-the-fix-promise 04-the-fix-promise-2">
-          <span id="04-the-fix-check" class="04-the-fix-check">
-            <svg class="04-the-fix-check-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path id="04-the-fix-check-mark" class="04-the-fix-check-stroke" pathLength="1" d="M5 12.5l4.5 4.5L19 7.5" />
-            </svg>
-          </span>
-          <span id="04-the-fix-promise-2-text">Every result published.</span>
+        <p class="04-the-fix-line 04-the-fix-line-2">
+          <span id="04-the-fix-line-2a" class="04-the-fix-phrase">Here’s Margaret’s year.</span>
         </p>
       </div>
     </div>
@@ -406,7 +365,7 @@
   <script>
     (function () {
       var ID = "04-the-fix";
-      var DURATION = 8.746;
+      var DURATION = 8.322;
       var el = function (name) {
         return document.getElementById(ID + "-" + name);
       };
@@ -414,10 +373,13 @@
       window.__timelines = window.__timelines || {};
       var tl = gsap.timeline({ paused: true });
 
-      // ---- Scene 1 (0.0–3.3s): the path draws itself 0.2–3.0s, steps pop on as the line reaches them ----
+      // Cues are word starts from timing/v4-estimated.json (frame 4); each reveal lands ~0.02s before its word.
+
+      // ---- Scene 1 (0.0–2.4s): the six-step path draws itself 0.2–2.4s, steps pop on as the line reaches them ----
       var SEG_START = 0.2; // first segment leaves step 1
-      var SEG_END = 3.0; // the line lands on the star
-      var SEG_DUR = (SEG_END - SEG_START) / 6; // constant-speed pen per segment (ease: none)
+      var SEG_END = 2.4; // the line lands on the star
+      var SEG_COUNT = 5;
+      var SEG_DUR = (SEG_END - SEG_START) / SEG_COUNT; // constant-speed pen per segment (ease: none)
       var EDGE_LEAD = SEG_DUR * 0.75; // line reaches the next circle's edge ~75% into its segment
       var POP_DUR = 0.55;
       var ICON_DELAY = 0.1;
@@ -428,9 +390,8 @@
         2: ["icon-2a", "icon-2b", "icon-2c"],
         3: ["icon-3a", "icon-3b"],
         4: ["icon-4a", "icon-4b"],
-        5: ["icon-5a", "icon-5b"],
-        6: ["icon-6a", "icon-6b", "icon-6c", "icon-6d"],
-        7: ["icon-7a"],
+        5: ["icon-5a", "icon-5b", "icon-5c", "icon-5d"],
+        6: ["icon-6a"],
       };
 
       // dash offsets tween as SVG attributes: the CSS route rounds px to whole
@@ -462,7 +423,7 @@
       // step 1 is on screen first, then the line leaves it
       popStep(1, 0.08);
 
-      for (var k = 0; k < 6; k++) {
+      for (var k = 0; k < SEG_COUNT; k++) {
         var segAt = SEG_START + k * SEG_DUR;
         tl.fromTo(
           el("seg-" + k),
@@ -473,26 +434,26 @@
         popStep(k + 2, segAt + EDGE_LEAD);
       }
 
-      // the seventh step: orange circle, star outline draws, then fills
-      var STAR_AT = SEG_START + 5 * SEG_DUR + EDGE_LEAD;
+      // the sixth step: orange circle, star outline draws, then fills
+      var STAR_AT = SEG_START + (SEG_COUNT - 1) * SEG_DUR + EDGE_LEAD;
       tl.fromTo(
-        el("icon-7a"),
+        el("icon-6a"),
         { fillOpacity: 0 },
         { fillOpacity: 1, duration: 0.35, ease: "power1.out" },
         STAR_AT + ICON_DELAY + ICON_DUR - 0.05,
       );
 
-      // title lockup on its voiceover cues: "care-integrated" 1.02 · "clinical" 2.09 · "trials" 2.48
+      // title lockup on its words: "Care-integrated" 0.309 · "clinical" 1.149 · "trials" 1.668
       tl.fromTo(
         el("accent"),
         { scaleX: 0 },
         { scaleX: 1, duration: 0.5, ease: "power3.out" },
-        0.86,
+        0.2,
       );
       [
-        ["word-1", 1.0],
-        ["word-2", 2.07],
-        ["word-3", 2.46],
+        ["word-1", 0.29],
+        ["word-2", 1.13],
+        ["word-3", 1.65],
       ].forEach(function (w) {
         tl.fromTo(
           el(w[0]),
@@ -502,37 +463,28 @@
         );
       });
 
-      // ---- Scene 2 (3.3–6.9s): the two promises under the title ----
-      // "treatment" (3.41)
-      tl.fromTo(
-        el("promise-1"),
-        { opacity: 0, y: 24 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-        3.38,
-      );
-      // "every result" (5.04) — slightly bolder line, small check pops and draws
-      var P2_AT = 5.0;
-      tl.fromTo(
-        el("promise-2"),
-        { opacity: 0, y: 24 },
-        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-        P2_AT,
-      );
-      tl.fromTo(
-        el("check"),
-        { scale: 0.6 },
-        { scale: 1, duration: POP_DUR, ease: "power3.out" },
-        P2_AT + 0.04,
-      );
-      tl.fromTo(
-        el("check-mark"),
-        { attr: { "stroke-dashoffset": 1.05 } },
-        { attr: { "stroke-dashoffset": 0 }, duration: 0.4, ease: "power2.out" },
-        P2_AT + 0.16,
-      );
+      // ---- Scene 2 (2.4–5.6s): "would do the same for every disease, in everyday care" ----
+      // "do" (2.437): the line arrives; its last phrase waits for "in everyday care" (4.383)
+      [
+        ["line-1a", 2.42],
+        ["line-1b", 4.36],
+      ].forEach(function (p) {
+        tl.fromTo(
+          el(p[0]),
+          { opacity: 0, y: 24 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+          p[1],
+        );
+      });
 
-      // ---- Scene 3 (6.9–8.7s): "Here's Margaret's year" (6.96) — she settles onto step 1 ----
-      var M_AT = 6.92;
+      // ---- Scene 3 (5.6–8.4s): "Here's" (5.643) brings the turn line; on "Margaret's" (6.001) she settles onto step 1 ----
+      tl.fromTo(
+        el("line-2a"),
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+        5.62,
+      );
+      var M_AT = 5.98;
       tl.fromTo(
         el("avatar"),
         { opacity: 0, y: -40, scale: 0.7 },
@@ -546,17 +498,17 @@
         { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out" },
         M_AT + 0.12,
       );
-      // the other six steps dim slightly
+      // the other five steps dim slightly
       tl.fromTo(
-        [el("node-2"), el("node-3"), el("node-4"), el("node-5"), el("node-6"), el("node-7")],
+        [el("node-2"), el("node-3"), el("node-4"), el("node-5"), el("node-6")],
         { opacity: 1 },
         { opacity: 0.6, duration: 0.6, ease: "power1.inOut" },
         M_AT + 0.12,
       );
 
       // near-imperceptible push toward step 1 under the back half (hands off to the next frame);
-      // ends exactly at the frame length, anchoring the timeline to DURATION
-      var PUSH_AT = 3.3;
+      // ends exactly at the frame length
+      var PUSH_AT = 2.6;
       tl.fromTo(
         el("stage"),
         { scale: 1 },
@@ -564,7 +516,38 @@
         PUSH_AT,
       );
 
+      // anchor the timeline to the full scene length
+      tl.set({}, {}, 8.322);
+
       window.__timelines["04-the-fix"] = tl;
+    })();
+  </script>
+
+  <script>
+    // retime-to-new-voice: drive this scene's original timeline through a map from the
+    // new narration's time to the old narration's time, anchored on matching spoken cues.
+    (function () {
+      var ID = "04-the-fix";
+      var inner = window.__timelines[ID];
+      var MAP = [[0.000,0.000],[4.383,3.925],[5.643,5.717],[6.787,6.654]]; // [old seconds, new seconds]
+      var NEW_DURATION = 6.87;
+      function toOld(t) {
+        for (var i = 1; i < MAP.length; i++) {
+          if (t <= MAP[i][1]) {
+            var a = MAP[i - 1], b = MAP[i];
+            return a[0] + (t - a[1]) * (b[0] - a[0]) / (b[1] - a[1]);
+          }
+        }
+        var last = MAP[MAP.length - 1];
+        return last[0] + (t - last[1]); // after the last cue, real time (holds stay holds)
+      }
+      var OLD_END = toOld(NEW_DURATION);
+      var outer = gsap.timeline({ paused: true });
+      outer.fromTo(inner, { time: 0 }, {
+        time: OLD_END, duration: NEW_DURATION,
+        ease: function (p) { return toOld(p * NEW_DURATION) / OLD_END; },
+      }, 0);
+      window.__timelines[ID] = outer;
     })();
   </script>
 </template>

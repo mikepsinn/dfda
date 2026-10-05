@@ -98,20 +98,20 @@
       display: inline-block;
     }
 
-    /* ── triptych ── */
+    /* ── triptych: one slot per reason (top 214 → bottom 790, clear of the sources line at 812) ── */
     [id="02-three-locks-grid"] {
       position: absolute;
       left: 96px;
       right: 96px;
-      top: 230px;
+      top: 214px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-template-rows: 548px;
+      grid-template-rows: 576px;
       gap: 1.4cqw;
     }
     [class~="02-three-locks-slot"] {
       position: relative;
-      height: 548px;
+      height: 576px;
     }
     /* dashed placeholder for a slot whose card hasn't arrived yet */
     [class~="02-three-locks-ghost"] {
@@ -132,7 +132,7 @@
       will-change: filter;
       box-sizing: border-box;
       height: 100%;
-      padding: 2.2cqw;
+      padding: 2cqw;
       background: var(--card-bg);
       border: 1.5px solid var(--border);
       border-radius: 14px;
@@ -161,47 +161,37 @@
       height: 2.5cqw;
       overflow: visible;
     }
-    /* tag-pill date line (card 1) — fixed-width year spans so the two-step wipe lands exactly */
-    [id="02-three-locks-pill1"] {
+    /* tag-pill (card 3): what Right to Try lets makers charge — wipes in left to right */
+    [id="02-three-locks-pill3"] {
       display: inline-flex;
       align-items: center;
       box-sizing: border-box;
-      width: 160px;
-      height: 38px;
-      padding: 0 18px;
+      height: 46px;
+      padding: 0 20px;
       border-radius: 100px;
       background: var(--accent-light);
       color: var(--primary);
-      font-size: 21px;
+      font-size: 1.4cqw;
       font-weight: 600;
-      letter-spacing: 0.02em;
-      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.01em;
       white-space: nowrap;
     }
-    [id="02-three-locks-yr1"] {
-      display: inline-block;
-      width: 56px;
-      text-align: right;
-    }
-    [id="02-three-locks-yr2"] {
-      display: inline-block;
-      width: 68px;
-      text-align: left;
-    }
+    /* two-line card titles, broken by hand so every card's numeral row sits at the same height */
     [class~="02-three-locks-title"] {
-      margin: 1.6cqw 0 0;
+      margin: 1.3cqw 0 0;
       font-size: 1.8cqw;
       font-weight: 600;
       line-height: 1.15;
       letter-spacing: -0.02em;
       color: var(--text);
       white-space: nowrap;
+      flex: 0 0 auto;
     }
-    /* numeral slot: fixed-width row, tabular digits, scale-only growth */
+    /* numeral slot: fixed-height row, tabular digits, scale-only growth */
     [class~="02-three-locks-numrow"] {
       position: relative;
-      margin-top: 1.6cqw;
-      height: 7.6cqw;
+      margin-top: 1.1cqw;
+      height: 7.1cqw;
       display: flex;
       align-items: baseline;
       flex: 0 0 auto;
@@ -219,7 +209,7 @@
     }
     [class~="02-three-locks-num"] {
       display: inline-block;
-      font-size: 7.5cqw;
+      font-size: 7cqw;
       font-weight: 700;
       line-height: 1;
       color: var(--primary);
@@ -227,17 +217,33 @@
       white-space: nowrap;
       transform-origin: 0% 85%;
     }
-    [id="02-three-locks-suffix3"] {
+    /* card 1 has no figure: the word "Patent" takes the numeral slot and is struck through */
+    [id="02-three-locks-num1"] {
+      position: relative;
+      font-size: 6cqw;
+      letter-spacing: -0.02em;
+    }
+    [id="02-three-locks-strike1"] {
+      position: absolute;
+      left: -0.04em;
+      right: -0.04em;
+      top: 0.51em;
+      height: 0.075em;
+      border-radius: 100px;
+      background: var(--primary);
+      transform-origin: 0% 50%;
+    }
+    [id="02-three-locks-suffix2"] {
       display: inline-block;
       margin-left: 0.04em;
-      font-size: 4.4cqw;
+      font-size: 4.1cqw;
       font-weight: 700;
       line-height: 1;
       color: var(--primary);
     }
     [class~="02-three-locks-rule"] {
       display: block;
-      margin-top: 1cqw;
+      margin-top: 0.8cqw;
       width: 60px;
       height: 4px;
       border-radius: 2px;
@@ -246,15 +252,12 @@
       flex: 0 0 auto;
     }
     [class~="02-three-locks-desc"] {
-      margin: 1.4cqw 0 0;
+      margin: 1.1cqw 0 0;
       font-size: 1.4cqw;
       font-weight: 400;
-      line-height: 1.45;
+      line-height: 1.4;
       color: var(--text-muted);
       text-wrap: balance;
-    }
-    [class~="02-three-locks-nw"] {
-      white-space: nowrap;
     }
 
     /* ── sources chrome ── */
@@ -271,8 +274,8 @@
     }
   </style>
 
-  <div id="root" data-composition-id="02-three-locks" data-width="1920" data-height="1080" data-duration="18.006">
-    <div id="02-three-locks-bg" class="clip" data-start="0" data-duration="18.006" data-track-index="0"></div>
+  <div id="root" data-composition-id="02-three-locks" data-width="1920" data-height="1080" data-duration="20.431">
+    <div id="02-three-locks-bg" class="clip" data-start="0" data-duration="20.431" data-track-index="0"></div>
 
     <div id="02-three-locks-stage">
       <div id="02-three-locks-cam">
@@ -281,39 +284,37 @@
           <span id="02-three-locks-accent"></span>
           <span id="02-three-locks-eyebrow">Why she’s stuck</span>
         </div>
-        <h2 id="02-three-locks-h2"><span class="02-three-locks-w"><span class="02-three-locks-wi">Three</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">things</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">block</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">her</span></span></h2>
+        <h2 id="02-three-locks-h2"><span class="02-three-locks-w"><span class="02-three-locks-wi">Three</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">reasons</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">promising</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">drugs</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">go</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">untested</span></span></h2>
 
         <!-- triptych -->
         <div id="02-three-locks-grid">
-          <!-- card 1 — you have to be dying -->
+          <!-- card 1 — no one pays to test old drugs -->
           <div class="02-three-locks-slot">
+            <div id="02-three-locks-ghost1" class="02-three-locks-ghost"></div>
             <div id="02-three-locks-rise1" class="02-three-locks-rise">
               <div id="02-three-locks-card1" class="02-three-locks-card">
                 <div class="02-three-locks-head">
                   <div id="02-three-locks-icon1" class="02-three-locks-icon">
                     <svg viewBox="0 0 48 48" fill="none" stroke="#694CFA" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 6 H36 M12 42 H36" />
-                      <path d="M15 6 C15 15 20.5 19.5 24 24 C27.5 19.5 33 15 33 6" />
-                      <path d="M15 42 C15 33 20.5 28.5 24 24 C27.5 28.5 33 33 33 42" />
-                      <path id="02-three-locks-sandtop" d="M18.2 12 H29.8 C28.8 16.4 26.2 19.2 24 21.6 C21.8 19.2 19.2 16.4 18.2 12 Z" fill="#694CFA" fill-opacity="0.35" stroke="none" />
-                      <path id="02-three-locks-sandbot" d="M17 40 C17.6 35.6 20.6 33.2 24 32 C27.4 33.2 30.4 35.6 31 40 Z" fill="#694CFA" fill-opacity="0.35" stroke="none" />
-                      <path d="M24 23.5 V31" stroke-width="1.6" stroke-dasharray="1.5 2.5" opacity="0.6" />
+                      <circle cx="24" cy="24" r="16" />
+                      <path d="M28.6 19 C27.8 17.4 26.1 16.6 24 16.6 C21.3 16.6 19.6 18 19.6 20 C19.6 22.4 22 23.1 24 23.7 C26.4 24.4 28.6 25.2 28.6 27.8 C28.6 30 26.6 31.4 24 31.4 C21.7 31.4 19.9 30.6 19.1 29 M24 13.6 V16.6 M24 31.4 V34.4" stroke-width="2.2" />
+                      <path id="02-three-locks-slashknock1" d="M10 38 L38 10" stroke="#E7E2F2" stroke-width="7" stroke-dasharray="40 40" />
+                      <path id="02-three-locks-slash1" d="M10 38 L38 10" stroke-width="2.8" stroke-dasharray="40 40" />
                     </svg>
                   </div>
-                  <span id="02-three-locks-pill1"><span id="02-three-locks-yr1">2018</span><span id="02-three-locks-yr2">–2024</span></span>
                 </div>
-                <h3 id="02-three-locks-title1" class="02-three-locks-title"><span class="02-three-locks-w"><span class="02-three-locks-wi">You</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">have</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">to</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">be</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">dying</span></span></h3>
+                <h3 id="02-three-locks-title1" class="02-three-locks-title"><span class="02-three-locks-w"><span class="02-three-locks-wi">No</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">one</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">pays</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">to</span></span><br><span class="02-three-locks-w"><span class="02-three-locks-wi">test</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">old</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">drugs</span></span></h3>
                 <div class="02-three-locks-numrow">
                   <span id="02-three-locks-skel1" class="02-three-locks-skel"></span>
-                  <span id="02-three-locks-num1" class="02-three-locks-num">21</span>
+                  <span id="02-three-locks-num1" class="02-three-locks-num"><span id="02-three-locks-word1">Patent</span><span id="02-three-locks-strike1"></span></span>
                 </div>
                 <span id="02-three-locks-rule1" class="02-three-locks-rule"></span>
-                <p id="02-three-locks-desc1" class="02-three-locks-desc">drugs used under federal <span class="02-three-locks-nw">right-to-try,</span> <span class="02-three-locks-nw">2018–2024</span></p>
+                <p id="02-three-locks-desc1" class="02-three-locks-desc">Old drugs can’t be patented, so no company pays for the trials.</p>
               </div>
             </div>
           </div>
 
-          <!-- card 2 — no financial incentive -->
+          <!-- card 2 — no one learns from patients -->
           <div class="02-three-locks-slot">
             <div id="02-three-locks-ghost2" class="02-three-locks-ghost"></div>
             <div id="02-three-locks-rise2" class="02-three-locks-rise">
@@ -321,25 +322,24 @@
                 <div class="02-three-locks-head">
                   <div id="02-three-locks-icon2" class="02-three-locks-icon">
                     <svg viewBox="0 0 48 48" fill="none" stroke="#694CFA" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="24" cy="24" r="16" />
-                      <path d="M28.6 19 C27.8 17.4 26.1 16.6 24 16.6 C21.3 16.6 19.6 18 19.6 20 C19.6 22.4 22 23.1 24 23.7 C26.4 24.4 28.6 25.2 28.6 27.8 C28.6 30 26.6 31.4 24 31.4 C21.7 31.4 19.9 30.6 19.1 29 M24 13.6 V16.6 M24 31.4 V34.4" stroke-width="2.2" />
-                      <path id="02-three-locks-slashknock" d="M10 38 L38 10" stroke="#E7E2F2" stroke-width="7" stroke-dasharray="40 40" />
-                      <path id="02-three-locks-slash" d="M10 38 L38 10" stroke-width="2.8" stroke-dasharray="40 40" />
+                      <path d="M18 9.5 H14 C12.3 9.5 11 10.8 11 12.5 V39 C11 40.7 12.3 42 14 42 H34 C35.7 42 37 40.7 37 39 V12.5 C37 10.8 35.7 9.5 34 9.5 H30" />
+                      <rect x="18" y="6" width="12" height="7" rx="2" />
+                      <path d="M17 21 H31 M17 27.5 H31 M17 34 H26" stroke="#94A3B8" stroke-width="2" stroke-dasharray="2.2 3.2" />
                     </svg>
                   </div>
                 </div>
-                <h3 id="02-three-locks-title2" class="02-three-locks-title"><span class="02-three-locks-w"><span class="02-three-locks-wi">No</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">financial</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">incentive</span></span></h3>
+                <h3 id="02-three-locks-title2" class="02-three-locks-title"><span class="02-three-locks-w"><span class="02-three-locks-wi">No</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">one</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">learns</span></span><br><span class="02-three-locks-w"><span class="02-three-locks-wi">from</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">patients</span></span></h3>
                 <div class="02-three-locks-numrow">
                   <span id="02-three-locks-skel2" class="02-three-locks-skel"></span>
-                  <span id="02-three-locks-num2" class="02-three-locks-num">573</span>
+                  <span id="02-three-locks-num2" class="02-three-locks-num">99.8</span><span id="02-three-locks-suffix2">%</span>
                 </div>
                 <span id="02-three-locks-rule2" class="02-three-locks-rule"></span>
-                <p id="02-three-locks-desc2" class="02-three-locks-desc">Alzheimer’s candidates still untested. No patent, no sponsor.</p>
+                <p id="02-three-locks-desc2" class="02-three-locks-desc">of Alzheimer’s patients are in no study, <span id="02-three-locks-desc2b">so nobody learns from their treatment.</span></p>
               </div>
             </div>
           </div>
 
-          <!-- card 3 — no one publishes outcomes -->
+          <!-- card 3 — Right to Try gives makers no incentive -->
           <div class="02-three-locks-slot">
             <div id="02-three-locks-ghost3" class="02-three-locks-ghost"></div>
             <div id="02-three-locks-rise3" class="02-three-locks-rise">
@@ -347,26 +347,28 @@
                 <div class="02-three-locks-head">
                   <div id="02-three-locks-icon3" class="02-three-locks-icon">
                     <svg viewBox="0 0 48 48" fill="none" stroke="#694CFA" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M18 9.5 H14 C12.3 9.5 11 10.8 11 12.5 V39 C11 40.7 12.3 42 14 42 H34 C35.7 42 37 40.7 37 39 V12.5 C37 10.8 35.7 9.5 34 9.5 H30" />
-                      <rect x="18" y="6" width="12" height="7" rx="2" />
-                      <path d="M17 21 H31 M17 27.5 H31 M17 34 H26" stroke="#94A3B8" stroke-width="2" stroke-dasharray="2.2 3.2" />
+                      <path d="M9 9 H22.2 C23.3 9 24.3 9.4 25 10.2 L39.4 24.6 C40.9 26.1 40.9 28.5 39.4 30 L30 39.4 C28.5 40.9 26.1 40.9 24.6 39.4 L10.2 25 C9.4 24.3 9 23.3 9 22.2 Z" />
+                      <circle cx="16.5" cy="16.5" r="2.6" />
+                      <path id="02-three-locks-slashknock3" d="M10 38 L38 10" stroke="#E7E2F2" stroke-width="7" stroke-dasharray="40 40" />
+                      <path id="02-three-locks-slash3" d="M10 38 L38 10" stroke-width="2.8" stroke-dasharray="40 40" />
                     </svg>
                   </div>
+                  <span id="02-three-locks-pill3">Price capped at cost</span>
                 </div>
-                <h3 id="02-three-locks-title3" class="02-three-locks-title"><span class="02-three-locks-w"><span class="02-three-locks-wi">No</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">one</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">publishes</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">outcomes</span></span></h3>
+                <h3 id="02-three-locks-title3" class="02-three-locks-title"><span class="02-three-locks-w"><span class="02-three-locks-wi">Right</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">to</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">Try</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">gives</span></span><br><span class="02-three-locks-w"><span class="02-three-locks-wi">makers</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">no</span></span> <span class="02-three-locks-w"><span class="02-three-locks-wi">incentive</span></span></h3>
                 <div class="02-three-locks-numrow">
                   <span id="02-three-locks-skel3" class="02-three-locks-skel"></span>
-                  <span id="02-three-locks-num3" class="02-three-locks-num">99.8</span><span id="02-three-locks-suffix3">%</span>
+                  <span id="02-three-locks-num3" class="02-three-locks-num">21</span>
                 </div>
                 <span id="02-three-locks-rule3" class="02-three-locks-rule"></span>
-                <p id="02-three-locks-desc3" class="02-three-locks-desc">of Alzheimer’s patients are in no study</p>
+                <p id="02-three-locks-desc3" class="02-three-locks-desc">drugs made available in over six years</p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- sources chrome -->
-        <div id="02-three-locks-sources">Sources: FDA via FactCheck.org, 2026 · Frontiers in Pharmacology, 2023 · Alzheimer’s Association, 2026</div>
+        <div id="02-three-locks-sources">Sources: Frontiers in Pharmacology, 2023; USC Schaeffer Center; Alzheimer’s Association, 2026; FDA via FactCheck.org, 2026</div>
       </div>
     </div>
   </div>
@@ -382,21 +384,15 @@
       }
 
       var tl = gsap.timeline({ paused: true });
-      var DUR = 19.563;
+      var DUR = 23.92;
 
       // ── camera: one slow push-in under the whole shot (sine.inOut → at rest by the hold)
       tl.fromTo(el("cam"), { scale: 1 }, { scale: 1.03, duration: DUR, ease: "sine.inOut" }, 0);
 
-      // ── Scene 1 (0.0–3.3s): slide-header, ghost slots, card 1 rises left
-      tl.fromTo(el("accent"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 0);
-      tl.fromTo(el("eyebrow"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.05);
-      tl.fromTo(words("h2"), { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.6, ease: "power3.out", stagger: 0.07 }, 0.1);
-      tl.fromTo([el("ghost2"), el("ghost3")], { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out", stagger: 0.1 }, 0.4);
-
-      // card assemble: rise into slot, icon spring-pop, per-word title
+      // card assemble: rise into slot, icon pop, per-word title
       function cardIn(n, t) {
         tl.fromTo(el("rise" + n), { y: 56, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, t);
-        tl.fromTo(el("icon" + n), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.8)" }, t + 0.18);
+        tl.fromTo(el("icon" + n), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "power3.out" }, t + 0.18);
         tl.fromTo(words("title" + n), { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.55, ease: "power3.out", stagger: 0.08 }, t + 0.25);
       }
       // the dashed placeholder retracts as its card rises into the slot (clip, mid-shot swap)
@@ -408,7 +404,13 @@
           t
         );
       }
-      // counting-dynamic-scale: value + scale share start, duration, ease; skeleton swaps out.
+      // the numeral slot fills: skeleton swaps out while the figure grows in (scale-only growth)
+      function slotIn(n, t, dur) {
+        tl.fromTo(el("num" + n), { scale: 0.5 }, { scale: 1, duration: dur, ease: "power3.out" }, t);
+        tl.fromTo(el("num" + n), { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, t);
+        tl.fromTo(el("skel" + n), { scaleX: 1 }, { scaleX: 0, duration: 0.35, ease: "power2.in" }, t);
+      }
+      // counting-dynamic-scale: value + scale share start, duration, ease.
       // The value lives behind a setter so every render (incl. event-suppressed seeks) writes the text.
       function countUp(n, t, target, dur, fmt) {
         var numEl = el("num" + n);
@@ -424,13 +426,17 @@
           },
         });
         tl.fromTo(state, { v: 0 }, { v: target, duration: dur, ease: "power3.out" }, t);
-        tl.fromTo(numEl, { scale: 0.5 }, { scale: 1, duration: dur, ease: "power3.out" }, t);
-        tl.fromTo(numEl, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, t);
-        tl.fromTo(el("skel" + n), { scaleX: 1 }, { scaleX: 0, duration: 0.35, ease: "power2.in" }, t);
-        tl.fromTo(el("rule" + n), { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power3.out" }, t + dur);
+        slotIn(n, t, dur);
+      }
+      function ruleIn(n, t) {
+        tl.fromTo(el("rule" + n), { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power3.out" }, t);
       }
       function descIn(n, t) {
         tl.fromTo(el("desc" + n), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, t);
+      }
+      // icon slash draws across (knock-out stroke first so it reads against the art)
+      function slashIn(n, t) {
+        tl.fromTo([el("slashknock" + n), el("slash" + n)], { strokeDashoffset: 40 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.inOut" }, t);
       }
       // depth-of-field-blur (light): previous card dims + softens while the next is active
       function defocus(n, t) {
@@ -456,55 +462,59 @@
         return (Math.round(v * 10) / 10).toFixed(1);
       }
 
-      // "Federal right-to-try" — card 1 rises into the left slot
-      cardIn(1, 0.2);
-      // hourglass sand drains while card 1 is the active card
-      gsap.set(el("sandtop"), { svgOrigin: "24 21.6" });
-      gsap.set(el("sandbot"), { svgOrigin: "24 40" });
-      tl.fromTo(el("sandtop"), { scaleY: 1 }, { scaleY: 0.1, duration: 7.9, ease: "none" }, 0.8);
-      tl.fromTo(el("sandbot"), { scaleY: 0.15 }, { scaleY: 1, duration: 7.9, ease: "none" }, 0.8);
+      // ── Beat 0 (0.0–1.97s): "There are three reasons." — slide-header, then three empty slots
+      tl.fromTo(el("accent"), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.309); // "There"
+      tl.fromTo(el("eyebrow"), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.359);
+      tl.fromTo(words("h2"), { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.6, ease: "power3.out", stagger: 0.07 }, 0.918); // "three"
+      tl.fromTo([el("ghost1"), el("ghost2"), el("ghost3")], { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out", stagger: 0.12 }, 1.276); // "reasons."
 
-      // ── Scene 2 (3.3–9.2s): date line wipes "2018" then "–2024"; 21 counts; description
+      // ── Beat 1 (1.97–5.95s): "Old drugs can't be patented, so no company pays to test them."
+      ghostOut(1, 1.968); // "Old"
+      cardIn(1, 1.968);
+      slotIn(1, 3.092, 0.7); // "patented," — the word "Patent" takes the numeral slot
+      tl.fromTo(el("strike1"), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, 3.392); // "patented," (tail) — struck through
+      tl.fromTo(el("word1"), { color: "#694CFA" }, { color: "#94A3B8", duration: 0.4, ease: "power2.inOut" }, 3.392);
+      ruleIn(1, 3.716); // "so"
+      descIn(1, 3.927); // "no company"
+      slashIn(1, 4.602); // "pays" — the coin is slashed
+
+      // ── Beat 2 (5.95–11.39s): "Almost no Alzheimer's patients are in any study, so nobody learns from their treatment."
+      defocus(1, 5.953); // "Almost"
+      ghostOut(2, 5.953);
+      cardIn(2, 5.953);
+      countUp(2, 6.574, 99.8, 1.4, asTenths); // "Alzheimer's"
+      tl.fromTo(el("suffix2"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 7.97); // "in" (count settles)
+      ruleIn(2, 7.97);
+      descIn(2, 8.18); // "any study,"
+      // the second clause stays hidden inside the line until its own cue
+      tl.fromTo(el("desc2b"), { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, 9.105); // "nobody learns"
+
+      // ── Beat 3 (11.39–23.92s): "And the federal Right to Try law lets drug makers charge only their costs,
+      //    so they have no reason to take part: only 21 drugs have been made available in over six years."
+      defocus(2, 12.356); // "Right"
+      ghostOut(3, 12.356);
+      cardIn(3, 12.356);
       tl.fromTo(
-        el("pill1"),
-        { clipPath: "inset(0px 160px 0px 0px round 100px)" },
-        { clipPath: "inset(0px 86px 0px 0px round 100px)", duration: 0.45, ease: "power2.out" },
-        3.4
-      );
-      tl.fromTo(
-        el("pill1"),
-        { clipPath: "inset(0px 86px 0px 0px round 100px)" },
-        { clipPath: "inset(0px 0px 0px 0px round 100px)", duration: 0.45, ease: "power2.out", immediateRender: false },
-        4.7
-      );
-      countUp(1, 6.66, 21, 1.3, asInt);
-      descIn(1, 7.82);
-
-      // ── Scene 3 (9.2–13.6s): card 1 defocuses; card 2 rises center; slash; 573; description
-      defocus(1, 9.22);
-      ghostOut(2, 9.22);
-      cardIn(2, 9.22);
-      tl.fromTo([el("slashknock"), el("slash")], { strokeDashoffset: 40 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.inOut" }, 9.86);
-      countUp(2, 10.36, 573, 1.5, asInt);
-      descIn(2, 11.46);
-
-      // ── Scene 4 (13.6–19.6s): card 2 defocuses; card 3 rises right; 99.8%; description; array resolves
-      defocus(2, 13.64);
-      ghostOut(3, 13.64);
-      cardIn(3, 13.64);
-      countUp(3, 14.36, 99.8, 1.6, asTenths);
-      tl.fromTo(el("suffix3"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, 14.36 + 1.6);
-      descIn(3, 17.28);
+        el("pill3"),
+        { clipPath: "inset(0% 100% 0% 0% round 100px)" },
+        { clipPath: "inset(0% 0% 0% 0% round 100px)", duration: 0.6, ease: "power2.out" },
+        14.447
+      ); // "charge only their costs"
+      slashIn(3, 16.805); // "no reason to take part" — the price tag is slashed
+      countUp(3, 18.837, 21, 1.2, asInt); // "21"
+      ruleIn(3, 20.071); // "been"
+      descIn(3, 20.376); // "made available"
       // all three return to equal weight as one held array; sources line arrives; hold
-      refocus(1, 18.5);
-      refocus(2, 18.5);
-      tl.fromTo(el("sources"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 18.5);
+      refocus(1, 21.463); // "over six years"
+      refocus(2, 21.463);
+      tl.fromTo(el("sources"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 21.463);
+
+      tl.set({}, {}, 23.92);
 
       window.__timelines = window.__timelines || {};
       window.__timelines["02-three-locks"] = tl;
     })();
   </script>
-
 
   <script>
     // retime-to-new-voice: drive this scene's original timeline through a map from the
@@ -512,8 +522,8 @@
     (function () {
       var ID = "02-three-locks";
       var inner = window.__timelines[ID];
-      var MAP = [[0.000,0.000],[3.320,3.328],[4.700,4.608],[6.540,5.931],[9.220,8.405],[11.200,10.197],[13.640,11.853],[16.960,14.754],[19.440,16.764]]; // [old seconds, new seconds]
-      var NEW_DURATION = 17.506;
+      var MAP = [[0.000,0.000],[1.968,1.920],[3.716,3.669],[5.953,5.504],[8.895,8.491],[11.390,10.602],[15.985,14.613],[18.532,16.234],[18.837,16.831],[22.286,19.890]]; // [old seconds, new seconds]
+      var NEW_DURATION = 19.931;
       function toOld(t) {
         for (var i = 1; i < MAP.length; i++) {
           if (t <= MAP[i][1]) {

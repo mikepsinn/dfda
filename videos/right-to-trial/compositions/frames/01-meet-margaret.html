@@ -92,7 +92,7 @@
     [id="01-meet-margaret-field"] {
       position: absolute;
       left: 1214px;
-      top: 100px;
+      top: 76px;
       width: 610px;
       height: 610px;
       display: grid;
@@ -111,7 +111,7 @@
     [id="01-meet-margaret-card"] {
       position: absolute;
       left: 868px;
-      top: 270px;
+      top: 246px;
       width: 540px;
       height: 360px;
       background: #f2eff1;
@@ -150,51 +150,42 @@
       color: #475569;
     }
 
-    [id="01-meet-margaret-lockbody"],
-    [id="01-meet-margaret-shackle"] {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 1920px;
-      height: 1080px;
-      overflow: visible;
-      pointer-events: none;
-    }
-    [id="01-meet-margaret-lockbody"] path,
-    [id="01-meet-margaret-shackle"] path {
-      fill: none;
-      stroke: #694cfa;
-      stroke-width: 14;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    [id="01-meet-margaret-final"] {
+    /* ---- closing lines under the card (above the caption band) ---- */
+    [id="01-meet-margaret-line1"],
+    [id="01-meet-margaret-line2"],
+    [id="01-meet-margaret-line3"] {
       position: absolute;
       left: 868px;
-      top: 744px;
-      font-size: 54px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 38px;
       font-weight: 500;
-      line-height: 1.3;
+      line-height: 1.2;
       letter-spacing: -0.02em;
       color: #0f172a;
       white-space: nowrap;
     }
+    [id="01-meet-margaret-line1"] {
+      top: 712px;
+    }
+    [id="01-meet-margaret-line2"] {
+      top: 766px;
+    }
+    [id="01-meet-margaret-line3"] {
+      top: 820px;
+    }
+    /* empty-record clipboard (same glyph as Frame 2's "No one publishes outcomes") */
+    [id="01-meet-margaret-record"] {
+      display: block;
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      overflow: visible;
+    }
 
     /* ---- chrome (outside the camera) ---- */
-    [id="01-meet-margaret-composite"] {
-      position: absolute;
-      left: 96px;
-      top: 60px;
-      padding: 9px 22px;
-      border-radius: 100px;
-      background: rgba(105, 76, 250, 0.08);
-      color: #5B3FE6;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 1.2;
-      white-space: nowrap;
-    }
     [id="01-meet-margaret-source"] {
       position: absolute;
       left: 96px;
@@ -213,13 +204,13 @@
     data-width="1920"
     data-height="1080"
     data-start="0"
-    data-duration="10.068"
+    data-duration="16.487"
   >
     <div
       id="01-meet-margaret-bg"
       class="clip"
       data-start="0"
-      data-duration="10.068"
+      data-duration="16.487"
       data-track-index="0"
     ></div>
 
@@ -237,23 +228,36 @@
         <div id="01-meet-margaret-label">existing drugs<br />that might help her</div>
       </div>
 
-      <svg id="01-meet-margaret-lockbody" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-        <path
-          id="01-meet-margaret-lockbody-path"
-          d="M 1138 270 H 1394 A 14 14 0 0 1 1408 284 V 616 A 14 14 0 0 1 1394 630 H 882 A 14 14 0 0 1 868 616 V 284 A 14 14 0 0 1 882 270 Z"
-        />
-      </svg>
-      <svg id="01-meet-margaret-shackle" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-        <path
-          id="01-meet-margaret-shackle-path"
-          d="M 1013 270 V 205 A 125 125 0 0 1 1263 205 V 270"
-        />
-      </svg>
-
-      <div id="01-meet-margaret-final">She can't get any of them.</div>
+      <div id="01-meet-margaret-line1">Few have ever been tested for Alzheimer's.</div>
+      <div id="01-meet-margaret-line2">Her doctor has no evidence for any of them.</div>
+      <div id="01-meet-margaret-line3">
+        <span>If she takes one, nobody records what happens.</span>
+        <svg
+          id="01-meet-margaret-record"
+          viewBox="0 0 48 48"
+          fill="none"
+          stroke="#694CFA"
+          stroke-width="2.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="01-meet-margaret-record-board"
+            d="M18 9.5 H14 C12.3 9.5 11 10.8 11 12.5 V39 C11 40.7 12.3 42 14 42 H34 C35.7 42 37 40.7 37 39 V12.5 C37 10.8 35.7 9.5 34 9.5 H30"
+          />
+          <rect id="01-meet-margaret-record-clip" x="18" y="6" width="12" height="7" rx="2" />
+          <path
+            id="01-meet-margaret-record-blank"
+            d="M17 21 H31 M17 27.5 H31 M17 34 H26"
+            stroke="#94A3B8"
+            stroke-width="2"
+            stroke-dasharray="2.2 3.2"
+          />
+        </svg>
+      </div>
     </div>
 
-    <div id="01-meet-margaret-composite">Margaret is a composite patient</div>
     <div id="01-meet-margaret-source">Source: Frontiers in Pharmacology, 2023</div>
   </div>
 
@@ -269,6 +273,7 @@
       var LIGHT = "#94A3B8";
       var SLOT = "rgba(105, 76, 250, 0.18)";
       var TOTAL = 573; // one dot per candidate drug (24 columns)
+      var COLS = 24;
 
       // build the dot field deterministically, index order = row-major
       var field = byId("field");
@@ -278,6 +283,28 @@
         var d = document.createElement("span");
         field.appendChild(d);
         dots.push(d);
+      }
+
+      // "few ever tested": a small, fixed, scattered handful stays purple.
+      // [row, col] picks avoid the cells the counter card covers (cols 0-7, rows 7-20).
+      // Purely visual; no count is shown or implied.
+      var FEW_CELLS = [
+        [1, 5],
+        [3, 19],
+        [7, 12],
+        [10, 22],
+        [13, 9],
+        [17, 17],
+        [20, 11],
+        [22, 3],
+      ];
+      var isFew = {};
+      for (var f = 0; f < FEW_CELLS.length; f++) {
+        isFew[FEW_CELLS[f][0] * COLS + FEW_CELLS[f][1]] = true;
+      }
+      var greyDots = [];
+      for (var g = 0; g < TOTAL; g++) {
+        if (!isFew[g]) greyDots.push(dots[g]);
       }
 
       var num = byId("num");
@@ -296,64 +323,58 @@
         path.style.strokeDashoffset = String(len + 20);
         return len;
       }
-      var bodyPath = byId("lockbody-path");
-      var shacklePath = byId("shackle-path");
-      var bodyLen = prepDraw(bodyPath, 1776);
-      var shackleLen = prepDraw(shacklePath, 523);
+      var boardPath = byId("record-board");
+      var clipRect = byId("record-clip");
+      var boardLen = prepDraw(boardPath, 104);
+      var clipLen = prepDraw(clipRect, 35);
 
       var tl = gsap.timeline({ paused: true });
 
-      // macro camera: very slow lean-in that settles before the held silence
+      // macro camera: very slow lean-in across the scene, settled before the held end
       tl.fromTo(
         byId("camera"),
         { scale: 1 },
-        { scale: 1.025, duration: 9.6, ease: "sine.inOut" },
+        { scale: 1.025, duration: 18.6, ease: "sine.inOut" },
         0
       );
 
-      // ---- Scene 1 (0.0-1.7): portrait settles, composite pill, name on "68" ----
+      // ---- Beat 1 (0.0-2.1): portrait on "Margaret", name on "68" ----
       tl.fromTo(
         byId("portrait"),
         { opacity: 0, y: 36, scale: 0.94 },
         { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: "power3.out" },
-        0.05
-      );
-      tl.fromTo(
-        byId("composite"),
-        { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
         0.2
       );
       tl.fromTo(
         byId("name"),
         { opacity: 0, y: 28 },
         { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
-        0.62
+        0.96
       );
 
-      // ---- Scene 2 (1.7-3.3): condition pill on "Alzheimer's", then hold ----
+      // ---- Beat 2 (2.1-3.95): condition pill on "Alzheimer's", then hold ----
       tl.fromTo(
         byId("tag"),
         { opacity: 0, y: 16, scale: 0.94 },
         { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" },
-        1.7
+        2.1
       );
 
-      // ---- Scene 3 (3.3-7.9): right half opens on "flagged", count on "573" ----
+      // ---- Beat 3 (3.95-8.2): right half opens on "identified", count on "573" ----
       // empty slots wave in (index order)
       tl.fromTo(
         dots,
         { opacity: 0, scale: 0.3 },
         { opacity: 1, scale: 0.55, duration: 0.35, ease: "power2.out", stagger: { amount: 0.5 } },
-        4.05
+        3.95
       );
       tl.fromTo(
         byId("card"),
         { opacity: 0, y: 24, scale: 0.97 },
         { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" },
-        4.25
+        4.15
       );
-      tl.fromTo(num, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 4.45);
+      tl.fromTo(num, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 4.4);
 
       // counting-dynamic-scale: value + transform scale share timing and ease
       // (direct innerText tween + snap — no callback, so it stays correct under
@@ -398,60 +419,91 @@
         byId("label"),
         { opacity: 0, y: 14 },
         { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
-        6.05
+        5.9
       );
-      // source line
+      // source line, as the sentence closes on "help her"
       tl.fromTo(
         byId("source"),
         { opacity: 0, y: 8 },
         { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
-        7.5
+        7.45
       );
 
-      // ---- Scene 4 (7.9-10.133): "She can't get" -> grey wave + lock ----
+      // ---- Beat 4 (8.2-11.9): "Few have ever been tested" -> first closing line,
+      //      grey wave across the field, a scattered handful stays purple ----
       tl.fromTo(
-        dots,
-        { backgroundColor: PRIMARY },
+        byId("line1"),
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+        8.22
+      );
+      tl.fromTo(
+        greyDots,
+        { backgroundColor: PRIMARY, scale: 1 },
         {
           backgroundColor: LIGHT,
-          duration: 0.3,
+          scale: 0.75,
+          duration: 0.35,
           ease: "power1.out",
-          stagger: { amount: 0.45 },
+          stagger: { amount: 0.85 },
           immediateRender: false,
         },
-        8.68
+        8.25
+      );
+      // the few that stay purple settle slightly larger as the wave passes, so they read
+      var fewDots = [];
+      for (var h = 0; h < TOTAL; h++) {
+        if (isFew[h]) fewDots.push(dots[h]);
+      }
+      tl.fromTo(
+        fewDots,
+        { scale: 1 },
+        { scale: 1.3, duration: 0.6, ease: "power3.out", immediateRender: false },
+        9.0
       );
       tl.fromTo(
         num,
         { color: PRIMARY },
-        { color: LIGHT, duration: 0.5, ease: "power1.out", immediateRender: false },
-        8.7
+        { color: LIGHT, duration: 0.8, ease: "power1.out", immediateRender: false },
+        8.3
       );
-      // lock body traces the counter card, then the (open) shackle, then it clicks shut
+      // ---- Beat 5 (11.9-16.25): "no evidence to recommend" -> second closing line ----
       tl.fromTo(
-        bodyPath,
-        { strokeDashoffset: bodyLen + 20 },
-        { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" },
-        8.75
-      );
-      tl.fromTo(
-        shacklePath,
-        { strokeDashoffset: shackleLen + 20 },
-        { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" },
-        9.16
-      );
-      tl.fromTo(byId("shackle"), { y: -30 }, { y: 0, duration: 0.18, ease: "power2.in" }, 9.56);
-
-      // closing line on "single one", then hold still
-      tl.fromTo(
-        byId("final"),
+        byId("line2"),
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
-        9.3
+        11.9
       );
 
-      // anchor the held silence to the fixed frame length
-      tl.set({}, {}, 10.133);
+      // ---- Beat 6 (16.25-end): "nobody records what happens" -> third line + empty record ----
+      tl.fromTo(
+        byId("line3"),
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" },
+        16.25
+      );
+      // empty clipboard draws itself on "records"; its blank lines stay blank
+      tl.fromTo(
+        boardPath,
+        { strokeDashoffset: boardLen + 20 },
+        { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" },
+        16.65
+      );
+      tl.fromTo(
+        clipRect,
+        { strokeDashoffset: clipLen + 20 },
+        { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" },
+        16.95
+      );
+      tl.fromTo(
+        byId("record-blank"),
+        { opacity: 0 },
+        { opacity: 0.7, duration: 0.4, ease: "power1.out" },
+        17.15
+      );
+
+      // hold still; anchor the end to the fixed scene length (narration 18.985 + 0.5)
+      tl.set({}, {}, 19.485);
 
       window.__timelines = window.__timelines || {};
       window.__timelines["01-meet-margaret"] = tl;
@@ -465,8 +517,8 @@
     (function () {
       var ID = "01-meet-margaret";
       var inner = window.__timelines[ID];
-      var MAP = [[0.000,0.000],[0.700,0.811],[3.380,2.816],[4.600,3.840],[8.680,7.083],[9.980,8.324]]; // [old seconds, new seconds]
-      var NEW_DURATION = 9.568;
+      var MAP = [[0.000,0.000],[1.038,0.853],[3.018,2.859],[4.627,4.181],[8.269,7.332],[10.828,9.594],[14.456,12.495],[16.294,14.116],[17.850,15.773]]; // [old seconds, new seconds]
+      var NEW_DURATION = 15.987;
       function toOld(t) {
         for (var i = 1; i < MAP.length; i++) {
           if (t <= MAP[i][1]) {

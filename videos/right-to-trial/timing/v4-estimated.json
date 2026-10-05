@@ -1,0 +1,1490 @@
+[
+ {
+  "frame": 1,
+  "duration_s": 18.985,
+  "words": [
+   {
+    "id": "w0",
+    "text": "Margaret",
+    "start": 0.309,
+    "end": 0.738
+   },
+   {
+    "id": "w1",
+    "text": "is",
+    "start": 0.828,
+    "end": 0.948
+   },
+   {
+    "id": "w2",
+    "text": "68",
+    "start": 1.038,
+    "end": 1.574
+   },
+   {
+    "id": "w3",
+    "text": "and",
+    "start": 1.664,
+    "end": 1.825
+   },
+   {
+    "id": "w4",
+    "text": "has",
+    "start": 1.915,
+    "end": 2.075
+   },
+   {
+    "id": "w5",
+    "text": "Alzheimer's.",
+    "start": 2.166,
+    "end": 2.701
+   },
+   {
+    "id": "w6",
+    "text": "Researchers",
+    "start": 3.018,
+    "end": 3.607
+   },
+   {
+    "id": "w7",
+    "text": "have",
+    "start": 3.697,
+    "end": 3.911
+   },
+   {
+    "id": "w8",
+    "text": "identified",
+    "start": 4.002,
+    "end": 4.537
+   },
+   {
+    "id": "w9",
+    "text": "573",
+    "start": 4.627,
+    "end": 5.858
+   },
+   {
+    "id": "w10",
+    "text": "existing",
+    "start": 5.948,
+    "end": 6.377
+   },
+   {
+    "id": "w11",
+    "text": "drugs",
+    "start": 6.467,
+    "end": 6.735
+   },
+   {
+    "id": "w12",
+    "text": "that",
+    "start": 6.825,
+    "end": 7.039
+   },
+   {
+    "id": "w13",
+    "text": "might",
+    "start": 7.129,
+    "end": 7.397
+   },
+   {
+    "id": "w14",
+    "text": "help",
+    "start": 7.487,
+    "end": 7.702
+   },
+   {
+    "id": "w15",
+    "text": "her.",
+    "start": 7.792,
+    "end": 7.952
+   },
+   {
+    "id": "w16",
+    "text": "Few",
+    "start": 8.269,
+    "end": 8.43
+   },
+   {
+    "id": "w17",
+    "text": "have",
+    "start": 8.52,
+    "end": 8.734
+   },
+   {
+    "id": "w18",
+    "text": "ever",
+    "start": 8.825,
+    "end": 9.039
+   },
+   {
+    "id": "w19",
+    "text": "been",
+    "start": 9.129,
+    "end": 9.343
+   },
+   {
+    "id": "w20",
+    "text": "tested",
+    "start": 9.434,
+    "end": 9.755
+   },
+   {
+    "id": "w21",
+    "text": "for",
+    "start": 9.845,
+    "end": 10.006
+   },
+   {
+    "id": "w22",
+    "text": "Alzheimer's,",
+    "start": 10.096,
+    "end": 10.631
+   },
+   {
+    "id": "w23",
+    "text": "so",
+    "start": 10.828,
+    "end": 10.948
+   },
+   {
+    "id": "w24",
+    "text": "her",
+    "start": 11.038,
+    "end": 11.199
+   },
+   {
+    "id": "w25",
+    "text": "doctor",
+    "start": 11.289,
+    "end": 11.61
+   },
+   {
+    "id": "w26",
+    "text": "has",
+    "start": 11.701,
+    "end": 11.861
+   },
+   {
+    "id": "w27",
+    "text": "no",
+    "start": 11.952,
+    "end": 12.072
+   },
+   {
+    "id": "w28",
+    "text": "evidence",
+    "start": 12.162,
+    "end": 12.59
+   },
+   {
+    "id": "w29",
+    "text": "to",
+    "start": 12.681,
+    "end": 12.801
+   },
+   {
+    "id": "w30",
+    "text": "recommend",
+    "start": 12.891,
+    "end": 13.373
+   },
+   {
+    "id": "w31",
+    "text": "any",
+    "start": 13.463,
+    "end": 13.624
+   },
+   {
+    "id": "w32",
+    "text": "of",
+    "start": 13.714,
+    "end": 13.834
+   },
+   {
+    "id": "w33",
+    "text": "them.",
+    "start": 13.925,
+    "end": 14.139
+   },
+   {
+    "id": "w34",
+    "text": "And",
+    "start": 14.456,
+    "end": 14.616
+   },
+   {
+    "id": "w35",
+    "text": "if",
+    "start": 14.706,
+    "end": 14.826
+   },
+   {
+    "id": "w36",
+    "text": "she",
+    "start": 14.917,
+    "end": 15.077
+   },
+   {
+    "id": "w37",
+    "text": "takes",
+    "start": 15.168,
+    "end": 15.435
+   },
+   {
+    "id": "w38",
+    "text": "one",
+    "start": 15.526,
+    "end": 15.686
+   },
+   {
+    "id": "w39",
+    "text": "anyway,",
+    "start": 15.777,
+    "end": 16.098
+   },
+   {
+    "id": "w40",
+    "text": "nobody",
+    "start": 16.294,
+    "end": 16.616
+   },
+   {
+    "id": "w41",
+    "text": "records",
+    "start": 16.706,
+    "end": 17.081
+   },
+   {
+    "id": "w42",
+    "text": "what",
+    "start": 17.171,
+    "end": 17.385
+   },
+   {
+    "id": "w43",
+    "text": "happens.",
+    "start": 17.475,
+    "end": 17.85
+   }
+  ],
+  "estimated": true
+ },
+ {
+  "frame": 2,
+  "duration_s": 23.42,
+  "words": [
+   {
+    "id": "w0",
+    "text": "There",
+    "start": 0.309,
+    "end": 0.577
+   },
+   {
+    "id": "w1",
+    "text": "are",
+    "start": 0.667,
+    "end": 0.828
+   },
+   {
+    "id": "w2",
+    "text": "three",
+    "start": 0.918,
+    "end": 1.186
+   },
+   {
+    "id": "w3",
+    "text": "reasons.",
+    "start": 1.276,
+    "end": 1.651
+   },
+   {
+    "id": "w4",
+    "text": "Old",
+    "start": 1.968,
+    "end": 2.128
+   },
+   {
+    "id": "w5",
+    "text": "drugs",
+    "start": 2.219,
+    "end": 2.486
+   },
+   {
+    "id": "w6",
+    "text": "can't",
+    "start": 2.577,
+    "end": 2.791
+   },
+   {
+    "id": "w7",
+    "text": "be",
+    "start": 2.881,
+    "end": 3.001
+   },
+   {
+    "id": "w8",
+    "text": "patented,",
+    "start": 3.092,
+    "end": 3.52
+   },
+   {
+    "id": "w9",
+    "text": "so",
+    "start": 3.716,
+    "end": 3.836
+   },
+   {
+    "id": "w10",
+    "text": "no",
+    "start": 3.927,
+    "end": 4.047
+   },
+   {
+    "id": "w11",
+    "text": "company",
+    "start": 4.137,
+    "end": 4.512
+   },
+   {
+    "id": "w12",
+    "text": "pays",
+    "start": 4.602,
+    "end": 4.816
+   },
+   {
+    "id": "w13",
+    "text": "to",
+    "start": 4.907,
+    "end": 5.027
+   },
+   {
+    "id": "w14",
+    "text": "test",
+    "start": 5.117,
+    "end": 5.331
+   },
+   {
+    "id": "w15",
+    "text": "them.",
+    "start": 5.422,
+    "end": 5.636
+   },
+   {
+    "id": "w16",
+    "text": "Almost",
+    "start": 5.953,
+    "end": 6.274
+   },
+   {
+    "id": "w17",
+    "text": "no",
+    "start": 6.364,
+    "end": 6.484
+   },
+   {
+    "id": "w18",
+    "text": "Alzheimer's",
+    "start": 6.574,
+    "end": 7.11
+   },
+   {
+    "id": "w19",
+    "text": "patients",
+    "start": 7.2,
+    "end": 7.628
+   },
+   {
+    "id": "w20",
+    "text": "are",
+    "start": 7.719,
+    "end": 7.879
+   },
+   {
+    "id": "w21",
+    "text": "in",
+    "start": 7.97,
+    "end": 8.09
+   },
+   {
+    "id": "w22",
+    "text": "any",
+    "start": 8.18,
+    "end": 8.341
+   },
+   {
+    "id": "w23",
+    "text": "study,",
+    "start": 8.431,
+    "end": 8.698
+   },
+   {
+    "id": "w24",
+    "text": "so",
+    "start": 8.895,
+    "end": 9.015
+   },
+   {
+    "id": "w25",
+    "text": "nobody",
+    "start": 9.105,
+    "end": 9.427
+   },
+   {
+    "id": "w26",
+    "text": "learns",
+    "start": 9.517,
+    "end": 9.838
+   },
+   {
+    "id": "w27",
+    "text": "from",
+    "start": 9.928,
+    "end": 10.143
+   },
+   {
+    "id": "w28",
+    "text": "their",
+    "start": 10.233,
+    "end": 10.501
+   },
+   {
+    "id": "w29",
+    "text": "treatment.",
+    "start": 10.591,
+    "end": 11.073
+   },
+   {
+    "id": "w30",
+    "text": "And",
+    "start": 11.39,
+    "end": 11.55
+   },
+   {
+    "id": "w31",
+    "text": "the",
+    "start": 11.64,
+    "end": 11.801
+   },
+   {
+    "id": "w32",
+    "text": "federal",
+    "start": 11.891,
+    "end": 12.266
+   },
+   {
+    "id": "w33",
+    "text": "Right",
+    "start": 12.356,
+    "end": 12.624
+   },
+   {
+    "id": "w34",
+    "text": "to",
+    "start": 12.714,
+    "end": 12.834
+   },
+   {
+    "id": "w35",
+    "text": "Try",
+    "start": 12.925,
+    "end": 13.085
+   },
+   {
+    "id": "w36",
+    "text": "law",
+    "start": 13.176,
+    "end": 13.336
+   },
+   {
+    "id": "w37",
+    "text": "lets",
+    "start": 13.427,
+    "end": 13.641
+   },
+   {
+    "id": "w38",
+    "text": "drug",
+    "start": 13.731,
+    "end": 13.945
+   },
+   {
+    "id": "w39",
+    "text": "makers",
+    "start": 14.036,
+    "end": 14.357
+   },
+   {
+    "id": "w40",
+    "text": "charge",
+    "start": 14.447,
+    "end": 14.768
+   },
+   {
+    "id": "w41",
+    "text": "only",
+    "start": 14.859,
+    "end": 15.073
+   },
+   {
+    "id": "w42",
+    "text": "their",
+    "start": 15.163,
+    "end": 15.431
+   },
+   {
+    "id": "w43",
+    "text": "costs,",
+    "start": 15.521,
+    "end": 15.789
+   },
+   {
+    "id": "w44",
+    "text": "so",
+    "start": 15.985,
+    "end": 16.105
+   },
+   {
+    "id": "w45",
+    "text": "they",
+    "start": 16.196,
+    "end": 16.41
+   },
+   {
+    "id": "w46",
+    "text": "have",
+    "start": 16.5,
+    "end": 16.714
+   },
+   {
+    "id": "w47",
+    "text": "no",
+    "start": 16.805,
+    "end": 16.925
+   },
+   {
+    "id": "w48",
+    "text": "reason",
+    "start": 17.015,
+    "end": 17.336
+   },
+   {
+    "id": "w49",
+    "text": "to",
+    "start": 17.427,
+    "end": 17.547
+   },
+   {
+    "id": "w50",
+    "text": "take",
+    "start": 17.637,
+    "end": 17.851
+   },
+   {
+    "id": "w51",
+    "text": "part:",
+    "start": 17.941,
+    "end": 18.156
+   },
+   {
+    "id": "w52",
+    "text": "only",
+    "start": 18.532,
+    "end": 18.746
+   },
+   {
+    "id": "w53",
+    "text": "21",
+    "start": 18.837,
+    "end": 19.318
+   },
+   {
+    "id": "w54",
+    "text": "drugs",
+    "start": 19.409,
+    "end": 19.676
+   },
+   {
+    "id": "w55",
+    "text": "have",
+    "start": 19.767,
+    "end": 19.981
+   },
+   {
+    "id": "w56",
+    "text": "been",
+    "start": 20.071,
+    "end": 20.285
+   },
+   {
+    "id": "w57",
+    "text": "made",
+    "start": 20.376,
+    "end": 20.59
+   },
+   {
+    "id": "w58",
+    "text": "available",
+    "start": 20.68,
+    "end": 21.162
+   },
+   {
+    "id": "w59",
+    "text": "in",
+    "start": 21.252,
+    "end": 21.372
+   },
+   {
+    "id": "w60",
+    "text": "over",
+    "start": 21.463,
+    "end": 21.677
+   },
+   {
+    "id": "w61",
+    "text": "six",
+    "start": 21.767,
+    "end": 21.928
+   },
+   {
+    "id": "w62",
+    "text": "years.",
+    "start": 22.018,
+    "end": 22.286
+   }
+  ],
+  "estimated": true
+ },
+ {
+  "frame": 3,
+  "duration_s": 19.736,
+  "words": [
+   {
+    "id": "w0",
+    "text": "It",
+    "start": 0.309,
+    "end": 0.429
+   },
+   {
+    "id": "w1",
+    "text": "doesn't",
+    "start": 0.52,
+    "end": 0.841
+   },
+   {
+    "id": "w2",
+    "text": "have",
+    "start": 0.931,
+    "end": 1.145
+   },
+   {
+    "id": "w3",
+    "text": "to",
+    "start": 1.236,
+    "end": 1.356
+   },
+   {
+    "id": "w4",
+    "text": "be",
+    "start": 1.446,
+    "end": 1.566
+   },
+   {
+    "id": "w5",
+    "text": "this",
+    "start": 1.657,
+    "end": 1.871
+   },
+   {
+    "id": "w6",
+    "text": "way.",
+    "start": 1.961,
+    "end": 2.122
+   },
+   {
+    "id": "w7",
+    "text": "In",
+    "start": 2.439,
+    "end": 2.559
+   },
+   {
+    "id": "w8",
+    "text": "2020,",
+    "start": 2.649,
+    "end": 3.291
+   },
+   {
+    "id": "w9",
+    "text": "Britain",
+    "start": 3.488,
+    "end": 3.862
+   },
+   {
+    "id": "w10",
+    "text": "built",
+    "start": 3.953,
+    "end": 4.22
+   },
+   {
+    "id": "w11",
+    "text": "a",
+    "start": 4.311,
+    "end": 4.431
+   },
+   {
+    "id": "w12",
+    "text": "clinical",
+    "start": 4.521,
+    "end": 4.949
+   },
+   {
+    "id": "w13",
+    "text": "trial",
+    "start": 5.04,
+    "end": 5.307
+   },
+   {
+    "id": "w14",
+    "text": "into",
+    "start": 5.398,
+    "end": 5.612
+   },
+   {
+    "id": "w15",
+    "text": "ordinary",
+    "start": 5.702,
+    "end": 6.13
+   },
+   {
+    "id": "w16",
+    "text": "hospital",
+    "start": 6.221,
+    "end": 6.649
+   },
+   {
+    "id": "w17",
+    "text": "care.",
+    "start": 6.739,
+    "end": 6.953
+   },
+   {
+    "id": "w18",
+    "text": "In",
+    "start": 7.27,
+    "end": 7.39
+   },
+   {
+    "id": "w19",
+    "text": "under",
+    "start": 7.481,
+    "end": 7.748
+   },
+   {
+    "id": "w20",
+    "text": "three",
+    "start": 7.839,
+    "end": 8.106
+   },
+   {
+    "id": "w21",
+    "text": "months,",
+    "start": 8.197,
+    "end": 8.518
+   },
+   {
+    "id": "w22",
+    "text": "it",
+    "start": 8.714,
+    "end": 8.834
+   },
+   {
+    "id": "w23",
+    "text": "showed",
+    "start": 8.925,
+    "end": 9.246
+   },
+   {
+    "id": "w24",
+    "text": "that",
+    "start": 9.336,
+    "end": 9.55
+   },
+   {
+    "id": "w25",
+    "text": "dexamethasone,",
+    "start": 9.641,
+    "end": 10.336
+   },
+   {
+    "id": "w26",
+    "text": "a",
+    "start": 10.533,
+    "end": 10.653
+   },
+   {
+    "id": "w27",
+    "text": "cheap",
+    "start": 10.743,
+    "end": 11.011
+   },
+   {
+    "id": "w28",
+    "text": "steroid",
+    "start": 11.101,
+    "end": 11.476
+   },
+   {
+    "id": "w29",
+    "text": "used",
+    "start": 11.566,
+    "end": 11.78
+   },
+   {
+    "id": "w30",
+    "text": "for",
+    "start": 11.871,
+    "end": 12.031
+   },
+   {
+    "id": "w31",
+    "text": "decades,",
+    "start": 12.122,
+    "end": 12.496
+   },
+   {
+    "id": "w32",
+    "text": "cut",
+    "start": 12.693,
+    "end": 12.854
+   },
+   {
+    "id": "w33",
+    "text": "deaths",
+    "start": 12.944,
+    "end": 13.265
+   },
+   {
+    "id": "w34",
+    "text": "among",
+    "start": 13.355,
+    "end": 13.623
+   },
+   {
+    "id": "w35",
+    "text": "the",
+    "start": 13.713,
+    "end": 13.874
+   },
+   {
+    "id": "w36",
+    "text": "sickest",
+    "start": 13.964,
+    "end": 14.339
+   },
+   {
+    "id": "w37",
+    "text": "COVID",
+    "start": 14.429,
+    "end": 14.697
+   },
+   {
+    "id": "w38",
+    "text": "patients",
+    "start": 14.787,
+    "end": 15.216
+   },
+   {
+    "id": "w39",
+    "text": "by",
+    "start": 15.306,
+    "end": 15.426
+   },
+   {
+    "id": "w40",
+    "text": "up",
+    "start": 15.516,
+    "end": 15.636
+   },
+   {
+    "id": "w41",
+    "text": "to",
+    "start": 15.727,
+    "end": 15.847
+   },
+   {
+    "id": "w42",
+    "text": "a",
+    "start": 15.937,
+    "end": 16.057
+   },
+   {
+    "id": "w43",
+    "text": "third.",
+    "start": 16.148,
+    "end": 16.415
+   },
+   {
+    "id": "w44",
+    "text": "It",
+    "start": 16.732,
+    "end": 16.852
+   },
+   {
+    "id": "w45",
+    "text": "saved",
+    "start": 16.942,
+    "end": 17.21
+   },
+   {
+    "id": "w46",
+    "text": "about",
+    "start": 17.3,
+    "end": 17.568
+   },
+   {
+    "id": "w47",
+    "text": "a",
+    "start": 17.658,
+    "end": 17.778
+   },
+   {
+    "id": "w48",
+    "text": "million",
+    "start": 17.869,
+    "end": 18.243
+   },
+   {
+    "id": "w49",
+    "text": "lives.",
+    "start": 18.334,
+    "end": 18.601
+   }
+  ],
+  "estimated": true
+ },
+ {
+  "frame": 4,
+  "duration_s": 7.922,
+  "words": [
+   {
+    "id": "w0",
+    "text": "Care-integrated",
+    "start": 0.309,
+    "end": 1.059
+   },
+   {
+    "id": "w1",
+    "text": "clinical",
+    "start": 1.149,
+    "end": 1.577
+   },
+   {
+    "id": "w2",
+    "text": "trials",
+    "start": 1.668,
+    "end": 1.989
+   },
+   {
+    "id": "w3",
+    "text": "would",
+    "start": 2.079,
+    "end": 2.347
+   },
+   {
+    "id": "w4",
+    "text": "do",
+    "start": 2.437,
+    "end": 2.557
+   },
+   {
+    "id": "w5",
+    "text": "the",
+    "start": 2.648,
+    "end": 2.808
+   },
+   {
+    "id": "w6",
+    "text": "same",
+    "start": 2.898,
+    "end": 3.113
+   },
+   {
+    "id": "w7",
+    "text": "for",
+    "start": 3.203,
+    "end": 3.364
+   },
+   {
+    "id": "w8",
+    "text": "every",
+    "start": 3.454,
+    "end": 3.721
+   },
+   {
+    "id": "w9",
+    "text": "disease,",
+    "start": 3.812,
+    "end": 4.187
+   },
+   {
+    "id": "w10",
+    "text": "in",
+    "start": 4.383,
+    "end": 4.503
+   },
+   {
+    "id": "w11",
+    "text": "everyday",
+    "start": 4.593,
+    "end": 5.022
+   },
+   {
+    "id": "w12",
+    "text": "care.",
+    "start": 5.112,
+    "end": 5.326
+   },
+   {
+    "id": "w13",
+    "text": "Here's",
+    "start": 5.643,
+    "end": 5.911
+   },
+   {
+    "id": "w14",
+    "text": "Margaret's",
+    "start": 6.001,
+    "end": 6.483
+   },
+   {
+    "id": "w15",
+    "text": "year.",
+    "start": 6.573,
+    "end": 6.787
+   }
+  ],
+  "estimated": true
+ },
+ {
+  "frame": 7,
+  "duration_s": 15.169,
+  "words": [
+   {
+    "id": "w0",
+    "text": "Her",
+    "start": 0.309,
+    "end": 0.47
+   },
+   {
+    "id": "w1",
+    "text": "own",
+    "start": 0.56,
+    "end": 0.721
+   },
+   {
+    "id": "w2",
+    "text": "doctor",
+    "start": 0.811,
+    "end": 1.132
+   },
+   {
+    "id": "w3",
+    "text": "recommends",
+    "start": 1.223,
+    "end": 1.758
+   },
+   {
+    "id": "w4",
+    "text": "one",
+    "start": 1.848,
+    "end": 2.009
+   },
+   {
+    "id": "w5",
+    "text": "over",
+    "start": 2.099,
+    "end": 2.313
+   },
+   {
+    "id": "w6",
+    "text": "a",
+    "start": 2.404,
+    "end": 2.524
+   },
+   {
+    "id": "w7",
+    "text": "video",
+    "start": 2.614,
+    "end": 2.882
+   },
+   {
+    "id": "w8",
+    "text": "visit,",
+    "start": 2.972,
+    "end": 3.24
+   },
+   {
+    "id": "w9",
+    "text": "and",
+    "start": 3.436,
+    "end": 3.597
+   },
+   {
+    "id": "w10",
+    "text": "she",
+    "start": 3.687,
+    "end": 3.848
+   },
+   {
+    "id": "w11",
+    "text": "signs",
+    "start": 3.938,
+    "end": 4.206
+   },
+   {
+    "id": "w12",
+    "text": "a",
+    "start": 4.296,
+    "end": 4.416
+   },
+   {
+    "id": "w13",
+    "text": "plain-language",
+    "start": 4.507,
+    "end": 5.202
+   },
+   {
+    "id": "w14",
+    "text": "consent:",
+    "start": 5.293,
+    "end": 5.667
+   },
+   {
+    "id": "w15",
+    "text": "the",
+    "start": 6.044,
+    "end": 6.205
+   },
+   {
+    "id": "w16",
+    "text": "risks,",
+    "start": 6.295,
+    "end": 6.563
+   },
+   {
+    "id": "w17",
+    "text": "the",
+    "start": 6.759,
+    "end": 6.92
+   },
+   {
+    "id": "w18",
+    "text": "unknowns,",
+    "start": 7.01,
+    "end": 7.438
+   },
+   {
+    "id": "w19",
+    "text": "who",
+    "start": 7.635,
+    "end": 7.795
+   },
+   {
+    "id": "w20",
+    "text": "pays,",
+    "start": 7.886,
+    "end": 8.1
+   },
+   {
+    "id": "w21",
+    "text": "and",
+    "start": 8.297,
+    "end": 8.457
+   },
+   {
+    "id": "w22",
+    "text": "that",
+    "start": 8.547,
+    "end": 8.762
+   },
+   {
+    "id": "w23",
+    "text": "it's",
+    "start": 8.852,
+    "end": 9.013
+   },
+   {
+    "id": "w24",
+    "text": "experimental.",
+    "start": 9.103,
+    "end": 9.745
+   },
+   {
+    "id": "w25",
+    "text": "A",
+    "start": 10.062,
+    "end": 10.182
+   },
+   {
+    "id": "w26",
+    "text": "charity",
+    "start": 10.272,
+    "end": 10.647
+   },
+   {
+    "id": "w27",
+    "text": "helps",
+    "start": 10.737,
+    "end": 11.005
+   },
+   {
+    "id": "w28",
+    "text": "her",
+    "start": 11.095,
+    "end": 11.256
+   },
+   {
+    "id": "w29",
+    "text": "pay,",
+    "start": 11.346,
+    "end": 11.507
+   },
+   {
+    "id": "w30",
+    "text": "and",
+    "start": 11.704,
+    "end": 11.864
+   },
+   {
+    "id": "w31",
+    "text": "no",
+    "start": 11.954,
+    "end": 12.074
+   },
+   {
+    "id": "w32",
+    "text": "insurer",
+    "start": 12.165,
+    "end": 12.54
+   },
+   {
+    "id": "w33",
+    "text": "or",
+    "start": 12.63,
+    "end": 12.75
+   },
+   {
+    "id": "w34",
+    "text": "state",
+    "start": 12.84,
+    "end": 13.108
+   },
+   {
+    "id": "w35",
+    "text": "program",
+    "start": 13.198,
+    "end": 13.573
+   },
+   {
+    "id": "w36",
+    "text": "has",
+    "start": 13.663,
+    "end": 13.824
+   },
+   {
+    "id": "w37",
+    "text": "to.",
+    "start": 13.914,
+    "end": 14.034
+   }
+  ],
+  "estimated": true
+ },
+ {
+  "frame": 10,
+  "duration_s": 13.68,
+  "words": [
+   {
+    "id": "w0",
+    "text": "Any",
+    "start": 0.309,
+    "end": 0.47
+   },
+   {
+    "id": "w1",
+    "text": "patient",
+    "start": 0.56,
+    "end": 0.935
+   },
+   {
+    "id": "w2",
+    "text": "can",
+    "start": 1.025,
+    "end": 1.186
+   },
+   {
+    "id": "w3",
+    "text": "get",
+    "start": 1.276,
+    "end": 1.437
+   },
+   {
+    "id": "w4",
+    "text": "treatment",
+    "start": 1.527,
+    "end": 2.009
+   },
+   {
+    "id": "w5",
+    "text": "through",
+    "start": 2.099,
+    "end": 2.474
+   },
+   {
+    "id": "w6",
+    "text": "their",
+    "start": 2.564,
+    "end": 2.832
+   },
+   {
+    "id": "w7",
+    "text": "own",
+    "start": 2.922,
+    "end": 3.083
+   },
+   {
+    "id": "w8",
+    "text": "doctor.",
+    "start": 3.173,
+    "end": 3.494
+   },
+   {
+    "id": "w9",
+    "text": "Clinics",
+    "start": 3.811,
+    "end": 4.186
+   },
+   {
+    "id": "w10",
+    "text": "can",
+    "start": 4.276,
+    "end": 4.437
+   },
+   {
+    "id": "w11",
+    "text": "afford",
+    "start": 4.527,
+    "end": 4.848
+   },
+   {
+    "id": "w12",
+    "text": "to",
+    "start": 4.939,
+    "end": 5.059
+   },
+   {
+    "id": "w13",
+    "text": "offer",
+    "start": 5.149,
+    "end": 5.417
+   },
+   {
+    "id": "w14",
+    "text": "it.",
+    "start": 5.507,
+    "end": 5.627
+   },
+   {
+    "id": "w15",
+    "text": "Every",
+    "start": 5.944,
+    "end": 6.212
+   },
+   {
+    "id": "w16",
+    "text": "result",
+    "start": 6.302,
+    "end": 6.623
+   },
+   {
+    "id": "w17",
+    "text": "is",
+    "start": 6.714,
+    "end": 6.834
+   },
+   {
+    "id": "w18",
+    "text": "published,",
+    "start": 6.924,
+    "end": 7.406
+   },
+   {
+    "id": "w19",
+    "text": "and",
+    "start": 7.602,
+    "end": 7.763
+   },
+   {
+    "id": "w20",
+    "text": "the",
+    "start": 7.853,
+    "end": 8.014
+   },
+   {
+    "id": "w21",
+    "text": "next",
+    "start": 8.104,
+    "end": 8.318
+   },
+   {
+    "id": "w22",
+    "text": "patient",
+    "start": 8.409,
+    "end": 8.783
+   },
+   {
+    "id": "w23",
+    "text": "learns",
+    "start": 8.874,
+    "end": 9.195
+   },
+   {
+    "id": "w24",
+    "text": "from",
+    "start": 9.285,
+    "end": 9.499
+   },
+   {
+    "id": "w25",
+    "text": "Margaret.",
+    "start": 9.59,
+    "end": 10.018
+   },
+   {
+    "id": "w26",
+    "text": "Learn",
+    "start": 10.335,
+    "end": 10.602
+   },
+   {
+    "id": "w27",
+    "text": "more",
+    "start": 10.693,
+    "end": 10.907
+   },
+   {
+    "id": "w28",
+    "text": "at",
+    "start": 10.997,
+    "end": 11.117
+   },
+   {
+    "id": "w29",
+    "text": "acceleratedmedicine.org.",
+    "start": 11.208,
+    "end": 12.546
+   }
+  ],
+  "estimated": true
+ }
+]
