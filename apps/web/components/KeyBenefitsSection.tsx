@@ -55,10 +55,9 @@ export function KeyBenefitsSection() {
     <section id="key-benefits" className="band-fade -mb-6 w-full py-12 md:-mb-10 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-          <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium">
-            <span className="text-primary">Why It Matters</span>
-          </div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Key Benefits</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Why Care-Integrated Clinical Trials Matter
+          </h2>
           <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             What the network is designed to deliver for patients, clinicians and researchers
           </p>
