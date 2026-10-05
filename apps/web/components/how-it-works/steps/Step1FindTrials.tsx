@@ -46,8 +46,7 @@ export function Step1FindTrials() {
             <div className="space-y-3 max-h-[320px] overflow-y-auto pr-1">
               {[
                 { name: "Lecanemab (Leqembi)", effectiveness: 92, status: "FDA Approved" },
-                { name: "Donanemab", effectiveness: 88, status: "Phase 3" },
-                { name: "Aducanumab (Aduhelm)", effectiveness: 76, status: "FDA Approved" },
+                { name: "Donanemab (Kisunla)", effectiveness: 88, status: "FDA Approved" },
                 { name: "Experimental Tau Inhibitor", effectiveness: 72, status: "Phase 2" },
                 { name: "Memantine + Donepezil", effectiveness: 68, status: "FDA Approved" },
                 { name: "APOE4 Gene Therapy", effectiveness: 65, status: "Phase 2" },
