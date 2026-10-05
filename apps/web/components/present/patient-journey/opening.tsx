@@ -139,7 +139,7 @@ export function RecoverySlide({ s }: Props) {
 }
 
 export const threeChanges = [
-  { icon: UserRound, lead: "Any patient", text: "can get the most promising treatments through their own doctor, after independent review and with written consent." },
+  { icon: UserRound, lead: "Any patient", text: "can get a screened treatment, or join a randomized trial, through their own doctor, with written consent." },
   { icon: Hospital, lead: "Clinics can charge a fair price,", text: "so they have a reason to offer treatments nobody else will fund." },
   { icon: FileText, lead: "Every result is published,", text: "good or bad, so the next patient chooses better." },
 ];

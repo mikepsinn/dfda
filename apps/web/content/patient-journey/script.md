@@ -42,15 +42,16 @@ prototype render the app's own components with its data, not screenshots.
   1. Many cheap existing drugs might help patients like Margaret, but nobody tests them: nobody
      can profit from it, and nobody records what happens to patients who take them.
   2. Building trials into everyday care already works (RECOVERY).
-  3. The act lets any patient get a screened treatment through their own doctor, lets clinics
-     charge enough to offer it, and publishes every result.
+  3. The act lets any patient get a screened treatment or join a randomized trial through their
+     own doctor, lets clinics charge enough to offer it, and publishes every result.
 - **They should feel:** that this is common sense, safe and proven. Calm confidence, not fear or
   outrage.
-- **The ask:** patients, families, doctors and clinics register their interest at
-  acceleratedmedicine.org. The initiative is a 501(c)(3). Describing the act is education.
-  Presenting it to legislators is direct lobbying, which is allowed within limits. Asking the public
-  to contact legislators would be grassroots lobbying, so the public materials do not. Confirm with
-  counsel.
+- **The close:** "Learn more at acceleratedmedicine.org", with no ask on the slides or in the
+  video. The initiative is a 501(c)(3). Describing the act is education. When the deck is presented
+  to a legislator, the presenter makes the ask in person (see the notes for slide 19); that is
+  direct lobbying, which is allowed within limits. Asking the public to contact legislators would be
+  grassroots lobbying, so the public materials do not. Confirm with counsel.
+- **No state:** the deck, the video and the handout name no state, so any state can use them.
 - **Tone:** plain and factual. No music in the video and no dramatic openers.
 - **Numbers:** only sourced, checkable figures in the main story, each shown against today where
   that tells its size ("82 times less than a typical trial"). Model estimates go in the backup
@@ -64,9 +65,8 @@ prototype render the app's own components with its data, not screenshots.
 ## Open items
 
 - **Title wording** (slide 1).
-- **State figures:** add figures for the state where the deck is presented (slide 3).
-- **Bill text:** check slide 18 against the bill, and name the bill and state on it. Confirm the
-  price and liability provisions (slides 12 and 18).
+- **Bill text:** check slide 18 against the bill text. Confirm the price and liability provisions
+  (slides 12 and 18).
 - **Backup B2:** the notes say 44.8% of people with a chronic disease would join a trial.
   Research!America (2023) found 79% of U.S. adults very or somewhat likely to join if their doctor
   recommended it. Confirm the model's source.
@@ -85,7 +85,7 @@ prototype render the app's own components with its data, not screenshots.
   an invented label.
 - "Dying" is gone from Margaret's year and the close.
 - The model estimates (0.34% tested, 36 vs 443 years, $9.50 per healthy year) move to backup.
-- The close asks people to register their interest.
+- The close points to acceleratedmedicine.org to learn more; the legislator ask is in the notes.
 - The journey has six steps, not seven: the payment slide is gone, and the cost is part of the
   consent step. Its questions (who pays, exploitation, liability) are in the notes of slide 18.
 
@@ -255,8 +255,8 @@ NHS England, 2021; Manhattan Institute, 2023; Moore et al., JAMA Internal Medici
 
 - Eyebrow: CARE-INTEGRATED CLINICAL TRIALS
 - Title: Do the same for every disease, in everyday care
-- **Any patient** can get the most promising treatments through their own doctor, after
-  independent review and with written consent.
+- **Any patient** can get a screened treatment, or join a randomized trial, through their own
+  doctor, with written consent.
 - **Clinics can charge a fair price,** so they have a reason to offer treatments nobody else will
   fund.
 - **Every result is published,** good or bad, so the next patient chooses better.
@@ -264,8 +264,10 @@ NHS England, 2021; Manhattan Institute, 2023; Moore et al., JAMA Internal Medici
 **Visual:** Three columns, each with a round purple icon (a person, a clinic, a document) above a
 bold lead-in and one sentence. The same icons return on the closing slide.
 
-**Speaker notes:** These three changes are the whole idea. The rest of the deck shows them through
-Margaret's first year.
+**Speaker notes:** These three changes are the whole idea. The first covers both paths in the
+bill: a treatment that an independent board has screened, given through the patient's own doctor,
+or a randomized trial run through ordinary doctors, as RECOVERY was. The rest of the deck shows them
+through Margaret's first year.
 
 **Video narration:** Care-integrated clinical trials would do the same for every disease, in
 everyday care. Here's Margaret's year.
@@ -569,7 +571,7 @@ whether it's good, bad, or neutral, so the evidence base reflects reality.
 sentence.
 
 **Speaker notes:** Each line sums up a provision shown earlier in the deck. Check every line
-against the current bill text before presenting, and name the bill and the state on the slide.
+against the current bill text before presenting.
 
 If asked who pays: no insurer or state program is required to. The patient, family, charities,
 employers, research sponsors, and insurers that choose to can pay. Clinics can charge a fair price,
@@ -580,35 +582,37 @@ experimental treatment invites exploitation, as with unproven stem-cell clinics.
 the board approves each clinic and protocol; the consent form states the cost and that the
 treatment is experimental; serious side effects can pause new patients; and every result,
 including failures, is published, so a clinic cannot hide poor results. If asked about liability:
-federal Right to Try already protects makers and doctors from lawsuits, except for gross
-negligence or willful misconduct, so the main barrier is money, not liability. Other payment
+the bill protects people who take part in good faith from liability under state law, except for
+gross negligence, reckless or willful misconduct, fraud, or concealing safety information. Federal
+law still applies, and federal Right to Try's protections cover only patients who meet its rules. Other payment
 options: installments or memberships, crowdfunding, patient-aid groups, free supply from the
 maker, and lower prices for patients who share outcome data.
 
 ## 19. Close
 
-**Purpose:** Restate the three changes and give one action.
+**Purpose:** Restate the three changes and say where to learn more.
 
 **On screen**
 
 - Headline: Every patient's experience becomes evidence for the next.
-- **Any patient can get** the most promising treatments through their own doctor.
+- **Any patient can get** a screened treatment, or join a trial, through their own doctor.
 - **Clinics can charge fairly,** so they offer treatments nobody else will fund.
 - **Every result is published,** producing treatment rankings and outcome labels.
-- Ask: Patients, families, doctors and clinics: register your interest at acceleratedmedicine.org
+- Learn more at acceleratedmedicine.org
 
 **Visual:** Dark, with the patient path across the top. A large white headline; three lines below
 it with bold lead-ins and the icons from slide 6. At the bottom, an amber-outlined panel with the
-ask and the web address.
+web address.
 
-**Speaker notes:** Close on the three changes. Then the ask: patients, families, doctors and
-clinics can register their interest at acceleratedmedicine.org. Registrations show legislators and
-clinics how many people want this. For a hands-on look, the prototype shows treatment rankings and
-outcome labels.
+**Speaker notes:** Close on the three changes, and point people to acceleratedmedicine.org to
+learn more. If you are meeting a legislator, make the ask in person, not on a slide: would they
+sponsor or co-sponsor the bill, or hold a hearing on it? That is direct lobbying, which a 501(c)(3)
+may do within limits; confirm with counsel. For a hands-on look, the prototype shows treatment
+rankings and outcome labels.
 
 **Video narration:** Any patient can get treatment through their own doctor. Clinics can afford to
-offer it. Every result is published, and the next patient learns from Margaret. If you're a
-patient, a family member, a doctor or a clinic, register your interest at acceleratedmedicine.org.
+offer it. Every result is published, and the next patient learns from Margaret. Learn more at
+acceleratedmedicine.org.
 
 ---
 
