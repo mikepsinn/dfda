@@ -48,7 +48,7 @@ export function CloseSlide({ s }: Props) {
         ))}
       </ul>
       <p className="absolute bottom-0 left-0 right-0 rounded-2xl border-2 border-amber-400 px-10 py-7 text-[34px]">
-        Patients, families, doctors and clinics: register your interest at{" "}
+        Learn more at{" "}
         <strong className="font-semibold text-amber-400">acceleratedmedicine.org</strong>
       </p>
     </SlideFrame>

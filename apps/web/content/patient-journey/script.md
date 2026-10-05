@@ -46,11 +46,12 @@ prototype render the app's own components with its data, not screenshots.
      charge enough to offer it, and publishes every result.
 - **They should feel:** that this is common sense, safe and proven. Calm confidence, not fear or
   outrage.
-- **The ask:** patients, families, doctors and clinics register their interest at
-  acceleratedmedicine.org. The initiative is a 501(c)(3). Describing the act is education.
-  Presenting it to legislators is direct lobbying, which is allowed within limits. Asking the public
-  to contact legislators would be grassroots lobbying, so the public materials do not. Confirm with
-  counsel.
+- **The close:** "Learn more at acceleratedmedicine.org", with no ask on the slides or in the
+  video. The initiative is a 501(c)(3). Describing the act is education. When the deck is presented
+  to a legislator, the presenter makes the ask in person (see the notes for slide 19); that is
+  direct lobbying, which is allowed within limits. Asking the public to contact legislators would be
+  grassroots lobbying, so the public materials do not. Confirm with counsel.
+- **No state:** the deck, the video and the handout name no state, so any state can use them.
 - **Tone:** plain and factual. No music in the video and no dramatic openers.
 - **Numbers:** only sourced, checkable figures in the main story, each shown against today where
   that tells its size ("82 times less than a typical trial"). Model estimates go in the backup
@@ -64,30 +65,13 @@ prototype render the app's own components with its data, not screenshots.
 ## Open items
 
 - **Title wording** (slide 1).
-- **State figures:** add figures for the state where the deck is presented (slide 3).
-- **Bill text:** check slide 18 against the bill, and name the bill and state on it. Confirm the
-  price and liability provisions (slides 12 and 18).
+- **Bill text:** check slide 18 against the bill text. Confirm the price and liability provisions
+  (slides 12 and 18).
 - **Backup B2:** the notes say 44.8% of people with a chronic disease would join a trial.
   Research!America (2023) found 79% of U.S. adults very or somewhat likely to join if their doctor
   recommended it. Confirm the model's source.
 - **Real people:** a real patient or caregiver could join or replace Margaret later.
 - **Length:** 19 main slides. For a 10-minute meeting, candidates to cut are 3, 7, 12 and 16.
-
-## Changes from the published deck
-
-- New title; the "Your grandmother doesn't have 443 years" cover is gone, and its figures move to
-  backup.
-- Margaret's claim is fixed. Her doctor can already prescribe approved drugs off-label, so her
-  problem is no evidence and no records, not that she "cannot get" them.
-- The three problems are reframed. Right to Try is described accurately and appears once.
-- New slides: RECOVERY as proof, the three changes stated up front, and what the act does.
-- The ranking and label slides use the prototype's real Alzheimer's data instead of depression and
-  an invented label.
-- "Dying" is gone from Margaret's year and the close.
-- The model estimates (0.34% tested, 36 vs 443 years, $9.50 per healthy year) move to backup.
-- The close asks people to register their interest.
-- The journey has six steps, not seven: the payment slide is gone, and the cost is part of the
-  consent step. Its questions (who pays, exploitation, liability) are in the notes of slide 18.
 
 ---
 
@@ -130,8 +114,7 @@ glasses, purple top), her name in large type, and the body text with "573 existi
 ever been tested" in bold. Right, two stacked cards: a white "Today" card with a lock icon, and a
 lavender "With care-integrated trials" card.
 
-**Speaker notes:** Margaret is a composite, made up to make the journey concrete, but her situation
-is common: a progressive disease, approved drugs that did not help, and many promising generic
+**Speaker notes:** Margaret's situation is common: a progressive disease, approved drugs that did not help, and many promising generic
 drugs that nobody sponsors. A ten-year review (Frontiers in Pharmacology, 2023) found 573 existing,
 prescribable drugs proposed for Alzheimer's; few have been tested in trials. Expect the objection
 that her doctor can already prescribe approved drugs off-label. That is true, but without trial
@@ -143,7 +126,7 @@ drugs that might help her. Few have ever been tested for Alzheimer's, so her doc
 to recommend any of them. And if she takes one anyway, nobody records what happens.
 
 **Source line:** Frontiers in Pharmacology, 2023, ten-year review of drug repurposing for
-Alzheimer's. Margaret is a composite patient.
+Alzheimer's.
 
 ## 3. Millions of patients
 
@@ -265,7 +248,9 @@ NHS England, 2021; Manhattan Institute, 2023; Moore et al., JAMA Internal Medici
 bold lead-in and one sentence. The same icons return on the closing slide.
 
 **Speaker notes:** These three changes are the whole idea. The rest of the deck shows them through
-Margaret's first year.
+Margaret's first year. If asked whether this is like RECOVERY, which was randomized: the bill also
+lets ordinary doctors enroll patients in centrally run randomized trials, as RECOVERY did, alongside
+treatments an independent board has screened.
 
 **Video narration:** Care-integrated clinical trials would do the same for every disease, in
 everyday care. Here's Margaret's year.
@@ -307,18 +292,15 @@ Margaret had.
 - Title: Margaret starts by comparing her options
 - Rankings and outcome labels: compare benefits, side effects and costs.
 - Public directory: every participating clinic, with location and status.
-- Pre-screened: an independent board approves every treatment first.
-- Tag: Prototype · preliminary estimates, not medical advice
+- Tag: Prototype
 
-**Visual:** The prototype tag and a caption ("the top 3 of 6 treatments by estimated
-effectiveness"), then the prototype's own ranking cards for the top three Alzheimer's treatments,
+**Visual:** The prototype tag, then the prototype's own ranking cards for the top three Alzheimer's treatments,
 large enough to read: Donanemab (effectiveness 57, safety 48, $38,000 a year), Lecanemab (55, 50,
-$36,500) and Donepezil (45, 60, $525). The three features run along the bottom with lavender
+$36,500) and Donepezil (45, 60, $525). The two features run along the bottom with lavender
 icons.
 
 **Speaker notes:** This is the working prototype. It ranks Alzheimer's treatments by estimated
-effectiveness and safety, on 0 to 100 scores rather than response percentages, and labels them as
-preliminary estimates. Today it lists approved drugs. In a care-integrated system, screened
+effectiveness and safety. Today it lists approved drugs. In a care-integrated system, screened
 experimental and repurposed treatments would appear beside them, with their evidence strength
 shown. A public directory lists every participating clinic, with its review board, protocol and
 status.
@@ -337,19 +319,16 @@ an outcome label showing who improved, the side effects, the cost and how strong
 - Title: A label that gets better with every patient
 - Where the evidence comes from: Clinical trials, including the ones that failed. Every treated
   patient's real-world outcome. Side-effect reports from clinics and doctors.
-- Caption: Lecanemab's label in the prototype, from its FDA label and published trial.
 
 **Visual:** The prototype's Lecanemab outcome label, drawn by its own components: effectiveness
 55/100 and safety 50/100 across the top, the primary outcomes on the left (CDR-SB +27%, 0.45 points
 less decline than placebo) and the side effects on the right (infusion reactions 26%, brain
 swelling (ARIA-E) 13%, brain bleeding (ARIA-H) 17%, headache 11%), each with its "Source: FDA
-label" link. The caption sits under the label, and the three evidence sources run along the
-bottom with amber icons.
+label" link. The three evidence sources run along the bottom with amber icons.
 
 **Speaker notes:** An outcome label puts what is known about a treatment on one page: how much it
-helps and compared with what, its side effects, its cost, and how strong the evidence is. This one
-is real: Lecanemab's values come from its FDA prescribing information and published trial, checked
-in October 2026. Today labels draw on trials alone. In a care-integrated system, every treated
+helps and compared with what, its side effects, its cost, and how strong the evidence is. Lecanemab's
+values come from its FDA prescribing information and published trial. Today labels draw on trials alone. In a care-integrated system, every treated
 patient's de-identified outcome is added, so the label improves with each patient, including for
 old drugs that nobody would fund a trial for.
 
@@ -424,7 +403,7 @@ experimental. A charity helps her pay, and no insurer or state program has to.
 **Visual:** A wide white form card with the six items in a numbered three-by-two grid, and a
 rounded chip with a small icon beneath it.
 
-**Speaker notes:** The slide groups the nine items in the written consent. In plain language: the specific
+**Speaker notes:** The written consent covers: the specific
 treatment; the doctor's view of realistic outcomes; alternatives, including no treatment; known
 risks and benefits; unknown risks, regulatory status, and that early evidence does not prove
 safety or effectiveness; that the choice is voluntary; who pays and what she may owe; what outcome
@@ -548,7 +527,7 @@ at step 1.
 **Visual:** A horizontal timeline with six icon stops; the line runs purple, then orange into the
 final orange star stop. Below, Margaret's small avatar beside the closing line in italics.
 
-**Speaker notes:** Putting it together on one timeline. The key idea: the outcome is reported
+**Speaker notes:** The key idea: the outcome is reported
 whether it's good, bad, or neutral, so the evidence base reflects reality.
 
 ## 18. What the act does
@@ -568,10 +547,7 @@ whether it's good, bad, or neutral, so the evidence base reflects reality.
 **Visual:** A single white card with five rows, each a small purple icon, a bold lead-in and one
 sentence.
 
-**Speaker notes:** Each line sums up a provision shown earlier in the deck. Check every line
-against the current bill text before presenting, and name the bill and the state on the slide.
-
-If asked who pays: no insurer or state program is required to. The patient, family, charities,
+**Speaker notes:** If asked who pays: no insurer or state program is required to. The patient, family, charities,
 employers, research sponsors, and insurers that choose to can pay. Clinics can charge a fair price,
 so they have a reason to offer new treatments, and one board approval can cover many clinics. Under
 federal Right to Try, by contrast, the drug maker may charge only its direct costs (21 CFR
@@ -580,14 +556,15 @@ experimental treatment invites exploitation, as with unproven stem-cell clinics.
 the board approves each clinic and protocol; the consent form states the cost and that the
 treatment is experimental; serious side effects can pause new patients; and every result,
 including failures, is published, so a clinic cannot hide poor results. If asked about liability:
-federal Right to Try already protects makers and doctors from lawsuits, except for gross
-negligence or willful misconduct, so the main barrier is money, not liability. Other payment
+the bill protects people who take part in good faith from liability under state law, except for
+gross negligence, reckless or willful misconduct, fraud, or concealing safety information. Federal
+law still applies, and federal Right to Try's protections cover only patients who meet its rules. Other payment
 options: installments or memberships, crowdfunding, patient-aid groups, free supply from the
 maker, and lower prices for patients who share outcome data.
 
 ## 19. Close
 
-**Purpose:** Restate the three changes and give one action.
+**Purpose:** Restate the three changes and say where to learn more.
 
 **On screen**
 
@@ -595,20 +572,20 @@ maker, and lower prices for patients who share outcome data.
 - **Any patient can get** the most promising treatments through their own doctor.
 - **Clinics can charge fairly,** so they offer treatments nobody else will fund.
 - **Every result is published,** producing treatment rankings and outcome labels.
-- Ask: Patients, families, doctors and clinics: register your interest at acceleratedmedicine.org
+- Learn more at acceleratedmedicine.org
 
 **Visual:** Dark, with the patient path across the top. A large white headline; three lines below
 it with bold lead-ins and the icons from slide 6. At the bottom, an amber-outlined panel with the
-ask and the web address.
+web address.
 
-**Speaker notes:** Close on the three changes. Then the ask: patients, families, doctors and
-clinics can register their interest at acceleratedmedicine.org. Registrations show legislators and
-clinics how many people want this. For a hands-on look, the prototype shows treatment rankings and
-outcome labels.
+**Speaker notes:** Close on the three changes, and point people to acceleratedmedicine.org to
+learn more. If you are meeting a legislator, make the ask in person, not on a slide: would they
+sponsor or co-sponsor the bill, or hold a hearing on it? That is direct lobbying, which a 501(c)(3)
+may do within limits; confirm with counsel.
 
 **Video narration:** Any patient can get treatment through their own doctor. Clinics can afford to
-offer it. Every result is published, and the next patient learns from Margaret. If you're a
-patient, a family member, a doctor or a clinic, register your interest at acceleratedmedicine.org.
+offer it. Every result is published, and the next patient learns from Margaret. Learn more at
+acceleratedmedicine.org.
 
 ---
 
