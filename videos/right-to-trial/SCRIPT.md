@@ -6,8 +6,7 @@
 
 The narration matches the "Video narration" lines in the deck's script
 (apps/web/content/patient-journey/script.md). Lines 5, 6, 8 and 9 are unchanged from v3 and can
-reuse its recordings; the others are new. Until they are recorded, the video uses silent tracks
-timed by tools/estimate-narration.py.
+reuse its recordings; the others were recorded for v4.
 
 ---
 

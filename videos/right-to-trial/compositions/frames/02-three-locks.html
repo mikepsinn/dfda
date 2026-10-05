@@ -274,8 +274,8 @@
     }
   </style>
 
-  <div id="root" data-composition-id="02-three-locks" data-width="1920" data-height="1080" data-duration="23.92">
-    <div id="02-three-locks-bg" class="clip" data-start="0" data-duration="23.92" data-track-index="0"></div>
+  <div id="root" data-composition-id="02-three-locks" data-width="1920" data-height="1080" data-duration="20.431">
+    <div id="02-three-locks-bg" class="clip" data-start="0" data-duration="20.431" data-track-index="0"></div>
 
     <div id="02-three-locks-stage">
       <div id="02-three-locks-cam">
@@ -513,6 +513,34 @@
 
       window.__timelines = window.__timelines || {};
       window.__timelines["02-three-locks"] = tl;
+    })();
+  </script>
+
+  <script>
+    // retime-to-new-voice: drive this scene's original timeline through a map from the
+    // new narration's time to the old narration's time, anchored on matching spoken cues.
+    (function () {
+      var ID = "02-three-locks";
+      var inner = window.__timelines[ID];
+      var MAP = [[0.000,0.000],[1.968,1.920],[3.716,3.669],[5.953,5.504],[8.895,8.491],[11.390,10.602],[15.985,14.613],[18.532,16.234],[18.837,16.831],[22.286,19.890]]; // [old seconds, new seconds]
+      var NEW_DURATION = 19.931;
+      function toOld(t) {
+        for (var i = 1; i < MAP.length; i++) {
+          if (t <= MAP[i][1]) {
+            var a = MAP[i - 1], b = MAP[i];
+            return a[0] + (t - a[1]) * (b[0] - a[0]) / (b[1] - a[1]);
+          }
+        }
+        var last = MAP[MAP.length - 1];
+        return last[0] + (t - last[1]); // after the last cue, real time (holds stay holds)
+      }
+      var OLD_END = toOld(NEW_DURATION);
+      var outer = gsap.timeline({ paused: true });
+      outer.fromTo(inner, { time: 0 }, {
+        time: OLD_END, duration: NEW_DURATION,
+        ease: function (p) { return toOld(p * NEW_DURATION) / OLD_END; },
+      }, 0);
+      window.__timelines[ID] = outer;
     })();
   </script>
 </template>

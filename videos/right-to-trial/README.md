@@ -1,6 +1,6 @@
 # Care-Integrated Clinical Trials: Margaret's year (explainer video)
 
-A 2:23 explainer for the Care-Integrated Clinical Trials Initiative, built with
+A 2:10 explainer for the Care-Integrated Clinical Trials Initiative, built with
 [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML + GSAP rendered to MP4).
 It follows Margaret, a composite Alzheimer's patient, through the six-step patient
 journey, using real footage of the web app's treatment rankings and Outcome Label. It has
@@ -66,13 +66,12 @@ Every on-screen figure comes from the Right to Trial deck (see `BRIEF.md`), the 
 Lecanemab label values were checked against the FDA prescribing information before
 capture (see `apps/web/data/optimitron/corrections.json`).
 
-## v4 (silent draft)
+## v4
 
 v4 follows the deck's script (apps/web/content/patient-journey/script.md). Lines 5, 6, 8 and 9
-of `SCRIPT.md` are v3's recordings; the other six are new and not recorded yet, so v4 is
-rendered silent: `assets/voice/*.wav` are silent tracks, and the new lines' word timings in
-`audio_meta.json` (marked `"estimated": true`) come from `tools/estimate-narration.py`, which fits
-Nadine's pace from the v3 recordings. The rewritten scenes were built against those timings
-(`timing/authored-words.json`). To add the narration: generate the voice (step 1 above), then
-re-time (step 2) and continue from step 3; scenes whose words did not change keep landing on
-their words at the real pace.
+of `SCRIPT.md` reuse v3's recordings; the other six were recorded for v4 (Nadine, HeyGen). The
+rewritten scenes were built before the new lines existed, against word timings that
+`tools/estimate-narration.py` estimated from Nadine's pace in v3 (`timing/v4-estimated.json`,
+`timing/authored-words.json`), then re-timed onto the recordings with
+`tools/retime-to-narration.py`. To record only some lines, give step 1 a script with just those
+lines and `--out` a separate file, then merge their voices into `audio_meta.json`.
