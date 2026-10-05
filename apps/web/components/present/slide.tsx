@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Activity, FileSignature, FileText, Search, Star, Stethoscope, Wallet, type LucideIcon } from "lucide-react";
+import { Activity, FileSignature, FileText, Search, Star, Stethoscope, type LucideIcon } from "lucide-react";
 import type { ScriptSlide } from "@/lib/present/script";
 import { cn } from "@/lib/utils";
 
@@ -62,12 +62,12 @@ export function IconBadge({ icon: Icon, tone = "soft", size = 72, className }: {
   );
 }
 
-export const journeyIcons: LucideIcon[] = [Search, Stethoscope, FileSignature, Wallet, Activity, FileText, Star];
+export const journeyIcons: LucideIcon[] = [Search, Stethoscope, FileSignature, Activity, FileText, Star];
 
-// The seven steps as a dotted zigzag through icon circles, ending in an orange star.
+// The six steps as a dotted zigzag through icon circles, ending in an orange star.
 export function PatientPath({ width = 1680, className }: { width?: number; className?: string }) {
   const node = 96;
-  const gap = (width - node) / 6;
+  const gap = (width - node) / (journeyIcons.length - 1);
   const points = journeyIcons.map((_, i) => ({ x: node / 2 + i * gap, y: i % 2 ? node / 2 : node / 2 + 84 }));
   const d = points.slice(1).reduce((path, p, i) => {
     const from = points[i];
