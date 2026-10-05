@@ -1,27 +1,25 @@
-CARE-INTEGRATED CLINICAL TRIALS: MARGARET'S YEAR — full narration (v3, Oct 2 2026).
-Changes from v2: no cold open and no music, the original's tone; the board line is shortened; the scale line and close are back to the original wording, with "try" replaced by "get treatment" so it isn't confused with the existing right-to-try law.
+CARE-INTEGRATED CLINICAL TRIALS: MARGARET'S YEAR — full narration (v4, Oct 5 2026).
+Changes from v3: the narration now matches the deck's script (apps/web/content/patient-journey/script.md). Margaret's problem is no evidence and no records, not that she can't get the drugs; Right to Try is described by its pricing rule, not as covering only the dying; RECOVERY is added as proof; the model figures (443 years, a third of one percent tested, $9.50 per healthy year) and the separate payment scene are gone; the close points to acceleratedmedicine.org. The first v4 render is silent, timed to estimated narration.
 Voice: HeyGen "Nadine" (calm & gentle).
 
-1 Margaret: Margaret is 68 and has Alzheimer's. Researchers have flagged 573 existing drugs that might help her. She can't get a single one.
+1 Margaret: Margaret is 68 and has Alzheimer's. Researchers have identified 573 existing drugs that might help her. Few have ever been tested for Alzheimer's, so her doctor has no evidence to recommend any of them. And if she takes one anyway, nobody records what happens.
 
-2 Three problems: Federal right-to-try covers only the dying. From 2018 to 2024, just 21 drugs were used under it. Old drugs can't be patented, so nobody pays to test them. And almost no Alzheimer's patients are in any study, so nobody learns from what happens to them.
+2 Three reasons: There are three reasons. Old drugs can't be patented, so no company pays to test them. Almost no Alzheimer's patients are in any study, so nobody learns from their treatment. And the federal Right to Try law lets drug makers charge only their costs, so they have no reason to take part: only 21 drugs have been made available in over six years.
 
-3 The gap: About 9,500 compounds already have a human safety record. Paired with a thousand diseases, that's 9.5 million possible treatments. We've tested about a third of one percent.
+3 Proof: It doesn't have to be this way. In 2020, Britain built a clinical trial into ordinary hospital care. In under three months, it showed that dexamethasone, a cheap steroid used for decades, cut deaths among the sickest COVID patients by up to a third. It saved about a million lives.
 
-4 The fix: The fix is care-integrated clinical trials: treatment through your own doctor, and every result published. Here's Margaret's year.
+4 The idea: Care-integrated clinical trials would do the same for every disease, in everyday care. Here's Margaret's year.
 
-5 Explore (Step 1): She starts by comparing her options: treatments ranked side by side, each with an outcome label showing who improved, the side effects, the cost and how strong the evidence is. An independent board has already screened every option.
+5 Explore (Step 1): She starts by comparing her options: treatments ranked side by side, each with an outcome label showing who improved, the side effects, the cost and how strong the evidence is.
 
-6 Doctor and consent (Steps 2-3): Her own doctor recommends one over a video visit. She doesn't have to be dying or fail approved drugs first. She signs a plain-language consent: the risks, the unknowns, who pays, and that it's experimental.
+6 Screened first: An independent board has already screened every option.
 
-7 Payment (Step 4): Clinics can charge a fair price, so they actually offer it. A charity helps Margaret pay. No insurer has to.
+7 Doctor, consent and cost (Steps 2-3): Her own doctor recommends one over a video visit, and she signs a plain-language consent: the risks, the unknowns, who pays, and that it's experimental. A charity helps her pay, and no insurer or state program has to.
 
-8 Treatment and safety (Step 5): Her first dose is in week two, at a clinic near home. Memory tests and quick phone check-ins track how she's doing. Any serious side effect reaches the board within days, and it can pause new patients.
+8 Treatment and safety (Step 4): Her first dose is in week two, at a clinic near home. Memory tests and quick phone check-ins track how she's doing. Any serious side effect reaches the board within days, and it can pause new patients.
 
-9 Results and the loop (Steps 6-7): At six months her outcome is recorded, good, bad or no change, then de-identified and published. Nothing is hidden. Pooled with every other clinic, it updates the label. The next patient starts with better data than Margaret had.
+9 Results and the loop (Steps 5-6): At six months her outcome is recorded, good, bad or no change, then de-identified and published. Nothing is hidden. Pooled with every other clinic, it updates the label. The next patient starts with better data than Margaret had.
 
-10 Scale: Scale that up. If just 2% of willing patients joined, our model says every disease without a treatment could get its first one in about 36 years instead of 443, at roughly $9.50 per year of healthy life.
+10 Close: Any patient can get treatment through their own doctor. Clinics can afford to offer it. Every result is published, and the next patient learns from Margaret. Learn more at acceleratedmedicine.org.
 
-11 Close: Any patient can get treatment. Clinics can afford to offer it. Every result is published. Margaret didn't have to be dying to get treatment, and the next patient learns from her.
-
-Sources for the scale figures: 443 / 36 years, 2%, $9.50 per healthy year — How to End War and Disease and its dFDA impact paper (model estimates). $89 per healthy year (malaria bed nets) and $100,000+ (typical new drug) — as cited on screen (How to End War and Disease; ICER). "Willing patients" — Research!America / Zogby, Oct 2023: 79% of US adults very or somewhat likely to join a trial if their doctor recommended it.
+Sources: 573 drugs — Frontiers in Pharmacology, 2023. 99.8% of Alzheimer's patients in no study — USC Schaeffer Center; Alzheimer's Association, 2026. 21 drugs under federal Right to Try, May 2018 to December 2024 — FDA, via FactCheck.org, 2026. RECOVERY (89 days from the first patient to the dexamethasone result; deaths cut by up to a third in patients on ventilators) — RECOVERY Collaborative Group, New England Journal of Medicine, 2021. About a million lives saved worldwide by March 2021 — NHS England, 2021.
