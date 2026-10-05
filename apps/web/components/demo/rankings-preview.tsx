@@ -6,8 +6,9 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { RankingsPreviewCondition } from "@/lib/demo/landing-preview";
 
-// Receives only the ranked summary rows, not full treatment records.
-export function RankingsPreview({ conditions }: { conditions: RankingsPreviewCondition[] }) {
+// Receives only the ranked summary rows, not full treatment records. `links` adds the links to each
+// Outcome Label and to the full rankings; the institute's page (/institute) leaves them out.
+export function RankingsPreview({ conditions, links = true }: { conditions: RankingsPreviewCondition[]; links?: boolean }) {
   const [selected, setSelected] = useState(conditions[0]?.slug);
   const condition = conditions.find(item => item.slug === selected) ?? conditions[0];
   if (!condition) return null;
@@ -46,10 +47,12 @@ export function RankingsPreview({ conditions }: { conditions: RankingsPreviewCon
               <p className="text-muted-foreground">
                 Safety estimate: <span className="font-medium tabular-nums text-foreground">{treatment.safetyScore} / 100</span>
               </p>
-              <Link href={treatment.href} className="inline-flex items-center gap-1 rounded-sm font-medium text-primary hover:underline">
-                View Outcome Label<span className="sr-only"> for {treatment.name}</span>
-                <ArrowRight aria-hidden="true" className="h-3 w-3" />
-              </Link>
+              {links && (
+                <Link href={treatment.href} className="inline-flex items-center gap-1 rounded-sm font-medium text-primary hover:underline">
+                  View Outcome Label<span className="sr-only"> for {treatment.name}</span>
+                  <ArrowRight aria-hidden="true" className="h-3 w-3" />
+                </Link>
+              )}
             </div>
           </li>
         ))}
@@ -60,11 +63,13 @@ export function RankingsPreview({ conditions }: { conditions: RankingsPreviewCon
           Top {condition.treatments.length} of {condition.treatmentCount} treatments. Scores use a 0–100 scale,
           not response percentages.
         </p>
-        <Button asChild variant="outline" className="h-auto min-h-10 shrink-0 gap-1 whitespace-normal">
-          <Link href={`/treatment-rankings?condition=${condition.slug}`}>
-            All {condition.name} rankings <ChevronRight aria-hidden="true" className="h-4 w-4 shrink-0" />
-          </Link>
-        </Button>
+        {links && (
+          <Button asChild variant="outline" className="h-auto min-h-10 shrink-0 gap-1 whitespace-normal">
+            <Link href={`/treatment-rankings?condition=${condition.slug}`}>
+              All {condition.name} rankings <ChevronRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   );

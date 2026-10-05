@@ -63,40 +63,49 @@ export function KeyBenefitsSection() {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2">
-          {benefits.map((benefit) => (
-            <div key={benefit.title} className="flex flex-col h-full rounded-lg border bg-background p-6 shadow-sm">
-              <div className="mb-4 rounded-full bg-primary/10 p-4 w-fit">
-                <benefit.icon aria-hidden="true" className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-bold">{benefit.title}</h3>
-              <div className="mt-2 text-muted-foreground flex-grow">
-                <p className="mb-4">{benefit.intro}</p>
-                <ul className="space-y-2">
-                  {benefit.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2">
-                      <div aria-hidden="true" className="rounded-full bg-primary/10 p-1 mt-0.5">
-                        <svg width="8" height="8" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary">
-                          <circle cx="3" cy="3" r="3" fill="currentColor" />
-                        </svg>
-                      </div>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-6 pt-4 border-t">
-                <Link
-                  href={benefit.link.href}
-                  className="text-primary text-sm font-medium inline-flex items-center hover:underline"
-                >
-                  {benefit.link.label} <ArrowRight aria-hidden="true" className="ml-1 h-3 w-3" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+        <BenefitCards />
       </div>
     </section>
+  )
+}
+
+// `links` adds each card's link into the app; the institute's page (/institute) leaves them out.
+export function BenefitCards({ links = true }: { links?: boolean }) {
+  return (
+    <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2">
+      {benefits.map((benefit) => (
+        <div key={benefit.title} className="flex flex-col h-full rounded-lg border bg-background p-6 shadow-sm">
+          <div className="mb-4 rounded-full bg-primary/10 p-4 w-fit">
+            <benefit.icon aria-hidden="true" className="h-6 w-6 text-primary" />
+          </div>
+          <h3 className="text-xl font-bold">{benefit.title}</h3>
+          <div className="mt-2 text-muted-foreground flex-grow">
+            <p className="mb-4">{benefit.intro}</p>
+            <ul className="space-y-2">
+              {benefit.points.map((point) => (
+                <li key={point} className="flex items-start gap-2">
+                  <div aria-hidden="true" className="rounded-full bg-primary/10 p-1 mt-0.5">
+                    <svg width="8" height="8" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary">
+                      <circle cx="3" cy="3" r="3" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {links && (
+            <div className="mt-6 pt-4 border-t">
+              <Link
+                href={benefit.link.href}
+                className="text-primary text-sm font-medium inline-flex items-center hover:underline"
+              >
+                {benefit.link.label} <ArrowRight aria-hidden="true" className="ml-1 h-3 w-3" />
+              </Link>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
   )
 }

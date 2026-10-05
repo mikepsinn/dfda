@@ -3,10 +3,12 @@
 import type { ReactNode } from "react"
 import { usePathname } from "next/navigation"
 
-// The site header, page container and footer, left out on full-screen presentations (/present).
+// The site header, page container and footer, left out on full-screen presentations (/present)
+// and on the institute's page (/institute), which has its own header and footer.
 export function SiteChrome({ header, footer, children }: { header: ReactNode; footer: ReactNode; children: ReactNode }) {
   const pathname = usePathname()
   if (pathname?.startsWith("/present/")) return <main>{children}</main>
+  if (pathname === "/institute") return <>{children}</>
   return (
     <div className="min-h-screen flex flex-col">
       {header}

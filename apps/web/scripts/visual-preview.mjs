@@ -21,6 +21,7 @@ const routes = [
   { name: "developers", path: "/developers" },
   { name: "impact", path: "/impact" },
   { name: "find-trials", path: "/find-trials" },
+  { name: "institute", path: "/institute" },
   // The deck on a phone, which shows the desktop layout scaled down; its slides are compared below.
   { name: "presentation", path: "/present/patient-journey#9", viewports: ["mobile"] },
 ];
