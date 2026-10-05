@@ -133,9 +133,9 @@ export function OutcomeLabelIllustration({ example }: { example: LandingOutcomeL
 }
 
 const audiences = [
-  { id: "how-it-works-patient", title: "For Patients", steps: <PatientSteps /> },
-  { id: "how-it-works-provider", title: "For Providers", steps: <ProviderSteps /> },
-  { id: "how-it-works-research-partner", title: "For Research Partners", steps: <ResearchPartnerSteps /> },
+  { id: "how-it-works-patient", eyebrow: "For patients", title: "How Your Doctor's Visit Should Actually Work", steps: <PatientSteps /> },
+  { id: "how-it-works-provider", eyebrow: "For doctors", title: "How Treating Patients Should Work", steps: <ProviderSteps /> },
+  { id: "how-it-works-research-partner", eyebrow: "For researchers", title: "How Clinical Trials Should Work", steps: <ResearchPartnerSteps /> },
 ]
 
 export function HowItWouldWorkSection() {
@@ -143,14 +143,15 @@ export function HowItWouldWorkSection() {
     <section id="how-it-works" className="w-full scroll-mt-16 py-12 md:py-24 lg:py-32">
       {/* The page container already pads phones; the wide mock-ups need that width. */}
       <div className="container px-0 sm:px-4 md:px-6">
-        <SectionHeading title="How Your Doctor's Visit Should Actually Work">
-          Patients would report outcomes, clinicians would see what has worked for patients like theirs, and
-          research partners would run trials on the same network.
+        <SectionHeading title="How It Should Actually Work">
+          Patients would report outcomes, doctors would see what has worked for patients like theirs, and
+          researchers would run trials on the same network.
         </SectionHeading>
         {audiences.map(audience => (
           <div key={audience.id} id={audience.id} className="relative mb-16 mt-12">
             <div className="mx-auto max-w-5xl">
-              <h3 className="mb-8 text-center text-2xl font-bold">{audience.title}</h3>
+              <p className="text-center text-sm font-semibold uppercase tracking-wider text-primary">{audience.eyebrow}</p>
+              <h3 className="mb-8 mt-2 text-center text-2xl font-bold">{audience.title}</h3>
               {audience.steps}
             </div>
           </div>
