@@ -42,8 +42,8 @@ prototype render the app's own components with its data, not screenshots.
   1. Many cheap existing drugs might help patients like Margaret, but nobody tests them: nobody
      can profit from it, and nobody records what happens to patients who take them.
   2. Building trials into everyday care already works (RECOVERY).
-  3. The act lets any patient get a screened treatment or join a randomized trial through their
-     own doctor, lets clinics charge enough to offer it, and publishes every result.
+  3. The act lets any patient get a screened treatment through their own doctor, lets clinics
+     charge enough to offer it, and publishes every result.
 - **They should feel:** that this is common sense, safe and proven. Calm confidence, not fear or
   outrage.
 - **The close:** "Learn more at acceleratedmedicine.org", with no ask on the slides or in the
@@ -255,8 +255,8 @@ NHS England, 2021; Manhattan Institute, 2023; Moore et al., JAMA Internal Medici
 
 - Eyebrow: CARE-INTEGRATED CLINICAL TRIALS
 - Title: Do the same for every disease, in everyday care
-- **Any patient** can get a screened treatment, or join a randomized trial, through their own
-  doctor, with written consent.
+- **Any patient** can get the most promising treatments through their own doctor, after
+  independent review and with written consent.
 - **Clinics can charge a fair price,** so they have a reason to offer treatments nobody else will
   fund.
 - **Every result is published,** good or bad, so the next patient chooses better.
@@ -264,10 +264,10 @@ NHS England, 2021; Manhattan Institute, 2023; Moore et al., JAMA Internal Medici
 **Visual:** Three columns, each with a round purple icon (a person, a clinic, a document) above a
 bold lead-in and one sentence. The same icons return on the closing slide.
 
-**Speaker notes:** These three changes are the whole idea. The first covers both paths in the
-bill: a treatment that an independent board has screened, given through the patient's own doctor,
-or a randomized trial run through ordinary doctors, as RECOVERY was. The rest of the deck shows them
-through Margaret's first year.
+**Speaker notes:** These three changes are the whole idea. The rest of the deck shows them through
+Margaret's first year. If asked whether this is like RECOVERY, which was randomized: the bill also
+lets ordinary doctors enroll patients in centrally run randomized trials, as RECOVERY did, alongside
+treatments an independent board has screened.
 
 **Video narration:** Care-integrated clinical trials would do the same for every disease, in
 everyday care. Here's Margaret's year.
@@ -595,7 +595,7 @@ maker, and lower prices for patients who share outcome data.
 **On screen**
 
 - Headline: Every patient's experience becomes evidence for the next.
-- **Any patient can get** a screened treatment, or join a trial, through their own doctor.
+- **Any patient can get** the most promising treatments through their own doctor.
 - **Clinics can charge fairly,** so they offer treatments nobody else will fund.
 - **Every result is published,** producing treatment rankings and outcome labels.
 - Learn more at acceleratedmedicine.org
