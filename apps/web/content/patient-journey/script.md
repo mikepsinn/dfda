@@ -143,7 +143,7 @@ drugs that might help her. Few have ever been tested for Alzheimer's, so her doc
 to recommend any of them. And if she takes one anyway, nobody records what happens.
 
 **Source line:** Frontiers in Pharmacology, 2023, ten-year review of drug repurposing for
-Alzheimer's. Margaret is a composite patient.
+Alzheimer's.
 
 ## 3. Millions of patients
 
