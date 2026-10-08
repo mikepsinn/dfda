@@ -89,7 +89,7 @@ over `dfda.earth` is a later migration step.
 | [`packages/legacy-import`](../packages/legacy-import) | Legacy MySQL Prisma schema, query tools, and MySQL-to-PostgreSQL sync | Present; replaces `packages/database` and `packages/db-ops`; retire after migration |
 | [`packages/config-eslint`](../packages/config-eslint) | Shared lint configuration | Present |
 | [`packages/config-typescript`](../packages/config-typescript) | Shared TypeScript configuration | Present |
-| [`supabase`](../supabase) and [`schema`](../schema) | Additional database schema definitions and tooling | Present; compare with app migrations before reuse |
+| [`schema`](../schema) | Earlier, unapplied database schema design | Present; compare with app migrations before reuse |
 | [`pulumi-infra`](../pulumi-infra) | GCP, Cloud Run, and Coolify/Supabase provisioning code | Present; code presence does not establish an active deployment |
 
 The nested agent/SDK and root infrastructure directories are not additional

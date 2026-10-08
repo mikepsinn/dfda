@@ -70,8 +70,9 @@ of UI conventions for contributors and coding agents.
   row-level security policies apply. Use `adminDb` (no row-level security) only in
   workers, scripts and server code that has already checked authorization. Never
   build a user-scoped client from an ID in request input.
-- The web app uses `apps/web/supabase/migrations` (SQL). The repository-root
-  `supabase` tree is a separate older schema/tooling area; do not copy it into the app.
+- The web app's schema is the SQL in `apps/web/supabase/migrations`. The
+  repository-root `schema` folder is an earlier, unapplied design; do not copy it
+  into the app.
 - Add schema changes as new SQL migrations, then run `pnpm db:pull` to update
   `prisma/schema.prisma` and the client. There are no real user accounts in
   production yet, so editing, squashing or rebaselining migrations is acceptable

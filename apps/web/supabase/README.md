@@ -8,9 +8,8 @@ The app is moving from Supabase to plain PostgreSQL with Prisma:
 - **Schema changes** are SQL files in [migrations](migrations). Prisma reads the
   resulting database into [`prisma/schema.prisma`](../prisma/schema.prisma).
 
-The repository-root `supabase` directory has separate, older schema tooling; do
-not assume its commands or schema layout apply to this app. Start with the
-shared [repository instructions](../../../AGENTS.md).
+The repository-root `schema` folder is an earlier, unapplied design; do not
+copy from it. Start with the shared [repository instructions](../../../AGENTS.md).
 
 ## Querying the database
 
