@@ -56,7 +56,7 @@ export function FileUploadComponent({
 
       const uploadResponse = await fetch(target.uploadUrl, {
         method: 'PUT',
-        headers: { 'Content-Type': file.type || 'application/octet-stream' },
+        headers: target.uploadHeaders,
         body: file,
       })
       if (!uploadResponse.ok) {

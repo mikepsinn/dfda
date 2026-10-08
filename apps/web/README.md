@@ -165,5 +165,5 @@ S3_FORCE_PATH_STYLE=true
     `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_JWT_SECRET`, and the `S3_*`
     variables for the file bucket. Add `GOOGLE_GENERATIVE_AI_API_KEY` only when
     AI-assisted features are enabled.
-3.  Set the bucket CORS rules to allow `PUT` requests with a `Content-Type`
-    header from the app domains. Browsers upload files directly to the bucket.
+3.  Set the bucket CORS rules to allow `PUT` requests with the `Content-Type`
+    and `If-None-Match` headers from the app domains. Browsers upload files directly to the bucket.

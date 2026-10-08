@@ -1,6 +1,7 @@
 'use server'
 
 import { getServerUser } from '@/lib/server-auth'
+import { isUniqueViolation } from '@/lib/db'
 import { getUserDb } from '@/lib/db/server'
 import { logger } from '@/lib/logger'
 import {
@@ -13,24 +14,25 @@ import {
 
 /**
  * Returns a signed URL that lets the browser upload one file into the
- * signed-in user's storage folder. After the upload, call recordUploadMetadata.
+ * signed-in user's storage folder. The browser must PUT exactly `size` bytes
+ * with `uploadHeaders`. After the upload, call recordUploadMetadata.
  */
 export async function createUploadUrlAction(file: {
   name: string
   type: string
   size: number
-}): Promise<{ storagePath: string; uploadUrl: string } | { error: string }> {
+}): Promise<{ storagePath: string; uploadUrl: string; uploadHeaders: Record<string, string> } | { error: string }> {
   const user = await getServerUser()
   if (!user) {
     return { error: 'Sign in to upload files.' }
   }
-  if (!(file.size > 0) || file.size > MAX_UPLOAD_BYTES) {
+  if (!Number.isSafeInteger(file.size) || file.size <= 0 || file.size > MAX_UPLOAD_BYTES) {
     return { error: `Files must be smaller than ${MAX_UPLOAD_BYTES / (1024 * 1024)} MB.` }
   }
 
   try {
-    const { key, url } = await createUserUploadUrl(user.id, file)
-    return { storagePath: key, uploadUrl: url }
+    const { key, url, headers } = await createUserUploadUrl(user.id, file)
+    return { storagePath: key, uploadUrl: url, uploadHeaders: headers }
   } catch (error) {
     logger.error('Could not create an upload URL', { userId: user.id, error })
     return { error: 'Could not prepare the upload.' }
@@ -88,6 +90,19 @@ export async function recordUploadMetadata(metadata: {
     logger.info('Recorded file upload metadata', { userId: user.id, fileId: record.id, path })
     return record.id
   } catch (error) {
+    if (isUniqueViolation(error)) {
+      // The file was already recorded (a retry or a second call). Keep the
+      // file, because the existing record points to it.
+      const db = await getUserDb()
+      const existing = await db.uploaded_files
+        .findUnique({ where: { storage_path: path }, select: { id: true } })
+        .catch((lookupError) => {
+          logger.error('Could not read the existing upload record', { userId: user.id, path, error: lookupError })
+          return null
+        })
+      logger.warn('Upload metadata was already recorded', { userId: user.id, path, fileId: existing?.id })
+      return existing?.id ?? null
+    }
     logger.error('Error inserting uploaded_files record', { userId: user.id, path, error })
     await deleteStoredFiles([path])
     return null

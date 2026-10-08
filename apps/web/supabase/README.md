@@ -78,14 +78,16 @@ Rules:
   from request input with `isUserFileKey(user.id, key)` before you record,
   read or delete it.
 - Browser uploads: the Server Action `createUploadUrlAction` returns a signed
-  PUT URL (valid for 5 minutes, at most `MAX_UPLOAD_BYTES`). The browser sends
-  the file with the same `Content-Type`, then calls `recordUploadMetadata`,
+  PUT URL (valid for 5 minutes, at most `MAX_UPLOAD_BYTES`) and the headers to
+  send with it. The signature covers `Content-Type`, the exact file size and
+  `If-None-Match: *`, so storage refuses a body of another size and a second
+  upload to the same key. The browser then calls `recordUploadMetadata`,
   which reads the size and type from storage and inserts the
-  `uploaded_files` record.
+  `uploaded_files` record. A repeated call returns the existing record.
 - Server uploads: `uploadUserFile(userId, file)`. Clean up with
   `deleteStoredFiles(keys)` when a later step fails.
-- The bucket must allow cross-origin `PUT` requests with a `Content-Type`
-  header from the app origins (bucket CORS settings).
+- The bucket must allow cross-origin `PUT` requests with the `Content-Type`
+  and `If-None-Match` headers from the app origins (bucket CORS settings).
 
 For local development, use the S3 endpoint of the local Supabase stack
 (`http://127.0.0.1:54321/storage/v1/s3`, keys from `pnpm sb:local:status`) or

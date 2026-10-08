@@ -33,7 +33,7 @@ async function uploadThroughBrowserFlow(content: string, type = 'text/plain') {
   }
   const response = await fetch(target.uploadUrl, {
     method: 'PUT',
-    headers: { 'Content-Type': type },
+    headers: target.uploadHeaders,
     body: content,
   })
   return { target, response }
@@ -75,6 +75,25 @@ describe('file storage', () => {
     expect(record.mime_type).toBe('text/plain')
   })
 
+  it('records a file only once and keeps it when metadata is recorded again', async () => {
+    const { target } = await uploadThroughBrowserFlow('recorded twice')
+    const first = await recordUploadMetadata({ storage_path: target.storagePath, file_name: 'notes.txt' })
+    expect(first).not.toBeNull()
+
+    const second = await recordUploadMetadata({ storage_path: target.storagePath, file_name: 'notes.txt' })
+    expect(second).toBe(first)
+    expect(await getStoredFileInfo(target.storagePath)).not.toBeNull()
+    expect(await adminDb.uploaded_files.count({ where: { storage_path: target.storagePath } })).toBe(1)
+  })
+
+  it('does not let an upload URL replace a file that is already stored', async () => {
+    const { target, response } = await uploadThroughBrowserFlow('first')
+    expect(response.ok).toBe(true)
+
+    const again = await fetch(target.uploadUrl, { method: 'PUT', headers: target.uploadHeaders, body: 'other' })
+    expect(again.status).toBe(412)
+  })
+
   it("does not record a file in another user's folder", async () => {
     signInAs(userB)
     const { target } = await uploadThroughBrowserFlow('belongs to B')
@@ -98,15 +117,17 @@ describe('file storage', () => {
       await createUploadUrlAction({ name: 'big.bin', type: 'application/octet-stream', size: MAX_UPLOAD_BYTES + 1 }),
     ).toHaveProperty('error')
     expect(await createUploadUrlAction({ name: 'empty.txt', type: 'text/plain', size: 0 })).toHaveProperty('error')
+    expect(await createUploadUrlAction({ name: 'part.txt', type: 'text/plain', size: 1.5 })).toHaveProperty('error')
   })
 
-  it('signs the content type into the upload URL and adds no checksum', async () => {
+  it('signs the content type, size and If-None-Match into the upload URL and adds no checksum', async () => {
     // The storage service enforces the signature, so a browser cannot upload a
-    // different content type. (The test server does not check signatures.)
+    // different content type or size. (The test server does not check signatures.)
     const target = await createUploadUrlAction({ name: 'scan.png', type: 'image/png', size: 4 })
     if ('error' in target) throw new Error(target.error)
     const params = new URL(target.uploadUrl).searchParams
-    expect(params.get('X-Amz-SignedHeaders')).toBe('content-type;host')
+    expect(params.get('X-Amz-SignedHeaders')).toBe('content-length;content-type;host;if-none-match')
+    expect(target.uploadHeaders).toEqual({ 'Content-Type': 'image/png', 'If-None-Match': '*' })
     expect([...params.keys()].some((key) => key.toLowerCase().startsWith('x-amz-checksum'))).toBe(false)
   })
 

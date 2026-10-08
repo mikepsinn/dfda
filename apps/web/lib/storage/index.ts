@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto'
 import {
+  type BucketLocationConstraint,
   CreateBucketCommand,
   DeleteObjectsCommand,
   HeadBucketCommand,
@@ -96,21 +97,33 @@ export async function uploadUserFile(userId: string, file: File): Promise<string
 
 /**
  * Returns a signed URL that lets the browser PUT one file into the user's
- * folder. The Content-Type header is part of the signature, so the browser
- * must send the same value.
+ * folder, and the headers the browser must send with it. The signature
+ * covers Content-Type, the exact Content-Length (the browser sets it from the
+ * body) and "If-None-Match: *", so the storage service refuses a body of
+ * another size and refuses a second upload to the same key.
  */
 export async function createUserUploadUrl(
   userId: string,
-  file: { name: string; type: string },
-): Promise<{ key: string; url: string }> {
+  file: { name: string; type: string; size: number },
+): Promise<{ key: string; url: string; headers: Record<string, string> }> {
   const { client, bucket } = getStorage()
   const key = userFileKey(userId, file.name)
+  const contentType = file.type || 'application/octet-stream'
   const url = await getSignedUrl(
     client,
-    new PutObjectCommand({ Bucket: bucket, Key: key, ContentType: file.type || 'application/octet-stream' }),
-    { expiresIn: UPLOAD_URL_TTL_SECONDS, signableHeaders: new Set(['content-type']) },
+    new PutObjectCommand({
+      Bucket: bucket,
+      Key: key,
+      ContentType: contentType,
+      ContentLength: file.size,
+      IfNoneMatch: '*',
+    }),
+    {
+      expiresIn: UPLOAD_URL_TTL_SECONDS,
+      signableHeaders: new Set(['content-type', 'content-length', 'if-none-match']),
+    },
   )
-  return { key, url }
+  return { key, url, headers: { 'Content-Type': contentType, 'If-None-Match': '*' } }
 }
 
 /** Size and content type of a stored file, or null when it does not exist. */
@@ -162,7 +175,14 @@ export async function ensureBucket(): Promise<void> {
     if (!(error instanceof NotFound || (error instanceof S3ServiceException && error.$metadata.httpStatusCode === 404))) {
       throw error
     }
-    await client.send(new CreateBucketCommand({ Bucket: bucket }))
+    // AWS needs the region in the request for buckets outside us-east-1.
+    // Other S3-compatible services (S3_ENDPOINT) choose the location themselves.
+    const region = await client.config.region()
+    const createBucketConfiguration =
+      !process.env.S3_ENDPOINT && region !== 'us-east-1'
+        ? { LocationConstraint: region as BucketLocationConstraint }
+        : undefined
+    await client.send(new CreateBucketCommand({ Bucket: bucket, CreateBucketConfiguration: createBucketConfiguration }))
     logger.info('Created storage bucket', { bucket })
   }
 }
