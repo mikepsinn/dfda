@@ -110,6 +110,19 @@ export const auth = betterAuth({
   databaseHooks: {
     user: {
       create: {
+        // A person who used the app with Supabase sign-in already has a
+        // profile (and maybe patient or provider data) under their old user
+        // id. When they sign in for the first time with a proven email
+        // address, the new user takes that id, so their data stays theirs.
+        before: async (user) => {
+          if (!user.emailVerified) return
+          const profile = await adminDb.profiles.findUnique({ where: { email: user.email }, select: { id: true } })
+          if (!profile) return
+          const owner = await adminDb.users.findUnique({ where: { id: profile.id }, select: { id: true } })
+          if (owner) return
+          logger.info('New user takes the id of an existing profile', { userId: profile.id })
+          return { data: { ...user, id: profile.id } }
+        },
         after: async (user) => {
           await adminDb.profiles.upsert({
             where: { id: user.id },

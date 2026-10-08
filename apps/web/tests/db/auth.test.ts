@@ -65,6 +65,21 @@ describe('Better Auth users', () => {
     }
   })
 
+  it('gives a new user the id of an existing profile with the same email', async () => {
+    // A profile from the Supabase sign-in time, with no users row.
+    const legacyEmail = `legacy-${Date.now()}@example.com`
+    const legacyId = crypto.randomUUID()
+    await adminDb.profiles.create({ data: { id: legacyId, email: legacyEmail } })
+    try {
+      const userId = await ensurePasswordUser(legacyEmail, 'Legacy User', password)
+      createdUserIds.push(userId)
+      expect(userId).toBe(legacyId)
+      expect(await adminDb.profiles.count({ where: { email: legacyEmail } })).toBe(1)
+    } finally {
+      await adminDb.profiles.deleteMany({ where: { id: legacyId } })
+    }
+  })
+
   it('stores the non-UUID verification ids that Better Auth makes', async () => {
     // A magic link for an existing, unverified user reserves a lock row with
     // a SHA-256 digest as its id.
