@@ -8,6 +8,27 @@ import { cache } from "react"
 export type Profile = Database['public']['Tables']['profiles']['Row'];
 
 /**
+ * Reads the profile of `user`.
+ *
+ * Returns null only when no profile row exists. A database error (for example
+ * a missing DATABASE_URL or a migration that is not applied) is thrown, so that
+ * callers do not mistake it for a profile without a role.
+ */
+export const fetchUserProfile = cache(async (user: User): Promise<Profile | null> => {
+  const db = await getUserDb()
+  const profile = await db.profiles.findUnique({
+    where: { id: user.id },
+  })
+
+  if (!profile) {
+    logger.warn('User profile not found.', { userId: user.id });
+    return null;
+  }
+
+  return profile;
+})
+
+/**
  * Fetches the user profile from the server-side.
  * Requires the authenticated user object.
  * 
@@ -21,17 +42,10 @@ export const getUserProfile = cache( async (user: User | null): Promise<Profile 
   }
 
   try {
-    const db = await getUserDb()
-    const profile = await db.profiles.findUnique({
-      where: { id: user.id },
-    })
-
-    if (!profile) {
-      logger.warn('User profile not found.', { userId: user.id });
-      return null;
+    const profile = await fetchUserProfile(user)
+    if (profile) {
+      logger.info('User profile fetched successfully', { userId: user.id });
     }
-
-    logger.info('User profile fetched successfully', { userId: user.id });
     return profile;
 
   } catch (err) {

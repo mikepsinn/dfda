@@ -1,6 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
-import { getUserProfile } from '@/lib/profile'
+import { fetchUserProfile, type Profile } from '@/lib/profile'
+import { logger } from '@/lib/logger'
 import { env } from '@/lib/env'
 
 export async function updateSession(request: NextRequest) {
@@ -40,12 +41,27 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Fetch the user profile if the user object exists
-  const profile = user ? await getUserProfile(user) : null;
+  // Fetch the user profile if the user object exists. When the database read
+  // fails, the role is unknown, not missing: do not send the user to
+  // /select-role, because that page would ask again for a role they already have.
+  let profile: Profile | null = null
+  let profileReadFailed = false
+  if (user) {
+    try {
+      profile = await fetchUserProfile(user)
+    } catch (error) {
+      profileReadFailed = true
+      logger.error('Could not read the user profile in middleware', {
+        userId: user.id,
+        error: error instanceof Error ? error.message : error,
+      })
+    }
+  }
 
   // Redirect to select role if user is logged in but user_type is missing from profile
   if (
     user && 
+    !profileReadFailed &&
     !profile?.user_type &&
     !request.nextUrl.pathname.startsWith('/select-role') &&
     !request.nextUrl.pathname.startsWith('/login') && // Allow access to login
