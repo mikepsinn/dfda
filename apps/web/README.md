@@ -1,8 +1,8 @@
 # dFDA web app
 
 `apps/web` is the canonical Next.js product application. It stores its data in
-PostgreSQL through Prisma; Supabase still provides sign-in and file storage
-while the app moves off it.
+PostgreSQL through Prisma and uploaded files in an S3-compatible bucket;
+Supabase still provides sign-in while the app moves off it.
 `prototype.dfda.earth` is its reference deployment. The same codebase is
 intended to serve the public site, personal health workspaces and clinic workspaces
 at `dfda.earth`, or run as a branded independent installation. One maintained
@@ -110,9 +110,10 @@ landing-page theme and components rather than creating another visual system.
 
 ## Environment Setup
 
-The web app requires a PostgreSQL connection (`DATABASE_URL`) and Supabase
-credentials (sign-in and storage). Google AI and Google Cloud credentials are
-optional and only enable the features that use those services.
+The web app requires a PostgreSQL connection (`DATABASE_URL`), an S3-compatible
+bucket for uploaded files (`S3_*`) and Supabase credentials for sign-in. Google
+AI and Google Cloud credentials are optional and only enable the features that
+use those services.
 
 ### Local Development
 
@@ -123,11 +124,20 @@ For local development, create a `.env` file in the root of the `apps/web` projec
 # Local Supabase stack: postgresql://postgres:postgres@127.0.0.1:54322/postgres
 DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:54322/postgres
 
-# Supabase sign-in and storage (Get from your Supabase project settings)
+# Supabase sign-in (Get from your Supabase project settings)
 NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
 SUPABASE_JWT_SECRET=YOUR_SUPABASE_JWT_SECRET
+
+# S3-compatible bucket for uploaded files. With the local Supabase stack, use its
+# S3 endpoint and the S3 keys that `pnpm sb:local:status` prints.
+S3_ENDPOINT=http://127.0.0.1:54321/storage/v1/s3
+S3_REGION=local
+S3_BUCKET=user_uploads
+S3_ACCESS_KEY_ID=YOUR_S3_ACCESS_KEY
+S3_SECRET_ACCESS_KEY=YOUR_S3_SECRET_KEY
+S3_FORCE_PATH_STYLE=true
 
 # Optional: Google Generative AI (for AI-assisted features)
 # Get from Google AI Studio: https://aistudio.google.com/app/apikey
@@ -152,5 +162,8 @@ SUPABASE_JWT_SECRET=YOUR_SUPABASE_JWT_SECRET
 1.  Go to your Vercel Project Settings > Environment Variables.
 2.  Add the required variables from your `.env` file: `DATABASE_URL`,
     `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
-    `SUPABASE_SERVICE_ROLE_KEY`, and `SUPABASE_JWT_SECRET`. Add
-    `GOOGLE_GENERATIVE_AI_API_KEY` only when AI-assisted features are enabled.
+    `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_JWT_SECRET`, and the `S3_*`
+    variables for the file bucket. Add `GOOGLE_GENERATIVE_AI_API_KEY` only when
+    AI-assisted features are enabled.
+3.  Set the bucket CORS rules to allow `PUT` requests with a `Content-Type`
+    header from the app domains. Browsers upload files directly to the bucket.

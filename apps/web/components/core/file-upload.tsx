@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useRef, useCallback } from 'react'
-import { createClient } from '@/utils/supabase/client'
-import { recordUploadMetadata } from '@/lib/actions/file-upload-actions'
+import { createUploadUrlAction, recordUploadMetadata } from '@/lib/actions/file-upload-actions'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
@@ -10,11 +9,9 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { UploadCloud, File as FileIcon, X } from 'lucide-react'
 import { logger } from '@/lib/logger'
 import { useToast } from '@/components/ui/use-toast'
-import { BUCKET_NAME } from '@/lib/constants/storage'
 
 interface FileUploadComponentProps {
   userId: string // Must be passed from a server component or context
-  bucketName?: string
   onUploadComplete: (uploadedFileId: string) => void
   // Add props for constraints like allowed types, max size etc. if needed
 }
@@ -22,10 +19,8 @@ interface FileUploadComponentProps {
 // Basic implementation - needs refinement for multiple files, progress, error details
 export function FileUploadComponent({ 
   userId,
-  bucketName = BUCKET_NAME, // Use imported constant as default
   onUploadComplete 
 }: FileUploadComponentProps) {
-  const supabase = createClient()
   const { toast } = useToast()
   const [file, setFile] = useState<File | null>(null)
   const [isUploading, setIsUploading] = useState(false)
@@ -51,39 +46,36 @@ export function FileUploadComponent({
     setError(null)
     setUploadProgress(0)
 
-    const filePath = `${userId}/${Date.now()}_${file.name}` // Use timestamp to avoid overwrites
-
     try {
-      const { error: uploadError } = await supabase.storage
-        .from(bucketName)
-        .upload(filePath, file, {
-          cacheControl: '3600', // Optional: cache control
-          upsert: false, // Set to true if you want to allow overwriting
-          // Note: Progress tracking via Supabase client upload is complex with fetch streams.
-          // Simple percentage is not directly available. We simulate progress for UI.
-        })
+      // The server decides where the file goes and signs a short-lived upload URL.
+      const target = await createUploadUrlAction({ name: file.name, type: file.type, size: file.size })
+      if ('error' in target) {
+        throw new Error(target.error)
+      }
+      const filePath = target.storagePath
 
-      // Simulate progress for now
-      setUploadProgress(50) 
-
-      if (uploadError) {
-        throw uploadError
+      const uploadResponse = await fetch(target.uploadUrl, {
+        method: 'PUT',
+        headers: { 'Content-Type': file.type || 'application/octet-stream' },
+        body: file,
+      })
+      if (!uploadResponse.ok) {
+        throw new Error(`Storage rejected the upload (HTTP ${uploadResponse.status}).`)
       }
 
-      // Simulate completion
-      setUploadProgress(100)
+      // Progress is not tracked during the upload; show the steps instead.
+      setUploadProgress(50)
 
       // Record metadata in DB via Server Action
       const uploadedFileId = await recordUploadMetadata({
         storage_path: filePath,
         file_name: file.name,
-        mime_type: file.type,
-        size_bytes: file.size,
       })
+
+      setUploadProgress(100)
 
       if (!uploadedFileId) {
         throw new Error('Failed to record upload metadata in database.')
-        // Consider attempting to delete the file from storage here if DB record fails
       }
 
       logger.info('File upload successful', { userId, filePath, uploadedFileId });
@@ -99,7 +91,7 @@ export function FileUploadComponent({
     } finally {
       setIsUploading(false)
     }
-  }, [file, userId, supabase.storage, bucketName, onUploadComplete, toast])
+  }, [file, userId, onUploadComplete, toast])
 
   const triggerFileInput = () => {
     fileInputRef.current?.click();
