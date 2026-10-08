@@ -1,13 +1,7 @@
-import { SupabaseClient } from '@supabase/supabase-js';
 import { getUserDb } from '@/lib/db/server';
 import { logger } from './logger';
-// import { v4 as uuidv4 } from 'uuid'; // REMOVED UNUSED
 import { UNIT_IDS } from '@/lib/constants/units'; // Needed for fallback
-// import { BUCKET_NAME } from '@/lib/constants/storage'; // REMOVED UNUSED
-import { uploadFile } from './storage.lib'; // Import the new upload function
-
-// Supabase client used for Storage uploads
-type ResolvedSupabaseClient = SupabaseClient;
+import { uploadUserFile } from '@/lib/storage';
 
 // Define image types needed by uploadAndLinkImages
 // const IMAGE_TYPES = ['primary', 'nutrition', 'ingredients', 'upc'] as const;
@@ -56,9 +50,9 @@ export async function findOrCreateUserVariable(
 /**
  * Uploads image files to storage, creates records in uploaded_files,
  * and links them to a user_variable via user_variable_images.
+ * `userId` must be the signed-in user: the files are stored in that user's folder.
  */
 export async function uploadAndLinkImages(
-    supabase: ResolvedSupabaseClient,
     userId: string,
     userVariableId: string,
     imageFiles: { type: ImageType; file: File }[],
@@ -73,7 +67,7 @@ export async function uploadAndLinkImages(
 
         try {
             // Call the centralized upload function
-            currentStoragePath = await uploadFile(supabase, userId, file);
+            currentStoragePath = await uploadUserFile(userId, file);
             uploadedStoragePaths.push(currentStoragePath); // Still track for potential cleanup
 
             // Link via uploaded_files Table

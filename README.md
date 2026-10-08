@@ -296,7 +296,7 @@ pnpm --filter web db:local:reset
 
 ### Database Setup
 
-The web app stores its data in PostgreSQL and queries it with Prisma; Supabase provides sign-in and file storage, and its local stack runs the development database. From the repo root:
+The web app stores its data in PostgreSQL and queries it with Prisma; uploaded files go to an S3-compatible bucket. Supabase provides sign-in, and its local stack runs the development database and a local S3 endpoint. From the repo root:
 
 ```bash
 pnpm --filter web sb:local:start   # start only local Supabase

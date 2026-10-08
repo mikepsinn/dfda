@@ -8,10 +8,19 @@ export const env = createEnv({
    */
   server: {
     // PostgreSQL connection used by Prisma (lib/db) for all table queries.
-    // Supabase is still used for sign-in and file storage. Optional here so
+    // Supabase is still used for sign-in. Optional here so
     // that builds run without database access; lib/db throws on first use
     // when it is missing.
     DATABASE_URL: z.string().url().optional(),
+    // S3-compatible bucket for uploaded files (lib/storage). Optional here so
+    // that builds run without it; lib/storage throws on first use when
+    // S3_BUCKET is missing. Without access keys the AWS default credentials apply.
+    S3_BUCKET: z.string().min(1).optional(),
+    S3_REGION: z.string().min(1).optional(),
+    S3_ENDPOINT: z.string().url().optional(),
+    S3_ACCESS_KEY_ID: z.string().min(1).optional(),
+    S3_SECRET_ACCESS_KEY: z.string().min(1).optional(),
+    S3_FORCE_PATH_STYLE: z.enum(['true', 'false']).optional(),
     // AI-assisted features degrade gracefully when no provider key is set.
     GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1).optional(),
     // Remove Google OAuth client creds - handled by Supabase Auth server
@@ -46,6 +55,12 @@ export const env = createEnv({
    */
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
+    S3_BUCKET: process.env.S3_BUCKET,
+    S3_REGION: process.env.S3_REGION,
+    S3_ENDPOINT: process.env.S3_ENDPOINT,
+    S3_ACCESS_KEY_ID: process.env.S3_ACCESS_KEY_ID,
+    S3_SECRET_ACCESS_KEY: process.env.S3_SECRET_ACCESS_KEY,
+    S3_FORCE_PATH_STYLE: process.env.S3_FORCE_PATH_STYLE,
     GOOGLE_GENERATIVE_AI_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
     // Remove Google OAuth client creds - handled by Supabase Auth server
     // GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
