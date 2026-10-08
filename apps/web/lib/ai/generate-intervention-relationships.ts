@@ -1,7 +1,5 @@
 import { z } from 'zod';
 import { generateObject, NoObjectGeneratedError } from 'ai';
-// Remove SupabaseClient import if no checks are done
-// import { SupabaseClient } from '@supabase/supabase-js'; 
 import { Database } from '@/lib/database.types';
 import { logger } from '@/lib/logger';
 import { defaultGoogleModel } from './google';
@@ -327,7 +325,6 @@ Suggest potential relationships between the predictor and each outcome variable.
 // Remove example usage or keep it commented
 /*
 async function runGeneration() {
-  // No Supabase needed here if checks removed
   const result = await generateInterventionSqlData(
     'intervention-id-example',
     'Intervention Example Name',

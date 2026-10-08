@@ -7,7 +7,7 @@
 3.  **Auth Helpers (Composition):** Create initial helper utilities for common auth patterns (e.g., API Key, OAuth2 base) in a new `lib/auth/` directory.
 4.  **Worker Update:** Modify `worker/runner.ts` to dynamically instantiate and call the appropriate handler based on the `import_jobs.integration_source_id`.
 5.  **Implement First Integration:** Choose a specific source and implement its concrete handler class (e.g., `GoogleFitHandler`) inheriting from `BaseIntegrationHandler` and using the relevant auth helper.
-6.  **User Configuration:** Build the necessary UI (`components/`) and backend logic (Server Actions or Supabase Functions) for users to authorize and configure this first integration.
+6.  **User Configuration:** Build the necessary UI (`components/`) and backend logic (Server Actions or route handlers) for users to authorize and configure this first integration.
 7.  **Scheduling/Triggering:** Implement the mechanism(s) to create `import_jobs` (e.g., `pg_cron` for scheduled tasks, Server Actions for manual triggers/uploads).
 8.  **Testing:** Thoroughly test the end-to-end flow for the first integration, including authentication, data fetching, mapping, saving, and job status updates.
 9.  **Refinement:** Review and refactor the base class, helpers, and overall process based on learnings from the first integration.
@@ -15,7 +15,7 @@
 
 ## Todo List
 
-### Database Schema (`supabase/migrations/`)
+### Database Schema (`db/migrations/`)
 - [ ] Create migration for `integration_sources` table.
 - [ ] Create migration for `user_integrations` table (define columns, consider secure credential storage strategy).
 - [ ] Create migration for `import_jobs` table (define columns for status, source, details, timestamps).
@@ -45,8 +45,8 @@
 ### User Configuration (Frontend & Backend)
 - [ ] Create UI components for listing available integrations (`components/integrations/IntegrationList.tsx`).
 - [ ] Create UI components for adding/configuring the first integration (e.g., Button to trigger OAuth flow `components/integrations/GoogleFitSetup.tsx`).
-- [ ] Create Server Action/Supabase Function to handle the OAuth callback from the provider (e.g., Google).
-- [ ] Create Server Action/Supabase Function to securely save/update the user's configuration and credentials in `user_integrations`.
+- [ ] Create Server Action/route handler to handle the OAuth callback from the provider (e.g., Google).
+- [ ] Create Server Action/route handler to securely save/update the user's configuration and credentials in `user_integrations`.
 - [ ] Create Server Action/UI element for manually triggering an import job.
 
 ### Job Creation & Scheduling

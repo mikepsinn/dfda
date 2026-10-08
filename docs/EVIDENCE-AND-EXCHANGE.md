@@ -202,7 +202,7 @@ reviewed empirical inputs to be displayed as provisional estimates.
 6. **Correct or withdraw:** deactivate affected inputs, invalidate caches and search
    indexes, propagate notices to permitted recipients, and recompute affected outputs.
 
-Use the existing deployment's PostgreSQL/Supabase storage, with separate logical
+Use the existing deployment's PostgreSQL database and file bucket, with separate logical
 stores and enforced permissions, not a database per source:
 
 - **Private:** identities, consent/enrollment, personal measurements, private ratings,

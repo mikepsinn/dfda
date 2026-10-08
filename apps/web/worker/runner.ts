@@ -8,7 +8,6 @@ import { run } from "graphile-worker";
 import * as tasks from "./tasks";
 
 // Ensure DATABASE_URL is set for graphile-worker
-// Typically this should be your Supabase connection string
 // It's often good practice to use a specific DB user for the worker
 const connectionString = process.env.DATABASE_URL;
 

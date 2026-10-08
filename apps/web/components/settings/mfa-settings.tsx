@@ -15,20 +15,12 @@ export default function MfaSettings() {
   const [isToggling, setIsToggling] = useState(false);
   const { toast } = useToast();
 
-  // TODO: In a real implementation, fetch the user's actual MFA status 
-  // from Supabase Auth on component mount.
+  // TODO: Fetch the user's actual MFA status on component mount. Better Auth
+  // has a two-factor plugin (not enabled yet).
   useEffect(() => {
     const fetchMfaStatus = async () => {
       setIsLoading(true);
       try {
-        // const supabase = createClient();
-        // const { data: { user }, error } = await supabase.auth.getUser();
-        // if (error || !user) {
-        //   throw new Error("User not authenticated");
-        // }
-        // const { data, error: listError } = await supabase.auth.mfa.listFactors();
-        // if (listError) throw listError;
-        // setIsMfaEnabled(data.totp.length > 0); // Check if any TOTP factors exist
         logger.info("[MfaSettings] TODO: Fetch actual MFA status");
         // For now, simulate a status (e.g., false)
         setIsMfaEnabled(false); 

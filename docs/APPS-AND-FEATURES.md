@@ -84,16 +84,15 @@ over `dfda.earth` is a later migration step.
 | [`apps/web/worker`](../apps/web/worker) | Graphile Worker background jobs | Present; a separate process belonging to the web app |
 | [`apps/web/cron-enqueuer.ts`](../apps/web/cron-enqueuer.ts) | Scheduled-job enqueueing | Present; a separate process belonging to the web app |
 | [`apps/web/agent`](../apps/web/agent) | LangGraph/CopilotKit agent project, with its own package manifest | Present; nested project, not a separate top-level product app |
-| [`apps/web/sdks/dfda-js-sdk`](../apps/web/sdks/dfda-js-sdk) | JavaScript SDK | Present; nested package |
-| [`apps/web/supabase`](../apps/web/supabase) and [`apps/web/prisma`](../apps/web/prisma) | App SQL migrations, database guide, Prisma schema and plain-PostgreSQL compatibility SQL | Present; canonical app migrations live in `apps/web/supabase/migrations` |
+| [`apps/web/db`](../apps/web/db) and [`apps/web/prisma`](../apps/web/prisma) | App SQL migrations, seeds, bootstrap SQL, database guide and Prisma schema | Present; canonical app migrations live in `apps/web/db/migrations` |
+| [`docker-compose.yml`](../docker-compose.yml) | Local PostgreSQL, Mailpit and S3 test server for development | Present |
 | [`packages/legacy-import`](../packages/legacy-import) | Legacy MySQL Prisma schema, query tools, and MySQL-to-PostgreSQL sync | Present; replaces `packages/database` and `packages/db-ops`; retire after migration |
 | [`packages/config-eslint`](../packages/config-eslint) | Shared lint configuration | Present |
 | [`packages/config-typescript`](../packages/config-typescript) | Shared TypeScript configuration | Present |
 | [`schema`](../schema) | Earlier, unapplied database schema design | Present; compare with app migrations before reuse |
-| [`pulumi-infra`](../pulumi-infra) | GCP, Cloud Run, and Coolify/Supabase provisioning code | Present; code presence does not establish an active deployment |
 
-The nested agent/SDK and root infrastructure directories are not additional
-workspace roots matched by the current `apps/*` and `packages/*` patterns.
+The nested agent directory is not an additional
+workspace root matched by the current `apps/*` and `packages/*` patterns.
 
 ## Repositories and what comes from each
 
