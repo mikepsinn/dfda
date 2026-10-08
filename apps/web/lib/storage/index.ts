@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto'
 import {
+  type BucketLocationConstraint,
   CreateBucketCommand,
   DeleteObjectsCommand,
   HeadBucketCommand,
@@ -96,19 +97,25 @@ export async function uploadUserFile(userId: string, file: File): Promise<string
 
 /**
  * Returns a signed URL that lets the browser PUT one file into the user's
- * folder. The Content-Type header is part of the signature, so the browser
- * must send the same value.
+ * folder. The Content-Type and Content-Length headers are part of the
+ * signature, so storage refuses a body with another type or size. Check the
+ * size against MAX_UPLOAD_BYTES before you call this.
  */
 export async function createUserUploadUrl(
   userId: string,
-  file: { name: string; type: string },
+  file: { name: string; type: string; size: number },
 ): Promise<{ key: string; url: string }> {
   const { client, bucket } = getStorage()
   const key = userFileKey(userId, file.name)
   const url = await getSignedUrl(
     client,
-    new PutObjectCommand({ Bucket: bucket, Key: key, ContentType: file.type || 'application/octet-stream' }),
-    { expiresIn: UPLOAD_URL_TTL_SECONDS, signableHeaders: new Set(['content-type']) },
+    new PutObjectCommand({
+      Bucket: bucket,
+      Key: key,
+      ContentType: file.type || 'application/octet-stream',
+      ContentLength: file.size,
+    }),
+    { expiresIn: UPLOAD_URL_TTL_SECONDS, signableHeaders: new Set(['content-type', 'content-length']) },
   )
   return { key, url }
 }
@@ -162,7 +169,18 @@ export async function ensureBucket(): Promise<void> {
     if (!(error instanceof NotFound || (error instanceof S3ServiceException && error.$metadata.httpStatusCode === 404))) {
       throw error
     }
-    await client.send(new CreateBucketCommand({ Bucket: bucket }))
+    // AWS needs the region for buckets outside us-east-1. Other services
+    // (S3_ENDPOINT is set) choose the location themselves.
+    const region = process.env.S3_REGION || 'us-east-1'
+    const needsLocation = !process.env.S3_ENDPOINT && region !== 'us-east-1'
+    await client.send(
+      new CreateBucketCommand({
+        Bucket: bucket,
+        CreateBucketConfiguration: needsLocation
+          ? { LocationConstraint: region as BucketLocationConstraint }
+          : undefined,
+      }),
+    )
     logger.info('Created storage bucket', { bucket })
   }
 }

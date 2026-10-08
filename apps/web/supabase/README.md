@@ -78,10 +78,11 @@ Rules:
   from request input with `isUserFileKey(user.id, key)` before you record,
   read or delete it.
 - Browser uploads: the Server Action `createUploadUrlAction` returns a signed
-  PUT URL (valid for 5 minutes, at most `MAX_UPLOAD_BYTES`). The browser sends
-  the file with the same `Content-Type`, then calls `recordUploadMetadata`,
-  which reads the size and type from storage and inserts the
-  `uploaded_files` record.
+  PUT URL (valid for 5 minutes, at most `MAX_UPLOAD_BYTES`). The content type
+  and size are part of the signature, so storage refuses any other file. The
+  browser sends the file, then calls `recordUploadMetadata`, which reads the
+  size and type from storage and inserts the `uploaded_files` record. A
+  repeated call returns the same record.
 - Server uploads: `uploadUserFile(userId, file)`. Clean up with
   `deleteStoredFiles(keys)` when a later step fails.
 - The bucket must allow cross-origin `PUT` requests with a `Content-Type`
