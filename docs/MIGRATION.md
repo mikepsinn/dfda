@@ -68,7 +68,7 @@ The general-purpose importer and MCP tools remain unimplemented.
 
 It already has:
 
-- Sign-in through Supabase Auth, and its own OAuth server (authorization and token endpoints with PKCE, and client registration for developers)
+- Sign-in through Better Auth (magic link, Google, password), and an OAuth 2.1 / OpenID Connect provider (PKCE, developer client management, dynamic client registration and discovery metadata for MCP clients)
 - Patient screens: conditions, treatments, 0–10 treatment ratings, side effects, measurements and reminders
 - Provider and research-partner screens
 - Public condition, treatment, outcome-label and trial pages, and an OpenAPI route

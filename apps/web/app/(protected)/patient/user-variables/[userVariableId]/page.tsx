@@ -1,4 +1,4 @@
-import { createClient } from "@/utils/supabase/server";
+import { getServerUser } from '@/lib/server-auth'
 import { UserVariableDetailView } from "@/components/patient/UserVariableDetailView";
 import { getUserVariableDetailsAction } from "@/lib/actions/user-variables"; // Action to fetch details
 import { logger } from "@/lib/logger";
@@ -13,10 +13,9 @@ interface UserVariableDetailPageProps {
 }
 
 export default async function UserVariableDetailPage({ params, searchParams }: UserVariableDetailPageProps) {
-  const supabase = await createClient();
-  const { data: { user }, error: authError } = await supabase.auth.getUser();
+  const user = await getServerUser();
 
-  if (authError || !user) {
+  if (!user) {
     logger.warn("User not authenticated, redirecting to login from UserVariableDetailPage", { userVariableId: params.userVariableId });
     redirect("/login?message=Please log in to view this page.");
   }

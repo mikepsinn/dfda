@@ -1,6 +1,8 @@
 'use server';
 
-import { createClient } from "@/utils/supabase/server";
+import { headers } from "next/headers";
+import { APIError } from "better-auth/api";
+import { auth } from "@/lib/auth";
 import { getServerUser } from "@/lib/server-auth";
 import { logger } from "@/lib/logger";
 import { z } from "zod";
@@ -17,7 +19,6 @@ interface ActionResult {
 
 // --- Change Password Action ---
 export async function changePasswordAction(formData: FormData): Promise<ActionResult> {
-  const supabase = await createClient();
   const user = await getServerUser();
 
   if (!user) {
@@ -42,27 +43,26 @@ export async function changePasswordAction(formData: FormData): Promise<ActionRe
     return { success: false, message: validationResult.error.errors[0]?.message || "Password does not meet requirements." };
   }
 
-  // IMPORTANT: Verify the *current* password first. This requires a temporary client with the current user's session.
-  // We can't directly verify the password with the service role client used by default in server actions.
-  // The best practice is usually to re-authenticate the user for sensitive actions like password changes.
-  // For simplicity here, we'll attempt the updateUser call and rely on Supabase's potential checks, 
-  // BUT THIS IS LESS SECURE than re-authenticating or explicitly verifying the current password.
-  // A more secure approach involves asking the user for their password again and using signInWithPassword before updateUser.
-
   logger.info(`[Action - changePassword] User ${user.id} attempting password change.`);
 
-  // Attempt to update the user's password
-  const { error } = await supabase.auth.updateUser({ password: newPassword });
-
-  if (error) {
-    logger.error(`[Action - changePassword] Failed for user ${user.id}`, { error: error.message });
-    // Check for specific errors if needed, e.g., weak password
-    if (error.message.toLowerCase().includes('weak password')) {
-      return { success: false, message: 'New password is too weak. Please choose a stronger password.' };
+  try {
+    // Better Auth checks the current password before it sets the new one,
+    // and signs out the user's other sessions.
+    await auth.api.changePassword({
+      body: { currentPassword, newPassword, revokeOtherSessions: true },
+      headers: await headers(),
+    });
+  } catch (error) {
+    logger.warn(`[Action - changePassword] Failed for user ${user.id}`, {
+      status: error instanceof APIError ? error.status : undefined,
+    });
+    if (error instanceof APIError && error.status === 'BAD_REQUEST') {
+      return {
+        success: false,
+        message: "The current password is not correct. If you have no password yet, use \"Forgot password\" on the sign-in page to set one.",
+      };
     }
-    // TODO: Add check for incorrect current password if Supabase provides a specific error code for that during updateUser.
-    // If Supabase *doesn't* check the current password here, this action is insecure.
-    return { success: false, message: "Failed to update password. Please ensure your current password is correct and try again." }; 
+    return { success: false, message: "Failed to update password. Please try again." };
   }
 
   logger.info(`[Action - changePassword] Password updated successfully for user ${user.id}`);
@@ -70,4 +70,4 @@ export async function changePasswordAction(formData: FormData): Promise<ActionRe
   return { success: true, message: "Password updated successfully." };
 }
 
-// --- Other settings actions can be added below --- 
+// --- Other settings actions can be added below ---

@@ -14,7 +14,7 @@ import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
 import { Progress } from "@/components/ui/progress"
 import { SubmissionComplete } from "./submission-complete"
-import { createClient } from '@/utils/supabase/client'
+import { authClient } from '@/lib/auth-client'
 import { logger } from "@/lib/logger"
 import { submitTrialDataAction } from "@/lib/actions/data-submissions"
 import type { Trial } from "@/lib/actions/trials"
@@ -35,7 +35,6 @@ export interface TrialSubmissionData {
 
 export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionData }) {
   const [submissionComplete, setSubmissionComplete] = useState(false)
-  const supabase = createClient()
 
   if (!trialData.submission) {
     return (
@@ -52,7 +51,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
     e.preventDefault()
 
     const formData = new FormData(e.currentTarget)
-    const user = (await supabase.auth.getUser()).data.user
+    const user = (await authClient.getSession()).data?.user
 
     if (!user) {
       logger.error("No user found during data submission")

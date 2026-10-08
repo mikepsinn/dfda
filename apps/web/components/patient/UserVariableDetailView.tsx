@@ -8,7 +8,7 @@ import { ReminderListForUserVariable } from "@/components/reminders/reminder-lis
 import { logger } from "@/lib/logger";
 import { format } from 'date-fns';
 import { getUserProfile } from "@/lib/profile";
-import { createClient } from "@/utils/supabase/server";
+import { getServerUser } from "@/lib/server-auth";
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
 import type { MeasurementCardData } from "@/components/measurement-card";
 import type { ReminderNotificationDetails } from "@/lib/database.types.custom";
@@ -20,11 +20,10 @@ interface UserVariableDetailViewProps {
 }
 
 export async function UserVariableDetailView({ userVariable, currentDate, userId }: UserVariableDetailViewProps) {
-  const supabase = await createClient();
-  const { data: { user }, error: userError } = await supabase.auth.getUser();
+  const user = await getServerUser();
 
-  if (userError || !user) {
-    logger.error('User not authenticated in UserVariableDetailView', { userError });
+  if (!user) {
+    logger.error('User not authenticated in UserVariableDetailView');
     return <p>User not authenticated. Please log in.</p>;
   }
   if (user.id !== userId) {

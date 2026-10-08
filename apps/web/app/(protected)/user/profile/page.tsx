@@ -1,6 +1,6 @@
+import { headers } from "next/headers"
 import { getServerUser } from "@/lib/server-auth"
-// No longer need createClient directly here
-// import { createClient } from "@/lib/supabase/server"
+import { auth } from "@/lib/auth"
 import { ProfileForm } from "./profile-form"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { redirect } from "next/navigation"
@@ -14,6 +14,8 @@ export default async function ProfilePage() {
 
   // Fetch user profile data using the action
   const profile = await getCurrentUserProfileAction()
+  const accounts = await auth.api.listUserAccounts({ headers: await headers() })
+  const googleConnected = accounts.some((account) => account.providerId === "google")
 
   // Handle case where profile fetch failed (though action logs errors)
   if (!profile) {
@@ -49,7 +51,7 @@ export default async function ProfilePage() {
                 <p className="text-sm text-muted-foreground">{user.email}</p>
               </div>
               <div className="text-sm text-muted-foreground">
-                {user.email_confirmed_at ? "Verified" : "Not verified"}
+                {user.emailVerified ? "Verified" : "Not verified"}
               </div>
             </div>
 
@@ -57,7 +59,7 @@ export default async function ProfilePage() {
               <div>
                 <h3 className="font-medium">Google Account</h3>
                 <p className="text-sm text-muted-foreground">
-                  {user.app_metadata?.provider === "google" ? "Connected" : "Not connected"}
+                  {googleConnected ? "Connected" : "Not connected"}
                 </p>
               </div>
             </div>

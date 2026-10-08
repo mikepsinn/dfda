@@ -1,6 +1,4 @@
 import { type NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@/utils/supabase/server'; // Corrected path
-// import { cookies } from 'next/headers'; // No longer needed directly here
 import { logger } from '@/lib/logger';
 
 // Ensure Supabase URL and Anon Key are available server-side
@@ -73,96 +71,15 @@ async function handler(req: NextRequest, { params }: { params: { slug: string[] 
         }
     }
 
-    // Validate HTTP method (moved after spec check)
-    if (!req.method || !ALLOWED_METHODS.includes(req.method)) {
-        logger.warn(`[API Supabase Proxy] Disallowed method: ${req.method}`);
-        return new NextResponse('Method Not Allowed', { status: 405 });
-    }
-
-    // Create Supabase client using the server utility and AWAIT it
-    const supabase = await createClient(); 
-
-    // Now use the resolved client directly
-    const { data: { user }, error: authError } = await supabase.auth.getUser();
-
-    if (authError || !user) {
-        logger.warn('[API Supabase Proxy] Unauthorized access attempt.', { authError });
-        return new NextResponse('Unauthorized', { status: 401 });
-    }
-
-    // Extract the JWT for forwarding - use the resolved client
-    const { data: { session }, error: sessionError } = await supabase.auth.getSession(); 
-    if (sessionError || !session) {
-        logger.error('[API Supabase Proxy] Could not retrieve session token even though user exists.', { sessionError, userId: user.id });
-        return new NextResponse('Internal Server Error', { status: 500 });
-    }
-    const jwt = session.access_token;
-
-    // Construct the target Supabase PostgREST URL
-    const targetUrl = `${supabaseUrl}/rest/v1/${slugPath}${req.nextUrl.search}`; // Include query params
-
-    // Prepare headers to forward
-    const headersToForward = new Headers();
-    headersToForward.set('apikey', supabaseAnonKey);
-    headersToForward.set('Authorization', `Bearer ${jwt}`);
-    
-    // Forward relevant client headers (like Content-Type, Prefer, Accept)
-    const contentType = req.headers.get('content-type');
-    const preferHeader = req.headers.get('prefer');
-    const acceptHeader = req.headers.get('accept');
-    
-    if (contentType) headersToForward.set('Content-Type', contentType);
-    if (preferHeader) headersToForward.set('Prefer', preferHeader);
-    if (acceptHeader) headersToForward.set('Accept', acceptHeader); // Often important for PostgREST
-
-    // Handle request body for relevant methods
-    let body: BodyInit | null | undefined = undefined;
-    if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
-        // Use ReadableStream directly for efficient proxying
-        body = req.body;
-    }
-
-    try {
-        logger.info(`[API Supabase Proxy] Forwarding ${req.method} to ${targetUrl}`);
-        const proxyRes = await fetch(targetUrl, {
-            method: req.method,
-            headers: headersToForward,
-            body: body,
-            // Important: Prevent fetch from interfering with streaming
-            // duplex: 'half' is required for streaming request bodies in some environments
-            // @ts-expect-error - duplex is not in standard Fetch options type but required for streaming body
-            duplex: 'half', 
-        });
-
-        // Log non-OK responses from Supabase
-        if (!proxyRes.ok) {
-            logger.warn(`[API Supabase Proxy] Received non-OK status ${proxyRes.status} from Supabase`, {
-                targetUrl,
-                method: req.method,
-                supabaseStatus: proxyRes.status,
-                supabaseStatusText: proxyRes.statusText,
-            });
-            // Consider logging response body here if needed for debugging, but be careful with large responses
-        }
-
-        // Stream the response back to the client
-        // Create a new NextResponse with the streamed body and original headers
-        const responseHeaders = new Headers(proxyRes.headers);
-        // Add CORS headers if needed for browser clients
-        responseHeaders.set('Access-Control-Allow-Origin', '*'); // Adjust as needed
-
-        return new NextResponse(proxyRes.body, {
-            status: proxyRes.status,
-            statusText: proxyRes.statusText,
-            headers: responseHeaders,
-        });
-
-    } catch (error: any) {
-        logger.error('[API Supabase Proxy] Error fetching from Supabase:', {
-             targetUrl, method: req.method, error: error.message 
-        });
-        return new NextResponse('Proxy request failed', { status: 502 }); // Bad Gateway
-    }
+    // Data requests went to Supabase PostgREST with the user's Supabase
+    // session token. Sign-in no longer uses Supabase, so there is no such
+    // token, and the app database is no longer the Supabase one. The REST API
+    // moves to the app itself in a later phase (docs/MIGRATION.md).
+    logger.warn(`[API Supabase Proxy] Data request refused: ${req.method} /${slugPath}`);
+    return NextResponse.json(
+        { error: 'not_implemented', error_description: 'The data API is not available yet.' },
+        { status: 501, headers: { 'Access-Control-Allow-Origin': '*' } },
+    );
 }
 
 // Export handlers for all allowed methods

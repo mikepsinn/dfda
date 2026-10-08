@@ -3,14 +3,15 @@ import dotenv from 'dotenv';
 import { vi } from 'vitest';
 
 // Developers can override these defaults with an uncommitted .env.test file.
-// Unit tests mock Supabase, so they should not require local secrets or a
-// running Supabase stack just to load the test environment.
+// Unit tests mock sign-in, so they should not require local secrets or a
+// running database just to load the test environment.
 dotenv.config({ path: '.env.test' });
 
 process.env.NEXT_PUBLIC_SUPABASE_URL ??= 'http://127.0.0.1:54321';
 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??= 'test-anon-key';
-process.env.SUPABASE_SERVICE_ROLE_KEY ??= 'test-service-role-key';
-process.env.SUPABASE_JWT_SECRET ??= 'test-jwt-secret-with-at-least-32-characters';
+process.env.BETTER_AUTH_SECRET ??= 'test-better-auth-secret-with-at-least-32-characters';
+process.env.SMTP_URL ??= 'smtp://127.0.0.1:2525';
+process.env.EMAIL_FROM ??= 'test@example.com';
 process.env.DATABASE_URL ??= 'postgresql://postgres:postgres@127.0.0.1:54322/postgres';
 process.env.GOOGLE_GENERATIVE_AI_API_KEY ??= 'test-google-generative-ai-key';
 
@@ -72,37 +73,10 @@ vi.mock('next/headers', () => ({
   },
 }));
 
-// Mock Supabase client
-vi.mock('@/utils/supabase', async (importOriginal) => {
-  const originalModule = await importOriginal<Record<string, unknown>>();
-  return {
-    ...originalModule,
-    createClient: vi.fn(() => ({
-      auth: {
-        getUser: vi.fn().mockResolvedValue({ data: { user: null }, error: null }),
-        signOut: vi.fn().mockResolvedValue({ error: null }),
-      },
-      from: vi.fn(() => ({
-        select: vi.fn().mockReturnThis(),
-        insert: vi.fn().mockReturnThis(),
-        update: vi.fn().mockReturnThis(),
-        delete: vi.fn().mockReturnThis(),
-        upsert: vi.fn().mockReturnThis(),
-        rpc: vi.fn().mockReturnThis(),
-      })),
-    })),
-    createServerClient: vi.fn(() => ({
-      auth: {
-        getUser: vi.fn().mockResolvedValue({ data: { user: null }, error: null }),
-      },
-      from: vi.fn(() => ({
-        select: vi.fn().mockReturnThis(),
-        insert: vi.fn().mockReturnThis(),
-        update: vi.fn().mockReturnThis(),
-        delete: vi.fn().mockReturnThis(),
-        upsert: vi.fn().mockReturnThis(),
-        rpc: vi.fn().mockReturnThis(),
-      })),
-    })),
-  };
-});
+// Mock the Better Auth browser client
+vi.mock('@/lib/auth-client', () => ({
+  authClient: {
+    getSession: vi.fn().mockResolvedValue({ data: null, error: null }),
+    signOut: vi.fn().mockResolvedValue({ data: { success: true }, error: null }),
+  },
+}));

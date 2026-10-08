@@ -22,7 +22,7 @@ import {
 } from '@/lib/actions/reminder-notifications';
 
 // Import Types
-import type { User } from '@supabase/supabase-js';
+import type { AuthUser as User } from '@/lib/auth';
 import type { Tables } from '@/lib/database.types';
 import type { ReminderNotificationDetails } from "@/lib/database.types.custom";
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
@@ -72,8 +72,8 @@ export default function PatientDashboardDisplay({
   // The mapping is no longer needed as initialMeasurements is already MeasurementCardData[]
   const measurementsForTimeline = initialMeasurements; // DIRECTLY use the prop
 
-  // Extract user timezone, default to UTC if not available
-  const userTimezone = initialUser.user_metadata?.profile?.timezone || 'UTC';
+  // The session user has no timezone; the timeline uses UTC.
+  const userTimezone = 'UTC';
 
   // Filtered variables for the dialog
   const filteredVariables = dialogCategory && dialogCategory !== 'all'

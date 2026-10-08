@@ -3,7 +3,8 @@
 The app is moving from Supabase to plain PostgreSQL with Prisma:
 
 - **Table queries** use Prisma through [`lib/db`](../lib/db). This is done.
-- **Sign-in** still uses Supabase Auth (`supabase.auth.*`).
+- **Sign-in** uses [Better Auth](https://www.better-auth.com) through
+  [`lib/auth.ts`](../lib/auth.ts). This is done.
 - **File uploads** use a private S3-compatible bucket through
   [`lib/storage`](../lib/storage). This is done.
 - **Schema changes** are SQL files in [migrations](migrations). Prisma reads the
@@ -44,20 +45,23 @@ Types:
 - Money columns are NUMERIC and come back as `Prisma.Decimal`. Convert them to
   numbers before you pass them to Client Components.
 
-## Supabase clients (sign-in only)
+## Sign-in (Better Auth)
 
-| Context | Wrapper |
+| Context | Use |
 | --- | --- |
-| Browser / Client Component | [`utils/supabase/client.ts`](../utils/supabase/client.ts) |
-| Server, acting for a user | [`utils/supabase/server.ts`](../utils/supabase/server.ts) |
-| Auth admin calls | [`utils/supabase/admin.ts`](../utils/supabase/admin.ts) (service-role key; never in the browser) |
-| Session refresh in middleware | [`utils/supabase/middleware.ts`](../utils/supabase/middleware.ts) |
+| Server configuration and server calls (`auth.api.*`) | [`lib/auth.ts`](../lib/auth.ts) |
+| Browser / Client Component | `authClient` from [`lib/auth-client.ts`](../lib/auth-client.ts) |
+| Current user in a page, action or route | `getServerUser()` from [`lib/server-auth.ts`](../lib/server-auth.ts) |
+| Demo and test users with a password | `ensurePasswordUser()` from [`lib/auth-users.ts`](../lib/auth-users.ts) |
 
-To get the current user on the server, use `getServerUser()` from
-[`lib/server-auth.ts`](../lib/server-auth.ts) (it calls `supabase.auth.getUser()`).
-Do not use the user from `getSession()` alone for authorization. A signed-in
-identity is not permission for every record: enforce ownership, roles and the
-policies.
+Users, sessions, accounts, OAuth clients and organizations are tables in the app
+database (migration `20261008160000_table_better_auth.sql`). The `users.id`
+value is a UUID and is the same as `profiles.id`, so `auth.uid()` in the
+policies works as before. The `anon` and `authenticated` roles have no access
+to the sign-in tables; only the server (`adminDb` and Better Auth) reads them.
+
+A signed-in identity is not permission for every record: enforce ownership,
+roles and the policies.
 
 ## File storage
 
@@ -140,8 +144,7 @@ Run app commands from `apps/web`, and read [package.json](../package.json) and
 the scripts before you run them. Commands with `--linked` or `cloud` in their
 names act on a remote project.
 
-- `pnpm sb:local:start` / `pnpm sb:local:status` start and inspect the local Supabase stack
-  (still needed for sign-in during development).
+- `pnpm sb:local:start` / `pnpm sb:local:status` start and inspect the local Supabase stack.
 - `pnpm db:local:push` applies pending migrations to the local Supabase database.
 - `pnpm db:pull` updates the Prisma schema and client from `DATABASE_URL`.
 - `pnpm db:generate` regenerates the Prisma client only (also runs on install).

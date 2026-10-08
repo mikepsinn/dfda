@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto'
 import { afterAll, describe, expect, it, vi } from 'vitest'
-import type { User } from '@supabase/supabase-js'
+import type { AuthUser } from '@/lib/auth'
 import { adminDb } from '@/lib/db'
 import { fetchUserProfile } from '@/lib/profile'
 
@@ -8,20 +8,19 @@ import { fetchUserProfile } from '@/lib/profile'
 
 vi.mock('@/lib/server-auth', () => ({ getServerUser: vi.fn() }))
 
-const authUser = (id: string, email?: string) => ({ id, email }) as Pick<User, 'id' | 'email'> as User
+const authUser = (id: string, email?: string) => ({ id, email }) as AuthUser
 
 const withoutProfile = authUser(randomUUID(), `profile-new-${Date.now()}@example.com`)
 const withProfile = authUser(randomUUID(), `profile-old-${Date.now()}@example.com`)
 
 afterAll(async () => {
-  await adminDb.profiles.deleteMany({ where: { id: withoutProfile.id } })
-  await adminDb.$executeRaw`DELETE FROM auth.users WHERE id = ${withProfile.id}::uuid`
+  await adminDb.profiles.deleteMany({ where: { id: { in: [withoutProfile.id, withProfile.id] } } })
   await adminDb.$disconnect()
 })
 
 describe('fetchUserProfile', () => {
   it('creates the profile of a signed-in user who has none', async () => {
-    // No auth.users row, as on a database that Supabase Auth does not share.
+    // No users row, as for a user from before Better Auth created profiles.
     const profile = await fetchUserProfile(withoutProfile)
 
     expect(profile).toMatchObject({ id: withoutProfile.id, email: withoutProfile.email, user_type: null })
@@ -29,9 +28,7 @@ describe('fetchUserProfile', () => {
   })
 
   it('returns an existing profile with its role', async () => {
-    await adminDb.$executeRaw`
-      INSERT INTO auth.users (id, email) VALUES (${withProfile.id}::uuid, ${withProfile.email})`
-    await adminDb.profiles.update({ where: { id: withProfile.id }, data: { user_type: 'patient' } })
+    await adminDb.profiles.create({ data: { id: withProfile.id, email: withProfile.email, user_type: 'patient' } })
 
     const profile = await fetchUserProfile(withProfile)
 

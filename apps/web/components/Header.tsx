@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { BrandMark } from "./BrandMark"
-import type { User } from '@supabase/supabase-js'
+import type { AuthUser as User } from '@/lib/auth'
 import { useEffect, useState } from 'react';
 import type { Profile } from "@/lib/actions/profiles";
 import { updateUserProfileTimezoneAction } from "@/lib/actions/profiles";

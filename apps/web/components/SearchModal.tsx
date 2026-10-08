@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react"
 import { useRouter } from "next/navigation"
-import type { User } from '@supabase/supabase-js'
+import type { AuthUser as User } from '@/lib/auth'
 import { DialogTitle } from "@/components/ui/dialog"
 import {
   CommandDialog,

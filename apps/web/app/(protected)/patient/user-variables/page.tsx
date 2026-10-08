@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { createClient } from '@/utils/supabase/server';
+import { getServerUser } from '@/lib/server-auth'
 import { getUserVariablesWithDetailsAction } from '@/lib/actions/user-variables';
 import { UserVariableList } from '@/components/patient/UserVariableList';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -7,11 +7,10 @@ import { AlertTriangle } from 'lucide-react';
 import { logger } from '@/lib/logger';
 
 export default async function UserVariablesPage() {
-  const supabase = await createClient();
-  const { data: { user }, error: authError } = await supabase.auth.getUser();
+  const user = await getServerUser();
 
-  if (authError || !user) {
-    logger.warn("UserVariablesPage: User not authenticated, redirecting.", { error: authError });
+  if (!user) {
+    logger.warn("UserVariablesPage: User not authenticated, redirecting.");
     redirect('/login');
   }
 

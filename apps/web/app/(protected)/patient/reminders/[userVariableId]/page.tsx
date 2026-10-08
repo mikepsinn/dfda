@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { createClient } from "@/utils/supabase/server"
+import { getServerUser } from '@/lib/server-auth'
 import { notFound } from 'next/navigation'
 import { logger } from '@/lib/logger'
 import { EditScheduleClient, type ReminderScheduleData } from '@/components/reminders'
@@ -80,14 +80,11 @@ export default async function VariableRemindersPage({ params }: { params: { user
   
   logger.info('Rendering Variable Reminders Page', { userVariableId });
 
-  const supabase = await createClient() // Used for auth only
-  
-  const { data: userData, error: userError } = await supabase.auth.getUser()
-  if (userError || !userData?.user) {
-     logger.error('User not found', { error: userError })
+  const user = await getServerUser()
+  if (!user) {
+     logger.error('User not found')
      notFound(); 
   }
-  const user = userData.user; // Get user object
   const userId = user.id
 
   // Fetch user variable details - Use params.userVariableId

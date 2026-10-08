@@ -1,6 +1,6 @@
 'use server'
 
-import { createClient } from '@/utils/supabase/server'
+import { getServerUser } from '@/lib/server-auth'
 import { getUserDb } from '@/lib/db/server'
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
@@ -22,12 +22,10 @@ export type PatientAssignmentDetails =
   }
 
 export async function getPatientDetailsForAssignment(patientId: string): Promise<PatientAssignmentDetails | null> {
-    const supabase = await createClient()
-
     // TODO: Add proper user role check (e.g., only providers can fetch this)
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
-    if (authError || !user) {
-        logger.error('Auth error fetching patient details for assignment', { patientId, error: authError })
+    const user = await getServerUser()
+    if (!user) {
+        logger.error('Auth error fetching patient details for assignment', { patientId })
         return null
     }
 
@@ -101,12 +99,10 @@ export type InterventionOption = Pick<Tables<'global_treatments'>, 'id' | 'treat
 }
 
 export async function getInterventionOptionsForTrial(trialId: string): Promise<InterventionOption[]> {
-    const supabase = await createClient()
-
     // Basic auth check
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
-    if (authError || !user) {
-        logger.error('Auth error fetching intervention options', { trialId, error: authError })
+    const user = await getServerUser()
+    if (!user) {
+        logger.error('Auth error fetching intervention options', { trialId })
         return []
     }
 
@@ -181,11 +177,9 @@ interface AssignInterventionPayload {
 }
 
 export async function assignIntervention(payload: AssignInterventionPayload): Promise<{ success: boolean; error?: string }> {
-    const supabase = await createClient()
-
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
-    if (authError || !user) {
-        logger.error('Auth error assigning intervention', { payload, error: authError })
+    const user = await getServerUser()
+    if (!user) {
+        logger.error('Auth error assigning intervention', { payload })
         return { success: false, error: 'Authentication required.' };
     }
     // TODO: Add role check - ensure user is authorized (e.g., a provider)
