@@ -14,7 +14,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Separator } from "@/components/ui/separator"
-import { getUserProfile } from "@/lib/profile"
+import { fetchUserProfile } from "@/lib/profile"
 
 type UserTypeEnum = Database["public"]["Enums"]["user_type_enum"]
 
@@ -54,8 +54,8 @@ async function setUserType(formData: FormData) {
 
   } catch (err) {
     logger.error('Error setting user_type in profiles table:', err);
-    // Potentially show an error message to the user instead of just returning
-    return; // Return on error
+    // Show the error page; returning would leave the user on this form with no message.
+    throw new Error('Could not save your role. Please try again later.')
   }
 
   // Redirect only if the update was successful (no error)
@@ -70,7 +70,9 @@ export default async function SelectRolePage() {
     redirect('/login')
   }
 
-  const profile = await getUserProfile(user)
+  // A database error is thrown to the error page. It must not show this form,
+  // because the user may already have a role that could not be read.
+  const profile = await fetchUserProfile(user)
 
   if (profile?.user_type) {
     logger.info('User already has role from profile, redirecting', { userId: user.id, role: profile.user_type });
