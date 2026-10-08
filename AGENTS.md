@@ -92,6 +92,11 @@ of UI conventions for contributors and coding agents.
 
 - Preserve unrelated changes and local artifacts. Stage only reviewed, in-scope
   files; do not clear the index or reset another person's work.
+- Name branches `<type>/<short-description>` in kebab case, for example
+  `feature/postgres-prisma`, `fix/contact-messages-rls` or `docs/database-guide`.
+  Use `feature`, `fix`, `docs`, `chore` or `refactor` as the type. When a tool
+  assigns a generated branch name, move the work to a descriptive branch before
+  opening the pull request.
 - On Windows, quote paths and use native PowerShell filesystem commands with
   literal paths. Verify exact targets before deletion or moving directories.
 - Keep compatibility files such as `CLAUDE.md` as pointers to this document,
