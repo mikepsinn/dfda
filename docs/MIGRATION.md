@@ -59,7 +59,7 @@ The general-purpose importer and MCP tools remain unimplemented.
 
 | Repository | What it has | Runs at |
 | --- | --- | --- |
-| `mikepsinn/dfda` (this repo) | [`apps/web`](../apps/web): Next.js and Supabase app for patients, providers and research partners. [`packages/legacy-import`](../packages/legacy-import): tools for moving data out of the legacy MySQL database. | prototype.dfda.earth |
+| `mikepsinn/dfda` (this repo) | [`apps/web`](../apps/web): Next.js app on PostgreSQL for patients, providers and research partners. [`packages/legacy-import`](../packages/legacy-import): tools for moving data out of the legacy MySQL database. | prototype.dfda.earth |
 | `mikepsinn/crowdsourcing-cures` (private) | Organization homepage, patient-rating Treatment Rankings, trial search, articles | crowdsourcingcures.org |
 | [`mikepsinn/optimitron`](https://github.com/mikepsinn/optimitron) | `apps/dfda`: condition and treatment pages (the numbers are AI estimates), trial search, and an MCP server and REST API for personal tracking. It shares optimitron.com's database and sign-in. `packages/optimizer`: N-of-1 analysis. `packages/tracking`: measurements and reminders. `packages/data`: wearable importers, a ClinicalTrials.gov client, a condition list. | dfda.earth |
 | `mikepsinn/curedao-api` (private) | Functional reference: PHP/AngularJS tracking app, accounts/OAuth, connectors, reminders, MySQL records, personal and population time-series analyses, charts and generated study reports | app.dfda.earth, studies.crowdsourcingcures.org |
@@ -387,7 +387,7 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
 | Automated personal and population time-series studies (historically ~15,800 published analyses; recount and reconcile at migration) | curedao-api analysis records and generated static site | Integrate eligible historical results as source-backed observational findings; preserve provenance and unknowns, then reproduce/improve calculations, charts and reports. Separate imported, reproduced and corrected versions; keep old links usable until continuity is tested. |
 | AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the health vocabulary. |
-| `apps/web` demo data | Existing Supabase seeds; complete source-pinned Optimitron medical directory under `apps/web/data/optimitron/` | Forked copy with a recorded origin, a sourced corrections log and tests that every edit is logged. General-purpose database contracts/importer remain planned; preserve labels, source permissions and separation from live records. Do not clear the demo or patient tables. |
+| `apps/web` demo data | Existing seeds in `apps/web/db/seeds`; complete source-pinned Optimitron medical directory under `apps/web/data/optimitron/` | Forked copy with a recorded origin, a sourced corrections log and tests that every edit is logged. General-purpose database contracts/importer remain planned; preserve labels, source permissions and separation from live records. Do not clear the demo or patient tables. |
 
 ## Order
 

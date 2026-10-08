@@ -1,0 +1,50 @@
+# Local services for apps/web. Start them with `pnpm services:start` (from the
+# repository root or apps/web), then build the schema once with
+# `pnpm --filter web db:plain:setup`. apps/web/.env.example has matching values.
+#
+#   PostgreSQL 16  postgresql://postgres:postgres@127.0.0.1:5432/dfda
+#   Mailpit        SMTP on port 1025, inbox at http://127.0.0.1:8025
+#   S3 (S3Mock)    http://127.0.0.1:9090, bucket dfda-uploads
+#
+# `pnpm services:reset` deletes the data volumes.
+name: dfda
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dfda
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d dfda']
+      interval: 2s
+      timeout: 5s
+      retries: 30
+
+  mailpit:
+    image: axllent/mailpit:v1.27
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+
+  # S3-compatible test server for uploaded files. It makes the bucket at
+  # start, allows browser uploads from any origin and accepts any access key.
+  s3:
+    image: adobe/s3mock:4.7.0
+    environment:
+      COM_ADOBE_TESTING_S3MOCK_STORE_INITIAL_BUCKETS: dfda-uploads
+      COM_ADOBE_TESTING_S3MOCK_STORE_ROOT: /data
+      COM_ADOBE_TESTING_S3MOCK_STORE_RETAIN_FILES_ON_EXIT: 'true'
+    ports:
+      - '9090:9090'
+    volumes:
+      - s3-data:/data
+
+volumes:
+  postgres-data:
+  s3-data:

@@ -100,8 +100,8 @@ privacy controls work today.
 
 Read the shared [repository instructions](../../AGENTS.md) before making changes.
 Follow the [repository setup instructions](../../README.md#getting-started).
-The app's database access, schema changes and Supabase client guidance are in
-the [database guide](supabase/README.md).
+The app's database access, schema changes, sign-in and file storage guidance
+are in the [database guide](db/README.md).
 Its worker and cron are supporting processes of this app, not separate products.
 
 For UI work, follow the [design system](../../docs/DESIGN-SYSTEM.md), including
@@ -119,34 +119,31 @@ features that use those services.
 
 ### Local Development
 
-For local development, create a `.env` file in the root of the `apps/web` project (or the monorepo root if configured that way). It should contain at least:
+For local development, copy [`.env.example`](.env.example) to `.env` in
+`apps/web`. Its values work with the local services (`pnpm services:start`,
+see the repository-root `docker-compose.yml`). It contains at least:
 
 ```env
 # PostgreSQL connection used by Prisma for all table queries.
-# Local Supabase stack: postgresql://postgres:postgres@127.0.0.1:54322/postgres
-DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:54322/postgres
+DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/dfda
 
 # Sign-in (Better Auth). Make the secret with: openssl rand -base64 32
 BETTER_AUTH_SECRET=YOUR_RANDOM_SECRET
-# SMTP server for magic links and password resets. For local tests, any SMTP
-# catcher works, for example Mailpit on smtp://127.0.0.1:1025.
-SMTP_URL=smtps://USER:PASSWORD@smtp.example.com:465
+# SMTP server for magic links and password resets. Locally, Mailpit takes SMTP
+# on port 1025 and shows the mail at http://127.0.0.1:8025.
+SMTP_URL=smtp://127.0.0.1:1025
 EMAIL_FROM="dFDA <no-reply@example.com>"
 # Optional: Google sign-in. Redirect URI: <site>/api/auth/callback/google
 # GOOGLE_CLIENT_ID=
 # GOOGLE_CLIENT_SECRET=
 
-# Supabase project (still used for the OpenAPI document of the old data API)
-NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
-
-# S3-compatible bucket for uploaded files. With the local Supabase stack, use its
-# S3 endpoint and the S3 keys that `pnpm sb:local:status` prints.
-S3_ENDPOINT=http://127.0.0.1:54321/storage/v1/s3
-S3_REGION=local
-S3_BUCKET=user_uploads
-S3_ACCESS_KEY_ID=YOUR_S3_ACCESS_KEY
-S3_SECRET_ACCESS_KEY=YOUR_S3_SECRET_KEY
+# S3-compatible bucket for uploaded files. These values match the local S3
+# test server, which accepts any access key.
+S3_ENDPOINT=http://127.0.0.1:9090
+S3_REGION=us-east-1
+S3_BUCKET=dfda-uploads
+S3_ACCESS_KEY_ID=local
+S3_SECRET_ACCESS_KEY=local
 S3_FORCE_PATH_STYLE=true
 
 # Optional: Google Generative AI (for AI-assisted features)
@@ -167,8 +164,7 @@ S3_FORCE_PATH_STYLE=true
 
 1.  Go to your Vercel Project Settings > Environment Variables.
 2.  Add the required variables from your `.env` file: `DATABASE_URL`,
-    `BETTER_AUTH_SECRET`, `SMTP_URL`, `EMAIL_FROM`,
-    `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and the `S3_*`
+    `BETTER_AUTH_SECRET`, `SMTP_URL`, `EMAIL_FROM`, and the `S3_*`
     variables for the file bucket. Add `GOOGLE_CLIENT_ID` and
     `GOOGLE_CLIENT_SECRET` for Google sign-in, and `GOOGLE_GENERATIVE_AI_API_KEY`
     only when AI-assisted features are enabled.

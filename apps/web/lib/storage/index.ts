@@ -15,8 +15,8 @@ import { logger } from '@/lib/logger'
 
 /**
  * File storage in a private S3-compatible bucket: AWS S3, Cloudflare R2,
- * Google Cloud Storage (S3 interoperability), MinIO, or the S3 endpoint of
- * Supabase Storage.
+ * Google Cloud Storage (S3 interoperability), MinIO, or a local S3 test
+ * server (docker-compose.yml).
  *
  * Each user's files are stored under "<userId>/". The bucket has no per-user
  * rules, so server code must pass the session user's ID and check the prefix

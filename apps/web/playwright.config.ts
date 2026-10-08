@@ -10,8 +10,6 @@ const TEST_PORT = 3001;
 // Environment variables for tests
 const testEnv = Object.entries({
   ...process.env, // Include all existing env variables
-  NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '',
   BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET ?? '',
   NODE_ENV: 'development', // Use development mode for tests since we're using dev server
   PORT: TEST_PORT.toString(),
@@ -25,8 +23,7 @@ const testEnv = Object.entries({
 
 // Validate required env variables
 const requiredEnvVars = [
-  'NEXT_PUBLIC_SUPABASE_URL',
-  'NEXT_PUBLIC_SUPABASE_ANON_KEY',
+  'DATABASE_URL',
   'BETTER_AUTH_SECRET'
 ];
 

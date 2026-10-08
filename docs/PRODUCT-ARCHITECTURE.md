@@ -145,7 +145,7 @@ create empty packages just to match this table.
 | `apps/web/lib/instance` | Validated branding/module configuration and operator administration |
 | `apps/web/lib/data-export` | Authorized personal export/import orchestration and transfer audit |
 | `apps/web/worker` and `apps/web/cron-enqueuer.ts` | Durable ingestion, refresh, validation, analysis, publication, deletion propagation, and reminders; supporting processes, not separate products |
-| `apps/web/supabase/migrations` | Canonical SQL schema, access policies, and publication views; no new canonical database package |
+| `apps/web/db/migrations` | Canonical SQL schema, access policies, and publication views; no new canonical database package |
 | `packages/health-vocabulary` | Versioned IDs, terminology mappings, units, outcome direction, and mapping review status |
 | `packages/evidence` | Source/report/time-series-analysis/effect/model-estimate/demo-example/published-analysis-version contracts, validators, provenance and deduplication primitives; no credentials or database access |
 | `packages/trials` | ClinicalTrials.gov/AACT adapters and parsing, trial discovery, public study-protocol contract |
