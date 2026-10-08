@@ -28,7 +28,9 @@ CREATE TABLE public."sessions" ("id" uuid default pg_catalog.gen_random_uuid() n
 
 CREATE TABLE public."accounts" ("id" uuid default pg_catalog.gen_random_uuid() not null primary key, "accountId" text not null, "providerId" text not null, "userId" uuid not null references public."users" ("id") on delete cascade, "accessToken" text, "refreshToken" text, "idToken" text, "accessTokenExpiresAt" timestamptz, "refreshTokenExpiresAt" timestamptz, "scope" text, "password" text, "createdAt" timestamptz default CURRENT_TIMESTAMP not null, "updatedAt" timestamptz not null);
 
-CREATE TABLE public."verifications" ("id" uuid default pg_catalog.gen_random_uuid() not null primary key, "identifier" text not null, "value" text not null, "expiresAt" timestamptz not null, "createdAt" timestamptz default CURRENT_TIMESTAMP not null, "updatedAt" timestamptz default CURRENT_TIMESTAMP not null);
+-- The id is text: Better Auth also writes SHA-256 digests here (lock rows when a
+-- magic link verifies an existing, unverified user).
+CREATE TABLE public."verifications" ("id" text default pg_catalog.gen_random_uuid()::text not null primary key, "identifier" text not null, "value" text not null, "expiresAt" timestamptz not null, "createdAt" timestamptz default CURRENT_TIMESTAMP not null, "updatedAt" timestamptz default CURRENT_TIMESTAMP not null);
 
 CREATE TABLE public."organizations" ("id" uuid default pg_catalog.gen_random_uuid() not null primary key, "name" text not null, "slug" text not null unique, "logo" text, "createdAt" timestamptz not null, "metadata" text);
 
@@ -50,7 +52,8 @@ CREATE TABLE public."oauth_access_tokens" ("id" uuid default pg_catalog.gen_rand
 
 CREATE TABLE public."oauth_consents" ("id" uuid default pg_catalog.gen_random_uuid() not null primary key, "clientId" text not null references public."oauth_clients" ("clientId") on delete cascade, "userId" uuid references public."users" ("id") on delete cascade, "referenceId" text, "resources" jsonb, "requestedUserInfoClaims" jsonb, "scopes" jsonb not null, "createdAt" timestamptz not null, "updatedAt" timestamptz not null);
 
-CREATE TABLE public."oauth_client_assertions" ("id" uuid default pg_catalog.gen_random_uuid() not null primary key, "expiresAt" timestamptz not null);
+-- The id is a SHA-256 digest of the client assertion (replay protection), not a UUID.
+CREATE TABLE public."oauth_client_assertions" ("id" text not null primary key, "expiresAt" timestamptz not null);
 
 CREATE INDEX "sessions_userId_idx" on public."sessions" ("userId");
 

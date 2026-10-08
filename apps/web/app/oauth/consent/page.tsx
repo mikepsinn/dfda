@@ -19,10 +19,24 @@ function ConsentError({ message }: { message: string }) {
 }
 
 /**
+ * The OIDC claims request (the `claims` parameter), or null. The
+ * authorization endpoint has already validated it.
+ */
+function parseClaimsRequest(value: string | null): { userinfo?: Record<string, unknown> } | null {
+  if (!value) return null;
+  try {
+    const parsed: unknown = JSON.parse(value);
+    return parsed && typeof parsed === 'object' ? (parsed as { userinfo?: Record<string, unknown> }) : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Consent page of the OAuth provider (consentPage in lib/auth.ts). The
  * authorization endpoint sends the user here with a signed query that names
- * the client and the requested scopes. Approving or denying returns the
- * user to the client.
+ * the client, the requested scopes and any requested user info claims.
+ * Approving or denying returns the user to the client.
  */
 export default async function ConsentPage({
   searchParams,
@@ -60,12 +74,16 @@ export default async function ConsentPage({
   }
 
   const scopes = (query.get('scope') ?? '').split(' ').filter(Boolean);
+  const claimsRequest = parseClaimsRequest(query.get('claims'));
+  const userInfoClaims = Object.keys(claimsRequest?.userinfo ?? {});
 
   return (
     <ConsentForm
       client={{ name: client.name || 'Unknown Application', icon: client.icon, uri: client.uri }}
       user={{ email: user.email }}
       scopes={scopes}
+      claimsRequest={claimsRequest}
+      userInfoClaims={userInfoClaims}
     />
   );
 }

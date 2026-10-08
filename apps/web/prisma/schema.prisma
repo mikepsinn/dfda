@@ -1102,7 +1102,7 @@ model jwks {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model oauth_client_assertions {
-  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id        String   @id
   expiresAt DateTime @db.Timestamptz(6)
 }
 
@@ -1241,7 +1241,7 @@ model users {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model verifications {
-  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id         String   @id @default(dbgenerated("(gen_random_uuid())::text"))
   identifier String
   value      String
   expiresAt  DateTime @db.Timestamptz(6)

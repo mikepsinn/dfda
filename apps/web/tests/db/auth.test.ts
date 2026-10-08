@@ -65,6 +65,20 @@ describe('Better Auth users', () => {
     }
   })
 
+  it('stores the non-UUID verification ids that Better Auth makes', async () => {
+    // A magic link for an existing, unverified user reserves a lock row with
+    // a SHA-256 digest as its id.
+    const { internalAdapter } = await auth.$context
+    const identifier = `test-reservation-${Date.now()}`
+    try {
+      await expect(
+        internalAdapter.reserveVerificationValue({ identifier, value: 'x', expiresAt: new Date(Date.now() + 60_000) }),
+      ).resolves.toBe(true)
+    } finally {
+      await adminDb.verifications.deleteMany({ where: { identifier } })
+    }
+  })
+
   it('deletes the profile when the user is deleted', async () => {
     const userId = await createUser()
     await adminDb.users.delete({ where: { id: userId } })

@@ -16,6 +16,16 @@ const SCOPE_DESCRIPTIONS: Record<string, string> = {
   offline_access: 'Stay connected when you are not using it',
 };
 
+// Plain-language names of the OIDC user info claims an application can ask for.
+const CLAIM_DESCRIPTIONS: Record<string, string> = {
+  name: 'your name',
+  given_name: 'your first name',
+  family_name: 'your last name',
+  picture: 'your picture',
+  email: 'your email address',
+  email_verified: 'whether your email address is verified',
+};
+
 export interface ConsentFormProps {
   client: {
     name: string;
@@ -26,9 +36,13 @@ export interface ConsentFormProps {
     email?: string | null;
   };
   scopes: string[];
+  /** The OIDC claims request of the authorization, or null. */
+  claimsRequest: Record<string, unknown> | null;
+  /** The user info claims that claimsRequest asks for. */
+  userInfoClaims: string[];
 }
 
-export function ConsentForm({ client, user, scopes }: ConsentFormProps) {
+export function ConsentForm({ client, user, scopes, claimsRequest, userInfoClaims }: ConsentFormProps) {
   const [isLoading, setIsLoading] = useState<'approve' | 'deny' | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -37,7 +51,13 @@ export function ConsentForm({ client, user, scopes }: ConsentFormProps) {
     setError(null);
 
     // The client plugin adds the signed query of this page to the request.
-    const { data, error } = await authClient.oauth2.consent({ accept: decision === 'approve' });
+    // The scopes and claims are sent explicitly, so that the user accepts
+    // only what this page shows.
+    const { data, error } = await authClient.oauth2.consent({
+      accept: decision === 'approve',
+      scope: scopes.join(' ') || undefined,
+      claims: claimsRequest ?? undefined,
+    });
     const target = (data as { url?: string; redirect_uri?: string } | null)?.url
       ?? (data as { redirect_uri?: string } | null)?.redirect_uri;
     if (error || !target) {
@@ -81,6 +101,16 @@ export function ConsentForm({ client, user, scopes }: ConsentFormProps) {
               ))}
             </ul>
             {scopes.length === 0 && <p className="text-sm text-gray-500">No specific permissions requested (default access).</p>}
+            {userInfoClaims.length > 0 && (
+              <>
+                <h3 className="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300">It also asks to see:</h3>
+                <ul className="mt-1 list-disc list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                  {userInfoClaims.map((claim) => (
+                    <li key={claim}>{CLAIM_DESCRIPTIONS[claim] ?? claim}</li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
           <p className="text-xs text-gray-500 dark:text-gray-400">
             By authorizing this application, you allow it to perform the actions listed above on your behalf.
