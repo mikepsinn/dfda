@@ -1,4 +1,5 @@
 import { getUserDb } from "@/lib/db/server"
+import { dbAs } from "@/lib/db"
 import { logger } from "@/lib/logger"
 import type { User } from "@supabase/supabase-js"
 import type { Database } from "@/lib/database.types"
@@ -13,9 +14,15 @@ export type Profile = Database['public']['Tables']['profiles']['Row'];
  * Returns null only when no profile row exists. A database error (for example
  * a missing DATABASE_URL or a migration that is not applied) is thrown, so that
  * callers do not mistake it for a profile without a role.
+ *
+ * `user` must come from Supabase Auth (`auth.getUser()`), never from request
+ * input. The query runs with row-level security as that user. It does not look
+ * up the session again: a second lookup that fails would fall back to the
+ * anonymous role, which cannot see the profile, and the profile would look
+ * missing.
  */
 export const fetchUserProfile = cache(async (user: User): Promise<Profile | null> => {
-  const db = await getUserDb()
+  const db = dbAs({ id: user.id, email: user.email })
   const profile = await db.profiles.findUnique({
     where: { id: user.id },
   })
