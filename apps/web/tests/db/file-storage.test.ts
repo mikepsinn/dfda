@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto'
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { adminDb, type DbUser } from '@/lib/db'
 import { getServerUser } from '@/lib/server-auth'
+import { getUserDb } from '@/lib/db/server'
 import { createUploadUrlAction, recordUploadMetadata } from '@/lib/actions/file-upload-actions'
 import {
   MAX_UPLOAD_BYTES,
@@ -16,6 +17,10 @@ import {
 // S3-compatible server (S3_ENDPOINT, S3_BUCKET, ...). See `pnpm test:db`.
 
 vi.mock('@/lib/server-auth', () => ({ getServerUser: vi.fn() }))
+vi.mock('@/lib/db/server', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/lib/db/server')>()
+  return { ...actual, getUserDb: vi.fn(actual.getUserDb) }
+})
 
 const userA: DbUser = { id: randomUUID(), email: `storage-a-${Date.now()}@example.com` }
 const userB: DbUser = { id: randomUUID(), email: `storage-b-${Date.now()}@example.com` }
@@ -92,6 +97,14 @@ describe('file storage', () => {
     expect(firstId).not.toBeNull()
     expect(await recordUploadMetadata(metadata)).toBe(firstId)
     expect(await getStoredFileInfo(target.storagePath)).not.toBeNull()
+  })
+
+  it('deletes the uploaded file when the database is not available', async () => {
+    const { target } = await uploadThroughBrowserFlow('no database')
+    vi.mocked(getUserDb).mockRejectedValueOnce(new Error('DATABASE_URL is not set'))
+
+    expect(await recordUploadMetadata({ storage_path: target.storagePath, file_name: 'notes.txt' })).toBeNull()
+    expect(await getStoredFileInfo(target.storagePath)).toBeNull()
   })
 
   it('does not record a file that was never uploaded', async () => {
