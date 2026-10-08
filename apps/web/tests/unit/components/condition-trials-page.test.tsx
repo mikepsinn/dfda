@@ -4,7 +4,7 @@ import ConditionTrialsPage from "@/app/(public)/conditions/[globalVariableId]/tr
 import { getGlobalConditionByIdAction } from "@/lib/actions/conditions";
 import { getTrialsByConditionAction } from "@/lib/actions/trials";
 import { getRecruitingRegistryTrials, registrySearchUrl, type RegistryTrial } from "@/lib/trials/registry-trials";
-import { createClient } from "@/utils/supabase/server";
+import { getUserDb } from "@/lib/db/server";
 
 vi.mock("next/navigation", () => ({
   notFound: () => {
@@ -17,7 +17,7 @@ vi.mock("@/lib/trials/registry-trials", async importOriginal => ({
   ...(await importOriginal<typeof import("@/lib/trials/registry-trials")>()),
   getRecruitingRegistryTrials: vi.fn(),
 }));
-vi.mock("@/utils/supabase/server", () => ({ createClient: vi.fn() }));
+vi.mock("@/lib/db/server", () => ({ getUserDb: vi.fn() }));
 
 const getCondition = vi.mocked(getGlobalConditionByIdAction);
 const getTrials = vi.mocked(getTrialsByConditionAction);
@@ -175,19 +175,14 @@ describe("condition trials page", () => {
 
 describe("getTrialsByConditionAction", () => {
   it("queries the recruiting trials that public visitors are allowed to read", async () => {
-    const filters: [string, unknown][] = [];
-    const query = {
-      select: () => query,
-      eq(column: string, value: unknown) {
-        filters.push([column, value]);
-        return filters.length === 2 ? Promise.resolve({ data: [], error: null }) : query;
-      },
-    };
-    vi.mocked(createClient).mockResolvedValue({ from: () => query } as unknown as Awaited<ReturnType<typeof createClient>>);
+    const findMany = vi.fn().mockResolvedValue([]);
+    vi.mocked(getUserDb).mockResolvedValue({ trials: { findMany } } as unknown as Awaited<ReturnType<typeof getUserDb>>);
     const { getTrialsByConditionAction: queryTrials } =
       await vi.importActual<typeof import("@/lib/actions/trials")>("@/lib/actions/trials");
 
     await expect(queryTrials("major-depressive-disorder")).resolves.toEqual([]);
-    expect(filters).toEqual([["condition_id", "major-depressive-disorder"], ["status", "recruiting"]]);
+    expect(findMany).toHaveBeenCalledWith(
+      expect.objectContaining({ where: { condition_id: "major-depressive-disorder", status: "recruiting" } }),
+    );
   });
 });

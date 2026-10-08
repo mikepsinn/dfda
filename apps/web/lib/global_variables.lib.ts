@@ -1,19 +1,15 @@
-import { SupabaseClient } from '@supabase/supabase-js';
-import { Database } from './database.types';
+import type { UserDb } from '@/lib/db';
 import { logger } from './logger';
 import slugify from 'slugify';
 import { UNIT_IDS, UNITS_DATA } from '@/lib/constants/units'; // Assuming constants are structured like this
 import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories';
-
-// Define the resolved Supabase client type here or import from a shared types file
-type ResolvedSupabaseClient = SupabaseClient<Database, "public">;
 
 /**
  * Finds an existing global variable by name/slug or creates a new one.
  * Handles both regular variables (food, treatment) and ingredients.
  */
 export async function findOrCreateGlobalVariable(
-    supabase: ResolvedSupabaseClient,
+    db: UserDb,
     name: string,
     type: 'food' | 'treatment' | 'other',
     details?: string,
@@ -59,11 +55,15 @@ export async function findOrCreateGlobalVariable(
     }
 
     // 1. Try finding by slugified ID
-    const { data: existingById, error: findByIdError } = await supabase
-        .from('global_variables').select('id, name, description, variable_category_id').eq('id', slugId).maybeSingle();
-    if (findByIdError) {
+    let existingById;
+    try {
+        existingById = await db.global_variables.findUnique({
+            where: { id: slugId },
+            select: { id: true, name: true, description: true, variable_category_id: true },
+        });
+    } catch (findByIdError) {
         logger.error('DB error finding GVar by ID', { id: slugId, error: findByIdError });
-        throw new Error(`DB error (find GVar by ID ${slugId}): ${findByIdError.message}`);
+        throw new Error(`DB error (find GVar by ID ${slugId}): ${errorMessage(findByIdError)}`);
     }
     if (existingById) {
         // Optional: Check if category matches, update if needed?
@@ -76,11 +76,18 @@ export async function findOrCreateGlobalVariable(
     }
 
     // 2. Try finding by name and category (case-insensitive)
-    const { data: existingByName, error: findByNameError } = await supabase
-        .from('global_variables').select('id').ilike('name', trimmedName).eq('variable_category_id', variableCategoryId).limit(1).maybeSingle();
-    if (findByNameError) {
+    let existingByName;
+    try {
+        existingByName = await db.global_variables.findFirst({
+            where: {
+                name: { equals: trimmedName, mode: 'insensitive' },
+                variable_category_id: variableCategoryId,
+            },
+            select: { id: true },
+        });
+    } catch (findByNameError) {
         logger.error('DB error finding GVar by Name', { name: trimmedName, category: variableCategoryId, error: findByNameError });
-        throw new Error(`DB error (find GVar by Name ${trimmedName}): ${findByNameError.message}`);
+        throw new Error(`DB error (find GVar by Name ${trimmedName}): ${errorMessage(findByNameError)}`);
     }
     if (existingByName) {
         logger.debug('Found existing GVar by Name', { id: existingByName.id });
@@ -90,17 +97,21 @@ export async function findOrCreateGlobalVariable(
 
     // 3. Create new global variable
     const description = isIngredient ? `Ingredient: ${trimmedName}` : details?.trim();
-    const { data: newVar, error: createError } = await supabase.from('global_variables').insert({
-        id: slugId,
-        name: trimmedName,
-        description: description,
-        variable_category_id: variableCategoryId,
-        default_unit_id: defaultUnitId
-    }).select('id').single();
-
-    if (createError || !newVar) {
+    let newVar;
+    try {
+        newVar = await db.global_variables.create({
+            data: {
+                id: slugId,
+                name: trimmedName,
+                description: description,
+                variable_category_id: variableCategoryId,
+                default_unit_id: defaultUnitId
+            },
+            select: { id: true },
+        });
+    } catch (createError) {
         logger.error('DB error creating GVar', { id: slugId, name: trimmedName, error: createError });
-        throw new Error(`DB error (create GVar ${slugId}): ${createError?.message || 'Insert failed'}`);
+        throw new Error(`DB error (create GVar ${slugId}): ${errorMessage(createError)}`);
     }
     logger.info('Created new global variable', { id: newVar.id, name: trimmedName, category: variableCategoryId });
     return newVar.id;
@@ -110,7 +121,7 @@ export async function findOrCreateGlobalVariable(
  * Finds the ID of a unit based on its string representation (name or abbreviation).
  * Checks constants first, then queries the database as a fallback.
  */
-export async function findUnitId(supabase: ResolvedSupabaseClient, unitString?: string | null): Promise<string | null> {
+export async function findUnitId(db: UserDb, unitString?: string | null): Promise<string | null> {
     if (!unitString) return null;
     const trimmedUnit = unitString.trim().toLowerCase();
     if (!trimmedUnit) return null;
@@ -125,14 +136,18 @@ export async function findUnitId(supabase: ResolvedSupabaseClient, unitString?: 
 
     // If not in constants, query DB
     logger.warn('Unit not found in constants, querying DB', { unitString });
-    const { data: unitData, error } = await supabase
-        .from('units')
-        .select('id')
-        .or(`name.ilike.${trimmedUnit},abbreviated_name.ilike.${trimmedUnit}`)
-        .limit(1)
-        .maybeSingle();
-    
-    if (error) {
+    let unitData;
+    try {
+        unitData = await db.units.findFirst({
+            where: {
+                OR: [
+                    { name: { equals: trimmedUnit, mode: 'insensitive' } },
+                    { abbreviated_name: { equals: trimmedUnit, mode: 'insensitive' } },
+                ],
+            },
+            select: { id: true },
+        });
+    } catch (error) {
         logger.error('DB error finding unit ID', { unitString, error });
         return null; // Non-fatal
     }
@@ -141,3 +156,7 @@ export async function findUnitId(supabase: ResolvedSupabaseClient, unitString?: 
     }
     return unitData?.id ?? null;
 } 
+
+function errorMessage(error: unknown): string {
+    return error instanceof Error ? error.message : String(error);
+}

@@ -19,8 +19,10 @@ export async function middleware(request: NextRequest) {
   return response;
 }
 
-// Only run middleware on specific paths
+// Only run middleware on specific paths. The Node.js runtime is required because
+// updateSession reads the user's profile through Prisma (lib/db).
 export const config = {
+  runtime: 'nodejs',
   matcher: [
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
     "/patient/:path*", 

@@ -1,6 +1,7 @@
 'use server'
 
 import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
 import { Tables } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
 
@@ -25,17 +26,14 @@ export async function getFormDefinition(formId: string): Promise<FormDefinition 
     return null
   }
 
-  const { data: form, error } = await supabase
-    .from('forms')
-    .select(`
-      *,
-      form_questions (*)
-    `)
-    .eq('id', formId)
-    .order('order', { foreignTable: 'form_questions', ascending: true })
-    .maybeSingle() // Use maybeSingle to return null if not found
-
-  if (error) {
+  let form: FormDefinition | null
+  try {
+    const db = await getUserDb()
+    form = await db.forms.findUnique({
+      where: { id: formId },
+      include: { form_questions: { orderBy: { order: 'asc' } } },
+    })
+  } catch (error) {
     logger.error('Error fetching form definition from DB', { formId, userId: user.id, error })
     return null
   }
@@ -46,8 +44,7 @@ export async function getFormDefinition(formId: string): Promise<FormDefinition 
   }
 
   // RLS implicitly handles whether the user *can* fetch this row.
-  // The structure matches FormDefinition type due to the select query.
-  return form as FormDefinition;
+  return form;
 }
 
 

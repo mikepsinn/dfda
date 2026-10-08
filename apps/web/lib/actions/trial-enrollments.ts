@@ -2,7 +2,9 @@
 
 import { logger } from "@/lib/logger"
 import { Database } from "@/lib/database.types"
-import { createClient } from "@/utils/supabase/server"
+import type { Prisma } from "@/lib/db"
+import { getUserDb } from "@/lib/db/server"
+import type { Trial } from "@/lib/actions/trials"
 
 export type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 export type TrialEnrollmentInsert = Database["public"]["Tables"]["trial_enrollments"]["Insert"]
@@ -14,116 +16,103 @@ export type EnrollmentWithRelations = TrialEnrollment & {
     id: string;
     profile: Database["public"]["Tables"]["profiles"]["Row"] | null;
   } & Database["public"]["Tables"]["patients"]["Row"];
-  trial: Database["public"]["Tables"]["trials"]["Row"];
+  trial: Trial;
   trial_actions: (Database["public"]["Tables"]["trial_actions"]["Row"] & {
     action_type: Database["public"]["Tables"]["action_types"]["Row"]
   })[];
 }
 
-export async function getTrialEnrollmentsAction(): Promise<TrialEnrollment[]> {
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from("trial_enrollments")
-    .select(`
-      *,
-      trials:trial_id(
-        id, 
-        title,
-        description, 
-        status,
-        global_treatments:treatment_id(id, title),
-        global_conditions:condition_id(id, title)
-      )
-    `)
-    .order("enrollment_date", { ascending: false })
+// Compensation is returned as a number rather than a Prisma.Decimal, so trials can be passed to client components
+function toTrial<T extends { compensation: Prisma.Decimal | null }>(row: T): Omit<T, "compensation"> & { compensation: number | null } {
+  return { ...row, compensation: row.compensation?.toNumber() ?? null }
+}
 
-  if (error) {
+const enrollmentTrialInclude = {
+  trials: {
+    select: {
+      id: true,
+      title: true,
+      description: true,
+      status: true,
+      global_treatments: { select: { id: true, global_variables: { select: { name: true } } } },
+      global_conditions: { select: { id: true, global_variables: { select: { name: true } } } },
+    },
+  },
+} satisfies Prisma.trial_enrollmentsInclude
+
+export async function getTrialEnrollmentsAction(): Promise<TrialEnrollment[]> {
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.findMany({
+      include: enrollmentTrialInclude,
+      orderBy: { enrollment_date: "desc" },
+    })
+  } catch (error) {
     logger.error(`Error fetching trial enrollments:`, error)
     throw error
   }
-
-  return data
 }
 
 export async function getTrialEnrollmentsByPatientAction(patientId: string): Promise<TrialEnrollment[]> {
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from("trial_enrollments")
-    .select(`
-      *,
-      trials:trial_id(
-        id, 
-        title,
-        description, 
-        status,
-        treatments:treatment_id(id, title),
-        conditions:condition_id(id, title)
-      )
-    `)
-    .eq("patient_id", patientId)
-    .order("enrollment_date", { ascending: false })
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.findMany({
+      where: { patient_id: patientId },
+      include: enrollmentTrialInclude,
+      orderBy: { enrollment_date: "desc" },
+    })
+  } catch (error) {
     logger.error(`Error fetching trial enrollments for patient ${patientId}:`, error)
     throw error
   }
-
-  return data
 }
 
 export async function getTrialEnrollmentsByTrialAction(trialId: string) {
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from("trial_enrollments")
-    .select(`
-      *,
-      patients:patient_id(id, first_name, last_name, email)
-    `)
-    .eq("trial_id", trialId)
-    .order("enrollment_date", { ascending: false })
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.findMany({
+      where: { trial_id: trialId },
+      include: {
+        patients: {
+          select: { id: true, profiles: { select: { first_name: true, last_name: true, email: true } } },
+        },
+      },
+      orderBy: { enrollment_date: "desc" },
+    })
+  } catch (error) {
     logger.error(`Error fetching trial enrollments for trial ${trialId}:`, error)
     throw error
   }
-
-  return data
 }
 
 export async function createTrialEnrollmentAction(enrollment: TrialEnrollmentInsert) {
-  const supabase = await createClient()
-  const { data, error } = await supabase.from("trial_enrollments").insert(enrollment).select().single()
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.create({ data: enrollment })
+  } catch (error) {
     logger.error("Error creating trial enrollment:", error)
     throw error
   }
-
-  return data
 }
 
 export async function updateTrialEnrollmentAction(id: string, updates: TrialEnrollmentUpdate) {
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from("trial_enrollments")
-    .update({ ...updates, updated_at: new Date().toISOString() })
-    .eq("id", id)
-    .select()
-    .single()
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.update({
+      where: { id },
+      data: { ...updates, updated_at: new Date() },
+    })
+  } catch (error) {
     logger.error(`Error updating trial enrollment with id ${id}:`, error)
     throw error
   }
-
-  return data
 }
 
 export async function deleteTrialEnrollmentAction(id: string) {
-  const supabase = await createClient()
-  const { error } = await supabase.from("trial_enrollments").delete().eq("id", id)
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    await db.trial_enrollments.deleteMany({ where: { id } })
+  } catch (error) {
     logger.error(`Error deleting trial enrollment with id ${id}:`, error)
     throw error
   }
@@ -132,164 +121,118 @@ export async function deleteTrialEnrollmentAction(id: string) {
 }
 
 export async function updateEnrollmentStatusAction(enrollmentId: string, status: TrialEnrollment['status']) {
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from('trial_enrollments')
-    .update({ status, updated_at: new Date().toISOString() })
-    .eq('id', enrollmentId)
-    .select()
-    .single()
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.update({
+      where: { id: enrollmentId },
+      data: { status, updated_at: new Date() },
+    })
+  } catch (error) {
     logger.error(`Error updating enrollment status for ${enrollmentId}:`, error)
     throw error
   }
-
-  return data
 }
 
 export async function getTrialEnrollmentByIdAction(id: string): Promise<TrialEnrollment | null> {
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from("trial_enrollments")
-    .select()
-    .eq("id", id)
-    .single()
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.findUnique({ where: { id } })
+  } catch (error) {
     logger.error(`Error fetching trial enrollment with id ${id}:`, error)
     throw error
   }
-
-  return data
 }
 
 export async function getTrialEnrollmentByTrialAndPatientAction(trialId: string, patientId: string): Promise<TrialEnrollment | null> {
-  const supabase = await createClient()
-  const { data, error } = await supabase
-    .from("trial_enrollments")
-    .select()
-    .eq("trial_id", trialId)
-    .eq("patient_id", patientId)
-    .single()
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.findFirst({
+      where: { trial_id: trialId, patient_id: patientId },
+    })
+  } catch (error) {
     logger.error(`Error fetching trial enrollment for trial ${trialId} and patient ${patientId}:`, error)
     throw error
   }
-
-  return data
 }
 
 // Get enrollment status for a patient in a trial
 export async function getTrialEnrollmentStatusAction(trialId: string, patientId: string) {
-  const supabase = await createClient()
-  
-  const { data: enrollment, error } = await supabase
-    .from("trial_enrollments")
-    .select("*")
-    .eq("trial_id", trialId)
-    .eq("patient_id", patientId)
-    .single()
-
-  if (error && error.code !== 'PGRST116') { // Ignore not found error
+  try {
+    const db = await getUserDb()
+    return await db.trial_enrollments.findFirst({
+      where: { trial_id: trialId, patient_id: patientId },
+    })
+  } catch (error) {
     logger.error("Error fetching trial enrollment status:", error)
     throw new Error("Failed to fetch enrollment status")
   }
-
-  return enrollment
 }
 
 // Get enrollments with related data for provider
 export async function getProviderEnrollmentsAction(providerId: string): Promise<EnrollmentWithRelations[]> {
-  const supabase = await createClient()
-  
-  const { data, error } = await supabase
-    .from("trial_enrollments")
-    .select(`
-      *,
-      patient:patients!inner ( *,
-        profile:profiles!patients_id_fkey (*) ),
-      trial:trials!inner (*),
-      trial_actions!inner ( *,
-        action_type:action_types!inner (*) )
-    `)
-    .eq("provider_id", providerId)
-    .is("deleted_at", null)
+  try {
+    const db = await getUserDb()
+    const enrollments = await db.trial_enrollments.findMany({
+      where: {
+        provider_id: providerId,
+        deleted_at: null,
+        patients: { is: {} },
+        trials: { is: {} },
+        trial_actions: { some: {} },
+      },
+      include: {
+        patients: { include: { profiles: true } },
+        trials: true,
+        trial_actions: { include: { action_types: true } },
+      },
+    })
 
-  if (error) {
+    return enrollments.map(({ patients: { profiles, ...patient }, trials, trial_actions, ...enrollment }) => ({
+      ...enrollment,
+      // Row-level security hides patients' profiles from providers; Prisma then returns null
+      patient: { ...patient, profile: profiles as typeof profiles | null },
+      trial: toTrial(trials),
+      trial_actions: trial_actions.map(({ action_types, ...action }) => ({ ...action, action_type: action_types })),
+    }))
+  } catch (error) {
     logger.error("Error fetching enrollments for provider:", error)
     throw new Error("Failed to fetch enrollments")
   }
-
-  return data as EnrollmentWithRelations[]
 }
 
 // Get active enrollment with trial data for a patient
 export async function getPatientActiveEnrollmentAction(patientId: string) {
-  const supabase = await createClient()
-  
-  const { data: enrollment, error } = await supabase
-    .from("trial_enrollments")
-    .select(`
-      id,
-      trial_id,
-      patient_id,
-      provider_id,
-      status,
-      enrollment_date,
-      completion_date,
-      notes,
-      created_at,
-      updated_at,
-      deleted_at,
-      trial:trials!inner (
-        id,
-        title,
-        description,
-        research_partner_id,
-        condition_id,
-        treatment_id,
-        status,
-        phase,
-        start_date,
-        end_date,
-        enrollment_target,
-        current_enrollment,
-        location,
-        compensation,
-        inclusion_criteria,
-        exclusion_criteria,
-        created_at,
-        updated_at,
-        deleted_at
-      )
-    `)
-    .eq("patient_id", patientId)
-    .eq("status", "approved")
-    .single()
+  try {
+    const db = await getUserDb()
+    const enrollment = await db.trial_enrollments.findFirst({
+      where: { patient_id: patientId, status: "approved", trials: { is: {} } },
+      include: { trials: true },
+    })
 
-  if (error) {
+    if (!enrollment) {
+      return null
+    }
+
+    const { trials, ...row } = enrollment
+    return { ...row, trial: toTrial(trials) }
+  } catch (error) {
     logger.error("Error fetching patient enrollment:", error)
     throw new Error("Failed to fetch patient enrollment")
   }
-
-  return enrollment
 }
 
 // Update enrollment after data submission
 export async function updateEnrollmentAfterSubmissionAction(enrollmentId: string) {
-  const supabase = await createClient()
-  
-  const { error } = await supabase
-    .from("trial_enrollments")
-    .update({
-      updated_at: new Date().toISOString(),
-      notes: "Data submission completed"
+  try {
+    const db = await getUserDb()
+    await db.trial_enrollments.updateMany({
+      where: { id: enrollmentId },
+      data: {
+        updated_at: new Date(),
+        notes: "Data submission completed"
+      },
     })
-    .eq("id", enrollmentId)
-
-  if (error) {
+  } catch (error) {
     logger.error("Error updating enrollment:", error)
     throw new Error("Failed to update enrollment")
   }
@@ -297,29 +240,25 @@ export async function updateEnrollmentAfterSubmissionAction(enrollmentId: string
 
 // Create initial enrollment request for a patient
 export async function createInitialEnrollmentAction(trialId: string, patientId: string) {
-  const supabase = await createClient()
-  
-  const { data, error } = await supabase
-    .from("trial_enrollments")
-    .insert({
-      trial_id: trialId,
-      patient_id: patientId,
-      provider_id: "system", // TODO: Get actual provider ID
-      status: "pending",
-      enrollment_date: new Date().toISOString(),
-      notes: "Initial enrollment request",
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
+  try {
+    const db = await getUserDb()
+    const now = new Date()
+    return await db.trial_enrollments.create({
+      data: {
+        trial_id: trialId,
+        patient_id: patientId,
+        provider_id: "system", // TODO: Get actual provider ID
+        status: "pending",
+        enrollment_date: now,
+        notes: "Initial enrollment request",
+        created_at: now,
+        updated_at: now
+      },
     })
-    .select()
-    .single()
-
-  if (error) {
+  } catch (error) {
     logger.error("Error creating initial enrollment:", error)
     throw new Error("Failed to create enrollment")
   }
-
-  return data
 }
 
-// Add action functions here later if needed 
+// Add action functions here later if needed

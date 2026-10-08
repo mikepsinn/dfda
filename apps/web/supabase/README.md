@@ -1,92 +1,118 @@
-# Web app database and client guide
+# Web app database guide
 
-This guide covers `apps/web/supabase`, its [configuration](config.toml) and
-[migrations](migrations). The repository-root `supabase` directory has separate
-schema/tooling; do not assume its commands or schema layout apply to this app.
-Start with the shared [repository instructions](../../../AGENTS.md).
+The app is moving from Supabase to plain PostgreSQL with Prisma:
 
-## Supabase clients
+- **Table queries** use Prisma through [`lib/db`](../lib/db). This is done.
+- **Sign-in** still uses Supabase Auth (`supabase.auth.*`).
+- **File uploads** still use Supabase Storage.
+- **Schema changes** are SQL files in [migrations](migrations). Prisma reads the
+  resulting database into [`prisma/schema.prisma`](../prisma/schema.prisma).
 
-Use the existing wrappers rather than constructing a differently configured
-client in each component or action:
+The repository-root `schema` folder is an earlier, unapplied design; do not
+copy from it. Start with the shared [repository instructions](../../../AGENTS.md).
 
-| Context | Wrapper | Usage |
+## Querying the database
+
+| Context | Use | Notes |
 | --- | --- | --- |
-| Browser / Client Component | [`utils/supabase/client.ts`](../utils/supabase/client.ts) | Call `createClient()` (also exported as `createBrowserClient`). Never import the admin wrapper here. |
-| Server Component / Server Action, acting for a user | [`utils/supabase/server.ts`](../utils/supabase/server.ts) | `const supabase = await createClient()`. Also exported as `createServerClient`; the wrapper obtains cookies itself and takes no service-role option. |
-| Explicitly authorized, privileged server operation | [`utils/supabase/admin.ts`](../utils/supabase/admin.ts) | `supabaseAdmin` is an already-created client using the service-role key. It bypasses RLS, so authorization and scope checks must happen before use. Do not substitute it for ordinary user-scoped queries. |
-| Session refresh in middleware | [`utils/supabase/middleware.ts`](../utils/supabase/middleware.ts) | Reuse `updateSession` and preserve the returned response/cookie updates through redirects or response changes. |
+| Server Component, Server Action or route handler, for the signed-in user | `const db = await getUserDb()` from [`lib/db/server.ts`](../lib/db/server.ts) | Row-level security applies as the session user, or as the anonymous role when nobody is signed in. |
+| Several writes that must succeed or fail together | `withUserTransaction(user, async (tx) => ...)` from [`lib/db`](../lib/db/index.ts) | Pass the session user. Keep the callback short. |
+| Workers, scripts, and server code that has already checked authorization | `adminDb` from [`lib/db`](../lib/db/index.ts) | Full access; row-level security does not apply. |
+| Client Components | A Server Action that uses `getUserDb()` | Prisma does not run in the browser. |
 
-For the current user-context flow, call `supabase.auth.getUser()` and handle
-errors or an absent user before protected operations. Do not treat the user
-object returned by `getSession()` alone as server-side authorization. An
-authenticated identity is not permission for every record: enforce ownership,
-roles and RLS policies as appropriate. Never expose service-role credentials to
-the browser or commit them to Git. These are implementation rules, not a claim
-that every existing route has passed a security audit.
+`getUserDb()` takes the user from the session. Do not create a user-scoped
+client from an ID in request input: the policies would then trust that input.
 
-## Schema conventions
+How it works: the existing policies call `auth.uid()` and `auth.role()`, which
+read `request.jwt.claims`. For each query, the user-scoped client sets that
+value and switches to the `authenticated` or `anon` role inside a transaction.
+This works the same on Supabase and on plain PostgreSQL.
 
-- Inspect the actual migrations and [generated types](../lib/database.types.ts)
-  before designing new tables. Preserve existing variable/measurement reuse and
-  unit relationships instead of creating parallel storage for each treatment or
-  outcome type.
-- Use clear names consistent with neighboring objects. The old multi-schema
-  editor proposal and blanket ban on `user_` prefixes are not app requirements.
-- Keep each migration focused on one logical object/change, with explicit
-  dependencies, constraints, indexes and RLS behavior where relevant.
-- Test user access and cross-user denial, not just successful admin queries.
+Model and field names are the table and column names (`db.measurements`,
+`start_at`). Relation fields are mostly the related table name; a few have
+readable names in the schema (for example `outcome_variable`).
 
-## Migration policy
+Types:
 
-New migration files use:
+- Use Prisma types, or the helpers in [`lib/database.types.ts`](../lib/database.types.ts)
+  (`Tables<'measurements'>`, `TablesInsert<'measurements'>`, `Enums<'user_type_enum'>`).
+- Timestamps and dates are `Date` objects. Pass `Date` objects when you write
+  them; Prisma rejects date-only strings.
+- `reminder_schedules.time_of_day` is a TIME column; convert it with
+  [`lib/time-of-day.ts`](../lib/time-of-day.ts).
+- Money columns are NUMERIC and come back as `Prisma.Decimal`. Convert them to
+  numbers before you pass them to Client Components.
 
-```text
-YYYYMMDDHHMMSS_<type>_<description>.sql
+## Supabase clients (sign-in and storage only)
+
+| Context | Wrapper |
+| --- | --- |
+| Browser / Client Component | [`utils/supabase/client.ts`](../utils/supabase/client.ts) |
+| Server, acting for a user | [`utils/supabase/server.ts`](../utils/supabase/server.ts) |
+| Auth admin calls and Storage | [`utils/supabase/admin.ts`](../utils/supabase/admin.ts) (service-role key; never in the browser) |
+| Session refresh in middleware | [`utils/supabase/middleware.ts`](../utils/supabase/middleware.ts) |
+
+To get the current user on the server, use `getServerUser()` from
+[`lib/server-auth.ts`](../lib/server-auth.ts) (it calls `supabase.auth.getUser()`).
+Do not use the user from `getSession()` alone for authorization. A signed-in
+identity is not permission for every record: enforce ownership, roles and the
+policies.
+
+## Changing the schema
+
+1. Write a SQL migration in [migrations](migrations) named
+   `YYYYMMDDHHMMSS_<type>_<description>.sql`, with a type prefix such as
+   `table_`, `alter_`, `policy_`, `function_`, `view_` or `index_`. Include
+   constraints, indexes and row-level security for new tables.
+2. Apply it to your local database (`pnpm db:local:push` for the local Supabase
+   stack, or rebuild a plain database with `pnpm db:plain:setup`).
+3. Run `pnpm db:pull` to update `prisma/schema.prisma` and the generated client.
+   Review the schema diff. Relation fields that you renamed in the schema are kept.
+4. Add or update a test in [`tests/db`](../tests/db) when you change a policy,
+   and run `pnpm test:db`.
+
+CI builds an empty PostgreSQL 16 database from the migrations, checks that
+`prisma/schema.prisma` matches it, and runs `pnpm test:db`.
+
+There are no real user accounts in production yet. Until there are, migrations
+may be edited, squashed or rebaselined when that makes the move off Supabase
+simpler; describe the change in the pull request.
+
+Prisma reads only the `public` schema. Keep foreign keys inside `public` (point
+to `profiles`, not `auth.users`), and use enum values that are valid
+identifiers (`research_partner`, not `research-partner`); otherwise Prisma
+gives TypeScript values that differ from the database.
+
+## Plain PostgreSQL
+
+[`prisma/supabase-compat.sql`](../prisma/supabase-compat.sql) creates the
+parts of Supabase that the migrations expect (the `anon`, `authenticated` and
+`service_role` roles, `auth.uid()`, `auth.role()`, a minimal `auth.users`
+table and `storage.objects`). It does nothing on a Supabase database.
+
+```bash
+createdb dfda_test
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/dfda_test pnpm db:plain:setup
+DATABASE_URL=postgresql://postgres:postgres@localhost:5432/dfda_test pnpm test:db
 ```
 
-Keep descriptive type prefixes such as `table_`, `function_`, `view_`, `policy_`,
-`trigger_`, `index_`, `constraint_`, `enum_`, `extension_` and `alter_`.
-
-1. Inspect the existing files and the intended database's applied migration
-   history before selecting a new, unique timestamp.
-2. Add forward migrations after the existing history and after their dependencies.
-   The initial `20240101...` files use type/time grouping; this is legacy ordering,
-   not a reason to backdate new changes into an already-applied sequence.
-3. Do not edit, rename or reorder applied migrations to change a deployed schema.
-   Use a new corrective migration. Rebuilding an initial baseline is a separate,
-   explicitly approved operation against a verified disposable environment.
-4. Review the SQL for data loss and authorization changes, then test it against a
-   dedicated local/test database with representative data. Verify preservation
-   of existing records, constraints, dependent views/functions and RLS policies.
-5. Regenerate affected types/schemas and inspect the generated diff. Do not
-   silently include unrelated generation output in the patch.
+`db:plain:setup` applies the compatibility file, all migrations and the seeds.
+It refuses to run when the database already has tables.
 
 ## Local commands and safety
 
-Run app commands from `apps/web`; inspect [package.json](../package.json) and the
-underlying scripts before execution. First verify the local Supabase instance and
-every configured database/storage target. Commands with `--linked` or remote/cloud
-names are not substitutes for local validation.
+Run app commands from `apps/web`, and read [package.json](../package.json) and
+the scripts before you run them. Commands with `--linked` or `cloud` in their
+names act on a remote project.
 
-- `pnpm sb:local:status` inspects the local stack.
-- `pnpm db:local:push` applies pending migrations to the local database; inspect
-  the SQL and confirm the intended writes are authorized first.
-- `pnpm db:local:types` regenerates `lib/database.types.ts` from the local schema.
-  Do not hand-edit that generated file.
-- `pnpm generate:schemas` regenerates the Zod schema file from those types;
-  `pnpm generate:constants` refreshes constants when the change requires it.
-  Review the scripts' environment dependencies and all resulting file changes.
+- `pnpm sb:local:start` / `pnpm sb:local:status` start and inspect the local Supabase stack
+  (still needed for sign-in during development).
+- `pnpm db:local:push` applies pending migrations to the local Supabase database.
+- `pnpm db:pull` updates the Prisma schema and client from `DATABASE_URL`.
+- `pnpm db:generate` regenerates the Prisma client only (also runs on install).
 
-**Do not automatically run `pnpm db:setup` or a reset after an SQL edit.**
+**Do not run `pnpm db:setup` without checking it first.**
 [`setup-local-full.ts`](../scripts/setup-local-full.ts) starts Supabase, resets
-the local database, runs worker migrations, changes storage via `.env` credentials
-and regenerates multiple files. A local-looking command does not prove every
-configured service is local. Resets/data deletion require explicit authorization
-and a verified disposable target; use backups when preserving data matters.
-Remote resets are not a development or test step.
-
-After a schema change, run relevant migration/integration tests, `pnpm test:unit`
-and `pnpm type-check`. Report unavailable services or unrun checks explicitly.
-Documentation-only work does not require applying migrations, regenerating types
-or starting/resetting a database.
+the local database, runs worker migrations, changes storage with the `.env`
+credentials and regenerates files. Never reset a remote or shared database as a
+development or test step.

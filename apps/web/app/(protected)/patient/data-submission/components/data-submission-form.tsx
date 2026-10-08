@@ -17,9 +17,9 @@ import { SubmissionComplete } from "./submission-complete"
 import { createClient } from '@/utils/supabase/client'
 import { logger } from "@/lib/logger"
 import { submitTrialDataAction } from "@/lib/actions/data-submissions"
+import type { Trial } from "@/lib/actions/trials"
 import { updateEnrollmentAfterSubmissionAction } from "@/lib/actions/trial-enrollments"
 
-type Trial = Database["public"]["Tables"]["trials"]["Row"]
 type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 type DataSubmissionInsert = Database["public"]["Tables"]["data_submissions"]["Insert"]
 type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Row"]

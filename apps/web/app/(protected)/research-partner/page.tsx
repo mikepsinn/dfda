@@ -23,7 +23,7 @@ export default async function ResearchPartnerDashboard() {
 
   const researchPartnerProfile = await getUserProfile(user)
 
-  if (!researchPartnerProfile || researchPartnerProfile.user_type !== 'research-partner') {
+  if (!researchPartnerProfile || researchPartnerProfile.user_type !== 'research_partner') {
     logger.warn("User accessed research partner dashboard with invalid/missing profile or wrong user_type.", { userId: user.id, userType: researchPartnerProfile?.user_type })
     redirect("/select-role?error=access_denied")
   }

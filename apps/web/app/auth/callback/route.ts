@@ -1,6 +1,7 @@
 'use server';
 
 import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
 import { logger } from '@/lib/logger'
 import { NextResponse, type NextRequest } from 'next/server'
 import { Constants } from '@/lib/database.types'
@@ -67,41 +68,43 @@ export async function GET(request: NextRequest) {
         }
 
         // Fetch user profile
-        const { data: profileData, error: profileError } = await supabase
-          .from('profiles')
-          .select('user_type')
-          .eq('id', user.id)
-          .single();
-
         let redirectPath = '/'; // Default path
 
-        if (profileError) {
-          logger.warn(`[AUTH-CALLBACK-ROUTE] Could not fetch profile for user ${user.id}. Using default redirect.`, { error: profileError.message });
-          // Proceed with default redirect even if profile fetch fails, but log it
-        } else if (profileData) {
-          logger.info(`[AUTH-CALLBACK-ROUTE] User ${user.id} has user_type: ${profileData.user_type}`);
-          switch (profileData.user_type) {
-            case Constants.public.Enums.user_type_enum[0]: // 'patient'
-              redirectPath = '/patient';
-              break;
-            case Constants.public.Enums.user_type_enum[1]: // 'provider'
-              redirectPath = '/provider'; 
-              break;
-            // Add cases for other user types using Constants.public.Enums.user_type_enum[index]
-            // case Constants.public.Enums.user_type_enum[2]: // 'research-partner'
-            //   redirectPath = '/research'; 
-            //   break;
-            // case Constants.public.Enums.user_type_enum[3]: // 'admin'
-            //   redirectPath = '/admin';
-            //   break;
-            // case Constants.public.Enums.user_type_enum[4]: // 'developer'
-            //   redirectPath = '/developer';
-            //   break;
-            default:
-              redirectPath = '/'; // Fallback to default dashboard or home
+        try {
+          const db = await getUserDb();
+          const profileData = await db.profiles.findUnique({
+            where: { id: user.id },
+            select: { user_type: true },
+          });
+
+          if (profileData) {
+            logger.info(`[AUTH-CALLBACK-ROUTE] User ${user.id} has user_type: ${profileData.user_type}`);
+            switch (profileData.user_type) {
+              case Constants.public.Enums.user_type_enum[0]: // 'patient'
+                redirectPath = '/patient';
+                break;
+              case Constants.public.Enums.user_type_enum[1]: // 'provider'
+                redirectPath = '/provider'; 
+                break;
+              // Add cases for other user types using Constants.public.Enums.user_type_enum[index]
+              // case Constants.public.Enums.user_type_enum[2]: // 'research_partner'
+              //   redirectPath = '/research'; 
+              //   break;
+              // case Constants.public.Enums.user_type_enum[3]: // 'admin'
+              //   redirectPath = '/admin';
+              //   break;
+              // case Constants.public.Enums.user_type_enum[4]: // 'developer'
+              //   redirectPath = '/developer';
+              //   break;
+              default:
+                redirectPath = '/'; // Fallback to default dashboard or home
+            }
+          } else {
+             logger.warn(`[AUTH-CALLBACK-ROUTE] No profile found for user ${user.id}. Using default redirect.`);
           }
-        } else {
-           logger.warn(`[AUTH-CALLBACK-ROUTE] No profile found for user ${user.id}. Using default redirect.`);
+        } catch (profileError) {
+          // Proceed with default redirect even if profile fetch fails, but log it
+          logger.warn(`[AUTH-CALLBACK-ROUTE] Could not fetch profile for user ${user.id}. Using default redirect.`, { error: profileError instanceof Error ? profileError.message : profileError });
         }
         
         const finalRedirectUrl = `${correctOrigin}${redirectPath}`;
