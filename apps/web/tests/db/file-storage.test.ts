@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto'
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 import { adminDb, type DbUser } from '@/lib/db'
 import { getServerUser } from '@/lib/server-auth'
+import { getUserDb } from '@/lib/db/server'
 import { createUploadUrlAction, recordUploadMetadata } from '@/lib/actions/file-upload-actions'
 import {
   MAX_UPLOAD_BYTES,
@@ -16,6 +17,10 @@ import {
 // S3-compatible server (S3_ENDPOINT, S3_BUCKET, ...). See `pnpm test:db`.
 
 vi.mock('@/lib/server-auth', () => ({ getServerUser: vi.fn() }))
+vi.mock('@/lib/db/server', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@/lib/db/server')>()
+  return { ...actual, getUserDb: vi.fn(actual.getUserDb) }
+})
 
 const userA: DbUser = { id: randomUUID(), email: `storage-a-${Date.now()}@example.com` }
 const userB: DbUser = { id: randomUUID(), email: `storage-b-${Date.now()}@example.com` }
@@ -84,6 +89,24 @@ describe('file storage', () => {
     expect(await adminDb.uploaded_files.count({ where: { storage_path: target.storagePath } })).toBe(0)
   })
 
+  it('returns the same record when the upload is recorded again, and keeps the file', async () => {
+    const { target } = await uploadThroughBrowserFlow('recorded twice')
+    const metadata = { storage_path: target.storagePath, file_name: 'notes.txt' }
+
+    const firstId = await recordUploadMetadata(metadata)
+    expect(firstId).not.toBeNull()
+    expect(await recordUploadMetadata(metadata)).toBe(firstId)
+    expect(await getStoredFileInfo(target.storagePath)).not.toBeNull()
+  })
+
+  it('deletes the uploaded file when the database is not available', async () => {
+    const { target } = await uploadThroughBrowserFlow('no database')
+    vi.mocked(getUserDb).mockRejectedValueOnce(new Error('DATABASE_URL is not set'))
+
+    expect(await recordUploadMetadata({ storage_path: target.storagePath, file_name: 'notes.txt' })).toBeNull()
+    expect(await getStoredFileInfo(target.storagePath)).toBeNull()
+  })
+
   it('does not record a file that was never uploaded', async () => {
     const key = userFileKey(userA.id, 'missing.txt')
     expect(await recordUploadMetadata({ storage_path: key, file_name: 'missing.txt' })).toBeNull()
@@ -100,13 +123,14 @@ describe('file storage', () => {
     expect(await createUploadUrlAction({ name: 'empty.txt', type: 'text/plain', size: 0 })).toHaveProperty('error')
   })
 
-  it('signs the content type into the upload URL and adds no checksum', async () => {
+  it('signs the content type and size into the upload URL and adds no checksum', async () => {
     // The storage service enforces the signature, so a browser cannot upload a
-    // different content type. (The test server does not check signatures.)
+    // different content type or a larger file. (The test server does not check
+    // signatures.)
     const target = await createUploadUrlAction({ name: 'scan.png', type: 'image/png', size: 4 })
     if ('error' in target) throw new Error(target.error)
     const params = new URL(target.uploadUrl).searchParams
-    expect(params.get('X-Amz-SignedHeaders')).toBe('content-type;host')
+    expect(params.get('X-Amz-SignedHeaders')).toBe('content-length;content-type;host')
     expect([...params.keys()].some((key) => key.toLowerCase().startsWith('x-amz-checksum'))).toBe(false)
   })
 

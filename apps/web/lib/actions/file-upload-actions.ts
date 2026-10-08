@@ -1,6 +1,7 @@
 'use server'
 
 import { getServerUser } from '@/lib/server-auth'
+import { isUniqueViolation, type UserDb } from '@/lib/db'
 import { getUserDb } from '@/lib/db/server'
 import { logger } from '@/lib/logger'
 import {
@@ -73,8 +74,9 @@ export async function recordUploadMetadata(metadata: {
     return null
   }
 
+  let db: UserDb | undefined
   try {
-    const db = await getUserDb()
+    db = await getUserDb()
     const record = await db.uploaded_files.create({
       data: {
         uploader_user_id: user.id,
@@ -88,6 +90,16 @@ export async function recordUploadMetadata(metadata: {
     logger.info('Recorded file upload metadata', { userId: user.id, fileId: record.id, path })
     return record.id
   } catch (error) {
+    if (db && isUniqueViolation(error)) {
+      // Already recorded (a repeated call). Keep the file: a record uses it.
+      const existing = await db.uploaded_files
+        .findFirst({ where: { storage_path: path, uploader_user_id: user.id }, select: { id: true } })
+        .catch((lookupError: unknown) => {
+          logger.error('Could not read the existing upload record', { userId: user.id, path, error: lookupError })
+          return null
+        })
+      return existing?.id ?? null
+    }
     logger.error('Error inserting uploaded_files record', { userId: user.id, path, error })
     await deleteStoredFiles([path])
     return null
