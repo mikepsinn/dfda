@@ -35,8 +35,9 @@ For app code changes, run the relevant tests and checks from `apps/web`:
 
 - `pnpm test:unit` and `pnpm type-check`.
 - `pnpm lint`; `pnpm check` combines type checking and linting, without auto-fixing.
-- `pnpm test:db` when queries, migrations or policies change. It needs
-  `DATABASE_URL` set to an empty PostgreSQL database prepared with `pnpm db:plain:setup`.
+- `pnpm test:db` when queries, migrations, policies or file storage change. It
+  needs `DATABASE_URL` set to an empty PostgreSQL database prepared with
+  `pnpm db:plain:setup`, and the `S3_*` settings of an S3-compatible test server.
 - `pnpm build` when changes affect the production build, plus relevant integration
   tests for the changed workflow using a dedicated local/test environment.
 
@@ -64,8 +65,9 @@ of UI conventions for contributors and coding agents.
 
 - Before changing app schema, queries or authentication, read the
   [database guide](apps/web/supabase/README.md). The app is moving from Supabase
-  to plain PostgreSQL: table queries use Prisma (`apps/web/lib/db`); Supabase is
-  still used for sign-in and file storage until those parts move.
+  to plain PostgreSQL: table queries use Prisma (`apps/web/lib/db`) and uploaded
+  files use an S3-compatible bucket (`apps/web/lib/storage`); Supabase is still
+  used for sign-in until that part moves.
 - Query as the signed-in user with `getUserDb()` from `@/lib/db/server`, so the
   row-level security policies apply. Use `adminDb` (no row-level security) only in
   workers, scripts and server code that has already checked authorization. Never

@@ -1,12 +1,10 @@
 'use server'
 
 import { z } from 'zod'
-// Correct import based on project structure usage in profiles.ts
-import { createClient } from '@/utils/supabase/server'
-// import { cookies } from 'next/headers' // Likely not needed if createClient handles it
 import { Database } from '@/lib/database.types'
 import { Prisma, type UserDb } from '@/lib/db'
 import { getUserDb } from '@/lib/db/server'
+import { getServerUser } from '@/lib/server-auth'
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 // import { v4 as uuidv4 } from 'uuid' // Removed unused import
@@ -17,8 +15,7 @@ import { revalidatePath } from 'next/cache'
 import { findOrCreateGlobalVariable, findUnitId } from '@/lib/global_variables.lib'
 import { resolveIngredientGvars, linkIngredientsToParentVariable } from '@/lib/variable_ingredients.lib'
 import { findOrCreateUserVariable, uploadAndLinkImages, ImageType } from '@/lib/user_variables.lib'
-// import { BUCKET_NAME } from '@/lib/constants/storage' // REMOVED UNUSED
-import { deleteFiles } from '@/lib/storage.lib'
+import { deleteStoredFiles } from '@/lib/storage'
 
 // Re-define image types locally as it's used in validation loop
 const IMAGE_TYPES = ['primary', 'nutrition', 'ingredients', 'upc'] as const;
@@ -110,9 +107,6 @@ interface SaveVariableMeasurementsSuccessData {
     uploadedFilesInfo?: { type: ImageType; uploadedFileId: string; userVariableImageLinked: boolean }[];
     patientTreatmentId?: string; // Add missing field
 }
-
-// Define BUCKET_NAME here as it is used in the main action's error handling
-// const BUCKET_NAME = 'user_uploads'; // REMOVED
 
 // --- Internal Type-Specific Handlers --- 
 
@@ -261,8 +255,6 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
   { success: true; data: SaveVariableMeasurementsSuccessData } |
   { success: false; error: string }
 > {
-  // The Supabase client is still used for Storage uploads and cleanup.
-  const supabase = await createClient();
   const db = await getUserDb();
 
   // --- 1. Parse and Validate Base Input (+ userId) --- 
@@ -293,6 +285,13 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
 
   const validatedData = validation.data;
   const { userId, type } = validatedData;
+
+  // Images are stored in the user's folder, which only the server protects.
+  const sessionUser = await getServerUser();
+  if (!sessionUser || sessionUser.id !== userId) {
+    logger.warn('saveVariableMeasurementsFromImageAction called for a different user', { userId, sessionUserId: sessionUser?.id });
+    return { success: false, error: 'You can only save measurements for your own account.' };
+  }
 
   // --- 2. Validate Images --- 
   const imageFilesToUpload: { type: ImageType; file: File }[] = [];
@@ -334,7 +333,7 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
     productId = await upsertProductDetails(db, mainGlobalVariableId, validatedData); 
 
     // --- 4. Upload Images (Specific to this action) --- 
-    uploadedFilesInfo = await uploadAndLinkImages(supabase, userId, userVariableId, imageFilesToUpload, uploadedStoragePaths);
+    uploadedFilesInfo = await uploadAndLinkImages(userId, userVariableId, imageFilesToUpload, uploadedStoragePaths);
 
     // --- 5. Dispatch to Type-Specific Handlers --- 
     if (type === 'food') {
@@ -382,15 +381,7 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
     });
     // Attempt storage cleanup
     if (uploadedStoragePaths.length > 0) {
-        // Use the centralized delete function
-        await deleteFiles(supabase, uploadedStoragePaths); 
-        // logger.warn('Attempting cleanup of storage objects due to error', { paths: uploadedStoragePaths }); // Logging done in deleteFiles
-        // const { error: removeError } = await supabase.storage.from(BUCKET_NAME).remove(uploadedStoragePaths); // Deletion logic moved
-        // if (removeError) { // Logging done in deleteFiles
-        //     logger.error('Failed to cleanup storage objects after error', { paths: uploadedStoragePaths, removeError });
-        // } else {
-        //     logger.info('Successfully cleaned up storage objects after error', { paths: uploadedStoragePaths });
-        // }
+        await deleteStoredFiles(uploadedStoragePaths);
     }
     return { success: false, error: errorMessage };
   }

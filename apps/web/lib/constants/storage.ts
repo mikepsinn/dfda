@@ -1,1 +1,0 @@
-export const BUCKET_NAME = 'user_uploads'; 

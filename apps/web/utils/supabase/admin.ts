@@ -13,7 +13,7 @@ if (!supabaseServiceRoleKey) {
 }
 
 // Note: this client bypasses RLS.
-// Use it only for Supabase Auth admin calls and Storage. Table queries use
+// Use it only for Supabase Auth admin calls. Table queries use
 // Prisma: adminDb from '@/lib/db' (no RLS) or getUserDb() from '@/lib/db/server'.
 export const supabaseAdmin = createClient(
   supabaseUrl,

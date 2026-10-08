@@ -62,8 +62,8 @@ Status meanings:
 
 ## Current application and its features
 
-[`apps/web`](../apps/web) is the canonical Next.js app (PostgreSQL through Prisma;
-Supabase still provides sign-in and file storage), formerly
+[`apps/web`](../apps/web) is the canonical Next.js app (PostgreSQL through Prisma,
+files in an S3-compatible bucket; Supabase still provides sign-in), formerly
 `apps/dfda-node`. Its reference deployment is `prototype.dfda.earth`; taking
 over `dfda.earth` is a later migration step.
 

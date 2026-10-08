@@ -1,16 +1,13 @@
 import { spawn } from 'node:child_process';
 import path from 'path';
-import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
+import { ensureBucket } from '../lib/storage';
 
 // --- Load Environment Variables ---
 // Load from .env.production for remote deployment
 dotenv.config({ path: path.resolve(process.cwd(), '.env.production') });
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const databaseUrl = process.env.DATABASE_URL; // Needed for checks and potentially commands
-const bucketName = 'user_uploads'; // Assuming same bucket name
 
 // Utility to run a command and pipe its output using spawn
 async function runCommand(command: string, args: string[], options?: any): Promise<void> {
@@ -57,40 +54,14 @@ async function runCommand(command: string, args: string[], options?: any): Promi
 
 // --- Utility to setup storage bucket ---
 async function setupStorageBucket() {
-  console.log(`
---- Setting up/Verifying Storage Bucket: ${bucketName} ---
-`);
-  if (!supabaseUrl || !serviceRoleKey) {
-    console.error('Error: Remote Supabase URL or Service Role Key not found in environment (.env.production) for storage setup.');
-    throw new Error('Missing Supabase credentials for storage setup.');
-  }
-  const supabaseAdmin = createClient(supabaseUrl, serviceRoleKey, { auth: { persistSession: false } });
+  const bucketName = process.env.S3_BUCKET;
+  console.log(`\n--- Setting up storage bucket: ${bucketName} ---\n`);
   try {
-    const { data: existingBucket, error: getError } = await supabaseAdmin.storage.getBucket(bucketName);
-    if (existingBucket) {
-      console.log(`Bucket "${bucketName}" already exists.`);
-      if (existingBucket.public !== false) {
-         console.warn(`Bucket "${bucketName}" is public. Updating to private.`);
-         const { error: updateError } = await supabaseAdmin.storage.updateBucket(bucketName, { public: false });
-         if (updateError) console.error(`Failed to update bucket "${bucketName}" to private:`, updateError.message);
-         else console.log(`Bucket "${bucketName}" updated to private.`);
-      }
-    } else if (getError && getError.message.includes('Bucket not found')) {
-      console.log(`Bucket "${bucketName}" not found. Creating...`);
-      const { data: newBucket, error: createError } = await supabaseAdmin.storage.createBucket(bucketName, { public: false });
-      if (createError) throw createError;
-      else console.log(`Successfully created private bucket "${bucketName}" with ID: ${newBucket?.name}`);
-    } else if (getError) {
-      throw getError; // Throw other get errors
-    } else {
-        throw new Error("Unknown error checking bucket existence.");
-    }
-     console.log(`
---- Completed: Storage Bucket Setup ---`);
+    await ensureBucket();
+    console.log(`\n--- Completed: storage bucket setup ---`);
   } catch (error: any) {
-    console.error(`
---- Error setting up storage bucket "${bucketName}":`, error.message);
-    throw error; // Re-throw to fail the main setup
+    console.error(`\n--- Error setting up storage bucket "${bucketName}":`, error.message || error);
+    throw error;
   }
 }
 
@@ -103,12 +74,11 @@ async function deployRemote() {
     console.error('Error: DATABASE_URL not found in environment (.env.production). Cannot run migrations.');
     process.exit(1);
   }
-  if (!supabaseUrl || !serviceRoleKey) {
-     console.error('Error: NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY not found in environment (.env.production). Cannot setup storage.');
+  if (!process.env.S3_BUCKET) {
+     console.error('Error: S3_BUCKET not found in environment (.env.production). Cannot set up storage.');
      process.exit(1);
   }
    console.log('Using Remote Database URL:', databaseUrl.replace(/:([^:]+)@/, ':********@')); // Mask password
-   console.log('Using Remote Supabase URL:', supabaseUrl);
 
   try {
     // 1. Apply Supabase schema migrations

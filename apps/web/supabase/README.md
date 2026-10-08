@@ -4,7 +4,8 @@ The app is moving from Supabase to plain PostgreSQL with Prisma:
 
 - **Table queries** use Prisma through [`lib/db`](../lib/db). This is done.
 - **Sign-in** still uses Supabase Auth (`supabase.auth.*`).
-- **File uploads** still use Supabase Storage.
+- **File uploads** use a private S3-compatible bucket through
+  [`lib/storage`](../lib/storage). This is done.
 - **Schema changes** are SQL files in [migrations](migrations). Prisma reads the
   resulting database into [`prisma/schema.prisma`](../prisma/schema.prisma).
 
@@ -43,13 +44,13 @@ Types:
 - Money columns are NUMERIC and come back as `Prisma.Decimal`. Convert them to
   numbers before you pass them to Client Components.
 
-## Supabase clients (sign-in and storage only)
+## Supabase clients (sign-in only)
 
 | Context | Wrapper |
 | --- | --- |
 | Browser / Client Component | [`utils/supabase/client.ts`](../utils/supabase/client.ts) |
 | Server, acting for a user | [`utils/supabase/server.ts`](../utils/supabase/server.ts) |
-| Auth admin calls and Storage | [`utils/supabase/admin.ts`](../utils/supabase/admin.ts) (service-role key; never in the browser) |
+| Auth admin calls | [`utils/supabase/admin.ts`](../utils/supabase/admin.ts) (service-role key; never in the browser) |
 | Session refresh in middleware | [`utils/supabase/middleware.ts`](../utils/supabase/middleware.ts) |
 
 To get the current user on the server, use `getServerUser()` from
@@ -57,6 +58,39 @@ To get the current user on the server, use `getServerUser()` from
 Do not use the user from `getSession()` alone for authorization. A signed-in
 identity is not permission for every record: enforce ownership, roles and the
 policies.
+
+## File storage
+
+Uploaded files are stored in one private S3-compatible bucket (AWS S3,
+Cloudflare R2, MinIO, or the S3 endpoint of Supabase Storage). Use the
+functions in [`lib/storage`](../lib/storage/index.ts); do not create other S3
+clients.
+
+Settings: `S3_BUCKET` (required), `S3_REGION`, `S3_ENDPOINT` (for services other
+than AWS), `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY` and `S3_FORCE_PATH_STYLE`
+(`true` for MinIO and Supabase). Without access keys the AWS default
+credentials apply.
+
+Rules:
+
+- Each file is stored under `<userId>/<random uuid>.<extension>`. The bucket
+  has no per-user rules, so take the user ID from the session, and check a key
+  from request input with `isUserFileKey(user.id, key)` before you record,
+  read or delete it.
+- Browser uploads: the Server Action `createUploadUrlAction` returns a signed
+  PUT URL (valid for 5 minutes, at most `MAX_UPLOAD_BYTES`). The browser sends
+  the file with the same `Content-Type`, then calls `recordUploadMetadata`,
+  which reads the size and type from storage and inserts the
+  `uploaded_files` record.
+- Server uploads: `uploadUserFile(userId, file)`. Clean up with
+  `deleteStoredFiles(keys)` when a later step fails.
+- The bucket must allow cross-origin `PUT` requests with a `Content-Type`
+  header from the app origins (bucket CORS settings).
+
+For local development, use the S3 endpoint of the local Supabase stack
+(`http://127.0.0.1:54321/storage/v1/s3`, keys from `pnpm sb:local:status`) or
+any other S3-compatible server. `pnpm test:db` needs an S3 server and the
+`S3_*` settings; CI uses the [moto](https://github.com/getmoto/moto) server.
 
 ## Changing the schema
 
