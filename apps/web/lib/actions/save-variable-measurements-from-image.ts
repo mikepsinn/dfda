@@ -5,6 +5,8 @@ import { z } from 'zod'
 import { createClient } from '@/utils/supabase/server'
 // import { cookies } from 'next/headers' // Likely not needed if createClient handles it
 import { Database } from '@/lib/database.types'
+import { Prisma, type UserDb } from '@/lib/db'
+import { getUserDb } from '@/lib/db/server'
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 // import { v4 as uuidv4 } from 'uuid' // Removed unused import
@@ -12,7 +14,6 @@ import { revalidatePath } from 'next/cache'
 // Import constants
 // import { UNIT_IDS } from '@/lib/constants/units' // UNITS_DATA removed
 // import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories' // Removed unused import
-import { SupabaseClient } from '@supabase/supabase-js'
 import { findOrCreateGlobalVariable, findUnitId } from '@/lib/global_variables.lib'
 import { resolveIngredientGvars, linkIngredientsToParentVariable } from '@/lib/variable_ingredients.lib'
 import { findOrCreateUserVariable, uploadAndLinkImages, ImageType } from '@/lib/user_variables.lib'
@@ -117,7 +118,7 @@ interface SaveVariableMeasurementsSuccessData {
 
 // Food Handler - Transforms data and calls DB directly
 async function _handleSaveFoodVariable(
-    supabase: ResolvedSupabaseClient,
+    db: UserDb,
     userId: string, // Keep userId if needed for future logic, though unused now
     mainGlobalVariableId: string,
     data: SaveVariableMeasurementsInput
@@ -130,8 +131,8 @@ async function _handleSaveFoodVariable(
 
     // 1. Transform data to global_foods.Insert type
     const { servingSize_quantity, servingSize_unit, calories_per_serving, fat_per_serving, protein_per_serving, carbs_per_serving, ingredients } = data;
-    const servingUnitId = await findUnitId(supabase, servingSize_unit);
-    const foodDetailsPayload: Database['public']['Tables']['global_foods']['Insert'] = {
+    const servingUnitId = await findUnitId(db, servingSize_unit);
+    const foodDetailsPayload = {
         global_variable_id: mainGlobalVariableId,
         serving_size_quantity: servingSize_quantity ?? null,
         serving_size_unit_id: servingUnitId, // findUnitId already returns null if not found
@@ -140,30 +141,32 @@ async function _handleSaveFoodVariable(
         protein_per_serving: protein_per_serving ?? null,
         carbs_per_serving: carbs_per_serving ?? null,
         // created_at, updated_at have defaults in DB
-    };
+    } satisfies Database['public']['Tables']['global_foods']['Insert'];
 
     // 2. Upsert global_foods
-    const { error: foodUpsertError } = await supabase
-        .from('global_foods')
-        .upsert(foodDetailsPayload, { onConflict: 'global_variable_id' });
-
-    if (foodUpsertError) {
+    try {
+        await db.global_foods.upsert({
+            where: { global_variable_id: mainGlobalVariableId },
+            create: foodDetailsPayload,
+            update: foodDetailsPayload,
+        });
+    } catch (foodUpsertError) {
         logger.error('Failed to upsert global_foods', { error: foodUpsertError, globalVariableId: mainGlobalVariableId });
-        throw new Error(`DB error (upsert global_foods): ${foodUpsertError.message}`);
+        throw new Error(`DB error (upsert global_foods): ${errorMessage(foodUpsertError)}`);
     }
     logger.info('Food details saved/updated', { globalVariableId: mainGlobalVariableId });
     const foodDetailsId = mainGlobalVariableId; // PK is the GVar ID
 
     // 3. Resolve and link ingredients
-    const resolvedIngredients = await resolveIngredientGvars(supabase, ingredients || []);
-    const ingredientIds = await linkIngredientsToParentVariable(supabase, mainGlobalVariableId, resolvedIngredients, []);
+    const resolvedIngredients = await resolveIngredientGvars(db, ingredients || []);
+    const ingredientIds = await linkIngredientsToParentVariable(db, mainGlobalVariableId, resolvedIngredients, []);
     
     return { foodDetailsId, ingredientIds };
 }
 
 // Treatment Handler
 async function _handleSaveTreatmentVariable(
-    supabase: ResolvedSupabaseClient,
+    db: UserDb,
     userId: string,
     mainGlobalVariableId: string,
     userVariableId: string,
@@ -181,7 +184,7 @@ async function _handleSaveTreatmentVariable(
 
     // 2. Upsert Treatment Record
     // Resolve active ingredients for the treatments table JSONB column
-    const resolvedActiveIngredients = await resolveIngredientGvars(supabase, active_ingredients ?? []);
+    const resolvedActiveIngredients = await resolveIngredientGvars(db, active_ingredients ?? []);
     const activeIngredientsJson = resolvedActiveIngredients.map(ing => ({
       ingredient_global_variable_id: ing.global_variable_id,
       strength_quantity: ing.quantity,
@@ -205,16 +208,18 @@ async function _handleSaveTreatmentVariable(
         manufacturer: (typeof brand === 'string' && brand.trim()) ? brand.trim() : null,
         dosage_form: (typeof dosage_form === 'string' && dosage_form.trim()) ? dosage_form.trim() : null,
         dosage_instructions: (typeof dosage_instructions === 'string' && dosage_instructions.trim()) ? dosage_instructions.trim() : null,
-        active_ingredients: activeIngredientsJson.length > 0 ? activeIngredientsJson : null,
+        active_ingredients: activeIngredientsJson.length > 0 ? activeIngredientsJson : Prisma.DbNull,
     } satisfies Database['public']['Tables']['global_treatments']['Update'];
 
-    const { error: upsertTreatmentError } = await supabase
-        .from('global_treatments')
-        .upsert(treatmentPayload, { onConflict: 'id' });
-
-    if(upsertTreatmentError) {
+    try {
+        await db.global_treatments.upsert({
+            where: { id: mainGlobalVariableId },
+            create: treatmentPayload,
+            update: treatmentPayload,
+        });
+    } catch (upsertTreatmentError) {
         logger.error('Error upserting treatment record', { error: upsertTreatmentError, treatmentGVarId: mainGlobalVariableId, payload: treatmentPayload });
-        throw new Error(`Database error ensuring treatment record exists: ${upsertTreatmentError.message}`);
+        throw new Error(`Database error ensuring treatment record exists: ${errorMessage(upsertTreatmentError)}`);
     }
     logger.info('Treatment record ensured', { treatmentGVarId: mainGlobalVariableId });
 
@@ -229,22 +234,24 @@ async function _handleSaveTreatmentVariable(
         // start_date, end_date could be added if available
     } satisfies Database['public']['Tables']['patient_treatments']['Update']; // Use Update for upsert
     
-    const { data: ptData, error: patientTreatmentUpsertError } = await supabase
-        .from('patient_treatments')
-        .upsert(patientTreatmentPayload, { onConflict: 'patient_id, treatment_id' })
-        .select('id')
-        .single();
-
-    if (patientTreatmentUpsertError || !ptData) {
+    let ptData: { id: string };
+    try {
+        ptData = await db.patient_treatments.upsert({
+            where: { patient_id_treatment_id: { patient_id: userId, treatment_id: mainGlobalVariableId } },
+            create: patientTreatmentPayload,
+            update: patientTreatmentPayload,
+            select: { id: true },
+        });
+    } catch (patientTreatmentUpsertError) {
         logger.error('Error upserting patient_treatments record', { error: patientTreatmentUpsertError, userId, treatmentGVarId: mainGlobalVariableId });
-        throw new Error(`Database error upserting patient treatment: ${patientTreatmentUpsertError?.message || 'Upsert failed'}`);
+        throw new Error(`Database error upserting patient treatment: ${errorMessage(patientTreatmentUpsertError)}`);
     }
     const patientTreatmentId = ptData.id;
     logger.info('Patient treatment record ensured', { patientTreatmentId });
 
     // 4. Resolve and link all ingredients
-    const resolvedIngredients = await resolveIngredientGvars(supabase, allIngredients);
-    const ingredientIds = await linkIngredientsToParentVariable(supabase, mainGlobalVariableId, resolvedIngredients, active_ingredients || []);
+    const resolvedIngredients = await resolveIngredientGvars(db, allIngredients);
+    const ingredientIds = await linkIngredientsToParentVariable(db, mainGlobalVariableId, resolvedIngredients, active_ingredients || []);
     
     return { patientTreatmentId, ingredientIds };
 }
@@ -254,7 +261,9 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
   { success: true; data: SaveVariableMeasurementsSuccessData } |
   { success: false; error: string }
 > {
+  // The Supabase client is still used for Storage uploads and cleanup.
   const supabase = await createClient();
+  const db = await getUserDb();
 
   // --- 1. Parse and Validate Base Input (+ userId) --- 
   const inputData: Record<string, any> = {};
@@ -319,10 +328,10 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
   try {
     // Map 'supplement' to 'treatment' for global variable lookup/creation
     const typeForGVar = validatedData.type === 'supplement' ? 'treatment' : validatedData.type;
-    mainGlobalVariableId = await findOrCreateGlobalVariable(supabase, validatedData.name, typeForGVar, validatedData.details);
-    const { userVariableId: uvid } = await findOrCreateUserVariable(supabase, userId, mainGlobalVariableId);
+    mainGlobalVariableId = await findOrCreateGlobalVariable(db, validatedData.name, typeForGVar, validatedData.details);
+    const { userVariableId: uvid } = await findOrCreateUserVariable(userId, mainGlobalVariableId);
     userVariableId = uvid;
-    productId = await upsertProductDetails(supabase, mainGlobalVariableId, validatedData); 
+    productId = await upsertProductDetails(db, mainGlobalVariableId, validatedData); 
 
     // --- 4. Upload Images (Specific to this action) --- 
     uploadedFilesInfo = await uploadAndLinkImages(supabase, userId, userVariableId, imageFilesToUpload, uploadedStoragePaths);
@@ -330,21 +339,21 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
     // --- 5. Dispatch to Type-Specific Handlers --- 
     if (type === 'food') {
         const { foodDetailsId: fid, ingredientIds: iids } = await _handleSaveFoodVariable(
-            supabase, userId, mainGlobalVariableId, validatedData
+            db, userId, mainGlobalVariableId, validatedData
         );
         foodDetailsId = fid;
         ingredientIds = iids || [];
     } else if (type === 'treatment' || type === 'supplement') {
         const { patientTreatmentId: ptid, ingredientIds: iids } = await _handleSaveTreatmentVariable(
-            supabase, userId, mainGlobalVariableId, userVariableId, validatedData
+            db, userId, mainGlobalVariableId, userVariableId, validatedData
         );
         patientTreatmentId = ptid;
         ingredientIds = iids || [];
     } else { // Handle 'other' case (type === 'other')
         logger.info("Handling 'other' type variable save", { mainGlobalVariableId }); 
         const otherData = validatedData as SaveVariableMeasurementsInput & { type: 'other' }; 
-        const resolvedIngredients = await resolveIngredientGvars(supabase, otherData.ingredients || []);
-        ingredientIds = await linkIngredientsToParentVariable(supabase, mainGlobalVariableId, resolvedIngredients, []);
+        const resolvedIngredients = await resolveIngredientGvars(db, otherData.ingredients || []);
+        ingredientIds = await linkIngredientsToParentVariable(db, mainGlobalVariableId, resolvedIngredients, []);
     }
 
     // --- 6. Revalidate Paths --- 
@@ -391,14 +400,15 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
 // Helper Functions (Keep specific ones, remove extracted)
 // ==================================
 
-// Helper function type definitions expecting the resolved client
-type ResolvedSupabaseClient = SupabaseClient<Database, "public">;
+function errorMessage(error: unknown): string {
+    return error instanceof Error ? error.message : String(error);
+}
 
 // findOrCreateGlobalVariable - REMOVED (moved to lib/gvars.lib.ts)
 
 // upsertProductDetails - KEEP for now
 async function upsertProductDetails(
-    supabase: ResolvedSupabaseClient,
+    db: UserDb,
     globalVariableId: string,
     data: SaveVariableMeasurementsInput
 ): Promise<string | null> {
@@ -414,25 +424,28 @@ async function upsertProductDetails(
         return null;
     }
 
-    const { data: productData, error } = await supabase
-        .from('products')
-        .upsert({
-          global_variable_id: globalVariableId,
-          product_type: productType,
-          name: typeof name === 'string' ? name.trim() : name,
-          // Safely trim optional strings
-          brand_name: typeof brand === 'string' ? brand.trim() : undefined,
-          upc: typeof upc === 'string' ? upc.trim() : undefined,
-        }, { onConflict: 'global_variable_id' })
-        .select('id')
-        .single();
-        
-    if (error || !productData) {
+    const productPayload = {
+        global_variable_id: globalVariableId,
+        product_type: productType,
+        name: typeof name === 'string' ? name.trim() : name,
+        // Safely trim optional strings
+        brand_name: typeof brand === 'string' ? brand.trim() : undefined,
+        upc: typeof upc === 'string' ? upc.trim() : undefined,
+    };
+
+    try {
+        const productData = await db.products.upsert({
+            where: { global_variable_id: globalVariableId },
+            create: productPayload,
+            update: productPayload,
+            select: { id: true },
+        });
+        logger.info('Product details saved/updated', { productId: productData.id });
+        return productData.id;
+    } catch (error) {
         logger.warn('Could not save/update product details', { error, globalVariableId });
         return null; // Non-fatal, return null
     }
-    logger.info('Product details saved/updated', { productId: productData.id });
-    return productData.id;
 }
 
 // findOrCreateUserVariable - REMOVED (moved to lib/user-variables.lib.ts)

@@ -21,9 +21,9 @@ interface ConditionsListProps {
 export function ConditionsList({ conditions }: ConditionsListProps) {
   const [selectedCondition, setSelectedCondition] = useState<string | null>(null)
 
-  const formatDate = (date: string | null): string => {
+  const formatDate = (date: Date | null): string => {
     if (!date) return "N/A"
-    return new Date(date).toLocaleDateString('en-US', {
+    return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
       day: 'numeric'

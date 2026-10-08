@@ -1,9 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Database } from "@/lib/database.types"
-
-type Trial = Database["public"]["Tables"]["trials"]["Row"]
+import type { Trial } from "@/lib/actions/trials"
 
 interface RecentActivityProps {
   activities: Trial[]

@@ -16,7 +16,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { createClient } from "@/utils/supabase/client"
+import { searchTreatmentOptionsAction } from "@/lib/actions/treatments"
 
 interface TreatmentSearchProps {
   onSelect: (treatment: { id: string; name: string }) => void
@@ -34,59 +34,8 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
     const searchTreatments = async () => {
       setLoading(true)
       setTreatments([])
-      const supabase = createClient()
-
       try {
-        let treatmentQuery = supabase
-          .from("global_treatments")
-          .select(
-            `
-            id,
-            global_variables!inner(name)
-          `,
-          )
-          .is("deleted_at", null)
-          .limit(10)
-
-        if (searchQuery.trim()) {
-          const { data: synonyms, error: synonymError } = await supabase
-            .from("global_variable_synonyms")
-            .select("global_variable_id")
-            .ilike("name", `${searchQuery}%`)
-            .limit(50)
-
-          if (synonymError) throw synonymError
-
-          const matchingVarIds = synonyms?.map((s) => s.global_variable_id) || []
-          const uniqueMatchingVarIds = [...new Set(matchingVarIds)]
-
-          console.log(
-            "[TreatmentSearch] Matching Global Variable IDs via Synonyms:",
-            uniqueMatchingVarIds,
-          )
-
-          if (uniqueMatchingVarIds.length === 0) {
-            setTreatments([])
-            setLoading(false)
-            return
-          }
-          treatmentQuery = treatmentQuery.in("id", uniqueMatchingVarIds)
-        }
-
-        const { data, error } = await treatmentQuery
-
-        console.log("[TreatmentSearch] Final Supabase response:", { data, error })
-
-        if (error) throw error
-
-        const formattedTreatments = data
-          ? data.map((t) => ({
-              id: t.id,
-              name: (t.global_variables as any)?.name || "Unknown Treatment Name",
-            }))
-          : []
-
-        setTreatments(formattedTreatments)
+        setTreatments(await searchTreatmentOptionsAction(searchQuery))
       } catch (error) {
         console.error("Error searching treatments:", error)
         setTreatments([])

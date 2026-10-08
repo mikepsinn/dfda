@@ -1,11 +1,12 @@
 "use server"
 
-import { createClient } from '@/utils/supabase/server'
 import type { Database } from '@/lib/database.types'
+import { Prisma, isRecordNotFound } from '@/lib/db'
+import { getUserDb } from '@/lib/db/server'
+import { timeOfDayFromString, timeOfDayToString } from '@/lib/time-of-day'
 import { RRule, rrulestr } from 'rrule'
 import { DateTime } from 'luxon'
 import { toZonedTime } from 'date-fns-tz'
-// import { handleDatabaseCollectionResponse } from '@/lib/actions-helpers' // Unused import
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 // REMOVE the Trigger.dev client import
@@ -17,7 +18,9 @@ import { getUserProfile } from "@/lib/profile"; // Import profile helper
 import { getServerUser } from "@/lib/server-auth"; // Import if needed for user context
 
 // Types
-export type ReminderSchedule = Database['public']['Tables']['reminder_schedules']['Row']
+type ReminderScheduleRow = Database['public']['Tables']['reminder_schedules']['Row']
+// time_of_day is returned to callers as an 'HH:MM:SS' string
+export type ReminderSchedule = Omit<ReminderScheduleRow, 'time_of_day'> & { time_of_day: string }
 // Type for data coming from the client component
 export type ReminderScheduleClientData = {
   rruleString: string;
@@ -28,9 +31,13 @@ export type ReminderScheduleClientData = {
   default_value?: number | null;
 }
 // Type for inserting/updating in the database
-export type ReminderScheduleDbData = Omit<Database['public']['Tables']['reminder_schedules']['Insert'], 'id' | 'created_at' | 'updated_at' | 'next_trigger_at'> & {
-    // We might allow updating next_trigger_at separately later
-    next_trigger_at?: string | null;
+export type ReminderScheduleDbData = Omit<
+    Prisma.reminder_schedulesUncheckedCreateInput,
+    'id' | 'created_at' | 'updated_at' | 'reminder_notifications'
+>
+
+function toReminderSchedule(row: ReminderScheduleRow): ReminderSchedule {
+    return { ...row, time_of_day: timeOfDayToString(row.time_of_day) };
 }
 
 // --- Server Actions ---
@@ -40,7 +47,6 @@ export async function getReminderSchedulesForUserVariableAction(
   userId: string, 
   userVariableId: string
 ): Promise<ReminderSchedule[]> {
-    const supabase = await createClient();
     logger.info('Fetching reminder schedules for user variable', { userId, userVariableId });
 
     if (!userId || !userVariableId) {
@@ -48,20 +54,22 @@ export async function getReminderSchedulesForUserVariableAction(
         return [];
     }
 
-    // Fetch reminder schedules directly using the provided user_variable_id
-    const { data, error } = await supabase
-        .from('reminder_schedules')
-        .select('*')
-        .eq('user_id', userId) // Still ensure it belongs to the user
-        .eq('user_variable_id', userVariableId) // Use the provided ID
-        .order('created_at', { ascending: true });
-
-    if (error) {
+    try {
+        const db = await getUserDb();
+        // Fetch reminder schedules directly using the provided user_variable_id
+        const schedules = await db.reminder_schedules.findMany({
+            where: {
+                user_id: userId, // Still ensure it belongs to the user
+                user_variable_id: userVariableId,
+            },
+            orderBy: { created_at: 'asc' },
+        });
+        return schedules.map(toReminderSchedule);
+    } catch (error) {
         logger.error('Error fetching reminder schedules using user_variable_id', { userVariableId, userId, error });
         // Consider throwing or returning an error object if fetch fails critically
         return []; // Return empty on error for now
     }
-    return data || [];
 }
 
 /**
@@ -69,7 +77,6 @@ export async function getReminderSchedulesForUserVariableAction(
  * to get the variable name and other details
  */
 export async function getAllReminderSchedulesForUserAction(userId: string): Promise<any[]> {
-    const supabase = await createClient();
     logger.info('Fetching all reminder schedules for user', { userId });
 
     if (!userId) {
@@ -77,47 +84,56 @@ export async function getAllReminderSchedulesForUserAction(userId: string): Prom
         return [];
     }
 
-    // Fetch schedules with joined data
-    const { data, error } = await supabase
-        .from('reminder_schedules')
-        .select(`
-            id,
-            is_active,
-            time_of_day,
-            rrule,
-            start_date,
-            end_date,
-            default_value,
-            user_variables!inner (
-                id,
-                global_variable_id,
-                global_variables (
-                    id,
-                    name,
-                    emoji,
-                    variable_category_id,
-                    default_unit_id,
-                    default_unit:default_unit_id(
-                        id,
-                        abbreviated_name
-                    )
-                ),
-                preferred_unit_id,
-                units:preferred_unit_id (
-                    id, 
-                    abbreviated_name
-                )
-            )
-        `)
-        .eq('user_id', userId)
-        .order('created_at', { ascending: false });
+    try {
+        const db = await getUserDb();
+        // Fetch schedules with joined data
+        const schedules = await db.reminder_schedules.findMany({
+            where: { user_id: userId },
+            orderBy: { created_at: 'desc' },
+            select: {
+                id: true,
+                is_active: true,
+                time_of_day: true,
+                rrule: true,
+                start_date: true,
+                end_date: true,
+                default_value: true,
+                user_variables: {
+                    select: {
+                        id: true,
+                        global_variable_id: true,
+                        global_variables: {
+                            select: {
+                                id: true,
+                                name: true,
+                                emoji: true,
+                                variable_category_id: true,
+                                default_unit_id: true,
+                                units: { select: { id: true, abbreviated_name: true } },
+                            },
+                        },
+                        preferred_unit_id: true,
+                        units: { select: { id: true, abbreviated_name: true } },
+                    },
+                },
+            },
+        });
 
-    if (error) {
+        return schedules.map(({ time_of_day, user_variables, ...schedule }) => {
+            const { units: default_unit, ...globalVariable } = user_variables.global_variables;
+            return {
+                ...schedule,
+                time_of_day: timeOfDayToString(time_of_day),
+                user_variables: {
+                    ...user_variables,
+                    global_variables: { ...globalVariable, default_unit },
+                },
+            };
+        });
+    } catch (error) {
         logger.error('Error fetching all reminder schedules for user', { userId, error });
         return [];
     }
-
-    return data || [];
 }
 
 // Upsert a reminder schedule for a specific user variable
@@ -127,7 +143,6 @@ export async function upsertReminderScheduleAction(
     userId: string,
     scheduleIdToUpdate?: string | null
 ): Promise<{ success: boolean; data?: ReminderSchedule; error?: string; message?: string }> {
-    const supabase = await createClient();
     logger.info('Upserting reminder schedule', { userVariableId, scheduleIdToUpdate, isActive: scheduleData.isActive });
 
     // --- Get DB Connection String for Worker ---
@@ -241,140 +256,104 @@ export async function upsertReminderScheduleAction(
         // --- End Determine next_trigger_at ---
 
 
-        const dbData: Omit<ReminderScheduleDbData, 'next_trigger_at'> & { user_id: string; next_trigger_at?: string | null } = {
+        const dbData: ReminderScheduleDbData = {
             user_id: userId,
             user_variable_id: userVariableId,
             is_active: scheduleData.isActive,
             rrule: scheduleData.rruleString,
-            time_of_day: scheduleData.timeOfDay,
-            start_date: scheduleData.startDate.toISOString(), // Store start date as sent by client
-            end_date: scheduleData.endDate ? scheduleData.endDate.toISOString() : null,
+            time_of_day: timeOfDayFromString(scheduleData.timeOfDay),
+            start_date: scheduleData.startDate, // Store start date as sent by client
+            end_date: scheduleData.endDate ?? null,
             default_value: scheduleData.default_value,
-            next_trigger_at: nextTriggerAtIso,
+            next_trigger_at: nextTriggerAtIso ? new Date(nextTriggerAtIso) : null,
         };
 
-        let response;
-        let savedScheduleId: string | undefined;
+        const db = await getUserDb();
+        let savedSchedule: ReminderScheduleRow;
+        try {
+            if (scheduleIdToUpdate) {
+                logger.info('[UPSERT-UPDATE] Starting update process', { scheduleIdToUpdate });
+                savedSchedule = await db.reminder_schedules.update({
+                    where: { id: scheduleIdToUpdate, user_id: userId },
+                    data: dbData,
+                });
+            } else {
+                logger.info('Inserting new schedule');
+                savedSchedule = await db.reminder_schedules.create({ data: dbData });
+            }
+        } catch (error) {
+            logger.error('Error upserting reminder schedule in DB', { error, userVariableId, scheduleIdToUpdate });
+            if (isRecordNotFound(error)) {
+                return { success: false, error: 'Reminder schedule not found.' };
+            }
+            throw error;
+        }
+        const savedScheduleId = savedSchedule.id;
 
         if (scheduleIdToUpdate) {
             // === UPDATE ===
-            logger.info('[UPSERT-UPDATE] Starting update process', { scheduleIdToUpdate });
-            response = await supabase
-                .from('reminder_schedules')
-                .update(dbData)
-                .eq('id', scheduleIdToUpdate)
-                .eq('user_id', userId)
-                .select()
-                .single();
-            
-            if (response.error) {
-                 logger.error('[UPSERT-UPDATE] Database update failed', { scheduleIdToUpdate, error: response.error });
-                 // Error will be thrown later
-            } else if (response.data) {
-                savedScheduleId = response.data.id;
-                logger.info('[UPSERT-UPDATE] DB update successful', { savedScheduleId });
-                // Only proceed if we have a valid ID
-                if (savedScheduleId) { 
-                    logger.info('[UPSERT-UPDATE] Proceeding with cleanup/requeue', { savedScheduleId });
-                    
-                    // --- Delete Future Pending Notifications ---
-                    logger.info('[UPSERT-UPDATE] Deleting future pending notifications', { savedScheduleId });
-                    const { error: deleteError } = await supabase
-                        .from('reminder_notifications')
-                        .delete()
-                        .eq('reminder_schedule_id', savedScheduleId)
-                        .eq('status', 'pending')
-                        .gt('notification_trigger_at', new Date().toISOString());
+            logger.info('[UPSERT-UPDATE] DB update successful, proceeding with cleanup/requeue', { savedScheduleId });
 
-                    if (deleteError) {
-                        logger.warn('[UPSERT-UPDATE] Failed to delete future pending notifications (continuing...)', { savedScheduleId, error: deleteError });
-                    } else {
-                        logger.info('[UPSERT-UPDATE] Successfully deleted future pending notifications', { savedScheduleId });
-                    }
-                    // --- End Deletion ---
-
-                    // --- Enqueue Worker Job to Regenerate First Notification ---
-                    // Ensure connectionString is available (checked earlier, but good practice)
-                    if (!connectionString) {
-                         logger.error('[UPSERT-UPDATE] CRITICAL: Connection string missing before enqueue attempt!');
-                         // Potentially return an error here or rely on earlier check
-                    } else {
-                        try {
-                            logger.info('[UPSERT-UPDATE] Attempting to enqueue processSingleSchedule job', { savedScheduleId, connectionString: '****' }); // Mask connection string in logs
-                            await quickAddJob(
-                                { connectionString }, 
-                                'processSingleSchedule', 
-                                { scheduleId: savedScheduleId } 
-                            );
-                            logger.info('[UPSERT-UPDATE] Successfully enqueued processSingleSchedule job', { savedScheduleId });
-                        } catch (enqueueError) {
-                            logger.error('[UPSERT-UPDATE] Error enqueuing processSingleSchedule job', {
-                                savedScheduleId,
-                                error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
-                            });
-                            // Log error but don't fail the user-facing operation
-                        }
-                    }
-                    // --- End Enqueue ---
-                } else {
-                     logger.error('[UPSERT-UPDATE] Update response missing schedule ID, cannot enqueue job', { scheduleIdToUpdate, responseData: response.data });
-                }
-            } else {
-                 // This case should ideally not happen if there's no error but also no data
-                 logger.warn('[UPSERT-UPDATE] DB update returned no error and no data', { scheduleIdToUpdate });
+            // --- Delete Future Pending Notifications ---
+            logger.info('[UPSERT-UPDATE] Deleting future pending notifications', { savedScheduleId });
+            try {
+                await db.reminder_notifications.deleteMany({
+                    where: {
+                        reminder_schedule_id: savedScheduleId,
+                        status: 'pending',
+                        notification_trigger_at: { gt: new Date() },
+                    },
+                });
+                logger.info('[UPSERT-UPDATE] Successfully deleted future pending notifications', { savedScheduleId });
+            } catch (deleteError) {
+                logger.warn('[UPSERT-UPDATE] Failed to delete future pending notifications (continuing...)', { savedScheduleId, error: deleteError });
             }
+            // --- End Deletion ---
+
+            // --- Enqueue Worker Job to Regenerate First Notification ---
+            try {
+                logger.info('[UPSERT-UPDATE] Attempting to enqueue processSingleSchedule job', { savedScheduleId, connectionString: '****' }); // Mask connection string in logs
+                await quickAddJob(
+                    { connectionString },
+                    'processSingleSchedule',
+                    { scheduleId: savedScheduleId }
+                );
+                logger.info('[UPSERT-UPDATE] Successfully enqueued processSingleSchedule job', { savedScheduleId });
+            } catch (enqueueError) {
+                logger.error('[UPSERT-UPDATE] Error enqueuing processSingleSchedule job', {
+                    savedScheduleId,
+                    error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
+                });
+                // Log error but don't fail the user-facing operation
+            }
+            // --- End Enqueue ---
         } else {
             // === INSERT ===
-            logger.info('Inserting new schedule');
-            response = await supabase
-                .from('reminder_schedules')
-                .insert(dbData)
-                .select()
-                .single();
-            if (!response.error && response.data) {
-                savedScheduleId = response.data.id;
-                 // Only proceed if we have a valid ID
-                if (savedScheduleId) {
-                    // --- Enqueue Worker Job for NEW schedule ---
-                     try {
-                        logger.info('Enqueuing processSingleSchedule job for NEW schedule', { savedScheduleId });
-                        await quickAddJob(
-                            { connectionString }, 
-                            'processSingleSchedule', 
-                            { scheduleId: savedScheduleId } // Now guaranteed to be string
-                        );
-                        logger.info('Successfully enqueued processSingleSchedule job for new schedule', { savedScheduleId });
-                    } catch (enqueueError) {
-                        logger.error('Error enqueuing processSingleSchedule job after insert', {
-                            savedScheduleId,
-                            error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
-                        });
-                    }
-                    // --- End Enqueue ---
-                } else {
-                    logger.error('Insert response missing schedule ID', { responseData: response.data });
-                }
+            // --- Enqueue Worker Job for NEW schedule ---
+            try {
+                logger.info('Enqueuing processSingleSchedule job for NEW schedule', { savedScheduleId });
+                await quickAddJob(
+                    { connectionString },
+                    'processSingleSchedule',
+                    { scheduleId: savedScheduleId }
+                );
+                logger.info('Successfully enqueued processSingleSchedule job for new schedule', { savedScheduleId });
+            } catch (enqueueError) {
+                logger.error('Error enqueuing processSingleSchedule job after insert', {
+                    savedScheduleId,
+                    error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
+                });
             }
+            // --- End Enqueue ---
         }
 
-        if (response.error) {
-            logger.error('Error upserting reminder schedule in DB', { error: response.error, userVariableId, scheduleIdToUpdate });
-            throw response.error;
-        }
-
-        // Check if data exists before accessing it
-        if (!response.data) {
-             logger.error('Upsert operation did not return data', { userVariableId, scheduleIdToUpdate });
-             throw new Error('Failed to save schedule data.');
-        }
-
-        logger.info('Successfully upserted reminder schedule DB record', { scheduleId: response.data.id });
+        logger.info('Successfully upserted reminder schedule DB record', { scheduleId: savedScheduleId });
 
         // Revalidate paths (could be more specific if needed)
-        revalidatePath('/patient/reminders'); 
+        revalidatePath('/patient/reminders');
         revalidatePath(`/patient/user-variables/${userVariableId}`);
 
-        return { success: true, data: response.data, message: 'Reminder schedule saved.' };
+        return { success: true, data: toReminderSchedule(savedSchedule), message: 'Reminder schedule saved.' };
 
     } catch (error) {
         logger.error("Failed in upsertReminderScheduleAction", { userVariableId, scheduleIdToUpdate, error: error instanceof Error ? error.message : String(error) });
@@ -389,7 +368,6 @@ export async function deleteReminderScheduleAction(
     userId: string,
     userVariableId: string
 ): Promise<{ success: boolean; error?: string }> {
-    const supabase = await createClient();
     logger.warn('Deleting reminder schedule and related notifications', { scheduleId, userId });
 
     if (!scheduleId) {
@@ -397,17 +375,14 @@ export async function deleteReminderScheduleAction(
     }
 
     try {
+        const db = await getUserDb();
         // Deleting the schedule should cascade delete notifications due to FK constraint
-        const { error } = await supabase
-            .from('reminder_schedules')
-            .delete()
-            .eq('id', scheduleId)
-            .eq('user_id', userId); // Ensure user owns the schedule
-
-        if (error) {
-            logger.error('Error deleting reminder schedule', { error, scheduleId });
-            throw error;
-        }
+        await db.reminder_schedules.deleteMany({
+            where: {
+                id: scheduleId,
+                user_id: userId, // Ensure user owns the schedule
+            },
+        });
 
         logger.info('Successfully deleted reminder schedule', { scheduleId });
         revalidatePath('/patient/reminders'); // Revalidate general page
@@ -434,7 +409,6 @@ export async function createDefaultReminderAction(
   variableName: string,
   variableCategory: string | null // Pass category to determine message
 ): Promise<{ success: boolean; error?: string }> {
-    const supabase = await createClient();
     logger.info('Creating default reminder', { userId, userVariableId, variableName });
 
     const user = await getServerUser(); // Get user object for profile fetching
@@ -470,20 +444,6 @@ export async function createDefaultReminderAction(
         message = `Did you take your ${variableName} dose?`;
     } // Add more specific messages if needed
 
-    // Construct schedule data
-    const scheduleDbData: ReminderScheduleDbData = {
-        user_id: userId,
-        user_variable_id: userVariableId,
-        rrule: defaultRruleString,
-        time_of_day: defaultTime,
-        start_date: startDate, 
-        is_active: true, 
-        notification_message_template: message, 
-        // Add other required fields from Insert type if necessary, e.g.:
-        // default_value: null, // If applicable
-        // notification_title_template: `Track ${variableName}`, // If applicable
-    };
-
     // Use the existing upsert logic (or a simplified insert if preferred)
     // For simplicity, let's call the core insert directly here
     // We need to calculate next_trigger_at similar to upsert
@@ -491,8 +451,6 @@ export async function createDefaultReminderAction(
     try {
         const rule = rrulestr(defaultRruleString) as RRule;
         const nowUtc = new Date();
-        // Remove unused variables
-        // const [hours, minutes] = defaultTime.split(':').map(Number);
         const dtstartWithTime = DateTime.fromISO(startDate + 'T' + defaultTime, { zone: userTimezone }).toJSDate();
 
         const options = {
@@ -510,16 +468,27 @@ export async function createDefaultReminderAction(
         logger.error('Error calculating next trigger for default reminder', { userId, userVariableId, error: e });
         // Proceed without next_trigger_at? Or return error?
     }
-    
-    (scheduleDbData as any).next_trigger_at = nextTriggerAtIso; // Assign using type assertion for now
 
-    const { data, error } = await supabase
-        .from('reminder_schedules')
-        .insert(scheduleDbData as any) // Use type assertion for insert if type mismatch persists
-        .select()
-        .single();
+    // Construct schedule data
+    const scheduleDbData: ReminderScheduleDbData = {
+        user_id: userId,
+        user_variable_id: userVariableId,
+        rrule: defaultRruleString,
+        time_of_day: timeOfDayFromString(defaultTime),
+        start_date: new Date(startDate), // UTC midnight of the user's current date
+        is_active: true, 
+        notification_message_template: message, 
+        next_trigger_at: nextTriggerAtIso ? new Date(nextTriggerAtIso) : null,
+        // Add other required fields from Insert type if necessary, e.g.:
+        // default_value: null, // If applicable
+        // notification_title_template: `Track ${variableName}`, // If applicable
+    };
 
-    if (error) {
+    let data: ReminderScheduleRow;
+    try {
+        const db = await getUserDb();
+        data = await db.reminder_schedules.create({ data: scheduleDbData });
+    } catch (error) {
         logger.error('Error inserting default reminder schedule', { userId, userVariableId, error });
         return { success: false, error: 'Could not create default reminder.' };
     }
@@ -533,13 +502,14 @@ export async function createDefaultReminderAction(
     // --- Enqueue Worker Job --- 
     const connectionString = process.env.DATABASE_URL;
     if (connectionString && data.next_trigger_at) { 
+        const triggerAt = data.next_trigger_at.toISOString();
         try {
             await quickAddJob(
                 { connectionString }, // Worker options
                 'schedule_next_notification', // Job identifier
-                { scheduleId: data.id, triggerAt: data.next_trigger_at } // Payload
+                { scheduleId: data.id, triggerAt } // Payload
             );
-            logger.info('Enqueued schedule_next_notification job for new default schedule', { scheduleId: data.id, triggerAt: data.next_trigger_at });
+            logger.info('Enqueued schedule_next_notification job for new default schedule', { scheduleId: data.id, triggerAt });
         } catch (workerError) {
             logger.error('Failed to enqueue schedule_next_notification job for new default schedule', { scheduleId: data.id, error: workerError });
             // Decide if this should cause the action to fail
@@ -939,42 +909,32 @@ export async function completeReminderNotificationAction(
    skipped: boolean = false,
    logDetails?: any // Optional log details to store
 ): Promise<{ success: boolean; error?: string; }> { 
-   const supabase = await createClient();
    const newStatus = skipped ? 'skipped' : 'completed';
    logger.info('Completing reminder notification', { notificationId, userId, newStatus, logDetails });
 
    try {
-        const updateData: Partial<Database['public']['Tables']['reminder_notifications']['Update']> = {
-            status: newStatus,
-            completed_or_skipped_at: new Date().toISOString(),
-            log_details: logDetails || null
-        };
-
-        const { error } = await supabase
-            .from('reminder_notifications')
-            .update(updateData)
-            .eq('id', notificationId)
-            .eq('user_id', userId)
-            .eq('status', 'pending'); // Important: Only update pending notifications
-
-        if (error) {
-            logger.error("Error updating reminder notification status", { notificationId, userId, error });
-            // Check if the notification wasn't pending (already completed/skipped?)
-            if (error.code === 'PGRST116') { // PostgREST error for no rows updated (might indicate status wasn't pending)
-                 return { success: false, error: "Notification might have already been processed." };
-            }
-            return { success: false, error: "Could not update the notification status." };
-        }
-        
-        // Revalidate relevant paths. Revalidating the inbox path is key.
-        revalidatePath(`/components/patient/TrackingInbox`); 
-        revalidatePath(`/patient/dashboard`);
-
-        logger.info("Reminder notification completed successfully", { notificationId, newStatus });
-        return { success: true }; 
-
+        const db = await getUserDb();
+        await db.reminder_notifications.updateMany({
+            where: {
+                id: notificationId,
+                user_id: userId,
+                status: 'pending', // Important: Only update pending notifications
+            },
+            data: {
+                status: newStatus,
+                completed_or_skipped_at: new Date(),
+                log_details: logDetails || Prisma.DbNull,
+            },
+        });
    } catch (error) {
-       logger.error('Failed in completeReminderNotificationAction', { notificationId, error: error instanceof Error ? error.message : String(error) });
-       return { success: false, error: error instanceof Error ? error.message : "An unknown error occurred." };
+        logger.error("Error updating reminder notification status", { notificationId, userId, error });
+        return { success: false, error: "Could not update the notification status." };
    }
+
+   // Revalidate relevant paths. Revalidating the inbox path is key.
+   revalidatePath(`/components/patient/TrackingInbox`); 
+   revalidatePath(`/patient/dashboard`);
+
+   logger.info("Reminder notification completed successfully", { notificationId, newStatus });
+   return { success: true }; 
 } 

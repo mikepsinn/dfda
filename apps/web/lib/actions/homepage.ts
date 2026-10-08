@@ -1,40 +1,37 @@
 "use server"
 
-import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
 import { logger } from '@/lib/logger'
 import type { Database } from '@/lib/database.types'
-import { handleDatabaseCollectionResponse } from '@/lib/actions-helpers'
 
 export async function getFeaturedTrialsAction() {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
-  const response = await supabase
-    .from('trials')
-    .select(`
-      id,
-      title,
-      description,
-      research_partner_id,
-      treatment_id,
-      condition_id,
-      status,
-      enrollment_target,
-      current_enrollment,
-      start_date,
-      end_date,
-      created_at,
-      updated_at
-    `)
-    .eq('status', 'active')
-    .order('created_at', { ascending: false })
-    .limit(3)
-
-  if (response.error) {
-    logger.error('Error fetching featured trials:', { error: response.error })
+  try {
+    return await db.trials.findMany({
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        research_partner_id: true,
+        treatment_id: true,
+        condition_id: true,
+        status: true,
+        enrollment_target: true,
+        current_enrollment: true,
+        start_date: true,
+        end_date: true,
+        created_at: true,
+        updated_at: true,
+      },
+      where: { status: 'active' },
+      orderBy: { created_at: 'desc' },
+      take: 3,
+    })
+  } catch (error) {
+    logger.error('Error fetching featured trials:', { error })
     return []
   }
-
-  return handleDatabaseCollectionResponse<Database['public']['Tables']['trials']['Row']>(response)
 }
 
 export type PatientDashboardData = {
@@ -43,31 +40,12 @@ export type PatientDashboardData = {
 }
 
 export async function getPatientDashboardDataAction(): Promise<PatientDashboardData> {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
-  const [enrollmentsResponse, submissionsResponse] = await Promise.all([
-    supabase
-      .from('trial_enrollments')
-      .select('*')
-      .order('created_at', { ascending: false }),
-    supabase
-      .from('data_submissions')
-      .select('*')
-      .order('created_at', { ascending: false }),
+  const [enrollments, submissions] = await Promise.all([
+    db.trial_enrollments.findMany({ orderBy: { created_at: 'desc' } }),
+    db.data_submissions.findMany({ orderBy: { created_at: 'desc' } }),
   ])
 
-  if (enrollmentsResponse.error) {
-    logger.error('Error fetching enrollments:', { error: enrollmentsResponse.error })
-    throw enrollmentsResponse.error
-  }
-
-  if (submissionsResponse.error) {
-    logger.error('Error fetching submissions:', { error: submissionsResponse.error })
-    throw submissionsResponse.error
-  }
-
-  return {
-    enrollments: enrollmentsResponse.data,
-    submissions: submissionsResponse.data,
-  }
+  return { enrollments, submissions }
 }

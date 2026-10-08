@@ -1,10 +1,6 @@
-import { SupabaseClient } from '@supabase/supabase-js';
-import { Database } from './database.types';
+import type { UserDb } from '@/lib/db';
 import { logger } from './logger';
 import { findOrCreateGlobalVariable, findUnitId } from './global_variables.lib'; // Updated path
-
-// Define the resolved Supabase client type here or import from a shared types file
-type ResolvedSupabaseClient = SupabaseClient<Database, "public">;
 
 // Define necessary types (consider moving to a shared types file later)
 // Type for input ingredient data (minimal structure needed by resolveIngredientGvars)
@@ -25,14 +21,14 @@ interface ResolvedIngredientInfo extends InputIngredientInfo {
  * finds their unit IDs, and returns the ingredients with this resolved info.
  */
 export async function resolveIngredientGvars(
-    supabase: ResolvedSupabaseClient,
+    db: UserDb,
     ingredients: InputIngredientInfo[]
 ): Promise<ResolvedIngredientInfo[]> {
     const resolvedIngredients: ResolvedIngredientInfo[] = [];
     for (const ing of ingredients) {
         // Ensure 'other' type is used when creating GVar for an ingredient
-        const gvarId = await findOrCreateGlobalVariable(supabase, ing.name, 'other', undefined, true, ing.unit);
-        const unitId = await findUnitId(supabase, ing.unit);
+        const gvarId = await findOrCreateGlobalVariable(db, ing.name, 'other', undefined, true, ing.unit);
+        const unitId = await findUnitId(db, ing.unit);
         resolvedIngredients.push({ ...ing, global_variable_id: gvarId, unit_id: unitId });
     }
     return resolvedIngredients;
@@ -43,7 +39,7 @@ export async function resolveIngredientGvars(
  * in the variable_ingredients table.
  */
 export async function linkIngredientsToParentVariable(
-    supabase: ResolvedSupabaseClient,
+    db: UserDb,
     parentGlobalVariableId: string,
     resolvedIngredients: ResolvedIngredientInfo[],
     // Used to mark which ingredients should be flagged as 'active' (for treatments)
@@ -53,22 +49,22 @@ export async function linkIngredientsToParentVariable(
         return [];
     }
 
-    const ingredientsToInsert = resolvedIngredients.map((ing, index) => {
+    const ingredientsToInsert = resolvedIngredients.flatMap((ing, index) => {
         // Check if this ingredient name was in the original active list
         const isActive = originalActiveIngredients.some(activeIng => activeIng.name === ing.name);
         if (!ing.global_variable_id) {
             logger.warn('Skipping ingredient link due to missing global_variable_id', { ingredientName: ing.name, parent: parentGlobalVariableId });
-            return null; // Skip if GVar ID wasn't resolved
+            return []; // Skip if GVar ID wasn't resolved
         }
-        return {
+        return [{
             parent_global_variable_id: parentGlobalVariableId,
             ingredient_global_variable_id: ing.global_variable_id,
             quantity_per_serving: ing.quantity,
             unit_id: ing.unit_id,
             is_active_ingredient: isActive,
             display_order: index,
-        };
-    }).filter(Boolean) as Database['public']['Tables']['variable_ingredients']['Insert'][]; // Filter out nulls and assert type
+        }];
+    });
 
     if (ingredientsToInsert.length === 0) {
         logger.warn('No valid ingredients to link after filtering', { parentGlobalVariableId });
@@ -76,15 +72,24 @@ export async function linkIngredientsToParentVariable(
     }
 
     // Upsert ingredients based on the unique constraint (parent_id, ingredient_id)
-    const { data, error } = await supabase
-        .from('variable_ingredients')
-        .upsert(ingredientsToInsert, { onConflict: 'parent_global_variable_id, ingredient_global_variable_id' })
-        .select('id');
-
-    if (error || !data) {
+    const ids: string[] = [];
+    try {
+        for (const ingredient of ingredientsToInsert) {
+            const { parent_global_variable_id, ingredient_global_variable_id, ...fields } = ingredient;
+            const row = await db.variable_ingredients.upsert({
+                where: {
+                    parent_global_variable_id_ingredient_global_variable_id: { parent_global_variable_id, ingredient_global_variable_id },
+                },
+                create: ingredient,
+                update: fields,
+                select: { id: true },
+            });
+            ids.push(row.id);
+        }
+    } catch (error) {
         logger.error('Failed to link ingredients to parent variable', { error, parentGlobalVariableId });
-        throw new Error(`DB error (linking ingredients): ${error?.message || 'Upsert failed'}`);
+        throw new Error(`DB error (linking ingredients): ${error instanceof Error ? error.message : 'Upsert failed'}`);
     }
-    logger.info(`Linked ${data.length} ingredients to variable`, { parentGlobalVariableId });
-    return data.map(d => d.id);
+    logger.info(`Linked ${ids.length} ingredients to variable`, { parentGlobalVariableId });
+    return ids;
 } 

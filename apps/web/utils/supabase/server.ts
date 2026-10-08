@@ -1,12 +1,11 @@
 import { createServerClient as createServerClientSSR } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { Database } from '@/lib/database.types'
 import { env } from '@/lib/env'
 
 export const createClient = async () => {
   const cookieStore = await cookies()
 
-  return createServerClientSSR<Database>(
+  return createServerClientSSR(
     env.NEXT_PUBLIC_SUPABASE_URL!,
     env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {

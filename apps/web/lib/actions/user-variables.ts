@@ -1,6 +1,6 @@
 "use server"
 
-import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
 import type { Database } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
 import { unstable_noStore as noStore } from 'next/cache'
@@ -29,7 +29,6 @@ export type UserVariableWithMeasurements = UserVariableWithDetails & {
  * Fetches a specific user variable by its ID, ensuring it belongs to the user.
  */
 export async function getUserVariableByIdAction(userVariableId: string, userId: string): Promise<UserVariable | null> {
-    const supabase = await createClient();
     logger.info("Fetching user variable by ID", { userVariableId, userId });
 
     if (!userVariableId || !userId) {
@@ -37,27 +36,22 @@ export async function getUserVariableByIdAction(userVariableId: string, userId: 
         return null;
     }
 
-    const { data, error } = await supabase
-        .from('user_variables')
-        .select('*')
-        .eq('id', userVariableId)
-        .eq('user_id', userId)
-        .maybeSingle();
-
-    if (error) {
+    try {
+        const db = await getUserDb();
+        return await db.user_variables.findFirst({
+            where: { id: userVariableId, user_id: userId },
+        });
+    } catch (error) {
         logger.error("Error fetching user variable", { userVariableId, userId, error });
         // Don't throw, return null to allow the page to handle "not found"
         return null;
     }
-
-    return data;
 }
 
 /**
  * Fetches all user variables for a user with associated global variable information
  */
 export async function getAllUserVariablesAction(userId: string): Promise<any[]> {
-    const supabase = await createClient();
     logger.info("Fetching all user variables", { userId });
 
     if (!userId) {
@@ -65,24 +59,22 @@ export async function getAllUserVariablesAction(userId: string): Promise<any[]> 
         return [];
     }
 
-    const { data, error } = await supabase
-        .from('user_variables')
-        .select(`
-            id,
-            global_variable_id,
-            global_variables(id, name, variable_category_id),
-            preferred_unit_id,
-            units:preferred_unit_id(id, abbreviated_name)
-        `)
-        .eq('user_id', userId)
-        .is('deleted_at', null);
-
-    if (error) {
+    try {
+        const db = await getUserDb();
+        return await db.user_variables.findMany({
+            where: { user_id: userId, deleted_at: null },
+            select: {
+                id: true,
+                global_variable_id: true,
+                global_variables: { select: { id: true, name: true, variable_category_id: true } },
+                preferred_unit_id: true,
+                units: { select: { id: true, abbreviated_name: true } }, // Preferred unit
+            },
+        });
+    } catch (error) {
         logger.error("Error fetching all user variables", { userId, error });
         return [];
     }
-
-    return data || [];
 }
 
 /**
@@ -99,27 +91,25 @@ export async function getUserVariablesWithDetailsAction(userId: string): Promise
   }
 
   try {
-    const supabase = await createClient();
-    const { data, error } = await supabase
-      .from("user_variables")
-      .select(`
-        *,
-        global_variables ( name, emoji )
-      `)
-      .eq("user_id", userId)
-      .is("deleted_at", null) // Ensure we only get active variables
-      .order("created_at", { ascending: true }); // Optional: order by creation date
+    const db = await getUserDb();
+    const data: UserVariableWithDetails[] = await db.user_variables.findMany({
+      where: {
+        user_id: userId,
+        deleted_at: null, // Ensure we only get active variables
+      },
+      include: {
+        global_variables: {
+          select: { name: true, emoji: true, default_unit_id: true, variable_category_id: true },
+        },
+      },
+      orderBy: { created_at: "asc" }, // Optional: order by creation date
+    });
 
-    if (error) {
-      logger.error("getUserVariablesWithDetailsAction: Error fetching user variables", { userId, error });
-      return { success: false, error: error.message };
-    }
+    logger.info("getUserVariablesWithDetailsAction: Fetched user variables successfully", { userId, count: data.length });
+    return { success: true, data };
 
-    logger.info("getUserVariablesWithDetailsAction: Fetched user variables successfully", { userId, count: data?.length ?? 0 });
-    return { success: true, data: data as UserVariableWithDetails[] }; // Cast needed because of join
-
-  } catch (error: any) {
-    logger.error("getUserVariablesWithDetailsAction: Unhandled error", { userId, error });
+  } catch (error) {
+    logger.error("getUserVariablesWithDetailsAction: Error fetching user variables", { userId, error });
     return { success: false, error: "An unexpected error occurred." };
   }
 }
@@ -138,29 +128,26 @@ export async function getUserVariableDetailsAction(userVariableId: string, userI
   }
 
   try {
-    const supabase = await createClient();
-    const { data, error } = await supabase
-      .from("user_variables")
-      .select(`
-        *,
-        global_variables ( 
-            name, 
-            emoji, 
-            default_unit_id, 
-            variable_category_id, 
-            units: units!inner (abbreviated_name) 
-        ),
-        units:preferred_unit_id ( abbreviated_name )
-      `)
-      .eq("id", userVariableId)
-      .eq("user_id", userId)
-      .is("deleted_at", null)
-      .maybeSingle();
-
-    if (error) {
-      logger.error("getUserVariableDetailsAction: Error fetching user variable details", { userId, userVariableId, error });
-      return { success: false, error: error.message };
-    }
+    const db = await getUserDb();
+    const data: UserVariableWithDetails | null = await db.user_variables.findFirst({
+      where: {
+        id: userVariableId,
+        user_id: userId,
+        deleted_at: null,
+      },
+      include: {
+        global_variables: {
+          select: {
+            name: true,
+            emoji: true,
+            default_unit_id: true,
+            variable_category_id: true,
+            units: { select: { abbreviated_name: true } }, // Default unit
+          },
+        },
+        units: { select: { abbreviated_name: true } }, // Preferred unit
+      },
+    });
 
     if (!data) {
        logger.warn("getUserVariableDetailsAction: User variable not found or access denied", { userId, userVariableId });
@@ -168,11 +155,10 @@ export async function getUserVariableDetailsAction(userVariableId: string, userI
     }
 
     logger.info("getUserVariableDetailsAction: Fetched user variable details successfully", { userId, userVariableId });
-    // The select might return slightly different structure, cast carefully or adjust select
-    return { success: true, data: data as UserVariableWithDetails };
+    return { success: true, data };
 
-  } catch (error: any) {
-    logger.error("getUserVariableDetailsAction: Unhandled error", { userId, userVariableId, error });
+  } catch (error) {
+    logger.error("getUserVariableDetailsAction: Error fetching user variable details", { userId, userVariableId, error });
     return { success: false, error: "An unexpected error occurred." };
   }
 }

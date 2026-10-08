@@ -5,7 +5,7 @@ dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 import fs from 'fs'; // Import Node.js file system module
 import crypto from 'crypto'; // For generating citation IDs from URLs
-import { createClient } from '@supabase/supabase-js'; // Keep for fetching initial predictors
+import { adminDb } from '@/lib/db';
 import {
   generateInterventionSqlData, // Import the renamed function
   // type GeneratedSqlData // Optional: Import type if needed elsewhere
@@ -75,31 +75,25 @@ async function main() {
   logger.info(`${LOG_PREFIX} Using Citation ID for AI Model: ${aiCitationId} (${aiModelName})`);
   logger.info(`${LOG_PREFIX} Generating SQL seed file for ALL '${VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS}' variables, including grounded citations.`);
 
-  // --- Initialize Supabase Client (ONLY for fetching predictors) ---
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  // Use anon key as we only need read access for predictors
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY; 
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    logger.error(`${LOG_PREFIX} Supabase URL or Anon Key is not configured for fetching predictors.`);
+  // --- Database connection (ONLY for fetching predictors) ---
+  if (!process.env.DATABASE_URL) {
+    logger.error(`${LOG_PREFIX} DATABASE_URL is not configured for fetching predictors.`);
     process.exit(1);
   }
-  const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
-     auth: { persistSession: false }
-  });
 
   // --- Fetch Intervention Variables --- (Keep this part)
   logger.info(`${LOG_PREFIX} Fetching variables from category: ${VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS}...`);
-  const { data: interventionVariables, error: fetchError } = await supabase
-    .from('global_variables')
-    .select('id, name')
-    .eq('variable_category_id', VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS);
-
-  if (fetchError) {
+  let interventionVariables: { id: string; name: string }[];
+  try {
+    interventionVariables = await adminDb.global_variables.findMany({
+      where: { variable_category_id: VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS },
+      select: { id: true, name: true },
+    });
+  } catch (fetchError) {
       logger.error(`${LOG_PREFIX} Failed to fetch intervention variables:`, fetchError);
       process.exit(1);
   }
-  if (!interventionVariables || interventionVariables.length === 0) {
+  if (interventionVariables.length === 0) {
       logger.warn(`${LOG_PREFIX} No variables found in category ${VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS}. Exiting.`);
       process.exit(0);
   }

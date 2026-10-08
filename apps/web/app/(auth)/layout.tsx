@@ -25,7 +25,7 @@ export default async function AuthLayout({
       const redirectPath =
         userType === 'patient' ? '/patient/' :
         userType === 'provider' ? '/provider/' :
-        userType === 'research-partner' ? '/research-partner/' :
+        userType === 'research_partner' ? '/research-partner/' :
         userType === 'developer' ? '/developer/' :
         '/select-role'; // Fallback if role is unexpected or not handled
       redirect(redirectPath);

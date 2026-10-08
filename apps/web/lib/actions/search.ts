@@ -1,10 +1,7 @@
 "use server";
 
 import { logger } from "@/lib/logger";
-// import { createServerActionClient } from "@supabase/auth-helpers-nextjs"; // Remove old import
-import { createClient } from "@/utils/supabase/server"; // Correct import
-// import { cookies } from "next/headers"; // No longer needed here
-import type { Database } from "@/lib/database.types";
+import { getUserDb } from "@/lib/db/server";
 import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories'; // Import category IDs
 
 // Define the structure for search results, aligning with SearchModal
@@ -17,14 +14,15 @@ export interface SearchResult {
   kind?: "condition" | "treatment"; // Set when the variable is a known condition or treatment
 }
 
-type GlobalVar = Database["public"]["Tables"]["global_variables"]["Row"];
 // Conditions and treatments are variables with a row in global_conditions or global_treatments.
-type Subtypes = { global_conditions?: unknown; global_treatments?: unknown };
-const SUBTYPES = "global_conditions(id), global_treatments(id)";
-const present = (row: unknown) => Array.isArray(row) ? row.length > 0 : row != null;
+type Subtypes = { global_conditions: { id: string } | null; global_treatments: { id: string } | null };
+const SUBTYPES = {
+  global_conditions: { select: { id: true } },
+  global_treatments: { select: { id: true } },
+} as const;
 function kindOf(variable: Subtypes): SearchResult["kind"] {
-  if (present(variable.global_conditions)) return "condition";
-  if (present(variable.global_treatments)) return "treatment";
+  if (variable.global_conditions) return "condition";
+  if (variable.global_treatments) return "treatment";
   return undefined;
 }
 // Assuming user_variables joins with global_variables to get the name
@@ -36,7 +34,7 @@ type UserVarJoin = {
     id: string; // global_variable id
     name: string;
     variable_category_id: string; // Added category ID
-  } & Subtypes | null;
+  } & Subtypes;
 };
 
 // Helper function to determine the correct href based on variable category
@@ -68,9 +66,7 @@ export async function searchVariablesAction(
   userId?: string | null
 ): Promise<SearchResult[]> {
   logger.info("searchVariablesAction: Called", { query, userId });
-  // const cookieStore = cookies(); // Removed
-  // Use the server client utility, which handles cookies internally
-  const supabase = await createClient(); 
+  const db = await getUserDb();
 
   const searchTerm = query.trim();
   let globalResults: SearchResult[] = [];
@@ -78,21 +74,15 @@ export async function searchVariablesAction(
   let userVars: UserVarJoin[] = []; // Initialize as empty array instead of null
 
   try {
-    // Fetch Global Variables matching the query
-    // Using ilike for case-insensitive search
-    const globalVariablesQuery = supabase
-      .from("global_variables")
-      .select(`id, name, variable_category_id, ${SUBTYPES}`) // Category, and whether it is a condition or treatment
-      .ilike("name", `%${searchTerm}%`)
-      .limit(10); // Limit results
+    // Fetch Global Variables matching the query (case-insensitive)
+    try {
+      const globalVars = await db.global_variables.findMany({
+        where: { name: { contains: searchTerm, mode: "insensitive" } },
+        select: { id: true, name: true, variable_category_id: true, ...SUBTYPES }, // Category, and whether it is a condition or treatment
+        take: 10, // Limit results
+      });
 
-    const { data: globalVars, error: globalError } = await globalVariablesQuery;
-
-    if (globalError) {
-      logger.error("searchVariablesAction: Error fetching global variables", { error: globalError });
-      // Decide if you want to throw or return partial/empty results
-    } else if (globalVars) {
-      globalResults = globalVars.map((variable: Pick<GlobalVar, 'id' | 'name' | 'variable_category_id'> & Subtypes) => ({
+      globalResults = globalVars.map((variable) => ({
         id: variable.id,
         name: variable.name,
         // Generate href based on the category ID
@@ -101,31 +91,28 @@ export async function searchVariablesAction(
         variableCategoryId: variable.variable_category_id,
         kind: kindOf(variable),
       }));
+    } catch (globalError) {
+      logger.error("searchVariablesAction: Error fetching global variables", { error: globalError });
+      // Decide if you want to throw or return partial/empty results
     }
 
     // Fetch User Variables if logged in
     if (userId) {
-      const userVariablesQuery = supabase
-        .from("user_variables")
-        .select(`
-          id,
-          global_variable_id,
-          user_id,
-          global_variables!inner( id, name, variable_category_id, ${SUBTYPES} ) 
-        `)
-        .eq("user_id", userId)
-        .ilike("global_variables.name", `%${searchTerm}%`) // Filter on joined table
-        .limit(5);
-
-      const { data: fetchedUserVars, error: userError } = await userVariablesQuery;
-
-      if (userError) {
-        logger.error("searchVariablesAction: Error fetching user variables", { error: userError });
-      } else if (fetchedUserVars) {
-        // Correct type should be inferred now if query is valid
-        userVars = fetchedUserVars; 
+      try {
+        userVars = await db.user_variables.findMany({
+          where: {
+            user_id: userId,
+            global_variables: { is: { name: { contains: searchTerm, mode: "insensitive" } } }, // Filter on joined table
+          },
+          select: {
+            id: true,
+            global_variable_id: true,
+            user_id: true,
+            global_variables: { select: { id: true, name: true, variable_category_id: true, ...SUBTYPES } },
+          },
+          take: 5,
+        });
         userResults = userVars
-          .filter((uv): uv is UserVarJoin & { global_variables: NonNullable<UserVarJoin['global_variables']> } => !!uv.global_variables) // Type guard
           .map((userVariable) => ({
             // NOTE: The 'id' here is the user_variable ID, but the link should probably go
             // to the underlying global variable's page. We use the global ID for the href.
@@ -137,6 +124,8 @@ export async function searchVariablesAction(
             variableCategoryId: userVariable.global_variables.variable_category_id,
             kind: kindOf(userVariable.global_variables),
           }));
+      } catch (userError) {
+        logger.error("searchVariablesAction: Error fetching user variables", { error: userError });
       }
     }
 

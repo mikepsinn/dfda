@@ -1,29 +1,14 @@
 "use server"
 
-import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
 // Removed unused Database type
 import { logger } from '@/lib/logger'
 // Removed unused revalidatePath
-
-// Keep handleDatabaseResponse if needed, remove handleDatabaseCollectionResponse if unused after refactor
-// import { handleDatabaseResponse, handleDatabaseCollectionResponse } from "@/lib/actions-helpers" 
 
 // Remove base types if they are only used by removed functions
 // export type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
 // export type TreatmentRatingInsert = Database["public"]["Tables"]["treatment_ratings"]["Insert"]
 // export type TreatmentRatingUpdate = Database["public"]["Tables"]["treatment_ratings"]["Update"]
-
-// Type representing a row from the new view (adjust if needed after type generation)
-// We map the view's columns to this type for clarity within the action
-type TreatmentRatingsStatsRow = {
-  treatment_id: string;
-  condition_id: string;
-  total_ratings: number;
-  average_effectiveness: number | null; 
-  positive_ratings_count: number; // View defines as >= 7
-  negative_ratings_count: number; // View defines as <= 3
-  neutral_ratings_count: number;  // View defines as > 3 and < 7
-}
 
 // Type for aggregated effectiveness statistics returned by actions
 // Adjusted to match view's direct counts
@@ -53,20 +38,13 @@ export async function getTreatmentEffectivenessStatsAction(
   treatmentId: string, 
   conditionId: string
 ): Promise<EffectivenessStats> {
-  const supabase = await createClient();
+  const db = await getUserDb();
   logger.info('Fetching effectiveness stats from view', { treatmentId, conditionId });
 
-  const { data, error } = await supabase
-    .from('treatment_ratings_stats') // Query the new view
-    .select('*')
-    .eq('treatment_id', treatmentId)
-    .eq('condition_id', conditionId)
-    .maybeSingle(); // Expect 0 or 1 row
-
-  if (error) {
-    logger.error("Error fetching treatment effectiveness stats from view:", { treatmentId, conditionId, error });
-    throw new Error("Failed to fetch treatment effectiveness stats");
-  }
+  // The view has one row per treatment and condition
+  const data = await db.treatment_ratings_stats.findFirst({
+    where: { treatment_id: treatmentId, condition_id: conditionId },
+  });
 
   // Default stats if no ratings found for this combo
   const defaultStats: EffectivenessStats = {
@@ -102,43 +80,37 @@ export async function getTreatmentEffectivenessStatsAction(
 export async function getTreatmentConditionsWithEffectivenessAction(
   treatmentId: string
 ): Promise<TreatmentConditionEffectiveness[]> {
-  const supabase = await createClient();
+  const db = await getUserDb();
   logger.info('Fetching conditions with effectiveness stats from view for treatment', { treatmentId });
 
-  // Query the view and join to get condition names/descriptions
-  const { data, error } = await supabase
-    .from('treatment_ratings_stats') // Query the new view
-    .select(`
-      *,
-      condition:conditions!inner (
-        gv:global_variables!inner ( name, description )
-      )
-    `)
-    .eq('treatment_id', treatmentId);
+  const stats = await db.treatment_ratings_stats.findMany({
+    where: { treatment_id: treatmentId },
+  });
 
-  if (error) {
-    logger.error("Error fetching rated conditions stats from view:", { treatmentId, error });
-    throw new Error("Failed to fetch treatment conditions with effectiveness stats");
-  }
-
-  if (!data) return [];
+  // Look up condition names/descriptions (a condition's id is its global variable id)
+  const conditionIds = stats.flatMap(row => (row.condition_id ? [row.condition_id] : []));
+  const conditions = await db.global_variables.findMany({
+    where: { id: { in: conditionIds } },
+    select: { id: true, name: true, description: true },
+  });
+  const conditionsById = new Map(conditions.map(condition => [condition.id, condition]));
 
   // Map the results
-  const results: TreatmentConditionEffectiveness[] = data.map(row => {
-    // Type assertion needed here until Supabase types include the view and joins properly
-    const typedRow = row as any as (TreatmentRatingsStatsRow & { condition: { gv: { name: string | null, description: string | null } | null } | null });
-    
-    return {
-      treatment_id: typedRow.treatment_id, // Included for completeness if needed later
-      condition_id: typedRow.condition_id,
-      condition_name: typedRow.condition?.gv?.name ?? 'Unknown Condition',
-      condition_description: typedRow.condition?.gv?.description ?? null,
-      total_ratings: typedRow.total_ratings ?? 0,
-      avg_effectiveness: typedRow.average_effectiveness ?? null,
-      positive_ratings_count: typedRow.positive_ratings_count ?? 0,
-      negative_ratings_count: typedRow.negative_ratings_count ?? 0,
-      neutral_ratings_count: typedRow.neutral_ratings_count ?? 0
-    };
+  const results = stats.flatMap(row => {
+    if (!row.condition_id) return [];
+    const condition = conditionsById.get(row.condition_id);
+
+    return [{
+      treatment_id: row.treatment_id, // Included for completeness if needed later
+      condition_id: row.condition_id,
+      condition_name: condition?.name ?? 'Unknown Condition',
+      condition_description: condition?.description ?? null,
+      total_ratings: row.total_ratings ?? 0,
+      avg_effectiveness: row.average_effectiveness ?? null,
+      positive_ratings_count: row.positive_ratings_count ?? 0,
+      negative_ratings_count: row.negative_ratings_count ?? 0,
+      neutral_ratings_count: row.neutral_ratings_count ?? 0
+    }];
   });
 
   logger.info(`Processed effectiveness stats for ${results.length} conditions related to treatment from view`, { treatmentId });

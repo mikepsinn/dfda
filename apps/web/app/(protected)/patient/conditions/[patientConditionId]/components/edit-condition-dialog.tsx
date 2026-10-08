@@ -66,7 +66,7 @@ export function EditConditionDialog({ patientCondition, children }: EditConditio
     const updates: Partial<Tables<"patient_conditions">> = {
         status: status === "unknown" ? null : status,
         severity: severity === "unknown" ? null : severity,
-        diagnosed_at: diagnosedAt ? new Date(diagnosedAt).toISOString() : null
+        diagnosed_at: diagnosedAt ? new Date(diagnosedAt) : null
     }
 
     startTransition(async () => {

@@ -1,14 +1,15 @@
 'use server'
 
 import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 import { Tables } from "@/lib/database.types" // Import only Tables
 
 // --- Fetch Patient Details ---
 // This combines data from multiple tables needed for the assignment view
-export type PatientAssignmentDetails = 
-  Tables<'patients'> & 
+export type PatientAssignmentDetails =
+  Tables<'patients'> &
   {
     profiles: Pick<Tables<'profiles'>, 'first_name' | 'last_name' | 'email'> | null;
     trial_enrollments: (Pick<Tables<'trial_enrollments'>, 'id' | 'enrollment_date' | 'status' | 'trial_id'> & {
@@ -30,26 +31,56 @@ export async function getPatientDetailsForAssignment(patientId: string): Promise
         return null
     }
 
-    const { data, error } = await supabase
-        .from('patients')
-        .select(`
-            *,
-            profiles ( first_name, last_name, email ),
-            trial_enrollments!inner ( id, enrollment_date, status, trial_id, trials ( id, title, description ) ),
-            patient_conditions ( id, diagnosed_at, severity, status, notes, conditions ( id ) )
-        `)
-        .eq('id', patientId)
-        // .eq('trial_enrollments.status', 'active') // Filter for active enrollment?
-        .maybeSingle()
+    try {
+        const db = await getUserDb()
+        const patient = await db.patients.findFirst({
+            where: {
+                id: patientId,
+                trial_enrollments: { some: {} },
+                // trial_enrollments: { some: { status: 'active' } }, // Filter for active enrollment?
+            },
+            include: {
+                profiles: { select: { first_name: true, last_name: true, email: true } },
+                trial_enrollments: {
+                    select: {
+                        id: true,
+                        enrollment_date: true,
+                        status: true,
+                        trial_id: true,
+                        trials: { select: { id: true, title: true, description: true } },
+                    },
+                },
+                patient_conditions: {
+                    select: {
+                        id: true,
+                        diagnosed_at: true,
+                        severity: true,
+                        status: true,
+                        notes: true,
+                        global_conditions: { select: { id: true } },
+                    },
+                },
+            },
+        })
 
-    if (error) {
+        if (!patient) {
+            return null
+        }
+
+        // TODO: Fetch condition names, potentially measurements for assessments/biomarkers separately if needed.
+
+        const { patient_conditions, ...details } = patient
+        return {
+            ...details,
+            patient_conditions: patient_conditions.map(({ global_conditions, ...condition }) => ({
+                ...condition,
+                conditions: global_conditions,
+            })),
+        }
+    } catch (error) {
         logger.error('Error fetching patient assignment details', { patientId, userId: user.id, error })
         return null
     }
-    
-    // TODO: Fetch condition names, potentially measurements for assessments/biomarkers separately if needed.
-
-    return data as PatientAssignmentDetails | null; 
 }
 
 // --- Fetch Intervention Options ---
@@ -81,32 +112,38 @@ export async function getInterventionOptionsForTrial(trialId: string): Promise<I
 
     // THIS IS A MAJOR PLACEHOLDER - Adapt query based on your actual schema structure for trial arms/interventions
     // Option 1: Fetch treatments directly linked to the trial?
-    const { data, error } = await supabase
-        .from('trials') 
-        .select(`
-            global_treatments!inner (id, treatment_type, global_variables(name, description) ) 
-        `)
-        .eq('id', trialId)
-        .single()
-        
-    // Option 2: Fetch protocol versions and get interventions from there?
-    // const { data, error } = await supabase.from('protocol_versions').select('...').eq('trial_id', trialId).eq('status', 'active')
-
-    if (error || !data || !data.global_treatments) {
+    let trial
+    try {
+        const db = await getUserDb()
+        trial = await db.trials.findUnique({
+            where: { id: trialId },
+            select: {
+                global_treatments: {
+                    select: { id: true, treatment_type: true, global_variables: { select: { name: true, description: true } } },
+                },
+            },
+        })
+    } catch (error) {
         logger.error('Error fetching intervention options for trial', { trialId, userId: user.id, error })
         return [] // Return empty array on error
+    }
+
+    // Option 2: Fetch protocol versions and get interventions from there?
+
+    if (!trial) {
+        logger.error('Error fetching intervention options for trial', { trialId, userId: user.id })
+        return []
     }
 
     // TODO: Map the fetched data (treatments/protocol details) to the InterventionOption structure.
     // This will likely involve fetching more related data (side effects, contraindications, etc.)
     // For now, returning mock-like data based on treatment name.
-    // Wrap data.treatments in an array if it exists and isn't already an array
-    const treatmentsArray = data.global_treatments ? (Array.isArray(data.global_treatments) ? data.global_treatments : [data.global_treatments]) : [];
-    const options: InterventionOption[] = treatmentsArray.map((t: any, index: number) => ({
-        id: t.id, // Use treatment ID
-        treatment_type: t.treatment_type,
-        name: t.global_variables?.name || `Intervention ${index + 1}`, // Use name from global_variables
-        description: t.global_variables?.description || `Description for ${t.global_variables?.name}`, 
+    const treatment = trial.global_treatments
+    const options: InterventionOption[] = [{
+        id: treatment.id, // Use treatment ID
+        treatment_type: treatment.treatment_type,
+        name: treatment.global_variables.name || 'Intervention 1', // Use name from global_variables
+        description: treatment.global_variables.description || `Description for ${treatment.global_variables.name}`,
         // Add dummy data for other fields until real data sources are identified/implemented
         details: "Details not yet implemented.",
         frequency: "Frequency TBD",
@@ -115,7 +152,7 @@ export async function getInterventionOptionsForTrial(trialId: string): Promise<I
         monitoring: "Monitoring details TBD.",
         sideEffects: [],
         contraindications: [],
-    }));
+    }];
 
     // Manually add a Control option if applicable?
     options.push({
@@ -161,22 +198,25 @@ export async function assignIntervention(payload: AssignInterventionPayload): Pr
 
     // Update the trial_enrollments table. Add specific columns if they exist
     // e.g., 'assigned_treatment_id', 'assignment_notes', 'assignment_date'
-    const { error: updateError } = await supabase
-        .from('trial_enrollments')
-        .update({
-            // Replace with your actual column names:
-            // assigned_treatment_id: payload.assignedInterventionId, 
-            assignment_notes: payload.notes, 
-            assignment_date: new Date().toISOString(), 
-            status: 'active_intervention' // Example: Update status? Or maybe just log assignment?
+    try {
+        const db = await getUserDb()
+        await db.trial_enrollments.updateMany({
+            where: {
+                id: payload.enrollmentId,
+                // Add further checks? e.g., ensure status is appropriate for assignment?
+                // status: 'enrolled',
+            },
+            data: {
+                // Replace with your actual column names (these columns do not exist yet):
+                // assigned_treatment_id: payload.assignedInterventionId,
+                // assignment_notes: payload.notes,
+                // assignment_date: new Date(),
+                status: 'active_intervention' // Example: Update status? Or maybe just log assignment?
+            },
         })
-        .eq('id', payload.enrollmentId)
-        // Add further checks? e.g., ensure status is appropriate for assignment?
-        // .eq('status', 'enrolled') 
-
-    if (updateError) {
-        logger.error('Error updating trial enrollment with intervention assignment', { userId: user.id, ...payload, error: updateError })
-        return { success: false, error: `Database error: ${updateError.message}` };
+    } catch (error) {
+        logger.error('Error updating trial enrollment with intervention assignment', { userId: user.id, ...payload, error })
+        return { success: false, error: 'Database error: the intervention could not be assigned.' };
     }
 
     logger.info('Successfully assigned intervention', { userId: user.id, ...payload })

@@ -103,7 +103,7 @@ export function CreateFormWizard() {
     },
     {
       id: 2,
-      type: "multiple-choice",
+      type: "multiple_choice",
       order: 2,
       question_text: "Naming Objects and Fingers",
       description: "Ability to name objects and fingers when prompted",
@@ -122,7 +122,7 @@ export function CreateFormWizard() {
     },
     {
       id: 3,
-      type: "multiple-choice",
+      type: "multiple_choice",
       order: 3,
       question_text: "Commands",
       description: "Ability to follow simple commands",
@@ -141,7 +141,7 @@ export function CreateFormWizard() {
     },
     {
       id: 4,
-      type: "multiple-choice",
+      type: "multiple_choice",
       order: 4,
       question_text: "Constructional Praxis",
       description: "Ability to copy geometric forms",
@@ -251,7 +251,7 @@ export function CreateFormWizard() {
             {question.description && <p className="text-xs text-muted-foreground pt-1">{question.description}</p>}
           </div>
         )
-      case "multiple-choice":
+      case "multiple_choice":
       case "checkbox": // Checkbox and Dropdown use ChoiceBased options too
       case "dropdown":
         const mcOptions = question.options as ChoiceBasedQuestionOptions | null;
@@ -340,7 +340,7 @@ export function CreateFormWizard() {
                     case 'text': 
                       defaultOptions = { multiline: false, placeholder: '' } as TextQuestionOptions;
                       break;
-                    case 'multiple-choice':
+                    case 'multiple_choice':
                     case 'checkbox':
                     case 'dropdown':
                       defaultOptions = { choices: [{value: 'option1', label: 'Option 1'}], allowMultiple: value === 'checkbox' } as ChoiceBasedQuestionOptions;
@@ -364,7 +364,7 @@ export function CreateFormWizard() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="text">Text Input</SelectItem>
-                <SelectItem value="multiple-choice">Multiple Choice</SelectItem>
+                <SelectItem value="multiple_choice">Multiple Choice</SelectItem>
                 <SelectItem value="checkbox">Checkboxes</SelectItem>
                 <SelectItem value="dropdown">Dropdown</SelectItem>
                 <SelectItem value="scale">Scale</SelectItem>
@@ -431,7 +431,7 @@ export function CreateFormWizard() {
             </div>
           )}
 
-          {(question.type === "multiple-choice" || question.type === "checkbox" || question.type === "dropdown") && 
+          {(question.type === "multiple_choice" || question.type === "checkbox" || question.type === "dropdown") && 
            questionOptions && 'choices' in questionOptions && (
             <div className="border-t pt-4 mt-4 space-y-4">
               <h4 className="font-medium text-sm">Choice Options</h4>

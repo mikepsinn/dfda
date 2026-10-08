@@ -94,7 +94,7 @@ export const DEMO_ACCOUNTS = {
     profileData: {
       first_name: "Demo",
       last_name: "Sponsor",
-      user_type: "research-partner" as UserTypeEnum,
+      user_type: "research_partner" as UserTypeEnum,
     } satisfies Omit<ProfileInsert, 'id' | 'email'>,
      seedData: {
         notifications: [

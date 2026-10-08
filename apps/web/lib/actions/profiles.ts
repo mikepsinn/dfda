@@ -1,6 +1,6 @@
 "use server"
 
-import { createServerClient } from "@/utils/supabase"
+import { getUserDb } from "@/lib/db/server"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
 import { getUserProfile, createUserProfile, updateUserProfile } from "@/lib/profile"
@@ -12,31 +12,26 @@ export type ProfileUpdate = Database["public"]["Tables"]["profiles"]["Update"]
 type UserTypeEnum = Database["public"]["Enums"]["user_type_enum"]
 
 export async function getProfileByIdAction(id: string): Promise<Profile | null> {
-  const supabase = await createServerClient()
-  const { data, error } = await supabase.from("profiles").select("*").eq("id", id).single()
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.profiles.findUnique({ where: { id } })
+  } catch (error) {
     logger.error("Error fetching profile:", error)
     return null
   }
-
-  return data as Profile
 }
 
 export async function getProfilesByTypeAction(type: UserTypeEnum): Promise<Profile[]> {
-  const supabase = await createServerClient()
-  const { data, error } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("user_type", type)
-    .order("created_at", { ascending: false })
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    return await db.profiles.findMany({
+      where: { user_type: type },
+      orderBy: { created_at: "desc" },
+    })
+  } catch (error) {
     logger.error("Error fetching profiles by type:", error)
     throw new Error("Failed to fetch profiles by type")
   }
-
-  return data as Profile[]
 }
 
 export async function createProfileAction(profile: ProfileInsert): Promise<Profile | null> {
@@ -48,7 +43,7 @@ export async function createProfileAction(profile: ProfileInsert): Promise<Profi
 }
 
 export async function updateProfileAction(id: string, updates: ProfileUpdate): Promise<Profile | null> {
-  const updatesWithTimestamp = { ...updates, updated_at: new Date().toISOString() };
+  const updatesWithTimestamp = { ...updates, updated_at: new Date() };
   const updatedProfile = await updateUserProfile(id, updatesWithTimestamp);
   if (!updatedProfile) {
       throw new Error("Failed to update profile")
@@ -57,10 +52,10 @@ export async function updateProfileAction(id: string, updates: ProfileUpdate): P
 }
 
 export async function deleteProfileAction(id: string): Promise<void> {
-  const supabase = await createServerClient()
-  const { error } = await supabase.from("profiles").delete().eq("id", id)
-
-  if (error) {
+  try {
+    const db = await getUserDb()
+    await db.profiles.deleteMany({ where: { id } })
+  } catch (error) {
     logger.error("Error deleting profile:", error)
     throw new Error("Failed to delete profile")
   }

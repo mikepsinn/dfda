@@ -1,6 +1,7 @@
 'use server'
 
 import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
 import { Database } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
 
@@ -36,13 +37,14 @@ export async function recordUploadMetadata(
     size_bytes: metadata.size_bytes,
   }
 
-  const { data, error } = await supabase
-    .from('uploaded_files')
-    .insert(recordToInsert)
-    .select('id')
-    .single()
-
-  if (error) {
+  let data: { id: string }
+  try {
+    const db = await getUserDb()
+    data = await db.uploaded_files.create({
+      data: recordToInsert,
+      select: { id: true },
+    })
+  } catch (error) {
     logger.error('Error inserting uploaded_files record', { error, record: recordToInsert })
     return null
   }

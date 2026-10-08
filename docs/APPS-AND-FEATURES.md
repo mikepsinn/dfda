@@ -62,7 +62,8 @@ Status meanings:
 
 ## Current application and its features
 
-[`apps/web`](../apps/web) is the canonical Next.js/Supabase app, formerly
+[`apps/web`](../apps/web) is the canonical Next.js app (PostgreSQL through Prisma;
+Supabase still provides sign-in and file storage), formerly
 `apps/dfda-node`. Its reference deployment is `prototype.dfda.earth`; taking
 over `dfda.earth` is a later migration step.
 
@@ -84,7 +85,7 @@ over `dfda.earth` is a later migration step.
 | [`apps/web/cron-enqueuer.ts`](../apps/web/cron-enqueuer.ts) | Scheduled-job enqueueing | Present; a separate process belonging to the web app |
 | [`apps/web/agent`](../apps/web/agent) | LangGraph/CopilotKit agent project, with its own package manifest | Present; nested project, not a separate top-level product app |
 | [`apps/web/sdks/dfda-js-sdk`](../apps/web/sdks/dfda-js-sdk) | JavaScript SDK | Present; nested package |
-| [`apps/web/supabase`](../apps/web/supabase) | App database configuration and SQL migrations | Present; canonical app migrations live here |
+| [`apps/web/supabase`](../apps/web/supabase) and [`apps/web/prisma`](../apps/web/prisma) | App SQL migrations, database guide, Prisma schema and plain-PostgreSQL compatibility SQL | Present; canonical app migrations live in `apps/web/supabase/migrations` |
 | [`packages/legacy-import`](../packages/legacy-import) | Legacy MySQL Prisma schema, query tools, and MySQL-to-PostgreSQL sync | Present; replaces `packages/database` and `packages/db-ops`; retire after migration |
 | [`packages/config-eslint`](../packages/config-eslint) | Shared lint configuration | Present |
 | [`packages/config-typescript`](../packages/config-typescript) | Shared TypeScript configuration | Present |

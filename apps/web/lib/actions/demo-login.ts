@@ -1,7 +1,7 @@
 "use server"
 
 import { createClient as createServerClient } from '@/utils/supabase/server'
-import { supabaseAdmin } from '@/utils/supabase/admin'
+import { adminDb } from '@/lib/db'
 import { DEMO_ACCOUNTS, DemoUserType } from '@/lib/constants/demo-accounts'
 import { createLogger } from '@/lib/logger'
 import { AuthApiError, type User } from '@supabase/supabase-js'
@@ -104,33 +104,28 @@ export async function demoLogin(userType: DemoUserType = "patient"): Promise<{ s
         logger.info('Proceeding to setup demo user data using ADMIN client', { userId });
         
         // --- Direct Profile Upsert using ADMIN client --- 
-        const profileData: ProfileInsert = {
+        const profileData = {
             id: userId,
             email: account.email, 
             ...account.profileData, 
-        };
+        } satisfies ProfileInsert;
 
         try {
-            // Use supabaseAdmin here
-            const { error: profileUpsertError } = await supabaseAdmin
-                .from('profiles')
-                .upsert(profileData) 
-                .select('id') 
-                .single();
-
-            if (profileUpsertError) {
-                logger.error('Direct profile upsert failed using ADMIN client', { userId, error: profileUpsertError });
-            } else {
-                logger.info('Direct profile upsert successful using ADMIN client', { userId });
-            }
+            await adminDb.profiles.upsert({
+                where: { id: userId },
+                create: profileData,
+                update: profileData,
+                select: { id: true },
+            });
+            logger.info('Direct profile upsert successful using ADMIN client', { userId });
         } catch (upsertErr) {
-             logger.error('Unexpected error during direct profile upsert with ADMIN client', { userId, error: upsertErr });
+            logger.error('Direct profile upsert failed using ADMIN client', { userId, error: upsertErr });
         }
         // --- End Direct Profile Upsert ---
 
         // --- Seeding using ADMIN client --- 
         // logger.warn('SKIPPING data seeding for debugging purposes.'); // Remove or keep commented
-        await setupDemoUserData(supabaseAdmin, userId, userType); 
+        await setupDemoUserData(adminDb, userId, userType); 
         // --- End Seeding ---
 
     } else if (!userId || !user) {

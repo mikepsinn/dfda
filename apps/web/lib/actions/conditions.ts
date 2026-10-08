@@ -1,6 +1,6 @@
 "use server"
 
-import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
 import type { Database } from '@/lib/database.types'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
@@ -20,123 +20,78 @@ export type PatientConditionRow = ConditionView; // Alias for clarity in compone
 export type ConditionInsert = Database['public']['Tables']['global_conditions']['Insert']
 export type ConditionUpdate = Database['public']['Tables']['global_conditions']['Update']
 
-// Get all conditions present in the conditions table
-export async function getConditionsAction() {
-  const supabase = await createClient()
+const conditionSummarySelect = {
+  id: true,
+  global_variables: { select: { name: true, description: true, emoji: true } },
+} as const
 
-  const response = await supabase
-    .from('global_conditions')
-    .select(`
-      id,
-      global_variables!inner(
-        name,
-        description,
-        emoji
-      )
-    `)
-    .order('id')
-    .limit(50)
+type ConditionSummaryRow = {
+  id: string
+  global_variables: Pick<Tables<'global_variables'>, 'name' | 'description' | 'emoji'>
+}
 
-  if (response.error) {
-    logger.error('Error fetching conditions:', { error: response.error })
-    throw new Error('Failed to fetch conditions')
-  }
-
-  // Map the response to flatten the structure
-  return response.data.map(item => ({
+// Flatten the joined global_variables fields into the condition
+function toConditionSummary(item: ConditionSummaryRow) {
+  return {
     id: item.id,
     name: item.global_variables.name,
     description: item.global_variables.description,
     emoji: item.global_variables.emoji
-  }));
+  }
+}
+
+// Get all conditions present in the conditions table
+export async function getConditionsAction() {
+  const db = await getUserDb()
+
+  const conditions = await db.global_conditions.findMany({
+    select: conditionSummarySelect,
+    orderBy: { id: 'asc' },
+    take: 50,
+  })
+
+  return conditions.map(toConditionSummary);
 }
 
 // Get a condition by ID with joined name from global_variables
 // This function already seems okay as it uses patient_conditions_view
 // which likely already joins conditions and global_variables.
 export async function getConditionByIdAction(id: string): Promise<ConditionView | null> {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
-  const response = await supabase
-    .from('patient_conditions_view')
-    .select()
-    .eq('id', id)
-    .single()
-
-  if (response.error) {
-    logger.error('Error fetching condition:', { error: response.error })
-    throw new Error('Failed to fetch condition')
-  }
-
-  return response.data
+  return db.patient_conditions_view.findFirst({ where: { id } })
 }
 
 // Get a public condition by its global variable id (the id used in condition URLs)
 export async function getGlobalConditionByIdAction(id: string) {
-  const supabase = await createClient();
+  const db = await getUserDb();
 
-  const { data: condition, error } = await supabase
-    .from('global_conditions')
-    .select(`
-      id,
-      global_variables!inner(
-        name,
-        description,
-        emoji
-      )
-    `)
-    .eq('id', id)
-    .maybeSingle();
-
-  if (error) {
-    logger.error('Error fetching condition by id:', { id, error });
-    throw new Error(`Failed to fetch condition: ${id}`);
-  }
+  const condition = await db.global_conditions.findUnique({
+    where: { id },
+    select: conditionSummarySelect,
+  });
 
   if (!condition) {
     logger.warn('Condition not found by id:', { id });
     return null;
   }
 
-  return {
-    id: condition.id,
-    name: condition.global_variables.name,
-    description: condition.global_variables.description,
-    emoji: condition.global_variables.emoji
-  };
+  return toConditionSummary(condition);
 }
 
 // Search conditions by name, ensuring they exist in the conditions table
 export async function searchConditionsAction(query: string) {
-  const supabase = await createClient()
+  const db = await getUserDb()
   logger.info('Searching conditions with query:', { query })
 
   try {
-    const { data: conditions, error } = await supabase
-      .from('global_conditions')
-      .select(`
-        id,
-        global_variables!inner(
-          name,
-          description,
-          emoji
-        )
-      `)
-      .ilike('global_variables.name', `%${query}%`)
-      .order('id')
+    const conditions = await db.global_conditions.findMany({
+      where: { global_variables: { is: { name: { contains: query, mode: 'insensitive' } } } },
+      select: conditionSummarySelect,
+      orderBy: { id: 'asc' },
+    })
 
-    if (error) {
-      logger.error('Error searching conditions:', { error })
-      throw error
-    }
-
-    // Map the response to flatten the structure
-    const results = (conditions || []).map(item => ({
-      id: item.id,
-      name: item.global_variables.name,
-      description: item.global_variables.description,
-      emoji: item.global_variables.emoji
-    }));
+    const results = conditions.map(toConditionSummary);
 
     logger.info('Found conditions:', { count: results.length });
     return results;
@@ -148,50 +103,33 @@ export async function searchConditionsAction(query: string) {
 
 // Create a new condition
 export async function createConditionAction(condition: ConditionInsert) {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
-  const response = await supabase.from("global_conditions").insert(condition).select().single()
-
-  if (response.error) {
-    logger.error('Error creating condition:', { error: response.error })
-    throw new Error('Failed to create condition')
-  }
+  const created = await db.global_conditions.create({ data: condition })
 
   revalidatePath('/conditions')
-  return response.data
+  return created
 }
 
 // Update a condition
 export async function updateConditionAction(id: string, updates: ConditionUpdate) {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
-  const response = await supabase
-    .from("global_conditions")
-    .update({ ...updates, updated_at: new Date().toISOString() })
-    .eq("id", id)
-    .select()
-    .single()
-
-  if (response.error) {
-    logger.error('Error updating condition:', { error: response.error })
-    throw new Error('Failed to update condition')
-  }
+  const updated = await db.global_conditions.update({
+    where: { id },
+    data: { ...updates, updated_at: new Date() },
+  })
 
   revalidatePath(`/condition/${id}`)
   revalidatePath('/conditions')
-  return response.data
+  return updated
 }
 
 // Delete a condition
 export async function deleteConditionAction(id: string) {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
-  const response = await supabase.from("global_conditions").delete().eq("id", id)
-
-  if (response.error) {
-    logger.error('Error deleting condition:', { error: response.error })
-    throw new Error('Failed to delete condition')
-  }
+  await db.global_conditions.deleteMany({ where: { id } })
 
   revalidatePath('/conditions')
 }
@@ -199,24 +137,14 @@ export async function deleteConditionAction(id: string) {
 // Gets conditions associated with a specific user from the view
 // Returns data matching the PatientConditionRow type (aliased from ConditionView)
 export async function getConditionsByUserAction(userId: string): Promise<PatientConditionRow[]> {
-  const supabase = await createClient()
+  const db = await getUserDb()
   logger.info("Fetching user conditions view for user", { userId })
 
   // Fetch patient conditions directly from the view
-  const response = await supabase
-    .from('patient_conditions_view') // Use the view directly
-    .select('*') // Select all columns from the view
-    .eq('patient_id', userId)
-    // Removed filter on deleted_at as it does not exist in the current view definition
-    .order('condition_name', { ascending: true }); // Order by condition name
-
-  if (response.error) {
-    logger.error("Error fetching user conditions view", { userId, error: response.error })
-    throw new Error("Failed to fetch user conditions")
-  }
-
-  // The data from the view should directly match PatientConditionRow[]
-  return response.data || [];
+  return db.patient_conditions_view.findMany({
+    where: { patient_id: userId },
+    orderBy: { condition_name: 'asc' },
+  });
 }
 
 /**
@@ -233,75 +161,40 @@ export async function getConditionsByUserAction(userId: string): Promise<Patient
  * @returns A promise resolving to an array of Condition objects.
  */
 export async function getConditionsForTreatmentAction(treatmentId: string): Promise<Condition[]> {
-  const supabase = await createClient()
+  const db = await getUserDb()
   logger.info("Fetching conditions associated with treatment", { treatmentId })
 
   // 1. Find patient_ids using the treatment
-  const patientResponse = await supabase
-    .from('patient_treatments')
-    .select('patient_id')
-    .eq('treatment_id', treatmentId)
-    .not('deleted_at', 'is', null);
+  const patientTreatments = await db.patient_treatments.findMany({
+    where: { treatment_id: treatmentId },
+    select: { patient_id: true },
+  });
 
-  if (patientResponse.error) {
-    logger.error('Error fetching patients for treatment:', { treatmentId, error: patientResponse.error });
-    throw new Error('Failed to fetch patients for treatment');
-  }
-
-  const patientIds = patientResponse.data?.map(pt => pt.patient_id) || [];
+  const patientIds = patientTreatments.map(pt => pt.patient_id);
 
   if (patientIds.length === 0) {
     logger.info('No patients found for treatment, thus no associated conditions', { treatmentId });
     return [];
   }
 
-  // 2. Find conditions associated with these patient_ids
-  const conditionResponse = await supabase
-    .from('patient_conditions')
-    .select(`
-      condition:conditions!inner(
-        id,
-        created_at,
-        deleted_at,
-        updated_at,
-        gv:global_variables!inner(
-          name,
-          description
-        )
-      )
-    `)
-    .in('patient_id', patientIds)
-    .not('deleted_at', 'is', null)
-    .not('condition.deleted_at', 'is', null); // Ensure condition itself isn't deleted
-
-  if (conditionResponse.error) {
-    logger.error('Error fetching conditions for patients:', { treatmentId, patientIds, error: conditionResponse.error });
-    throw new Error('Failed to fetch conditions for treatment');
-  }
-
-  if (!conditionResponse.data) {
-    return [];
-  }
-
-  // 3. Extract unique conditions
-  const conditionsMap = new Map<string, Condition>();
-  conditionResponse.data.forEach(item => {
-    // Type assertion for clarity
-    const typedItem = item as any;
-    if (typedItem.condition && typedItem.condition.gv && !conditionsMap.has(typedItem.condition.id)) {
-      conditionsMap.set(typedItem.condition.id, {
-        id: typedItem.condition.id,
-        created_at: typedItem.condition.created_at,
-        deleted_at: typedItem.condition.deleted_at,
-        updated_at: typedItem.condition.updated_at,
-        name: typedItem.condition.gv.name,
-        description: typedItem.condition.gv.description
-      });
-    }
+  // 2. Find the unique (not deleted) conditions these patients have
+  const conditions = await db.global_conditions.findMany({
+    where: {
+      deleted_at: null,
+      patient_conditions: { some: { patient_id: { in: patientIds }, deleted_at: null } },
+    },
+    select: {
+      id: true,
+      created_at: true,
+      deleted_at: true,
+      updated_at: true,
+      global_variables: { select: { name: true, description: true } },
+    },
   });
 
-  // const conditions = Array.from(conditionsMap.values());
-  // logger.info(`Found ${conditions.length} unique conditions associated with treatment`, { treatmentId });
-
-  return Array.from(conditionsMap.values()) // Directly return the array
+  return conditions.map(({ global_variables, ...condition }) => ({
+    ...condition,
+    name: global_variables.name,
+    description: global_variables.description
+  }));
 }

@@ -8,10 +8,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Progress } from "@/components/ui/progress"
-import type { Database } from "@/lib/database.types"
+import type { Trial as TrialRow } from "@/lib/actions/trials"
 
-// Use the auto-generated database type and extend it with UI-specific properties
-type Trial = Database["public"]["Tables"]["trials"]["Row"] & {
+// Extend the trial row with UI-specific properties
+type Trial = TrialRow & {
   progress?: number
   results?: string
   submittedDate?: string
