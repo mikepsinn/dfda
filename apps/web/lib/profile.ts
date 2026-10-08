@@ -1,5 +1,5 @@
 import { getUserDb } from "@/lib/db/server"
-import { dbAs } from "@/lib/db"
+import { adminDb, dbAs } from "@/lib/db"
 import { logger } from "@/lib/logger"
 import type { User } from "@supabase/supabase-js"
 import type { Database } from "@/lib/database.types"
@@ -9,11 +9,18 @@ import { cache } from "react"
 export type Profile = Database['public']['Tables']['profiles']['Row'];
 
 /**
- * Reads the profile of `user`.
+ * Reads the profile of `user`, and creates it when it does not exist yet.
  *
- * Returns null only when no profile row exists. A database error (for example
- * a missing DATABASE_URL or a migration that is not applied) is thrown, so that
- * callers do not mistake it for a profile without a role.
+ * On Supabase, the on_auth_user_created trigger creates the profile at sign-up.
+ * On a plain PostgreSQL database that trigger cannot run, because the users are
+ * in Supabase Auth, not in this database. So the first read creates the row
+ * (id and email, as the trigger did). Choosing a role then creates the
+ * patient, provider or research partner row through the profiles trigger.
+ *
+ * Returns null only when no profile exists and none can be created (a user
+ * without an email). A database error (for example a missing DATABASE_URL or
+ * a migration that is not applied) is thrown, so that callers do not mistake
+ * it for a profile without a role.
  *
  * `user` must come from Supabase Auth (`auth.getUser()`), never from request
  * input. The query runs with row-level security as that user. It does not look
@@ -27,12 +34,22 @@ export const fetchUserProfile = cache(async (user: User): Promise<Profile | null
     where: { id: user.id },
   })
 
-  if (!profile) {
-    logger.warn('User profile not found.', { userId: user.id });
+  if (profile) {
+    return profile;
+  }
+
+  if (!user.email) {
+    logger.warn('User profile not found, and the user has no email to create it with.', { userId: user.id });
     return null;
   }
 
-  return profile;
+  // The user comes from Supabase Auth, so creating their own row is authorized.
+  logger.info('Creating the missing user profile.', { userId: user.id });
+  return adminDb.profiles.upsert({
+    where: { id: user.id },
+    create: { id: user.id, email: user.email },
+    update: {},
+  })
 })
 
 /**
