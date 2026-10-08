@@ -296,12 +296,12 @@ pnpm --filter web db:local:reset
 
 ### Database Setup
 
-The web app uses Supabase for its database and authentication. From the repo root:
+The web app stores its data in PostgreSQL and queries it with Prisma; Supabase provides sign-in and file storage, and its local stack runs the development database. From the repo root:
 
 ```bash
 pnpm --filter web sb:local:start   # start only local Supabase
 pnpm --filter web db:local:reset   # apply migrations and seeds
-pnpm --filter web db:local:types   # regenerate TypeScript types
+pnpm --filter web db:pull          # update the Prisma schema and client
 ```
 
 The database schema is managed through migrations in the `apps/web/supabase/migrations` directory. Each migration represents a specific change to the database structure.
@@ -326,7 +326,6 @@ dfda/
 ├── apps/           # Deployable applications (web)
 ├── packages/       # Shared libraries and tooling
 ├── schema/         # Earlier, unapplied database design
-├── supabase/       # Earlier combined-migration tooling
 ├── docs/           # Documentation
 └── .github/        # GitHub workflows
 ```
