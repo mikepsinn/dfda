@@ -1,13 +1,13 @@
 import { SupabaseClient } from '@supabase/supabase-js';
-import { Database } from './database.types';
+import { getUserDb } from '@/lib/db/server';
 import { logger } from './logger';
 // import { v4 as uuidv4 } from 'uuid'; // REMOVED UNUSED
 import { UNIT_IDS } from '@/lib/constants/units'; // Needed for fallback
 // import { BUCKET_NAME } from '@/lib/constants/storage'; // REMOVED UNUSED
 import { uploadFile } from './storage.lib'; // Import the new upload function
 
-// Define the resolved Supabase client type here or import from a shared types file
-type ResolvedSupabaseClient = SupabaseClient<Database, "public">;
+// Supabase client used for Storage uploads
+type ResolvedSupabaseClient = SupabaseClient;
 
 // Define image types needed by uploadAndLinkImages
 // const IMAGE_TYPES = ['primary', 'nutrition', 'ingredients', 'upc'] as const;
@@ -19,45 +19,35 @@ export type ImageType = 'primary' | 'nutrition' | 'ingredients' | 'upc';
  * linking a user to a global variable.
  */
 export async function findOrCreateUserVariable(
-    supabase: ResolvedSupabaseClient,
     userId: string,
     globalVariableId: string
 ): Promise<{ userVariableId: string, defaultUnitId: string }> {
-    const { data: existingUserVar, error: findError } = await supabase
-      .from('user_variables')
-      .select('id, global_variable_id, global_variables(default_unit_id)') // Fetch default unit via relationship
-      .eq('user_id', userId)
-      .eq('global_variable_id', globalVariableId)
-      .maybeSingle();
-
-    if (findError) {
-        logger.error('DB error checking user_variables', { userId, globalVariableId, error: findError });
-        throw new Error(`DB error checking user_variables: ${findError.message}`);
-    }
+    const db = await getUserDb();
+    const existingUserVar = await db.user_variables.findUnique({
+      where: { user_id_global_variable_id: { user_id: userId, global_variable_id: globalVariableId } },
+      select: { id: true, global_variable_id: true, global_variables: { select: { default_unit_id: true } } }, // Fetch default unit via relationship
+    });
 
     if (existingUserVar) {
         logger.debug('User already tracking this variable', { userId, globalVariableId, userVariableId: existingUserVar.id });
-        const defaultUnitId = existingUserVar.global_variables?.default_unit_id ?? UNIT_IDS.DIMENSIONLESS; // Fallback
+        const defaultUnitId = existingUserVar.global_variables.default_unit_id ?? UNIT_IDS.DIMENSIONLESS; // Fallback
         return { userVariableId: existingUserVar.id, defaultUnitId };
     } else {
         // Fetch the default unit ID from the global variable directly
-        const { data: gvData, error: gvError } = await supabase.from('global_variables').select('default_unit_id').eq('id', globalVariableId).single();
-        if (gvError || !gvData) {
-            logger.error('DB error fetching GVar default unit', { globalVariableId, error: gvError });
-            throw new Error(`DB error fetching GVar default unit: ${gvError?.message || 'Not found'}`);
+        const gvData = await db.global_variables.findUnique({
+            where: { id: globalVariableId },
+            select: { default_unit_id: true },
+        });
+        if (!gvData) {
+            logger.error('DB error fetching GVar default unit', { globalVariableId });
+            throw new Error('DB error fetching GVar default unit: Not found');
         }
         const defaultUnitId = gvData.default_unit_id;
 
-        const { data: newUserVar, error: createError } = await supabase
-            .from('user_variables')
-            .insert({ user_id: userId, global_variable_id: globalVariableId, preferred_unit_id: defaultUnitId })
-            .select('id')
-            .single();
-
-        if (createError || !newUserVar) {
-            logger.error('DB error creating user_variables', { userId, globalVariableId, error: createError });
-            throw new Error(`DB error creating user_variables: ${createError?.message || 'Insert failed'}`);
-        }
+        const newUserVar = await db.user_variables.create({
+            data: { user_id: userId, global_variable_id: globalVariableId, preferred_unit_id: defaultUnitId },
+            select: { id: true },
+        });
         logger.info('Created user variable association', { userVariableId: newUserVar.id });
         return { userVariableId: newUserVar.id, defaultUnitId };
     }
@@ -76,6 +66,7 @@ export async function uploadAndLinkImages(
     uploadedStoragePaths: string[] 
 ): Promise<{ type: ImageType; uploadedFileId: string; userVariableImageLinked: boolean }[]> {
     const results: { type: ImageType; uploadedFileId: string; userVariableImageLinked: boolean }[] = [];
+    const db = await getUserDb();
 
     for (const { type, file } of imageFiles) {
         let currentStoragePath: string | null = null;
@@ -86,28 +77,24 @@ export async function uploadAndLinkImages(
             uploadedStoragePaths.push(currentStoragePath); // Still track for potential cleanup
 
             // Link via uploaded_files Table
-            const { data: uploadedFileData, error: insertFileError } = await supabase
-              .from('uploaded_files')
-              .insert({ uploader_user_id: userId, storage_path: currentStoragePath, file_name: file.name, mime_type: file.type, size_bytes: file.size })
-              .select('id')
-              .single();
-            
-            if (insertFileError || !uploadedFileData) throw new Error(`DB error inserting uploaded_files record: ${insertFileError?.message || 'Insert failed'}`);
+            const uploadedFileData = await db.uploaded_files.create({
+              data: { uploader_user_id: userId, storage_path: currentStoragePath, file_name: file.name, mime_type: file.type, size_bytes: file.size },
+              select: { id: true },
+            });
             const uploadedFileId = uploadedFileData.id;
             logger.info('Uploaded file metadata saved', { type, uploadedFileId });
 
             // Link User Variable and Uploaded File
             let userVariableImageLinked = false;
-            const { error: linkImageError } = await supabase
-              .from('user_variable_images')
-              .insert({ user_variable_id: userVariableId, uploaded_file_id: uploadedFileId, is_primary: type === 'primary' });
-      
-            if (linkImageError) {
-                logger.warn('Failed to link user variable to uploaded image', { error: linkImageError, type, userVariableId, uploadedFileId });
-                // Non-fatal for now
-            } else {
+            try {
+                await db.user_variable_images.create({
+                  data: { user_variable_id: userVariableId, uploaded_file_id: uploadedFileId, is_primary: type === 'primary' },
+                });
                 userVariableImageLinked = true;
                 logger.info('Successfully linked user variable to image', { type, userVariableId, uploadedFileId });
+            } catch (linkImageError) {
+                logger.warn('Failed to link user variable to uploaded image', { error: linkImageError, type, userVariableId, uploadedFileId });
+                // Non-fatal for now
             }
             results.push({ type, uploadedFileId, userVariableImageLinked });
 

@@ -1,8 +1,8 @@
 "use server"
 
-import { createClient } from "@/utils/supabase/server"
+import { getUserDb } from "@/lib/db/server"
 import { logger } from "@/lib/logger"
-import type { /*Database, Tables,*/ TablesInsert, Database, Tables } from "@/lib/database.types"
+import type { TablesInsert, Database } from "@/lib/database.types"
 import { revalidatePath } from "next/cache"
 import { unstable_noStore as noStore } from 'next/cache'
 import { startOfDay, endOfDay } from 'date-fns';
@@ -37,23 +37,6 @@ export type UpdateMeasurementInput = {
   notes?: string | null;
 };
 
-// Helper type for the joined data structure
-// Used in getMeasurementsForDateAction
-type FetchedMeasurement = Tables<'measurements'> & {
-    units: Pick<Tables<'units'>, 'id' | 'abbreviated_name' | 'name'> | null;
-    user_variables: (
-        Pick<Tables<'user_variables'>, 'id' | 'global_variable_id' | 'preferred_unit_id'>
-        & {
-            global_variables: (
-                Pick<Tables<'global_variables'>, 'id' | 'name' | 'variable_category_id' | 'default_unit_id' | 'description' | 'emoji'>
-                & {
-                    variable_categories: Pick<Tables<'variable_categories'>, 'id' | 'name'> | null;
-                }
-            ) | null;
-        }
-    ) | null;
-};
-
 /**
  * Creates a measurement log, finding/creating the necessary user_variable record.
  * Optionally links the measurement back to a reminder notification if ID is provided.
@@ -63,7 +46,6 @@ export async function logMeasurementAction(
     input: LogMeasurementInput
 ): Promise<{ success: boolean; error?: string; data?: { id: string } /* Return only ID */ }> {
     logger.info("SERVER ACTION: logMeasurementAction started");
-    const supabase = await createClient()
     logger.info("Logging measurement", { input });
 
     const { userId, globalVariableId, value, unitId: inputUnitId, startAt, notes, reminderNotificationId } = input;
@@ -77,41 +59,34 @@ export async function logMeasurementAction(
     }
 
     try {
+        const db = await getUserDb();
         // --- 1. Find or Create User Variable --- 
         let userVariableId: string;
         let resolvedUnitId: string | null = inputUnitId || null;
 
-        const { data: existingUserVar, error: uvFindError } = await supabase
-            .from('user_variables')
-            .select('id, preferred_unit_id, global_variables(default_unit_id)')
-            .eq('user_id', userId)
-            .eq('global_variable_id', globalVariableId)
-            .maybeSingle();
-
-        if (uvFindError) {
-            logger.error("Error finding user_variable", { userId, globalVariableId, error: uvFindError });
-            throw uvFindError;
-        }
+        const existingUserVar = await db.user_variables.findUnique({
+            where: { user_id_global_variable_id: { user_id: userId, global_variable_id: globalVariableId } },
+            select: { id: true, preferred_unit_id: true, global_variables: { select: { default_unit_id: true } } },
+        });
 
         if (existingUserVar) {
             userVariableId = existingUserVar.id;
             logger.info("Found existing user_variable", { userVariableId });
             if (!resolvedUnitId) {
-                resolvedUnitId = existingUserVar.preferred_unit_id || existingUserVar.global_variables?.default_unit_id || null;
+                resolvedUnitId = existingUserVar.preferred_unit_id || existingUserVar.global_variables.default_unit_id || null;
             }
         } else {
             logger.info("No existing user_variable found, creating new one", { userId, globalVariableId });
             let defaultUnitId: string | null = null;
             if (!resolvedUnitId) {
-                const { data: gvData, error: gvError } = await supabase
-                    .from('global_variables')
-                    .select('default_unit_id')
-                    .eq('id', globalVariableId)
-                    .single();
-                if (gvError) {
-                    logger.warn("Could not fetch global variable to get default unit ID", { globalVariableId, error: gvError });
+                const gvData = await db.global_variables.findUnique({
+                    where: { id: globalVariableId },
+                    select: { default_unit_id: true },
+                });
+                if (!gvData) {
+                    logger.warn("Could not fetch global variable to get default unit ID", { globalVariableId });
                 } else {
-                    defaultUnitId = gvData?.default_unit_id || null;
+                    defaultUnitId = gvData.default_unit_id || null;
                     resolvedUnitId = defaultUnitId;
                 }
             }
@@ -121,16 +96,10 @@ export async function logMeasurementAction(
                 global_variable_id: globalVariableId,
                 preferred_unit_id: defaultUnitId 
             };
-            const { data: createdUserVar, error: uvCreateError } = await supabase
-                .from('user_variables')
-                .insert(newUserVar)
-                .select('id')
-                .single();
-
-            if (uvCreateError || !createdUserVar) {
-                logger.error("Error creating user_variable", { userId, globalVariableId, error: uvCreateError });
-                throw uvCreateError || new Error("Failed to create user variable link.");
-            }
+            const createdUserVar = await db.user_variables.create({
+                data: newUserVar,
+                select: { id: true },
+            });
             userVariableId = createdUserVar.id;
             logger.info("Created new user_variable", { userVariableId });
         }
@@ -149,25 +118,15 @@ export async function logMeasurementAction(
             user_variable_id: userVariableId,
             value: value,
             unit_id: resolvedUnitId,
-            start_at: startAt ? new Date(startAt).toISOString() : new Date().toISOString(),
+            start_at: startAt ? new Date(startAt) : new Date(),
             notes: notes || null,
         };
 
         // --- 3. Insert Measurement --- 
-        const { data: newMeasurement, error: measurementError } = await supabase
-            .from('measurements')
-            .insert(measurementData)
-            .select('id') // Only select ID here
-            .single();
-
-        if (measurementError) {
-            logger.error("Error inserting measurement", { error: measurementError, measurementData });
-            throw measurementError;
-        }
-        if (!newMeasurement?.id) {
-             logger.error("Measurement insert succeeded but no ID returned", { input });
-             throw new Error("Failed to get ID of new measurement record.");
-        }
+        const newMeasurement = await db.measurements.create({
+            data: measurementData,
+            select: { id: true }, // Only select ID here
+        });
 
         const measurementId = newMeasurement.id;
         logger.info("Successfully logged measurement", { measurementId, userId });
@@ -175,23 +134,24 @@ export async function logMeasurementAction(
         // --- 4. (Optional) Link measurement back to notification --- 
         if (reminderNotificationId) {
             logger.info("Linking measurement to reminder notification", { measurementId, reminderNotificationId });
-            const { error: updateNotifError } = await supabase
-                .from('reminder_notifications')
-                 // Update status and details. Assumes completeReminderNotificationAction does similar.
-                .update({ 
-                    log_details: { measurementId: measurementId },
-                    status: 'completed', 
-                    completed_or_skipped_at: new Date().toISOString()
-                 })
-                .eq('id', reminderNotificationId)
-                .eq('user_id', userId)
-                .eq('status', 'pending'); // Only update pending
-            
-            if (updateNotifError) {
+            try {
+                // Update status and details. Assumes completeReminderNotificationAction does similar.
+                await db.reminder_notifications.updateMany({
+                    where: {
+                        id: reminderNotificationId,
+                        user_id: userId,
+                        status: 'pending', // Only update pending
+                    },
+                    data: {
+                        log_details: { measurementId: measurementId },
+                        status: 'completed',
+                        completed_or_skipped_at: new Date(),
+                    },
+                });
+                logger.info("Successfully linked measurement and updated notification status", { measurementId, reminderNotificationId });
+            } catch (updateNotifError) {
                 // Log warning but don't fail the whole action
                 logger.warn("Failed to link measurement and update notification status", { measurementId, notificationId: reminderNotificationId, error: updateNotifError });
-            } else {
-                 logger.info("Successfully linked measurement and updated notification status", { measurementId, reminderNotificationId });
             }
         }
 
@@ -227,26 +187,23 @@ export async function getMeasurementsForUserVariableAction(
     }
 
     try {
-        const supabase = await createClient();
-        const { data, error } = await supabase
-            .from("measurements")
-            .select("*, units ( abbreviated_name )") // Select all measurement fields + unit name
-            .eq("user_variable_id", userVariableId)
-            .eq("user_id", userId)
-            .is("deleted_at", null)
-            .order("start_at", { ascending: false })
-            .limit(limit);
+        const db = await getUserDb();
+        const data = await db.measurements.findMany({
+            where: {
+                user_variable_id: userVariableId,
+                user_id: userId,
+                deleted_at: null,
+            },
+            include: { units: { select: { abbreviated_name: true } } }, // All measurement fields + unit name
+            orderBy: { start_at: "desc" },
+            take: limit,
+        });
 
-        if (error) {
-            logger.error("getMeasurementsForUserVariableAction: Error fetching measurements", { userId, userVariableId, error });
-            return { success: false, error: error.message };
-        }
+        logger.info("getMeasurementsForUserVariableAction: Fetched measurements successfully", { userId, userVariableId, count: data.length });
+        return { success: true, data };
 
-        logger.info("getMeasurementsForUserVariableAction: Fetched measurements successfully", { userId, userVariableId, count: data?.length ?? 0 });
-        return { success: true, data: data || [] };
-
-    } catch (error: any) {
-        logger.error("getMeasurementsForUserVariableAction: Unhandled error", { userId, userVariableId, error });
+    } catch (error) {
+        logger.error("getMeasurementsForUserVariableAction: Error fetching measurements", { userId, userVariableId, error });
         return { success: false, error: "An unexpected error occurred." };
     }
 }
@@ -255,23 +212,25 @@ export async function updateMeasurementAction(
   input: UpdateMeasurementInput
 ): Promise<{ success: boolean; error?: string }> {
   const { measurementId, userId, value, unitId, notes } = input;
-  const supabase = await createClient();
 
-  const { error } = await supabase
-    .from("measurements")
-    .update({
-      value,
-      unit_id: unitId,
-      notes: notes ?? null,
-      updated_at: new Date().toISOString(),
-    })
-    .eq("id", measurementId)
-    .eq("user_id", userId)
-    .is("deleted_at", null);
-
-  if (error) {
+  try {
+    const db = await getUserDb();
+    await db.measurements.updateMany({
+      where: {
+        id: measurementId,
+        user_id: userId,
+        deleted_at: null,
+      },
+      data: {
+        value,
+        unit_id: unitId,
+        notes: notes ?? null,
+        updated_at: new Date(),
+      },
+    });
+  } catch (error) {
     logger.error("Failed to update measurement", { measurementId, userId, error });
-    return { success: false, error: error.message };
+    return { success: false, error: "Could not update the measurement." };
   }
 
   // Optionally revalidate relevant paths here
@@ -287,73 +246,68 @@ export async function getMeasurementsForDateAction(
     targetDate: Date
 ): Promise<{ success: boolean; data?: MeasurementCardData[]; error?: string }> {
     noStore(); // Ensure this doesn't get cached inappropriately
-    const supabase = await createClient();
     const dateStr = targetDate.toISOString().split('T')[0];
     logger.info('Fetching measurements for date', { userId, date: dateStr });
 
-    const dayStart = startOfDay(targetDate).toISOString();
-    const dayEnd = endOfDay(targetDate).toISOString();
+    const dayStart = startOfDay(targetDate);
+    const dayEnd = endOfDay(targetDate);
 
     // Fetch measurements for the target date range and join related data
-    const { data: measurements, error } = await supabase
-        .from('measurements')
-        .select(`
-            id,
-            value,
-            unit_id,
-            notes,
-            start_at,
-            user_variable_id,
-            units!inner( id, abbreviated_name, name ),
-            user_variables!inner(
-                id,
-                global_variable_id,
-                preferred_unit_id,
-                global_variables!inner(
-                    id,
-                    name,
-                    variable_category_id,
-                    description,
-                    emoji,
-                    default_unit_id,
-                    variable_categories( id, name )
-                )
-            )
-        `)
-        .eq('user_id', userId)
-        .gte('start_at', dayStart)
-        .lt('start_at', dayEnd)
-        .order('start_at', { ascending: true });
-
-    if (error) {
+    let measurements;
+    try {
+        const db = await getUserDb();
+        measurements = await db.measurements.findMany({
+            where: {
+                user_id: userId,
+                start_at: { gte: dayStart, lt: dayEnd },
+                user_variables: { isNot: null },
+            },
+            orderBy: { start_at: 'asc' },
+            select: {
+                id: true,
+                value: true,
+                unit_id: true,
+                notes: true,
+                start_at: true,
+                end_at: true,
+                user_variable_id: true,
+                units: { select: { id: true, abbreviated_name: true, name: true } },
+                user_variables: {
+                    select: {
+                        id: true,
+                        global_variable_id: true,
+                        preferred_unit_id: true,
+                        global_variables: {
+                            select: {
+                                id: true,
+                                name: true,
+                                variable_category_id: true,
+                                description: true,
+                                emoji: true,
+                                default_unit_id: true,
+                                variable_categories: { select: { id: true, name: true } },
+                            },
+                        },
+                    },
+                },
+            },
+        });
+    } catch (error) {
         logger.error('Error fetching measurements for date', { userId, date: dateStr, error });
-        console.error("Supabase fetch error (measurements for date):", JSON.stringify(error, null, 2));
-        return { success: false, error: `Database error: ${error.message}` };
-    }
-
-    if (!measurements) {
-        logger.warn('No measurements found for date', { userId, date: dateStr });
-        return { success: true, data: [] };
+        return { success: false, error: 'Database error fetching measurements.' };
     }
 
     // Map to the MeasurementCardData structure
-    const measurementCardDataItems: MeasurementCardData[] = measurements.map((m): MeasurementCardData | null => {
-        const measurement = m as FetchedMeasurement; // Cast to the more specific type
+    const measurementCardDataItems: MeasurementCardData[] = measurements.map((measurement): MeasurementCardData | null => {
         const userVar = measurement.user_variables;
-        const globalVar = userVar?.global_variables;
-        const category = globalVar?.variable_categories;
         const unit = measurement.units;
 
-        if (!userVar || !globalVar || !category || !unit) {
-            logger.warn("Missing required nested data for measurement card data, skipping", {
-                measurementId: measurement.id,
-                userVarMissing: !userVar,
-                globalVarMissing: !globalVar,
-                categoryMissing: !category,
-                unitMissing: !unit,
-            });
+        if (!userVar) {
+            logger.warn("Missing user variable for measurement card data, skipping", { measurementId: measurement.id });
             return null; 
         }
+        const globalVar = userVar.global_variables;
+        const category = globalVar.variable_categories;
 
         const variableCategoryId = category.id as MeasurementCardData['variableCategoryId'];
 
@@ -363,8 +317,8 @@ export async function getMeasurementsForDateAction(
             userVariableId: userVar.id,
             variableCategoryId: variableCategoryId,
             name: globalVar.name,
-            start_at: measurement.start_at, // Use start_at directly
-            end_at: measurement.end_at ?? undefined, // Include end_at if available from FetchedMeasurement
+            start_at: measurement.start_at.toISOString(),
+            end_at: measurement.end_at?.toISOString() ?? undefined,
             value: measurement.value,
             unit: unit.abbreviated_name,
             unitId: unit.id,

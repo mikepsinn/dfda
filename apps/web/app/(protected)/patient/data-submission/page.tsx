@@ -2,24 +2,10 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { getServerUser } from "@/lib/server-auth"
-import { DataSubmissionForm } from "./components/data-submission-form"
+import { DataSubmissionForm, type TrialSubmissionData } from "./components/data-submission-form"
 import { redirect } from "next/navigation"
-import { Database } from "@/lib/database.types"
 import { getPatientActiveEnrollmentAction } from "@/lib/actions/trial-enrollments"
 import { getLatestDataSubmissionAction } from "@/lib/actions/data-submissions"
-
-type Trial = Database["public"]["Tables"]["trials"]["Row"]
-type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Row"]
-type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
-
-interface TrialSubmissionData {
-  trial: Trial
-  enrollment: TrialEnrollment
-  submission: DataSubmission | null
-  currentMilestone: string
-  refundAmount: number
-  progress: number
-}
 
 export const metadata: Metadata = {
   title: "Submit Trial Data | Open Treatment Evidence Network",

@@ -4,10 +4,7 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import type { Database } from "@/lib/database.types"
-
-// Use the auto-generated database type and extend it with UI-specific properties
-type TrialRow = Database["public"]["Tables"]["trials"]["Row"]
+import type { Trial as TrialRow } from "@/lib/actions/trials"
 
 interface TrialEnrollmentProps {
   trials: TrialRow[]

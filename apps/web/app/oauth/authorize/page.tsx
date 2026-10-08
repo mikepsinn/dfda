@@ -1,8 +1,8 @@
 import { redirect } from 'next/navigation';
 // import { cookies } from 'next/headers'; // Removed unused import
 import { createServerClient } from '@/utils/supabase/server';
-import { supabaseAdmin } from '@/utils/supabase/admin';
-// import { type Database } from '@/lib/database.types'; // Removed unused import
+import { adminDb } from '@/lib/db';
+import { type Tables } from '@/lib/database.types';
 import { logger } from '@/lib/logger';
 import { ConsentForm } from '@/components/oauth/ConsentForm';
 
@@ -103,19 +103,21 @@ export default async function AuthorizePage({ searchParams }: AuthorizePageProps
     return redirect(loginRedirectUrl.toString());
   }
 
-  // 2. Client Validation (using a service role client for direct DB access)
-  // IMPORTANT: For production, ensure RLS is properly configured if not using service_role,
-  // or ensure this service_role client is only used in secure server environments.
-  
-  // Use the pre-configured supabaseAdmin client
-  const { data: oauthClient, error: clientDbError } = await supabaseAdmin // Use supabaseAdmin
-    .from('oauth_clients')
-    .select('*')
-    .eq('client_id', client_id)
-    .single();
+  // 2. Client Validation (using the full-access database client, which bypasses RLS)
+  // IMPORTANT: Only use this client in secure server environments.
+  let oauthClient: Pick<Tables<'oauth_clients'>, 'client_id' | 'client_name' | 'logo_uri' | 'redirect_uris' | 'scope'> | null = null;
+  let clientDbError: unknown = null;
+  try {
+    oauthClient = await adminDb.oauth_clients.findUnique({
+      where: { client_id },
+      select: { client_id: true, client_name: true, logo_uri: true, redirect_uris: true, scope: true },
+    });
+  } catch (error) {
+    clientDbError = error;
+  }
 
-  if (clientDbError || !oauthClient) {
-    logger.warn('Invalid client_id or database error for /oauth/authorize', { client_id, error: clientDbError?.message });
+  if (!oauthClient) {
+    logger.warn('Invalid client_id or database error for /oauth/authorize', { client_id, error: clientDbError instanceof Error ? clientDbError.message : undefined });
     return redirect(buildErrorRedirect(redirect_uri, 'unauthorized_client', 'Invalid client ID or client not found.', state));
   }
 

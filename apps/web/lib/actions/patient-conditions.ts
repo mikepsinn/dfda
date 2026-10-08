@@ -1,10 +1,11 @@
 "use server"
 
-import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
+import { withUserTransaction } from '@/lib/db'
+import { getServerUser } from '@/lib/server-auth'
 import type { Database } from '@/lib/database.types'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
-import type { PatientConditionClientInsert } from '@/lib/database.types.custom'
 // Import reminder action for single add
 import { createDefaultReminderAction } from "./reminder-schedules"
 
@@ -12,51 +13,55 @@ export type PatientCondition = Database['public']['Views']['patient_conditions_v
 export type PatientConditionInsert = Database['public']['Tables']['patient_conditions']['Insert']
 export type PatientConditionUpdate = Database['public']['Tables']['patient_conditions']['Update']
 
+/**
+ * New patient_conditions rows need their user variable. A database trigger
+ * sets user_variable_id on insert; Prisma still requires the relation, so
+ * connect the same (user, condition) user variable, creating it if missing.
+ */
+function userVariableFor(userId: string, conditionId: string) {
+  return {
+    connectOrCreate: {
+      where: { user_id_global_variable_id: { user_id: userId, global_variable_id: conditionId } },
+      create: {
+        profiles: { connect: { id: userId } },
+        global_variables: { connect: { id: conditionId } },
+      },
+    },
+  }
+}
+
+// Fields for a new patient condition with the default status and diagnosis date
+function newPatientConditionData(userId: string, conditionId: string) {
+  return {
+    status: 'active',
+    diagnosed_at: new Date(),
+    patients: { connect: { id: userId } },
+    global_conditions: { connect: { id: conditionId } },
+    user_variables: userVariableFor(userId, conditionId),
+  }
+}
+
 // Get all conditions for a patient
 export async function getPatientConditionsAction(patientId: string): Promise<PatientCondition[]> {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
   // Log the request details
   logger.info('Fetching patient conditions:', {
     table: 'patient_conditions_view',
     patientId,
-    url: process.env.NEXT_PUBLIC_SUPABASE_URL
   })
 
-  const response = await supabase
-    .from('patient_conditions_view')
-    .select('*')
-    .eq('patient_id', patientId)
-    .order('diagnosed_at', { ascending: false })
-
-  if (response.error) {
-    logger.error('Error fetching patient conditions:', { 
-      error: response.error,
-      status: response.status,
-      statusText: response.statusText
-    })
-    throw new Error('Failed to fetch patient conditions')
-  }
-
-  return response.data
+  return db.patient_conditions_view.findMany({
+    where: { patient_id: patientId },
+    orderBy: { diagnosed_at: 'desc' },
+  })
 }
 
 // Get a specific condition by ID
 export async function getPatientConditionByIdAction(id: string): Promise<PatientCondition | null> {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
-  const response = await supabase
-    .from('patient_conditions_view')
-    .select('*')
-    .eq('id', id)
-    .single()
-
-  if (response.error) {
-    logger.error('Error fetching patient condition:', { error: response.error })
-    throw new Error('Failed to fetch patient condition')
-  }
-
-  return response.data
+  return db.patient_conditions_view.findFirst({ where: { id } })
 }
 
 /**
@@ -66,7 +71,7 @@ export async function getPatientConditionByIdAction(id: string): Promise<Patient
  * @param conditionId The ID of the condition (from global_variables) to add.
  */
 export async function addPatientConditionAction(
-    userId: string, 
+    userId: string,
     conditionId: string
 ): Promise<{ success: boolean; error?: string; data?: any; message?: string }> {
   // Logic from app/actions/patientConditions.ts
@@ -77,19 +82,18 @@ export async function addPatientConditionAction(
     return { success: false, error: "User ID and Condition ID are required." }
   }
 
-  const supabase = await createClient()
+  const db = await getUserDb()
   logger.info("Attempting to add condition for user", { userId, conditionId })
 
   try {
     // Check if the patient already has this condition
-    const { data: existingCondition, error: checkError } = await supabase
-      .from("patient_conditions")
-      .select("id")
-      .eq("patient_id", userId)
-      .eq("condition_id", conditionId)
-      .maybeSingle()
-
-    if (checkError) {
+    let existingCondition: { id: string } | null
+    try {
+      existingCondition = await db.patient_conditions.findFirst({
+        where: { patient_id: userId, condition_id: conditionId },
+        select: { id: true },
+      })
+    } catch (checkError) {
       logger.error("Error checking for existing patient condition", { userId, conditionId, error: checkError })
       // Return error object
       return { success: false, error: "Database error checking condition." }
@@ -101,61 +105,35 @@ export async function addPatientConditionAction(
       return { success: true, data: existingCondition, message: "Condition already exists for patient." }
     }
 
-    // Add the new condition
-    // Define data using the client-specific type
-    const insertData: PatientConditionClientInsert = {
-      patient_id: userId,
-      condition_id: conditionId,
-      // Ensure required fields have defaults or are handled
-      status: 'active', // Example default
-      diagnosed_at: new Date().toISOString(), // Example default
-    }
-
-    // Use .select().single() to get the newly inserted record, including DB-generated fields
-    const { data: newPatientCondition, error: insertError } = await supabase
-      .from("patient_conditions")
-      .insert(insertData as PatientConditionInsert) // Cast to full type for insert
-      .select() // Select all columns of the new row
-      .single() // Expect one row
-
-    if (insertError || !newPatientCondition) {
+    // Add the new condition, returning the condition name for the default reminder
+    let insertResult
+    try {
+      insertResult = await db.patient_conditions.create({
+        data: newPatientConditionData(userId, conditionId),
+        include: { global_conditions: { select: { global_variables: { select: { name: true } } } } },
+      })
+    } catch (insertError) {
       logger.error("Error adding patient condition", { userId, conditionId, error: insertError })
       // Return error object
-       return { success: false, error: insertError?.message || "Database error adding condition." }
+      return { success: false, error: insertError instanceof Error ? insertError.message : "Database error adding condition." }
     }
+    const { global_conditions: { global_variables: { name: conditionName } }, ...newPatientCondition } = insertResult
 
     logger.info("Successfully added patient condition", { userId, conditionId, newRecord: newPatientCondition })
-    
-    // Fetch condition name for default reminder
-    // Using newPatientCondition.condition_id which is guaranteed to be the correct one
-    const { data: conditionDetails, error: nameError } = await supabase
-        .from('global_variables')
-        .select('name')
-        .eq('id', newPatientCondition.condition_id)
-        .single();
-    
-    // Create Default Reminder (Fire and Forget)
-    if (nameError || !conditionDetails?.name) {
-      logger.warn("Could not fetch condition name for default reminder", { userId, conditionId: newPatientCondition.condition_id, error: nameError });
-    } else {
-      // Pass user_variable_id from the newly inserted record to the reminder action
-       if (!newPatientCondition.user_variable_id) {
-          logger.error("user_variable_id missing after insert, cannot create reminder", { newRecord: newPatientCondition });
-       } else {
-          createDefaultReminderAction(userId, newPatientCondition.user_variable_id, conditionDetails.name, 'condition')
-              .then(result => {
-                  if (!result.success) {
-                      logger.error("Failed to create default reminder for new condition", { userId, conditionId: newPatientCondition.condition_id, userVariableId: newPatientCondition.user_variable_id, error: result.error });
-                  } else {
-                      logger.info("Successfully triggered default reminder creation for new condition", { userId, conditionId: newPatientCondition.condition_id, userVariableId: newPatientCondition.user_variable_id });
-                  }
-              })
-              .catch(err => {
-                   logger.error("Error calling createDefaultReminderAction for condition", { userId, conditionId: newPatientCondition.condition_id, userVariableId: newPatientCondition.user_variable_id, error: err });
-              });
-       }
-    }
-    
+
+    // Create Default Reminder (Fire and Forget) for the user variable of the new record
+    createDefaultReminderAction(userId, newPatientCondition.user_variable_id, conditionName, 'condition')
+        .then(result => {
+            if (!result.success) {
+                logger.error("Failed to create default reminder for new condition", { userId, conditionId: newPatientCondition.condition_id, userVariableId: newPatientCondition.user_variable_id, error: result.error });
+            } else {
+                logger.info("Successfully triggered default reminder creation for new condition", { userId, conditionId: newPatientCondition.condition_id, userVariableId: newPatientCondition.user_variable_id });
+            }
+        })
+        .catch(err => {
+             logger.error("Error calling createDefaultReminderAction for condition", { userId, conditionId: newPatientCondition.condition_id, userVariableId: newPatientCondition.user_variable_id, error: err });
+        });
+
     // Revalidate relevant paths
     try {
       revalidatePath("/patient/conditions") // Or the specific page where patient conditions are listed
@@ -175,73 +153,53 @@ export async function addPatientConditionAction(
 
 // Update a patient condition
 export async function updatePatientConditionAction(id: string, updates: PatientConditionUpdate): Promise<PatientCondition> {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
   // First update the condition
-  const updateResponse = await supabase
-    .from('patient_conditions')
-    .update({ ...updates, updated_at: new Date().toISOString() })
-    .eq('id', id)
-    .select()
-    .single()
-
-  if (updateResponse.error) {
-    logger.error('Error updating patient condition:', { error: updateResponse.error })
-    throw new Error('Failed to update patient condition')
-  }
+  const updated = await db.patient_conditions.update({
+    where: { id },
+    data: { ...updates, updated_at: new Date() },
+    select: { patient_id: true },
+  })
 
   // Then fetch it from the view to get the complete data
-  const viewResponse = await supabase
-    .from('patient_conditions_view')
-    .select('*')
-    .eq('id', id)
-    .single()
+  const condition = await db.patient_conditions_view.findFirst({ where: { id } })
 
-  if (viewResponse.error) {
-    logger.error('Error fetching updated patient condition:', { error: viewResponse.error })
+  if (!condition) {
+    logger.error('Updated patient condition not found in view:', { id })
     throw new Error('Failed to fetch updated patient condition')
   }
 
-  revalidatePath(`/patient/${updateResponse.data.patient_id}`) 
+  revalidatePath(`/patient/${updated.patient_id}`)
   revalidatePath(`/patient/conditions`) // Also revalidate list if needed
-  return viewResponse.data
+  return condition
 }
 
 // Delete a patient condition
 export async function deletePatientConditionAction(id: string): Promise<void> {
-  const supabase = await createClient()
+  const db = await getUserDb()
 
   // Need patient_id for revalidation before deleting
-  const { data: conditionData, error: fetchError } = await supabase
-    .from('patient_conditions')
-    .select('patient_id')
-    .eq('id', id)
-    .single();
+  const conditionData = await db.patient_conditions.findUnique({
+    where: { id },
+    select: { patient_id: true },
+  });
 
-  if (fetchError || !conditionData) {
-    logger.error('Error fetching patient_id before deleting condition:', { id, error: fetchError });
+  if (!conditionData) {
+    logger.error('Error fetching patient_id before deleting condition:', { id });
     throw new Error('Failed to find condition to delete or get patient ID.');
   }
 
-  const response = await supabase
-    .from('patient_conditions')
-    .delete()
-    .eq('id', id)
-
-  if (response.error) {
-    logger.error('Error deleting patient condition:', { id, error: response.error })
-    throw new Error('Failed to delete patient condition')
-  }
+  await db.patient_conditions.deleteMany({ where: { id } })
 
   revalidatePath('/patient/conditions')
 }
 
 // Action for bulk-adding conditions during onboarding
 export async function addInitialPatientConditionsAction(
-  patientId: string, 
+  patientId: string,
   conditions: { id: string; name: string }[]
 ): Promise<{ success: boolean; error?: string }> {
-  const supabase = await createClient();
   logger.info('Adding initial patient conditions', { patientId, count: conditions.length });
 
   if (!patientId || !conditions || conditions.length === 0) {
@@ -249,27 +207,26 @@ export async function addInitialPatientConditionsAction(
     return { success: false, error: 'Invalid input provided.' };
   }
 
-  // No explicit type here, let TS infer
-  const conditionsToInsert = conditions.map(c => ({
-    patient_id: patientId,
-    condition_id: c.id, // This is the global condition ID
-    // You might want default values or nulls here depending on your table definition
-    status: 'active', // Default status
-    diagnosed_at: new Date().toISOString(), // Default diagnosed date
-    // user_variable_id is intentionally omitted, handled by trigger
-  }));
+  const user = await getServerUser();
 
-  const { data: insertedConditions, error } = await supabase
-    .from('patient_conditions')
-    // Cast to PatientConditionInsert[], assuming the trigger handles user_variable_id
-    .insert(conditionsToInsert as PatientConditionInsert[])
-    .select(); // Get back the inserted records to have access to user_variable_ids
-
-  if (error || !insertedConditions) {
-    logger.error('Error inserting initial patient conditions:', { 
-      patientId, 
+  let insertedConditions: { condition_id: string; user_variable_id: string }[];
+  try {
+    // Insert all conditions in one transaction, so either all or none are saved
+    insertedConditions = await withUserTransaction(user && { id: user.id, email: user.email }, async (tx) => {
+      const inserted = [];
+      for (const condition of conditions) {
+        inserted.push(await tx.patient_conditions.create({
+          data: newPatientConditionData(patientId, condition.id), // condition.id is the global condition ID
+          select: { condition_id: true, user_variable_id: true },
+        }));
+      }
+      return inserted;
+    });
+  } catch (error) {
+    logger.error('Error inserting initial patient conditions:', {
+      patientId,
       conditionIds: conditions.map(c => c.id),
-      error 
+      error
     });
     return { success: false, error: 'Failed to save conditions.' };
   }
@@ -280,7 +237,7 @@ export async function addInitialPatientConditionsAction(
     if (insertedCondition?.user_variable_id) {
       try {
         const reminderResult = await createDefaultReminderAction(
-          patientId, 
+          patientId,
           insertedCondition.user_variable_id,
           condition.name,
           'condition'
@@ -314,4 +271,4 @@ export async function addInitialPatientConditionsAction(
 
   logger.info('Successfully added initial patient conditions', { patientId, count: conditions.length });
   return { success: true };
-} 
+}

@@ -1,6 +1,8 @@
 # dFDA web app
 
-`apps/web` is the canonical Next.js/Supabase product application.
+`apps/web` is the canonical Next.js product application. It stores its data in
+PostgreSQL through Prisma; Supabase still provides sign-in and file storage
+while the app moves off it.
 `prototype.dfda.earth` is its reference deployment. The same codebase is
 intended to serve the public site, personal health workspaces and clinic workspaces
 at `dfda.earth`, or run as a branded independent installation. One maintained
@@ -97,8 +99,8 @@ privacy controls work today.
 
 Read the shared [repository instructions](../../AGENTS.md) before making changes.
 Follow the [repository setup instructions](../../README.md#getting-started).
-The app's database configuration, migration policy and client guidance are in
-[supabase](supabase/README.md).
+The app's database access, schema changes and Supabase client guidance are in
+the [database guide](supabase/README.md).
 Its worker and cron are supporting processes of this app, not separate products.
 
 For UI work, follow the [design system](../../docs/DESIGN-SYSTEM.md), including
@@ -108,16 +110,20 @@ landing-page theme and components rather than creating another visual system.
 
 ## Environment Setup
 
-The web app requires Supabase credentials. Direct Postgres, Google AI, and
-Google Cloud credentials are optional and only enable the features that use
-those services.
+The web app requires a PostgreSQL connection (`DATABASE_URL`) and Supabase
+credentials (sign-in and storage). Google AI and Google Cloud credentials are
+optional and only enable the features that use those services.
 
 ### Local Development
 
 For local development, create a `.env` file in the root of the `apps/web` project (or the monorepo root if configured that way). It should contain at least:
 
 ```env
-# Supabase (Get from your Supabase project settings)
+# PostgreSQL connection used by Prisma for all table queries.
+# Local Supabase stack: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:54322/postgres
+
+# Supabase sign-in and storage (Get from your Supabase project settings)
 NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
@@ -132,8 +138,6 @@ SUPABASE_JWT_SECRET=YOUR_SUPABASE_JWT_SECRET
 # GOOGLE_CLIENT_ID=
 # GOOGLE_CLIENT_SECRET=
 
-# Optional: Database connection string if needed directly by ORM/scripts
-# DATABASE_URL="postgresql://postgres:[YOUR-PASSWORD]@db.[YOUR-SUPABASE-ID].supabase.co:5432/postgres"
 ```
 
 **Authentication for Google Cloud Locally (Recommended):**
@@ -146,7 +150,7 @@ SUPABASE_JWT_SECRET=YOUR_SUPABASE_JWT_SECRET
 ### Vercel Deployment
 
 1.  Go to your Vercel Project Settings > Environment Variables.
-2.  Add the required Supabase variables from your `.env` file:
+2.  Add the required variables from your `.env` file: `DATABASE_URL`,
     `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
     `SUPABASE_SERVICE_ROLE_KEY`, and `SUPABASE_JWT_SECRET`. Add
     `GOOGLE_GENERATIVE_AI_API_KEY` only when AI-assisted features are enabled.

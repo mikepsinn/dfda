@@ -169,7 +169,8 @@ owns operation names, origins, preview/retry semantics and publication controls;
 the [roadmap](MIGRATION.md#order) owns their delivery order.
 
 Long-running ingestion belongs in jobs, not a page request. The current worker
-uses a Supabase service-role client; this is **not** the target trust boundary
+uses a full-access database client (`adminDb`, which replaced the Supabase
+service-role client); this is **not** the target trust boundary
 for an untrusted-source ingestion or public publishing job. Separate queues,
 process credentials, restricted database roles, and explicit publication views
 must prevent those jobs from reading private patient records. The same repo can

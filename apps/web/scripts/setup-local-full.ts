@@ -112,16 +112,13 @@ async function setupLocalFull() {
     // 5. Setup Storage Bucket
     await setupStorageBucket();
 
-    // 6. Generate Types
-    await runCommand('pnpm', ['db:local:types']);
+    // 6. Update the Prisma schema and client from the database
+    await runCommand('pnpm', ['db:pull']);
 
     // 7. Generate Constants from DB
     await runCommand('pnpm', ['run', 'generate:constants']);
 
-    // 8. Generate Zod Schemas from DB types
-    await runCommand('pnpm', ['run', 'generate:schemas']);
-
-    // 9. Generate Navigation from files
+    // 8. Generate Navigation from files
     await runCommand('pnpm', ['run', 'generate:nav']);
 
     console.log('\n✅✅✅ Full local setup completed successfully! ✅✅✅');

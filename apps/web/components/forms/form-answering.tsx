@@ -75,7 +75,7 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
           else fieldSchema = textSchema.min(1, { message: "This field is required" });
           defaults[questionId] = '';
           break;
-        case 'multiple-choice':
+        case 'multiple_choice':
         case 'dropdown':
           const stringSchema = z.string();
           if (!q.is_required) fieldSchema = stringSchema.optional().nullable();
@@ -252,7 +252,7 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
           />
         );
 
-      case 'multiple-choice':
+      case 'multiple_choice':
         const mcOpts = opts as ChoiceBasedQuestionOptions | null;
         return (
           <Controller

@@ -7,9 +7,9 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    // The web app uses Supabase's HTTP API. Direct Postgres access is only
-    // required by workers and database maintenance scripts.
-    DATABASE_URL: z.string().url().optional(),
+    // Direct PostgreSQL connection used by Prisma (lib/db) for all table
+    // queries. Supabase is still used for sign-in and file storage.
+    DATABASE_URL: z.string().url(),
     // AI-assisted features degrade gracefully when no provider key is set.
     GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1).optional(),
     // Remove Google OAuth client creds - handled by Supabase Auth server

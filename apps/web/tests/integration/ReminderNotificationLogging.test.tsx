@@ -10,9 +10,8 @@ import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories';
 import { UNIT_IDS } from '@/lib/constants/units';
 import { createMeasurementAndCompleteNotificationAction } from '@/lib/actions/reminder-notifications';
 
-// Using createClient from supabase-js directly for test client
-import { createClient, type SupabaseClient, type User } from '@supabase/supabase-js';
-import type { Database, Tables } from '@/lib/database.types'; // Import Database type
+import type { User } from '@supabase/supabase-js';
+import { adminDb } from '@/lib/db';
 
 // Mock user for the test session
 const mockTestUser: User = {
@@ -30,32 +29,17 @@ const mockTestUser: User = {
   identities: [], 
 };
 
-// Mock the Supabase SSR clients used by the server action
-vi.mock('@/utils/supabase/server', () => ({
-  createClient: vi.fn().mockResolvedValue({
-    auth: {
-      getUser: vi.fn().mockResolvedValue({ data: { user: { id: 'test-integration-user-id' } }, error: null }),
-    },
-    from: vi.fn().mockImplementation(() => ({
-      select: vi.fn().mockReturnThis(),
-      insert: vi.fn().mockReturnThis(),
-      update: vi.fn().mockReturnThis(),
-      delete: vi.fn().mockReturnThis(),
-      eq: vi.fn().mockReturnThis(),
-      single: vi.fn().mockResolvedValue({ data: null, error: null }), // Default mock for .single()
-      // Add other methods if chained and needed
-    })),
-    // Add other Supabase client methods if needed by the action
-  }),
-}));
+// The server action reads the database as the session user; run it as the test user
+vi.mock('@/lib/db/server', async () => {
+  const { dbAs } = await vi.importActual<typeof import('@/lib/db')>('@/lib/db');
+  return {
+    getUserDb: vi.fn(async () => dbAs({ id: 'test-integration-user-id' })),
+  };
+});
 
 
 describe('Integration: ReminderNotificationCard - Database Logging', () => {
-  let supabaseTestClient: SupabaseClient<Database>;
   let testUserVariableId: string | null = null;
-
-  const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://localhost:54321';
-  const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0'; // Common default local anon key
 
   // Base mock notification for these tests
   const baseMockNotification: ReminderNotificationDetails = {
@@ -78,27 +62,22 @@ describe('Integration: ReminderNotificationCard - Database Logging', () => {
   };
 
   beforeAll(async () => {
-    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-      throw new Error('Supabase URL or Anon Key is missing. Ensure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set for integration tests, or adjust hardcoded defaults.');
-    }
-    supabaseTestClient = createClient<Database>(SUPABASE_URL, SUPABASE_ANON_KEY);
-    
     // For actions that require a user_variable, create one here
     // This ensures the action can find it via findUserVariableId or create it idempotently
-    const { data: userVariable, error: uvError } = await supabaseTestClient
-      .from('user_variables')
-      .upsert({
+    const userVariable = await adminDb.user_variables.upsert({
+      where: {
+        user_id_global_variable_id: {
+          user_id: mockTestUser.id,
+          global_variable_id: baseMockNotification.globalVariableId,
+        },
+      },
+      create: {
         user_id: mockTestUser.id,
         global_variable_id: baseMockNotification.globalVariableId,
-        // Add other required fields or ensure they have defaults in DB schema
-      })
-      .select('id')
-      .single();
-
-    if (uvError || !userVariable) {
-      console.error('Failed to create/upsert user_variable for testing:', uvError);
-      throw new Error('Test setup failed: Could not create/upsert user_variable.');
-    }
+      },
+      update: {},
+      select: { id: true },
+    });
     testUserVariableId = userVariable.id;
   });
 
@@ -106,7 +85,7 @@ describe('Integration: ReminderNotificationCard - Database Logging', () => {
     // Clean up: delete the created user_variable if it was specifically created for the test run
     // and not part of a shared seed. Consider if this cleanup is always desired.
     if (testUserVariableId) {
-      // await supabaseTestClient.from('user_variables').delete().match({ id: testUserVariableId });
+      // await adminDb.user_variables.delete({ where: { id: testUserVariableId } });
       // Decide on cleanup strategy for user_variables if tests create them directly.
     }
   });
@@ -114,21 +93,18 @@ describe('Integration: ReminderNotificationCard - Database Logging', () => {
   beforeEach(async () => {
     if (!testUserVariableId) throw new Error('testUserVariableId not set in beforeAll');
     // Clean measurements and notification status before each test for this specific notification
-    await supabaseTestClient.from('measurements').delete().match({ user_variable_id: testUserVariableId });
-    await supabaseTestClient.from('reminder_notifications').delete().match({ id: baseMockNotification.notificationId });
+    await adminDb.measurements.deleteMany({ where: { user_variable_id: testUserVariableId } });
+    await adminDb.reminder_notifications.deleteMany({ where: { id: baseMockNotification.notificationId } });
     
-    const { error: notifError } = await supabaseTestClient.from('reminder_notifications').insert({
+    await adminDb.reminder_notifications.create({
+      data: {
         id: baseMockNotification.notificationId,
         user_id: mockTestUser.id,
         reminder_schedule_id: baseMockNotification.scheduleId,
-        user_variable_id: testUserVariableId, 
-        notification_trigger_at: baseMockNotification.dueAt,
+        notification_trigger_at: new Date(baseMockNotification.dueAt),
         status: 'pending',
+      },
     });
-    if (notifError) {
-        console.error('Failed to insert test notification:', notifError);
-        throw new Error('Test setup failed: Could not insert notification.');
-    }
   });
 
   it('should log a measurement to the database when a rating button is clicked', async () => {
@@ -168,29 +144,23 @@ describe('Integration: ReminderNotificationCard - Database Logging', () => {
     await user.click(ratingButton);
 
     await waitFor(async () => {
-      const { data: measurements, error } = await supabaseTestClient
-        .from('measurements')
-        .select('*')
-        .eq('user_variable_id', testUserVariableId!)
-        .eq('value', loggedValue)
-        .single();
+      const measurements = await adminDb.measurements.findMany({
+        where: { user_variable_id: testUserVariableId!, value: loggedValue },
+      });
 
-      expect(error).toBeNull();
-      expect(measurements).not.toBeNull();
-      if (measurements) {
-        expect(measurements.value).toBe(loggedValue);
-        expect(measurements.unit_id).toBe(notificationToTest.unitId);
-        expect(measurements.user_id).toBe(mockTestUser.id);
-      }
+      expect(measurements).toHaveLength(1);
+      const [measurement] = measurements;
+      expect(measurement.value).toBe(loggedValue);
+      expect(measurement.unit_id).toBe(notificationToTest.unitId);
+      expect(measurement.user_id).toBe(mockTestUser.id);
     }, { timeout: 5000 });
 
     await waitFor(async () => {
-        const { data: notification, error: notifError } = await supabaseTestClient
-            .from('reminder_notifications')
-            .select('status')
-            .eq('id', notificationToTest.notificationId)
-            .single();
-        expect(notifError).toBeNull();
+        const notification = await adminDb.reminder_notifications.findUnique({
+            where: { id: notificationToTest.notificationId },
+            select: { status: true },
+        });
+        expect(notification).not.toBeNull();
         expect(notification?.status).toBe('completed');
     }, { timeout: 5000 });
   });

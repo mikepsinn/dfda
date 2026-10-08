@@ -2,7 +2,7 @@ import { OutcomeLabel } from "@/components/OutcomeLabel";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getOutcomeLabelDataAction } from "@/lib/actions/global-variable-relationships";
-import { createClient } from "@/utils/supabase/server";
+import { getUserDb } from "@/lib/db/server";
 
 // The Page Component
 export default async function OutcomeLabelPage({ params }: { params: { predictorVariableId: string } }) {
@@ -31,12 +31,11 @@ export default async function OutcomeLabelPage({ params }: { params: { predictor
 // Optional: Add generateMetadata function if needed for dynamic titles
 export async function generateMetadata({ params }: { params: { predictorVariableId: string } }) {
     const { predictorVariableId } = await params;
-    const supabase = await createClient();
-    const { data: predictorData } = await supabase
-        .from('global_variables')
-        .select('name')
-        .eq('id', predictorVariableId)
-        .single<{name: string | null}>();
+    const db = await getUserDb();
+    const predictorData = await db.global_variables.findUnique({
+        where: { id: predictorVariableId },
+        select: { name: true },
+    });
 
     return {
         title: `${predictorData?.name || 'Outcome Label'} | Open Treatment Evidence Network`,

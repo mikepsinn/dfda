@@ -40,7 +40,7 @@ const userTypeNavItemsMap: Record<UserType, NavItem[]> = {
   'patient': patientNavItems,
   'provider': providerNavItems,
   'developer': developerNavItems,
-  'research-partner': researchPartnerNavItems,
+  'research_partner': researchPartnerNavItems,
   'admin': adminNavItems,
 }
 

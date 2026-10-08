@@ -20,9 +20,11 @@ UI and database guidance in the linked documents, not separate editor rule sets.
   webhooks and other integrations that need them.
 - Put reusable components in `apps/web/components` and library code in
   `apps/web/lib`; route files belong in `apps/web/app`.
-- Reuse generated `apps/web/lib/database.types.ts` types for database records;
-  regenerate rather than hand-edit them. Separate UI, import and domain types are
-  appropriate when they represent something other than a database row.
+- Database row types come from the Prisma schema (`apps/web/prisma/schema.prisma`).
+  Use the Prisma types or the helpers in `apps/web/lib/database.types.ts`
+  (`Tables<'x'>`, `TablesInsert<'x'>`); regenerate the client rather than writing
+  row types by hand. Separate UI, import and domain types are appropriate when
+  they represent something other than a database row.
 - Use `apps/web/lib/logger.ts` for application logging. Handle errors deliberately:
   propagate them or provide a meaningful recovery/error state, not empty catches
   or cosmetic renaming that hides failures. Never log secrets or private health data.
@@ -33,6 +35,8 @@ For app code changes, run the relevant tests and checks from `apps/web`:
 
 - `pnpm test:unit` and `pnpm type-check`.
 - `pnpm lint`; `pnpm check` combines type checking and linting, without auto-fixing.
+- `pnpm test:db` when queries, migrations or policies change. It needs
+  `DATABASE_URL` set to an empty PostgreSQL database prepared with `pnpm db:plain:setup`.
 - `pnpm build` when changes affect the production build, plus relevant integration
   tests for the changed workflow using a dedicated local/test environment.
 
@@ -59,21 +63,27 @@ of UI conventions for contributors and coding agents.
 ## Database and data boundaries
 
 - Before changing app schema, queries or authentication, read the
-  [database and client guide](apps/web/supabase/README.md). It defines the current
-  user/browser/admin client wrappers, migration policy and type-generation steps.
-- The web app uses `apps/web/supabase`; the repository-root `supabase` tree is a
-  separate existing schema/tooling area. Verify the intended target. Do not copy
-  the old multi-schema proposal into the app or rename existing schema objects
-  merely to follow an obsolete instruction.
-- Preserve applied migration history. Add forward migrations; do not backdate,
-  rename or rewrite applied migrations without an explicitly approved rebaseline.
-- Do not automatically run `db:setup` after editing SQL: it resets the local DB,
-  runs worker migrations and performs storage operations using configured credentials.
-  Verify every target and obtain explicit authorization for resets or destructive
-  data changes. Never use a production reset as a development or testing step.
+  [database guide](apps/web/supabase/README.md). The app is moving from Supabase
+  to plain PostgreSQL: table queries use Prisma (`apps/web/lib/db`); Supabase is
+  still used for sign-in and file storage until those parts move.
+- Query as the signed-in user with `getUserDb()` from `@/lib/db/server`, so the
+  row-level security policies apply. Use `adminDb` (no row-level security) only in
+  workers, scripts and server code that has already checked authorization. Never
+  build a user-scoped client from an ID in request input.
+- The web app uses `apps/web/supabase/migrations` (SQL). The repository-root
+  `supabase` tree is a separate older schema/tooling area; do not copy it into the app.
+- Add schema changes as new SQL migrations, then run `pnpm db:pull` to update
+  `prisma/schema.prisma` and the client. There are no real user accounts in
+  production yet, so editing, squashing or rebaselining migrations is acceptable
+  when it makes the move off Supabase simpler; say so in the pull request.
+- Do not reset or overwrite a shared or production database as a development or
+  testing step. `pnpm db:setup` resets the local Supabase database and changes
+  storage with the configured credentials; check every target before running it.
+  For tests, use `pnpm db:plain:setup` on an empty PostgreSQL database.
 - Preserve the app's shared variable/measurement model and units where applicable;
   inspect the actual schema before introducing duplicate treatment/outcome storage.
-  Keep user-scoped operations subject to authorization and row-level security.
+  Keep user-scoped operations subject to authorization and row-level security, and
+  add a database test (`apps/web/tests/db`) when you change a policy.
 - Follow [evidence and exchange](docs/EVIDENCE-AND-EXCHANGE.md) for estimates,
   sources and private records. Keep credentials and private patient data out of
   Git. Retain provenance and checksums when importing demo or public source data.

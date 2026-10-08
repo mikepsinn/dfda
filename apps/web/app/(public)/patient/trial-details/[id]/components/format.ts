@@ -11,9 +11,9 @@ export function formatTrialPhase(phase: string) {
   return phase.replace(/^phase_(\d)$/, "Phase $1")
 }
 
-// Start and end dates are calendar dates (YYYY-MM-DD). Format them in UTC so that the day does not shift.
-export function formatTrialDate(date: string) {
-  return new Date(`${date}T00:00:00Z`).toLocaleDateString("en-US", {
+// Start and end dates are calendar dates, stored as midnight UTC. Format them in UTC so that the day does not shift.
+export function formatTrialDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
     day: "numeric",

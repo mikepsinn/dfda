@@ -6,7 +6,7 @@ import TrialDetailsPage from "@/app/(public)/patient/trial-details/[id]/page";
 import { getTrialDetailsAction, type TrialDetails } from "@/lib/actions/trials";
 import { getTrialEnrollmentStatusAction } from "@/lib/actions/trial-enrollments";
 import { getServerUser } from "@/lib/server-auth";
-import { createClient } from "@/utils/supabase/server";
+import { getUserDb } from "@/lib/db/server";
 
 vi.mock("next/navigation", () => ({
   notFound: () => {
@@ -20,7 +20,7 @@ vi.mock("@/lib/actions/trial-enrollments", () => ({
   createInitialEnrollmentAction: vi.fn(),
 }));
 vi.mock("@/lib/server-auth", () => ({ getServerUser: vi.fn() }));
-vi.mock("@/utils/supabase/server", () => ({ createClient: vi.fn() }));
+vi.mock("@/lib/db/server", () => ({ getUserDb: vi.fn() }));
 vi.mock("@/utils/supabase/client", () => ({ createClient: vi.fn() }));
 
 const getTrial = vi.mocked(getTrialDetailsAction);
@@ -32,17 +32,24 @@ const ketamine = {
   description: "Evaluating the safety and efficacy of Ketamine.",
   status: "recruiting",
   phase: "phase_2",
-  start_date: "2025-02-01",
+  start_date: new Date("2025-02-01T00:00:00Z"),
   end_date: null,
   enrollment_target: 200,
   current_enrollment: 0,
   location: "Boston, New York",
   inclusion_criteria: ["Age 18 or older"],
-  exclusion_criteria: null,
+  exclusion_criteria: [],
   condition_name: "Major Depressive Disorder",
   treatment_name: "Ketamine",
   research_partner_name: "Demo Sponsor",
-} as TrialDetails;
+  research_partner_id: "33333333-3333-3333-3333-333333333333",
+  condition_id: "major-depressive-disorder",
+  treatment_id: "ketamine",
+  compensation: null,
+  created_at: null,
+  updated_at: null,
+  deleted_at: null,
+} satisfies TrialDetails;
 
 beforeEach(() => vi.clearAllMocks());
 afterEach(cleanup);
@@ -92,24 +99,26 @@ describe("getTrialDetailsAction", () => {
     const { getTrialDetailsAction: query } = await actual();
 
     await expect(query("not-a-trial")).resolves.toBeNull();
-    expect(createClient).not.toHaveBeenCalled();
+    expect(getUserDb).not.toHaveBeenCalled();
   });
 
   it("flattens the condition, treatment and sponsor names", async () => {
     const row = {
       id: trialId,
       title: "Ketamine",
-      condition: { global_variables: { name: "Major Depressive Disorder" } },
-      treatment: { global_variables: { name: "Ketamine" } },
-      research_partner: { first_name: "Demo", last_name: null },
+      compensation: null,
+      global_conditions: { global_variables: { name: "Major Depressive Disorder" } },
+      global_treatments: { global_variables: { name: "Ketamine" } },
+      profiles: { first_name: "Demo", last_name: null },
     };
-    const query = { select: () => query, eq: () => query, maybeSingle: () => Promise.resolve({ data: row, error: null }) };
-    vi.mocked(createClient).mockResolvedValue({ from: () => query } as unknown as Awaited<ReturnType<typeof createClient>>);
+    const findUnique = vi.fn().mockResolvedValue(row);
+    vi.mocked(getUserDb).mockResolvedValue({ trials: { findUnique } } as unknown as Awaited<ReturnType<typeof getUserDb>>);
     const { getTrialDetailsAction: getDetails } = await actual();
 
     await expect(getDetails(trialId)).resolves.toEqual({
       id: trialId,
       title: "Ketamine",
+      compensation: null,
       condition_name: "Major Depressive Disorder",
       treatment_name: "Ketamine",
       research_partner_name: "Demo",

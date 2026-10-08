@@ -1,6 +1,7 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
+import { Prisma } from "@/lib/db";
+import { getUserDb } from "@/lib/db/server";
 import { logger } from "@/lib/logger";
 import { revalidatePath } from "next/cache";
 
@@ -17,7 +18,6 @@ interface UndoLogInput {
 export async function undoLogAction(
   input: UndoLogInput
 ): Promise<{ success: boolean; error?: string }> {
-  const supabase = await createClient();
   logger.info("Attempting to undo log", { input });
 
   const { userId, notificationId, logType, details } = input;
@@ -33,19 +33,19 @@ export async function undoLogAction(
   }
 
   try {
+    const db = await getUserDb();
+
     // --- Step 1: Undo the specific log entry --- 
     if (logType === "measurement") {
       if (!details.measurementId) {
         logger.error("Cannot undo measurement without measurementId", { input });
         throw new Error("Internal error: Missing measurement ID for undo.");
       }
-      const { error: deleteMeasurementError } = await supabase
-        .from("measurements")
-        .delete()
-        .eq("id", details.measurementId)
-        .eq("user_id", userId);
-
-      if (deleteMeasurementError) {
+      try {
+        await db.measurements.deleteMany({
+          where: { id: details.measurementId, user_id: userId },
+        });
+      } catch (deleteMeasurementError) {
         logger.error("Error deleting measurement during undo", {
           error: deleteMeasurementError,
           input,
@@ -67,17 +67,19 @@ export async function undoLogAction(
     }
 
     // --- Step 2: Reset the reminder notification's status --- 
-    const { error: updateNotificationError } = await supabase
-      .from("reminder_notifications")
-      .update({ 
-          status: 'pending', 
-          completed_or_skipped_at: null, 
-          log_details: null 
-       })
-      .eq("id", notificationId)
-      .eq("user_id", userId); // Ensure user owns the notification
-
-    if (updateNotificationError) {
+    try {
+      await db.reminder_notifications.updateMany({
+        where: {
+          id: notificationId,
+          user_id: userId, // Ensure user owns the notification
+        },
+        data: {
+          status: 'pending',
+          completed_or_skipped_at: null,
+          log_details: Prisma.DbNull,
+        },
+      });
+    } catch (updateNotificationError) {
       logger.error("Error resetting notification status during undo", {
         error: updateNotificationError,
         input,
