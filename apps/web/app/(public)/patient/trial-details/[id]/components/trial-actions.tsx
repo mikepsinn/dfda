@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { createClient } from '@/utils/supabase/client'
+import { authClient } from '@/lib/auth-client'
 import { logger } from "@/lib/logger"
 import { useToast } from '@/components/ui/use-toast'
 import { createInitialEnrollmentAction } from "@/lib/actions/trial-enrollments"
@@ -29,8 +29,7 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
     setIsLoading(true)
 
     try {
-      const supabase = createClient()
-      const { data: { user } } = await supabase.auth.getUser()
+      const user = (await authClient.getSession()).data?.user
 
       if (!user) {
         logger.error("No user found during enrollment")

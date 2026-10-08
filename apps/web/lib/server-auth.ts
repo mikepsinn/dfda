@@ -1,30 +1,24 @@
-import { createClient } from '@/utils/supabase/server'
-import { logger } from '@/lib/logger'
-import type { User } from '@supabase/supabase-js'
-import { AuthSessionMissingError } from '@supabase/supabase-js'
+import { cache } from 'react'
+import { headers } from 'next/headers'
+import { getSessionCookie } from 'better-auth/cookies'
+import { auth, type AuthUser } from '@/lib/auth'
 
-export async function getServerUser(): Promise<User | null> {
-  const supabase = await createClient()
-  const { data: { user }, error: authError } = await supabase.auth.getUser()
+export type { AuthUser }
 
-  if (authError && !(authError instanceof AuthSessionMissingError)) {
-    logger.error("Error getting auth user:", { authError })
-  }
-  if (authError || !user) {
-    return null
-  }
-
-  logger.debug('getServerUser returning raw user object', { userId: user.id, metadata: user.user_metadata })
-  return user // Return the user object without merged profile data
-}
-
-export async function getServerSession() {
-  const supabase = await createClient()
-  const { data: { session }, error } = await supabase.auth.getSession()
-  if (error) {
-    logger.error("Error getting session:", { error })
-    return null
-  }
-  return session
-}
-
+/**
+ * Returns the signed-in user of the current request, or null.
+ *
+ * Better Auth checks the session cookie against the sessions table, so the
+ * result can be used for authorization. Use it in Server Components, Server
+ * Actions and route handlers.
+ *
+ * Without a session cookie there is no user, so the database is not read.
+ * This also keeps static pages (built with no request and no database)
+ * working.
+ */
+export const getServerUser = cache(async (): Promise<AuthUser | null> => {
+  const requestHeaders = await headers()
+  if (!getSessionCookie(requestHeaders)) return null
+  const session = await auth.api.getSession({ headers: requestHeaders })
+  return session?.user ?? null
+})

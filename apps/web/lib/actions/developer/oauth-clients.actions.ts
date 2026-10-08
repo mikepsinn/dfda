@@ -1,89 +1,102 @@
 'use server';
 
-// import { supabaseAdmin } from '@/utils/supabase/admin'; // Removed unused import
-import { createServerClient } from '@/utils/supabase/server';
-import { getUserDb } from '@/lib/db/server';
-import { isRecordNotFound, isUniqueViolation, type Prisma } from '@/lib/db';
-import { publicOauthClientsInsertSchemaSchema } from '@/lib/database.schemas';
-import { Argon2id } from 'oslo/password';
-// import { randomBytes } from 'crypto'; // Removed unused import
-import { v4 as uuidv4 } from 'uuid';
+import { headers } from 'next/headers';
+import { APIError } from 'better-auth/api';
+import { auth } from '@/lib/auth';
+import { getServerUser } from '@/lib/server-auth';
 import { logger } from '@/lib/logger';
 import {
   CreateOAuthClientInputSchema,
   type CreateOAuthClientInput,
-  // UpdateOAuthClientInputSchema, // UNUSED in this file
-  // type UpdateOAuthClientInput, // UNUSED in this file
+  type OAuthClientSummary,
   UpdateOAuthClientPayloadSchema,
   type UpdateOAuthClientPayload
 } from './oauth-clients.schemas';
 
 const LOG_PREFIX = '[ServerAction /developer/oauth-clients]';
 
-// Columns returned to the developer dashboard. client_secret is never selected.
-const listedClientFields = {
-  client_id: true, client_name: true, client_uri: true, redirect_uris: true, logo_uri: true, scope: true,
-  grant_types: true, response_types: true, created_at: true, owner_id: true, tos_uri: true, policy_uri: true,
-} satisfies Prisma.oauth_clientsSelect;
+/*
+ * OAuth clients of the signed-in developer. Better Auth's OAuth provider
+ * (lib/auth.ts) stores the clients, hashes their secrets and checks that the
+ * session user owns each client it changes.
+ */
 
-const createdClientFields = {
-  client_id: true, client_name: true, client_uri: true, redirect_uris: true, logo_uri: true, scope: true,
-  grant_types: true, response_types: true, client_type: true, created_at: true, owner_id: true,
-} satisfies Prisma.oauth_clientsSelect;
+// A client in the OAuth (RFC 7591) format that Better Auth returns.
+type ProviderClient = {
+  client_id: string;
+  client_secret?: string;
+  client_name?: string;
+  client_uri?: string;
+  logo_uri?: string;
+  tos_uri?: string;
+  policy_uri?: string;
+  redirect_uris?: string[];
+  scope?: string;
+  grant_types?: string[];
+  response_types?: string[];
+  token_endpoint_auth_method?: string;
+  client_id_issued_at?: number;
+  user_id?: string;
+};
 
-const updatedClientFields = {
-  client_id: true, client_name: true, client_uri: true, redirect_uris: true, logo_uri: true, scope: true,
-  grant_types: true, response_types: true, client_type: true, created_at: true, updated_at: true, owner_id: true,
-  tos_uri: true, policy_uri: true,
-} satisfies Prisma.oauth_clientsSelect;
-
-// Helper to generate a secure client secret
-function generateClientSecret(length = 40) {
-  const E = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let t = "";
-  for (let n = 0; n < length; n++) {
-    t += E.charAt(Math.floor(Math.random() * E.length));
-  }
-  return t;
+function toSummary(client: ProviderClient): OAuthClientSummary {
+  return {
+    client_id: client.client_id,
+    client_name: client.client_name ?? null,
+    client_uri: client.client_uri ?? null,
+    redirect_uris: client.redirect_uris ?? [],
+    logo_uri: client.logo_uri ?? null,
+    scope: client.scope ?? null,
+    grant_types: client.grant_types ?? [],
+    response_types: client.response_types ?? [],
+    client_type: client.token_endpoint_auth_method === 'none' ? 'public' : 'confidential',
+    created_at: client.client_id_issued_at ? new Date(client.client_id_issued_at * 1000).toISOString() : null,
+    owner_id: client.user_id ?? null,
+    tos_uri: client.tos_uri ?? null,
+    policy_uri: client.policy_uri ?? null,
+  };
 }
+
+// The result shape the developer dashboard reads.
+type ActionResult<T = undefined> = {
+  success: boolean;
+  data?: T;
+  error?: string;
+  details?: unknown;
+  message?: string;
+  status: number;
+};
+
+function failure(action: string, error: unknown, fallback: string): ActionResult<never> {
+  if (error instanceof APIError) {
+    logger.warn(`${LOG_PREFIX} ${action} refused`, { status: error.status, message: error.message });
+    const status = typeof error.statusCode === 'number' ? error.statusCode : 400;
+    if (status === 404) return { success: false, error: 'OAuth client not found or access denied', status };
+    return { success: false, error: error.message || fallback, status };
+  }
+  logger.error(`${LOG_PREFIX} ${action} failed`, { error: error instanceof Error ? error.message : error });
+  return { success: false, error: fallback, status: 500 };
+}
+
+const unauthorized: ActionResult<never> = { success: false, error: 'Unauthorized', status: 401 };
 
 // Action to list OAuth clients for the authenticated developer
-export async function listOAuthClients() {
-  const supabase = await createServerClient();
-  const { data: { user }, error: userError } = await supabase.auth.getUser();
-
-  if (userError || !user) {
-    logger.warn(`${LOG_PREFIX} listOAuthClients - Unauthorized access attempt.`);
-    // In Server Actions, throwing an error or returning an object with an error is common.
-    // For consistency, let's return an error object.
-    return { success: false, error: 'Unauthorized', status: 401 };
-  }
+export async function listOAuthClients(): Promise<ActionResult<OAuthClientSummary[]>> {
+  const user = await getServerUser();
+  if (!user) return unauthorized;
 
   try {
-    const db = await getUserDb();
-    const clients = await db.oauth_clients.findMany({
-      where: { owner_id: user.id, deleted_at: null },
-      select: listedClientFields,
-    });
-
-    logger.info(`${LOG_PREFIX} listOAuthClients - Successfully fetched ${clients.length} clients for user ${user.id}.`);
-    return { success: true, data: clients, status: 200 };
-
-  } catch (e: any) {
-    logger.error(`${LOG_PREFIX} listOAuthClients - Error fetching for user ${user.id}:`, { error: e });
-    return { success: false, error: 'Failed to fetch OAuth clients', details: e.message, status: 500 };
+    const clients = (await auth.api.getOAuthClients({ headers: await headers() })) as ProviderClient[];
+    return { success: true, data: clients.map(toSummary), status: 200 };
+  } catch (error) {
+    return failure('listOAuthClients', error, 'Failed to fetch OAuth clients');
   }
 }
 
-// Action to create a new OAuth client
-export async function createOAuthClient(input: CreateOAuthClientInput) {
-  const supabase = await createServerClient();
-  const { data: { user }, error: userError } = await supabase.auth.getUser();
-
-  if (userError || !user) {
-    logger.warn(`${LOG_PREFIX} createOAuthClient - Unauthorized access attempt.`);
-    return { success: false, error: 'Unauthorized', status: 401 };
-  }
+// Action to create a new OAuth client. The secret is returned once.
+export async function createOAuthClient(input: CreateOAuthClientInput): Promise<ActionResult<OAuthClientSummary & { client_secret?: string }>> {
+  const user = await getServerUser();
+  if (!user) return unauthorized;
 
   const parsedInput = CreateOAuthClientInputSchema.safeParse(input);
   if (!parsedInput.success) {
@@ -91,111 +104,26 @@ export async function createOAuthClient(input: CreateOAuthClientInput) {
     return { success: false, error: 'Invalid input', details: parsedInput.error.flatten(), status: 400 };
   }
 
-  const { client_name, redirect_uris, client_uri, logo_uri, scope, grant_types, response_types, tos_uri, policy_uri, client_type } = parsedInput.data;
-
-  const clientId = uuidv4();
-  const plainClientSecret = generateClientSecret();
-  let hashedClientSecret;
-
+  const { client_type, ...metadata } = parsedInput.data;
   try {
-    hashedClientSecret = await new Argon2id().hash(plainClientSecret);
-  } catch (hashError: any) {
-    logger.error(`${LOG_PREFIX} createOAuthClient - Failed to hash client secret for user ${user.id}:`, { error: hashError });
-    return { success: false, error: 'Failed to secure client credentials', status: 500 };
-  }
-
-  try {
-    const newClientData = {
-      client_id: clientId,
-      client_secret: hashedClientSecret,
-      owner_id: user.id,
-      client_name,
-      redirect_uris,
-      client_uri: client_uri || null,
-      logo_uri: logo_uri || null,
-      scope,
-      grant_types: grant_types || ['authorization_code', 'refresh_token'],
-      response_types: response_types || ['code'],
-      tos_uri: tos_uri || null,
-      policy_uri: policy_uri || null,
-      client_type: client_type,
-    };
-    
-    const finalValidation = publicOauthClientsInsertSchemaSchema.safeParse(newClientData);
-    if (!finalValidation.success) {
-      logger.error(`${LOG_PREFIX} createOAuthClient - Internal validation failed for user ${user.id}:`, { errors: finalValidation.error.flatten(), data: newClientData });
-      return { success: false, error: 'Internal data validation error', details: finalValidation.error.flatten(), status: 500 };
-    }
-
-    const db = await getUserDb();
-    let newClient;
-    try {
-      newClient = await db.oauth_clients.create({
-        data: finalValidation.data,
-        select: createdClientFields,
-      });
-    } catch (insertError: any) {
-      logger.error(`${LOG_PREFIX} createOAuthClient - Error creating client for user ${user.id}:`, { error: insertError });
-      if (isUniqueViolation(insertError)) {
-          return { success: false, error: 'OAuth client could not be created due to a conflict.', details: insertError.message, status: 409 };
-      }
-      return { success: false, error: 'Failed to create OAuth client', details: insertError.message, status: 500 };
-    }
-
-    logger.info(`${LOG_PREFIX} createOAuthClient - Successfully created client ${newClient.client_id} for user ${user.id}.`);
-    // Return the new client details INCLUDING the plainClientSecret for the user to copy one time.
-    return { success: true, data: { ...newClient, client_secret: plainClientSecret }, status: 201 };
-
-  } catch (e: any) {
-    logger.error(`${LOG_PREFIX} createOAuthClient - Unexpected error for user ${user.id}:`, { error: e });
-    return { success: false, error: 'An unexpected error occurred', details: e.message, status: 500 };
-  }
-}
-
-// Action to get a specific OAuth client by ID
-export async function getOAuthClient(clientId: string) {
-  const supabase = await createServerClient();
-  const { data: { user }, error: userError } = await supabase.auth.getUser();
-
-  if (userError || !user) {
-    logger.warn(`${LOG_PREFIX} getOAuthClient - Unauthorized attempt for client ${clientId}.`);
-    return { success: false, error: 'Unauthorized', status: 401 };
-  }
-
-  try {
-    const db = await getUserDb();
-    const client = await db.oauth_clients.findFirst({
-      where: { client_id: clientId, owner_id: user.id, deleted_at: null },
-      select: listedClientFields,
-    });
-
-    if (!client) {
-      logger.warn(`${LOG_PREFIX} getOAuthClient - Client ${clientId} not found for user ${user.id}.`);
-      return { success: false, error: 'OAuth client not found or access denied', status: 404 };
-    }
-
-    logger.info(`${LOG_PREFIX} getOAuthClient - Successfully fetched client ${clientId} for user ${user.id}.`);
-    return { success: true, data: client, status: 200 };
-
-  } catch (e: any) {
-    logger.error(`${LOG_PREFIX} getOAuthClient - Error fetching client ${clientId} for user ${user.id}:`, { error: e });
-    return { success: false, error: 'Failed to fetch OAuth client', details: e.message, status: 500 };
+    const client = (await auth.api.createOAuthClient({
+      body: {
+        ...metadata,
+        token_endpoint_auth_method: client_type === 'public' ? 'none' : 'client_secret_basic',
+      },
+      headers: await headers(),
+    })) as ProviderClient;
+    logger.info(`${LOG_PREFIX} createOAuthClient - Created client ${client.client_id} for user ${user.id}.`);
+    return { success: true, data: { ...toSummary(client), client_secret: client.client_secret }, status: 201 };
+  } catch (error) {
+    return failure('createOAuthClient', error, 'Failed to create OAuth client');
   }
 }
 
 // Action to update an OAuth client
-export async function updateOAuthClient(clientId: string, input: UpdateOAuthClientPayload) {
-  const supabase = await createServerClient();
-  const { data: { user }, error: userError } = await supabase.auth.getUser();
-
-  if (userError || !user) {
-    logger.warn(`${LOG_PREFIX} updateOAuthClient - Unauthorized attempt for client ${clientId}.`);
-    return { success: false, error: 'Unauthorized', status: 401 };
-  }
-
-  if (Object.keys(input).length === 0) {
-    return { success: false, error: 'Request body is empty, no fields to update', status: 400 };
-  }
+export async function updateOAuthClient(clientId: string, input: UpdateOAuthClientPayload): Promise<ActionResult<OAuthClientSummary>> {
+  const user = await getServerUser();
+  if (!user) return unauthorized;
 
   const parsedInput = UpdateOAuthClientPayloadSchema.safeParse(input);
   if (!parsedInput.success) {
@@ -203,124 +131,48 @@ export async function updateOAuthClient(clientId: string, input: UpdateOAuthClie
     return { success: false, error: 'Invalid input', details: parsedInput.error.flatten(), status: 400 };
   }
 
-  const dataToUpdate: { [key: string]: any } = { updated_at: new Date() };
-  
-  for (const key in parsedInput.data) {
-    if (Object.prototype.hasOwnProperty.call(parsedInput.data, key)) {
-      const value = (parsedInput.data as any)[key];
-      if (value !== undefined) {
-        dataToUpdate[key] = value;
-      }
-    }
-  }
-
-  const db = await getUserDb();
-  const clientWhere = { client_id: clientId, owner_id: user.id, deleted_at: null };
-
-  if (Object.keys(dataToUpdate).length === 1 && dataToUpdate.updated_at) {
-    try {
-      const currentClient = await db.oauth_clients.findFirst({
-        where: clientWhere,
-        select: updatedClientFields,
-      });
-      if (currentClient) {
-        logger.info(`${LOG_PREFIX} updateOAuthClient - No actual changes for client ${clientId}.`);
-        return { success: true, data: currentClient, status: 200 };
-      }
-      logger.error(`${LOG_PREFIX} updateOAuthClient - Failed to fetch current client data for no-op update`, { clientId });
-    } catch (currentError) {
-      logger.error(`${LOG_PREFIX} updateOAuthClient - Failed to fetch current client data for no-op update`, { clientId, error: currentError });
-    }
-    return { success: false, error: 'Failed to retrieve client details after no-op update', status: 500 };
-  }
-
+  const update = parsedInput.data;
   try {
-    const updatedClient = await db.oauth_clients.update({
-      where: clientWhere,
-      data: dataToUpdate,
-      select: updatedClientFields,
-    });
-
-    logger.info(`${LOG_PREFIX} updateOAuthClient - Successfully updated client ${clientId} for user ${user.id}.`);
-    return { success: true, data: updatedClient, status: 200 };
-
-  } catch (e: any) {
-    if (isRecordNotFound(e)) {
-      logger.warn(`${LOG_PREFIX} updateOAuthClient - Client ${clientId} not found for update for user ${user.id}.`);
-      return { success: false, error: 'OAuth client not found or access denied', status: 404 };
-    }
-    logger.error(`${LOG_PREFIX} updateOAuthClient - Error updating client ${clientId} for user ${user.id}:`, { error: e });
-    return { success: false, error: 'Failed to update OAuth client', details: e.message, status: 500 };
+    const client = (await auth.api.updateOAuthClient({
+      body: { client_id: clientId, update },
+      headers: await headers(),
+    })) as ProviderClient;
+    logger.info(`${LOG_PREFIX} updateOAuthClient - Updated client ${clientId} for user ${user.id}.`);
+    return { success: true, data: toSummary(client), status: 200 };
+  } catch (error) {
+    return failure('updateOAuthClient', error, 'Failed to update OAuth client');
   }
 }
 
-// Action to delete an OAuth client (soft delete)
-export async function deleteOAuthClient(clientId: string) {
-  const supabase = await createServerClient();
-  const { data: { user }, error: userError } = await supabase.auth.getUser();
-
-  if (userError || !user) {
-    logger.warn(`${LOG_PREFIX} deleteOAuthClient - Unauthorized attempt for client ${clientId}.`);
-    return { success: false, error: 'Unauthorized', status: 401 };
-  }
+// Action to delete an OAuth client
+export async function deleteOAuthClient(clientId: string): Promise<ActionResult> {
+  const user = await getServerUser();
+  if (!user) return unauthorized;
 
   try {
-    const db = await getUserDb();
-    const { count } = await db.oauth_clients.updateMany({
-      where: { client_id: clientId, owner_id: user.id, deleted_at: null },
-      data: { deleted_at: new Date() },
-    });
-
-    if (count === 0) {
-      logger.warn(`${LOG_PREFIX} deleteOAuthClient - Client ${clientId} not found or already deleted for user ${user.id}.`);
-      return { success: false, error: 'OAuth client not found, already deleted, or access denied', status: 404 };
-    }
-
-    logger.info(`${LOG_PREFIX} deleteOAuthClient - Successfully soft-deleted client ${clientId} for user ${user.id}.`);
+    await auth.api.deleteOAuthClient({ body: { client_id: clientId }, headers: await headers() });
+    logger.info(`${LOG_PREFIX} deleteOAuthClient - Deleted client ${clientId} for user ${user.id}.`);
     return { success: true, message: 'OAuth client successfully deleted', status: 200 };
-
-  } catch (e: any) {
-    logger.error(`${LOG_PREFIX} deleteOAuthClient - Error deleting client ${clientId} for user ${user.id}:`, { error: e });
-    return { success: false, error: 'Failed to delete OAuth client', details: e.message, status: 500 };
+  } catch (error) {
+    return failure('deleteOAuthClient', error, 'Failed to delete OAuth client');
   }
 }
 
-// Action to reset an OAuth client's secret
-export async function resetOAuthClientSecret(clientId: string) {
-  const supabase = await createServerClient();
-  const { data: { user }, error: userError } = await supabase.auth.getUser();
-
-  if (userError || !user) {
-    logger.warn(`${LOG_PREFIX} resetOAuthClientSecret - Unauthorized attempt for client ${clientId}.`);
-    return { success: false, error: 'Unauthorized', status: 401 };
-  }
-
-  const plainClientSecret = generateClientSecret();
-  let hashedClientSecret;
-  try {
-    hashedClientSecret = await new Argon2id().hash(plainClientSecret);
-  } catch (hashError: any) {
-    logger.error(`${LOG_PREFIX} resetOAuthClientSecret - Failed to hash new secret for client ${clientId}, user ${user.id}:`, { error: hashError });
-    return { success: false, error: 'Failed to secure new client credentials', status: 500 };
-  }
+// Action to reset an OAuth client's secret. The new secret is returned once.
+export async function resetOAuthClientSecret(clientId: string): Promise<ActionResult<{ client_id: string; client_secret?: string }>> {
+  const user = await getServerUser();
+  if (!user) return unauthorized;
 
   try {
-    const db = await getUserDb();
-    await db.oauth_clients.update({
-      where: { client_id: clientId, owner_id: user.id, deleted_at: null },
-      data: { client_secret: hashedClientSecret, updated_at: new Date() },
-      select: { client_id: true },
-    });
-
-    logger.info(`${LOG_PREFIX} resetOAuthClientSecret - Successfully reset secret for ${clientId}, user ${user.id}.`);
-    return { success: true, data: { client_id: clientId, client_secret: plainClientSecret }, message: 'Client secret has been reset. Please save the new secret.', status: 200 };
-
-  } catch (e: any) {
-    if (isRecordNotFound(e)) {
-      logger.warn(`${LOG_PREFIX} resetOAuthClientSecret - Client ${clientId} not found for secret reset for user ${user.id}.`);
-      return { success: false, error: 'OAuth client not found or access denied', status: 404 };
-    }
-    logger.error(`${LOG_PREFIX} resetOAuthClientSecret - Error updating secret for ${clientId}, user ${user.id}:`, { error: e });
-    return { success: false, error: 'Failed to reset client secret', details: e.message, status: 500 };
+    const client = (await auth.api.rotateClientSecret({ body: { client_id: clientId }, headers: await headers() })) as ProviderClient;
+    logger.info(`${LOG_PREFIX} resetOAuthClientSecret - Reset secret for ${clientId}, user ${user.id}.`);
+    return {
+      success: true,
+      data: { client_id: clientId, client_secret: client.client_secret },
+      message: 'Client secret has been reset. Please save the new secret.',
+      status: 200,
+    };
+  } catch (error) {
+    return failure('resetOAuthClientSecret', error, 'Failed to reset client secret');
   }
-} 
+}

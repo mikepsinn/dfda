@@ -1,8 +1,9 @@
 # dFDA web app
 
 `apps/web` is the canonical Next.js product application. It stores its data in
-PostgreSQL through Prisma and uploaded files in an S3-compatible bucket;
-Supabase still provides sign-in while the app moves off it.
+PostgreSQL through Prisma and uploaded files in an S3-compatible bucket, and
+signs users in with Better Auth (users and sessions are tables in the same
+database).
 `prototype.dfda.earth` is its reference deployment. The same codebase is
 intended to serve the public site, personal health workspaces and clinic workspaces
 at `dfda.earth`, or run as a branded independent installation. One maintained
@@ -79,10 +80,10 @@ and [next implementation slice](../../docs/MIGRATION.md#next-implementation-slic
 
 Each deployment is intended to retain its own patient records, authentication,
 and configuration. Shared branding/code does not imply shared patient access;
-custom domains alone do not establish tenant isolation. Supabase Auth and the
-app's OAuth endpoints are present;
-MCP-compatible authorization and bearer-token data access need the changes
-listed in the migration plan.
+custom domains alone do not establish tenant isolation. Sign-in and an OAuth
+2.1 / OpenID Connect provider with dynamic client registration and discovery
+metadata (Better Auth) are present; bearer-token data access for an MCP
+server is still to be built (see the migration plan).
 
 Before clinic data can be shared, build consent records, installation identity,
 authenticated clinic aggregate submission, and aggregate privacy controls,
@@ -111,9 +112,10 @@ landing-page theme and components rather than creating another visual system.
 ## Environment Setup
 
 The web app requires a PostgreSQL connection (`DATABASE_URL`), an S3-compatible
-bucket for uploaded files (`S3_*`) and Supabase credentials for sign-in. Google
-AI and Google Cloud credentials are optional and only enable the features that
-use those services.
+bucket for uploaded files (`S3_*`), a sign-in secret (`BETTER_AUTH_SECRET`) and
+an SMTP server for sign-in emails (`SMTP_URL`, `EMAIL_FROM`). Google sign-in,
+Google AI and Google Cloud credentials are optional and only enable the
+features that use those services.
 
 ### Local Development
 
@@ -124,11 +126,19 @@ For local development, create a `.env` file in the root of the `apps/web` projec
 # Local Supabase stack: postgresql://postgres:postgres@127.0.0.1:54322/postgres
 DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:54322/postgres
 
-# Supabase sign-in (Get from your Supabase project settings)
+# Sign-in (Better Auth). Make the secret with: openssl rand -base64 32
+BETTER_AUTH_SECRET=YOUR_RANDOM_SECRET
+# SMTP server for magic links and password resets. For local tests, any SMTP
+# catcher works, for example Mailpit on smtp://127.0.0.1:1025.
+SMTP_URL=smtps://USER:PASSWORD@smtp.example.com:465
+EMAIL_FROM="dFDA <no-reply@example.com>"
+# Optional: Google sign-in. Redirect URI: <site>/api/auth/callback/google
+# GOOGLE_CLIENT_ID=
+# GOOGLE_CLIENT_SECRET=
+
+# Supabase project (still used for the OpenAPI document of the old data API)
 NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
-SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
-SUPABASE_JWT_SECRET=YOUR_SUPABASE_JWT_SECRET
 
 # S3-compatible bucket for uploaded files. With the local Supabase stack, use its
 # S3 endpoint and the S3 keys that `pnpm sb:local:status` prints.
@@ -144,10 +154,6 @@ S3_FORCE_PATH_STYLE=true
 # GOOGLE_GENERATIVE_AI_API_KEY=YOUR_GEMINI_API_KEY
 
 
-# Optional: Other variables like Google OAuth Client ID/Secret if needed
-# GOOGLE_CLIENT_ID=
-# GOOGLE_CLIENT_SECRET=
-
 ```
 
 **Authentication for Google Cloud Locally (Recommended):**
@@ -161,9 +167,10 @@ S3_FORCE_PATH_STYLE=true
 
 1.  Go to your Vercel Project Settings > Environment Variables.
 2.  Add the required variables from your `.env` file: `DATABASE_URL`,
-    `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
-    `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_JWT_SECRET`, and the `S3_*`
-    variables for the file bucket. Add `GOOGLE_GENERATIVE_AI_API_KEY` only when
-    AI-assisted features are enabled.
+    `BETTER_AUTH_SECRET`, `SMTP_URL`, `EMAIL_FROM`,
+    `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and the `S3_*`
+    variables for the file bucket. Add `GOOGLE_CLIENT_ID` and
+    `GOOGLE_CLIENT_SECRET` for Google sign-in, and `GOOGLE_GENERATIVE_AI_API_KEY`
+    only when AI-assisted features are enabled.
 3.  Set the bucket CORS rules to allow `PUT` requests with a `Content-Type`
     header from the app domains. Browsers upload files directly to the bucket.

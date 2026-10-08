@@ -1,6 +1,6 @@
 'use server'
 
-import { createClient } from '@/utils/supabase/server'
+import { getServerUser } from '@/lib/server-auth'
 import { getUserDb } from '@/lib/db/server'
 import { Tables } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
@@ -18,11 +18,9 @@ export type FormDefinition = Tables<'forms'> & {
  * @returns The form definition or null if not found or on error.
  */
 export async function getFormDefinition(formId: string): Promise<FormDefinition | null> {
-  const supabase = await createClient()
-
-  const { data: { user }, error: authError } = await supabase.auth.getUser()
-  if (authError || !user) {
-    logger.error('Auth error fetching form definition', { formId, error: authError })
+  const user = await getServerUser()
+  if (!user) {
+    logger.error('Auth error fetching form definition', { formId })
     return null
   }
 

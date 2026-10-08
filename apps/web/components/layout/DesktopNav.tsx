@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import type { NavItem } from "@/lib/types/navigation"
-import type { User } from "@supabase/supabase-js"
+import type { AuthUser as User } from '@/lib/auth'
 
 interface DesktopNavProps {
   user: User | null // Need user to determine logged-in state

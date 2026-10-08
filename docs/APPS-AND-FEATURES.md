@@ -63,7 +63,7 @@ Status meanings:
 ## Current application and its features
 
 [`apps/web`](../apps/web) is the canonical Next.js app (PostgreSQL through Prisma,
-files in an S3-compatible bucket; Supabase still provides sign-in), formerly
+files in an S3-compatible bucket, sign-in with Better Auth), formerly
 `apps/dfda-node`. Its reference deployment is `prototype.dfda.earth`; taking
 over `dfda.earth` is a later migration step.
 
@@ -74,7 +74,7 @@ over `dfda.earth` is a later migration step.
 | Clinic workspace | Provider dashboard, patient list and enrollment, intervention assignment, EHR authorization, and form creation screens | Packaging for an independent installation and aggregate-data sharing are still planned; this row describes the provider interface, not a separate app. |
 | Research partner | Dashboard, trial creation, enrollment actions, and trial-results screens | Build/verify protocol versions, review gates, consent, eligibility, withdrawal and study lifecycle. Existing create/enroll actions do not establish these safeguards. |
 | Admin | Admin dashboard and role-selection screens | Broader instance administration and network management remain incomplete. |
-| Authentication and developer access | Supabase sign-in, password reset, OAuth authorization and token endpoints, developer OAuth-client management, developer documentation, and `/api/openapi` | MCP needs dynamic client registration, standard discovery metadata, form-encoded token requests, and bearer-token database access. |
+| Authentication and developer access | Better Auth sign-in (magic link, Google, password), password reset, organizations, an OAuth 2.1 / OpenID Connect provider with dynamic client registration and discovery metadata, developer OAuth-client management, developer documentation, and `/api/openapi` | An MCP server and bearer-token data access are still to be built. |
 | AI-assisted capture and chat | Image analysis and measurement-saving actions; chat and CopilotKit routes | Text-to-measurement logging is to be extracted. Parsing a person's input and generating provisional estimates remain distinct; estimates need origin labels and must not become observed patient/study records. |
 
 ## Existing supporting components

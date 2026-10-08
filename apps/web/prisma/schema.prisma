@@ -340,78 +340,109 @@ model notifications {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model oauth_access_tokens {
-  id                   String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  token                String                 @unique
-  client_id            String                 @db.Uuid
-  user_id              String                 @db.Uuid
-  scope                String
-  expires_at           DateTime               @db.Timestamptz(6)
-  revoked_at           DateTime?              @db.Timestamptz(6)
-  created_at           DateTime?              @default(now()) @db.Timestamptz(6)
-  oauth_clients        oauth_clients          @relation(fields: [client_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  profiles             profiles               @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  oauth_refresh_tokens oauth_refresh_tokens[]
-}
+  id                      String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  token                   String                @unique
+  clientId                String
+  sessionId               String?               @db.Uuid
+  userId                  String?               @db.Uuid
+  referenceId             String?
+  authorizationCodeId     String?
+  resources               Json?
+  requestedUserInfoClaims Json?
+  refreshId               String?               @db.Uuid
+  expiresAt               DateTime              @db.Timestamptz(6)
+  createdAt               DateTime              @db.Timestamptz(6)
+  revoked                 DateTime?             @db.Timestamptz(6)
+  confirmation            Json?
+  scopes                  Json
+  oauth_clients           oauth_clients         @relation(fields: [clientId], references: [clientId], onDelete: Cascade, onUpdate: NoAction)
+  oauth_refresh_tokens    oauth_refresh_tokens? @relation(fields: [refreshId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  sessions                sessions?             @relation(fields: [sessionId], references: [id], onUpdate: NoAction)
+  users                   users?                @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
-/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
-/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
-model oauth_authorization_codes {
-  id                    String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  code                  String        @unique
-  client_id             String
-  user_id               String        @db.Uuid
-  redirect_uri          String
-  scope                 String?
-  expires_at            DateTime      @db.Timestamptz(6)
-  created_at            DateTime      @default(dbgenerated("timezone('utc'::text, now())")) @db.Timestamptz(6)
-  code_challenge        String?
-  code_challenge_method String?
-  oauth_clients         oauth_clients @relation(fields: [client_id], references: [client_id], onDelete: Cascade, onUpdate: NoAction, map: "fk_authorization_codes_client_id")
-  profiles              profiles      @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-
-  @@index([code], map: "idx_authorization_codes_code")
-  @@index([expires_at], map: "idx_authorization_codes_expires_at")
+  @@index([authorizationCodeId])
+  @@index([clientId])
+  @@index([refreshId])
+  @@index([sessionId])
+  @@index([userId])
 }
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model oauth_clients {
-  id                        String                      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  client_id                 String                      @unique
-  client_secret             String
-  client_name               String
-  redirect_uris             String[]
-  grant_types               String[]
-  response_types            String[]
-  scope                     String
-  owner_id                  String                      @db.Uuid
-  logo_uri                  String?
-  client_uri                String?
-  tos_uri                   String?
-  policy_uri                String?
-  deleted_at                DateTime?                   @db.Timestamptz(6)
-  created_at                DateTime?                   @default(now()) @db.Timestamptz(6)
-  updated_at                DateTime?                   @default(now()) @db.Timestamptz(6)
-  client_type               oauth_client_type_enum      @default(confidential)
-  oauth_access_tokens       oauth_access_tokens[]
-  oauth_authorization_codes oauth_authorization_codes[]
-  profiles                  profiles                    @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  oauth_refresh_tokens      oauth_refresh_tokens[]
+  id                               String                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  clientId                         String                   @unique
+  clientSecret                     String?
+  clientDiscoveryId                String?
+  disabled                         Boolean?
+  skipConsent                      Boolean?
+  enableEndSession                 Boolean?
+  subjectType                      String?
+  scopes                           Json?
+  clientCredentialsScopes          Json?
+  userId                           String?                  @db.Uuid
+  createdAt                        DateTime?                @db.Timestamptz(6)
+  updatedAt                        DateTime?                @db.Timestamptz(6)
+  name                             String?
+  uri                              String?
+  icon                             String?
+  contacts                         Json?
+  tos                              String?
+  policy                           String?
+  softwareId                       String?
+  softwareVersion                  String?
+  softwareStatement                String?
+  redirectUris                     Json
+  postLogoutRedirectUris           Json?
+  backchannelLogoutUri             String?
+  backchannelLogoutSessionRequired Boolean?
+  tokenEndpointAuthMethod          String?
+  applicationType                  String?
+  jwks                             String?
+  jwksUri                          String?
+  grantTypes                       Json?
+  responseTypes                    Json?
+  requirePKCE                      Boolean?
+  dpopBoundAccessTokens            Boolean?
+  referenceId                      String?
+  metadata                         Json?
+  oauth_access_tokens              oauth_access_tokens[]
+  oauth_client_resources           oauth_client_resources[]
+  users                            users?                   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  oauth_consents                   oauth_consents[]
+  oauth_refresh_tokens             oauth_refresh_tokens[]
+
+  @@index([userId])
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model oauth_refresh_tokens {
-  id                  String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  token               String              @unique
-  access_token_id     String              @db.Uuid
-  client_id           String              @db.Uuid
-  user_id             String              @db.Uuid
-  scope               String
-  expires_at          DateTime            @db.Timestamptz(6)
-  revoked_at          DateTime?           @db.Timestamptz(6)
-  created_at          DateTime?           @default(now()) @db.Timestamptz(6)
-  oauth_access_tokens oauth_access_tokens @relation(fields: [access_token_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  oauth_clients       oauth_clients       @relation(fields: [client_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  profiles            profiles            @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id                      String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  token                   String                @unique
+  clientId                String
+  sessionId               String?               @db.Uuid
+  userId                  String                @db.Uuid
+  referenceId             String?
+  authorizationCodeId     String?
+  resources               Json?
+  requestedUserInfoClaims Json?
+  expiresAt               DateTime              @db.Timestamptz(6)
+  createdAt               DateTime              @db.Timestamptz(6)
+  revoked                 DateTime?             @db.Timestamptz(6)
+  rotatedAt               DateTime?             @db.Timestamptz(6)
+  rotationReplayResponse  String?
+  rotationReplayExpiresAt DateTime?             @db.Timestamptz(6)
+  authTime                DateTime?             @db.Timestamptz(6)
+  confirmation            Json?
+  scopes                  Json
+  oauth_access_tokens     oauth_access_tokens[]
+  oauth_clients           oauth_clients         @relation(fields: [clientId], references: [clientId], onDelete: Cascade, onUpdate: NoAction)
+  sessions                sessions?             @relation(fields: [sessionId], references: [id], onUpdate: NoAction)
+  users                   users                 @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([authorizationCodeId])
+  @@index([clientId])
+  @@index([sessionId])
+  @@index([userId])
 }
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
@@ -641,38 +672,34 @@ model products {
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model profiles {
-  id                        String                      @id @db.Uuid
-  email                     String                      @unique
-  first_name                String?
-  last_name                 String?
-  user_type                 user_type_enum?
-  avatar_url                String?
-  deleted_at                DateTime?                   @db.Timestamptz(6)
-  created_at                DateTime?                   @default(now()) @db.Timestamptz(6)
-  updated_at                DateTime?                   @default(now()) @db.Timestamptz(6)
-  timezone                  String?
-  contact_messages          contact_messages[]
-  data_submissions          data_submissions[]
-  forms                     forms[]
-  measurements              measurements[]
-  notifications             notifications[]
-  oauth_access_tokens       oauth_access_tokens[]
-  oauth_authorization_codes oauth_authorization_codes[]
-  oauth_clients             oauth_clients[]
-  oauth_refresh_tokens      oauth_refresh_tokens[]
-  patient_treatments        patient_treatments[]
-  patients                  patients?
-  protocol_versions         protocol_versions[]
-  providers                 providers?
-  reminder_notifications    reminder_notifications[]
-  reminder_schedules        reminder_schedules[]
-  research_partners         research_partners?
-  cancelled_trial_actions   trial_actions[]             @relation("trial_actions_cancelled_byToprofiles")
-  completed_trial_actions   trial_actions[]             @relation("trial_actions_completed_byToprofiles")
-  trial_enrollments         trial_enrollments[]
-  trials                    trials[]
-  uploaded_files            uploaded_files[]
-  user_variables            user_variables[]
+  id                      String                   @id @db.Uuid
+  email                   String                   @unique
+  first_name              String?
+  last_name               String?
+  user_type               user_type_enum?
+  avatar_url              String?
+  deleted_at              DateTime?                @db.Timestamptz(6)
+  created_at              DateTime?                @default(now()) @db.Timestamptz(6)
+  updated_at              DateTime?                @default(now()) @db.Timestamptz(6)
+  timezone                String?
+  contact_messages        contact_messages[]
+  data_submissions        data_submissions[]
+  forms                   forms[]
+  measurements            measurements[]
+  notifications           notifications[]
+  patient_treatments      patient_treatments[]
+  patients                patients?
+  protocol_versions       protocol_versions[]
+  providers               providers?
+  reminder_notifications  reminder_notifications[]
+  reminder_schedules      reminder_schedules[]
+  research_partners       research_partners?
+  cancelled_trial_actions trial_actions[]          @relation("trial_actions_cancelled_byToprofiles")
+  completed_trial_actions trial_actions[]          @relation("trial_actions_completed_byToprofiles")
+  trial_enrollments       trial_enrollments[]
+  trials                  trials[]
+  uploaded_files          uploaded_files[]
+  user_variables          user_variables[]
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
@@ -1042,6 +1069,188 @@ model variable_ingredients {
   @@index([parent_global_variable_id], map: "idx_variable_ingredients_parent_id")
 }
 
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model accounts {
+  id                    String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  accountId             String
+  providerId            String
+  userId                String    @db.Uuid
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime? @db.Timestamptz(6)
+  refreshTokenExpiresAt DateTime? @db.Timestamptz(6)
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now()) @db.Timestamptz(6)
+  updatedAt             DateTime  @db.Timestamptz(6)
+  users                 users     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([userId])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model jwks {
+  id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  publicKey  String
+  privateKey String
+  createdAt  DateTime  @db.Timestamptz(6)
+  expiresAt  DateTime? @db.Timestamptz(6)
+  alg        String?
+  crv        String?
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model oauth_client_assertions {
+  id        String   @id
+  expiresAt DateTime @db.Timestamptz(6)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model oauth_client_resources {
+  id              String          @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  clientId        String
+  resourceId      String
+  metadata        Json?
+  createdAt       DateTime?       @db.Timestamptz(6)
+  oauth_clients   oauth_clients   @relation(fields: [clientId], references: [clientId], onDelete: Cascade, onUpdate: NoAction)
+  oauth_resources oauth_resources @relation(fields: [resourceId], references: [identifier], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([clientId, resourceId], map: "oauth_client_resources_clientId_resourceId_uidx")
+  @@index([clientId])
+  @@index([resourceId])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model oauth_consents {
+  id                      String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  clientId                String
+  userId                  String?       @db.Uuid
+  referenceId             String?
+  resources               Json?
+  requestedUserInfoClaims Json?
+  scopes                  Json
+  createdAt               DateTime      @db.Timestamptz(6)
+  updatedAt               DateTime      @db.Timestamptz(6)
+  oauth_clients           oauth_clients @relation(fields: [clientId], references: [clientId], onDelete: Cascade, onUpdate: NoAction)
+  users                   users?        @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([clientId])
+  @@index([userId])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model oauth_resources {
+  id                            String                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  identifier                    String                   @unique
+  name                          String
+  accessTokenTtl                Int?
+  refreshTokenTtl               Int?
+  signingAlgorithm              String?
+  signingKeyId                  String?
+  allowedScopes                 Json?
+  customClaims                  Json?
+  dpopBoundAccessTokensRequired Boolean?
+  disabled                      Boolean?
+  createdAt                     DateTime?                @db.Timestamptz(6)
+  updatedAt                     DateTime?                @db.Timestamptz(6)
+  policyVersion                 Int?
+  metadata                      Json?
+  oauth_client_resources        oauth_client_resources[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model organization_invitations {
+  id             String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  organizationId String        @db.Uuid
+  email          String
+  role           String?
+  status         String
+  expiresAt      DateTime      @db.Timestamptz(6)
+  createdAt      DateTime      @default(now()) @db.Timestamptz(6)
+  inviterId      String        @db.Uuid
+  users          users         @relation(fields: [inviterId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  organizations  organizations @relation(fields: [organizationId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([email])
+  @@index([organizationId])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model organization_members {
+  id             String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  organizationId String        @db.Uuid
+  userId         String        @db.Uuid
+  role           String
+  createdAt      DateTime      @db.Timestamptz(6)
+  organizations  organizations @relation(fields: [organizationId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  users          users         @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([organizationId])
+  @@index([userId])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model organizations {
+  id                       String                     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                     String
+  slug                     String                     @unique
+  logo                     String?
+  createdAt                DateTime                   @db.Timestamptz(6)
+  metadata                 String?
+  organization_invitations organization_invitations[]
+  organization_members     organization_members[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model sessions {
+  id                   String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  expiresAt            DateTime               @db.Timestamptz(6)
+  token                String                 @unique
+  createdAt            DateTime               @default(now()) @db.Timestamptz(6)
+  updatedAt            DateTime               @db.Timestamptz(6)
+  ipAddress            String?
+  userAgent            String?
+  userId               String                 @db.Uuid
+  activeOrganizationId String?
+  oauth_access_tokens  oauth_access_tokens[]
+  oauth_refresh_tokens oauth_refresh_tokens[]
+  users                users                  @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([userId])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model users {
+  id                       String                     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                     String
+  email                    String                     @unique
+  emailVerified            Boolean
+  image                    String?
+  createdAt                DateTime                   @default(now()) @db.Timestamptz(6)
+  updatedAt                DateTime                   @default(now()) @db.Timestamptz(6)
+  accounts                 accounts[]
+  oauth_access_tokens      oauth_access_tokens[]
+  oauth_clients            oauth_clients[]
+  oauth_consents           oauth_consents[]
+  oauth_refresh_tokens     oauth_refresh_tokens[]
+  organization_invitations organization_invitations[]
+  organization_members     organization_members[]
+  sessions                 sessions[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model verifications {
+  id         String   @id @default(dbgenerated("(gen_random_uuid())::text"))
+  identifier String
+  value      String
+  expiresAt  DateTime @db.Timestamptz(6)
+  createdAt  DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt  DateTime @default(now()) @db.Timestamptz(6)
+
+  @@index([identifier])
+}
+
 view pending_actions {
   id                   String?          @db.Uuid
   trial_id             String?          @db.Uuid
@@ -1142,12 +1351,6 @@ enum form_question_type {
   scale
   date
   file_upload
-}
-
-/// This enum is commented in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
-enum oauth_client_type_enum {
-  public
-  confidential
 }
 
 enum product_type_enum {

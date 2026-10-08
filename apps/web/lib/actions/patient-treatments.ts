@@ -1,9 +1,8 @@
 "use server"
 
-import { createClient } from '@/utils/supabase/server'
+import { getServerUser } from '@/lib/server-auth'
 import { getUserDb } from '@/lib/db/server'
 import { isUniqueViolation, withUserTransaction } from '@/lib/db'
-import { getServerUser } from '@/lib/server-auth'
 import type { Database } from '@/lib/database.types'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
@@ -205,12 +204,10 @@ export async function addInitialPatientTreatmentsAction(
 export async function addSinglePatientTreatmentAction(
   input: AddPatientTreatmentInput
 ): Promise<{ success: boolean; error?: string; data?: { id: string } }> {
-  const supabase = await createClient()
-
   // 1. Get current user session
-  const { data: { user }, error: authError } = await supabase.auth.getUser();
-  if (authError || !user) {
-    logger.error("User not authenticated", { error: authError });
+  const user = await getServerUser();
+  if (!user) {
+    logger.error("User not authenticated");
     return { success: false, error: "Authentication failed." };
   }
 

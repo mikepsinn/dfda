@@ -8,7 +8,7 @@ import { format } from "date-fns"
 import { CalendarIcon, Loader2 } from "lucide-react"
 
 import { getFormDefinition, submitFormAnswers, FormDefinition } from '@/lib/actions/form-actions'
-import { createBrowserClient } from '@/utils/supabase/client'
+import { authClient } from '@/lib/auth-client'
 import type { Tables } from '@/lib/database.types'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -55,7 +55,6 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
   const [userId, setUserId] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const supabase = createBrowserClient();
 
   // Generate validation schema and default values based on formDefinition
   const { schema, defaultValues } = useMemo(() => {
@@ -139,7 +138,7 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
   // Fetch user ID
   useEffect(() => {
     const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
+      const user = (await authClient.getSession()).data?.user;
       if (user) {
         setUserId(user.id);
       } else {
@@ -148,7 +147,7 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
       }
     };
     getUser();
-  }, [supabase]);
+  }, []);
 
   // Fetch form definition
   useEffect(() => {

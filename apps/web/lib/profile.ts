@@ -1,28 +1,30 @@
 import { getUserDb } from "@/lib/db/server"
 import { adminDb, dbAs } from "@/lib/db"
 import { logger } from "@/lib/logger"
-import type { User } from "@supabase/supabase-js"
+import type { AuthUser } from "@/lib/auth"
 import type { Database } from "@/lib/database.types"
 import { cache } from "react"
 
 // Export the Profile type
 export type Profile = Database['public']['Tables']['profiles']['Row'];
 
+/** The signed-in user, as getServerUser() returns it. */
+type User = Pick<AuthUser, 'id' | 'email'>;
+
 /**
  * Reads the profile of `user`, and creates it when it does not exist yet.
  *
- * On Supabase, the on_auth_user_created trigger creates the profile at sign-up.
- * On a plain PostgreSQL database that trigger cannot run, because the users are
- * in Supabase Auth, not in this database. So the first read creates the row
- * (id and email, as the trigger did). Choosing a role then creates the
- * patient, provider or research partner row through the profiles trigger.
+ * Better Auth creates the profile when it creates the user (lib/auth.ts). Users
+ * from before that, or a profile insert that failed, get the row here on the
+ * first read (id and email). Choosing a role then creates the patient,
+ * provider or research partner row through the profiles trigger.
  *
  * Returns null only when no profile exists and none can be created (a user
  * without an email). A database error (for example a missing DATABASE_URL or
  * a migration that is not applied) is thrown, so that callers do not mistake
  * it for a profile without a role.
  *
- * `user` must come from Supabase Auth (`auth.getUser()`), never from request
+ * `user` must come from the session (`getServerUser()`), never from request
  * input. The query runs with row-level security as that user. It does not look
  * up the session again: a second lookup that fails would fall back to the
  * anonymous role, which cannot see the profile, and the profile would look
@@ -43,7 +45,7 @@ export const fetchUserProfile = cache(async (user: User): Promise<Profile | null
     return null;
   }
 
-  // The user comes from Supabase Auth, so creating their own row is authorized.
+  // The user comes from the session, so creating their own row is authorized.
   logger.info('Creating the missing user profile.', { userId: user.id });
   return adminDb.profiles.upsert({
     where: { id: user.id },
@@ -56,7 +58,7 @@ export const fetchUserProfile = cache(async (user: User): Promise<Profile | null
  * Fetches the user profile from the server-side.
  * Requires the authenticated user object.
  * 
- * @param user The authenticated user object from Supabase Auth.
+ * @param user The signed-in user from getServerUser().
  * @returns The user's profile object or null if not found/error occurred.
  */
 export const getUserProfile = cache( async (user: User | null): Promise<Profile | null> => {
@@ -146,3 +148,14 @@ export async function createUserProfile(profileData: ProfileInsert): Promise<Pro
 }
 
 // Add other profile-related functions here (e.g., deleteProfile, client-side fetch)
+
+/** The home page of a user with this role, or /select-role when the role is not set. */
+export function dashboardPathFor(userType: Profile['user_type'] | undefined): string {
+  switch (userType) {
+    case 'patient': return '/patient/';
+    case 'provider': return '/provider/';
+    case 'research_partner': return '/research-partner/';
+    case 'developer': return '/developer/';
+    default: return '/select-role';
+  }
+}

@@ -7,10 +7,10 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    // PostgreSQL connection used by Prisma (lib/db) for all table queries.
-    // Supabase is still used for sign-in. Required, so that a deployment
-    // without it fails at build time instead of failing every query at run
-    // time. The build does not connect to it.
+    // PostgreSQL connection used by Prisma (lib/db) for all table queries,
+    // and by Better Auth (lib/auth.ts) for users and sessions. Required, so
+    // that a deployment without it fails at build time instead of failing
+    // every query at run time. The build does not connect to it.
     DATABASE_URL: z.string().url(),
     // S3-compatible bucket for uploaded files (lib/storage). Optional here so
     // that builds run without it; lib/storage throws on first use when
@@ -23,12 +23,16 @@ export const env = createEnv({
     S3_FORCE_PATH_STYLE: z.enum(['true', 'false']).optional(),
     // AI-assisted features degrade gracefully when no provider key is set.
     GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1).optional(),
-    // Remove Google OAuth client creds - handled by Supabase Auth server
-    // GOOGLE_CLIENT_ID: z.string().min(1).optional(), 
-    // GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
-    SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
-    SUPABASE_JWT_SECRET: z.string().min(32, 'JWT Secret must be at least 32 characters long'),
-    ACCESS_TOKEN_EXPIRES_IN_SECONDS: z.coerce.number().int().positive().default(3600),
+    // Sign-in (lib/auth.ts). The secret signs session cookies and OAuth
+    // queries; make one with `openssl rand -base64 32`.
+    BETTER_AUTH_SECRET: z.string().min(32, 'BETTER_AUTH_SECRET must be at least 32 characters long'),
+    // Outgoing email (magic links and password resets), for example
+    // smtps://user:password@smtp.example.com:465.
+    SMTP_URL: z.string().url(),
+    EMAIL_FROM: z.string().min(3),
+    // Google sign-in. Optional: without both values the Google button is hidden.
+    GOOGLE_CLIENT_ID: z.string().min(1).optional(),
+    GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
     GOOGLE_APPLICATION_CREDENTIALS: z.string().min(1).optional(),
   },
 
@@ -62,12 +66,11 @@ export const env = createEnv({
     S3_SECRET_ACCESS_KEY: process.env.S3_SECRET_ACCESS_KEY,
     S3_FORCE_PATH_STYLE: process.env.S3_FORCE_PATH_STYLE,
     GOOGLE_GENERATIVE_AI_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
-    // Remove Google OAuth client creds - handled by Supabase Auth server
-    // GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
-    // GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-    SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
-    SUPABASE_JWT_SECRET: process.env.SUPABASE_JWT_SECRET,
-    ACCESS_TOKEN_EXPIRES_IN_SECONDS: process.env.ACCESS_TOKEN_EXPIRES_IN_SECONDS || '3600',
+    BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
+    SMTP_URL: process.env.SMTP_URL,
+    EMAIL_FROM: process.env.EMAIL_FROM,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     GOOGLE_APPLICATION_CREDENTIALS: process.env.GOOGLE_APPLICATION_CREDENTIALS,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,

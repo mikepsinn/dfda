@@ -1,5 +1,4 @@
-import { createClient } from "@/utils/supabase/server"
-// import type { SupabaseClient } from "@supabase/supabase-js" // Removed unused
+import { getServerUser } from '@/lib/server-auth'
 import { redirect, notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -24,8 +23,7 @@ export default async function TreatmentSideEffectsPage({ params }: { params: Pro
   const { patientTreatmentId } = await params;
   logger.info(`Rendering side effects page for treatment ID: ${patientTreatmentId}`);
 
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await getServerUser()
 
   if (!user) {
     redirect("/login?message=Please log in to view treatment side effects.")

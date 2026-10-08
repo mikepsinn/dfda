@@ -8,6 +8,7 @@ export default defineConfig({
   test: {
     environment: 'node',
     include: ['tests/db/**/*.test.ts'],
+    setupFiles: ['tests/db/setup.ts'],
     testTimeout: 30000,
     fileParallelism: false,
   },

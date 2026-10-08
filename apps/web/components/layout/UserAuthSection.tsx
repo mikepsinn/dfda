@@ -16,8 +16,8 @@ import {
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { createClient } from "@/utils/supabase/client"
-import type { User } from "@supabase/supabase-js"
+import { authClient } from "@/lib/auth-client"
+import type { AuthUser as User } from "@/lib/auth"
 import type { NavItem } from "@/lib/types/navigation"
 import { useRouter } from 'next/navigation'
 
@@ -28,15 +28,15 @@ interface UserAuthSectionProps {
 }
 
 export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems = [] }: UserAuthSectionProps) {
-  const supabase = createClient()
   const router = useRouter()
 
-  const userInitials = user?.user_metadata?.name
-    ? user.user_metadata.name.split(" ").map((n: string) => n[0]).join("").toUpperCase()
+  const userInitials = user?.name
+    ? user.name.split(" ").map((n: string) => n[0]).join("").toUpperCase()
     : user?.email?.[0].toUpperCase() ?? "U"
 
   const handleSignOut = async () => {
-    await supabase.auth.signOut()
+    await authClient.signOut()
+    router.push('/')
     router.refresh()
   }
 

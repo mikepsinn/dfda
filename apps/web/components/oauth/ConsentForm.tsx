@@ -1,110 +1,95 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
-// import { redirect } from 'next/navigation'; // No longer needed here
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { logger } from '@/lib/logger';
-import Image from 'next/image';
+import { authClient } from '@/lib/auth-client';
 import { Check, X, ShieldQuestion, Loader2 } from 'lucide-react';
 
-import { handleConsent, type HandleConsentResult } from '@/lib/actions/oauth/authorize.actions';
+// Plain-language names of the OAuth scopes (lib/auth.ts).
+const SCOPE_DESCRIPTIONS: Record<string, string> = {
+  openid: 'Confirm who you are',
+  profile: 'See your name and picture',
+  email: 'See your email address',
+  offline_access: 'Stay connected when you are not using it',
+};
+
+// Plain-language names of the OIDC user info claims an application can ask for.
+const CLAIM_DESCRIPTIONS: Record<string, string> = {
+  name: 'your name',
+  given_name: 'your first name',
+  family_name: 'your last name',
+  picture: 'your picture',
+  email: 'your email address',
+  email_verified: 'whether your email address is verified',
+};
 
 export interface ConsentFormProps {
   client: {
-    client_id: string;
-    client_name: string;
-    logo_uri?: string | null;
+    name: string;
+    icon?: string | null;
+    uri?: string | null;
   };
   user: {
     email?: string | null;
   };
   scopes: string[];
-  csrfToken?: string | null; // Will be passed as 'state' from the authorize page
-  code_challenge?: string | null;
-  code_challenge_method?: string | null;
-  redirect_uri: string;
+  /** The OIDC claims request of the authorization, or null. */
+  claimsRequest: Record<string, unknown> | null;
+  /** The user info claims that claimsRequest asks for. */
+  userInfoClaims: string[];
 }
 
-export function ConsentForm({
-  client,
-  user,
-  scopes,
-  csrfToken,
-  code_challenge,
-  code_challenge_method,
-  redirect_uri,
-}: ConsentFormProps) {
-  const [isLoading, setIsLoading] = useState(false);
+export function ConsentForm({ client, user, scopes, claimsRequest, userInfoClaims }: ConsentFormProps) {
+  const [isLoading, setIsLoading] = useState<'approve' | 'deny' | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmitDecision = async (decision: 'approve' | 'deny') => {
-    setIsLoading(true);
+  const submitDecision = async (decision: 'approve' | 'deny') => {
+    setIsLoading(decision);
     setError(null);
 
-    const formData = new FormData();
-    formData.append('decision', decision);
-    formData.append('client_id', client.client_id);
-    formData.append('redirect_uri', redirect_uri);
-    if (scopes) {
-      formData.append('scope', scopes.join(' '));
+    // The client plugin adds the signed query of this page to the request.
+    // The scopes and claims are sent explicitly, so that the user accepts
+    // only what this page shows.
+    const { data, error } = await authClient.oauth2.consent({
+      accept: decision === 'approve',
+      scope: scopes.join(' ') || undefined,
+      claims: claimsRequest ?? undefined,
+    });
+    const target = (data as { url?: string; redirect_uri?: string } | null)?.url
+      ?? (data as { redirect_uri?: string } | null)?.redirect_uri;
+    if (error || !target) {
+      logger.error('[ConsentForm] Consent handling failed', { status: error?.status });
+      setError('Could not complete the authorization. Please start again from the application.');
+      setIsLoading(null);
+      return;
     }
-    if (csrfToken) { // csrfToken from props is the OAuth 'state' parameter
-      formData.append('state', csrfToken);
-    }
-    if (code_challenge) {
-      formData.append('code_challenge', code_challenge);
-    }
-    if (code_challenge_method) {
-      formData.append('code_challenge_method', code_challenge_method);
-    }
-
-    try {
-      const result: HandleConsentResult = await handleConsent(formData);
-      if (result.success) {
-        window.location.href = result.redirect_to;
-      } else {
-        logger.error('[ConsentForm] Consent handling failed:', { error: result.error, description: result.error_description });
-        setError(result.error_description || result.error || 'An unexpected error occurred.');
-      }
-    } catch (e: any) {
-      logger.error('[ConsentForm] Error submitting consent decision:', { error: e });
-      setError('An unexpected client-side error occurred. Please try again.');
-    }
-
-    setIsLoading(false);
-  };
-
-  const handleSubmitApprove = (event: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    handleSubmitDecision('approve');
-  };
-
-  const handleSubmitDeny = (event: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    handleSubmitDecision('deny');
+    window.location.assign(target);
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          {client.logo_uri ? (
-            <Image 
-              src={client.logo_uri} 
-              alt={`${client.client_name} logo`} 
-              width={64} 
-              height={64} 
-              className="mx-auto mb-4 rounded-full object-contain" 
+          {client.icon ? (
+            // eslint-disable-next-line @next/next/no-img-element -- the icon is on the client's own host
+            <img
+              src={client.icon}
+              alt={`${client.name} logo`}
+              width={64}
+              height={64}
+              className="mx-auto mb-4 rounded-full object-contain"
             />
           ) : (
             <ShieldQuestion className="mx-auto h-16 w-16 text-gray-400 mb-4" />
           )}
           <CardTitle className="text-xl">Authorize Application</CardTitle>
           <CardDescription>
-            <span className="font-semibold">{client.client_name}</span> wants to access your account 
+            <span className="font-semibold">{client.name}</span> wants to access your account
             ({user.email}).
+            {client.uri && <span className="block mt-1 text-xs">{client.uri}</span>}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -112,14 +97,23 @@ export function ConsentForm({
             <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">This application will be able to:</h3>
             <ul className="mt-1 list-disc list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400">
               {scopes.map((scope) => (
-                <li key={scope}>{scope.charAt(0).toUpperCase() + scope.slice(1)}</li> // Simple scope formatting
+                <li key={scope}>{SCOPE_DESCRIPTIONS[scope] ?? scope}</li>
               ))}
             </ul>
             {scopes.length === 0 && <p className="text-sm text-gray-500">No specific permissions requested (default access).</p>}
+            {userInfoClaims.length > 0 && (
+              <>
+                <h3 className="mt-3 text-sm font-medium text-gray-700 dark:text-gray-300">It also asks to see:</h3>
+                <ul className="mt-1 list-disc list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                  {userInfoClaims.map((claim) => (
+                    <li key={claim}>{CLAIM_DESCRIPTIONS[claim] ?? claim}</li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
           <p className="text-xs text-gray-500 dark:text-gray-400">
-            By authorizing this application, you allow it to perform the actions listed above on your behalf. 
-            You can revoke this access at any time in your application settings.
+            By authorizing this application, you allow it to perform the actions listed above on your behalf.
           </p>
           {error && (
             <Alert variant="destructive">
@@ -129,14 +123,14 @@ export function ConsentForm({
           )}
         </CardContent>
         <CardFooter className="grid grid-cols-2 gap-4">
-          <Button type="submit" onClick={handleSubmitApprove} disabled={isLoading} className="mr-2">
-            {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</> : <><Check className="mr-2 h-4 w-4" /> Allow Access</>}
+          <Button type="button" onClick={() => submitDecision('approve')} disabled={isLoading !== null}>
+            {isLoading === 'approve' ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</> : <><Check className="mr-2 h-4 w-4" /> Allow Access</>}
           </Button>
-          <Button type="button" variant="outline" onClick={handleSubmitDeny} disabled={isLoading}>
-            {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</> : <><X className="mr-2 h-4 w-4"/> Deny Access</>}
+          <Button type="button" variant="outline" onClick={() => submitDecision('deny')} disabled={isLoading !== null}>
+            {isLoading === 'deny' ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</> : <><X className="mr-2 h-4 w-4"/> Deny Access</>}
           </Button>
         </CardFooter>
       </Card>
     </div>
   );
-} 
+}

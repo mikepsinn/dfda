@@ -12,10 +12,10 @@ import Link from "next/link"
 import { ExternalLink, LayoutDashboard, SearchCode, BookText, SquareCode, BotMessageSquare, KeyRound, Pencil, Trash2, RefreshCw, Copy, CheckCircle, AlertTriangle } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
-import { type User } from '@supabase/supabase-js';
+import type { AuthUser as User } from '@/lib/auth';
 import { type Database } from '@/lib/database.types';
 import { listOAuthClients, deleteOAuthClient, resetOAuthClientSecret, createOAuthClient, updateOAuthClient } from '@/lib/actions/developer/oauth-clients.actions';
-import { CreateOAuthClientInputSchema, UpdateOAuthClientInputSchema, type CreateOAuthClientInput, type UpdateOAuthClientInput } from '@/lib/actions/developer/oauth-clients.schemas';
+import { CreateOAuthClientInputSchema, UpdateOAuthClientInputSchema, type CreateOAuthClientInput, type OAuthClientSummary, type UpdateOAuthClientInput } from '@/lib/actions/developer/oauth-clients.schemas';
 import { z } from 'zod';
 import { updateDeveloperProfile, type UpdateProfileInput } from '@/lib/actions/developer/profile.actions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -28,23 +28,7 @@ import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 // Derive the Profile type
 type Profile = Database['public']['Tables']['profiles']['Row'];
 
-// Use Pick from the generated DB types for OAuthClient
-type OAuthClient = Pick<
-  Database['public']['Tables']['oauth_clients']['Row'],
-  |'client_id'
-  | 'client_name'
-  | 'client_uri'
-  | 'redirect_uris'
-  | 'logo_uri'
-  | 'scope'
-  | 'grant_types'
-  | 'response_types'
-  | 'client_type'
-  | 'created_at'
-  | 'owner_id'
-  | 'tos_uri'
-  | 'policy_uri'
->;
+type OAuthClient = OAuthClientSummary;
 
 export interface DeveloperDashboardClientProps {
   user: User | null;

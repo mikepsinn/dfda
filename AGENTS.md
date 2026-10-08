@@ -65,9 +65,10 @@ of UI conventions for contributors and coding agents.
 
 - Before changing app schema, queries or authentication, read the
   [database guide](apps/web/supabase/README.md). The app is moving from Supabase
-  to plain PostgreSQL: table queries use Prisma (`apps/web/lib/db`) and uploaded
-  files use an S3-compatible bucket (`apps/web/lib/storage`); Supabase is still
-  used for sign-in until that part moves.
+  to plain PostgreSQL: table queries use Prisma (`apps/web/lib/db`), uploaded
+  files use an S3-compatible bucket (`apps/web/lib/storage`) and sign-in uses
+  Better Auth (`apps/web/lib/auth.ts`). Read the current user with
+  `getServerUser()` from `@/lib/server-auth`.
 - Query as the signed-in user with `getUserDb()` from `@/lib/db/server`, so the
   row-level security policies apply. Use `adminDb` (no row-level security) only in
   workers, scripts and server code that has already checked authorization. Never

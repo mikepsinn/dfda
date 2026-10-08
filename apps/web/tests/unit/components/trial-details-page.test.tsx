@@ -21,7 +21,7 @@ vi.mock("@/lib/actions/trial-enrollments", () => ({
 }));
 vi.mock("@/lib/server-auth", () => ({ getServerUser: vi.fn() }));
 vi.mock("@/lib/db/server", () => ({ getUserDb: vi.fn() }));
-vi.mock("@/utils/supabase/client", () => ({ createClient: vi.fn() }));
+vi.mock("@/lib/auth-client", () => ({ authClient: { getSession: vi.fn() } }));
 
 const getTrial = vi.mocked(getTrialDetailsAction);
 const trialId = "22222222-2222-2222-2222-222222222222";

@@ -1,4 +1,4 @@
-import { createClient } from "@/utils/supabase/server"
+import { getServerUser } from '@/lib/server-auth'
 import { redirect, notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import Link from "next/link"
@@ -19,8 +19,7 @@ export default async function TreatmentRatingsPage({ params }: { params: Promise
   const { patientTreatmentId } = await params;
   logger.info(`Rendering treatment ratings page for treatment ID: ${patientTreatmentId}`);
 
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await getServerUser()
 
   if (!user) {
     redirect("/login?message=Please log in to view treatment ratings.")

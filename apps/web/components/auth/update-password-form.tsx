@@ -9,16 +9,20 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { updatePassword } from "@/app/(auth)/update-password/actions" // Action to be created next
+import { updatePassword } from "@/app/(auth)/update-password/actions"
 
 export default function UpdatePasswordForm() {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const searchParams = useSearchParams()
+  // The reset link from the email adds the token.
+  const token = searchParams.get('token') ?? ''
 
   useEffect(() => {
     const errorMessage = searchParams.get('error');
-    if (errorMessage) {
+    if (errorMessage === 'INVALID_TOKEN') {
+      setError('The reset link is not valid or has expired. Please ask for a new one.');
+    } else if (errorMessage) {
       setError(decodeURIComponent(errorMessage));
     }
   }, [searchParams]);
@@ -59,6 +63,7 @@ export default function UpdatePasswordForm() {
         )}
         {/* Use onSubmit for client-side handling before calling action */}
         <form onSubmit={handleSubmit} className="space-y-4">
+          <input type="hidden" name="token" value={token} />
           <div className="space-y-2">
             <Label htmlFor="password">New Password</Label>
             <Input

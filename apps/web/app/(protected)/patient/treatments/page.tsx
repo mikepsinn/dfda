@@ -1,4 +1,4 @@
-import { createClient } from "@/utils/supabase/server"
+import { getServerUser } from '@/lib/server-auth'
 import { redirect } from "next/navigation"
 import { AddTreatmentDialog } from "./components/add-treatment-dialog"
 import { getPatientConditionsAction } from '@/lib/actions/patient-conditions'
@@ -9,8 +9,7 @@ import { TreatmentsClient } from "./components/treatments-client"
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
 
 export default async function TreatmentsPage() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await getServerUser()
 
   if (!user) {
     redirect("/login")
