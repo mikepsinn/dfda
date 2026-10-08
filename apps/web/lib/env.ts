@@ -8,10 +8,11 @@ export const env = createEnv({
    */
   server: {
     // PostgreSQL connection used by Prisma (lib/db) for all table queries.
-    // Supabase is still used for sign-in. Optional here so
-    // that builds run without database access; lib/db throws on first use
-    // when it is missing.
-    DATABASE_URL: z.string().url().optional(),
+    // Supabase is still used for sign-in. Required on Vercel (VERCEL=1), so a
+    // deployment without it fails at build time instead of failing every
+    // query at run time. Optional elsewhere, so that CI and local builds run
+    // without database access; lib/db throws on first use when it is missing.
+    DATABASE_URL: process.env.VERCEL === '1' ? z.string().url() : z.string().url().optional(),
     // S3-compatible bucket for uploaded files (lib/storage). Optional here so
     // that builds run without it; lib/storage throws on first use when
     // S3_BUCKET is missing. Without access keys the AWS default credentials apply.
