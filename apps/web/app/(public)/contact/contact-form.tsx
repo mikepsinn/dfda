@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import type { Database } from "@/lib/database.types"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -9,39 +8,30 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { createClient } from '@/utils/supabase/client'
+import { submitContactMessageAction } from "@/lib/actions/contact"
 import { Check } from "lucide-react"
 import { logger } from "@/lib/logger"
-
-type ContactMessage = Database["public"]["Tables"]["contact_messages"]["Insert"]
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formError, setFormError] = useState<string | null>(null)
-  const supabase = createClient()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setFormError(null)
 
-    const formData = new FormData(e.currentTarget)
-    const message: ContactMessage = {
-      email: formData.get("email") as string,
-      subject: formData.get("inquiryType") as string,
-      message: formData.get("message") as string,
-      name: "Anonymous", // Default name for now
-      status: "new",
-    }
+    const form = e.currentTarget
+    const formData = new FormData(form)
 
     try {
-      const { error } = await supabase.from("contact_messages").insert(message)
+      const result = await submitContactMessageAction(formData)
 
-      if (error) throw error
+      if (!result.success) throw new Error(result.error)
 
       setIsSubmitted(true)
-      e.currentTarget.reset()
+      form.reset()
     } catch (error) {
       logger.error("Error submitting contact form:", error)
       setFormError("There was an error submitting your message. Please try again.")

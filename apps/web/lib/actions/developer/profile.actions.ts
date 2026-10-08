@@ -1,7 +1,7 @@
 'use server';
 
 import { z } from 'zod';
-import { createServerClient } from '@/utils/supabase/server';
+import { getUserDb } from '@/lib/db/server';
 import { revalidatePath } from 'next/cache';
 import { logger } from '@/lib/logger';
 import { type Database } from '@/lib/database.types';
@@ -21,8 +21,6 @@ export async function updateDeveloperProfile(
   userId: string,
   input: UpdateProfileInput
 ): Promise<{ success: boolean; data?: null; error?: string; details?: any }> {
-  const supabase = await createServerClient();
-
   const validatedFields = UpdateProfileSchema.safeParse(input);
 
   if (!validatedFields.success) {
@@ -51,15 +49,11 @@ export async function updateDeveloperProfile(
   }
 
   try {
-    const { error } = await supabase
-      .from('profiles')
-      .update(profileDataToUpdate)
-      .eq('id', userId);
-
-    if (error) {
-      logger.error('Error updating profile in Supabase', { userId, error });
-      return { success: false, error: error.message, details: error };
-    }
+    const db = await getUserDb();
+    await db.profiles.updateMany({
+      where: { id: userId },
+      data: profileDataToUpdate,
+    });
 
     revalidatePath('/developer/dashboard'); // Or the specific path where the profile is displayed
     return { success: true, data: null };

@@ -1,11 +1,12 @@
 "use server"
 
 import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
+import { isUniqueViolation, withUserTransaction } from '@/lib/db'
+import { getServerUser } from '@/lib/server-auth'
 import type { Database } from '@/lib/database.types'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
-// Import the new custom client insert type
-import type { PatientTreatmentClientInsert } from '@/lib/database.types.custom';
 // Import reminder action for single add
 import { createDefaultReminderAction } from "./reminder-schedules"
 // Import the type needed for the detail fetch
@@ -14,12 +15,12 @@ import type { FullPatientTreatmentDetail } from "@/app/(protected)/patient/treat
 // Import related types if needed
 export type PatientTreatmentInsert = Database['public']['Tables']['patient_treatments']['Insert']
 // Removed UserVariableInsert as we won't manually upsert it
-// export type UserVariableInsert = Database['public']['Tables']['user_variables']['Insert'] 
+// export type UserVariableInsert = Database['public']['Tables']['user_variables']['Insert']
 
 // Type for the input data when selecting treatments in the UI
 // Assuming it provides global treatment ID and maybe name
 export type SelectedTreatment = {
-  treatmentId: string; 
+  treatmentId: string;
   treatmentName: string;
 }
 
@@ -49,67 +50,78 @@ export type PatientTreatmentWithRatings = PatientTreatmentWithName & {
 
 // Removed TreatmentEntry and ConditionTreatmentState interfaces
 
-// --- Server Action --- 
+const treatmentNameInclude = {
+  global_treatments: { select: { global_variables: { select: { name: true } } } },
+} as const
+
+/**
+ * Fields for a new, active, non-prescribed patient treatment starting now.
+ * A database trigger sets user_variable_id on insert; Prisma still requires the
+ * relation, so connect the same (user, treatment) user variable, creating it if missing.
+ */
+function newPatientTreatmentData(userId: string, treatmentId: string) {
+  return {
+    status: 'active',
+    is_prescribed: false,
+    start_date: new Date(),
+    profiles: { connect: { id: userId } },
+    global_treatments: { connect: { id: treatmentId } },
+    user_variables: {
+      connectOrCreate: {
+        where: { user_id_global_variable_id: { user_id: userId, global_variable_id: treatmentId } },
+        create: {
+          profiles: { connect: { id: userId } },
+          global_variables: { connect: { id: treatmentId } },
+        },
+      },
+    },
+  }
+}
+
+// --- Server Action ---
 
 // Action to get all treatments for a patient
 export async function getPatientTreatmentsAction(patientId: string): Promise<PatientTreatmentWithName[]> {
-  const supabase = await createClient()
+  const db = await getUserDb()
   logger.info('Fetching treatments for patient', { patientId });
 
-  const { data, error } = await supabase
-    .from('patient_treatments')
-    .select(`
-      *,
-      global_treatments!inner(
-        global_variables!inner(
-          name
-        )
-      )
-    `)
-    .eq('patient_id', patientId)
-    .is('end_date', null) // Optionally filter for currently active treatments
-    .order('start_date', { ascending: false });
-
-  if (error) {
-    logger.error('Error fetching patient treatments:', { patientId, error });
-    throw new Error('Failed to fetch patient treatments');
-  }
-
-  return data || [];
+  return db.patient_treatments.findMany({
+    where: {
+      patient_id: patientId,
+      end_date: null, // Optionally filter for currently active treatments
+    },
+    include: treatmentNameInclude,
+    orderBy: { start_date: 'desc' },
+  });
 }
 
 // --- New Action to Fetch Full Patient Treatment Details ---
 export async function getPatientTreatmentDetailAction(patientTreatmentId: string, userId: string): Promise<FullPatientTreatmentDetail | null> {
-    const supabase = await createClient();
+    const db = await getUserDb();
     logger.info('Fetching full patient treatment details', { patientTreatmentId, userId });
 
-    const { data, error } = await supabase
-        .from("patient_treatments")
-        .select(`
-            *,
-            global_treatments!inner ( global_variables!inner ( name ) ), 
-            treatment_ratings (
-                *, 
-                patient_conditions ( 
-                    id,
-                    global_conditions!inner ( global_variables!inner ( name ) ) 
-                ) 
-            ),
-            patient_side_effects ( id, description, severity_out_of_ten )
-        `)
-        .eq('id', patientTreatmentId)
-        .eq('patient_id', userId) 
-        .single();
-
-    if (error) {
-        logger.error("Error fetching patient treatment details", { patientTreatmentId, userId, error: error.message });
-        // Log the specific error for easier debugging
-        console.error("Supabase Fetch Error (getPatientTreatmentDetailAction):", error);
+    try {
+        return await db.patient_treatments.findFirst({
+            where: { id: patientTreatmentId, patient_id: userId },
+            include: {
+                ...treatmentNameInclude,
+                treatment_ratings: {
+                    include: {
+                        patient_conditions: {
+                            select: {
+                                id: true,
+                                global_conditions: { select: { global_variables: { select: { name: true } } } },
+                            },
+                        },
+                    },
+                },
+                patient_side_effects: { select: { id: true, description: true, severity_out_of_ten: true } },
+            },
+        });
+    } catch (error) {
+        logger.error("Error fetching patient treatment details", { patientTreatmentId, userId, error: error instanceof Error ? error.message : String(error) });
         return null;
     }
-
-    // No need for explicit casting if the alias matches the type
-    return data;
 }
 // --- End New Action ---
 
@@ -117,7 +129,6 @@ export async function addInitialPatientTreatmentsAction(
   userId: string,
   selectedTreatments: SelectedTreatment[] // Updated parameter type
 ): Promise<{ success: boolean; error?: string }> {
-  const supabase = await createClient();
   logger.info('Adding initial patient treatments via trigger', { userId, count: selectedTreatments.length });
 
   if (!userId || !selectedTreatments || selectedTreatments.length === 0) {
@@ -126,67 +137,50 @@ export async function addInitialPatientTreatmentsAction(
   }
 
   try {
-    // 1. Prepare Patient Treatments for Insertion (using Client type)
-    const patientTreatmentsToInsert: PatientTreatmentClientInsert[] = selectedTreatments.map(treatment => {
-      return {
-        patient_id: userId,
-        treatment_id: treatment.treatmentId,
-        status: 'active',
-        start_date: new Date().toISOString(),
-        is_prescribed: false,
-      };
+    // 1. Insert all patient treatments in one transaction, so either all or none are saved
+    const user = await getServerUser();
+    const insertedPatientTreatments = await withUserTransaction(user && { id: user.id, email: user.email }, async (tx) => {
+      const inserted = [];
+      for (const treatment of selectedTreatments) {
+        inserted.push(await tx.patient_treatments.create({
+          data: newPatientTreatmentData(userId, treatment.treatmentId),
+          select: { id: true, treatment_id: true, user_variable_id: true, ...treatmentNameInclude },
+        }));
+      }
+      return inserted;
     });
-
-    // 2. Perform Patient Treatment Insertion
-    const { data: insertedPatientTreatments, error: ptError } = await supabase
-      .from('patient_treatments')
-      .insert(patientTreatmentsToInsert as PatientTreatmentInsert[])
-      .select('id, treatment_id, user_variable_id');
-
-    if (ptError || !insertedPatientTreatments) {
-      logger.error('Error inserting initial patient treatments:', { userId, error: ptError });
-      throw new Error(ptError?.message || 'Failed to save patient treatments.');
-    }
 
     logger.info('Successfully inserted patient treatments', { userId, count: insertedPatientTreatments.length });
 
-    // 3. Create default reminders for each treatment
+    // 2. Create default reminders for each treatment
     const reminderPromises = insertedPatientTreatments.map(async (pt) => {
-      const { data: treatmentDetails } = await supabase
-        .from('global_variables')
-        .select('name')
-        .eq('id', pt.treatment_id)
-        .single();
-
-      if (treatmentDetails?.name && pt.user_variable_id) {
-        try {
-          const reminderResult = await createDefaultReminderAction(
-            userId,
-            pt.user_variable_id,
-            treatmentDetails.name,
-            'treatment'
-          );
-          if (!reminderResult.success) {
-            logger.warn('Failed to create default reminder for treatment', {
-              userId,
-              treatmentId: pt.treatment_id,
-              error: reminderResult.error
-            });
-          }
-        } catch (err) {
-          logger.error('Error creating default reminder for treatment', {
+      try {
+        const reminderResult = await createDefaultReminderAction(
+          userId,
+          pt.user_variable_id,
+          pt.global_treatments.global_variables.name,
+          'treatment'
+        );
+        if (!reminderResult.success) {
+          logger.warn('Failed to create default reminder for treatment', {
             userId,
             treatmentId: pt.treatment_id,
-            error: err
+            error: reminderResult.error
           });
         }
+      } catch (err) {
+        logger.error('Error creating default reminder for treatment', {
+          userId,
+          treatmentId: pt.treatment_id,
+          error: err
+        });
       }
     });
 
     // Wait for all reminders to be created, but don't fail if some fail
     await Promise.allSettled(reminderPromises);
 
-    // 4. Revalidation
+    // 3. Revalidation
     try {
       revalidatePath(`/patient`);
       revalidatePath(`/patient/treatments`);
@@ -228,76 +222,49 @@ export async function addSinglePatientTreatmentAction(
 
   logger.info("Attempting to add patient treatment via trigger", { userId: input.patient_id, treatmentId: input.treatment_id });
 
+  const db = await getUserDb()
+
   try {
-    // 3. Prepare data for patient_treatments insertion (using Client type)
-    // user_variable_id will be handled by the database trigger
-    const treatmentData: PatientTreatmentClientInsert = { 
-        patient_id: input.patient_id,
-        treatment_id: input.treatment_id,
-        // user_variable_id is intentionally omitted
-        status: 'active', // Set default status
-        is_prescribed: false, // Default value
-        start_date: new Date().toISOString(), // Default start date
-        // Optional fields like patient_notes can be added here if needed
-    };
-
-    // 4. Perform the insert operation (with casting)
-    // Select the user_variable_id generated/found by the trigger
-    const { data, error } = await supabase
-      .from("patient_treatments")
-      .insert(treatmentData as PatientTreatmentInsert) // Cast here
-      .select("id, user_variable_id") // Select ID and the trigger-handled user_variable_id
-      .single(); // Expect only one row to be inserted
-
-    // 5. Handle potential errors
-    if (error) {
-      logger.error("Failed to insert patient treatment", { error: error.message, input, treatmentData });
+    // 3. Insert the patient treatment, returning its user variable and the treatment name
+    let data;
+    try {
+      data = await db.patient_treatments.create({
+        data: newPatientTreatmentData(input.patient_id, input.treatment_id),
+        select: { id: true, user_variable_id: true, ...treatmentNameInclude },
+      });
+    } catch (error) {
+      logger.error("Failed to insert patient treatment", { error: error instanceof Error ? error.message : String(error), input });
       // Check for unique constraint violation (patient_id, treatment_id)
-      if (error.code === '23505') { 
+      if (isUniqueViolation(error)) {
            return { success: false, error: "This treatment is likely already tracked for this patient." };
       }
-      throw new Error(error.message || "Database error occurred inserting patient treatment.");
-    }
-    
-    if (!data?.id || !data.user_variable_id) { // Check both IDs were returned
-       logger.error("Insert succeeded but ID or user_variable_id missing", { input, returnedData: data });
-       throw new Error("Failed to get ID or user_variable_id of new treatment record.");
+      throw error;
     }
 
     // Destructure needed IDs after successful insert
     const newPatientTreatmentId = data.id;
-    const userVariableId = data.user_variable_id; 
+    const userVariableId = data.user_variable_id;
+    const treatmentName = data.global_treatments.global_variables.name;
 
     logger.info("Successfully inserted patient treatment", { newPatientTreatmentId, userVariableId });
 
-    // 6. Fetch treatment name for default reminder (no change needed here)
-    const { data: treatmentDetails, error: nameError } = await supabase
-      .from('global_variables')
-      .select('name')
-      .eq('id', input.treatment_id)
-      .single();
+    // 4. Create Default Reminder (Fire and Forget)
+    createDefaultReminderAction(input.patient_id, userVariableId, treatmentName, 'treatment')
+      .then(result => {
+        if (!result.success) {
+          logger.error("Failed to create default reminder for new treatment", { userId: input.patient_id, treatmentId: input.treatment_id, userVariableId, error: result.error });
+        } else {
+          logger.info("Successfully triggered default reminder creation for new treatment", { userId: input.patient_id, treatmentId: input.treatment_id, userVariableId });
+        }
+      })
+      .catch(err => {
+        logger.error("Error calling createDefaultReminderAction for treatment", { userId: input.patient_id, treatmentId: input.treatment_id, userVariableId, error: err });
+      });
 
-    // 7. Create Default Reminder (Fire and Forget) - Pass the retrieved userVariableId
-    if (nameError || !treatmentDetails?.name) {
-      logger.warn("Could not fetch treatment name for default reminder", { userId: input.patient_id, treatmentId: input.treatment_id, error: nameError });
-    } else {
-      createDefaultReminderAction(input.patient_id, userVariableId, treatmentDetails.name, 'treatment') // Pass userVariableId now
-        .then(result => {
-          if (!result.success) {
-            logger.error("Failed to create default reminder for new treatment", { userId: input.patient_id, treatmentId: input.treatment_id, userVariableId, error: result.error });
-          } else {
-            logger.info("Successfully triggered default reminder creation for new treatment", { userId: input.patient_id, treatmentId: input.treatment_id, userVariableId });
-          }
-        })
-        .catch(err => {
-          logger.error("Error calling createDefaultReminderAction for treatment", { userId: input.patient_id, treatmentId: input.treatment_id, userVariableId, error: err });
-        });
-    }
+    // 5. Revalidate the path to update the UI
+    revalidatePath("/patient/treatments");
 
-    // 8. Revalidate the path to update the UI
-    revalidatePath("/patient/treatments"); 
-
-    // 9. Return success
+    // 6. Return success
     logger.info("Successfully added patient treatment and triggered reminder creation", { newPatientTreatmentId });
     return { success: true, data: { id: newPatientTreatmentId } }; // Return only patient_treatment id as before
 
@@ -309,32 +276,22 @@ export async function addSinglePatientTreatmentAction(
 
 // Action to get all treatments with ratings for a patient
 export async function getPatientTreatmentsWithRatingsAction(patientId: string): Promise<PatientTreatmentWithRatings[]> {
-  const supabase = await createClient()
+  const db = await getUserDb()
   logger.info('Fetching treatments with ratings for patient', { patientId });
 
-  const { data, error } = await supabase
-    .from('patient_treatments')
-    .select(`
-      *,
-      global_treatments!inner (
-        global_variables!inner (
-          name
-        )
-      ),
-      treatment_ratings (
-        effectiveness_out_of_ten,
-        review,
-        id,
-        patient_condition_id
-      )
-    `)
-    .eq('patient_id', patientId)
-    .order('start_date', { ascending: false });
-
-  if (error) {
-    logger.error('Error fetching patient treatments with ratings:', { patientId, error });
-    throw new Error('Failed to fetch patient treatments');
-  }
-
-  return data || [];
-} 
+  return db.patient_treatments.findMany({
+    where: { patient_id: patientId },
+    include: {
+      ...treatmentNameInclude,
+      treatment_ratings: {
+        select: {
+          effectiveness_out_of_ten: true,
+          review: true,
+          id: true,
+          patient_condition_id: true,
+        },
+      },
+    },
+    orderBy: { start_date: 'desc' },
+  });
+}

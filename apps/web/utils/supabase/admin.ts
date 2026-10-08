@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js'
-import type { Database } from '@/lib/database.types'
 
 // Ensure your environment variables are correctly named and loaded
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -14,8 +13,9 @@ if (!supabaseServiceRoleKey) {
 }
 
 // Note: this client bypasses RLS.
-// Use it ONLY for server-side operations where RLS needs to be bypassed.
-export const supabaseAdmin = createClient<Database>(
+// Use it only for Supabase Auth admin calls and Storage. Table queries use
+// Prisma: adminDb from '@/lib/db' (no RLS) or getUserDb() from '@/lib/db/server'.
+export const supabaseAdmin = createClient(
   supabaseUrl,
   supabaseServiceRoleKey,
   {

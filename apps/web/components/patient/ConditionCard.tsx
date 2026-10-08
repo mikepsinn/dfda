@@ -9,7 +9,7 @@ interface ConditionCardProps {
   condition: PatientCondition & { 
     emoji?: string | null;
     status?: string | null; // Add status 
-    diagnosed_at?: string | null; // Add diagnosed_at
+    diagnosed_at?: Date | null;
   }
 }
 

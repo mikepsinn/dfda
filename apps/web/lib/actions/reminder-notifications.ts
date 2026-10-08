@@ -1,38 +1,22 @@
 "use server"
 
-import { createClient } from "@/utils/supabase/server";
+import { Prisma } from "@/lib/db";
+import { getUserDb } from "@/lib/db/server";
 import { logger } from "@/lib/logger";
-import type { Database } from "@/lib/database.types";
 import { startOfDay, endOfDay } from 'date-fns'; 
 import type { ReminderNotificationDetails, ReminderNotificationStatus, VariableCategoryId } from "@/lib/database.types.custom";
 import { revalidatePath } from 'next/cache';
 
-// Define the type structure expected from the Supabase query with joins
+const unitSelect = { select: { id: true, name: true, abbreviated_name: true } } as const;
 
-// Intermediate type for the innermost part of global_variables
-type FetchedGlobalVariableCore = Pick<Database['public']['Tables']['global_variables']['Row'], 'id' | 'name' | 'variable_category_id' | 'default_unit_id' | 'description' | 'emoji'>;
-type FetchedGlobalVariableUnits = {
-    default_unit: Pick<Database['public']['Tables']['units']['Row'], 'id' | 'abbreviated_name' | 'name'> | null;
-    variable_categories: Pick<Database['public']['Tables']['variable_categories']['Row'], 'id' | 'name'> | null;
-};
-
-// Intermediate type for user_variables
-type FetchedUserVariableCore = Pick<Database['public']['Tables']['user_variables']['Row'], 'id' | 'global_variable_id' | 'preferred_unit_id'>;
-type FetchedUserVariableNested = {
-    global_variables: (FetchedGlobalVariableCore & FetchedGlobalVariableUnits) | null;
-    preferred_unit: Pick<Database['public']['Tables']['units']['Row'], 'id' | 'abbreviated_name' | 'name'> | null;
-};
-
-// Intermediate type for reminder_schedules
-type FetchedReminderScheduleCore = Pick<Database['public']['Tables']['reminder_schedules']['Row'], 'id' | 'user_variable_id' | 'time_of_day' | 'default_value' | 'notification_title_template' | 'notification_message_template'>;
-type FetchedReminderScheduleNested = {
-    user_variables: (FetchedUserVariableCore & FetchedUserVariableNested) | null;
-};
-
-// Final FetchedNotification type
-export type FetchedNotification = Database['public']['Tables']['reminder_notifications']['Row'] & {
-    reminder_schedules: (FetchedReminderScheduleCore & FetchedReminderScheduleNested) | null;
-};
+/** Returns the measurement ID stored in a notification's log_details, if any. */
+function getLinkedMeasurementId(logDetails: Prisma.JsonValue): string | null {
+  if (logDetails && typeof logDetails === 'object' && !Array.isArray(logDetails)) {
+    const measurementId = logDetails.measurementId;
+    return typeof measurementId === 'string' && measurementId ? measurementId : null;
+  }
+  return null;
+}
 
 /**
  * Fetches reminder notifications for a specific user and date to populate the timeline.
@@ -42,110 +26,96 @@ export async function getTimelineNotificationsForDateAction(
     userId: string,
   targetDate: Date
 ): Promise<{ success: boolean; data?: ReminderNotificationDetails[]; error?: string }> {
-        const supabase = await createClient();
+  const db = await getUserDb();
   const dateStr = targetDate.toISOString().split('T')[0];
   logger.info('Fetching timeline notifications for date', { userId, date: dateStr });
 
-  const dayStart = startOfDay(targetDate).toISOString();
-  const dayEnd = endOfDay(targetDate).toISOString();
+  const dayStart = startOfDay(targetDate);
+  const dayEnd = endOfDay(targetDate);
 
-  const { data: notifications, error } = await supabase
-    .from('reminder_notifications')
-    .select(`
-      id,
-      notification_trigger_at,
-      status,
-      log_details,
-      reminder_schedule_id, 
-      reminder_schedules!inner(
-        id,
-        user_variable_id,
-        time_of_day,
-        default_value,
-        notification_title_template,
-        notification_message_template,
-        user_variables!inner(
-            id,
-            global_variable_id,
-            preferred_unit_id,
-            global_variables!inner(
-                id,
-                name,
-                variable_category_id,
-                description,
-                emoji,
-                default_unit_id,
-                default_unit:units!global_variables_default_unit_id_fkey( id, name, abbreviated_name ),
-                variable_categories( id, name )
-            ),
-            preferred_unit:units!user_variables_preferred_unit_id_fkey( id, name, abbreviated_name )
-        )
-      )
-    `)
-    .eq('user_id', userId)
-    .gte('notification_trigger_at', dayStart)
-    .lt('notification_trigger_at', dayEnd) 
-    .order('notification_trigger_at', { ascending: true }); 
-
-  if (error) {
+  let notifications;
+  try {
+    notifications = await db.reminder_notifications.findMany({
+      where: {
+        user_id: userId,
+        notification_trigger_at: { gte: dayStart, lt: dayEnd },
+      },
+      orderBy: { notification_trigger_at: 'asc' },
+      select: {
+        id: true,
+        notification_trigger_at: true,
+        status: true,
+        log_details: true,
+        reminder_schedule_id: true,
+        reminder_schedules: {
+          select: {
+            id: true,
+            user_variable_id: true,
+            default_value: true,
+            notification_title_template: true,
+            notification_message_template: true,
+            user_variables: {
+              select: {
+                id: true,
+                global_variable_id: true,
+                preferred_unit_id: true,
+                global_variables: {
+                  select: {
+                    id: true,
+                    name: true,
+                    variable_category_id: true,
+                    description: true,
+                    emoji: true,
+                    default_unit_id: true,
+                    units: unitSelect,
+                    variable_categories: { select: { id: true, name: true } },
+                  },
+                },
+                units: unitSelect,
+              },
+            },
+          },
+        },
+      },
+    });
+  } catch (error) {
     logger.error('Error fetching timeline notifications', { userId, date: dateStr, error });
-    console.error("Supabase fetch error (timeline notifications):", JSON.stringify(error, null, 2));
     return { success: false, error: "Database error fetching timeline data." };
   }
 
-  logger.debug("Raw notifications fetched from DB", { count: notifications?.length ?? 0, notifications: notifications?.map(n => ({id: n.id, triggerAt: n.notification_trigger_at, status: n.status})) });
-
-  if (!notifications) {
-    logger.info('No timeline notifications found for date', { userId, date: dateStr });
-    return { success: true, data: [] };
-  }
+  logger.debug("Raw notifications fetched from DB", { count: notifications.length, notifications: notifications.map(n => ({id: n.id, triggerAt: n.notification_trigger_at, status: n.status})) });
 
   const completedMeasurementIds = notifications
-    .filter(n => n.status === 'completed' && n.log_details && (n.log_details as any).measurementId)
-    .map(n => (n.log_details as any).measurementId as string);
+    .filter(n => n.status === 'completed')
+    .map(n => getLinkedMeasurementId(n.log_details))
+    .filter((id): id is string => id !== null);
 
   const linkedMeasurementsMap = new Map<string, number>();
   if (completedMeasurementIds.length > 0) {
-    const { data: measurementsData, error: measurementsError } = await supabase
-      .from('measurements')
-      .select('id, value')
-      .in('id', completedMeasurementIds)
-      .eq('user_id', userId); 
-
-    if (measurementsError) {
-      logger.warn('Error fetching linked measurements for completed timeline items', { userId, date: dateStr, error: measurementsError });
-    } else if (measurementsData) {
+    try {
+      const measurementsData = await db.measurements.findMany({
+        where: { id: { in: completedMeasurementIds }, user_id: userId },
+        select: { id: true, value: true },
+      });
       measurementsData.forEach(m => {
         linkedMeasurementsMap.set(m.id, m.value);
       });
+    } catch (measurementsError) {
+      logger.warn('Error fetching linked measurements for completed timeline items', { userId, date: dateStr, error: measurementsError });
     }
   }
 
-  const reminderDetailsItems: ReminderNotificationDetails[] = notifications.map((n): ReminderNotificationDetails | null => {
-    const notification = n as FetchedNotification; 
+  const reminderDetailsItems: ReminderNotificationDetails[] = notifications.map((notification): ReminderNotificationDetails => {
     const schedule = notification.reminder_schedules;
-    const userVar = schedule?.user_variables;
-    const globalVar = userVar?.global_variables;
-    const category = globalVar?.variable_categories;
-    const preferredUnit = userVar?.preferred_unit;
-    const defaultUnit = globalVar?.default_unit;
-    const actualUnit = preferredUnit || defaultUnit;
-
-    if (!schedule || !userVar || !globalVar || !category || !actualUnit) {
-      logger.warn("Missing required nested data for reminder details, skipping notification", {
-          notificationId: notification.id,
-          scheduleMissing: !schedule,
-          userVarMissing: !userVar,
-          globalVarMissing: !globalVar,
-          categoryMissing: !category,
-          unitMissing: !actualUnit
-      });
-      return null; 
-    }
+    const userVar = schedule.user_variables;
+    const globalVar = userVar.global_variables;
+    const category = globalVar.variable_categories;
+    // Preferred unit of the user variable, otherwise the global variable's default unit
+    const actualUnit = userVar.units || globalVar.units;
 
     let displayValue: number | null = null;
-    if (notification.status === 'completed' && notification.log_details) {
-      const linkedMeasurementId = (notification.log_details as any)?.measurementId;
+    if (notification.status === 'completed') {
+      const linkedMeasurementId = getLinkedMeasurementId(notification.log_details);
       if (linkedMeasurementId && linkedMeasurementsMap.has(linkedMeasurementId)) {
         displayValue = linkedMeasurementsMap.get(linkedMeasurementId)!;
       }
@@ -163,7 +133,7 @@ export async function getTimelineNotificationsForDateAction(
       variableCategory: variableCatId,
       unitId: actualUnit.id,
       unitName: actualUnit.name,
-      dueAt: notification.notification_trigger_at,
+      dueAt: notification.notification_trigger_at.toISOString(),
       title: schedule.notification_title_template || globalVar.name,
       message: schedule.notification_message_template?.replace("{variableName}", globalVar.name) || globalVar.description || null,
       status: notifStatus,
@@ -172,7 +142,7 @@ export async function getTimelineNotificationsForDateAction(
       value: displayValue,
       isEditable: true,
     };
-  }).filter((item): item is ReminderNotificationDetails => item !== null);
+  });
 
   logger.info(`Found and mapped ${reminderDetailsItems.length} reminder details items for date`, { userId, date: dateStr });
   return { success: true, data: reminderDetailsItems };
@@ -185,61 +155,62 @@ export async function getTimelineNotificationsForDateAction(
 export async function getPendingReminderNotificationsAction(
   userId: string
 ): Promise<ReminderNotificationDetails[]> { 
-  const supabase = await createClient();
   logger.info('Fetching pending reminder notifications', { userId });
 
-  const { data: notifications, error } = await supabase
-    .from('reminder_notifications')
-    .select(`
-      id, 
-      notification_trigger_at,
-      status,
-      reminder_schedules!inner(
-        id,
-        user_variable_id,
-        default_value,
-        notification_title_template,
-        notification_message_template,
-        user_variables!inner(
-            global_variable_id,
-            preferred_unit_id,
-            global_variables!inner(
-                name,
-                variable_category_id,
-                default_unit_id,
-                emoji,
-                default_unit:units!global_variables_default_unit_id_fkey( id, abbreviated_name, name ), 
-                variable_categories!inner( id, name )
-            ),
-            preferred_unit:units!user_variables_preferred_unit_id_fkey( id, abbreviated_name, name )
-        )
-      )
-    `)
-    .eq('user_id', userId)
-    .eq('status', 'pending') 
-    .order('notification_trigger_at', { ascending: true }); 
-
-  if (error) {
+  let notifications;
+  try {
+    const db = await getUserDb();
+    notifications = await db.reminder_notifications.findMany({
+      where: { user_id: userId, status: 'pending' },
+      orderBy: { notification_trigger_at: 'asc' },
+      select: {
+        id: true,
+        notification_trigger_at: true,
+        status: true,
+        reminder_schedules: {
+          select: {
+            id: true,
+            user_variable_id: true,
+            default_value: true,
+            notification_title_template: true,
+            notification_message_template: true,
+            user_variables: {
+              select: {
+                global_variable_id: true,
+                preferred_unit_id: true,
+                global_variables: {
+                  select: {
+                    name: true,
+                    variable_category_id: true,
+                    default_unit_id: true,
+                    emoji: true,
+                    units: unitSelect,
+                    variable_categories: { select: { id: true, name: true } },
+                  },
+                },
+                units: unitSelect,
+              },
+            },
+          },
+        },
+      },
+    });
+  } catch (error) {
     logger.error('Error fetching pending reminder notifications', { userId, error });
-    console.error("Supabase fetch error (pending notifications):", JSON.stringify(error, null, 2));
     return []; 
-  }
-
-  if (!notifications) {
-    return [];
   }
 
   const mappedNotifications: (ReminderNotificationDetails | null)[] = notifications
     .map(n => {
-      const schedule = n.reminder_schedules as any; 
-      const userVar = schedule?.user_variables as any;
-      const globalVar = userVar?.global_variables as any;
-      const category = globalVar?.variable_categories as any; 
-      const preferredUnit = userVar?.preferred_unit as any;
-      const defaultUnit = globalVar?.default_unit as any;
+      const schedule = n.reminder_schedules;
+      const userVar = schedule.user_variables;
+      const globalVar = userVar.global_variables;
+      const category = globalVar.variable_categories;
+      const preferredUnit = userVar.units;
+      const defaultUnit = globalVar.units;
 
-      const resolvedUnitId = preferredUnit?.id || defaultUnit?.id;
-      const resolvedUnitName = preferredUnit?.abbreviated_name || defaultUnit?.abbreviated_name;
+      const resolvedUnitId = preferredUnit?.id || defaultUnit.id;
+      const resolvedUnitName = preferredUnit?.abbreviated_name || defaultUnit.abbreviated_name;
 
       if (!resolvedUnitId || !resolvedUnitName) {
         logger.warn('Skipping pending notification due to missing unit information (id or name)', { 
@@ -250,28 +221,27 @@ export async function getPendingReminderNotificationsAction(
         return null; 
       }
       
-      if (!category?.id) {
+      if (!category.id) {
           logger.warn('Skipping pending notification due to missing variable category ID', { notificationId: n.id, category });
           return null; 
       }
 
       return {
           notificationId: n.id,
-          scheduleId: schedule?.id || '',
-          userVariableId: schedule?.user_variable_id || '',
-          variableName: globalVar?.name || 'Unknown Item',
-          globalVariableId: userVar?.global_variable_id || '',
+          scheduleId: schedule.id,
+          userVariableId: schedule.user_variable_id,
+          variableName: globalVar.name || 'Unknown Item',
+          globalVariableId: userVar.global_variable_id,
           // Ensure this cast is to the correct VariableCategoryId type if ReminderNotificationDetails expects it
           variableCategory: category.id as ReminderNotificationDetails['variableCategory'], 
           unitId: resolvedUnitId,
           unitName: resolvedUnitName,
-          dueAt: n.notification_trigger_at as string,
-          title: schedule?.notification_title_template || null,
-          message: schedule?.notification_message_template || null,
-          // Ensure this cast is to the correct ReminderNotificationStatus type
-          status: n.status as ReminderNotificationDetails['status'], 
-          defaultValue: schedule?.default_value,       
-          emoji: globalVar?.emoji,                   
+          dueAt: n.notification_trigger_at.toISOString(),
+          title: schedule.notification_title_template || null,
+          message: schedule.notification_message_template || null,
+          status: n.status, 
+          defaultValue: schedule.default_value,       
+          emoji: globalVar.emoji,                   
       };
     });
 
@@ -299,42 +269,33 @@ export async function completeReminderNotificationAction(
    skipped: boolean = false,
    logDetails?: any 
 ): Promise<{ success: boolean; error?: string; }> { 
-   const supabase = await createClient();
    const newStatus = skipped ? 'skipped' : 'completed';
    logger.info('Completing reminder notification', { notificationId, userId, newStatus, logDetails });
 
    try {
-        const updateData: Partial<Database['public']['Tables']['reminder_notifications']['Update']> = {
-            status: newStatus,
-            completed_or_skipped_at: new Date().toISOString(),
-            log_details: logDetails || null
-        };
-
-        const { error } = await supabase
-            .from('reminder_notifications')
-            .update(updateData)
-            .eq('id', notificationId)
-            .eq('user_id', userId)
-            .eq('status', 'pending');
-
-        if (error) {
-            logger.error("Error updating reminder notification status", { notificationId, userId, error });
-            if (error.code === 'PGRST116') { 
-                 return { success: false, error: "Notification might have already been processed." };
-            }
-            return { success: false, error: "Could not update the notification status." };
-        }
-        
-        revalidatePath(`/components/patient/TrackingInbox`); // This path might not be ideal for revalidation
-        revalidatePath(`/patient/dashboard`);
-
-        logger.info("Reminder notification completed successfully", { notificationId, newStatus });
-        return { success: true }; 
-
+        const db = await getUserDb();
+        await db.reminder_notifications.updateMany({
+            where: {
+                id: notificationId,
+                user_id: userId,
+                status: 'pending',
+            },
+            data: {
+                status: newStatus,
+                completed_or_skipped_at: new Date(),
+                log_details: logDetails || Prisma.DbNull,
+            },
+        });
    } catch (error) {
-       logger.error('Failed in completeReminderNotificationAction', { notificationId, error: error instanceof Error ? error.message : String(error) });
-       return { success: false, error: error instanceof Error ? error.message : "An unknown error occurred." };
+        logger.error("Error updating reminder notification status", { notificationId, userId, error });
+        return { success: false, error: "Could not update the notification status." };
    }
+
+   revalidatePath(`/components/patient/TrackingInbox`); // This path might not be ideal for revalidation
+   revalidatePath(`/patient/dashboard`);
+
+   logger.info("Reminder notification completed successfully", { notificationId, newStatus });
+   return { success: true }; 
 } 
 // --- END of completeReminderNotificationAction --- 
 
@@ -357,65 +318,51 @@ export async function createMeasurementAndCompleteNotificationAction(params: {
   scheduleId: string; // Though not directly used in this action currently, kept for consistency with prior thinking
   notes?: string;
 }): Promise<ActionResult> {
-  const supabase = await createClient();
   logger.info('createMeasurementAndCompleteNotificationAction called', params);
 
+  // Step 1: Create the measurement
+  let newMeasurement: { id: string };
   try {
-    // Step 1: Create the measurement
-    const measurementToInsert = {
-      user_id: params.userId,
-      global_variable_id: params.globalVariableId,
-      value: params.value,
-      unit_id: params.unitId,
-      notes: params.notes,
-      start_at: new Date().toISOString(), // Or use notification.dueAt if preferred
-      measurement_type: 'self_reported', // Or a more specific type like 'notification_log'
-      reminder_notification_id: params.notificationId, // Optional: if you have a direct link
-    };
-
-    const { data: newMeasurement, error: measurementError } = await supabase
-      .from('measurements')
-      .insert(measurementToInsert)
-      .select('id')
-      .single();
-
-    if (measurementError) {
-      logger.error('Error creating measurement from notification', { ...params, error: measurementError });
-      return { success: false, error: measurementError.message || "Failed to create measurement." };
-    }
-    if (!newMeasurement) {
-        logger.error('No measurement data returned after insert', params);
-        return { success: false, error: "Failed to create measurement (no data returned)." };
-    }
-
-    logger.info('Measurement created from notification', { measurementId: newMeasurement.id, notificationId: params.notificationId });
-
-    // Step 2: Complete the notification, linking the measurement
-    const completeResult = await completeReminderNotificationAction(
-      params.notificationId,
-      params.userId,
-      false, // skipped = false
-      { measurementId: newMeasurement.id, loggedValue: params.value } // logDetails
-    );
-
-    if (!completeResult.success) {
-      // Note: Measurement was created. Consider compensation logic if critical (e.g., delete measurement).
-      // For now, we'll just report the error from completing the notification.
-      logger.error('Measurement created, but failed to complete notification', { ...params, measurementId: newMeasurement.id, error: completeResult.error });
-      return { success: false, error: completeResult.error || "Measurement logged, but failed to update notification status." };
-    }
-
-    // Revalidate paths after successful operation
-    revalidatePath('/patient/dashboard'); // Revalidate the main dashboard
-    // Add other relevant paths, e.g., a page listing all measurements
-    // revalidatePath('/patient/measurements'); 
-
-    return { success: true, data: { measurementId: newMeasurement.id } };
-
-  } catch (error) {
-    logger.error('Unexpected error in createMeasurementAndCompleteNotificationAction', { ...params, error: error instanceof Error ? error.message : String(error) });
-    return { success: false, error: error instanceof Error ? error.message : "An unknown server error occurred." };
+    const db = await getUserDb();
+    newMeasurement = await db.measurements.create({
+      data: {
+        user_id: params.userId,
+        global_variable_id: params.globalVariableId,
+        value: params.value,
+        unit_id: params.unitId,
+        notes: params.notes,
+        start_at: new Date(), // Or use notification.dueAt if preferred
+      },
+      select: { id: true },
+    });
+  } catch (measurementError) {
+    logger.error('Error creating measurement from notification', { ...params, error: measurementError });
+    return { success: false, error: "Failed to create measurement." };
   }
+
+  logger.info('Measurement created from notification', { measurementId: newMeasurement.id, notificationId: params.notificationId });
+
+  // Step 2: Complete the notification, linking the measurement
+  const completeResult = await completeReminderNotificationAction(
+    params.notificationId,
+    params.userId,
+    false, // skipped = false
+    { measurementId: newMeasurement.id, loggedValue: params.value } // logDetails
+  );
+
+  if (!completeResult.success) {
+    // Note: Measurement was created. Consider compensation logic if critical (e.g., delete measurement).
+    // For now, we'll just report the error from completing the notification.
+    logger.error('Measurement created, but failed to complete notification', { ...params, measurementId: newMeasurement.id, error: completeResult.error });
+    return { success: false, error: completeResult.error || "Measurement logged, but failed to update notification status." };
+  }
+
+  // Revalidate paths after successful operation
+  revalidatePath('/patient/dashboard'); // Revalidate the main dashboard
+  // Add other relevant paths, e.g., a page listing all measurements
+  // revalidatePath('/patient/measurements'); 
+
+  return { success: true, data: { measurementId: newMeasurement.id } };
 }
 
 /**
@@ -425,55 +372,32 @@ export async function undoNotificationAction(params: {
   notificationId: string;
   userId: string;
 }): Promise<ActionResult> {
-  const supabase = await createClient();
   logger.info('undoNotificationAction called', params);
 
+  // Optionally, fetch the notification first if you need to inspect log_details
+  // to delete/disassociate a linked measurement. For simplicity, we'll just update status and clear details here.
   try {
-    // Optionally, fetch the notification first if you need to inspect log_details
-    // to delete/disassociate a linked measurement. For simplicity, we'll just update status and clear details here.
-    /*
-    const { data: currentNotification, error: fetchError } = await supabase
-      .from('reminder_notifications')
-      .select('log_details')
-      .eq('id', params.notificationId)
-      .eq('user_id', params.userId)
-      .single();
-
-    if (fetchError) {
-      logger.warn('Could not fetch notification before undo', { ...params, error: fetchError });
-      // Decide if this is a hard stop or if we proceed with the update anyway
-    }
-    // if (currentNotification && currentNotification.log_details?.measurementId) {
-    //   // TODO: Optionally delete the measurement with currentNotification.log_details.measurementId
-    // }
-    */
-
-    const updateData = {
-      status: 'pending' as ReminderNotificationStatus, // Explicitly cast for safety
-      completed_or_skipped_at: null,
-      log_details: null,
-    };
-
-    const { error: updateError } = await supabase
-      .from('reminder_notifications')
-      .update(updateData)
-      .eq('id', params.notificationId)
-      .eq('user_id', params.userId);
-      // Potentially add a condition: .in('status', ['completed', 'skipped']) to only undo if not already pending
-
-    if (updateError) {
-      logger.error('Error undoing notification status', { ...params, error: updateError });
-      return { success: false, error: updateError.message || "Failed to undo notification status." };
-    }
-
-    // Revalidate paths
-    revalidatePath('/patient/dashboard');
-    // revalidatePath('/patient/measurements'); 
-
-    return { success: true };
-
-  } catch (error) {
-    logger.error('Unexpected error in undoNotificationAction', { ...params, error: error instanceof Error ? error.message : String(error) });
-    return { success: false, error: error instanceof Error ? error.message : "An unknown server error occurred." };
+    const db = await getUserDb();
+    await db.reminder_notifications.updateMany({
+      where: {
+        id: params.notificationId,
+        user_id: params.userId,
+        // Potentially add a condition: status: { in: ['completed', 'skipped'] } to only undo if not already pending
+      },
+      data: {
+        status: 'pending',
+        completed_or_skipped_at: null,
+        log_details: Prisma.DbNull,
+      },
+    });
+  } catch (updateError) {
+    logger.error('Error undoing notification status', { ...params, error: updateError });
+    return { success: false, error: "Failed to undo notification status." };
   }
+
+  // Revalidate paths
+  revalidatePath('/patient/dashboard');
+  // revalidatePath('/patient/measurements'); 
+
+  return { success: true };
 }

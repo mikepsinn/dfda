@@ -33,6 +33,9 @@ RUN curl -Ls https://cli.doppler.com/install.sh | sh -s -- --no-package-manager 
 
 # Copy package files and lockfile first
 COPY package.json pnpm-lock.yaml* ./
+# The Prisma schema is needed by the postinstall step (prisma generate)
+COPY prisma ./prisma
+COPY prisma.config.ts ./
 # Install dependencies AFTER Doppler CLI is available (in case of private packages via Doppler)
 # Doppler token is available via ARG, doppler login/setup isn't used here
 # Mount pnpm cache - REMOVING

@@ -1,25 +1,29 @@
 "use server"
 
-import { createClient } from '@/utils/supabase/server'
+import { getUserDb } from '@/lib/db/server'
+import type { Prisma } from '@/lib/db'
 import type { Database } from '@/lib/database.types'
 import { revalidatePath } from "next/cache"
 import { logger } from "@/lib/logger"
 
-// Use the database types directly
-export type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type TrialRow = Database["public"]["Tables"]["trials"]["Row"]
+
+// Compensation is returned as a number rather than a Prisma.Decimal, so trials can be passed to client components
+export type Trial = Omit<TrialRow, "compensation"> & { compensation: number | null }
 export type TrialInsert = Database["public"]["Tables"]["trials"]["Insert"]
 export type TrialUpdate = Database["public"]["Tables"]["trials"]["Update"]
 export type Enrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 
-// Type for trials with joined relations
+// Type for trials with joined relations. Condition and treatment names come from global_variables,
+// the research partner name from the sponsor's profile.
 export type TrialWithRelations = Trial & {
-  conditions?: { id: string; name: string }[]
-  treatments?: { id: string; name: string }[]
-  research_partners?: { id: string; name: string }[]
+  global_conditions: { id: string; name: string; icd_code: string | null }
+  global_treatments: { id: string; name: string; treatment_type: string; manufacturer: string | null }
+  research_partners: { id: string; name: string } | null
 }
 
 // Types for provider dashboard
-type FetchedTrial = Database["public"]["Tables"]["trials"]["Row"] & {
+type FetchedTrial = Trial & {
   trial_enrollments: Database["public"]["Tables"]["trial_enrollments"]["Row"][];
   trial_actions: (Database["public"]["Tables"]["trial_actions"]["Row"] & {
     action_type: Database["public"]["Tables"]["action_types"]["Row"]
@@ -29,14 +33,55 @@ type FetchedTrial = Database["public"]["Tables"]["trials"]["Row"] & {
 
 type FetchedPatient = Database["public"]["Tables"]["patients"]["Row"] & {
   profile: Database["public"]["Tables"]["profiles"]["Row"] | null;
-  conditions: { 
-    condition: { 
-      id: string; 
+  conditions: {
+    condition: {
+      id: string;
       global_variables: {
         name: string;
       }
-    } | null 
+    } | null
   }[];
+}
+
+function toTrial<T extends { compensation: Prisma.Decimal | null }>(row: T): Omit<T, "compensation"> & { compensation: number | null } {
+  return { ...row, compensation: row.compensation?.toNumber() ?? null }
+}
+
+// Row-level security hides some profiles from the reader. Prisma then returns null for the
+// relation although the schema requires it, so profiles are treated as nullable here.
+function partnerName(profile: { first_name: string | null; last_name: string | null } | null): string {
+  return profile ? `${profile.first_name ?? ""} ${profile.last_name ?? ""}`.trim() : ""
+}
+
+const trialRelationsInclude = {
+  global_conditions: { select: { id: true, icd_code: true, global_variables: { select: { name: true } } } },
+  global_treatments: {
+    select: { id: true, treatment_type: true, manufacturer: true, global_variables: { select: { name: true } } },
+  },
+  profiles: { select: { id: true, first_name: true, last_name: true } },
+} satisfies Prisma.trialsInclude
+
+function toTrialWithRelations({
+  global_conditions,
+  global_treatments,
+  profiles,
+  ...trial
+}: Prisma.trialsGetPayload<{ include: typeof trialRelationsInclude }>): TrialWithRelations {
+  return {
+    ...toTrial(trial),
+    global_conditions: {
+      id: global_conditions.id,
+      name: global_conditions.global_variables.name,
+      icd_code: global_conditions.icd_code,
+    },
+    global_treatments: {
+      id: global_treatments.id,
+      name: global_treatments.global_variables.name,
+      treatment_type: global_treatments.treatment_type,
+      manufacturer: global_treatments.manufacturer,
+    },
+    research_partners: profiles ? { id: profiles.id, name: partnerName(profiles) } : null,
+  }
 }
 
 // Find trials matching the given condition IDs
@@ -47,170 +92,119 @@ export async function findTrialsForConditionsAction(
     return []
   }
 
-  const supabase = await createClient()
-
-  const response = await supabase
-    .from("trials")
-    .select(`
-      *,
-      global_conditions:condition_id(id, name),
-      global_treatments:treatment_id(id, name),
-      research_partners:research_partner_id(id, name)
-    `)
-    .in("condition_id", conditionIds)
-    .eq("status", "active")
-    .order("created_at", { ascending: false })
-
-  if (response.error) {
-    logger.error("Error finding trials:", response.error)
+  try {
+    const db = await getUserDb()
+    const trials = await db.trials.findMany({
+      where: { condition_id: { in: conditionIds }, status: "active" },
+      include: trialRelationsInclude,
+      orderBy: { created_at: "desc" },
+    })
+    return trials.map(toTrialWithRelations)
+  } catch (error) {
+    logger.error("Error finding trials:", error)
     throw new Error("Failed to find trials")
   }
-
-  return response.data as unknown as TrialWithRelations[]
 }
 
 // Get a trial by ID
 export async function getTrialByIdAction(id: string): Promise<TrialWithRelations | null> {
-  const supabase = await createClient()
-
-  const response = await supabase
-    .from("trials")
-    .select(`
-      *,
-      global_conditions:condition_id(id, name),
-      global_treatments:treatment_id(id, name),
-      research_partners:research_partner_id(id, name)
-    `)
-    .eq("id", id)
-    .single()
-
-  if (response.error) {
-    if (response.error.code === 'PGRST116') {
-      // Not found
-      return null
-    }
-    logger.error("Error fetching trial:", response.error)
+  try {
+    const db = await getUserDb()
+    const trial = await db.trials.findUnique({
+      where: { id },
+      include: trialRelationsInclude,
+    })
+    return trial ? toTrialWithRelations(trial) : null
+  } catch (error) {
+    logger.error("Error fetching trial:", error)
     throw new Error("Failed to fetch trial")
   }
-
-  return response.data as unknown as TrialWithRelations
 }
 
 // Get all trials
 export async function getTrialsAction(): Promise<TrialWithRelations[]> {
-  const supabase = await createClient()
-  
-  const response = await supabase
-    .from("trials")
-    .select(`
-      *,
-      global_conditions:condition_id(id, name),
-      global_treatments:treatment_id(id, name),
-      research_partners:research_partner_id(id, name)
-    `)
-    .order("created_at", { ascending: false })
-
-  if (response.error) {
-    logger.error("Error fetching trials:", response.error)
+  try {
+    const db = await getUserDb()
+    const trials = await db.trials.findMany({
+      include: trialRelationsInclude,
+      orderBy: { created_at: "desc" },
+    })
+    return trials.map(toTrialWithRelations)
+  } catch (error) {
+    logger.error("Error fetching trials:", error)
     throw new Error("Failed to fetch trials")
   }
-
-  return response.data as unknown as TrialWithRelations[]
 }
 
 // Get trials by condition
 export async function getTrialsByConditionAction(conditionId: string) {
-  const supabase = await createClient()
+  try {
+    const db = await getUserDb()
+    const trials = await db.trials.findMany({
+      where: {
+        condition_id: conditionId,
+        // Recruiting trials are the ones patients can join and the only joinable status
+        // that public visitors may read (see the trials row-level security policy).
+        status: "recruiting",
+      },
+      include: { profiles: { select: { first_name: true, last_name: true } } },
+    })
 
-  const { data, error } = await supabase
-    .from("trials")
-    .select(`
-      *,
-      research_partner:profiles!trials_research_partner_id_fkey (
-        first_name,
-        last_name
-      )
-    `)
-    .eq("condition_id", conditionId)
-    // Recruiting trials are the ones patients can join and the only joinable status
-    // that public visitors may read (see the trials row-level security policy).
-    .eq("status", "recruiting")
-
-  if (error) {
+    return trials.map(({ profiles, ...trial }) => ({
+      ...toTrial(trial),
+      research_partner: profiles as typeof profiles | null,
+      research_partner_name: partnerName(profiles) || 'Unknown Sponsor',
+    }))
+  } catch (error) {
     logger.error("Error fetching trials by condition:", { error, conditionId })
     throw new Error("Failed to fetch trials")
   }
-
-  if (!data) {
-    return [];
-  }
-
-  return data.map(trial => ({
-    ...trial,
-    research_partner_name: trial.research_partner ? 
-      `${trial.research_partner.first_name || ''} ${trial.research_partner.last_name || ''}`.trim() || 'Unknown Sponsor' 
-      : 'Unknown Sponsor'
-  }))
 }
 
 // Get trials by treatment
 export async function getTrialsByTreatmentAction(treatmentId: string): Promise<TrialWithRelations[]> {
-  const supabase = await createClient()
-  
-  const response = await supabase
-    .from("trials")
-    .select(`
-      *,
-      global_conditions:condition_id(id, name),
-      global_treatments:treatment_id(id, name),
-      research_partners:research_partner_id(id, name)
-    `)
-    .eq("treatment_id", treatmentId)
-    .eq("status", "active")
-    .order("created_at", { ascending: false })
-
-  if (response.error) {
-    logger.error(`Error fetching trials for treatment ${treatmentId}:`, response.error)
+  try {
+    const db = await getUserDb()
+    const trials = await db.trials.findMany({
+      where: { treatment_id: treatmentId, status: "active" },
+      include: trialRelationsInclude,
+      orderBy: { created_at: "desc" },
+    })
+    return trials.map(toTrialWithRelations)
+  } catch (error) {
+    logger.error(`Error fetching trials for treatment ${treatmentId}:`, error)
     throw new Error("Failed to fetch trials for treatment")
   }
-
-  return response.data as unknown as TrialWithRelations[]
 }
 
 // Create a new trial
 export async function createTrialAction(trial: TrialInsert): Promise<Trial> {
-  const supabase = await createClient()
-  
-  const response = await supabase
-    .from("trials")
-    .insert(trial)
-    .select()
-    .single()
-
-  if (response.error) {
-    logger.error("Error creating trial:", response.error)
+  let created
+  try {
+    const db = await getUserDb()
+    created = await db.trials.create({ data: trial })
+  } catch (error) {
+    logger.error("Error creating trial:", error)
     throw new Error("Failed to create trial")
   }
 
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
   revalidatePath("/research-partner/")
-  return response.data
+  return toTrial(created)
 }
 
 // Update a trial
 export async function updateTrialAction(id: string, updates: TrialUpdate): Promise<Trial> {
-  const supabase = await createClient()
-  
-  const response = await supabase
-    .from("trials")
-    .update({ ...updates, updated_at: new Date().toISOString() })
-    .eq("id", id)
-    .select()
-    .single()
-
-  if (response.error) {
-    logger.error(`Error updating trial with id ${id}:`, response.error)
+  let updated
+  try {
+    const db = await getUserDb()
+    updated = await db.trials.update({
+      where: { id },
+      data: { ...updates, updated_at: new Date() },
+    })
+  } catch (error) {
+    logger.error(`Error updating trial with id ${id}:`, error)
     throw new Error("Failed to update trial")
   }
 
@@ -218,20 +212,16 @@ export async function updateTrialAction(id: string, updates: TrialUpdate): Promi
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
   revalidatePath("/research-partner/")
-  return response.data
+  return toTrial(updated)
 }
 
 // Delete a trial
 export async function deleteTrialAction(id: string): Promise<void> {
-  const supabase = await createClient()
-  
-  const response = await supabase
-    .from("trials")
-    .delete()
-    .eq("id", id)
-
-  if (response.error) {
-    logger.error(`Error deleting trial with id ${id}:`, response.error)
+  try {
+    const db = await getUserDb()
+    await db.trials.deleteMany({ where: { id } })
+  } catch (error) {
+    logger.error(`Error deleting trial with id ${id}:`, error)
     throw new Error("Failed to delete trial")
   }
 
@@ -246,52 +236,28 @@ export async function getResearchPartnerTrialsAction(researchPartnerId: string):
   completedTrials: TrialWithRelations[];
   pendingTrials: TrialWithRelations[];
 }> {
-  const supabase = await createClient()
-  
-  const selectQuery = `
-    *,
-    global_conditions:condition_id(id, title, icd_code),
-    global_treatments:treatment_id(id, title, treatment_type, manufacturer)
-  `
+  const db = await getUserDb()
 
-  const [activeResponse, completedResponse, pendingResponse] = await Promise.all([
-    supabase
-      .from("trials")
-      .select(selectQuery)
-      .eq("research_partner_id", researchPartnerId)
-      .eq("status", "active"),
-    supabase
-      .from("trials")
-      .select(selectQuery)
-      .eq("research_partner_id", researchPartnerId)
-      .eq("status", "completed"),
-    supabase
-      .from("trials")
-      .select(selectQuery)
-      .eq("research_partner_id", researchPartnerId)
-      .eq("status", "pending")
+  const trialsWithStatus = async (status: "active" | "completed" | "pending") => {
+    try {
+      const trials = await db.trials.findMany({
+        where: { research_partner_id: researchPartnerId, status },
+        include: trialRelationsInclude,
+      })
+      return trials.map(toTrialWithRelations)
+    } catch (error) {
+      logger.error(`Error fetching ${status} trials:`, error)
+      throw new Error(`Failed to fetch ${status} trials`)
+    }
+  }
+
+  const [activeTrials, completedTrials, pendingTrials] = await Promise.all([
+    trialsWithStatus("active"),
+    trialsWithStatus("completed"),
+    trialsWithStatus("pending"),
   ])
 
-  if (activeResponse.error) {
-    logger.error("Error fetching active trials:", activeResponse.error)
-    throw new Error("Failed to fetch active trials")
-  }
-
-  if (completedResponse.error) {
-    logger.error("Error fetching completed trials:", completedResponse.error)
-    throw new Error("Failed to fetch completed trials")
-  }
-
-  if (pendingResponse.error) {
-    logger.error("Error fetching pending trials:", pendingResponse.error)
-    throw new Error("Failed to fetch pending trials")
-  }
-
-  return {
-    activeTrials: activeResponse.data as unknown as TrialWithRelations[],
-    completedTrials: completedResponse.data as unknown as TrialWithRelations[],
-    pendingTrials: pendingResponse.data as unknown as TrialWithRelations[]
-  }
+  return { activeTrials, completedTrials, pendingTrials }
 }
 
 export type TrialDetails = Trial & {
@@ -308,90 +274,87 @@ export async function getTrialDetailsAction(trialId: string): Promise<TrialDetai
     return null
   }
 
-  const supabase = await createClient()
+  try {
+    const db = await getUserDb()
+    const trial = await db.trials.findUnique({
+      where: { id: trialId },
+      include: {
+        global_conditions: { select: { global_variables: { select: { name: true } } } },
+        global_treatments: { select: { global_variables: { select: { name: true } } } },
+        profiles: { select: { first_name: true, last_name: true } },
+      },
+    })
 
-  const { data: trial, error } = await supabase
-    .from("trials")
-    .select(`
-      *,
-      condition:global_conditions!trials_condition_id_fkey(global_variables(name)),
-      treatment:global_treatments!trials_treatment_id_fkey(global_variables(name)),
-      research_partner:profiles!trials_research_partner_id_fkey(first_name, last_name)
-    `)
-    .eq("id", trialId)
-    .maybeSingle()
+    if (!trial) {
+      return null
+    }
 
-  if (error) {
+    const { global_conditions, global_treatments, profiles, ...row } = trial
+
+    return {
+      ...toTrial(row),
+      condition_name: global_conditions.global_variables.name,
+      treatment_name: global_treatments.global_variables.name,
+      research_partner_name: partnerName(profiles) || null,
+    }
+  } catch (error) {
     logger.error("Error fetching trial details:", { trialId, error })
     throw new Error("Failed to fetch trial details")
-  }
-
-  if (!trial) {
-    return null
-  }
-
-  const { condition, treatment, research_partner, ...row } = trial
-  const partnerName = research_partner
-    ? `${research_partner.first_name ?? ""} ${research_partner.last_name ?? ""}`.trim()
-    : ""
-
-  return {
-    ...row,
-    condition_name: condition?.global_variables?.name ?? null,
-    treatment_name: treatment?.global_variables?.name ?? null,
-    research_partner_name: partnerName || null,
   }
 }
 
 // Get active trials with enrollments and actions for provider dashboard
 export async function getProviderActiveTrialsAction(): Promise<FetchedTrial[]> {
-  const supabase = await createClient()
-  
-  const { data, error } = await supabase
-    .from("trials")
-    .select(`
-      *,
-      trial_enrollments!inner (*),
-      trial_actions!inner ( *,
-        action_type:action_types!inner (*) ),
-      research_partner_profile:profiles!trials_research_partner_id_fkey (*)
-    `)
-    .eq("status", "active")
-    .is("deleted_at", null)
+  try {
+    const db = await getUserDb()
+    const trials = await db.trials.findMany({
+      where: {
+        status: "active",
+        deleted_at: null,
+        trial_enrollments: { some: {} },
+        trial_actions: { some: {} },
+      },
+      include: {
+        trial_enrollments: true,
+        trial_actions: { include: { action_types: true } },
+        profiles: true,
+      },
+    })
 
-  if (error) {
+    return trials.map(({ trial_actions, profiles, ...trial }) => ({
+      ...toTrial(trial),
+      trial_actions: trial_actions.map(({ action_types, ...action }) => ({ ...action, action_type: action_types })),
+      research_partner_profile: profiles as typeof profiles | null,
+    }))
+  } catch (error) {
     logger.error("Error fetching active trials for provider:", error)
     throw new Error("Failed to fetch active trials")
   }
-
-  return data as FetchedTrial[]
 }
 
 // Get eligible patients with conditions for provider dashboard
 export async function getProviderPatientsAction(): Promise<FetchedPatient[]> {
-  const supabase = await createClient()
-  
-  const { data, error } = await supabase
-    .from("patients")
-    .select(`
-      *,
-      profile:profiles!patients_id_fkey (*),
-      conditions:patient_conditions!inner (
-        condition:global_conditions!inner (
-          id,
-          global_variables!inner (
-            name
-          )
-        )
-      )
-    `)
-    .is("deleted_at", null)
+  try {
+    const db = await getUserDb()
+    const patients = await db.patients.findMany({
+      where: { deleted_at: null, patient_conditions: { some: {} } },
+      include: {
+        profiles: true,
+        patient_conditions: {
+          select: {
+            global_conditions: { select: { id: true, global_variables: { select: { name: true } } } },
+          },
+        },
+      },
+    })
 
-  if (error) {
+    return patients.map(({ profiles, patient_conditions, ...patient }) => ({
+      ...patient,
+      profile: profiles as typeof profiles | null,
+      conditions: patient_conditions.map(({ global_conditions }) => ({ condition: global_conditions })),
+    }))
+  } catch (error) {
     logger.error("Error fetching patients for provider:", error)
     throw new Error("Failed to fetch patients")
   }
-
-  // Cast to unknown first to handle the type mismatch with conditions
-  return data as unknown as FetchedPatient[]
-} 
+}

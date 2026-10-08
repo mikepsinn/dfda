@@ -1,0 +1,13 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "env": {
+    "GIT_AUTHOR_NAME": "Mike P. Sinn",
+    "GIT_AUTHOR_EMAIL": "m@crowdsourcingcures.org",
+    "GIT_COMMITTER_NAME": "Mike P. Sinn",
+    "GIT_COMMITTER_EMAIL": "m@crowdsourcingcures.org"
+  }
+}

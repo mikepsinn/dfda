@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
+import { getUserDb } from "@/lib/db/server";
 import { Database } from "@/lib/database.types";
 import { logger } from "@/lib/logger";
 import { getServerUser } from "@/lib/server-auth"; // Use the correct auth helper
@@ -21,7 +21,6 @@ export type PatientUpdate = Database['public']['Tables']['patients']['Update'];
  * through trial enrollments.
  */
 export async function getProviderPatientsAction(): Promise<PatientProfileSummary[]> {
-  const supabase = await createClient();
   const user = await getServerUser(); // Fetch the current user
 
   // Ensure the user is logged in
@@ -52,50 +51,31 @@ export async function getProviderPatientsAction(): Promise<PatientProfileSummary
   logger.info("Fetching patients for provider:", { providerId });
 
   try {
+    const db = await getUserDb();
+
     // Step 1: Find all unique patient IDs from trial enrollments managed by this provider.
-    const { data: enrollments, error: enrollmentsError } = await supabase
-      .from("trial_enrollments")
-      .select("patient_id")
-      .eq("provider_id", providerId);
+    const enrollments = await db.trial_enrollments.findMany({
+      where: { provider_id: providerId },
+      select: { patient_id: true },
+    });
 
-    if (enrollmentsError) {
-      logger.error("Error fetching trial enrollments for provider", {
-        providerId,
-        error: enrollmentsError,
-      });
-      throw enrollmentsError; // Re-throw the error to be caught by the outer try-catch
-    }
-
-    if (!enrollments || enrollments.length === 0) {
+    if (enrollments.length === 0) {
       logger.info("Provider has no trial enrollments", { providerId });
       return [];
     }
 
     const patientIds = [...new Set(enrollments.map((e) => e.patient_id))];
 
-    if (patientIds.length === 0) {
-        return [];
-    }
-
     // Step 2: Fetch the profile details for these unique patient IDs.
-    const { data: patients, error: patientsError } = await supabase
-      .from("profiles")
-      .select("id, first_name, last_name, email, avatar_url") // Select only needed fields
-      .in("id", patientIds);
+    const patients = await db.profiles.findMany({
+      where: { id: { in: patientIds } },
+      select: { id: true, first_name: true, last_name: true, email: true, avatar_url: true }, // Select only needed fields
+    });
 
-    if (patientsError) {
-      logger.error("Error fetching patient profiles for provider", {
-        providerId,
-        patientIds,
-        error: patientsError,
-      });
-      throw patientsError; // Re-throw the error
-    }
-
-    logger.info(`Found ${patients?.length ?? 0} patients for provider`, {
+    logger.info(`Found ${patients.length} patients for provider`, {
       providerId,
     });
-    return (patients as PatientProfileSummary[]) || []; // Cast to the specific type
+    return patients;
 
   } catch (error) {
     logger.error("Error in getProviderPatientsAction", { providerId, error });

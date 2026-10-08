@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { getServerUser } from "@/lib/server-auth"
-import { createClient } from "@/utils/supabase/server"
+import { getUserDb } from "@/lib/db/server"
 import { logger } from "@/lib/logger"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -18,6 +18,11 @@ import { getUserProfile } from "@/lib/profile"
 
 type UserTypeEnum = Database["public"]["Enums"]["user_type_enum"]
 
+// Role values use underscores ('research_partner'); dashboard paths use hyphens ('/research-partner').
+function dashboardPathFor(role: UserTypeEnum): string {
+  return `/${role.replace(/_/g, '-')}`
+}
+
 // Server Action to set user role
 async function setUserType(formData: FormData) {
   'use server'
@@ -28,7 +33,6 @@ async function setUserType(formData: FormData) {
     return; // Just return without redirecting if no role selected
   }
 
-  const supabase = await createClient()
   const user = await getServerUser()
 
   if (!user) {
@@ -37,36 +41,26 @@ async function setUserType(formData: FormData) {
 
   logger.info('Setting user role in profile', { userId: user.id, role });
 
-  let profileUpdateError: any = null; // Define error variable outside try
-
   try {
     // 1. Update the profiles table
-    ({ error: profileUpdateError } = await supabase // Assign to the outer variable
-      .from('profiles')
-      .update({ user_type: role })
-      .eq('id', user.id)
-      .select('user_type')
-      .single());
+    const db = await getUserDb()
+    await db.profiles.update({
+      where: { id: user.id },
+      data: { user_type: role },
+      select: { user_type: true },
+    })
 
     // No redirect inside the try block anymore
 
   } catch (err) {
-    // Catch actual unexpected errors during the database operation
-    logger.error('Unexpected error during profile update:', err);
-    // Set the error variable or handle differently if needed
-    profileUpdateError = err;
-  }
-
-  // Check for profile update error *after* the try...catch block
-  if (profileUpdateError) {
-    logger.error('Error setting user_type in profiles table:', profileUpdateError);
+    logger.error('Error setting user_type in profiles table:', err);
     // Potentially show an error message to the user instead of just returning
     return; // Return on error
   }
 
   // Redirect only if the update was successful (no error)
   logger.info('User profile role set, redirecting', { userId: user.id, role });
-  redirect(`/${role}`); // Redirect is now outside the try...catch
+  redirect(dashboardPathFor(role)); // Redirect is now outside the try...catch
 }
 
 export default async function SelectRolePage() {
@@ -80,7 +74,7 @@ export default async function SelectRolePage() {
 
   if (profile?.user_type) {
     logger.info('User already has role from profile, redirecting', { userId: user.id, role: profile.user_type });
-    redirect(`/${profile.user_type}`)
+    redirect(dashboardPathFor(profile.user_type))
   } else {
     if (profile) {
         logger.info('User profile exists but has no role, showing selection page', { userId: user.id });
@@ -151,7 +145,7 @@ export default async function SelectRolePage() {
 
               {/* Research Partner Role */}
               <div className="flex items-start space-x-2 rounded-md border p-4 shadow-sm transition-all hover:bg-accent/30">
-                <RadioGroupItem value="research-partner" id="research-partner" className="mt-1" />
+                <RadioGroupItem value="research_partner" id="research-partner" className="mt-1" />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <Label htmlFor="research-partner" className="font-medium flex items-center cursor-pointer">

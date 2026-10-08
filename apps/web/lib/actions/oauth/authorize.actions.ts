@@ -3,9 +3,9 @@
 import { z } from 'zod';
 // import { redirect } from 'next/navigation'; // Removed unused import
 import { createServerClient } from '@/utils/supabase/server';
-import { supabaseAdmin } from '@/utils/supabase/admin';
+import { adminDb } from '@/lib/db';
 import { logger } from '@/lib/logger';
-// import { type Database } from '@/lib/database.types'; // Removed unused import
+import { type Tables } from '@/lib/database.types';
 import { publicOauthAuthorizationCodesInsertSchemaSchema } from '@/lib/database.schemas';
 import crypto from 'crypto';
 
@@ -81,15 +81,19 @@ export async function handleConsent(formData: FormData): Promise<HandleConsentRe
   }
 
   // Re-validate client and redirect_uri (similar to authorize page)
-  const { data: oauthClient, error: clientDbError } = await supabaseAdmin
-    .from('oauth_clients')
-    .select('client_id, client_name, redirect_uris, scope') // Select necessary fields
-    .eq('client_id', client_id)
-    .is('deleted_at', null)
-    .single();
+  let oauthClient: Pick<Tables<'oauth_clients'>, 'client_id' | 'client_name' | 'redirect_uris' | 'scope'> | null = null;
+  let clientDbError: unknown = null;
+  try {
+    oauthClient = await adminDb.oauth_clients.findFirst({
+      where: { client_id, deleted_at: null },
+      select: { client_id: true, client_name: true, redirect_uris: true, scope: true }, // Select necessary fields
+    });
+  } catch (error) {
+    clientDbError = error;
+  }
 
-  if (clientDbError || !oauthClient) {
-    logger.warn(`${LOG_PREFIX} Invalid client_id or DB error during consent:`, { client_id, error: clientDbError?.message });
+  if (!oauthClient) {
+    logger.warn(`${LOG_PREFIX} Invalid client_id or DB error during consent:`, { client_id, error: clientDbError instanceof Error ? clientDbError.message : undefined });
     return { 
       success: false, 
       error: 'unauthorized_client', 
@@ -148,11 +152,12 @@ export async function handleConsent(formData: FormData): Promise<HandleConsentRe
         return { success: false, error: 'server_error', error_description: 'Internal error preparing authorization code.', state };
     }
 
-    const { error: insertError } = await supabaseAdmin
-      .from('oauth_authorization_codes')
-      .insert(validatedCodeData.data);
-
-    if (insertError) {
+    try {
+      await adminDb.oauth_authorization_codes.create({
+        data: { ...validatedCodeData.data, expires_at: new Date(validatedCodeData.data.expires_at) },
+        select: { id: true },
+      });
+    } catch (insertError) {
       logger.error(`${LOG_PREFIX} Failed to store authorization code for user ${user.id}, client ${client_id}:`, { error: insertError });
       return { success: false, error: 'server_error', error_description: 'Could not issue authorization code.', state };
     }

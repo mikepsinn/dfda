@@ -4,8 +4,9 @@ import { createClient } from "@/utils/supabase/server"
 import { notFound } from 'next/navigation'
 import { logger } from '@/lib/logger'
 import { EditScheduleClient, type ReminderScheduleData } from '@/components/reminders'
-// import { parseISO } from 'date-fns' // Removed unused import
 import { Database } from '@/lib/database.types'
+import { getUserDb } from '@/lib/db/server'
+import { timeOfDayToString } from '@/lib/time-of-day'
 import { 
   Breadcrumb, 
   BreadcrumbItem, 
@@ -22,9 +23,9 @@ function mapDbToSchedulerData(dbSchedule: Database['public']['Tables']['reminder
   return {
     id: dbSchedule.id,
     rruleString: dbSchedule.rrule,
-    timeOfDay: dbSchedule.time_of_day, // Assuming it's already HH:mm
-    startDate: new Date(dbSchedule.start_date),
-    endDate: dbSchedule.end_date ? new Date(dbSchedule.end_date) : null,
+    timeOfDay: timeOfDayToString(dbSchedule.time_of_day),
+    startDate: dbSchedule.start_date,
+    endDate: dbSchedule.end_date,
     isActive: dbSchedule.is_active,
     default_value: dbSchedule.default_value
   };
@@ -35,18 +36,17 @@ async function getReminderSchedulesForUserVariableAction(
   userId: string, 
   globalVariableId: string
 ): Promise<Database['public']['Tables']['reminder_schedules']['Row'][] | null> { 
-  const supabase = await createClient();
   logger.info('Fetching reminder schedules for user variable', { userId, globalVariableId });
+  const db = await getUserDb();
 
    // 1. Find the specific user_variable record for this user and global variable
-    const { data: userVariable, error: uvError } = await supabase
-        .from('user_variables')
-        .select('id')
-        .eq('user_id', userId)
-        .eq('global_variable_id', globalVariableId)
-        .maybeSingle();
-
-    if (uvError) {
+    let userVariable;
+    try {
+        userVariable = await db.user_variables.findUnique({
+            where: { user_id_global_variable_id: { user_id: userId, global_variable_id: globalVariableId } },
+            select: { id: true },
+        });
+    } catch (uvError) {
         logger.error('Error fetching user_variable for reminders', { userId, globalVariableId, error: uvError });
         return null; // Indicate error
     }
@@ -60,18 +60,17 @@ async function getReminderSchedulesForUserVariableAction(
     logger.info('Found user_variable_id, fetching schedules', { userVariableId });
 
     // 2. Fetch reminder schedules using the found user_variable.id
-    const { data, error } = await supabase
-        .from('reminder_schedules')
-        .select('*')
-        .eq('user_variable_id', userVariableId)
-        .order('created_at', { ascending: true });
-
-    if (error) {
+    try {
+        const data = await db.reminder_schedules.findMany({
+            where: { user_variable_id: userVariableId },
+            orderBy: { created_at: 'asc' },
+        });
+        logger.info(`Found ${data.length} reminder schedules`, { userVariableId });
+        return data;
+    } catch (error) {
         logger.error('Error fetching reminder schedules using user_variable_id', { userVariableId, error });
         return null; // Indicate error
     }
-    logger.info(`Found ${data?.length ?? 0} reminder schedules`, { userVariableId });
-    return data || [];
 }
 
 // Ensure the component is async if you need to await inside
@@ -81,7 +80,7 @@ export default async function VariableRemindersPage({ params }: { params: { user
   
   logger.info('Rendering Variable Reminders Page', { userVariableId });
 
-  const supabase = await createClient() // Keep for other fetches
+  const supabase = await createClient() // Used for auth only
   
   const { data: userData, error: userError } = await supabase.auth.getUser()
   if (userError || !userData?.user) {
@@ -92,33 +91,32 @@ export default async function VariableRemindersPage({ params }: { params: { user
   const userId = user.id
 
   // Fetch user variable details - Use params.userVariableId
-  const { data: userVariable, error: uvError } = await supabase
-      .from('user_variables')
-      .select(`
-        id,
-        global_variable_id,
-        preferred_unit_id,
-        global_variables (
-          id,
-          name,
-          default_unit_id,
-          variable_category_id
-        ),
-        units:preferred_unit_id (
-          id,
-          abbreviated_name
-        )
-      `)
-      .eq('id', userVariableId) // Use directly
-      .eq('user_id', userId)
-      .single();
+  const db = await getUserDb()
+  let uvError: unknown = null
+  const userVariable = await db.user_variables
+      .findFirst({
+        where: { id: userVariableId, user_id: userId },
+        select: {
+          id: true,
+          global_variable_id: true,
+          preferred_unit_id: true,
+          global_variables: {
+            select: { id: true, name: true, default_unit_id: true, variable_category_id: true },
+          },
+          units: { select: { id: true, abbreviated_name: true } }, // Preferred unit
+        },
+      })
+      .catch((error: unknown) => {
+        uvError = error
+        return null
+      })
   
-  if (uvError || !userVariable) {
+  if (!userVariable) {
     logger.error('Error fetching user variable details or not found', { userVariableId: userVariableId, error: uvError });
     notFound();
   }
 
-  const variableName = userVariable.global_variables?.name || 'Unknown Variable'
+  const variableName = userVariable.global_variables.name || 'Unknown Variable'
   // const unitName = userVariable.units?.abbreviated_name || '' // Removed unused variable
   // const variableCategoryId = userVariable.global_variables?.variable_category_id // Not used currently
 

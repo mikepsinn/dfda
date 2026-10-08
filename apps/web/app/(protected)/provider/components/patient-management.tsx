@@ -16,7 +16,7 @@ type ProfileRow = Database["public"]["Tables"]["profiles"]["Row"]
 type PatientRow = Database["public"]["Tables"]["patients"]["Row"]
 
 // Helper function to calculate age from date of birth
-function calculateAge(dateOfBirth: string | null | undefined): number {
+function calculateAge(dateOfBirth: Date | null | undefined): number {
   if (!dateOfBirth) return 0
   const dob = new Date(dateOfBirth)
   const today = new Date()

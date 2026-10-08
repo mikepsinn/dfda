@@ -1,11 +1,12 @@
 import { type NextRequest, NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/utils/supabase/admin';
+import { adminDb } from '@/lib/db';
 import { logger } from '@/lib/logger';
 import { Argon2id } from 'oslo/password';
 import { SignJWT } from 'jose'; // For creating JWTs
 import { TokenRequestSchema, type TokenRequestInput } from '@/lib/actions/oauth/token.schemas';
 import crypto from 'crypto';
 import { env } from '@/lib/env';
+import { type Tables } from '@/lib/database.types';
 
 const LOG_PREFIX = '[Route /oauth/token]';
 
@@ -79,15 +80,19 @@ export async function POST(request: NextRequest) {
   }
 
   // --- 1. Client Authentication & Validation ---
-  const { data: oauthClient, error: clientDbError } = await supabaseAdmin
-    .from('oauth_clients')
-    .select('client_id, client_secret, grant_types, response_types, client_type, redirect_uris, scope') // Removed client_secret_hashed
-    .eq('client_id', client_id)
-    .is('deleted_at', null)
-    .single();
+  let oauthClient: Pick<Tables<'oauth_clients'>, 'client_id' | 'client_secret' | 'grant_types' | 'response_types' | 'client_type' | 'redirect_uris' | 'scope'> | null = null;
+  let clientDbError: unknown = null;
+  try {
+    oauthClient = await adminDb.oauth_clients.findFirst({
+      where: { client_id, deleted_at: null },
+      select: { client_id: true, client_secret: true, grant_types: true, response_types: true, client_type: true, redirect_uris: true, scope: true },
+    });
+  } catch (error) {
+    clientDbError = error;
+  }
 
-  if (clientDbError || !oauthClient) {
-    logger.warn(`${LOG_PREFIX} Client not found or DB error:`, { client_id, error: clientDbError?.message });
+  if (!oauthClient) {
+    logger.warn(`${LOG_PREFIX} Client not found or DB error:`, { client_id, error: clientDbError instanceof Error ? clientDbError.message : undefined });
     return NextResponse.json({ error: 'invalid_client', error_description: 'Client authentication failed.' }, { status: 401 });
   }
 
@@ -123,22 +128,30 @@ export async function POST(request: NextRequest) {
   }
   
   // --- 2. Authorization Code Validation ---
-  const { data: authCodeDetails, error: codeDbError } = await supabaseAdmin
-    .from('oauth_authorization_codes')
-    .select('*')
-    .eq('code', authorizationCode)
-    .single();
+  let authCodeDetails: Tables<'oauth_authorization_codes'> | null = null;
+  let codeDbError: unknown = null;
+  try {
+    authCodeDetails = await adminDb.oauth_authorization_codes.findUnique({
+      where: { code: authorizationCode },
+    });
+  } catch (error) {
+    codeDbError = error;
+  }
 
-  if (codeDbError || !authCodeDetails) {
-    logger.warn(`${LOG_PREFIX} Authorization code not found or DB error:`, { code: authorizationCode, error: codeDbError?.message });
+  if (!authCodeDetails) {
+    logger.warn(`${LOG_PREFIX} Authorization code not found or DB error:`, { code: authorizationCode, error: codeDbError instanceof Error ? codeDbError.message : undefined });
     return NextResponse.json({ error: 'invalid_grant', error_description: 'Invalid or expired authorization code.' }, { status: 400 });
   }
 
   // Check if code is expired
-  if (new Date(authCodeDetails.expires_at) < new Date()) {
+  if (authCodeDetails.expires_at < new Date()) {
     logger.warn(`${LOG_PREFIX} Expired authorization code used:`, { code: authorizationCode, client_id });
     // As a security measure, also delete the expired code
-    await supabaseAdmin.from('oauth_authorization_codes').delete().eq('id', authCodeDetails.id);
+    try {
+      await adminDb.oauth_authorization_codes.deleteMany({ where: { id: authCodeDetails.id } });
+    } catch (error) {
+      logger.warn(`${LOG_PREFIX} Failed to delete expired authorization code:`, { codeId: authCodeDetails.id, error });
+    }
     return NextResponse.json({ error: 'invalid_grant', error_description: 'Authorization code has expired.' }, { status: 400 });
   }
 
@@ -181,12 +194,9 @@ export async function POST(request: NextRequest) {
   }
 
   // --- 4. Invalidate Authorization Code (it's single-use) ---
-  const { error: deleteCodeError } = await supabaseAdmin
-    .from('oauth_authorization_codes')
-    .delete()
-    .eq('id', authCodeDetails.id);
-
-  if (deleteCodeError) {
+  try {
+    await adminDb.oauth_authorization_codes.deleteMany({ where: { id: authCodeDetails.id } });
+  } catch (deleteCodeError) {
     // This is serious. If we can't delete the code, it could be reused.
     // Log critical error and deny token issuance.
     logger.error(`${LOG_PREFIX} CRITICAL: Failed to delete used authorization code:`, { codeId: authCodeDetails.id, error: deleteCodeError });
@@ -207,12 +217,14 @@ export async function POST(request: NextRequest) {
     // const refreshTokenExpiresAt = new Date(Date.now() + env.REFRESH_TOKEN_EXPIRES_IN_DAYS * 24 * 60 * 60 * 1000);
     // const hashedRefreshToken = await new Argon2id().hash(refreshToken); // If storing hashed refresh tokens
     /*
-    await supabaseAdmin.from('oauth_refresh_tokens').insert({
-      token_hash: hashedRefreshToken, // Or just the token if not hashing (less secure for DB leaks)
-      client_id: client_id,
-      user_id: userId,
-      scopes: grantedScopes.join(' '),
-      expires_at: refreshTokenExpiresAt.toISOString(),
+    await adminDb.oauth_refresh_tokens.create({
+      data: {
+        token_hash: hashedRefreshToken, // Or just the token if not hashing (less secure for DB leaks)
+        client_id: client_id,
+        user_id: userId,
+        scopes: grantedScopes.join(' '),
+        expires_at: refreshTokenExpiresAt,
+      },
     });
     */
 
