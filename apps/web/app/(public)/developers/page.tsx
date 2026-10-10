@@ -1,359 +1,94 @@
+import type { Metadata } from "next"
 import Link from "next/link"
-import { Key, Code, Database, Copy, ExternalLink, FileText, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
-import { DeveloperWhatYouCanBuild } from "@/components/developers/DeveloperWhatYouCanBuild"
-import { DeveloperTechnicalAdvantages } from "@/components/developers/DeveloperTechnicalAdvantages"
-import { DeveloperPricingPlans } from "@/components/developers/DeveloperPricingPlans"
-import type { Metadata } from 'next';
-import { getMetadataFromNavKey } from '@/lib/metadata';
+import { getMetadataFromNavKey } from "@/lib/metadata"
+import { getBaseUrl } from "@/lib/url"
 
-// Generate metadata using the helper function
 export async function generateMetadata(): Promise<Metadata> {
-  return getMetadataFromNavKey('developers');
+  return getMetadataFromNavKey("developers")
 }
 
-export default function DeveloperPortal() {
-  const showPricingTab = false // Set to false to hide the pricing tab
+// The OAuth 2.1 / OpenID Connect provider endpoints (see lib/auth.ts). Clients find the others in the metadata.
+const oauthEndpoints = [
+  { name: "Metadata", path: "/.well-known/oauth-authorization-server/api/auth" },
+  { name: "Authorization", path: "/api/auth/oauth2/authorize" },
+  { name: "Token", path: "/api/auth/oauth2/token" },
+  { name: "Client registration", path: "/api/auth/oauth2/register" },
+]
+
+const notBuilt = [
+  "Data access with an access token. A token from our sign-in does not give access to health data yet.",
+  "An MCP server for AI assistants.",
+  "API endpoints for measurements, reminders, notifications and variables.",
+  "An API for Treatment Rankings and Outcome Labels.",
+]
+
+export default function DevelopersPage() {
+  const siteUrl = getBaseUrl().replace(/\/$/, "")
 
   return (
-    <main className="py-6 md:py-10">
-      <div className="container">
-        <div className="mx-auto max-w-5xl">
+    <div className="mx-auto max-w-3xl space-y-10">
+      <header className="space-y-3">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Developers</h1>
+        <p className="text-muted-foreground sm:text-lg">
+          We plan an API for Treatment Rankings, Outcome Labels and the health data that people choose to share. Most of
+          it is not built yet. This page lists what you can use today.
+        </p>
+      </header>
 
-          <div className="space-y-8">
-            <div className="rounded-lg bg-primary/5 p-8">
-              <div className="mx-auto max-w-3xl text-center">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  A Universal Database of What Works
-                </h2>
-                <p className="mt-4 text-muted-foreground md:text-xl">
-                  We are building treatment rankings and Outcome Labels for every condition and treatment, open to any
-                  app through one public API
-                </p>
-                <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-                  <Link href="/register?role=developer">
-                    <Button size="lg">
-                      <Key className="mr-2 h-4 w-4" /> Sign Up for API Access
-                    </Button>
-                  </Link>
-                  <Link href="/developers/documentation">
-                    <Button variant="outline" size="lg">
-                      <Code className="mr-2 h-4 w-4" /> View Documentation
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+      <section aria-labelledby="available-heading" className="space-y-6">
+        <h2 id="available-heading" className="text-2xl font-semibold tracking-tight">Available today</h2>
 
-            <div className="grid gap-6 md:grid-cols-3">
-              <Card>
-                <CardHeader className="space-y-1">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 mb-2">
-                    <Database className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Real-World Clinical Data</CardTitle>
-                  <CardDescription>Access comprehensive patient outcomes</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Integrate real-world data from over 50,000 clinical trials, including patient-reported outcomes,
-                    side effect profiles, and comparative effectiveness metrics that aren&apos;t available anywhere else.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader className="space-y-1">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 mb-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-6 w-6 text-primary"
-                    >
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-                    </svg>
-                  </div>
-                  <CardTitle>Personalized Health Insights</CardTitle>
-                  <CardDescription>Deliver tailored recommendations</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Leverage our AI-powered outcome labels and comparative effectiveness data to provide your users with
-                    personalized treatment insights based on their specific health profile and preferences.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader className="space-y-1">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 mb-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-6 w-6 text-primary"
-                    >
-                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                    </svg>
-                  </div>
-                  <CardTitle>Seamless Trial Integration</CardTitle>
-                  <CardDescription>Connect patients to cutting-edge treatments</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Enable your users to discover, apply for, and participate in clinical trials directly through your
-                    app with our OAuth2 integration, creating new revenue streams and improving health outcomes.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <Tabs defaultValue="get-started">
-              <TabsList className={`grid w-full ${showPricingTab ? "grid-cols-4" : "grid-cols-3"}`}>
-                <TabsTrigger value="get-started">Get Started</TabsTrigger>
-                <TabsTrigger value="documentation">Documentation</TabsTrigger>
-                <TabsTrigger value="examples">Code Examples</TabsTrigger>
-                {showPricingTab && <TabsTrigger value="pricing">Pricing</TabsTrigger>}
-              </TabsList>
-
-              <TabsContent value="get-started" className="space-y-6 pt-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Getting Started with the API</CardTitle>
-                    <CardDescription>Follow these steps to start using our API in your applications</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-medium">1. Sign Up</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Sign up to get an API key. Optionally, you can also register an OAuth2 application if you need to access user-specific data.
-                      </p>
-                      <Link href="/developer">
-                        <Button variant="outline" className="mt-2">
-                          <Key className="mr-2 h-4 w-4" /> Sign Up for Access
-                        </Button>
-                      </Link>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-medium">2. Authentication</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Once you receive your API key, you&apos;ll need to include it in the header of all your API
-                        requests.
-                      </p>
-                      <div className="rounded-lg bg-muted p-4 mt-2">
-                        <div className="flex items-center justify-between">
-                          <code className="text-sm">Authorization: Bearer YOUR_API_KEY</code>
-                          <Button variant="ghost" size="sm">
-                            <Copy className="h-4 w-4" />
-                            <span className="sr-only">Copy</span>
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-medium">3. Make Your First API Call</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Try making a simple API call to test your authentication.
-                      </p>
-                      <div className="rounded-lg bg-muted p-4 mt-2">
-                        <div className="flex items-center justify-between">
-                          <code className="text-sm">GET https://api.dfda.earth/v1/trials</code>
-                          <Button variant="ghost" size="sm">
-                            <Copy className="h-4 w-4" />
-                            <span className="sr-only">Copy</span>
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-medium">4. Explore the Documentation</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Check out our comprehensive documentation to learn about all available endpoints and parameters.
-                      </p>
-                      <Link href="/developers/documentation">
-                        <Button variant="outline" className="mt-2">
-                          <ExternalLink className="mr-2 h-4 w-4" /> View Full Documentation
-                        </Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="documentation" className="space-y-6 pt-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>API Documentation</CardTitle>
-                    <CardDescription>Comprehensive documentation for the API</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <p className="text-muted-foreground">
-                      Our detailed documentation covers everything you need to know about using the API,
-                      including authentication, endpoints, error handling, and more.
-                    </p>
-                    <div className="grid gap-6 md:grid-cols-2">
-                      <div className="rounded-lg border p-4">
-                        <h3 className="font-medium mb-2">Getting Started</h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          Learn the basics of the API and how to make your first request.
-                        </p>
-                        <Link href="/developers/documentation#getting-started">
-                          <Button variant="outline" size="sm">
-                            View Section
-                          </Button>
-                        </Link>
-                      </div>
-                      <div className="rounded-lg border p-4">
-                        <h3 className="font-medium mb-2">Authentication</h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          Learn about API keys and OAuth 2.0 authentication.
-                        </p>
-                        <Link href="/developers/documentation#auth">
-                          <Button variant="outline" size="sm">
-                            View Section
-                          </Button>
-                        </Link>
-                      </div>
-                      <div className="rounded-lg border p-4">
-                        <h3 className="font-medium mb-2">Endpoints</h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          Explore all available API endpoints and their parameters.
-                        </p>
-                        <Link href="/developers/documentation#endpoints">
-                          <Button variant="outline" size="sm">
-                            View Section
-                          </Button>
-                        </Link>
-                      </div>
-                      <div className="rounded-lg border p-4">
-                        <h3 className="font-medium mb-2">Error Handling</h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          Learn how to handle errors and troubleshoot issues.
-                        </p>
-                        <Link href="/developers/documentation#error-handling">
-                          <Button variant="outline" size="sm">
-                            View Section
-                          </Button>
-                        </Link>
-                      </div>
-                    </div>
-                    <Link href="/developers/documentation">
-                      <Button className="w-full">View Full Documentation</Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="examples" className="space-y-6 pt-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Code Examples</CardTitle>
-                    <CardDescription>Sample code for using the API in different languages</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <CodeExampleTabs />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              {showPricingTab && (
-                <TabsContent value="pricing" className="space-y-6 pt-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>API Pricing</CardTitle>
-                      <CardDescription>Choose the plan that fits your needs</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <DeveloperPricingPlans />
-                    </CardContent>
-                  </Card>
-                </TabsContent>
-              )}
-            </Tabs>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Need Help?</CardTitle>
-                <CardDescription>Our developer support team is here to help you integrate with our API</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid gap-6 md:grid-cols-3">
-                  <div className="rounded-lg border p-4">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="mb-4 rounded-full bg-primary/10 p-3">
-                        <Code className="h-6 w-6 text-primary" />
-                      </div>
-                      <h3 className="font-medium">Developer Forum</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        Join our community forum to ask questions and share solutions
-                      </p>
-                      <Button variant="outline" size="sm" className="mt-4">
-                        Visit Forum
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="rounded-lg border p-4">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="mb-4 rounded-full bg-primary/10 p-3">
-                        <FileText className="h-6 w-6 text-primary" />
-                      </div>
-                      <h3 className="font-medium">Documentation</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        Browse our comprehensive API documentation and guides
-                      </p>
-                      <Link href="/developers/documentation">
-                        <Button variant="outline" size="sm" className="mt-4">
-                          View Docs
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="rounded-lg border p-4">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="mb-4 rounded-full bg-primary/10 p-3">
-                        <Mail className="h-6 w-6 text-primary" />
-                      </div>
-                      <h3 className="font-medium">Contact Support</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">Get in touch with our developer support team</p>
-                      <Button variant="outline" size="sm" className="mt-4">
-                        Email Support
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <DeveloperWhatYouCanBuild />
-
-            <DeveloperTechnicalAdvantages />
-          </div>
+        <div className="space-y-3">
+          <h3 className="text-lg font-semibold">Sign-in with OAuth 2.1 and OpenID Connect</h3>
+          <p className="text-muted-foreground">
+            Your app can let people sign in with their account on our site. Each person approves each app on a consent
+            page. Register your app in the developer dashboard, or let it register itself with dynamic client
+            registration (RFC 7591). Apps that cannot keep a client secret use PKCE.
+          </p>
+          <table className="w-full text-sm">
+            <caption className="sr-only">OAuth endpoints</caption>
+            <tbody className="divide-y">
+              {oauthEndpoints.map(endpoint => (
+                <tr key={endpoint.path}>
+                  <th scope="row" className="py-2 pr-4 text-left align-top font-medium">{endpoint.name}</th>
+                  <td className="py-2">
+                    <code className="break-all text-muted-foreground">{siteUrl + endpoint.path}</code>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <Button asChild variant="outline">
+            <Link href="/developer">Open the developer dashboard</Link>
+          </Button>
         </div>
-      </div>
-    </main>
+
+        <div className="space-y-3">
+          <h3 className="text-lg font-semibold">OpenAPI description</h3>
+          <p className="text-muted-foreground">
+            <code className="break-all">{siteUrl}/api/openapi</code> returns an OpenAPI description of our database
+            tables.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="not-built-heading" className="space-y-3">
+        <h2 id="not-built-heading" className="text-2xl font-semibold tracking-tight">Not built yet</h2>
+        <ul className="list-disc space-y-2 pl-6 text-muted-foreground">
+          {notBuilt.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <p className="text-muted-foreground">
+        Questions, or want to help build the API?{" "}
+        <Link href="/contact" className="font-medium text-primary hover:underline">
+          Contact us
+        </Link>
+        .
+      </p>
+    </div>
   )
 }
