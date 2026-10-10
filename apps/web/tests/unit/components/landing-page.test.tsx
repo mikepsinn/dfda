@@ -27,7 +27,7 @@ describe("landing page", () => {
     const loop = screen.getByRole("heading", { name: "Every patient helps the next" }).parentElement!;
     expect(within(loop).getAllByRole("heading", { level: 3 }).map(heading => heading.textContent))
       .toEqual(["Compare", "Join", "Report", "Improve"]);
-    for (const removed of [/How the data flows/, /Digital Twin Safe/, /Global Aggregator/, /FDA v2/, /Decentralized FDA/, /dFDA/, /FDAi/, /Drug Assessment/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/, /Help Build It/, /Support the dFDA Initiative/, /Sign to Support/]) {
+    for (const removed of [/How the data flows/, /Digital Twin Safe/, /Global Aggregator/, /FDA v2/, /Decentralized FDA/, /dFDA/, /FDAi/, /Drug Assessment/, /Testimonial/, /Success Metrics/, /Trusted by/, /Join thousands/, /Join Trial/, /245 trials/, /Help Build It/, /Support the dFDA Initiative/, /Sign to Support/, /Accelerating Discovery/, /Interventions by Condition/, /Comprehensive health impact data/, /designed to deliver/, /Our AI analyzes/, /regulatory compliance/, /Blockchain/, /Temperature-controlled/, /One-click policy/, /Preliminary estimates/]) {
       expect(screen.queryByText(removed)).not.toBeInTheDocument();
     }
   });

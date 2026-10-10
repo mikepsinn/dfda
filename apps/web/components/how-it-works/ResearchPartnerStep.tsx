@@ -1,5 +1,4 @@
 import type { ReactNode } from "react"
-import { ArrowRight } from "lucide-react"
 import { ExampleDataTag } from "./ExampleDataTag"
 
 interface ResearchPartnerStepProps {
@@ -7,14 +6,13 @@ interface ResearchPartnerStepProps {
   title: string
   icon: ReactNode
   description: string
-  benefits: string[]
   preview: ReactNode
   reverse: boolean
   // Set when the mock-up shows outcome or effectiveness numbers that could be read as real evidence.
   exampleData?: boolean
 }
 
-export function ResearchPartnerStep({ stepNumber, title, icon, description, benefits, preview, reverse, exampleData = false }: ResearchPartnerStepProps) {
+export function ResearchPartnerStep({ stepNumber, title, icon, description, preview, reverse, exampleData = false }: ResearchPartnerStepProps) {
   return (
     <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
       <div className={`order-2 ${reverse ? "md:order-2" : "md:order-1"}`}>
@@ -23,15 +21,7 @@ export function ResearchPartnerStep({ stepNumber, title, icon, description, bene
             <div className="rounded-full bg-primary/10 p-2 flex-shrink-0">{icon}</div>
             <h4 className="text-xl font-semibold">{title}</h4>
           </div>
-          <p className="text-muted-foreground mb-4">{description}</p>
-          <ul className="space-y-2 text-sm">
-            {benefits.map((benefit, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <ArrowRight className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="text-muted-foreground">{description}</p>
         </div>
       </div>
       <div className={`order-1 ${reverse ? "md:order-1" : "md:order-2"} flex justify-center`}>

@@ -8,13 +8,6 @@ export function Step7FDAiAgent() {
       title="Connect with Your AI Health Agent"
       icon={<Bot className="h-5 w-5 text-primary" />}
       description="Receive personalized daily check-ins from your AI health agent that monitors your progress, collects data, and provides insights in a conversational way."
-      benefits={[
-        "Daily check-ins via phone or text to monitor your well-being",
-        "Natural conversation interface for easy data collection",
-        "Personalized insights based on your treatment response",
-        "Immediate alerts for potential side effects or concerns",
-        "Medication reminders and adherence support",
-      ]}
       preview={
         <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
           <div className="flex items-center gap-3 mb-4 pb-3 border-b">
