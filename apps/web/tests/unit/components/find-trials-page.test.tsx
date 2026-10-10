@@ -71,7 +71,8 @@ describe("find trials page", () => {
     expect(screen.getByLabelText("Participant's sex")).toHaveValue("female");
     expect(screen.getByRole("checkbox", { name: "Child (0–17)" })).toBeChecked();
     expect(screen.getByRole("region", { name: "Trials" })).toHaveAttribute("id", "registry-trials");
-    expect(screen.getByText(/of 25 matching studies on ClinicalTrials.gov/)).toBeInTheDocument();
+    expect(screen.getByText("25 ClinicalTrials.gov studies for:")).toBeInTheDocument();
+    expect(screen.queryByText(/^Showing/)).not.toBeInTheDocument();
     expect(screen.queryByText(/have not reviewed|National Library of Medicine/)).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Next" })).toHaveAttribute(
       "href", "/find-trials?condition=Asthma&location=Boston&sex=female&age=child&page=2&pageToken=Next2&total=25#registry-trials",
@@ -85,6 +86,7 @@ describe("find trials page", () => {
 
     expect(search).toHaveBeenCalledWith(expect.objectContaining({ treatment: "Montelukast" }), { pageToken: "Next2" });
     expect(screen.getByText("Page 2 of 3")).toBeInTheDocument();
+    expect(screen.getByText("25 ClinicalTrials.gov studies for:")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /First page/ })).toHaveAttribute("href", "/find-trials?treatment=Montelukast#registry-trials");
   });
 

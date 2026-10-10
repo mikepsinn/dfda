@@ -15,11 +15,6 @@ export function ResearchPartnerSteps() {
         title="Create a Trial"
         icon={<Upload className="h-5 w-5 text-primary" />}
         description="Upload protocols, pre/post-clinical data, and register your supply chain in one place."
-        benefits={[
-          "Simple protocol builder with templates",
-          "Automated regulatory compliance checks",
-          "Secure data storage and management",
-        ]}
         preview={
           <div className="w-full max-w-[320px] rounded-lg border shadow-md overflow-hidden bg-background">
             {/* Mini Create Trial Page Preview */}
@@ -65,11 +60,6 @@ export function ResearchPartnerSteps() {
         title="Get Liability Insurance"
         icon={<Shield className="h-5 w-5 text-primary" />}
         description="Automatically receive and select liability insurance quotes per subject with transparent pricing."
-        benefits={[
-          "Competitive quotes from multiple providers",
-          "Risk-based pricing tailored to your trial",
-          "One-click policy activation",
-        ]}
         preview={
           <div className="w-full max-w-[320px] rounded-lg border shadow-md overflow-hidden bg-background">
             {/* Mini Insurance Page Preview */}
@@ -123,11 +113,6 @@ export function ResearchPartnerSteps() {
         title="Set Parameters"
         icon={<Settings className="h-5 w-5 text-primary" />}
         description="Define patient pricing, required data collection, and refundable deposits to optimize your trial."
-        benefits={[
-          "Flexible pricing models for participants",
-          "Customizable data collection requirements",
-          "Incentive structures to maximize retention",
-        ]}
         preview={
           <div className="w-full max-w-[320px] rounded-lg border shadow-md overflow-hidden bg-background">
             {/* Mini Parameters Page Preview */}
@@ -181,12 +166,6 @@ export function ResearchPartnerSteps() {
         title="Manage Supply Chain & Orders"
         icon={<Package className="h-5 w-5 text-primary" />}
         description="Track inventory, fulfill patient orders, and manage the entire treatment supply chain with end-to-end visibility."
-        benefits={[
-          "Automated inventory tracking and alerts",
-          "Secure patient order processing and fulfillment",
-          "Temperature-controlled shipping monitoring",
-          "Blockchain-verified chain of custody",
-        ]}
         preview={
           <div className="w-full max-w-[320px] rounded-lg border shadow-md overflow-hidden bg-background">
             {/* Mini Supply Chain Dashboard Preview */}
@@ -253,12 +232,6 @@ export function ResearchPartnerSteps() {
         title="Analyze Trial Data"
         icon={<BarChart3 className="h-5 w-5 text-primary" />}
         description="Access real-time insights, analyze effectiveness data, and make informed decisions with comprehensive dashboards and reporting tools."
-        benefits={[
-          "Real-time effectiveness monitoring",
-          "Participant compliance tracking",
-          "Advanced statistical analysis tools",
-          "Regulatory submission preparation",
-        ]}
         preview={
           <div className="w-full max-w-[320px] rounded-lg border shadow-md overflow-hidden bg-background">
             {/* Mini Analytics Dashboard Preview */}

@@ -26,8 +26,9 @@ interface RegistryTrialListProps {
   query?: URLSearchParams
   // A visible heading; without one, the section is named "Trials" for screen readers.
   heading?: string
-  // What the studies are, in the count: "Showing 1–10 of 458 recruiting studies".
-  countNoun: string
+  // What the studies are, in the count: "Showing 1–10 of 458 recruiting studies". Without it, there is no
+  // count line: the page shows the count itself.
+  countNoun?: string
   // Shown when the registry finds no studies.
   emptyText: string
   // The link to the registry's own search: under the results, and when the registry does not respond.
@@ -76,10 +77,12 @@ export function RegistryTrialList({
               That results page has expired. These are the latest results, from the first page.
             </p>
           )}
-          <p className="text-sm tabular-nums text-muted-foreground">
-            Showing {(page - 1) * REGISTRY_PAGE_SIZE + 1}–{(page - 1) * REGISTRY_PAGE_SIZE + result.trials.length}
-            {total !== null && ` of ${total.toLocaleString("en-US")}`} {countNoun}, most relevant first.
-          </p>
+          {countNoun && (
+            <p className="text-sm tabular-nums text-muted-foreground">
+              Showing {(page - 1) * REGISTRY_PAGE_SIZE + 1}–{(page - 1) * REGISTRY_PAGE_SIZE + result.trials.length}
+              {total !== null && ` of ${total.toLocaleString("en-US")}`} {countNoun}, most relevant first.
+            </p>
+          )}
           <ul className="space-y-4">
             {result.trials.map(trial => (
               <li key={trial.nctId}>

@@ -9,15 +9,9 @@ export function Step1ReviewPatientMatches() {
     <HowItWorksStep
       exampleData
       stepNumber={1}
-      title="Review AI-Ranked Trial Matches for Your Patients"
+      title="Review Trial Matches for Your Patients"
       icon={<Users className="h-5 w-5 text-primary" />}
-      description="Our AI analyzes patient EHR data to identify and rank the most suitable and effective clinical trials, saving you time."
-      benefits={[
-        "Leverage AI for precise patient-trial matching",
-        "View ranked lists based on predicted effectiveness",
-        "Quickly assess eligibility criteria against patient data",
-        "Focus on the most promising options first",
-      ]}
+      description="See the trials that match each patient, ranked by estimated effectiveness."
       preview={
         <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
           <div className="space-y-4">

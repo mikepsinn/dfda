@@ -79,12 +79,6 @@ export function Step5TrackData() {
       title="Track Outcomes"
       icon={<LineChart className="h-5 w-5 text-primary" />}
       description="Quick check-ins record how you're doing. Every result, good or bad, improves the outcome labels for the next patient."
-      benefits={[
-        "Simple mobile app for daily tracking",
-        "Automatic data collection from wearables",
-        "Customized tracking based on your trial",
-        "Secure and private data storage",
-      ]}
       preview={<TrackOutcomesPreview />}
       reverse={false}
     />

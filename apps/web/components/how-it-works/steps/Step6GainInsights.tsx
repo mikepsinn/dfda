@@ -9,12 +9,6 @@ export function Step6GainInsights() {
       title="Gain Personal Insights"
       icon={<Lightbulb className="h-5 w-5 text-primary" />}
       description="View personalized analytics about your health and treatment response."
-      benefits={[
-        "See how your response compares to others",
-        "Identify patterns in your symptoms and triggers",
-        "Track your progress over time",
-        "Receive personalized recommendations",
-      ]}
       preview={
         <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
           <div className="space-y-4">

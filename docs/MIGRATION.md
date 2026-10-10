@@ -27,8 +27,7 @@ content and estimates, label their status, and progressively improve them with b
 sources and methods. Removing estimated numbers or blanking useful screens is not a
 milestone or a prerequisite for demonstrating the product.
 
-Use the concise label **"Current best estimates"**, followed by **"Preliminary
-estimates, updated as better evidence becomes available."** Do not repeat
+Use the concise label **"Current best estimates"**. Do not repeat
 "AI-generated" throughout the public interface or expose import/debug provenance
 as a large page section. Retain origin, basis, limitations and dates in the data
 and developer documentation; show actual study citations when verified.

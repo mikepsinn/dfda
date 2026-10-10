@@ -12,12 +12,6 @@ export function Step2AssignIntervention() {
       title="Assign Patients to Trial Arms with Confidence"
       icon={<FlaskConical className="h-5 w-5 text-primary" />}
       description="Review detailed outcome labels, compare trial arms (including placebo/standard of care), and assign patients directly."
-      benefits={[
-        "Make informed decisions with transparent outcome data",
-        "Compare effectiveness and side effect profiles easily",
-        "Assign patients to specific trial arms seamlessly",
-        "Integrate assignment with patient management workflows",
-      ]}
       preview={
         <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
           <div className="space-y-4">

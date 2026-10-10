@@ -16,6 +16,12 @@ const examples = [
   { label: "Metformin", href: "/find-trials?treatment=Metformin#results" },
 ]
 
+// The count and the search in one line: "25 ClinicalTrials.gov studies for: [Asthma] [Boston]".
+function studiesFor(total: number | null) {
+  if (total === null) return "ClinicalTrials.gov studies for:"
+  return `${total.toLocaleString("en-US")} ClinicalTrials.gov ${total === 1 ? "study" : "studies"} for:`
+}
+
 export default async function FindTrialsPage({
   searchParams,
 }: {
@@ -50,7 +56,7 @@ export default async function FindTrialsPage({
         {registry && position ? (
           <>
             <div className="flex flex-wrap items-center gap-2 text-sm">
-              <span className="text-muted-foreground">Showing studies for:</span>
+              <span className="tabular-nums text-muted-foreground">{studiesFor(registry.ok ? position.total : null)}</span>
               <ul aria-label="Search criteria" className="flex flex-wrap gap-2">
                 {describeTrialSearch(form).map(phrase => (
                   <li key={phrase} className="rounded-full bg-primary/10 px-3 py-1 font-medium text-primary">{phrase}</li>
@@ -64,7 +70,6 @@ export default async function FindTrialsPage({
               total={position.total}
               basePath="/find-trials"
               query={trialSearchQuery(form)}
-              countNoun="matching studies on ClinicalTrials.gov"
               emptyText="ClinicalTrials.gov lists no studies that match this search. Try another spelling, fewer filters or a wider location."
               registryLinkText="Search ClinicalTrials.gov directly"
               failedLinkText="Search ClinicalTrials.gov directly"
