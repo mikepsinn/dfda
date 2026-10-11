@@ -1,11 +1,8 @@
-import { NextResponse } from 'next/server';
+import { corsHeaders } from '@/lib/api/resource-auth'
+import { openApiDocument } from '@/lib/api/openapi'
 
-// The OpenAPI document came from Supabase's PostgREST API, which the app no
-// longer uses. The REST API and its OpenAPI document move to the app itself in
-// a later step (docs/MIGRATION.md).
-export async function GET() {
-  return NextResponse.json(
-    { error: 'not_implemented', error_description: 'The API document is not available yet.' },
-    { status: 501 },
-  );
+// The old address of the API document. It now serves the document of the
+// app's own REST API, the same as /api/v1/openapi.json.
+export function GET() {
+  return Response.json(openApiDocument(), { headers: corsHeaders })
 }

@@ -91,6 +91,14 @@ describe('OpenAPI document', () => {
     expect(patch.parameters.map((parameter) => parameter.name)).toEqual(['id'])
     expect(patch.requestBody.content['application/json'].schema.properties).not.toHaveProperty('measurementId')
   })
+
+  it('is served at /api/openapi as well as /api/v1/openapi.json', async () => {
+    const { GET: oldAddress } = await import('@/app/api/openapi/route')
+    const { GET: v1Address } = await import('@/app/api/v1/openapi.json/route')
+    const [old, v1] = [oldAddress(), v1Address()]
+    expect([old.status, v1.status]).toEqual([200, 200])
+    expect(await old.json()).toEqual(await v1.json())
+  })
 })
 
 function document() {
