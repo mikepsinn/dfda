@@ -10,13 +10,7 @@ export function Step3MonitorProgress() {
       stepNumber={3}
       title="Monitor Patient Progress & Trial Performance"
       icon={<TrendingUp className="h-5 w-5 text-primary" />}
-      description="Track key metrics, patient-reported outcomes, and overall trial status through an intuitive dashboard."
-      benefits={[
-        "Visualize patient progress over time",
-        "Monitor adherence and adverse events easily",
-        "Track enrollment rates and trial milestones",
-        "Generate reports for analysis and regulatory needs",
-      ]}
+      description="Track key metrics, patient-reported outcomes, and overall trial status on a dashboard."
       preview={
         <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
           <Card>

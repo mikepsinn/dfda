@@ -264,7 +264,8 @@ const OAuthApplicationForm: React.FC<OAuthApplicationFormProps> = ({
             />
             {errors.scope && <p className="text-sm text-red-500">{errors.scope.join(', ')}</p>}
              <p className="text-xs text-muted-foreground">
-              Default: {DEFAULT_SCOPES.join(' ')}. Defines the permissions your application requests.
+              Default: {DEFAULT_SCOPES.join(' ')}. Defines the permissions your application requests. Add
+              tracking:read and tracking:write to use the MCP server or the REST API.
             </p>
           </div>
 

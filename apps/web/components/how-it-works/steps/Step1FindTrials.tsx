@@ -9,12 +9,6 @@ export function Step1FindTrials() {
       title="Find the Most Promising Treatment for Your Condition"
       icon={<Search className="h-5 w-5 text-primary" />}
       description="Search for trials based on your condition, location, and preferences."
-      benefits={[
-        "Access trials from anywhere in the world",
-        "Filter by condition, treatment type, and more",
-        "See real-time availability and enrollment status",
-        "Compare multiple treatment options side-by-side",
-      ]}
       preview={
         <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
           <div className="space-y-4">

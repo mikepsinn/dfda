@@ -20,7 +20,7 @@ export function treatmentOutcomeCategories(treatment: TreatmentEstimate): Outcom
       title: "Side-effect estimates", isSideEffectCategory: true,
       description: sideEffects.some(item => item.source)
         ? "Frequency, from the cited source where one is shown."
-        : "Estimated frequency.",
+        : undefined,
       emptyText: "No side-effect estimates supplied; this does not establish safety.",
       items: sideEffects,
     },

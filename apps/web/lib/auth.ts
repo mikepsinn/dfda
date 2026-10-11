@@ -1,12 +1,14 @@
 import { betterAuth, type BetterAuthPlugin } from 'better-auth'
 import { nextCookies } from 'better-auth/next-js'
 import { jwt, magicLink, organization } from 'better-auth/plugins'
-import { oauthProvider } from '@better-auth/oauth-provider'
+import { DEFAULT_OAUTH_SCOPES, oauthProvider } from '@better-auth/oauth-provider'
 import { Pool } from 'pg'
 import { adminDb } from '@/lib/db'
 import { env } from '@/lib/env'
 import { linkEmail, sendEmail } from '@/lib/email'
+import { findInstanceByHost, hostName } from '@/lib/instance/hosts'
 import { logger } from '@/lib/logger'
+import { apiResources, resourceUrl, trackingScopes, type ApiResource } from '@/lib/oauth-resources'
 import { getBaseUrl } from '@/lib/url'
 
 /**
@@ -27,6 +29,10 @@ import { getBaseUrl } from '@/lib/url'
  * /api/auth/oauth2/token, dynamic client registration at
  * /api/auth/oauth2/register, metadata at
  * /.well-known/oauth-authorization-server/api/auth.
+ *
+ * Third-party apps use it for the MCP server (/api/mcp) and the REST API
+ * (/api/v1): with the `resource` parameter set to one of them, the token is a
+ * JWT for that API (see lib/oauth-resources.ts and lib/api/access-token.ts).
  */
 
 const siteUrl = getBaseUrl().replace(/\/$/, '')
@@ -35,6 +41,31 @@ const siteUrl = getBaseUrl().replace(/\/$/, '')
 const trustedOrigins = [siteUrl]
 if (process.env.VERCEL_URL) trustedOrigins.push(`https://${process.env.VERCEL_URL}`)
 if (process.env.NODE_ENV !== 'production') trustedOrigins.push('http://localhost:3000', 'http://127.0.0.1:3000')
+
+/**
+ * The trusted origins for one request: the site's own, plus a company
+ * instance's domain or subdomain (lib/instance) when the request arrives on
+ * it, so that people can sign in there. A request to another host never
+ * trusts an instance domain, so instance domains cannot be used as redirect
+ * targets from the main site.
+ */
+export async function trustedOriginsFor(request?: Request): Promise<string[]> {
+  if (!request) return trustedOrigins
+  const hostHeader = (request.headers.get('x-forwarded-host') ?? request.headers.get('host') ?? '').split(',')[0].trim()
+  const host = hostName(hostHeader)
+  try {
+    if (host && (await findInstanceByHost(host))) {
+      const protocol = request.headers.get('x-forwarded-proto')?.split(',')[0].trim() ?? new URL(request.url).protocol.replace(':', '')
+      return [...trustedOrigins, `${protocol}://${hostHeader.toLowerCase()}`]
+    }
+  } catch (error) {
+    logger.error('Could not check whether the request host is an instance', {
+      host,
+      error: error instanceof Error ? error.message : String(error),
+    })
+  }
+  return trustedOrigins
+}
 
 const googleSignIn =
   env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET
@@ -57,6 +88,18 @@ const oauthProviderPluginUncast = oauthProvider({
   // consent page.
   allowDynamicClientRegistration: true,
   allowUnauthenticatedClientRegistration: true,
+  scopes: [...DEFAULT_OAUTH_SCOPES, ...trackingScopes],
+  // The APIs that accept these tokens. Better Auth stores them in
+  // oauth_resources on first use; 'merge' keeps those rows in step with this
+  // list. Any client may ask for a token for them; the person still approves
+  // each client and its scopes on the consent page.
+  resources: (Object.keys(apiResources) as ApiResource[]).map((resource) => ({
+    identifier: resourceUrl(resource),
+    name: apiResources[resource].name,
+    allowedScopes: [...trackingScopes, 'offline_access'],
+  })),
+  resourceSeedMode: 'merge',
+  enforcePerClientResources: false,
   schema: {
     oauthClient: { modelName: 'oauth_clients' },
     oauthRefreshToken: { modelName: 'oauth_refresh_tokens' },
@@ -74,7 +117,7 @@ export const auth = betterAuth({
   appName: env.NEXT_PUBLIC_SITE_NAME,
   baseURL: siteUrl,
   secret: env.BETTER_AUTH_SECRET,
-  trustedOrigins,
+  trustedOrigins: trustedOriginsFor,
   // A pool of its own; Prisma (lib/db) keeps a separate one. Creating the pool
   // does not connect, so the build needs no database.
   database: new Pool({ connectionString: env.DATABASE_URL }),

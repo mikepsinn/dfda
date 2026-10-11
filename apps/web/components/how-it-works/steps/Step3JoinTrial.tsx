@@ -8,12 +8,6 @@ export function Step3JoinTrial() {
       title="Join a Trial"
       icon={<ClipboardCheck className="h-5 w-5 text-primary" />}
       description="Complete informed consent and enroll in your chosen trial."
-      benefits={[
-        "Simple digital enrollment process",
-        "Clear explanation of trial requirements",
-        "Transparent compensation information",
-        "Easy withdrawal option if needed",
-      ]}
       preview={
         <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
           <div className="space-y-4">

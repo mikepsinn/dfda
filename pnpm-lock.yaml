@@ -78,6 +78,9 @@ importers:
       '@langchain/openai':
         specifier: ^0.5.10
         version: 0.5.18(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(ws@8.18.3(bufferutil@4.0.8)(utf-8-validate@6.0.3))
+      '@modelcontextprotocol/sdk':
+        specifier: 1.25.1
+        version: 1.25.1(@cfworker/json-schema@4.1.1)(hono@4.11.1)(zod@3.25.76)
       '@prisma/adapter-pg':
         specifier: ^7.10.0
         version: 7.10.0

@@ -82,8 +82,10 @@ Each deployment is intended to retain its own patient records, authentication,
 and configuration. Shared branding/code does not imply shared patient access;
 custom domains alone do not establish tenant isolation. Sign-in and an OAuth
 2.1 / OpenID Connect provider with dynamic client registration and discovery
-metadata (Better Auth) are present; bearer-token data access for an MCP
-server is still to be built (see the migration plan).
+metadata (Better Auth) are present. Its access tokens give an app or an MCP
+client access to one person's own tracking data through the MCP server
+(`/api/mcp`) and the REST API (`/api/v1`); see `lib/tracking` and
+`lib/oauth-resources.ts`.
 
 Before clinic data can be shared, build consent records, installation identity,
 authenticated clinic aggregate submission, and aggregate privacy controls,

@@ -14,6 +14,8 @@ const SCOPE_DESCRIPTIONS: Record<string, string> = {
   profile: 'See your name and picture',
   email: 'See your email address',
   offline_access: 'Stay connected when you are not using it',
+  'tracking:read': 'See your measurements, reminders and reminder notifications',
+  'tracking:write': 'Record, change and delete your measurements and reminders, and answer your reminders',
 };
 
 // Plain-language names of the OIDC user info claims an application can ask for.

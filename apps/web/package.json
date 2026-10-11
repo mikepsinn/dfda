@@ -52,6 +52,7 @@
     "@langchain/core": "^0.3.56",
     "@langchain/langgraph": "^0.2.72",
     "@langchain/openai": "^0.5.10",
+    "@modelcontextprotocol/sdk": "1.25.1",
     "@prisma/adapter-pg": "^7.10.0",
     "@prisma/client": "^7.10.0",
     "@radix-ui/react-accordion": "^1.2.2",
