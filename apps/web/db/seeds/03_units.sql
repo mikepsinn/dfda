@@ -116,3 +116,12 @@ UPDATE unit_categories SET base_unit_id = 'micrograms-per-cubic-meter' WHERE id 
 UPDATE unit_categories SET base_unit_id = 'percent' WHERE id = 'percentage';
 UPDATE unit_categories SET base_unit_id = 'us-dollar' WHERE id = 'currency';
 UPDATE unit_categories SET base_unit_id = 'year-age' WHERE id = 'age';
+
+-- Blood marker units (also in migration 20261011020000 for existing databases)
+INSERT INTO units (id, unit_category_id, name, abbreviated_name, ucum_code, conversion_factor, conversion_offset, emoji)
+VALUES
+('units-per-liter', 'enzyme-activity', 'Units per Liter', 'U/L', 'U/L', 1, 0, '🧪'), -- Base Unit
+('nanograms-per-milliliter', 'mass-concentration', 'Nanograms per Milliliter', 'ng/mL', 'ng/mL', 1, 0, '🧪'), -- Base Unit
+('milligrams-per-liter', 'mass-concentration', 'Milligrams per Liter', 'mg/L', 'mg/L', 0.001, 0, '🧪');
+UPDATE unit_categories SET base_unit_id = 'units-per-liter' WHERE id = 'enzyme-activity';
+UPDATE unit_categories SET base_unit_id = 'nanograms-per-milliliter' WHERE id = 'mass-concentration';

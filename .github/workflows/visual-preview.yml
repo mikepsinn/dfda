@@ -1,9 +1,11 @@
 name: Visual Preview
 
 # Posts before/after screenshots of key pages as one comment on each pull request.
-# "Before" is the base branch and "after" is the pull request; both are built here and
-# run without a database. Images are committed to the visual-previews branch, which is
-# only an image store: deleting it removes the images from old comments.
+# "Before" is the base branch and "after" is the pull request; both are built here, each with
+# its own PostgreSQL database built from its own migrations and filled with the demo data of
+# `pnpm db:seed:demo`, so signed-in company and program pages can be captured too. Images are
+# committed to the visual-previews branch, which is only an image store: deleting it removes
+# the images from old comments.
 # Pull requests from forks are skipped, because their token cannot push or comment.
 
 on:
@@ -29,6 +31,18 @@ jobs:
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     env:
       PREVIEW_BRANCH: visual-previews
       PR_NUMBER: ${{ github.event.pull_request.number }}
@@ -38,7 +52,8 @@ jobs:
       OUT_DIR: ${{ github.workspace }}/visual-preview
       # Same placeholder settings as the CI build; no service is contacted.
       NODE_OPTIONS: --max-old-space-size=4096
-      DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/dfda
+      BEFORE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/dfda_before
+      AFTER_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/dfda_after
       GOOGLE_GENERATIVE_AI_API_KEY: test-google-generative-ai-key
       BETTER_AUTH_SECRET: test-better-auth-secret-with-at-least-32-characters
       SMTP_URL: smtp://127.0.0.1:2525
@@ -80,18 +95,34 @@ jobs:
             after/pnpm-lock.yaml
             before/pnpm-lock.yaml
 
+      - name: Create the two databases
+        run: |
+          psql postgresql://postgres:postgres@127.0.0.1:5432/postgres -c 'CREATE DATABASE dfda_after' -c 'CREATE DATABASE dfda_before'
+
       - name: Build the pull request
         working-directory: after
+        env:
+          DATABASE_URL: ${{ env.AFTER_DATABASE_URL }}
         run: |
           pnpm --filter web... install --frozen-lockfile
+          pnpm --dir apps/web db:plain:setup
+          pnpm --dir apps/web db:seed:demo
           pnpm --dir apps/web build
 
       - name: Build the base branch
         id: before
         continue-on-error: true
         working-directory: before
+        env:
+          DATABASE_URL: ${{ env.BEFORE_DATABASE_URL }}
         run: |
           pnpm --filter web... install --frozen-lockfile
+          # The pages still build without a database; then the signed-in pages show as new.
+          pnpm --dir apps/web db:plain:setup || echo "The base branch's database could not be built"
+          # Base branches from before scripts/seed-demo.ts have no demo data.
+          if grep -q '"db:seed:demo"' apps/web/package.json && pnpm --dir apps/web db:seed:demo; then
+            echo "demo_data=1" >> "$GITHUB_OUTPUT"
+          fi
           pnpm --dir apps/web build
 
       - name: Start both apps
@@ -103,10 +134,10 @@ jobs:
             done
             echo "Server at $1 did not start"; return 1
           }
-          (cd after/apps/web && nohup pnpm exec next start -p 3002 > "$RUNNER_TEMP/after.log" 2>&1 &)
+          (cd after/apps/web && DATABASE_URL="$AFTER_DATABASE_URL" nohup pnpm exec next start -p 3002 > "$RUNNER_TEMP/after.log" 2>&1 &)
           wait_for http://localhost:3002/
           if [ "${{ steps.before.outcome }}" = success ]; then
-            (cd before/apps/web && nohup pnpm exec next start -p 3001 > "$RUNNER_TEMP/before.log" 2>&1 &)
+            (cd before/apps/web && DATABASE_URL="$BEFORE_DATABASE_URL" nohup pnpm exec next start -p 3001 > "$RUNNER_TEMP/before.log" 2>&1 &)
             wait_for http://localhost:3001/ || echo "Continuing without before screenshots"
           fi
 
@@ -116,6 +147,9 @@ jobs:
 
       - name: Capture screenshots
         working-directory: after/apps/web
+        env:
+          DEMO_DATA: 1
+          BEFORE_DEMO_DATA: ${{ steps.before.outputs.demo_data }}
         run: |
           if curl -s -o /dev/null http://localhost:3001/; then export BEFORE_URL=http://localhost:3001; fi
           AFTER_URL=http://localhost:3002 node scripts/visual-preview.mjs capture "$OUT_DIR"

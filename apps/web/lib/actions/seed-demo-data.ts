@@ -87,12 +87,22 @@ export async function setupDemoUserData(
 
       if (seedData.conditions && seedData.conditions.length > 0) {
         logger.info("Seeding patient conditions", { userId, count: seedData.conditions.length });
-        const conditionsToInsert = seedData.conditions.map((cond: any) => ({
-            ...cond,
-            diagnosed_at: toDate(cond.diagnosed_at),
-            patient_id: userId,
-        }));
-        // Use upsert for conditions? Check if needed based on constraints.
+        const conditionsToInsert = [];
+        for (const cond of seedData.conditions) {
+            // Each patient condition refers to the user's variable for the condition.
+            const userVariable = await db.user_variables.upsert({
+                where: { user_id_global_variable_id: { user_id: userId, global_variable_id: cond.condition_id } },
+                create: { user_id: userId, global_variable_id: cond.condition_id },
+                update: {},
+                select: { id: true },
+            });
+            conditionsToInsert.push({
+                ...cond,
+                diagnosed_at: toDate(cond.diagnosed_at),
+                patient_id: userId,
+                user_variable_id: userVariable.id,
+            });
+        }
         await db.patient_conditions.createMany({ data: conditionsToInsert });
       }
 

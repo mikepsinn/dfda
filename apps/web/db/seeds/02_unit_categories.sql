@@ -22,3 +22,9 @@ VALUES
 ('currency', 'Currency', 'Units representing currency', '💰'),
 ('age', 'Age', 'Units representing age (e.g., years)', '🎂'),
 ('dimensionless', 'Dimensionless', 'Units for counts, scores, and normalized ratings (typically 1)', '🔢');
+
+-- Blood marker units (also in migration 20261011020000 for existing databases)
+INSERT INTO unit_categories (id, name, description, emoji)
+VALUES
+('enzyme-activity', 'Enzyme Activity', 'Units of enzyme activity in blood (e.g., U/L)', '🧪'),
+('mass-concentration', 'Mass Concentration', 'Mass of a substance per volume (e.g., ng/mL, mg/L)', '🧪');

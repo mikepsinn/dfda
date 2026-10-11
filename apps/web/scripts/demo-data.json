@@ -1,0 +1,16 @@
+{
+  "comment": "The demo accounts and names that scripts/seed-demo.ts creates and scripts/visual-preview.mjs signs in with. For local and CI databases only.",
+  "password": "demo-password-local-only",
+  "company": { "email": "demo-company@example.com", "name": "Demo Company" },
+  "memberEmail": "demo-member{n}@example.com",
+  "people": 10,
+  "instance": {
+    "id": "3d6f2a8e-5c41-4b7a-9e0d-1a2b3c4d5e01",
+    "slug": "acme-metabolic",
+    "name": "Acme Metabolic",
+    "tagline": "GLP-1 care with your blood markers measured before and after.",
+    "primaryColor": "#0f766e",
+    "products": ["Semaglutide program", "Blood panels"]
+  },
+  "program": { "id": "3d6f2a8e-5c41-4b7a-9e0d-1a2b3c4d5e02", "template": "glp-1" }
+}

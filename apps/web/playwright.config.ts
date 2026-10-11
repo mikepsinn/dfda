@@ -1,89 +1,59 @@
-import { defineConfig, devices } from '@playwright/test';
-import dotenv from 'dotenv';
+import { defineConfig, devices } from '@playwright/test'
+import dotenv from 'dotenv'
 
-// Always load test environment variables for Playwright
-dotenv.config({ path: '.env.test' });
+/**
+ * Browser tests (tests/e2e). The database must have the schema and the demo
+ * data: `pnpm db:plain:setup`, then `pnpm db:seed:demo`.
+ *
+ * - With E2E_BASE_URL, the tests use the app that runs at that address. CI
+ *   starts a production build (see .github/workflows/ci.yml).
+ * - Without it, Playwright starts `pnpm dev` on port 3001 with the settings in
+ *   the environment and in .env.test.
+ * - CHROMIUM_PATH: a Chromium to use instead of the one that
+ *   `pnpm exec playwright install chromium` downloads.
+ */
+dotenv.config({ path: '.env.test' })
 
-// Test specific port to avoid conflicts with dev server
-const TEST_PORT = 3001;
+const TEST_PORT = 3001
+const appUrl = process.env.E2E_BASE_URL
+const baseURL = appUrl ?? `http://localhost:${TEST_PORT}`
 
-// Environment variables for tests
-const testEnv = Object.entries({
-  ...process.env, // Include all existing env variables
-  BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET ?? '',
-  NODE_ENV: 'development', // Use development mode for tests since we're using dev server
-  PORT: TEST_PORT.toString(),
-}).reduce((acc, [key, value]) => {
-  // Only include defined values and convert them to strings
-  if (value !== undefined) {
-    acc[key] = String(value);
+if (!appUrl) {
+  for (const key of ['DATABASE_URL', 'BETTER_AUTH_SECRET']) {
+    if (!process.env[key]) throw new Error(`Missing required environment variable: ${key}`)
   }
-  return acc;
-}, {} as Record<string, string>);
-
-// Validate required env variables
-const requiredEnvVars = [
-  'DATABASE_URL',
-  'BETTER_AUTH_SECRET'
-];
-
-requiredEnvVars.forEach(key => {
-  if (!testEnv[key]) {
-    throw new Error(`Missing required environment variable: ${key}`);
-  }
-});
+}
 
 export default defineConfig({
   testDir: './tests/e2e',
-  /* Maximum time one test can run for */
-  timeout: 60000,
-  /* Maximum time for globalSetup */
-  globalTimeout: 600000,
-  /* Maximum number of failures before stopping */
-  maxFailures: process.env.CI ? 10 : 1,
-  /* Run tests in files in parallel */
+  timeout: 60_000,
   fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Reporter configuration */
-  reporter: [['html', { open: 'never' }]],
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  retries: process.env.CI ? 1 : 0,
+  reporter: process.env.CI ? [['list'], ['html', { open: 'never' }]] : [['html', { open: 'never' }]],
   use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: `http://127.0.0.1:${TEST_PORT}`,
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
-    video: 'retain-on-failure',
+    baseURL,
+    trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
+    launchOptions: process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {},
   },
-  /* Configure projects for major browsers */
   projects: [
+    // Signs in the demo accounts once; the sign-in endpoint allows only a few requests at a time.
+    { name: 'sign-in', testMatch: /auth\.setup\.ts/ },
     {
-      name: 'setup-db',
-      testMatch: /global\.setup\.ts/,
-    },
-    {
-      name: 'auth-tests',
-      testMatch: /.*login\.test\.ts/,
-      // Auth tests don't need database setup
-      dependencies: [],
-    },
-    {
-      name: 'data-tests',
-      testMatch: /.*(?<!login)\.test\.ts/,
-      dependencies: ['setup-db'], // These tests need database setup
+      name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      dependencies: ['sign-in'],
     },
   ],
-  /* Run your local dev server before starting the tests */
-  webServer: {
-    command: `pnpm dev --port ${TEST_PORT}`,
-    url: `http://127.0.0.1:${TEST_PORT}`,
-    timeout: 120 * 1000,
-    env: testEnv,
-    stdout: 'pipe',
-    stderr: 'pipe',
-  },
-}); 
+  webServer: appUrl
+    ? undefined
+    : {
+        command: `pnpm dev --port ${TEST_PORT}`,
+        url: baseURL,
+        timeout: 120_000,
+        reuseExistingServer: !process.env.CI,
+        stdout: 'pipe',
+        stderr: 'pipe',
+      },
+})

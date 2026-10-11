@@ -11,9 +11,11 @@ import { DemoUserType } from "@/lib/constants/demo-accounts"
 interface DemoLoginButtonProps {
   onError: (error: { type: 'email_not_confirmed' | 'other', message: string }) => void;
   showAll?: boolean;
+  /** A path on this site to open after sign-in, instead of the role's home page. */
+  next?: string | null;
 }
 
-export function DemoLoginButton({ onError, showAll = false }: DemoLoginButtonProps) {
+export function DemoLoginButton({ onError, showAll = false, next }: DemoLoginButtonProps) {
   const [isLoading, setIsLoading] = useState<DemoUserType | null>(null)
   const router = useRouter()
 
@@ -24,7 +26,7 @@ export function DemoLoginButton({ onError, showAll = false }: DemoLoginButtonPro
 
       if (result && result.success && result.redirectUrl) {
         router.refresh()
-        router.push(result.redirectUrl)
+        router.push(next ?? result.redirectUrl)
       } else {
         logger.error("Demo login action failed:", { error: result?.error, userType });
         onError({ 

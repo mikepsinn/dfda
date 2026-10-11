@@ -12,6 +12,10 @@ production database is on [Neon](https://neon.tech); any PostgreSQL 16 host work
   resulting database into [`prisma/schema.prisma`](../prisma/schema.prisma).
   [`bootstrap.sql`](bootstrap.sql) runs before the migrations, and the
   [seeds](seeds) after them.
+- **Catalog rows** (variables, units) that an existing database also needs go in
+  a seed file and in a migration. The migration adds them only when the catalog
+  is already seeded, because a new database runs the seeds after the migrations.
+  See [`20261011020000_catalog_lab_markers_and_peptides.sql`](migrations/20261011020000_catalog_lab_markers_and_peptides.sql).
 
 The repository-root `schema` folder is an earlier, unapplied design; do not
 copy from it. Start with the shared [repository instructions](../../../AGENTS.md).
@@ -138,6 +142,13 @@ Supabase origin: the `anon`, `authenticated` and `service_role` roles,
   the database already has tables.
 - `pnpm db:migrate` applies the new migrations to an **existing** database,
   each in its own transaction. `--dry-run` lists them and changes nothing.
+- `pnpm db:seed:demo` adds demo data to a **local or CI** database: the company
+  instance `/i/acme-metabolic`, its GLP-1 program, and 10 people who joined it,
+  with made-up values. The accounts and their password are in
+  [`scripts/demo-data.json`](../scripts/demo-data.json); sign in as
+  `demo-company@example.com` or `demo-member1@example.com`. It refuses a
+  database on another host. The screenshot workflow and the browser tests
+  (`pnpm test:e2e`) use it.
 
 Both record each applied migration file name in the table
 `schema_migrations.applied` (outside `public`, so Prisma does not see it).

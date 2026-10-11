@@ -13,6 +13,7 @@
     "db:pull": "prisma db pull && prisma generate",
     "db:plain:setup": "tsx ./scripts/db-plain-setup.ts",
     "db:migrate": "tsx ./scripts/db-migrate.ts",
+    "db:seed:demo": "tsx ./scripts/seed-demo.ts",
     "services:start": "docker compose -f ../../docker-compose.yml up -d --wait",
     "services:stop": "docker compose -f ../../docker-compose.yml down",
     "check": "pnpm run type-check && pnpm run lint",

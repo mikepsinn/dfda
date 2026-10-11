@@ -38,6 +38,9 @@ For app code changes, run the relevant tests and checks from `apps/web`:
 - `pnpm test:db` when queries, migrations, policies or file storage change. It
   needs `DATABASE_URL` set to an empty PostgreSQL database prepared with
   `pnpm db:plain:setup`, and the `S3_*` settings of an S3-compatible test server.
+- `pnpm test:e2e` (browser tests with Playwright) when pages, forms or sign-in
+  change. The database needs `pnpm db:plain:setup` and then `pnpm db:seed:demo`;
+  [`playwright.config.ts`](apps/web/playwright.config.ts) tells how to start the app.
 - `pnpm build` when changes affect the production build, plus relevant integration
   tests for the changed workflow using a dedicated local/test environment.
 

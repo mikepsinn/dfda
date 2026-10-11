@@ -14,9 +14,14 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { InternalLink } from '@/components/internal-link'
 import { authClient } from '@/lib/auth-client'
 import { logger } from '@/lib/logger'
+import { safeLocalPath } from '@/lib/safe-path'
 
-// Where the browser goes after a magic link or Google sign-in.
-const AFTER_SIGN_IN = '/auth/callback'
+// Where the browser goes after a magic link or Google sign-in. A `next` path
+// on the sign-in page (for example a program to join) is passed on.
+function afterSignIn(searchParams: URLSearchParams): string {
+  const next = safeLocalPath(searchParams.get('next'))
+  return next ? `/auth/callback?next=${encodeURIComponent(next)}` : '/auth/callback'
+}
 
 /**
  * The URL to open after a magic link sign-in. During an OAuth authorization
@@ -24,7 +29,7 @@ const AFTER_SIGN_IN = '/auth/callback'
  * the authorization endpoint, which continues to the consent page.
  */
 function magicLinkCallbackUrl(searchParams: URLSearchParams): string {
-  if (!searchParams.has('sig') || !searchParams.has('client_id')) return AFTER_SIGN_IN
+  if (!searchParams.has('sig') || !searchParams.has('client_id')) return afterSignIn(searchParams)
   const query = new URLSearchParams(searchParams)
   for (const name of ['sig', 'exp', 'ba_iat', 'ba_pl']) query.delete(name)
   return `/api/auth/oauth2/authorize?${query.toString()}`
@@ -69,7 +74,7 @@ export function SignInCard({ mode, googleEnabled }: SignInCardProps) {
   async function signInWithGoogle() {
     setBusy('google')
     setError(null)
-    const { error } = await authClient.signIn.social({ provider: 'google', callbackURL: AFTER_SIGN_IN })
+    const { error } = await authClient.signIn.social({ provider: 'google', callbackURL: afterSignIn(searchParams) })
     if (error) {
       logger.warn('Google sign-in failed to start', { status: error.status })
       setError('Could not sign in with Google. Please try again.')
@@ -86,14 +91,14 @@ export function SignInCard({ mode, googleEnabled }: SignInCardProps) {
     const { error } = await authClient.signIn.email({
       email: String(form.get('email') ?? '').trim(),
       password: String(form.get('password') ?? ''),
-      callbackURL: AFTER_SIGN_IN,
+      callbackURL: afterSignIn(searchParams),
     })
     if (error) {
       setError(error.status === 401 ? 'The email or password is not correct.' : 'Could not sign in. Please try again.')
       setBusy(null)
     }
     // On success the client follows the redirect in the response: to
-    // AFTER_SIGN_IN, or to the consent page during an OAuth authorization.
+    // the callback, or to the consent page during an OAuth authorization.
   }
 
   if (emailSent) {
@@ -179,7 +184,7 @@ export function SignInCard({ mode, googleEnabled }: SignInCardProps) {
           </>
         )}
 
-        <DemoLoginButton showAll={true} onError={(err) => setError(err.message)} />
+        <DemoLoginButton showAll={true} next={safeLocalPath(searchParams.get('next'))} onError={(err) => setError(err.message)} />
 
         <form onSubmit={sendMagicLink} className="space-y-4 pt-4">
           <div className="space-y-2">

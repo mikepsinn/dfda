@@ -2,10 +2,13 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { getServerUser } from '@/lib/server-auth'
 import { dashboardPathFor, fetchUserProfile } from '@/lib/profile'
 import { logger } from '@/lib/logger'
+import { safeLocalPath } from '@/lib/safe-path'
 
 /**
  * Where the browser lands after a magic link, Google or password sign-in.
- * Sends the user to the home page of their role, or to /select-role.
+ * Sends the user to the `next` path when the sign-in page had one (for
+ * example a program to join), else to the home page of their role, or to
+ * /select-role.
  */
 export async function GET(request: NextRequest) {
   // Behind a proxy (Docker, Cloud Run) request.url can carry the internal
@@ -20,6 +23,12 @@ export async function GET(request: NextRequest) {
     const loginUrl = new URL('/login', origin)
     loginUrl.searchParams.set('error', 'Could not sign in. Please try again.')
     return NextResponse.redirect(loginUrl)
+  }
+
+  const next = safeLocalPath(request.nextUrl.searchParams.get('next'))
+  if (next) {
+    logger.info('[AUTH-CALLBACK-ROUTE] Signed in', { userId: user.id, redirectPath: next })
+    return NextResponse.redirect(new URL(next, origin))
   }
 
   let redirectPath = '/'
