@@ -8,7 +8,8 @@ test.describe("a company's own site", () => {
     await expect(header.getByRole('link', { name: demo.instance.name })).toBeVisible()
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(demo.instance.name)
     await expect(page.getByRole('heading', { name: 'How a program works' })).toBeVisible()
-    await expect(page.getByRole('contentinfo')).toContainText(/Powered by/)
+    // In a preview, the link to the network's site ends the preview first.
+    await expect(page.getByRole('contentinfo').getByRole('link', { name: 'Open Treatment Evidence Network' })).toHaveAttribute('href', '/i')
 
     await header.getByRole('link', { name: 'Programs' }).click()
     await expect(page).toHaveURL(/\/programs$/)
@@ -36,6 +37,10 @@ test.describe("a company's own site", () => {
       '/programs/glp-1/me',
     )
     await expect(page.getByRole('button', { name: 'Sign out' })).toBeVisible()
+
+    // A signed-in member who opens the sign-in page also goes to the programs, not to a role dashboard.
+    await page.goto('/login')
+    await expect(page).toHaveURL(/\/programs$/)
   })
 
   test("the main site keeps the network's pages", async ({ page }) => {

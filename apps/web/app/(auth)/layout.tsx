@@ -3,6 +3,7 @@ import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
 import { dashboardPathFor, getUserProfile } from "@/lib/profile"
 import { logger } from "@/lib/logger" // Import logger
+import { resolveInstance } from "@/lib/instance/resolve"
 
 export default async function AuthLayout({
   children,
@@ -13,6 +14,9 @@ export default async function AuthLayout({
 
   // If the user is already logged in, check their role and redirect
   if (user) {
+    // On a company instance, the role pages are not on the site: go to its programs.
+    if (await resolveInstance()) redirect("/programs")
+
     const profile = await getUserProfile(user) // Fetch profile
     
     // Check the profile table for user_type

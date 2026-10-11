@@ -123,7 +123,11 @@ export default async function RootLayout({
             }
             footer={
               instance ? (
-                <InstanceFooter brand={instance} network={{ name: env.NEXT_PUBLIC_SITE_NAME, url: env.NEXT_PUBLIC_SITE_URL }} />
+                <InstanceFooter
+                  brand={instance}
+                  // In a preview, the network's site is on this host: the link ends the preview first.
+                  network={{ name: env.NEXT_PUBLIC_SITE_NAME, url: instance.via === "preview" ? "/i" : env.NEXT_PUBLIC_SITE_URL }}
+                />
               ) : (
                 <Footer siteName={env.NEXT_PUBLIC_SITE_NAME} />
               )
