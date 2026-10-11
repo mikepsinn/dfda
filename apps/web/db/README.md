@@ -142,6 +142,12 @@ Supabase origin: the `anon`, `authenticated` and `service_role` roles,
   the database already has tables.
 - `pnpm db:migrate` applies the new migrations to an **existing** database,
   each in its own transaction. `--dry-run` lists them and changes nothing.
+- `pnpm db:seed:demo` adds demo data to a **local or CI** database: the company
+  instance `/i/acme-metabolic`, its GLP-1 program, and 10 people who joined it,
+  with made-up values. The accounts and their password are in
+  [`scripts/demo-data.json`](../scripts/demo-data.json); sign in as
+  `demo-company@example.com` or `demo-member1@example.com`. It refuses a
+  database on another host. The screenshot workflow uses it.
 
 Both record each applied migration file name in the table
 `schema_migrations.applied` (outside `public`, so Prisma does not see it).

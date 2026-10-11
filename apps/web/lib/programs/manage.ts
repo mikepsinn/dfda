@@ -72,8 +72,9 @@ export const CHECK_IN_REMINDER_TIME = '20:00'
  * Joins `program`: records the start and creates a reminder for each dose and
  * check-in that the user does not already have a reminder for. A user with no
  * role becomes a patient, because they now track their own health.
+ * `scheduleNotifications: false` skips the worker jobs (for the demo seed).
  */
-export async function joinProgram(user: DbUser, program: Program) {
+export async function joinProgram(user: DbUser, program: Program, { scheduleNotifications = true } = {}) {
   const result = await withUserTransaction(user, async (tx) => {
     const existing = await tx.program_enrollments.findUnique({
       where: { program_id_user_id: { program_id: program.id, user_id: user.id } },
@@ -105,7 +106,7 @@ export async function joinProgram(user: DbUser, program: Program) {
   })
 
   // After the commit: the worker makes each reminder's first notification.
-  for (const reminder of result.reminders) {
+  for (const reminder of scheduleNotifications ? result.reminders : []) {
     try {
       await afterReminderSaved(user.id, reminder, true)
     } catch (error) {
