@@ -4,8 +4,9 @@ import { auth } from '@/lib/auth'
 import { fetchUserProfile, type Profile } from '@/lib/profile'
 import { logger } from '@/lib/logger'
 
-// Paths a signed-in user without a role may still open.
-const PATHS_WITHOUT_ROLE = ['/select-role', '/login', '/register', '/auth', '/api/auth', '/oauth', '/.well-known']
+// Paths a signed-in user without a role may still open. The MCP server and
+// the REST API use access tokens, not the session.
+const PATHS_WITHOUT_ROLE = ['/select-role', '/login', '/register', '/auth', '/api/auth', '/oauth', '/.well-known', '/api/mcp', '/api/v1']
 
 export async function middleware(request: NextRequest) {
   // Visitors without a session cookie are not signed in; skip the database.

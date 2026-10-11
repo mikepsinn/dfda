@@ -74,7 +74,7 @@ over `dfda.earth` is a later migration step.
 | Clinic workspace | Provider dashboard, patient list and enrollment, intervention assignment, EHR authorization, and form creation screens | Packaging for an independent installation and aggregate-data sharing are still planned; this row describes the provider interface, not a separate app. |
 | Research partner | Dashboard, trial creation, enrollment actions, and trial-results screens | Build/verify protocol versions, review gates, consent, eligibility, withdrawal and study lifecycle. Existing create/enroll actions do not establish these safeguards. |
 | Admin | Admin dashboard and role-selection screens | Broader instance administration and network management remain incomplete. |
-| Authentication and developer access | Better Auth sign-in (magic link, Google, password), password reset, organizations, an OAuth 2.1 / OpenID Connect provider with dynamic client registration and discovery metadata, developer OAuth-client management, a developers page that lists the OAuth endpoints, and `/api/openapi` | An MCP server and bearer-token data access are still to be built. |
+| Authentication and developer access | Better Auth sign-in (magic link, Google, password), password reset, organizations, an OAuth 2.1 / OpenID Connect provider with dynamic client registration and discovery metadata, developer OAuth-client management, a developers page, `/api/openapi`, and the MCP server (`/api/mcp`) and REST API (`/api/v1`, with `/api/v1/openapi.json`) for personal tracking, with access tokens for each | API access to conditions, treatments and ratings, and evidence-curation tools, are still to be built. |
 | AI-assisted capture and chat | Image analysis and measurement-saving actions; chat and CopilotKit routes | Text-to-measurement logging is to be extracted. Parsing a person's input and generating provisional estimates remain distinct; estimates need origin labels and must not become observed patient/study records. |
 
 ## Existing supporting components
@@ -142,8 +142,8 @@ Unchecked items below are planned or awaiting acceptance, not confirmed complete
 
 From Optimitron:
 
-- [ ] Port the dFDA MCP measurement, reminder, and notification tools into `/api/mcp` over this app's data layer.
-- [ ] Port the tracking REST API for measurements, reminders, notifications, and variables, with its OpenAPI document.
+- [ ] Port the dFDA MCP measurement, reminder, and notification tools into `/api/mcp` over this app's data layer. **Implemented, awaiting acceptance:** 14 tools in `apps/web/lib/tracking`, with database tests.
+- [ ] Port the tracking REST API for measurements, reminders, notifications, and variables, with its OpenAPI document. **Implemented, awaiting acceptance:** `/api/v1` and `/api/v1/openapi.json`.
 - [ ] Extract the tested ClinicalTrials.gov search client into `packages/trials` and connect the existing trial-search page.
 - [ ] Evaluate/extract TypeScript N-of-1 analysis into `packages/analysis` against the curedao-api reference baseline. Recheck and resolve reported small-sample p-value and effect-direction problems; this library alone does not prove feature or numerical parity.
 - [ ] Extract wearable/app export parsers into `packages/importers`.

@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { getMetadataFromNavKey } from "@/lib/metadata"
-import { getBaseUrl } from "@/lib/url"
+import { resourceUrl, siteOrigin } from "@/lib/oauth-resources"
+import { trackingOperations } from "@/lib/tracking/operations"
 
 export async function generateMetadata(): Promise<Metadata> {
   return getMetadataFromNavKey("developers")
@@ -17,27 +18,61 @@ const oauthEndpoints = [
 ]
 
 const notBuilt = [
-  "Data access with an access token. A token from our sign-in does not give access to health data yet.",
-  "An MCP server for AI assistants.",
-  "API endpoints for measurements, reminders, notifications and variables.",
   "An API for Treatment Rankings and Outcome Labels.",
+  "API access to your conditions, treatments and treatment ratings.",
 ]
 
+function Address({ children }: { children: string }) {
+  return <code className="block break-all rounded-md bg-muted px-3 py-2 text-sm">{children}</code>
+}
+
 export default function DevelopersPage() {
-  const siteUrl = getBaseUrl().replace(/\/$/, "")
+  const siteUrl = siteOrigin()
 
   return (
     <div className="mx-auto max-w-3xl space-y-10">
       <header className="space-y-3">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Developers</h1>
         <p className="text-muted-foreground sm:text-lg">
-          We plan an API for Treatment Rankings, Outcome Labels and the health data that people choose to share. Most of
-          it is not built yet. This page lists what you can use today.
+          Apps and AI assistants can read and record a person&apos;s own health tracking data, with that
+          person&apos;s permission. This page lists what you can use today.
         </p>
       </header>
 
-      <section aria-labelledby="available-heading" className="space-y-6">
+      <section aria-labelledby="available-heading" className="space-y-8">
         <h2 id="available-heading" className="text-2xl font-semibold tracking-tight">Available today</h2>
+
+        <div className="space-y-3">
+          <h3 className="text-lg font-semibold">MCP server for AI assistants</h3>
+          <p className="text-muted-foreground">
+            Add this address to an MCP client, for example Claude or ChatGPT. The client asks you to sign in and to
+            approve its access. Then it can record your measurements, and manage and answer your reminders.
+          </p>
+          <Address>{resourceUrl("mcp")}</Address>
+          <ul aria-label="MCP tools" className="flex flex-wrap gap-2">
+            {Object.values(trackingOperations).map(operation => (
+              <li key={operation.name}>
+                <code title={operation.title} className="rounded bg-primary/10 px-2 py-0.5 text-xs text-primary">
+                  {operation.name}
+                </code>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-lg font-semibold">REST API</h3>
+          <p className="text-muted-foreground">
+            The same operations over HTTP: measurements, variables, reminders and their notifications. The OpenAPI
+            document describes each endpoint.
+          </p>
+          <Address>{resourceUrl("rest")}</Address>
+          <p className="text-sm">
+            <a href="/api/v1/openapi.json" className="font-medium text-primary hover:underline">
+              OpenAPI document
+            </a>
+          </p>
+        </div>
 
         <div className="space-y-3">
           <h3 className="text-lg font-semibold">Sign-in with OAuth 2.1 and OpenID Connect</h3>
@@ -45,6 +80,11 @@ export default function DevelopersPage() {
             Your app can let people sign in with their account on our site. Each person approves each app on a consent
             page. Register your app in the developer dashboard, or let it register itself with dynamic client
             registration (RFC 7591). Apps that cannot keep a client secret use PKCE.
+          </p>
+          <p className="text-muted-foreground">
+            For a token for the MCP server or the REST API, send its address as the <code>resource</code> parameter,
+            and ask for the scopes <code>tracking:read</code> (read the data) and <code>tracking:write</code> (record
+            and change it). MCP clients do this for you.
           </p>
           <table className="w-full text-sm">
             <caption className="sr-only">OAuth endpoints</caption>
@@ -62,14 +102,6 @@ export default function DevelopersPage() {
           <Button asChild variant="outline">
             <Link href="/developer">Open the developer dashboard</Link>
           </Button>
-        </div>
-
-        <div className="space-y-3">
-          <h3 className="text-lg font-semibold">OpenAPI description</h3>
-          <p className="text-muted-foreground">
-            <code className="break-all">{siteUrl}/api/openapi</code> returns an OpenAPI description of our database
-            tables.
-          </p>
         </div>
       </section>
 

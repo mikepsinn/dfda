@@ -12,8 +12,17 @@ describe("developers page", () => {
       expect(endpoints.some(url => url?.endsWith(path))).toBe(true);
     }
     expect(screen.getByRole("link", { name: "Open the developer dashboard" })).toHaveAttribute("href", "/developer");
-    expect(within(screen.getByRole("region", { name: "Not built yet" })).getByText(/An MCP server/)).toBeInTheDocument();
+    expect(within(screen.getByRole("region", { name: "Not built yet" })).getByText(/Treatment Rankings and Outcome Labels/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Contact us" })).toHaveAttribute("href", "/contact");
+  });
+
+  it("gives the MCP and REST addresses, the tools and the OpenAPI document", () => {
+    render(<DevelopersPage />);
+    expect(screen.getByText("http://localhost:3000/api/mcp")).toBeInTheDocument();
+    expect(screen.getByText("http://localhost:3000/api/v1")).toBeInTheDocument();
+    const tools = within(screen.getByRole("list", { name: "MCP tools" })).getAllByRole("listitem").map(item => item.textContent);
+    expect(tools).toEqual(expect.arrayContaining(["recordMeasurement", "listMeasurements", "respondToTrackingReminder"]));
+    expect(screen.getByRole("link", { name: "OpenAPI document" })).toHaveAttribute("href", "/api/v1/openapi.json");
   });
 
   it("makes no claims about features that do not exist", () => {

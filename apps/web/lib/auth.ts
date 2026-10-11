@@ -1,12 +1,13 @@
 import { betterAuth, type BetterAuthPlugin } from 'better-auth'
 import { nextCookies } from 'better-auth/next-js'
 import { jwt, magicLink, organization } from 'better-auth/plugins'
-import { oauthProvider } from '@better-auth/oauth-provider'
+import { DEFAULT_OAUTH_SCOPES, oauthProvider } from '@better-auth/oauth-provider'
 import { Pool } from 'pg'
 import { adminDb } from '@/lib/db'
 import { env } from '@/lib/env'
 import { linkEmail, sendEmail } from '@/lib/email'
 import { logger } from '@/lib/logger'
+import { apiResources, resourceUrl, trackingScopes, type ApiResource } from '@/lib/oauth-resources'
 import { getBaseUrl } from '@/lib/url'
 
 /**
@@ -27,6 +28,10 @@ import { getBaseUrl } from '@/lib/url'
  * /api/auth/oauth2/token, dynamic client registration at
  * /api/auth/oauth2/register, metadata at
  * /.well-known/oauth-authorization-server/api/auth.
+ *
+ * Third-party apps use it for the MCP server (/api/mcp) and the REST API
+ * (/api/v1): with the `resource` parameter set to one of them, the token is a
+ * JWT for that API (see lib/oauth-resources.ts and lib/api/access-token.ts).
  */
 
 const siteUrl = getBaseUrl().replace(/\/$/, '')
@@ -57,6 +62,18 @@ const oauthProviderPluginUncast = oauthProvider({
   // consent page.
   allowDynamicClientRegistration: true,
   allowUnauthenticatedClientRegistration: true,
+  scopes: [...DEFAULT_OAUTH_SCOPES, ...trackingScopes],
+  // The APIs that accept these tokens. Better Auth stores them in
+  // oauth_resources on first use; 'merge' keeps those rows in step with this
+  // list. Any client may ask for a token for them; the person still approves
+  // each client and its scopes on the consent page.
+  resources: (Object.keys(apiResources) as ApiResource[]).map((resource) => ({
+    identifier: resourceUrl(resource),
+    name: apiResources[resource].name,
+    allowedScopes: [...trackingScopes, 'offline_access'],
+  })),
+  resourceSeedMode: 'merge',
+  enforcePerClientResources: false,
   schema: {
     oauthClient: { modelName: 'oauth_clients' },
     oauthRefreshToken: { modelName: 'oauth_refresh_tokens' },

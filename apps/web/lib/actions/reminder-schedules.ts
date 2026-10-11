@@ -8,6 +8,7 @@ import { RRule, rrulestr } from 'rrule'
 import { DateTime } from 'luxon'
 import { toZonedTime } from 'date-fns-tz'
 import { logger } from '@/lib/logger'
+import { computeNextTriggerAt, enqueueScheduleProcessing } from '@/lib/reminders/schedule'
 import { revalidatePath } from 'next/cache'
 // REMOVE the Trigger.dev client import
 // import { client } from '@/lib/trigger' 
@@ -186,8 +187,7 @@ export async function upsertReminderScheduleAction(
     }
 
     try {
-        let nextTriggerAtIso: string | null = null;
-        let userTimezone: string | undefined;
+        let userTimezone: string;
         const user = await getServerUser(); // Get user object to pass to getUserProfile
         if (!user) {
             logger.error('upsertReminderScheduleAction: Could not get authenticated user.', { userId });
@@ -205,54 +205,11 @@ export async function upsertReminderScheduleAction(
         // --- End Determine user timezone ---
 
         // --- Determine next_trigger_at ---
-        if (scheduleData.isActive) {
-            try {
-                const rule = rrulestr(scheduleData.rruleString) as RRule;
-                const nowUtc = new Date();
-                const [hours, minutes] = scheduleData.timeOfDay.split(':').map(Number);
-
-                // DTSTART handling: Prefer RRULE's DTSTART if available, else use scheduleData.startDate
-                let dtstartSource: Date;
-                if (rule.options.dtstart instanceof Date) {
-                    dtstartSource = rule.options.dtstart;
-                } else if (scheduleData.startDate instanceof Date) {
-                    dtstartSource = scheduleData.startDate;
-                } else {
-                    logger.warn('Could not determine valid Date object for dtstart, using current time as fallback.', { ruleDtstart: rule.options.dtstart, scheduleStartDate: scheduleData.startDate });
-                    dtstartSource = new Date(); // Less ideal fallback
-                }
-
-                // Ensure time is applied correctly to the start date for calculation
-                const dtstartWithTime = new Date(dtstartSource);
-                dtstartWithTime.setHours(hours, minutes, 0, 0);
-
-                const options = {
-                    ...rule.options,
-                    // Ensure dtstart is a Date object before passing to toZonedTime
-                    dtstart: toZonedTime(dtstartWithTime, userTimezone), // Convert start to user's timezone
-                    tzid: userTimezone, // Ensure timezone is explicit in options
-                };
-                const calculationRule = new RRule(options);
-                const nowInTargetTz = toZonedTime(nowUtc, userTimezone); // Use current time in user's timezone
-                const nextOccurrence = calculationRule.after(nowInTargetTz, true); // Find next occurrence after now
-
-                if (nextOccurrence) {
-                    // Convert the JSDate result (which is in user's TZ context) back to UTC ISO string
-                    nextTriggerAtIso = DateTime.fromJSDate(nextOccurrence).setZone(userTimezone).toUTC().toISO();
-                    logger.info('Calculated next trigger time for active schedule', { nextTriggerAtIso, timezone: userTimezone });
-                } else {
-                    logger.info('No future occurrences found for active rule', { userVariableId, scheduleIdToUpdate });
-                    nextTriggerAtIso = null; // Explicitly null if no future dates
-                }
-            } catch (ruleError) {
-                 logger.error('Error calculating next trigger time', { scheduleIdToUpdate, rruleString: scheduleData.rruleString, error: ruleError });
-                 nextTriggerAtIso = null; // Default to null on error
-            }
-        } else {
-            // If schedule is inactive, clear the next trigger time
-            logger.info('Schedule is inactive, setting next_trigger_at to null', { userVariableId, scheduleIdToUpdate });
-            nextTriggerAtIso = null;
-        }
+        const nextTriggerAt = computeNextTriggerAt(
+            { rruleString: scheduleData.rruleString, timeOfDay: scheduleData.timeOfDay, startDate: scheduleData.startDate, isActive: scheduleData.isActive },
+            userTimezone,
+        );
+        logger.info('Calculated next trigger time', { nextTriggerAt, timezone: userTimezone, isActive: scheduleData.isActive });
         // --- End Determine next_trigger_at ---
 
 
@@ -265,7 +222,7 @@ export async function upsertReminderScheduleAction(
             start_date: scheduleData.startDate, // Store start date as sent by client
             end_date: scheduleData.endDate ?? null,
             default_value: scheduleData.default_value,
-            next_trigger_at: nextTriggerAtIso ? new Date(nextTriggerAtIso) : null,
+            next_trigger_at: nextTriggerAt,
         };
 
         const db = await getUserDb();
@@ -310,41 +267,12 @@ export async function upsertReminderScheduleAction(
             }
             // --- End Deletion ---
 
-            // --- Enqueue Worker Job to Regenerate First Notification ---
-            try {
-                logger.info('[UPSERT-UPDATE] Attempting to enqueue processSingleSchedule job', { savedScheduleId, connectionString: '****' }); // Mask connection string in logs
-                await quickAddJob(
-                    { connectionString },
-                    'processSingleSchedule',
-                    { scheduleId: savedScheduleId }
-                );
-                logger.info('[UPSERT-UPDATE] Successfully enqueued processSingleSchedule job', { savedScheduleId });
-            } catch (enqueueError) {
-                logger.error('[UPSERT-UPDATE] Error enqueuing processSingleSchedule job', {
-                    savedScheduleId,
-                    error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
-                });
-                // Log error but don't fail the user-facing operation
-            }
-            // --- End Enqueue ---
+            // --- Ask the worker to regenerate the first notification ---
+            await enqueueScheduleProcessing(savedScheduleId);
         } else {
             // === INSERT ===
-            // --- Enqueue Worker Job for NEW schedule ---
-            try {
-                logger.info('Enqueuing processSingleSchedule job for NEW schedule', { savedScheduleId });
-                await quickAddJob(
-                    { connectionString },
-                    'processSingleSchedule',
-                    { scheduleId: savedScheduleId }
-                );
-                logger.info('Successfully enqueued processSingleSchedule job for new schedule', { savedScheduleId });
-            } catch (enqueueError) {
-                logger.error('Error enqueuing processSingleSchedule job after insert', {
-                    savedScheduleId,
-                    error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
-                });
-            }
-            // --- End Enqueue ---
+            // --- Ask the worker to create the first notification ---
+            await enqueueScheduleProcessing(savedScheduleId);
         }
 
         logger.info('Successfully upserted reminder schedule DB record', { scheduleId: savedScheduleId });
