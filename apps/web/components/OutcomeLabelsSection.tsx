@@ -13,7 +13,7 @@ export function OutcomeLabelsSection({ example }: { example: LandingOutcomeLabel
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Outcome Labels</h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
-              See the quantitative effects of foods and drugs on all measurable aspects of human health
+              See the quantitative effects of foods and drugs on health outcomes
             </p>
             <Button asChild variant="outline">
               <Link href={example?.href ?? "/treatment-rankings"}>

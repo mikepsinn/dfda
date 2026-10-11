@@ -20,16 +20,16 @@ export default function PublicProviderPage() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Accelerate Research and Get Your Patients the Most Promising Treatment
+                  Pragmatic Trials for Your Patients
                 </h1>
                 <p className="text-muted-foreground md:text-xl">
-                  With our pragmatic trial methodology, you can get your patients the most promising treatment faster.
+                  You can get your patients the most promising treatment faster.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button asChild size="lg">
-                  <Link href="/auth/signup?role=provider">
-                    Get Started Now
+                  <Link href="/register">
+                    Get Started
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

@@ -9,7 +9,7 @@ export function Step2AssignIntervention() {
     <HowItWorksStep
       exampleData
       stepNumber={2}
-      title="Assign Patients to Trial Arms with Confidence"
+      title="Assign Patients to Trial Arms"
       icon={<FlaskConical className="h-5 w-5 text-primary" />}
       description="Review detailed outcome labels, compare trial arms (including placebo/standard of care), and assign patients directly."
       preview={

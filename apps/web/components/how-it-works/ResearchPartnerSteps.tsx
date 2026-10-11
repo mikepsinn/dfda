@@ -112,7 +112,7 @@ export function ResearchPartnerSteps() {
         stepNumber={3}
         title="Set Parameters"
         icon={<Settings className="h-5 w-5 text-primary" />}
-        description="Define patient pricing, required data collection, and refundable deposits to optimize your trial."
+        description="Define patient pricing, required data collection, and refundable deposits."
         preview={
           <div className="w-full max-w-[320px] rounded-lg border shadow-md overflow-hidden bg-background">
             {/* Mini Parameters Page Preview */}
@@ -165,7 +165,7 @@ export function ResearchPartnerSteps() {
         stepNumber={4}
         title="Manage Supply Chain & Orders"
         icon={<Package className="h-5 w-5 text-primary" />}
-        description="Track inventory, fulfill patient orders, and manage the entire treatment supply chain with end-to-end visibility."
+        description="Track inventory, fulfill patient orders, and manage the entire treatment supply chain."
         preview={
           <div className="w-full max-w-[320px] rounded-lg border shadow-md overflow-hidden bg-background">
             {/* Mini Supply Chain Dashboard Preview */}
@@ -231,7 +231,7 @@ export function ResearchPartnerSteps() {
         stepNumber={5}
         title="Analyze Trial Data"
         icon={<BarChart3 className="h-5 w-5 text-primary" />}
-        description="Access real-time insights, analyze effectiveness data, and make informed decisions with comprehensive dashboards and reporting tools."
+        description="Access real-time insights, analyze effectiveness data, and see the results on dashboards and reports."
         preview={
           <div className="w-full max-w-[320px] rounded-lg border shadow-md overflow-hidden bg-background">
             {/* Mini Analytics Dashboard Preview */}
