@@ -1,7 +1,8 @@
 /**
  * Fills a local or CI database with a demo company instance, its GLP-1
  * program and people who joined it, so the company and program pages have
- * something to show. The Visual Preview workflow screenshots them.
+ * something to show. The Visual Preview workflow screenshots them, and the
+ * browser tests (tests/e2e) use them.
  *
  * The accounts and names are in demo-data.json. The people's values come from
  * the sample generator (lib/programs/sample.ts): they are made up. Fixed ids

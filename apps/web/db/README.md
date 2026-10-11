@@ -147,7 +147,8 @@ Supabase origin: the `anon`, `authenticated` and `service_role` roles,
   with made-up values. The accounts and their password are in
   [`scripts/demo-data.json`](../scripts/demo-data.json); sign in as
   `demo-company@example.com` or `demo-member1@example.com`. It refuses a
-  database on another host. The screenshot workflow uses it.
+  database on another host. The screenshot workflow and the browser tests
+  (`pnpm test:e2e`) use it.
 
 Both record each applied migration file name in the table
 `schema_migrations.applied` (outside `public`, so Prisma does not see it).
