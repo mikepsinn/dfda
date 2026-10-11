@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, SlidersHorizontal } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConditionPicker } from "@/components/demo/condition-picker";
 import { EstimateNotice } from "@/components/demo/estimate-notice";
@@ -21,14 +21,7 @@ export default async function TreatmentRankingsPage({ searchParams }: {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-4 rounded-2xl bg-gradient-to-br from-primary/5 to-muted/50 p-6 sm:p-8">
-        <p className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1 text-sm font-medium text-primary">
-          <SlidersHorizontal aria-hidden="true" className="h-4 w-4" /> Explore treatments
-        </p>
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Treatment rankings</h1>
-        <p className="max-w-2xl text-muted-foreground sm:text-lg">
-          See how treatments compare. Explore benefits, side effects and costs,
-          then explore related studies.
-        </p>
       </header>
       <form action="/treatment-rankings" method="get"
         className="grid items-end gap-4 rounded-xl border bg-card p-5 shadow-sm sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_auto_auto]">
@@ -51,10 +44,10 @@ export default async function TreatmentRankingsPage({ searchParams }: {
         <section aria-labelledby="ranking-heading" className="space-y-5">
           <div className="space-y-2">
             <h2 id="ranking-heading" className="text-2xl font-semibold tracking-tight">
-              {condition.name}: {condition.treatments.length} treatment estimates
+              {condition.name}: {condition.treatments.length} treatments
             </h2>
             <p className="max-w-3xl text-sm text-muted-foreground">
-              Sorted by {sort} score, highest first; ties use alphabetical order.
+              Sorted by {sort} score, highest first.
               Scores use a 0–100 scale, not response percentages.
             </p>
           </div>

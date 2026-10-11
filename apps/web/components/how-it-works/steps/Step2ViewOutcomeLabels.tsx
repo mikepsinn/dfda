@@ -36,13 +36,7 @@ export function Step2ViewOutcomeLabels() {
       stepNumber={2}
       title="View Outcome Labels"
       icon={<FileText className="h-5 w-5 text-primary" />}
-      description="Review comprehensive outcome data before deciding to join a trial."
-      benefits={[
-        "See real effectiveness data from actual patients",
-        "Understand potential side effects and their frequency",
-        "Compare with standard of care treatments",
-        "Read about experiences from patients like you",
-      ]}
+      description="Review outcome data before deciding to join a trial."
       preview={
         // Use the new data structure
         <OutcomeLabel {...klothoGeneTherapyData} />

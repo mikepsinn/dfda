@@ -23,7 +23,7 @@ const providerNavItems: NavItem[] = [
 
 const developerNavItems: NavItem[] = [
   navigationTreeObject.developer, // Uses generated title (e.g., "Developer") and href
-  navigationTreeObject.developers_documentation,
+  navigationTreeObject.developers,
 ]
 
 const researchPartnerNavItems: NavItem[] = [

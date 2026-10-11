@@ -27,8 +27,7 @@ content and estimates, label their status, and progressively improve them with b
 sources and methods. Removing estimated numbers or blanking useful screens is not a
 milestone or a prerequisite for demonstrating the product.
 
-Use the concise label **"Current best estimates"**, followed by **"Preliminary
-estimates, updated as better evidence becomes available."** Do not repeat
+Use the concise label **"Current best estimates"**. Do not repeat
 "AI-generated" throughout the public interface or expose import/debug provenance
 as a large page section. Retain origin, basis, limitations and dates in the data
 and developer documentation; show actual study citations when verified.
@@ -123,8 +122,8 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 
 | Feature in optimitron `apps/dfda` | In `apps/web` | Notes |
 | --- | --- | --- |
-| MCP server: 11 tools for measurements, reminders and notifications | A new `/api/mcp` route over the web app's existing measurement and reminder code | Signs in through the web app's own OAuth server, which needs three changes first: dynamic client registration, the standard `.well-known` metadata, and a token endpoint that accepts form-encoded requests (it reads only JSON today, and OAuth clients send forms). The existing actions get their database client from the Supabase session cookie, so the route builds one from the bearer token instead of calling them as they are. This is the tracking tool group; new evidence-curation tools use separate scopes over the shared importer. |
-| REST API (`/api/v1`: measurements, reminders, notifications, variables) and its generated OpenAPI document | Next to the existing OpenAPI route | Same auth as the MCP server |
+| MCP server: 11 tools for measurements, reminders and notifications | `/api/mcp` (done) | **Done:** 14 tools (the 11, plus searchVariables, getVariable and deleteTrackingReminder), written for this app's tables in `apps/web/lib/tracking`. Clients sign in through the web app's own OAuth server with `resource` set to the MCP URL and the scopes `tracking:read` and `tracking:write`; the server issues a JWT for that URL, and each tool runs in one transaction with row-level security as the token's user. This is the tracking tool group; new evidence-curation tools use separate scopes over the shared importer. |
+| REST API (`/api/v1`: measurements, reminders, notifications, variables) and its generated OpenAPI document | `/api/v1` and `/api/v1/openapi.json` (done) | **Done:** the same operations and input schemas as the MCP tools, with the same paths as optimitron's API; tokens for `/api/v1` only. |
 | Trial search | The existing `find-trials` page, using `packages/trials` | optimitron's ClinicalTrials.gov client replaces the web app's unused helper |
 | Landing, about and FAQ content | Existing public pages | Copy only |
 | Condition and treatment pages and AI estimates | Adapt useful content and estimates into the existing condition/treatment pages | Preserve demo coverage with explicit current-best-estimate labels and available generation/source metadata. Add patient ratings and trial results as distinct views, then improve or supersede estimates; do not exclude content simply because AI generated it. |
@@ -174,6 +173,9 @@ migrations or a new audit of every dependency:
    injects Optimitron's Prisma database and its MCP auth uses the shared issuer.
    Rewire to dFDA-owned auth/storage and user scopes; copying these files does not
    migrate accounts or authorize importing private health records.
+   **Done:** `/api/mcp`, `/api/v1` and `/api/v1/openapi.json`, over this app's tables
+   and OAuth server (see the table above). Moving dfda.earth's accounts and data is
+   still open.
 4. **Health imports and analysis:** reuse selected `packages/data/src/importers/`
    parsers, unit conversion/validation and their tests, followed by selected
    `packages/optimizer` calculations under the curedao-api parity baseline below.

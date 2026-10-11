@@ -6,9 +6,11 @@ import { KeyBenefitsSection } from "@/components/KeyBenefitsSection";
 import { OutcomeLabelsSection } from "@/components/OutcomeLabelsSection";
 import { conditionCatalog } from "@/lib/demo/treatment-estimates";
 import { getLandingOutcomeLabel, getRankingsPreview } from "@/lib/demo/landing-preview";
+import { resolveInstance } from "@/lib/instance/resolve";
 
 export default async function Home() {
-  // Both read local snapshot files; neither makes a database or model call.
+  const instance = await resolveInstance();
+  // The previews read local snapshot files; neither makes a database or model call.
   const [rankingsPreview, outcomeLabelExample] = await Promise.all([
     getRankingsPreview(),
     getLandingOutcomeLabel(),
@@ -17,7 +19,7 @@ export default async function Home() {
 
   return (
     <>
-      <HeroSection />
+      <HeroSection instance={instance} />
       <ExplainerVideoSection />
       <ComparativeEffectivenessSection preview={rankingsPreview} conditionIndex={conditionIndex} />
       <OutcomeLabelsSection example={outcomeLabelExample} />

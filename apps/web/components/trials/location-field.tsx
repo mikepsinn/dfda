@@ -81,7 +81,7 @@ export function LocationField({
           <Input id="trial-location" name="location" defaultValue={defaultLocation} placeholder="For example, Boston, Massachusetts"
             maxLength={maxLength} autoComplete="off" enterKeyHint="search" className="h-11" />
           <p role={messages[state] ? "status" : undefined} className="text-xs text-muted-foreground">
-            {messages[state] ?? "City, state, country or postal code, separated by commas"}
+            {messages[state] ?? "City, state or postal code"}
           </p>
         </>
       )}

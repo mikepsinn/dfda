@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { ExternalLink, FlaskConical, LineChart, Target, TriangleAlert } from "lucide-react"
+import { ExternalLink, FlaskConical, LineChart, TriangleAlert } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import type { ReactNode } from "react"
 import { Button } from "@/components/ui/button"
@@ -72,9 +72,6 @@ export default function ImpactPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-12">
       <header className="space-y-4 rounded-2xl bg-gradient-to-br from-primary/5 to-muted/50 p-6 sm:p-8">
-        <p className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1 text-sm font-medium text-primary">
-          <Target aria-hidden="true" className="h-4 w-4" /> The goal
-        </p>
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">The Impact of Universal Pragmatic Trials</h1>
         <p className="max-w-3xl text-muted-foreground sm:text-lg">
           What if every patient could join a clinical trial as part of their normal care? This page shows what that
@@ -119,14 +116,11 @@ export default function ImpactPage() {
           intervals.
         </p>
         <FigureList figures={modelEstimates} label="Model estimates" />
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <p className="text-muted-foreground">The paper gives the full method, inputs and sources.</p>
-          <Button asChild variant="outline" className="gap-2 self-start">
-            <a href={paper.url} target="_blank" rel="noopener noreferrer">
-              Read the analysis <ExternalLink aria-hidden="true" className="h-4 w-4" />
-            </a>
-          </Button>
-        </div>
+        <Button asChild variant="outline" className="gap-2">
+          <a href={paper.url} target="_blank" rel="noopener noreferrer">
+            Read the analysis <ExternalLink aria-hidden="true" className="h-4 w-4" />
+          </a>
+        </Button>
       </section>
 
       <section aria-labelledby="goal-heading" className="space-y-4 rounded-2xl bg-muted p-6 text-center sm:p-8">

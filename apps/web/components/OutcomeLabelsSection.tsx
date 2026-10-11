@@ -1,15 +1,9 @@
 import Link from "next/link"
-import { Check, FlaskConical } from "lucide-react"
+import { FlaskConical } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { OutcomeLabel } from "./OutcomeLabel"
 import { treatmentOutcomeCategories } from "./demo/treatment-outcomes"
 import type { LandingOutcomeLabel } from "@/lib/demo/landing-preview"
-
-const features = [
-  "Comprehensive health impact data",
-  "Both positive and negative effects",
-  "Evidence-based decision making",
-]
 
 export function OutcomeLabelsSection({ example }: { example: LandingOutcomeLabel | null }) {
   return (
@@ -19,16 +13,8 @@ export function OutcomeLabelsSection({ example }: { example: LandingOutcomeLabel
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Outcome Labels</h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
-              See the quantitative effects of foods and drugs on all measurable aspects of human health
+              See the quantitative effects of foods and drugs on health outcomes
             </p>
-            <ul className="grid gap-2">
-              {features.map((feature) => (
-                <li key={feature} className="flex items-center gap-2">
-                  <Check aria-hidden="true" className="h-5 w-5 shrink-0 text-primary" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
             <Button asChild variant="outline">
               <Link href={example?.href ?? "/treatment-rankings"}>
                 {example ? "View the full Outcome Label" : "Compare treatments"}

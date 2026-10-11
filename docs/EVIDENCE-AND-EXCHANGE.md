@@ -21,8 +21,7 @@ Keep three origins distinct, independently of a record's privacy classification:
   workflow. Label it "Example data"; simulated patients, counts and citations are
   not actual observations, participants or verified references.
 - **Provisional model estimate:** an AI/model-generated current best estimate, with
-  adjacent "Current best estimates" and "Preliminary estimates, updated as better
-  evidence becomes available" wording. Do not repeat AI attribution or internal
+  the adjacent label "Current best estimates". Do not repeat AI attribution or internal
   import-status boilerplate across the public interface. Preserve assumptions,
   supporting sources, generation method/version/date where known, and limitations
   in the underlying records and technical documentation. Unknown generation history

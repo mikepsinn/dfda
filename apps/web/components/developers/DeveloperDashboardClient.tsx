@@ -1,17 +1,14 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { ApiKeyRequestForm } from "@/components/developers/ApiKeyRequestForm";
 import OAuthApplicationForm from "@/components/developers/OAuthApplicationForm";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { logger } from "@/lib/logger"
-import Link from "next/link"
-import { ExternalLink, LayoutDashboard, SearchCode, BookText, SquareCode, BotMessageSquare, KeyRound, Pencil, Trash2, RefreshCw, Copy, CheckCircle, AlertTriangle } from "lucide-react"
+import { LayoutDashboard, SearchCode, BotMessageSquare, KeyRound, Pencil, Trash2, RefreshCw, Copy, CheckCircle, AlertTriangle } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
 import type { AuthUser as User } from '@/lib/auth';
 import { type Database } from '@/lib/database.types';
 import { listOAuthClients, deleteOAuthClient, resetOAuthClientSecret, createOAuthClient, updateOAuthClient } from '@/lib/actions/developer/oauth-clients.actions';
@@ -291,8 +288,6 @@ export function DeveloperDashboardClient({ user, profile: initialProfile }: Deve
   const tabDefinitions = [
     { value: "dashboard", title: "Dashboard", icon: LayoutDashboard },
     { value: "apiExplorer", title: "API Explorer", icon: SearchCode },
-    { value: "documentation", title: "Documentation", icon: BookText },
-    { value: "examples", title: "Code Examples", icon: SquareCode },
     { value: "apiChat", title: "API Chat", icon: BotMessageSquare },
   ];
 
@@ -307,7 +302,7 @@ export function DeveloperDashboardClient({ user, profile: initialProfile }: Deve
     <div className="container py-6 md:py-10">
       <div className="mx-auto max-w-5xl space-y-8">
         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">Developer Dashboard</h1>
-        <p className="text-muted-foreground">Manage your profile, API keys, OAuth applications, and access documentation.</p>
+        <p className="text-muted-foreground">Manage your profile and OAuth applications, and explore the OpenAPI description.</p>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           {isMobile ? (
@@ -323,7 +318,7 @@ export function DeveloperDashboardClient({ user, profile: initialProfile }: Deve
               activeColor="text-foreground bg-muted"
             />
           ) : (
-            <TabsList className="grid w-full grid-cols-5">
+            <TabsList className="grid w-full grid-cols-3">
               {tabDefinitions.map(tab => {
                 const IconComponent = tab.icon; // Assign the icon component to a variable
                 return (
@@ -381,17 +376,6 @@ export function DeveloperDashboardClient({ user, profile: initialProfile }: Deve
                     {isUpdatingProfile ? 'Updating...' : 'Update Profile'}
                   </Button>
                 </form>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <KeyRound className="mr-2 h-5 w-5" /> API Keys
-                </CardTitle>
-                <CardDescription>Manage your API keys for accessing the platform.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ApiKeyRequestForm />
               </CardContent>
             </Card>
             <Card>
@@ -510,45 +494,6 @@ export function DeveloperDashboardClient({ user, profile: initialProfile }: Deve
                 ) : (
                   <p>Loading API documentation...</p>
                 )}
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="documentation" className="space-y-6 pt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Documentation Resources</CardTitle>
-                <CardDescription>Links to detailed guides and API references.</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <p className="text-muted-foreground">Our detailed documentation covers everything you need to know...</p>
-                <div className="grid gap-6 md:grid-cols-2">
-                  {/* TODO: Populate with actual links or components */}
-                   <div className="rounded-lg border p-4">
-                     <h3 className="font-medium mb-2">Getting Started</h3>
-                     <p className="text-sm text-muted-foreground mb-4">Learn the basics...</p>
-                     <Link href="/developers/documentation#getting-started" target="_blank"><Button variant="outline" size="sm">View Section</Button></Link>
-                   </div>
-                   {/* ... other links ... */}
-                 </div>
-                 <Link href="/developers/documentation" target="_blank" rel="noopener noreferrer">
-                   <Button variant="default" className="mt-4">
-                     <ExternalLink className="mr-2 h-4 w-4" /> View Full Documentation
-                   </Button>
-                 </Link>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="examples" className="space-y-6 pt-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Code Examples</CardTitle>
-                <CardDescription>See how to integrate the API into your applications</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6">Explore code examples...</p>
-                <CodeExampleTabs />
               </CardContent>
             </Card>
           </TabsContent>

@@ -36,7 +36,7 @@ export function TrialResult({ comparison }: { comparison: TrialComparison }) {
       <p className="text-sm text-muted-foreground">
         Trial regimen: suvorexant 20 mg for ages 18–64 or 15 mg for ages 65+, nightly.
         Both groups followed a two-week placebo run-in. The comparison above is the
-        study’s reported adjusted result, not a pooled estimate or the score below.
+        study’s reported adjusted result.
       </p>
       <details className="text-sm">
         <summary className="cursor-pointer font-medium">Outcome and analysis details</summary>

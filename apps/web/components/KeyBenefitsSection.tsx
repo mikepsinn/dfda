@@ -7,7 +7,6 @@ const benefits = [
   {
     title: "Improved Patient Experience",
     icon: Users,
-    intro: "Designed to make participation easier and more rewarding:",
     points: [
       "Take part from home instead of traveling to a trial site",
       "Personalized health insights for every participant",
@@ -18,7 +17,6 @@ const benefits = [
   {
     title: "Lower Cost per Patient",
     icon: DollarSign,
-    intro: "Pragmatic trials show what is possible:",
     points: [
       "The RECOVERY trial cost about $500 per patient, compared with about $41,000 for a typical trial",
       "Data collection runs inside routine care",
@@ -29,7 +27,6 @@ const benefits = [
   {
     title: "Better Data Quality",
     icon: LineChart,
-    intro: "Designed for data that researchers can check and reuse:",
     points: [
       "Continuous data from apps and wearables, not only clinic visits",
       "Every number shows where it came from",
@@ -40,7 +37,6 @@ const benefits = [
   {
     title: "Faster Access to Treatments",
     icon: Clock,
-    intro: "Reduce the wait for life-changing treatments:",
     points: [
       "Outcome data from the first patients, not only at the end of a multi-year trial",
       "Rankings update as new evidence arrives",
@@ -58,9 +54,6 @@ export function KeyBenefitsSection() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Why Care-Integrated Clinical Trials Matter
           </h2>
-          <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            What the network is designed to deliver for patients, clinicians and researchers
-          </p>
         </div>
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2">
@@ -70,8 +63,7 @@ export function KeyBenefitsSection() {
                 <benefit.icon aria-hidden="true" className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold">{benefit.title}</h3>
-              <div className="mt-2 text-muted-foreground flex-grow">
-                <p className="mb-4">{benefit.intro}</p>
+              <div className="mt-4 text-muted-foreground flex-grow">
                 <ul className="space-y-2">
                   {benefit.points.map((point) => (
                     <li key={point} className="flex items-start gap-2">

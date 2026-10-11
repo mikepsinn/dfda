@@ -54,7 +54,7 @@ describe("imported treatment demo pages", () => {
       treatment.name,
     );
     expect(screen.getAllByText("-68%")).toHaveLength(2);
-    expect(screen.getByText('Estimated frequency.')).toBeInTheDocument();
+    expect(screen.queryByText('Estimated frequency.')).not.toBeInTheDocument();
     expect(screen.getByText('Current best estimates')).toBeInTheDocument();
     expect(screen.queryByText(/AI-generated/i)).not.toBeInTheDocument();
     expect(screen.queryByText('Origin and limitations')).not.toBeInTheDocument();
@@ -99,7 +99,7 @@ describe("imported treatment demo pages", () => {
   it("renders a newly imported condition and its Outcome Label", async () => {
     const condition = (await getConditionEstimate("acne"))!;
     render(await RankingsPage({ searchParams: Promise.resolve({ condition: condition.slug }) }));
-    expect(screen.getByRole("heading", { name: `Acne: ${condition.treatments.length} treatment estimates` })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: `Acne: ${condition.treatments.length} treatments` })).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: /View Outcome Label/ })).toHaveLength(condition.treatments.length);
     cleanup();
     render(await LabelPage({ params: Promise.resolve({ conditionSlug: condition.slug, treatmentSlug: condition.treatments[0].slug }) }));

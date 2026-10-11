@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { ConditionPicker } from "@/components/demo/condition-picker"
 import { EstimateNotice } from "@/components/demo/estimate-notice"
 import { RankingsPreview } from "@/components/demo/rankings-preview"
@@ -26,12 +26,6 @@ export function ComparativeEffectivenessSection({ preview, conditionIndex }: {
         <div className="mx-auto mt-8 max-w-4xl">
           <Card>
             <CardHeader className="gap-4">
-              <div className="text-center">
-                <CardTitle>Interventions by Condition</CardTitle>
-                <CardDescription className="mt-1.5">
-                  Ranked by estimated effectiveness. Choose an example, or search all conditions.
-                </CardDescription>
-              </div>
               <form action="/treatment-rankings" method="get"
                 className="grid items-end gap-3 sm:grid-cols-[minmax(0,1fr)_auto]">
                 <ConditionPicker conditions={conditionIndex} initialValue={preview[0]?.slug ?? ""} />
