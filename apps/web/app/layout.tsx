@@ -11,10 +11,13 @@ import { getProfileByIdAction } from "../lib/actions/profiles"
 import type { Profile } from "../lib/actions/profiles"
 import { env } from "@/lib/env"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { InstanceTheme } from "@/components/instance/InstanceTheme"
+import { PreviewBar } from "@/components/instance/PreviewBar"
+import { resolveInstance } from "@/lib/instance/resolve"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: env.NEXT_PUBLIC_SITE_NAME,
   description: env.NEXT_PUBLIC_SITE_DESCRIPTION,
   metadataBase: new URL(env.NEXT_PUBLIC_SITE_URL),
@@ -73,6 +76,19 @@ export const metadata: Metadata = {
   },
 }
 
+// On a company instance, the tab title and description use its name and tagline.
+export async function generateMetadata(): Promise<Metadata> {
+  const instance = await resolveInstance()
+  if (!instance) return baseMetadata
+  return {
+    ...baseMetadata,
+    title: instance.name,
+    description: instance.tagline ?? baseMetadata.description,
+    openGraph: { ...baseMetadata.openGraph, title: instance.name, siteName: instance.name },
+    twitter: { ...baseMetadata.twitter, title: instance.name },
+  }
+}
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -84,15 +100,26 @@ export default async function RootLayout({
   if (user) {
     profile = await getProfileByIdAction(user.id)
   }
+  // A company instance (its own domain, subdomain or preview link) shows its own branding.
+  const instance = await resolveInstance()
+  const siteName = instance?.name ?? env.NEXT_PUBLIC_SITE_NAME
 
   return (
     <html lang="en">
       <body className={inter.className}>
+        {instance && <InstanceTheme primaryColor={instance.primaryColor} />}
+        {instance?.via === "preview" && <PreviewBar name={instance.name} />}
         <TooltipProvider>
           <ScrollToHashElement />
           <SiteChrome
-            header={<Header initialUser={user} initialProfile={profile} siteName={env.NEXT_PUBLIC_SITE_NAME} />}
-            footer={<Footer siteName={env.NEXT_PUBLIC_SITE_NAME} />}
+            header={<Header initialUser={user} initialProfile={profile} siteName={siteName} brand={instance} />}
+            footer={
+              <Footer
+                siteName={siteName}
+                brand={instance}
+                poweredBy={instance ? { name: env.NEXT_PUBLIC_SITE_NAME, url: env.NEXT_PUBLIC_SITE_URL } : undefined}
+              />
+            }
           >
             {children}
           </SiteChrome>

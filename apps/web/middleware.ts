@@ -1,12 +1,27 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { getSessionCookie } from 'better-auth/cookies'
 import { auth } from '@/lib/auth'
+import { dbAs } from '@/lib/db'
 import { fetchUserProfile, type Profile } from '@/lib/profile'
 import { logger } from '@/lib/logger'
 
 // Paths a signed-in user without a role may still open. The MCP server and
-// the REST API use access tokens, not the session.
-const PATHS_WITHOUT_ROLE = ['/select-role', '/login', '/register', '/auth', '/api/auth', '/oauth', '/.well-known', '/api/mcp', '/api/v1']
+// the REST API use access tokens, not the session. A company that creates an
+// instance (/instances, /i) needs no patient or provider role.
+const PATHS_WITHOUT_ROLE = ['/select-role', '/login', '/register', '/auth', '/api/auth', '/oauth', '/.well-known', '/api/mcp', '/api/v1', '/instances', '/i']
+
+/** Whether the user owns a company instance. A failed read counts as yes, so the user is not sent away. */
+async function ownsInstance(userId: string) {
+  try {
+    return Boolean(await dbAs({ id: userId }).instances.findFirst({ where: { owner_id: userId }, select: { id: true } }))
+  } catch (error) {
+    logger.error('Could not check the instances of a user in middleware', {
+      userId,
+      error: error instanceof Error ? error.message : error,
+    })
+    return true
+  }
+}
 
 export async function middleware(request: NextRequest) {
   // Visitors without a session cookie are not signed in; skip the database.
@@ -30,13 +45,15 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // A signed-in user without a role chooses one first.
+  // A signed-in user without a role chooses one first. A company that owns
+  // an instance has its role already: it runs the instance.
   const { pathname } = request.nextUrl
   if (
     user &&
     !profileReadFailed &&
     !profile?.user_type &&
-    !PATHS_WITHOUT_ROLE.some((path) => pathname.startsWith(path))
+    !PATHS_WITHOUT_ROLE.some((path) => pathname === path || pathname.startsWith(`${path}/`)) &&
+    !(await ownsInstance(user.id))
   ) {
     const redirectUrl = request.nextUrl.clone()
     redirectUrl.pathname = '/select-role'

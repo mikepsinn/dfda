@@ -34,6 +34,15 @@ export const env = createEnv({
     GOOGLE_CLIENT_ID: z.string().min(1).optional(),
     GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
     GOOGLE_APPLICATION_CREDENTIALS: z.string().min(1).optional(),
+    // Company instances (lib/instance). With a root domain such as
+    // dfda.earth, an instance with slug "acme" is also served at
+    // acme.dfda.earth; that needs a wildcard domain (*.dfda.earth) on the host.
+    INSTANCE_ROOT_DOMAIN: z.string().min(1).optional(),
+    // With these, saving an instance's own domain also adds it to the Vercel
+    // project, so it works as soon as its DNS points to Vercel.
+    VERCEL_API_TOKEN: z.string().min(1).optional(),
+    VERCEL_PROJECT_ID: z.string().min(1).optional(),
+    VERCEL_TEAM_ID: z.string().min(1).optional(),
   },
 
   /**
@@ -72,6 +81,10 @@ export const env = createEnv({
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     GOOGLE_APPLICATION_CREDENTIALS: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+    INSTANCE_ROOT_DOMAIN: process.env.INSTANCE_ROOT_DOMAIN,
+    VERCEL_API_TOKEN: process.env.VERCEL_API_TOKEN,
+    VERCEL_PROJECT_ID: process.env.VERCEL_PROJECT_ID,
+    VERCEL_TEAM_ID: process.env.VERCEL_TEAM_ID,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     NEXT_PUBLIC_LOG_LEVEL: process.env.NEXT_PUBLIC_LOG_LEVEL,

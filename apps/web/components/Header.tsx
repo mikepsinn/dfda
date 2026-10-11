@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { BrandMark } from "./BrandMark"
+import { SiteLogo } from "./instance/SiteLogo"
 import type { AuthUser as User } from '@/lib/auth'
 import { useEffect, useState } from 'react';
 import type { Profile } from "@/lib/actions/profiles";
@@ -29,9 +29,11 @@ interface HeaderProps {
   initialUser: User | null;
   initialProfile: Profile | null;
   siteName: string;
+  /** On a company instance: its name and logo for the logo slot. */
+  brand?: { name: string; logoUrl: string | null } | null;
 }
 
-export function Header({ initialUser, initialProfile, siteName }: HeaderProps) {
+export function Header({ initialUser, initialProfile, siteName, brand }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // UseEffect to check and update timezone if needed
@@ -94,7 +96,7 @@ export function Header({ initialUser, initialProfile, siteName }: HeaderProps) {
         <div className="flex flex-1 items-center lg:gap-6">
           {/* Logo - always visible */}
           <Link href="/" className="flex items-center gap-2">
-            <BrandMark className="hidden h-8 w-8 flex-shrink-0 min-[370px]:block" />
+            <SiteLogo brand={brand} className="hidden h-8 w-8 flex-shrink-0 min-[370px]:flex" />
             {/* A long name wraps to a two-line wordmark below 2xl, so it does not crowd the links. */}
             <span className="max-w-[8.5rem] text-xs font-bold leading-tight min-[370px]:text-sm sm:max-w-[10rem] sm:text-base 2xl:max-w-none 2xl:text-xl">
               {siteName}

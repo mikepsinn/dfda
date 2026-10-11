@@ -107,6 +107,18 @@ Adopt the useful hosted-service/self-hosted-software model: one maintained
 release, optional clinic branding, no source fork per customer. This is not a
 WordPress implementation or an arbitrary third-party plugin marketplace.
 
+**Demo, 2026-10-11 (`apps/web/lib/instance`):** a signed-in company creates an
+instance at `/instances/new` (name, address, tagline, color, logo, products and
+an optional domain). The whole site then shows its branding on a preview link
+(`/i/{slug}`), on `{slug}.<INSTANCE_ROOT_DOMAIN>` when a wildcard domain is set
+up, and on the company's own domain once its DNS points to the deployment; with
+`VERCEL_API_TOKEN` and `VERCEL_PROJECT_ID`, saving the domain also adds it to the
+Vercel project. People can sign in on the instance's domain. This is branding
+only: all instances share one database, one set of accounts and one evidence
+pipeline. It does not verify domain ownership and does not isolate tenants; the
+isolation, data-ownership and compliance work below comes before real customer
+data.
+
 Configuration can select a verified domain, logo/favicon, theme, organization
 copy and contacts, enabled modules, and versioned questionnaire/study templates.
 Branding cannot change evidence calculations, remove provenance or uncertainty,
