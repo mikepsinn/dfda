@@ -293,6 +293,7 @@ model global_variables {
   alias_global_variables       global_variables[]              @relation("global_variablesToglobal_variables")
   units                        units                           @relation(fields: [default_unit_id], references: [id], onUpdate: NoAction)
   variable_categories          variable_categories             @relation(fields: [variable_category_id], references: [id], onUpdate: NoAction)
+  instance_program_items       instance_program_items[]
   measurements                 measurements[]
   products                     products?
   user_variables               user_variables[]
@@ -690,6 +691,7 @@ model profiles {
   notifications           notifications[]
   patient_treatments      patient_treatments[]
   patients                patients?
+  program_enrollments     program_enrollments[]
   protocol_versions       protocol_versions[]
   providers               providers?
   reminder_notifications  reminder_notifications[]
@@ -1255,20 +1257,72 @@ model verifications {
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model instances {
-  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  slug          String   @unique
-  name          String
-  tagline       String?
-  logo_url      String?
-  primary_color String   @default("#6d4df6")
-  products      String[] @default([])
-  custom_domain String?  @unique
-  owner_id      String   @db.Uuid
-  created_at    DateTime @default(now()) @db.Timestamptz(6)
-  updated_at    DateTime @default(now()) @db.Timestamptz(6)
-  profiles      profiles @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id                String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  slug              String              @unique
+  name              String
+  tagline           String?
+  logo_url          String?
+  primary_color     String              @default("#6d4df6")
+  products          String[]            @default([])
+  custom_domain     String?             @unique
+  owner_id          String              @db.Uuid
+  created_at        DateTime            @default(now()) @db.Timestamptz(6)
+  updated_at        DateTime            @default(now()) @db.Timestamptz(6)
+  instance_programs instance_programs[]
+  profiles          profiles            @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@index([owner_id], map: "idx_instances_owner_id")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model instance_program_items {
+  id                 String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  program_id         String            @db.Uuid
+  kind               String
+  global_variable_id String
+  frequency          String?
+  better             String?
+  default_value      Float?
+  position           Int               @default(0)
+  global_variables   global_variables  @relation(fields: [global_variable_id], references: [id], onUpdate: NoAction)
+  instance_programs  instance_programs @relation(fields: [program_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([program_id, global_variable_id])
+  @@index([program_id], map: "idx_instance_program_items_program_id")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model instance_programs {
+  id                     String                   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  instance_id            String                   @db.Uuid
+  slug                   String
+  name                   String
+  summary                String?
+  follow_up_weeks        Int                      @default(12)
+  created_at             DateTime                 @default(now()) @db.Timestamptz(6)
+  updated_at             DateTime                 @default(now()) @db.Timestamptz(6)
+  instance_program_items instance_program_items[]
+  instances              instances                @relation(fields: [instance_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  program_enrollments    program_enrollments[]
+
+  @@unique([instance_id, slug])
+  @@index([instance_id], map: "idx_instance_programs_instance_id")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model program_enrollments {
+  id                String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  program_id        String            @db.Uuid
+  user_id           String            @db.Uuid
+  started_at        DateTime          @default(now()) @db.Timestamptz(6)
+  created_at        DateTime          @default(now()) @db.Timestamptz(6)
+  instance_programs instance_programs @relation(fields: [program_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profiles          profiles          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([program_id, user_id])
+  @@index([user_id], map: "idx_program_enrollments_user_id")
 }
 
 view pending_actions {

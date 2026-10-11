@@ -93,3 +93,17 @@ VALUES
 ('hippocampal-volume', 'Hippocampal Volume', 'Volume of the hippocampus measured by imaging.', 'health-and-physiology', 'milliliter', ' M'), -- Assuming cubic cm or ml
 ('immune-response', 'Immune Response', 'Reaction of the immune system, often measured by specific markers or events.', 'health-and-physiology', 'zero-to-ten-scale', '🛡️');
 -- Note: 'headache' and 'fatigue' already exist
+
+-- Blood markers, peptides and energy for the program templates
+-- (also in migration 20261011020000 for existing databases)
+INSERT INTO global_variables (id, name, description, variable_category_id, default_unit_id, emoji)
+VALUES
+('hba1c', 'HbA1c', 'Hemoglobin A1c: the average blood sugar over about three months.', 'health-and-physiology', 'percent', '🩸'),
+('alanine-aminotransferase', 'ALT', 'Alanine aminotransferase, a liver enzyme measured in blood.', 'health-and-physiology', 'units-per-liter', '🩸'),
+('apolipoprotein-b', 'ApoB', 'Apolipoprotein B: the number of cholesterol-carrying particles that can block arteries.', 'health-and-physiology', 'milligrams-per-deciliter', '🩸'),
+('ferritin', 'Ferritin', 'Ferritin, a measure of the iron stored in the body.', 'health-and-physiology', 'nanograms-per-milliliter', '🩸'),
+('c-reactive-protein', 'hs-CRP', 'High-sensitivity C-reactive protein, a marker of inflammation.', 'health-and-physiology', 'milligrams-per-liter', '🩸'),
+('energy-level', 'Energy', 'Self-rated energy level.', 'mental-and-emotional-state', 'zero-to-ten-scale', '⚡'),
+('tirzepatide', 'Tirzepatide', 'GIP and GLP-1 receptor agonist used for type 2 diabetes and weight management.', 'intake-and-interventions', 'milligram', '💊'),
+('bpc-157', 'BPC-157', 'Body Protection Compound-157, a synthetic peptide.', 'intake-and-interventions', 'microgram', '💉'),
+('tb-500', 'TB-500', 'A synthetic peptide from thymosin beta-4.', 'intake-and-interventions', 'milligram', '💉');

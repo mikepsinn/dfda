@@ -463,6 +463,12 @@ suite remains to be added.
 
 **Next: make the tracking and study loop real (step 2)**
 
+Brought forward, 2026-10-11, as a working demo of company instances: company programs with a
+before/after report and company totals (`apps/web/lib/programs`, see
+[white labeling](PRODUCT-ARCHITECTURE.md#white-labeling-and-independent-hosting)).
+This thin slice uses the existing measurements and reminders. It does not replace
+the reference-study reproduction below, and step 1 keeps its open items.
+
 - [ ] Capture one authorized curedao-api reference study with inputs, method
   settings and expected outputs; use synthetic known-answer fixtures in Git.
 - [ ] Verify measurement entry/import -> history/chart -> personal analysis ->

@@ -119,6 +119,26 @@ pipeline. It does not verify domain ownership and does not isolate tenants; the
 isolation, data-ownership and compliance work below comes before real customer
 data.
 
+**Programs, 2026-10-11 (`apps/web/lib/programs`):** an instance owner defines
+programs at `/instances/{slug}/programs/new`, from a GLP-1 or BPC-157 template or
+blank: doses and check-ins (reminder schedules when a person joins), labs entered
+at the start and at a follow-up week, and which direction is better for each
+measure. On the instance's site, a person joins at `/programs/{slug}` and gets a
+before/after report at `/programs/{slug}/me`. Three decisions for this demo:
+
+1. The company sees totals only: per measure, how many people have values at both
+   times and how many improved, hidden below 5 people. Row-level security gives
+   the owner no access to enrollments; the server reads the totals after it
+   checks ownership, and only totals leave it.
+2. A person's values count in a company's totals only while they are in its
+   program. Joining says so; they can leave at any time.
+3. Sample data (30 made-up people per program, and an example report) is generated
+   in memory, labeled "Sample data", never stored, and never used by Outcome
+   Labels, rankings or other evidence.
+
+A before/after change in one person or one program is not a treatment effect; the
+pages say that a change after the start does not prove that the product caused it.
+
 Configuration can select a verified domain, logo/favicon, theme, organization
 copy and contacts, enabled modules, and versioned questionnaire/study templates.
 Branding cannot change evidence calculations, remove provenance or uncertainty,

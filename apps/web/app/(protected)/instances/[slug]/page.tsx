@@ -1,12 +1,14 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { CheckCircle2, ExternalLink } from "lucide-react"
+import Link from "next/link"
+import { CheckCircle2, ExternalLink, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { InstanceForm } from "@/components/instance/InstanceForm"
 import { updateInstanceAction } from "@/lib/actions/instances"
 import { getUserDb } from "@/lib/db/server"
 import { env } from "@/lib/env"
 import { dnsRecordFor, isDomainConfigured } from "@/lib/instance/vercel-domains"
+import { listPrograms } from "@/lib/programs/data"
 import { siteOrigin } from "@/lib/oauth-resources"
 import { getServerUser } from "@/lib/server-auth"
 
@@ -59,7 +61,10 @@ export default async function InstancePage({
     customDomain: row.custom_domain,
   }
   const site = siteOrigin()
-  const domainConnected = instance.customDomain ? await isDomainConfigured(instance.customDomain) : null
+  const [domainConnected, programs] = await Promise.all([
+    instance.customDomain ? isDomainConfigured(instance.customDomain) : null,
+    listPrograms(instance.slug),
+  ])
   const dns = instance.customDomain ? dnsRecordFor(instance.customDomain) : null
 
   return (
@@ -122,6 +127,39 @@ export default async function InstancePage({
               </tbody>
             </table>
           </div>
+        )}
+      </section>
+
+      <section aria-labelledby="programs-heading" className="space-y-3">
+        <div className="flex items-center justify-between gap-4">
+          <h2 id="programs-heading" className="text-xl font-semibold">Programs</h2>
+          <Button asChild size="sm" className="gap-1">
+            <Link href={`/instances/${instance.slug}/programs/new`}>
+              <Plus aria-hidden="true" className="h-4 w-4" /> New program
+            </Link>
+          </Button>
+        </div>
+        {programs.length === 0 ? (
+          <p className="text-muted-foreground">
+            A program says what your customers track while they use your product, such as their dose, weight, side
+            effects and blood markers. Each person gets a before/after report, and you see totals.
+          </p>
+        ) : (
+          <ul className="divide-y rounded-xl border">
+            {programs.map((program) => (
+              <li key={program.id}>
+                <Link
+                  href={`/instances/${instance.slug}/programs/${program.slug}`}
+                  className="flex flex-col gap-1 p-4 hover:bg-muted/50 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <span className="font-medium">{program.name}</span>
+                  <span className="text-sm text-muted-foreground">
+                    {program.items.length} things to track · follow-up at week {program.followUpWeeks}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         )}
       </section>
 

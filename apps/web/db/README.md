@@ -12,6 +12,10 @@ production database is on [Neon](https://neon.tech); any PostgreSQL 16 host work
   resulting database into [`prisma/schema.prisma`](../prisma/schema.prisma).
   [`bootstrap.sql`](bootstrap.sql) runs before the migrations, and the
   [seeds](seeds) after them.
+- **Catalog rows** (variables, units) that an existing database also needs go in
+  a seed file and in a migration. The migration adds them only when the catalog
+  is already seeded, because a new database runs the seeds after the migrations.
+  See [`20261011020000_catalog_lab_markers_and_peptides.sql`](migrations/20261011020000_catalog_lab_markers_and_peptides.sql).
 
 The repository-root `schema` folder is an earlier, unapplied design; do not
 copy from it. Start with the shared [repository instructions](../../../AGENTS.md).
