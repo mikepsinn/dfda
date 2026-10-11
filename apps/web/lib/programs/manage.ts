@@ -137,11 +137,13 @@ export async function recordProgramValues(
   date: string,
   values: Record<string, string>,
 ) {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(`${date}T12:00:00Z`))) {
+  const startTime = `${date}T12:00:00.000Z`
+  const time = Date.parse(startTime)
+  // Date.parse turns 2026-02-31 into March 3, so the date must come back unchanged.
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(time) || new Date(time).toISOString().slice(0, 10) !== date) {
     throw new ProgramError('Enter the date.')
   }
-  const startTime = `${date}T12:00:00.000Z`
-  if (Date.parse(startTime) > Date.now() + 86_400_000) throw new ProgramError('The date is in the future.')
+  if (time > Date.now() + 86_400_000) throw new ProgramError('The date is in the future.')
 
   const entries = program.items
     .filter((item) => (kind === 'lab' ? item.kind === 'lab' : item.kind !== 'lab') && values[item.id]?.trim())

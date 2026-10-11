@@ -32,7 +32,9 @@ export function ProgramTotals({ totals }: { totals: MeasureTotals[] }) {
                 <th scope="row" className="px-4 py-3 font-medium">
                   {measure.name} <span className="font-normal text-muted-foreground">({measure.unit})</span>
                 </th>
-                <td className="px-4 py-3 text-right tabular-nums">{measure.people}</td>
+                <td className="px-4 py-3 text-right tabular-nums">
+                  {measure.hidden ? `Fewer than ${MIN_GROUP_SIZE}` : measure.people}
+                </td>
                 {measure.hidden ? (
                   <td colSpan={4} className="px-4 py-3 text-muted-foreground">
                     Shown when at least {MIN_GROUP_SIZE} people have a value at the start and later.

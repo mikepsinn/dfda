@@ -30,6 +30,8 @@ describe("program totals", () => {
     const small = programTotals([weight], [report(90)])
     const { rerender } = render(<ProgramTotals totals={small} />)
     expect(screen.getByText(`Shown when at least ${MIN_GROUP_SIZE} people have a value at the start and later.`)).toBeInTheDocument()
+    // The exact number of a small group is hidden too.
+    expect(within(screen.getByRole("row", { name: /Weight/ })).getAllByRole("cell")[0]).toHaveTextContent(`Fewer than ${MIN_GROUP_SIZE}`)
 
     rerender(<ProgramTotals totals={programTotals([weight], [90, 90, 90, 100, 110].map(report))} />)
     expect(screen.getByRole("img", { name: "3 improved, 1 no change, 1 worse" })).toBeInTheDocument()

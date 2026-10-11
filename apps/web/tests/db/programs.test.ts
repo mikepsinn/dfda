@@ -122,6 +122,8 @@ describe('values and the report', () => {
     await expect(recordProgramValues(member, program, 'lab', isoDate(Date.now() + 3 * DAY), { [hba1c.id]: '6' })).rejects.toThrow(
       'The date is in the future.',
     )
+    // JavaScript would read February 31 as March 3.
+    await expect(recordProgramValues(member, program, 'lab', '2026-02-31', { [hba1c.id]: '6' })).rejects.toThrow('Enter the date.')
     const stored = await adminDb.measurements.findFirst({
       where: { user_id: member.id, global_variable_id: 'hba1c' },
       select: { value: true, unit_id: true },
