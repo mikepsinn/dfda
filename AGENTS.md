@@ -64,8 +64,8 @@ of UI conventions for contributors and coding agents.
 ## Database and data boundaries
 
 - Before changing app schema, queries or authentication, read the
-  [database guide](apps/web/supabase/README.md). The app is moving from Supabase
-  to plain PostgreSQL: table queries use Prisma (`apps/web/lib/db`), uploaded
+  [database guide](apps/web/db/README.md). The app uses plain PostgreSQL and
+  does not use Supabase: table queries use Prisma (`apps/web/lib/db`), uploaded
   files use an S3-compatible bucket (`apps/web/lib/storage`) and sign-in uses
   Better Auth (`apps/web/lib/auth.ts`). Read the current user with
   `getServerUser()` from `@/lib/server-auth`.
@@ -73,17 +73,18 @@ of UI conventions for contributors and coding agents.
   row-level security policies apply. Use `adminDb` (no row-level security) only in
   workers, scripts and server code that has already checked authorization. Never
   build a user-scoped client from an ID in request input.
-- The web app's schema is the SQL in `apps/web/supabase/migrations`. The
+- The web app's schema is the SQL in `apps/web/db/migrations`. The
   repository-root `schema` folder is an earlier, unapplied design; do not copy it
   into the app.
 - Add schema changes as new SQL migrations, then run `pnpm db:pull` to update
   `prisma/schema.prisma` and the client. There are no real user accounts in
-  production yet, so editing, squashing or rebaselining migrations is acceptable
-  when it makes the move off Supabase simpler; say so in the pull request.
+  production yet, so editing, squashing or rebaselining migrations is acceptable;
+  say so in the pull request. `pnpm db:migrate` applies new migrations to an
+  existing database.
 - Do not reset or overwrite a shared or production database as a development or
-  testing step. `pnpm db:setup` resets the local Supabase database and changes
-  storage with the configured credentials; check every target before running it.
-  For tests, use `pnpm db:plain:setup` on an empty PostgreSQL database.
+  testing step. Database scripts act on the database in `DATABASE_URL`; check it
+  before running one. For tests, use `pnpm db:plain:setup` on an empty PostgreSQL
+  database (`pnpm services:start` runs one locally).
 - Preserve the app's shared variable/measurement model and units where applicable;
   inspect the actual schema before introducing duplicate treatment/outcome storage.
   Keep user-scoped operations subject to authorization and row-level security, and

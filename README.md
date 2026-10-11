@@ -238,9 +238,10 @@ The planned shared packages are listed in [docs/MIGRATION.md](docs/MIGRATION.md)
 ## Technology Stack
 
 - **Frontend**: React, Next.js, TypeScript, Tailwind
-- **Canonical node database**: PostgreSQL through Supabase, with Row Level Security and SQL migrations
+- **Canonical node database**: PostgreSQL (Neon in production) with Prisma, Row Level Security and SQL migrations
 - **Legacy data**: a Prisma schema of the old MySQL database in `packages/legacy-import`, used only for the migration
-- **Authentication**: Supabase Auth, plus the web app's own OAuth server for third-party apps
+- **Authentication**: Better Auth, including an OAuth 2.1 provider for third-party apps
+- **File storage**: an S3-compatible bucket (Cloudflare R2 in production)
 - **Background jobs**: graphile-worker
 - **Tooling**: pnpm workspaces, Turborepo, Vitest, Playwright, GitHub Actions
 
@@ -251,8 +252,7 @@ The planned shared packages are listed in [docs/MIGRATION.md](docs/MIGRATION.md)
 
 - Node.js 22+
 - pnpm
-- Docker (for the local Supabase stack)
-- Supabase CLI
+- Docker with Compose (for the local PostgreSQL, email and S3 services)
 
 
 ### Installation
@@ -276,7 +276,7 @@ pnpm install
 
 ```shellscript
 cp apps/web/.env.example apps/web/.env
-# Edit apps/web/.env with your Supabase credentials
+# The defaults work with the local services. Set BETTER_AUTH_SECRET.
 ```
 
 
@@ -286,31 +286,33 @@ cp apps/web/.env.example apps/web/.env
 pnpm --filter web dev:env
 ```
 
-This starts local Supabase (it needs Docker), then the Next.js server, the background worker (`dev:worker`) and the reminder cron (`dev:cron`). `dev:next` starts only the Next.js server, and `dev` starts it with secrets from Doppler instead of `.env`.
+This starts the local services in `docker-compose.yml` (PostgreSQL, Mailpit and an S3 test server; it needs Docker), then the Next.js server, the background worker (`dev:worker`) and the reminder cron (`dev:cron`). `dev:next` starts only the Next.js server, and `dev` starts it with secrets from Doppler instead of `.env`.
 
-5. The first time, load the database schema and seed data from a second terminal:
+5. The first time, load the database schema, seed data and job queue from a second terminal:
 
 ```shellscript
-pnpm --filter web db:local:reset
+pnpm --filter web db:plain:setup
+pnpm --filter web db:worker:migrate
 ```
 
 ### Database Setup
 
-The web app stores its data in PostgreSQL and queries it with Prisma; uploaded files go to an S3-compatible bucket. Supabase provides sign-in, and its local stack runs the development database and a local S3 endpoint. From the repo root:
+The web app stores its data in PostgreSQL and queries it with Prisma; uploaded files go to an S3-compatible bucket, and sign-in uses Better Auth. From the repo root:
 
 ```bash
-pnpm --filter web sb:local:start   # start only local Supabase
-pnpm --filter web db:local:reset   # apply migrations and seeds
-pnpm --filter web db:pull          # update the Prisma schema and client
+pnpm services:start                 # start the local services only
+pnpm --filter web db:plain:setup    # build an empty database: migrations and seeds
+pnpm --filter web db:migrate        # apply new migrations to an existing database
+pnpm --filter web db:pull           # update the Prisma schema and client
 ```
 
-The database schema is managed through migrations in the `apps/web/supabase/migrations` directory. Each migration represents a specific change to the database structure.
+The database schema is managed through migrations in the `apps/web/db/migrations` directory. Each migration represents a specific change to the database structure. See the [database guide](apps/web/db/README.md).
 
 ### Development Environment
 
 The development environment includes:
 
-- A local Supabase stack (PostgreSQL, Auth, Storage) started by `sb:local:start`
+- PostgreSQL 16, Mailpit (email inbox at http://127.0.0.1:8025) and an S3 test server, started by `pnpm services:start`
 - A graphile-worker process for reminders and background jobs (`dev:worker`)
 - A cron process that queues the periodic reminder jobs (`dev:cron`)
 
@@ -332,7 +334,7 @@ dfda/
 
 ### Commands
 
-- `pnpm --filter web dev:env` - Start the web app with local Supabase, the worker and the cron
+- `pnpm --filter web dev:env` - Start the web app with the local services, the worker and the cron
 - `pnpm --filter web build` - Build it
 - `pnpm --filter web test` - Run its tests
 - `pnpm --filter web lint` - Lint it
@@ -349,8 +351,8 @@ dfda/
 
 ## Deployment
 
-The reference web app deploys to Vercel from `apps/web`, using Supabase Cloud
-for its database and authentication. See the [app environment setup](apps/web/README.md#environment-setup)
+The reference web app deploys to Vercel from `apps/web`. Its database is on
+Neon and its uploaded files are in Cloudflare R2. See the [app environment setup](apps/web/README.md#environment-setup)
 for configuration.
 
 Packaging the same app so a clinic can install and operate its own isolated

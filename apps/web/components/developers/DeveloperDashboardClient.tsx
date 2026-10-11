@@ -69,7 +69,8 @@ export function DeveloperDashboardClient({ user, profile: initialProfile }: Deve
 
   const fetchOpenApiSpec = useCallback(async () => {
     try {
-      const res = await fetch('/api/openapi');
+      const res = await fetch('/api/v1/openapi.json');
+      if (!res.ok) throw new Error(`OpenAPI spec request failed: ${res.status}`);
       const spec = await res.json();
       setOpenApiSpecObject(spec);
       logger.info('[DeveloperDashboard] OpenAPI spec fetched for SwaggerUI.');
@@ -82,7 +83,8 @@ export function DeveloperDashboardClient({ user, profile: initialProfile }: Deve
   const fetchAndSetSpecForChat = useCallback(async () => {
     setIsFetchingSpec(true);
     try {
-      const res = await fetch('/api/openapi');
+      const res = await fetch('/api/v1/openapi.json');
+      if (!res.ok) throw new Error(`OpenAPI spec request failed: ${res.status}`);
       const spec = await res.json();
       setOpenApiSpecForChat(JSON.stringify(spec, null, 2));
       logger.info('[DeveloperDashboard] OpenAPI spec fetched and processed for chat.');
@@ -491,8 +493,10 @@ export function DeveloperDashboardClient({ user, profile: initialProfile }: Deve
               <CardContent>
                 {openApiSpecObject ? (
                   <SwaggerUI spec={openApiSpecObject} />
-                ) : (
+                ) : isFetchingSpec ? (
                   <p>Loading API documentation...</p>
+                ) : (
+                  <p>The API documentation is not available yet.</p>
                 )}
               </CardContent>
             </Card>

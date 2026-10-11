@@ -6,11 +6,10 @@
     "node": ">=22"
   },
   "scripts": {
-    "db:start": "docker-compose up -d",
-    "db:stop": "docker-compose down",
-    "db:reset": "pnpm db:stop && docker volume rm decentralized-fda_supabase_db && pnpm db:start",
-    "db:status": "docker-compose ps",
-    "db:reset-schema": "pnpm db:reset"
+    "services:start": "docker compose up -d --wait",
+    "services:stop": "docker compose down",
+    "services:reset": "docker compose down -v && docker compose up -d --wait",
+    "services:status": "docker compose ps"
   },
   "dependencies": {
     "@prisma/client": "5.10.2"
@@ -19,7 +18,6 @@
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
     "prisma": "5.10.2",
-    "supabase": "^2.19.7",
     "tsx": "4.19.1",
     "zod": "3.25.76"
   },

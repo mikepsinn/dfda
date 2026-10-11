@@ -205,7 +205,7 @@ async function main() {
   sqlString += generateSqlInsert('global_variable_relationships', allNewRelationships); 
 
   // --- Write SQL File ---
-  const outputPath = path.resolve(process.cwd(), 'supabase', 'seeds', '99_ai_generated_relationships.sql');
+  const outputPath = path.resolve(process.cwd(), 'db', 'seeds', '99_ai_generated_relationships.sql');
   logger.info(`${LOG_PREFIX} Writing SQL seed file to: ${outputPath}`);
   try {
     fs.writeFileSync(outputPath, sqlString);

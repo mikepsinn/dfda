@@ -7,12 +7,10 @@ import { vi } from 'vitest';
 // running database just to load the test environment.
 dotenv.config({ path: '.env.test' });
 
-process.env.NEXT_PUBLIC_SUPABASE_URL ??= 'http://127.0.0.1:54321';
-process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??= 'test-anon-key';
 process.env.BETTER_AUTH_SECRET ??= 'test-better-auth-secret-with-at-least-32-characters';
 process.env.SMTP_URL ??= 'smtp://127.0.0.1:2525';
 process.env.EMAIL_FROM ??= 'test@example.com';
-process.env.DATABASE_URL ??= 'postgresql://postgres:postgres@127.0.0.1:54322/postgres';
+process.env.DATABASE_URL ??= 'postgresql://postgres:postgres@127.0.0.1:5432/dfda';
 process.env.GOOGLE_GENERATIVE_AI_API_KEY ??= 'test-google-generative-ai-key';
 
 // Mock next/navigation

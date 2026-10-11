@@ -15,8 +15,6 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 // import ChangePasswordForm from "./change-password-form";
 
 export default async function SettingsPage() {
-  // const supabase = createClient(); // Remove direct client creation
-
   // Use the helper function to get the user
   const user = await getServerUser();
 

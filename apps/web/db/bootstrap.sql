@@ -1,15 +1,14 @@
--- Supabase compatibility layer for a plain PostgreSQL database.
+-- Bootstrap for a plain PostgreSQL database. Apply it before the migrations.
 --
--- The SQL migrations in supabase/migrations were written for Supabase. They
+-- The SQL migrations in db/migrations were first written for Supabase. They
 -- use the anon/authenticated/service_role roles, auth.uid()/auth.role(), the
 -- auth.users table, the extensions schema and storage.objects policies. This
--- file creates minimal equivalents so that the same migrations run on plain
--- PostgreSQL (local tests and CI). It does nothing on a Supabase database,
--- where these objects already exist.
+-- file creates minimal equivalents, so that the same migrations run on any
+-- PostgreSQL host (Neon in production, a local container, CI). Every statement
+-- is safe to run again.
 --
--- auth.uid() and auth.role() read the same request.jwt.claims setting as
--- Supabase. lib/db sets it for each user-scoped query, so the existing
--- row-level security policies apply unchanged.
+-- auth.uid() and auth.role() read the request.jwt.claims setting. lib/db sets
+-- it for each user-scoped query, so the row-level security policies apply.
 
 DO $$
 BEGIN
@@ -127,8 +126,8 @@ BEGIN
 END
 $$;
 
--- Supabase gives these roles access to everything in the public schema and
--- relies on row-level security to limit rows.
+-- These roles get access to everything in the public schema; row-level
+-- security limits the rows.
 GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO anon, authenticated, service_role;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO anon, authenticated, service_role;

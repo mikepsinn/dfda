@@ -10,23 +10,12 @@ import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories';
 import { UNIT_IDS } from '@/lib/constants/units';
 import { createMeasurementAndCompleteNotificationAction } from '@/lib/actions/reminder-notifications';
 
-import type { User } from '@supabase/supabase-js';
 import { adminDb } from '@/lib/db';
 
 // Mock user for the test session
-const mockTestUser: User = {
+const mockTestUser = {
   id: 'test-integration-user-id',
-  app_metadata: { provider: 'email', providers: ['email'] },
-  user_metadata: { name: 'Integration Test User' },
-  aud: 'authenticated',
-  created_at: new Date().toISOString(),
   email: 'integration@test.com',
-  phone: '',
-  email_confirmed_at: new Date().toISOString(),
-  last_sign_in_at: new Date().toISOString(),
-  role: 'authenticated',
-  updated_at: new Date().toISOString(),
-  identities: [], 
 };
 
 // The server action reads the database as the session user; run it as the test user
