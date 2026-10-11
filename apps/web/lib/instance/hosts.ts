@@ -2,6 +2,14 @@ import { dbAs } from '@/lib/db'
 import { env } from '@/lib/env'
 import type { InstanceBranding } from './config'
 
+/** The cookie of the preview link /i/{slug}: the visitor sees the site with that branding. */
+export const PREVIEW_COOKIE = 'instance_preview'
+
+export type ResolvedInstance = InstanceBranding & {
+  /** How the request found the instance: its own domain, its subdomain, or the preview cookie. */
+  via: 'domain' | 'subdomain' | 'preview'
+}
+
 const select = {
   slug: true,
   name: true,
@@ -63,4 +71,12 @@ export async function findInstanceByHost(host: string): Promise<(InstanceBrandin
 export async function findInstanceBySlug(slug: string): Promise<InstanceBranding | null> {
   const row = await dbAs(null).instances.findUnique({ where: { slug }, select })
   return row ? toBranding(row) : null
+}
+
+/** The instance of a request: by its host, else by the slug in the preview cookie. Null for the main site. */
+export async function findInstanceForRequest(host: string, previewSlug: string | undefined): Promise<ResolvedInstance | null> {
+  const byHost = await findInstanceByHost(host)
+  if (byHost) return byHost
+  const byPreview = previewSlug ? await findInstanceBySlug(previewSlug) : null
+  return byPreview ? { ...byPreview, via: 'preview' } : null
 }

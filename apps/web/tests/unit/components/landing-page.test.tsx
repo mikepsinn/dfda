@@ -2,9 +2,12 @@ import { readdirSync } from "node:fs";
 import path from "node:path";
 import { cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import Home from "@/app/page";
 import { getConditionEstimate, outcomeLabelHref, rankTreatments } from "@/lib/demo/treatment-estimates";
+
+// The home page reads the user only on a company instance; these tests show the main site.
+vi.mock("@/lib/server-auth", () => ({ getServerUser: vi.fn() }));
 
 afterEach(cleanup);
 

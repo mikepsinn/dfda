@@ -2,13 +2,15 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { getServerUser } from '@/lib/server-auth'
 import { dashboardPathFor, fetchUserProfile } from '@/lib/profile'
 import { logger } from '@/lib/logger'
+import { resolveInstance } from '@/lib/instance/resolve'
 import { safeLocalPath } from '@/lib/safe-path'
 
 /**
  * Where the browser lands after a magic link, Google or password sign-in.
  * Sends the user to the `next` path when the sign-in page had one (for
  * example a program to join), else to the home page of their role, or to
- * /select-role.
+ * /select-role. On a company instance, the role pages are not on the site:
+ * the user goes to its programs.
  */
 export async function GET(request: NextRequest) {
   // Behind a proxy (Docker, Cloud Run) request.url can carry the internal
@@ -29,6 +31,11 @@ export async function GET(request: NextRequest) {
   if (next) {
     logger.info('[AUTH-CALLBACK-ROUTE] Signed in', { userId: user.id, redirectPath: next })
     return NextResponse.redirect(new URL(next, origin))
+  }
+
+  if (await resolveInstance()) {
+    logger.info('[AUTH-CALLBACK-ROUTE] Signed in on a company instance', { userId: user.id, redirectPath: '/programs' })
+    return NextResponse.redirect(new URL('/programs', origin))
   }
 
   let redirectPath = '/'

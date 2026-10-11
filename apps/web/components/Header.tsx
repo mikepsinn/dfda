@@ -5,8 +5,6 @@ import { SiteLogo } from "./instance/SiteLogo"
 import type { AuthUser as User } from '@/lib/auth'
 import { useEffect, useState } from 'react';
 import type { Profile } from "@/lib/actions/profiles";
-import { updateUserProfileTimezoneAction } from "@/lib/actions/profiles";
-import { logger } from "@/lib/logger";
 import { type NavItem } from "@/lib/types/navigation";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button"
@@ -24,44 +22,19 @@ import {
 import { DesktopNav } from "./layout/DesktopNav"
 import { MobileNav } from "./layout/MobileNav"
 import { UserAuthSection } from "./layout/UserAuthSection"
+import { useProfileTimezone } from "./layout/use-profile-timezone"
 
 interface HeaderProps {
   initialUser: User | null;
   initialProfile: Profile | null;
   siteName: string;
-  /** On a company instance: its name and logo for the logo slot. */
-  brand?: { name: string; logoUrl: string | null } | null;
 }
 
-export function Header({ initialUser, initialProfile, siteName, brand }: HeaderProps) {
+/** The network's header. A company instance has its own (instance/InstanceHeader). */
+export function Header({ initialUser, initialProfile, siteName }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  // UseEffect to check and update timezone if needed
-  useEffect(() => {
-    if (initialUser && initialProfile && !initialProfile.timezone) {
-      try {
-        const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        if (browserTimezone && typeof browserTimezone === 'string') {
-          logger.info("Header: Profile timezone missing, attempting update", { userId: initialUser.id, browserTimezone });
-          
-          updateUserProfileTimezoneAction(browserTimezone)
-            .then(result => {
-              if (!result.success) {
-                logger.warn("Header: Failed auto timezone update", { userId: initialUser.id, error: result.error });
-              } else {
-                 logger.info("Header: Auto timezone update successful", { userId: initialUser.id });
-              }
-            })
-            .catch(err => {
-               logger.error("Header: Error calling timezone update action", { userId: initialUser.id, error: err });
-            });
-        }
-      } catch (e) {
-         logger.error("Header: Error getting browser timezone", { error: e });
-      }
-    }
-    // Run only when user/profile data potentially changes
-  }, [initialUser, initialProfile]); 
+  useProfileTimezone(initialUser, initialProfile);
 
   // Add keybinding for search (e.g., Ctrl+K)
   useEffect(() => {
@@ -96,7 +69,7 @@ export function Header({ initialUser, initialProfile, siteName, brand }: HeaderP
         <div className="flex flex-1 items-center lg:gap-6">
           {/* Logo - always visible */}
           <Link href="/" className="flex items-center gap-2">
-            <SiteLogo brand={brand} className="hidden h-8 w-8 flex-shrink-0 min-[370px]:flex" />
+            <SiteLogo className="hidden h-8 w-8 flex-shrink-0 min-[370px]:flex" />
             {/* A long name wraps to a two-line wordmark below 2xl, so it does not crowd the links. */}
             <span className="max-w-[8.5rem] text-xs font-bold leading-tight min-[370px]:text-sm sm:max-w-[10rem] sm:text-base 2xl:max-w-none 2xl:text-xl">
               {siteName}

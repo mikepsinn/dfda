@@ -35,6 +35,7 @@ const program = `/programs/${demo.program.template}`;
 const company = `/instances/${demo.instance.slug}`;
 const demoRoutes = [
   { name: "instance-home", label: "/ (company instance)", path: onInstance("/") },
+  { name: "instance-programs", label: "/programs (company instance)", path: onInstance("/programs") },
   { name: "program", label: `${program} (company instance)`, path: onInstance(program) },
   { name: "program-me", label: `${program}/me (member)`, path: onInstance(`${program}/me`), as: "member" },
   { name: "program-example", label: `${program}/example (company instance)`, path: onInstance(`${program}/example`) },
