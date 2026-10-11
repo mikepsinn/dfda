@@ -119,6 +119,15 @@ pipeline. It does not verify domain ownership and does not isolate tenants; the
 isolation, data-ownership and compliance work below comes before real customer
 data.
 
+**Instance sites, 2026-10-11:** on an instance, the site is the company's own:
+its header, footer and home page, its programs at `/programs`, sign-in, a
+member's reminders, and the terms and privacy pages. The network's other pages
+(rankings, trials, Outcome Labels, role dashboards and role selection) give 404
+there. [`lib/instance/routes.ts`](../apps/web/lib/instance/routes.ts) lists the
+paths, and `middleware.ts` applies the list. The instance pages stay in the one
+route tree of `apps/web`: one release, no second app. The terms and privacy pages
+are still the network's.
+
 **Programs, 2026-10-11 (`apps/web/lib/programs`):** an instance owner defines
 programs at `/instances/{slug}/programs/new`, from a GLP-1 or BPC-157 template or
 blank: doses and check-ins (reminder schedules when a person joins), labs entered

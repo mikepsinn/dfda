@@ -105,6 +105,16 @@ export async function findProgramById(id: string): Promise<Program | null> {
   return row ? toProgram(row) : null
 }
 
+/** Which of these programs the user joined. Empty for a visitor who is not signed in. */
+export async function joinedProgramIds(user: { id: string } | null, programIds: string[]): Promise<Set<string>> {
+  if (!user || programIds.length === 0) return new Set()
+  const rows = await dbAs(user).program_enrollments.findMany({
+    where: { user_id: user.id, program_id: { in: programIds } },
+    select: { program_id: true },
+  })
+  return new Set(rows.map((row) => row.program_id))
+}
+
 /** The variables a program can track, for the program form. */
 export async function variableOptions(): Promise<VariableOption[]> {
   const rows = await dbAs(null).global_variables.findMany({

@@ -12,6 +12,8 @@ import type { Profile } from "../lib/actions/profiles"
 import { env } from "@/lib/env"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { InstanceTheme } from "@/components/instance/InstanceTheme"
+import { InstanceHeader } from "@/components/instance/InstanceHeader"
+import { InstanceFooter } from "@/components/instance/InstanceFooter"
 import { PreviewBar } from "@/components/instance/PreviewBar"
 import { resolveInstance } from "@/lib/instance/resolve"
 
@@ -100,9 +102,9 @@ export default async function RootLayout({
   if (user) {
     profile = await getProfileByIdAction(user.id)
   }
-  // A company instance (its own domain, subdomain or preview link) shows its own branding.
+  // A company instance (its own domain, subdomain or preview link) is the company's own site:
+  // its branding, header and footer, and only its pages (lib/instance/routes.ts).
   const instance = await resolveInstance()
-  const siteName = instance?.name ?? env.NEXT_PUBLIC_SITE_NAME
 
   return (
     <html lang="en">
@@ -112,13 +114,19 @@ export default async function RootLayout({
         <TooltipProvider>
           <ScrollToHashElement />
           <SiteChrome
-            header={<Header initialUser={user} initialProfile={profile} siteName={siteName} brand={instance} />}
+            header={
+              instance ? (
+                <InstanceHeader brand={instance} initialUser={user} initialProfile={profile} />
+              ) : (
+                <Header initialUser={user} initialProfile={profile} siteName={env.NEXT_PUBLIC_SITE_NAME} />
+              )
+            }
             footer={
-              <Footer
-                siteName={siteName}
-                brand={instance}
-                poweredBy={instance ? { name: env.NEXT_PUBLIC_SITE_NAME, url: env.NEXT_PUBLIC_SITE_URL } : undefined}
-              />
+              instance ? (
+                <InstanceFooter brand={instance} network={{ name: env.NEXT_PUBLIC_SITE_NAME, url: env.NEXT_PUBLIC_SITE_URL }} />
+              ) : (
+                <Footer siteName={env.NEXT_PUBLIC_SITE_NAME} />
+              )
             }
           >
             {children}

@@ -38,10 +38,12 @@ function magicLinkCallbackUrl(searchParams: URLSearchParams): string {
 interface SignInCardProps {
   mode: 'login' | 'register'
   googleEnabled: boolean
+  /** The network's demo accounts. A company instance leaves them out: their pages are not on its site. */
+  demoAccounts?: boolean
 }
 
 /** The sign-in and registration form: magic link, Google, password and demo accounts. */
-export function SignInCard({ mode, googleEnabled }: SignInCardProps) {
+export function SignInCard({ mode, googleEnabled, demoAccounts = true }: SignInCardProps) {
   const searchParams = useSearchParams()
   const [emailSent, setEmailSent] = useState(false)
   const [busy, setBusy] = useState<'magic' | 'google' | 'password' | null>(null)
@@ -184,7 +186,9 @@ export function SignInCard({ mode, googleEnabled }: SignInCardProps) {
           </>
         )}
 
-        <DemoLoginButton showAll={true} next={safeLocalPath(searchParams.get('next'))} onError={(err) => setError(err.message)} />
+        {demoAccounts && (
+          <DemoLoginButton showAll={true} next={safeLocalPath(searchParams.get('next'))} onError={(err) => setError(err.message)} />
+        )}
 
         <form onSubmit={sendMagicLink} className="space-y-4 pt-4">
           <div className="space-y-2">
