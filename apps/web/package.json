@@ -17,7 +17,7 @@
     "services:start": "docker compose -f ../../docker-compose.yml up -d --wait",
     "services:stop": "docker compose -f ../../docker-compose.yml down",
     "check": "pnpm run type-check && pnpm run lint",
-    "build": "prisma generate && next build",
+    "build": "prisma generate && tsx ./scripts/db-migrate.ts --deploy && next build",
     "dev:next": "cross-env NODE_OPTIONS='--inspect' next dev",
     "dev:worker": "dotenv -- tsx watch worker/runner.ts",
     "dev:worker:doppler": "doppler run -- tsx watch worker/runner.ts",

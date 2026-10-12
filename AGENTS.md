@@ -83,7 +83,11 @@ of UI conventions for contributors and coding agents.
   `prisma/schema.prisma` and the client. There are no real user accounts in
   production yet, so editing, squashing or rebaselining migrations is acceptable;
   say so in the pull request. `pnpm db:migrate` applies new migrations to an
-  existing database.
+  existing database. A production build on Vercel runs it, so a migration must
+  work with the code that is live: add, do not rename or drop in the same change.
+  An edited migration does not run again on production; to change what
+  production has, add a new migration (see the
+  [database guide](apps/web/db/README.md#deployments)).
 - Do not reset or overwrite a shared or production database as a development or
   testing step. Database scripts act on the database in `DATABASE_URL`; check it
   before running one. For tests, use `pnpm db:plain:setup` on an empty PostgreSQL

@@ -152,9 +152,17 @@ Supabase origin: the `anon`, `authenticated` and `service_role` roles,
 
 Both record each applied migration file name in the table
 `schema_migrations.applied` (outside `public`, so Prisma does not see it).
-A database that was built before this table existed needs
-`pnpm db:migrate --baseline` once: it records every migration file as applied
-and runs no SQL. Use it only when the database already has every migration.
+A database that was built before this table existed needs one baseline run.
+It records migrations as applied and runs no SQL:
+
+- `pnpm db:migrate --baseline-through=<file>` records the files up to and
+  including `<file>`, for a database that has those migrations and not the
+  newer ones. The next run applies the newer ones.
+- `pnpm db:migrate --baseline` records every file, for a database that has every
+  migration.
+
+Before you choose `<file>`, check which migrations the database has: a file that
+is recorded but was never applied does not run later.
 
 ```bash
 createdb dfda_test
@@ -162,9 +170,37 @@ DATABASE_URL=postgresql://postgres:postgres@localhost:5432/dfda_test pnpm db:pla
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/dfda_test pnpm test:db
 ```
 
-**Production.** Run `pnpm db:migrate --dry-run`, then `pnpm db:migrate`, with
-the production `DATABASE_URL`, after a backup (on Neon, make a branch first)
-and before you deploy code that needs the new schema.
+## Deployments
+
+`pnpm build` runs `db-migrate.ts --deploy` before `next build`:
+
+- A **production** build on Vercel (`VERCEL_ENV=production`) applies the new
+  migrations to the production database. If one fails, the build fails and the
+  current deployment stays live; the migrations before it stay applied.
+- A **preview** build applies them only with `MIGRATE_PREVIEW_DATABASE=1`. Set
+  it in the Vercel Preview environment only when each preview deployment has its
+  own database branch (Neon's Vercel integration). Without such branches,
+  previews use the production database, and an unmerged pull request must not
+  change it.
+- CI and local builds do not migrate. `SKIP_DB_MIGRATIONS=1` turns the step off
+  for any build.
+
+Each migration runs in one transaction under an advisory lock, so two builds
+that run at the same time apply it once. A migration that waits more than 10
+seconds for a locked table fails, so that it does not hold up the site.
+
+The live deployment uses the new schema until the new deployment replaces it,
+and a Vercel rollback does not undo a migration. So:
+
+- Add tables and columns; do not rename or drop them in the same change. First
+  make the code stop using a column, deploy, then drop it in a later migration.
+- An edited migration does not run again on production. To change what
+  production has, add a new migration.
+- To undo a migration on production, restore the database to a time before the
+  deployment (Neon point-in-time restore).
+
+To check a database by hand: `pnpm db:migrate --dry-run` with its
+`DATABASE_URL`.
 
 ## Local commands and safety
 
