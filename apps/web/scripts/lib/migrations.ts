@@ -74,3 +74,36 @@ export async function recordMigration(client: Client, file: string) {
     [path.basename(file)],
   )
 }
+
+export async function isApplied(client: Client, name: string): Promise<boolean> {
+  const { rows } = await client.query('SELECT 1 FROM schema_migrations.applied WHERE name = $1', [name])
+  return rows.length > 0
+}
+
+/**
+ * The key of the advisory lock that db-migrate.ts takes in each migration
+ * transaction, so that two deployments that build at the same time apply each
+ * migration once. Any fixed number works; only this script uses it.
+ */
+export const MIGRATION_LOCK_KEY = 726_150_001
+
+/**
+ * Why a build must not change the database, or null when it applies the new
+ * migrations (`db-migrate.ts --deploy`). A production build on Vercel
+ * migrates. A preview build migrates only with MIGRATE_PREVIEW_DATABASE=1: set
+ * it when each preview deployment has its own database branch (Neon's Vercel
+ * integration); otherwise previews use the production database. CI and local
+ * builds do not migrate.
+ */
+export function skipMigrationsOnBuild(env: Record<string, string | undefined>): string | null {
+  if (env.SKIP_DB_MIGRATIONS === '1') return 'SKIP_DB_MIGRATIONS=1 is set.'
+  if (env.VERCEL_ENV === 'production') return null
+  if (env.VERCEL_ENV === 'preview') {
+    return env.MIGRATE_PREVIEW_DATABASE === '1'
+      ? null
+      : 'This is a Vercel preview build without MIGRATE_PREVIEW_DATABASE=1: it may use the production database.'
+  }
+  return env.VERCEL_ENV
+    ? `This is a Vercel ${env.VERCEL_ENV} build; only production and preview builds migrate the database.`
+    : 'This is not a Vercel build; only Vercel builds migrate the database.'
+}
