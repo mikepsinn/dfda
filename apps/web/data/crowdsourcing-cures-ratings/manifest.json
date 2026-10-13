@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "source": "Crowdsourcing Cures Aggregated Self-Reported Patient Ratings",
+  "origin": "patient-reported",
+  "reviewStatus": "unverified-import",
+  "sourceDatabase": "Crowdsourcing Cures Postgres database (Neon project \"wishonia\"), Dfda* tables",
+  "sourceLastUpdatedAt": "2024-09-04T20:02:54.328Z",
+  "retrievedAt": "2026-10-12T19:50:42.190Z",
+  "files": [
+    {
+      "path": "treatment-ratings.jsonl",
+      "rows": 5878,
+      "bytes": 1280663,
+      "sha256": "b57594ef01f352624ab0234489366f6c53682f5ea0202dc7f05a54d7929e9ab5"
+    },
+    {
+      "path": "treatment-side-effects.jsonl",
+      "rows": 2505,
+      "bytes": 294173,
+      "sha256": "a8769a4e88153160123b9c8e0f7fb252d34edf569ceb7d813b67d6e15327ce1d"
+    },
+    {
+      "path": "condition-symptoms.jsonl",
+      "rows": 4186,
+      "bytes": 786679,
+      "sha256": "234272745a72baae56f16c214ed093656ac7f509e5f9dd6d3e5d97942e18052a"
+    },
+    {
+      "path": "condition-causes.jsonl",
+      "rows": 3653,
+      "bytes": 399805,
+      "sha256": "87ee3ac08e95bf899faa7184f54b0ae24c81645a8ebfa8a2e2f82affe5853902"
+    }
+  ]
+}
