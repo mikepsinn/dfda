@@ -16,9 +16,11 @@ production database is on [Neon](https://neon.tech); any PostgreSQL 16 host work
   a seed file and in a migration. The migration adds them only when the catalog
   is already seeded, because a new database runs the seeds after the migrations.
   See [`20261011020000_catalog_lab_markers_and_peptides.sql`](migrations/20261011020000_catalog_lab_markers_and_peptides.sql).
-  Visitors and signed-in users can only read the catalog; signed-in users can
-  also add a global variable
-  ([`20261020010000_policy_catalog_tables.sql`](migrations/20261020010000_policy_catalog_tables.sql)).
+  Visitors and signed-in users can only read the catalog. The exceptions are for
+  the photo import: signed-in users can add a global variable and the details of
+  a treatment, and a user who tracks a treatment can change its details
+  ([`20261020010000_policy_catalog_tables.sql`](migrations/20261020010000_policy_catalog_tables.sql),
+  [`20261020020000_policy_global_treatments_photo_import.sql`](migrations/20261020020000_policy_global_treatments_photo_import.sql)).
 
 The repository-root `schema` folder is an earlier, unapplied design; do not
 copy from it. Start with the shared [repository instructions](../../../AGENTS.md).

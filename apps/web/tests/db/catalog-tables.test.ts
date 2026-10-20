@@ -5,7 +5,8 @@ import { findOrCreateGlobalVariable } from '@/lib/global_variables.lib'
 
 // The shared catalog: variables, units, categories, conditions, treatments,
 // pharmacies and OAuth scopes. Everyone reads it; only the full-access client
-// (seeds, migrations, scripts) changes it. Runs against a database built by
+// (seeds, migrations, scripts) changes it, apart from what the photo import adds
+// (see photo-import.test.ts). Runs against a database built by
 // scripts/db-plain-setup.ts (see `pnpm test:db`).
 
 const user: DbUser = { id: randomUUID(), email: `catalog-${Date.now()}@example.com` }

@@ -7,9 +7,11 @@
 --
 -- Everyone can read them. Signed-in users can add a global variable, as the
 -- photo import does (lib/actions/save-variable-measurements-from-image.ts); a
--- trigger adds its first synonym. Only the full-access client (seeds,
--- migrations, scripts) changes or deletes rows. tests/db/catalog-tables.test.ts
--- also checks that every table in the public schema has row-level security.
+-- trigger adds its first synonym. Treatment details get the rules of the photo
+-- import in 20261020020000_policy_global_treatments_photo_import.sql. Otherwise
+-- only the full-access client (seeds, migrations, scripts) changes or deletes
+-- rows. tests/db/catalog-tables.test.ts also checks that every table in the
+-- public schema has row-level security.
 
 ALTER TABLE public.variable_categories ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS "Anyone can read variable categories" ON public.variable_categories;
