@@ -23,7 +23,7 @@ export function ProgramReport({ report }: { report: PersonReport }) {
           Started {formatDate(report.startedAt)} · Follow-up {formatDate(report.followUpAt)}
         </p>
       </div>
-      <div className="overflow-x-auto rounded-xl border">
+      <div className="surface-raised overflow-x-auto rounded-xl border">
         <table className="w-full min-w-[32rem] text-left text-sm">
           <thead className="bg-muted/50 text-muted-foreground">
             <tr>

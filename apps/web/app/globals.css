@@ -119,6 +119,53 @@
   .band-fade {
     border-image: linear-gradient(hsl(var(--background)), hsl(var(--muted) / 0.5)) fill 0 / 0 / 0 100vmax;
   }
+
+  /* Depth for company sites and reports, in the theme's colors (a company's
+     theme sets them, lib/instance/theme.ts): raised cards, a hero panel lit by
+     the brand color, a soft glow behind a heading, and a glow under the main
+     button. Stronger on a dark page. Screen only: printed pages stay flat. */
+  @media screen {
+    .surface-raised {
+      background-color: hsl(var(--card));
+      box-shadow:
+        inset 0 1px 0 hsl(0 0% 100% / 0.6),
+        0 1px 2px hsl(var(--foreground) / 0.04),
+        0 18px 40px -24px hsl(var(--foreground) / 0.22);
+    }
+    :is(.dark, .dark-on-screen) .surface-raised {
+      box-shadow:
+        inset 0 1px 0 hsl(0 0% 100% / 0.07),
+        0 24px 60px -28px hsl(0 0% 0% / 0.85);
+    }
+    /* A hero panel: the card color with light of the brand color from the top left corner. */
+    .brand-panel {
+      background-color: hsl(var(--card));
+      background-image:
+        radial-gradient(90% 120% at 0% 0%, hsl(var(--primary) / 0.16), transparent 60%),
+        radial-gradient(60% 90% at 100% 100%, hsl(var(--primary) / 0.07), transparent 60%);
+      box-shadow:
+        inset 0 1px 0 hsl(0 0% 100% / 0.6),
+        0 24px 60px -32px hsl(var(--foreground) / 0.25);
+    }
+    :is(.dark, .dark-on-screen) .brand-panel {
+      background-image:
+        radial-gradient(90% 120% at 0% 0%, hsl(var(--primary) / 0.26), transparent 60%),
+        radial-gradient(60% 90% at 100% 100%, hsl(var(--primary) / 0.12), transparent 60%);
+      box-shadow:
+        inset 0 1px 0 hsl(0 0% 100% / 0.07),
+        0 32px 80px -32px hsl(0 0% 0% / 0.85);
+    }
+    /* A soft glow behind a heading, with no panel: it fades out before the nearest edge (closest-side), so no edge shows. */
+    .brand-glow {
+      background-image: radial-gradient(ellipse closest-side at 25% 45%, hsl(var(--primary) / 0.1), transparent);
+    }
+    :is(.dark, .dark-on-screen) .brand-glow {
+      background-image: radial-gradient(ellipse closest-side at 25% 45%, hsl(var(--primary) / 0.22), transparent);
+    }
+    .primary-glow {
+      box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.6);
+    }
+  }
 }
 
 

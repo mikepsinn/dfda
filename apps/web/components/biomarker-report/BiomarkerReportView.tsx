@@ -30,7 +30,7 @@ export function BiomarkerReportView({ report }: { report: BiomarkerReport }) {
 
   return (
     <article className="biomarker-report mx-auto max-w-5xl space-y-10">
-      <header className="space-y-6">
+      <header className="brand-glow space-y-6">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="max-w-3xl space-y-3">
             <p className="text-sm font-medium uppercase tracking-wide text-primary">Biomarker report</p>
@@ -39,7 +39,7 @@ export function BiomarkerReportView({ report }: { report: BiomarkerReport }) {
           </div>
           <PrintButton />
         </div>
-        <dl className="grid gap-4 rounded-xl border bg-card p-4 text-sm sm:grid-cols-2 md:p-6 lg:grid-cols-3">
+        <dl className="surface-raised grid gap-4 rounded-xl border bg-card p-4 text-sm sm:grid-cols-2 md:p-6 lg:grid-cols-3">
           <Fact term="Patient">{personLine}</Fact>
           <Fact term="Program">
             {report.program.name}

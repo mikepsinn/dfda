@@ -12,7 +12,7 @@ export function ProgramList({ programs, joined }: { programs: Program[]; joined:
           <li key={program.id}>
             <Link
               href={member ? `/programs/${program.slug}/me` : `/programs/${program.slug}`}
-              className="flex h-full flex-col gap-2 rounded-xl border p-6 transition-colors hover:bg-muted/50"
+              className="surface-raised flex h-full flex-col gap-2 rounded-xl border p-6 transition-colors hover:bg-muted/50"
             >
               <h3 className="text-lg font-semibold">{program.name}</h3>
               {program.summary && <p className="text-muted-foreground">{program.summary}</p>}
