@@ -19,9 +19,9 @@ Rules for this file:
 - **Must see** names text or controls on the page, not colors or positions, so that a theme change
   does not break the tour.
 
-To record the videos: `pnpm demo:video` in `apps/web` (see [`tests/e2e/README.md`](../../tests/e2e/README.md)),
-or run the "Demo videos" workflow on GitHub. The patient journey is recorded at phone size, the
-others at desktop size.
+To record the videos: `pnpm demo:video` in `apps/web`, with the setup of the browser tests
+([`playwright.config.ts`](../../playwright.config.ts)), or run the "Demo videos" workflow on
+GitHub. The patient's journeys are recorded at phone size, the others at desktop size.
 
 ## Patient: Riley Lee, on a phone
 
@@ -86,7 +86,7 @@ reports with it.
 
 ### clinician-1: Opens the care team's patients
 
-- **Page:** the sign-in page, then the clinic's care page.
+- **Page:** the sign-in page, then the care team's patients on the clinic's site.
 - **Action:** signs in as the demo clinic clinician.
 - **Must see:** the patients who share, each with their program and week, and Riley Lee with
   "Waiting for review".

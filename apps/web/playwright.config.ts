@@ -11,6 +11,8 @@ import dotenv from 'dotenv'
  *   the environment and in .env.test.
  * - CHROMIUM_PATH: a Chromium to use instead of the one that
  *   `pnpm exec playwright install chromium` downloads.
+ * - DEMO_VIDEO=1: the tour (tests/e2e/tour.test.ts) records the demo videos,
+ *   slowly enough to follow (`pnpm demo:video`).
  */
 dotenv.config({ path: '.env.test' })
 
@@ -35,7 +37,10 @@ export default defineConfig({
     baseURL,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    launchOptions: process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {},
+    launchOptions: {
+      ...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}),
+      ...(process.env.DEMO_VIDEO === '1' ? { slowMo: 150 } : {}),
+    },
   },
   projects: [
     // Signs in the demo accounts once; the sign-in endpoint allows only a few requests at a time.

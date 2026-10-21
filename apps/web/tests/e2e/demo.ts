@@ -7,14 +7,16 @@ export const demo = JSON.parse(readFileSync(join(__dirname, '../../scripts/demo-
   company: { email: string; name: string }
   memberEmail: string
   patient: { email: string; name: string }
+  clinician: { email: string; name: string }
   people: number
-  instance: { slug: string; name: string }
+  instance: { slug: string; name: string; tagline: string }
   program: { template: string }
 }
 
 /** Signed-in browser state for each account, written by auth.setup.ts. */
 export const COMPANY_STATE = join(__dirname, '../../playwright/.auth/company.json')
 export const MEMBER_STATE = join(__dirname, '../../playwright/.auth/member.json')
+export const CLINICIAN_STATE = join(__dirname, '../../playwright/.auth/clinician.json')
 
 export const memberEmail = (n: number) => demo.memberEmail.replace('{n}', String(n))
 
