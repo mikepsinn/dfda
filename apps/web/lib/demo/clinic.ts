@@ -1,6 +1,8 @@
 import demo from '@/scripts/demo-data.json'
 import { adminDb, Prisma } from '@/lib/db'
 import { ensurePasswordUser } from '@/lib/auth-users'
+import { EXAMPLE_REPORT } from '@/lib/biomarker-report/example'
+import type { BiomarkerReport } from '@/lib/biomarker-report/schema'
 import { PROGRAM_TEMPLATES } from '@/lib/programs/config'
 import { findProgramById, reportItems, type Program } from '@/lib/programs/data'
 import { joinProgram } from '@/lib/programs/manage'
@@ -9,9 +11,11 @@ import { sampleCohort, SAMPLE_SIZE } from '@/lib/programs/sample'
 
 /**
  * The demo clinic: a company instance (scripts/demo-data.json), its GLP-1
- * program, people who joined it, and a demo patient. The local seed
- * (scripts/seed-demo.ts) and the demo sign-in (lib/actions/clinic-demo-login.ts)
- * both use it, so a deployment gets the demo on its first demo sign-in.
+ * program, people who joined it, a demo patient with a week-12 biomarker
+ * report, and a clinician on the care team. The people share their reports
+ * with the care team. The local seed (scripts/seed-demo.ts) and the demo
+ * sign-in (lib/actions/clinic-demo-login.ts) both use it, so a deployment gets
+ * the demo on its first demo sign-in.
  *
  * All values are made up (lib/programs/sample.ts). Measurements feed only the
  * person's own report and the program's company totals, never the network's
@@ -31,6 +35,7 @@ type Db = Prisma.TransactionClient
  */
 export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Program; slug: string }> {
   const ownerId = await ensurePasswordUser(demo.company.email, demo.company.name, demo.password)
+  const clinicianId = await ensurePasswordUser(demo.clinician.email, demo.clinician.name, demo.password)
   let instance = await adminDb.instances.findUnique({ where: { id: demo.instance.id }, select: { slug: true } })
   if (!instance) {
     instance = await adminDb.instances.create({
@@ -82,6 +87,10 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
       select: { id: true },
     })
   }
+  await adminDb.instance_clinicians.createMany({
+    data: [{ instance_id: demo.instance.id, user_id: clinicianId }],
+    skipDuplicates: true,
+  })
   const program = await findProgramById(demo.program.id)
   if (!program) throw new Error('The demo program was not saved.')
   return { ownerId, program, slug: instance.slug }
@@ -128,8 +137,12 @@ export async function ensureDemoMembers(program: Program, now = new Date()): Pro
   let joined = 0
   for (const [index, person] of people.entries()) {
     const email = demo.memberEmail.replace('{n}', String(index + 1))
-    const user = { id: await ensurePasswordUser(email, `Demo Member ${index + 1}`, demo.password) }
-    if ((await joinProgram(user, program, { scheduleNotifications: false })).joined === false) continue
+    const name = demo.memberNames[index] ?? `Demo Member ${index + 1}`
+    const user = { id: await ensurePasswordUser(email, name, demo.password) }
+    // Members created before they had names keep their account; they get the name here.
+    await adminDb.users.updateMany({ where: { id: user.id, name: { not: name } }, data: { name } })
+    const joining = await joinProgram(user, program, { scheduleNotifications: false, shareWithCareTeam: true })
+    if (joining.joined === false) continue
     await adminDb.$transaction(async (tx) => {
       await tx.program_enrollments.updateMany({
         where: { program_id: program.id, user_id: user.id },
@@ -146,22 +159,88 @@ export async function ensureDemoMembers(program: Program, now = new Date()): Pro
 export async function ensureDemoPatient(program: Program): Promise<string> {
   const user = { id: await ensurePasswordUser(demo.patient.email, demo.patient.name, demo.password) }
   // The first time, this also creates the dose and check-in reminders.
-  await joinProgram(user, program, { scheduleNotifications: false })
+  await joinProgram(user, program, { scheduleNotifications: false, shareWithCareTeam: true })
   return user.id
+}
+
+/** The demo accounts that joined the program. */
+function demoEmails() {
+  return [demo.patient.email, ...Array.from({ length: demo.people }, (_, index) => demo.memberEmail.replace('{n}', String(index + 1)))]
+}
+
+/**
+ * The demo patient's week-12 report: the example report (lib/biomarker-report/example.ts)
+ * with their name, the program and the clinic, dated at their follow-up.
+ */
+export function demoPatientReport(program: Program, startedAt: Date, clinicName: string): BiomarkerReport {
+  const followUp = new Date(startedAt.getTime() + program.followUpWeeks * 7 * DAY)
+  return {
+    ...EXAMPLE_REPORT,
+    reportDate: followUp.toISOString().slice(0, 10),
+    person: { name: demo.patient.name, code: demo.report.code, age: EXAMPLE_REPORT.person.age },
+    program: { ...EXAMPLE_REPORT.program, name: program.name },
+    clinician: { name: demo.clinician.name, organization: clinicName, location: EXAMPLE_REPORT.clinician?.location },
+  }
+}
+
+/** Saves the demo patient's report with the dates of their start; its review stays as it is. */
+async function writeDemoReport(db: Db, program: Program, patientId: string, startedAt: Date) {
+  const clinic = await db.instances.findUnique({ where: { id: demo.instance.id }, select: { name: true } })
+  const report = demoPatientReport(program, startedAt, clinic?.name ?? demo.instance.name)
+  const fields = {
+    data: report,
+    title: report.title,
+    report_date: new Date(`${report.reportDate}T00:00:00Z`),
+  }
+  await db.biomarker_reports.upsert({
+    where: { id: demo.report.id },
+    create: { id: demo.report.id, program_id: program.id, user_id: patientId, ...fields },
+    update: fields,
+    select: { id: true },
+  })
+}
+
+/**
+ * The care team's side of the demo: the demo accounts share their reports
+ * (also those that joined before there were care teams), and the patient has
+ * their report. Other people in the program keep their own choice.
+ */
+export async function ensureDemoCareTeam(program: Program, patientId: string) {
+  await adminDb.$transaction(async (tx) => {
+    await tx.program_enrollments.updateMany({
+      where: { program_id: program.id, shared_with_care_team_at: null, profiles: { email: { in: demoEmails() } } },
+      data: { shared_with_care_team_at: new Date() },
+    })
+    const enrollment = await tx.program_enrollments.findUniqueOrThrow({
+      where: { program_id_user_id: { program_id: program.id, user_id: patientId } },
+      select: { started_at: true },
+    })
+    if (!(await tx.biomarker_reports.findUnique({ where: { id: demo.report.id }, select: { id: true } }))) {
+      await writeDemoReport(tx, program, patientId, enrollment.started_at)
+    }
+  })
+}
+
+/** Clears the review of the demo patient's report, so that the next visitor can sign it off. */
+export async function resetDemoReview(): Promise<void> {
+  // The trigger on biomarker_reports clears the reviewer and the note too.
+  await adminDb.biomarker_reports.updateMany({ where: { id: demo.report.id }, data: { reviewed_at: null } })
 }
 
 type DemoClinic = { program: Program; slug: string; patientId: string }
 
 /**
- * The demo clinic when it is complete. The patient is created last, so a
- * patient in the program means that the members are there too.
+ * The demo clinic when it is complete. The patient's report is created last,
+ * so the report means that the members, the patient and the care team are
+ * there too.
  */
 async function readyDemoClinic(): Promise<DemoClinic | null> {
-  const [instance, patient] = await Promise.all([
+  const [instance, patient, report] = await Promise.all([
     adminDb.instances.findUnique({ where: { id: demo.instance.id }, select: { slug: true } }),
     adminDb.users.findUnique({ where: { email: demo.patient.email }, select: { id: true } }),
+    adminDb.biomarker_reports.findUnique({ where: { id: demo.report.id }, select: { id: true } }),
   ])
-  if (!instance || !patient) return null
+  if (!instance || !patient || !report) return null
   const enrollment = await adminDb.program_enrollments.findUnique({
     where: { program_id_user_id: { program_id: demo.program.id, user_id: patient.id } },
     select: { id: true },
@@ -188,7 +267,9 @@ export async function prepareDemoClinic(): Promise<DemoClinic> {
       if (done) return done
       const { program, slug } = await ensureDemoClinic()
       await ensureDemoMembers(program)
-      return { program, slug, patientId: await ensureDemoPatient(program) }
+      const patientId = await ensureDemoPatient(program)
+      await ensureDemoCareTeam(program, patientId)
+      return { program, slug, patientId }
     },
     // Creating 12 accounts with their values takes a few seconds.
     { maxWait: 60_000, timeout: 120_000 },
@@ -230,7 +311,9 @@ export function demoPatientValues(program: Program, now: Date) {
 
 /**
  * Gives the demo patient fresh values: anything recorded before, by them or
- * by a visitor trying the page, is replaced.
+ * by a visitor trying the page, is replaced. Their report gets the new dates,
+ * and reports that visitors added as the clinician are removed; the report's
+ * review stays, so that the patient sees a clinician's sign-off.
  */
 export async function resetDemoPatient(program: Program, patientId: string, now = new Date()): Promise<void> {
   const user = { id: patientId }
@@ -247,5 +330,7 @@ export async function resetDemoPatient(program: Program, patientId: string, now 
       data: { started_at: startedAt },
     })
     await writeValues(tx, user.id, program, series)
+    await tx.biomarker_reports.deleteMany({ where: { user_id: user.id, program_id: program.id, id: { not: demo.report.id } } })
+    await writeDemoReport(tx, program, user.id, startedAt)
   })
 }

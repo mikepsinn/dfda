@@ -1,9 +1,12 @@
 {
-  "comment": "The demo clinic (lib/demo/clinic.ts): its accounts, instance and program. The demo sign-in creates it on any deployment, like the network's demo accounts; scripts/seed-demo.ts creates it in a local or CI database, and scripts/visual-preview.mjs and the browser tests sign in with it. All values are made up.",
+  "comment": "The demo clinic (lib/demo/clinic.ts): its accounts, instance, program and the patient's report. The demo sign-in creates it on any deployment, like the network's demo accounts; scripts/seed-demo.ts creates it in a local or CI database, and scripts/visual-preview.mjs and the browser tests sign in with it. All values are made up.",
   "password": "demo-password-local-only",
   "company": { "email": "demo-company@example.com", "name": "Demo Company" },
   "memberEmail": "demo-member{n}@example.com",
+  "memberNames": ["Jordan Avery", "Maria Santos", "Wei Chen", "Aisha Bello", "Daniel Kim", "Priya Natarajan", "Tom Becker", "Lena Novak", "Marcus Hill", "Sofia Rossi"],
   "patient": { "email": "demo-clinic-patient@example.com", "name": "Riley Lee" },
+  "clinician": { "email": "demo-clinic-clinician@example.com", "name": "Dr. Sam Okafor" },
+  "report": { "id": "3d6f2a8e-5c41-4b7a-9e0d-1a2b3c4d5e03", "code": "AM-0102" },
   "people": 10,
   "instance": {
     "id": "3d6f2a8e-5c41-4b7a-9e0d-1a2b3c4d5e01",
