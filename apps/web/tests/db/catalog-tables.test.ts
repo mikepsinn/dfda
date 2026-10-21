@@ -126,4 +126,39 @@ describe('the shared catalog', () => {
     // The insert trigger still adds the name as the first synonym.
     expect(await adminDb.global_variable_synonyms.count({ where: { global_variable_id: id, name } })).toBe(1)
   })
+
+  it('gives the lab-test variables their LOINC codes, in the right form, which users cannot set', async () => {
+    const coded = await adminDb.global_variables.findMany({
+      where: { id: { in: ['hba1c', 'alanine-aminotransferase', 'c-reactive-protein'] } },
+      select: { id: true, loinc_code: true },
+      orderBy: { id: 'asc' },
+    })
+    expect(coded).toEqual([
+      { id: 'alanine-aminotransferase', loinc_code: '1742-6' },
+      { id: 'c-reactive-protein', loinc_code: '30522-7' },
+      { id: 'hba1c', loinc_code: '4548-4' },
+    ])
+
+    await expect(
+      adminDb.global_variables.update({ where: { id: rows.variable.id }, data: { loinc_code: 'HbA1c' } }),
+    ).rejects.toThrow()
+    // A code identifies one variable.
+    await expect(
+      adminDb.global_variables.update({ where: { id: rows.variable.id }, data: { loinc_code: '4548-4' } }),
+    ).rejects.toThrow()
+
+    const id = `catalog-test-coded-${Date.now()}`
+    await expect(
+      dbAs(user).global_variables.create({
+        data: {
+          id,
+          name: 'Coded by a user',
+          variable_category_id: 'health-and-physiology',
+          default_unit_id: 'millimoles-per-liter',
+          loinc_code: '2951-2',
+        },
+        select: { id: true },
+      }),
+    ).rejects.toThrow(/row-level security/)
+  })
 })
