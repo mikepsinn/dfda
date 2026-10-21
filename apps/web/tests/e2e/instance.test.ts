@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { MEMBER_STATE, demo, onInstance } from './demo'
+import { COMPANY_STATE, MEMBER_STATE, demo, onInstance } from './demo'
 
 test.describe("a company's own site", () => {
   test('shows the company, its programs and no network pages', async ({ page }) => {
@@ -41,6 +41,35 @@ test.describe("a company's own site", () => {
     // A signed-in member who opens the sign-in page also goes to the programs, not to a role dashboard.
     await page.goto('/login')
     await expect(page).toHaveURL(/\/programs$/)
+  })
+
+  test("shows the theme that the owner sets: page colors on screen, light colors in print", async ({ browser }) => {
+    const page = await (await browser.newContext({ storageState: COMPANY_STATE })).newPage()
+    async function setTheme(theme: { background: string; font: string; corners: string }) {
+      await page.goto(`/instances/${demo.instance.slug}`)
+      await page.getByLabel('Background color', { exact: true }).fill(theme.background)
+      await page.getByLabel('Font', { exact: true }).selectOption(theme.font)
+      await page.getByLabel('Corners', { exact: true }).selectOption(theme.corners)
+      await page.getByRole('button', { name: 'Save changes' }).click()
+      await expect(page.getByText('Your changes are saved.')).toBeVisible()
+    }
+
+    try {
+      await setTheme({ background: '#0d0f0e', font: 'serif', corners: 'large' })
+      await page.goto(onInstance('/'))
+      const body = page.locator('body')
+      await expect(page.locator('html')).toHaveClass(/\bdark-on-screen\b/)
+      await expect(body).toHaveCSS('background-color', 'rgb(13, 15, 14)')
+      await expect(body).toHaveCSS('font-family', /Georgia/)
+      await expect(page.getByRole('link', { name: 'Programs' }).first()).toBeVisible()
+
+      await page.emulateMedia({ media: 'print' })
+      await expect(body).toHaveCSS('background-color', 'rgb(255, 255, 255)')
+    } finally {
+      // Other tests use the same demo company.
+      await page.emulateMedia({ media: 'screen' })
+      await setTheme({ background: '#ffffff', font: 'inter', corners: 'medium' })
+    }
   })
 
   test("the main site keeps the network's pages", async ({ page }) => {

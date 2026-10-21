@@ -1,6 +1,7 @@
 import { dbAs } from '@/lib/db'
 import { env } from '@/lib/env'
 import type { InstanceBranding } from './config'
+import type { CornerRadius, InstanceFont } from './theme'
 
 /** The cookie of the preview link /i/{slug}: the visitor sees the site with that branding. */
 export const PREVIEW_COOKIE = 'instance_preview'
@@ -16,6 +17,9 @@ const select = {
   tagline: true,
   logo_url: true,
   primary_color: true,
+  background_color: true,
+  font: true,
+  corner_radius: true,
   products: true,
   custom_domain: true,
 } as const
@@ -26,17 +30,24 @@ type InstanceRow = {
   tagline: string | null
   logo_url: string | null
   primary_color: string
+  background_color: string
+  font: string
+  corner_radius: string
   products: string[]
   custom_domain: string | null
 }
 
-function toBranding(row: InstanceRow): InstanceBranding {
+/** The branding of an instances row. The table's checks allow only the fonts and corner sizes of lib/instance/theme.ts. */
+export function toBranding(row: InstanceRow): InstanceBranding {
   return {
     slug: row.slug,
     name: row.name,
     tagline: row.tagline,
     logoUrl: row.logo_url,
     primaryColor: row.primary_color,
+    backgroundColor: row.background_color,
+    font: row.font as InstanceFont,
+    cornerRadius: row.corner_radius as CornerRadius,
     products: row.products,
     customDomain: row.custom_domain,
   }

@@ -43,6 +43,12 @@ and this guide in the same change instead of creating a one-off competing patter
 - Theme tokens live in `apps/web/app/globals.css` and the app's Tailwind config.
   Use `primary`, `background`, `card`, `muted`, `foreground` and their matching
   foreground tokens. Keep emphasis, borders and spacing consistent in both themes.
+- A company instance sets these tokens from its theme (`apps/web/lib/instance/theme.ts`):
+  brand color, background color, font and corner size. The text, card, muted and border
+  colors follow from the background and stay readable on it. A dark background puts the
+  `dark-on-screen` class on the page: `dark:` styles apply on screen, and printed pages
+  keep the light colors. Use tokens, not fixed colors, on pages that instances show; where
+  a fixed color is necessary (such as a status badge), add a `dark:` variant.
 - The brand mark is the Outcome Label card in `apps/web/components/BrandMark.tsx`, in
   theme colors for the header, menu and footer, or fixed colors for generated images.
   `apps/web/app/icon.svg` is the same drawing for the browser icon; a unit test keeps

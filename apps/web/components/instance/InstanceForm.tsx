@@ -7,7 +7,16 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import type { InstanceFormState } from "@/lib/actions/instances"
-import { brandTheme, slugFromName, type InstanceBranding } from "@/lib/instance/config"
+import { slugFromName, type InstanceBranding } from "@/lib/instance/config"
+import {
+  CORNER_RADII,
+  FONTS,
+  bestTextContrast,
+  contrastRatio,
+  themeVariables,
+  type CornerRadius,
+  type InstanceFont,
+} from "@/lib/instance/theme"
 
 type Values = {
   name: string
@@ -15,6 +24,9 @@ type Values = {
   tagline: string
   logoUrl: string
   primaryColor: string
+  backgroundColor: string
+  font: InstanceFont
+  cornerRadius: CornerRadius
   products: string
   customDomain: string
 }
@@ -26,6 +38,9 @@ function toValues(instance?: InstanceBranding | null): Values {
     tagline: instance?.tagline ?? "",
     logoUrl: instance?.logoUrl ?? "",
     primaryColor: instance?.primaryColor ?? "#0f766e",
+    backgroundColor: instance?.backgroundColor ?? "#ffffff",
+    font: instance?.font ?? "inter",
+    cornerRadius: instance?.cornerRadius ?? "medium",
     products: instance?.products.join("\n") ?? "",
     customDomain: instance?.customDomain ?? "",
   }
@@ -34,6 +49,12 @@ function toValues(instance?: InstanceBranding | null): Values {
 function FieldError({ message }: { message?: string }) {
   return message ? <p className="text-sm text-destructive">{message}</p> : null
 }
+
+const selectClass =
+  "h-10 w-full rounded-md border border-input bg-background px-3 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+
+/** A typed hex color, or the fallback while the owner types one. */
+const hexOr = (value: string, fallback: string) => (/^#[0-9a-fA-F]{6}$/.test(value) ? value.toLowerCase() : fallback)
 
 /**
  * The form for a company instance, with a live preview of the branding.
@@ -54,7 +75,7 @@ export function InstanceForm({
   const [values, setValues] = useState(() => toValues(instance))
   // Until the owner edits the address, it follows the company name.
   const [slugEdited, setSlugEdited] = useState(Boolean(instance))
-  const set = (field: keyof Values) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const set = (field: keyof Values) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const value = event.target.value
     setValues((current) => ({
       ...current,
@@ -64,8 +85,14 @@ export function InstanceForm({
   }
   const errors = state.fieldErrors ?? {}
   const products = values.products.split(/[\n,]/).map((item) => item.trim()).filter(Boolean).slice(0, 8)
-  const color = /^#[0-9a-fA-F]{6}$/.test(values.primaryColor) ? values.primaryColor.toLowerCase() : "#0f766e"
-  const buttonText = `hsl(${brandTheme(color).primaryForeground})`
+  const color = hexOr(values.primaryColor, "#0f766e")
+  const background = hexOr(values.backgroundColor, "#ffffff")
+  // The preview sets the same CSS variables as the site (lib/instance/theme.ts) on its own box.
+  const theme = themeVariables({ primaryColor: color, backgroundColor: background, font: values.font, cornerRadius: values.cornerRadius })
+  const previewStyle = { ...theme.brand, ...theme.surface.variables, fontFamily: theme.fontFamily } as React.CSSProperties
+  const backgroundHint =
+    bestTextContrast(background) < 7 ? "Choose a lighter or a darker background, so that text is easy to read on it." : undefined
+  const brandContrast = contrastRatio(color, background)
 
   return (
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
@@ -125,10 +152,58 @@ export function InstanceForm({
             <FieldError message={errors.primaryColor} />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="logoUrl">Logo address (optional)</Label>
-            <Input id="logoUrl" name="logoUrl" value={values.logoUrl} onChange={set("logoUrl")} placeholder="https://…/logo.png" />
-            <FieldError message={errors.logoUrl} />
+            <Label htmlFor="backgroundColor">Background color</Label>
+            <div className="flex items-center gap-2">
+              <input
+                type="color"
+                aria-label="Pick the background color"
+                value={background}
+                onChange={set("backgroundColor")}
+                className="h-10 w-12 shrink-0 cursor-pointer rounded border bg-background p-1"
+              />
+              <Input
+                id="backgroundColor"
+                name="backgroundColor"
+                value={values.backgroundColor}
+                onChange={set("backgroundColor")}
+                required
+              />
+            </div>
+            <FieldError message={errors.backgroundColor ?? backgroundHint} />
           </div>
+          {brandContrast < 4.5 && (
+            <p className="text-sm text-muted-foreground sm:col-span-2">
+              Links in the brand color are hard to read on this background (contrast {brandContrast.toFixed(1)} to 1; text
+              needs 4.5 to 1). Choose a lighter or darker brand color.
+            </p>
+          )}
+          <div className="space-y-2">
+            <Label htmlFor="font">Font</Label>
+            <select id="font" name="font" value={values.font} onChange={set("font")} className={selectClass}>
+              {Object.entries(FONTS).map(([value, font]) => (
+                <option key={value} value={value}>
+                  {font.label}
+                </option>
+              ))}
+            </select>
+            <FieldError message={errors.font} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="cornerRadius">Corners</Label>
+            <select id="cornerRadius" name="cornerRadius" value={values.cornerRadius} onChange={set("cornerRadius")} className={selectClass}>
+              {Object.entries(CORNER_RADII).map(([value, radius]) => (
+                <option key={value} value={value}>
+                  {radius.label}
+                </option>
+              ))}
+            </select>
+            <FieldError message={errors.cornerRadius} />
+          </div>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="logoUrl">Logo address (optional)</Label>
+          <Input id="logoUrl" name="logoUrl" value={values.logoUrl} onChange={set("logoUrl")} placeholder="https://…/logo.png" />
+          <FieldError message={errors.logoUrl} />
         </div>
         <div className="space-y-2">
           <Label htmlFor="products">Products to track (one per line)</Label>
@@ -161,7 +236,7 @@ export function InstanceForm({
 
       <section aria-label="Preview" className="space-y-2 lg:sticky lg:top-24 lg:self-start">
         <p className="text-sm font-medium text-muted-foreground">Preview</p>
-        <div className="overflow-hidden rounded-xl border shadow-sm">
+        <div className="overflow-hidden rounded-lg border bg-background text-foreground shadow-sm" style={previewStyle}>
           <div className="flex items-center gap-2 border-b bg-background px-4 py-3">
             {values.logoUrl.startsWith("https://") ? (
               // eslint-disable-next-line @next/next/no-img-element -- the logo is on the company's own host
@@ -169,8 +244,7 @@ export function InstanceForm({
             ) : (
               <span
                 aria-hidden="true"
-                className="flex h-7 w-7 items-center justify-center rounded-md text-sm font-bold"
-                style={{ backgroundColor: color, color: buttonText }}
+                className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-sm font-bold text-primary-foreground"
               >
                 {(values.name.trim().charAt(0) || "A").toUpperCase()}
               </span>
@@ -197,7 +271,7 @@ export function InstanceForm({
                 ))}
               </ul>
             )}
-            <span className="inline-block rounded-md px-4 py-2 text-sm font-medium" style={{ backgroundColor: color, color: buttonText }}>
+            <span className="inline-block rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
               Start tracking
             </span>
           </div>

@@ -1268,6 +1268,9 @@ model instances {
   owner_id          String              @db.Uuid
   created_at        DateTime            @default(now()) @db.Timestamptz(6)
   updated_at        DateTime            @default(now()) @db.Timestamptz(6)
+  background_color  String              @default("#ffffff")
+  font              String              @default("inter")
+  corner_radius     String              @default("medium")
   instance_programs instance_programs[]
   profiles          profiles            @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 

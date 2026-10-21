@@ -1,7 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-    darkMode: ["class"],
+    // `dark` (dark slides) is dark everywhere; `dark-on-screen` (an instance with
+    // a dark background, lib/instance/theme.ts) is dark on screen only, so that
+    // printed pages stay light.
+    darkMode: ["variant", ["&:is(.dark *)", "@media screen { &:is(.dark-on-screen *) }"]],
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
