@@ -22,6 +22,8 @@ const INSTANCE_PATHS = [
   // The owner's pages and the preview link, also while the owner previews the site
   '/instances',
   '/i',
+  // Care team invitations, for a clinician who also visited the company's site
+  '/care-teams',
   // APIs, OAuth and well-known files
   '/api',
   '/oauth',

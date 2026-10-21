@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { careTeamsOf } from "@/lib/care-team/data"
+import { careTeamsOf, invitationsFor } from "@/lib/care-team/data"
 import { getUserDb } from "@/lib/db/server"
 import { getServerUser } from "@/lib/server-auth"
 
@@ -18,7 +18,7 @@ export default async function InstancesPage() {
         orderBy: { created_at: "desc" },
       })
     : []
-  const careTeams = user ? await careTeamsOf(user) : []
+  const [careTeams, invitations] = user ? await Promise.all([careTeamsOf(user), invitationsFor(user)]) : [[], []]
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
@@ -46,6 +46,21 @@ export default async function InstancesPage() {
             </li>
           ))}
         </ul>
+      )}
+      {invitations.length > 0 && (
+        <section aria-labelledby="invitations-heading" className="space-y-3">
+          <h2 id="invitations-heading" className="text-xl font-semibold">Care team invitations</h2>
+          <ul className="divide-y rounded-xl border">
+            {invitations.map((invitation) => (
+              <li key={invitation.id}>
+                <Link href={`/care-teams/join/${invitation.id}`} className="flex items-center gap-3 p-4 hover:bg-muted/50">
+                  <span className="font-medium">{invitation.instance.name}</span>
+                  <span className="ml-auto text-sm text-muted-foreground">Open the invitation</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
       {careTeams.length > 0 && (
         <section aria-labelledby="care-teams-heading" className="space-y-3">
