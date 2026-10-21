@@ -25,12 +25,15 @@ const DAY = 86_400_000
 
 type Db = Prisma.TransactionClient
 
-/** The demo company's account, instance and program, created when missing. */
-export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Program }> {
+/**
+ * The demo company's account, instance and program, created when missing,
+ * with the instance's current address (the owner may change it).
+ */
+export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Program; slug: string }> {
   const ownerId = await ensurePasswordUser(demo.company.email, demo.company.name, demo.password)
-  const instance = await adminDb.instances.findUnique({ where: { id: demo.instance.id }, select: { id: true } })
+  let instance = await adminDb.instances.findUnique({ where: { id: demo.instance.id }, select: { slug: true } })
   if (!instance) {
-    await adminDb.instances.create({
+    instance = await adminDb.instances.create({
       data: {
         id: demo.instance.id,
         slug: demo.instance.slug,
@@ -40,7 +43,7 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
         products: demo.instance.products,
         owner_id: ownerId,
       },
-      select: { id: true },
+      select: { slug: true },
     })
   }
 
@@ -81,7 +84,7 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
   }
   const program = await findProgramById(demo.program.id)
   if (!program) throw new Error('The demo program was not saved.')
-  return { ownerId, program }
+  return { ownerId, program, slug: instance.slug }
 }
 
 /** Writes made-up values of the program's variables for a user. */
@@ -139,9 +142,57 @@ export async function ensureDemoMembers(program: Program, now = new Date()): Pro
   return joined
 }
 
-/** Whether the program already has its demo members, so a demo sign-in can skip them. */
-export async function hasDemoMembers(program: Program): Promise<boolean> {
-  return (await adminDb.program_enrollments.count({ where: { program_id: program.id } })) >= demo.people
+/** The demo patient's account, signed up for the program once. Returns the patient's user id. */
+export async function ensureDemoPatient(program: Program): Promise<string> {
+  const user = { id: await ensurePasswordUser(demo.patient.email, demo.patient.name, demo.password) }
+  // The first time, this also creates the dose and check-in reminders.
+  await joinProgram(user, program, { scheduleNotifications: false })
+  return user.id
+}
+
+type DemoClinic = { program: Program; slug: string; patientId: string }
+
+/**
+ * The demo clinic when it is complete. The patient is created last, so a
+ * patient in the program means that the members are there too.
+ */
+async function readyDemoClinic(): Promise<DemoClinic | null> {
+  const [instance, patient] = await Promise.all([
+    adminDb.instances.findUnique({ where: { id: demo.instance.id }, select: { slug: true } }),
+    adminDb.users.findUnique({ where: { email: demo.patient.email }, select: { id: true } }),
+  ])
+  if (!instance || !patient) return null
+  const enrollment = await adminDb.program_enrollments.findUnique({
+    where: { program_id_user_id: { program_id: demo.program.id, user_id: patient.id } },
+    select: { id: true },
+  })
+  const program = enrollment && (await findProgramById(demo.program.id))
+  return program ? { program, slug: instance.slug, patientId: patient.id } : null
+}
+
+/**
+ * The demo clinic for a demo sign-in, created on first use: the company, the
+ * instance, the program, the members and the patient. Returns at once when
+ * they exist. Otherwise one sign-in at a time creates them, so two visitors
+ * who open a new deployment's demo together do not create the same records
+ * twice.
+ */
+export async function prepareDemoClinic(): Promise<DemoClinic> {
+  const ready = await readyDemoClinic()
+  if (ready) return ready
+  return adminDb.$transaction(
+    async (tx) => {
+      // The lock lasts until this transaction ends; the work below uses other connections.
+      await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext('demo-clinic'))`
+      const done = await readyDemoClinic()
+      if (done) return done
+      const { program, slug } = await ensureDemoClinic()
+      await ensureDemoMembers(program)
+      return { program, slug, patientId: await ensureDemoPatient(program) }
+    },
+    // Creating 12 accounts with their values takes a few seconds.
+    { maxWait: 60_000, timeout: 120_000 },
+  )
 }
 
 /**
@@ -178,14 +229,11 @@ export function demoPatientValues(program: Program, now: Date) {
 }
 
 /**
- * Signs the demo patient up for the program, once, and gives them fresh
- * values on each call: anything recorded before, by them or by a visitor
- * trying the page, is replaced. Returns the patient's user id.
+ * Gives the demo patient fresh values: anything recorded before, by them or
+ * by a visitor trying the page, is replaced.
  */
-export async function resetDemoPatient(program: Program, now = new Date()): Promise<string> {
-  const user = { id: await ensurePasswordUser(demo.patient.email, demo.patient.name, demo.password) }
-  // The first time, this also creates the dose and check-in reminders.
-  await joinProgram(user, program, { scheduleNotifications: false })
+export async function resetDemoPatient(program: Program, patientId: string, now = new Date()): Promise<void> {
+  const user = { id: patientId }
   const { startedAt, series } = demoPatientValues(program, now)
 
   await adminDb.$transaction(async (tx) => {
@@ -200,5 +248,4 @@ export async function resetDemoPatient(program: Program, now = new Date()): Prom
     })
     await writeValues(tx, user.id, program, series)
   })
-  return user.id
 }

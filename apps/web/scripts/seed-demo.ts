@@ -15,7 +15,7 @@
  * It refuses a database that is not on this machine unless --allow-remote is given.
  */
 import { adminDb } from '@/lib/db'
-import { DEMO_CLINIC as demo, ensureDemoClinic, ensureDemoMembers, resetDemoPatient } from '@/lib/demo/clinic'
+import { DEMO_CLINIC as demo, ensureDemoClinic, ensureDemoMembers, ensureDemoPatient, resetDemoPatient } from '@/lib/demo/clinic'
 
 function requireLocalDatabase() {
   const url = process.env.DATABASE_URL
@@ -30,7 +30,7 @@ async function main() {
   requireLocalDatabase()
   const { program } = await ensureDemoClinic()
   const joined = await ensureDemoMembers(program)
-  await resetDemoPatient(program)
+  await resetDemoPatient(program, await ensureDemoPatient(program))
   console.log(
     `Demo data: ${demo.instance.name} (/i/${demo.instance.slug}), program "${program.name}", ${joined} people joined now, and the demo patient ${demo.patient.email}.`,
   )
