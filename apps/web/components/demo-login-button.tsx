@@ -81,7 +81,7 @@ export function DemoLoginButton({ onError, showAll = false, next }: DemoLoginBut
               {isLoading === role ? "Loading..." : `Demo ${role.replace('-', ' ')}`}
             </Button>
           ))}
-          {(['owner', 'patient'] as ClinicDemoRole[]).map((role) => (
+          {(['owner', 'clinician', 'patient'] as ClinicDemoRole[]).map((role) => (
             <Button
               key={`clinic-${role}`}
               variant="outline"

@@ -48,7 +48,7 @@ export const instanceInputSchema = z.object({
     .trim()
     .transform((value) => value || null)
     .pipe(z.string().url().startsWith('https://', 'The logo address must start with https://.').nullable()),
-  primaryColor: hexColor('#0f766e'),
+  primaryColor: hexColor('#6d4df6'),
   // The text and surface colors follow from it (lib/instance/theme.ts); a middle tone leaves no readable text color.
   backgroundColor: hexColor('#ffffff').refine(
     (color) => bestTextContrast(color) >= 7,

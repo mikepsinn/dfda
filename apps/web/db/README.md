@@ -171,15 +171,18 @@ Supabase origin: the `anon`, `authenticated` and `service_role` roles,
   each in its own transaction. `--dry-run` lists them and changes nothing.
 - `pnpm db:seed:demo` adds the demo clinic to a **local or CI** database: the
   company instance `/i/acme-metabolic`, its GLP-1 program, 10 people who joined
-  it and a demo patient, with made-up values. The accounts and their password
-  are in [`scripts/demo-data.json`](../scripts/demo-data.json); sign in as
-  `demo-company@example.com`, `demo-member1@example.com` or
-  `demo-clinic-patient@example.com`. It refuses a database on another host. The
+  it and a demo patient with a week-12 biomarker report, and a clinician on the
+  care team, with made-up values. The accounts and their password are in
+  [`scripts/demo-data.json`](../scripts/demo-data.json); sign in as
+  `demo-company@example.com`, `demo-member1@example.com`,
+  `demo-clinic-patient@example.com` or `demo-clinic-clinician@example.com`. It refuses a database on another host. The
   screenshot workflow and the browser tests (`pnpm test:e2e`) use it. A
-  deployment needs no seed: the **Demo clinic owner** and **Demo clinic
-  patient** buttons on the sign-in page create the same clinic on first use
-  ([`lib/demo/clinic.ts`](../lib/demo/clinic.ts)), and each patient sign-in
-  gives the demo patient fresh values.
+  deployment needs no seed: the **Demo clinic owner**, **Demo clinic
+  clinician** and **Demo clinic patient** buttons on the sign-in page create
+  the same clinic on first use ([`lib/demo/clinic.ts`](../lib/demo/clinic.ts)).
+  Each patient sign-in gives the demo patient fresh values and keeps their
+  report's sign-off; each clinician sign-in clears the sign-off, so the next
+  visitor can sign the report off again.
 
 Both record each applied migration file name in the table
 `schema_migrations.applied` (outside `public`, so Prisma does not see it).

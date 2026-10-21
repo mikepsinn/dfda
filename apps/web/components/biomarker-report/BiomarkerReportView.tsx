@@ -19,9 +19,11 @@ function Fact({ term, children }: { term: string; children: React.ReactNode }) {
  * A biomarker report (lib/biomarker-report): who and what was measured, the
  * panels at a glance, the clinic's values, each panel, then the report's text
  * sections. Every status and count comes from rules.ts. Printing gives A4
- * pages without the site header and footer (app/globals.css).
+ * pages without the site header and footer (app/globals.css). `review` (a
+ * saved report's sign-off, lib/care-team) shows under the header and prints
+ * with the report.
  */
-export function BiomarkerReportView({ report }: { report: BiomarkerReport }) {
+export function BiomarkerReportView({ report, review }: { report: BiomarkerReport; review?: React.ReactNode }) {
   const summary = summarizeReport(report)
   const { person, clinician } = report
   const personLine = [person.name, person.code, [person.age, person.sex].filter((part) => part !== undefined).join(" ")]
@@ -60,6 +62,7 @@ export function BiomarkerReportView({ report }: { report: BiomarkerReport }) {
           {report.platform && <Fact term="Platform">{report.platform}</Fact>}
           <Fact term="Report date">{formatReportDate(report.reportDate)}</Fact>
         </dl>
+        {review}
       </header>
 
       <AtAGlance summary={summary} threshold={report.threshold} />

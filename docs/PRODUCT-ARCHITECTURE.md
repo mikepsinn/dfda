@@ -164,7 +164,22 @@ file holds only values and text; the rules calculate every status, index and cou
 The example report uses made-up values. By the owner's decision, it carries no
 "Sample data" label on the page, so that a company can show its product as it will
 look. Like program sample data, it is never stored as evidence or read by Outcome
-Labels, rankings or company totals. Uploading a company's own report file is planned.
+Labels, rankings or company totals. A care team adds a person's own report files (below).
+
+**Care teams, 2026-10-21 (`apps/web/lib/care-team`):** the company still sees totals
+only. A person can also share the biomarker reports of a program with the instance's
+care team: the clinicians that the owner adds at `/instances/{slug}`. The person
+chooses when they join and can change it on their program page; when they stop, the
+care team loses the access at once. The care team, at `/instances/{slug}/care`, sees
+the people who share and their reports, adds a report file (checked against the report
+format), and signs a report off with a note for the person. The person sees each report
+as soon as it is saved, with its review status. Row-level security enforces each of
+these rules
+([`20261021050000_table_care_teams_and_biomarker_reports.sql`](../apps/web/db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql)).
+The owner is not on the care team unless they add themselves, and no evidence, ranking
+or total reads the reports. The demo clinic's journeys (patient, clinician and owner)
+are written in [`content/clinic-demo/script.md`](../apps/web/content/clinic-demo/script.md);
+a browser tour follows them and can record them as videos.
 
 Configuration can select a verified domain, logo/favicon, theme, organization
 copy and contacts, enabled modules, and versioned questionnaire/study templates.

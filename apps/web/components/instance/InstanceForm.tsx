@@ -37,7 +37,7 @@ function toValues(instance?: InstanceBranding | null): Values {
     slug: instance?.slug ?? "",
     tagline: instance?.tagline ?? "",
     logoUrl: instance?.logoUrl ?? "",
-    primaryColor: instance?.primaryColor ?? "#0f766e",
+    primaryColor: instance?.primaryColor ?? "#6d4df6",
     backgroundColor: instance?.backgroundColor ?? "#ffffff",
     font: instance?.font ?? "inter",
     cornerRadius: instance?.cornerRadius ?? "medium",
@@ -85,7 +85,7 @@ export function InstanceForm({
   }
   const errors = state.fieldErrors ?? {}
   const products = values.products.split(/[\n,]/).map((item) => item.trim()).filter(Boolean).slice(0, 8)
-  const color = hexOr(values.primaryColor, "#0f766e")
+  const color = hexOr(values.primaryColor, "#6d4df6")
   const background = hexOr(values.backgroundColor, "#ffffff")
   // The preview sets the same CSS variables as the site (lib/instance/theme.ts) on its own box.
   const theme = themeVariables({ primaryColor: color, backgroundColor: background, font: values.font, cornerRadius: values.cornerRadius })

@@ -1,7 +1,7 @@
 /**
  * Fills a local or CI database with the demo clinic (lib/demo/clinic.ts): a
- * company instance, its GLP-1 program, people who joined it and the demo
- * patient, so the
+ * company instance, its GLP-1 program, people who joined it, the demo
+ * patient with their report and the clinician on the care team, so the
  * company and program pages have something to show. The Visual Preview
  * workflow screenshots them, and the browser tests (tests/e2e) use them. A
  * deployment gets the same clinic on its first demo sign-in instead.
@@ -15,7 +15,14 @@
  * It refuses a database that is not on this machine unless --allow-remote is given.
  */
 import { adminDb } from '@/lib/db'
-import { DEMO_CLINIC as demo, ensureDemoClinic, ensureDemoMembers, ensureDemoPatient, resetDemoPatient } from '@/lib/demo/clinic'
+import {
+  DEMO_CLINIC as demo,
+  ensureDemoCareTeam,
+  ensureDemoClinic,
+  ensureDemoMembers,
+  ensureDemoPatient,
+  resetDemoPatient,
+} from '@/lib/demo/clinic'
 
 function requireLocalDatabase() {
   const url = process.env.DATABASE_URL
@@ -30,9 +37,11 @@ async function main() {
   requireLocalDatabase()
   const { program } = await ensureDemoClinic()
   const joined = await ensureDemoMembers(program)
-  await resetDemoPatient(program, await ensureDemoPatient(program))
+  const patientId = await ensureDemoPatient(program)
+  await ensureDemoCareTeam(program, patientId)
+  await resetDemoPatient(program, patientId)
   console.log(
-    `Demo data: ${demo.instance.name} (/i/${demo.instance.slug}), program "${program.name}", ${joined} people joined now, and the demo patient ${demo.patient.email}.`,
+    `Demo data: ${demo.instance.name} (/i/${demo.instance.slug}), program "${program.name}", ${joined} people joined now, the demo patient ${demo.patient.email} and the clinician ${demo.clinician.email}.`,
   )
 }
 

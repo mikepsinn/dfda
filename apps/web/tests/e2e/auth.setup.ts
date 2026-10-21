@@ -1,9 +1,11 @@
 import { expect, test as setup } from '@playwright/test'
-import { COMPANY_STATE, MEMBER_STATE, demo, memberEmail } from './demo'
+import { CLINICIAN_STATE, COMPANY_STATE, MEMBER_STATE, demo, memberEmail } from './demo'
 
 for (const [name, email, path] of [
   ['company', demo.company.email, COMPANY_STATE],
   ['member', memberEmail(1), MEMBER_STATE],
+  // Not with the demo button: that clears the sign-off of the patient's report, which the tour checks.
+  ['clinician', demo.clinician.email, CLINICIAN_STATE],
 ] as const) {
   setup(`sign in as the demo ${name}`, async ({ request }) => {
     const signIn = () => request.post('/api/auth/sign-in/email', { data: { email, password: demo.password } })

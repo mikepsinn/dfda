@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { careTeamsOf } from "@/lib/care-team/data"
 import { getUserDb } from "@/lib/db/server"
 import { getServerUser } from "@/lib/server-auth"
 
@@ -17,6 +18,7 @@ export default async function InstancesPage() {
         orderBy: { created_at: "desc" },
       })
     : []
+  const careTeams = user ? await careTeamsOf(user) : []
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
@@ -44,6 +46,21 @@ export default async function InstancesPage() {
             </li>
           ))}
         </ul>
+      )}
+      {careTeams.length > 0 && (
+        <section aria-labelledby="care-teams-heading" className="space-y-3">
+          <h2 id="care-teams-heading" className="text-xl font-semibold">Care teams you are on</h2>
+          <ul className="divide-y rounded-xl border">
+            {careTeams.map((team) => (
+              <li key={team.id}>
+                <Link href={`/instances/${team.slug}/care`} className="flex items-center gap-3 p-4 hover:bg-muted/50">
+                  <span className="font-medium">{team.name}</span>
+                  <span className="ml-auto text-sm text-muted-foreground">Patients</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
     </div>
   )

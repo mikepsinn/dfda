@@ -49,7 +49,14 @@ export default async function ProgramPage({
               </Link>
             </Button>
           ) : (
-            <form action={joinProgramAction.bind(null, program.id)}>
+            <form action={joinProgramAction.bind(null, program.id)} className="space-y-4">
+              <label className="flex max-w-xl items-start gap-3 text-sm">
+                <input type="checkbox" name="share" className="mt-0.5 h-4 w-4 shrink-0 accent-primary" />
+                <span>
+                  Share my biomarker reports with {instance.name}&rsquo;s care team, so that a clinician can review them.
+                  You can stop sharing at any time.
+                </span>
+              </label>
               <Button type="submit" size="lg" className="gap-1">
                 Join the program <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Button>
@@ -108,7 +115,8 @@ export default async function ProgramPage({
         </h2>
         <p>
           Totals only, such as how many people improved on each measure. {instance.name} does not see your own values.
-          You can leave the program at any time.
+          If you share your biomarker reports, the clinicians of its care team see those reports and your name. You can
+          stop sharing or leave the program at any time.
         </p>
       </section>
     </div>

@@ -1,6 +1,16 @@
 import { afterAll, describe, expect, it } from 'vitest'
 import { adminDb } from '@/lib/db'
-import { DEMO_CLINIC as demo, ensureDemoClinic, ensureDemoMembers, prepareDemoClinic, resetDemoPatient } from '@/lib/demo/clinic'
+import { careTeamPatients, findReport } from '@/lib/care-team/data'
+import { saveReport, signOffReport } from '@/lib/care-team/manage'
+import { EXAMPLE_REPORT } from '@/lib/biomarker-report/example'
+import {
+  DEMO_CLINIC as demo,
+  ensureDemoClinic,
+  ensureDemoMembers,
+  prepareDemoClinic,
+  resetDemoPatient,
+  resetDemoReview,
+} from '@/lib/demo/clinic'
 import { personalReport } from '@/lib/programs/data'
 
 // The demo clinic that the demo sign-in creates on a deployment
@@ -12,6 +22,7 @@ const now = new Date('2026-10-21T15:00:00Z')
 const emails = [
   demo.company.email,
   demo.patient.email,
+  demo.clinician.email,
   ...Array.from({ length: demo.people }, (_, index) => demo.memberEmail.replace('{n}', String(index + 1))),
 ]
 
@@ -19,6 +30,7 @@ afterAll(async () => {
   const users = await adminDb.users.findMany({ where: { email: { in: emails } }, select: { id: true } })
   const ids = users.map((user) => user.id)
   await adminDb.measurements.deleteMany({ where: { user_id: { in: ids } } })
+  await adminDb.biomarker_reports.deleteMany({ where: { program_id: demo.program.id } })
   await adminDb.program_enrollments.deleteMany({ where: { program_id: demo.program.id } })
   await adminDb.instance_programs.deleteMany({ where: { id: demo.program.id } })
   await adminDb.instances.deleteMany({ where: { id: demo.instance.id } })
@@ -67,5 +79,54 @@ describe('the demo clinic', () => {
     expect(report.measures.some((measure) => measure.status === 'waiting')).toBe(false)
     const improved = report.measures.filter((measure) => measure.status === 'improved').length
     expect(improved).toBeGreaterThanOrEqual(Math.ceil(report.measures.length / 2))
+  })
+
+  it("gives the care team the people who share, and the patient's report dated at the follow-up", async () => {
+    const { program, patientId } = await prepareDemoClinic()
+    await resetDemoPatient(program, patientId, now)
+    const clinician = await adminDb.users.findUniqueOrThrow({ where: { email: demo.clinician.email }, select: { id: true } })
+    const patients = await careTeamPatients(clinician, { id: demo.instance.id, slug: 'renamed-clinic' })
+    expect(patients).toHaveLength(demo.people + 1)
+
+    const riley = patients.find((patient) => patient.userId === patientId)!
+    expect(riley.name).toBe(demo.patient.name)
+    expect(riley.reports.map((report) => [report.id, report.reviewedAt])).toEqual([[demo.report.id, null]])
+    const saved = (await findReport({ id: patientId }, demo.report.id))!
+    const enrollment = await adminDb.program_enrollments.findUniqueOrThrow({
+      where: { program_id_user_id: { program_id: program.id, user_id: patientId } },
+      select: { started_at: true },
+    })
+    expect(saved.report.person.name).toBe(demo.patient.name)
+    expect(saved.report.clinician).toMatchObject({ name: demo.clinician.name, organization: 'Renamed by the owner' })
+    expect(new Date(`${saved.report.reportDate}T00:00:00Z`).getTime()).toBe(
+      enrollment.started_at.getTime() + program.followUpWeeks * 7 * DAY,
+    )
+  })
+
+  it("keeps the clinician's sign-off for the patient, and clears it for the next clinician", async () => {
+    const { program, patientId } = await prepareDemoClinic()
+    const clinician = await adminDb.users.findUniqueOrThrow({ where: { email: demo.clinician.email }, select: { id: true } })
+    await signOffReport(clinician, demo.report.id, 'Keep the dose.')
+    // A visitor adds a report as the clinician; the patient's next sign-in removes it and keeps the review.
+    const extra = await saveReport(clinician, { programId: program.id, patientId, report: EXAMPLE_REPORT })
+    await resetDemoPatient(program, patientId, now)
+    expect(await findReport({ id: patientId }, extra)).toBeNull()
+    expect(await findReport({ id: patientId }, demo.report.id)).toMatchObject({ reviewerName: demo.clinician.name, reviewNote: 'Keep the dose.' })
+
+    await resetDemoReview()
+    expect(await findReport({ id: patientId }, demo.report.id)).toMatchObject({ reviewedAt: null, reviewerName: null, reviewNote: null })
+  })
+
+  it('adds the care team and the current color to a demo clinic that was created before them', async () => {
+    await adminDb.instances.update({ where: { id: demo.instance.id }, data: { primary_color: '#0f766e' } })
+    await adminDb.biomarker_reports.deleteMany({ where: { id: demo.report.id } })
+    await adminDb.instance_clinicians.deleteMany({ where: { instance_id: demo.instance.id } })
+    await adminDb.program_enrollments.updateMany({ where: { program_id: demo.program.id }, data: { shared_with_care_team_at: null } })
+
+    const { patientId } = await prepareDemoClinic()
+    const clinician = await adminDb.users.findUniqueOrThrow({ where: { email: demo.clinician.email }, select: { id: true } })
+    expect(await careTeamPatients(clinician, { id: demo.instance.id, slug: 'renamed-clinic' })).toHaveLength(demo.people + 1)
+    expect(await findReport({ id: patientId }, demo.report.id)).not.toBeNull()
+    expect((await adminDb.instances.findUniqueOrThrow({ where: { id: demo.instance.id } })).primary_color).toBe(demo.instance.primaryColor)
   })
 })

@@ -1,6 +1,6 @@
 import { expect, test, type APIRequestContext, type Browser, type Page } from '@playwright/test'
 import { appRoutes, routeOf } from '../shared/app-routes'
-import { COMPANY_STATE, MEMBER_STATE, onInstance } from './demo'
+import { CLINICIAN_STATE, COMPANY_STATE, MEMBER_STATE, demo, onInstance } from './demo'
 
 /**
  * Every internal link must lead to a page that loads. The checker crawls from
@@ -123,5 +123,17 @@ test.describe('every internal link leads to a page that loads', () => {
   test("on the company owner's pages", async ({ browser, baseURL }) => {
     const page = await contextPage(browser, COMPANY_STATE)
     await expectNoBrokenLinks(page.request, baseURL!, '/instances')
+  })
+
+  test("on the care team's pages, and the demo patient's reports", async ({ browser, baseURL }) => {
+    const clinician = await contextPage(browser, CLINICIAN_STATE)
+    const care = `/instances/${demo.instance.slug}/care`
+    await clinician.goto(onInstance(care))
+    await expectNoBrokenLinks(clinician.request, baseURL!, care)
+
+    const patient = await contextPage(browser)
+    await signInAsDemo(patient, 'clinic patient')
+    await patient.waitForURL(/\/programs\/[^/]+\/me$/)
+    await expectNoBrokenLinks(patient.request, baseURL!, new URL(patient.url()).pathname)
   })
 })
