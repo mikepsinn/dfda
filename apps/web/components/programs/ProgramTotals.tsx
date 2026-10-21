@@ -12,7 +12,7 @@ function Share({ count, of }: { count: number; of: number }) {
 /** The company's view of a program: per measure, how many people improved. Totals only. */
 export function ProgramTotals({ totals }: { totals: MeasureTotals[] }) {
   return (
-    <div className="overflow-x-auto rounded-xl border">
+    <div className="surface-raised overflow-x-auto rounded-xl border">
       <table className="w-full min-w-[40rem] text-left text-sm">
         <thead className="bg-muted/50 text-muted-foreground">
           <tr>

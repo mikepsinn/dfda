@@ -35,7 +35,7 @@ export function InstanceHome({
 }) {
   return (
     <div className="mx-auto max-w-5xl space-y-14">
-      <section className="space-y-6 pt-2 md:pt-8">
+      <section className="brand-panel space-y-6 rounded-[calc(var(--radius)*2.5)] border p-6 sm:p-10">
         <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">{instance.name}</h1>
         <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
           {instance.tagline ?? "Track your treatments and how you feel, and see what worked for people like you."}
@@ -53,7 +53,7 @@ export function InstanceHome({
           </div>
         )}
         {programs.length > 0 && (
-          <Button asChild size="lg" className="gap-1">
+          <Button asChild size="lg" className="primary-glow gap-1">
             <Link href="#programs">
               See the programs <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
@@ -76,7 +76,7 @@ export function InstanceHome({
         </h2>
         <ol className="grid gap-4 md:grid-cols-3">
           {STEPS.map(({ icon: Icon, title, text }) => (
-            <li key={title} className="space-y-2 rounded-xl border p-6">
+            <li key={title} className="surface-raised space-y-2 rounded-xl border p-6">
               <Icon aria-hidden="true" className="h-6 w-6 text-primary" />
               <h3 className="text-lg font-semibold">{title}</h3>
               <p className="text-muted-foreground">{text}</p>

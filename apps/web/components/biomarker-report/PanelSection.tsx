@@ -33,7 +33,7 @@ export function PanelSection({ report, panel }: { report: BiomarkerReport; panel
     <section
       id={`panel-${panel.id}`}
       aria-labelledby={`panel-${panel.id}-heading`}
-      className="scroll-mt-24 space-y-4 rounded-xl border bg-card p-4 md:p-6 print:break-inside-avoid"
+      className="surface-raised scroll-mt-24 space-y-4 rounded-xl border bg-card p-4 md:p-6 print:break-inside-avoid"
     >
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="space-y-1">
