@@ -4,7 +4,10 @@ import Link from "next/link"
 import { CheckCircle2, ExternalLink, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { InstanceForm } from "@/components/instance/InstanceForm"
+import { AddClinicianForm } from "@/components/care-team/CareForms"
+import { addClinicianAction, removeClinicianAction } from "@/lib/actions/care-team"
 import { updateInstanceAction } from "@/lib/actions/instances"
+import { careTeam } from "@/lib/care-team/data"
 import { getUserDb } from "@/lib/db/server"
 import { env } from "@/lib/env"
 import { toBranding } from "@/lib/instance/hosts"
@@ -54,9 +57,10 @@ export default async function InstancePage({
 
   const instance = toBranding(row)
   const site = siteOrigin()
-  const [domainConnected, programs] = await Promise.all([
+  const [domainConnected, programs, team] = await Promise.all([
     instance.customDomain ? isDomainConfigured(instance.customDomain) : null,
     listPrograms(instance.slug),
+    careTeam(user, row.id),
   ])
   const dns = instance.customDomain ? dnsRecordFor(instance.customDomain) : null
 
@@ -154,6 +158,39 @@ export default async function InstancePage({
             ))}
           </ul>
         )}
+      </section>
+
+      <section aria-labelledby="care-heading" className="space-y-3">
+        <div className="flex items-center justify-between gap-4">
+          <h2 id="care-heading" className="text-xl font-semibold">Care team</h2>
+          {team.some((member) => member.userId === user.id) && (
+            <Button asChild size="sm" variant="outline">
+              <Link href={`/instances/${instance.slug}/care`}>Open the care area</Link>
+            </Button>
+          )}
+        </div>
+        <p className="text-sm text-muted-foreground">
+          The clinicians of the care team see the people who share their biomarker reports with it, add their reports
+          and sign them off. You see totals only, unless you add yourself.
+        </p>
+        {team.length > 0 && (
+          <ul className="divide-y rounded-xl border">
+            {team.map((member) => (
+              <li key={member.userId} className="flex items-center gap-3 p-4">
+                <span className="min-w-0 flex-1">
+                  <span className="block font-medium">{member.name}</span>
+                  <span className="block break-all text-sm text-muted-foreground">{member.email}</span>
+                </span>
+                <form action={removeClinicianAction.bind(null, instance.slug, member.userId)}>
+                  <Button type="submit" variant="outline" size="sm">
+                    Remove
+                  </Button>
+                </form>
+              </li>
+            ))}
+          </ul>
+        )}
+        <AddClinicianForm action={addClinicianAction.bind(null, instance.slug)} />
       </section>
 
       <section aria-labelledby="branding-heading" className="space-y-4">

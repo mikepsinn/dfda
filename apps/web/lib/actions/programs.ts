@@ -65,8 +65,11 @@ export async function updateProgramAction(
   return save(instanceSlug, formData, programSlug)
 }
 
-/** Joins a program, or opens sign-in first and comes back. */
-export async function joinProgramAction(programId: string) {
+/**
+ * Joins a program, or opens sign-in first and comes back. The form's "share"
+ * box shares the user's biomarker reports in the program with the care team.
+ */
+export async function joinProgramAction(programId: string, formData?: FormData) {
   const program = await findProgramById(programId)
   if (!program) redirect("/")
   const user = await getServerUser()
@@ -75,7 +78,7 @@ export async function joinProgramAction(programId: string) {
   try {
     // The enrollment refers to the profile, which the first page load usually creates.
     await fetchUserProfile(user)
-    await joinProgram(user, program)
+    await joinProgram(user, program, { shareWithCareTeam: formData?.get("share") === "on" })
   } catch (error) {
     logger.error("Could not join the program", {
       userId: user.id,
