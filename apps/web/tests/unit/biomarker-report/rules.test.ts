@@ -35,6 +35,8 @@ describe('markerResult', () => {
 
   it('counts a change of exactly the threshold as a change', () => {
     expect(markerResult(marker([10, 11.5], 1, 'up'), 1.5)).toMatchObject({ noiseMultiple: 1.5, status: 'intended' })
+    // 1.15 − 1 is 0.1499999999999999 in floating point.
+    expect(markerResult(marker([1, 1.15], 0.1, 'up'), 1.5).status).toBe('intended')
   })
 
   it('calls a change below the threshold unchanged, in either direction', () => {
@@ -92,6 +94,11 @@ describe('clinicalResult', () => {
     expect(clinicalResult(clinical(6.1, 5.6, 'lower', 5))).toMatchObject({ status: 'intended' })
     expect(clinicalResult(clinical(31, 36, 'lower', 15))).toMatchObject({ status: 'review' })
     expect(clinicalResult(clinical(26, 24, 'higher', 5))).toMatchObject({ status: 'review' })
+  })
+
+  it('counts a change of exactly the meaningful change as a change', () => {
+    // (0.9 − 1) ÷ 1 is −0.09999999999999998 in floating point.
+    expect(clinicalResult(clinical(1, 0.9, 'lower', 10)).status).toBe('intended')
   })
 
   it('calls a change smaller than the meaningful change unchanged, and a change without a better direction changed', () => {

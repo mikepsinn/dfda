@@ -51,6 +51,9 @@ export type ReportSummary = {
   counts: Record<MarkerStatus, number> & { total: number }
 }
 
+/** Floating-point slack for the threshold checks: 1.15 − 1 is 0.1499999999999999, which must count as 0.15. */
+const TOLERANCE = 1e-9
+
 function compare(values: (number | null)[]): Change {
   const first = values[0] ?? null
   const last = values.at(-1) ?? null
@@ -67,7 +70,7 @@ export function markerResult(marker: Marker, threshold: number): MarkerResult {
   const towardIntended = compared.change > 0 === (marker.intended === 'up')
   const score = compared.change === 0 ? 0 : towardIntended ? noiseMultiple : -noiseMultiple
   let status: MarkerStatus
-  if (noiseMultiple < threshold) status = 'unchanged'
+  if (noiseMultiple < threshold - TOLERANCE) status = 'unchanged'
   else status = towardIntended ? 'intended' : 'review'
   return { ...compared, noiseMultiple, score, status }
 }
@@ -94,7 +97,7 @@ export function clinicalResult(value: ClinicalValue): ClinicalResult {
   const compared = compare(value.values)
   if (compared.change === null) return { ...compared, status: 'below-limit' }
   // A first value of 0 has no percent change; any change from it counts.
-  const meaningful = compared.percentChange === null ? compared.change !== 0 : Math.abs(compared.percentChange) >= value.meaningfulChange
+  const meaningful = compared.percentChange === null ? compared.change !== 0 : Math.abs(compared.percentChange) >= value.meaningfulChange - TOLERANCE
   let status: ClinicalStatus
   if (!meaningful) status = 'unchanged'
   else if (value.better === 'neither') status = 'changed'
