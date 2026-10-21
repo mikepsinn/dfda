@@ -2,9 +2,10 @@ import { randomUUID } from 'node:crypto'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { adminDb, dbAs, type DbUser } from '@/lib/db'
 import { findOrCreateGlobalVariable } from '@/lib/global_variables.lib'
+import { seedCodes } from '../shared/variable-codes'
 
-// The shared catalog: variables, units, categories, conditions, treatments,
-// pharmacies and OAuth scopes. Everyone reads it; only the full-access client
+// The shared catalog: variables and their standard codes, units, categories,
+// conditions, treatments, pharmacies and OAuth scopes. Everyone reads it; only the full-access client
 // (seeds, migrations, scripts) changes it, apart from what the photo import adds
 // (see photo-import.test.ts). Runs against a database built by
 // scripts/db-plain-setup.ts (see `pnpm test:db`).
@@ -66,6 +67,7 @@ describe('the shared catalog', () => {
       expect(await reader.global_conditions.count()).toBeGreaterThan(0)
       expect(await reader.global_treatments.count()).toBeGreaterThan(0)
       expect(await reader.oauth_scopes.count()).toBeGreaterThan(0)
+      expect(await reader.global_variable_codes.count()).toBeGreaterThan(0)
       await expect(reader.pharmacies.count()).resolves.toBeGreaterThanOrEqual(0)
     }
   })
@@ -125,5 +127,39 @@ describe('the shared catalog', () => {
     expect(await adminDb.global_variables.findUniqueOrThrow({ where: { id } })).toMatchObject({ name })
     // The insert trigger still adds the name as the first synonym.
     expect(await adminDb.global_variable_synonyms.count({ where: { global_variable_id: id, name } })).toBe(1)
+  })
+
+  it('maps lab-test variables to their LOINC codes, which users cannot change', async () => {
+    // Every code of the seed file is in the database, so no variable id in it is mistyped (the insert skips unknown variables).
+    const stored = await dbAs(visitor).global_variable_codes.findMany({
+      select: { global_variable_id: true, system: true, code: true, display: true },
+    })
+    const key = (variableId: string, system: string, code: string) => `${variableId} ${system} ${code}`
+    expect(new Set(stored.map((row) => key(row.global_variable_id, row.system, row.code)))).toEqual(
+      new Set(seedCodes().map((row) => key(row.variableId, row.system, row.code))),
+    )
+    expect(
+      stored.filter((row) => row.global_variable_id === 'ldl-cholesterol').map((row) => row.code).sort(),
+    ).toEqual(['13457-7', '18262-6', '2089-1'])
+
+    const loinc = 'http://loinc.org'
+    const newCode = { global_variable_id: rows.variable.id, system: loinc, code: '2951-2', display: 'Sodium' }
+    for (const writer of [dbAs(visitor), dbAs(user)]) {
+      await expect(writer.global_variable_codes.create({ data: newCode, select: { code: true } })).rejects.toThrow(
+        /row-level security/,
+      )
+      const changes = [
+        await writer.global_variable_codes.updateMany({ where: { system: loinc, code: '4548-4' }, data: { global_variable_id: rows.variable.id } }),
+        await writer.global_variable_codes.deleteMany({ where: { system: loinc, code: '4548-4' } }),
+      ]
+      expect(changes.map((change) => change.count)).toEqual([0, 0])
+    }
+    expect(await adminDb.global_variable_codes.findUniqueOrThrow({ where: { system_code: { system: loinc, code: '4548-4' } } })).toMatchObject({
+      global_variable_id: 'hba1c',
+    })
+
+    // A LOINC code in the wrong form, and a code that already belongs to another variable.
+    await expect(adminDb.global_variable_codes.create({ data: { ...newCode, code: 'HbA1c' }, select: { code: true } })).rejects.toThrow()
+    await expect(adminDb.global_variable_codes.create({ data: { ...newCode, code: '4548-4' }, select: { code: true } })).rejects.toThrow()
   })
 })

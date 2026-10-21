@@ -21,6 +21,22 @@ production database is on [Neon](https://neon.tech); any PostgreSQL 16 host work
   a treatment, and a user who tracks a treatment can change its details
   ([`20261020010000_policy_catalog_tables.sql`](migrations/20261020010000_policy_catalog_tables.sql),
   [`20261020020000_policy_global_treatments_photo_import.sql`](migrations/20261020020000_policy_global_treatments_photo_import.sql)).
+- **Standard codes** let data from other systems match the catalog. A variable's
+  codes are rows of `global_variable_codes` (code system URI, code, the code
+  system's name for it): a variable can have several, because labs report the
+  same test by different methods, and a code belongs to one variable. They are
+  LOINC codes for lab tests so far; RxNorm or SNOMED codes can follow in the same
+  table. Conditions have ICD codes (`global_conditions.icd_code`) and units UCUM
+  codes (`units.ucum_code`). A new code goes in a migration that adds it as
+  [`20261021030000_table_global_variable_codes.sql`](migrations/20261021030000_table_global_variable_codes.sql)
+  does, and in [`seeds/99_global_variable_codes.sql`](seeds/99_global_variable_codes.sql).
+  [`tests/unit/catalog/variable-codes.test.ts`](../tests/unit/catalog/variable-codes.test.ts)
+  checks that both give the same codes and each LOINC check digit, and
+  `tests/db/catalog-tables.test.ts` that a new database has every one. Only the
+  full-access client writes codes. This material contains content from LOINC
+  (https://loinc.org). LOINC is copyright © Regenstrief Institute, Inc. and the
+  Logical Observation Identifiers Names and Codes (LOINC) Committee and is
+  available at no cost under the license at https://loinc.org/license.
 
 The repository-root `schema` folder is an earlier, unapplied design; do not
 copy from it. Start with the shared [repository instructions](../../../AGENTS.md).
