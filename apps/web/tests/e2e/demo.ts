@@ -6,6 +6,7 @@ export const demo = JSON.parse(readFileSync(join(__dirname, '../../scripts/demo-
   password: string
   company: { email: string; name: string }
   memberEmail: string
+  patient: { email: string; name: string }
   people: number
   instance: { slug: string; name: string }
   program: { template: string }

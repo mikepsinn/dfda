@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { demoLogin } from "@/lib/actions/demo-login"
+import { clinicDemoLogin, type ClinicDemoRole } from "@/lib/actions/clinic-demo-login"
 import { AlertCircle } from "lucide-react"
 import { logger } from "@/lib/logger"
 import { DemoUserType } from "@/lib/constants/demo-accounts"
@@ -16,7 +17,7 @@ interface DemoLoginButtonProps {
 }
 
 export function DemoLoginButton({ onError, showAll = false, next }: DemoLoginButtonProps) {
-  const [isLoading, setIsLoading] = useState<DemoUserType | null>(null)
+  const [isLoading, setIsLoading] = useState<DemoUserType | `clinic-${ClinicDemoRole}` | null>(null)
   const router = useRouter()
 
   const handleDemoLogin = async (userType: DemoUserType) => {
@@ -46,6 +47,23 @@ export function DemoLoginButton({ onError, showAll = false, next }: DemoLoginBut
     }
   }
 
+  const handleClinicDemoLogin = async (role: ClinicDemoRole) => {
+    setIsLoading(`clinic-${role}`)
+    try {
+      const result = await clinicDemoLogin(role)
+      if (result.success && result.redirectUrl) {
+        // A full page load: the clinic's preview link sets its cookie, and the page reads the new session.
+        window.location.assign(result.redirectUrl)
+        return
+      }
+      onError({ type: 'other', message: result.error ?? "Could not open the demo clinic. Try again." })
+    } catch (error: any) {
+      logger.error("Error calling the demo clinic sign-in:", { error, role })
+      onError({ type: 'other', message: error?.message ?? "An unexpected error occurred. Please try again." })
+    }
+    setIsLoading(null)
+  }
+
   if (showAll) {
     return (
       <div className="space-y-2 text-center">
@@ -61,6 +79,18 @@ export function DemoLoginButton({ onError, showAll = false, next }: DemoLoginBut
               className="text-xs flex-grow sm:flex-grow-0"
             >
               {isLoading === role ? "Loading..." : `Demo ${role.replace('-', ' ')}`}
+            </Button>
+          ))}
+          {(['owner', 'patient'] as ClinicDemoRole[]).map((role) => (
+            <Button
+              key={`clinic-${role}`}
+              variant="outline"
+              size="sm"
+              onClick={() => handleClinicDemoLogin(role)}
+              disabled={!!isLoading}
+              className="text-xs flex-grow sm:flex-grow-0"
+            >
+              {isLoading === `clinic-${role}` ? "Loading..." : `Demo clinic ${role}`}
             </Button>
           ))}
          </div>
