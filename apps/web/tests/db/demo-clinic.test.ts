@@ -117,7 +117,8 @@ describe('the demo clinic', () => {
     expect(await findReport({ id: patientId }, demo.report.id)).toMatchObject({ reviewedAt: null, reviewerName: null, reviewNote: null })
   })
 
-  it('adds the care team to a demo clinic that was created before care teams', async () => {
+  it('adds the care team and the current color to a demo clinic that was created before them', async () => {
+    await adminDb.instances.update({ where: { id: demo.instance.id }, data: { primary_color: '#0f766e' } })
     await adminDb.biomarker_reports.deleteMany({ where: { id: demo.report.id } })
     await adminDb.instance_clinicians.deleteMany({ where: { instance_id: demo.instance.id } })
     await adminDb.program_enrollments.updateMany({ where: { program_id: demo.program.id }, data: { shared_with_care_team_at: null } })
@@ -126,5 +127,6 @@ describe('the demo clinic', () => {
     const clinician = await adminDb.users.findUniqueOrThrow({ where: { email: demo.clinician.email }, select: { id: true } })
     expect(await careTeamPatients(clinician, { id: demo.instance.id, slug: 'renamed-clinic' })).toHaveLength(demo.people + 1)
     expect(await findReport({ id: patientId }, demo.report.id)).not.toBeNull()
+    expect((await adminDb.instances.findUniqueOrThrow({ where: { id: demo.instance.id } })).primary_color).toBe(demo.instance.primaryColor)
   })
 })

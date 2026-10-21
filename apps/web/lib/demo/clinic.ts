@@ -52,6 +52,12 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
     })
   }
 
+  // The demo clinic was teal at first; a clinic still in that teal gets the current color. An owner's own color stays.
+  await adminDb.instances.updateMany({
+    where: { id: demo.instance.id, primary_color: '#0f766e' },
+    data: { primary_color: demo.instance.primaryColor },
+  })
+
   if (!(await adminDb.instance_programs.findUnique({ where: { id: demo.program.id }, select: { id: true } }))) {
     const template = PROGRAM_TEMPLATES.find((candidate) => candidate.key === demo.program.template)
     if (!template) throw new Error(`No program template "${demo.program.template}".`)
