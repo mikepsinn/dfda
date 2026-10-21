@@ -216,9 +216,10 @@ const declarations = (variables: Record<string, string>) =>
 
 /**
  * The theme as a style sheet. The brand color and corner radius apply
- * everywhere; the page colors apply on screen only, so that printed pages
- * (such as a biomarker report) stay light, with a brand color that reads on
- * white.
+ * everywhere, also in explicitly dark parts (the `dark` class). The page
+ * colors apply to the page on screen only: dark parts keep their dark colors,
+ * and printed pages (such as a biomarker report) stay light, with a brand
+ * color that reads on white.
  */
 export function themeCss(theme: InstanceTheme): string {
   const { brand, surface, fontFamily } = themeVariables(theme)
@@ -227,7 +228,7 @@ export function themeCss(theme: InstanceTheme): string {
   const colorScheme = surface.dark ? 'dark' : 'light'
   return [
     `${root}{${declarations(brand)}}`,
-    `@media screen{${root}{color-scheme:${colorScheme};${declarations(surface.variables)}}}`,
+    `@media screen{:root{color-scheme:${colorScheme};${declarations(surface.variables)}}}`,
     printBrand ? `@media print{${root}{${declarations(printBrand)}}}` : '',
     `body{font-family:${fontFamily}}`,
   ].join('')

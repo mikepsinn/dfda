@@ -74,7 +74,7 @@ describe('themeCss', () => {
   it('sets the brand and corners everywhere, the page colors on screen only, and the font', () => {
     const css = themeCss({ primaryColor: '#2fd4be', backgroundColor: '#0d0f0e', font: 'serif', cornerRadius: 'large' })
     expect(css).toContain(':root,:root.dark,.dark{--primary:172 66% 51%;--primary-foreground:0 0% 9%;--ring:172 66% 51%;--radius:1rem}')
-    expect(css).toMatch(/@media screen\{:root,:root\.dark,\.dark\{color-scheme:dark;--background:150 7\.1% 5\.5%;/)
+    expect(css).toMatch(/@media screen\{:root\{color-scheme:dark;--background:150 7\.1% 5\.5%;/)
     expect(css).toContain('body{font-family:ui-serif, Georgia')
     expect(css).toMatch(/@media print\{:root,:root\.dark,\.dark\{--primary:172 65.7% \d+(\.\d)?%;--primary-foreground:0 0% 100%/)
   })
