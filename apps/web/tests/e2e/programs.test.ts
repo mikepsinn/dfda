@@ -7,7 +7,8 @@ test.describe('the seeded program', () => {
   test('the company sees totals, not single values', async ({ browser }) => {
     const page = await (await browser.newContext({ storageState: COMPANY_STATE })).newPage()
     await page.goto(`${programsPath}/${demo.program.template}`)
-    await expect(page.getByText(`${demo.people} people have joined.`)).toBeVisible()
+    // The members and the demo patient.
+    await expect(page.getByText(`${demo.people + 1} people have joined.`)).toBeVisible()
     const weight = page.getByRole('row', { name: /^Weight/ })
     await expect(weight.getByRole('img', { name: /^\d+ improved, \d+ no change, \d+ worse$/ })).toBeVisible()
   })

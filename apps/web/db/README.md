@@ -149,13 +149,17 @@ Supabase origin: the `anon`, `authenticated` and `service_role` roles,
   the database already has tables.
 - `pnpm db:migrate` applies the new migrations to an **existing** database,
   each in its own transaction. `--dry-run` lists them and changes nothing.
-- `pnpm db:seed:demo` adds demo data to a **local or CI** database: the company
-  instance `/i/acme-metabolic`, its GLP-1 program, and 10 people who joined it,
-  with made-up values. The accounts and their password are in
-  [`scripts/demo-data.json`](../scripts/demo-data.json); sign in as
-  `demo-company@example.com` or `demo-member1@example.com`. It refuses a
-  database on another host. The screenshot workflow and the browser tests
-  (`pnpm test:e2e`) use it.
+- `pnpm db:seed:demo` adds the demo clinic to a **local or CI** database: the
+  company instance `/i/acme-metabolic`, its GLP-1 program, 10 people who joined
+  it and a demo patient, with made-up values. The accounts and their password
+  are in [`scripts/demo-data.json`](../scripts/demo-data.json); sign in as
+  `demo-company@example.com`, `demo-member1@example.com` or
+  `demo-clinic-patient@example.com`. It refuses a database on another host. The
+  screenshot workflow and the browser tests (`pnpm test:e2e`) use it. A
+  deployment needs no seed: the **Demo clinic owner** and **Demo clinic
+  patient** buttons on the sign-in page create the same clinic on first use
+  ([`lib/demo/clinic.ts`](../lib/demo/clinic.ts)), and each patient sign-in
+  gives the demo patient fresh values.
 
 Both record each applied migration file name in the table
 `schema_migrations.applied` (outside `public`, so Prisma does not see it).
