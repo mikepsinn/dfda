@@ -125,3 +125,14 @@ VALUES
 ('milligrams-per-liter', 'mass-concentration', 'Milligrams per Liter', 'mg/L', 'mg/L', 0.001, 0, '🧪');
 UPDATE unit_categories SET base_unit_id = 'units-per-liter' WHERE id = 'enzyme-activity';
 UPDATE unit_categories SET base_unit_id = 'nanograms-per-milliliter' WHERE id = 'mass-concentration';
+
+-- Lab test units (also in migration 20261021040000 for existing databases)
+INSERT INTO units (id, unit_category_id, name, abbreviated_name, ucum_code, conversion_factor, conversion_offset, emoji)
+VALUES
+('millimeters-per-hour', 'velocity', 'Millimeters per Hour', 'mm/h', 'mm/h', 1, 0, '🧪'), -- Base Unit
+('micro-international-units-per-milliliter', 'international-units-concentration', 'Micro International Units per Milliliter', 'µIU/mL', 'u[IU]/mL', 1, 0, '🧪'), -- Base Unit
+('picograms-per-milliliter', 'mass-concentration', 'Picograms per Milliliter', 'pg/mL', 'pg/mL', 1000, 0, '🧪'),
+('milliliters-per-minute-per-1-73-square-meters', 'filtration-rate', 'Milliliters per Minute per 1.73 Square Meters', 'mL/min/1.73m²', 'mL/min/{1.73_m2}', 1, 0, '🧪'); -- Base Unit
+UPDATE unit_categories SET base_unit_id = 'millimeters-per-hour' WHERE id = 'velocity';
+UPDATE unit_categories SET base_unit_id = 'micro-international-units-per-milliliter' WHERE id = 'international-units-concentration';
+UPDATE unit_categories SET base_unit_id = 'milliliters-per-minute-per-1-73-square-meters' WHERE id = 'filtration-rate';
