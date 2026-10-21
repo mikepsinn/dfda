@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Download, ChevronRight, Plus } from "lucide-react"
+import { Download, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
@@ -82,13 +82,6 @@ export function TrialManagement({ activeTrials, completedTrials, pendingApproval
                           {new Date(trial.start_date || "").toLocaleDateString()} - {new Date(trial.end_date || "").toLocaleDateString()}
                         </p>
                       </div>
-                      <div className="flex items-center justify-end">
-                        <Link href={`/research-partner/trials/${trial.id}`}>
-                          <Button variant="ghost" size="sm">
-                            View Details <ChevronRight className="ml-1 h-4 w-4" />
-                          </Button>
-                        </Link>
-                      </div>
                     </div>
                     <div className="mt-4">
                       <div className="mb-1 flex items-center justify-between text-sm">
@@ -133,13 +126,6 @@ export function TrialManagement({ activeTrials, completedTrials, pendingApproval
                           <Download className="mr-2 h-4 w-4" />
                           Results
                         </Button>
-                        <div className="flex items-center justify-end">
-                          <Link href={`/research-partner/trials/${trial.id}`}>
-                            <Button variant="ghost" size="sm">
-                              View Details <ChevronRight className="ml-1 h-4 w-4" />
-                            </Button>
-                          </Link>
-                        </div>
                       </div>
                     </div>
                     <div className="mt-4">
@@ -171,13 +157,6 @@ export function TrialManagement({ activeTrials, completedTrials, pendingApproval
                       <div>
                         <h3 className="text-lg font-medium">{trial.title}</h3>
                         <p className="text-sm text-muted-foreground">Submitted for approval</p>
-                      </div>
-                      <div className="flex items-center justify-end">
-                        <Link href={`/research-partner/trials/${trial.id}`}>
-                          <Button variant="ghost" size="sm">
-                            View Details <ChevronRight className="ml-1 h-4 w-4" />
-                          </Button>
-                        </Link>
                       </div>
                     </div>
                   </div>

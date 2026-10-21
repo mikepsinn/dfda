@@ -1,8 +1,6 @@
 "use client"
 
-import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import type { Trial as TrialRow } from "@/lib/actions/trials"
 
@@ -47,13 +45,6 @@ export function TrialEnrollment({ trials }: TrialEnrollmentProps) {
                   value={trial.enrollment_target ? ((trial.current_enrollment || 0) / trial.enrollment_target) * 100 : 0}
                   className="h-2"
                 />
-              </div>
-              <div className="flex justify-end">
-                <Link href={`/research-partner/trials/${trial.id}`}>
-                  <Button size="sm" variant="outline">
-                    View Trial
-                  </Button>
-                </Link>
               </div>
             </div>
           ))}

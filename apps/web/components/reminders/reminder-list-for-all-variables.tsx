@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { PlusCircle } from 'lucide-react'
 import type { ReminderSchedule } from '@/lib/actions/reminder-schedules'
 import { getAllReminderSchedulesForUserAction } from '@/lib/actions/reminder-schedules'
-import { toast } from 'sonner'
+import { toast } from '@/components/ui/use-toast'
 import { useRouter } from 'next/navigation'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { ReminderCard } from './reminder-card'
@@ -45,7 +45,7 @@ export function ReminderListForAllVariables({
       setSchedules(fetchedSchedules)
     } catch (error) {
       console.error('Failed to load schedules:', error)
-      toast.error('Failed to load reminders')
+      toast({ title: 'Failed to load reminders', variant: 'destructive' })
       setSchedules([])
     } finally {
       setIsLoading(false)

@@ -83,9 +83,9 @@ export default async function TrialResultsPage({ params }: { params: { id: strin
         <div className="container">
           <div className="mx-auto max-w-5xl">
             <div className="mb-8 flex items-center gap-2">
-              <Link href={`/research-partner/trials/${trialId}`} className="text-muted-foreground hover:text-foreground">
+              <Link href="/research-partner" className="text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="h-4 w-4" />
-                <span className="sr-only">Back to trial</span>
+                <span className="sr-only">Back to the dashboard</span>
               </Link>
               <h1 className="text-2xl font-bold">Trial Results & Analytics</h1>
             </div>
@@ -97,8 +97,8 @@ export default async function TrialResultsPage({ params }: { params: { id: strin
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink href={`/research-partner/trials/${trialId}`} className="text-muted-foreground hover:text-foreground">
-                    Trial Details
+                  <BreadcrumbLink href="/research-partner" className="text-muted-foreground hover:text-foreground">
+                    Research partner
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />

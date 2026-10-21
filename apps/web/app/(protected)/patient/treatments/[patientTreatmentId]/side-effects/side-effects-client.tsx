@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Slider } from "@/components/ui/slider"
 import { useToast } from "@/components/ui/use-toast"
 import { logger } from "@/lib/logger"
+import { reportSideEffectAction } from "@/lib/actions/treatment-side-effects"
 
 type SideEffect = {
   id: string
@@ -41,6 +42,7 @@ export function SideEffectsClient({
   const [newDescription, setNewDescription] = useState('')
   const [newSeverity, setNewSeverity] = useState<number>(5)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [open, setOpen] = useState(false)
   const { toast } = useToast()
 
   const handleAddSideEffect = async () => {
@@ -56,24 +58,24 @@ export function SideEffectsClient({
     setIsSubmitting(true)
 
     try {
-      // Note: Implement the actual API call to add side effect
-      // This is a placeholder for now
-      const mockResponse = {
-        id: `temp-${Date.now()}`,
-        description: newDescription,
-        severity_out_of_ten: newSeverity
-      }
+      const saved = await reportSideEffectAction({
+        patient_treatment_id: patientTreatmentId,
+        description: newDescription.trim(),
+        severity_out_of_ten: newSeverity,
+      })
 
-      setSideEffects([...sideEffects, mockResponse])
+      setSideEffects([
+        ...sideEffects,
+        { id: saved.id, description: saved.description, severity_out_of_ten: saved.severity_out_of_ten },
+      ])
       setNewDescription('')
       setNewSeverity(5)
-      
+      setOpen(false)
+
       toast({
         title: "Side Effect Added",
         description: "Your side effect has been recorded successfully."
       })
-      
-      // Close dialog will happen via DialogClose component
     } catch (error) {
       logger.error("Failed to add side effect", { error, patientTreatmentId })
       toast({
@@ -104,7 +106,7 @@ export function SideEffectsClient({
       )}
       
       <div className="pt-4 border-t">
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button className="w-full">
               <Plus className="mr-2 h-4 w-4" />

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useCallback, useEffect } from 'react'
-import { toast as sonnerToast } from 'sonner'
 import { useToast } from '@/components/ui/use-toast'
 import { logger } from '@/lib/logger'
 import { 
@@ -32,7 +31,7 @@ export function useReminderManagement(userId: string, globalVariableId: string) 
       setSchedules(fetchedSchedules)
     } catch (error) {
       console.error('Failed to load schedules:', error)
-      sonnerToast.error('Failed to load reminders')
+      toast({ title: 'Failed to load reminders', variant: 'destructive' })
       setSchedules([])
     } finally {
       setIsLoading(false)
@@ -58,12 +57,12 @@ export function useReminderManagement(userId: string, globalVariableId: string) 
       
       const newSchedule = result.data;
       setSchedules(prev => [...prev, newSchedule]);
-      sonnerToast.success('Reminder created');
+      toast({ title: 'Reminder created' });
       return newSchedule;
       
     } catch (error) {
       console.error('Failed to create schedule:', error)
-      sonnerToast.error(`Failed to create reminder: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      toast({ title: `Failed to create reminder: ${error instanceof Error ? error.message : 'Unknown error'}`, variant: 'destructive' })
       return null;
     }
   }, [userId, globalVariableId])
@@ -92,11 +91,11 @@ export function useReminderManagement(userId: string, globalVariableId: string) 
         )
       )
       
-      sonnerToast.success('Reminder updated')
+      toast({ title: 'Reminder updated' })
       return updatedSchedule
     } catch (error) {
       console.error('Failed to update schedule:', error)
-      sonnerToast.error(`Failed to update reminder: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      toast({ title: `Failed to update reminder: ${error instanceof Error ? error.message : 'Unknown error'}`, variant: 'destructive' })
       return null;
     }
   }, [userId, globalVariableId])

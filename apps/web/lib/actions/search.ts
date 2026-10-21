@@ -2,7 +2,6 @@
 
 import { logger } from "@/lib/logger";
 import { getUserDb } from "@/lib/db/server";
-import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories'; // Import category IDs
 
 // Define the structure for search results, aligning with SearchModal
 export interface SearchResult {
@@ -37,22 +36,10 @@ type UserVarJoin = {
   } & Subtypes;
 };
 
-// Helper function to determine the correct href based on variable category
-function getHrefForVariable(id: string, categoryId: string | undefined): string {
-  switch (categoryId) {
-    case VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY:
-      return `/conditions/${id}`;
-    case VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS:
-      // This category covers treatments, food, drink, supplements, etc.
-      // Mapping all to /treatments/ for now, based on existing routes.
-      return `/treatments/${id}`;
-    // Add more cases here for other specific category routes if needed
-    // e.g., case VARIABLE_CATEGORY_IDS.ACTIVITY_AND_BEHAVIOR: return `/activities/${id}`;
-    default:
-      logger.warn("getHrefForVariable: Unmapped category ID, using default /variables/ path", { id, categoryId });
-      // Fallback for unmapped categories or if categoryId is missing
-      return `/variables/${id}`;
-  }
+/** A condition's trials page or a treatment's page: the public pages that exist for a variable. */
+function publicHref(variable: { id: string } & Subtypes): string {
+  const id = encodeURIComponent(variable.id);
+  return variable.global_conditions ? `/conditions/${id}/trials` : `/treatments/${id}`;
 }
 
 /**
@@ -77,7 +64,11 @@ export async function searchVariablesAction(
     // Fetch Global Variables matching the query (case-insensitive)
     try {
       const globalVars = await db.global_variables.findMany({
-        where: { name: { contains: searchTerm, mode: "insensitive" } },
+        // Only conditions and treatments: other variables have no public page.
+        where: {
+          name: { contains: searchTerm, mode: "insensitive" },
+          OR: [{ global_conditions: { isNot: null } }, { global_treatments: { isNot: null } }],
+        },
         select: { id: true, name: true, variable_category_id: true, ...SUBTYPES }, // Category, and whether it is a condition or treatment
         take: 10, // Limit results
       });
@@ -85,8 +76,7 @@ export async function searchVariablesAction(
       globalResults = globalVars.map((variable) => ({
         id: variable.id,
         name: variable.name,
-        // Generate href based on the category ID
-        href: getHrefForVariable(variable.id, variable.variable_category_id),
+        href: publicHref(variable),
         category: "Global Variables",
         variableCategoryId: variable.variable_category_id,
         kind: kindOf(variable),
@@ -118,8 +108,8 @@ export async function searchVariablesAction(
             // to the underlying global variable's page. We use the global ID for the href.
             id: userVariable.global_variables.id, // Using global ID for linking consistency
             name: userVariable.global_variables.name,
-            // Use the category ID from the joined global_variables
-            href: getHrefForVariable(userVariable.global_variables.id, userVariable.global_variables.variable_category_id),
+            // The person's own page of the variable, with their values
+            href: `/patient/user-variables/${encodeURIComponent(userVariable.id)}`,
             category: "My Variables", // Display category
             variableCategoryId: userVariable.global_variables.variable_category_id,
             kind: kindOf(userVariable.global_variables),

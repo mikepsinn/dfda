@@ -1,9 +1,8 @@
 import { Suspense } from 'react';
-import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { User, ChevronRight } from "lucide-react";
+import { User } from "lucide-react";
 import { getProviderPatientsAction, PatientProfileSummary } from "@/lib/actions/patients";
 import { logger } from '@/lib/logger';
 
@@ -26,10 +25,6 @@ async function PatientList() {
     return (
       <div className="text-center text-muted-foreground py-8">
         You currently have no patients enrolled in trials.
-        {/* Optional: Add a link/button to guide the provider? */}
-        {/* <Button asChild variant="link" className="mt-4">
-          <Link href="/provider/trials">Manage Trials</Link>
-        </Button> */}
       </div>
     );
   }
@@ -37,11 +32,7 @@ async function PatientList() {
   return (
     <div className="space-y-4">
       {patients.map((patient) => (
-        <Link
-          key={patient.id}
-          href={`/provider/patients/${patient.id}`}
-          className="block rounded-lg border p-4 bg-card hover:bg-accent hover:cursor-pointer transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-        >
+        <div key={patient.id} className="rounded-lg border p-4 bg-card">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4 min-w-0">
               <Avatar>
@@ -60,9 +51,8 @@ async function PatientList() {
                 </p>
               </div>
             </div>
-            <ChevronRight className="h-5 w-5 text-muted-foreground flex-shrink-0 ml-2" />
           </div>
-        </Link>
+        </div>
       ))}
     </div>
   );

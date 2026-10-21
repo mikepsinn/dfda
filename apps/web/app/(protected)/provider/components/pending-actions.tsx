@@ -1,9 +1,8 @@
 "use client"
 
-import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, Pill, ClipboardList, ChevronRight } from "lucide-react"
+import { FileText, Pill, ClipboardList } from "lucide-react"
 
 interface PendingAction {
   id: number
@@ -51,13 +50,6 @@ export function PendingActions({ actions, totalActions }: PendingActionsProps) {
                   {action.patient} • Due {action.due}
                 </div>
               </div>
-              <Link
-                href={`/provider/${action.type === "form" ? "forms" : action.type === "intervention" ? "intervention-assignment" : "patients"}/${action.id}`}
-              >
-                <Button size="sm" variant="ghost">
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
-              </Link>
             </div>
           ))}
 

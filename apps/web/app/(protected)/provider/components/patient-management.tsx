@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Search, User, Activity, Microscope, FileText, Pill, ChevronRight } from "lucide-react"
+import { Search, User, Activity, Microscope, FileText, Pill } from "lucide-react"
 import type { Database } from "@/lib/database.types"
 
 // Use the auto-generated database types
@@ -131,15 +131,7 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
                     </div>
                   </div>
 
-                  <div className="mt-4 flex justify-between items-center">
-                    <div className="text-sm text-muted-foreground">Last visit: {patient.lastVisit}</div>
-                    <Link href={`/provider/patients/${patient.id}`}>
-                      <Button variant="outline" size="sm">
-                        View Patient
-                        <ChevronRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                  </div>
+                  <div className="mt-4 text-sm text-muted-foreground">Last visit: {patient.lastVisit}</div>
                 </div>
               ))
             ) : (
@@ -216,9 +208,6 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
                       <Button variant="outline" size="sm">
                         Assign Intervention
                       </Button>
-                    </Link>
-                    <Link href={`/provider/patients/${patient.id}`}>
-                      <Button size="sm">View Patient</Button>
                     </Link>
                   </div>
                 </div>

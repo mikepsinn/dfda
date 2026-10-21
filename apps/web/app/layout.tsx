@@ -6,6 +6,7 @@ import { ScrollToHashElement } from "@/components/ScrollToHashElement"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { SiteChrome } from "@/components/SiteChrome"
+import { Toaster } from "@/components/ui/toaster"
 import { getServerUser } from "@/lib/server-auth"
 import { getProfileByIdAction } from "../lib/actions/profiles"
 import type { Profile } from "../lib/actions/profiles"
@@ -135,6 +136,7 @@ export default async function RootLayout({
           >
             {children}
           </SiteChrome>
+          <Toaster />
         </TooltipProvider>
       </body>
     </html>
