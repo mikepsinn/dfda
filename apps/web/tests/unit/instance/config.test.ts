@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { brandTheme, instanceInputSchema, slugFromName } from '@/lib/instance/config'
+import { instanceInputSchema, slugFromName } from '@/lib/instance/config'
 import { subdomainSlug } from '@/lib/instance/resolve'
 
 const valid = {
@@ -9,6 +9,9 @@ const valid = {
   tagline: '',
   logoUrl: '',
   primaryColor: '#0F766E',
+  backgroundColor: '#FAF9F6',
+  font: 'system',
+  cornerRadius: 'large',
   products: 'Proteomics panel\nBPC-157, Proteomics panel',
   customDomain: '',
 }
@@ -21,6 +24,9 @@ describe('instance input', () => {
       tagline: null,
       logoUrl: null,
       primaryColor: '#0f766e',
+      backgroundColor: '#faf9f6',
+      font: 'system',
+      cornerRadius: 'large',
       products: ['Proteomics panel', 'BPC-157'],
       customDomain: 'track.acme.com',
     })
@@ -31,6 +37,9 @@ describe('instance input', () => {
     ['an address with spaces', { slug: 'acme labs' }],
     ['a logo without https', { logoUrl: 'http://acme.com/logo.png' }],
     ['a color name', { primaryColor: 'teal' }],
+    ['a middle-gray background, on which no text color is easy to read', { backgroundColor: '#777777' }],
+    ['a font that is not in the list', { font: 'comic-sans' }],
+    ['a corner size that is not in the list', { cornerRadius: 'huge' }],
     ['a domain without a dot', { customDomain: 'localhost' }],
   ])('refuses %s', (_name, change) => {
     expect(instanceInputSchema.safeParse({ ...valid, ...change }).success).toBe(false)
@@ -38,13 +47,6 @@ describe('instance input', () => {
 
   it('suggests an address from the company name', () => {
     expect(slugFromName('Acme Proteomics, Inc.')).toBe('acme-proteomics-inc')
-  })
-})
-
-describe('brandTheme', () => {
-  it('gives the color in the theme form, with readable text on it', () => {
-    expect(brandTheme('#0f766e')).toEqual({ primary: '175 77% 26%', primaryForeground: '0 0% 100%' })
-    expect(brandTheme('#facc15').primaryForeground).toBe('0 0% 9%')
   })
 })
 

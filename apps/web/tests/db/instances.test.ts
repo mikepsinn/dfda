@@ -54,8 +54,14 @@ describe('instances table', () => {
     expect((await adminDb.instances.findUnique({ where: { slug } }))?.name).toBe('Acme Proteomics')
   })
 
-  it('refuses an address or color in the wrong form', async () => {
-    for (const data of [{ slug: 'Not Valid' }, { slug: `${slug}-c`, primary_color: 'teal' }]) {
+  it('refuses an address, color, font or corner size in the wrong form', async () => {
+    for (const data of [
+      { slug: 'Not Valid' },
+      { slug: `${slug}-c`, primary_color: 'teal' },
+      { slug: `${slug}-b`, background_color: 'white' },
+      { slug: `${slug}-f`, font: 'comic-sans' },
+      { slug: `${slug}-r`, corner_radius: 'huge' },
+    ]) {
       await expect(
         dbAs(owner).instances.create({ data: { name: 'Acme', owner_id: owner.id, ...data }, select: { id: true } }),
       ).rejects.toThrow()
@@ -72,7 +78,16 @@ describe('resolveInstance', () => {
   }
 
   it('finds the instance by its own domain, its subdomain or the preview cookie', async () => {
-    expect(await resolve(domain)).toMatchObject({ slug, via: 'domain', name: 'Acme Proteomics', products: ['BPC-157'] })
+    expect(await resolve(domain)).toMatchObject({
+      slug,
+      via: 'domain',
+      name: 'Acme Proteomics',
+      products: ['BPC-157'],
+      // The theme's defaults: the standard look.
+      backgroundColor: '#ffffff',
+      font: 'inter',
+      cornerRadius: 'medium',
+    })
     expect(await resolve(`${slug}.brands.example.org`)).toMatchObject({ slug, via: 'subdomain' })
     expect(await resolve('localhost:3000', slug)).toMatchObject({ slug, via: 'preview' })
   })

@@ -22,6 +22,9 @@ function readForm(formData: FormData) {
     tagline: field("tagline"),
     logoUrl: field("logoUrl"),
     primaryColor: field("primaryColor"),
+    backgroundColor: field("backgroundColor"),
+    font: field("font"),
+    cornerRadius: field("cornerRadius"),
     products: field("products"),
     customDomain: field("customDomain"),
   })
@@ -34,6 +37,9 @@ function toRow(input: InstanceInput) {
     tagline: input.tagline,
     logo_url: input.logoUrl,
     primary_color: input.primaryColor,
+    background_color: input.backgroundColor,
+    font: input.font,
+    corner_radius: input.cornerRadius,
     products: input.products,
     custom_domain: input.customDomain,
   }

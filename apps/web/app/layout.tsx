@@ -17,8 +17,10 @@ import { InstanceHeader } from "@/components/instance/InstanceHeader"
 import { InstanceFooter } from "@/components/instance/InstanceFooter"
 import { PreviewBar } from "@/components/instance/PreviewBar"
 import { resolveInstance } from "@/lib/instance/resolve"
+import { DARK_CLASS, isDark } from "@/lib/instance/theme"
+import { cn } from "@/lib/utils"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 const baseMetadata: Metadata = {
   title: env.NEXT_PUBLIC_SITE_NAME,
@@ -108,9 +110,10 @@ export default async function RootLayout({
   const instance = await resolveInstance()
 
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        {instance && <InstanceTheme primaryColor={instance.primaryColor} />}
+    <html lang="en" className={cn(inter.variable, instance && isDark(instance.backgroundColor) && DARK_CLASS)}>
+      {/* An instance sets its font in InstanceTheme. */}
+      <body className={instance ? undefined : inter.className}>
+        {instance && <InstanceTheme theme={instance} />}
         {instance?.via === "preview" && <PreviewBar name={instance.name} />}
         <TooltipProvider>
           <ScrollToHashElement />

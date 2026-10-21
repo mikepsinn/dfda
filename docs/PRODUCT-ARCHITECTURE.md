@@ -108,7 +108,7 @@ release, optional clinic branding, no source fork per customer. This is not a
 WordPress implementation or an arbitrary third-party plugin marketplace.
 
 **Demo, 2026-10-11 (`apps/web/lib/instance`):** a signed-in company creates an
-instance at `/instances/new` (name, address, tagline, color, logo, products and
+instance at `/instances/new` (name, address, tagline, theme, logo, products and
 an optional domain). The whole site then shows its branding on a preview link
 (`/i/{slug}`), on `{slug}.<INSTANCE_ROOT_DOMAIN>` when a wildcard domain is set
 up, and on the company's own domain once its DNS points to the deployment; with
@@ -118,6 +118,15 @@ only: all instances share one database, one set of accounts and one evidence
 pipeline. It does not verify domain ownership and does not isolate tenants; the
 isolation, data-ownership and compliance work below comes before real customer
 data.
+
+**Instance themes, 2026-10-21:** the owner sets a brand color, a background
+color, a font (Inter, the system font or a serif) and a corner size. The other
+page colors follow from the background, readable on it; a dark background gives
+a dark site. Printed pages, such as a biomarker report, stay light. The form
+refuses a middle-tone background, on which no text color is easy to read, and
+it warns when the brand color is hard to read on the background. Clinics thus
+get their own look without code or a fork, and nothing about a customer's brand
+is in the repository.
 
 **Instance sites, 2026-10-11:** on an instance, the site is the company's own:
 its header, footer and home page, its programs at `/programs`, sign-in, a

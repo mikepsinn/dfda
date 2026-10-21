@@ -7,6 +7,7 @@ import { InstanceForm } from "@/components/instance/InstanceForm"
 import { updateInstanceAction } from "@/lib/actions/instances"
 import { getUserDb } from "@/lib/db/server"
 import { env } from "@/lib/env"
+import { toBranding } from "@/lib/instance/hosts"
 import { dnsRecordFor, isDomainConfigured } from "@/lib/instance/vercel-domains"
 import { listPrograms } from "@/lib/programs/data"
 import { siteOrigin } from "@/lib/oauth-resources"
@@ -51,15 +52,7 @@ export default async function InstancePage({
   const row = await db.instances.findFirst({ where: { slug, owner_id: user.id } })
   if (!row) notFound()
 
-  const instance = {
-    slug: row.slug,
-    name: row.name,
-    tagline: row.tagline,
-    logoUrl: row.logo_url,
-    primaryColor: row.primary_color,
-    products: row.products,
-    customDomain: row.custom_domain,
-  }
+  const instance = toBranding(row)
   const site = siteOrigin()
   const [domainConnected, programs] = await Promise.all([
     instance.customDomain ? isDomainConfigured(instance.customDomain) : null,

@@ -1,9 +1,8 @@
-import { brandTheme } from "@/lib/instance/config"
+import { themeCss, type InstanceTheme as Theme } from "@/lib/instance/theme"
 
-// Sets the theme's primary color to a company instance's brand color, in light
-// and dark mode. The color is a validated hex value (lib/instance/config).
-export function InstanceTheme({ primaryColor }: { primaryColor: string }) {
-  const { primary, primaryForeground } = brandTheme(primaryColor)
-  const css = `:root,:root.dark,.dark{--primary:${primary};--primary-foreground:${primaryForeground};--ring:${primary}}`
-  return <style dangerouslySetInnerHTML={{ __html: css }} />
+// Sets the theme of a company instance: its brand color, page colors, font and
+// corner radius (lib/instance/theme.ts). The values are validated hex colors and
+// names from fixed lists (lib/instance/config.ts and the instances table).
+export function InstanceTheme({ theme }: { theme: Theme }) {
+  return <style dangerouslySetInnerHTML={{ __html: themeCss(theme) }} />
 }
