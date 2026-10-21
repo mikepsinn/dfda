@@ -1,5 +1,6 @@
-import { adminDb, dbAs, isUniqueViolation, type DbUser } from '@/lib/db'
+import { dbAs, isUniqueViolation, withUserTransaction, type DbUser } from '@/lib/db'
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
+import { careTeam } from './data'
 
 export { MAX_REPORT_FILE_BYTES } from './format'
 
@@ -10,6 +11,8 @@ export { MAX_REPORT_FILE_BYTES } from './format'
  */
 
 export class CareTeamError extends Error {}
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 
 /** A report file (lib/biomarker-report/schema.ts), checked; or what is wrong with it, at most 10 problems. */
 export function parseReportFile(text: string): { report: BiomarkerReport } | { errors: string[] } {
@@ -75,22 +78,64 @@ export async function setSharing(user: DbUser, programId: string, share: boolean
   })
 }
 
+/** The result of an invitation: an invitation to email, or the owner on the care team at once. */
+export type InviteResult = { invitationId: string; email: string } | { addedOwner: true }
+
 /**
- * Adds the account with this email to the care team of the owner's instance.
- * The account must exist: the clinician signs in once first.
+ * Invites the person with this email to the care team of the owner's
+ * instance. The result is the same whether or not an account uses the email,
+ * so the owner does not learn who has an account. Inviting an email again
+ * renews its invitation. The owner's own email adds the owner at once.
  */
-export async function addClinician(owner: DbUser, instanceSlug: string, email: string) {
+export async function inviteClinician(owner: DbUser, instanceSlug: string, email: string): Promise<InviteResult> {
+  const address = email.trim().toLowerCase()
   const instance = await dbAs(owner).instances.findFirst({ where: { slug: instanceSlug, owner_id: owner.id }, select: { id: true } })
   if (!instance) throw new CareTeamError('This instance does not exist, or it is not yours.')
-  // The owner may not read other profiles; the server looks up only the id of this one email.
-  const profile = await adminDb.profiles.findUnique({ where: { email: email.trim().toLowerCase() }, select: { id: true } })
-  if (!profile) throw new CareTeamError('No account uses this email. Ask the clinician to sign in once, then add them.')
-  try {
-    await dbAs(owner).instance_clinicians.create({ data: { instance_id: instance.id, user_id: profile.id }, select: { user_id: true } })
-  } catch (error) {
-    if (isUniqueViolation(error)) throw new CareTeamError('This clinician is already on the care team.')
-    throw error
+
+  if (address === owner.email?.toLowerCase()) {
+    try {
+      await dbAs(owner).instance_clinicians.create({ data: { instance_id: instance.id, user_id: owner.id }, select: { user_id: true } })
+    } catch (error) {
+      if (isUniqueViolation(error)) throw new CareTeamError('You are already on the care team.')
+      throw error
+    }
+    return { addedOwner: true }
   }
+  // The owner sees the emails of the care team already, so this tells them nothing new.
+  if ((await careTeam(owner, instance.id)).some((member) => member.email.toLowerCase() === address)) {
+    throw new CareTeamError('This clinician is already on the care team.')
+  }
+  const invitation = await dbAs(owner).care_team_invitations.upsert({
+    where: { instance_id_email: { instance_id: instance.id, email: address } },
+    create: { instance_id: instance.id, email: address, invited_by: owner.id },
+    update: { invited_by: owner.id, created_at: new Date() },
+    select: { id: true },
+  })
+  return { invitationId: invitation.id, email: address }
+}
+
+/** Cancels an open invitation to the care team of the owner's instance. */
+export async function cancelInvitation(owner: DbUser, instanceSlug: string, invitationId: string) {
+  await dbAs(owner).care_team_invitations.deleteMany({
+    where: { id: invitationId, instances: { slug: instanceSlug, owner_id: owner.id } },
+  })
+}
+
+/**
+ * Accepts an invitation to the user's verified email: the user joins the care
+ * team. Returns the instance's slug; null when the invitation is not open or
+ * is for another email.
+ */
+export async function acceptInvitation(user: DbUser, invitationId: string): Promise<string | null> {
+  if (!UUID.test(invitationId)) return null
+  const instanceId = await withUserTransaction(user, async (tx) => {
+    const rows = await tx.$queryRaw<{ instance_id: string | null }[]>`
+      SELECT public.accept_care_team_invitation(${invitationId}::uuid) AS instance_id`
+    return rows[0]?.instance_id ?? null
+  })
+  if (!instanceId) return null
+  const instance = await dbAs(user).instances.findUnique({ where: { id: instanceId }, select: { slug: true } })
+  return instance?.slug ?? null
 }
 
 /** Removes a clinician from the care team of the owner's instance. */

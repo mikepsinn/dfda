@@ -1,7 +1,7 @@
 "use client"
 
 import { useActionState, useState } from "react"
-import { Loader2 } from "lucide-react"
+import { CheckCircle2, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -79,18 +79,23 @@ export function SignOffForm({ action }: { action: Action }) {
   )
 }
 
-/** Adds a clinician to the care team by the email of their account. */
-export function AddClinicianForm({ action }: { action: Action }) {
+/** Invites a clinician to the care team by email. */
+export function InviteClinicianForm({ action }: { action: Action }) {
   const [state, formAction, pending] = useActionState(action, {})
   return (
     <form action={formAction} className="space-y-3">
       <Problems state={state} />
+      {state.notice && (
+        <p role="status" className="flex items-center gap-2 text-sm font-medium text-primary">
+          <CheckCircle2 aria-hidden="true" className="h-4 w-4" /> {state.notice}
+        </p>
+      )}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
         <div className="flex-1 space-y-2">
           <Label htmlFor="clinician-email">Clinician&rsquo;s email</Label>
           <Input id="clinician-email" name="email" type="email" autoComplete="off" required />
         </div>
-        <Submit pending={pending}>Add to the care team</Submit>
+        <Submit pending={pending}>Send the invitation</Submit>
       </div>
     </form>
   )

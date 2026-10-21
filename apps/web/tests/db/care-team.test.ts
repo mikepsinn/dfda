@@ -2,8 +2,19 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { adminDb, dbAs } from '@/lib/db'
 import { ensurePasswordUser } from '@/lib/auth-users'
 import { EXAMPLE_REPORT } from '@/lib/biomarker-report/example'
-import { careTeam, careTeamPatients, findReport, myReports } from '@/lib/care-team/data'
-import { addClinician, CareTeamError, parseReportFile, removeReport, saveReport, setSharing, signOffReport } from '@/lib/care-team/manage'
+import { careTeam, careTeamInvitations, careTeamPatients, findReport, invitationsFor, myReports } from '@/lib/care-team/data'
+import {
+  acceptInvitation,
+  cancelInvitation,
+  CareTeamError,
+  inviteClinician,
+  parseReportFile,
+  removeClinician,
+  removeReport,
+  saveReport,
+  setSharing,
+  signOffReport,
+} from '@/lib/care-team/manage'
 import { PROGRAM_TEMPLATES, programInputSchema } from '@/lib/programs/config'
 import { findProgram, type Program } from '@/lib/programs/data'
 import { joinProgram, saveProgram } from '@/lib/programs/manage'
@@ -37,6 +48,18 @@ async function newUser(label: string, name = label): Promise<User> {
   return { id, email }
 }
 
+/** The id of a new invitation; the test fails when the owner was added at once instead. */
+async function invitationId(inviter: User, instanceSlug: string, email: string): Promise<string> {
+  const result = await inviteClinician(inviter, instanceSlug, email)
+  if (!('invitationId' in result)) throw new Error(`Expected an invitation for ${email}`)
+  return result.invitationId
+}
+
+/** Invites the member, who accepts. */
+async function join(inviter: User, instanceSlug: string, member: User) {
+  expect(await acceptInvitation(member, await invitationId(inviter, instanceSlug, member.email))).toBe(instanceSlug)
+}
+
 const glp1 = PROGRAM_TEMPLATES.find((template) => template.key === 'glp-1')!
 const input = programInputSchema.parse({
   name: glp1.name,
@@ -60,9 +83,9 @@ beforeAll(async () => {
   await saveProgram(owner, slug, input)
   program = (await findProgram(slug, 'glp-1'))!
 
-  await addClinician(owner, slug, clinician.email)
-  await addClinician(owner, slug, secondClinician.email)
-  await addClinician(stranger, otherSlug, otherClinician.email)
+  await join(owner, slug, clinician)
+  await join(owner, slug, secondClinician)
+  await join(stranger, otherSlug, otherClinician)
   await joinProgram(patient, program, { scheduleNotifications: false, shareWithCareTeam: true })
   await joinProgram(privatePerson, program, { scheduleNotifications: false })
 })
@@ -81,12 +104,11 @@ describe('the care team', () => {
     expect((await careTeam(owner, instance.id)).map((member) => member.name)).toEqual(['Dr. Test Clinician', 'Dr. Second Clinician'])
     expect(await careTeam(clinician, instance.id)).toEqual([])
 
-    await expect(addClinician(stranger, slug, stranger.email)).rejects.toThrow(CareTeamError)
+    await expect(inviteClinician(stranger, slug, `someone-${stamp}@example.com`)).rejects.toThrow(CareTeamError)
     await expect(
       dbAs(clinician).instance_clinicians.create({ data: { instance_id: instance.id, user_id: stranger.id }, select: { user_id: true } }),
     ).rejects.toThrow(/row-level security/)
-    await expect(addClinician(owner, slug, `nobody-${stamp}@example.com`)).rejects.toThrow('No account uses this email')
-    await expect(addClinician(owner, slug, clinician.email)).rejects.toThrow('already on the care team')
+    await expect(inviteClinician(owner, slug, clinician.email.toUpperCase())).rejects.toThrow('already on the care team')
   })
 
   it('lists only the people who share their reports, and only for its own clinicians', async () => {
@@ -186,5 +208,58 @@ describe('biomarker reports', () => {
     await adminDb.users.delete({ where: { id: secondClinician.id } })
     expect(await adminDb.profiles.count({ where: { id: secondClinician.id } })).toBe(0)
     expect(await findReport(patient, signed)).toMatchObject({ reviewerName: 'Dr. Second Clinician', reviewNote: 'Signed before leaving.' })
+  })
+})
+
+describe('invitations to the care team', () => {
+  it('give the owner the same result whether or not an account uses the email', async () => {
+    const nobody = `nobody-${stamp}@example.com`
+    const known = await inviteClinician(owner, slug, privatePerson.email)
+    const unknown = await inviteClinician(owner, slug, nobody)
+    expect(Object.keys(known)).toEqual(Object.keys(unknown))
+    // Inviting again renews the invitation.
+    expect(await inviteClinician(owner, slug, ` ${privatePerson.email.toUpperCase()} `)).toEqual(known)
+    expect((await careTeamInvitations(owner, instance.id)).map((row) => row.email).sort()).toEqual([nobody, privatePerson.email].sort())
+  })
+
+  it('are seen and accepted only by the account with the invited, verified email', async () => {
+    const id = await invitationId(owner, slug, privatePerson.email)
+    for (const outsider of [clinician, stranger, patient]) {
+      expect(await dbAs(outsider).care_team_invitations.findMany({ select: { id: true } })).toEqual([])
+      expect(await acceptInvitation(outsider, id)).toBeNull()
+    }
+    expect(await careTeamInvitations(clinician, instance.id)).toEqual([])
+    expect(await acceptInvitation(privatePerson, 'not-an-id')).toBeNull()
+
+    await adminDb.users.update({ where: { id: privatePerson.id }, data: { emailVerified: false } })
+    try {
+      expect(await invitationsFor(privatePerson)).toEqual([])
+      expect(await acceptInvitation(privatePerson, id)).toBeNull()
+    } finally {
+      await adminDb.users.update({ where: { id: privatePerson.id }, data: { emailVerified: true } })
+    }
+
+    expect(await invitationsFor(privatePerson)).toEqual([{ id, instance: { slug, name: 'Care Clinic' } }])
+    expect(await acceptInvitation(privatePerson, id)).toBe(slug)
+    expect((await careTeam(owner, instance.id)).map((member) => member.userId)).toContain(privatePerson.id)
+    expect(await invitationsFor(privatePerson)).toEqual([])
+    expect(await acceptInvitation(privatePerson, id)).toBeNull()
+    await removeClinician(owner, slug, privatePerson.id)
+  })
+
+  it('add the owner at once for their own email', async () => {
+    expect(await inviteClinician(owner, slug, owner.email)).toEqual({ addedOwner: true })
+    await expect(inviteClinician(owner, slug, owner.email)).rejects.toThrow('You are already on the care team.')
+    expect((await careTeam(owner, instance.id)).map((member) => member.userId)).toContain(owner.id)
+    await removeClinician(owner, slug, owner.id)
+  })
+
+  it('are cancelled only by the owner', async () => {
+    const email = `cancel-${stamp}@example.com`
+    const id = await invitationId(owner, slug, email)
+    await cancelInvitation(stranger, slug, id)
+    expect((await careTeamInvitations(owner, instance.id)).map((row) => row.id)).toContain(id)
+    await cancelInvitation(owner, slug, id)
+    expect((await careTeamInvitations(owner, instance.id)).map((row) => row.id)).not.toContain(id)
   })
 })

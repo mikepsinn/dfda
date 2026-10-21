@@ -2,10 +2,13 @@
 
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
-import { careTeamPatients } from "@/lib/care-team/data"
+import { careTeamPatients, invitationUrl } from "@/lib/care-team/data"
 import {
-  addClinician,
+  acceptInvitation,
+  cancelInvitation,
   CareTeamError,
+  inviteClinician,
+  type InviteResult,
   MAX_REPORT_FILE_BYTES,
   parseReportFile,
   removeClinician,
@@ -15,11 +18,12 @@ import {
   signOffReport,
 } from "@/lib/care-team/manage"
 import { dbAs } from "@/lib/db"
+import { linkEmail, sendEmail } from "@/lib/email"
 import { logger } from "@/lib/logger"
 import { findProgramById } from "@/lib/programs/data"
 import { getServerUser } from "@/lib/server-auth"
 
-export type CareFormState = { error?: string; errors?: string[] }
+export type CareFormState = { error?: string; errors?: string[]; notice?: string }
 
 const message = (error: unknown) => (error instanceof Error ? error.message : String(error))
 
@@ -30,6 +34,12 @@ async function careTeamInstance(userId: string, slug: string) {
     select: { instances: { select: { id: true, slug: true } } },
   })
   return membership?.instances ?? null
+}
+
+/** The instance's name for an email; the slug when it has none. */
+async function findInstanceName(slug: string) {
+  const instance = await dbAs(null).instances.findUnique({ where: { slug }, select: { name: true } })
+  return instance?.name ?? slug
 }
 
 /** Adds a report file for a person who shares their reports with the care team, then opens the report. */
@@ -112,21 +122,62 @@ export async function setSharingAction(programId: string, share: boolean) {
   redirect(`/programs/${program.slug}/me?sharing=${share ? "on" : "off"}`)
 }
 
-/** Adds a clinician to the care team of the signed-in owner's instance. */
-export async function addClinicianAction(instanceSlug: string, _state: CareFormState, formData: FormData): Promise<CareFormState> {
+/**
+ * Invites a clinician to the care team of the signed-in owner's instance and
+ * emails them the link. The owner sees the same result whether or not an
+ * account uses the email. When the email cannot be sent, the invitation stays
+ * and the owner can send its link themselves.
+ */
+export async function inviteClinicianAction(instanceSlug: string, _state: CareFormState, formData: FormData): Promise<CareFormState> {
   const user = await getServerUser()
   if (!user) return { error: "Sign in to change the care team." }
   const email = String(formData.get("email") ?? "").trim()
-  if (!email.includes("@")) return { error: "Enter the clinician's email." }
+  if (!/^[^\s@]+@[^\s@]+$/.test(email) || email.length > 320) return { error: "Enter the clinician's email." }
+  let result: InviteResult
   try {
-    await addClinician(user, instanceSlug, email)
+    result = await inviteClinician(user, instanceSlug, email)
   } catch (error) {
     if (error instanceof CareTeamError) return { error: error.message }
-    logger.error("Could not add a clinician", { userId: user.id, instanceSlug, error: message(error) })
-    return { error: "Could not add the clinician. Try again." }
+    logger.error("Could not invite a clinician", { userId: user.id, instanceSlug, error: message(error) })
+    return { error: "Could not save the invitation. Try again." }
   }
   revalidatePath(`/instances/${instanceSlug}`)
-  return {}
+  if ("addedOwner" in result) return { notice: "You are on the care team now." }
+
+  const instance = await findInstanceName(instanceSlug)
+  try {
+    await sendEmail(
+      linkEmail(
+        result.email,
+        `Join the ${instance} care team`,
+        `${instance} invites you to its care team. On the care team you see the people who share their biomarker reports with ${instance}, and you review their reports. Open the link and sign in with this email address to join.`,
+        "Open the invitation",
+        invitationUrl(result.invitationId),
+      ),
+    )
+  } catch (error) {
+    logger.error("Could not send a care team invitation", { userId: user.id, instanceSlug, error: message(error) })
+    return { error: `Could not send the email to ${result.email}. Send them the invitation link below.` }
+  }
+  return { notice: `We sent an invitation to ${result.email}.` }
+}
+
+/** Cancels an open invitation to the care team of the signed-in owner's instance. */
+export async function cancelInvitationAction(instanceSlug: string, invitationId: string) {
+  const user = await getServerUser()
+  if (!user) redirect("/login")
+  await cancelInvitation(user, instanceSlug, invitationId)
+  revalidatePath(`/instances/${instanceSlug}`)
+}
+
+/** Joins the care team of an invitation to the signed-in user's email, then opens the care area. */
+export async function acceptInvitationAction(invitationId: string) {
+  const user = await getServerUser()
+  if (!user) redirect(`/login?next=${encodeURIComponent(`/care-teams/join/${invitationId}`)}`)
+  const slug = await acceptInvitation(user, invitationId)
+  if (!slug) redirect(`/care-teams/join/${invitationId}`)
+  revalidatePath("/instances")
+  redirect(`/instances/${slug}/care?joined=1`)
 }
 
 /** Removes a clinician from the care team of the signed-in owner's instance. */

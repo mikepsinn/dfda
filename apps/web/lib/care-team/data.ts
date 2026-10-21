@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { adminDb, dbAs, withUserTransaction, type DbUser, type Prisma } from '@/lib/db'
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
+import { siteOrigin } from '@/lib/oauth-resources'
 import { listPrograms, type Program } from '@/lib/programs/data'
 import { getServerUser } from '@/lib/server-auth'
 
@@ -9,7 +10,9 @@ import { getServerUser } from '@/lib/server-auth'
  * database decides who sees what
  * (db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql):
  * a person sees their own reports, and a clinician of an instance's care team
- * sees the people who share their reports with it, and those reports. Server only.
+ * sees the people who share their reports with it, and those reports. The
+ * owner invites clinicians by email
+ * (db/migrations/20261021070000_table_care_team_invitations.sql). Server only.
  */
 
 export type ReportSummary = {
@@ -191,4 +194,36 @@ export async function careTeam(owner: DbUser, instanceId: string) {
     email: byId.get(row.user_id)?.email ?? '',
     addedAt: row.created_at,
   }))
+}
+
+/** The link that opens an invitation, on the main site. */
+export function invitationUrl(invitationId: string): string {
+  return `${siteOrigin()}/care-teams/join/${invitationId}`
+}
+
+export type CareTeamInvitation = { id: string; email: string; createdAt: Date }
+
+/** The open invitations to the care team of an instance that `owner` owns, oldest first; empty for anyone else. */
+export async function careTeamInvitations(owner: DbUser, instanceId: string): Promise<CareTeamInvitation[]> {
+  const rows = await dbAs(owner).care_team_invitations.findMany({
+    where: { instance_id: instanceId, instances: { owner_id: owner.id } },
+    select: { id: true, email: true, created_at: true },
+    orderBy: { created_at: 'asc' },
+  })
+  return rows.map((row) => ({ id: row.id, email: row.email, createdAt: row.created_at }))
+}
+
+/**
+ * The open invitations to the user's email, with their instances. The
+ * database returns them only when the user's email is verified
+ * (db/migrations/20261021070000_table_care_team_invitations.sql).
+ */
+export async function invitationsFor(user: DbUser) {
+  if (!user.email) return []
+  const rows = await dbAs(user).care_team_invitations.findMany({
+    where: { email: user.email.toLowerCase() },
+    select: { id: true, instances: { select: { slug: true, name: true } } },
+    orderBy: { created_at: 'asc' },
+  })
+  return rows.map((row) => ({ id: row.id, instance: row.instances }))
 }

@@ -687,6 +687,7 @@ model profiles {
   reviewed_biomarker_reports biomarker_reports[]      @relation("biomarker_reports_reviewed_byToprofiles")
   uploaded_biomarker_reports biomarker_reports[]      @relation("biomarker_reports_uploaded_byToprofiles")
   biomarker_reports          biomarker_reports[]      @relation("biomarker_reports_user_idToprofiles")
+  care_team_invitations      care_team_invitations[]
   contact_messages           contact_messages[]
   data_submissions           data_submissions[]
   forms                      forms[]
@@ -1262,23 +1263,24 @@ model verifications {
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model instances {
-  id                  String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  slug                String                @unique
-  name                String
-  tagline             String?
-  logo_url            String?
-  primary_color       String                @default("#6d4df6")
-  products            String[]              @default([])
-  custom_domain       String?               @unique
-  owner_id            String                @db.Uuid
-  created_at          DateTime              @default(now()) @db.Timestamptz(6)
-  updated_at          DateTime              @default(now()) @db.Timestamptz(6)
-  background_color    String                @default("#ffffff")
-  font                String                @default("inter")
-  corner_radius       String                @default("medium")
-  instance_clinicians instance_clinicians[]
-  instance_programs   instance_programs[]
-  profiles            profiles              @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id                    String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  slug                  String                  @unique
+  name                  String
+  tagline               String?
+  logo_url              String?
+  primary_color         String                  @default("#6d4df6")
+  products              String[]                @default([])
+  custom_domain         String?                 @unique
+  owner_id              String                  @db.Uuid
+  created_at            DateTime                @default(now()) @db.Timestamptz(6)
+  updated_at            DateTime                @default(now()) @db.Timestamptz(6)
+  background_color      String                  @default("#ffffff")
+  font                  String                  @default("inter")
+  corner_radius         String                  @default("medium")
+  care_team_invitations care_team_invitations[]
+  instance_clinicians   instance_clinicians[]
+  instance_programs     instance_programs[]
+  profiles              profiles                @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@index([owner_id], map: "idx_instances_owner_id")
 }
@@ -1384,6 +1386,21 @@ model instance_clinicians {
 
   @@id([instance_id, user_id])
   @@index([user_id], map: "idx_instance_clinicians_user_id")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model care_team_invitations {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  instance_id String    @db.Uuid
+  email       String
+  invited_by  String?   @db.Uuid
+  created_at  DateTime  @default(now()) @db.Timestamptz(6)
+  instances   instances @relation(fields: [instance_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profiles    profiles? @relation(fields: [invited_by], references: [id], onUpdate: NoAction)
+
+  @@unique([instance_id, email])
+  @@index([email], map: "idx_care_team_invitations_email")
 }
 
 view pending_actions {

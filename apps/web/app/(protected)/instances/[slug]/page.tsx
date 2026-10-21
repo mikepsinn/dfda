@@ -4,15 +4,16 @@ import Link from "next/link"
 import { CheckCircle2, ExternalLink, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { InstanceForm } from "@/components/instance/InstanceForm"
-import { AddClinicianForm } from "@/components/care-team/CareForms"
-import { addClinicianAction, removeClinicianAction } from "@/lib/actions/care-team"
+import { InviteClinicianForm } from "@/components/care-team/CareForms"
+import { cancelInvitationAction, inviteClinicianAction, removeClinicianAction } from "@/lib/actions/care-team"
 import { updateInstanceAction } from "@/lib/actions/instances"
-import { careTeam } from "@/lib/care-team/data"
+import { careTeam, careTeamInvitations, invitationUrl } from "@/lib/care-team/data"
 import { getUserDb } from "@/lib/db/server"
 import { env } from "@/lib/env"
 import { toBranding } from "@/lib/instance/hosts"
 import { dnsRecordFor, isDomainConfigured } from "@/lib/instance/vercel-domains"
 import { listPrograms } from "@/lib/programs/data"
+import { formatDate } from "@/lib/programs/format"
 import { siteOrigin } from "@/lib/oauth-resources"
 import { getServerUser } from "@/lib/server-auth"
 
@@ -57,10 +58,11 @@ export default async function InstancePage({
 
   const instance = toBranding(row)
   const site = siteOrigin()
-  const [domainConnected, programs, team] = await Promise.all([
+  const [domainConnected, programs, team, invitations] = await Promise.all([
     instance.customDomain ? isDomainConfigured(instance.customDomain) : null,
     listPrograms(instance.slug),
     careTeam(user, row.id),
+    careTeamInvitations(user, row.id),
   ])
   const dns = instance.customDomain ? dnsRecordFor(instance.customDomain) : null
 
@@ -170,8 +172,9 @@ export default async function InstancePage({
           )}
         </div>
         <p className="text-sm text-muted-foreground">
-          The clinicians of the care team see the people who share their biomarker reports with it, add their reports
-          and sign them off. You see totals only, unless you add yourself.
+          The clinicians who review the lab reports of your members. A member chooses to share their reports with the
+          care team. The care team then sees that member&rsquo;s name and reports, adds new reports and signs them off.
+          You see totals only. To review reports yourself, enter your own email.
         </p>
         {team.length > 0 && (
           <ul className="divide-y rounded-xl border">
@@ -190,7 +193,31 @@ export default async function InstancePage({
             ))}
           </ul>
         )}
-        <AddClinicianForm action={addClinicianAction.bind(null, instance.slug)} />
+        {invitations.length > 0 && (
+          <div className="space-y-2">
+            <h3 className="text-sm font-medium">Open invitations</h3>
+            <ul className="divide-y rounded-xl border" aria-label="Open invitations">
+              {invitations.map((invitation) => (
+                <li key={invitation.id} className="flex items-center gap-3 p-4">
+                  <span className="min-w-0 flex-1">
+                    <span className="block break-all font-medium">{invitation.email}</span>
+                    <span className="block text-sm text-muted-foreground">Invited {formatDate(invitation.createdAt)}</span>
+                    <span className="block break-all text-xs text-muted-foreground">{invitationUrl(invitation.id)}</span>
+                  </span>
+                  <form action={cancelInvitationAction.bind(null, instance.slug, invitation.id)}>
+                    <Button type="submit" variant="outline" size="sm">
+                      Cancel
+                    </Button>
+                  </form>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-muted-foreground">
+              The clinician joins when they open the link and sign in with the invited email.
+            </p>
+          </div>
+        )}
+        <InviteClinicianForm action={inviteClinicianAction.bind(null, instance.slug)} />
       </section>
 
       <section aria-labelledby="branding-heading" className="space-y-4">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { CheckCircle2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { reviewLabel } from "@/components/care-team/ReviewStatus"
 import { careTeamPatients, requireCareTeam } from "@/lib/care-team/data"
@@ -9,14 +10,25 @@ import { formatDate } from "@/lib/programs/format"
 export const metadata: Metadata = { title: "Care team" }
 
 /** The care team's patients: the people who share their biomarker reports with it. */
-export default async function CareTeamPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
+export default async function CareTeamPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ joined?: string }>
+}) {
+  const [{ slug }, query] = await Promise.all([params, searchParams])
   const { user, instance } = await requireCareTeam(slug)
   const patients = await careTeamPatients(user, instance)
 
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
+        {query.joined && (
+          <p role="status" className="flex items-center gap-2 font-medium text-primary">
+            <CheckCircle2 aria-hidden="true" className="h-5 w-5" /> You are on the care team now.
+          </p>
+        )}
         <p className="text-sm font-medium text-primary">{instance.name} care team</p>
         <h1 className="text-3xl font-bold tracking-tight">Patients</h1>
         <p className="text-muted-foreground">

@@ -168,7 +168,12 @@ Labels, rankings or company totals. A care team adds a person's own report files
 
 **Care teams, 2026-10-21 (`apps/web/lib/care-team`):** the company still sees totals
 only. A person can also share the biomarker reports of a program with the instance's
-care team: the clinicians that the owner adds at `/instances/{slug}`. The person
+care team: the clinicians that the owner invites by email at `/instances/{slug}`. The
+invited person opens the emailed link at `/care-teams/join/{id}` and joins after they
+sign in with that email; the owner sees the same result whether or not an account uses
+the email
+([`20261021070000_table_care_team_invitations.sql`](../apps/web/db/migrations/20261021070000_table_care_team_invitations.sql)).
+The person
 chooses when they join and can change it on their program page; when they stop, the
 care team loses the access at once. The care team, at `/instances/{slug}/care`, sees
 the people who share and their reports, adds a report file (checked against the report
@@ -176,7 +181,7 @@ format), and signs a report off with a note for the person. The person sees each
 as soon as it is saved, with its review status. Row-level security enforces each of
 these rules
 ([`20261021050000_table_care_teams_and_biomarker_reports.sql`](../apps/web/db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql)).
-The owner is not on the care team unless they add themselves, and no evidence, ranking
+The owner is not on the care team unless they enter their own email, and no evidence, ranking
 or total reads the reports. The demo clinic's journeys (patient, clinician and owner)
 are written in [`content/clinic-demo/script.md`](../apps/web/content/clinic-demo/script.md);
 a browser tour follows them and can record them as videos.
