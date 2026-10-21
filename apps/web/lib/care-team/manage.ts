@@ -1,6 +1,8 @@
 import { adminDb, dbAs, isRecordNotFound, isUniqueViolation, type DbUser } from '@/lib/db'
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
 
+export { MAX_REPORT_FILE_BYTES } from './format'
+
 /**
  * Changes to care teams, sharing and biomarker reports, with the user's own
  * permissions; the database refuses what the user may not do (see
@@ -8,9 +10,6 @@ import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-rep
  */
 
 export class CareTeamError extends Error {}
-
-/** The largest report file that the care team can add. */
-export const MAX_REPORT_FILE_BYTES = 1_000_000
 
 /** A report file (lib/biomarker-report/schema.ts), checked; or what is wrong with it, at most 10 problems. */
 export function parseReportFile(text: string): { report: BiomarkerReport } | { errors: string[] } {

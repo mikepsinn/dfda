@@ -1,12 +1,13 @@
 "use client"
 
-import { useActionState } from "react"
+import { useActionState, useState } from "react"
 import { Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import type { CareFormState } from "@/lib/actions/care-team"
+import { MAX_REPORT_FILE_BYTES } from "@/lib/care-team/format"
 
 type Action = (state: CareFormState, formData: FormData) => Promise<CareFormState>
 
@@ -40,9 +41,20 @@ function Submit({ pending, children }: { pending: boolean; children: React.React
 /** Adds a report file (JSON in the biomarker report format) for one person. */
 export function UploadReportForm({ action }: { action: Action }) {
   const [state, formAction, pending] = useActionState(action, {})
+  // Checked here too: a file over the server's body limit would not reach the action.
+  const [tooLarge, setTooLarge] = useState(false)
   return (
-    <form action={formAction} className="space-y-3">
-      <Problems state={state} />
+    <form
+      action={formAction}
+      onSubmit={(event) => {
+        const file = new FormData(event.currentTarget).get("file")
+        const large = file instanceof File && file.size > MAX_REPORT_FILE_BYTES
+        setTooLarge(large)
+        if (large) event.preventDefault()
+      }}
+      className="space-y-3"
+    >
+      <Problems state={tooLarge ? { error: "The file is larger than 900 KB." } : state} />
       <div className="space-y-2">
         <Label htmlFor="report-file">Report file</Label>
         <Input id="report-file" name="file" type="file" accept="application/json,.json" required className="max-w-md" />

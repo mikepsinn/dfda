@@ -47,7 +47,7 @@ export async function uploadReportAction(
 
   const file = formData.get("file")
   if (!(file instanceof File) || file.size === 0) return { error: "Choose a report file." }
-  if (file.size > MAX_REPORT_FILE_BYTES) return { error: "The file is larger than 1 MB." }
+  if (file.size > MAX_REPORT_FILE_BYTES) return { error: "The file is larger than 900 KB." }
   const parsed = parseReportFile(await file.text())
   if ("errors" in parsed) return { error: "The file is not a valid report.", errors: parsed.errors }
 
