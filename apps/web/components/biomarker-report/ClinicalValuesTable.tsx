@@ -38,7 +38,7 @@ export function ClinicalValuesTable({ report, values }: { report: BiomarkerRepor
         </p>
       </div>
 
-      <div className="hidden overflow-x-auto rounded-xl border md:block print:block print:overflow-visible">
+      <div className="surface-raised hidden overflow-x-auto rounded-xl border md:block print:block print:overflow-visible">
         <table className="w-full min-w-[44rem] text-left text-sm print:min-w-0 print:text-xs">
           <thead className="bg-muted/50 text-muted-foreground">
             <tr>
@@ -74,7 +74,7 @@ export function ClinicalValuesTable({ report, values }: { report: BiomarkerRepor
         </table>
       </div>
 
-      <ul className="divide-y rounded-xl border bg-card px-4 md:hidden print:hidden" aria-label="Clinical values">
+      <ul className="surface-raised divide-y rounded-xl border bg-card px-4 md:hidden print:hidden" aria-label="Clinical values">
         {rows.map((value) => (
           <li key={value.name} className="space-y-1 py-3">
             <div className="flex items-start justify-between gap-3">

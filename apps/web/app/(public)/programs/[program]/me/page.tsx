@@ -71,7 +71,7 @@ export default async function YourProgramPage({
       </header>
 
       {todayItems.length > 0 && (
-        <section aria-labelledby="today-heading" className="space-y-4 rounded-xl border p-6">
+        <section aria-labelledby="today-heading" className="surface-raised space-y-4 rounded-xl border p-6">
           <h2 id="today-heading" className="text-xl font-semibold">
             Record a day
           </h2>
@@ -86,7 +86,7 @@ export default async function YourProgramPage({
       )}
 
       {labItems.length > 0 && (
-        <section aria-labelledby="labs-heading" className="space-y-4 rounded-xl border p-6">
+        <section aria-labelledby="labs-heading" className="surface-raised space-y-4 rounded-xl border p-6">
           <div className="space-y-1">
             <h2 id="labs-heading" className="text-xl font-semibold">
               Lab results

@@ -26,7 +26,7 @@ export function AtAGlance({ summary, threshold }: { summary: ReportSummary; thre
         {GROUPS.map(({ verdict, title }) => {
           const panels = summary.panels.filter((panel) => panel.verdict === verdict)
           return (
-            <div key={verdict} className="rounded-xl border bg-card p-4">
+            <div key={verdict} className="surface-raised rounded-xl border bg-card p-4">
               <h3 className="text-sm font-semibold">{title}</h3>
               {panels.length === 0 ? (
                 <p className="mt-2 text-sm text-muted-foreground">None</p>
@@ -82,7 +82,7 @@ export function AtAGlance({ summary, threshold }: { summary: ReportSummary; thre
           </p>
         </div>
 
-        <dl className="space-y-3 rounded-xl border bg-card p-4 text-sm">
+        <dl className="surface-raised space-y-3 rounded-xl border bg-card p-4 text-sm">
           <div>
             <dt className="text-muted-foreground">Markers in this report</dt>
             <dd className="text-3xl font-semibold tabular-nums">{counts.total}</dd>

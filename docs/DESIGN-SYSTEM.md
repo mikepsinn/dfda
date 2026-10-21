@@ -49,6 +49,11 @@ and this guide in the same change instead of creating a one-off competing patter
   `dark-on-screen` class on the page: `dark:` styles apply on screen, and printed pages
   keep the light colors. Use tokens, not fixed colors, on pages that instances show; where
   a fixed color is necessary (such as a status badge), add a `dark:` variant.
+- Depth on company sites and in reports (`app/globals.css`, screen only, from the theme's
+  colors): `surface-raised` for cards and table frames (a top highlight and a soft shadow),
+  `brand-panel` for a hero panel lit by the brand color, `brand-glow` for a soft glow behind a
+  heading, and `primary-glow` under the one main button of a page. Keep them to those places;
+  the network's own pages keep the flat cards.
 - The brand mark is the Outcome Label card in `apps/web/components/BrandMark.tsx`, in
   theme colors for the header, menu and footer, or fixed colors for generated images.
   `apps/web/app/icon.svg` is the same drawing for the browser icon; a unit test keeps

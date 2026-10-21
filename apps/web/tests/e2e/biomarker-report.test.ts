@@ -16,8 +16,12 @@ test("a company's site shows the report, and prints the report without the site 
   await page.goto(onInstance('/reports/example'))
   await expect(page.getByRole('banner')).toContainText(demo.instance.name)
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+  // The panels are raised cards on screen, and flat on paper.
+  const panel = page.getByRole('region', { name: 'Muscle & bone' })
+  await expect(panel).not.toHaveCSS('box-shadow', 'none')
 
   await page.emulateMedia({ media: 'print' })
+  await expect(panel).toHaveCSS('box-shadow', 'none')
   await expect(page.getByRole('banner')).toBeHidden()
   await expect(page.getByRole('contentinfo')).toBeHidden()
   await expect(page.getByRole('button', { name: 'Print or save as PDF' })).toBeHidden()
