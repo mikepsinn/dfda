@@ -166,6 +166,20 @@ describe('REST API measurements', () => {
     const row = await adminDb.measurements.findUnique({ where: { id: measurementId }, select: { deleted_at: true } })
     expect(row?.deleted_at).toBeInstanceOf(Date)
   })
+
+  it('records a lab value as amount per volume only for a test with a molar mass', async () => {
+    const record = (globalVariableId: string, value: number, unitAbbreviation: string) =>
+      measurementsRoute.POST(
+        request('/api/v1/measurements', aliceRest, { method: 'POST', body: JSON.stringify({ globalVariableId, value, unitAbbreviation }) }),
+      )
+    // Glucose (default mg/dL) has a molar mass, so mmol/L converts.
+    const glucose = await record('fasting-blood-glucose', 5.4, 'mmol/L')
+    expect(glucose.status).toBe(201)
+    expect((await glucose.json()).measurement.unit).toMatchObject({ id: 'millimoles-per-liter' })
+    // ApoB (mg/dL) has none: mmol/L would need one, g/L is a mass like mg/dL.
+    expect((await record('apolipoprotein-b', 1, 'mmol/L')).status).toBe(400)
+    expect((await record('apolipoprotein-b', 0.9, 'g/L')).status).toBe(201)
+  })
 })
 
 describe('REST API reminders and notifications', () => {

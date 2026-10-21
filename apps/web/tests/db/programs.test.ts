@@ -2,7 +2,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { adminDb, dbAs } from '@/lib/db'
 import { ensurePasswordUser } from '@/lib/auth-users'
 import { PROGRAM_TEMPLATES, programInputSchema, usableTemplate } from '@/lib/programs/config'
-import { findProgram, personalReport, programDashboard, variableOptions, type Program } from '@/lib/programs/data'
+import { findProgram, loadSeries, personalReport, programDashboard, variableOptions, type Program, type ProgramItem } from '@/lib/programs/data'
 import { joinProgram, leaveProgram, recordProgramValues, saveProgram } from '@/lib/programs/manage'
 import { MIN_GROUP_SIZE } from '@/lib/programs/report'
 
@@ -182,5 +182,41 @@ describe('company totals', () => {
   it('stop counting a member who leaves', async () => {
     expect(await leaveProgram(member, program.id)).toBe(true)
     expect((await programDashboard(owner.id, program)).enrolled).toBe(MIN_GROUP_SIZE - 1)
+  })
+})
+
+describe('values in another unit', () => {
+  it('convert to the item unit: within mass per volume, and to amount per volume with a molar mass', async () => {
+    const person = await newUser('units')
+    const lab = (variableId: string, molarMass: number | null): ProgramItem => ({
+      id: variableId,
+      kind: 'lab',
+      variableId,
+      name: variableId,
+      unitId: 'milligrams-per-deciliter',
+      unit: 'mg/dL',
+      molarMass,
+      frequency: null,
+      better: 'lower',
+      defaultValue: null,
+    })
+    const unitsProgram: Program = { ...program, items: [lab('apolipoprotein-b', null), lab('fasting-blood-glucose', 180.156), lab('triglycerides', null)] }
+    const at = new Date(Date.now() - DAY)
+    for (const [variableId, value, unitId] of [
+      ['apolipoprotein-b', 0.9, 'grams-per-liter'],
+      ['fasting-blood-glucose', 5.4, 'millimoles-per-liter'],
+      // No molar mass given here: this value cannot convert, so it is left out.
+      ['triglycerides', 1.7, 'millimoles-per-liter'],
+    ] as const) {
+      const userVariable = await adminDb.user_variables.create({ data: { user_id: person.id, global_variable_id: variableId }, select: { id: true } })
+      await adminDb.measurements.create({
+        data: { user_id: person.id, global_variable_id: variableId, user_variable_id: userVariable.id, value, unit_id: unitId, start_at: at },
+        select: { id: true },
+      })
+    }
+    const series = (await loadSeries(adminDb, [person.id], unitsProgram, new Date(Date.now() - 2 * DAY))).get(person.id)!
+    expect(series.get('apolipoprotein-b')![0].value).toBeCloseTo(90)
+    expect(series.get('fasting-blood-glucose')![0].value).toBeCloseTo(97.3, 1)
+    expect(series.has('triglycerides')).toBe(false)
   })
 })

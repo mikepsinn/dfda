@@ -1,4 +1,5 @@
 import type { Prisma } from '@/lib/db'
+import { convertibleCategories } from '@/lib/units/convert'
 import { invalidArgument, notFound } from './errors'
 import type { SearchVariablesInput } from './schemas'
 
@@ -66,7 +67,7 @@ export async function resolveVariable(
   if (ref.globalVariableId) {
     const row = await db.global_variables.findFirst({
       where: { id: ref.globalVariableId, deleted_at: null },
-      select: { id: true, name: true, units: { select: unitSelect } },
+      select: { id: true, name: true, molar_mass: true, units: { select: unitSelect } },
     })
     if (!row) throw notFound(`No variable with id "${ref.globalVariableId}". Use searchVariables to find one.`)
     return row
@@ -81,7 +82,7 @@ export async function resolveVariable(
         { global_variable_synonyms: { some: { name: { equals: name, mode: 'insensitive' } } } },
       ],
     },
-    select: { id: true, name: true, units: { select: unitSelect } },
+    select: { id: true, name: true, molar_mass: true, units: { select: unitSelect } },
     take: 2,
   })
   if (matches.length === 0) throw notFound(`No variable named "${name}". Use searchVariables to find one.`)
@@ -93,16 +94,18 @@ export async function resolveVariable(
 
 /**
  * The unit for a value of a variable: the given unit, else the user's
- * preferred unit, else the variable's default unit. A given unit must measure
- * the same quantity as the default unit. Scales and other dimensionless units
- * cannot be converted, so for them only the default or preferred unit is
- * accepted.
+ * preferred unit, else the variable's default unit. A given unit must convert
+ * to the default unit: the same quantity, or for a lab test with a molar mass
+ * (g/mol) mass and amount per volume (lib/units/convert.ts). Scales and other
+ * dimensionless units cannot be converted, so for them only the default or
+ * preferred unit is accepted.
  */
 export async function resolveUnit(
   db: TrackingDb,
   ref: { unitId?: string; unitAbbreviation?: string },
   defaultUnit: UnitRow,
   preferredUnitId: string | null,
+  molarMass: number | null = null,
 ) {
   if (!ref.unitId && !ref.unitAbbreviation) {
     if (preferredUnitId && preferredUnitId !== defaultUnit.id) {
@@ -120,7 +123,8 @@ export async function resolveUnit(
   const allowed =
     unit.id === defaultUnit.id ||
     unit.id === preferredUnitId ||
-    (unit.unit_category_id === defaultUnit.unit_category_id && unit.unit_category_id !== 'dimensionless')
+    (unit.unit_category_id !== 'dimensionless' &&
+      convertibleCategories(unit.unit_category_id, defaultUnit.unit_category_id, molarMass))
   if (!allowed) {
     throw invalidArgument(
       `The unit "${unit.abbreviated_name}" does not fit this variable. Use "${defaultUnit.abbreviated_name}" or a unit of the same kind.`,

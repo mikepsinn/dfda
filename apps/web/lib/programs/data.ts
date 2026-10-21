@@ -1,4 +1,5 @@
 import { adminDb, dbAs, withUserTransaction, type Prisma } from '@/lib/db'
+import { convertValue } from '@/lib/units/convert'
 import type { Better, Frequency, ItemKind, VariableOption } from './config'
 import { buildPersonReport, LOOKBACK_DAYS, programTotals, type Point, type ReportItem } from './report'
 
@@ -19,7 +20,9 @@ const programSelect = {
       better: true,
       default_value: true,
       global_variable_id: true,
-      global_variables: { select: { name: true, default_unit_id: true, units: { select: { abbreviated_name: true } } } },
+      global_variables: {
+        select: { name: true, default_unit_id: true, molar_mass: true, units: { select: { abbreviated_name: true } } },
+      },
     },
     orderBy: [{ position: 'asc' }, { id: 'asc' }],
   },
@@ -34,6 +37,8 @@ export type ProgramItem = {
   name: string
   unitId: string
   unit: string
+  /** g/mol, for a lab test that converts between mass and amount per volume (lib/units/convert.ts). */
+  molarMass: number | null
   frequency: Frequency | null
   better: Better | null
   defaultValue: number | null
@@ -64,6 +69,7 @@ function toProgram(row: ProgramRow): Program {
       name: item.global_variables.name,
       unitId: item.global_variables.default_unit_id,
       unit: item.global_variables.units.abbreviated_name,
+      molarMass: item.global_variables.molar_mass,
       frequency: item.frequency as Frequency | null,
       better: item.better as Better | null,
       defaultValue: item.default_value,
@@ -126,18 +132,11 @@ export async function variableOptions(): Promise<VariableOption[]> {
   return rows.map((row) => ({ id: row.id, name: row.name, unit: row.units.abbreviated_name, category: row.variable_categories.name }))
 }
 
-type UnitFactors = { factor: number; offset: number; category: string }
-
-/** A value in another unit of the same kind, as convert_measurement_value in the database does it. */
-function convert(value: number, from: UnitFactors, to: UnitFactors) {
-  return ((value - from.offset) / from.factor) * to.factor + to.offset
-}
-
 type MeasurementReader = Pick<Prisma.TransactionClient, 'measurements' | 'units'>
 
 /**
  * The values of the program's variables per user, in each variable's default
- * unit. A value in a unit of another kind is left out.
+ * unit. A value that does not convert to it (lib/units/convert.ts) is left out.
  */
 export async function loadSeries(db: MeasurementReader, userIds: string[], program: Program, since: Date) {
   const items = reportItems(program)
@@ -164,6 +163,7 @@ export async function loadSeries(db: MeasurementReader, userIds: string[], progr
     ]),
   )
   const defaultUnit = new Map(items.map((item) => [item.variableId, item.unitId]))
+  const molarMass = new Map(program.items.map((item) => [item.variableId, item.molarMass]))
 
   const byUser = new Map<string, Map<string, Point[]>>()
   for (const row of rows) {
@@ -172,8 +172,9 @@ export async function loadSeries(db: MeasurementReader, userIds: string[], progr
     if (row.unit_id !== targetId) {
       const from = units.get(row.unit_id)
       const to = units.get(targetId)
-      if (!from || !to || from.category !== to.category || from.factor === 0) continue
-      value = convert(value, from, to)
+      const converted = from && to ? convertValue(value, from, to, molarMass.get(row.global_variable_id)) : null
+      if (converted === null) continue
+      value = converted
     }
     const series = byUser.get(row.user_id) ?? new Map<string, Point[]>()
     const points = series.get(row.global_variable_id) ?? []
