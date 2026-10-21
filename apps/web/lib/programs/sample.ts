@@ -1,5 +1,6 @@
 import type { ItemKind, Frequency } from './config'
 import { buildPersonReport, programTotals, type PersonReport, type Point, type ReportItem } from './report'
+import { hash, seededRandom } from '@/lib/seeded-random'
 
 /**
  * Made-up people for a program, to show what the report and the company
@@ -13,28 +14,6 @@ export const SAMPLE_SIZE = 30
 /** Of the sample people, this many joined less than a week ago and have no second value yet. */
 const RECENT_JOINERS = 4
 const DAY = 86_400_000
-
-// mulberry32: a small seeded random number generator.
-function seededRandom(seed: number) {
-  let state = seed >>> 0
-  return () => {
-    state = (state + 0x6d2b79f5) >>> 0
-    let t = state
-    t = Math.imul(t ^ (t >>> 15), t | 1)
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
-}
-
-// FNV-1a, to turn the program id into a seed.
-function hash(text: string) {
-  let value = 2166136261
-  for (let index = 0; index < text.length; index++) {
-    value ^= text.charCodeAt(index)
-    value = Math.imul(value, 16777619)
-  }
-  return value >>> 0
-}
 
 function normal(random: () => number, mean: number, sd: number) {
   const u = Math.max(random(), 1e-12)
