@@ -27,6 +27,15 @@ describe("biomarker report", () => {
     expect(screen.getByText(/Rose within the reference interval/)).toBeInTheDocument()
   })
 
+  it("draws a trend for each clinical value with two or more values", () => {
+    render(<BiomarkerReportView report={EXAMPLE_REPORT} />)
+    // Laboratory values at the first and the last timepoint only.
+    const hba1c = screen.getByRole("row", { name: /^HbA1c/ })
+    expect(within(hba1c).getByRole("img", { name: "Baseline 6.0, Week 12 5.5" })).toBeInTheDocument()
+    // Below the assay limit at both timepoints: nothing to draw.
+    expect(within(screen.getByRole("row", { name: /^hs-cTnI/ })).queryByRole("img")).toBeNull()
+  })
+
   it("shows each marker of a panel with its change, trend, noise multiple and status", () => {
     render(<BiomarkerReportView report={EXAMPLE_REPORT} />)
     const panel = screen.getByRole("region", { name: "Muscle & bone" })
