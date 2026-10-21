@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { isInstancePath } from '@/lib/instance/routes'
 
 describe('the paths of a company instance', () => {
-  it('include the home page, programs, sign-in, reminders, legal pages and the owner pages', () => {
+  it('include the home page, programs, sign-in, reminders, legal pages, the owner pages and care team invitations', () => {
     for (const path of [
       '/',
       '/programs',
@@ -17,6 +17,7 @@ describe('the paths of a company instance', () => {
       '/terms',
       '/privacy',
       '/instances/acme/programs/new',
+      '/care-teams/join/0b6f2a8e-1c2d-4e5f-8a9b-0c1d2e3f4a5b',
       '/i',
       '/i/acme',
       '/api/auth/sign-in/email',

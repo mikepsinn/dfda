@@ -53,6 +53,8 @@ test.describe('the owner', () => {
     const context = await browser.newContext({ storageState: MEMBER_STATE, baseURL: testInfo.project.use.baseURL })
     try {
       const clinician = await context.newPage()
+      // The clinic's site sets its preview cookie; the link must still open.
+      await clinician.goto(onInstance('/programs'))
       await clinician.goto(new URL(link).pathname)
       await expect(clinician.getByRole('heading', { level: 1, name: `Join the ${demo.instance.name} care team` })).toBeVisible()
       await clinician.getByRole('button', { name: 'Join the care team' }).click()

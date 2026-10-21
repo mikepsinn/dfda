@@ -9,9 +9,10 @@ import { isInstancePath } from '@/lib/instance/routes'
 
 // Paths a signed-in user without a role may still open. The MCP server and
 // the REST API use access tokens, not the session. A company that creates an
-// instance (/instances, /i) needs no patient or provider role, and a person
-// who opens a program (/programs) gets the patient role when they join it.
-const PATHS_WITHOUT_ROLE = ['/select-role', '/login', '/register', '/auth', '/api/auth', '/oauth', '/.well-known', '/api/mcp', '/api/v1', '/instances', '/i', '/programs']
+// instance (/instances, /i) needs no patient or provider role, nor does a
+// clinician who opens a care team invitation (/care-teams), and a person who
+// opens a program (/programs) gets the patient role when they join it.
+const PATHS_WITHOUT_ROLE = ['/select-role', '/login', '/register', '/auth', '/api/auth', '/oauth', '/.well-known', '/api/mcp', '/api/v1', '/instances', '/i', '/programs', '/care-teams']
 
 /** Whether the user owns a company instance. A failed read counts as yes, so the user is not sent away. */
 async function ownsInstance(userId: string) {
