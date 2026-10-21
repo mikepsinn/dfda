@@ -72,9 +72,15 @@ export const CHECK_IN_REMINDER_TIME = '20:00'
  * Joins `program`: records the start and creates a reminder for each dose and
  * check-in that the user does not already have a reminder for. A user with no
  * role becomes a patient, because they now track their own health.
- * `scheduleNotifications: false` skips the worker jobs (for the demo seed).
+ * `shareWithCareTeam` shares the user's biomarker reports in the program with
+ * the instance's care team (lib/care-team). `scheduleNotifications: false`
+ * skips the worker jobs (for the demo seed).
  */
-export async function joinProgram(user: DbUser, program: Program, { scheduleNotifications = true } = {}) {
+export async function joinProgram(
+  user: DbUser,
+  program: Program,
+  { scheduleNotifications = true, shareWithCareTeam = false } = {},
+) {
   const result = await withUserTransaction(user, async (tx) => {
     const existing = await tx.program_enrollments.findUnique({
       where: { program_id_user_id: { program_id: program.id, user_id: user.id } },
@@ -82,7 +88,10 @@ export async function joinProgram(user: DbUser, program: Program, { scheduleNoti
     })
     if (existing) return { joined: false, reminders: [] as { id: string; isActive: boolean }[] }
 
-    await tx.program_enrollments.create({ data: { program_id: program.id, user_id: user.id }, select: { id: true } })
+    await tx.program_enrollments.create({
+      data: { program_id: program.id, user_id: user.id, shared_with_care_team_at: shareWithCareTeam ? new Date() : null },
+      select: { id: true },
+    })
     await tx.profiles.updateMany({ where: { id: user.id, user_type: null }, data: { user_type: 'patient' } })
 
     const reminders: { id: string; isActive: boolean }[] = []

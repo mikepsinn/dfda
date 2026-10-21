@@ -674,36 +674,40 @@ model products {
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model profiles {
-  id                      String                   @id @db.Uuid
-  email                   String                   @unique
-  first_name              String?
-  last_name               String?
-  user_type               user_type_enum?
-  avatar_url              String?
-  deleted_at              DateTime?                @db.Timestamptz(6)
-  created_at              DateTime?                @default(now()) @db.Timestamptz(6)
-  updated_at              DateTime?                @default(now()) @db.Timestamptz(6)
-  timezone                String?
-  contact_messages        contact_messages[]
-  data_submissions        data_submissions[]
-  forms                   forms[]
-  instances               instances[]
-  measurements            measurements[]
-  notifications           notifications[]
-  patient_treatments      patient_treatments[]
-  patients                patients?
-  program_enrollments     program_enrollments[]
-  protocol_versions       protocol_versions[]
-  providers               providers?
-  reminder_notifications  reminder_notifications[]
-  reminder_schedules      reminder_schedules[]
-  research_partners       research_partners?
-  cancelled_trial_actions trial_actions[]          @relation("trial_actions_cancelled_byToprofiles")
-  completed_trial_actions trial_actions[]          @relation("trial_actions_completed_byToprofiles")
-  trial_enrollments       trial_enrollments[]
-  trials                  trials[]
-  uploaded_files          uploaded_files[]
-  user_variables          user_variables[]
+  id                         String                   @id @db.Uuid
+  email                      String                   @unique
+  first_name                 String?
+  last_name                  String?
+  user_type                  user_type_enum?
+  avatar_url                 String?
+  deleted_at                 DateTime?                @db.Timestamptz(6)
+  created_at                 DateTime?                @default(now()) @db.Timestamptz(6)
+  updated_at                 DateTime?                @default(now()) @db.Timestamptz(6)
+  timezone                   String?
+  reviewed_biomarker_reports biomarker_reports[]      @relation("biomarker_reports_reviewed_byToprofiles")
+  uploaded_biomarker_reports biomarker_reports[]      @relation("biomarker_reports_uploaded_byToprofiles")
+  biomarker_reports          biomarker_reports[]      @relation("biomarker_reports_user_idToprofiles")
+  contact_messages           contact_messages[]
+  data_submissions           data_submissions[]
+  forms                      forms[]
+  instance_clinicians        instance_clinicians[]
+  instances                  instances[]
+  measurements               measurements[]
+  notifications              notifications[]
+  patient_treatments         patient_treatments[]
+  patients                   patients?
+  program_enrollments        program_enrollments[]
+  protocol_versions          protocol_versions[]
+  providers                  providers?
+  reminder_notifications     reminder_notifications[]
+  reminder_schedules         reminder_schedules[]
+  research_partners          research_partners?
+  cancelled_trial_actions    trial_actions[]          @relation("trial_actions_cancelled_byToprofiles")
+  completed_trial_actions    trial_actions[]          @relation("trial_actions_completed_byToprofiles")
+  trial_enrollments          trial_enrollments[]
+  trials                     trials[]
+  uploaded_files             uploaded_files[]
+  user_variables             user_variables[]
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
@@ -1258,22 +1262,23 @@ model verifications {
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model instances {
-  id                String              @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  slug              String              @unique
-  name              String
-  tagline           String?
-  logo_url          String?
-  primary_color     String              @default("#6d4df6")
-  products          String[]            @default([])
-  custom_domain     String?             @unique
-  owner_id          String              @db.Uuid
-  created_at        DateTime            @default(now()) @db.Timestamptz(6)
-  updated_at        DateTime            @default(now()) @db.Timestamptz(6)
-  background_color  String              @default("#ffffff")
-  font              String              @default("inter")
-  corner_radius     String              @default("medium")
-  instance_programs instance_programs[]
-  profiles          profiles            @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id                  String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  slug                String                @unique
+  name                String
+  tagline             String?
+  logo_url            String?
+  primary_color       String                @default("#6d4df6")
+  products            String[]              @default([])
+  custom_domain       String?               @unique
+  owner_id            String                @db.Uuid
+  created_at          DateTime              @default(now()) @db.Timestamptz(6)
+  updated_at          DateTime              @default(now()) @db.Timestamptz(6)
+  background_color    String                @default("#ffffff")
+  font                String                @default("inter")
+  corner_radius       String                @default("medium")
+  instance_clinicians instance_clinicians[]
+  instance_programs   instance_programs[]
+  profiles            profiles              @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@index([owner_id], map: "idx_instances_owner_id")
 }
@@ -1307,6 +1312,7 @@ model instance_programs {
   follow_up_weeks        Int                      @default(12)
   created_at             DateTime                 @default(now()) @db.Timestamptz(6)
   updated_at             DateTime                 @default(now()) @db.Timestamptz(6)
+  biomarker_reports      biomarker_reports[]
   instance_program_items instance_program_items[]
   instances              instances                @relation(fields: [instance_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
   program_enrollments    program_enrollments[]
@@ -1317,13 +1323,14 @@ model instance_programs {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model program_enrollments {
-  id                String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  program_id        String            @db.Uuid
-  user_id           String            @db.Uuid
-  started_at        DateTime          @default(now()) @db.Timestamptz(6)
-  created_at        DateTime          @default(now()) @db.Timestamptz(6)
-  instance_programs instance_programs @relation(fields: [program_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  profiles          profiles          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id                       String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  program_id               String            @db.Uuid
+  user_id                  String            @db.Uuid
+  started_at               DateTime          @default(now()) @db.Timestamptz(6)
+  created_at               DateTime          @default(now()) @db.Timestamptz(6)
+  shared_with_care_team_at DateTime?         @db.Timestamptz(6)
+  instance_programs        instance_programs @relation(fields: [program_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profiles                 profiles          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@unique([program_id, user_id])
   @@index([user_id], map: "idx_program_enrollments_user_id")
@@ -1341,6 +1348,42 @@ model global_variable_codes {
 
   @@id([system, code])
   @@index([global_variable_id], map: "idx_global_variable_codes_global_variable_id")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model biomarker_reports {
+  id                String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  program_id        String            @db.Uuid
+  user_id           String            @db.Uuid
+  data              Json
+  title             String
+  report_date       DateTime          @db.Date
+  uploaded_by       String?           @db.Uuid
+  created_at        DateTime          @default(now()) @db.Timestamptz(6)
+  reviewed_by       String?           @db.Uuid
+  reviewer_name     String?
+  reviewed_at       DateTime?         @db.Timestamptz(6)
+  review_note       String?
+  instance_programs instance_programs @relation(fields: [program_id], references: [id], onUpdate: NoAction)
+  reviewer          profiles?         @relation("biomarker_reports_reviewed_byToprofiles", fields: [reviewed_by], references: [id], onUpdate: NoAction)
+  uploader          profiles?         @relation("biomarker_reports_uploaded_byToprofiles", fields: [uploaded_by], references: [id], onUpdate: NoAction)
+  patient           profiles          @relation("biomarker_reports_user_idToprofiles", fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([program_id], map: "idx_biomarker_reports_program_id")
+  @@index([user_id, program_id], map: "idx_biomarker_reports_user_program")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model instance_clinicians {
+  instance_id String    @db.Uuid
+  user_id     String    @db.Uuid
+  created_at  DateTime  @default(now()) @db.Timestamptz(6)
+  instances   instances @relation(fields: [instance_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profiles    profiles  @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([instance_id, user_id])
+  @@index([user_id], map: "idx_instance_clinicians_user_id")
 }
 
 view pending_actions {
