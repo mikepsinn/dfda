@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { StarRating as Rating } from "@/components/ui/star-rating"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { toast } from 'sonner'
+import { toast } from '@/components/ui/use-toast'
 import { upsertTreatmentRatingAction, type TreatmentRatingUpsertData } from "@/lib/actions/treatment-ratings"
 import { logger } from "@/lib/logger"
 
@@ -39,16 +39,16 @@ export function TreatmentReviewForm({
       const result = await upsertTreatmentRatingAction(ratingData)
 
       if (result.success) {
-      toast.success("Your review has been submitted.")
+      toast({ title: "Your review has been submitted." })
 
       if (onReviewSubmitted) {
         onReviewSubmitted()
         }
       } else {
-        toast.error("Failed to submit review. Please try again.")
+        toast({ title: "Failed to submit review. Please try again.", variant: "destructive" })
       }
     } catch {
-      toast.error("Failed to submit review. Please try again.")
+      toast({ title: "Failed to submit review. Please try again.", variant: "destructive" })
     } finally {
       setIsSubmitting(false)
     }

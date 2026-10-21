@@ -186,8 +186,8 @@ export function InterventionAssignmentForm({ patientId }: InterventionAssignment
                 <Link href="/provider/">
                   <Button variant="outline">Return to Dashboard</Button>
                 </Link>
-                <Link href={`/provider/patients/${patientId}`}>
-                  <Button>View Patient</Button>
+                <Link href="/provider/patients">
+                  <Button>View Patients</Button>
                 </Link>
               </div>
             </div>

@@ -65,14 +65,6 @@ export function ActiveTrials({ trials, className = "" }: ActiveTrialsProps) {
                 </div>
               </div>
 
-              <div className="mt-4 flex justify-end">
-                <Link href={`/provider/trials/${trial.id}`}>
-                  <Button variant="outline" size="sm">
-                    View Details
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
             </div>
           ))}
 

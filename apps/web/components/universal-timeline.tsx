@@ -187,11 +187,9 @@ export function UniversalTimeline({
       onNavigateToVariableSettings(userVariableId, globalVariableId);
     } else {
       if (userVariableId) {
-        router.push(`/user-variables/${userVariableId}/settings`);
-      } else if (globalVariableId) {
-        router.push(`/variables/${globalVariableId}/settings`);
+        router.push(`/patient/user-variables/${userVariableId}`);
       } else {
-        logger.warn("UniversalTimeline: Cannot navigate to variable settings, no ID provided.");
+        logger.warn("UniversalTimeline: Cannot navigate to variable settings without the person's own variable.", { globalVariableId });
       }
     }
   }, [router, onNavigateToVariableSettings]);

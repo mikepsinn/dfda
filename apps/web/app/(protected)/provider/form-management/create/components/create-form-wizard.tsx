@@ -544,9 +544,6 @@ export function CreateFormWizard() {
                 <Link href="/provider/">
                   <Button variant="outline">Return to Dashboard</Button>
                 </Link>
-                <Link href="/provider/form-management">
-                  <Button>Manage Forms</Button>
-                </Link>
               </div>
             </div>
           </CardContent>
