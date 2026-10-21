@@ -32,7 +32,7 @@ export default async function CarePatientPage({
       <header className="space-y-3">
         <p className="text-sm font-medium text-primary">{instance.name} care team</p>
         <h1 className="text-3xl font-bold tracking-tight">{patient.name}</h1>
-        <dl className="grid gap-4 rounded-xl border bg-card p-4 text-sm sm:grid-cols-3">
+        <dl className="surface-raised grid gap-4 rounded-xl border bg-card p-4 text-sm sm:grid-cols-3">
           <div>
             <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Program</dt>
             <dd className="mt-0.5">{patient.program.name}</dd>
@@ -58,13 +58,13 @@ export default async function CarePatientPage({
           </p>
         )}
         {patient.reports.length > 0 ? (
-          <ReportList reports={patient.reports} hrefFor={(id) => `${base}/reports/${id}`} />
+          <ReportList reports={patient.reports} hrefFor={(id) => `${base}/reports/${id}`} className="surface-raised" />
         ) : (
           <p className="text-muted-foreground">No report yet.</p>
         )}
       </section>
 
-      <section aria-labelledby="add-heading" className="space-y-3 rounded-xl border p-6">
+      <section aria-labelledby="add-heading" className="surface-raised space-y-3 rounded-xl border p-6">
         <h2 id="add-heading" className="text-xl font-semibold">Add a report</h2>
         <p className="text-sm text-muted-foreground">
           A report file from your lab, in the biomarker report format (JSON; see the{" "}

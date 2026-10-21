@@ -1,14 +1,23 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
+import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import type { ReportSummary } from "@/lib/care-team/data"
 import { formatDate } from "@/lib/programs/format"
 import { reviewLabel } from "./ReviewStatus"
 
 /** Biomarker reports, newest first, each with its date and review status. */
-export function ReportList({ reports, hrefFor }: { reports: ReportSummary[]; hrefFor: (reportId: string) => string }) {
+export function ReportList({
+  reports,
+  hrefFor,
+  className,
+}: {
+  reports: ReportSummary[]
+  hrefFor: (reportId: string) => string
+  className?: string
+}) {
   return (
-    <ul className="divide-y rounded-xl border">
+    <ul className={cn("divide-y rounded-xl border", className)}>
       {reports.map((report) => (
         <li key={report.id}>
           <Link href={hrefFor(report.id)} className="flex items-center gap-3 p-4 hover:bg-muted/50">

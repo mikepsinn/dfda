@@ -10,7 +10,7 @@ import { formatDate } from "@/lib/programs/format"
 export function ReviewStatus({ report, audience }: { report: ReportSummary; audience: "patient" | "care-team" }) {
   if (report.reviewedAt) {
     return (
-      <section aria-label="Review" className="flex items-start gap-3 rounded-xl border bg-card p-4 break-inside-avoid">
+      <section aria-label="Review" className="surface-raised flex items-start gap-3 rounded-xl border bg-card p-4 break-inside-avoid">
         <CheckCircle2 aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
         <div className="space-y-1">
           <p className="font-medium">

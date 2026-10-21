@@ -54,7 +54,7 @@ export default async function CareReportPage({
       <BiomarkerReportView report={saved.report} review={<ReviewStatus report={saved} audience="care-team" />} />
 
       {!saved.reviewedAt && (
-        <section aria-labelledby="sign-off-heading" className="mx-auto max-w-5xl space-y-4 rounded-xl border p-6 print:hidden">
+        <section aria-labelledby="sign-off-heading" className="surface-raised mx-auto max-w-5xl space-y-4 rounded-xl border p-6 print:hidden">
           <h2 id="sign-off-heading" className="text-xl font-semibold">Sign off</h2>
           <p className="text-sm text-muted-foreground">
             Your sign-off shows your name, the date and your note to {patient.name}.

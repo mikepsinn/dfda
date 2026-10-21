@@ -28,7 +28,7 @@ export default async function CareTeamPage({ params }: { params: Promise<{ slug:
       {patients.length === 0 ? (
         <p className="rounded-xl border border-dashed p-6 text-muted-foreground">Nobody shares their reports yet.</p>
       ) : (
-        <div className="overflow-x-auto rounded-xl border">
+        <div className="surface-raised overflow-x-auto rounded-xl border">
           <table className="w-full text-left text-sm">
             <thead className="bg-muted/50 text-muted-foreground">
               <tr>

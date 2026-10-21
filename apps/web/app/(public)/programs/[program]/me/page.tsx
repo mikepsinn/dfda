@@ -108,7 +108,7 @@ export default async function YourProgramPage({
 
       <ProgramReport report={report} />
 
-      <section aria-labelledby="reports-heading" className="space-y-4 rounded-xl border p-6">
+      <section aria-labelledby="reports-heading" className="surface-raised space-y-4 rounded-xl border p-6">
         <h2 id="reports-heading" className="text-xl font-semibold">
           Biomarker reports
         </h2>
