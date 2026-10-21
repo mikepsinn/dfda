@@ -282,11 +282,11 @@ model global_variables {
   deleted_at                   DateTime?                       @db.Timestamptz(6)
   created_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
   updated_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
-  loinc_code                   String?                         @unique
   global_conditions            global_conditions?
   global_foods                 global_foods?
   global_symptoms              global_symptoms?
   global_treatments            global_treatments?
+  global_variable_codes        global_variable_codes[]
   relationships_as_outcome     global_variable_relationships[] @relation("global_variable_relationships_outcome_global_variable_idToglobal_variables")
   relationships_as_predictor   global_variable_relationships[] @relation("global_variable_relationships_predictor_global_variable_idToglobal_variables")
   global_variable_synonyms     global_variable_synonyms[]
@@ -1327,6 +1327,20 @@ model program_enrollments {
 
   @@unique([program_id, user_id])
   @@index([user_id], map: "idx_program_enrollments_user_id")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model global_variable_codes {
+  system             String
+  code               String
+  global_variable_id String
+  display            String?
+  created_at         DateTime         @default(now()) @db.Timestamptz(6)
+  global_variables   global_variables @relation(fields: [global_variable_id], references: [id], onDelete: Cascade)
+
+  @@id([system, code])
+  @@index([global_variable_id], map: "idx_global_variable_codes_global_variable_id")
 }
 
 view pending_actions {
