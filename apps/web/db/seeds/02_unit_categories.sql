@@ -28,3 +28,10 @@ INSERT INTO unit_categories (id, name, description, emoji)
 VALUES
 ('enzyme-activity', 'Enzyme Activity', 'Units of enzyme activity in blood (e.g., U/L)', '🧪'),
 ('mass-concentration', 'Mass Concentration', 'Mass of a substance per volume (e.g., ng/mL, mg/L)', '🧪');
+
+-- Lab test units (also in migration 20261021040000 for existing databases)
+INSERT INTO unit_categories (id, name, description, emoji)
+VALUES
+('velocity', 'Velocity', 'Distance per time (e.g., mm/h for the erythrocyte sedimentation rate)', '🧪'),
+('international-units-concentration', 'International Units Concentration', 'Biological activity per volume in international units (e.g., µIU/mL)', '🧪'),
+('filtration-rate', 'Filtration Rate', 'Volume filtered per time per standard body surface area (e.g., mL/min/1.73m²)', '🧪');

@@ -162,4 +162,68 @@ describe('the shared catalog', () => {
     await expect(adminDb.global_variable_codes.create({ data: { ...newCode, code: 'HbA1c' }, select: { code: true } })).rejects.toThrow()
     await expect(adminDb.global_variable_codes.create({ data: { ...newCode, code: '4548-4' }, select: { code: true } })).rejects.toThrow()
   })
+
+  it('has one variable per lab test, which keeps the name of the merged second one', async () => {
+    // db/migrations/20261021040000_catalog_lab_units_and_duplicates.sql does the same for an existing database.
+    const merged = [
+      { id: 'creatinine', formerId: 'blood-creatinine', formerName: 'Blood Creatinine' },
+      { id: 'fasting-blood-glucose', formerId: 'fasting-plasma-glucose', formerName: 'Fasting Plasma Glucose' },
+      { id: 'crp-c-reactive-protein', formerId: 'c-reactive-protein-crp', formerName: 'C-Reactive Protein (CRP)' },
+      { id: 'oxygen-saturation', formerId: 'oxygen-saturation-spo2', formerName: 'Oxygen Saturation (SpO2)' },
+    ]
+    expect(await adminDb.global_variables.count({ where: { id: { in: merged.map((test) => test.formerId) } } })).toBe(0)
+    for (const test of merged) {
+      expect(await adminDb.global_variable_synonyms.count({ where: { global_variable_id: test.id, name: test.formerName } })).toBe(1)
+    }
+    // Their findings are on the merged variables.
+    const findings = await adminDb.global_variable_relationships.findMany({
+      where: { outcome_global_variable_id: { in: merged.map((test) => test.id) } },
+      select: { predictor_global_variable_id: true, outcome_global_variable_id: true },
+    })
+    expect(findings).toEqual(
+      expect.arrayContaining([
+        { predictor_global_variable_id: 'lisinopril', outcome_global_variable_id: 'creatinine' },
+        { predictor_global_variable_id: 'sitagliptin', outcome_global_variable_id: 'fasting-blood-glucose' },
+        { predictor_global_variable_id: 'tocilizumab', outcome_global_variable_id: 'crp-c-reactive-protein' },
+        { predictor_global_variable_id: 'albuterol', outcome_global_variable_id: 'oxygen-saturation' },
+      ]),
+    )
+  })
+
+  it('gives lab tests, and the effects on them, the units that labs report', async () => {
+    const units = {
+      'creatine-kinase-ck': 'units-per-liter',
+      'esr-erythrocyte-sedimentation-rate': 'millimeters-per-hour',
+      'fasting-insulin': 'micro-international-units-per-milliliter',
+      'crp-c-reactive-protein': 'milligrams-per-liter',
+      'd-dimer': 'milligrams-per-liter',
+      ferritin: 'nanograms-per-milliliter',
+      'interleukin-6-il-6': 'picograms-per-milliliter',
+      'ketamine-plasma-concentration': 'nanograms-per-milliliter',
+      'estimated-glomerular-filtration-rate-egfr': 'milliliters-per-minute-per-1-73-square-meters',
+    }
+    const stored = await adminDb.global_variables.findMany({
+      where: { id: { in: Object.keys(units) } },
+      select: { id: true, default_unit_id: true },
+    })
+    expect(Object.fromEntries(stored.map((variable) => [variable.id, variable.default_unit_id]))).toEqual(units)
+
+    // An effect's absolute change is in a unit that converts to the test's unit.
+    const coded = await adminDb.global_variable_codes.findMany({ select: { global_variable_id: true } })
+    const labTests = [...new Set([...coded.map((code) => code.global_variable_id), ...Object.keys(units)])]
+    const effects = await adminDb.global_variable_relationships.findMany({
+      where: { outcome_global_variable_id: { in: labTests }, absolute_change_unit_id: { not: null } },
+      select: {
+        predictor_global_variable_id: true,
+        outcome_global_variable_id: true,
+        units: { select: { unit_category_id: true } },
+        outcome_variable: { select: { units: { select: { unit_category_id: true } } } },
+      },
+    })
+    expect(effects.length).toBeGreaterThan(10)
+    const mismatched = effects
+      .filter((effect) => effect.units?.unit_category_id !== effect.outcome_variable.units.unit_category_id)
+      .map((effect) => `${effect.predictor_global_variable_id} → ${effect.outcome_global_variable_id}`)
+    expect(mismatched).toEqual([])
+  })
 })

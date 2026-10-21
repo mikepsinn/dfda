@@ -16,6 +16,10 @@ production database is on [Neon](https://neon.tech); any PostgreSQL 16 host work
   a seed file and in a migration. The migration adds them only when the catalog
   is already seeded, because a new database runs the seeds after the migrations.
   See [`20261011020000_catalog_lab_markers_and_peptides.sql`](migrations/20261011020000_catalog_lab_markers_and_peptides.sql).
+  A correction (a wrong unit, or two variables for one thing) goes in the seed
+  files and in a migration too. A merge moves the references to the kept
+  variable and keeps the other one's name as a synonym; see
+  [`20261021040000_catalog_lab_units_and_duplicates.sql`](migrations/20261021040000_catalog_lab_units_and_duplicates.sql).
   Visitors and signed-in users can only read the catalog. The exceptions are for
   the photo import: signed-in users can add a global variable and the details of
   a treatment, and a user who tracks a treatment can change its details
