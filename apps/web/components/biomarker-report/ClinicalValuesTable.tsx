@@ -23,8 +23,6 @@ export function ClinicalValuesTable({ report, values }: { report: BiomarkerRepor
       firstText: formatMeasuredOrMissing(value.first, value.lowerLimit, decimals),
       lastText: formatMeasuredOrMissing(value.last, value.lowerLimit, decimals),
       changeText: value.percentChange === null ? "–" : formatPercent(value.percentChange),
-      // A trend needs more than the first and last value.
-      trend: value.values.filter((point) => point !== null).length > 2,
     }
   })
 
@@ -62,7 +60,10 @@ export function ClinicalValuesTable({ report, values }: { report: BiomarkerRepor
                 <td className="px-4 py-2.5 text-right tabular-nums">{value.firstText}</td>
                 <td className="px-4 py-2.5 text-right font-medium tabular-nums">{value.lastText}</td>
                 <td className="px-4 py-2.5 text-right tabular-nums">{value.changeText}</td>
-                <td className="px-4 py-1">{value.trend && <Sparkline values={value.values} weeks={weeks} labels={labels} />}</td>
+                <td className="px-4 py-1">
+                  {/* A line from the first to the last value, through any values between; none for fewer than two. */}
+                  <Sparkline values={value.values} weeks={weeks} labels={labels} />
+                </td>
                 <td className="px-4 py-2.5 tabular-nums text-muted-foreground">{value.reference ?? "–"}</td>
                 <td className="px-4 py-2.5">
                   <StatusBadge status={value.status} />
@@ -87,7 +88,7 @@ export function ClinicalValuesTable({ report, values }: { report: BiomarkerRepor
                 {value.percentChange !== null && <> · {value.changeText}</>}
                 {value.reference && <span className="text-muted-foreground"> · reference {value.reference}</span>}
               </p>
-              {value.trend && <Sparkline values={value.values} weeks={weeks} labels={labels} />}
+              <Sparkline values={value.values} weeks={weeks} labels={labels} />
             </div>
           </li>
         ))}
