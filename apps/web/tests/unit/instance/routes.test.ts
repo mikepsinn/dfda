@@ -8,6 +8,7 @@ describe('the paths of a company instance', () => {
       '/',
       '/programs',
       '/programs/glp-1/me',
+      '/reports/example',
       '/login',
       '/register',
       '/auth/callback',

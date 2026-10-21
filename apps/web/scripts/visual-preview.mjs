@@ -24,6 +24,7 @@ const routes = [
   { name: "developers", path: "/developers" },
   { name: "impact", path: "/impact" },
   { name: "find-trials", path: "/find-trials" },
+  { name: "biomarker-report", path: "/reports/example" },
   // The deck on a phone, which shows the desktop layout scaled down; its slides are compared below.
   { name: "presentation", path: "/present/patient-journey#9", viewports: ["mobile"] },
 ];
@@ -39,6 +40,7 @@ const demoRoutes = [
   { name: "program", label: `${program} (company instance)`, path: onInstance(program) },
   { name: "program-me", label: `${program}/me (member)`, path: onInstance(`${program}/me`), as: "member" },
   { name: "program-example", label: `${program}/example (company instance)`, path: onInstance(`${program}/example`) },
+  { name: "instance-biomarker-report", label: "/reports/example (company instance)", path: onInstance("/reports/example") },
   { name: "company-instance", label: company, path: company, as: "company" },
   { name: "company-program", label: `${company}${program}`, path: `${company}${program}`, as: "company" },
   { name: "company-program-sample", label: `${company}${program}?view=sample`, path: `${company}${program}?view=sample`, as: "company" },

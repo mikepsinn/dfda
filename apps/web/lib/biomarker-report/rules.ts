@@ -46,7 +46,7 @@ export type PanelResult = {
 export type ClinicalResult = Change & { status: ClinicalStatus }
 
 export type ReportSummary = {
-  panels: (Panel & PanelResult)[]
+  panels: (Omit<Panel, 'markers'> & PanelResult)[]
   clinicalValues: (ClinicalValue & ClinicalResult)[]
   counts: Record<MarkerStatus, number> & { total: number }
 }
