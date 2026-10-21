@@ -7,6 +7,8 @@
 const INSTANCE_PATHS = [
   // The company's programs, and each member's own program page
   '/programs',
+  // Biomarker reports
+  '/reports',
   // Sign-in
   '/login',
   '/register',

@@ -148,6 +148,15 @@ before/after report at `/programs/{slug}/me`. Three decisions for this demo:
 A before/after change in one person or one program is not a treatment effect; the
 pages say that a change after the start does not prove that the product caused it.
 
+Biomarker reports (`lib/biomarker-report`, `components/biomarker-report`, the example
+at `/reports/example`) show one person's blood markers at several timepoints, read
+against that person's own noise, next to the clinic's laboratory values. The data
+file holds only values and text; the rules calculate every status, index and count.
+The example report uses made-up values. By the owner's decision, it carries no
+"Sample data" label on the page, so that a company can show its product as it will
+look. Like program sample data, it is never stored as evidence or read by Outcome
+Labels, rankings or company totals. Uploading a company's own report file is planned.
+
 Configuration can select a verified domain, logo/favicon, theme, organization
 copy and contacts, enabled modules, and versioned questionnaire/study templates.
 Branding cannot change evidence calculations, remove provenance or uncertainty,

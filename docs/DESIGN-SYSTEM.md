@@ -113,6 +113,18 @@ The working examples are `/treatment-rankings?condition=insomnia`,
 `/outcome-labels/demo/insomnia/suvorexant`, and the landing page's existing label.
 These render local files without model calls. No dependency or theme reset is needed.
 
+## Biomarker reports
+
+- `components/biomarker-report/BiomarkerReportView.tsx`: a whole report from its data
+  file (`lib/biomarker-report`). Statuses always appear as text badges
+  (`StatusBadge.tsx`): emerald for the intended direction, amber for review, muted for
+  unchanged and below the assay limit.
+- Tables become stacked lists below the `md` breakpoint, so that the status stays in
+  view; print always uses the tables, without their minimum width.
+- `Sparkline.tsx` draws every timepoint in the instance's `primary` color and gives the
+  values in its accessible name, with the same decimals as the table.
+- Printing gives A4 pages with the report only (rules in `app/globals.css`).
+
 ## Presentations
 
 Slide decks are web app pages under `/present/<deck>`, such as

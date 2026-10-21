@@ -157,3 +157,26 @@
     break-after: auto;
   }
 }
+
+/* Biomarker reports (components/biomarker-report): print or save as PDF on A4
+   pages with the report only: without the site header and footer (the page
+   frame's direct children, components/SiteChrome.tsx) and without other parts
+   of the page, such as the instance preview bar. Other pages keep the rules above. */
+@media print {
+  @page biomarker-report {
+    size: A4;
+    margin: 12mm;
+  }
+  .biomarker-report {
+    page: biomarker-report;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  body:has(.biomarker-report) > :not(:has(.biomarker-report)),
+  body:has(.biomarker-report) .min-h-screen > :is(header, footer) {
+    display: none;
+  }
+  body:has(.biomarker-report) main {
+    padding: 0;
+  }
+}
