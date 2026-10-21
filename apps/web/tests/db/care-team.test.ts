@@ -21,6 +21,7 @@ const userIds: string[] = []
 type User = { id: string; email: string }
 let owner: User
 let clinician: User
+let secondClinician: User
 let otherClinician: User
 let patient: User
 let privatePerson: User
@@ -48,6 +49,7 @@ const input = programInputSchema.parse({
 beforeAll(async () => {
   owner = await newUser('owner')
   clinician = await newUser('clinician', 'Dr. Test Clinician')
+  secondClinician = await newUser('second-clinician', 'Dr. Second Clinician')
   otherClinician = await newUser('other-clinician')
   patient = await newUser('patient', 'Pat Shares')
   privatePerson = await newUser('private')
@@ -59,6 +61,7 @@ beforeAll(async () => {
   program = (await findProgram(slug, 'glp-1'))!
 
   await addClinician(owner, slug, clinician.email)
+  await addClinician(owner, slug, secondClinician.email)
   await addClinician(stranger, otherSlug, otherClinician.email)
   await joinProgram(patient, program, { scheduleNotifications: false, shareWithCareTeam: true })
   await joinProgram(privatePerson, program, { scheduleNotifications: false })
@@ -75,7 +78,7 @@ afterAll(async () => {
 
 describe('the care team', () => {
   it('is changed only by the instance owner', async () => {
-    expect((await careTeam(owner, instance.id)).map((member) => member.name)).toEqual(['Dr. Test Clinician'])
+    expect((await careTeam(owner, instance.id)).map((member) => member.name)).toEqual(['Dr. Test Clinician', 'Dr. Second Clinician'])
     expect(await careTeam(clinician, instance.id)).toEqual([])
 
     await expect(addClinician(stranger, slug, stranger.email)).rejects.toThrow(CareTeamError)
@@ -137,13 +140,23 @@ describe('biomarker reports', () => {
       reviewedAt: expect.any(Date),
     })
 
+    // A second sign-off does not replace the first, also when both clinicians opened the report before it.
+    await expect(signOffReport(secondClinician, reportId, 'A later note')).rejects.toThrow(CareTeamError)
+    expect(await findReport(patient, reportId)).toMatchObject({ reviewerName: 'Dr. Test Clinician', reviewNote: 'Keep the dose. Recheck at week 16.' })
+
     // Only the review columns may change, and only as the clinician's own review.
     await expect(
       dbAs(clinician).biomarker_reports.update({ where: { id: reportId }, data: { title: 'Changed' }, select: { id: true } }),
     ).rejects.toThrow(/permission denied/)
+    const open = await saveReport(clinician, { programId: program.id, patientId: patient.id, report: EXAMPLE_REPORT })
     await expect(
-      dbAs(clinician).biomarker_reports.update({ where: { id: reportId }, data: { reviewed_by: owner.id }, select: { id: true } }),
+      dbAs(clinician).biomarker_reports.update({
+        where: { id: open },
+        data: { reviewed_by: owner.id, reviewed_at: new Date() },
+        select: { id: true },
+      }),
     ).rejects.toThrow(/row-level security/)
+    await removeReport(clinician, open)
     expect(await findReport(patient, reportId)).toMatchObject({ title: EXAMPLE_REPORT.title, reviewerName: 'Dr. Test Clinician' })
   })
 
@@ -164,5 +177,14 @@ describe('biomarker reports', () => {
 
     await setSharing(patient, program.id, true)
     expect(await findReport(clinician, reportId)).not.toBeNull()
+  })
+
+  it("keep the reviewer's name when the reviewer's account is deleted", async () => {
+    const signed = await saveReport(clinician, { programId: program.id, patientId: patient.id, report: EXAMPLE_REPORT })
+    await signOffReport(secondClinician, signed, 'Signed before leaving.')
+    // Deleting the account deletes the profile too (handle_deleted_app_user), which clears reviewed_by.
+    await adminDb.users.delete({ where: { id: secondClinician.id } })
+    expect(await adminDb.profiles.count({ where: { id: secondClinician.id } })).toBe(0)
+    expect(await findReport(patient, signed)).toMatchObject({ reviewerName: 'Dr. Second Clinician', reviewNote: 'Signed before leaving.' })
   })
 })

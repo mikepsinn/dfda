@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { adminDb, dbAs, withUserTransaction, type DbUser } from '@/lib/db'
+import { adminDb, dbAs, withUserTransaction, type DbUser, type Prisma } from '@/lib/db'
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
 import { listPrograms, type Program } from '@/lib/programs/data'
 import { getServerUser } from '@/lib/server-auth'
@@ -46,15 +46,7 @@ const summarySelect = {
   review_note: true,
 } as const
 
-type SummaryRow = {
-  id: string
-  title: string
-  report_date: Date
-  created_at: Date
-  reviewed_at: Date | null
-  reviewer_name: string | null
-  review_note: string | null
-}
+type SummaryRow = Prisma.biomarker_reportsGetPayload<{ select: typeof summarySelect }>
 
 function toSummary(row: SummaryRow): ReportSummary {
   return {
@@ -92,6 +84,7 @@ export async function requireCareTeam(slug: string) {
   return { user, instance: membership.instances }
 }
 
+/** A row of the care_team_patients() function, which joins several tables; no Prisma model has its shape. */
 type PatientRow = {
   enrollment_id: string
   user_id: string

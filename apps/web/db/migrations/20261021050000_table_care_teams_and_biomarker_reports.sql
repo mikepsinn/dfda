@@ -106,7 +106,9 @@ AS $$
   ORDER BY u.name, pr.email
 $$;
 
--- A review names the reviewer from their account, and an open report has no review fields.
+-- A review names the reviewer from their account, and an open report has no
+-- review fields. When the reviewer's account is deleted, reviewed_by becomes
+-- null and the saved name stays.
 CREATE OR REPLACE FUNCTION public.set_biomarker_report_reviewer()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -117,7 +119,7 @@ BEGIN
     NEW.reviewed_by := NULL;
     NEW.reviewer_name := NULL;
     NEW.review_note := NULL;
-  ELSE
+  ELSIF NEW.reviewed_by IS NOT NULL THEN
     NEW.reviewer_name := (
       SELECT COALESCE(NULLIF(trim(u.name), ''), pr.email)
       FROM public.profiles pr LEFT JOIN public.users u ON u.id = pr.id
@@ -152,7 +154,8 @@ CREATE POLICY "Clinicians see their care teams" ON public.instance_clinicians
 
 -- The person reads their own reports. The care team reads, adds, signs off
 -- and removes the reports of people who share with it; a signed-off report
--- stays. Nobody else has access.
+-- stays as it is, so a second sign-off cannot replace the first. Nobody else
+-- has access.
 DROP POLICY IF EXISTS "People read their own reports" ON public.biomarker_reports;
 CREATE POLICY "People read their own reports" ON public.biomarker_reports
   FOR SELECT TO authenticated
@@ -171,7 +174,7 @@ CREATE POLICY "Care teams add shared reports" ON public.biomarker_reports
 DROP POLICY IF EXISTS "Care teams sign off shared reports" ON public.biomarker_reports;
 CREATE POLICY "Care teams sign off shared reports" ON public.biomarker_reports
   FOR UPDATE TO authenticated
-  USING (public.care_team_can_see(user_id, program_id))
+  USING (public.care_team_can_see(user_id, program_id) AND reviewed_at IS NULL)
   WITH CHECK (public.care_team_can_see(user_id, program_id) AND reviewed_at IS NOT NULL AND reviewed_by = auth.uid());
 
 DROP POLICY IF EXISTS "Care teams remove open reports" ON public.biomarker_reports;
