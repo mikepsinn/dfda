@@ -154,7 +154,27 @@ export function printBrandTheme(hex: string): Record<string, string> | null {
   if (contrast(color, WHITE) >= 4.5) return null
   const { h, s, l } = toHsl(color)
   const darker = variable(readableText(h, s, l, { h: 0, s: 0, l: 100 }, false, 4.5))
-  return { '--primary': darker, '--primary-foreground': '0 0% 100%', '--ring': darker }
+  return { '--primary': darker, '--primary-foreground': '0 0% 100%', '--primary-text': darker, '--ring': darker }
+}
+
+/** The muted areas of a page: a little darker than a light page, a little lighter than a dark one. */
+function mutedShade(page: Hsl, dark: boolean): Hsl {
+  return shade(page, dark, dark ? 1.2 : 1.1)
+}
+
+/**
+ * The brand color for text on the page (links, headings, icons). A brand color
+ * that does not read on the page gets darker on a light page, or lighter on a
+ * dark one, with the same hue, until it reads on the page's muted areas.
+ * Buttons and other fills keep the brand color itself.
+ */
+export function brandTextColor(primaryHex: string, backgroundHex: string): string {
+  const color = rgbOf(primaryHex)
+  const dark = isDark(backgroundHex)
+  const muted = mutedShade(toHsl(rgbOf(backgroundHex)), dark)
+  if (contrast(color, toRgb(muted)) >= 4.5) return brandTheme(primaryHex).primary
+  const { h, s, l } = toHsl(color)
+  return variable(readableText(h, s, l, muted, dark, 4.5))
 }
 
 /**
@@ -168,7 +188,7 @@ export function surfaceTheme(background: string): { dark: boolean; variables: Re
   const dark = isDark(background)
   const { h, s } = page
   const card = shade(page, true, dark ? 1.08 : 1.03)
-  const muted = shade(page, dark, dark ? 1.2 : 1.1)
+  const muted = mutedShade(page, dark)
   const border = shade(page, dark, dark ? 1.35 : 1.25)
   // Muted areas have the least contrast with the text: a text color that reads on them reads on the page and on cards.
   const textSaturation = Math.min(s, 10)
@@ -194,9 +214,14 @@ export function surfaceTheme(background: string): { dark: boolean; variables: Re
   }
 }
 
-/** The theme's CSS variables: the brand and corner radius, the page colors, and the font stack. */
+/**
+ * The theme's CSS variables: the brand and corner radius, the page colors with
+ * the brand color for text on them, and the font stack.
+ */
 export function themeVariables(theme: InstanceTheme) {
   const { primary, primaryForeground } = brandTheme(theme.primaryColor)
+  const surface = surfaceTheme(theme.backgroundColor)
+  surface.variables['--primary-text'] = brandTextColor(theme.primaryColor, theme.backgroundColor)
   return {
     brand: {
       '--primary': primary,
@@ -204,7 +229,7 @@ export function themeVariables(theme: InstanceTheme) {
       '--ring': primary,
       '--radius': CORNER_RADII[theme.cornerRadius].value,
     },
-    surface: surfaceTheme(theme.backgroundColor),
+    surface,
     fontFamily: FONTS[theme.font].stack,
   }
 }

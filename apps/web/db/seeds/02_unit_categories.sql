@@ -8,7 +8,7 @@ VALUES
 ('mass', 'Mass', 'Units of mass (distinct from weight)', '⚖️'),
 ('length', 'Length', 'Units of length or distance', '📏'),
 ('temperature', 'Temperature', 'Units of temperature', '🌡️'),
-('concentration', 'Concentration', 'Units of concentration (e.g., mg/dL, mmol/L)', '🧪'),
+('concentration', 'Molar Concentration', 'Amount of a substance per volume (e.g., mmol/L, µmol/L); mass units convert to these only with the substance''s molar mass', '🧪'),
 ('cell-count', 'Cell Count', 'Units for cell counts (e.g., per microliter)', '🔬'),
 ('volume', 'Volume', 'Units of volume', '💧'),
 ('energy', 'Energy', 'Units of energy (e.g., kcal, kJ)', '⚡'),
@@ -27,11 +27,16 @@ VALUES
 INSERT INTO unit_categories (id, name, description, emoji)
 VALUES
 ('enzyme-activity', 'Enzyme Activity', 'Units of enzyme activity in blood (e.g., U/L)', '🧪'),
-('mass-concentration', 'Mass Concentration', 'Mass of a substance per volume (e.g., ng/mL, mg/L)', '🧪');
+('mass-concentration', 'Mass Concentration', 'Mass of a substance per volume (e.g., mg/dL, mg/L, ng/mL)', '🧪');
 
 -- Lab test units (also in migration 20261021040000 for existing databases)
 INSERT INTO unit_categories (id, name, description, emoji)
 VALUES
-('velocity', 'Velocity', 'Distance per time (e.g., mm/h for the erythrocyte sedimentation rate)', '🧪'),
+('velocity', 'Velocity', 'Distance per time (e.g., mm/h for the erythrocyte sedimentation rate, m/s for gait speed)', '🧪'),
 ('international-units-concentration', 'International Units Concentration', 'Biological activity per volume in international units (e.g., µIU/mL)', '🧪'),
 ('filtration-rate', 'Filtration Rate', 'Volume filtered per time per standard body surface area (e.g., mL/min/1.73m²)', '🧪');
+
+-- Flow units (also in migration 20261021060000 for existing databases)
+INSERT INTO unit_categories (id, name, description, emoji)
+VALUES
+('volume-flow-rate', 'Volume Flow Rate', 'Volume per time (e.g., L/min for the peak expiratory flow)', '💨');

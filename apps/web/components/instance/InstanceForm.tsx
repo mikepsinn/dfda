@@ -13,6 +13,7 @@ import {
   FONTS,
   bestTextContrast,
   contrastRatio,
+  isDark,
   themeVariables,
   type CornerRadius,
   type InstanceFont,
@@ -175,8 +176,9 @@ export function InstanceForm({
           </div>
           {brandContrast < 4.5 && (
             <p className="text-sm text-muted-foreground sm:col-span-2">
-              Links in the brand color are hard to read on this background (contrast {brandContrast.toFixed(1)} to 1; text
-              needs 4.5 to 1). Choose a lighter or darker brand color.
+              The brand color is hard to read as text on this background (contrast {brandContrast.toFixed(1)} to 1; text
+              needs 4.5 to 1). So the site shows links and headings in a {isDark(background) ? "lighter" : "darker"} shade of
+              it, and buttons in the brand color itself.
             </p>
           )}
           <div className="space-y-2">
@@ -262,7 +264,7 @@ export function InstanceForm({
             <span className="font-bold">{values.name || "Company name"}</span>
           </div>
           <div className="space-y-4 bg-muted/40 p-6">
-            <p className="text-3xl font-bold tracking-tight" style={{ color }}>
+            <p className="text-3xl font-bold tracking-tight text-primary">
               {values.name || "Company name"}
             </p>
             <p className="text-muted-foreground">
@@ -271,11 +273,7 @@ export function InstanceForm({
             {products.length > 0 && (
               <ul className="flex flex-wrap gap-2">
                 {products.map((product) => (
-                  <li
-                    key={product}
-                    className="rounded-full px-3 py-1 text-sm font-medium"
-                    style={{ color, backgroundColor: `${color}1a` }}
-                  >
+                  <li key={product} className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
                     {product}
                   </li>
                 ))}

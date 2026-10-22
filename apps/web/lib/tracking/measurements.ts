@@ -74,7 +74,7 @@ export async function listMeasurements(db: TrackingDb, userId: string, input: Li
 export async function recordMeasurement(db: TrackingDb, userId: string, input: RecordMeasurementInput) {
   const variable = await resolveVariable(db, input)
   const userVariable = await ensureUserVariable(db, userId, variable.id)
-  const unit = await resolveUnit(db, input, variable.units, userVariable.preferred_unit_id)
+  const unit = await resolveUnit(db, input, variable.units, userVariable.preferred_unit_id, variable.molar_mass)
   const row = await db.measurements.create({
     data: {
       user_id: userId,
@@ -108,7 +108,7 @@ export async function updateMeasurement(db: TrackingDb, userId: string, input: U
       ? (await db.user_variables.findUnique({ where: { id: existing.user_variable_id }, select: { preferred_unit_id: true } }))
           ?.preferred_unit_id ?? null
       : null
-    unitId = (await resolveUnit(db, input, variable.units, preferred)).id
+    unitId = (await resolveUnit(db, input, variable.units, preferred, variable.molar_mass)).id
   }
   const row = await db.measurements.update({
     where: { id: existing.id },

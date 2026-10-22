@@ -31,8 +31,19 @@ describe("the instance form", () => {
 
     type("Background color", "#ffffff")
     expect(screen.queryByText(/Choose a lighter or a darker background/)).not.toBeInTheDocument()
-    expect(screen.queryByText(/Links in the brand color are hard to read/)).not.toBeInTheDocument()
+    expect(screen.queryByText(/hard to read as text/)).not.toBeInTheDocument()
     type("Brand color", "#2fd4be")
-    expect(screen.getByText(/Links in the brand color are hard to read on this background \(contrast 1\.\d to 1/)).toBeInTheDocument()
+    expect(screen.getByText(/The brand color is hard to read as text on this background \(contrast 1\.\d to 1/)).toHaveTextContent(
+      "So the site shows links and headings in a darker shade of it, and buttons in the brand color itself.",
+    )
+  })
+
+  it("previews text in the brand color as the site shows it, and buttons in the brand color itself", () => {
+    const { preview, type } = renderForm()
+    type("Background color", "#faf9f6")
+    type("Brand color", "#2fd4be")
+    expect(preview.style.getPropertyValue("--primary")).toBe("172 66% 51%")
+    expect(preview.style.getPropertyValue("--primary-text")).toMatch(/^172 65\.7% \d+(\.\d)?%$/)
+    expect(preview.style.getPropertyValue("--primary-text")).not.toBe("172 65.7% 50.8%")
   })
 })
