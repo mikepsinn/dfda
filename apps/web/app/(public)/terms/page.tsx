@@ -3,13 +3,19 @@ import { ArrowLeft } from "lucide-react"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
 import { env } from '@/lib/env';
+import { CompanyPage } from '@/components/instance/CompanyPage';
+import { findCurrentPage } from '@/lib/instance/page-data';
 
 // Generate metadata using the helper function
 export async function generateMetadata(): Promise<Metadata> {
-  return getMetadataFromNavKey('terms');
+  const companyPage = await findCurrentPage('terms');
+  return companyPage ? { title: companyPage.title } : getMetadataFromNavKey('terms');
 }
 
 export default async function TermsPage() {
+  // A company's own page with this address takes the place of the network's text on the company's site.
+  const companyPage = await findCurrentPage('terms');
+  if (companyPage) return <CompanyPage page={companyPage} />;
   return (
     <div className="flex min-h-screen flex-col">
 

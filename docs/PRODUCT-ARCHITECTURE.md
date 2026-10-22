@@ -155,7 +155,24 @@ member's reminders, and the terms and privacy pages. The network's other pages
 there. [`lib/instance/routes.ts`](../apps/web/lib/instance/routes.ts) lists the
 paths, and `middleware.ts` applies the list. The instance pages stay in the one
 route tree of `apps/web`: one release, no second app. The terms and privacy pages
-are still the network's.
+are the network's unless the company writes its own (below).
+
+**Content pages, 2026-10-22 (`apps/web/lib/instance/pages.ts`):** an instance
+owner writes pages of text in Markdown at `/instances/{slug}/pages/new`: what the
+company measures, how its service works, an FAQ. The company's site shows each
+page at `/pages/{slug}`; a page in the menu is linked in the header on wide
+screens, and every page is linked in the footer. A page with the address `terms`
+or `privacy` takes the place of the network's page at `/terms` or `/privacy` on
+the company's site. Decisions:
+
+1. One generic page type, not a feature per kind of content (such as a marker
+   list with its own upload format): a company that has a list or a table writes
+   it as a Markdown table, and any company can use the same pages.
+2. The text is Markdown only: raw HTML is not rendered, and links with an unsafe
+   protocol lose their address, so a page cannot run scripts on the company's site.
+3. Pages are public, like the branding (row-level security: anyone reads, only the
+   instance's owner writes). Do not put anything on a page that the company does
+   not want to publish.
 
 **Programs, 2026-10-11 (`apps/web/lib/programs`):** an instance owner defines
 programs at `/instances/{slug}/programs/new`, from a GLP-1 or BPC-157 template or

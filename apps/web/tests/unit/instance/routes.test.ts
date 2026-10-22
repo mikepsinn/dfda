@@ -3,12 +3,13 @@ import { describe, expect, it } from 'vitest'
 import { isInstancePath } from '@/lib/instance/routes'
 
 describe('the paths of a company instance', () => {
-  it('include the home page, programs, sign-in, reminders, legal pages, the owner pages and care team invitations', () => {
+  it('include the home page, programs, content pages, sign-in, reminders, legal pages, the owner pages and care team invitations', () => {
     for (const path of [
       '/',
       '/programs',
       '/programs/glp-1/me',
       '/reports/example',
+      '/pages/what-we-measure',
       '/login',
       '/register',
       '/auth/callback',

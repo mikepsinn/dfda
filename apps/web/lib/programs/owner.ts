@@ -24,7 +24,12 @@ export async function requireOwnedProgram(instanceSlug: string, programSlug: str
   return { ...owned, program }
 }
 
-/** The address where people open a program: the preview link works on any host. */
+/** The address where the owner opens a path of their site: the preview link works on any host. */
+export function previewPath(instanceSlug: string, path: string) {
+  return `/i/${instanceSlug}?next=${encodeURIComponent(path)}`
+}
+
+/** The address where people open a program. */
 export function programPreviewPath(instanceSlug: string, programSlug: string) {
-  return `/i/${instanceSlug}?next=${encodeURIComponent(`/programs/${programSlug}`)}`
+  return previewPath(instanceSlug, `/programs/${programSlug}`)
 }

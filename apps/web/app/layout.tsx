@@ -16,6 +16,7 @@ import { InstanceTheme } from "@/components/instance/InstanceTheme"
 import { InstanceHeader } from "@/components/instance/InstanceHeader"
 import { InstanceFooter } from "@/components/instance/InstanceFooter"
 import { PreviewBar } from "@/components/instance/PreviewBar"
+import { listPages } from "@/lib/instance/page-data"
 import { requestSiteOrigin, resolveInstance } from "@/lib/instance/resolve"
 import { DARK_CLASS, isDark } from "@/lib/instance/theme"
 import { cn } from "@/lib/utils"
@@ -117,6 +118,8 @@ export default async function RootLayout({
   // A company instance (its own domain, subdomain or preview link) is the company's own site:
   // its branding, header and footer, and only its pages (lib/instance/routes.ts).
   const instance = await resolveInstance()
+  // Its content pages, linked in its header and footer.
+  const pages = instance ? (await listPages(instance.slug)).map(({ slug, title, inMenu }) => ({ slug, title, inMenu })) : []
 
   return (
     <html lang="en" className={cn(inter.variable, reportSerif.variable, instance && isDark(instance.backgroundColor) && DARK_CLASS)}>
@@ -129,14 +132,14 @@ export default async function RootLayout({
           <SiteChrome
             header={
               instance ? (
-                <InstanceHeader brand={instance} initialUser={user} initialProfile={profile} />
+                <InstanceHeader brand={instance} pages={pages} initialUser={user} initialProfile={profile} />
               ) : (
                 <Header initialUser={user} initialProfile={profile} siteName={env.NEXT_PUBLIC_SITE_NAME} />
               )
             }
             footer={
               instance ? (
-                <InstanceFooter brand={instance} />
+                <InstanceFooter brand={instance} pages={pages} />
               ) : (
                 <Footer siteName={env.NEXT_PUBLIC_SITE_NAME} />
               )

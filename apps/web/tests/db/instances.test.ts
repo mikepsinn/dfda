@@ -69,6 +69,50 @@ describe('instances table', () => {
   })
 })
 
+describe('instance_pages table', () => {
+  const instanceId = async () => (await adminDb.instances.findUniqueOrThrow({ where: { slug }, select: { id: true } })).id
+
+  it('lets the owner write a page, and anyone read it', async () => {
+    await dbAs(owner).instance_pages.create({
+      data: { instance_id: await instanceId(), slug: 'faq', title: 'FAQ', body: '## Questions', in_menu: true },
+      select: { id: true },
+    })
+    expect(await dbAs(null).instance_pages.findMany({ where: { instances: { slug } }, select: { slug: true, title: true } })).toEqual([
+      { slug: 'faq', title: 'FAQ' },
+    ])
+    const { count } = await dbAs(owner).instance_pages.updateMany({ where: { instances: { slug }, slug: 'faq' }, data: { title: 'Questions' } })
+    expect(count).toBe(1)
+  })
+
+  it('does not let another user write, change or delete the pages of an instance that is not theirs', async () => {
+    await expect(
+      dbAs(other).instance_pages.create({ data: { instance_id: await instanceId(), slug: 'fake', title: 'Fake', body: 'x' }, select: { id: true } }),
+    ).rejects.toThrow()
+    const { count: changed } = await dbAs(other).instance_pages.updateMany({ where: { instances: { slug } }, data: { body: 'Taken over' } })
+    const { count: deleted } = await dbAs(other).instance_pages.deleteMany({ where: { instances: { slug } } })
+    expect([changed, deleted]).toEqual([0, 0])
+    expect(await adminDb.instance_pages.findMany({ where: { instances: { slug } }, select: { title: true, body: true } })).toEqual([
+      { title: 'Questions', body: '## Questions' },
+    ])
+  })
+
+  it('refuses a second page at the same address, and an address in the wrong form', async () => {
+    const instance_id = await instanceId()
+    for (const pageSlug of ['faq', 'Not Valid', 'a--b']) {
+      await expect(
+        dbAs(owner).instance_pages.create({ data: { instance_id, slug: pageSlug, title: 'Page', body: 'x' }, select: { id: true } }),
+      ).rejects.toThrow()
+    }
+  })
+
+  it('goes with its instance', async () => {
+    const extra = await dbAs(owner).instances.create({ data: { slug: `${slug}-pages`, name: 'Acme', owner_id: owner.id }, select: { id: true } })
+    await dbAs(owner).instance_pages.create({ data: { instance_id: extra.id, slug: 'about', title: 'About', body: 'x' }, select: { id: true } })
+    await dbAs(owner).instances.delete({ where: { id: extra.id } })
+    expect(await adminDb.instance_pages.count({ where: { instance_id: extra.id } })).toBe(0)
+  })
+})
+
 describe('resolveInstance', () => {
   async function resolve(host: string, cookie?: string) {
     Object.assign(request, { host, cookie })

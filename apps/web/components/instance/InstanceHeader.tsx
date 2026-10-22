@@ -6,16 +6,23 @@ import { Button } from "@/components/ui/button"
 import { useProfileTimezone } from "@/components/layout/use-profile-timezone"
 import type { Profile } from "@/lib/actions/profiles"
 import type { AuthUser as User } from "@/lib/auth"
+import { pagePath, type PageLink } from "@/lib/instance/pages"
 import { authClient } from "@/lib/auth-client"
 import { SiteLogo } from "./SiteLogo"
 
-/** The header of a company instance: its logo and name, its programs, and sign-in. No links to the network's pages. */
+/**
+ * The header of a company instance: its logo and name, its programs, its menu
+ * pages on wide screens (the footer links every page), and sign-in. No links
+ * to the network's pages.
+ */
 export function InstanceHeader({
   brand,
+  pages,
   initialUser,
   initialProfile,
 }: {
   brand: { name: string; logoUrl: string | null }
+  pages: PageLink[]
   initialUser: User | null
   initialProfile: Profile | null
 }) {
@@ -39,6 +46,13 @@ export function InstanceHeader({
           <Button asChild variant="ghost" size="sm">
             <Link href="/programs">Programs</Link>
           </Button>
+          {pages
+            .filter((page) => page.inMenu)
+            .map((page) => (
+              <Button key={page.slug} asChild variant="ghost" size="sm" className="hidden md:inline-flex">
+                <Link href={pagePath(page.slug)}>{page.title}</Link>
+              </Button>
+            ))}
           {initialUser ? (
             <Button type="button" variant="outline" size="sm" onClick={signOut}>
               Sign out
