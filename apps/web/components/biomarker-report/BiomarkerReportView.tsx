@@ -10,13 +10,14 @@ import { ReportSheet, type SheetFrame } from "./ReportSheet"
 import { VisitPage } from "./VisitPage"
 
 /**
- * A biomarker report (lib/biomarker-report), laid out as its printed pages: a
- * cover, the panels at a glance, the clinic's values, one page per panel, the
- * page for the visit, and the methods. Pages without data are left out. Every
- * status and count comes from rules.ts. `brandName` (the site's name) heads
- * every page. Printing gives one A4 page per sheet without the site header and
- * footer (app/globals.css). `review` (a saved report's sign-off, lib/care-team)
- * shows on the cover and prints with it.
+ * A biomarker report (lib/biomarker-report), in the sections of its printed
+ * pages: a cover, the panels at a glance, the clinic's values, one page per
+ * panel, the page for the visit, and the methods. Pages without data are left
+ * out. Every status and count comes from rules.ts. On screen it is a page of
+ * the site, in the site's light or dark colors. Printing gives one A4 page per
+ * sheet on the report's own paper, without the site header and footer, with
+ * `brandName` (the site's name) on every page (app/globals.css). `review` (a
+ * saved report's sign-off, lib/care-team) shows on the cover and prints with it.
  */
 export function BiomarkerReportView({
   report,

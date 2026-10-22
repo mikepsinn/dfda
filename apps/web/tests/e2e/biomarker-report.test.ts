@@ -16,12 +16,14 @@ test("a company's site shows the report, and prints the report without the site 
   await page.goto(onInstance('/reports/example'))
   await expect(page.getByRole('banner')).toContainText(demo.instance.name)
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-  // The panels are raised cards on screen, and flat on paper.
+  // On screen the report is a page of the site, with no paper; in print each sheet is the report's paper.
   const panel = page.getByRole('region', { name: 'Muscle & bone' })
-  await expect(panel).not.toHaveCSS('box-shadow', 'none')
+  await expect(panel).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)')
+  await expect(panel.getByText(/^Page \d+ of \d+$/)).toBeHidden()
 
   await page.emulateMedia({ media: 'print' })
-  await expect(panel).toHaveCSS('box-shadow', 'none')
+  await expect(panel).toHaveCSS('background-color', 'rgb(249, 248, 245)')
+  await expect(panel.getByText(/^Page \d+ of \d+$/)).toBeVisible()
   await expect(page.getByRole('banner')).toBeHidden()
   await expect(page.getByRole('contentinfo')).toBeHidden()
   await expect(page.getByRole('button', { name: 'Print or save as PDF' })).toBeHidden()
@@ -32,6 +34,7 @@ test("a company's site shows the report, and prints the report without the site 
 test("a program's example report prints one A4 page per sheet, as the clinician edition does", async ({ page }) => {
   await page.goto(onInstance('/programs/glp-1/example'))
   await expect(page.getByRole('heading', { level: 1 })).toContainText('semaglutide')
+  await page.emulateMedia({ media: 'print' })
   await expect(page.getByText('Page 13 of 13')).toBeVisible()
   // The page's own @page rule gives the size (A4) and no margin; a sheet that does not fit adds a page.
   const pdf = (await page.pdf({ preferCSSPageSize: true, printBackground: true })).toString('latin1')

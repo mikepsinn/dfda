@@ -178,6 +178,48 @@ export function brandTextColor(primaryHex: string, backgroundHex: string): strin
 }
 
 /**
+ * The status colors of a biomarker report (components/biomarker-report/StatusBadge.tsx):
+ * teal for a change in the intended direction, amber for one to review, stone
+ * for no change. Printed reports use these.
+ */
+export const STATUS_COLORS = { intended: '#1d7a6c', review: '#b07526', neutral: '#85837d' } as const
+
+/** How much of a status color its pale fill has, on a card (a badge, a note). app/globals.css mixes the same share. */
+export const STATUS_FILL = 0.14
+
+/** Mixes two colors as CSS `color-mix(in srgb, …)` does: by channel, in sRGB. */
+function mix(a: Rgb, b: Rgb, share: number): Rgb {
+  return a.map((channel, index) => channel * share + b[index] * (1 - share)) as Rgb
+}
+
+/**
+ * The status colors on a page background, for a report on screen. Each keeps
+ * its hue, and gets darker on a light page or lighter on a dark one until it
+ * reads on the page's muted areas and on its own pale fill.
+ */
+export function statusColors(background: string): Record<`--status-${keyof typeof STATUS_COLORS}`, string> {
+  const page = toHsl(rgbOf(background))
+  const dark = isDark(background)
+  const card = toRgb(shade(page, true, dark ? 1.08 : 1.03))
+  const muted = toRgb(mutedShade(page, dark))
+  const readable = (hex: string) => {
+    const { h, s, l: start } = toHsl(rgbOf(hex))
+    const reads = (l: number) => {
+      const color = toRgb({ h, s, l })
+      return contrast(color, muted) >= 4.5 && contrast(color, mix(color, card, STATUS_FILL)) >= 4.5
+    }
+    let l = start
+    while (!reads(l) && (dark ? l < 100 : l > 0)) l = clamp(round(l + (dark ? 1 : -1)))
+    return variable({ h, s, l })
+  }
+  return {
+    '--status-intended': readable(STATUS_COLORS.intended),
+    '--status-review': readable(STATUS_COLORS.review),
+    '--status-neutral': readable(STATUS_COLORS.neutral),
+  }
+}
+
+/**
  * The page colors for a background. Cards are a little lighter than the page.
  * Muted areas, inputs and borders are a little darker on a light page and a
  * little lighter on a dark page. The text keeps a hint of the page's hue, and
@@ -210,6 +252,7 @@ export function surfaceTheme(background: string): { dark: boolean; variables: Re
       '--accent-foreground': text,
       '--border': variable(border),
       '--input': variable(border),
+      ...statusColors(background),
     },
   }
 }

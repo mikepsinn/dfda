@@ -2,8 +2,12 @@ import { expect, test } from '@playwright/test'
 import { contrastRatio } from '../../lib/instance/theme'
 import { COMPANY_STATE, MEMBER_STATE, demo, onInstance } from './demo'
 
-/** "rgb(47, 212, 190)" as "#2fd4be". */
-const hexOf = (rgb: string) => `#${rgb.match(/\d+/g)!.slice(0, 3).map((value) => Number(value).toString(16).padStart(2, '0')).join('')}`
+/** "rgb(47, 212, 190)", or a mixed color such as "color(srgb 0.18 0.83 0.75)", as "#2fd4be". */
+function hexOf(color: string) {
+  const numbers = color.match(/[\d.]+/g)!.slice(0, 3).map(Number)
+  const channels = color.startsWith('color(') ? numbers.map((value) => Math.round(value * 255)) : numbers
+  return `#${channels.map((value) => value.toString(16).padStart(2, '0')).join('')}`
+}
 
 test.describe("a company's own site", () => {
   test('shows the company, its programs and no network pages', async ({ page }) => {
@@ -95,6 +99,25 @@ test.describe("a company's own site", () => {
 
       await page.emulateMedia({ media: 'print' })
       await expect(body).toHaveCSS('background-color', 'rgb(255, 255, 255)')
+      await page.emulateMedia({ media: 'screen' })
+
+      // The example report is a page of the dark site, with status colors that read on it, and prints on its light paper.
+      await page.goto(onInstance('/reports/example'))
+      const sheet = page.getByRole('region', { name: 'Muscle & bone' })
+      await expect(sheet).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)')
+      const badge = sheet.getByText('Review', { exact: true }).first()
+      const [text, fill] = await badge.evaluate((element) => [getComputedStyle(element).color, getComputedStyle(element).backgroundColor])
+      expect(contrastRatio(hexOf(text), hexOf(fill)), `${text} on ${fill}`).toBeGreaterThanOrEqual(4.5)
+      expect(contrastRatio(hexOf(text), '#0d0f0e'), text).toBeGreaterThanOrEqual(4.5)
+      const doseSteps = await page.getByRole('list', { name: 'Dose schedule' }).getByRole('listitem').all()
+      expect(doseSteps.length).toBeGreaterThan(0)
+      for (const step of doseSteps) {
+        const [label, stepFill] = await step.evaluate((element) => [getComputedStyle(element).color, getComputedStyle(element).backgroundColor])
+        expect(contrastRatio(hexOf(label), hexOf(stepFill)), `${label} on ${stepFill}`).toBeGreaterThanOrEqual(4.5)
+      }
+      await page.emulateMedia({ media: 'print' })
+      await expect(sheet).toHaveCSS('background-color', 'rgb(249, 248, 245)')
+      await expect(badge).toHaveCSS('color', 'rgb(176, 117, 38)')
       await page.emulateMedia({ media: 'screen' })
 
       // A light brand color on a light page: buttons keep it, and text in it gets darker until it reads.

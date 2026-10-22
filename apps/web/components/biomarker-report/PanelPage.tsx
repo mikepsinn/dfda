@@ -68,6 +68,7 @@ export function PanelPage({
       frame={frame}
       number={number}
       section={panel.name}
+      sectionInPrintOnly
       personLine={personLine}
       id={`panel-${panel.id}`}
       labelledBy={`panel-${panel.id}-heading`}
