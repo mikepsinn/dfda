@@ -14,11 +14,12 @@ const valid = {
   cornerRadius: 'large',
   products: 'Proteomics panel\nBPC-157, Proteomics panel',
   customDomain: '',
+  supportEmail: '',
 }
 
 describe('instance input', () => {
   it('normalizes the form values', () => {
-    expect(instanceInputSchema.parse({ ...valid, customDomain: 'https://Track.Acme.com/start' })).toEqual({
+    expect(instanceInputSchema.parse({ ...valid, customDomain: 'https://Track.Acme.com/start', supportEmail: ' Help@Acme.com ' })).toEqual({
       name: 'Acme Proteomics',
       slug: 'acme',
       tagline: null,
@@ -29,7 +30,9 @@ describe('instance input', () => {
       cornerRadius: 'large',
       products: ['Proteomics panel', 'BPC-157'],
       customDomain: 'track.acme.com',
+      supportEmail: 'help@acme.com',
     })
+    expect(instanceInputSchema.parse(valid).supportEmail).toBeNull()
   })
 
   it.each([
@@ -41,6 +44,7 @@ describe('instance input', () => {
     ['a font that is not in the list', { font: 'comic-sans' }],
     ['a corner size that is not in the list', { cornerRadius: 'huge' }],
     ['a domain without a dot', { customDomain: 'localhost' }],
+    ['a support email without a domain', { supportEmail: 'help@' }],
   ])('refuses %s', (_name, change) => {
     expect(instanceInputSchema.safeParse({ ...valid, ...change }).success).toBe(false)
   })
@@ -56,6 +60,28 @@ describe('subdomainSlug', () => {
     expect(subdomainSlug('dfda.earth', 'dfda.earth')).toBeNull()
     expect(subdomainSlug('a.b.dfda.earth', 'dfda.earth')).toBeNull()
     expect(subdomainSlug('acme.dfda.earth', undefined)).toBeNull()
+  })
+})
+
+describe('companySiteOrigin', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs()
+    vi.resetModules()
+  })
+
+  it('uses the own domain once it is connected, else the subdomain, else none', async () => {
+    vi.stubEnv('INSTANCE_ROOT_DOMAIN', 'dfda.earth')
+    vi.resetModules()
+    const { companySiteOrigin } = await import('@/lib/instance/hosts')
+    const acme = { slug: 'acme', customDomain: 'track.acme.com' }
+    expect(companySiteOrigin(acme, true)).toBe('https://track.acme.com')
+    expect(companySiteOrigin(acme, false)).toBe('https://acme.dfda.earth')
+    expect(companySiteOrigin(acme, null)).toBe('https://acme.dfda.earth')
+
+    vi.stubEnv('INSTANCE_ROOT_DOMAIN', '')
+    vi.resetModules()
+    const withoutRoot = await import('@/lib/instance/hosts')
+    expect(withoutRoot.companySiteOrigin({ slug: 'acme', customDomain: null }, null)).toBeNull()
   })
 })
 

@@ -2,16 +2,22 @@ import Link from "next/link"
 import { Beaker } from "lucide-react"
 import type { Metadata } from 'next';
 import { env } from '@/lib/env';
+import { resolveInstance } from '@/lib/instance/resolve';
 
 import UpdatePasswordForm from "../../../components/auth/update-password-form"
 
-export const metadata: Metadata = {
-  title: `Update Password | ${env.NEXT_PUBLIC_SITE_NAME}`,
-  description: `Update your ${env.NEXT_PUBLIC_SITE_NAME} account password.`,
-  // Add other relevant metadata fields if needed
-};
+// A company's site names the company, not the network.
+async function siteName(): Promise<string> {
+  return (await resolveInstance())?.name ?? env.NEXT_PUBLIC_SITE_NAME
+}
 
-export default function UpdatePasswordPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const name = await siteName()
+  return { title: `Update Password | ${name}`, description: `Update your ${name} account password.` }
+}
+
+export default async function UpdatePasswordPage() {
+  const name = await siteName()
   return (
     <div className="flex min-h-screen flex-col">
       {/* Basic Header - Consider using Layout component if applicable */}
@@ -20,7 +26,7 @@ export default function UpdatePasswordPage() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <Beaker className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">{env.NEXT_PUBLIC_SITE_NAME}</span>
+              <span className="text-xl font-bold">{name}</span>
             </Link>
           </div>
           {/* Hide auth buttons on update page? Or show logged-in state? Depends on flow */}

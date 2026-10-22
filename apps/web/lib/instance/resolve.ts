@@ -23,3 +23,11 @@ export const resolveInstance = cache(async (): Promise<ResolvedInstance | null> 
     return null
   }
 })
+
+/** The origin of the current request, as the browser used it. */
+export async function requestSiteOrigin(): Promise<string> {
+  const requestHeaders = await headers()
+  const host = (requestHeaders.get('x-forwarded-host') ?? requestHeaders.get('host') ?? '').split(',')[0].trim().toLowerCase()
+  const protocol = requestHeaders.get('x-forwarded-proto')?.split(',')[0].trim() ?? 'https'
+  return `${protocol}://${host}`
+}

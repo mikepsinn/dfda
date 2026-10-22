@@ -23,8 +23,8 @@ describe("BrandMark", () => {
   });
 
   it("matches the browser icon drawing", () => {
-    // app/icon.svg is the same drawing with fixed colors; this catches one changing without the other.
-    const icon = readFileSync(path.join(process.cwd(), "app/icon.svg"), "utf8");
+    // public/icon.svg is the same drawing with fixed colors; this catches one changing without the other.
+    const icon = readFileSync(path.join(process.cwd(), "public/icon.svg"), "utf8");
     const { container } = render(<BrandMark colors={fixedBrandMarkColors} />);
     const shapes = (root: ParentNode) =>
       [...root.querySelectorAll("rect, circle, polyline")].map(el =>

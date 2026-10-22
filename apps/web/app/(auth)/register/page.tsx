@@ -14,7 +14,13 @@ export default async function RegisterPage() {
   return (
     <div className="flex min-h-[calc(100vh-theme(spacing.16))] flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md mt-8">
-        <SignInCard mode="register" googleEnabled={isGoogleSignInEnabled} demoAccounts={!instance} />
+        {/* On a company's site: no Google button (Google's screen names the network's app) and the company's help address. */}
+        <SignInCard
+          mode="register"
+          googleEnabled={isGoogleSignInEnabled && !instance}
+          demoAccounts={!instance}
+          helpEmail={instance ? instance.supportEmail : "help@dfda.earth"}
+        />
       </div>
     </div>
   );

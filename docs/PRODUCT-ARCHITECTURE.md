@@ -128,6 +128,20 @@ it warns when the brand color is hard to read on the background. Clinics thus
 get their own look without code or a fork, and nothing about a customer's brand
 is in the repository.
 
+**The company's own site, 2026-10-22:** a member sees one company, not a
+network. On an instance the footer, sign-in page, password pages, page
+metadata, link-preview image (`/share-image.png`) and tab icon show the company
+and nothing of the network; the Google button is hidden there, because Google's
+screen names the network's app. Sign-in and password emails come from the
+company (its name as the sender and in the subject, its optional support email
+as the reply address), and their links sign the person in on the host they
+used: the sign-in library builds links on the main site, so
+`lib/instance/auth-email.ts` moves the link and the pages it opens to that host.
+Care team invitations link to the company's own domain or subdomain. The
+sending address stays the network's until a company verifies a sending domain
+of its own, and the privacy policy must still describe who processes members'
+data.
+
 **Instance sites, 2026-10-11:** on an instance, the site is the company's own:
 its header, footer and home page, its programs at `/programs`, sign-in, a
 member's reminders, and the terms and privacy pages. The network's other pages

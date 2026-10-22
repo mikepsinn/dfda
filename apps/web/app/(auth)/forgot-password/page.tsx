@@ -3,6 +3,7 @@ import { ArrowLeft, Beaker } from "lucide-react"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
 import { env } from '@/lib/env';
+import { resolveInstance } from '@/lib/instance/resolve';
 
 import { Button } from "@/components/ui/button"
 import ForgotPasswordForm from "@/components/auth/forgot-password-form"
@@ -12,7 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return getMetadataFromNavKey('forgot_password');
 }
 
-export default function ForgotPassword() {
+export default async function ForgotPassword() {
+  // A company's site names the company, not the network.
+  const siteName = (await resolveInstance())?.name ?? env.NEXT_PUBLIC_SITE_NAME
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b bg-background">
@@ -20,7 +23,7 @@ export default function ForgotPassword() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <Beaker className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">{env.NEXT_PUBLIC_SITE_NAME}</span>
+              <span className="text-xl font-bold">{siteName}</span>
             </Link>
           </div>
           <div className="flex items-center gap-4">

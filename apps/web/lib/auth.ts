@@ -6,7 +6,8 @@ import { Pool } from 'pg'
 import { adminDb } from '@/lib/db'
 import { env } from '@/lib/env'
 import { linkEmail, sendEmail } from '@/lib/email'
-import { findInstanceByHost, hostName } from '@/lib/instance/hosts'
+import { authEmailContext, linkOnHost } from '@/lib/instance/auth-email'
+import { findInstanceByHost, requestOrigin } from '@/lib/instance/hosts'
 import { logger } from '@/lib/logger'
 import { apiResources, resourceUrl, trackingScopes, type ApiResource } from '@/lib/oauth-resources'
 import { getBaseUrl } from '@/lib/url'
@@ -51,13 +52,9 @@ if (process.env.NODE_ENV !== 'production') trustedOrigins.push('http://localhost
  */
 export async function trustedOriginsFor(request?: Request): Promise<string[]> {
   if (!request) return trustedOrigins
-  const hostHeader = (request.headers.get('x-forwarded-host') ?? request.headers.get('host') ?? '').split(',')[0].trim()
-  const host = hostName(hostHeader)
+  const { host, origin } = requestOrigin(request)
   try {
-    if (host && (await findInstanceByHost(host))) {
-      const protocol = request.headers.get('x-forwarded-proto')?.split(',')[0].trim() ?? new URL(request.url).protocol.replace(':', '')
-      return [...trustedOrigins, `${protocol}://${hostHeader.toLowerCase()}`]
-    }
+    if (host && (await findInstanceByHost(host))) return [...trustedOrigins, origin]
   } catch (error) {
     logger.error('Could not check whether the request host is an instance', {
       host,
@@ -140,9 +137,17 @@ export const auth = betterAuth({
     disableSignUp: true,
     minPasswordLength: 8,
     revokeSessionsOnPasswordReset: true,
-    sendResetPassword: async ({ user, url }) => {
+    sendResetPassword: async ({ user, url }, request) => {
+      const company = await authEmailContext(request)
       await sendEmail(
-        linkEmail(user.email, 'Reset your password', 'Use this link to set a new password.', 'Set a new password', url),
+        linkEmail(
+          user.email,
+          company ? `Reset your ${company.brand.name} password` : 'Reset your password',
+          'Use this link to set a new password.',
+          'Set a new password',
+          company?.origin ? linkOnHost(url, company.origin) : url,
+          company?.brand,
+        ),
       )
     },
   },
@@ -184,8 +189,19 @@ export const auth = betterAuth({
   ],
   plugins: [
     magicLink({
-      sendMagicLink: async ({ email, url }) => {
-        await sendEmail(linkEmail(email, 'Your sign-in link', 'Use this link to sign in.', 'Sign in', url))
+      // On a company's site the email comes from the company, and its link signs the person in on that site.
+      sendMagicLink: async ({ email, url }, ctx) => {
+        const company = await authEmailContext(ctx?.request)
+        await sendEmail(
+          linkEmail(
+            email,
+            company ? `Sign in to ${company.brand.name}` : 'Your sign-in link',
+            'Use this link to sign in.',
+            'Sign in',
+            company?.origin ? linkOnHost(url, company.origin) : url,
+            company?.brand,
+          ),
+        )
       },
     }),
     organization({

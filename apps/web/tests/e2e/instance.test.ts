@@ -12,8 +12,9 @@ test.describe("a company's own site", () => {
     await expect(header.getByRole('link', { name: demo.instance.name })).toBeVisible()
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(demo.instance.name)
     await expect(page.getByRole('heading', { name: 'How a program works' })).toBeVisible()
-    // In a preview, the link to the network's site ends the preview first.
-    await expect(page.getByRole('contentinfo').getByRole('link', { name: 'Open Treatment Evidence Network' })).toHaveAttribute('href', '/i')
+    // The site is the company's own: its footer names no one else.
+    await expect(page.getByRole('contentinfo')).toContainText(demo.instance.name)
+    await expect(page.getByRole('contentinfo')).not.toContainText(/Powered by|Open Treatment Evidence Network|dFDA/)
 
     await header.getByRole('link', { name: 'Programs' }).click()
     await expect(page).toHaveURL(/\/programs$/)
@@ -26,10 +27,31 @@ test.describe("a company's own site", () => {
     }
   })
 
-  test('has no network demo accounts on its sign-in page', async ({ page }) => {
+  test('has no network demo accounts, Google button or help address on its sign-in page', async ({ page }) => {
     await page.goto(onInstance('/login'))
     await expect(page.getByRole('button', { name: 'Send Magic Link' })).toBeVisible()
     await expect(page.getByRole('button', { name: /^Demo / })).toHaveCount(0)
+    await expect(page.getByRole('button', { name: /Google/ })).toHaveCount(0)
+    await expect(page.getByText(/help@dfda\.earth/)).toHaveCount(0)
+  })
+
+  test("describes itself to browsers and link previews as the company, with the network's own site unchanged", async ({ page, request }) => {
+    await page.goto(onInstance('/'))
+    const content = (selector: string) => page.locator(selector).first().getAttribute('content')
+    expect(await content('meta[property="og:site_name"]')).toBe(demo.instance.name)
+    expect(await content('meta[property="og:image:alt"]')).toBe(demo.instance.name)
+    await expect(page.locator('meta[name="author"], meta[name="keywords"], meta[name="twitter:creator"]')).toHaveCount(0)
+    await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/site-icon.png')
+    // The preview link is for the company itself, not for search engines.
+    expect(await content('meta[name="robots"]')).toContain('noindex')
+    const image = await page.request.get('/share-image.png')
+    expect(image.headers()['content-type']).toBe('image/png')
+
+    // The network's own site keeps its name, icon and image.
+    await page.goto('/i')
+    expect(await content('meta[property="og:site_name"]')).not.toBe(demo.instance.name)
+    await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/icon.svg')
+    expect((await request.get('/icon.svg')).ok()).toBe(true)
   })
 
   test('sends a member to the programs after sign-in, where their program opens their own page', async ({ browser }) => {

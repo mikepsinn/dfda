@@ -40,10 +40,12 @@ interface SignInCardProps {
   googleEnabled: boolean
   /** The network's demo accounts. A company instance leaves them out: their pages are not on its site. */
   demoAccounts?: boolean
+  /** Where people get help; no help line when null. */
+  helpEmail?: string | null
 }
 
 /** The sign-in and registration form: magic link, Google, password and demo accounts. */
-export function SignInCard({ mode, googleEnabled, demoAccounts = true }: SignInCardProps) {
+export function SignInCard({ mode, googleEnabled, demoAccounts = true, helpEmail = null }: SignInCardProps) {
   const searchParams = useSearchParams()
   const [emailSent, setEmailSent] = useState(false)
   const [busy, setBusy] = useState<'magic' | 'google' | 'password' | null>(null)
@@ -242,9 +244,9 @@ export function SignInCard({ mode, googleEnabled, demoAccounts = true }: SignInC
             </>
           )}
         </div>
-        {mode === 'register' && (
+        {helpEmail && (
           <div className="text-center text-sm text-muted-foreground">
-            Need help? Contact <Link href="mailto:help@dfda.earth" className="underline">help@dfda.earth</Link>
+            Need help? Contact <Link href={`mailto:${helpEmail}`} className="underline">{helpEmail}</Link>
           </div>
         )}
       </CardFooter>
