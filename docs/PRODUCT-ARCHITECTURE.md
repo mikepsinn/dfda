@@ -114,8 +114,11 @@ an optional domain). The whole site then shows its branding on a preview link
 up, and on the company's own domain once its DNS points to the deployment; with
 `VERCEL_API_TOKEN` and `VERCEL_PROJECT_ID`, saving the domain also adds it to the
 Vercel project. Without them the owner adds the domain in Vercel by hand. Whether
-the domain is connected is a DNS lookup that needs no key: a CNAME to Vercel, or
-Vercel's A addresses. A domain behind a proxy such as Cloudflare's hides its records,
+the domain is connected needs no key. First a DNS lookup: a CNAME to Vercel, or
+Vercel's A addresses. Then one HTTPS request to the address that the lookup found
+(public addresses only, with a valid certificate for the domain) must get this
+company's slug from `/api/instance`, because DNS can point to Vercel before the domain
+is on the project. A domain behind a proxy such as Cloudflare's hides its records,
 so it counts as not connected, and care team invitations then use the preview link. People can sign in on the instance's domain. This is branding
 only: all instances share one database, one set of accounts and one evidence
 pipeline. It does not verify domain ownership and does not isolate tenants; the

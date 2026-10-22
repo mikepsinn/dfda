@@ -59,7 +59,7 @@ export default async function InstancePage({
   const instance = toBranding(row)
   const site = siteOrigin()
   const [domainConnected, programs, team, invitations] = await Promise.all([
-    instance.customDomain ? isDomainConfigured(instance.customDomain) : null,
+    instance.customDomain ? isDomainConfigured(instance.customDomain, instance.slug) : null,
     listPrograms(instance.slug),
     careTeam(user, row.id),
     careTeamInvitations(user, row.id),
@@ -97,7 +97,7 @@ export default async function InstancePage({
                 domainConnected === true
                   ? "Connected."
                   : domainConnected === false
-                    ? "Waiting for the DNS record below."
+                    ? "Not connected yet. It connects when the DNS record below points here and the domain answers as this site."
                     : "Works when the DNS record below points here."
               }
             />

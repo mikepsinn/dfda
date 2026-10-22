@@ -46,11 +46,14 @@ test.describe("a company's own site", () => {
     expect(await content('meta[name="robots"]')).toContain('noindex')
     const image = await page.request.get('/share-image.png')
     expect(image.headers()['content-type']).toBe('image/png')
+    // The company's own domain answers with its slug; the domain check reads it (lib/instance/vercel-domains.ts).
+    expect(await (await page.request.get('/api/instance')).json()).toEqual({ slug: demo.instance.slug })
 
     // The network's own site keeps its name, icon and image.
     await page.goto('/i')
     expect(await content('meta[property="og:site_name"]')).not.toBe(demo.instance.name)
     await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/icon.svg')
+    expect(await (await page.request.get('/api/instance')).json()).toEqual({ slug: null })
     expect((await request.get('/icon.svg')).ok()).toBe(true)
   })
 
