@@ -51,7 +51,7 @@ export default async function CareReportPage({
         </p>
       )}
 
-      <BiomarkerReportView report={saved.report} review={<ReviewStatus report={saved} audience="care-team" />} />
+      <BiomarkerReportView report={saved.report} brandName={instance.name} review={<ReviewStatus report={saved} audience="care-team" />} />
 
       {!saved.reviewedAt && (
         <section aria-labelledby="sign-off-heading" className="surface-raised mx-auto max-w-5xl space-y-4 rounded-xl border p-6 print:hidden">

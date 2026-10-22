@@ -13,6 +13,7 @@ import type { BiomarkerReport, ClinicalValue, Marker, Panel } from './schema'
  *   a change in the intended direction counts as positive. It compares a
  *   person with themselves only, never with other people.
  * - A clinical value counts as changed from its meaningful change in percent.
+ *   Below the lab's limit at the first and the last timepoint, it is unchanged.
  */
 
 export type MarkerStatus = 'intended' | 'unchanged' | 'review' | 'below-limit'
@@ -95,6 +96,8 @@ export function panelResult(panel: Panel, threshold: number): PanelResult {
 
 export function clinicalResult(value: ClinicalValue): ClinicalResult {
   const compared = compare(value.values)
+  // Below the assay's limit at the first and the last timepoint: no change that the lab can see.
+  if (compared.first === null && compared.last === null && value.lowerLimit !== undefined) return { ...compared, status: 'unchanged' }
   if (compared.change === null) return { ...compared, status: 'below-limit' }
   // A first value of 0 has no percent change; any change from it counts.
   const meaningful = compared.percentChange === null ? compared.change !== 0 : Math.abs(compared.percentChange) >= value.meaningfulChange - TOLERANCE

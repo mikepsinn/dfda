@@ -106,9 +106,14 @@ describe('clinicalResult', () => {
     expect(clinicalResult(clinical(0.82, 1.2, 'neither', 10)).status).toBe('changed')
   })
 
-  it('reports values below the limit, and judges any change from 0 as meaningful', () => {
+  it('reports missing values, and judges any change from 0 as meaningful', () => {
     expect(clinicalResult(clinical(null, null, 'lower', 20)).status).toBe('below-limit')
     expect(clinicalResult(clinical(0, 2, 'higher', 10))).toMatchObject({ percentChange: null, status: 'intended' })
+  })
+
+  it('calls a value below the lab limit at the first and the last timepoint unchanged', () => {
+    expect(clinicalResult({ ...clinical(null, null, 'lower', 20), lowerLimit: 3 }).status).toBe('unchanged')
+    expect(clinicalResult({ ...clinical(null, 4, 'lower', 20), lowerLimit: 3 }).status).toBe('below-limit')
   })
 })
 

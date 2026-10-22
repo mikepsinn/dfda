@@ -8,43 +8,56 @@ afterEach(cleanup)
 const cells = (row: HTMLElement) => within(row).getAllByRole("cell").map((cell) => cell.textContent)
 
 describe("biomarker report", () => {
+  it("lays the report out as numbered pages with the brand on each", () => {
+    render(<BiomarkerReportView report={EXAMPLE_REPORT} brandName="Acme Metabolic" />)
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(EXAMPLE_REPORT.title)
+    // Cover, at a glance, clinical values, 8 panels, the visit and the methods; every page but the cover has a footer.
+    expect(screen.getByText("Page 2 of 13")).toBeInTheDocument()
+    expect(screen.getByText("Page 13 of 13")).toBeInTheDocument()
+    expect(screen.queryByText("Page 1 of 13")).toBeNull()
+    expect(screen.getAllByText("Acme Metabolic Proteomic Response Report · Clinician edition")).toHaveLength(12)
+  })
+
   it("shows the panels at a glance, with each panel's index and the totals", () => {
     render(<BiomarkerReportView report={EXAMPLE_REPORT} />)
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(EXAMPLE_REPORT.title)
-
     const glance = screen.getByRole("region", { name: "At a glance" })
     const review = within(glance).getByRole("heading", { name: "Review with the patient" }).parentElement!
     expect(within(review).getByRole("link", { name: "Muscle & bone" })).toHaveAttribute("href", "#panel-muscle-bone")
-    expect(within(glance).getByRole("img", { name: "Metabolic & GLP-1 axis: +2.5× the noise, intended direction" })).toBeInTheDocument()
-    expect(within(glance).getByRole("img", { name: "Muscle & bone: −1.6× the noise, review" })).toBeInTheDocument()
-    expect(within(glance).getByText("Markers in this report").nextElementSibling).toHaveTextContent("20")
+    expect(within(glance).getByRole("img", { name: "Metabolic & GLP-1 axis: +2.8× the noise, intended direction" })).toBeInTheDocument()
+    expect(within(glance).getByRole("img", { name: "Muscle & bone: −0.9× the noise, review" })).toBeInTheDocument()
+    expect(within(glance).getByText("Proteins in this report").nextElementSibling).toHaveTextContent("68")
   })
 
   it("shows each clinical value with its decimals, reference and status", () => {
     render(<BiomarkerReportView report={EXAMPLE_REPORT} />)
-    expect(cells(screen.getByRole("row", { name: /^HbA1c/ }))).toEqual(["%", "6.0", "5.5", "−8%", "", "< 5.7", "Intended direction"])
-    expect(cells(screen.getByRole("row", { name: /^hs-cTnI/ }))).toEqual(["ng/L", "< 3", "< 3", "–", "", "< 20", "Below limit"])
-    expect(screen.getByText(/Rose within the reference interval/)).toBeInTheDocument()
+    expect(cells(screen.getByRole("row", { name: /^HbA1c/ }))).toEqual(["%", "6.1", "5.6", "−8%", "< 5.7", "Intended direction"])
+    // A value below 100 shows one decimal at least.
+    expect(cells(screen.getByRole("row", { name: /^ALT/ }))).toEqual(["U/L", "38.0", "27.0", "−29%", "7–35", "Intended direction"])
+    // Below the assay limit at both timepoints: no change that the lab can see.
+    expect(cells(screen.getByRole("row", { name: /^hs-cTnI/ }))).toEqual(["ng/L", "< 3", "< 3", "—", "< 16", "Unchanged"])
+    expect(screen.getByText(/rose within the reference interval/)).toBeInTheDocument()
   })
 
-  it("draws a trend for each clinical value with two or more values", () => {
+  it("draws the clinical value with more than two values, the dose and the reported effects", () => {
     render(<BiomarkerReportView report={EXAMPLE_REPORT} />)
-    // Laboratory values at the first and the last timepoint only.
-    const hba1c = screen.getByRole("row", { name: /^HbA1c/ })
-    expect(within(hba1c).getByRole("img", { name: "Baseline 6.0, Week 12 5.5" })).toBeInTheDocument()
-    // Below the assay limit at both timepoints: nothing to draw.
-    expect(within(screen.getByRole("row", { name: /^hs-cTnI/ })).queryByRole("img")).toBeNull()
+    expect(screen.getByRole("img", { name: "Weight: Baseline 91.4 kg, Week 4 88.9 kg, Week 8 86.1 kg, Week 12 83.7 kg" })).toBeInTheDocument()
+    expect(within(screen.getByRole("list", { name: "Dose schedule" })).getAllByRole("listitem").map((step) => step.textContent)).toEqual([
+      "0.25 mg from week 0 to week 4",
+      "0.5 mg from week 4 to week 8",
+      "1.0 mg from week 8 to week 12",
+    ])
+    expect(within(screen.getByRole("table", { name: "Reported effects" })).getAllByRole("row")).toHaveLength(4)
   })
 
   it("shows each marker of a panel with its change, trend, noise multiple and status", () => {
     render(<BiomarkerReportView report={EXAMPLE_REPORT} />)
     const panel = screen.getByRole("region", { name: "Muscle & bone" })
-    expect(within(panel).getByText("Index −1.6× the noise · 4 markers: 0 intended, 2 unchanged, 2 to review")).toBeInTheDocument()
-    expect(cells(within(panel).getByRole("row", { name: /^IGF1/ }))).toEqual(["ng/mL", "151", "126", "−17%", "", "2.1×", "Review"])
+    expect(within(panel).getByText(/^Organ response index −0\.9× noise band · 11 proteins · 0 moved \/ 7 unchanged \/ 4 review$/)).toBeInTheDocument()
+    expect(cells(within(panel).getByRole("row", { name: /^IGF1/ }))).toEqual(["ng/mL", "142", "118", "−17%", "", "1.9×", "Review"])
 
     const crp = screen.getByRole("row", { name: /^CRP C-reactive protein/ })
-    expect(cells(crp)).toEqual(["mg/L", "3.2", "1.7", "−47%", "", "2.1×", "Intended direction"])
+    expect(cells(crp)).toEqual(["mg/L", "3.8", "1.9", "−50%", "", "2.5×", "Intended direction"])
     // The trend gives every timepoint in its accessible name.
-    expect(within(crp).getByRole("img", { name: /^Baseline 3\.2, Week 4 \d\.\d, Week 8 \d\.\d, Week 12 1\.7$/ })).toBeInTheDocument()
+    expect(within(crp).getByRole("img", { name: /^Baseline 3\.8, Week 4 \d\.\d, Week 8 \d\.\d, Week 12 1\.9$/ })).toBeInTheDocument()
   })
 })

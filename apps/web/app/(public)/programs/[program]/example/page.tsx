@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import { BiomarkerReportView } from "@/components/biomarker-report/BiomarkerReportView"
 import { ProgramReport } from "@/components/programs/ProgramReport"
+import { exampleReportFor } from "@/lib/biomarker-report/example"
 import { requireCurrentProgram } from "@/lib/programs/current"
 import { reportItems } from "@/lib/programs/data"
 import { sampleView } from "@/lib/programs/sample"
@@ -9,7 +11,20 @@ import { sampleView } from "@/lib/programs/sample"
 export const metadata: Metadata = { title: "Example report" }
 
 export default async function ExampleReportPage({ params }: { params: Promise<{ program: string }> }) {
-  const { program } = await requireCurrentProgram((await params).program)
+  const { instance, program } = await requireCurrentProgram((await params).program)
+  // A program with a full example report (lib/biomarker-report/example.ts) shows it as the printed
+  // report looks. By the owner's decision it has no "sample" label (docs/PRODUCT-ARCHITECTURE.md).
+  const biomarkerReport = exampleReportFor(program)
+  if (biomarkerReport) {
+    return (
+      <div className="space-y-6">
+        <Link href={`/programs/${program.slug}`} className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground print:hidden">
+          <ArrowLeft aria-hidden="true" className="h-4 w-4" /> {program.name}
+        </Link>
+        <BiomarkerReportView report={biomarkerReport} brandName={instance.name} />
+      </div>
+    )
+  }
   const { example } = sampleView(program, reportItems(program))
 
   return (

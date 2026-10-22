@@ -13,7 +13,7 @@ export const metadata: Metadata = { title: "Your biomarker report" }
 /** One of the signed-in person's biomarker reports in a program, with its review. */
 export default async function YourReportPage({ params }: { params: Promise<{ program: string; report: string }> }) {
   const { program: programSlug, report: reportId } = await params
-  const { program } = await requireCurrentProgram(programSlug)
+  const { instance, program } = await requireCurrentProgram(programSlug)
   const user = await getServerUser()
   if (!user) redirect(`/login?next=${encodeURIComponent(`/programs/${program.slug}/me/reports/${reportId}`)}`)
   const saved = await findReport(user, reportId)
@@ -27,7 +27,7 @@ export default async function YourReportPage({ params }: { params: Promise<{ pro
       >
         <ArrowLeft aria-hidden="true" className="h-4 w-4" /> {program.name}
       </Link>
-      <BiomarkerReportView report={saved.report} review={<ReviewStatus report={saved} audience="patient" />} />
+      <BiomarkerReportView report={saved.report} brandName={instance.name} review={<ReviewStatus report={saved} audience="patient" />} />
     </div>
   )
 }

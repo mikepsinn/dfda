@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Source_Serif_4 } from "next/font/google"
 import "./globals.css"
 import { ScrollToHashElement } from "@/components/ScrollToHashElement"
 import { Header } from "@/components/Header"
@@ -21,6 +21,8 @@ import { DARK_CLASS, isDark } from "@/lib/instance/theme"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+// The headings of biomarker reports (app/globals.css). Not preloaded: only report pages use it.
+const reportSerif = Source_Serif_4({ subsets: ["latin"], variable: "--font-report-serif", weight: ["500"], preload: false })
 
 const baseMetadata: Metadata = {
   title: env.NEXT_PUBLIC_SITE_NAME,
@@ -110,7 +112,7 @@ export default async function RootLayout({
   const instance = await resolveInstance()
 
   return (
-    <html lang="en" className={cn(inter.variable, instance && isDark(instance.backgroundColor) && DARK_CLASS)}>
+    <html lang="en" className={cn(inter.variable, reportSerif.variable, instance && isDark(instance.backgroundColor) && DARK_CLASS)}>
       {/* An instance sets its font in InstanceTheme. */}
       <body className={instance ? undefined : inter.className}>
         {instance && <InstanceTheme theme={instance} />}

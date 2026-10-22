@@ -1,99 +1,77 @@
-import { formatReportDate } from "@/lib/biomarker-report/format"
 import { summarizeReport } from "@/lib/biomarker-report/rules"
 import type { BiomarkerReport } from "@/lib/biomarker-report/schema"
 import { AtAGlance } from "./AtAGlance"
-import { ClinicalValuesTable } from "./ClinicalValuesTable"
-import { PanelSection } from "./PanelSection"
+import { ClinicalPage } from "./ClinicalPage"
+import { Cover } from "./Cover"
+import { MethodsPage } from "./MethodsPage"
+import { PanelPage } from "./PanelPage"
 import { PrintButton } from "./PrintButton"
-
-function Fact({ term, children }: { term: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{term}</dt>
-      <dd className="mt-0.5">{children}</dd>
-    </div>
-  )
-}
+import { ReportSheet, type SheetFrame } from "./ReportSheet"
+import { VisitPage } from "./VisitPage"
 
 /**
- * A biomarker report (lib/biomarker-report): who and what was measured, the
- * panels at a glance, the clinic's values, each panel, then the report's text
- * sections. Every status and count comes from rules.ts. Printing gives A4
- * pages without the site header and footer (app/globals.css). `review` (a
- * saved report's sign-off, lib/care-team) shows under the header and prints
- * with the report.
+ * A biomarker report (lib/biomarker-report), laid out as its printed pages: a
+ * cover, the panels at a glance, the clinic's values, one page per panel, the
+ * page for the visit, and the methods. Pages without data are left out. Every
+ * status and count comes from rules.ts. `brandName` (the site's name) heads
+ * every page. Printing gives one A4 page per sheet without the site header and
+ * footer (app/globals.css). `review` (a saved report's sign-off, lib/care-team)
+ * shows on the cover and prints with it.
  */
-export function BiomarkerReportView({ report, review }: { report: BiomarkerReport; review?: React.ReactNode }) {
+export function BiomarkerReportView({
+  report,
+  review,
+  brandName,
+}: {
+  report: BiomarkerReport
+  review?: React.ReactNode
+  brandName?: string
+}) {
   const summary = summarizeReport(report)
-  const { person, clinician } = report
-  const personLine = [person.name, person.code, [person.age, person.sex].filter((part) => part !== undefined).join(" ")]
-    .filter(Boolean)
-    .join(" · ")
+  const { person, program } = report
+  const shortLine = [person.name, person.code].filter(Boolean).join(" · ")
+  const longLine = [shortLine, program.name].join(" · ")
+
+  // Page numbers: cover, at a glance, then each optional page in order.
+  const hasClinical = summary.clinicalValues.length > 0
+  const hasMethods = report.methods.length > 0 || Boolean(report.movers)
+  const clinicalNumber = 3
+  const firstPanelNumber = hasClinical ? 4 : 3
+  const visitNumber = firstPanelNumber + summary.panels.length
+  const methodsNumber = visitNumber + (report.visit ? 1 : 0)
+  const notesNumber = methodsNumber + (hasMethods ? 1 : 0)
+  const total = notesNumber - 1 + (report.sections.length > 0 ? 1 : 0)
+  const frame: SheetFrame = { brandName, reportName: report.edition ?? "Biomarker report", footerNote: report.footerNote, total }
 
   return (
-    <article className="biomarker-report mx-auto max-w-5xl space-y-10">
-      <header className="brand-glow space-y-6">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div className="max-w-3xl space-y-3">
-            <p className="text-sm font-medium uppercase tracking-wide text-primary">Biomarker report</p>
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{report.title}</h1>
-            {report.subtitle && <p className="text-lg text-muted-foreground">{report.subtitle}</p>}
-          </div>
-          <PrintButton />
-        </div>
-        <dl className="surface-raised grid gap-4 rounded-xl border bg-card p-4 text-sm sm:grid-cols-2 md:p-6 lg:grid-cols-3">
-          <Fact term="Patient">{personLine}</Fact>
-          <Fact term="Program">
-            {report.program.name}
-            {report.program.indication && <span className="block text-muted-foreground">{report.program.indication}</span>}
-          </Fact>
-          {clinician && (
-            <Fact term="Clinician">
-              {clinician.name}
-              {(clinician.organization || clinician.location) && (
-                <span className="block text-muted-foreground">
-                  {[clinician.organization, clinician.location].filter(Boolean).join(", ")}
-                </span>
-              )}
-            </Fact>
-          )}
-          <Fact term="Timepoints">{report.timepoints.map((timepoint) => timepoint.label).join(" · ")}</Fact>
-          {report.collection && <Fact term="Collection">{report.collection}</Fact>}
-          {report.platform && <Fact term="Platform">{report.platform}</Fact>}
-          <Fact term="Report date">{formatReportDate(report.reportDate)}</Fact>
-        </dl>
-        {review}
-      </header>
-
-      <AtAGlance summary={summary} threshold={report.threshold} />
-
-      {summary.clinicalValues.length > 0 && <ClinicalValuesTable report={report} values={summary.clinicalValues} />}
-
-      <div className="space-y-6">
-        {summary.panels.map((panel) => (
-          <PanelSection key={panel.id} report={report} panel={panel} />
-        ))}
-        <p className="text-sm text-muted-foreground">
-          The trend shows every timepoint from {report.timepoints[0].label} to{" "}
-          {report.timepoints[report.timepoints.length - 1].label}. &ldquo;Vs noise&rdquo; is the change divided by this
-          person&rsquo;s expected variation for that marker; a change under {report.threshold}× the noise is reported as
-          unchanged.
-        </p>
+    <article className="biomarker-report mx-auto max-w-[52rem] space-y-8">
+      <div className="flex justify-end print:hidden">
+        <PrintButton />
       </div>
 
+      <Cover report={report} frame={frame} review={review} />
+      <AtAGlance report={report} summary={summary} frame={frame} personLine={longLine} />
+      {hasClinical && <ClinicalPage report={report} summary={summary} frame={frame} number={clinicalNumber} personLine={shortLine} />}
+      {summary.panels.map((panel, index) => (
+        <PanelPage key={panel.id} report={report} panel={panel} frame={frame} number={firstPanelNumber + index} personLine={longLine} />
+      ))}
+      {report.visit && <VisitPage report={report} frame={frame} number={visitNumber} personLine={shortLine} />}
+      {hasMethods && <MethodsPage report={report} frame={frame} number={methodsNumber} personLine={shortLine} />}
       {report.sections.length > 0 && (
-        <div className="grid gap-6 md:grid-cols-2">
-          {report.sections.map((section) => (
-            <section key={section.title} className="space-y-2 break-inside-avoid">
-              <h2 className="text-lg font-semibold">{section.title}</h2>
-              <ul className="list-disc space-y-1.5 pl-5 text-sm">
-                {section.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
+        <ReportSheet frame={frame} number={notesNumber} section="Notes" personLine={shortLine} label="Notes">
+          <div className="grid gap-6 md:grid-cols-2">
+            {report.sections.map((section) => (
+              <section key={section.title} className="space-y-2 break-inside-avoid">
+                <h2 className="report-serif text-[1.35rem] leading-tight">{section.title}</h2>
+                <ul className="list-disc space-y-1.5 pl-5">
+                  {section.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        </ReportSheet>
       )}
     </article>
   )

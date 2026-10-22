@@ -159,7 +159,10 @@ pages say that a change after the start does not prove that the product caused i
 
 Biomarker reports (`lib/biomarker-report`, `components/biomarker-report`, the example
 at `/reports/example`) show one person's blood markers at several timepoints, read
-against that person's own noise, next to the clinic's laboratory values. The data
+against that person's own noise, next to the clinic's laboratory values. They have the
+pages of a printed clinician report and print as one A4 page per sheet. A program whose
+dose is semaglutide (the GLP-1 template) also shows the example at
+`/programs/{slug}/example`. The data
 file holds only values and text; the rules calculate every status, index and count.
 The example report uses made-up values. By the owner's decision, it carries no
 "Sample data" label on the page, so that a company can show its product as it will

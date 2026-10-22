@@ -127,14 +127,23 @@ These render local files without model calls. No dependency or theme reset is ne
 ## Biomarker reports
 
 - `components/biomarker-report/BiomarkerReportView.tsx`: a whole report from its data
-  file (`lib/biomarker-report`). Statuses always appear as text badges
-  (`StatusBadge.tsx`): emerald for the intended direction, amber for review, muted for
-  unchanged and below the assay limit.
-- Tables become stacked lists below the `md` breakpoint, so that the status stays in
-  view; print always uses the tables, without their minimum width.
-- `Sparkline.tsx` draws every timepoint in the instance's `primary` color and gives the
-  values in its accessible name, with the same decimals as the table.
-- Printing gives A4 pages with the report only (rules in `app/globals.css`).
+  file (`lib/biomarker-report`), laid out as the pages of the printed clinician report:
+  cover, at a glance, clinical values, one page per panel, the visit, and the methods.
+  Each page is a `ReportSheet` with a running header (site name, section, person) and
+  footer (report name, note, page number); the cover has no footer.
+- The report has its own paper colors and serif headings on every site theme
+  (`.biomarker-report` in `app/globals.css`): teal for the intended direction, amber for
+  review, stone for unchanged and below the assay limit. Statuses always appear as text
+  badges (`StatusBadge.tsx`).
+- Values show the decimals of their row, and at least one below 100 ("108", "94.0").
+- Tables become stacked lists below the `md` breakpoint, so that the values and the status
+  stay in view; print always uses the tables.
+- `Sparkline.tsx` draws every timepoint in the tone of the status and gives the values in
+  its accessible name, with the same decimals as the table.
+- Printing gives one A4 page per sheet, with the report only (rules in `app/globals.css`).
+  The screen layout is scaled to the width of A4, so that the printed page is the page on
+  screen. A sheet whose content is taller than A4 adds a page; the browser test
+  `tests/e2e/biomarker-report.test.ts` checks the page count of the example report.
 
 ## Presentations
 
