@@ -65,10 +65,33 @@ export const clinicalValueSchema = z.object({
   note: optionalText(200),
 })
 
-/** A titled list of short paragraphs: discussion points, the next measurement, limits, methods. */
+/** A titled list of short paragraphs, for text that has no place of its own below. */
 export const sectionSchema = z.object({
   title: text(80),
   items: z.array(text(800)).min(1).max(12),
+})
+
+/** A short paragraph that starts with a bold lead, such as "Lean mass." */
+export const leadTextSchema = z.object({ lead: text(80), text: text(600) })
+
+/** A note next to the clinical values: "review" for one worth a look, "info" for context. */
+export const clinicalNoteSchema = z.object({ tone: z.enum(['review', 'info']), lead: text(80), text: text(400) })
+
+/** The dose of the program's drug from a week on, until the next step. */
+export const doseStepSchema = z.object({ week: z.number().min(0).max(520), amount: z.number().positive() })
+
+/** An effect that the person reported, for a range of weeks. */
+export const effectSchema = z.object({ weeks: text(20), text: text(200), severity: z.enum(['mild', 'notable', 'resolved']) })
+
+/** A marker outside the report's panels, with its change only: an exploratory list. */
+export const moverSchema = z.object({
+  id: text(40),
+  name: text(120),
+  percentChange: z.number().finite(),
+  noiseMultiple: z.number().nonnegative(),
+  /** Timepoints with a quantified value, of `of`. */
+  detected: z.number().int().min(0),
+  of: z.number().int().positive(),
 })
 
 export const biomarkerReportSchema = z
@@ -87,11 +110,45 @@ export const biomarkerReportSchema = z
     clinician: z.object({ name: text(80), organization: optionalText(120), location: optionalText(80) }).optional(),
     collection: optionalText(200),
     platform: optionalText(200),
+    /** The report's kind and edition, above the title: "Proteomic response report · Clinician edition". */
+    edition: optionalText(80),
+    /** What the report calls its markers. */
+    markerNoun: z.enum(['marker', 'protein']).default('marker'),
+    /** How many markers the platform measured, of which the panels show a curated part. */
+    assayCount: z.number().int().positive().max(100_000).optional(),
+    /** At the foot of the first page: what the values are, and are not, for. */
+    disclaimer: optionalText(600),
+    /** In the middle of every page footer, such as "Research Use Only". */
+    footerNote: optionalText(120),
     timepoints: z.array(timepointSchema).min(2).max(MAX_TIMEPOINTS),
     /** A marker counts as changed when its change is at least this many times its noise. */
     threshold: z.number().positive().max(10).default(1.5),
     clinicalValues: z.array(clinicalValueSchema).max(40).default([]),
+    /** Above the clinical values: where they come from. */
+    clinicalIntro: optionalText(400),
+    clinicalNotes: z.array(clinicalNoteSchema).max(6).default([]),
+    dose: z.object({ unit: text(20), steps: z.array(doseStepSchema).min(1).max(12), note: optionalText(200) }).optional(),
+    effects: z.array(effectSchema).max(12).default([]),
+    /** The text of the cards on the summary page: why the panels in each group moved or not, and when to measure next. */
+    glance: z
+      .object({ intended: optionalText(300), unchanged: optionalText(300), review: optionalText(300), nextWindow: leadTextSchema.optional() })
+      .optional(),
     panels: z.array(panelSchema).min(1).max(20),
+    /** Under every panel table, after the general note: how the values were measured. */
+    panelNote: optionalText(600),
+    /** The page for the visit: what to discuss, when to measure next, the person's likely questions and the report's limits. */
+    visit: z
+      .object({
+        discussion: z.array(leadTextSchema).max(8).default([]),
+        nextWindow: z.object({ lead: text(80), text: text(300), detail: optionalText(400) }).optional(),
+        questions: z.array(text(300)).max(8).default([]),
+        limits: z.array(leadTextSchema).max(6).default([]),
+        companion: leadTextSchema.optional(),
+      })
+      .optional(),
+    /** How the report was produced: platform, specimen, batching, noise and so on. */
+    methods: z.array(z.object({ term: text(40), text: text(800) })).max(12).default([]),
+    movers: z.object({ intro: text(400), items: z.array(moverSchema).min(1).max(40), note: optionalText(400) }).optional(),
     sections: z.array(sectionSchema).max(12).default([]),
   })
   .superRefine((report, context) => {
@@ -102,6 +159,12 @@ export const biomarkerReportSchema = z
       if (index > 0 && timepoint.week <= report.timepoints[index - 1].week) {
         issue(['timepoints', index, 'week'], 'Timepoints must be in order, each later than the one before.')
       }
+    })
+    report.dose?.steps.forEach((step, index, steps) => {
+      if (index > 0 && step.week <= steps[index - 1].week) issue(['dose', 'steps', index, 'week'], 'Dose steps must be in order of week.')
+    })
+    report.movers?.items.forEach((mover, index) => {
+      if (mover.detected > mover.of) issue(['movers', 'items', index, 'detected'], 'A marker cannot be detected at more timepoints than there are.')
     })
     report.clinicalValues.forEach((value, index) => {
       if (value.values.length !== count) issue(['clinicalValues', index, 'values'], `Give ${count} values, one per timepoint.`)
@@ -125,3 +188,4 @@ export type BiomarkerReportInput = z.input<typeof biomarkerReportSchema>
 export type Marker = z.infer<typeof markerSchema>
 export type Panel = z.infer<typeof panelSchema>
 export type ClinicalValue = z.infer<typeof clinicalValueSchema>
+export type LeadText = z.infer<typeof leadTextSchema>

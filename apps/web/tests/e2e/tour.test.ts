@@ -101,8 +101,8 @@ test.describe('the patient', () => {
         const review = page.getByRole('region', { name: 'Review' })
         await show(review)
         await expect(review).toContainText(/Waiting for review|Reviewed by/)
-        await show(page.getByRole('heading', { name: 'At a glance' }))
-        await show(page.getByRole('heading', { name: 'Clinical values' }))
+        await show(page.getByRole('region', { name: 'At a glance' }))
+        await show(page.getByRole('heading', { name: 'Accredited laboratory values and program context.' }))
       })
 
       await step(page, 'patient-7', async () => {
@@ -143,7 +143,7 @@ test.describe('the clinician', () => {
         await show(page.getByRole('region', { name: 'Biomarker reports' }))
         await page.getByRole('link', { name: /How this patient's biology responded/ }).click()
         await expect(page.getByRole('heading', { level: 1, name: /How this patient's biology responded/ })).toBeVisible()
-        await show(page.getByRole('heading', { name: 'At a glance' }))
+        await show(page.getByRole('region', { name: 'At a glance' }))
         await show(page.getByRole('heading', { name: 'Sign off' }))
       })
 

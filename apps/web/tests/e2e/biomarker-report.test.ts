@@ -28,3 +28,12 @@ test("a company's site shows the report, and prints the report without the site 
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   await expect(page.getByRole('region', { name: 'Muscle & bone' }).getByRole('row', { name: /^IGF1/ })).toBeVisible()
 })
+
+test("a program's example report prints one A4 page per sheet, as the clinician edition does", async ({ page }) => {
+  await page.goto(onInstance('/programs/glp-1/example'))
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('semaglutide')
+  await expect(page.getByText('Page 13 of 13')).toBeVisible()
+  // The page's own @page rule gives the size (A4) and no margin; a sheet that does not fit adds a page.
+  const pdf = (await page.pdf({ preferCSSPageSize: true, printBackground: true })).toString('latin1')
+  expect(pdf.match(/\/Type\s*\/Page\b(?!s)/g)).toHaveLength(await page.locator('.report-sheet').count())
+})

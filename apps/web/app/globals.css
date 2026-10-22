@@ -213,9 +213,10 @@
    frame's direct children, components/SiteChrome.tsx) and without other parts
    of the page, such as the instance preview bar. Other pages keep the rules above. */
 @media print {
+  /* No page margin: each report sheet is one A4 page with its own padding, header and footer. */
   @page biomarker-report {
     size: A4;
-    margin: 12mm;
+    margin: 0;
   }
   .biomarker-report {
     page: biomarker-report;
@@ -228,5 +229,96 @@
   }
   body:has(.biomarker-report) main {
     padding: 0;
+  }
+}
+
+/* The paper of a biomarker report (components/biomarker-report): its own
+   colors and serif headings, like a printed lab report, on every site theme.
+   Teal is a change in the intended direction, stone no change, amber one to
+   review. */
+.biomarker-report {
+  --report-paper: #f9f8f5;
+  --report-card: #fefefc;
+  --report-ink: #1c1b19;
+  --report-muted: #6e6c66;
+  --report-rule: #e5e3dd;
+  --report-teal: #1d7a6c;
+  --report-teal-soft: #e2efec;
+  --report-amber: #b07526;
+  --report-amber-soft: #f7ecda;
+  --report-stone: #85837d;
+  --report-stone-soft: #efeee9;
+  --report-serif: var(--font-report-serif), "Iowan Old Style", Georgia, serif;
+}
+.report-sheet {
+  background: var(--report-paper);
+  color: var(--report-ink);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08), 0 12px 32px -16px rgb(0 0 0 / 0.35);
+}
+.report-serif {
+  font-family: var(--report-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+/* In the components layer, so that border utilities (a colored top border) override it. */
+@layer components {
+  .report-card {
+    background: var(--report-card);
+    border: 1px solid var(--report-rule);
+    border-radius: 14px;
+  }
+}
+.report-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.report-th {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--report-muted);
+}
+.report-muted {
+  color: var(--report-muted);
+}
+.report-rule {
+  border-color: var(--report-rule);
+}
+/* On screen a sheet is at least as tall as an A4 page at its width; in print it is one A4 page,
+   a little shorter than 297 mm so that rounding never adds a blank page. */
+@media screen and (min-width: 768px) {
+  .report-sheet {
+    min-height: 73.5rem;
+  }
+}
+@media print {
+  /* The screen layout (52rem wide, with the desktop padding) scaled to the width of A4, so that
+     the printed page is the page on screen. */
+  .report-sheet {
+    width: 52rem;
+    max-width: none;
+    /* 210 mm is 793.7 px and 52rem is 832 px; 296 mm at that scale is 1172 px. */
+    zoom: 0.954;
+    min-height: 1172px;
+    padding: 3.5rem 3.75rem;
+    box-shadow: none;
+    break-after: page;
+  }
+  .report-sheet:last-child {
+    break-after: auto;
+  }
+  /* Nothing around the sheets takes room on the paper, so that each sheet starts at the top left of its
+     page. The spacing utilities between siblings are more specific than these rules, hence !important. */
+  body:has(.biomarker-report) main :has(.biomarker-report),
+  body:has(.biomarker-report) .biomarker-report {
+    max-width: none;
+    margin: 0 !important;
+    padding: 0;
+  }
+  .biomarker-report > .report-sheet {
+    margin: 0 !important;
   }
 }

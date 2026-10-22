@@ -5,6 +5,7 @@ import {
   formatIndex,
   formatMeasured,
   formatMeasuredOrMissing,
+  formatReported,
   formatMultiple,
   formatReportDate,
 } from '@/lib/biomarker-report/format'
@@ -25,6 +26,15 @@ describe('biomarker report formats', () => {
     expect(formatMeasuredOrMissing(2.5, undefined, 2)).toBe('2.50')
   })
 
+  it('shows a value below 100 with at least one decimal, as the printed report does', () => {
+    expect(formatReported(108, 0)).toBe('108')
+    expect(formatReported(94, 0)).toBe('94.0')
+    expect(formatReported(0.84, 2)).toBe('0.84')
+    expect(formatReported(1)).toBe('1.0')
+    expect(formatReported(1120)).toBe('1,120')
+    expect(formatMeasuredOrMissing(42, undefined, 0)).toBe('42.0')
+  })
+
   it('signs a panel index and shows a noise multiple with one decimal', () => {
     expect(formatIndex(2.4937)).toBe('+2.5×')
     expect(formatIndex(-1.6146)).toBe('−1.6×')
@@ -33,6 +43,6 @@ describe('biomarker report formats', () => {
   })
 
   it('shows the report date without a time zone shift', () => {
-    expect(formatReportDate('2026-09-30')).toBe('Sep 30, 2026')
+    expect(formatReportDate('2026-09-30')).toBe('30 Sep 2026')
   })
 })
