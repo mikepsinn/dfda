@@ -5,8 +5,9 @@ import { resolveInstance } from "@/lib/instance/resolve"
 import { isDark } from "@/lib/instance/theme"
 
 // The image that link previews show (Open Graph and Twitter cards, set in
-// app/layout.tsx). On a company's site it shows the company: its logo when it
-// has one, its name, tagline and colors. Otherwise it shows the network.
+// app/layout.tsx). On a company's site it shows the company: its name, tagline
+// and colors. Not its logo: the server would fetch the address that the owner
+// typed, which could point at a service inside our own network.
 
 const size = { width: 1200, height: 630 }
 // Branding can change, so previews may keep an image for an hour, not for a year.
@@ -30,10 +31,6 @@ export async function GET() {
             borderTop: `24px solid ${instance.primaryColor}`,
           }}
         >
-          {instance.logoUrl && (
-            // eslint-disable-next-line @next/next/no-img-element -- an image in the generated picture, not on a page
-            <img src={instance.logoUrl} alt="" height={120} style={{ marginBottom: "40px", objectFit: "contain" }} />
-          )}
           <div style={{ display: "flex", fontSize: "72px", fontWeight: "bold", color: text, lineHeight: 1.1 }}>{instance.name}</div>
           {instance.tagline && (
             <div style={{ display: "flex", fontSize: "36px", color: text, opacity: 0.75, marginTop: "24px", maxWidth: "1000px" }}>
