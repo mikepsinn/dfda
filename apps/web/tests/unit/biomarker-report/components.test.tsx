@@ -38,6 +38,13 @@ describe("biomarker report", () => {
     expect(screen.getByText(/rose within the reference interval/)).toBeInTheDocument()
   })
 
+  it("shows a clinical value's note in the table and in the list for phones", () => {
+    const [first, ...rest] = EXAMPLE_REPORT.clinicalValues
+    render(<BiomarkerReportView report={{ ...EXAMPLE_REPORT, clinicalValues: [{ ...first, note: "Fasting, morning draw" }, ...rest] }} />)
+    expect(within(screen.getByRole("row", { name: /^Weight/ })).getByText("Fasting, morning draw")).toBeInTheDocument()
+    expect(within(screen.getByRole("list", { name: "Laboratory values" })).getByText("Fasting, morning draw")).toBeInTheDocument()
+  })
+
   it("draws the clinical value with more than two values, the dose and the reported effects", () => {
     render(<BiomarkerReportView report={EXAMPLE_REPORT} />)
     expect(screen.getByRole("img", { name: "Weight: Baseline 91.4 kg, Week 4 88.9 kg, Week 8 86.1 kg, Week 12 83.7 kg" })).toBeInTheDocument()
@@ -59,5 +66,15 @@ describe("biomarker report", () => {
     expect(cells(crp)).toEqual(["mg/L", "3.8", "1.9", "−50%", "", "2.5×", "Intended direction"])
     // The trend gives every timepoint in its accessible name.
     expect(within(crp).getByRole("img", { name: /^Baseline 3\.8, Week 4 \d\.\d, Week 8 \d\.\d, Week 12 1\.9$/ })).toBeInTheDocument()
+    // Below the assay's limit: "< limit".
+    expect(cells(screen.getByRole("row", { name: /^TNNT2/ })).slice(0, 3)).toEqual(["pg/mL", "< 5", "< 5"])
+  })
+
+  it("shows a marker value that is missing without a limit as missing, not as below the limit", () => {
+    const [panel, ...panels] = EXAMPLE_REPORT.panels
+    const [marker, ...markers] = panel.markers
+    const report = { ...EXAMPLE_REPORT, panels: [{ ...panel, markers: [{ ...marker, values: [null, 500, 400, 370] }, ...markers] }, ...panels] }
+    render(<BiomarkerReportView report={report} />)
+    expect(cells(screen.getByRole("row", { name: /^INS Insulin/ })).slice(0, 3)).toEqual(["pg/mL", "–", "370"])
   })
 })

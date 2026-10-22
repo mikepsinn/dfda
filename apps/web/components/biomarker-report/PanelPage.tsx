@@ -116,9 +116,9 @@ export function PanelPage({
                     )}
                   </th>
                   <td className="report-muted px-1 py-[7px]">{marker.unit}</td>
-                  <td className="px-1 py-[7px] text-right tabular-nums">{formatMeasuredOrMissing(marker.first, marker.lowerLimit, decimals, "< LLOQ")}</td>
+                  <td className="px-1 py-[7px] text-right tabular-nums">{formatMeasuredOrMissing(marker.first, marker.lowerLimit, decimals)}</td>
                   <td className="px-1 py-[7px] text-right font-semibold tabular-nums">
-                    {formatMeasuredOrMissing(marker.last, marker.lowerLimit, decimals, "< LLOQ")}
+                    {formatMeasuredOrMissing(marker.last, marker.lowerLimit, decimals)}
                   </td>
                   <td className="px-1 py-[7px] text-right tabular-nums">{marker.percentChange === null ? "—" : formatPercent(marker.percentChange)}</td>
                   <td className="px-1 py-1">
@@ -154,8 +154,8 @@ export function PanelPage({
               </div>
               <div className="flex items-center justify-between gap-3 text-[12.5px]">
                 <p className="tabular-nums">
-                  {formatMeasuredOrMissing(marker.first, marker.lowerLimit, decimals, "< LLOQ")} →{" "}
-                  <span className="font-semibold">{formatMeasuredOrMissing(marker.last, marker.lowerLimit, decimals, "< LLOQ")}</span>{" "}
+                  {formatMeasuredOrMissing(marker.first, marker.lowerLimit, decimals)} →{" "}
+                  <span className="font-semibold">{formatMeasuredOrMissing(marker.last, marker.lowerLimit, decimals)}</span>{" "}
                   <span className="report-muted">{marker.unit}</span>
                   {marker.percentChange !== null && <> · {formatPercent(marker.percentChange)}</>}
                   {marker.noiseMultiple !== null && <> · {formatMultiple(marker.noiseMultiple)} noise</>}
