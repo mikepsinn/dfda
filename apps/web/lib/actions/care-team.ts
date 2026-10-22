@@ -42,7 +42,7 @@ async function careTeamInstance(userId: string, slug: string) {
 async function companyOf(slug: string) {
   const instance = await findInstanceBySlug(slug)
   if (!instance) return null
-  const domainConnected = instance.customDomain ? await isDomainConfigured(instance.customDomain) : null
+  const domainConnected = instance.customDomain ? await isDomainConfigured(instance.customDomain, instance.slug) : null
   return { instance, origin: companySiteOrigin(instance, domainConnected) }
 }
 
