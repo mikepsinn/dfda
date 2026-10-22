@@ -10,7 +10,8 @@ const input = { title: "What we measure", slug: "what-we-measure", body: "## Mar
 describe("a company's content page", () => {
   it("takes a title, an address in lowercase with single hyphens, and a text", () => {
     expect(pageInputSchema.parse({ ...input, title: "  What we measure ", slug: " What-We-Measure " })).toEqual(input)
-    for (const slug of ["what we measure", "what--we", "-faq", "faq-", "", "a".repeat(61)]) {
+    // "new" is the address of the form for a new page.
+    for (const slug of ["what we measure", "what--we", "-faq", "faq-", "", "a".repeat(61), "new"]) {
       expect(pageInputSchema.safeParse({ ...input, slug }).success, slug).toBe(false)
     }
     expect(pageInputSchema.safeParse({ ...input, title: " " }).success).toBe(false)

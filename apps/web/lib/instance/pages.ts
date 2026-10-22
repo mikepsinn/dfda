@@ -17,7 +17,9 @@ export const pageInputSchema = z.object({
     .trim()
     .toLowerCase()
     .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Use lowercase letters, numbers and single hyphens.')
-    .max(60, 'Use at most 60 characters.'),
+    .max(60, 'Use at most 60 characters.')
+    // /instances/{slug}/pages/new is the form for a new page, so a page there could not be edited.
+    .refine((slug) => slug !== 'new', 'This address is reserved. Choose another.'),
   body: z
     .string()
     .trim()
