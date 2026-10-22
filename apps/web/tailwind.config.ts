@@ -13,6 +13,12 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		// Text in the brand color (text-primary) reads on the page; fills (bg-primary) keep the brand color.
+  		textColor: {
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary-text))'
+  			}
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

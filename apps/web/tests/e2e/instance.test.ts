@@ -1,5 +1,9 @@
 import { expect, test } from '@playwright/test'
+import { contrastRatio } from '../../lib/instance/theme'
 import { COMPANY_STATE, MEMBER_STATE, demo, onInstance } from './demo'
+
+/** "rgb(47, 212, 190)" as "#2fd4be". */
+const hexOf = (rgb: string) => `#${rgb.match(/\d+/g)!.slice(0, 3).map((value) => Number(value).toString(16).padStart(2, '0')).join('')}`
 
 test.describe("a company's own site", () => {
   test('shows the company, its programs and no network pages', async ({ page }) => {
@@ -43,10 +47,11 @@ test.describe("a company's own site", () => {
     await expect(page).toHaveURL(/\/programs$/)
   })
 
-  test("shows the theme that the owner sets: page colors on screen, light colors in print", async ({ browser }) => {
+  test("shows the theme that the owner sets: page colors on screen, light colors in print, readable brand text", async ({ browser }) => {
     const page = await (await browser.newContext({ storageState: COMPANY_STATE })).newPage()
-    async function setTheme(theme: { background: string; font: string; corners: string }) {
+    async function setTheme(theme: { brand: string; background: string; font: string; corners: string }) {
       await page.goto(`/instances/${demo.instance.slug}`)
+      await page.getByLabel('Brand color', { exact: true }).fill(theme.brand)
       await page.getByLabel('Background color', { exact: true }).fill(theme.background)
       await page.getByLabel('Font', { exact: true }).selectOption(theme.font)
       await page.getByLabel('Corners', { exact: true }).selectOption(theme.corners)
@@ -55,7 +60,7 @@ test.describe("a company's own site", () => {
     }
 
     try {
-      await setTheme({ background: '#0d0f0e', font: 'serif', corners: 'large' })
+      await setTheme({ brand: '#6d4df6', background: '#0d0f0e', font: 'serif', corners: 'large' })
       await page.goto(onInstance('/'))
       const body = page.locator('body')
       await expect(page.locator('html')).toHaveClass(/\bdark-on-screen\b/)
@@ -65,10 +70,21 @@ test.describe("a company's own site", () => {
 
       await page.emulateMedia({ media: 'print' })
       await expect(body).toHaveCSS('background-color', 'rgb(255, 255, 255)')
+      await page.emulateMedia({ media: 'screen' })
+
+      // A light brand color on a light page: buttons keep it, and text in it gets darker until it reads.
+      await setTheme({ brand: '#2fd4be', background: '#faf9f6', font: 'inter', corners: 'large' })
+      await page.goto(onInstance('/'))
+      // The theme keeps the brand color in whole percents of hue, saturation and lightness: within 2 of each channel.
+      const button = await page.getByRole('link', { name: 'See the programs' }).evaluate((element) => getComputedStyle(element).backgroundColor)
+      const channels = button.match(/\d+/g)!.slice(0, 3).map(Number)
+      ;[47, 212, 190].forEach((value, index) => expect(Math.abs(channels[index] - value), button).toBeLessThanOrEqual(2))
+      const heading = await page.getByRole('heading', { level: 1 }).evaluate((element) => getComputedStyle(element).color)
+      expect(contrastRatio(hexOf(heading), '#faf9f6'), heading).toBeGreaterThanOrEqual(4.5)
     } finally {
       // Other tests use the same demo company.
       await page.emulateMedia({ media: 'screen' })
-      await setTheme({ background: '#ffffff', font: 'inter', corners: 'medium' })
+      await setTheme({ brand: '#6d4df6', background: '#ffffff', font: 'inter', corners: 'medium' })
     }
   })
 
