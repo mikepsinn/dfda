@@ -200,7 +200,10 @@ jobs:
           exit 1
 
       - name: Install Chromium
-        run: pnpm exec playwright install --with-deps chromium
+        run: |
+          # The runner's Microsoft apt source sometimes answers 403 and stops apt; nothing here needs it.
+          sudo grep -ls packages.microsoft.com /etc/apt/sources.list.d/* | xargs -r sudo rm -f
+          pnpm exec playwright install --with-deps chromium
 
       - name: Run browser tests
         env:
