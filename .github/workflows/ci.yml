@@ -7,12 +7,14 @@ on:
       - 'package.json'
       - 'pnpm-lock.yaml'
       - 'pnpm-workspace.yaml'
+      - '.github/workflows/ci.yml'
   pull_request:
     paths:
       - 'apps/web/**'
       - 'package.json'
       - 'pnpm-lock.yaml'
       - 'pnpm-workspace.yaml'
+      - '.github/workflows/ci.yml'
   workflow_dispatch:
 
 jobs:
