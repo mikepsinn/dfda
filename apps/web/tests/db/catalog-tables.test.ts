@@ -3,6 +3,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { adminDb, dbAs, type DbUser } from '@/lib/db'
 import { findOrCreateGlobalVariable } from '@/lib/global_variables.lib'
 import { seedCodes } from '../shared/variable-codes'
+import { convertibleCategories, MASS_CONCENTRATION, MOLAR_CONCENTRATION } from '@/lib/units/convert'
 
 // The shared catalog: variables and their standard codes, units, categories,
 // conditions, treatments, pharmacies and OAuth scopes. Everyone reads it; only the full-access client
@@ -190,7 +191,7 @@ describe('the shared catalog', () => {
     )
   })
 
-  it('gives lab tests, and the effects on them, the units that labs report', async () => {
+  it('gives lab tests and other variables the units they are measured in', async () => {
     const units = {
       'creatine-kinase-ck': 'units-per-liter',
       'esr-erythrocyte-sedimentation-rate': 'millimeters-per-hour',
@@ -201,28 +202,77 @@ describe('the shared catalog', () => {
       'interleukin-6-il-6': 'picograms-per-milliliter',
       'ketamine-plasma-concentration': 'nanograms-per-milliliter',
       'estimated-glomerular-filtration-rate-egfr': 'milliliters-per-minute-per-1-73-square-meters',
+      'forced-expiratory-volume-in-1-second-fev1': 'liter',
+      'peak-expiratory-flow-pef': 'liters-per-minute',
+      'swollen-joint-count': 'dimensionless-unit',
+      'tender-joint-count': 'dimensionless-unit',
+      'grip-strength': 'kilogram',
+      'gait-speed': 'meters-per-second',
+      'rescue-inhaler-use': 'per-day',
+      'frequency-of-ibuprofen-use': 'per-day',
+      'metformin-dosage': 'milligram',
+      'emergency-room-visits': 'per-month',
+      'wheezing-episodes': 'per-day',
+      'medication-adherence': 'percent',
+      'treatment-adherence': 'percent',
     }
     const stored = await adminDb.global_variables.findMany({
       where: { id: { in: Object.keys(units) } },
       select: { id: true, default_unit_id: true },
     })
     expect(Object.fromEntries(stored.map((variable) => [variable.id, variable.default_unit_id]))).toEqual(units)
+  })
 
-    // An effect's absolute change is in a unit that converts to the test's unit.
-    const coded = await adminDb.global_variable_codes.findMany({ select: { global_variable_id: true } })
-    const labTests = [...new Set([...coded.map((code) => code.global_variable_id), ...Object.keys(units)])]
+  it('keeps mass and amount per volume apart, and gives lab tests reported in both their molar mass', async () => {
+    const kinds = await adminDb.units.findMany({
+      where: { unit_category_id: { in: [MASS_CONCENTRATION, MOLAR_CONCENTRATION] } },
+      select: { id: true, unit_category_id: true },
+    })
+    const kindOf = Object.fromEntries(kinds.map((unit) => [unit.id, unit.unit_category_id]))
+    expect(kindOf).toMatchObject({
+      'milligrams-per-deciliter': MASS_CONCENTRATION,
+      'grams-per-liter': MASS_CONCENTRATION,
+      'milligrams-per-liter': MASS_CONCENTRATION,
+      'millimoles-per-liter': MOLAR_CONCENTRATION,
+      'micromoles-per-liter': MOLAR_CONCENTRATION,
+    })
+    const molar = await adminDb.global_variables.findMany({ where: { molar_mass: { not: null } }, select: { id: true, molar_mass: true } })
+    expect(Object.fromEntries(molar.map((variable) => [variable.id, variable.molar_mass]))).toEqual({
+      'blood-glucose': 180.156,
+      'fasting-blood-glucose': 180.156,
+      'postprandial-glucose': 180.156,
+      'total-cholesterol': 386.654,
+      'ldl-cholesterol': 386.654,
+      'hdl-cholesterol': 386.654,
+      triglycerides: 885.7,
+      creatinine: 113.12,
+      'uric-acid': 168.11,
+      'blood-urea-nitrogen-bun': 28.014,
+      'blood-potassium': 39.098,
+      'salicylate-level': 138.12,
+    })
+  })
+
+  it("states every effect's absolute change in a unit that converts to the outcome's unit", async () => {
     const effects = await adminDb.global_variable_relationships.findMany({
-      where: { outcome_global_variable_id: { in: labTests }, absolute_change_unit_id: { not: null } },
+      where: { absolute_change_unit_id: { not: null } },
       select: {
         predictor_global_variable_id: true,
         outcome_global_variable_id: true,
         units: { select: { unit_category_id: true } },
-        outcome_variable: { select: { units: { select: { unit_category_id: true } } } },
+        outcome_variable: { select: { molar_mass: true, units: { select: { unit_category_id: true } } } },
       },
     })
-    expect(effects.length).toBeGreaterThan(10)
+    expect(effects.length).toBeGreaterThan(100)
     const mismatched = effects
-      .filter((effect) => effect.units?.unit_category_id !== effect.outcome_variable.units.unit_category_id)
+      .filter(
+        (effect) =>
+          !convertibleCategories(
+            effect.units!.unit_category_id,
+            effect.outcome_variable.units.unit_category_id,
+            effect.outcome_variable.molar_mass,
+          ),
+      )
       .map((effect) => `${effect.predictor_global_variable_id} → ${effect.outcome_global_variable_id}`)
     expect(mismatched).toEqual([])
   })

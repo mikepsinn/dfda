@@ -282,6 +282,7 @@ model global_variables {
   deleted_at                   DateTime?                       @db.Timestamptz(6)
   created_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
   updated_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
+  molar_mass                   Float?
   global_conditions            global_conditions?
   global_foods                 global_foods?
   global_symptoms              global_symptoms?

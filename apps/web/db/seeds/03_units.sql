@@ -38,10 +38,13 @@ VALUES
 ('celsius', 'temperature', 'Celsius', '°C', 'Cel', 1, 0, '🌡️'), -- Base Unit
 ('fahrenheit', 'temperature', 'Fahrenheit', '°F', '[degF]', 1.8, 32, '🌡️'),
 
--- Concentration (Base: 'millimoles-per-liter')
+-- Molar concentration (Base: 'millimoles-per-liter'); mass units convert to it only with a substance's molar mass (lib/units/convert.ts)
 ('millimoles-per-liter', 'concentration', 'Millimoles per Liter', 'mmol/L', 'mmol/L', 1, 0, '🧪'), -- Base Unit
-('milligrams-per-deciliter', 'concentration', 'Milligrams per Deciliter', 'mg/dL', 'mg/dL', 18.0182, 0, '🧪'),
-('grams-per-liter', 'concentration', 'Grams per Liter', 'g/L', 'g/L', 1, 0, '🧪'),
+('micromoles-per-liter', 'concentration', 'Micromoles per Liter', 'µmol/L', 'umol/L', 1000, 0, '🧪'),
+
+-- Mass concentration (Base: 'nanograms-per-milliliter', below with the blood marker units)
+('milligrams-per-deciliter', 'mass-concentration', 'Milligrams per Deciliter', 'mg/dL', 'mg/dL', 0.0001, 0, '🧪'),
+('grams-per-liter', 'mass-concentration', 'Grams per Liter', 'g/L', 'g/L', 0.000001, 0, '🧪'),
 
 -- Cell Count (Base: 'per-microliter')
 ('per-microliter', 'cell-count', 'Per Microliter', '/uL', '/uL', 1, 0, '🔬'), -- Base Unit
@@ -136,3 +139,11 @@ VALUES
 UPDATE unit_categories SET base_unit_id = 'millimeters-per-hour' WHERE id = 'velocity';
 UPDATE unit_categories SET base_unit_id = 'micro-international-units-per-milliliter' WHERE id = 'international-units-concentration';
 UPDATE unit_categories SET base_unit_id = 'milliliters-per-minute-per-1-73-square-meters' WHERE id = 'filtration-rate';
+
+-- Flow and speed units (also in migration 20261021060000 for existing databases)
+INSERT INTO units (id, unit_category_id, name, abbreviated_name, ucum_code, conversion_factor, conversion_offset, emoji)
+VALUES
+('liters-per-second', 'volume-flow-rate', 'Liters per Second', 'L/s', 'L/s', 1, 0, '💨'), -- Base Unit
+('liters-per-minute', 'volume-flow-rate', 'Liters per Minute', 'L/min', 'L/min', 60, 0, '💨'),
+('meters-per-second', 'velocity', 'Meters per Second', 'm/s', 'm/s', 0.0000002777777777777778, 0, '🏃');
+UPDATE unit_categories SET base_unit_id = 'liters-per-second' WHERE id = 'volume-flow-rate';
