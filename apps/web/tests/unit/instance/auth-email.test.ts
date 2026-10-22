@@ -1,13 +1,12 @@
 // @vitest-environment node
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { authEmailContext, linkOnHost } from '@/lib/instance/auth-email'
 
-const findInstanceForRequest = vi.fn()
+const { findInstanceForRequest } = vi.hoisted(() => ({ findInstanceForRequest: vi.fn() }))
 vi.mock('@/lib/instance/hosts', async (importOriginal) => ({
   ...(await importOriginal<typeof import('@/lib/instance/hosts')>()),
-  findInstanceForRequest: (...args: unknown[]) => findInstanceForRequest(...args),
+  findInstanceForRequest,
 }))
-
-const { authEmailContext, linkOnHost } = await import('@/lib/instance/auth-email')
 
 const response = {
   slug: 'response',

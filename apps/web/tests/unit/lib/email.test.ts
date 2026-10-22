@@ -1,10 +1,9 @@
 // @vitest-environment node
 import { afterEach, describe, expect, it, vi } from 'vitest'
+import { linkEmail, sendEmail, senderAddress } from '@/lib/email'
 
-const sendMail = vi.fn()
+const { sendMail } = vi.hoisted(() => ({ sendMail: vi.fn() }))
 vi.mock('nodemailer', () => ({ default: { createTransport: () => ({ sendMail }) } }))
-
-const { linkEmail, sendEmail, senderAddress } = await import('@/lib/email')
 
 afterEach(() => sendMail.mockReset())
 
