@@ -27,6 +27,7 @@ function readForm(formData: FormData) {
     cornerRadius: field("cornerRadius"),
     products: field("products"),
     customDomain: field("customDomain"),
+    supportEmail: field("supportEmail"),
   })
 }
 
@@ -42,6 +43,7 @@ function toRow(input: InstanceInput) {
     corner_radius: input.cornerRadius,
     products: input.products,
     custom_domain: input.customDomain,
+    support_email: input.supportEmail,
   }
 }
 

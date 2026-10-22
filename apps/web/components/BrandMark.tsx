@@ -1,5 +1,5 @@
 // The brand mark: an Outcome Label card with ranked rows and a check.
-// app/icon.svg is the same drawing with fixed colors, for the browser icon; keep the two in step.
+// public/icon.svg is the same drawing with fixed colors, for the browser icon; keep the two in step.
 
 export interface BrandMarkColors {
   primary: string

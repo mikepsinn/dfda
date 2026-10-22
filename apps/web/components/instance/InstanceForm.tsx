@@ -29,6 +29,7 @@ type Values = {
   cornerRadius: CornerRadius
   products: string
   customDomain: string
+  supportEmail: string
 }
 
 function toValues(instance?: InstanceBranding | null): Values {
@@ -43,6 +44,7 @@ function toValues(instance?: InstanceBranding | null): Values {
     cornerRadius: instance?.cornerRadius ?? "medium",
     products: instance?.products.join("\n") ?? "",
     customDomain: instance?.customDomain ?? "",
+    supportEmail: instance?.supportEmail ?? "",
   }
 }
 
@@ -228,6 +230,21 @@ export function InstanceForm({
           />
           <FieldError message={errors.customDomain} />
         </div>
+        <div className="space-y-2">
+          <Label htmlFor="supportEmail">Support email (optional)</Label>
+          <Input
+            id="supportEmail"
+            name="supportEmail"
+            type="email"
+            value={values.supportEmail}
+            onChange={set("supportEmail")}
+            placeholder="help@acme.com"
+          />
+          <p className="text-xs text-muted-foreground">
+            Shown on your sign-in page. Replies to the emails that your site sends go here.
+          </p>
+          <FieldError message={errors.supportEmail} />
+        </div>
         <Button type="submit" size="lg" disabled={pending} className="gap-2">
           {pending && <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />}
           {submitLabel}
@@ -238,16 +255,9 @@ export function InstanceForm({
         <p className="text-sm font-medium text-muted-foreground">Preview</p>
         <div className="overflow-hidden rounded-lg border bg-background text-foreground shadow-sm" style={previewStyle}>
           <div className="flex items-center gap-2 border-b bg-background px-4 py-3">
-            {values.logoUrl.startsWith("https://") ? (
+            {values.logoUrl.startsWith("https://") && (
               // eslint-disable-next-line @next/next/no-img-element -- the logo is on the company's own host
               <img src={values.logoUrl} alt="" className="h-7 w-7 object-contain" />
-            ) : (
-              <span
-                aria-hidden="true"
-                className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-sm font-bold text-primary-foreground"
-              >
-                {(values.name.trim().charAt(0) || "A").toUpperCase()}
-              </span>
             )}
             <span className="font-bold">{values.name || "Company name"}</span>
           </div>

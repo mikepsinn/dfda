@@ -66,6 +66,12 @@ export const instanceInputSchema = z.object({
     .trim()
     .transform((value) => value || null)
     .pipe(domainSchema.nullable()),
+  supportEmail: z
+    .string()
+    .trim()
+    .toLowerCase()
+    .transform((value) => value || null)
+    .pipe(z.string().email('Enter an email address such as help@example.com.').max(320).nullable()),
 })
 
 export type InstanceInput = z.infer<typeof instanceInputSchema>
@@ -78,6 +84,8 @@ export type InstanceBranding = InstanceTheme & {
   logoUrl: string | null
   products: string[]
   customDomain: string | null
+  /** Where members get help; the reply address of the site's emails. */
+  supportEmail: string | null
 }
 
 /** A slug suggestion from a company name: "Acme Proteomics, Inc." → "acme-proteomics-inc". */

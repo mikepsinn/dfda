@@ -54,22 +54,22 @@ describe("a company instance's own site", () => {
   it("has a header with the company's name, its programs and sign-in", () => {
     render(<InstanceHeader brand={{ name: "Acme Proteomics", logoUrl: null }} initialUser={null} initialProfile={null} />)
     const header = screen.getByRole("banner")
+    // Without a logo, the name stands alone: no letter badge in its place.
     expect(within(header).getByRole("link", { name: /Acme Proteomics/ })).toHaveAttribute("href", "/")
+    expect(within(header).getByRole("link", { name: /Acme Proteomics/ })).toHaveTextContent(/^Acme Proteomics$/)
+    expect(header.querySelector("img, [aria-hidden='true'].bg-primary")).toBeNull()
     expect(within(header).getByRole("link", { name: "Programs" })).toHaveAttribute("href", "/programs")
     expect(within(header).getByRole("link", { name: "Sign in" })).toHaveAttribute("href", "/login")
     expect(within(header).getAllByRole("link")).toHaveLength(3)
   })
 
-  it("has a footer that names the network that runs it, with the company's letter as its logo", () => {
-    const { container } = render(
-      <InstanceFooter
-        brand={{ name: "Acme Proteomics", logoUrl: null }}
-        network={{ name: "Open Treatment Evidence Network", url: "https://prototype.dfda.earth" }}
-      />,
-    )
-    expect(container.querySelector("footer span[aria-hidden='true']")).toHaveTextContent("A")
+  it("has a footer with the company's logo when it has one, and no word of the network that runs it", () => {
+    const { container, rerender } = render(<InstanceFooter brand={{ name: "Acme Proteomics", logoUrl: null }} />)
+    expect(container.querySelector("footer img, footer span[aria-hidden='true']")).toBeNull()
     expect(screen.getByText(/© \d{4} Acme Proteomics/)).toBeInTheDocument()
-    expect(screen.getByRole("link", { name: "Open Treatment Evidence Network" })).toHaveAttribute("href", "https://prototype.dfda.earth")
+    rerender(<InstanceFooter brand={{ name: "Acme Proteomics", logoUrl: "https://acme.example/logo.png" }} />)
+    expect(container.querySelector("footer img")).toHaveAttribute("src", "https://acme.example/logo.png")
+    expect(container).not.toHaveTextContent(/Powered by|Open Treatment Evidence Network|dFDA/)
     expect(screen.queryByRole("link", { name: "For companies" })).not.toBeInTheDocument()
   })
 })

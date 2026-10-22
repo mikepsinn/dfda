@@ -196,9 +196,14 @@ export async function careTeam(owner: DbUser, instanceId: string) {
   }))
 }
 
-/** The link that opens an invitation, on the main site. */
-export function invitationUrl(invitationId: string): string {
-  return `${siteOrigin()}/care-teams/join/${invitationId}`
+/**
+ * The link that opens an invitation on the company's site: on its own domain
+ * or subdomain (`companyOrigin`, lib/instance/hosts.ts companySiteOrigin), else
+ * through its preview link on the main site.
+ */
+export function invitationUrl(slug: string, invitationId: string, companyOrigin: string | null): string {
+  const path = `/care-teams/join/${invitationId}`
+  return companyOrigin ? `${companyOrigin}${path}` : `${siteOrigin()}/i/${slug}?next=${encodeURIComponent(path)}`
 }
 
 export type CareTeamInvitation = { id: string; email: string; createdAt: Date }

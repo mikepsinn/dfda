@@ -28,9 +28,6 @@ const INSTANCE_PATHS = [
   '/api',
   '/oauth',
   '/.well-known',
-  // Images for link previews
-  '/opengraph-image',
-  '/twitter-image',
 ]
 
 export function isInstancePath(pathname: string): boolean {

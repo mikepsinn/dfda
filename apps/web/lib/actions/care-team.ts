@@ -19,6 +19,8 @@ import {
 } from "@/lib/care-team/manage"
 import { dbAs } from "@/lib/db"
 import { linkEmail, sendEmail } from "@/lib/email"
+import { companySiteOrigin, findInstanceBySlug } from "@/lib/instance/hosts"
+import { isDomainConfigured } from "@/lib/instance/vercel-domains"
 import { logger } from "@/lib/logger"
 import { findProgramById } from "@/lib/programs/data"
 import { getServerUser } from "@/lib/server-auth"
@@ -36,10 +38,12 @@ async function careTeamInstance(userId: string, slug: string) {
   return membership?.instances ?? null
 }
 
-/** The instance's name for an email; the slug when it has none. */
-async function findInstanceName(slug: string) {
-  const instance = await dbAs(null).instances.findUnique({ where: { slug }, select: { name: true } })
-  return instance?.name ?? slug
+/** The company of an instance for its emails, and the address of its site. */
+async function companyOf(slug: string) {
+  const instance = await findInstanceBySlug(slug)
+  if (!instance) return null
+  const domainConnected = instance.customDomain ? await isDomainConfigured(instance.customDomain) : null
+  return { instance, origin: companySiteOrigin(instance, domainConnected) }
 }
 
 /** Adds a report file for a person who shares their reports with the care team, then opens the report. */
@@ -144,15 +148,18 @@ export async function inviteClinicianAction(instanceSlug: string, _state: CareFo
   revalidatePath(`/instances/${instanceSlug}`)
   if ("addedOwner" in result) return { notice: "You are on the care team now." }
 
-  const instance = await findInstanceName(instanceSlug)
+  const company = await companyOf(instanceSlug)
+  if (!company) return { error: "This instance does not exist." }
+  const { instance, origin } = company
   try {
     await sendEmail(
       linkEmail(
         result.email,
-        `Join the ${instance} care team`,
-        `${instance} invites you to its care team. On the care team you see the people who share their biomarker reports with ${instance}, and you review their reports. Open the link and sign in with this email address to join.`,
+        `Join the ${instance.name} care team`,
+        `${instance.name} invites you to its care team. On the care team you see the people who share their biomarker reports with ${instance.name}, and you review their reports. Open the link and sign in with this email address to join.`,
         "Open the invitation",
-        invitationUrl(result.invitationId),
+        invitationUrl(instance.slug, result.invitationId, origin),
+        { name: instance.name, primaryColor: instance.primaryColor, supportEmail: instance.supportEmail },
       ),
     )
   } catch (error) {

@@ -2,14 +2,8 @@ import Link from "next/link"
 import { InternalLink } from "@/components/internal-link"
 import { SiteLogo } from "./SiteLogo"
 
-/** The footer of a company instance: its programs, the legal pages, and the network that runs it. */
-export function InstanceFooter({
-  brand,
-  network,
-}: {
-  brand: { name: string; logoUrl: string | null }
-  network: { name: string; url: string }
-}) {
+/** The footer of a company instance: its programs and the legal pages. The site is the company's own, so it names no one else. */
+export function InstanceFooter({ brand }: { brand: { name: string; logoUrl: string | null } }) {
   return (
     <footer className="w-full border-t py-6">
       <div className="container mx-auto flex flex-col items-center gap-4 px-4 md:px-6">
@@ -30,12 +24,6 @@ export function InstanceFooter({
             © {new Date().getFullYear()} {brand.name}. All rights reserved.
           </p>
         </div>
-        <p className="text-xs text-muted-foreground">
-          Powered by{" "}
-          <a href={network.url} className="font-medium hover:underline">
-            {network.name}
-          </a>
-        </p>
       </div>
     </footer>
   )

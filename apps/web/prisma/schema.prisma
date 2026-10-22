@@ -1277,6 +1277,7 @@ model instances {
   background_color      String                  @default("#ffffff")
   font                  String                  @default("inter")
   corner_radius         String                  @default("medium")
+  support_email         String?
   care_team_invitations care_team_invitations[]
   instance_clinicians   instance_clinicians[]
   instance_programs     instance_programs[]

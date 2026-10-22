@@ -22,6 +22,7 @@ const select = {
   corner_radius: true,
   products: true,
   custom_domain: true,
+  support_email: true,
 } as const
 
 type InstanceRow = {
@@ -35,6 +36,7 @@ type InstanceRow = {
   corner_radius: string
   products: string[]
   custom_domain: string | null
+  support_email: string | null
 }
 
 /** The branding of an instances row. The table's checks allow only the fonts and corner sizes of lib/instance/theme.ts. */
@@ -50,7 +52,26 @@ export function toBranding(row: InstanceRow): InstanceBranding {
     cornerRadius: row.corner_radius as CornerRadius,
     products: row.products,
     customDomain: row.custom_domain,
+    supportEmail: row.support_email,
   }
+}
+
+/** The host of a request (with its port) and the origin that the browser used. */
+export function requestOrigin(request: Request): { host: string; origin: string } {
+  const hostHeader = (request.headers.get('x-forwarded-host') ?? request.headers.get('host') ?? '').split(',')[0].trim().toLowerCase()
+  const protocol = request.headers.get('x-forwarded-proto')?.split(',')[0].trim() ?? new URL(request.url).protocol.replace(':', '')
+  return { host: hostName(hostHeader), origin: `${protocol}://${hostHeader}` }
+}
+
+/**
+ * Where people open a company's site: its own domain once its DNS is
+ * connected, else its subdomain. Null when it has neither: then only the
+ * preview link on the main site shows it.
+ */
+export function companySiteOrigin(instance: { slug: string; customDomain: string | null }, domainConnected: boolean | null): string | null {
+  if (instance.customDomain && domainConnected) return `https://${instance.customDomain}`
+  if (env.INSTANCE_ROOT_DOMAIN) return `https://${instance.slug}.${env.INSTANCE_ROOT_DOMAIN}`
+  return null
 }
 
 /** The host name of a Host header value: lower case, without the port. */

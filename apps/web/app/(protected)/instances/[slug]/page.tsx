@@ -10,7 +10,7 @@ import { updateInstanceAction } from "@/lib/actions/instances"
 import { careTeam, careTeamInvitations, invitationUrl } from "@/lib/care-team/data"
 import { getUserDb } from "@/lib/db/server"
 import { env } from "@/lib/env"
-import { toBranding } from "@/lib/instance/hosts"
+import { companySiteOrigin, toBranding } from "@/lib/instance/hosts"
 import { dnsRecordFor, isDomainConfigured } from "@/lib/instance/vercel-domains"
 import { listPrograms } from "@/lib/programs/data"
 import { formatDate } from "@/lib/programs/format"
@@ -202,7 +202,7 @@ export default async function InstancePage({
                   <span className="min-w-0 flex-1">
                     <span className="block break-all font-medium">{invitation.email}</span>
                     <span className="block text-sm text-muted-foreground">Invited {formatDate(invitation.createdAt)}</span>
-                    <span className="block break-all text-xs text-muted-foreground">{invitationUrl(invitation.id)}</span>
+                    <span className="block break-all text-xs text-muted-foreground">{invitationUrl(instance.slug, invitation.id, companySiteOrigin(instance, domainConnected))}</span>
                   </span>
                   <form action={cancelInvitationAction.bind(null, instance.slug, invitation.id)}>
                     <Button type="submit" variant="outline" size="sm">
