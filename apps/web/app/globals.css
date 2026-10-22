@@ -51,6 +51,12 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* The status colors of a biomarker report on screen: statusColors("#ffffff") in
+       lib/instance/theme.ts, which an instance's theme replaces. A unit test keeps them in step. */
+    --status-intended: 171 61.6% 28.6%;
+    --status-review: 34 64.5% 34%;
+    --status-neutral: 45 3.2% 40.6%;
   }
 
   .dark {
@@ -233,9 +239,9 @@
 }
 
 /* The paper of a biomarker report (components/biomarker-report): its own
-   colors and serif headings, like a printed lab report, on every site theme.
-   Teal is a change in the intended direction, stone no change, amber one to
-   review. */
+   colors and serif headings, like a printed lab report. Teal is a change in the
+   intended direction, stone no change, amber one to review. On screen the
+   report is a page of the site in the site's colors (below). */
 .biomarker-report {
   --report-paper: #f9f8f5;
   --report-card: #fefefc;
@@ -287,16 +293,39 @@
 .report-rule {
   border-color: var(--report-rule);
 }
-/* On screen a sheet is at least as tall as an A4 page at its width; in print it is one A4 page,
-   a little shorter than 297 mm so that rounding never adds a blank page. */
-@media screen and (min-width: 768px) {
+/* On screen a report is a page of the site, not paper: the site's colors (an
+   instance's theme sets them, light or dark, lib/instance/theme.ts) with status
+   colors that read on them, no sheet edges, and only what a page needs of each
+   sheet's running header and footer (components/biomarker-report/ReportSheet.tsx).
+   The pale fills mix STATUS_FILL of the status color into the card. */
+@media screen {
+  .biomarker-report {
+    --report-card: hsl(var(--card));
+    --report-ink: hsl(var(--foreground));
+    --report-muted: hsl(var(--muted-foreground));
+    --report-rule: hsl(var(--border));
+    --report-teal: hsl(var(--status-intended));
+    --report-amber: hsl(var(--status-review));
+    --report-stone: hsl(var(--status-neutral));
+    --report-teal-soft: color-mix(in srgb, var(--report-teal) 14%, var(--report-card));
+    --report-amber-soft: color-mix(in srgb, var(--report-amber) 14%, var(--report-card));
+    --report-stone-soft: color-mix(in srgb, var(--report-stone) 14%, var(--report-card));
+  }
   .report-sheet {
-    min-height: 73.5rem;
+    background: none;
+    box-shadow: none;
+  }
+  .report-sheet + .report-sheet {
+    border-top: 1px solid var(--report-rule);
+  }
+  .report-print-only {
+    display: none;
   }
 }
 @media print {
   /* The screen layout (52rem wide, with the desktop padding) scaled to the width of A4, so that
      the printed page is the page on screen. */
+  /* One A4 page per sheet, a little shorter than 297 mm so that rounding never adds a blank page. */
   .report-sheet {
     width: 52rem;
     max-width: none;

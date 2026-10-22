@@ -1,5 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '@/tailwind.config'
 import {
@@ -9,6 +11,9 @@ import {
   contrastRatio,
   isDark,
   printBrandTheme,
+  STATUS_COLORS,
+  STATUS_FILL,
+  statusColors,
   surfaceTheme,
   themeCss,
 } from '@/lib/instance/theme'
@@ -102,6 +107,49 @@ describe('brandTextColor', () => {
         }
       }
     }
+  })
+})
+
+describe('statusColors', () => {
+  /** The pale fill of a status color: STATUS_FILL of it mixed into the card, by sRGB channel, as app/globals.css mixes it. */
+  const fill = (color: string, card: string) => {
+    const channels = (hex: string) => [1, 3, 5].map((index) => parseInt(hex.slice(index, index + 2), 16))
+    const card255 = channels(card)
+    return `#${channels(color)
+      .map((value, index) => Math.round(value * STATUS_FILL + card255[index] * (1 - STATUS_FILL)).toString(16).padStart(2, '0'))
+      .join('')}`
+  }
+
+  it('read on the page, the cards, the muted areas and their own pale fill of every accepted background', () => {
+    for (const background of backgrounds) {
+      const { variables } = surfaceTheme(background)
+      for (const name of ['--status-intended', '--status-review', '--status-neutral'] as const) {
+        const color = hexOf(variables[name])
+        const card = hexOf(variables['--card'])
+        for (const surface of [hexOf(variables['--background']), card, hexOf(variables['--muted']), fill(color, card)]) {
+          // 4.4: the hex form rounds each channel, which can change the ratio a little.
+          expect(contrastRatio(color, surface), `${name} on ${surface} of ${background}`).toBeGreaterThanOrEqual(4.4)
+        }
+      }
+    }
+  })
+
+  it('keep the hue of the printed colors', () => {
+    const hueOf = (variable: string) => Number(variable.split(' ')[0])
+    for (const background of ['#ffffff', '#0d0f0e']) {
+      const colors = statusColors(background)
+      expect(hueOf(colors['--status-intended'])).toBe(171)
+      expect(hueOf(colors['--status-review'])).toBe(34)
+      expect(hueOf(colors['--status-neutral'])).toBe(45)
+    }
+  })
+
+  it("are the site's own status colors on a white page, and the printed colors are the report's paper colors", () => {
+    const css = readFileSync(join(__dirname, '../../../app/globals.css'), 'utf8')
+    for (const [name, value] of Object.entries(statusColors('#ffffff'))) expect(css).toContain(`${name}: ${value};`)
+    expect(css).toContain(`--report-teal: ${STATUS_COLORS.intended};`)
+    expect(css).toContain(`--report-amber: ${STATUS_COLORS.review};`)
+    expect(css).toContain(`--report-stone: ${STATUS_COLORS.neutral};`)
   })
 })
 

@@ -15,7 +15,12 @@ function Facts({ rows }: { rows: [string, React.ReactNode][] }) {
   )
 }
 
-/** The first page: the brand, what the report is, its title and lead, who and what was measured, and its disclaimer. */
+/**
+ * The first page: the brand, what the report is, its title and lead, who and
+ * what was measured, and its disclaimer. In print it is a cover, with the
+ * brand on top and wide spaces; on screen it heads the page, under the site's
+ * own header.
+ */
 export function Cover({ report, frame, review }: { report: BiomarkerReport; frame: SheetFrame; review?: React.ReactNode }) {
   const { person, clinician } = report
   const personRest = [person.code, [person.age, person.sex].filter((part) => part !== undefined).join(" ")].filter(Boolean)
@@ -24,13 +29,13 @@ export function Cover({ report, frame, review }: { report: BiomarkerReport; fram
 
   return (
     <ReportSheet frame={frame} number={1} label="Cover" footer={false}>
-      {frame.brandName && <p className="report-serif pt-2 text-[22px] md:pt-8 md:text-[25px]">{frame.brandName}</p>}
-      <div className="space-y-5 pt-16 md:pt-32">
+      {frame.brandName && <p className="report-print-only report-serif pt-2 text-[22px] md:pt-8 md:text-[25px]">{frame.brandName}</p>}
+      <div className="space-y-5 print:pt-32">
         <p className="report-label text-[color:var(--report-teal)]">{report.edition ?? "Biomarker report"}</p>
         <h1 className="report-serif max-w-[38rem] text-[2.4rem] leading-[1.08] md:text-[3.4rem]">{report.title}</h1>
         {report.subtitle && <p className="report-muted max-w-[34rem] text-[15.5px] leading-snug">{report.subtitle}</p>}
       </div>
-      <div className="grid gap-3 pt-10 md:grid-cols-2 md:pt-16">
+      <div className="grid gap-3 pt-8 md:grid-cols-2 print:pt-16">
         <Facts
           rows={[
             [
@@ -68,7 +73,7 @@ export function Cover({ report, frame, review }: { report: BiomarkerReport; fram
       </div>
       {review && <div className="pt-6">{review}</div>}
       {report.disclaimer && (
-        <p className="report-muted mt-auto max-w-[44rem] pt-16 text-[10.5px] leading-snug">
+        <p className="report-muted mt-auto max-w-[44rem] pt-8 text-[10.5px] leading-snug print:pt-16">
           <strong className="font-semibold text-[color:var(--report-ink)]">{lead}</strong> {rest.join(" ")}
         </p>
       )}

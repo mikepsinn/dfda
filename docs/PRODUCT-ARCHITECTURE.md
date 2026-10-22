@@ -180,7 +180,10 @@ pages say that a change after the start does not prove that the product caused i
 Biomarker reports (`lib/biomarker-report`, `components/biomarker-report`, the example
 at `/reports/example`) show one person's blood markers at several timepoints, read
 against that person's own noise, next to the clinic's laboratory values. They have the
-pages of a printed clinician report and print as one A4 page per sheet. A report file
+sections of a printed clinician report. On screen a report is a page of the site in the
+site's light or dark colors; it prints as one A4 page per sheet on light paper, like the
+clinician PDF (decision 2026-10-22: on a dark company site, a light paper sheet looked
+like a PDF viewer). A report file
 may leave out the panel summaries and the summary-page card texts: the upload writes
 them from the file's numbers in fixed sentences (`lib/biomarker-report/text.ts`),
 facts only, with no advice. They are written once, so a report does not change after
