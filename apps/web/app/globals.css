@@ -254,6 +254,9 @@
   --report-amber-soft: #f7ecda;
   --report-stone: #85837d;
   --report-stone-soft: #efeee9;
+  /* The dose schedule's fill: the paper teal also on screen, dark enough for its white labels on
+     every theme (a dark theme's teal is lighter); its paler steps mix in the card. */
+  --report-dose: #1d7a6c;
   --report-serif: var(--font-report-serif), "Iowan Old Style", Georgia, serif;
 }
 .report-sheet {

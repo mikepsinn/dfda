@@ -84,7 +84,7 @@ function DoseCard({ report }: { report: BiomarkerReport }) {
             style={{
               width: `${step.share}%`,
               // Paler steps mix in the card: white on paper and light pages, dark on a dark page, so the white text reads.
-              background: `color-mix(in srgb, var(--report-teal) ${40 + (60 * (index + 1)) / steps.length}%, var(--report-card))`,
+              background: `color-mix(in srgb, var(--report-dose) ${40 + (60 * (index + 1)) / steps.length}%, var(--report-card))`,
             }}
           >
             {formatReported(step.amount)} {dose.unit}

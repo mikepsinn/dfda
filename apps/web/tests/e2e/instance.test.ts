@@ -109,6 +109,12 @@ test.describe("a company's own site", () => {
       const [text, fill] = await badge.evaluate((element) => [getComputedStyle(element).color, getComputedStyle(element).backgroundColor])
       expect(contrastRatio(hexOf(text), hexOf(fill)), `${text} on ${fill}`).toBeGreaterThanOrEqual(4.5)
       expect(contrastRatio(hexOf(text), '#0d0f0e'), text).toBeGreaterThanOrEqual(4.5)
+      const doseSteps = await page.getByRole('list', { name: 'Dose schedule' }).getByRole('listitem').all()
+      expect(doseSteps.length).toBeGreaterThan(0)
+      for (const step of doseSteps) {
+        const [label, stepFill] = await step.evaluate((element) => [getComputedStyle(element).color, getComputedStyle(element).backgroundColor])
+        expect(contrastRatio(hexOf(label), hexOf(stepFill)), `${label} on ${stepFill}`).toBeGreaterThanOrEqual(4.5)
+      }
       await page.emulateMedia({ media: 'print' })
       await expect(sheet).toHaveCSS('background-color', 'rgb(249, 248, 245)')
       await expect(badge).toHaveCSS('color', 'rgb(176, 117, 38)')
