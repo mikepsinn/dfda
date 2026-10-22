@@ -47,7 +47,8 @@ export const markerSchema = z.object({
 export const panelSchema = z.object({
   id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).max(40),
   name: text(60),
-  summary: text(600),
+  /** What the panel shows. Left out, the upload writes it from the numbers (text.ts). */
+  summary: optionalText(600),
   markers: z.array(markerSchema).min(1).max(60),
 })
 
@@ -129,7 +130,10 @@ export const biomarkerReportSchema = z
     clinicalNotes: z.array(clinicalNoteSchema).max(6).default([]),
     dose: z.object({ unit: text(20), steps: z.array(doseStepSchema).min(1).max(12), note: optionalText(200) }).optional(),
     effects: z.array(effectSchema).max(12).default([]),
-    /** The text of the cards on the summary page: why the panels in each group moved or not, and when to measure next. */
+    /**
+     * The text of the cards on the summary page: why the panels in each group moved or not, and when to measure next.
+     * The upload writes a card's text that the file leaves out from the numbers (text.ts).
+     */
     glance: z
       .object({ intended: optionalText(300), unchanged: optionalText(300), review: optionalText(300), nextWindow: leadTextSchema.optional() })
       .optional(),
