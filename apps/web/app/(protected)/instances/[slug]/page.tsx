@@ -125,6 +125,10 @@ export default async function InstancePage({
                 </tr>
               </tbody>
             </table>
+            <p className="text-muted-foreground">
+              On Cloudflare, set the record&rsquo;s proxy status to &ldquo;DNS only&rdquo;. Behind the proxy, this page cannot
+              see the record, and invitations use the preview link.
+            </p>
           </div>
         )}
       </section>

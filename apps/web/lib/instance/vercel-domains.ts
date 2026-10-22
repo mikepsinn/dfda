@@ -1,11 +1,13 @@
+import { Resolver } from 'node:dns/promises'
 import { env } from '@/lib/env'
 import { logger } from '@/lib/logger'
 
 /**
- * Adds a company's own domain to the Vercel project, so the domain serves this
- * app as soon as its DNS points to Vercel. Needs VERCEL_API_TOKEN and
- * VERCEL_PROJECT_ID (and VERCEL_TEAM_ID for a team project); without them the
- * owner adds the domain in Vercel by hand.
+ * A company's own domain on Vercel. addDomainToProject adds it to the Vercel
+ * project, so the domain serves this app as soon as its DNS points to Vercel;
+ * it needs VERCEL_API_TOKEN and VERCEL_PROJECT_ID (and VERCEL_TEAM_ID for a
+ * team project), and without them the owner adds the domain in Vercel by hand.
+ * isDomainConfigured needs no token: it reads the domain's DNS.
  */
 
 export type DomainSetup =
@@ -63,19 +65,34 @@ export async function addDomainToProject(domain: string): Promise<DomainSetup> {
   }
 }
 
-/** Whether DNS already points the domain to Vercel. Null when it cannot be checked. */
+/** The host of a CNAME to Vercel: cname.vercel-dns.com, or a project's own, such as 5f0de91f7e0e5950.vercel-dns-016.com. */
+const VERCEL_CNAME = /(^|\.)vercel-dns(-\d+)?\.com\.?$/i
+/** Vercel's addresses for an A record, as its domain settings give them. */
+const VERCEL_ADDRESSES = new Set(['76.76.21.21', '216.150.1.1', '216.150.16.1'])
+
+/** No record of that type, or no such name: an empty answer, not a failed lookup. */
+function noRecords(error: unknown): string[] {
+  const code = (error as { code?: string }).code
+  if (code === 'ENODATA' || code === 'ENOTFOUND') return []
+  throw error
+}
+
+/**
+ * Whether DNS already points the domain to Vercel: a CNAME to Vercel, or A
+ * records with Vercel's addresses only. Null when the lookup fails. A domain
+ * behind a proxy such as Cloudflare's (orange cloud) hides its records, so it
+ * counts as not pointing here; the care team's links then use the preview link,
+ * which always works. A DNS lookup only: no request goes to the domain.
+ */
 export async function isDomainConfigured(domain: string): Promise<boolean | null> {
-  if (!env.VERCEL_API_TOKEN) return null
+  const resolver = new Resolver({ timeout: 2000, tries: 2 })
   try {
-    const response = await fetch(vercelUrl(`/v6/domains/${encodeURIComponent(domain)}/config`), {
-      headers: { Authorization: `Bearer ${env.VERCEL_API_TOKEN}` },
-      cache: 'no-store',
-    })
-    if (!response.ok) return null
-    const body = (await response.json()) as { misconfigured?: boolean }
-    return body.misconfigured === false
+    const cnames = await resolver.resolveCname(domain).catch(noRecords)
+    if (cnames.some((name) => VERCEL_CNAME.test(name))) return true
+    const addresses = await resolver.resolve4(domain).catch(noRecords)
+    return addresses.length > 0 && addresses.every((address) => VERCEL_ADDRESSES.has(address))
   } catch (error) {
-    logger.warn('Could not check the DNS of an instance domain', {
+    logger.warn('Could not look up the DNS of an instance domain', {
       domain,
       error: error instanceof Error ? error.message : String(error),
     })
