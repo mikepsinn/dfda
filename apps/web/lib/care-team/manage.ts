@@ -1,5 +1,6 @@
 import { dbAs, isUniqueViolation, withUserTransaction, type DbUser } from '@/lib/db'
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
+import { withGeneratedText } from '@/lib/biomarker-report/text'
 import { careTeam } from './data'
 
 export { MAX_REPORT_FILE_BYTES } from './format'
@@ -14,7 +15,12 @@ export class CareTeamError extends Error {}
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 
-/** A report file (lib/biomarker-report/schema.ts), checked; or what is wrong with it, at most 10 problems. */
+/**
+ * A report file (lib/biomarker-report/schema.ts), checked, with the summaries
+ * that it leaves out written from its numbers (lib/biomarker-report/text.ts);
+ * or what is wrong with it, at most 10 problems. The texts are written once,
+ * here, so that a report does not change after a clinician signs it off.
+ */
 export function parseReportFile(text: string): { report: BiomarkerReport } | { errors: string[] } {
   let json: unknown
   try {
@@ -23,7 +29,7 @@ export function parseReportFile(text: string): { report: BiomarkerReport } | { e
     return { errors: ['The file is not valid JSON.'] }
   }
   const parsed = biomarkerReportSchema.safeParse(json)
-  if (parsed.success) return { report: parsed.data }
+  if (parsed.success) return { report: withGeneratedText(parsed.data) }
   return {
     errors: parsed.error.issues.slice(0, 10).map((issue) => (issue.path.length ? `${issue.path.join('.')}: ${issue.message}` : issue.message)),
   }

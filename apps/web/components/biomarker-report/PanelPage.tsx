@@ -77,7 +77,7 @@ export function PanelPage({
           <h2 id={`panel-${panel.id}-heading`} className="report-serif text-[1.75rem] leading-tight">
             {panel.name}
           </h2>
-          <p className="text-[13.5px] leading-snug">{panel.summary}</p>
+          {panel.summary && <p className="text-[13.5px] leading-snug">{panel.summary}</p>}
         </div>
         <VerdictCard report={report} panel={panel} />
       </div>

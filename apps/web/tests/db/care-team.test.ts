@@ -126,6 +126,10 @@ describe('biomarker reports', () => {
     const broken = parseReportFile(JSON.stringify({ ...EXAMPLE_REPORT, timepoints: [EXAMPLE_REPORT.timepoints[0]] }))
     expect('errors' in broken && broken.errors[0]).toMatch(/^timepoints/)
     expect(parseReportFile(JSON.stringify(EXAMPLE_REPORT))).toEqual({ report: EXAMPLE_REPORT })
+    // A file of values alone: the upload writes the summaries from the numbers (lib/biomarker-report/text.ts).
+    const bare = parseReportFile(JSON.stringify({ ...EXAMPLE_REPORT, glance: undefined, panels: EXAMPLE_REPORT.panels.map((panel) => ({ ...panel, summary: undefined })) }))
+    expect('report' in bare && bare.report.panels[0].summary).toMatch(/^10 of 12 proteins moved/)
+    expect('report' in bare && bare.report.glance?.unchanged).toBe("No protein in these panels moved beyond this patient's own noise.")
   })
 
   it('are added by the care team for a person who shares, and read by that person', async () => {

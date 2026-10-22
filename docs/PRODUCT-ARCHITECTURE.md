@@ -174,7 +174,11 @@ pages say that a change after the start does not prove that the product caused i
 Biomarker reports (`lib/biomarker-report`, `components/biomarker-report`, the example
 at `/reports/example`) show one person's blood markers at several timepoints, read
 against that person's own noise, next to the clinic's laboratory values. They have the
-pages of a printed clinician report and print as one A4 page per sheet. A program whose
+pages of a printed clinician report and print as one A4 page per sheet. A report file
+may leave out the panel summaries and the summary-page card texts: the upload writes
+them from the file's numbers in fixed sentences (`lib/biomarker-report/text.ts`),
+facts only, with no advice. They are written once, so a report does not change after
+sign-off. Advice and the other texts (the visit, the methods) come from the file. A program whose
 dose is semaglutide (the GLP-1 template) also shows the example at
 `/programs/{slug}/example`. The data
 file holds only values and text; the rules calculate every status, index and count.
