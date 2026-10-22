@@ -188,7 +188,10 @@ export function ClinicalPage({
             return (
               <li key={value.name} className="space-y-1 py-3">
                 <div className="flex items-start justify-between gap-3">
-                  <p className="font-semibold leading-snug">{value.name}</p>
+                  <p className="font-semibold leading-snug">
+                    {value.name}
+                    {value.note && <span className="report-muted block text-[12px] font-normal">{value.note}</span>}
+                  </p>
                   <StatusBadge status={value.status} />
                 </div>
                 <p className="text-[12.5px] tabular-nums">

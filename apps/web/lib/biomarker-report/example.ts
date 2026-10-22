@@ -137,7 +137,7 @@ const PANELS: { id: string; name: string; summary: string; markers: MarkerSpec[]
       { id: 'APOA1', name: 'Apolipoprotein A-I', unit: 'mg/mL', first: 1.31, last: 1.36, multiple: 0.6, intended: 'up' },
       { id: 'ANGPT2', name: 'Angiopoietin-2', unit: 'ng/mL', first: 2.1, last: 1.9, multiple: 0.7, intended: 'down' },
       { id: 'NPPB', name: 'Natriuretic peptides B', note: 'Total BNP-gene product, not NT-proBNP', unit: 'pg/mL', first: 28.0, last: 25.0, multiple: 0.7, intended: 'down' },
-      { id: 'TNNT2', name: 'Troponin T, cardiac muscle', note: 'Below LLOQ at all four timepoints', unit: 'pg/mL', first: null, last: null, multiple: 1, intended: 'down' },
+      { id: 'TNNT2', name: 'Troponin T, cardiac muscle', note: 'Below LLOQ at all four timepoints', unit: 'pg/mL', first: null, last: null, multiple: 1, intended: 'down', lowerLimit: 5 },
     ],
   },
   {
