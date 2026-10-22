@@ -11,6 +11,8 @@ import { careTeam, careTeamInvitations, invitationUrl } from "@/lib/care-team/da
 import { getUserDb } from "@/lib/db/server"
 import { env } from "@/lib/env"
 import { companySiteOrigin, toBranding } from "@/lib/instance/hosts"
+import { listPages } from "@/lib/instance/page-data"
+import { isLegalPage } from "@/lib/instance/pages"
 import { dnsRecordFor, isDomainConfigured } from "@/lib/instance/vercel-domains"
 import { listPrograms } from "@/lib/programs/data"
 import { formatDate } from "@/lib/programs/format"
@@ -58,9 +60,10 @@ export default async function InstancePage({
 
   const instance = toBranding(row)
   const site = siteOrigin()
-  const [domainConnected, programs, team, invitations] = await Promise.all([
+  const [domainConnected, programs, pages, team, invitations] = await Promise.all([
     instance.customDomain ? isDomainConfigured(instance.customDomain, instance.slug) : null,
     listPrograms(instance.slug),
+    listPages(instance.slug),
     careTeam(user, row.id),
     careTeamInvitations(user, row.id),
   ])
@@ -158,6 +161,40 @@ export default async function InstancePage({
                   <span className="font-medium">{program.name}</span>
                   <span className="text-sm text-muted-foreground">
                     {program.items.length} things to track · follow-up at week {program.followUpWeeks}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section aria-labelledby="pages-heading" className="space-y-3">
+        <div className="flex items-center justify-between gap-4">
+          <h2 id="pages-heading" className="text-xl font-semibold">Pages</h2>
+          <Button asChild size="sm" variant="outline" className="gap-1">
+            <Link href={`/instances/${instance.slug}/pages/new`}>
+              <Plus aria-hidden="true" className="h-4 w-4" /> New page
+            </Link>
+          </Button>
+        </div>
+        {pages.length === 0 ? (
+          <p className="text-muted-foreground">
+            Pages of text on your site, such as what you measure, how your service works, an FAQ, or your own terms of
+            service and privacy policy.
+          </p>
+        ) : (
+          <ul className="divide-y rounded-xl border">
+            {pages.map((page) => (
+              <li key={page.slug}>
+                <Link
+                  href={`/instances/${instance.slug}/pages/${page.slug}`}
+                  className="flex flex-col gap-1 p-4 hover:bg-muted/50 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <span className="font-medium">{page.title}</span>
+                  <span className="text-sm text-muted-foreground">
+                    {isLegalPage(page.slug) ? `Replaces the network's /${page.slug}` : page.inMenu ? "In the top menu" : "In the footer"}{" "}
+                    · changed {formatDate(page.updatedAt)}
                   </span>
                 </Link>
               </li>

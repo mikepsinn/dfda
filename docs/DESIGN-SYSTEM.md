@@ -54,6 +54,10 @@ and this guide in the same change instead of creating a one-off competing patter
   `brand-panel` for a hero panel lit by the brand color, `brand-glow` for a soft glow behind a
   heading, and `primary-glow` under the one main button of a page. Keep them to those places;
   the network's own pages keep the flat cards.
+- Markdown text that a company writes (content pages) renders through
+  `apps/web/components/instance/MarkdownContent.tsx`, which gives each element the
+  site's classes (the app has no typography plugin, so `prose` classes do nothing).
+  Add new Markdown elements there, not as page-specific styles.
 - The brand mark is the Outcome Label card in `apps/web/components/BrandMark.tsx`, in
   theme colors for the header, menu and footer, or fixed colors for generated images.
   `apps/web/app/icon.svg` is the same drawing for the browser icon; a unit test keeps

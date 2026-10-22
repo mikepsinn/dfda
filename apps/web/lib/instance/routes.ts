@@ -9,6 +9,8 @@ const INSTANCE_PATHS = [
   '/programs',
   // Biomarker reports
   '/reports',
+  // The company's content pages (lib/instance/pages.ts)
+  '/pages',
   // Sign-in
   '/login',
   '/register',

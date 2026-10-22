@@ -113,6 +113,62 @@ test.describe("a company's own site", () => {
     }
   })
 
+  test("shows the pages that the owner writes: in the menu, in the footer, and in place of the network's terms", async ({ browser, page }) => {
+    const owner = await (await browser.newContext({ storageState: COMPANY_STATE })).newPage()
+    // The owner confirms the deletes at the end.
+    owner.on('dialog', (dialog) => dialog.accept())
+    async function createPage(fill: { title: string; slug?: string; text: string; inMenu?: boolean }) {
+      await owner.goto(`/instances/${demo.instance.slug}`)
+      await owner.getByRole('link', { name: 'New page' }).click()
+      await owner.getByLabel('Title').fill(fill.title)
+      if (fill.slug) await owner.getByLabel('Address').fill(fill.slug)
+      await owner.getByLabel('Text', { exact: true }).fill(fill.text)
+      if (fill.inMenu) await owner.getByLabel(/Show in the top menu/).check()
+      await owner.getByRole('button', { name: 'Create page' }).click()
+      await expect(owner.getByText('The page is live on your site.')).toBeVisible()
+    }
+
+    try {
+      await createPage({
+        title: 'What we measure',
+        text: ['## Organs', '', '| Organ | Markers |', '| --- | --- |', '| Heart | NT-proBNP, TNNT2 |'].join('\n'),
+        inMenu: true,
+      })
+      // The address follows the title.
+      await expect(owner).toHaveURL(/\/pages\/what-we-measure\?created=1$/)
+      await createPage({ title: 'Terms of Use', slug: 'terms', text: 'These terms are between you and the company.' })
+
+      await page.goto(onInstance('/'))
+      await page.getByRole('banner').getByRole('link', { name: 'What we measure' }).click()
+      await expect(page).toHaveURL(/\/pages\/what-we-measure$/)
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText('What we measure')
+      await expect(page.getByRole('heading', { level: 2, name: 'Organs' })).toBeVisible()
+      await expect(page.getByRole('cell', { name: 'NT-proBNP, TNNT2' })).toBeVisible()
+
+      await page.getByRole('contentinfo').getByRole('link', { name: 'Terms of Use' }).click()
+      await expect(page).toHaveURL(/\/terms$/)
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText('Terms of Use')
+      await expect(page.getByText('These terms are between you and the company.')).toBeVisible()
+
+      // The network's own site keeps its terms, and has no company pages.
+      await page.goto('/i')
+      await page.goto('/terms')
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText('Terms of Service')
+      expect((await page.goto('/pages/what-we-measure'))?.status()).toBe(404)
+    } finally {
+      // Other tests use the same demo company.
+      for (const slug of ['what-we-measure', 'terms']) {
+        await owner.goto(`/instances/${demo.instance.slug}/pages/${slug}`)
+        const remove = owner.getByRole('button', { name: 'Delete page' })
+        if (await remove.isVisible()) {
+          await remove.click()
+          await expect(owner).toHaveURL(new RegExp(`/instances/${demo.instance.slug}$`))
+        }
+      }
+    }
+    await expect(owner.getByRole('region', { name: 'Pages' }).getByRole('listitem')).toHaveCount(0)
+  })
+
   test("the main site keeps the network's pages", async ({ page }) => {
     const response = await page.goto('/treatment-rankings')
     expect(response?.status()).toBe(200)
