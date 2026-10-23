@@ -1361,26 +1361,26 @@ model global_variable_codes {
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model biomarker_reports {
-  id                   String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  program_id           String                @db.Uuid
-  user_id              String                @db.Uuid
-  data                 Json
-  title                String
-  report_date          DateTime              @db.Date
-  uploaded_by          String?               @db.Uuid
-  created_at           DateTime              @default(now()) @db.Timestamptz(6)
-  reviewed_by          String?               @db.Uuid
-  reviewer_name        String?
-  reviewed_at          DateTime?             @db.Timestamptz(6)
-  review_note          String?
-  review_decision      String?
-  import_key_id        String?               @db.Uuid
-  external_id          String?
-  import_key           instance_import_keys? @relation(fields: [import_key_id], references: [id], onUpdate: NoAction)
-  instance_programs    instance_programs     @relation(fields: [program_id], references: [id], onUpdate: NoAction)
-  reviewer             profiles?             @relation("biomarker_reports_reviewed_byToprofiles", fields: [reviewed_by], references: [id], onUpdate: NoAction)
-  uploader             profiles?             @relation("biomarker_reports_uploaded_byToprofiles", fields: [uploaded_by], references: [id], onUpdate: NoAction)
-  patient              profiles              @relation("biomarker_reports_user_idToprofiles", fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id                String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  program_id        String                @db.Uuid
+  user_id           String                @db.Uuid
+  data              Json
+  title             String
+  report_date       DateTime              @db.Date
+  uploaded_by       String?               @db.Uuid
+  created_at        DateTime              @default(now()) @db.Timestamptz(6)
+  reviewed_by       String?               @db.Uuid
+  reviewer_name     String?
+  reviewed_at       DateTime?             @db.Timestamptz(6)
+  review_note       String?
+  review_decision   String?
+  import_key_id     String?               @db.Uuid
+  external_id       String?
+  import_key        instance_import_keys? @relation(fields: [import_key_id], references: [id], onUpdate: NoAction)
+  instance_programs instance_programs     @relation(fields: [program_id], references: [id], onUpdate: NoAction)
+  reviewer          profiles?             @relation("biomarker_reports_reviewed_byToprofiles", fields: [reviewed_by], references: [id], onUpdate: NoAction)
+  uploader          profiles?             @relation("biomarker_reports_uploaded_byToprofiles", fields: [uploaded_by], references: [id], onUpdate: NoAction)
+  patient           profiles              @relation("biomarker_reports_user_idToprofiles", fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@unique([program_id, external_id], map: "idx_biomarker_reports_program_external_id", where: raw("(external_id IS NOT NULL)"))
   @@index([program_id], map: "idx_biomarker_reports_program_id")
