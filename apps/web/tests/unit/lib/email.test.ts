@@ -28,6 +28,12 @@ describe('linkEmail', () => {
     expect(plain.fromName).toBeUndefined()
     expect(plain.html).toBe('<p>Use this link to sign in.</p><p><a href="https://x.example/">Sign in</a></p><p>If you did not ask for this email, you can ignore it.</p>')
   })
+
+  it('says in its footer why the person gets the email, when the sender gives a reason', () => {
+    const news = linkEmail('a@example.com', 's', 'i', 'l', 'https://x.example/', brand, 'You get this email because you are in <a> program.')
+    expect(news.text.endsWith('\n\nYou get this email because you are in <a> program.')).toBe(true)
+    expect(news.html).toContain('<p>You get this email because you are in &lt;a&gt; program.</p>')
+  })
 })
 
 describe('sendEmail', () => {

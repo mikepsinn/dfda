@@ -41,7 +41,7 @@ const reviewNote = 'Your markers moved the way the program intends. Keep the dos
 
 /** Signs in with a demo clinic button on the main site's sign-in page. */
 async function signInAs(page: Page, role: 'patient' | 'clinician' | 'owner') {
-  // The clinic site's preview cookie would show the clinic's sign-in page, which has no demo buttons.
+  // As a new visitor, from the network's site.
   await page.context().clearCookies()
   await page.goto('/login')
   await page.getByRole('button', { name: `Demo clinic ${role}` }).click()
@@ -65,8 +65,10 @@ test.describe('the patient', () => {
         await show(page.getByRole('heading', { name: 'What you do' }))
         await show(page.getByRole('heading', { name: 'What you get' }))
         await show(page.getByRole('heading', { name: `What ${demo.instance.name} sees` }))
-        await expect(page.getByText(/If you share your biomarker reports, the clinicians of its care team see those reports/)).toBeVisible()
-        await show(page.getByRole('checkbox', { name: /Share my biomarker reports/ }))
+        await expect(page.getByText(/The clinicians of its care team see your biomarker reports and your name/)).toBeVisible()
+        // A clinic's treatment program: joining shares the reports with the care team, without a separate choice.
+        await show(page.getByText(/In this program, .* care team adds and reviews your biomarker reports/))
+        await expect(page.getByRole('checkbox', { name: /Share my biomarker reports/ })).toHaveCount(0)
       })
 
       await step(page, 'patient-3', async () => {
@@ -74,6 +76,7 @@ test.describe('the patient', () => {
         await expect(page).toHaveURL(/\/programs\/glp-1\/me$/)
         await expect(page.getByText('Your follow-up is due.')).toBeVisible()
         await expect(page.getByText(`Shared with ${demo.instance.name}'s care team since`)).toBeAttached()
+        await expect(page.getByRole('button', { name: 'Stop sharing' })).toHaveCount(0)
       })
 
       await step(page, 'patient-4', async () => {

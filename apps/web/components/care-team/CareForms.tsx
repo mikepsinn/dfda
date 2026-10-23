@@ -114,3 +114,44 @@ export function InviteClinicianForm({ action }: { action: Action }) {
     </form>
   )
 }
+
+/** Creates an import key for the company's laboratory, and shows the new key once. */
+export function ImportKeyForm({ action, endpoint }: { action: Action; endpoint: string }) {
+  const [state, formAction, pending] = useActionState(action, {})
+  const [copied, setCopied] = useState(false)
+  return (
+    <form action={formAction} className="space-y-3">
+      <Problems state={state} />
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+        <div className="flex-1 space-y-2">
+          <Label htmlFor="import-key-name">Name of the key</Label>
+          <Input id="import-key-name" name="name" maxLength={80} placeholder="Our laboratory" autoComplete="off" required />
+        </div>
+        <Submit pending={pending}>Create a key</Submit>
+      </div>
+      {state.key && (
+        <div role="status" className="space-y-3 rounded-lg border border-primary/40 bg-primary/5 p-4 text-sm">
+          <p className="flex items-center gap-2 font-medium">
+            <CheckCircle2 aria-hidden="true" className="h-4 w-4 text-primary" /> {state.notice}
+          </p>
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <Input aria-label="New import key" value={state.key} readOnly className="font-mono text-xs" onFocus={(event) => event.target.select()} />
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => {
+                void navigator.clipboard?.writeText(state.key!).then(() => setCopied(true))
+              }}
+            >
+              {copied ? "Copied" : "Copy"}
+            </Button>
+          </div>
+          <p className="text-muted-foreground">
+            Give the key to the laboratory in a safe way. It sends each report with <code>POST {endpoint}</code> and the
+            header <code>Authorization: Bearer &lt;key&gt;</code>.
+          </p>
+        </div>
+      )}
+    </form>
+  )
+}

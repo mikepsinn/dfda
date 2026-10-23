@@ -19,6 +19,7 @@ const program = (id: string, slug: string, name: string): Program => ({
   name,
   summary: null,
   followUpWeeks: 12,
+  careTeamReview: false,
   instanceId: "instance-1",
   items: [],
 })

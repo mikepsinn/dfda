@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+import { after } from "next/server"
 import { careTeamPatients, invitationUrl } from "@/lib/care-team/data"
 import { isReviewDecision } from "@/lib/care-team/format"
 import {
@@ -18,15 +19,16 @@ import {
   setSharing,
   signOffReport,
 } from "@/lib/care-team/manage"
+import { createImportKey, importKeyNameSchema, revokeImportKey } from "@/lib/care-team/import"
+import { companyOf, notifyReport } from "@/lib/care-team/notify"
 import { dbAs } from "@/lib/db"
 import { linkEmail, sendEmail } from "@/lib/email"
-import { companySiteOrigin, findInstanceBySlug } from "@/lib/instance/hosts"
-import { isDomainConfigured } from "@/lib/instance/vercel-domains"
 import { logger } from "@/lib/logger"
 import { findProgramById } from "@/lib/programs/data"
 import { getServerUser } from "@/lib/server-auth"
 
-export type CareFormState = { error?: string; errors?: string[]; notice?: string }
+/** `key` is a new import key, which the form shows once. */
+export type CareFormState = { error?: string; errors?: string[]; notice?: string; key?: string }
 
 const message = (error: unknown) => (error instanceof Error ? error.message : String(error))
 
@@ -37,14 +39,6 @@ async function careTeamInstance(userId: string, slug: string) {
     select: { instances: { select: { id: true, slug: true } } },
   })
   return membership?.instances ?? null
-}
-
-/** The company of an instance for its emails, and the address of its site. */
-async function companyOf(slug: string) {
-  const instance = await findInstanceBySlug(slug)
-  if (!instance) return null
-  const domainConnected = instance.customDomain ? await isDomainConfigured(instance.customDomain, instance.slug) : null
-  return { instance, origin: companySiteOrigin(instance, domainConnected) }
 }
 
 /** Adds a report file for a person who shares their reports with the care team, then opens the report. */
@@ -74,6 +68,7 @@ export async function uploadReportAction(
     logger.error("Could not save a biomarker report", { userId: user.id, enrollmentId, error: message(error) })
     return { error: "Could not save the report. Try again." }
   }
+  after(() => notifyReport("added", reportId))
   revalidatePath(`/instances/${instanceSlug}/care`)
   redirect(`/instances/${instanceSlug}/care/${enrollmentId}/reports/${reportId}?added=1`)
 }
@@ -99,6 +94,7 @@ export async function signOffReportAction(
     logger.error("Could not sign off a biomarker report", { userId: user.id, reportId, error: message(error) })
     return { error: "Could not sign off the report. Try again." }
   }
+  after(() => notifyReport("reviewed", reportId))
   revalidatePath(`/instances/${instanceSlug}/care`)
   redirect(`/instances/${instanceSlug}/care/${enrollmentId}/reports/${reportId}?signed=1`)
 }
@@ -119,11 +115,16 @@ export async function removeReportAction(instanceSlug: string, enrollmentId: str
   redirect(`/instances/${instanceSlug}/care/${enrollmentId}?removed=1`)
 }
 
-/** Starts or stops sharing the signed-in user's reports in a program with the care team. */
+/**
+ * Starts or stops sharing the signed-in user's reports in a program with the
+ * care team. In a program with care team review, the person stops by leaving
+ * the program instead.
+ */
 export async function setSharingAction(programId: string, share: boolean) {
   const user = await getServerUser()
   const program = await findProgramById(programId)
   if (!user || !program) redirect("/")
+  if (program.careTeamReview && !share) redirect(`/programs/${program.slug}/me`)
   await setSharing(user, programId, share)
   revalidatePath(`/programs/${program.slug}/me`)
   redirect(`/programs/${program.slug}/me?sharing=${share ? "on" : "off"}`)
@@ -195,5 +196,31 @@ export async function removeClinicianAction(instanceSlug: string, userId: string
   const user = await getServerUser()
   if (!user) redirect("/login")
   await removeClinician(user, instanceSlug, userId)
+  revalidatePath(`/instances/${instanceSlug}`)
+}
+
+/** Creates an import key for the signed-in owner's instance, for its laboratory; the form shows the key once. */
+export async function createImportKeyAction(instanceSlug: string, _state: CareFormState, formData: FormData): Promise<CareFormState> {
+  const user = await getServerUser()
+  if (!user) return { error: "Sign in to create an import key." }
+  const name = importKeyNameSchema.safeParse(formData.get("name") ?? "")
+  if (!name.success) return { error: name.error.issues[0].message }
+  const instance = await dbAs(user).instances.findFirst({ where: { slug: instanceSlug, owner_id: user.id }, select: { id: true } })
+  if (!instance) return { error: "This instance does not exist, or it is not yours." }
+  try {
+    const { key } = await createImportKey(user, instance.id, name.data)
+    revalidatePath(`/instances/${instanceSlug}`)
+    return { notice: `The key "${name.data}" is ready. Copy it now: you cannot see it again.`, key }
+  } catch (error) {
+    logger.error("Could not create an import key", { userId: user.id, instanceSlug, error: message(error) })
+    return { error: "Could not create the key. Try again." }
+  }
+}
+
+/** Revokes an import key of the signed-in owner's instance. */
+export async function revokeImportKeyAction(instanceSlug: string, keyId: string) {
+  const user = await getServerUser()
+  if (!user) redirect("/login")
+  await revokeImportKey(user, keyId)
   revalidatePath(`/instances/${instanceSlug}`)
 }

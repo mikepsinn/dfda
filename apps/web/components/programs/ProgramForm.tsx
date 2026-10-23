@@ -25,7 +25,7 @@ type Values = { name: string; slug: string; summary: string; followUpWeeks: stri
 const selectClass =
   "h-10 rounded-md border border-input bg-background px-3 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
 
-type Initial = Pick<ProgramTemplate, "name" | "slug" | "summary" | "followUpWeeks" | "items">
+type Initial = Pick<ProgramTemplate, "name" | "slug" | "summary" | "followUpWeeks" | "items"> & { careTeamReview?: boolean }
 
 function toValues(template: Initial, variables: VariableOption[], nextKey: () => number): Values {
   const byId = new Map(variables.map((variable) => [variable.id, variable]))
@@ -196,6 +196,22 @@ export function ProgramForm({
         />
         <FieldError message={errors.followUpWeeks} />
       </div>
+
+      <label className="flex max-w-2xl items-start gap-3 text-sm">
+        <input
+          type="checkbox"
+          name="careTeamReview"
+          defaultChecked={initial.careTeamReview}
+          className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+        />
+        <span>
+          <span className="block font-medium">The care team reviews each member&rsquo;s biomarker reports</span>
+          <span className="block text-muted-foreground">
+            For a treatment program of a clinic. People agree to it when they join, and stop by leaving the program.
+            Without it, each person chooses whether to share their reports.
+          </span>
+        </span>
+      </label>
 
       <fieldset className="space-y-3">
         <legend className="text-sm font-medium">What people track</legend>

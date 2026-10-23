@@ -5,8 +5,9 @@ import { isDark } from '@/lib/instance/theme'
 /**
  * Outgoing email through the SMTP server in SMTP_URL.
  *
- * Used for sign-in links, password resets and care team invitations. The
- * messages contain sign-in tokens, so never log their text or links.
+ * Used for sign-in links, password resets, care team invitations and news of
+ * biomarker reports (lib/care-team/notify.ts). The messages contain sign-in
+ * tokens, so never log their text or links.
  */
 
 let transporter: Transporter | undefined
@@ -42,12 +43,21 @@ export type EmailBrand = { name: string; primaryColor: string; supportEmail: str
 /**
  * A short email with one link, as plain text and simple HTML. With a brand,
  * the email comes from the company: its name as the sender and at the top,
- * the link button in its color, and replies to its support address.
+ * the link button in its color, and replies to its support address. The
+ * footer says why the person gets the email.
  */
-export function linkEmail(to: string, subject: string, intro: string, linkText: string, url: string, brand?: EmailBrand): Email {
+export function linkEmail(
+  to: string,
+  subject: string,
+  intro: string,
+  linkText: string,
+  url: string,
+  brand?: EmailBrand,
+  footer = 'If you did not ask for this email, you can ignore it.',
+): Email {
   const escape = (value: string) =>
     value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-  const ignore = 'If you did not ask for this email, you can ignore it.'
+  const ignore = footer
   const link = brand
     ? `<a href="${escape(url)}" style="display:inline-block;padding:10px 18px;border-radius:6px;background:${escape(brand.primaryColor)};color:${isDark(brand.primaryColor) ? '#ffffff' : '#171717'};text-decoration:none;font-weight:600">${escape(linkText)}</a>`
     : `<a href="${escape(url)}">${escape(linkText)}</a>`
@@ -55,7 +65,7 @@ export function linkEmail(to: string, subject: string, intro: string, linkText: 
     to,
     subject,
     text: `${brand ? `${brand.name}\n\n` : ''}${intro}\n\n${url}\n\n${ignore}`,
-    html: `${brand ? `<p style="font-size:18px;font-weight:700">${escape(brand.name)}</p>` : ''}<p>${escape(intro)}</p><p>${link}</p><p>${ignore}</p>`,
+    html: `${brand ? `<p style="font-size:18px;font-weight:700">${escape(brand.name)}</p>` : ''}<p>${escape(intro)}</p><p>${link}</p><p>${escape(ignore)}</p>`,
     ...(brand && { fromName: brand.name, ...(brand.supportEmail && { replyTo: brand.supportEmail }) }),
   }
 }

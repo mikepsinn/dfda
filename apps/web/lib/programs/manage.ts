@@ -33,6 +33,7 @@ export async function saveProgram(user: DbUser, instanceSlug: string, input: Pro
       name: input.name,
       summary: input.summary,
       follow_up_weeks: input.followUpWeeks,
+      care_team_review: input.careTeamReview,
       updated_at: new Date(),
     }
     let programId: string
@@ -73,8 +74,9 @@ export const CHECK_IN_REMINDER_TIME = '20:00'
  * check-in that the user does not already have a reminder for. A user with no
  * role becomes a patient, because they now track their own health.
  * `shareWithCareTeam` shares the user's biomarker reports in the program with
- * the instance's care team (lib/care-team). `scheduleNotifications: false`
- * skips the worker jobs (for the demo seed).
+ * the instance's care team (lib/care-team); in a program with care team
+ * review, joining always shares them. `scheduleNotifications: false` skips
+ * the worker jobs (for the demo seed).
  */
 export async function joinProgram(
   user: DbUser,
@@ -89,7 +91,11 @@ export async function joinProgram(
     if (existing) return { joined: false, reminders: [] as { id: string; isActive: boolean }[] }
 
     await tx.program_enrollments.create({
-      data: { program_id: program.id, user_id: user.id, shared_with_care_team_at: shareWithCareTeam ? new Date() : null },
+      data: {
+        program_id: program.id,
+        user_id: user.id,
+        shared_with_care_team_at: shareWithCareTeam || program.careTeamReview ? new Date() : null,
+      },
       select: { id: true },
     })
     await tx.profiles.updateMany({ where: { id: user.id, user_type: null }, data: { user_type: 'patient' } })

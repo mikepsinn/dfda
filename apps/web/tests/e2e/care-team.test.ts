@@ -72,4 +72,51 @@ test.describe('the owner', () => {
     await member.getByRole('button', { name: 'Remove' }).click()
     await expect(member).toHaveCount(0)
   })
+
+  // The laboratory's report import (lib/care-team/import.ts), for a demo member
+  // who is not in the tour. The clinician removes the report again, and the
+  // owner revokes the key.
+  test('creates an import key, with which the laboratory sends a report to the care team', async ({ page, browser }, testInfo) => {
+    const name = `Laboratory ${Date.now()}`
+    await page.goto(`/instances/${demo.instance.slug}`)
+    const section = page.getByRole('region', { name: 'Report import' })
+    await section.getByLabel('Name of the key').fill(name)
+    await section.getByRole('button', { name: 'Create a key' }).click()
+    const key = await section.getByLabel('New import key').inputValue()
+    expect(key).toMatch(/^dfri_/)
+
+    const report = await (await page.request.get('/reports/example.json')).json()
+    const request = { program: 'glp-1', email: memberEmail(3), externalId: `e2e-${Date.now()}`, report }
+    expect((await page.request.post('/api/v1/biomarker-reports', { data: request })).status()).toBe(401)
+    const sent = await page.request.post('/api/v1/biomarker-reports', { headers: { Authorization: `Bearer ${key}` }, data: request })
+    expect(sent.status()).toBe(201)
+    const again = await page.request.post('/api/v1/biomarker-reports', { headers: { Authorization: `Bearer ${key}` }, data: request })
+    expect(again.status()).toBe(200)
+    expect((await again.json()).id).toBe((await sent.json()).id)
+
+    const context = await browser.newContext({ storageState: CLINICIAN_STATE, baseURL: testInfo.project.use.baseURL })
+    try {
+      const clinician = await context.newPage()
+      await clinician.goto(onInstance(`/instances/${demo.instance.slug}/care`))
+      const row = clinician.getByRole('row', { name: new RegExp(demo.memberNames[2]) })
+      await expect(row).toContainText('1 report to review')
+      await row.getByRole('link').click()
+      await clinician.getByRole('region', { name: 'Biomarker reports' }).getByRole('link').first().click()
+      await expect(clinician.getByRole('region', { name: 'Review' })).toContainText('Waiting for review')
+      await clinician.getByRole('button', { name: 'Remove this report' }).click()
+      await expect(clinician.getByRole('status').filter({ hasText: 'The report is removed.' })).toBeVisible()
+    } finally {
+      await context.close()
+    }
+
+    await page.reload()
+    const listed = section.getByRole('list', { name: 'Import keys' }).getByRole('listitem').filter({ hasText: name })
+    await listed.getByRole('button', { name: 'Revoke' }).click()
+    await expect(listed).toHaveCount(0)
+    const late = await page.request.post('/api/v1/biomarker-reports', {
+      headers: { Authorization: `Bearer ${key}` },
+      data: { ...request, externalId: `${request.externalId}-late` },
+    })
+    expect(late.status()).toBe(401)
+  })
 })

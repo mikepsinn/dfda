@@ -77,6 +77,7 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
         name: template.name,
         summary: template.summary,
         follow_up_weeks: template.followUpWeeks,
+        care_team_review: true,
         instance_program_items: {
           create: template.items
             .filter((item) => known.has(item.variableId))
@@ -93,6 +94,11 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
       select: { id: true },
     })
   }
+  // The demo program is a clinic's treatment program, also when it was created before care team review.
+  await adminDb.instance_programs.updateMany({
+    where: { id: demo.program.id, care_team_review: false },
+    data: { care_team_review: true },
+  })
   await adminDb.instance_clinicians.createMany({
     data: [{ instance_id: demo.instance.id, user_id: clinicianId }],
     skipDuplicates: true,
