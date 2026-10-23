@@ -78,6 +78,7 @@ export type InstanceInput = z.infer<typeof instanceInputSchema>
 
 /** The branding that pages use. */
 export type InstanceBranding = InstanceTheme & {
+  id: string
   slug: string
   name: string
   tagline: string | null

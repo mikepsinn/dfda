@@ -12,6 +12,7 @@ export type ResolvedInstance = InstanceBranding & {
 }
 
 const select = {
+  id: true,
   slug: true,
   name: true,
   tagline: true,
@@ -26,6 +27,7 @@ const select = {
 } as const
 
 type InstanceRow = {
+  id: string
   slug: string
   name: string
   tagline: string | null
@@ -42,6 +44,7 @@ type InstanceRow = {
 /** The branding of an instances row. The table's checks allow only the fonts and corner sizes of lib/instance/theme.ts. */
 export function toBranding(row: InstanceRow): InstanceBranding {
   return {
+    id: row.id,
     slug: row.slug,
     name: row.name,
     tagline: row.tagline,
