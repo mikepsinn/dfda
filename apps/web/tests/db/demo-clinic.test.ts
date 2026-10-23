@@ -106,15 +106,15 @@ describe('the demo clinic', () => {
   it("keeps the clinician's sign-off for the patient, and clears it for the next clinician", async () => {
     const { program, patientId } = await prepareDemoClinic()
     const clinician = await adminDb.users.findUniqueOrThrow({ where: { email: demo.clinician.email }, select: { id: true } })
-    await signOffReport(clinician, demo.report.id, 'Keep the dose.')
+    await signOffReport(clinician, demo.report.id, 'continue', 'Keep the dose.')
     // A visitor adds a report as the clinician; the patient's next sign-in removes it and keeps the review.
     const extra = await saveReport(clinician, { programId: program.id, patientId, report: EXAMPLE_REPORT })
     await resetDemoPatient(program, patientId, now)
     expect(await findReport({ id: patientId }, extra)).toBeNull()
-    expect(await findReport({ id: patientId }, demo.report.id)).toMatchObject({ reviewerName: demo.clinician.name, reviewNote: 'Keep the dose.' })
+    expect(await findReport({ id: patientId }, demo.report.id)).toMatchObject({ reviewerName: demo.clinician.name, reviewNote: 'Keep the dose.', reviewDecision: 'continue' })
 
     await resetDemoReview()
-    expect(await findReport({ id: patientId }, demo.report.id)).toMatchObject({ reviewedAt: null, reviewerName: null, reviewNote: null })
+    expect(await findReport({ id: patientId }, demo.report.id)).toMatchObject({ reviewedAt: null, reviewerName: null, reviewNote: null, reviewDecision: null })
   })
 
   it('adds the care team and the current color to a demo clinic that was created before them', async () => {

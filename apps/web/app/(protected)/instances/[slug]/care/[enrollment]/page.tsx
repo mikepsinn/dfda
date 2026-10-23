@@ -58,7 +58,7 @@ export default async function CarePatientPage({
           </p>
         )}
         {patient.reports.length > 0 ? (
-          <ReportList reports={patient.reports} hrefFor={(id) => `${base}/reports/${id}`} className="surface-raised" />
+          <ReportList reports={patient.reports} hrefFor={(id) => `${base}/reports/${id}`} audience="care-team" className="surface-raised" />
         ) : (
           <p className="text-muted-foreground">No report yet.</p>
         )}

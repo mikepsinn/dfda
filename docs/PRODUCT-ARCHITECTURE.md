@@ -224,10 +224,18 @@ The person
 chooses when they join and can change it on their program page; when they stop, the
 care team loses the access at once. The care team, at `/instances/{slug}/care`, sees
 the people who share and their reports, adds a report file (checked against the report
-format), and signs a report off with a note for the person. The person sees each report
-as soon as it is saved, with its review status. Row-level security enforces each of
+format), and signs a report off with a decision for the care plan (continue, adjust,
+investigate, or not enough information to decide) and an optional note for the person.
+Its list of patients is a queue: first the people with reports to review, the longest
+waiting first; then the people without a report; then the others
+([`lib/care-team/queue.ts`](../apps/web/lib/care-team/queue.ts)). The person sees each
+report as soon as it is saved, with its review status and the note. The pages show the
+decision to the care team only (decision 2026-10-23: the decision is the care team's
+working record, and the note is what the clinician tells the person); the database
+still lets a person read all of their own report rows. Row-level security enforces each of
 these rules
-([`20261021050000_table_care_teams_and_biomarker_reports.sql`](../apps/web/db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql)).
+([`20261021050000_table_care_teams_and_biomarker_reports.sql`](../apps/web/db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql),
+[`20261023010000_alter_biomarker_reports_review_decision.sql`](../apps/web/db/migrations/20261023010000_alter_biomarker_reports_review_decision.sql)).
 The owner is not on the care team unless they enter their own email, and no evidence, ranking
 or total reads the reports. The demo clinic's journeys (patient, clinician and owner)
 are written in [`content/clinic-demo/script.md`](../apps/web/content/clinic-demo/script.md);

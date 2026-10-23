@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { adminDb, dbAs, withUserTransaction, type DbUser, type Prisma } from '@/lib/db'
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
 import { siteOrigin } from '@/lib/oauth-resources'
+import { isReviewDecision, type ReviewDecision } from './format'
 import { listPrograms, type Program } from '@/lib/programs/data'
 import { getServerUser } from '@/lib/server-auth'
 
@@ -23,6 +24,8 @@ export type ReportSummary = {
   reviewedAt: Date | null
   reviewerName: string | null
   reviewNote: string | null
+  /** The care team's decision at sign-off; null for an open report and for reviews from before decisions. */
+  reviewDecision: ReviewDecision | null
 }
 
 export type SavedReport = ReportSummary & { userId: string; programId: string; report: BiomarkerReport }
@@ -47,6 +50,7 @@ const summarySelect = {
   reviewed_at: true,
   reviewer_name: true,
   review_note: true,
+  review_decision: true,
 } as const
 
 type SummaryRow = Prisma.biomarker_reportsGetPayload<{ select: typeof summarySelect }>
@@ -60,6 +64,7 @@ function toSummary(row: SummaryRow): ReportSummary {
     reviewedAt: row.reviewed_at,
     reviewerName: row.reviewer_name,
     reviewNote: row.review_note,
+    reviewDecision: isReviewDecision(row.review_decision) ? row.review_decision : null,
   }
 }
 

@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 import { careTeamPatients, invitationUrl } from "@/lib/care-team/data"
+import { isReviewDecision } from "@/lib/care-team/format"
 import {
   acceptInvitation,
   cancelInvitation,
@@ -87,10 +88,12 @@ export async function signOffReportAction(
 ): Promise<CareFormState> {
   const user = await getServerUser()
   if (!user) return { error: "Sign in to sign off the report." }
+  const decision = formData.get("decision")
+  if (!isReviewDecision(decision)) return { error: "Choose a decision for the care plan." }
   const note = String(formData.get("note") ?? "")
   if (note.length > 2000) return { error: "Keep the note under 2,000 characters." }
   try {
-    await signOffReport(user, reportId, note)
+    await signOffReport(user, reportId, decision, note)
   } catch (error) {
     if (error instanceof CareTeamError) return { error: error.message }
     logger.error("Could not sign off a biomarker report", { userId: user.id, reportId, error: message(error) })

@@ -127,7 +127,9 @@ test.describe('the clinician', () => {
         const riley = page.getByRole('row', { name: new RegExp(demo.patient.name) })
         await show(riley)
         await expect(riley).toContainText('GLP-1 weight program')
-        await expect(riley).toContainText('Waiting for review')
+        await expect(riley).toContainText('1 report to review')
+        // The patients with reports to review come first.
+        await expect(page.getByRole('row').nth(1)).toContainText('to review')
       })
 
       await step(page, 'clinician-2', async () => {
@@ -148,6 +150,9 @@ test.describe('the clinician', () => {
       })
 
       await step(page, 'clinician-4', async () => {
+        const decision = page.getByRole('group', { name: 'Decision for the care plan' })
+        await show(decision)
+        await decision.getByRole('radio', { name: /^Continue/ }).check()
         await type(page.getByLabel('Note for the person (optional)'), reviewNote)
         await page.getByRole('button', { name: 'Sign off' }).click()
         await expect(page.getByRole('status').filter({ hasText: 'Signed off' })).toBeVisible()
@@ -155,6 +160,7 @@ test.describe('the clinician', () => {
         await show(review)
         await expect(review).toContainText(`Reviewed by ${demo.clinician.name}`)
         await expect(review).toContainText(reviewNote)
+        await expect(review).toContainText('Decision: Continue')
       })
     } finally {
       await finish()
@@ -177,6 +183,8 @@ test.describe('the patient, after the review', () => {
         await show(review)
         await expect(review).toContainText(`Reviewed by ${demo.clinician.name}`)
         await expect(review).toContainText(reviewNote)
+        // The decision is for the care team.
+        await expect(review).not.toContainText('Decision')
       })
     } finally {
       await finish()

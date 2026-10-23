@@ -2,6 +2,7 @@ import { dbAs, isUniqueViolation, withUserTransaction, type DbUser } from '@/lib
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
 import { withGeneratedText } from '@/lib/biomarker-report/text'
 import { careTeam } from './data'
+import type { ReviewDecision } from './format'
 
 export { MAX_REPORT_FILE_BYTES } from './format'
 
@@ -59,13 +60,14 @@ export async function saveReport(user: DbUser, input: { programId: string; patie
 }
 
 /**
- * Signs off a report as the user, with an optional note for the person. Only
- * an open report: when two clinicians sign off together, the first sign-off stays.
+ * Signs off a report as the user, with the care team's decision and an
+ * optional note for the person. Only an open report: when two clinicians sign
+ * off together, the first sign-off stays.
  */
-export async function signOffReport(user: DbUser, reportId: string, note: string) {
+export async function signOffReport(user: DbUser, reportId: string, decision: ReviewDecision, note: string) {
   const { count } = await dbAs(user).biomarker_reports.updateMany({
     where: { id: reportId, reviewed_at: null },
-    data: { reviewed_by: user.id, reviewed_at: new Date(), review_note: note.trim() || null },
+    data: { reviewed_by: user.id, reviewed_at: new Date(), review_decision: decision, review_note: note.trim() || null },
   })
   if (count === 0) throw new CareTeamError('This report is already signed off, or you cannot review it.')
 }

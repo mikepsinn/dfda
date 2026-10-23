@@ -1370,6 +1370,7 @@ model biomarker_reports {
   reviewer_name     String?
   reviewed_at       DateTime?         @db.Timestamptz(6)
   review_note       String?
+  review_decision   String?
   instance_programs instance_programs @relation(fields: [program_id], references: [id], onUpdate: NoAction)
   reviewer          profiles?         @relation("biomarker_reports_reviewed_byToprofiles", fields: [reviewed_by], references: [id], onUpdate: NoAction)
   uploader          profiles?         @relation("biomarker_reports_uploaded_byToprofiles", fields: [uploaded_by], references: [id], onUpdate: NoAction)

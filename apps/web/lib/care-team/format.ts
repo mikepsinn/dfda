@@ -12,3 +12,21 @@ export function programWeek(startedAt: Date, followUpWeeks: number, now = new Da
   const week = Math.max(1, Math.floor((now.getTime() - startedAt.getTime()) / WEEK) + 1)
   return week > followUpWeeks ? 'Follow-up due' : `Week ${week} of ${followUpWeeks}`
 }
+
+/**
+ * The clinician's decision when they sign off a report
+ * (db/migrations/20261023010000_alter_biomarker_reports_review_decision.sql).
+ * The care team sees it; the person sees the reviewer, the date and the note.
+ */
+export const REVIEW_DECISIONS = {
+  continue: { label: 'Continue', description: 'Keep the current plan.' },
+  adjust: { label: 'Adjust', description: 'Change the plan.' },
+  investigate: { label: 'Investigate', description: 'Look into a finding before you decide.' },
+  insufficient: { label: 'Not enough information', description: 'This report alone does not support a decision.' },
+} as const
+
+export type ReviewDecision = keyof typeof REVIEW_DECISIONS
+
+export function isReviewDecision(value: unknown): value is ReviewDecision {
+  return typeof value === 'string' && Object.hasOwn(REVIEW_DECISIONS, value)
+}
