@@ -228,15 +228,14 @@ export const EXAMPLE_REPORT: BiomarkerReport = biomarkerReportSchema.parse({
   edition: 'Proteomic Response Report · Clinician edition',
   title: "How this patient's biology responded to 12 weeks of semaglutide.",
   subtitle:
-    "1,063 plasma proteins measured at four timepoints on one plate, read against the patient's own baseline noise, and anchored to accredited clinical chemistry.",
+    "About 1,000 plasma proteins measured at four timepoints on one plate, read against the patient's own baseline noise, and anchored to accredited clinical chemistry.",
   reportDate: '2026-06-12',
   person: { name: 'M.K.', code: 'R-0417', age: 52, sex: 'F' },
   program: { name: 'GLP-1 initiation (semaglutide)', indication: 'Weight management, prediabetes (HbA1c 6.1%)' },
   clinician: { name: 'Dr. A. Rivera', organization: 'Meridian Longevity Clinic', location: 'Austin TX' },
-  collection: 'Home capillary dried blood (Tasso-M20), 4 wafers returned together',
-  platform: 'nELISA Omni 1000 v2.1 (absolute pg/mL)',
+  collection: 'Home capillary dried blood, 4 samples returned together',
+  platform: 'Multiplex proteomics panel v2.1 (pg/mL)',
   markerNoun: 'protein',
-  assayCount: 1063,
   disclaimer:
     'Research Use Only. Proteomic results are not a diagnosis; accredited clinical chemistry values are the only results on which clinical action should be taken.',
   footerNote: 'Research Use Only',
@@ -285,7 +284,7 @@ export const EXAMPLE_REPORT: BiomarkerReport = biomarkerReportSchema.parse({
   ],
   panels: PANELS.map((panel) => ({ ...panel, markers: panel.markers.map((spec) => marker(panel.id, spec)) })),
   panelNote:
-    'The noise is the technical replicates on the same plate plus cohort within-person variance. Concentrations are calibrant-relative absolute values from dried capillary blood and are not interchangeable with venous clinical assays of the same analyte.',
+    'The noise is the technical replicates on the same plate plus cohort within-person variance. Concentrations are calibrant-relative values from dried capillary blood and are not interchangeable with venous clinical assays of the same analyte.',
   visit: {
     discussion: [
       {
@@ -304,9 +303,9 @@ export const EXAMPLE_REPORT: BiomarkerReport = biomarkerReportSchema.parse({
     ],
     nextWindow: {
       lead: 'Week 16–18',
-      text: '· one home wafer, after ≥ 4 weeks at a stable dose.',
+      text: '· one home sample, after ≥ 4 weeks at a stable dose.',
       detail:
-        "The next wafer will be run with this patient's reserved baseline aliquot on the same plate, so the comparison stays within one calibrator lot.",
+        "The next sample will be run with this patient's reserved baseline aliquot on the same plate, so the comparison stays within one calibrator lot.",
     },
     questions: [
       '"Is my liver better?" — ALT and liver-fat proteins fell; fibrosis markers were unchanged, which is expected at 12 weeks.',
@@ -335,11 +334,11 @@ export const EXAMPLE_REPORT: BiomarkerReport = biomarkerReportSchema.parse({
   methods: [
     {
       term: 'Platform',
-      text: 'nELISA, Omni 1000 panel v2.1 · 1,063 assays · absolute quantification against recombinant standard curves (16-point, 4PL) run on a calibration plate the same day.',
+      text: 'Multiplex proteomics panel v2.1 · about 1,000 assays · quantification against recombinant standard curves (16-point, 4PL) run on a calibration plate the same day.',
     },
     {
       term: 'Specimen',
-      text: 'Capillary whole blood, Tasso-M20 volumetric tips (20 µL), air-dried and stored at room temperature; four wafers returned together at Week 12. Eluted per vendor SOP (150 µL buffer per tip, 1 h, protease inhibitor).',
+      text: "Capillary whole blood, volumetric tips (20 µL), air-dried and stored at room temperature; four samples returned together at Week 12. Eluted per the panel's protocol (150 µL buffer per tip, 1 h, protease inhibitor).",
     },
     {
       term: 'Batching',
@@ -351,11 +350,11 @@ export const EXAMPLE_REPORT: BiomarkerReport = biomarkerReportSchema.parse({
     },
     {
       term: 'Detectability',
-      text: "Of 1,063 assays, 781 were above LLOQ in all four of this patient's samples and are eligible for reporting; 92 were quantifiable in some timepoints only; 190 were below LLOQ throughout (predominantly intracellular proteins, expected in dried capillary blood).",
+      text: "781 assays were above LLOQ in all four of this patient's samples and are eligible for reporting; 92 were quantifiable in some timepoints only; 190 were below LLOQ throughout (predominantly intracellular proteins, expected in dried capillary blood).",
     },
     {
       term: 'Sample QC',
-      text: 'All four wafers passed: haemolysis index low (4 / 4), dwell time 1–84 days recorded, reference wafer co-shipped and within tolerance.',
+      text: 'All four samples passed: haemolysis index low (4 / 4), dwell time 1–84 days recorded, reference sample co-shipped and within tolerance.',
     },
     { term: 'Regulatory', text: 'Research Use Only. Not CLIA-returnable. Clinical anchors from an accredited laboratory.' },
   ],
@@ -384,7 +383,7 @@ export const EXAMPLE_REPORT: BiomarkerReport = biomarkerReportSchema.parse({
       { id: 'IL7', name: 'Interleukin-7', percentChange: -26, noiseMultiple: 1.8, detected: 4, of: 4 },
       { id: 'FCGR3A', name: 'Low affinity immunoglobulin gamma Fc region receptor III-A', percentChange: 34, noiseMultiple: 1.8, detected: 4, of: 4 },
     ],
-    note: 'Within-person CV, LLOQ and detectability come from the per-target validation table of the platform. Gene symbols are Omni 1000 v2.1 assay identifiers.',
+    note: 'Within-person CV, LLOQ and detectability come from the per-target validation table of the platform. Gene symbols are the assay identifiers of the panel.',
   },
 })
 

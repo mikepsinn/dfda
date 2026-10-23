@@ -34,7 +34,7 @@ describe("program totals", () => {
     expect(within(screen.getByRole("row", { name: /Weight/ })).getAllByRole("cell")[0]).toHaveTextContent(`Fewer than ${MIN_GROUP_SIZE}`)
 
     rerender(<ProgramTotals totals={programTotals([weight], [90, 90, 90, 100, 110].map(report))} />)
-    expect(screen.getByRole("img", { name: "3 improved, 1 no change, 1 worse" })).toBeInTheDocument()
+    expect(screen.getByRole("img", { name: "3 improved, 1 unchanged, 1 review" })).toBeInTheDocument()
     expect(within(screen.getByRole("row", { name: /Weight/ })).getAllByRole("cell").map((cell) => cell.textContent)).toEqual([
       "5",
       "",

@@ -10,7 +10,7 @@ test.describe('the seeded program', () => {
     // The members and the demo patient.
     await expect(page.getByText(`${demo.people + 1} people have joined.`)).toBeVisible()
     const weight = page.getByRole('row', { name: /^Weight/ })
-    await expect(weight.getByRole('img', { name: /^\d+ improved, \d+ no change, \d+ worse$/ })).toBeVisible()
+    await expect(weight.getByRole('img', { name: /^\d+ improved, \d+ unchanged, \d+ review$/ })).toBeVisible()
   })
 
   test('a person who joined sees their before/after report', async ({ browser }) => {

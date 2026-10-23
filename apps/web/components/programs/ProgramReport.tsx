@@ -1,13 +1,14 @@
+import { TonePill, type Tone } from "@/components/status-tone"
 import { formatChange, formatDate, formatPercent, formatValue, STATUS_LABELS } from "@/lib/programs/format"
 import type { MeasureStatus, PersonReport } from "@/lib/programs/report"
 
-// In this file so that Tailwind, which scans components/, generates the classes.
-const STATUS_CLASSES: Record<MeasureStatus, string> = {
-  improved: "bg-emerald-100 text-emerald-900 dark:bg-emerald-950 dark:text-emerald-200",
-  unchanged: "bg-muted text-foreground",
-  worse: "bg-rose-100 text-rose-900 dark:bg-rose-950 dark:text-rose-200",
-  changed: "bg-sky-100 text-sky-900 dark:bg-sky-950 dark:text-sky-200",
-  waiting: "bg-muted text-muted-foreground",
+/** The tones of the biomarker reports: teal for improved, amber for review (worse), stone otherwise. */
+const STATUS_TONES: Record<MeasureStatus, Tone> = {
+  improved: "teal",
+  unchanged: "stone",
+  worse: "amber",
+  changed: "stone",
+  waiting: "stone",
 }
 
 /** A person's before/after report: a one-line verdict, then each measure at the start and now. */
@@ -59,9 +60,9 @@ export function ProgramReport({ report }: { report: PersonReport }) {
                   )}
                 </td>
                 <td className="px-4 py-3">
-                  <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_CLASSES[measure.status]}`}>
+                  <TonePill tone={STATUS_TONES[measure.status]} className="px-2.5 py-0.5 text-xs">
                     {STATUS_LABELS[measure.status]}
-                  </span>
+                  </TonePill>
                 </td>
               </tr>
             ))}

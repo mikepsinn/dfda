@@ -21,8 +21,8 @@ export function formatPercent(value: number): string {
 
 export const STATUS_LABELS: Record<MeasureStatus, string> = {
   improved: 'Improved',
-  unchanged: 'No change',
-  worse: 'Worse',
+  unchanged: 'Unchanged',
+  worse: 'Review',
   changed: 'Changed',
   waiting: 'Waiting',
 }

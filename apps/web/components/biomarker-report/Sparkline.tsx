@@ -1,5 +1,5 @@
 import { decimalsFor, formatReported } from "@/lib/biomarker-report/format"
-import { TONE_CLASSES, type Tone } from "./StatusBadge"
+import { TONE_CLASSES, type Tone } from "@/components/status-tone"
 
 const WIDTH = 84
 const HEIGHT = 24

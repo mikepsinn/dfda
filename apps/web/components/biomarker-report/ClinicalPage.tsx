@@ -1,9 +1,10 @@
+import { TONE_CLASSES } from "@/components/status-tone"
 import { formatPercent } from "@/lib/programs/format"
 import { decimalsFor, formatMeasuredOrMissing, formatReported, shortTimepoint } from "@/lib/biomarker-report/format"
 import type { ReportSummary } from "@/lib/biomarker-report/rules"
 import type { BiomarkerReport } from "@/lib/biomarker-report/schema"
 import { ReportSheet, type SheetFrame } from "./ReportSheet"
-import { StatusBadge, TONE_CLASSES } from "./StatusBadge"
+import { StatusBadge } from "./StatusBadge"
 
 const SEVERITY_TONES = { mild: "stone", notable: "amber", resolved: "teal" } as const
 

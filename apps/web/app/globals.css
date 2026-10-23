@@ -57,6 +57,14 @@
     --status-intended: 171 61.6% 28.6%;
     --status-review: 34 64.5% 34%;
     --status-neutral: 45 3.2% 40.6%;
+    /* The status tones of reports and program pages (components/status-tone.tsx): each status
+       color and its pale fill, mixed into the card. A biomarker report maps them to its own colors. */
+    --tone-teal: hsl(var(--status-intended));
+    --tone-amber: hsl(var(--status-review));
+    --tone-stone: hsl(var(--status-neutral));
+    --tone-teal-soft: color-mix(in srgb, var(--tone-teal) 14%, hsl(var(--card)));
+    --tone-amber-soft: color-mix(in srgb, var(--tone-amber) 14%, hsl(var(--card)));
+    --tone-stone-soft: color-mix(in srgb, var(--tone-stone) 14%, hsl(var(--card)));
   }
 
   .dark {
@@ -257,6 +265,13 @@
   /* The dose schedule's fill: the paper teal also on screen, dark enough for its white labels on
      every theme (a dark theme's teal is lighter); its paler steps mix in the card. */
   --report-dose: #1d7a6c;
+  /* The status tones (components/status-tone.tsx) in the report's colors: paper in print, the site's on screen. */
+  --tone-teal: var(--report-teal);
+  --tone-amber: var(--report-amber);
+  --tone-stone: var(--report-stone);
+  --tone-teal-soft: var(--report-teal-soft);
+  --tone-amber-soft: var(--report-amber-soft);
+  --tone-stone-soft: var(--report-stone-soft);
   --report-serif: var(--font-report-serif), "Iowan Old Style", Georgia, serif;
 }
 .report-sheet {

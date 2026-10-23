@@ -49,7 +49,7 @@ export function formatIndex(value: number): string {
 }
 
 export const STATUS_LABELS: Record<ClinicalStatus, string> = {
-  intended: 'Intended direction',
+  intended: 'Improved',
   unchanged: 'Unchanged',
   review: 'Review',
   'below-limit': 'Below LLOQ',
@@ -57,7 +57,7 @@ export const STATUS_LABELS: Record<ClinicalStatus, string> = {
 }
 
 export const VERDICT_LABELS: Record<PanelVerdict, string> = {
-  intended: 'Intended direction',
+  intended: 'Improved',
   unchanged: 'Unchanged',
   review: 'Review',
 }
