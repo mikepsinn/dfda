@@ -133,3 +133,16 @@ describe('answerQuestion', () => {
     expect(events.at(-1)).toMatchObject({ type: 'error' })
   })
 })
+
+describe('the numbers in the report document', () => {
+  it('keep the values of the file as they are, and round only what the rules calculate', () => {
+    const marker = { ...EXAMPLE_REPORT.panels[0].markers[0], values: [100.1, 120.01, 1.23e-10], noise: 200.1 }
+    const report = { ...EXAMPLE_REPORT, timepoints: EXAMPLE_REPORT.timepoints.slice(0, 3), panels: [{ ...EXAMPLE_REPORT.panels[0], markers: [marker] }] }
+    const line = reportDocument(report)
+      .split('\n')
+      .find((text) => text.startsWith(`- ${marker.name}`))!
+    expect(line).toContain(': 100.1, 120.01, 1.23e-10; noise 200.1;')
+    // (1.23e-10 − 100.1) / 200.1 = 0.50025: rounded to 3 significant digits.
+    expect(line).toContain('change 0.5 times the noise')
+  })
+})

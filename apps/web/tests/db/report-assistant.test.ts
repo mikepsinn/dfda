@@ -112,6 +112,14 @@ describe('the report assistant', () => {
       })),
     })
     expect(await logQuestion({ user: clinician, reportId, instanceId, question: 'One more' })).toEqual({ limited: true })
+
+    // Questions asked at the same time pass the limit one at a time: with one place left, one of twenty gets it.
+    await adminDb.report_questions.deleteMany({ where: { instance_id: instanceId, question: 'Question 0' } })
+    const together = await Promise.all(
+      Array.from({ length: 20 }, (_, n) => logQuestion({ user: clinician, reportId, instanceId, question: `Together ${n}` })),
+    )
+    expect(together.filter((result) => 'id' in result)).toHaveLength(1)
+    expect(await adminDb.report_questions.count({ where: { instance_id: instanceId } })).toBe(DAILY_QUESTION_LIMIT)
     const tomorrow = new Date(Date.now() + 25 * 60 * 60 * 1000)
     expect(await logQuestion({ user: clinician, reportId, instanceId, question: 'Tomorrow', now: tomorrow })).toEqual({ id: expect.any(String) })
   })

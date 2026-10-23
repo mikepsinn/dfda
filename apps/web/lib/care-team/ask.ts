@@ -62,7 +62,9 @@ export async function questionsAbout(user: DbUser, reportId: string): Promise<Sa
 /**
  * Logs a question before the assistant answers it, unless the company asked
  * its daily number of questions already. The caller has checked that the
- * user is on the care team of the report's company.
+ * user is on the care team of the report's company. A lock for the company
+ * makes the count and the insert one step, so that questions asked at the
+ * same time cannot pass the limit together.
  */
 export async function logQuestion(input: {
   user: { id: string; name: string }
@@ -72,20 +74,24 @@ export async function logQuestion(input: {
   now?: Date
 }): Promise<{ id: string } | { limited: true }> {
   const since = new Date((input.now ?? new Date()).getTime() - 24 * 60 * 60 * 1000)
-  const asked = await adminDb.report_questions.count({ where: { instance_id: input.instanceId, created_at: { gte: since } } })
-  if (asked >= DAILY_QUESTION_LIMIT) return { limited: true }
-  const row = await adminDb.report_questions.create({
-    data: {
-      report_id: input.reportId,
-      instance_id: input.instanceId,
-      asked_by: input.user.id,
-      asker_name: input.user.name.trim().slice(0, 120) || 'A clinician',
-      question: input.question,
-      model: ASSISTANT_MODEL,
-    },
-    select: { id: true },
+  return adminDb.$transaction(async (tx) => {
+    // Held until the transaction ends.
+    await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${`report-questions:${input.instanceId}`}))`
+    const asked = await tx.report_questions.count({ where: { instance_id: input.instanceId, created_at: { gte: since } } })
+    if (asked >= DAILY_QUESTION_LIMIT) return { limited: true as const }
+    const row = await tx.report_questions.create({
+      data: {
+        report_id: input.reportId,
+        instance_id: input.instanceId,
+        asked_by: input.user.id,
+        asker_name: input.user.name.trim().slice(0, 120) || 'A clinician',
+        question: input.question,
+        model: ASSISTANT_MODEL,
+      },
+      select: { id: true },
+    })
+    return { id: row.id }
   })
-  return { id: row.id }
 }
 
 export async function saveAnswer(questionId: string, answer: Answer) {

@@ -101,7 +101,10 @@ export function citationEvents(answer: Answer, citation: Citation): AnswerEvent[
   ]
 }
 
-const number = (value: number) => (Number.isInteger(value) ? String(value) : value.toPrecision(3).replace(/\.?0+$/, ''))
+/** A value from the report file, as the file has it. */
+const exact = (value: number) => String(value)
+/** A value that the report's rules calculate, to 3 significant digits: 18.4, 2.35, 0.00123, 1.23e-10. */
+const rounded = (value: number) => String(Number(value.toPrecision(3)))
 
 /**
  * The report as plain text for the model: its numbers and the statuses that
@@ -111,7 +114,7 @@ const number = (value: number) => (Number.isInteger(value) ? String(value) : val
 export function reportDocument(report: BiomarkerReport): string {
   const summary = summarizeReport(report)
   const value = (values: (number | null)[], lowerLimit?: number) =>
-    values.map((v) => (v === null ? (lowerLimit ? `< ${number(lowerLimit)}` : 'not measured') : number(v))).join(', ')
+    values.map((v) => (v === null ? (lowerLimit ? `< ${exact(lowerLimit)}` : 'not measured') : exact(v))).join(', ')
   const lines: string[] = [
     `Report: ${report.title}`,
     ...(report.subtitle ? [report.subtitle] : []),
@@ -121,10 +124,10 @@ export function reportDocument(report: BiomarkerReport): string {
     ...(report.platform ? [`Platform: ${report.platform}`] : []),
     ...(report.collection ? [`Collection: ${report.collection}`] : []),
     `Timepoints, in order: ${report.timepoints.map((point) => `${point.label} (week ${point.week})`).join('; ')}. Each list of values below follows this order.`,
-    `A ${report.markerNoun} counts as changed when it moved at least ${number(report.threshold)} times the person's own noise (one standard deviation of the person's variation without a real change). "Improved" means it changed in the direction the program intends; "Review" means it changed the other way.`,
+    `A ${report.markerNoun} counts as changed when it moved at least ${exact(report.threshold)} times the person's own noise (one standard deviation of the person's variation without a real change). "Improved" means it changed in the direction the program intends; "Review" means it changed the other way.`,
   ]
   if (report.dose) {
-    lines.push('', `Dose (${report.dose.unit}): ${report.dose.steps.map((step) => `${number(step.amount)} from week ${step.week}`).join('; ')}.${report.dose.note ? ` ${report.dose.note}` : ''}`)
+    lines.push('', `Dose (${report.dose.unit}): ${report.dose.steps.map((step) => `${exact(step.amount)} from week ${step.week}`).join('; ')}.${report.dose.note ? ` ${report.dose.note}` : ''}`)
   }
   if (report.effects.length > 0) {
     lines.push('', 'Effects the person reported:', ...report.effects.map((effect) => `- Weeks ${effect.weeks}: ${effect.text} (${effect.severity})`))
@@ -132,7 +135,7 @@ export function reportDocument(report: BiomarkerReport): string {
   if (summary.clinicalValues.length > 0) {
     lines.push('', 'Clinical laboratory values:')
     for (const item of summary.clinicalValues) {
-      const change = item.percentChange === null ? '' : `, change ${item.percentChange > 0 ? '+' : ''}${number(item.percentChange)}%`
+      const change = item.percentChange === null ? '' : `, change ${item.percentChange > 0 ? '+' : ''}${rounded(item.percentChange)}%`
       lines.push(
         `- ${item.name} (${item.unit}): ${value(item.values, item.lowerLimit)}${item.reference ? `; reference ${item.reference}` : ''}${change}; status ${STATUS_LABELS[item.status]}${item.note ? `. ${item.note}` : ''}`,
       )
@@ -142,16 +145,16 @@ export function reportDocument(report: BiomarkerReport): string {
   for (const panel of summary.panels) {
     lines.push('', `Panel: ${panel.name}.${panel.summary ? ` ${panel.summary}` : ''}`)
     for (const marker of panel.markers) {
-      const moved = marker.noiseMultiple === null ? '' : `, change ${number(marker.noiseMultiple)} times the noise`
+      const moved = marker.noiseMultiple === null ? '' : `, change ${rounded(marker.noiseMultiple)} times the noise`
       lines.push(
-        `- ${marker.name} (${marker.id}, ${marker.unit}): ${value(marker.values, marker.lowerLimit)}; noise ${number(marker.noise)}; intended ${marker.intended}${moved}; status ${STATUS_LABELS[marker.status]}${marker.note ? `. ${marker.note}` : ''}`,
+        `- ${marker.name} (${marker.id}, ${marker.unit}): ${value(marker.values, marker.lowerLimit)}; noise ${exact(marker.noise)}; intended ${marker.intended}${moved}; status ${STATUS_LABELS[marker.status]}${marker.note ? `. ${marker.note}` : ''}`,
       )
     }
   }
   if (report.movers) {
     lines.push('', `Other ${report.markerNoun}s that moved, outside the panels (exploratory). ${report.movers.intro}`)
     for (const mover of report.movers.items) {
-      lines.push(`- ${mover.name} (${mover.id}): ${mover.percentChange > 0 ? '+' : ''}${number(mover.percentChange)}%, ${number(mover.noiseMultiple)} times the noise`)
+      lines.push(`- ${mover.name} (${mover.id}): ${mover.percentChange > 0 ? '+' : ''}${exact(mover.percentChange)}%, ${exact(mover.noiseMultiple)} times the noise`)
     }
   }
   if (report.panelNote) lines.push('', report.panelNote)
