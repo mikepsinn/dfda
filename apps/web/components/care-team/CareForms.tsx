@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import type { CareFormState } from "@/lib/actions/care-team"
-import { MAX_REPORT_FILE_BYTES } from "@/lib/care-team/format"
+import { MAX_REPORT_FILE_BYTES, REVIEW_DECISIONS } from "@/lib/care-team/format"
 
 type Action = (state: CareFormState, formData: FormData) => Promise<CareFormState>
 
@@ -68,8 +68,22 @@ export function UploadReportForm({ action }: { action: Action }) {
 export function SignOffForm({ action }: { action: Action }) {
   const [state, formAction, pending] = useActionState(action, {})
   return (
-    <form action={formAction} className="space-y-3">
+    <form action={formAction} className="space-y-4">
       <Problems state={state} />
+      <fieldset className="space-y-2">
+        <legend className="text-sm font-medium">Decision for the care plan</legend>
+        <div className="grid gap-2 sm:grid-cols-2">
+          {Object.entries(REVIEW_DECISIONS).map(([value, decision]) => (
+            <label key={value} className="flex cursor-pointer items-start gap-3 rounded-lg border p-3 text-sm has-[:checked]:border-primary">
+              <input type="radio" name="decision" value={value} required className="mt-0.5 h-4 w-4 shrink-0 accent-primary" />
+              <span>
+                <span className="block font-medium">{decision.label}</span>
+                <span className="block text-muted-foreground">{decision.description}</span>
+              </span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
       <div className="space-y-2">
         <Label htmlFor="review-note">Note for the person (optional)</Label>
         <Textarea id="review-note" name="note" rows={4} maxLength={2000} className="max-w-2xl" />

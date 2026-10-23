@@ -6,14 +6,16 @@ import type { ReportSummary } from "@/lib/care-team/data"
 import { formatDate } from "@/lib/programs/format"
 import { reviewLabel } from "./ReviewStatus"
 
-/** Biomarker reports, newest first, each with its date and review status. */
+/** Biomarker reports, newest first, each with its date and review status (for the care team, with the decision). */
 export function ReportList({
   reports,
   hrefFor,
+  audience = "patient",
   className,
 }: {
   reports: ReportSummary[]
   hrefFor: (reportId: string) => string
+  audience?: "patient" | "care-team"
   className?: string
 }) {
   return (
@@ -26,7 +28,7 @@ export function ReportList({
               <span className="block text-sm text-muted-foreground">{formatDate(report.reportDate)}</span>
             </span>
             <Badge variant={report.reviewedAt ? "secondary" : "outline"} className="shrink-0">
-              {reviewLabel(report)}
+              {reviewLabel(report, audience)}
             </Badge>
             <ChevronRight aria-hidden="true" className="h-4 w-4 shrink-0 text-muted-foreground" />
           </Link>

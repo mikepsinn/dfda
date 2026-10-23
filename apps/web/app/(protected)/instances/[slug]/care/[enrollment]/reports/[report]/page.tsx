@@ -13,7 +13,7 @@ export const metadata: Metadata = { title: "Review a report" }
 
 const messages: Record<string, string> = {
   added: "The report is saved. The person can see it now.",
-  signed: "Signed off. The person sees your name, the date and your note.",
+  signed: "Signed off. The person sees your name, the date and your note; the decision is for the care team.",
 }
 
 /** A shared report for the care team: its review, then the report. */
@@ -57,7 +57,8 @@ export default async function CareReportPage({
         <section aria-labelledby="sign-off-heading" className="surface-raised mx-auto max-w-5xl space-y-4 rounded-xl border p-6 print:hidden">
           <h2 id="sign-off-heading" className="text-xl font-semibold">Sign off</h2>
           <p className="text-sm text-muted-foreground">
-            Your sign-off shows your name, the date and your note to {patient.name}.
+            Your sign-off shows your name, the date and your note to {patient.name}. The decision is for the care team
+            only.
           </p>
           <SignOffForm action={signOffReportAction.bind(null, instance.slug, patient.enrollmentId, saved.id)} />
           <form action={removeReportAction.bind(null, instance.slug, patient.enrollmentId, saved.id)} className="border-t pt-4">

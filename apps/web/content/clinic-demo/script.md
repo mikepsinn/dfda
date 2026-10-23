@@ -88,9 +88,9 @@ reports with it.
 
 - **Page:** the sign-in page, then the care team's patients on the clinic's site.
 - **Action:** signs in as the demo clinic clinician.
-- **Must see:** the patients who share, each with their program and week, and Riley Lee with
-  "Waiting for review".
-- **Caption:** Dr. Okafor sees only the patients who chose to share their reports with Acme Metabolic's care team.
+- **Must see:** the patients who share, each with their program and week, the patients with
+  reports to review first, and Riley Lee with "1 report to review".
+- **Caption:** Dr. Okafor sees only the patients who share their reports with the care team. The reports that wait the longest come first.
 
 ### clinician-2: Opens Riley's record
 
@@ -109,9 +109,9 @@ reports with it.
 ### clinician-4: Reviews and signs off
 
 - **Page:** the same report.
-- **Action:** writes a note and signs off.
-- **Must see:** "Reviewed by Dr. Sam Okafor" and the note.
-- **Caption:** Dr. Okafor adds a note for Riley and signs off. Riley sees the note on the report.
+- **Action:** chooses "Continue" as the decision for the care plan, writes a note and signs off.
+- **Must see:** "Reviewed by Dr. Sam Okafor", the note and "Decision: Continue".
+- **Caption:** Dr. Okafor chooses a decision for the care plan, adds a note for Riley and signs off. Riley sees the note, not the decision.
 
 ## Patient: Riley gets the review
 
@@ -119,7 +119,7 @@ reports with it.
 
 - **Page:** the report on the clinic's site.
 - **Action:** signs in as the demo clinic patient and opens the report.
-- **Must see:** "Reviewed by Dr. Sam Okafor" and the note.
+- **Must see:** "Reviewed by Dr. Sam Okafor" and the note, and no decision.
 - **Caption:** Back on the clinic's site, Riley sees who reviewed the report, when, and the note.
 
 ## Owner: the clinic's owner, on a desktop

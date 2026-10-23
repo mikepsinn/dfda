@@ -157,18 +157,23 @@ describe('biomarker reports', () => {
 
   it('are signed off under the clinician account name, and the sign-off changes nothing else', async () => {
     for (const outsider of [otherClinician, owner, patient]) {
-      await expect(signOffReport(outsider, reportId, 'Not mine to sign')).rejects.toThrow(CareTeamError)
+      await expect(signOffReport(outsider, reportId, 'continue', 'Not mine to sign')).rejects.toThrow(CareTeamError)
     }
-    await signOffReport(clinician, reportId, 'Keep the dose. Recheck at week 16.')
+    await signOffReport(clinician, reportId, 'continue', 'Keep the dose. Recheck at week 16.')
     expect(await findReport(patient, reportId)).toMatchObject({
       reviewerName: 'Dr. Test Clinician',
       reviewNote: 'Keep the dose. Recheck at week 16.',
+      reviewDecision: 'continue',
       reviewedAt: expect.any(Date),
     })
 
     // A second sign-off does not replace the first, also when both clinicians opened the report before it.
-    await expect(signOffReport(secondClinician, reportId, 'A later note')).rejects.toThrow(CareTeamError)
-    expect(await findReport(patient, reportId)).toMatchObject({ reviewerName: 'Dr. Test Clinician', reviewNote: 'Keep the dose. Recheck at week 16.' })
+    await expect(signOffReport(secondClinician, reportId, 'adjust', 'A later note')).rejects.toThrow(CareTeamError)
+    expect(await findReport(patient, reportId)).toMatchObject({
+      reviewerName: 'Dr. Test Clinician',
+      reviewNote: 'Keep the dose. Recheck at week 16.',
+      reviewDecision: 'continue',
+    })
 
     // Only the review columns may change, and only as the clinician's own review.
     await expect(
@@ -184,6 +189,24 @@ describe('biomarker reports', () => {
     ).rejects.toThrow(/row-level security/)
     await removeReport(clinician, open)
     expect(await findReport(patient, reportId)).toMatchObject({ title: EXAMPLE_REPORT.title, reviewerName: 'Dr. Test Clinician' })
+  })
+
+  it('have a decision only with the sign-off, and only one of the four decisions', async () => {
+    const open = await saveReport(clinician, { programId: program.id, patientId: patient.id, report: EXAMPLE_REPORT })
+    await expect(
+      dbAs(clinician).biomarker_reports.update({ where: { id: open }, data: { review_decision: 'adjust' }, select: { id: true } }),
+    ).rejects.toThrow(/row-level security/)
+    // An open report has no decision, also when an administrator writes one.
+    await adminDb.biomarker_reports.update({ where: { id: open }, data: { review_decision: 'adjust' }, select: { id: true } })
+    expect(await findReport(clinician, open)).toMatchObject({ reviewedAt: null, reviewDecision: null })
+    await expect(
+      dbAs(clinician).biomarker_reports.update({
+        where: { id: open },
+        data: { reviewed_by: clinician.id, reviewed_at: new Date(), review_decision: 'stop' },
+        select: { id: true },
+      }),
+    ).rejects.toThrow(/check constraint/)
+    await removeReport(clinician, open)
   })
 
   it('can be removed while nobody has signed them off', async () => {
@@ -207,7 +230,7 @@ describe('biomarker reports', () => {
 
   it("keep the reviewer's name when the reviewer's account is deleted", async () => {
     const signed = await saveReport(clinician, { programId: program.id, patientId: patient.id, report: EXAMPLE_REPORT })
-    await signOffReport(secondClinician, signed, 'Signed before leaving.')
+    await signOffReport(secondClinician, signed, 'investigate', 'Signed before leaving.')
     // Deleting the account deletes the profile too (handle_deleted_app_user), which clears reviewed_by.
     await adminDb.users.delete({ where: { id: secondClinician.id } })
     expect(await adminDb.profiles.count({ where: { id: secondClinician.id } })).toBe(0)

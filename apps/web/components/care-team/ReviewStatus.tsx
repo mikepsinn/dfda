@@ -1,11 +1,12 @@
 import { CheckCircle2, Clock } from "lucide-react"
 import type { ReportSummary } from "@/lib/care-team/data"
+import { REVIEW_DECISIONS } from "@/lib/care-team/format"
 import { formatDate } from "@/lib/programs/format"
 
 /**
  * Whether a clinician has signed off a biomarker report: who, when and their
  * note, or that the report waits for review. The person sees the report
- * before the review too.
+ * before the review too. Only the care team sees the decision for the care plan.
  */
 export function ReviewStatus({ report, audience }: { report: ReportSummary; audience: "patient" | "care-team" }) {
   if (report.reviewedAt) {
@@ -16,6 +17,11 @@ export function ReviewStatus({ report, audience }: { report: ReportSummary; audi
           <p className="font-medium">
             Reviewed by {report.reviewerName} on {formatDate(report.reviewedAt)}
           </p>
+          {audience === "care-team" && report.reviewDecision && (
+            <p className="text-sm">
+              <span className="text-muted-foreground">Decision:</span> {REVIEW_DECISIONS[report.reviewDecision].label}
+            </p>
+          )}
           {report.reviewNote && <p className="whitespace-pre-line text-sm">{report.reviewNote}</p>}
         </div>
       </section>
@@ -36,7 +42,8 @@ export function ReviewStatus({ report, audience }: { report: ReportSummary; audi
   )
 }
 
-/** A report's review as a short label, for lists. */
-export function reviewLabel(report: ReportSummary) {
-  return report.reviewedAt ? "Reviewed" : "Waiting for review"
+/** A report's review as a short label, for lists; for the care team, with the decision. */
+export function reviewLabel(report: ReportSummary, audience: "patient" | "care-team" = "patient") {
+  if (!report.reviewedAt) return "Waiting for review"
+  return audience === "care-team" && report.reviewDecision ? `Reviewed · ${REVIEW_DECISIONS[report.reviewDecision].label}` : "Reviewed"
 }
