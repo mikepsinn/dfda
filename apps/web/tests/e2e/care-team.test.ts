@@ -120,3 +120,14 @@ test.describe('the owner', () => {
     expect(late.status()).toBe(401)
   })
 })
+
+// The report assistant (lib/care-team/ask.ts) answers only the care team. The
+// tour asks it a question as the clinician (tour.test.ts).
+test.describe('a person who is not on the care team', () => {
+  test.use({ storageState: MEMBER_STATE })
+
+  test('cannot ask the report assistant', async ({ page }) => {
+    const response = await page.request.post(`/api/care-team/reports/${demo.report.id}/questions`, { data: { question: 'Why?' } })
+    expect(response.status()).toBe(404)
+  })
+})

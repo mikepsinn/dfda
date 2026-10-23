@@ -106,7 +106,15 @@ reports with it.
 - **Must see:** the report's title, "At a glance", and the review form.
 - **Caption:** The report shows what moved more than Riley's own noise, and which changes went against the program's intent.
 
-### clinician-4: Reviews and signs off
+### clinician-4: Asks about the report
+
+- **Page:** the same report, "Ask about this report".
+- **Action:** chooses the question "Which changes should I look at first, and why?" and asks it.
+- **Must see:** the answer, with a numbered source after each part: quotes of the report and pages of
+  the medical literature.
+- **Caption:** Dr. Okafor asks about the report. The answer cites the report and the medical literature for each part.
+
+### clinician-5: Reviews and signs off
 
 - **Page:** the same report.
 - **Action:** chooses "Continue" as the decision for the care plan, writes a note and signs off.

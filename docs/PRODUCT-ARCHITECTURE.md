@@ -249,7 +249,20 @@ with the program, the person's email and its own id of the report, so that a rep
 again is saved once
 ([`lib/care-team/import.ts`](../apps/web/lib/care-team/import.ts),
 [`20261023030000_table_instance_import_keys.sql`](../apps/web/db/migrations/20261023030000_table_instance_import_keys.sql)).
-An import reaches only a person who shares their reports with the care team. Row-level security enforces each of
+An import reaches only a person who shares their reports with the care team. The care
+team can also ask the **report assistant** about a report, as in a clinical evidence search:
+Claude reads the report as a cited document and searches the medical literature on a fixed
+list of trusted sites (indexes, agencies and journals), and every part of the answer has a
+numbered source, a quote of the report or a page of the literature
+([`lib/care-team/assistant.ts`](../apps/web/lib/care-team/assistant.ts),
+[`lib/care-team/ask.ts`](../apps/web/lib/care-team/ask.ts)). It answers; the clinician
+decides. The report goes to the model without the person's name. The questions and answers
+are the care team's record, which the person does not see, and a company can ask 50
+questions a day
+([`20261023040000_table_report_questions.sql`](../apps/web/db/migrations/20261023040000_table_report_questions.sql)).
+Decision 2026-10-23: health data goes to the Claude API only under a business associate
+agreement, so until there is one the assistant works only on the demo clinic, whose values
+are made up. Row-level security enforces each of
 these rules
 ([`20261021050000_table_care_teams_and_biomarker_reports.sql`](../apps/web/db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql),
 [`20261023010000_alter_biomarker_reports_review_decision.sql`](../apps/web/db/migrations/20261023010000_alter_biomarker_reports_review_decision.sql)).

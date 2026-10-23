@@ -45,6 +45,9 @@ importers:
       '@ai-sdk/react':
         specifier: ^1.2.12
         version: 1.2.12(react@19.2.3)(zod@3.25.76)
+      '@anthropic-ai/sdk':
+        specifier: ^1.2.0
+        version: 1.2.0(zod@3.25.76)
       '@aws-sdk/client-s3':
         specifier: ^3.1139.0
         version: 3.1139.0
@@ -53,7 +56,7 @@ importers:
         version: 3.1139.0
       '@better-auth/oauth-provider':
         specifier: ^1.7.7
-        version: 1.7.7(@better-auth/core@1.7.7(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(@opentelemetry/api@1.9.0)(better-call@1.4.0(zod@4.6.5))(jose@6.2.12)(kysely@0.29.6)(nanostores@1.5.5))(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(better-auth@1.7.7(@opentelemetry/api@1.9.0)(@prisma/client@7.10.0(prisma@7.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3))(mysql2@3.15.3)(next@15.5.21(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(@playwright/test@1.51.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(pg@8.16.3)(prisma@7.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vitest@3.2.4))(better-call@1.4.0(zod@3.25.76))
+        version: 1.7.7(@better-auth/core@1.7.7(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(@opentelemetry/api@1.9.0)(better-call@1.4.0(zod@3.25.76))(jose@6.1.3)(kysely@0.29.6)(nanostores@1.5.5))(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(better-auth@1.7.7(@opentelemetry/api@1.9.0)(@prisma/client@7.10.0(prisma@7.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3))(mysql2@3.15.3)(next@15.5.21(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(@playwright/test@1.51.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(pg@8.16.3)(prisma@7.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vitest@3.2.4))(better-call@1.4.0(zod@3.25.76))
       '@copilotkit/react-core':
         specifier: ^1.8.11
         version: 1.50.1(@types/mdast@4.0.4)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(micromark-util-types@2.0.2)(micromark@4.0.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod@3.25.76)
@@ -62,7 +65,7 @@ importers:
         version: 1.50.1(@types/mdast@4.0.4)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(graphql@16.12.0)(micromark-util-types@2.0.2)(micromark@4.0.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod@3.25.76)
       '@copilotkit/runtime':
         specifier: ^1.8.11
-        version: 1.50.1(@cfworker/json-schema@4.1.1)(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(@langchain/langgraph-sdk@0.1.10(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@langchain/openai@0.5.18(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(ws@8.18.3(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 1.50.1(@anthropic-ai/sdk@1.2.0(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(@langchain/langgraph-sdk@0.1.10(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@langchain/openai@0.5.18(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(ws@8.18.3(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@google/genai':
         specifier: ^0.10.0
         version: 0.10.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)
@@ -658,6 +661,15 @@ packages:
 
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
+
+  '@anthropic-ai/sdk@1.2.0':
+    resolution: {integrity: sha512-3MAqqeOOfLJQ5PkwhvZJLFq0HzcHbyMmX5qsmKXiJT5fHHYp0uFY83yPYqEC4tgaUBSVimZGTdkptie/oLogBA==}
+    hasBin: true
+    peerDependencies:
+      zod: ^3.25.0 || ^4.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
 
   '@apidevtools/json-schema-ref-parser@13.0.5':
     resolution: {integrity: sha512-xfh4xVJD62gG6spIc7lwxoWT+l16nZu1ELyU8FkjaP/oD2yP09EvLAU6KhtudN9aML2Khhs9pY6Slr7KGTES3w==}
@@ -3945,6 +3957,9 @@ packages:
     resolution: {integrity: sha512-r7jh49VJxGerfAcTQA6gXcKc+98zOp/tqRwzYjgOE+iSQsP6cEU1hq2QzbuipmP68QtYdY9wKEhiCQZIzHgZ4Q==}
     engines: {node: '>=18.0.0'}
 
+  '@stablelib/base64@1.0.1':
+    resolution: {integrity: sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ==}
+
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
@@ -6465,6 +6480,9 @@ packages:
   fast-safe-stringify@2.1.1:
     resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
 
+  fast-sha256@1.3.0:
+    resolution: {integrity: sha512-n11RGP/lrWEFI/bWdygLxhI+pVeo1ZYIVwvvPkW7azl/rOy+F3HYRZ2K5zeE9mmkhQppyv9sQFx0JM9UabnpPQ==}
+
   fast-uri@3.1.0:
     resolution: {integrity: sha512-iPeeDKJSWf4IEOasVVrknXpaBV0IApz/gp7S2bb7Z4Lljbl2MGJRqInZiUrQwV16cpzw/D3S5j5Julj/gT52AA==}
 
@@ -7488,6 +7506,10 @@ packages:
 
   json-parse-even-better-errors@2.3.1:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
+
+  json-schema-to-ts@3.1.1:
+    resolution: {integrity: sha512-+DWg8jCJG2TEnpy7kOm/7/AxaYoaRbjVB4LFZLySZlWn8exGs3A4OLJR966cVvU26N7X9TWxl+Jsw7dzAqKT6g==}
+    engines: {node: '>=16'}
 
   json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
@@ -9533,6 +9555,9 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
+  standardwebhooks@1.1.1:
+    resolution: {integrity: sha512-bCbX9ZEyFkWPsRz7Bl3NuQUJohmwGSev/yhr7vhaGPlc4AfIrspIRa6cPTBuI1ItmrTDJ4d/S2hCsfe4+vQGnQ==}
+
   statuses@2.0.2:
     resolution: {integrity: sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==}
     engines: {node: '>= 0.8'}
@@ -9843,6 +9868,9 @@ packages:
 
   trough@2.2.0:
     resolution: {integrity: sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw==}
+
+  ts-algebra@2.0.0:
+    resolution: {integrity: sha512-FPAhNPFMrkwz76P7cdjdmiShwMynZYN6SgOujD1urY4oNm80Ou9oMdmbR45LotcKOXoy7wSmHkRFE6Mxbrhefw==}
 
   ts-api-utils@1.4.3:
     resolution: {integrity: sha512-i3eMG77UTMD0hZhgRS562pv83RC6ukSAC2GMNWc+9dieh/+jDM5u5YG+NHX6VNDRHQcHwmsTHctP9LhbC3WxVw==}
@@ -10731,6 +10759,14 @@ snapshots:
       package-manager-detector: 1.6.0
       tinyexec: 1.0.2
 
+  '@anthropic-ai/sdk@1.2.0(zod@3.25.76)':
+    dependencies:
+      '@opentelemetry/api': 1.9.0
+      json-schema-to-ts: 3.1.1
+      standardwebhooks: 1.1.1
+    optionalDependencies:
+      zod: 3.25.76
+
   '@apidevtools/json-schema-ref-parser@13.0.5':
     dependencies:
       '@types/json-schema': 7.0.15
@@ -11283,7 +11319,7 @@ snapshots:
       '@better-auth/core': 1.7.7(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(@opentelemetry/api@1.9.0)(better-call@1.4.0(zod@3.25.76))(jose@6.1.3)(kysely@0.29.6)(nanostores@1.5.5)
       '@better-auth/utils': 0.4.2
 
-  '@better-auth/oauth-provider@1.7.7(@better-auth/core@1.7.7(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(@opentelemetry/api@1.9.0)(better-call@1.4.0(zod@4.6.5))(jose@6.2.12)(kysely@0.29.6)(nanostores@1.5.5))(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(better-auth@1.7.7(@opentelemetry/api@1.9.0)(@prisma/client@7.10.0(prisma@7.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3))(mysql2@3.15.3)(next@15.5.21(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(@playwright/test@1.51.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(pg@8.16.3)(prisma@7.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vitest@3.2.4))(better-call@1.4.0(zod@3.25.76))':
+  '@better-auth/oauth-provider@1.7.7(@better-auth/core@1.7.7(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(@opentelemetry/api@1.9.0)(better-call@1.4.0(zod@3.25.76))(jose@6.1.3)(kysely@0.29.6)(nanostores@1.5.5))(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(better-auth@1.7.7(@opentelemetry/api@1.9.0)(@prisma/client@7.10.0(prisma@7.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3))(mysql2@3.15.3)(next@15.5.21(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(@playwright/test@1.51.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(pg@8.16.3)(prisma@7.10.0(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(magicast@0.3.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vitest@3.2.4))(better-call@1.4.0(zod@3.25.76))':
     dependencies:
       '@better-auth/core': 1.7.7(@better-auth/utils@0.4.2)(@better-fetch/fetch@1.3.2)(@opentelemetry/api@1.9.0)(better-call@1.4.0(zod@3.25.76))(jose@6.1.3)(kysely@0.29.6)(nanostores@1.5.5)
       '@better-auth/utils': 0.4.2
@@ -11398,7 +11434,7 @@ snapshots:
       - encoding
       - graphql
 
-  '@copilotkit/runtime@1.50.1(@cfworker/json-schema@4.1.1)(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(@langchain/langgraph-sdk@0.1.10(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@langchain/openai@0.5.18(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(ws@8.18.3(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@copilotkit/runtime@1.50.1(@anthropic-ai/sdk@1.2.0(zod@3.25.76))(@cfworker/json-schema@4.1.1)(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(@langchain/langgraph-sdk@0.1.10(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@langchain/openai@0.5.18(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(ws@8.18.3(bufferutil@4.0.8)(utf-8-validate@6.0.3)))(@opentelemetry/api@1.9.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@ag-ui/client': 0.0.42
       '@ag-ui/core': 0.0.42
@@ -11424,6 +11460,7 @@ snapshots:
       type-graphql: 2.0.0-rc.1(class-validator@0.14.3)(graphql-scalars@1.25.0(graphql@16.12.0))(graphql@16.12.0)
       zod: 3.25.76
     optionalDependencies:
+      '@anthropic-ai/sdk': 1.2.0(zod@3.25.76)
       '@langchain/langgraph-sdk': 0.1.10(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@langchain/openai': 0.5.18(@langchain/core@0.3.79(@opentelemetry/api@1.9.0))(ws@8.18.3(bufferutil@4.0.8)(utf-8-validate@6.0.3))
     transitivePeerDependencies:
@@ -13920,7 +13957,7 @@ snapshots:
   '@readme/better-ajv-errors@2.4.0(ajv@8.17.1)':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/runtime': 7.28.4
+      '@babel/runtime': 7.29.7
       '@humanwhocodes/momoa': 2.0.4
       ajv: 8.17.1
       jsonpointer: 5.0.1
@@ -14147,6 +14184,8 @@ snapshots:
   '@smithy/types@4.19.0':
     dependencies:
       tslib: 2.8.1
+
+  '@stablelib/base64@1.0.1': {}
 
   '@standard-schema/spec@1.1.0': {}
 
@@ -16781,7 +16820,7 @@ snapshots:
 
   dom-helpers@5.2.1:
     dependencies:
-      '@babel/runtime': 7.28.4
+      '@babel/runtime': 7.29.7
       csstype: 3.1.3
 
   domexception@4.0.0:
@@ -17745,6 +17784,8 @@ snapshots:
   fast-redact@3.5.0: {}
 
   fast-safe-stringify@2.1.1: {}
+
+  fast-sha256@1.3.0: {}
 
   fast-uri@3.1.0: {}
 
@@ -19117,6 +19158,11 @@ snapshots:
   json-buffer@3.0.1: {}
 
   json-parse-even-better-errors@2.3.1: {}
+
+  json-schema-to-ts@3.1.1:
+    dependencies:
+      '@babel/runtime': 7.29.7
+      ts-algebra: 2.0.0
 
   json-schema-traverse@0.4.1: {}
 
@@ -20972,7 +21018,7 @@ snapshots:
 
   react-transition-group@4.4.5(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
-      '@babel/runtime': 7.28.4
+      '@babel/runtime': 7.29.7
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
@@ -21679,6 +21725,11 @@ snapshots:
 
   stackback@0.0.2: {}
 
+  standardwebhooks@1.1.1:
+    dependencies:
+      '@stablelib/base64': 1.0.1
+      fast-sha256: 1.3.0
+
   statuses@2.0.2: {}
 
   std-env@3.10.0: {}
@@ -22122,6 +22173,8 @@ snapshots:
   trim-lines@3.0.1: {}
 
   trough@2.2.0: {}
+
+  ts-algebra@2.0.0: {}
 
   ts-api-utils@1.4.3(typescript@5.5.4):
     dependencies:

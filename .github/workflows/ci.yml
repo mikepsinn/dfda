@@ -165,6 +165,9 @@ jobs:
       NEXT_PUBLIC_SITE_DESCRIPTION: Decentralized clinical trials and health research
       NEXT_PUBLIC_SITE_URL: http://localhost:3000
       NEXT_TELEMETRY_DISABLED: 1
+      # The report assistant calls a mock of the Claude API (tests/e2e/mock-claude.mjs), started below.
+      ANTHROPIC_API_KEY: test-anthropic-key
+      ANTHROPIC_BASE_URL: http://127.0.0.1:4010
 
     steps:
       - name: Checkout repository
@@ -195,6 +198,7 @@ jobs:
 
       - name: Start the app
         run: |
+          (nohup node tests/e2e/mock-claude.mjs 4010 > "$RUNNER_TEMP/claude.log" 2>&1 &)
           (nohup pnpm exec next start -p 3000 > "$RUNNER_TEMP/app.log" 2>&1 &)
           for _ in $(seq 1 60); do
             curl -s -o /dev/null http://localhost:3000/ && exit 0

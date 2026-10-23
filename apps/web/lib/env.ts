@@ -23,6 +23,8 @@ export const env = createEnv({
     S3_FORCE_PATH_STYLE: z.enum(['true', 'false']).optional(),
     // AI-assisted features degrade gracefully when no provider key is set.
     GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1).optional(),
+    // The report assistant (lib/care-team/assistant.ts) calls the Claude API with this key; without it, it is hidden.
+    ANTHROPIC_API_KEY: z.string().min(1).optional(),
     // Sign-in (lib/auth.ts). The secret signs session cookies and OAuth
     // queries; make one with `openssl rand -base64 32`.
     BETTER_AUTH_SECRET: z.string().min(32, 'BETTER_AUTH_SECRET must be at least 32 characters long'),
@@ -73,6 +75,7 @@ export const env = createEnv({
     S3_SECRET_ACCESS_KEY: process.env.S3_SECRET_ACCESS_KEY,
     S3_FORCE_PATH_STYLE: process.env.S3_FORCE_PATH_STYLE,
     GOOGLE_GENERATIVE_AI_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
+    ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY,
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     SMTP_URL: process.env.SMTP_URL,
     EMAIL_FROM: process.env.EMAIL_FROM,

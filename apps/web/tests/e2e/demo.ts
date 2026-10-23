@@ -12,6 +12,7 @@ export const demo = JSON.parse(readFileSync(join(__dirname, '../../scripts/demo-
   people: number
   instance: { slug: string; name: string; tagline: string }
   program: { template: string }
+  report: { id: string }
 }
 
 /** Signed-in browser state for each account, written by auth.setup.ts. */
