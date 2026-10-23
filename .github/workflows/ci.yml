@@ -1,7 +1,9 @@
 name: dFDA Node Tests
 
 on:
+  # Pushes to master only: a pull request's pushes run through pull_request, so they do not run twice.
   push:
+    branches: [master]
     paths:
       - 'apps/web/**'
       - 'package.json'
@@ -203,9 +205,14 @@ jobs:
 
       - name: Install Chromium
         run: |
-          # The runner's Microsoft apt source sometimes answers 403 and stops apt; nothing here needs it.
-          sudo grep -ls packages.microsoft.com /etc/apt/sources.list.d/* | xargs -r sudo rm -f
-          pnpm exec playwright install --with-deps chromium
+          pnpm exec playwright install chromium
+          # The runner has Google Chrome, and so the system libraries that Chromium needs. Only if Chromium
+          # cannot start, install them with apt, which takes 10 to 20 minutes. The runner's Microsoft apt
+          # source sometimes answers 403 and stops apt; nothing here needs it.
+          if ! node -e "require('@playwright/test').chromium.launch().then((browser) => browser.close())"; then
+            sudo grep -ls packages.microsoft.com /etc/apt/sources.list.d/* | xargs -r sudo rm -f
+            pnpm exec playwright install-deps chromium
+          fi
 
       - name: Run browser tests
         env:
