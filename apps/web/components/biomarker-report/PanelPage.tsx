@@ -1,10 +1,11 @@
+import { TONE_CLASSES } from "@/components/status-tone"
 import { formatPercent } from "@/lib/programs/format"
 import { decimalsFor, formatIndex, formatMeasuredOrMissing, formatMultiple, VERDICT_LABELS } from "@/lib/biomarker-report/format"
 import type { ReportSummary } from "@/lib/biomarker-report/rules"
 import type { BiomarkerReport } from "@/lib/biomarker-report/schema"
 import { ReportSheet, type SheetFrame } from "./ReportSheet"
 import { Sparkline } from "./Sparkline"
-import { StatusBadge, TONE_CLASSES, toneOf } from "./StatusBadge"
+import { StatusBadge, toneOf } from "./StatusBadge"
 
 type PanelSummary = ReportSummary["panels"][number]
 

@@ -139,12 +139,14 @@ These render local files without model calls. No dependency or theme reset is ne
   (not on a panel, whose heading is its name), and the footer is for print only.
 - On screen the report is in the site's colors, light or dark (an instance's theme sets
   them), with serif headings. In print it has its own paper colors
-  (`.biomarker-report` in `app/globals.css`). Status colors: teal for the intended
-  direction, amber for review, stone for unchanged and below the assay limit. On screen
-  they come from `statusColors` in `lib/instance/theme.ts`, which keeps each hue and
-  makes it read on the page, the cards and its own pale fill. Statuses always appear as
-  text badges (`StatusBadge.tsx`). Use the `--report-*` variables, not fixed colors, in
-  report components.
+  (`.biomarker-report` in `app/globals.css`). Use the `--report-*` variables, not fixed
+  colors, in report components.
+- Statuses have one look on reports and program pages (`components/status-tone.tsx`):
+  teal for Improved, stone for Unchanged (and below the assay limit, changed, waiting),
+  amber for Review, always as words in a pill, never red and green. On screen the colors
+  come from `statusColors` in `lib/instance/theme.ts`, which keeps each hue and makes it
+  read on the page, the cards and its own pale fill; a printed report uses its paper
+  colors. Use `TonePill` or `TONE_CLASSES` for a status, not new colors.
 - Values show the decimals of their row, and at least one below 100 ("108", "94.0").
 - Tables become stacked lists below the `md` breakpoint, so that the values and the status
   stay in view; print always uses the tables.

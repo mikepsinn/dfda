@@ -144,9 +144,14 @@ jobs:
       - name: Install Chromium
         working-directory: after/apps/web
         run: |
-          # The runner's Microsoft apt source sometimes answers 403 and stops apt; nothing here needs it.
-          sudo grep -ls packages.microsoft.com /etc/apt/sources.list.d/* | xargs -r sudo rm -f
-          pnpm exec playwright install --with-deps chromium
+          pnpm exec playwright install chromium
+          # The runner has Google Chrome, and so the system libraries that Chromium needs. Only if Chromium
+          # cannot start, install them with apt, which takes 10 to 20 minutes. The runner's Microsoft apt
+          # source sometimes answers 403 and stops apt; nothing here needs it.
+          if ! node -e "require('@playwright/test').chromium.launch().then((browser) => browser.close())"; then
+            sudo grep -ls packages.microsoft.com /etc/apt/sources.list.d/* | xargs -r sudo rm -f
+            pnpm exec playwright install-deps chromium
+          fi
 
       - name: Capture screenshots
         working-directory: after/apps/web

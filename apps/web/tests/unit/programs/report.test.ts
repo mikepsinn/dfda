@@ -6,6 +6,7 @@ import {
   MIN_GROUP_SIZE,
   programTotals,
   verdictFor,
+  weeklyTrend,
   type Point,
   type ReportItem,
 } from '@/lib/programs/report'
@@ -83,5 +84,18 @@ describe('program totals', () => {
       worse: 1,
       medianPercentChange: -5,
     })
+  })
+})
+
+describe('weeklyTrend', () => {
+  it('gives the mean of each week since the start, with the values from before the start in week 0', () => {
+    const trend = weeklyTrend([at(-3, 102), at(2, 100), at(8, 98), at(9, 96), at(22, 94)], start)
+    expect(trend.weeks).toEqual([0, 1, 2, 3])
+    expect(trend.values).toEqual([101, 97, null, 94])
+  })
+
+  it('leaves out values from before the lookback, and gives nothing without values', () => {
+    expect(weeklyTrend([at(-200, 150), at(0, 100)], start).values).toEqual([100])
+    expect(weeklyTrend([], start)).toEqual({ weeks: [], values: [] })
   })
 })

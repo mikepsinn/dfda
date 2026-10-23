@@ -7,16 +7,16 @@ vi.mock('nodemailer', () => ({ default: { createTransport: () => ({ sendMail }) 
 
 afterEach(() => sendMail.mockReset())
 
-const brand = { name: 'Response <by> SuperOme', primaryColor: '#2fd4be', supportEmail: 'help@superome.example' }
+const brand = { name: 'Acme <by> Metabolic', primaryColor: '#2fd4be', supportEmail: 'help@acme.example' }
 
 describe('linkEmail', () => {
   it("comes from the company with a brand: its name, its color and its support address", () => {
-    const email = linkEmail('member@example.com', 'Sign in to Response', 'Use this link to sign in.', 'Sign in', 'https://track.superome.example/x?a=1&b=2', brand)
-    expect(email.fromName).toBe('Response <by> SuperOme')
-    expect(email.replyTo).toBe('help@superome.example')
-    expect(email.text).toBe('Response <by> SuperOme\n\nUse this link to sign in.\n\nhttps://track.superome.example/x?a=1&b=2\n\nIf you did not ask for this email, you can ignore it.')
-    expect(email.html).toContain('Response &lt;by&gt; SuperOme')
-    expect(email.html).toContain('href="https://track.superome.example/x?a=1&amp;b=2"')
+    const email = linkEmail('member@example.com', 'Sign in to Acme', 'Use this link to sign in.', 'Sign in', 'https://track.acme.example/x?a=1&b=2', brand)
+    expect(email.fromName).toBe('Acme <by> Metabolic')
+    expect(email.replyTo).toBe('help@acme.example')
+    expect(email.text).toBe('Acme <by> Metabolic\n\nUse this link to sign in.\n\nhttps://track.acme.example/x?a=1&b=2\n\nIf you did not ask for this email, you can ignore it.')
+    expect(email.html).toContain('Acme &lt;by&gt; Metabolic')
+    expect(email.html).toContain('href="https://track.acme.example/x?a=1&amp;b=2"')
     // A light brand color gets dark text on its button.
     expect(email.html).toContain('background:#2fd4be;color:#171717')
     expect(email.html).not.toMatch(/dFDA|Open Treatment Evidence Network/)
@@ -32,9 +32,9 @@ describe('linkEmail', () => {
 
 describe('sendEmail', () => {
   it("sends with the company's name and the site's own address", async () => {
-    await sendEmail({ to: 'a@example.com', subject: 's', text: 't', fromName: 'Response by SuperOme', replyTo: 'help@superome.example' })
+    await sendEmail({ to: 'a@example.com', subject: 's', text: 't', fromName: 'Acme Metabolic', replyTo: 'help@acme.example' })
     expect(sendMail).toHaveBeenCalledWith(
-      expect.objectContaining({ from: { name: 'Response by SuperOme', address: senderAddress() }, replyTo: 'help@superome.example' }),
+      expect.objectContaining({ from: { name: 'Acme Metabolic', address: senderAddress() }, replyTo: 'help@acme.example' }),
     )
     expect(senderAddress('dFDA <noreply@updates.dfda.earth>')).toBe('noreply@updates.dfda.earth')
     expect(senderAddress('noreply@updates.dfda.earth')).toBe('noreply@updates.dfda.earth')

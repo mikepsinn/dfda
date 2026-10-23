@@ -23,16 +23,16 @@ describe("biomarker report", () => {
     const glance = screen.getByRole("region", { name: "At a glance" })
     const review = within(glance).getByRole("heading", { name: "Review with the patient" }).parentElement!
     expect(within(review).getByRole("link", { name: "Muscle & bone" })).toHaveAttribute("href", "#panel-muscle-bone")
-    expect(within(glance).getByRole("img", { name: "Metabolic & GLP-1 axis: +2.8× the noise, intended direction" })).toBeInTheDocument()
+    expect(within(glance).getByRole("img", { name: "Metabolic & GLP-1 axis: +2.8× the noise, improved" })).toBeInTheDocument()
     expect(within(glance).getByRole("img", { name: "Muscle & bone: −0.9× the noise, review" })).toBeInTheDocument()
     expect(within(glance).getByText("Proteins in this report").nextElementSibling).toHaveTextContent("68")
   })
 
   it("shows each clinical value with its decimals, reference and status", () => {
     render(<BiomarkerReportView report={EXAMPLE_REPORT} />)
-    expect(cells(screen.getByRole("row", { name: /^HbA1c/ }))).toEqual(["%", "6.1", "5.6", "−8%", "< 5.7", "Intended direction"])
+    expect(cells(screen.getByRole("row", { name: /^HbA1c/ }))).toEqual(["%", "6.1", "5.6", "−8%", "< 5.7", "Improved"])
     // A value below 100 shows one decimal at least.
-    expect(cells(screen.getByRole("row", { name: /^ALT/ }))).toEqual(["U/L", "38.0", "27.0", "−29%", "7–35", "Intended direction"])
+    expect(cells(screen.getByRole("row", { name: /^ALT/ }))).toEqual(["U/L", "38.0", "27.0", "−29%", "7–35", "Improved"])
     // Below the assay limit at both timepoints: no change that the lab can see.
     expect(cells(screen.getByRole("row", { name: /^hs-cTnI/ }))).toEqual(["ng/L", "< 3", "< 3", "—", "< 16", "Unchanged"])
     expect(screen.getByText(/rose within the reference interval/)).toBeInTheDocument()
@@ -63,7 +63,7 @@ describe("biomarker report", () => {
     expect(cells(within(panel).getByRole("row", { name: /^IGF1/ }))).toEqual(["ng/mL", "142", "118", "−17%", "", "1.9×", "Review"])
 
     const crp = screen.getByRole("row", { name: /^CRP C-reactive protein/ })
-    expect(cells(crp)).toEqual(["mg/L", "3.8", "1.9", "−50%", "", "2.5×", "Intended direction"])
+    expect(cells(crp)).toEqual(["mg/L", "3.8", "1.9", "−50%", "", "2.5×", "Improved"])
     // The trend gives every timepoint in its accessible name.
     expect(within(crp).getByRole("img", { name: /^Baseline 3\.8, Week 4 \d\.\d, Week 8 \d\.\d, Week 12 1\.9$/ })).toBeInTheDocument()
     // Below the assay's limit: "< limit".

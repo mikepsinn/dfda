@@ -10,9 +10,9 @@ vi.mock('@/lib/instance/hosts', async (importOriginal) => ({
 
 const response = {
   slug: 'response',
-  name: 'Response by SuperOme',
+  name: 'Acme Metabolic',
   primaryColor: '#2fd4be',
-  supportEmail: 'help@superome.example',
+  supportEmail: 'help@acme.example',
 }
 
 function request(host: string, headers: Record<string, string> = {}) {
@@ -29,17 +29,17 @@ describe('linkOnHost', () => {
     'https://prototype.dfda.earth/api/auth/magic-link/verify?token=abc&callbackURL=%2Fauth%2Fcallback%3Fnext%3D%252Fprograms&errorCallbackURL=%2Flogin%3Ferror%3Dexpired'
 
   it("puts the link and the pages it opens after sign-in on the company's host", () => {
-    const moved = new URL(linkOnHost(link, 'https://track.superome.example'))
-    expect(moved.origin).toBe('https://track.superome.example')
+    const moved = new URL(linkOnHost(link, 'https://track.acme.example'))
+    expect(moved.origin).toBe('https://track.acme.example')
     expect(moved.pathname).toBe('/api/auth/magic-link/verify')
     expect(moved.searchParams.get('token')).toBe('abc')
-    expect(moved.searchParams.get('callbackURL')).toBe('https://track.superome.example/auth/callback?next=%2Fprograms')
-    expect(moved.searchParams.get('errorCallbackURL')).toBe('https://track.superome.example/login?error=expired')
+    expect(moved.searchParams.get('callbackURL')).toBe('https://track.acme.example/auth/callback?next=%2Fprograms')
+    expect(moved.searchParams.get('errorCallbackURL')).toBe('https://track.acme.example/login?error=expired')
   })
 
   it('keeps a page that is not a path on the site', () => {
     for (const page of ['https://elsewhere.example/', '//elsewhere.example/']) {
-      const moved = new URL(linkOnHost(`https://prototype.dfda.earth/x?callbackURL=${encodeURIComponent(page)}`, 'https://track.superome.example'))
+      const moved = new URL(linkOnHost(`https://prototype.dfda.earth/x?callbackURL=${encodeURIComponent(page)}`, 'https://track.acme.example'))
       expect(moved.searchParams.get('callbackURL')).toBe(page)
     }
   })
@@ -48,17 +48,17 @@ describe('linkOnHost', () => {
 describe('authEmailContext', () => {
   it("gives the company and its host for a request to the company's own domain", async () => {
     findInstanceForRequest.mockResolvedValue({ ...response, via: 'domain' })
-    expect(await authEmailContext(request('track.superome.example'))).toEqual({
-      brand: { name: 'Response by SuperOme', primaryColor: '#2fd4be', supportEmail: 'help@superome.example' },
-      origin: 'https://track.superome.example',
+    expect(await authEmailContext(request('track.acme.example'))).toEqual({
+      brand: { name: 'Acme Metabolic', primaryColor: '#2fd4be', supportEmail: 'help@acme.example' },
+      origin: 'https://track.acme.example',
     })
-    expect(findInstanceForRequest).toHaveBeenCalledWith('track.superome.example', undefined)
+    expect(findInstanceForRequest).toHaveBeenCalledWith('track.acme.example', undefined)
   })
 
   it('gives the company but no host for the preview link, which is on the main site', async () => {
     findInstanceForRequest.mockResolvedValue({ ...response, via: 'preview' })
     const context = await authEmailContext(request('prototype.dfda.earth', { cookie: 'other=1; instance_preview=response' }))
-    expect(context?.brand.name).toBe('Response by SuperOme')
+    expect(context?.brand.name).toBe('Acme Metabolic')
     expect(context?.origin).toBeNull()
     expect(findInstanceForRequest).toHaveBeenCalledWith('prototype.dfda.earth', 'response')
   })
@@ -68,6 +68,6 @@ describe('authEmailContext', () => {
     expect(await authEmailContext(request('prototype.dfda.earth'))).toBeNull()
     expect(await authEmailContext(undefined)).toBeNull()
     findInstanceForRequest.mockRejectedValue(new Error('database down'))
-    expect(await authEmailContext(request('track.superome.example'))).toBeNull()
+    expect(await authEmailContext(request('track.acme.example'))).toBeNull()
   })
 })

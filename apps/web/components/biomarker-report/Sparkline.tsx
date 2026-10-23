@@ -1,5 +1,5 @@
 import { decimalsFor, formatReported } from "@/lib/biomarker-report/format"
-import { TONE_CLASSES, type Tone } from "./StatusBadge"
+import { TONE_CLASSES, type Tone } from "@/components/status-tone"
 
 const WIDTH = 84
 const HEIGHT = 24
@@ -51,7 +51,8 @@ export function Sparkline({
           cx={x(point.week)}
           cy={y(point.value)}
           r={index === points.length - 1 ? 2.75 : 2.25}
-          fill={index === points.length - 1 ? color : "var(--report-card)"}
+          // The card color: the report's inside a report, the site's elsewhere (program pages).
+          fill={index === points.length - 1 ? color : "var(--report-card, hsl(var(--card)))"}
           stroke={color}
           strokeWidth={1}
         />

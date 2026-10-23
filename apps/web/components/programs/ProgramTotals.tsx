@@ -1,3 +1,4 @@
+import { TONE_CLASSES } from "@/components/status-tone"
 import { formatPercent } from "@/lib/programs/format"
 import { MIN_GROUP_SIZE, type MeasureTotals } from "@/lib/programs/report"
 
@@ -18,9 +19,9 @@ export function ProgramTotals({ totals }: { totals: MeasureTotals[] }) {
           <tr>
             <th scope="col" className="px-4 py-2 font-medium">Measure</th>
             <th scope="col" className="px-4 py-2 text-right font-medium">People</th>
-            <th scope="col" className="px-4 py-2 font-medium">Improved · no change · worse</th>
+            <th scope="col" className="px-4 py-2 font-medium">Improved · unchanged · review</th>
             <th scope="col" className="px-4 py-2 text-right font-medium">Improved</th>
-            <th scope="col" className="px-4 py-2 text-right font-medium">Worse</th>
+            <th scope="col" className="px-4 py-2 text-right font-medium">Review</th>
             <th scope="col" className="px-4 py-2 text-right font-medium">Median change</th>
           </tr>
         </thead>
@@ -50,11 +51,11 @@ export function ProgramTotals({ totals }: { totals: MeasureTotals[] }) {
                         <div
                           className="flex h-3 w-40 overflow-hidden rounded-full bg-muted"
                           role="img"
-                          aria-label={`${measure.improved} improved, ${measure.unchanged} no change, ${measure.worse} worse`}
+                          aria-label={`${measure.improved} improved, ${measure.unchanged} unchanged, ${measure.worse} review`}
                         >
-                          <span className="bg-emerald-500" style={{ width: `${(measure.improved / measure.people) * 100}%` }} />
+                          <span className={TONE_CLASSES.teal.solid} style={{ width: `${(measure.improved / measure.people) * 100}%` }} />
                           <span className="bg-muted-foreground/30" style={{ width: `${(measure.unchanged / measure.people) * 100}%` }} />
-                          <span className="bg-rose-500" style={{ width: `${(measure.worse / measure.people) * 100}%` }} />
+                          <span className={TONE_CLASSES.amber.solid} style={{ width: `${(measure.worse / measure.people) * 100}%` }} />
                         </div>
                       )}
                     </td>

@@ -1,12 +1,13 @@
+import { TONE_CLASSES } from "@/components/status-tone"
 import { formatIndex, formatMultiple, VERDICT_LABELS } from "@/lib/biomarker-report/format"
 import type { PanelVerdict, ReportSummary } from "@/lib/biomarker-report/rules"
 import type { BiomarkerReport } from "@/lib/biomarker-report/schema"
 import { ReportSheet, type SheetFrame } from "./ReportSheet"
-import { TONE_CLASSES, toneOf } from "./StatusBadge"
+import { toneOf } from "./StatusBadge"
 
 const GROUPS: { verdict: PanelVerdict; title: string }[] = [
-  { verdict: "intended", title: "Moved in the intended direction" },
-  { verdict: "unchanged", title: "Stayed unchanged" },
+  { verdict: "intended", title: "Improved" },
+  { verdict: "unchanged", title: "Unchanged" },
   { verdict: "review", title: "Review with the patient" },
 ]
 
@@ -134,7 +135,7 @@ export function AtAGlance({
             <dl className="mt-2 space-y-0.5 text-[12.5px]">
               {(
                 [
-                  ["intended", "moved in intended direction"],
+                  ["intended", "improved"],
                   ["unchanged", "unchanged"],
                   ["review", "review"],
                   ["below-limit", "below quantification"],
