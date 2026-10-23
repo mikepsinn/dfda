@@ -73,10 +73,28 @@ export function compareMeasure(points: Point[], startedAt: Date, better: Better,
   return { before, after, change, percentChange, status }
 }
 
+/** A measure's values over the program: the mean of each week since the start, null for a week without values. */
+export type Trend = { weeks: number[]; values: (number | null)[] }
+
+/** The weekly means of a measure. Week 0 also has the values from before the start, as far back as "before" looks. */
+export function weeklyTrend(points: Point[], startedAt: Date): Trend {
+  const earliest = startedAt.getTime() - LOOKBACK_DAYS * DAY
+  const byWeek = new Map<number, number[]>()
+  for (const point of points) {
+    if (point.at.getTime() < earliest) continue
+    const week = Math.max(0, Math.floor((point.at.getTime() - startedAt.getTime()) / (7 * DAY)))
+    byWeek.set(week, [...(byWeek.get(week) ?? []), point.value])
+  }
+  if (byWeek.size === 0) return { weeks: [], values: [] }
+  const weeks = Array.from({ length: Math.max(...byWeek.keys()) + 1 }, (_, week) => week)
+  const mean = (values: number[] | undefined) => (values ? values.reduce((sum, value) => sum + value, 0) / values.length : null)
+  return { weeks, values: weeks.map((week) => mean(byWeek.get(week))) }
+}
+
 export type PersonReport = {
   startedAt: Date
   followUpAt: Date
-  measures: (ReportItem & MeasureResult)[]
+  measures: (ReportItem & MeasureResult & { trend: Trend })[]
   verdict: string
 }
 
@@ -110,6 +128,7 @@ export function buildPersonReport(
   const measures = items.map((item) => ({
     ...item,
     ...compareMeasure(series.get(item.variableId) ?? [], startedAt, item.better, item.unitId),
+    trend: weeklyTrend(series.get(item.variableId) ?? [], startedAt),
   }))
   return {
     startedAt,
@@ -143,7 +162,7 @@ export function programTotals(items: ReportItem[], reports: PersonReport[]): Mea
   return items.map((item) => {
     const results = reports
       .map((report) => report.measures.find((measure) => measure.variableId === item.variableId))
-      .filter((measure): measure is ReportItem & MeasureResult => Boolean(measure) && measure!.status !== 'waiting')
+      .filter((measure): measure is PersonReport['measures'][number] => Boolean(measure) && measure!.status !== 'waiting')
     const count = (status: MeasureStatus) => results.filter((result) => result.status === status).length
     const hidden = results.length < MIN_GROUP_SIZE
     return {

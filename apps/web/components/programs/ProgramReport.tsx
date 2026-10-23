@@ -1,3 +1,4 @@
+import { Sparkline } from "@/components/biomarker-report/Sparkline"
 import { TonePill, type Tone } from "@/components/status-tone"
 import { formatChange, formatDate, formatPercent, formatValue, STATUS_LABELS } from "@/lib/programs/format"
 import type { MeasureStatus, PersonReport } from "@/lib/programs/report"
@@ -11,7 +12,7 @@ const STATUS_TONES: Record<MeasureStatus, Tone> = {
   waiting: "stone",
 }
 
-/** A person's before/after report: a one-line verdict, then each measure at the start and now. */
+/** A person's before/after report: a one-line verdict, then each measure at the start and now, with its weekly trend. */
 export function ProgramReport({ report }: { report: PersonReport }) {
   return (
     <section aria-labelledby="report-heading" className="space-y-4">
@@ -25,13 +26,14 @@ export function ProgramReport({ report }: { report: PersonReport }) {
         </p>
       </div>
       <div className="surface-raised overflow-x-auto rounded-xl border">
-        <table className="w-full min-w-[32rem] text-left text-sm">
+        <table className="w-full min-w-[38rem] text-left text-sm">
           <thead className="bg-muted/50 text-muted-foreground">
             <tr>
               <th scope="col" className="px-4 py-2 font-medium">Measure</th>
               <th scope="col" className="px-4 py-2 text-right font-medium">Before</th>
               <th scope="col" className="px-4 py-2 text-right font-medium">Now</th>
               <th scope="col" className="px-4 py-2 text-right font-medium">Change</th>
+              <th scope="col" className="px-4 py-2 font-medium">Trend</th>
               <th scope="col" className="px-4 py-2 font-medium">Result</th>
             </tr>
           </thead>
@@ -58,6 +60,14 @@ export function ProgramReport({ report }: { report: PersonReport }) {
                       )}
                     </>
                   )}
+                </td>
+                <td className="px-4 py-3">
+                  <Sparkline
+                    values={measure.trend.values}
+                    weeks={measure.trend.weeks}
+                    labels={measure.trend.weeks.map((week) => (week === 0 ? "Start" : `Week ${week}`))}
+                    tone={STATUS_TONES[measure.status]}
+                  />
                 </td>
                 <td className="px-4 py-3">
                   <TonePill tone={STATUS_TONES[measure.status]} className="px-2.5 py-0.5 text-xs">

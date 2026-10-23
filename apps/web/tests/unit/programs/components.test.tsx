@@ -18,7 +18,9 @@ describe("program report", () => {
     render(<ProgramReport report={report} />)
     expect(screen.getByText("1 of 1 measures improved. 1 still needs a second value.")).toBeInTheDocument()
     const row = screen.getByRole("row", { name: /Weight/ })
-    expect(within(row).getAllByRole("cell").map((cell) => cell.textContent)).toEqual(["100", "92.5", "−7.5 (−8%)", "Improved"])
+    expect(within(row).getAllByRole("cell").map((cell) => cell.textContent)).toEqual(["100", "92.5", "−7.5 (−8%)", "", "Improved"])
+    // The weekly trend, in the tone of the status, with its values in its name.
+    expect(within(row).getByRole("img")).toHaveAccessibleName("Start 100.04, Week 12 92.50")
     expect(within(screen.getByRole("row", { name: /HbA1c/ })).getByText("Waiting")).toBeInTheDocument()
     expect(screen.getByText(/does not prove that the product caused it/)).toBeInTheDocument()
   })

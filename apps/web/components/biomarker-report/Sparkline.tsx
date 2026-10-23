@@ -51,7 +51,8 @@ export function Sparkline({
           cx={x(point.week)}
           cy={y(point.value)}
           r={index === points.length - 1 ? 2.75 : 2.25}
-          fill={index === points.length - 1 ? color : "var(--report-card)"}
+          // The card color: the report's inside a report, the site's elsewhere (program pages).
+          fill={index === points.length - 1 ? color : "var(--report-card, hsl(var(--card)))"}
           stroke={color}
           strokeWidth={1}
         />
