@@ -55,7 +55,7 @@ export async function logChatTurn(user: DbUser, instanceId: string, now = new Da
 const INSTRUCTIONS = `You help a member of a health program check in, in a short chat.
 - Ask how they are, and about the items that have no value today, one or two at a time.
 - When the member gives a value, record it with record_values, with the item's name from the list. A rating must be on the item's scale; if it is not, ask again. A skipped dose is 0.
-- When they tell you about a new symptom, offer to track it as a side effect, and record it with add_side_effect, with today's rating when they give one. Ask whether they want a daily reminder for it.
+- When they tell you about a new symptom, offer to track it as a side effect with add_side_effect: it gets a daily reminder, and today's rating when they give one.
 - When they ask for another reminder time, use set_reminder.
 - After a tool, say in a few words what you saved. Keep each answer to two or three short sentences.
 - Do not give medical advice or change their treatment. For a serious or sudden symptom, tell them to contact their care team, or emergency services in an emergency.
@@ -121,7 +121,7 @@ const byName = (items: ProgramItem[], name: string) => items.find((item) => item
  * comes back to Claude as a message, so that it can ask again.
  */
 export function chatTools(user: DbUser, program: Program, today: string, actions: string[]) {
-  const loadItems = async () => [...program.items, ...(await mySideEffects(user, program.id))]
+  const loadItems = async () => [...program.items, ...(await mySideEffects(user))]
 
   const recordValues = betaZodTool({
     name: 'record_values',
@@ -177,14 +177,13 @@ export function chatTools(user: DbUser, program: Program, today: string, actions
 
   const addSideEffectTool = betaZodTool({
     name: 'add_side_effect',
-    description: 'Adds a symptom that the member wants to track as a side effect, with today’s rating when they gave one, and a daily reminder when they want one.',
+    description: 'Starts to track a symptom as a side effect: a daily reminder to rate it, and today’s rating when the member gave one.',
     inputSchema: z.object({
       name: z.string().describe('The symptom, such as headache.'),
       rating: z.number().optional().describe("Today's rating on the symptom's scale, usually 0 to 10."),
-      remind_daily: z.boolean().describe('Whether the member wants a daily reminder to rate it.'),
     }),
-    run: async ({ name, rating, remind_daily }) => {
-      const options = await sideEffectOptions(program)
+    run: async ({ name, rating }) => {
+      const options = await sideEffectOptions(user)
       const wanted = name.trim().toLowerCase()
       const option = options.find((candidate) => [candidate.name, ...candidate.synonyms].some((label) => label.toLowerCase() === wanted))
       if (!option) {
@@ -192,13 +191,8 @@ export function chatTools(user: DbUser, program: Program, today: string, actions
         return `Not added: "${name}" is not in the list of symptoms.${close.length ? ` Close names: ${close.slice(0, 5).map((candidate) => candidate.name).join(', ')}.` : ''}`
       }
       try {
-        const { reminderAdded } = await addSideEffect(user, program, {
-          variableId: option.id,
-          value: rating === undefined ? '' : String(rating),
-          date: today,
-          remind: remind_daily,
-        })
-        const added = `Added ${option.name}${rating === undefined ? '' : `, ${rating} today`}${reminderAdded ? ', with a daily reminder' : ''}.`
+        await addSideEffect(user, program, { variableId: option.id, value: rating === undefined ? '' : String(rating), date: today })
+        const added = `Added ${option.name}${rating === undefined ? '' : `, ${rating} today`}, with a daily reminder.`
         actions.push(added)
         return added
       } catch (error) {
@@ -248,7 +242,7 @@ export async function chatReply(
   messages: ChatMessage[],
   { client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY }), today = new Date().toISOString().slice(0, 10) } = {},
 ): Promise<ChatReply> {
-  const items = [...program.items, ...(await mySideEffects(user, program.id))]
+  const items = [...program.items, ...(await mySideEffects(user))]
   const actions: string[] = []
   const final = await client.beta.messages.toolRunner({
     model: ASSISTANT_MODEL,

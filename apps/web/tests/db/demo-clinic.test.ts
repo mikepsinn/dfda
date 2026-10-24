@@ -71,11 +71,12 @@ describe('the demo clinic', () => {
     await adminDb.measurements.create({
       data: { user_id: patientId, global_variable_id: 'weight', user_variable_id: weight.id, value: 300, unit_id: 'kilogram', start_at: now },
     })
-    // A visitor adds a side effect with a rating; the next sign-in removes both.
-    await addSideEffect({ id: patientId }, program, { variableId: 'headache', value: '5', date: now.toISOString().slice(0, 10), remind: false })
+    // A visitor adds a side effect with a rating; the next sign-in removes both, and its reminder.
+    await addSideEffect({ id: patientId }, program, { variableId: 'headache', value: '5', date: now.toISOString().slice(0, 10) })
     await resetDemoPatient(program, patientId, now)
     expect(await count()).toBe(values)
-    expect(await mySideEffects({ id: patientId }, program.id)).toEqual([])
+    expect(await mySideEffects({ id: patientId })).toEqual([])
+    expect(await adminDb.reminder_schedules.count({ where: { user_id: patientId, user_variables: { global_variable_id: 'headache' } } })).toBe(0)
 
     const report = (await personalReport({ id: patientId }, program))!
     const today = Math.floor(now.getTime() / DAY) * DAY

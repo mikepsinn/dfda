@@ -53,8 +53,8 @@ export default async function ProgramPage({
               {program.careTeamReview ? (
                 <p className="max-w-xl text-sm">
                   In this program, {instance.name}&rsquo;s care team adds and reviews your biomarker reports. When you
-                  join, its clinicians see your name, your email, your start date, your reports and what you log in the
-                  program. To stop, leave the program.
+                  join, its clinicians see your name, your email, your start date, your reports, what you log in the
+                  program and the symptoms that you rate. To stop, leave the program.
                 </p>
               ) : (
                 <label className="flex max-w-xl items-start gap-3 text-sm">
@@ -124,7 +124,7 @@ export default async function ProgramPage({
         <p>
           Totals only, such as how many people improved on each measure. {instance.name} does not see your own values.
           {program.careTeamReview
-            ? " The clinicians of its care team see your name, your biomarker reports and what you log in the program, and review each report. You can leave the program at any time."
+            ? " The clinicians of its care team see your name, your biomarker reports, what you log in the program and the symptoms that you rate, and review each report. You can leave the program at any time."
             : " If you share your biomarker reports, the clinicians of its care team see those reports and your name. You can stop sharing or leave the program at any time."}
         </p>
       </section>

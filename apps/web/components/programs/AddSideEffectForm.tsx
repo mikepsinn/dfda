@@ -11,9 +11,9 @@ import type { SideEffectOption } from "@/lib/programs/side-effects"
 import { RatingInput } from "./RatingInput"
 
 /**
- * Adds a side effect to the member's program: a symptom from the list (its
- * name or another name), with today's rating and a daily reminder when the
- * member wants them. Then the daily check-in asks for it.
+ * Starts to track a side effect: a symptom from the list (its name or another
+ * name) gets a daily reminder, and today's rating when the member gives one.
+ * Then the daily check-in asks for it.
  */
 export function AddSideEffectForm({
   action,
@@ -59,7 +59,7 @@ export function AddSideEffectForm({
       {state.added && !pending && (
         <p role="status" className="flex items-center gap-2 text-sm font-medium text-primary">
           <CheckCircle2 aria-hidden="true" className="h-4 w-4" />
-          Added {state.added}.{state.reminderAdded ? " You get a reminder for it each day." : ""}
+          Added {state.added}. You get a reminder to rate it each day.
         </p>
       )}
       <input type="hidden" hidden name="date" value={date} />
@@ -94,10 +94,6 @@ export function AddSideEffectForm({
           words={scaleWords("lower", match.scale[0])}
         />
       )}
-      <label className="flex items-center gap-2 text-sm">
-        <input type="checkbox" name="remind" defaultChecked className="h-4 w-4 accent-primary" />
-        Remind me to rate it each day
-      </label>
       <Button type="submit" variant="outline" disabled={pending || !match} className="gap-2">
         {pending && <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />}
         Add the side effect

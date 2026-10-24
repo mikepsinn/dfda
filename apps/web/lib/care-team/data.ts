@@ -5,7 +5,7 @@ import { siteOrigin } from '@/lib/oauth-resources'
 import { isReviewDecision, type ReviewDecision } from './format'
 import { listPrograms, loadSeries, lookbackStart, type Program, type ProgramItem } from '@/lib/programs/data'
 import type { Point } from '@/lib/programs/report'
-import { enrollmentSideEffects } from '@/lib/programs/side-effects'
+import { ratedSideEffects } from '@/lib/programs/side-effects'
 import { getServerUser } from '@/lib/server-auth'
 
 /**
@@ -164,13 +164,14 @@ export async function careLogs(patient: CarePatient, items: ProgramItem[] = pati
 
 /**
  * The items that the care team sees in the logs of `patient`: the program's
- * items, then the side effects that the person tracks (lib/programs/side-effects.ts).
- * Only the program's items when the program has no care team review.
+ * items, then the other symptoms that the person rated from the lookback
+ * start (lib/programs/side-effects.ts). Only the program's items when the
+ * program has no care team review.
  */
 export async function careItems(patient: CarePatient): Promise<ProgramItem[]> {
   if (!patient.program.careTeamReview) return patient.program.items
-  const sideEffects = await enrollmentSideEffects([patient.enrollmentId])
-  return [...patient.program.items, ...(sideEffects.get(patient.enrollmentId) ?? [])]
+  const sideEffects = await ratedSideEffects(patient.userId, patient.program, lookbackStart(patient.startedAt))
+  return [...patient.program.items, ...sideEffects]
 }
 
 /** A report that the user may read, with its checked file; null when there is none. */

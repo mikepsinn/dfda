@@ -147,11 +147,12 @@ describe("the chat's tools", () => {
 
   it('add a side effect from the list with its rating and a reminder, and say the close names of an unknown one', async () => {
     const { addSideEffect, actions } = tools()
-    expect(await addSideEffect.run({ name: 'headache', rating: 4, remind_daily: true })).toBe('Added Headache, 4 today, with a daily reminder.')
+    expect(await addSideEffect.run({ name: 'headache', rating: 4 })).toBe('Added Headache, 4 today, with a daily reminder.')
     expect(actions).toEqual(['Added Headache, 4 today, with a daily reminder.'])
     expect(await values('headache')).toEqual([{ value: 4, unit_id: 'zero-to-ten-scale' }])
-    expect(await addSideEffect.run({ name: 'pain', remind_daily: false })).toBe('Added Pain.')
-    expect(await addSideEffect.run({ name: 'a strange feeling', remind_daily: false })).toBe('Not added: "a strange feeling" is not in the list of symptoms.')
+    expect(await addSideEffect.run({ name: 'pain' })).toBe('Added Pain, with a daily reminder.')
+    expect(await adminDb.reminder_schedules.count({ where: { user_id: patient.id, is_active: true, user_variables: { global_variable_id: 'pain' } } })).toBe(1)
+    expect(await addSideEffect.run({ name: 'a strange feeling' })).toBe('Not added: "a strange feeling" is not in the list of symptoms.')
   })
 
   it('set the time of a reminder', async () => {

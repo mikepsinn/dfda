@@ -54,14 +54,14 @@ test('a company creates a program; a person joins it and records values', async 
   await today.getByRole('button', { name: 'Save' }).click()
   await expect(today.getByRole('status')).toHaveText('Saved 1 value.')
 
-  // A side effect from the list, rated today, is then in each day's form.
+  // A side effect from the list, rated today, gets a daily reminder, and is then in each day's form.
   const sideEffects = member.getByRole('region', { name: 'Side effects' })
   await sideEffects.getByLabel('Side effect', { exact: true }).fill('Headache')
   await sideEffects.getByRole('group', { name: 'Headache today' }).getByText('3', { exact: true }).click()
   await sideEffects.getByRole('button', { name: 'Add the side effect' }).click()
-  // The reminder is new on a new database; a run before may have added it (tests/db/check-in.test.ts checks it).
-  await expect(sideEffects.getByRole('status')).toHaveText(/^Added Headache\./)
+  await expect(sideEffects.getByRole('status')).toHaveText('Added Headache. You get a reminder to rate it each day.')
   await expect(today.getByRole('group', { name: 'Headache' })).toBeVisible()
+  // Stopping it deletes the reminder.
   await sideEffects.getByRole('button', { name: 'Stop tracking Headache' }).click()
   await expect(today.getByRole('group', { name: 'Headache' })).toHaveCount(0)
 

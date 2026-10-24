@@ -71,7 +71,7 @@ test.describe('the patient', () => {
         await show(page.getByRole('heading', { name: 'What you do' }))
         await show(page.getByRole('heading', { name: 'What you get' }))
         await show(page.getByRole('heading', { name: `What ${demo.instance.name} sees` }))
-        await expect(page.getByText(/The clinicians of its care team see your name, your biomarker reports and what you log/)).toBeVisible()
+        await expect(page.getByText(/The clinicians of its care team see your name, your biomarker reports, what you log in the program and the symptoms that you rate/)).toBeVisible()
         // A clinic's treatment program: joining shares the reports with the care team, without a separate choice.
         await show(page.getByText(/In this program, .* care team adds and reviews your biomarker reports/))
         await expect(page.getByRole('checkbox', { name: /Share my biomarker reports/ })).toHaveCount(0)

@@ -60,8 +60,8 @@ export default async function YourProgramPage({
   const [reports, shared, sideEffects, options, chat] = await Promise.all([
     myReports(user, program.id),
     sharedSince(user, program.id),
-    mySideEffects(user, program.id),
-    sideEffectOptions(program),
+    mySideEffects(user),
+    sideEffectOptions(user),
     chatAvailable(user, program),
   ])
 
@@ -130,8 +130,12 @@ export default async function YourProgramPage({
             Side effects
           </h2>
           <p className="text-sm text-muted-foreground">
-            Feel something new? Add it here, and rate it each day with the rest of your day.
-            {program.careTeamReview && ` ${instance.name}'s care team sees your side effects with your other values.`}
+            Feel something new? Add it here, and rate it each day with the rest of your day. Each one gets a daily
+            reminder, which you can change on{" "}
+            <Link href="/patient/reminders" className="font-medium underline">
+              your reminders page
+            </Link>
+            .{program.careTeamReview && ` ${instance.name}'s care team sees the symptoms that you rate with your other values.`}
           </p>
         </div>
         {sideEffects.length > 0 && (

@@ -142,7 +142,7 @@ export async function recordProgramValuesAction(
   if (!program) return { error: "This program does not exist." }
 
   try {
-    const items = kind === "today" ? [...program.items, ...(await mySideEffects(user, program.id))] : program.items
+    const items = kind === "today" ? [...program.items, ...(await mySideEffects(user))] : program.items
     const { values, units } = formValues(items, formData)
     const saved = await recordProgramValues(user, program, kind, String(formData.get("date") ?? ""), values, { items, units })
     revalidatePath(`/programs/${program.slug}/me`)
@@ -172,9 +172,9 @@ export async function recordCheckInAction(token: string, _state: ValuesFormState
   }
 }
 
-export type SideEffectFormState = { error?: string; added?: string; reminderAdded?: boolean }
+export type SideEffectFormState = { error?: string; added?: string }
 
-/** Adds a side effect to the user's program, with today's rating and a daily reminder when they ask for them. */
+/** Starts to track a side effect for a member of a program: a daily reminder, and today's rating when they gave one. */
 export async function addSideEffectAction(
   programId: string,
   _state: SideEffectFormState,
@@ -185,14 +185,13 @@ export async function addSideEffectAction(
   const program = await findProgramById(programId)
   if (!program) return { error: "This program does not exist." }
   try {
-    const { item, reminderAdded } = await addSideEffect(user, program, {
+    const item = await addSideEffect(user, program, {
       variableId: String(formData.get("variableId") ?? ""),
       value: String(formData.get("value") ?? ""),
       date: String(formData.get("date") ?? ""),
-      remind: formData.get("remind") === "on",
     })
     revalidatePath(`/programs/${program.slug}/me`)
-    return { added: item.name, reminderAdded }
+    return { added: item.name }
   } catch (error) {
     if (error instanceof ProgramError) return { error: error.message }
     logger.error("Could not add a side effect", {
@@ -204,13 +203,13 @@ export async function addSideEffectAction(
   }
 }
 
-/** Stops tracking a side effect in the user's program. */
+/** Stops tracking a side effect: deletes the user's reminders for it. */
 export async function removeSideEffectAction(programId: string, variableId: string) {
   const user = await getServerUser()
   if (!user) redirect("/login")
   const program = await findProgramById(programId)
   if (!program) return
-  await removeSideEffect(user, program.id, variableId)
+  await removeSideEffect(user, variableId)
   revalidatePath(`/programs/${program.slug}/me`)
 }
 

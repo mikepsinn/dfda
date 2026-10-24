@@ -250,10 +250,14 @@ milligrams (`units.ts`). The value is saved in the unit chosen; the member's own
 report shows the unit they chose last, and the care team and the company see the
 program's units. Under the day form,
 the member adds side effects: symptoms from the variables catalog that are rated on
-a scale (`side-effects.ts`, table `enrollment_side_effects`), with today's rating
-and a daily reminder if they want them. The day form then asks for each side
-effect, and in a program with care team review the care team sees them with the
-other logs. Once a day, after the last of the day's reminders in the member's time
+a scale (`side-effects.ts`), with today's rating. A side effect is not stored per
+program: it is the member's normal daily reminder for the symptom, and its ratings
+are their normal measurements. So the day form of each of their programs asks for
+each symptom that has an active reminder, also one added on the reminders page,
+unless it is a check-in of one of their programs; stopping a side effect deletes its
+reminder, and the ratings stay. In a program with
+care team review, the care team sees the symptoms that the member rated, from the
+same lookback start as the other logs, and the text at join says so. Once a day, after the last of the day's reminders in the member's time
 zone, the member gets one email for each program (`check-in.ts`): number buttons
 for each rating, and "Took it" and "Skipped" for each dose. Four decisions:
 

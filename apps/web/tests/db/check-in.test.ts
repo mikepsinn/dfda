@@ -2,7 +2,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vites
 import { recordCheckInAction } from '@/lib/actions/programs'
 import { ensurePasswordUser } from '@/lib/auth-users'
 import { careItems, careLogs, requireCarePatient } from '@/lib/care-team/data'
-import { adminDb, dbAs } from '@/lib/db'
+import { adminDb, dbAs, withUserTransaction } from '@/lib/db'
 import { sendEmail } from '@/lib/email'
 import { dueCheckIns, findCheckIn, sendCheckInEmails } from '@/lib/programs/check-in'
 import { checkInToken } from '@/lib/programs/check-in-email'
@@ -10,9 +10,10 @@ import { PROGRAM_TEMPLATES, programInputSchema } from '@/lib/programs/config'
 import { findProgram, type Program } from '@/lib/programs/data'
 import { joinProgram, recordProgramValues, saveProgram } from '@/lib/programs/manage'
 import { addSideEffect, mySideEffects, removeSideEffect, sideEffectItemId, sideEffectOptions } from '@/lib/programs/side-effects'
+import { upsertReminder } from '@/lib/tracking/reminders'
 
-// Side effects in a program, the daily check-in emails and their links
-// (lib/programs/side-effects.ts, lib/programs/check-in.ts). See `pnpm test:db`.
+// Side effects (the member's symptom reminders), the daily check-in emails and
+// their links (lib/programs/side-effects.ts, lib/programs/check-in.ts). See `pnpm test:db`.
 
 vi.mock('@/lib/email', async (importOriginal) => ({ ...(await importOriginal<typeof import('@/lib/email')>()), sendEmail: vi.fn() }))
 vi.mock('next/cache', () => ({ revalidatePath: vi.fn() }))
@@ -66,7 +67,7 @@ afterAll(async () => {
 
 describe('side effects', () => {
   it('are symptoms on a rating scale that are not items of the program', async () => {
-    const options = await sideEffectOptions(program)
+    const options = await sideEffectOptions(member)
     const ids = options.map((option) => option.id)
     expect(ids).toEqual(expect.arrayContaining(['headache', 'dizziness', 'fatigue']))
     // Nausea and energy are check-ins of the program already; weight is not a rating.
@@ -77,45 +78,82 @@ describe('side effects', () => {
   })
 
   it("are added with today's rating and a daily reminder, and only the member sees them", async () => {
-    const { item, reminderAdded } = await addSideEffect(member, program, { variableId: 'headache', value: '4', date: today, remind: true })
+    const item = await addSideEffect(member, program, { variableId: 'headache', value: '4', date: today })
     expect(item).toMatchObject({ id: sideEffectItemId('headache'), kind: 'check_in', better: 'lower', frequency: 'daily' })
-    expect(reminderAdded).toBe(true)
-    expect((await mySideEffects(member, program.id)).map((sideEffect) => sideEffect.name)).toEqual(['Headache'])
+    expect((await mySideEffects(member)).map((sideEffect) => sideEffect.name)).toEqual(['Headache'])
     const values = await adminDb.measurements.findMany({ where: { user_id: member.id, global_variable_id: 'headache' }, select: { value: true } })
     expect(values.map((row) => row.value)).toEqual([4])
-    const reminders = await adminDb.reminder_schedules.findMany({
-      where: { user_id: member.id, is_active: true, user_variables: { global_variable_id: 'headache' } },
-      select: { rrule: true },
-    })
+    const headacheReminders = () =>
+      adminDb.reminder_schedules.findMany({
+        where: { user_id: member.id, is_active: true, user_variables: { global_variable_id: 'headache' } },
+        select: { rrule: true },
+      })
+    const reminders = await headacheReminders()
     expect(reminders).toHaveLength(1)
     expect(reminders[0].rrule).toContain('FREQ=DAILY')
 
     // Row-level security: the other member sees none of them.
-    expect(await dbAs(other).enrollment_side_effects.count({ where: { enrollment_id: enrollmentId } })).toBe(0)
-    await expect(
-      dbAs(other).enrollment_side_effects.create({ data: { enrollment_id: enrollmentId, global_variable_id: 'dizziness' } }),
-    ).rejects.toThrow()
+    expect(await mySideEffects(other)).toEqual([])
+    expect(await dbAs(other).reminder_schedules.count({ where: { user_id: member.id } })).toBe(0)
 
     // Added again: no second reminder.
-    expect((await addSideEffect(member, program, { variableId: 'headache', value: '', date: today, remind: true })).reminderAdded).toBe(false)
+    await addSideEffect(member, program, { variableId: 'headache', value: '', date: today })
+    expect(await headacheReminders()).toHaveLength(1)
+  })
+
+  it('are the symptoms that the member has an active reminder for, also from the reminders page', async () => {
+    const { reminder } = await withUserTransaction(member, (tx) =>
+      upsertReminder(tx, member.id, { globalVariableId: 'fatigue', timeOfDay: '08:00', rrule: 'FREQ=DAILY' }),
+    )
+    try {
+      // The program's own check-ins (nausea) are not side effects.
+      expect((await mySideEffects(member)).map((sideEffect) => sideEffect.variableId)).toEqual(['headache', 'fatigue'])
+      await adminDb.reminder_schedules.update({ where: { id: reminder.id }, data: { is_active: false } })
+      expect((await mySideEffects(member)).map((sideEffect) => sideEffect.variableId)).toEqual(['headache'])
+    } finally {
+      await adminDb.reminder_schedules.delete({ where: { id: reminder.id } })
+    }
+  })
+
+  it("leave out the check-ins of the member's programs, whose reminders those programs use", async () => {
+    const both = { id: await ensurePasswordUser(`check-in-both-${stamp}@example.com`, 'Both', password) }
+    userIds.push(both.id)
+    const bpc = PROGRAM_TEMPLATES.find((template) => template.key === 'bpc-157')!
+    await saveProgram(
+      owner,
+      slug,
+      programInputSchema.parse({ name: 'BPC-157', slug: 'bpc-157', summary: '', followUpWeeks: '8', items: JSON.stringify(bpc.items) }),
+    )
+    await joinProgram(both, program, { scheduleNotifications: false })
+    await joinProgram(both, (await findProgram(slug, 'bpc-157'))!, { scheduleNotifications: false })
+
+    // Pain is a check-in of the BPC-157 program, with a reminder: not a side effect in the GLP-1 program.
+    expect(await mySideEffects(both)).toEqual([])
+    expect((await sideEffectOptions(both)).map((option) => option.id)).not.toContain('pain')
+    expect((await sideEffectOptions(member)).map((option) => option.id)).toContain('pain')
+    await expect(addSideEffect(both, program, { variableId: 'pain', value: '', date: today })).rejects.toThrow(
+      'Choose a side effect from the list.',
+    )
+    expect(await removeSideEffect(both, 'pain')).toBe(false)
+    expect(await adminDb.reminder_schedules.count({ where: { user_id: both.id, user_variables: { global_variable_id: 'pain' } } })).toBe(1)
   })
 
   it('must be a symptom from the list, and the member must be in the program', async () => {
     for (const variableId of ['nausea', 'weight', 'no-such-variable']) {
-      await expect(addSideEffect(member, program, { variableId, value: '', date: today, remind: false })).rejects.toThrow(
+      await expect(addSideEffect(member, program, { variableId, value: '', date: today })).rejects.toThrow(
         'Choose a side effect from the list.',
       )
     }
-    await expect(addSideEffect(member, program, { variableId: 'dizziness', value: '11', date: today, remind: false })).rejects.toThrow(
+    await expect(addSideEffect(member, program, { variableId: 'dizziness', value: '11', date: today })).rejects.toThrow(
       'Dizziness: enter a number from 0 to 10.',
     )
-    await expect(addSideEffect(owner, program, { variableId: 'dizziness', value: '', date: today, remind: false })).rejects.toThrow(
+    await expect(addSideEffect(owner, program, { variableId: 'dizziness', value: '', date: today })).rejects.toThrow(
       'Join the program first.',
     )
   })
 
   it('are in the day form and in what the care team sees', async () => {
-    const items = [...program.items, ...(await mySideEffects(member, program.id))]
+    const items = [...program.items, ...(await mySideEffects(member))]
     await recordProgramValues(member, program, 'today', today, { [sideEffectItemId('headache')]: '6' }, { items })
     const values = await adminDb.measurements.findMany({ where: { user_id: member.id, global_variable_id: 'headache' }, select: { value: true } })
     expect(values.map((row) => row.value).sort()).toEqual([4, 6])
@@ -127,10 +165,17 @@ describe('side effects', () => {
     expect((await careLogs(patient, careSees)).get('headache')?.map((point) => point.value).sort()).toEqual([4, 6])
   })
 
-  it('stop when the member removes them; the values and the reminder stay', async () => {
-    await addSideEffect(member, program, { variableId: 'dizziness', value: '', date: today, remind: false })
-    expect(await removeSideEffect(member, program.id, 'dizziness')).toBe(true)
-    expect((await mySideEffects(member, program.id)).map((sideEffect) => sideEffect.variableId)).toEqual(['headache'])
+  it('stop when the member removes them: the reminder goes, the values stay, and the care team still sees them', async () => {
+    await addSideEffect(member, program, { variableId: 'dizziness', value: '3', date: today })
+    expect(await removeSideEffect(member, 'dizziness')).toBe(true)
+    expect((await mySideEffects(member)).map((sideEffect) => sideEffect.variableId)).toEqual(['headache'])
+    expect(await adminDb.reminder_schedules.count({ where: { user_id: member.id, user_variables: { global_variable_id: 'dizziness' } } })).toBe(0)
+    const patient = await requireCarePatient(owner, { id: instanceId, slug }, enrollmentId)
+    expect((await careItems(patient)).map((item) => item.name)).toContain('Dizziness')
+
+    // The program's own check-ins cannot be removed as side effects.
+    expect(await removeSideEffect(member, 'nausea')).toBe(false)
+    expect(await adminDb.reminder_schedules.count({ where: { user_id: member.id, user_variables: { global_variable_id: 'nausea' } } })).toBe(1)
   })
 })
 
