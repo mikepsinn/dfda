@@ -1,4 +1,5 @@
 import { adminDb } from '@/lib/db'
+import { demoAccountIds } from '@/lib/demo/instance-accounts'
 import { linkEmail, sendEmail, type Email, type EmailBrand } from '@/lib/email'
 import { companySiteOrigin, findInstanceBySlug } from '@/lib/instance/hosts'
 import { isDomainConfigured } from '@/lib/instance/vercel-domains'
@@ -11,7 +12,9 @@ import { companyPageUrl } from './data'
  * clinicians of the care team when a report waits for review. They say what
  * happened and link to the page. They hold no values, decisions or notes,
  * because email is not a safe place for health data. A failed email is
- * logged; the report stays as it is. Server only.
+ * logged; the report stays as it is. The demo accounts of a site's demo mode
+ * (lib/demo/instance.ts) get no emails, and nobody gets one about the demo
+ * patient. Server only.
  */
 
 /** The company of an instance for its emails, and the address of its site. */
@@ -65,7 +68,10 @@ async function reportContext(reportId: string) {
 export async function reportEmails(news: ReportNews, reportId: string): Promise<Email[]> {
   const context = await reportContext(reportId)
   if (!context) return []
-  const { report, program, enrollment, clinicians, brand, url } = context
+  const { report, program, enrollment, brand, url } = context
+  const demo = await demoAccountIds(program.instance_id)
+  if (demo.has(report.user_id)) return []
+  const clinicians = context.clinicians.filter((clinician) => !demo.has(clinician.user_id))
   const personLink = url(`/programs/${program.slug}/me/reports/${reportId}`)
   const personFooter = `You get this email because you are in ${brand.name}'s ${program.name}.`
 

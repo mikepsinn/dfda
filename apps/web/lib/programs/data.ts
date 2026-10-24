@@ -1,4 +1,5 @@
 import { adminDb, dbAs, withUserTransaction, type Prisma } from '@/lib/db'
+import { demoAccountIds } from '@/lib/demo/instance-accounts'
 import { convertValue } from '@/lib/units/convert'
 import type { Better, Frequency, ItemKind, VariableOption } from './config'
 import { buildPersonReport, LOOKBACK_DAYS, programTotals, type Point, type ReportItem } from './report'
@@ -219,7 +220,8 @@ export async function personalReport(user: { id: string }, program: Program) {
 /**
  * Totals for the company that owns the program. People's records are read
  * with the admin client, so the caller must first check that `ownerId` owns
- * the program's instance; only totals leave this function.
+ * the program's instance; only totals leave this function. The site's demo
+ * patient (lib/demo/instance.ts) does not count.
  */
 export async function programDashboard(ownerId: string, program: Program) {
   const owns = await dbAs({ id: ownerId }).instances.findFirst({
@@ -228,8 +230,9 @@ export async function programDashboard(ownerId: string, program: Program) {
   })
   if (!owns) throw new Error('Only the owner of the instance can see the program totals.')
 
+  const demo = await demoAccountIds(program.instanceId)
   const enrollments = await adminDb.program_enrollments.findMany({
-    where: { program_id: program.id },
+    where: { program_id: program.id, user_id: { notIn: [...demo] } },
     select: { user_id: true, started_at: true },
   })
   if (enrollments.length === 0) return { enrolled: 0, totals: programTotals(reportItems(program), []) }

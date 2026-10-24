@@ -13,19 +13,22 @@ export function PatientCard({
   details,
   programName,
   rows,
+  heading: Heading = "h1",
 }: {
   name: string
   details: string | null
   programName: string
   rows: { term: string; value: string }[]
+  /** h1 on the case page; a lower level where the card is one part of a page. */
+  heading?: "h1" | "h2" | "h3"
 }) {
   return (
     <CaseCard aria-labelledby="patient-name" className="space-y-4">
       <div className="space-y-2">
         <Eyebrow>Patient</Eyebrow>
-        <h1 id="patient-name" className={`${SERIF} text-4xl`}>
+        <Heading id="patient-name" className={`${SERIF} text-4xl`}>
           {name}
-        </h1>
+        </Heading>
         <p className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           {details && <span>{details}</span>}
           <span className="rounded-full bg-[color:var(--tone-teal-soft)] px-2 py-0.5 text-xs font-medium text-[color:var(--tone-teal)]">
@@ -188,7 +191,7 @@ export function ArcTimeline({
           {ticks.map((week) => (
             <span
               key={week}
-              className={`absolute -translate-x-1/2 pt-1 ${week % (every * 2) !== 0 && week !== 0 ? "max-sm:hidden" : ""}`}
+              className={`absolute -translate-x-1/2 whitespace-nowrap pt-1 ${week % (every * 2) !== 0 && week !== 0 ? "max-sm:hidden" : ""}`}
               style={{ left: left(week) }}
             >
               {weekLabel(week)}

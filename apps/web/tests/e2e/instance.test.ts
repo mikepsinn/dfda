@@ -15,7 +15,9 @@ test.describe("a company's own site", () => {
     const header = page.getByRole('banner')
     await expect(header.getByRole('link', { name: demo.instance.name })).toBeVisible()
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(demo.instance.name)
-    await expect(page.getByRole('heading', { name: 'How a program works' })).toBeVisible()
+    // A clinic's home page: for patients and for clinicians, with a case in four steps.
+    await expect(page.getByRole('heading', { name: 'One case, from both sides' })).toBeVisible()
+    await expect(page.getByRole('img', { name: /^A patient's case as the care team sees it/ })).toBeVisible()
     // The site is the company's own: its footer names no one else.
     await expect(page.getByRole('contentinfo')).toContainText(demo.instance.name)
     await expect(page.getByRole('contentinfo')).not.toContainText(/Powered by|Open Treatment Evidence Network|dFDA/)
@@ -128,8 +130,8 @@ test.describe("a company's own site", () => {
       const button = await page.getByRole('link', { name: 'See the programs' }).evaluate((element) => getComputedStyle(element).backgroundColor)
       const channels = button.match(/\d+/g)!.slice(0, 3).map(Number)
       ;[47, 212, 190].forEach((value, index) => expect(Math.abs(channels[index] - value), button).toBeLessThanOrEqual(2))
-      const heading = await page.getByRole('heading', { level: 1 }).evaluate((element) => getComputedStyle(element).color)
-      expect(contrastRatio(hexOf(heading), '#faf9f6'), heading).toBeGreaterThanOrEqual(4.5)
+      const label = await page.getByText('How it works', { exact: true }).evaluate((element) => getComputedStyle(element).color)
+      expect(contrastRatio(hexOf(label), '#faf9f6'), label).toBeGreaterThanOrEqual(4.5)
     } finally {
       // Other tests use the same demo company: back to its own colors (scripts/demo-data.json).
       await page.emulateMedia({ media: 'screen' })

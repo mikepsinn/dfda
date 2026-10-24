@@ -10,6 +10,8 @@ import { getConditionEstimate, outcomeLabelHref, rankTreatments } from "@/lib/de
 vi.mock("@/lib/server-auth", () => ({ getServerUser: vi.fn() }));
 // A server action: in the app the client calls it over the network, so its server modules never load in the browser.
 vi.mock("@/lib/actions/instance-demo-login", () => ({ instanceDemoLogin: vi.fn() }));
+// A clinic's case preview reads the demo's server modules; these tests show the main site, which has no preview.
+vi.mock("@/lib/instance/case-preview", () => ({ casePreview: vi.fn(() => null) }));
 
 afterEach(cleanup);
 
