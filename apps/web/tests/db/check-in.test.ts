@@ -28,6 +28,7 @@ let program: Program
 let enrollmentId: string
 let instanceId: string
 
+const DAY = 86_400_000
 const today = new Date().toISOString().slice(0, 10)
 const atToday = (time: string) => new Date(`${today}T${time}:00.000Z`)
 const glp1 = PROGRAM_TEMPLATES.find((template) => template.key === 'glp-1')!
@@ -150,6 +151,22 @@ describe('the daily check-in email', () => {
       expect(await mine(atToday('20:30'))).toEqual([])
     } finally {
       await adminDb.profiles.update({ where: { id: member.id }, data: { timezone: 'UTC' } })
+    }
+  })
+
+  it('is still due after midnight for a reminder late in the evening, for 3 hours', async () => {
+    const schedules = await adminDb.reminder_schedules.findMany({ where: { user_id: member.id }, select: { id: true, time_of_day: true } })
+    await adminDb.reminder_schedules.updateMany({ where: { user_id: member.id }, data: { time_of_day: new Date('1970-01-01T23:30:00.000Z') } })
+    try {
+      // The scheduler runs at minute 17 of each hour: 23:17 is too early, and 00:17 is the next day.
+      expect(await mine(atToday('23:17'))).toEqual([])
+      const tomorrow = (time: string) => new Date(atToday(time).getTime() + DAY)
+      expect((await mine(tomorrow('00:17'))).map((checkIn) => checkIn.day)).toEqual([today])
+      expect(await mine(tomorrow('02:31'))).toEqual([])
+    } finally {
+      for (const schedule of schedules) {
+        await adminDb.reminder_schedules.update({ where: { id: schedule.id }, data: { time_of_day: schedule.time_of_day } })
+      }
     }
   })
 

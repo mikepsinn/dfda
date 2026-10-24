@@ -29,6 +29,9 @@ import { enrollmentSideEffects } from './side-effects'
  */
 
 const DAY = 86_400_000
+const HOUR = 3_600_000
+/** How long after the last reminder of a day its email is still sent on the next day. */
+const CARRY_HOURS = 3
 
 /** The doses and check-ins of a program, then the member's side effects. */
 function dailyItems(program: Program, sideEffects: ProgramItem[] = []): ProgramItem[] {
@@ -80,10 +83,13 @@ export type DueCheckIn = {
 /**
  * The check-in emails that are due at `now`: for each member and program,
  * when the member's time is after the last of the day's reminders for the
- * program's doses, check-ins and side effects. None when no such reminder
- * fires that day (for example, the member turned them off), when the member
- * already has a value of each of those items that day, when the email of the
- * day was sent, or for the demo accounts of a site.
+ * program's doses, check-ins and side effects. The email of the day before is
+ * still due for 3 hours after its last reminder, so that a reminder late in
+ * the evening, or a failed email of the day's last run, is not lost at
+ * midnight. None when no such reminder fires that day (for example, the
+ * member turned them off), when the member already has a value of each of
+ * those items that day, when the email of the day was sent, or for the demo
+ * accounts of a site.
  */
 export async function dueCheckIns(now = new Date()): Promise<DueCheckIn[]> {
   const [enrollments, demo] = await Promise.all([
@@ -130,37 +136,42 @@ export async function dueCheckIns(now = new Date()): Promise<DueCheckIn[]> {
 
   const candidates: DueCheckIn[] = []
   for (const enrollment of members) {
-    const zone = zoneOf(enrollment.profiles.timezone)
-    const local = DateTime.fromJSDate(now).setZone(zone)
-    const day = local.toISODate()!
-    if (sentKeys.has(`${enrollment.id}:${day}`)) continue
     if (!programs.has(enrollment.program_id)) programs.set(enrollment.program_id, findProgramById(enrollment.program_id))
     const program = await programs.get(enrollment.program_id)!
     if (!program) continue
+    const zone = zoneOf(enrollment.profiles.timezone)
+    const today = DateTime.fromJSDate(now).setZone(zone)
+    const items = dailyItems(program, sideEffects.get(enrollment.id))
 
-    const times = new Map<string, string>()
-    for (const item of dailyItems(program, sideEffects.get(enrollment.id))) {
-      for (const schedule of schedulesOf.get(enrollment.user_id) ?? []) {
-        if (schedule.user_variables.global_variable_id !== item.variableId) continue
-        const fires = firesOn(
-          { rruleString: schedule.rrule, startDate: schedule.start_date, endDate: schedule.end_date },
-          day,
-          zone,
-        )
-        const time = timeOfDayToString(schedule.time_of_day).slice(0, 5)
-        if (fires && time > (times.get(item.id) ?? '')) times.set(item.id, time)
+    // Today, and the day before: a reminder late in the evening can come after the scheduler's last run of its day.
+    for (const day of [today.toISODate()!, today.minus({ days: 1 }).toISODate()!]) {
+      if (sentKeys.has(`${enrollment.id}:${day}`)) continue
+      const times = new Map<string, string>()
+      for (const item of items) {
+        for (const schedule of schedulesOf.get(enrollment.user_id) ?? []) {
+          if (schedule.user_variables.global_variable_id !== item.variableId) continue
+          const fires = firesOn(
+            { rruleString: schedule.rrule, startDate: schedule.start_date, endDate: schedule.end_date },
+            day,
+            zone,
+          )
+          const time = timeOfDayToString(schedule.time_of_day).slice(0, 5)
+          if (fires && time > (times.get(item.id) ?? '')) times.set(item.id, time)
+        }
       }
+      if (times.size === 0) continue
+      const dueAt = DateTime.fromISO(`${day}T${[...times.values()].sort().at(-1)}`, { zone }).toJSDate()
+      if (now < dueAt || (day !== today.toISODate() && now.getTime() - dueAt.getTime() > CARRY_HOURS * HOUR)) continue
+      candidates.push({
+        enrollmentId: enrollment.id,
+        userId: enrollment.user_id,
+        email: enrollment.profiles.email,
+        instanceSlug: enrollment.instance_programs.instances.slug,
+        day,
+        program,
+        items: items.filter((item) => times.has(item.id)),
+      })
     }
-    if (times.size === 0 || local.toFormat('HH:mm') < [...times.values()].sort().at(-1)!) continue
-    candidates.push({
-      enrollmentId: enrollment.id,
-      userId: enrollment.user_id,
-      email: enrollment.profiles.email,
-      instanceSlug: enrollment.instance_programs.instances.slug,
-      day,
-      program,
-      items: dailyItems(program, sideEffects.get(enrollment.id)).filter((item) => times.has(item.id)),
-    })
   }
   if (candidates.length === 0) return []
 
@@ -221,7 +232,16 @@ export async function sendCheckInEmails(now = new Date()) {
         enrollmentId: checkIn.enrollmentId,
         error: error instanceof Error ? error.message : String(error),
       })
-      await adminDb.check_in_emails.deleteMany({ where: key }).catch(() => undefined)
+      try {
+        await adminDb.check_in_emails.deleteMany({ where: key })
+      } catch (cleanup) {
+        // The row stays, so this email of the day is not sent again; say so.
+        logger.error('Could not release a failed check-in email; it will not be retried', {
+          enrollmentId: checkIn.enrollmentId,
+          day: checkIn.day,
+          error: cleanup instanceof Error ? cleanup.message : String(cleanup),
+        })
+      }
     }
   }
   return counts

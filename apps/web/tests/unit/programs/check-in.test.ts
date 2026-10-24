@@ -64,6 +64,16 @@ describe('the days that a reminder fires', () => {
     expect(firesOn({ ...daily, endDate: at('2026-10-25T15:00:00Z') }, '2026-10-26', 'America/New_York')).toBe(false)
   })
 
+  it('end at the UNTIL of the rule when the schedule has no end date', () => {
+    const until = {
+      rruleString: 'DTSTART;TZID=America/New_York:20261020T110000\nRRULE:FREQ=DAILY;UNTIL=20261025T150000Z',
+      startDate: start,
+      endDate: null,
+    }
+    expect(firesOn(until, '2026-10-25', 'America/New_York')).toBe(true)
+    expect(firesOn(until, '2026-10-26', 'America/New_York')).toBe(false)
+  })
+
   it("are the start date's weekday for a weekly rule without days, and the given days otherwise", () => {
     // 2026-10-20 is a Tuesday.
     const weekly = { rruleString: 'RRULE:FREQ=WEEKLY', startDate: start, endDate: null }
