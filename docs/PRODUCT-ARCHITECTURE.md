@@ -148,6 +148,23 @@ sending address stays the network's until a company verifies a sending domain
 of its own, and the privacy policy must still describe who processes members'
 data.
 
+**Byline and demo mode, 2026-10-24:** a company's name stays short (such as
+"Acme"): it is the name in titles, emails and consent text. An optional
+byline (such as "by Acme Health") shows only under the name on the home page and
+after it in the footer
+([`20261024020000_alter_instances_byline_and_demo.sql`](../apps/web/db/migrations/20261024020000_alter_instances_byline_and_demo.sql)).
+The owner can also show a demo on the site: "Try it as a patient" and "Try it as
+a clinician" on the home and sign-in pages sign the visitor in as the site's own
+demo patient, with the example report in the first program with care team
+review, or as a demo clinician of its care team, who opens that patient's case
+([`lib/demo/instance.ts`](../apps/web/lib/demo/instance.ts)). Any visitor can use
+these accounts, so they must never see a real person: the owner can turn the demo
+on only while nobody has joined the company's programs, and the first person who
+joins ends it before their enrollment is saved, which removes the demo people from
+the site (decision 2026-10-24: a company shows its product before launch; the
+network's demo clinic stays for the network itself). The demo accounts' password
+comes from the server's secret, so only the demo sign-in can use them.
+
 **Instance sites, 2026-10-11:** on an instance, the site is the company's own:
 its header, footer and home page, its programs at `/programs`, sign-in, a
 member's reminders, and the terms and privacy pages. The network's other pages

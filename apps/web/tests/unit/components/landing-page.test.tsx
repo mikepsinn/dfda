@@ -8,6 +8,8 @@ import { getConditionEstimate, outcomeLabelHref, rankTreatments } from "@/lib/de
 
 // The home page reads the user only on a company instance; these tests show the main site.
 vi.mock("@/lib/server-auth", () => ({ getServerUser: vi.fn() }));
+// A server action: in the app the client calls it over the network, so its server modules never load in the browser.
+vi.mock("@/lib/actions/instance-demo-login", () => ({ instanceDemoLogin: vi.fn() }));
 
 afterEach(cleanup);
 

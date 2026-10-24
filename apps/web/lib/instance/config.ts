@@ -41,6 +41,8 @@ const choice = <Name extends string>(names: Name[], message: string) =>
 
 export const instanceInputSchema = z.object({
   name: z.string().trim().min(2, 'Enter the company name.').max(80),
+  // Under the name on the home page and after it in the footer, such as "by Acme Health"; the name stays short elsewhere.
+  byline: optionalText(60).default(''),
   slug: slugSchema,
   tagline: optionalText(200),
   logoUrl: z
@@ -72,6 +74,8 @@ export const instanceInputSchema = z.object({
     .toLowerCase()
     .transform((value) => value || null)
     .pipe(z.string().email('Enter an email address such as help@example.com.').max(320).nullable()),
+  // Visitors can try the site as a demo patient and a demo clinician (lib/demo/instance.ts).
+  demoEnabled: z.boolean().default(false),
 })
 
 export type InstanceInput = z.infer<typeof instanceInputSchema>
@@ -81,12 +85,16 @@ export type InstanceBranding = InstanceTheme & {
   id: string
   slug: string
   name: string
+  /** Shown under the name on the home page and after it in the footer, such as "by Acme Health". */
+  byline: string | null
   tagline: string | null
   logoUrl: string | null
   products: string[]
   customDomain: string | null
   /** Where members get help; the reply address of the site's emails. */
   supportEmail: string | null
+  /** Visitors can try the site as a demo patient and a demo clinician (lib/demo/instance.ts). */
+  demoEnabled: boolean
 }
 
 /** A slug suggestion from a company name: "Acme Proteomics, Inc." → "acme-proteomics-inc". */

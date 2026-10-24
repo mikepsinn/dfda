@@ -1281,6 +1281,8 @@ model instances {
   font                  String                  @default("inter")
   corner_radius         String                  @default("medium")
   support_email         String?
+  byline                String?
+  demo_enabled          Boolean                 @default(false)
   care_team_invitations care_team_invitations[]
   instance_clinicians   instance_clinicians[]
   instance_import_keys  instance_import_keys[]

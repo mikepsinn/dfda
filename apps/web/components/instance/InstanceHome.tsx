@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, BarChart3, ClipboardList, LineChart, ShieldCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { DemoTryButtons } from "@/components/instance/DemoTryButtons"
 import { ProgramList } from "@/components/programs/ProgramList"
 import type { InstanceBranding } from "@/lib/instance/config"
 import type { Program } from "@/lib/programs/data"
@@ -29,14 +30,17 @@ export function InstanceHome({
   programs,
   joined,
 }: {
-  instance: Pick<InstanceBranding, "name" | "tagline" | "products">
+  instance: Pick<InstanceBranding, "name" | "byline" | "tagline" | "products" | "demoEnabled">
   programs: Program[]
   joined: Set<string>
 }) {
   return (
     <div className="mx-auto max-w-5xl space-y-14">
       <section className="brand-panel space-y-6 rounded-[calc(var(--radius)*2.5)] border p-6 sm:p-10">
-        <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">{instance.name}</h1>
+        <div className="space-y-1">
+          <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl">{instance.name}</h1>
+          {instance.byline && <p className="text-lg font-medium text-muted-foreground">{instance.byline}</p>}
+        </div>
         <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
           {instance.tagline ?? "Track your treatments and how you feel, and see what worked for people like you."}
         </p>
@@ -58,6 +62,12 @@ export function InstanceHome({
               See the programs <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
           </Button>
+        )}
+        {instance.demoEnabled && (
+          <div className="space-y-2 border-t pt-6">
+            <p className="font-medium">See how it works with a demo patient</p>
+            <DemoTryButtons />
+          </div>
         )}
       </section>
 
@@ -90,8 +100,10 @@ export function InstanceHome({
           <ShieldCheck aria-hidden="true" className="h-5 w-5 text-primary" /> Your data
         </h2>
         <p>
-          {instance.name} sees totals only, such as how many people improved on each measure. {instance.name} does not
-          see your own values. You can leave a program at any time.
+          {programs.some((program) => program.careTeamReview)
+            ? `In a program where ${instance.name}'s care team reviews your reports, its clinicians see your reports and what you log. Otherwise ${instance.name} sees totals only, such as how many people improved on each measure.`
+            : `${instance.name} sees totals only, such as how many people improved on each measure. ${instance.name} does not see your own values.`}{" "}
+          You can leave a program at any time.
         </p>
       </section>
     </div>

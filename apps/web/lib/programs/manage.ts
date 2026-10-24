@@ -3,6 +3,7 @@ import { dbAs, withUserTransaction, type DbUser } from '@/lib/db'
 import { afterReminderSaved, upsertReminder } from '@/lib/tracking/reminders'
 import { recordMeasurement } from '@/lib/tracking/measurements'
 import { ensureUserVariable } from '@/lib/tracking/variables'
+import { endDemoBeforeJoin } from '@/lib/demo/instance-accounts'
 import { SCALE_RANGES, type ProgramInput } from './config'
 import type { Program } from './data'
 
@@ -83,6 +84,8 @@ export async function joinProgram(
   program: Program,
   { scheduleNotifications = true, shareWithCareTeam = false } = {},
 ) {
+  // A site that shows a demo ends it first: its demo clinician must never see a real person.
+  await endDemoBeforeJoin(program.instanceId)
   const result = await withUserTransaction(user, async (tx) => {
     const existing = await tx.program_enrollments.findUnique({
       where: { program_id_user_id: { program_id: program.id, user_id: user.id } },

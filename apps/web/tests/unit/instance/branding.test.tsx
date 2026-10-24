@@ -9,10 +9,11 @@ import type { Program } from "@/lib/programs/data"
 
 vi.mock("@/lib/auth-client", () => ({ authClient: { signOut: vi.fn() } }))
 vi.mock("@/lib/actions/profiles", () => ({ updateUserProfileTimezoneAction: vi.fn() }))
+vi.mock("@/lib/actions/instance-demo-login", () => ({ instanceDemoLogin: vi.fn() }))
 
 afterEach(cleanup)
 
-const instance = { name: "Acme Proteomics", tagline: "Track your peptides.", products: ["BPC-157", "Proteomics panel"] }
+const instance = { name: "Acme Proteomics", byline: null, tagline: "Track your peptides.", products: ["BPC-157", "Proteomics panel"], demoEnabled: false }
 const program = (id: string, slug: string, name: string): Program => ({
   id,
   slug,
@@ -46,6 +47,16 @@ describe("a company instance's own site", () => {
     expect(hrefs.every((href) => href === "#programs" || href?.startsWith("/programs/"))).toBe(true)
   })
 
+  it("shows the byline under the name, the demo buttons when the owner turned the demo on, and what a clinic's care team sees", () => {
+    const clinic = { ...program("p1", "glp-1", "GLP-1 weight program"), careTeamReview: true }
+    render(<InstanceHome instance={{ ...instance, byline: "by Acme Labs", demoEnabled: true }} programs={[clinic]} joined={new Set()} />)
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/^Acme Proteomics$/)
+    expect(screen.getByText("by Acme Labs")).toBeInTheDocument()
+    expect(screen.getByRole("button", { name: "Try it as a patient" })).toBeInTheDocument()
+    expect(screen.getByRole("button", { name: "Try it as a clinician" })).toBeInTheDocument()
+    expect(screen.getByText(/its clinicians see your reports and what you log/)).toBeInTheDocument()
+  })
+
   it("leaves out the programs part when there are no programs", () => {
     render(<InstanceHome instance={{ ...instance, tagline: null, products: [] }} programs={[]} joined={new Set()} />)
     expect(screen.queryByRole("heading", { name: "Programs" })).not.toBeInTheDocument()
@@ -68,6 +79,8 @@ describe("a company instance's own site", () => {
     const { container, rerender } = render(<InstanceFooter brand={{ name: "Acme Proteomics", logoUrl: null }} pages={[]} />)
     expect(container.querySelector("footer img, footer span[aria-hidden='true']")).toBeNull()
     expect(screen.getByText(/© \d{4} Acme Proteomics/)).toBeInTheDocument()
+    rerender(<InstanceFooter brand={{ name: "Acme Proteomics", byline: "by Acme Labs", logoUrl: null }} pages={[]} />)
+    expect(screen.getByText(/© \d{4} Acme Proteomics by Acme Labs\. All rights reserved\./)).toBeInTheDocument()
     rerender(<InstanceFooter brand={{ name: "Acme Proteomics", logoUrl: "https://acme.example/logo.png" }} pages={[]} />)
     expect(container.querySelector("footer img")).toHaveAttribute("src", "https://acme.example/logo.png")
     expect(container).not.toHaveTextContent(/Powered by|Open Treatment Evidence Network|dFDA/)

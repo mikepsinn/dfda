@@ -21,6 +21,7 @@ describe('instance input', () => {
   it('normalizes the form values', () => {
     expect(instanceInputSchema.parse({ ...valid, customDomain: 'https://Track.Acme.com/start', supportEmail: ' Help@Acme.com ' })).toEqual({
       name: 'Acme Proteomics',
+      byline: null,
       slug: 'acme',
       tagline: null,
       logoUrl: null,
@@ -31,8 +32,10 @@ describe('instance input', () => {
       products: ['Proteomics panel', 'BPC-157'],
       customDomain: 'track.acme.com',
       supportEmail: 'help@acme.com',
+      demoEnabled: false,
     })
     expect(instanceInputSchema.parse(valid).supportEmail).toBeNull()
+    expect(instanceInputSchema.parse({ ...valid, byline: '  by Acme Labs ', demoEnabled: true })).toMatchObject({ byline: 'by Acme Labs', demoEnabled: true })
   })
 
   it.each([

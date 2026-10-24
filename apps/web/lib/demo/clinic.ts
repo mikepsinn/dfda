@@ -111,7 +111,7 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
 }
 
 /** Writes made-up values of the program's variables for a user. */
-async function writeValues(db: Db, userId: string, program: Program, series: Map<string, Point[]>) {
+export async function writeValues(db: Db, userId: string, program: Program, series: Map<string, Point[]>) {
   for (const item of program.items) {
     const points = series.get(item.variableId)
     if (!points?.length) continue
