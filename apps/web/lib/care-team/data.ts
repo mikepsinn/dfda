@@ -3,7 +3,8 @@ import { adminDb, dbAs, withUserTransaction, type DbUser, type Prisma } from '@/
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
 import { siteOrigin } from '@/lib/oauth-resources'
 import { isReviewDecision, type ReviewDecision } from './format'
-import { listPrograms, type Program } from '@/lib/programs/data'
+import { listPrograms, loadSeries, lookbackStart, type Program } from '@/lib/programs/data'
+import type { Point } from '@/lib/programs/report'
 import { getServerUser } from '@/lib/server-auth'
 
 /**
@@ -143,6 +144,20 @@ export async function requireCarePatient(user: DbUser, instance: { id: string; s
   const patient = (await careTeamPatients(user, instance)).find((row) => row.enrollmentId === enrollmentId)
   if (!patient) notFound()
   return patient
+}
+
+/**
+ * What the person logged in the program (dose, check-ins and lab values), for
+ * the care team's timeline. Only in a program with care team review: joining
+ * it says that the care team sees the reports and the logs. Read with the
+ * admin client, so it takes a patient from careTeamPatients, which checked
+ * with the user's own permissions that they are on the care team and that the
+ * person shares with it. Only the program's variables, from the lookback start.
+ */
+export async function careLogs(patient: CarePatient): Promise<Map<string, Point[]>> {
+  if (!patient.program.careTeamReview) return new Map()
+  const series = await loadSeries(adminDb, [patient.userId], patient.program, lookbackStart(patient.startedAt), patient.program.items)
+  return series.get(patient.userId) ?? new Map()
 }
 
 /** A report that the user may read, with its checked file; null when there is none. */

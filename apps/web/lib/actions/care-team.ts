@@ -96,7 +96,9 @@ export async function signOffReportAction(
   }
   after(() => notifyReport("reviewed", reportId))
   revalidatePath(`/instances/${instanceSlug}/care`)
-  redirect(`/instances/${instanceSlug}/care/${enrollmentId}/reports/${reportId}?signed=1`)
+  // From the case page's Decide chapter, back to it; from the report page, back to the report.
+  const patientPage = `/instances/${instanceSlug}/care/${enrollmentId}`
+  redirect(formData.get("from") === "case" ? `${patientPage}?signed=1#decide` : `${patientPage}/reports/${reportId}?signed=1`)
 }
 
 /** Removes a report that nobody has signed off yet. */

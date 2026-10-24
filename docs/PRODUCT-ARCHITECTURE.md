@@ -240,7 +240,26 @@ format), and signs a report off with a decision for the care plan (continue, adj
 investigate, or not enough information to decide) and an optional note for the person.
 Its list of patients is a queue: first the people with reports to review, the longest
 waiting first; then the people without a report; then the others
-([`lib/care-team/queue.ts`](../apps/web/lib/care-team/queue.ts)). The person sees each
+([`lib/care-team/queue.ts`](../apps/web/lib/care-team/queue.ts)). A person's page
+in the care area is a case in four chapters
+([`lib/care-team/case.ts`](../apps/web/lib/care-team/case.ts)): **Baseline** (the
+program, the dates and a dot for each sample on the way to the follow-up), **Track**
+(what the person logged, on the weeks of the samples: the dose as steps, check-ins and
+lab values as points that are never joined into a curve, and the report's reported
+effects), **Follow-up** (the latest report by pathway, the largest change of each panel
+as a card, and one marker at a time: its values, the band of the person's own noise, the
+dose, and the studies about its change on the program's drug, each with its population,
+finding and limits) and **Decide** (the report assistant, then a note that starts as a
+draft of facts from the report's statuses, which the clinician edits before the
+sign-off). The studies are a short, checked list
+([`lib/care-team/evidence.ts`](../apps/web/lib/care-team/evidence.ts)); a marker without
+an entry says that no reference is verified yet, instead of an expected change. In a
+program with care team review the care team also sees what the person logs in the
+program (decision 2026-10-24: the clinic treats the person, and the dose and the effects
+explain the report); the join page says so, and the server reads those logs only after
+it has checked the care team with the clinician's own permissions
+([`careLogs`](../apps/web/lib/care-team/data.ts)). In other programs the care team sees
+the reports only. The person sees each
 report as soon as it is saved, with its review status and the note. The pages show the
 decision to the care team only (decision 2026-10-23: the decision is the care team's
 working record, and the note is what the clinician tells the person); the database

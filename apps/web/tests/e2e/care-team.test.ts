@@ -30,7 +30,7 @@ test.describe('a clinician', () => {
 
     await page.getByRole('button', { name: 'Remove this report' }).click()
     await expect(page.getByRole('status').filter({ hasText: 'The report is removed.' })).toBeVisible()
-    await expect(page.getByText('No report yet.')).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'No report yet' })).toBeVisible()
   })
 })
 
@@ -101,7 +101,7 @@ test.describe('the owner', () => {
       const row = clinician.getByRole('row', { name: new RegExp(demo.memberNames[2]) })
       await expect(row).toContainText('1 report to review')
       await row.getByRole('link').click()
-      await clinician.getByRole('region', { name: 'Biomarker reports' }).getByRole('link').first().click()
+      await clinician.getByRole('link', { name: /Open the full report/ }).click()
       await expect(clinician.getByRole('region', { name: 'Review' })).toContainText('Waiting for review')
       await clinician.getByRole('button', { name: 'Remove this report' }).click()
       await expect(clinician.getByRole('status').filter({ hasText: 'The report is removed.' })).toBeVisible()

@@ -10,7 +10,7 @@ export const demo = JSON.parse(readFileSync(join(__dirname, '../../scripts/demo-
   patient: { email: string; name: string }
   clinician: { email: string; name: string }
   people: number
-  instance: { slug: string; name: string; tagline: string }
+  instance: { slug: string; name: string; tagline: string; primaryColor: string; backgroundColor: string }
   program: { template: string }
   report: { id: string }
 }

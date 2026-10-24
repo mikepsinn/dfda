@@ -141,9 +141,16 @@ type MeasurementReader = Pick<Prisma.TransactionClient, 'measurements' | 'units'
 /**
  * The values of the program's variables per user, in each variable's default
  * unit. A value that does not convert to it (lib/units/convert.ts) is left out.
+ * By default the variables are those that the report compares; the care
+ * team's timeline also reads the dose (`program.items`).
  */
-export async function loadSeries(db: MeasurementReader, userIds: string[], program: Program, since: Date) {
-  const items = reportItems(program)
+export async function loadSeries(
+  db: MeasurementReader,
+  userIds: string[],
+  program: Program,
+  since: Date,
+  items: { variableId: string; unitId: string }[] = reportItems(program),
+) {
   const rows = await db.measurements.findMany({
     where: {
       user_id: { in: userIds },

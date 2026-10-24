@@ -131,9 +131,9 @@ test.describe("a company's own site", () => {
       const heading = await page.getByRole('heading', { level: 1 }).evaluate((element) => getComputedStyle(element).color)
       expect(contrastRatio(hexOf(heading), '#faf9f6'), heading).toBeGreaterThanOrEqual(4.5)
     } finally {
-      // Other tests use the same demo company.
+      // Other tests use the same demo company: back to its own colors (scripts/demo-data.json).
       await page.emulateMedia({ media: 'screen' })
-      await setTheme({ brand: '#6d4df6', background: '#ffffff', font: 'inter', corners: 'medium' })
+      await setTheme({ brand: demo.instance.primaryColor, background: demo.instance.backgroundColor, font: 'inter', corners: 'medium' })
     }
   })
 

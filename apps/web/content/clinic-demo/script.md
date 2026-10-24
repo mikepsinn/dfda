@@ -94,34 +94,45 @@ reports with it.
   reports to review first, and Riley Lee with "1 report to review".
 - **Caption:** Dr. Okafor sees only the patients who share their reports with the care team. The reports that wait the longest come first.
 
-### clinician-2: Opens Riley's record
+### clinician-2: Opens Riley's case: Baseline
 
-- **Page:** Riley's page in the care area.
+- **Page:** Riley's case in the care area, in four chapters: Baseline, Track, Follow-up and Decide.
 - **Action:** opens Riley.
-- **Must see:** Riley's program, start date and reports, and the form to add a report file.
-- **Caption:** Riley's page lists the program, the start date and each report. The clinic adds a new report from its lab's file.
+- **Must see:** the chapters, Riley's card with the program and dates, the baseline sample, and the
+  timeline from the baseline to the follow-up with a dot for each sample.
+- **Caption:** Riley's case opens on the baseline: the program, the first sample, and a dot for each sample up to the follow-up.
 
-### clinician-3: Reads the report
+### clinician-3: Track
 
-- **Page:** the week-12 report in the care area.
-- **Action:** reads "At a glance" and the panels.
-- **Must see:** the report's title, "At a glance", and the review form.
-- **Caption:** The report shows what moved more than Riley's own noise, and which changes went against the program's intent.
+- **Page:** the same case, "What surrounded the change".
+- **Action:** opens the Track chapter.
+- **Must see:** the dose steps, the check-ins that Riley logged and the reported effects, on the weeks
+  of the samples.
+- **Caption:** Every dose, check-in and reported effect sits on the same weeks as the blood samples.
 
-### clinician-4: Asks about the report
+### clinician-4: Follow-up
 
-- **Page:** the same report, "Ask about this report".
+- **Page:** the same case, the latest report by pathway.
+- **Action:** opens C-reactive protein from the Inflammation panel, then the studies behind its expected change.
+- **Must see:** the four largest changes, the panels with each protein in its status color, the chart
+  of C-reactive protein with Riley's noise band, and the sources: Verma et al. 2022 and Plutzky et al. 2026.
+- **Caption:** Grouped by pathway, not a single score. Each protein shows its values, Riley's noise and the studies behind it.
+
+### clinician-5: Asks about the report
+
+- **Page:** the same case, the Decide chapter, "Ask about this report".
 - **Action:** chooses the question "Which changes should I look at first, and why?" and asks it.
 - **Must see:** the answer, with a numbered source after each part: quotes of the report and pages of
   the medical literature.
 - **Caption:** Dr. Okafor asks about the report. The answer cites the report and the medical literature for each part.
 
-### clinician-5: Reviews and signs off
+### clinician-6: Decides and signs off
 
-- **Page:** the same report.
-- **Action:** chooses "Continue" as the decision for the care plan, writes a note and signs off.
-- **Must see:** "Reviewed by Dr. Sam Okafor", the note and "Decision: Continue".
-- **Caption:** Dr. Okafor chooses a decision for the care plan, adds a note for Riley and signs off. Riley sees the note, not the decision.
+- **Page:** the same case, the clinician note.
+- **Action:** adds the plan to the draft note, chooses "Continue", confirms the review and signs off.
+- **Must see:** the note drafted from the report, "Edited by clinician", "Reviewed by clinician",
+  then "Reviewed by Dr. Sam Okafor", the note and "Decision: Continue".
+- **Caption:** The note starts as a draft from the report. Dr. Okafor adds the plan and signs off. Riley sees the note, not the decision.
 
 ## Patient: Riley gets the review
 

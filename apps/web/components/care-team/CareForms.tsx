@@ -9,9 +9,9 @@ import { Textarea } from "@/components/ui/textarea"
 import type { CareFormState } from "@/lib/actions/care-team"
 import { MAX_REPORT_FILE_BYTES, REVIEW_DECISIONS } from "@/lib/care-team/format"
 
-type Action = (state: CareFormState, formData: FormData) => Promise<CareFormState>
+export type Action = (state: CareFormState, formData: FormData) => Promise<CareFormState>
 
-function Problems({ state }: { state: CareFormState }) {
+export function Problems({ state }: { state: CareFormState }) {
   if (!state.error) return null
   return (
     <div role="alert" className="space-y-1 rounded-lg border border-destructive/50 bg-destructive/5 p-3 text-sm">
@@ -29,7 +29,7 @@ function Problems({ state }: { state: CareFormState }) {
   )
 }
 
-function Submit({ pending, children }: { pending: boolean; children: React.ReactNode }) {
+export function Submit({ pending, children }: { pending: boolean; children: React.ReactNode }) {
   return (
     <Button type="submit" disabled={pending} className="gap-2">
       {pending && <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />}

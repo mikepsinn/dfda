@@ -130,7 +130,7 @@ export default async function YourProgramPage({
             {shared
               ? `Shared with ${instance.name}'s care team since ${formatDate(shared)}. Its clinicians can add and review your reports.`
               : `Not shared with ${instance.name}'s care team. Share your reports so that its clinicians can add and review them.`}
-            {shared && program.careTeamReview && " In this program, the care team reviews your reports. To stop, leave the program."}
+            {shared && program.careTeamReview && " In this program, the care team sees your reports and what you log, and reviews each report. To stop, leave the program."}
           </p>
           {!(shared && program.careTeamReview) && (
             <form action={setSharingAction.bind(null, program.id, !shared)}>

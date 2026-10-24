@@ -13,7 +13,8 @@
     "slug": "acme-metabolic",
     "name": "Acme Metabolic",
     "tagline": "GLP-1 care with your blood markers measured before and after.",
-    "primaryColor": "#6d4df6",
+    "primaryColor": "#0e7568",
+    "backgroundColor": "#faf9f6",
     "products": ["Semaglutide program", "Blood panels"]
   },
   "program": { "id": "3d6f2a8e-5c41-4b7a-9e0d-1a2b3c4d5e02", "template": "glp-1" }
