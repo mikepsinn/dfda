@@ -21,7 +21,9 @@ Rules for this file:
 
 To record the videos: `pnpm demo:video` in `apps/web`, with the setup of the browser tests
 ([`playwright.config.ts`](../../playwright.config.ts)), or run the "Demo videos" workflow on
-GitHub. The patient's journeys are recorded at phone size, the others at desktop size.
+GitHub. The tests run the patient's journeys at phone size and the others at desktop size. The
+videos show every journey at one 16:9 desktop size (1920×1080), so that the text is easy to read
+on any screen.
 
 ## Patient: Riley Lee, on a phone
 

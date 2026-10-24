@@ -13,17 +13,22 @@ test.setTimeout(RECORDING ? 300_000 : 90_000)
 
 const PHONE = { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
 const DESKTOP = { viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1, isMobile: false, hasTouch: false }
+// A recording uses one 16:9 desktop size for every journey.
+// scripts/demo-video.mjs scales its videos to 1920x1080, so that the text is
+// about 1.7 times as large as on a 1080p screen and easy to read on a phone too.
+const VIDEO = { viewport: { width: 1152, height: 648 }, deviceScaleFactor: 1, isMobile: false, hasTouch: false }
 
 /**
  * A browser context for one journey, on a phone or a desktop. In a recording
- * it records a video at the size of the viewport, which `finish` saves as
- * `<name>.webm` in the test's output folder (scripts/demo-video.mjs collects it).
+ * it uses the VIDEO size instead and records a video of that size, which
+ * `finish` saves as `<name>.webm` in the test's output folder
+ * (scripts/demo-video.mjs collects it).
  */
 async function journey(browser: Browser, device: typeof PHONE, testInfo: TestInfo, name: string) {
   const context = await browser.newContext({
-    ...device,
+    ...(RECORDING ? VIDEO : device),
     baseURL: testInfo.project.use.baseURL,
-    recordVideo: RECORDING ? { dir: testInfo.outputPath('recording'), size: device.viewport } : undefined,
+    recordVideo: RECORDING ? { dir: testInfo.outputPath('recording'), size: VIDEO.viewport } : undefined,
   })
   const page = await context.newPage()
   await startTour(page)

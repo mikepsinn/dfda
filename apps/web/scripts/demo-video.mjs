@@ -1,8 +1,8 @@
 /**
  * Records the clinic demo's videos: runs the tour (tests/e2e/tour.test.ts),
  * which follows content/clinic-demo/script.md, with DEMO_VIDEO=1, and copies
- * each journey's video to demo-videos/ as a .webm file, and as an .mp4 file
- * when ffmpeg is installed.
+ * each journey's video to demo-videos/ as a .webm file, and as a 1920x1080
+ * .mp4 file when ffmpeg is installed.
  *
  * Needs the same setup as the browser tests (playwright.config.ts): a
  * database with the demo data, and the app at E2E_BASE_URL or started by
@@ -45,7 +45,9 @@ for (const video of videos) {
   const webm = join(out, `${name}.webm`)
   copyFileSync(video, webm)
   if (hasFfmpeg) {
-    spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', webm, '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '20', '-movflags', '+faststart', join(out, `${name}.mp4`)], {
+    // The tour records at 1152x648 (tests/e2e/tour.test.ts); scaled up, the text is large enough to read on a phone.
+    const scale = ['-vf', 'scale=1920:1080:flags=lanczos']
+    spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', webm, ...scale, '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-movflags', '+faststart', join(out, `${name}.mp4`)], {
       stdio: 'inherit',
     })
   }
