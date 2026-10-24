@@ -44,12 +44,30 @@ test('a company creates a program; a person joins it and records values', async 
   await member.getByRole('button', { name: 'Join the program' }).click()
   await expect(member).toHaveURL(new RegExp(`/programs/${slug}/me\\?joined=1$`))
 
-  // The dose field has the program's usual amount already.
+  // Ratings are one button for each number; the dose is one button with the program's usual amount.
   const today = member.getByRole('region', { name: 'Record a day' })
-  await today.getByLabel(/^Pain/).fill('6')
-  await today.getByLabel(/^Energy/).fill('4')
+  await today.getByRole('group', { name: 'Pain' }).getByText('6', { exact: true }).click()
+  await today.getByRole('group', { name: 'Energy' }).getByText('4', { exact: true }).click()
   await today.getByRole('button', { name: 'Save' }).click()
-  await expect(today.getByRole('status')).toHaveText('Saved 3 values.')
+  await expect(today.getByRole('status')).toHaveText('Saved 2 values.')
+  await today.getByRole('button', { name: 'Took my dose (250 ug)' }).click()
+  await today.getByRole('button', { name: 'Save' }).click()
+  await expect(today.getByRole('status')).toHaveText('Saved 1 value.')
+
+  // A side effect from the list, rated today, is then in each day's form.
+  const sideEffects = member.getByRole('region', { name: 'Side effects' })
+  await sideEffects.getByLabel('Side effect', { exact: true }).fill('Headache')
+  await sideEffects.getByRole('group', { name: 'Headache today' }).getByText('3', { exact: true }).click()
+  await sideEffects.getByRole('button', { name: 'Add the side effect' }).click()
+  await expect(sideEffects.getByRole('status')).toHaveText('Added Headache. You get a reminder for it each day.')
+  await expect(today.getByRole('group', { name: 'Headache' })).toBeVisible()
+  await sideEffects.getByRole('button', { name: 'Stop tracking Headache' }).click()
+  await expect(today.getByRole('group', { name: 'Headache' })).toHaveCount(0)
+
+  // An old or changed check-in link records nothing.
+  await member.goto(onInstance(`/programs/${slug}/check-in/not-a-link`))
+  await expect(member.getByRole('heading', { name: 'This link is too old' })).toBeVisible()
+  await member.goto(onInstance(`/programs/${slug}/me`))
 
   const labs = member.getByRole('region', { name: 'Lab results' })
   await labs.getByLabel(/^hs-CRP/).fill('2.5')

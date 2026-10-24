@@ -15,7 +15,7 @@ import { signOffReportAction, uploadReportAction } from "@/lib/actions/care-team
 import { summarizeReport } from "@/lib/biomarker-report/rules"
 import { assistantAvailable, questionsAbout } from "@/lib/care-team/ask"
 import { caseMarkers, caseTimeline, draftNote, headlineMarkers, type CaseMarker } from "@/lib/care-team/case"
-import { careLogs, findReport, requireCarePatient, requireCareTeam } from "@/lib/care-team/data"
+import { careItems, careLogs, findReport, requireCarePatient, requireCareTeam } from "@/lib/care-team/data"
 import { drugClassOf, evidenceFor } from "@/lib/care-team/evidence"
 import { programWeek } from "@/lib/care-team/format"
 import { formatDate } from "@/lib/programs/format"
@@ -43,12 +43,13 @@ export default async function CarePatientPage({
   const base = `/instances/${instance.slug}/care/${patient.enrollmentId}`
   const latest = patient.reports[0] ? await findReport(user, patient.reports[0].id) : null
   const report = latest?.report ?? null
+  const items = await careItems(patient)
   const [logs, questions] = await Promise.all([
-    careLogs(patient),
+    careLogs(patient, items),
     latest && assistantAvailable(patient.program.instanceId) ? questionsAbout(user, latest.id) : null,
   ])
 
-  const timeline = caseTimeline({ program: patient.program, startedAt: patient.startedAt, series: logs, report })
+  const timeline = caseTimeline({ program: { ...patient.program, items }, startedAt: patient.startedAt, series: logs, report })
   const markers = report ? caseMarkers(report) : []
   const panels = report
     ? summarizeReport(report).panels.map((panel) => ({ ...panel, markers: markers.filter((marker) => marker.panelId === panel.id) }))

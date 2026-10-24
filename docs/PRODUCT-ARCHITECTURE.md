@@ -239,6 +239,32 @@ before/after report at `/programs/{slug}/me`. Three decisions for this demo:
 A before/after change in one person or one program is not a treatment effect; the
 pages say that a change after the start does not prove that the product caused it.
 
+**The daily check-in, 2026-10-24 (`apps/web/lib/programs`):** a member records a day
+at `/programs/{slug}/me` with one button for each number of a rating (0 to 10 for
+most symptoms, with the words of the better direction at the two ends) and one
+"Took my dose" button with the program's usual amount; a saved day has a dose only
+when the person taps it. Other values, such as weight, are number fields. Under it,
+the member adds side effects: symptoms from the variables catalog that are rated on
+a scale (`side-effects.ts`, table `enrollment_side_effects`), with today's rating
+and a daily reminder if they want them. The day form then asks for each side
+effect, and in a program with care team review the care team sees them with the
+other logs. Once a day, after the last of the day's reminders in the member's time
+zone, the member gets one email for each program (`check-in.ts`): number buttons
+for each rating and a dose button. Four decisions:
+
+1. A button in the email opens the check-in page with that answer chosen; the
+   member saves there. Some email systems open each link of an email to check it,
+   so opening a link must not record anything.
+2. The link opens the check-in without a sign-in. It holds the enrollment and the
+   day, signed with `BETTER_AUTH_SECRET`, and records values of that day only, for
+   3 days. It shows no values, and the email holds none.
+3. The emails do not need the worker: a scheduler calls
+   `/api/cron/check-in-emails` every hour with `CRON_SECRET`
+   (`.github/workflows/check-in-emails.yml`, or a Vercel cron job). Each email of a
+   day is sent once (table `check_in_emails`).
+4. No email when the member turned the reminders off, already recorded each item
+   of the day, or is a demo account of a site.
+
 Biomarker reports (`lib/biomarker-report`, `components/biomarker-report`, the example
 at `/reports/example`) show one person's blood markers at several timepoints, read
 against that person's own noise, next to the clinic's laboratory values. They have the

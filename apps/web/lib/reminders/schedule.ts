@@ -63,6 +63,37 @@ export function buildRruleString(parts: string, startDate: Date, timeZone: strin
 }
 
 /**
+ * Whether a schedule fires on `day` (YYYY-MM-DD) in `timeZone`: the day is
+ * between its start and end dates there, and its recurrence rule has an
+ * occurrence on the day. The rule is read in local days, so a weekly rule
+ * without BYDAY fires on the weekday of the start date.
+ */
+export function firesOn(
+  schedule: { rruleString: string; startDate: Date; endDate: Date | null },
+  day: string,
+  timeZone: string,
+): boolean {
+  const localDay = (at: Date) => DateTime.fromJSDate(at).setZone(timeZone).toISODate() ?? ''
+  if (day < localDay(schedule.startDate) || (schedule.endDate && day > localDay(schedule.endDate))) return false
+  try {
+    // Days as UTC midnights: the occurrences are local days, without time zone shifts.
+    // The start, the end and the zone come from the schedule.
+    const midnight = (isoDay: string) => new Date(`${isoDay}T00:00:00.000Z`)
+    const rule = new RRule({
+      ...(rrulestr(schedule.rruleString) as RRule).origOptions,
+      dtstart: midnight(localDay(schedule.startDate)),
+      until: null,
+      tzid: null,
+    })
+    const from = midnight(day)
+    return rule.between(from, new Date(from.getTime() + 86_400_000 - 1), true).length > 0
+  } catch (error) {
+    logger.error('Error reading the recurrence rule of a reminder', { rruleString: schedule.rruleString, error })
+    return false
+  }
+}
+
+/**
  * Asks the worker to create the first notification of a schedule. A failure
  * is logged and does not fail the caller: the worker's regular run creates
  * notifications for all active schedules.

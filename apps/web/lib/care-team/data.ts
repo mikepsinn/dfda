@@ -3,8 +3,9 @@ import { adminDb, dbAs, withUserTransaction, type DbUser, type Prisma } from '@/
 import { biomarkerReportSchema, type BiomarkerReport } from '@/lib/biomarker-report/schema'
 import { siteOrigin } from '@/lib/oauth-resources'
 import { isReviewDecision, type ReviewDecision } from './format'
-import { listPrograms, loadSeries, lookbackStart, type Program } from '@/lib/programs/data'
+import { listPrograms, loadSeries, lookbackStart, type Program, type ProgramItem } from '@/lib/programs/data'
 import type { Point } from '@/lib/programs/report'
+import { enrollmentSideEffects } from '@/lib/programs/side-effects'
 import { getServerUser } from '@/lib/server-auth'
 
 /**
@@ -152,12 +153,24 @@ export async function requireCarePatient(user: DbUser, instance: { id: string; s
  * it says that the care team sees the reports and the logs. Read with the
  * admin client, so it takes a patient from careTeamPatients, which checked
  * with the user's own permissions that they are on the care team and that the
- * person shares with it. Only the program's variables, from the lookback start.
+ * person shares with it. Only the variables of `items` (careItems), from the
+ * lookback start.
  */
-export async function careLogs(patient: CarePatient): Promise<Map<string, Point[]>> {
+export async function careLogs(patient: CarePatient, items: ProgramItem[] = patient.program.items): Promise<Map<string, Point[]>> {
   if (!patient.program.careTeamReview) return new Map()
-  const series = await loadSeries(adminDb, [patient.userId], patient.program, lookbackStart(patient.startedAt), patient.program.items)
+  const series = await loadSeries(adminDb, [patient.userId], patient.program, lookbackStart(patient.startedAt), items)
   return series.get(patient.userId) ?? new Map()
+}
+
+/**
+ * The items that the care team sees in the logs of `patient`: the program's
+ * items, then the side effects that the person tracks (lib/programs/side-effects.ts).
+ * Only the program's items when the program has no care team review.
+ */
+export async function careItems(patient: CarePatient): Promise<ProgramItem[]> {
+  if (!patient.program.careTeamReview) return patient.program.items
+  const sideEffects = await enrollmentSideEffects([patient.enrollmentId])
+  return [...patient.program.items, ...(sideEffects.get(patient.enrollmentId) ?? [])]
 }
 
 /** A report that the user may read, with its checked file; null when there is none. */

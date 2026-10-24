@@ -110,6 +110,18 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
   return { ownerId, program, slug: instance.slug }
 }
 
+/**
+ * Removes the side effects that a visitor added as the demo patient
+ * (lib/programs/side-effects.ts). Returns the variables whose values a reset
+ * replaces: the program's, and those of the side effects.
+ */
+export async function clearDemoSideEffects(db: Db, program: Program, userId: string): Promise<string[]> {
+  const where = { program_enrollments: { program_id: program.id, user_id: userId } }
+  const rows = await db.enrollment_side_effects.findMany({ where, select: { global_variable_id: true } })
+  await db.enrollment_side_effects.deleteMany({ where })
+  return [...program.items.map((item) => item.variableId), ...rows.map((row) => row.global_variable_id)]
+}
+
 /** Writes made-up values of the program's variables for a user. */
 export async function writeValues(db: Db, userId: string, program: Program, series: Map<string, Point[]>) {
   for (const item of program.items) {
@@ -341,9 +353,10 @@ export function demoPatientValues(program: Program, now: Date) {
 
 /**
  * Gives the demo patient fresh values: anything recorded before, by them or
- * by a visitor trying the page, is replaced. Their report gets the new dates,
- * and reports that visitors added as the clinician are removed; the report's
- * review stays, so that the patient sees a clinician's sign-off.
+ * by a visitor trying the page, is replaced, and the side effects that a
+ * visitor added are removed. Their report gets the new dates, and reports
+ * that visitors added as the clinician are removed; the report's review
+ * stays, so that the patient sees a clinician's sign-off.
  */
 export async function resetDemoPatient(program: Program, patientId: string, now = new Date()): Promise<void> {
   const user = { id: patientId }
@@ -353,7 +366,7 @@ export async function resetDemoPatient(program: Program, patientId: string, now 
     // One reset at a time: two visitors who sign in together must not get the values twice.
     await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${`demo-patient:${program.id}`}))`
     await tx.measurements.deleteMany({
-      where: { user_id: user.id, global_variable_id: { in: program.items.map((item) => item.variableId) } },
+      where: { user_id: user.id, global_variable_id: { in: await clearDemoSideEffects(tx, program, user.id) } },
     })
     await tx.program_enrollments.updateMany({
       where: { program_id: program.id, user_id: user.id },

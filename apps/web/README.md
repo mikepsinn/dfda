@@ -172,3 +172,11 @@ S3_FORCE_PATH_STYLE=true
     only when AI-assisted features are enabled.
 3.  Set the bucket CORS rules to allow `PUT` requests with a `Content-Type`
     header from the app domains. Browsers upload files directly to the bucket.
+4.  Optional, for the daily check-in emails of program members: add
+    `CRON_SECRET` (make it with `openssl rand -base64 32`). Then, in the GitHub
+    repository settings, add the same value as the Actions secret `CRON_SECRET`,
+    and the site address (for example `https://prototype.dfda.earth`) as the
+    Actions variable `APP_URL`. The workflow `.github/workflows/check-in-emails.yml`
+    then calls `/api/cron/check-in-emails` every hour. On a Vercel plan with
+    hourly cron jobs, a Vercel cron job for the same path can do this instead:
+    Vercel sends the `CRON_SECRET` header itself.

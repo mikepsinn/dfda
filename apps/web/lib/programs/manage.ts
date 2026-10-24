@@ -4,7 +4,7 @@ import { afterReminderSaved, upsertReminder } from '@/lib/tracking/reminders'
 import { recordMeasurement } from '@/lib/tracking/measurements'
 import { ensureUserVariable } from '@/lib/tracking/variables'
 import { SCALE_RANGES, type ProgramInput } from './config'
-import type { Program } from './data'
+import type { Program, ProgramItem } from './data'
 
 /** Saves, joins and records values of programs, with the user's own permissions. Server only. */
 
@@ -141,18 +141,11 @@ export async function leaveProgram(user: DbUser, programId: string) {
 }
 
 /**
- * Records the values a user entered for a program on one day, in each
- * variable's default unit: lab results (`lab`), or doses and check-ins
- * (`today`). `values` maps item ids to the text of the form fields; empty
- * fields are skipped.
+ * The time that the values of a day (YYYY-MM-DD) are saved at: noon UTC, so
+ * that the day is the same in every time zone. Throws for a date that is not
+ * valid or that is in the future.
  */
-export async function recordProgramValues(
-  user: DbUser,
-  program: Program,
-  kind: 'lab' | 'today',
-  date: string,
-  values: Record<string, string>,
-) {
+export function dayTime(date: string): string {
   const startTime = `${date}T12:00:00.000Z`
   const time = Date.parse(startTime)
   // Date.parse turns 2026-02-31 into March 3, so the date must come back unchanged.
@@ -160,18 +153,39 @@ export async function recordProgramValues(
     throw new ProgramError('Enter the date.')
   }
   if (time > Date.now() + 86_400_000) throw new ProgramError('The date is in the future.')
+  return startTime
+}
 
-  const entries = program.items
+/** The number in the text of an item's field; a rating must be on the item's scale. */
+export function itemValue(item: Pick<ProgramItem, 'name' | 'unitId'>, text: string): number {
+  const value = Number(text.trim())
+  const range = SCALE_RANGES[item.unitId]
+  if (!Number.isFinite(value)) throw new ProgramError(`${item.name}: enter a number.`)
+  if (range && (value < range[0] || value > range[1])) {
+    throw new ProgramError(`${item.name}: enter a number from ${range[0]} to ${range[1]}.`)
+  }
+  return value
+}
+
+/**
+ * Records the values a user entered for a program on one day, in each
+ * variable's default unit: lab results (`lab`), or doses and check-ins
+ * (`today`). `values` maps item ids to the text of the form fields; empty
+ * fields are skipped. `items` are the program's items, and for `today` also
+ * the side effects that the user tracks (lib/programs/side-effects.ts).
+ */
+export async function recordProgramValues(
+  user: DbUser,
+  program: Program,
+  kind: 'lab' | 'today',
+  date: string,
+  values: Record<string, string>,
+  items: ProgramItem[] = program.items,
+) {
+  const startTime = dayTime(date)
+  const entries = items
     .filter((item) => (kind === 'lab' ? item.kind === 'lab' : item.kind !== 'lab') && values[item.id]?.trim())
-    .map((item) => {
-      const value = Number(values[item.id].trim())
-      const range = SCALE_RANGES[item.unitId]
-      if (!Number.isFinite(value)) throw new ProgramError(`${item.name}: enter a number.`)
-      if (range && (value < range[0] || value > range[1])) {
-        throw new ProgramError(`${item.name}: enter a number from ${range[0]} to ${range[1]}.`)
-      }
-      return { item, value }
-    })
+    .map((item) => ({ item, value: itemValue(item, values[item.id]) }))
   if (entries.length === 0) throw new ProgramError('Enter at least one value.')
 
   await withUserTransaction(user, async (tx) => {
