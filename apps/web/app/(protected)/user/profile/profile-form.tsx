@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation"
 import { toast } from "@/components/ui/use-toast"
 import { logger } from "@/lib/logger"
 import { updateProfileAction } from "@/lib/actions/profiles"
-import type { Profile, ProfileUpdate } from "@/lib/actions/profiles"
+import type { Profile, ProfileFormUpdate } from "@/lib/actions/profiles"
 
 interface ProfileFormProps {
   initialData: Profile | Partial<Profile>
@@ -86,7 +86,7 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
     const [firstName, ...lastNameParts] = formData.name.trim().split(/\s+/);
     const lastName = lastNameParts.join(' ');
 
-    const profileUpdates: ProfileUpdate = {
+    const profileUpdates: ProfileFormUpdate = {
         first_name: firstName || null,
         last_name: lastName || null,
         timezone: formData.timezone || null,
@@ -95,7 +95,7 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
     startTransition(async () => {
       logger.info("Updating user profile via server action", { userId, updates: profileUpdates });
       try {
-        const updatedProfile = await updateProfileAction(userId, profileUpdates)
+        const updatedProfile = await updateProfileAction(profileUpdates)
 
         if (!updatedProfile) {
           throw new Error("Server action did not return updated profile.")

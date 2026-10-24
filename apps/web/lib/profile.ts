@@ -80,12 +80,14 @@ export const getUserProfile = cache( async (user: User | null): Promise<Profile 
   }
 } )
 
-// Type for profile updates (allow partial updates)
-// Export if needed elsewhere, otherwise keep internal
-export type ProfileUpdate = Database['public']['Tables']['profiles']['Update'];
+/**
+ * The fields that a user changes in their own profile; the database lets the
+ * user change no others (db/migrations/20261024040000_alter_profiles_user_updates.sql).
+ */
+export type ProfileUpdate = Pick<Database['public']['Tables']['profiles']['Update'], 'first_name' | 'last_name' | 'avatar_url' | 'timezone' | 'updated_at'>;
 
 /**
- * Updates a user's profile on the server-side.
+ * Updates the signed-in user's profile on the server-side.
  * 
  * @param userId The ID of the user whose profile is to be updated.
  * @param updates The partial profile data to update.
@@ -116,36 +118,8 @@ export async function updateUserProfile(userId: string, updates: ProfileUpdate):
   }
 }
 
-// Type for profile inserts (might require specific fields)
-// Export if needed elsewhere, otherwise keep internal
+/** A whole profile row, as the server's admin client writes it (lib/auth.ts, the demo sign-in). */
 export type ProfileInsert = Database['public']['Tables']['profiles']['Insert'];
-
-/**
- * Creates a new user profile on the server-side.
- * 
- * @param profileData The data for the new profile.
- * @returns The created profile object or null if an error occurred.
- */
-export async function createUserProfile(profileData: ProfileInsert): Promise<Profile | null> {
-  if (!profileData || !profileData.id) {
-    logger.warn('createUserProfile called without profile data or user ID.');
-    return null;
-  }
-
-  try {
-    const db = await getUserDb();
-    const newProfile = await db.profiles.create({
-      data: profileData,
-    });
-
-    logger.info('User profile created successfully', { userId: profileData.id });
-    return newProfile;
-  } catch (err) {
-    // Handle specific errors like unique constraint violations if needed
-    logger.error('Error creating user profile:', { userId: profileData.id, error: err });
-    return null;
-  }
-}
 
 // Add other profile-related functions here (e.g., deleteProfile, client-side fetch)
 

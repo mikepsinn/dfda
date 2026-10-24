@@ -186,8 +186,17 @@ function demoEmails() {
  * The demo patient's week-12 report: the example report (lib/biomarker-report/example.ts)
  * with their name, the program and the clinic, dated at their follow-up.
  */
+/**
+ * The weeks from the demo patient's start to their last sample: the program's
+ * follow-up, or the example report's last sample when that comes later (a
+ * program with an 8-week follow-up still gets the report's week-12 sample).
+ */
+function demoWeeks(program: Program): number {
+  return Math.max(program.followUpWeeks, ...EXAMPLE_REPORT.timepoints.map((timepoint) => timepoint.week))
+}
+
 export function demoPatientReport(program: Program, startedAt: Date, clinicName: string): BiomarkerReport {
-  const followUp = new Date(startedAt.getTime() + program.followUpWeeks * 7 * DAY)
+  const followUp = new Date(startedAt.getTime() + demoWeeks(program) * 7 * DAY)
   return {
     ...EXAMPLE_REPORT,
     reportDate: followUp.toISOString().slice(0, 10),
@@ -292,8 +301,8 @@ export async function prepareDemoClinic(): Promise<DemoClinic> {
 
 /**
  * The demo patient's values: of the made-up people who finished the program,
- * the one with the most improved measures, moved in time so that their
- * follow-up was two days before `now`.
+ * the one with the most improved measures, moved in time so that their last
+ * sample (demoWeeks) was two days before `now`.
  */
 export function demoPatientValues(program: Program, now: Date) {
   const people = sampleCohort({
@@ -312,7 +321,7 @@ export function demoPatientValues(program: Program, now: Date) {
   const best = people.reduce((winner, person) => (improved(person) > improved(winner) ? person : winner))
 
   const today = Math.floor(now.getTime() / DAY) * DAY
-  const startedAt = new Date(today - (program.followUpWeeks * 7 + 2) * DAY)
+  const startedAt = new Date(today - (demoWeeks(program) * 7 + 2) * DAY)
   const shift = startedAt.getTime() - best.startedAt.getTime()
   const series = new Map(
     [...best.series].map(([variableId, points]) => [

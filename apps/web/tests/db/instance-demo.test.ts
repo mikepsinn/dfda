@@ -75,6 +75,11 @@ describe("a company site's demo", () => {
     expect(preview!.headline).toHaveLength(4)
     expect(preview!.timeline.lanes.map((lane) => lane.name)).toContain(program.items.find((item) => item.kind === 'dose')!.name)
     expect(casePreview('Site Demo Clinic', [{ ...program, careTeamReview: false }])).toBeNull()
+    // A program with an earlier follow-up than the example report's last sample: every sample is in the past.
+    const now = new Date()
+    const short = casePreview('Site Demo Clinic', [{ ...program, followUpWeeks: 8 }], now)!
+    expect(short.lastWeek).toBe(12)
+    expect(short.startedAt.getTime() + short.lastWeek * 7 * 86_400_000).toBeLessThan(now.getTime())
   })
 
   it('gives the demo clinician one patient, with logs and the example report to sign off', async () => {
@@ -140,8 +145,11 @@ describe("a company site's demo", () => {
     const emails = (await reportEmails('added', realReportId)).map((email) => email.to)
     expect(emails).toEqual([visitor.email, realClinician.email])
 
-    // A user can change their profile's email; the demo clinician stays the demo clinician.
-    await dbAs(demoClinician).profiles.update({ where: { id: demoClinician.id }, data: { email: `renamed-${stamp}@example.com` }, select: { id: true } })
+    // The rule does not depend on the email: even with another email (which a user cannot set), the demo clinician stays the demo clinician.
+    await expect(
+      dbAs(demoClinician).profiles.update({ where: { id: demoClinician.id }, data: { email: `renamed-${stamp}@example.com` }, select: { id: true } }),
+    ).rejects.toThrow(/permission denied/)
+    await adminDb.profiles.update({ where: { id: demoClinician.id }, data: { email: `renamed-${stamp}@example.com` }, select: { id: true } })
     expect((await adminDb.profiles.findUniqueOrThrow({ where: { id: demoClinician.id } })).email).toBe(`renamed-${stamp}@example.com`)
     expect(await names(demoClinician)).toEqual(['Riley Lee'])
     expect(await findReport(demoClinician, realReportId)).toBeNull()

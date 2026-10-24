@@ -186,7 +186,7 @@ export function ClinicHome({
             programName={preview.programName}
             rows={[
               { term: "Baseline", value: `${formatDate(preview.startedAt)} · Day 0` },
-              { term: "Follow-up", value: `${formatDate(dateAtWeek(preview.startedAt, preview.followUpWeeks))} · ${preview.lastLabel}` },
+              { term: "Follow-up", value: `${formatDate(dateAtWeek(preview.startedAt, preview.lastWeek))} · ${preview.lastLabel}` },
             ]}
           />
           <div className="grid grid-cols-2 gap-3">
