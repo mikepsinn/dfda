@@ -3,6 +3,7 @@ import { getMetadataFromNavKey } from '@/lib/metadata';
 import { isGoogleSignInEnabled } from '@/lib/auth';
 import { SignInCard } from '@/components/auth/sign-in-card';
 import { resolveInstance } from '@/lib/instance/resolve';
+import { demoButtonsFor } from '@/lib/demo/sign-in';
 
 // Generate metadata using the helper function
 export async function generateMetadata(): Promise<Metadata> {
@@ -18,7 +19,7 @@ export default async function RegisterPage() {
         <SignInCard
           mode="register"
           googleEnabled={isGoogleSignInEnabled && !instance}
-          demoAccounts={!instance}
+          demoButtons={demoButtonsFor(instance)}
           helpEmail={instance ? instance.supportEmail : "help@dfda.earth"}
         />
       </div>

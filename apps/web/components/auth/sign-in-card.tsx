@@ -15,6 +15,7 @@ import { InternalLink } from '@/components/internal-link'
 import { authClient } from '@/lib/auth-client'
 import { logger } from '@/lib/logger'
 import { safeLocalPath } from '@/lib/safe-path'
+import type { DemoButtons } from '@/lib/demo/sign-in'
 
 // Where the browser goes after a magic link or Google sign-in. A `next` path
 // on the sign-in page (for example a program to join) is passed on.
@@ -38,14 +39,14 @@ function magicLinkCallbackUrl(searchParams: URLSearchParams): string {
 interface SignInCardProps {
   mode: 'login' | 'register'
   googleEnabled: boolean
-  /** The network's demo accounts. A company instance leaves them out: their pages are not on its site. */
-  demoAccounts?: boolean
+  /** Which demo buttons to show (lib/demo/sign-in.ts): none on a real company's site. */
+  demoButtons?: DemoButtons
   /** Where people get help; no help line when null. */
   helpEmail?: string | null
 }
 
 /** The sign-in and registration form: magic link, Google, password and demo accounts. */
-export function SignInCard({ mode, googleEnabled, demoAccounts = true, helpEmail = null }: SignInCardProps) {
+export function SignInCard({ mode, googleEnabled, demoButtons = 'network', helpEmail = null }: SignInCardProps) {
   const searchParams = useSearchParams()
   const [emailSent, setEmailSent] = useState(false)
   const [busy, setBusy] = useState<'magic' | 'google' | 'password' | null>(null)
@@ -188,8 +189,13 @@ export function SignInCard({ mode, googleEnabled, demoAccounts = true, helpEmail
           </>
         )}
 
-        {demoAccounts && (
-          <DemoLoginButton showAll={true} next={safeLocalPath(searchParams.get('next'))} onError={(err) => setError(err.message)} />
+        {demoButtons && (
+          <DemoLoginButton
+            showAll={true}
+            clinicOnly={demoButtons === 'clinic'}
+            next={safeLocalPath(searchParams.get('next'))}
+            onError={(err) => setError(err.message)}
+          />
         )}
 
         <form onSubmit={sendMagicLink} className="space-y-4 pt-4">

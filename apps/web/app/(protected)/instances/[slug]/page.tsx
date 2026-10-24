@@ -4,10 +4,17 @@ import Link from "next/link"
 import { CheckCircle2, ExternalLink, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { InstanceForm } from "@/components/instance/InstanceForm"
-import { InviteClinicianForm } from "@/components/care-team/CareForms"
-import { cancelInvitationAction, inviteClinicianAction, removeClinicianAction } from "@/lib/actions/care-team"
+import { ImportKeyForm, InviteClinicianForm } from "@/components/care-team/CareForms"
+import {
+  cancelInvitationAction,
+  createImportKeyAction,
+  inviteClinicianAction,
+  removeClinicianAction,
+  revokeImportKeyAction,
+} from "@/lib/actions/care-team"
 import { updateInstanceAction } from "@/lib/actions/instances"
 import { careTeam, careTeamInvitations, invitationUrl } from "@/lib/care-team/data"
+import { importKeys } from "@/lib/care-team/import"
 import { getUserDb } from "@/lib/db/server"
 import { env } from "@/lib/env"
 import { companySiteOrigin, toBranding } from "@/lib/instance/hosts"
@@ -60,13 +67,15 @@ export default async function InstancePage({
 
   const instance = toBranding(row)
   const site = siteOrigin()
-  const [domainConnected, programs, pages, team, invitations] = await Promise.all([
+  const [domainConnected, programs, pages, team, invitations, keys] = await Promise.all([
     instance.customDomain ? isDomainConfigured(instance.customDomain, instance.slug) : null,
     listPrograms(instance.slug),
     listPages(instance.slug),
     careTeam(user, row.id),
     careTeamInvitations(user, row.id),
+    importKeys(user, row.id),
   ])
+  const endpoint = `${site}/api/v1/biomarker-reports`
   const dns = instance.customDomain ? dnsRecordFor(instance.customDomain) : null
 
   return (
@@ -213,9 +222,10 @@ export default async function InstancePage({
           )}
         </div>
         <p className="text-sm text-muted-foreground">
-          The clinicians who review the lab reports of your members. A member chooses to share their reports with the
-          care team. The care team then sees that member&rsquo;s name and reports, adds new reports and signs them off.
-          You see totals only. To review reports yourself, enter your own email.
+          The clinicians who review the lab reports of your members. In a program with care team review, every member
+          shares their reports with the care team; in the other programs, each member chooses. The care team sees the
+          name and reports of the members who share, adds new reports and signs them off. You see totals only. To review
+          reports yourself, enter your own email.
         </p>
         {team.length > 0 && (
           <ul className="divide-y rounded-xl border">
@@ -259,6 +269,58 @@ export default async function InstancePage({
           </div>
         )}
         <InviteClinicianForm action={inviteClinicianAction.bind(null, instance.slug)} />
+      </section>
+
+      <section aria-labelledby="import-heading" className="space-y-3">
+        <h2 id="import-heading" className="text-xl font-semibold">Report import</h2>
+        <p className="text-sm text-muted-foreground">
+          Your laboratory can send each biomarker report to the care team directly, with an import key. The report goes
+          to the member with the email in the request, when that member shares their reports with the care team. The
+          member and the care team then get an email, as when a clinician adds the report.
+        </p>
+        {keys.length > 0 && (
+          <ul className="divide-y rounded-xl border" aria-label="Import keys">
+            {keys.map((key) => (
+              <li key={key.id} className="flex items-center gap-3 p-4">
+                <span className="min-w-0 flex-1">
+                  <span className="block font-medium">{key.name}</span>
+                  <span className="block font-mono text-xs text-muted-foreground">{key.prefix}…</span>
+                  <span className="block text-sm text-muted-foreground">
+                    Created {formatDate(key.createdAt)} · {key.lastUsedAt ? `last used ${formatDate(key.lastUsedAt)}` : "not used yet"}
+                  </span>
+                </span>
+                <form action={revokeImportKeyAction.bind(null, instance.slug, key.id)}>
+                  <Button type="submit" variant="outline" size="sm">
+                    Revoke
+                  </Button>
+                </form>
+              </li>
+            ))}
+          </ul>
+        )}
+        <ImportKeyForm action={createImportKeyAction.bind(null, instance.slug)} endpoint={endpoint} />
+        <details className="space-y-2 text-sm">
+          <summary className="cursor-pointer font-medium">The request</summary>
+          <pre className="overflow-x-auto rounded-lg bg-muted p-3 text-xs">{`POST ${endpoint}
+Authorization: Bearer <key>
+Content-Type: application/json
+
+{
+  "program": "${programs[0]?.slug ?? "glp-1"}",
+  "email": "member@example.com",
+  "externalId": "the laboratory's own id of the report",
+  "report": { the report file }
+}`}</pre>
+          <p className="text-muted-foreground">
+            The report file has the format of the{" "}
+            <a href="/reports/example.json" className="font-medium text-primary underline">
+              example report file
+            </a>
+            . The answer is 201 with the report&rsquo;s id for a new report, and 200 for a report sent again with the
+            same externalId. It is 400 with the problems for a report that is not valid, and 404 when no member of the
+            program with that email shares their reports.
+          </p>
+        </details>
       </section>
 
       <section aria-labelledby="branding-heading" className="space-y-4">

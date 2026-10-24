@@ -130,12 +130,15 @@ export default async function YourProgramPage({
             {shared
               ? `Shared with ${instance.name}'s care team since ${formatDate(shared)}. Its clinicians can add and review your reports.`
               : `Not shared with ${instance.name}'s care team. Share your reports so that its clinicians can add and review them.`}
+            {shared && program.careTeamReview && " In this program, the care team reviews your reports. To stop, leave the program."}
           </p>
-          <form action={setSharingAction.bind(null, program.id, !shared)}>
-            <Button type="submit" variant="outline" size="sm">
-              {shared ? "Stop sharing" : "Share with the care team"}
-            </Button>
-          </form>
+          {!(shared && program.careTeamReview) && (
+            <form action={setSharingAction.bind(null, program.id, !shared)}>
+              <Button type="submit" variant="outline" size="sm">
+                {shared ? "Stop sharing" : "Share with the care team"}
+              </Button>
+            </form>
+          )}
         </div>
       </section>
 

@@ -202,15 +202,19 @@ export async function careTeam(owner: DbUser, instanceId: string) {
 }
 
 /**
- * The link that opens an invitation on the company's site: on its own domain
- * or subdomain (`companyOrigin`, lib/instance/hosts.ts companySiteOrigin), else
- * through its preview link on the main site. The path holds only letters,
+ * The link to a page of the company's site, for an email: on its own domain or
+ * subdomain (`companyOrigin`, lib/instance/hosts.ts companySiteOrigin), else
+ * through its preview link on the main site. The paths hold only letters,
  * digits, "-" and "/", which a query may hold as they are, so the preview link
  * stays readable in the email.
  */
-export function invitationUrl(slug: string, invitationId: string, companyOrigin: string | null): string {
-  const path = `/care-teams/join/${invitationId}`
+export function companyPageUrl(slug: string, path: string, companyOrigin: string | null): string {
   return companyOrigin ? `${companyOrigin}${path}` : `${siteOrigin()}/i/${slug}?next=${path}`
+}
+
+/** The link that opens an invitation on the company's site. */
+export function invitationUrl(slug: string, invitationId: string, companyOrigin: string | null): string {
+  return companyPageUrl(slug, `/care-teams/join/${invitationId}`, companyOrigin)
 }
 
 export type CareTeamInvitation = { id: string; email: string; createdAt: Date }

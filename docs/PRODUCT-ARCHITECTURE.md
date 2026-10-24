@@ -222,7 +222,13 @@ the email
 ([`20261021070000_table_care_team_invitations.sql`](../apps/web/db/migrations/20261021070000_table_care_team_invitations.sql)).
 The person
 chooses when they join and can change it on their program page; when they stop, the
-care team loses the access at once. The care team, at `/instances/{slug}/care`, sees
+care team loses the access at once. A program with **care team review**, such as a
+clinic's treatment program, has no such choice: the join page says that the care team
+adds and reviews the person's reports, joining shares them, and the person stops by
+leaving the program (decision 2026-10-23: in a clinic, the care team treats the person
+and orders the tests, so a separate share step only added a step;
+[`20261023020000_alter_instance_programs_care_team_review.sql`](../apps/web/db/migrations/20261023020000_alter_instance_programs_care_team_review.sql)).
+The care team, at `/instances/{slug}/care`, sees
 the people who share and their reports, adds a report file (checked against the report
 format), and signs a report off with a decision for the care plan (continue, adjust,
 investigate, or not enough information to decide) and an optional note for the person.
@@ -232,7 +238,18 @@ waiting first; then the people without a report; then the others
 report as soon as it is saved, with its review status and the note. The pages show the
 decision to the care team only (decision 2026-10-23: the decision is the care team's
 working record, and the note is what the clinician tells the person); the database
-still lets a person read all of their own report rows. Row-level security enforces each of
+still lets a person read all of their own report rows. Emails from the company tell the
+person that a report is added and that it is reviewed, and tell the other clinicians that
+a report waits for review
+([`lib/care-team/notify.ts`](../apps/web/lib/care-team/notify.ts)); they hold only a link,
+no values, decisions or notes. A laboratory, or another system of the company, can send
+reports itself: the owner creates an import key on the instance page (the database keeps
+only its hash), and the laboratory sends each report to `POST /api/v1/biomarker-reports`
+with the program, the person's email and its own id of the report, so that a report sent
+again is saved once
+([`lib/care-team/import.ts`](../apps/web/lib/care-team/import.ts),
+[`20261023030000_table_instance_import_keys.sql`](../apps/web/db/migrations/20261023030000_table_instance_import_keys.sql)).
+An import reaches only a person who shares their reports with the care team. Row-level security enforces each of
 these rules
 ([`20261021050000_table_care_teams_and_biomarker_reports.sql`](../apps/web/db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql),
 [`20261023010000_alter_biomarker_reports_review_decision.sql`](../apps/web/db/migrations/20261023010000_alter_biomarker_reports_review_decision.sql)).

@@ -11,6 +11,7 @@ const programSelect = {
   name: true,
   summary: true,
   follow_up_weeks: true,
+  care_team_review: true,
   instance_id: true,
   instance_program_items: {
     select: {
@@ -50,6 +51,8 @@ export type Program = {
   name: string
   summary: string | null
   followUpWeeks: number
+  /** The care team reviews every member's biomarker reports: joining shares them (see joinProgram). */
+  careTeamReview: boolean
   instanceId: string
   items: ProgramItem[]
 }
@@ -61,6 +64,7 @@ function toProgram(row: ProgramRow): Program {
     name: row.name,
     summary: row.summary,
     followUpWeeks: row.follow_up_weeks,
+    careTeamReview: row.care_team_review,
     instanceId: row.instance_id,
     items: row.instance_program_items.map((item) => ({
       id: item.id,

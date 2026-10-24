@@ -22,6 +22,7 @@ function readForm(formData: FormData) {
     slug: field("slug"),
     summary: field("summary"),
     followUpWeeks: field("followUpWeeks"),
+    careTeamReview: formData.get("careTeamReview") === "on",
     items: field("items") || "[]",
   })
 }
@@ -67,7 +68,8 @@ export async function updateProgramAction(
 
 /**
  * Joins a program, or opens sign-in first and comes back. The form's "share"
- * box shares the user's biomarker reports in the program with the care team.
+ * box shares the user's biomarker reports in the program with the care team;
+ * a program with care team review shares them without the box.
  */
 export async function joinProgramAction(programId: string, formData?: FormData) {
   const program = await findProgramById(programId)

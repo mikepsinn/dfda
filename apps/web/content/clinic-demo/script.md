@@ -39,9 +39,9 @@ the care team has not reviewed it yet.
 
 - **Page:** the program page.
 - **Action:** reads the page; does not join (Riley joined 12 weeks ago).
-- **Must see:** "What you do", "What you get", what the clinic sees, and the choice to share lab
-  reports with the care team.
-- **Caption:** Before joining, Riley sees what to track, what comes back, and that the care team sees reports only if Riley shares them.
+- **Must see:** "What you do", "What you get", what the clinic sees, and that the care team adds
+  and reviews the reports in this program.
+- **Caption:** Before joining, Riley sees what to track, what comes back, and that the clinic's care team reviews the reports.
 
 ### patient-3: Opens the program at week 12
 

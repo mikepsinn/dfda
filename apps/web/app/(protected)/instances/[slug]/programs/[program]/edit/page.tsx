@@ -41,6 +41,7 @@ export default async function EditProgramPage({ params }: { params: Promise<{ sl
           slug: program.slug,
           summary: program.summary ?? "",
           followUpWeeks: program.followUpWeeks,
+          careTeamReview: program.careTeamReview,
           items,
         }}
         variables={variables}

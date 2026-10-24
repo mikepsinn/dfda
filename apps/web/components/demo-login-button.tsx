@@ -14,9 +14,11 @@ interface DemoLoginButtonProps {
   showAll?: boolean;
   /** A path on this site to open after sign-in, instead of the role's home page. */
   next?: string | null;
+  /** Only the demo clinic's roles, as on the demo clinic's own site. */
+  clinicOnly?: boolean;
 }
 
-export function DemoLoginButton({ onError, showAll = false, next }: DemoLoginButtonProps) {
+export function DemoLoginButton({ onError, showAll = false, next, clinicOnly = false }: DemoLoginButtonProps) {
   const [isLoading, setIsLoading] = useState<DemoUserType | `clinic-${ClinicDemoRole}` | null>(null)
   const router = useRouter()
 
@@ -69,7 +71,7 @@ export function DemoLoginButton({ onError, showAll = false, next }: DemoLoginBut
       <div className="space-y-2 text-center">
          <p className="text-xs text-muted-foreground">Or use a demo account:</p>
          <div className="flex flex-wrap gap-2 justify-center">
-          {(['patient', 'provider', 'research-partner', 'developer'] as DemoUserType[]).map((role) => (
+          {(clinicOnly ? [] : (['patient', 'provider', 'research-partner', 'developer'] as DemoUserType[])).map((role) => (
             <Button
               key={role}
               variant="outline"

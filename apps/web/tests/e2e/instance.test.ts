@@ -31,10 +31,11 @@ test.describe("a company's own site", () => {
     }
   })
 
-  test('has no network demo accounts, Google button or help address on its sign-in page', async ({ page }) => {
+  test("has no network demo accounts, Google button or help address on its sign-in page; the demo clinic has its own roles", async ({ page }) => {
     await page.goto(onInstance('/login'))
     await expect(page.getByRole('button', { name: 'Send Magic Link' })).toBeVisible()
-    await expect(page.getByRole('button', { name: /^Demo / })).toHaveCount(0)
+    // A real company's site has no demo buttons (lib/demo/sign-in.ts); the demo clinic offers its own roles.
+    await expect(page.getByRole('button', { name: /^Demo / })).toHaveText(['Demo clinic owner', 'Demo clinic clinician', 'Demo clinic patient'])
     await expect(page.getByRole('button', { name: /Google/ })).toHaveCount(0)
     await expect(page.getByText(/help@dfda\.earth/)).toHaveCount(0)
   })
