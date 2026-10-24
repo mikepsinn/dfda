@@ -9,7 +9,7 @@ import { afterReminderSaved, upsertReminder } from '@/lib/tracking/reminders'
 import { ensureUserVariable } from '@/lib/tracking/variables'
 import { SCALE_RANGES, scaleWords } from './config'
 import { personalReport, type Program, type ProgramItem } from './data'
-import { ProgramError, recordProgramValues } from './manage'
+import { dayTime, itemValue, ProgramError, recordProgramValues } from './manage'
 import { addSideEffect, mySideEffects, sideEffectOptions } from './side-effects'
 import { unitChoices } from './units'
 
@@ -158,6 +158,10 @@ export function chatTools(user: DbUser, program: Program, today: string, actions
         lines.push(savedLine(item, entry.value, units[item.id] ? entry.unit! : item.unit))
       }
       try {
+        // Each value is checked before any is saved: the doses and check-ins and the lab results are saved
+        // one after the other, so a wrong lab result must not come after saved values that a retry would save again.
+        dayTime(day)
+        for (const entry of values) itemValue(byName(items, entry.item)!, String(entry.value))
         for (const kind of ['today', 'lab'] as const) {
           if (Object.keys(groups[kind]).length) await recordProgramValues(user, program, kind, day, groups[kind], { items, units })
         }

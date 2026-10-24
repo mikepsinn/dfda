@@ -15,6 +15,7 @@ const stamp = Date.now()
 const slug = `chat-${stamp}`
 const password = 'correct horse battery staple'
 const userIds: string[] = []
+let owner: { id: string }
 let patient: { id: string }
 let member: { id: string }
 let program: Program
@@ -50,7 +51,7 @@ function fakeClient(replies: Anthropic.Beta.BetaContentBlock[][]) {
 }
 
 beforeAll(async () => {
-  const owner = { id: await ensurePasswordUser(`chat-owner-${stamp}@example.com`, 'Owner', password) }
+  owner = { id: await ensurePasswordUser(`chat-owner-${stamp}@example.com`, 'Owner', password) }
   patient = { id: await ensurePasswordUser(`chat-patient-${stamp}@example.com`, 'Demo Patient', password) }
   member = { id: await ensurePasswordUser(`chat-member-${stamp}@example.com`, 'Member', password) }
   userIds.push(owner.id, patient.id, member.id)
@@ -123,6 +124,25 @@ describe("the chat's tools", () => {
     expect(await recordValues.run({ values: [{ item: 'Energy', value: 11 }] })).toBe('Not saved: Energy: enter a number from 0 to 10.')
     expect(actions).toEqual([])
     expect(await values('energy-level')).toEqual([])
+  })
+
+  it('save nothing when one value of a call is wrong, so that a retry does not save the others twice', async () => {
+    // A program whose lab result is a rating: its values are checked when the doses and check-ins are saved already.
+    const items = [
+      { kind: 'check_in', variableId: 'energy-level', frequency: 'daily', better: 'higher' },
+      { kind: 'lab', variableId: 'fatigue', better: 'lower' },
+    ]
+    await saveProgram(owner, slug, programInputSchema.parse({ name: 'Mixed', slug: 'mixed', summary: '', followUpWeeks: '12', items: JSON.stringify(items) }))
+    const mixed = (await findProgram(slug, 'mixed'))!
+    await joinProgram(patient, mixed, { scheduleNotifications: false })
+    const actions: string[] = []
+    const [recordValues] = chatTools(patient, mixed, today, actions)
+    const energy = (await values('energy-level')).length
+    expect(await recordValues.run({ values: [{ item: 'Energy', value: 5 }, { item: 'Fatigue', value: 12 }] })).toBe(
+      'Not saved: Fatigue: enter a number from 0 to 10.',
+    )
+    expect(await values('energy-level')).toHaveLength(energy)
+    expect(actions).toEqual([])
   })
 
   it('add a side effect from the list with its rating and a reminder, and say the close names of an unknown one', async () => {
