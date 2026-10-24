@@ -3,7 +3,7 @@ import { ensurePasswordUser } from '@/lib/auth-users'
 import { adminDb } from '@/lib/db'
 import { listPrograms, type Program } from '@/lib/programs/data'
 import { demoPatientReport, demoPatientValues, writeValues } from './clinic'
-import { instanceDemoAccounts } from './instance-accounts'
+import { demoLockKey, instanceDemoAccounts } from './instance-accounts'
 
 /**
  * Demo mode of a company's site: visitors try the site as a demo patient,
@@ -20,16 +20,33 @@ export class DemoUnavailable extends Error {}
 
 export type InstanceDemoRole = 'patient' | 'clinician'
 
+type Reader = Pick<typeof adminDb, 'instance_programs' | 'program_enrollments'>
+
 /** Why the owner cannot turn the demo on yet; null when they can. */
-export async function instanceDemoProblem(instanceId: string): Promise<string | null> {
-  if (!(await adminDb.instance_programs.count({ where: { instance_id: instanceId } }))) {
+export async function instanceDemoProblem(instanceId: string, db: Reader = adminDb): Promise<string | null> {
+  if (!(await db.instance_programs.count({ where: { instance_id: instanceId } }))) {
     return 'Add a program first, then turn on the demo.'
   }
   const { patient, clinician } = instanceDemoAccounts(instanceId)
-  const joined = await adminDb.program_enrollments.count({
+  const joined = await db.program_enrollments.count({
     where: { instance_programs: { instance_id: instanceId }, profiles: { email: { notIn: [patient, clinician] } } },
   })
   return joined ? 'The demo is only for a site that nobody has joined yet: its demo clinician would see them.' : null
+}
+
+/**
+ * Turns the demo on, after the checks of instanceDemoProblem, under the demo's
+ * lock: an enrollment saved at the same time either comes first, and the check
+ * sees it, or waits and then sees the demo, which it ends. The caller checks
+ * that the user owns the site. Returns the problem, or null when the demo is on.
+ */
+export async function startInstanceDemo(instanceId: string): Promise<string | null> {
+  return adminDb.$transaction(async (tx) => {
+    await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${demoLockKey(instanceId)}))`
+    const problem = await instanceDemoProblem(instanceId, tx)
+    if (!problem) await tx.instances.update({ where: { id: instanceId }, data: { demo_enabled: true }, select: { id: true } })
+    return problem
+  })
 }
 
 /** The program of the demo: the first one in which the care team reviews the reports, or the first one. */
@@ -56,7 +73,7 @@ export async function prepareInstanceDemo(instanceId: string, role: InstanceDemo
 
   const enrollmentId = await adminDb.$transaction(
     async (tx) => {
-      await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${`instance-demo:${instanceId}`}))`
+      await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${demoLockKey(instanceId)}))`
       // A person may have joined, and so ended the demo, since the check above.
       const current = await tx.instances.findUnique({ where: { id: instanceId }, select: { demo_enabled: true } })
       if (!current?.demo_enabled) throw new DemoUnavailable('This site has no demo.')

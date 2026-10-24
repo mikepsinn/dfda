@@ -5,7 +5,7 @@ import { redirect } from "next/navigation"
 import { isUniqueViolation } from "@/lib/db"
 import { getUserDb } from "@/lib/db/server"
 import { instanceInputSchema, type InstanceInput } from "@/lib/instance/config"
-import { instanceDemoProblem } from "@/lib/demo/instance"
+import { instanceDemoProblem, startInstanceDemo } from "@/lib/demo/instance"
 import { endInstanceDemo } from "@/lib/demo/instance-accounts"
 import { addDomainToProject } from "@/lib/instance/vercel-domains"
 import { logger } from "@/lib/logger"
@@ -116,15 +116,21 @@ export async function updateInstanceAction(
     })
     if (!existing) return { error: "This instance does not exist, or it is not yours." }
     previousDomain = existing.custom_domain
-    if (parsed.data.demoEnabled && !existing.demo_enabled) {
+    const starting = parsed.data.demoEnabled && !existing.demo_enabled
+    if (starting) {
       const problem = await instanceDemoProblem(existing.id)
       if (problem) return { fieldErrors: { demoEnabled: problem } }
     }
     await db.instances.update({
       where: { id: existing.id },
-      data: { ...toRow(parsed.data), demo_enabled: parsed.data.demoEnabled, updated_at: new Date() },
+      data: { ...toRow(parsed.data), updated_at: new Date() },
       select: { id: true },
     })
+    // The demo starts and ends under its lock (lib/demo/instance-accounts.ts), never in the update above.
+    if (starting) {
+      const problem = await startInstanceDemo(existing.id)
+      if (problem) return { fieldErrors: { demoEnabled: problem } }
+    }
     if (!parsed.data.demoEnabled && existing.demo_enabled) await endInstanceDemo(existing.id)
   } catch (error) {
     const known = uniqueError(error)

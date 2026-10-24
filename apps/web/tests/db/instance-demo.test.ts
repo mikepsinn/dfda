@@ -3,8 +3,8 @@ import { adminDb, dbAs } from '@/lib/db'
 import { ensurePasswordUser } from '@/lib/auth-users'
 import { careLogs, careTeamPatients, findReport } from '@/lib/care-team/data'
 import { signOffReport } from '@/lib/care-team/manage'
-import { DemoUnavailable, instanceDemoProblem, prepareInstanceDemo } from '@/lib/demo/instance'
-import { endInstanceDemo, instanceDemoAccounts } from '@/lib/demo/instance-accounts'
+import { DemoUnavailable, instanceDemoProblem, prepareInstanceDemo, startInstanceDemo } from '@/lib/demo/instance'
+import { demoLockKey, endInstanceDemo, instanceDemoAccounts } from '@/lib/demo/instance-accounts'
 import { PROGRAM_TEMPLATES, programInputSchema } from '@/lib/programs/config'
 import { findProgram, type Program } from '@/lib/programs/data'
 import { joinProgram, saveProgram } from '@/lib/programs/manage'
@@ -59,7 +59,7 @@ describe("a company site's demo", () => {
     program = (await findProgram(slug, 'glp-1'))!
     expect(await instanceDemoProblem(instanceId)).toBeNull()
     await expect(prepareInstanceDemo(instanceId, 'clinician')).rejects.toBeInstanceOf(DemoUnavailable)
-    await adminDb.instances.update({ where: { id: instanceId }, data: { demo_enabled: true } })
+    expect(await startInstanceDemo(instanceId)).toBeNull()
   })
 
   it('gives the demo clinician one patient, with logs and the example report to sign off', async () => {
@@ -80,6 +80,22 @@ describe("a company site's demo", () => {
     expect(await findReport(clinician, report.id)).toMatchObject({ reviewedAt: null, reviewNote: null })
   })
 
+  it('ends only after a demo sign-in in progress, so that the sign-in cannot put the demo clinician back', async () => {
+    // A transaction that holds the demo's lock stands for a sign-in in progress.
+    let signInDone = false
+    const signIn = adminDb.$transaction(async (tx) => {
+      await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${demoLockKey(instanceId)}))`
+      await new Promise((resolve) => setTimeout(resolve, 300))
+      signInDone = true
+    })
+    await new Promise((resolve) => setTimeout(resolve, 50))
+    await endInstanceDemo(instanceId)
+    expect(signInDone).toBe(true)
+    await signIn
+    expect(await startInstanceDemo(instanceId)).toBeNull()
+    await prepareInstanceDemo(instanceId, 'clinician')
+  })
+
   it('ends when a real person joins: the demo people leave before the person is in', async () => {
     const clinician = await demoUser('clinician')
     const patient = await demoUser('patient')
@@ -92,6 +108,9 @@ describe("a company site's demo", () => {
     expect(await adminDb.biomarker_reports.count({ where: { user_id: patient.id } })).toBe(0)
     await expect(prepareInstanceDemo(instanceId, 'clinician')).rejects.toBeInstanceOf(DemoUnavailable)
     expect(await instanceDemoProblem(instanceId)).toMatch(/nobody has joined/)
+    // Turning it on again checks under the lock, too.
+    expect(await startInstanceDemo(instanceId)).toMatch(/nobody has joined/)
+    expect((await adminDb.instances.findUniqueOrThrow({ where: { id: instanceId } })).demo_enabled).toBe(false)
     // Ending it again changes nothing.
     await endInstanceDemo(instanceId)
   })

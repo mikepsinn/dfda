@@ -8,6 +8,14 @@ import { env } from '@/lib/env'
  * (lib/programs/manage.ts) can end a demo without importing the demo's data.
  */
 
+/**
+ * The key of the advisory lock that orders every change of a site's demo: its
+ * start, a demo sign-in, its end, and a real person's enrollment. Each holds it
+ * until its transaction ends, so a demo never starts beside a real person, and
+ * a sign-in in progress cannot put the demo clinician back after the demo ended.
+ */
+export const demoLockKey = (instanceId: string) => `instance-demo:${instanceId}`
+
 /** The demo patient's and the demo clinician's emails, and their password, derived from the server's secret. */
 export function instanceDemoAccounts(instanceId: string) {
   return {
@@ -26,6 +34,7 @@ export async function endInstanceDemo(instanceId: string) {
   const { patient, clinician } = instanceDemoAccounts(instanceId)
   const ids = (await adminDb.users.findMany({ where: { email: { in: [patient, clinician] } }, select: { id: true } })).map((user) => user.id)
   await adminDb.$transaction(async (tx) => {
+    await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${demoLockKey(instanceId)}))`
     await tx.instances.updateMany({ where: { id: instanceId }, data: { demo_enabled: false } })
     if (!ids.length) return
     const where = { user_id: { in: ids }, instance_programs: { instance_id: instanceId } }
