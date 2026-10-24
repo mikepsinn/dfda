@@ -43,11 +43,8 @@ export default async function CarePatientPage({
   const base = `/instances/${instance.slug}/care/${patient.enrollmentId}`
   const latest = patient.reports[0] ? await findReport(user, patient.reports[0].id) : null
   const report = latest?.report ?? null
-  const items = await careItems(patient)
-  const [logs, questions] = await Promise.all([
-    careLogs(patient, items),
-    latest && assistantAvailable(patient.program.instanceId) ? questionsAbout(user, latest.id) : null,
-  ])
+  const [items, canAsk] = await Promise.all([careItems(patient), assistantAvailable(patient.program.instanceId, patient.userId)])
+  const [logs, questions] = await Promise.all([careLogs(patient, items), latest && canAsk ? questionsAbout(user, latest.id) : null])
 
   const timeline = caseTimeline({ program: { ...patient.program, items }, startedAt: patient.startedAt, series: logs, report })
   const markers = report ? caseMarkers(report) : []

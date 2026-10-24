@@ -270,6 +270,23 @@ for each rating, and "Took it" and "Skipped" for each dose. Four decisions:
 4. No email when the member turned the reminders off, already recorded each item
    of the day, or is a demo account of a site.
 
+**The check-in chat, 2026-10-24 (`apps/web/lib/programs/chat.ts`):** on their program page, a
+demo patient can check in by chat. They write how they are; Claude records the values
+(`record_values`, by item name, in another unit, a skipped dose as 0), adds side effects
+from the symptom list (`add_side_effect`) and sets reminder times (`set_reminder`). The
+tools run on the server with the member's own permissions and the same checks as the forms,
+and a value that cannot be saved goes back to Claude as a message, so that it asks again.
+Claude gets the program's items, the side effects, which items have a value today and the
+member's before/after verdict; the chat itself is not stored. Decisions:
+
+1. Health data goes to the Claude API only under a business associate agreement, so the
+   chat is on only for demo patients, whose values are made up (the demo clinic's patient
+   and each company site's demo patient). Real members do not see it.
+2. Every visitor of a demo shares its patient's account, so a company's demo answers 300
+   messages a day (table `program_chat_turns`, which holds no text).
+3. The model is the report assistant's (`claude-opus-5-5`), at low effort for a short
+   chat, with the server-side fallback for a declined request.
+
 Biomarker reports (`lib/biomarker-report`, `components/biomarker-report`, the example
 at `/reports/example`) show one person's blood markers at several timepoints, read
 against that person's own noise, next to the clinic's laboratory values. They have the
@@ -365,8 +382,9 @@ are the care team's record, which the person does not see, and a company can ask
 questions a day
 ([`20261023040000_table_report_questions.sql`](../apps/web/db/migrations/20261023040000_table_report_questions.sql)).
 Decision 2026-10-23: health data goes to the Claude API only under a business associate
-agreement, so until there is one the assistant works only on the demo clinic, whose values
-are made up. Row-level security enforces each of
+agreement, so until there is one the assistant works only on made-up reports: those of the
+demo clinic, and, since 2026-10-24, those of a company site's demo patient
+([`lib/demo/patient.ts`](../apps/web/lib/demo/patient.ts)). Row-level security enforces each of
 these rules
 ([`20261021050000_table_care_teams_and_biomarker_reports.sql`](../apps/web/db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql),
 [`20261023010000_alter_biomarker_reports_review_decision.sql`](../apps/web/db/migrations/20261023010000_alter_biomarker_reports_review_decision.sql)).

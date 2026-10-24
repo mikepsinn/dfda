@@ -4,20 +4,24 @@ import { redirect } from "next/navigation"
 import { CheckCircle2, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AddSideEffectForm } from "@/components/programs/AddSideEffectForm"
+import { CheckInChat } from "@/components/programs/CheckInChat"
 import { ProgramReport } from "@/components/programs/ProgramReport"
 import { ProgramValuesForm } from "@/components/programs/ProgramValuesForm"
 import { ReportList } from "@/components/care-team/ReportList"
 import { setSharingAction } from "@/lib/actions/care-team"
 import {
   addSideEffectAction,
+  checkInChatAction,
   leaveProgramAction,
   recordProgramValuesAction,
   removeSideEffectAction,
 } from "@/lib/actions/programs"
 import { myReports, sharedSince } from "@/lib/care-team/data"
 import { withUserTransaction } from "@/lib/db"
+import { chatAvailable } from "@/lib/programs/chat"
+import { SCALE_RANGES } from "@/lib/programs/config"
 import { requireCurrentProgram } from "@/lib/programs/current"
-import { personalReport } from "@/lib/programs/data"
+import { personalReport, type ProgramItem } from "@/lib/programs/data"
 import { valueFields } from "@/lib/programs/fields"
 import { formatDate } from "@/lib/programs/format"
 import { CHECK_IN_REMINDER_TIME, DOSE_REMINDER_TIME } from "@/lib/programs/manage"
@@ -28,6 +32,17 @@ import { getServerUser } from "@/lib/server-auth"
 export const metadata: Metadata = { title: "Your program" }
 
 const DAY = 86_400_000
+
+/** Things to say to the check-in chat with one tap: the dose, a rating, and a new symptom. */
+function chatSuggestions(items: ProgramItem[]): string[] {
+  const dose = items.find((item) => item.kind === "dose")
+  const rating = items.find((item) => item.kind === "check_in" && SCALE_RANGES[item.unitId])
+  return [
+    ...(dose ? [`I took my ${dose.name}`] : []),
+    ...(rating ? [`My ${rating.name.toLowerCase()} is a 6 today`] : []),
+    "I have a headache",
+  ]
+}
 
 export default async function YourProgramPage({
   params,
@@ -42,11 +57,12 @@ export default async function YourProgramPage({
   if (!user) redirect(`/login?next=${encodeURIComponent(`/programs/${program.slug}/me`)}`)
   const report = await personalReport(user, program)
   if (!report) redirect(`/programs/${program.slug}`)
-  const [reports, shared, sideEffects, options] = await Promise.all([
+  const [reports, shared, sideEffects, options, chat] = await Promise.all([
     myReports(user, program.id),
     sharedSince(user, program.id),
     mySideEffects(user, program.id),
     sideEffectOptions(program),
+    chatAvailable(user, program),
   ])
 
   const today = new Date().toISOString().slice(0, 10)
@@ -80,6 +96,18 @@ export default async function YourProgramPage({
           </p>
         )}
       </header>
+
+      {chat && (
+        <section aria-labelledby="chat-heading" className="surface-raised space-y-4 rounded-xl border p-6">
+          <div className="space-y-1">
+            <h2 id="chat-heading" className="text-xl font-semibold">
+              Check in by chat
+            </h2>
+            <p className="text-sm text-muted-foreground">Tell it how you are. It records your values and side effects for you.</p>
+          </div>
+          <CheckInChat action={checkInChatAction.bind(null, program.id)} suggestions={chatSuggestions(program.items)} />
+        </section>
+      )}
 
       {todayItems.length > 0 && (
         <section aria-labelledby="today-heading" className="surface-raised space-y-4 rounded-xl border p-6">

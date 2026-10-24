@@ -2,6 +2,7 @@ import Anthropic from '@anthropic-ai/sdk'
 import demo from '@/scripts/demo-data.json'
 import type { BiomarkerReport } from '@/lib/biomarker-report/schema'
 import { adminDb, dbAs, type DbUser } from '@/lib/db'
+import { isDemoPatient } from '@/lib/demo/patient'
 import { env } from '@/lib/env'
 import {
   applyEvent,
@@ -22,7 +23,8 @@ import {
  *
  * Health data goes to the Claude API only under a business associate
  * agreement. Until there is one, the assistant answers only about the demo
- * clinic's reports, whose values are made up.
+ * clinic's reports and the reports of a company site's demo patient, whose
+ * values are made up.
  */
 
 export const ASSISTANT_MODEL = 'claude-opus-5-5'
@@ -31,9 +33,15 @@ export const DAILY_QUESTION_LIMIT = 50
 /** Server-side tool loops that end in pause_turn are resumed at most this often. */
 const MAX_CONTINUATIONS = 2
 
-/** Whether the care team of this company can ask the assistant: with an API key, and only on the demo clinic for now. */
-export function assistantAvailable(instanceId: string, apiKey = env.ANTHROPIC_API_KEY): boolean {
-  return Boolean(apiKey) && instanceId === demo.instance.id
+/**
+ * Whether the care team of this company can ask the assistant about a
+ * patient's reports: with an API key, and only about made-up reports for now:
+ * those of the demo clinic, and those of a company site's demo patient
+ * (lib/demo/patient.ts).
+ */
+export async function assistantAvailable(instanceId: string, patientId: string, apiKey = env.ANTHROPIC_API_KEY): Promise<boolean> {
+  if (!apiKey) return false
+  return instanceId === demo.instance.id || isDemoPatient(instanceId, patientId)
 }
 
 /** A question in the care team's log, with its answer when it is complete. */

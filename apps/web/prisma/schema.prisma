@@ -701,6 +701,7 @@ model profiles {
   notifications              notifications[]
   patient_treatments         patient_treatments[]
   patients                   patients?
+  program_chat_turns         program_chat_turns[]
   program_enrollments        program_enrollments[]
   protocol_versions          protocol_versions[]
   providers                  providers?
@@ -1292,6 +1293,7 @@ model instances {
   instance_pages         instance_pages[]
   instance_programs      instance_programs[]
   profiles               profiles                 @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  program_chat_turns     program_chat_turns[]
   report_questions       report_questions[]
 
   @@index([owner_id], map: "idx_instances_owner_id")
@@ -1513,6 +1515,18 @@ model enrollment_side_effects {
   global_variables    global_variables    @relation(fields: [global_variable_id], references: [id], onUpdate: NoAction)
 
   @@id([enrollment_id, global_variable_id])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model program_chat_turns {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  instance_id String    @db.Uuid
+  user_id     String    @db.Uuid
+  created_at  DateTime  @default(now()) @db.Timestamptz(6)
+  instances   instances @relation(fields: [instance_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profiles    profiles  @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@index([instance_id, created_at], map: "idx_program_chat_turns_instance_created")
 }
 
 view pending_actions {
