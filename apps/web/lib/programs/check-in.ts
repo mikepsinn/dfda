@@ -30,6 +30,11 @@ import { enrollmentSideEffects } from './side-effects'
 
 const DAY = 86_400_000
 const HOUR = 3_600_000
+const MINUTE = 60_000
+/** After this, the claim of an email that was not marked sent (its run stopped) can be taken over. */
+const CLAIM_MINUTES = 15
+/** A run stops claiming emails after this, within the 60 seconds of the scheduler's call; the rest stay due. */
+const SEND_SECONDS = 40
 /** How long after the last reminder of a day its email is still sent on the next day. */
 const CARRY_HOURS = 3
 
@@ -124,8 +129,12 @@ export async function dueCheckIns(now = new Date()): Promise<DueCheckIn[]> {
     }),
     enrollmentSideEffects(members.map((enrollment) => enrollment.id)),
     // The member's day is at most a day from UTC's.
+    // Sent, or claimed by a run that may still send it.
     adminDb.check_in_emails.findMany({
-      where: { local_date: { gte: new Date(now.getTime() - 2 * DAY) } },
+      where: {
+        local_date: { gte: new Date(now.getTime() - 2 * DAY) },
+        OR: [{ sent_at: { not: null } }, { claimed_at: { gte: new Date(now.getTime() - CLAIM_MINUTES * MINUTE) } }],
+      },
       select: { enrollment_id: true, local_date: true },
     }),
   ])
@@ -195,24 +204,44 @@ export async function dueCheckIns(now = new Date()): Promise<DueCheckIn[]> {
 }
 
 /**
- * Sends the check-in emails that are due. Each email of a day is sent once:
- * the row in check_in_emails is added first, and two runs at the same time
- * cannot both add it. A failed email removes the row, so the next run tries
- * again. Returns the counts.
+ * Claims the email of an enrollment and day for this run: a new claim, or the
+ * claim of a run that stopped before it sent the email. False when another
+ * run has it, or sent it.
  */
-export async function sendCheckInEmails(now = new Date()) {
+async function claim(key: { enrollment_id: string; local_date: Date }, now: Date): Promise<boolean> {
+  try {
+    await adminDb.check_in_emails.create({ data: { ...key, claimed_at: now }, select: { enrollment_id: true } })
+    return true
+  } catch (error) {
+    if (!isUniqueViolation(error)) throw error
+  }
+  const { count } = await adminDb.check_in_emails.updateMany({
+    where: { ...key, sent_at: null, claimed_at: { lt: new Date(now.getTime() - CLAIM_MINUTES * MINUTE) } },
+    data: { claimed_at: now },
+  })
+  return count === 1
+}
+
+/**
+ * Sends the check-in emails that are due. Each email of a day is sent once:
+ * a run claims it first (two runs cannot both claim it) and marks it sent
+ * after it went. A failed email loses its claim, so the next run tries again;
+ * the claim of a run that stopped before it sent the email is taken over
+ * after 15 minutes. A run stops claiming after 40 seconds, and the emails
+ * that it did not reach stay due. Returns the counts.
+ */
+export async function sendCheckInEmails(now = new Date(), deadline = Date.now() + SEND_SECONDS * 1000) {
   const due = await dueCheckIns(now)
-  const counts = { due: due.length, sent: 0, failed: 0 }
+  const counts = { due: due.length, sent: 0, failed: 0, deferred: 0 }
   // One lookup for each company: it can ask the company's own domain whether it is connected.
   const companies = new Map<string, ReturnType<typeof companyOf>>()
-  for (const checkIn of due) {
-    const key = { enrollment_id: checkIn.enrollmentId, local_date: new Date(`${checkIn.day}T00:00:00.000Z`) }
-    try {
-      await adminDb.check_in_emails.create({ data: key, select: { enrollment_id: true } })
-    } catch (error) {
-      if (isUniqueViolation(error)) continue
-      throw error
+  for (const [index, checkIn] of due.entries()) {
+    if (Date.now() > deadline) {
+      counts.deferred = due.length - index
+      break
     }
+    const key = { enrollment_id: checkIn.enrollmentId, local_date: new Date(`${checkIn.day}T00:00:00.000Z`) }
+    if (!(await claim(key, now))) continue
     try {
       if (!companies.has(checkIn.instanceSlug)) companies.set(checkIn.instanceSlug, companyOf(checkIn.instanceSlug))
       const company = await companies.get(checkIn.instanceSlug)!
@@ -225,7 +254,6 @@ export async function sendCheckInEmails(now = new Date()) {
       const url = (path: string) => companyPageUrl(company.instance.slug, path, company.origin)
       const pagePath = `/programs/${checkIn.program.slug}/check-in/${checkInToken(checkIn.enrollmentId, checkIn.day)}`
       await sendEmail(checkInEmail(checkIn, brand, url, pagePath))
-      counts.sent++
     } catch (error) {
       counts.failed++
       logger.error('Could not send a check-in email', {
@@ -235,14 +263,27 @@ export async function sendCheckInEmails(now = new Date()) {
       try {
         await adminDb.check_in_emails.deleteMany({ where: key })
       } catch (cleanup) {
-        // The row stays, so this email of the day is not sent again; say so.
-        logger.error('Could not release a failed check-in email; it will not be retried', {
+        // The claim stays without sent_at, so a run takes it over after CLAIM_MINUTES.
+        logger.error('Could not release the claim of a failed check-in email', {
           enrollmentId: checkIn.enrollmentId,
           day: checkIn.day,
           error: cleanup instanceof Error ? cleanup.message : String(cleanup),
         })
       }
+      continue
+    }
+    counts.sent++
+    try {
+      await adminDb.check_in_emails.updateMany({ where: key, data: { sent_at: new Date() } })
+    } catch (error) {
+      // The email went; a run may send it again after CLAIM_MINUTES.
+      logger.error('Could not mark a check-in email as sent', {
+        enrollmentId: checkIn.enrollmentId,
+        day: checkIn.day,
+        error: error instanceof Error ? error.message : String(error),
+      })
     }
   }
+  if (counts.deferred) logger.warn('The check-in emails did not fit in one run; the next run sends the rest', counts)
   return counts
 }
