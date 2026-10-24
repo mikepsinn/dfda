@@ -239,6 +239,41 @@ before/after report at `/programs/{slug}/me`. Three decisions for this demo:
 A before/after change in one person or one program is not a treatment effect; the
 pages say that a change after the start does not prove that the product caused it.
 
+**How the company tables fit the older schema, 2026-10-24:** company sites and programs
+build on the tracking core: a program item is a catalog variable, a value is a
+measurement, and a dose, a check-in or a side effect is a reminder. They do not use the
+older clinical tables. Decisions:
+
+1. A program is not a trial. `trials` needs one condition and one research partner,
+   `trial_enrollments` needs a provider for each enrollment, and both are made to
+   recruit people into controlled trials (phase, payment, entry criteria). A company's
+   program has a product, items and a follow-up week, and its care team is the
+   company's. So programs have their own tables (`instance_programs`,
+   `instance_program_items`, `program_enrollments`).
+2. Company sites do not use Better Auth's organizations. `instances` holds a site's
+   brand, domain, demo and pages, `instance_clinicians` its care team, and
+   `care_team_invitations` the invitations by email, each with row-level security. The
+   organization plugin is on in `lib/auth.ts`, but no page uses its tables.
+3. `providers` and `research_partners` hold a person's credentials; a membership of a
+   care team is a separate row. Programs do not use `patients` (date of birth, sex) yet.
+
+Links to add when they are needed:
+
+- Close the day's reminder notifications when a program saves a value. Not needed
+  while the reminder worker does not run in production; the measurements API does not
+  close them either.
+- Save the markers of an imported biomarker report as measurements, matched by LOINC
+  code (`global_variable_codes`), so that the before/after report uses them. First
+  decide whether a value counts before a clinician reviews the report.
+- Record the program's treatment (`patient_treatments`) while a member is in the
+  program, so that treatment ratings and Outcome Labels can use program data. The text
+  at join must then say so.
+- Remove the tables that are empty in production and that no app code queries:
+  `patient_symptoms`, `global_symptoms`, `protocol_versions`, `prescriptions`,
+  `pharmacies`, `product_sellers`, `product_listings`, `regulatory_approvals`, and the
+  organization tables with the plugin. `patient_side_effects` is empty too; only the
+  older treatments page uses it.
+
 **The daily check-in, 2026-10-24 (`apps/web/lib/programs`):** a member records a day
 at `/programs/{slug}/me` with one button for each number of a rating (0 to 10 for
 most symptoms, with the words of the better direction at the two ends), and "Took
