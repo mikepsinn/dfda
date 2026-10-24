@@ -140,6 +140,12 @@ describe("a company site's demo", () => {
     const emails = (await reportEmails('added', realReportId)).map((email) => email.to)
     expect(emails).toEqual([visitor.email, realClinician.email])
 
+    // A user can change their profile's email; the demo clinician stays the demo clinician.
+    await dbAs(demoClinician).profiles.update({ where: { id: demoClinician.id }, data: { email: `renamed-${stamp}@example.com` }, select: { id: true } })
+    expect((await adminDb.profiles.findUniqueOrThrow({ where: { id: demoClinician.id } })).email).toBe(`renamed-${stamp}@example.com`)
+    expect(await names(demoClinician)).toEqual(['Riley Lee'])
+    expect(await findReport(demoClinician, realReportId)).toBeNull()
+
     // A demo sign-in after the join still works.
     await prepareInstanceDemo(instanceId, 'clinician')
     expect(await names(demoClinician)).toEqual(['Riley Lee'])

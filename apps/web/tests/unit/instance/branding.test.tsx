@@ -76,7 +76,6 @@ describe("a company instance's own site", () => {
       collection: null,
       firstLabel: "Baseline",
       lastLabel: "Week 12",
-      clinicianName: "Dr. Sam Okafor",
       note: draftNote(markers),
     }
     const { rerender } = render(

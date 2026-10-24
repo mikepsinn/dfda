@@ -12,7 +12,7 @@ import { demoLockKey, instanceDemoAccounts } from './instance-accounts'
  * it on at /instances/{slug} once the site has a program. It stays on beside
  * real members: the demo clinician, whose account any visitor can use, sees
  * the demo patient only, and the real care team, the company totals and the
- * report emails leave the demo patient out (lib/demo/instance-accounts.ts).
+ * report emails leave the demo people out (lib/demo/instance-accounts.ts).
  * The demo patient's values and report are made up, as in the demo clinic
  * (lib/demo/clinic.ts).
  */
@@ -72,6 +72,14 @@ export async function prepareInstanceDemo(instanceId: string, role: InstanceDemo
       const current = await tx.instances.findUnique({ where: { id: instanceId }, select: { demo_enabled: true } })
       if (!current?.demo_enabled) throw new DemoUnavailable('This site has no demo.')
 
+      // Recorded before the clinician joins the care team, so that the database never takes them for a real clinician.
+      await tx.instance_demo_accounts.createMany({
+        data: [
+          { instance_id: instanceId, user_id: patientId, role: 'patient' },
+          { instance_id: instanceId, user_id: clinicianId, role: 'clinician' },
+        ],
+        skipDuplicates: true,
+      })
       await tx.instance_clinicians.createMany({ data: [{ instance_id: instanceId, user_id: clinicianId }], skipDuplicates: true })
       const { startedAt, series } = demoPatientValues(program, new Date())
       const enrollment = await tx.program_enrollments.upsert({

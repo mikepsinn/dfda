@@ -1,5 +1,5 @@
 import { adminDb } from '@/lib/db'
-import { instanceDemoAccounts } from '@/lib/demo/instance-accounts'
+import { demoAccountIds } from '@/lib/demo/instance-accounts'
 import { linkEmail, sendEmail, type Email, type EmailBrand } from '@/lib/email'
 import { companySiteOrigin, findInstanceBySlug } from '@/lib/instance/hosts'
 import { isDomainConfigured } from '@/lib/instance/vercel-domains'
@@ -69,9 +69,9 @@ export async function reportEmails(news: ReportNews, reportId: string): Promise<
   const context = await reportContext(reportId)
   if (!context) return []
   const { report, program, enrollment, brand, url } = context
-  const demo = instanceDemoAccounts(program.instance_id)
-  if (report.patient.email === demo.patient) return []
-  const clinicians = context.clinicians.filter((clinician) => clinician.profiles.email !== demo.clinician)
+  const demo = await demoAccountIds(program.instance_id)
+  if (demo.has(report.user_id)) return []
+  const clinicians = context.clinicians.filter((clinician) => !demo.has(clinician.user_id))
   const personLink = url(`/programs/${program.slug}/me/reports/${reportId}`)
   const personFooter = `You get this email because you are in ${brand.name}'s ${program.name}.`
 

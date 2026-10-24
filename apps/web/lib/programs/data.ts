@@ -1,5 +1,5 @@
 import { adminDb, dbAs, withUserTransaction, type Prisma } from '@/lib/db'
-import { instanceDemoAccounts } from '@/lib/demo/instance-accounts'
+import { demoAccountIds } from '@/lib/demo/instance-accounts'
 import { convertValue } from '@/lib/units/convert'
 import type { Better, Frequency, ItemKind, VariableOption } from './config'
 import { buildPersonReport, LOOKBACK_DAYS, programTotals, type Point, type ReportItem } from './report'
@@ -230,8 +230,9 @@ export async function programDashboard(ownerId: string, program: Program) {
   })
   if (!owns) throw new Error('Only the owner of the instance can see the program totals.')
 
+  const demo = await demoAccountIds(program.instanceId)
   const enrollments = await adminDb.program_enrollments.findMany({
-    where: { program_id: program.id, profiles: { email: { not: instanceDemoAccounts(program.instanceId).patient } } },
+    where: { program_id: program.id, user_id: { notIn: [...demo] } },
     select: { user_id: true, started_at: true },
   })
   if (enrollments.length === 0) return { enrolled: 0, totals: programTotals(reportItems(program), []) }

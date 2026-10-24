@@ -22,7 +22,6 @@ export type CasePreview = {
   collection: string | null
   firstLabel: string
   lastLabel: string
-  clinicianName: string | null
   note: string
 }
 
@@ -45,7 +44,6 @@ export function casePreview(instanceName: string, programs: Program[], now = new
     collection: report.collection ?? null,
     firstLabel: report.timepoints[0].label,
     lastLabel: report.timepoints.at(-1)?.label ?? `Week ${program.followUpWeeks}`,
-    clinicianName: report.clinician?.name ?? null,
     note: draftNote(markers),
   }
 }

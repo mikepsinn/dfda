@@ -129,7 +129,6 @@ export function ClinicHome({
             <span className="rounded-full bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground">Reviewed by clinician</span>
           </div>
           <p className="whitespace-pre-line text-sm leading-relaxed">{preview.note}</p>
-          {preview.clinicianName && <p className="text-sm text-muted-foreground">Signed off by {preview.clinicianName}</p>}
         </CaseCard>
       ),
     },

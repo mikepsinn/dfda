@@ -160,14 +160,17 @@ review, or as a demo clinician of its care team, who opens that patient's case
 ([`lib/demo/instance.ts`](../apps/web/lib/demo/instance.ts)). Any visitor can use
 these accounts, so they must never see a real person. The demo stays on beside
 real members (decision 2026-10-24, the same day: a clinic shows its product on its
-live site; the network's demo clinic stays for the network itself):
+live site; the network's demo clinic stays for the network itself). The demo
+sign-in records both accounts by user id in `instance_demo_accounts`, which users
+cannot change (a user can change their profile's email), and
 `care_team_can_see()` and `care_team_patients()` give the demo clinician the demo
 patient only, and never give the demo patient to the real care team
-([`20261024030000_alter_care_team_functions_demo_accounts.sql`](../apps/web/db/migrations/20261024030000_alter_care_team_functions_demo_accounts.sql)).
-The company totals and the report emails also leave the demo patient out, and no
+([`20261024030000_table_instance_demo_accounts.sql`](../apps/web/db/migrations/20261024030000_table_instance_demo_accounts.sql)).
+The company totals and the report emails also leave the demo people out, and no
 email goes to a demo account. Turning the demo off removes the demo people from
-the site. The demo accounts' emails are at example.com and their password comes
-from the server's secret, so only the demo sign-in can use them.
+the site. Each site has its own two demo accounts, not the network demo clinic's
+accounts; their password comes from the server's secret, so only the demo
+sign-in can use them.
 
 **Clinic home page, 2026-10-24:** a company site with a program in which its
 care team reviews the reports gets a home page for both of its audiences
