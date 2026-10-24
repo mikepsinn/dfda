@@ -6,9 +6,10 @@ import { careTeamPatients, findReport } from '@/lib/care-team/data'
 import { createImportKey, IMPORT_KEY_PREFIX, ImportError, importKeys, importReport, revokeImportKey } from '@/lib/care-team/import'
 import { acceptInvitation, inviteClinician, saveReport, setSharing, signOffReport } from '@/lib/care-team/manage'
 import { reportEmails } from '@/lib/care-team/notify'
+import { careLogs } from '@/lib/care-team/data'
 import { PROGRAM_TEMPLATES, programInputSchema } from '@/lib/programs/config'
 import { findProgram, type Program } from '@/lib/programs/data'
-import { joinProgram, saveProgram } from '@/lib/programs/manage'
+import { joinProgram, recordProgramValues, saveProgram } from '@/lib/programs/manage'
 
 // A clinic's treatment program (care team review), the laboratory's report
 // import (db/migrations/20261023030000_table_instance_import_keys.sql) and the
@@ -103,6 +104,24 @@ describe('a program with care team review', () => {
     await joinProgram(chooser, open, { scheduleNotifications: false })
     const listed = await careTeamPatients(clinician, { id: instanceId, slug })
     expect(listed.map((row) => [row.name, row.program.slug])).toEqual([['Pat Clinic', 'clinic']])
+  })
+})
+
+describe("the care team's view of what a person logs", () => {
+  it('shows the logs in a program with care team review, and none in a program where the person only shares reports', async () => {
+    const today = new Date().toISOString().slice(0, 10)
+    for (const [person, program] of [[patient, clinic], [chooser, open]] as const) {
+      const energy = program.items.find((item) => item.name === 'Energy')!
+      expect(await recordProgramValues(person, program, 'today', today, { [energy.id]: '6' })).toBe(1)
+    }
+    await setSharing(chooser, open.id, true)
+    const patients = await careTeamPatients(clinician, { id: instanceId, slug })
+    const inClinic = patients.find((row) => row.userId === patient.id && row.program.id === clinic.id)!
+    const sharing = patients.find((row) => row.userId === chooser.id && row.program.id === open.id)!
+    const energy = clinic.items.find((item) => item.name === 'Energy')!
+    expect((await careLogs(inClinic)).get(energy.variableId)).toEqual([{ at: expect.any(Date), value: 6 }])
+    expect((await careLogs(sharing)).size).toBe(0)
+    await setSharing(chooser, open.id, false)
   })
 })
 

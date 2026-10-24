@@ -13,17 +13,22 @@ test.setTimeout(RECORDING ? 300_000 : 90_000)
 
 const PHONE = { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
 const DESKTOP = { viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1, isMobile: false, hasTouch: false }
+// A recording uses one 16:9 desktop size for every journey.
+// scripts/demo-video.mjs scales its videos to 1920x1080, so that the text is
+// about 1.7 times as large as on a 1080p screen and easy to read on a phone too.
+const VIDEO = { viewport: { width: 1152, height: 648 }, deviceScaleFactor: 1, isMobile: false, hasTouch: false }
 
 /**
  * A browser context for one journey, on a phone or a desktop. In a recording
- * it records a video at the size of the viewport, which `finish` saves as
- * `<name>.webm` in the test's output folder (scripts/demo-video.mjs collects it).
+ * it uses the VIDEO size instead and records a video of that size, which
+ * `finish` saves as `<name>.webm` in the test's output folder
+ * (scripts/demo-video.mjs collects it).
  */
 async function journey(browser: Browser, device: typeof PHONE, testInfo: TestInfo, name: string) {
   const context = await browser.newContext({
-    ...device,
+    ...(RECORDING ? VIDEO : device),
     baseURL: testInfo.project.use.baseURL,
-    recordVideo: RECORDING ? { dir: testInfo.outputPath('recording'), size: device.viewport } : undefined,
+    recordVideo: RECORDING ? { dir: testInfo.outputPath('recording'), size: VIDEO.viewport } : undefined,
   })
   const page = await context.newPage()
   await startTour(page)
@@ -37,13 +42,14 @@ async function journey(browser: Browser, device: typeof PHONE, testInfo: TestInf
   }
 }
 
-const reviewNote = 'Your markers moved the way the program intends. Keep the dose, add resistance training, and recheck at week 16.'
+// The plan that the clinician adds to the draft note.
+const reviewNote = 'Plan: keep the dose, add resistance training, and recheck at week 16.'
 
-/** Signs in with a demo clinic button on the main site's sign-in page. */
+/** Signs in with a demo button on the clinic's own sign-in page. */
 async function signInAs(page: Page, role: 'patient' | 'clinician' | 'owner') {
-  // As a new visitor, from the network's site.
+  // As a new visitor.
   await page.context().clearCookies()
-  await page.goto('/login')
+  await page.goto(onInstance('/login'))
   await page.getByRole('button', { name: `Demo clinic ${role}` }).click()
 }
 
@@ -65,7 +71,7 @@ test.describe('the patient', () => {
         await show(page.getByRole('heading', { name: 'What you do' }))
         await show(page.getByRole('heading', { name: 'What you get' }))
         await show(page.getByRole('heading', { name: `What ${demo.instance.name} sees` }))
-        await expect(page.getByText(/The clinicians of its care team see your biomarker reports and your name/)).toBeVisible()
+        await expect(page.getByText(/The clinicians of its care team see your name, your biomarker reports and what you log/)).toBeVisible()
         // A clinic's treatment program: joining shares the reports with the care team, without a separate choice.
         await show(page.getByText(/In this program, .* care team adds and reviews your biomarker reports/))
         await expect(page.getByRole('checkbox', { name: /Share my biomarker reports/ })).toHaveCount(0)
@@ -138,21 +144,43 @@ test.describe('the clinician', () => {
       await step(page, 'clinician-2', async () => {
         await page.getByRole('link', { name: demo.patient.name }).click()
         await expect(page.getByRole('heading', { level: 1, name: demo.patient.name })).toBeVisible()
-        await expect(page.getByText('Shares reports since')).toBeVisible()
-        await expect(page.getByRole('region', { name: 'Biomarker reports' }).getByRole('link')).toHaveCount(1)
-        await show(page.getByRole('heading', { name: 'Add a report' }))
-        await expect(page.getByLabel('Report file')).toBeVisible()
+        const chapters = page.getByRole('navigation', { name: 'Chapters' })
+        await expect(chapters.getByRole('link')).toHaveText(['Baseline', 'Track', 'Follow-up', 'Decide'])
+        await expect(page.getByRole('region', { name: /^\d[\d,]* proteins measured$/ })).toContainText('Baseline · Day 0')
+        const timeline = page.getByRole('region', { name: 'Baseline to follow-up' })
+        await show(timeline)
+        await expect(timeline.getByRole('img')).toHaveAccessibleName(/^Samples: Baseline on /)
       })
 
       await step(page, 'clinician-3', async () => {
-        await show(page.getByRole('region', { name: 'Biomarker reports' }))
-        await page.getByRole('link', { name: /How this patient's biology responded/ }).click()
-        await expect(page.getByRole('heading', { level: 1, name: /How this patient's biology responded/ })).toBeVisible()
-        await show(page.getByRole('region', { name: 'At a glance' }))
-        await show(page.getByRole('heading', { name: 'Sign off' }))
+        await page.getByRole('navigation', { name: 'Chapters' }).getByRole('link', { name: 'Track' }).click()
+        const track = page.getByRole('region', { name: 'What surrounded the change' })
+        await show(track)
+        // The dose as steps, and the check-ins that Riley logged, on the weeks of the samples.
+        await expect(track.getByRole('img', { name: /^Semaglutide: [\d.]+ mg from / })).toBeVisible()
+        await expect(track.getByRole('img', { name: /^Energy: \d+ values from/ })).toBeVisible()
+        await expect(track.getByRole('img', { name: /^Reported effects:/ })).toBeVisible()
       })
 
       await step(page, 'clinician-4', async () => {
+        await page.getByRole('navigation', { name: 'Chapters' }).getByRole('link', { name: 'Follow-up' }).click()
+        await show(page.getByRole('heading', { name: 'Grouped by pathway, not a single score' }))
+        await expect(page.getByRole('list', { name: 'Largest changes' }).getByRole('listitem')).toHaveCount(4)
+        await page.getByRole('list', { name: 'Markers of Inflammation' }).getByRole('link', { name: 'CRP', exact: true }).click()
+        const marker = page.getByRole('region', { name: /^CRP · C-reactive protein/ })
+        await expect(marker).toBeVisible()
+        await show(marker)
+        await expect(marker.getByRole('img')).toHaveAccessibleName(/^C-reactive protein: Baseline 3\.8 mg\/L/)
+        await marker.getByRole('button', { name: 'Why a decrease was expected' }).click()
+        const sources = page.getByRole('dialog', { name: 'Why a decrease was expected' })
+        await expect(sources.getByRole('link', { name: /Verma et al\. 2022/ })).toBeVisible()
+        await show(sources.getByRole('link', { name: /Plutzky et al\. 2026/ }))
+        await page.keyboard.press('Escape')
+        await expect(sources).toBeHidden()
+      })
+
+      await step(page, 'clinician-5', async () => {
+        await page.getByRole('navigation', { name: 'Chapters' }).getByRole('link', { name: 'Decide' }).click()
         const assistant = page.getByRole('region', { name: 'Ask about this report' })
         await show(assistant)
         await assistant.getByRole('button', { name: 'Which changes should I look at first, and why?' }).click()
@@ -167,14 +195,22 @@ test.describe('the clinician', () => {
         await show(answer)
       })
 
-      await step(page, 'clinician-5', async () => {
-        const decision = page.getByRole('group', { name: 'Decision for the care plan' })
-        await show(decision)
-        await decision.getByRole('radio', { name: /^Continue/ }).check()
-        await type(page.getByLabel('Note for the person (optional)'), reviewNote)
+      await step(page, 'clinician-6', async () => {
+        const note = page.getByLabel('Note for the person')
+        await show(note)
+        await expect(note).toHaveValue(/^Since your baseline, these moved the way the program intends: /)
+        await expect(page.getByText('Draft from the report')).toBeVisible()
+        // The clinician adds the plan to the draft.
+        await note.click()
+        await note.press('ControlOrMeta+End')
+        await note.pressSequentially(`\n${reviewNote}`, { delay: RECORDING ? 35 : 0 })
+        await expect(page.getByText('Edited by clinician')).toBeVisible()
+        await page.getByRole('group', { name: 'Decision for the care plan' }).getByRole('radio', { name: /^Continue/ }).check()
+        await page.getByText('I reviewed this report and the note').click()
+        await expect(page.getByText('Reviewed by clinician')).toBeVisible()
         await page.getByRole('button', { name: 'Sign off' }).click()
         await expect(page.getByRole('status').filter({ hasText: 'Signed off' })).toBeVisible()
-        const review = page.getByRole('region', { name: 'Review' })
+        const review = page.getByRole('region', { name: 'Review', exact: true })
         await show(review)
         await expect(review).toContainText(`Reviewed by ${demo.clinician.name}`)
         await expect(review).toContainText(reviewNote)

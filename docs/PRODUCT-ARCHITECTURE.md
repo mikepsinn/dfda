@@ -188,8 +188,10 @@ before/after report at `/programs/{slug}/me`. Three decisions for this demo:
 2. A person's values count in a company's totals only while they are in its
    program. Joining says so; they can leave at any time.
 3. Sample data (30 made-up people per program, and an example report) is generated
-   in memory, labeled "Sample data", never stored, and never used by Outcome
-   Labels, rankings or other evidence.
+   in memory, never stored, and never used by Outcome Labels, rankings or other
+   evidence. The company's dashboard shows it under its "Sample data" tab; the
+   pages carry no warning box about it (decision 2026-10-24: demo data is plainly
+   demo data).
 
 A before/after change in one person or one program is not a treatment effect; the
 pages say that a change after the start does not prove that the product caused it.
@@ -228,13 +230,36 @@ adds and reviews the person's reports, joining shares them, and the person stops
 leaving the program (decision 2026-10-23: in a clinic, the care team treats the person
 and orders the tests, so a separate share step only added a step;
 [`20261023020000_alter_instance_programs_care_team_review.sql`](../apps/web/db/migrations/20261023020000_alter_instance_programs_care_team_review.sql)).
+Care team review is on for a new program; the owner turns it off in the program form
+(decision 2026-10-24: most programs are a clinic's treatment programs). Programs that
+nobody had joined took the new default; a program with members keeps its setting
+([`20261024010000_alter_instance_programs_care_team_review_default.sql`](../apps/web/db/migrations/20261024010000_alter_instance_programs_care_team_review_default.sql)).
 The care team, at `/instances/{slug}/care`, sees
 the people who share and their reports, adds a report file (checked against the report
 format), and signs a report off with a decision for the care plan (continue, adjust,
 investigate, or not enough information to decide) and an optional note for the person.
 Its list of patients is a queue: first the people with reports to review, the longest
 waiting first; then the people without a report; then the others
-([`lib/care-team/queue.ts`](../apps/web/lib/care-team/queue.ts)). The person sees each
+([`lib/care-team/queue.ts`](../apps/web/lib/care-team/queue.ts)). A person's page
+in the care area is a case in four chapters
+([`lib/care-team/case.ts`](../apps/web/lib/care-team/case.ts)): **Baseline** (the
+program, the dates and a dot for each sample on the way to the follow-up), **Track**
+(what the person logged, on the weeks of the samples: the dose as steps, check-ins and
+lab values as points that are never joined into a curve, and the report's reported
+effects), **Follow-up** (the latest report by pathway, the largest change of each panel
+as a card, and one marker at a time: its values, the band of the person's own noise, the
+dose, and the studies about its change on the program's drug, each with its population,
+finding and limits) and **Decide** (the report assistant, then a note that starts as a
+draft of facts from the report's statuses, which the clinician edits before the
+sign-off). The studies are a short, checked list
+([`lib/care-team/evidence.ts`](../apps/web/lib/care-team/evidence.ts)); a marker without
+an entry says that no reference is verified yet, instead of an expected change. In a
+program with care team review the care team also sees what the person logs in the
+program (decision 2026-10-24: the clinic treats the person, and the dose and the effects
+explain the report); the join page says so, and the server reads those logs only after
+it has checked the care team with the clinician's own permissions
+([`careLogs`](../apps/web/lib/care-team/data.ts)). In other programs the care team sees
+the reports only. The person sees each
 report as soon as it is saved, with its review status and the note. The pages show the
 decision to the care team only (decision 2026-10-23: the decision is the care team's
 working record, and the note is what the clinician tells the person); the database

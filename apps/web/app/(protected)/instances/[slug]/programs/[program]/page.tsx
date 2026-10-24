@@ -7,7 +7,7 @@ import { BETTER_LABELS, KIND_LABELS } from "@/lib/programs/config"
 import { programDashboard, reportItems } from "@/lib/programs/data"
 import { programPreviewPath, requireOwnedProgram } from "@/lib/programs/owner"
 import { MIN_GROUP_SIZE } from "@/lib/programs/report"
-import { SAMPLE_SIZE, sampleView } from "@/lib/programs/sample"
+import { sampleView } from "@/lib/programs/sample"
 
 export const metadata: Metadata = { title: "Program" }
 
@@ -91,16 +91,14 @@ export default async function ProgramDashboardPage({
         </div>
 
         {sample && (
-          <p className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-100">
-            <strong>Sample data:</strong> {SAMPLE_SIZE} made-up people, to show how this page looks once people join.
-            These numbers are invented. They are not results.{" "}
+          <p className="text-sm">
             <a
               href={programPreviewPath(instance.slug, `${program.slug}/example`)}
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium underline"
             >
-              See a sample person&apos;s report
+              See one person&apos;s report
             </a>
           </p>
         )}

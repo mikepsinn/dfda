@@ -68,7 +68,7 @@ export const programInputSchema = z.object({
   slug: programSlugSchema,
   summary: z.string().trim().max(300, 'Keep the summary under 300 characters.').transform((value) => value || null),
   followUpWeeks: z.coerce.number().int().min(2, 'Use 2 to 52 weeks.').max(52, 'Use 2 to 52 weeks.'),
-  careTeamReview: z.boolean().default(false),
+  careTeamReview: z.boolean().default(true),
   items: itemsSchema,
 })
 

@@ -72,6 +72,11 @@ describe('program input', () => {
     expect(programInputSchema.parse(form())).toMatchObject({ slug: 'glp-1', summary: null, followUpWeeks: 12, items: glp1.items })
   })
 
+  it('has care team review on unless the owner turns it off', () => {
+    expect(programInputSchema.parse(form()).careTeamReview).toBe(true)
+    expect(programInputSchema.parse(form({ careTeamReview: false })).careTeamReview).toBe(false)
+  })
+
   it.each([
     ['the same variable twice', { items: JSON.stringify([glp1.items[1], glp1.items[1]]) }, 'Each variable can appear only once.'],
     ['doses only', { items: JSON.stringify([glp1.items[0]]) }, 'Add at least one check-in or lab, so the report has something to compare.'],

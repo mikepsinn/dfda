@@ -45,6 +45,7 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
         name: demo.instance.name,
         tagline: demo.instance.tagline,
         primary_color: demo.instance.primaryColor,
+        background_color: demo.instance.backgroundColor,
         products: demo.instance.products,
         owner_id: ownerId,
       },
@@ -52,10 +53,11 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
     })
   }
 
-  // The demo clinic was teal at first; a clinic still in that teal gets the current color. An owner's own color stays.
+  // A demo clinic still in an earlier demo color (teal, then violet on white) gets the current colors: the
+  // paper and teal of the printed report. An owner's own colors stay.
   await adminDb.instances.updateMany({
-    where: { id: demo.instance.id, primary_color: '#0f766e' },
-    data: { primary_color: demo.instance.primaryColor },
+    where: { id: demo.instance.id, primary_color: { in: ['#0f766e', '#6d4df6'] } },
+    data: { primary_color: demo.instance.primaryColor, background_color: demo.instance.backgroundColor },
   })
 
   if (!(await adminDb.instance_programs.findUnique({ where: { id: demo.program.id }, select: { id: true } }))) {
