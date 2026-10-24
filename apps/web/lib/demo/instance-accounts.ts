@@ -4,15 +4,20 @@ import { env } from '@/lib/env'
 
 /**
  * The accounts of a company site's demo mode (lib/demo/instance.ts), and how
- * the demo ends. In a module of their own, so that joining a program
- * (lib/programs/manage.ts) can end a demo without importing the demo's data.
+ * the demo ends. In a module of their own, so that the company totals and the
+ * report emails can leave the demo people out without importing the demo's
+ * data. The demo sign-in records both accounts by user id in
+ * instance_demo_accounts, which users cannot change
+ * (db/migrations/20261024030000_table_instance_demo_accounts.sql): there the
+ * database gives the demo clinician the demo patient only, and never gives the
+ * demo patient to the real care team.
  */
 
 /**
- * The key of the advisory lock that orders every change of a site's demo: its
- * start, a demo sign-in, its end, and a real person's enrollment. Each holds it
- * until its transaction ends, so a demo never starts beside a real person, and
- * a sign-in in progress cannot put the demo clinician back after the demo ended.
+ * The key of the advisory lock that orders the changes of a site's demo: its
+ * start, a demo sign-in and its end. Each holds it until its transaction ends,
+ * so that a sign-in in progress cannot put the demo people back after the demo
+ * ended.
  */
 export const demoLockKey = (instanceId: string) => `instance-demo:${instanceId}`
 
@@ -25,17 +30,22 @@ export function instanceDemoAccounts(instanceId: string) {
   }
 }
 
+/** The user ids of the site's demo accounts, both roles. */
+export async function demoAccountIds(instanceId: string): Promise<Set<string>> {
+  const rows = await adminDb.instance_demo_accounts.findMany({ where: { instance_id: instanceId }, select: { user_id: true } })
+  return new Set(rows.map((row) => row.user_id))
+}
+
 /**
  * Turns the site's demo off and removes the demo people from it: the
  * clinician from the care team, and the patient's enrollments, reports and
  * values. The accounts stay, unused: only the demo sign-in knows their password.
  */
 export async function endInstanceDemo(instanceId: string) {
-  const { patient, clinician } = instanceDemoAccounts(instanceId)
-  const ids = (await adminDb.users.findMany({ where: { email: { in: [patient, clinician] } }, select: { id: true } })).map((user) => user.id)
   await adminDb.$transaction(async (tx) => {
     await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${demoLockKey(instanceId)}))`
     await tx.instances.updateMany({ where: { id: instanceId }, data: { demo_enabled: false } })
+    const ids = (await tx.instance_demo_accounts.findMany({ where: { instance_id: instanceId }, select: { user_id: true } })).map((row) => row.user_id)
     if (!ids.length) return
     const where = { user_id: { in: ids }, instance_programs: { instance_id: instanceId } }
     await tx.instance_clinicians.deleteMany({ where: { instance_id: instanceId, user_id: { in: ids } } })
@@ -43,14 +53,4 @@ export async function endInstanceDemo(instanceId: string) {
     await tx.program_enrollments.deleteMany({ where })
     await tx.measurements.deleteMany({ where: { user_id: { in: ids } } })
   })
-}
-
-/**
- * Before a person joins a program: when the program's site shows a demo, the
- * demo ends first, so that the demo clinician, whose account any visitor can
- * use, never sees a real person. The demo patient never joins this way.
- */
-export async function endDemoBeforeJoin(instanceId: string) {
-  const instance = await adminDb.instances.findUnique({ where: { id: instanceId }, select: { demo_enabled: true } })
-  if (instance?.demo_enabled) await endInstanceDemo(instanceId)
 }

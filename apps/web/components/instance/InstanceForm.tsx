@@ -270,7 +270,8 @@ export function InstanceForm({
                 <span className="block font-medium">Show a demo on this site</span>
                 <span className="block text-muted-foreground">
                   Visitors can try the site as a demo patient with an example report, and as a clinician of your care team
-                  who reviews it. The demo turns off when the first person joins one of your programs.
+                  who reviews it. The demo clinician sees only the demo patient. Your care team, your totals and your
+                  emails never include the demo patient.
                 </span>
               </span>
             </label>

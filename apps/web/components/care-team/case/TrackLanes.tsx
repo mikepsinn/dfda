@@ -22,7 +22,7 @@ function describe(lane: TimelineLane): string {
  * steps, check-ins and lab values as dots (never joined into a curve), and
  * reported effects as spans. Each lane's values are also in its accessible name.
  */
-export function TrackLanes({ timeline, compact = false }: { timeline: CaseTimeline; compact?: boolean }) {
+export function TrackLanes({ timeline, compact = false, fit = false }: { timeline: CaseTimeline; compact?: boolean; fit?: boolean }) {
   const { start, end, samples, lanes } = timeline
   const span = Math.max(1, end - start)
   // Inside a margin, so that the first and last values keep room for their labels.
@@ -31,36 +31,41 @@ export function TrackLanes({ timeline, compact = false }: { timeline: CaseTimeli
   const firstTick = Math.ceil(start / every) * every
   const ticks = Array.from({ length: Math.floor((end - firstTick) / every) + 1 }, (_, index) => firstTick + index * every)
   const height = compact ? "h-7" : "h-10"
+  // `fit`: the whole program in the width of the box, also on a phone, with every second week label there; otherwise it scrolls.
+  const columns = fit ? "grid-cols-[5.5rem_1fr] gap-2 sm:grid-cols-[9.5rem_1fr] sm:gap-3" : "grid-cols-[9.5rem_1fr] gap-3"
 
   const sampleLines = samples.map((sample) => (
     <span key={sample.label} aria-hidden="true" className="absolute inset-y-0 w-px bg-[color:var(--tone-teal)] opacity-40" style={{ left: at(sample.week) }} />
   ))
 
   return (
-    <div className="overflow-x-auto">
-      <div className="min-w-[640px] space-y-1">
-        <div className="grid grid-cols-[9.5rem_1fr] gap-3">
+    <div className={fit ? "" : "overflow-x-auto"}>
+      <div className={`space-y-1 ${fit ? "" : "min-w-[640px]"}`}>
+        <div className={`grid ${columns}`}>
           <span />
-          <div aria-hidden="true" className="relative h-5 text-[11px] text-muted-foreground">
-            {ticks.map((week) => (
-              <span key={week} className="absolute -translate-x-1/2 whitespace-nowrap" style={{ left: at(week) }}>
+          <div aria-hidden="true" className="relative h-7 text-[11px] text-muted-foreground">
+            {ticks.map((week, index) => (
+              <span
+                key={week}
+                className={`absolute top-0 -translate-x-1/2 whitespace-nowrap ${fit && index % 2 ? "max-sm:hidden" : ""}`}
+                style={{ left: at(week) }}
+              >
                 {weekLabel(week)}
               </span>
             ))}
+            {/* Each sample as a dot under its week, above the sample's line through the lanes. */}
             {samples.map((sample) => (
               <span
                 key={sample.label}
-                className="absolute -top-0.5 -translate-x-1/2 rounded-full bg-[color:var(--tone-teal-soft)] px-1.5 text-[10px] font-semibold text-[color:var(--tone-teal)]"
+                className="absolute bottom-0.5 h-2 w-2 -translate-x-1/2 rounded-full bg-[color:var(--tone-teal)]"
                 style={{ left: at(sample.week) }}
-              >
-                ●
-              </span>
+              />
             ))}
           </div>
         </div>
 
         {lanes.map((lane) => (
-          <div key={`${lane.kind}:${lane.name}`} className="grid grid-cols-[9.5rem_1fr] items-center gap-3 border-t py-1.5">
+          <div key={`${lane.kind}:${lane.name}`} className={`grid items-center border-t py-1.5 ${columns}`}>
             <p className="text-xs leading-tight">
               <span className="font-medium">{lane.name}</span>
               {lane.kind !== "spans" && <span className="text-muted-foreground"> ({lane.unit})</span>}

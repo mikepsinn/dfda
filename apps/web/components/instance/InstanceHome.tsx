@@ -1,8 +1,11 @@
 import Link from "next/link"
-import { ArrowRight, BarChart3, ClipboardList, LineChart, ShieldCheck } from "lucide-react"
+import { ArrowRight, BarChart3, ClipboardList, LineChart } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ClinicHome } from "@/components/instance/ClinicHome"
 import { DemoTryButtons } from "@/components/instance/DemoTryButtons"
+import { YourData } from "@/components/instance/YourData"
 import { ProgramList } from "@/components/programs/ProgramList"
+import type { CasePreview } from "@/lib/instance/case-preview"
 import type { InstanceBranding } from "@/lib/instance/config"
 import type { Program } from "@/lib/programs/data"
 
@@ -24,16 +27,24 @@ const STEPS = [
   },
 ]
 
-/** The home page of a company instance: the company, its programs and how a program works. No network pages. */
+/**
+ * The home page of a company instance: the company, its programs and how a
+ * program works. No network pages. A clinic, with a program in which its care
+ * team reviews the reports, gets the home page for patients and clinicians
+ * (ClinicHome) with `preview`, its demo patient's case.
+ */
 export function InstanceHome({
   instance,
   programs,
   joined,
+  preview = null,
 }: {
   instance: Pick<InstanceBranding, "name" | "byline" | "tagline" | "products" | "demoEnabled">
   programs: Program[]
   joined: Set<string>
+  preview?: CasePreview | null
 }) {
+  if (preview) return <ClinicHome instance={instance} programs={programs} joined={joined} preview={preview} />
   return (
     <div className="mx-auto max-w-5xl space-y-14">
       <section className="brand-panel space-y-6 rounded-[calc(var(--radius)*2.5)] border p-6 sm:p-10">
@@ -95,17 +106,7 @@ export function InstanceHome({
         </ol>
       </section>
 
-      <section aria-labelledby="data-heading" className="space-y-2 rounded-xl border bg-muted/40 p-6">
-        <h2 id="data-heading" className="flex items-center gap-2 text-xl font-semibold">
-          <ShieldCheck aria-hidden="true" className="h-5 w-5 text-primary" /> Your data
-        </h2>
-        <p>
-          {programs.some((program) => program.careTeamReview)
-            ? `In a program where ${instance.name}'s care team reviews your reports, its clinicians see your reports and what you log. Otherwise ${instance.name} sees totals only, such as how many people improved on each measure.`
-            : `${instance.name} sees totals only, such as how many people improved on each measure. ${instance.name} does not see your own values.`}{" "}
-          You can leave a program at any time.
-        </p>
-      </section>
+      <YourData name={instance.name} programs={programs} />
     </div>
   )
 }
