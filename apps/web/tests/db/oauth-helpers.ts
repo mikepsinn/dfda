@@ -1,19 +1,22 @@
 import { createHash, randomBytes } from 'node:crypto'
-import { auth } from '@/lib/auth'
+import * as authRoute from '@/app/api/auth/[...all]/route'
 import { ensurePasswordUser } from '@/lib/auth-users'
 
-// Runs the OAuth 2.1 authorization code flow against Better Auth's handler, as
-// an MCP client does: dynamic client registration, PKCE, consent and the token
-// request with a `resource` parameter.
+// Runs the OAuth 2.1 authorization code flow against the app's auth route
+// (Better Auth's handler), as an MCP client does: dynamic client
+// registration, PKCE, consent and the token request with a `resource`
+// parameter. `origin` is the main site, or a company's own address.
 
-const origin = 'http://localhost:3000'
+export const siteOrigin = 'http://localhost:3000'
 const redirectUri = 'https://client.example.com/callback'
 
-function call(path: string, init: RequestInit & { cookie?: string } = {}) {
-  const headers = new Headers(init.headers)
-  if (init.cookie) headers.set('cookie', init.cookie)
+function call(path: string, init: RequestInit & { cookie?: string; origin?: string } = {}) {
+  const { cookie, origin = siteOrigin, ...rest } = init
+  const headers = new Headers(rest.headers)
+  if (cookie) headers.set('cookie', cookie)
   headers.set('origin', origin)
-  return auth.handler(new Request(`${origin}/api/auth${path}`, { ...init, headers }))
+  const request = new Request(`${origin}/api/auth${path}`, { ...rest, headers })
+  return rest.method === 'POST' ? authRoute.POST(request) : authRoute.GET(request)
 }
 
 async function json(response: Response) {
@@ -22,11 +25,12 @@ async function json(response: Response) {
   return body
 }
 
-/** Creates a user with a password and returns its id and a session cookie. */
-export async function signedInUser(email: string) {
+/** Creates a user with a password and returns its id and a session cookie of `origin`. */
+export async function signedInUser(email: string, origin = siteOrigin) {
   const password = 'correct horse battery staple'
   const userId = await ensurePasswordUser(email, 'Test User', password)
   const response = await call('/sign-in/email', {
+    origin,
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ email, password }),
@@ -37,9 +41,10 @@ export async function signedInUser(email: string) {
 }
 
 /** Registers a public client, as an MCP client does on first use. */
-export async function registerClient() {
+export async function registerClient(origin = siteOrigin) {
   const client = await json(
     await call('/oauth2/register', {
+      origin,
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
@@ -54,13 +59,18 @@ export async function registerClient() {
   return client.client_id as string
 }
 
-/** Runs authorize, consent and token; returns the token response. */
+/**
+ * Runs authorize, consent and token on `origin`; returns the token response,
+ * and the `iss` parameter of the authorization response.
+ */
 export async function getAccessToken(options: {
   cookie: string
   clientId: string
   resource: string
   scope: string
+  origin?: string
 }) {
+  const origin = options.origin ?? siteOrigin
   const verifier = randomBytes(32).toString('base64url')
   const challenge = createHash('sha256').update(verifier).digest('base64url')
   const query = new URLSearchParams({
@@ -75,7 +85,7 @@ export async function getAccessToken(options: {
   })
 
   // The authorization endpoint sends a signed-in user to the consent page.
-  const authorize = await call(`/oauth2/authorize?${query}`, { cookie: options.cookie, redirect: 'manual' })
+  const authorize = await call(`/oauth2/authorize?${query}`, { origin, cookie: options.cookie, redirect: 'manual' })
   const consentUrl = new URL(authorize.headers.get('location') ?? (await authorize.json()).url, origin)
   if (consentUrl.pathname !== '/oauth/consent') {
     throw new Error(`Expected the consent page, got ${consentUrl}`)
@@ -83,6 +93,7 @@ export async function getAccessToken(options: {
 
   const consent = await json(
     await call('/oauth2/consent', {
+      origin,
       method: 'POST',
       cookie: options.cookie,
       headers: { 'content-type': 'application/json' },
@@ -94,8 +105,9 @@ export async function getAccessToken(options: {
   if (!code) throw new Error(`No code in ${callback}`)
 
   // OAuth clients send the token request form-encoded.
-  return json(
+  const token = (await json(
     await call('/oauth2/token', {
+      origin,
       method: 'POST',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
@@ -107,5 +119,6 @@ export async function getAccessToken(options: {
         resource: options.resource,
       }),
     }),
-  ) as Promise<{ access_token: string; token_type: string; scope?: string; refresh_token?: string }>
+  )) as { access_token: string; token_type: string; scope?: string; refresh_token?: string }
+  return { ...token, iss: callback.searchParams.get('iss') }
 }

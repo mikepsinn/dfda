@@ -85,7 +85,10 @@ custom domains alone do not establish tenant isolation. Sign-in and an OAuth
 metadata (Better Auth) are present. Its access tokens give an app or an MCP
 client access to one person's own tracking data through the MCP server
 (`/api/mcp`) and the REST API (`/api/v1`); see `lib/tracking` and
-`lib/oauth-resources.ts`.
+`lib/oauth-resources.ts`. A company's site serves them, and the sign-in, on its
+own address (`lib/instance/oauth.ts`). Due reminder notifications are created
+when they are listed, so they do not need the reminder worker
+(`lib/reminders/due.ts`).
 
 Before clinic data can be shared, build consent records, installation identity,
 authenticated clinic aggregate submission, and aggregate privacy controls,

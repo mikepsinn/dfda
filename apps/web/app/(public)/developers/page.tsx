@@ -46,7 +46,8 @@ export default function DevelopersPage() {
           <h3 className="text-lg font-semibold">MCP server for AI assistants</h3>
           <p className="text-muted-foreground">
             Add this address to an MCP client, for example Claude or ChatGPT. The client asks you to sign in and to
-            approve its access. Then it can record your measurements, and manage and answer your reminders.
+            approve its access. Then it can record your measurements, and manage and answer your reminders. A
+            company&apos;s site has the same server at its own address, with sign-in on that site.
           </p>
           <Address>{resourceUrl("mcp")}</Address>
           <ul aria-label="MCP tools" className="flex flex-wrap gap-2">

@@ -9,7 +9,7 @@ import { linkEmail, sendEmail } from '@/lib/email'
 import { authEmailContext, linkOnHost } from '@/lib/instance/auth-email'
 import { findInstanceByHost, requestOrigin } from '@/lib/instance/hosts'
 import { logger } from '@/lib/logger'
-import { apiResources, resourceUrl, trackingScopes, type ApiResource } from '@/lib/oauth-resources'
+import { apiResources, resourceScopes, resourceUrl, trackingScopes, type ApiResource } from '@/lib/oauth-resources'
 import { getBaseUrl } from '@/lib/url'
 
 /**
@@ -93,7 +93,7 @@ const oauthProviderPluginUncast = oauthProvider({
   resources: (Object.keys(apiResources) as ApiResource[]).map((resource) => ({
     identifier: resourceUrl(resource),
     name: apiResources[resource].name,
-    allowedScopes: [...trackingScopes, 'offline_access'],
+    allowedScopes: resourceScopes,
   })),
   resourceSeedMode: 'merge',
   enforcePerClientResources: false,

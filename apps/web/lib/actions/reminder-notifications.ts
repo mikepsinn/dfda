@@ -3,11 +3,27 @@
 import { Prisma } from "@/lib/db";
 import { getUserDb } from "@/lib/db/server";
 import { logger } from "@/lib/logger";
+import { refreshDueNotifications } from "@/lib/reminders/due";
+import { getServerUser } from "@/lib/server-auth";
 import { startOfDay, endOfDay } from 'date-fns'; 
 import type { ReminderNotificationDetails, ReminderNotificationStatus, VariableCategoryId } from "@/lib/database.types.custom";
 import { revalidatePath } from 'next/cache';
 
 const unitSelect = { select: { id: true, name: true, abbreviated_name: true } } as const;
+
+/**
+ * Creates the signed-in user's due notifications (lib/reminders/due.ts), so
+ * that the lists show them without the reminder worker. A failure is logged,
+ * and the lists show what is stored.
+ */
+async function refreshMyDueNotifications() {
+  try {
+    const user = await getServerUser();
+    if (user) await refreshDueNotifications(user.id);
+  } catch (error) {
+    logger.error('Could not refresh the due reminder notifications', { error: error instanceof Error ? error.message : String(error) });
+  }
+}
 
 /** Returns the measurement ID stored in a notification's log_details, if any. */
 function getLinkedMeasurementId(logDetails: Prisma.JsonValue): string | null {
@@ -26,6 +42,7 @@ export async function getTimelineNotificationsForDateAction(
     userId: string,
   targetDate: Date
 ): Promise<{ success: boolean; data?: ReminderNotificationDetails[]; error?: string }> {
+  await refreshMyDueNotifications();
   const db = await getUserDb();
   const dateStr = targetDate.toISOString().split('T')[0];
   logger.info('Fetching timeline notifications for date', { userId, date: dateStr });
@@ -156,6 +173,7 @@ export async function getPendingReminderNotificationsAction(
   userId: string
 ): Promise<ReminderNotificationDetails[]> { 
   logger.info('Fetching pending reminder notifications', { userId });
+  await refreshMyDueNotifications();
 
   let notifications;
   try {

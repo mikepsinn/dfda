@@ -17,7 +17,7 @@ export async function runRestOperation(
   const token = await authenticateRequest(req, 'rest')
   if (token instanceof Response) return token
   const operation = trackingOperations[name] as unknown as TrackingOperation
-  if (!token.scopes.includes(operation.scope)) return insufficientScopeResponse('rest', operation.scope)
+  if (!token.scopes.includes(operation.scope)) return insufficientScopeResponse('rest', operation.scope, token.origin)
 
   try {
     const parsed = operation.input.safeParse(await readInput())

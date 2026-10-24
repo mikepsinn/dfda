@@ -14,7 +14,7 @@ vi.mock('@/lib/db', () => ({ adminDb: {}, withUserTransaction: vi.fn() }))
 
 describe('protected-resource metadata', () => {
   it('names the API, this app as the authorization server, and the tracking scopes', async () => {
-    expect(await mcpMetadata().json()).toEqual({
+    expect(await (await mcpMetadata(new Request('http://localhost:3000/.well-known/oauth-protected-resource/api/mcp'))).json()).toEqual({
       resource: 'http://localhost:3000/api/mcp',
       authorization_servers: ['http://localhost:3000/api/auth'],
       scopes_supported: ['tracking:read', 'tracking:write'],

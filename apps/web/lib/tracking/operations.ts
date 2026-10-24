@@ -1,6 +1,7 @@
 import type { z } from 'zod/v4'
 import { withUserTransaction } from '@/lib/db'
 import { TRACKING_READ_SCOPE, TRACKING_WRITE_SCOPE, type TrackingScope } from '@/lib/oauth-resources'
+import { refreshDueNotifications } from '@/lib/reminders/due'
 import { deleteMeasurement, listMeasurements, recordMeasurement, updateMeasurement } from './measurements'
 import { listDueNotifications, listNotifications, respondToNotification, respondToNotifications } from './notifications'
 import { afterReminderSaved, deleteReminder, getReminder, listReminders, upsertReminder } from './reminders'
@@ -31,6 +32,12 @@ function operation<Input extends z.ZodObject>(definition: TrackingOperation<Inpu
 
 function inTransaction<T>(userId: string, fn: (tx: TrackingDb) => Promise<T>): Promise<T> {
   return withUserTransaction({ id: userId }, fn)
+}
+
+/** Like inTransaction, after it creates the user's due notifications (lib/reminders/due.ts): the worker may not run. */
+async function withDueNotifications<T>(userId: string, fn: (tx: TrackingDb) => Promise<T>): Promise<T> {
+  await refreshDueNotifications(userId)
+  return inTransaction(userId, fn)
 }
 
 export const trackingOperations = {
@@ -132,7 +139,7 @@ export const trackingOperations = {
     description: 'List the notifications of your reminders, newest first, with their status and answers.',
     scope: TRACKING_READ_SCOPE,
     input: schemas.listNotificationsInput,
-    run: (userId, input) => inTransaction(userId, (tx) => listNotifications(tx, userId, input)),
+    run: (userId, input) => withDueNotifications(userId, (tx) => listNotifications(tx, userId, input)),
   }),
   listDueTrackingReminders: operation({
     name: 'listDueTrackingReminders',
@@ -140,7 +147,7 @@ export const trackingOperations = {
     description: 'List the reminder notifications that are due now and not answered yet, oldest first.',
     scope: TRACKING_READ_SCOPE,
     input: schemas.listDueRemindersInput,
-    run: (userId, input) => inTransaction(userId, (tx) => listDueNotifications(tx, userId, input)),
+    run: (userId, input) => withDueNotifications(userId, (tx) => listDueNotifications(tx, userId, input)),
   }),
   respondToTrackingReminder: operation({
     name: 'respondToTrackingReminder',
@@ -158,7 +165,7 @@ export const trackingOperations = {
       'Answer several notifications the same way, by default all that are due now. Either all are answered or none.',
     scope: TRACKING_WRITE_SCOPE,
     input: schemas.respondToNotificationsInput,
-    run: (userId, input) => inTransaction(userId, (tx) => respondToNotifications(tx, userId, input)),
+    run: (userId, input) => withDueNotifications(userId, (tx) => respondToNotifications(tx, userId, input)),
   }),
 } satisfies Record<string, TrackingOperation>
 
