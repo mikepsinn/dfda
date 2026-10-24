@@ -283,6 +283,7 @@ model global_variables {
   created_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
   updated_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
   molar_mass                   Float?
+  enrollment_side_effects      enrollment_side_effects[]
   global_conditions            global_conditions?
   global_foods                 global_foods?
   global_symptoms              global_symptoms?
@@ -1337,14 +1338,16 @@ model instance_programs {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model program_enrollments {
-  id                       String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  program_id               String            @db.Uuid
-  user_id                  String            @db.Uuid
-  started_at               DateTime          @default(now()) @db.Timestamptz(6)
-  created_at               DateTime          @default(now()) @db.Timestamptz(6)
-  shared_with_care_team_at DateTime?         @db.Timestamptz(6)
-  instance_programs        instance_programs @relation(fields: [program_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  profiles                 profiles          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  id                       String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  program_id               String                    @db.Uuid
+  user_id                  String                    @db.Uuid
+  started_at               DateTime                  @default(now()) @db.Timestamptz(6)
+  created_at               DateTime                  @default(now()) @db.Timestamptz(6)
+  shared_with_care_team_at DateTime?                 @db.Timestamptz(6)
+  check_in_emails          check_in_emails[]
+  enrollment_side_effects  enrollment_side_effects[]
+  instance_programs        instance_programs         @relation(fields: [program_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profiles                 profiles                  @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@unique([program_id, user_id])
   @@index([user_id], map: "idx_program_enrollments_user_id")
@@ -1489,6 +1492,28 @@ model instance_demo_accounts {
 
   @@id([instance_id, user_id])
   @@index([user_id], map: "idx_instance_demo_accounts_user_id")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model check_in_emails {
+  enrollment_id       String              @db.Uuid
+  local_date          DateTime            @db.Date
+  sent_at             DateTime?           @db.Timestamptz(6)
+  claimed_at          DateTime            @default(now()) @db.Timestamptz(6)
+  program_enrollments program_enrollments @relation(fields: [enrollment_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@id([enrollment_id, local_date])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model enrollment_side_effects {
+  enrollment_id       String              @db.Uuid
+  global_variable_id  String
+  created_at          DateTime            @default(now()) @db.Timestamptz(6)
+  program_enrollments program_enrollments @relation(fields: [enrollment_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  global_variables    global_variables    @relation(fields: [global_variable_id], references: [id], onUpdate: NoAction)
+
+  @@id([enrollment_id, global_variable_id])
 }
 
 view pending_actions {

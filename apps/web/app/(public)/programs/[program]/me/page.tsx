@@ -1,29 +1,33 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { redirect } from "next/navigation"
-import { CheckCircle2 } from "lucide-react"
+import { CheckCircle2, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { AddSideEffectForm } from "@/components/programs/AddSideEffectForm"
 import { ProgramReport } from "@/components/programs/ProgramReport"
-import { ProgramValuesForm, type ValueField } from "@/components/programs/ProgramValuesForm"
+import { ProgramValuesForm } from "@/components/programs/ProgramValuesForm"
 import { ReportList } from "@/components/care-team/ReportList"
 import { setSharingAction } from "@/lib/actions/care-team"
-import { leaveProgramAction, recordProgramValuesAction } from "@/lib/actions/programs"
+import {
+  addSideEffectAction,
+  leaveProgramAction,
+  recordProgramValuesAction,
+  removeSideEffectAction,
+} from "@/lib/actions/programs"
 import { myReports, sharedSince } from "@/lib/care-team/data"
-import { SCALE_RANGES } from "@/lib/programs/config"
+import { withUserTransaction } from "@/lib/db"
 import { requireCurrentProgram } from "@/lib/programs/current"
-import { personalReport, type ProgramItem } from "@/lib/programs/data"
+import { personalReport } from "@/lib/programs/data"
+import { valueFields } from "@/lib/programs/fields"
 import { formatDate } from "@/lib/programs/format"
 import { CHECK_IN_REMINDER_TIME, DOSE_REMINDER_TIME } from "@/lib/programs/manage"
+import { mySideEffects, sideEffectOptions } from "@/lib/programs/side-effects"
+import { preferredUnits, unitChoices } from "@/lib/programs/units"
 import { getServerUser } from "@/lib/server-auth"
 
 export const metadata: Metadata = { title: "Your program" }
 
 const DAY = 86_400_000
-
-function field(item: ProgramItem): ValueField {
-  const range = SCALE_RANGES[item.unitId]
-  return { id: item.id, name: item.name, unit: item.unit, defaultValue: item.defaultValue, min: range?.[0], max: range?.[1] }
-}
 
 export default async function YourProgramPage({
   params,
@@ -38,13 +42,20 @@ export default async function YourProgramPage({
   if (!user) redirect(`/login?next=${encodeURIComponent(`/programs/${program.slug}/me`)}`)
   const report = await personalReport(user, program)
   if (!report) redirect(`/programs/${program.slug}`)
-  const [reports, shared] = await Promise.all([myReports(user, program.id), sharedSince(user, program.id)])
+  const [reports, shared, sideEffects, options] = await Promise.all([
+    myReports(user, program.id),
+    sharedSince(user, program.id),
+    mySideEffects(user, program.id),
+    sideEffectOptions(program),
+  ])
 
   const today = new Date().toISOString().slice(0, 10)
   const day = Math.floor((Date.now() - report.startedAt.getTime()) / DAY) + 1
   const followUpDays = program.followUpWeeks * 7
-  const todayItems = program.items.filter((item) => item.kind !== "lab")
+  const todayItems = [...program.items.filter((item) => item.kind !== "lab"), ...sideEffects]
   const labItems = program.items.filter((item) => item.kind === "lab")
+  const units = await unitChoices(program.items)
+  const preferred = await withUserTransaction(user, (tx) => preferredUnits(tx, user.id, program.items, units))
 
   return (
     <div className="mx-auto max-w-4xl space-y-10">
@@ -77,13 +88,44 @@ export default async function YourProgramPage({
           </h2>
           <ProgramValuesForm
             action={recordProgramValuesAction.bind(null, program.id, "today")}
-            fields={todayItems.map(field)}
+            fields={valueFields(todayItems, units, preferred)}
             defaultDate={today}
             dateLabel="Date"
             submitLabel="Save"
           />
         </section>
       )}
+
+      <section aria-labelledby="side-effects-heading" className="surface-raised space-y-4 rounded-xl border p-6">
+        <div className="space-y-1">
+          <h2 id="side-effects-heading" className="text-xl font-semibold">
+            Side effects
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Feel something new? Add it here, and rate it each day with the rest of your day.
+            {program.careTeamReview && ` ${instance.name}'s care team sees your side effects with your other values.`}
+          </p>
+        </div>
+        {sideEffects.length > 0 && (
+          <ul aria-label="Side effects you track" className="flex flex-wrap gap-2">
+            {sideEffects.map((item) => (
+              <li key={item.id} className="flex items-center gap-1 rounded-full border py-1 pl-3 pr-1 text-sm">
+                {item.name}
+                <form action={removeSideEffectAction.bind(null, program.id, item.variableId)}>
+                  <Button type="submit" variant="ghost" size="icon" className="h-6 w-6 rounded-full" aria-label={`Stop tracking ${item.name}`}>
+                    <X aria-hidden="true" className="h-3.5 w-3.5" />
+                  </Button>
+                </form>
+              </li>
+            ))}
+          </ul>
+        )}
+        <AddSideEffectForm
+          action={addSideEffectAction.bind(null, program.id)}
+          options={options.filter((option) => !sideEffects.some((item) => item.variableId === option.id))}
+          date={today}
+        />
+      </section>
 
       {labItems.length > 0 && (
         <section aria-labelledby="labs-heading" className="surface-raised space-y-4 rounded-xl border p-6">
@@ -98,7 +140,7 @@ export default async function YourProgramPage({
           </div>
           <ProgramValuesForm
             action={recordProgramValuesAction.bind(null, program.id, "lab")}
-            fields={labItems.map(field)}
+            fields={valueFields(labItems, units, preferred)}
             defaultDate={today}
             dateLabel="Date of the blood draw"
             submitLabel="Save lab results"

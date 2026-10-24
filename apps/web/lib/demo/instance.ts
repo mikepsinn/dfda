@@ -2,7 +2,7 @@ import demo from '@/scripts/demo-data.json'
 import { ensurePasswordUser } from '@/lib/auth-users'
 import { adminDb } from '@/lib/db'
 import { listPrograms, type Program } from '@/lib/programs/data'
-import { demoPatientReport, demoPatientValues, writeValues } from './clinic'
+import { clearDemoSideEffects, demoPatientReport, demoPatientValues, writeValues } from './clinic'
 import { demoLockKey, instanceDemoAccounts } from './instance-accounts'
 
 /**
@@ -88,7 +88,7 @@ export async function prepareInstanceDemo(instanceId: string, role: InstanceDemo
         update: { started_at: startedAt, shared_with_care_team_at: startedAt },
         select: { id: true },
       })
-      await tx.measurements.deleteMany({ where: { user_id: patientId, global_variable_id: { in: program.items.map((item) => item.variableId) } } })
+      await tx.measurements.deleteMany({ where: { user_id: patientId, global_variable_id: { in: await clearDemoSideEffects(tx, program, patientId) } } })
       await writeValues(tx, patientId, program, series)
 
       const report = demoPatientReport(program, startedAt, instance.name)

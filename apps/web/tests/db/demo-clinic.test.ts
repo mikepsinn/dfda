@@ -12,6 +12,7 @@ import {
   resetDemoReview,
 } from '@/lib/demo/clinic'
 import { personalReport } from '@/lib/programs/data'
+import { addSideEffect, mySideEffects } from '@/lib/programs/side-effects'
 
 // The demo clinic that the demo sign-in creates on a deployment
 // (lib/demo/clinic.ts). Runs against the database from
@@ -70,8 +71,11 @@ describe('the demo clinic', () => {
     await adminDb.measurements.create({
       data: { user_id: patientId, global_variable_id: 'weight', user_variable_id: weight.id, value: 300, unit_id: 'kilogram', start_at: now },
     })
+    // A visitor adds a side effect with a rating; the next sign-in removes both.
+    await addSideEffect({ id: patientId }, program, { variableId: 'headache', value: '5', date: now.toISOString().slice(0, 10), remind: false })
     await resetDemoPatient(program, patientId, now)
     expect(await count()).toBe(values)
+    expect(await mySideEffects({ id: patientId }, program.id)).toEqual([])
 
     const report = (await personalReport({ id: patientId }, program))!
     const today = Math.floor(now.getTime() / DAY) * DAY

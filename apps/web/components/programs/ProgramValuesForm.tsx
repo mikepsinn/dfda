@@ -1,13 +1,34 @@
 "use client"
 
-import { useActionState } from "react"
+import { startTransition, useActionState, useEffect, useState, type FormEvent } from "react"
 import { CheckCircle2, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import type { ValuesFormState } from "@/lib/actions/programs"
+import type { UnitChoice } from "@/lib/programs/units"
+import { DoseInput } from "./DoseInput"
+import { RatingInput } from "./RatingInput"
 
-export type ValueField = { id: string; name: string; unit: string; defaultValue?: number | null; min?: number; max?: number }
+const selectClass =
+  "h-10 rounded-md border border-input bg-background px-3 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+
+/**
+ * One field of the form. A rating (`scale`) shows a button for each number;
+ * a dose with a usual amount (`usual`) shows "Took it" and "Skipped" buttons;
+ * other values show a number field, with a unit menu when there are other
+ * units (`units`, the chosen one first selected is `unitId`).
+ */
+export type ValueField = {
+  id: string
+  name: string
+  unit: string
+  kind: "dose" | "check_in" | "lab"
+  usual?: number | null
+  scale?: { min: number; max: number; words: [low: string, high: string] | null } | null
+  units?: UnitChoice[]
+  unitId?: string
+}
 
 /** A form for one day's values of a program: lab results, or doses and check-ins. */
 export function ProgramValuesForm({
@@ -16,16 +37,32 @@ export function ProgramValuesForm({
   defaultDate,
   dateLabel,
   submitLabel,
+  fixedDate = false,
+  initialValues = {},
 }: {
   action: (state: ValuesFormState, formData: FormData) => Promise<ValuesFormState>
   fields: ValueField[]
   defaultDate: string
   dateLabel: string
   submitLabel: string
+  /** The day is given (a check-in link), so there is no date field. */
+  fixedDate?: boolean
+  /** Values to show at first, by field id (from a check-in link). */
+  initialValues?: Record<string, number>
 }) {
-  const [state, formAction, pending] = useActionState(action, {})
+  const [state, dispatch, pending] = useActionState(action, {})
+  // A save clears the fields for the next day; an error keeps the answers.
+  const [round, setRound] = useState(0)
+  useEffect(() => {
+    if (state.saved) setRound((previous) => previous + 1)
+  }, [state])
+  const submit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
+    startTransition(() => dispatch(data))
+  }
   return (
-    <form action={formAction} className="space-y-4">
+    <form onSubmit={submit} className="space-y-6">
       {state.error && (
         <p role="alert" className="rounded-lg border border-destructive/50 bg-destructive/5 p-3 text-sm">
           {state.error}
@@ -37,28 +74,83 @@ export function ProgramValuesForm({
           Saved {state.saved} {state.saved === 1 ? "value" : "values"}.
         </p>
       )}
-      <div className="space-y-2">
-        <Label htmlFor={`date-${fields[0]?.id}`}>{dateLabel}</Label>
-        <Input id={`date-${fields[0]?.id}`} name="date" type="date" defaultValue={defaultDate} className="w-44" required />
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        {fields.map((field) => (
-          <div key={field.id} className="space-y-2">
-            <Label htmlFor={`value-${field.id}`}>
-              {field.name} <span className="font-normal text-muted-foreground">({field.unit})</span>
-            </Label>
-            <Input
-              id={`value-${field.id}`}
-              name={`value-${field.id}`}
-              type="number"
-              step="any"
-              inputMode="decimal"
-              min={field.min}
-              max={field.max}
-              defaultValue={field.defaultValue ?? undefined}
-            />
-          </div>
-        ))}
+      {fixedDate ? (
+        // `hidden` keeps the field out of the spacing between the fields.
+        <input type="hidden" hidden name="date" value={defaultDate} />
+      ) : (
+        <div className="space-y-2">
+          <Label htmlFor={`date-${fields[0]?.id}`}>{dateLabel}</Label>
+          <Input id={`date-${fields[0]?.id}`} name="date" type="date" defaultValue={defaultDate} className="w-44" required />
+        </div>
+      )}
+      <div key={round} className="grid gap-6 sm:grid-cols-2">
+        {fields.map((field) => {
+          const name = `value-${field.id}`
+          // The answers of a check-in link, until the first save.
+          const initial = round === 0 ? initialValues[field.id] : undefined
+          if (field.scale) {
+            return (
+              <div key={field.id} className="sm:col-span-2">
+                <RatingInput
+                  name={name}
+                  label={field.name}
+                  min={field.scale.min}
+                  max={field.scale.max}
+                  words={field.scale.words}
+                  defaultValue={initial}
+                />
+              </div>
+            )
+          }
+          if (field.kind === "dose" && field.usual != null) {
+            return (
+              <div key={field.id} className="sm:col-span-2">
+                <DoseInput
+                  id={`value-${field.id}`}
+                  name={name}
+                  label={field.name}
+                  unit={field.unit}
+                  usual={field.usual}
+                  defaultValue={initial}
+                />
+              </div>
+            )
+          }
+          const units = field.units ?? []
+          return (
+            <div key={field.id} className="space-y-2">
+              <Label htmlFor={`value-${field.id}`}>
+                {field.name}
+                {units.length < 2 && <span className="font-normal text-muted-foreground"> ({field.unit})</span>}
+              </Label>
+              <div className="flex gap-2">
+                <Input
+                  id={`value-${field.id}`}
+                  name={name}
+                  type="number"
+                  step="any"
+                  inputMode="decimal"
+                  min={field.kind === "dose" ? 0 : undefined}
+                  defaultValue={initial}
+                />
+                {units.length > 1 && (
+                  <select
+                    name={`unit-${field.id}`}
+                    aria-label={`${field.name} unit`}
+                    defaultValue={field.unitId ?? units[0].id}
+                    className={selectClass}
+                  >
+                    {units.map((unit) => (
+                      <option key={unit.id} value={unit.id}>
+                        {unit.unit}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              </div>
+            </div>
+          )
+        })}
       </div>
       <Button type="submit" disabled={pending} className="gap-2">
         {pending && <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />}

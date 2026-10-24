@@ -6,8 +6,10 @@ import { isUniqueViolation } from "@/lib/db"
 import { logger } from "@/lib/logger"
 import { fetchUserProfile } from "@/lib/profile"
 import { programInputSchema, type ProgramInput } from "@/lib/programs/config"
-import { findProgramById } from "@/lib/programs/data"
+import { findCheckIn } from "@/lib/programs/check-in"
+import { findProgramById, type ProgramItem } from "@/lib/programs/data"
 import { joinProgram, leaveProgram, ProgramError, recordProgramValues, saveProgram } from "@/lib/programs/manage"
+import { addSideEffect, mySideEffects, removeSideEffect } from "@/lib/programs/side-effects"
 import { getServerUser } from "@/lib/server-auth"
 
 export type ProgramFormState = {
@@ -103,7 +105,28 @@ export async function leaveProgramAction(programId: string) {
 
 export type ValuesFormState = { error?: string; saved?: number }
 
-/** Records a user's lab results, or doses and check-ins, for a program on one day. */
+/** The values of the form's fields, and the units chosen for them, by item id. */
+function formValues(items: ProgramItem[], formData: FormData) {
+  const values: Record<string, string> = {}
+  const units: Record<string, string> = {}
+  for (const item of items) {
+    values[item.id] = String(formData.get(`value-${item.id}`) ?? "")
+    const unit = formData.get(`unit-${item.id}`)
+    if (typeof unit === "string" && unit) units[item.id] = unit
+  }
+  return { values, units }
+}
+
+function valuesError(error: unknown, context: Record<string, unknown>): ValuesFormState {
+  if (error instanceof ProgramError) return { error: error.message }
+  logger.error("Could not record program values", {
+    ...context,
+    error: error instanceof Error ? error.message : String(error),
+  })
+  return { error: "Could not save the values. Try again." }
+}
+
+/** Records a user's lab results, or doses, check-ins and side effects, for a program on one day. */
 export async function recordProgramValuesAction(
   programId: string,
   kind: "lab" | "today",
@@ -115,19 +138,75 @@ export async function recordProgramValuesAction(
   const program = await findProgramById(programId)
   if (!program) return { error: "This program does not exist." }
 
-  const values: Record<string, string> = {}
-  for (const item of program.items) values[item.id] = String(formData.get(`value-${item.id}`) ?? "")
   try {
-    const saved = await recordProgramValues(user, program, kind, String(formData.get("date") ?? ""), values)
+    const items = kind === "today" ? [...program.items, ...(await mySideEffects(user, program.id))] : program.items
+    const { values, units } = formValues(items, formData)
+    const saved = await recordProgramValues(user, program, kind, String(formData.get("date") ?? ""), values, { items, units })
     revalidatePath(`/programs/${program.slug}/me`)
     return { saved }
   } catch (error) {
+    return valuesError(error, { userId: user.id, programId })
+  }
+}
+
+/**
+ * Records the day of a check-in link (lib/programs/check-in.ts) without a
+ * sign-in: the link's signature is the permission, for its member, program
+ * and day only.
+ */
+export async function recordCheckInAction(token: string, _state: ValuesFormState, formData: FormData): Promise<ValuesFormState> {
+  const checkIn = await findCheckIn(token)
+  if (!checkIn) return { error: "This link is too old. Open your program to record the day." }
+  try {
+    const { values, units } = formValues(checkIn.items, formData)
+    const saved = await recordProgramValues({ id: checkIn.userId }, checkIn.program, "today", checkIn.day, values, {
+      items: checkIn.items,
+      units,
+    })
+    return { saved }
+  } catch (error) {
+    return valuesError(error, { enrollmentId: checkIn.enrollmentId })
+  }
+}
+
+export type SideEffectFormState = { error?: string; added?: string; reminderAdded?: boolean }
+
+/** Adds a side effect to the user's program, with today's rating and a daily reminder when they ask for them. */
+export async function addSideEffectAction(
+  programId: string,
+  _state: SideEffectFormState,
+  formData: FormData,
+): Promise<SideEffectFormState> {
+  const user = await getServerUser()
+  if (!user) return { error: "Sign in to add a side effect." }
+  const program = await findProgramById(programId)
+  if (!program) return { error: "This program does not exist." }
+  try {
+    const { item, reminderAdded } = await addSideEffect(user, program, {
+      variableId: String(formData.get("variableId") ?? ""),
+      value: String(formData.get("value") ?? ""),
+      date: String(formData.get("date") ?? ""),
+      remind: formData.get("remind") === "on",
+    })
+    revalidatePath(`/programs/${program.slug}/me`)
+    return { added: item.name, reminderAdded }
+  } catch (error) {
     if (error instanceof ProgramError) return { error: error.message }
-    logger.error("Could not record program values", {
+    logger.error("Could not add a side effect", {
       userId: user.id,
       programId,
       error: error instanceof Error ? error.message : String(error),
     })
-    return { error: "Could not save the values. Try again." }
+    return { error: "Could not add the side effect. Try again." }
   }
+}
+
+/** Stops tracking a side effect in the user's program. */
+export async function removeSideEffectAction(programId: string, variableId: string) {
+  const user = await getServerUser()
+  if (!user) redirect("/login")
+  const program = await findProgramById(programId)
+  if (!program) return
+  await removeSideEffect(user, program.id, variableId)
+  revalidatePath(`/programs/${program.slug}/me`)
 }

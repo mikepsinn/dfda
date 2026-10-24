@@ -88,9 +88,9 @@ test.describe('the patient', () => {
       await step(page, 'patient-4', async () => {
         const today = page.getByRole('region', { name: 'Record a day' })
         await show(today)
-        await type(today.getByLabel(/^Weight/), '83.4')
-        await type(today.getByLabel(/^Energy/), '7')
-        await type(today.getByLabel(/^Nausea/), '1')
+        await type(today.getByLabel('Weight', { exact: true }), '83.4')
+        await today.getByRole('group', { name: 'Energy' }).getByText('7', { exact: true }).click()
+        await today.getByRole('group', { name: 'Nausea' }).getByText('1', { exact: true }).click()
         await today.getByRole('button', { name: 'Save' }).click()
         await expect(today.getByRole('status')).toHaveText(/Saved \d+ values/)
       })

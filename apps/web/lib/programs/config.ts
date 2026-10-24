@@ -136,5 +136,12 @@ export const SCALE_RANGES: Record<string, [min: number, max: number]> = {
   'one-to-five-scale': [1, 5],
 }
 
+/** The words at the two ends of a rating scale, by the better direction; none when neither end is better. */
+export function scaleWords(better: Better | null, min: number): [low: string, high: string] | null {
+  if (better === 'lower') return [min === 0 ? 'None' : 'Mildest', 'Worst']
+  if (better === 'higher') return ['Very low', 'Very high']
+  return null
+}
+
 export const KIND_LABELS: Record<ItemKind, string> = { dose: 'Dose', check_in: 'Check-in', lab: 'Lab' }
 export const BETTER_LABELS: Record<Better, string> = { higher: 'Higher is better', lower: 'Lower is better', neither: 'Neither' }
