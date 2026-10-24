@@ -4,6 +4,7 @@ import { ensurePasswordUser } from '@/lib/auth-users'
 import { careLogs, careTeamPatients, findReport } from '@/lib/care-team/data'
 import { signOffReport } from '@/lib/care-team/manage'
 import { reportEmails } from '@/lib/care-team/notify'
+import { casePreview } from '@/lib/instance/case-preview'
 import { DemoUnavailable, instanceDemoProblem, prepareInstanceDemo, startInstanceDemo } from '@/lib/demo/instance'
 import { demoLockKey, endInstanceDemo, instanceDemoAccounts } from '@/lib/demo/instance-accounts'
 import { PROGRAM_TEMPLATES, programInputSchema } from '@/lib/programs/config'
@@ -65,6 +66,15 @@ describe("a company site's demo", () => {
     expect(await instanceDemoProblem(instanceId)).toBeNull()
     await expect(prepareInstanceDemo(instanceId, 'clinician')).rejects.toBeInstanceOf(DemoUnavailable)
     expect(await startInstanceDemo(instanceId)).toBeNull()
+  })
+
+  it("shows the demo patient's case on the home page of a site with care team review", () => {
+    expect(program.careTeamReview).toBe(true)
+    const preview = casePreview('Site Demo Clinic', [program])
+    expect(preview).toMatchObject({ patientName: 'Riley Lee', programName: program.name, followUpWeeks: 12 })
+    expect(preview!.headline).toHaveLength(4)
+    expect(preview!.timeline.lanes.map((lane) => lane.name)).toContain(program.items.find((item) => item.kind === 'dose')!.name)
+    expect(casePreview('Site Demo Clinic', [{ ...program, careTeamReview: false }])).toBeNull()
   })
 
   it('gives the demo clinician one patient, with logs and the example report to sign off', async () => {

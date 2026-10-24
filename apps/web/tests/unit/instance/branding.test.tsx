@@ -5,6 +5,9 @@ import { HeroSection } from "@/components/HeroSection"
 import { InstanceFooter } from "@/components/instance/InstanceFooter"
 import { InstanceHeader } from "@/components/instance/InstanceHeader"
 import { InstanceHome } from "@/components/instance/InstanceHome"
+import { EXAMPLE_REPORT } from "@/lib/biomarker-report/example"
+import { caseMarkers, caseTimeline, draftNote, headlineMarkers } from "@/lib/care-team/case"
+import type { CasePreview } from "@/lib/instance/case-preview"
 import type { Program } from "@/lib/programs/data"
 
 vi.mock("@/lib/auth-client", () => ({ authClient: { signOut: vi.fn() } }))
@@ -55,6 +58,53 @@ describe("a company instance's own site", () => {
     expect(screen.getByRole("button", { name: "Try it as a patient" })).toBeInTheDocument()
     expect(screen.getByRole("button", { name: "Try it as a clinician" })).toBeInTheDocument()
     expect(screen.getByText(/its clinicians see your reports and what you log/)).toBeInTheDocument()
+  })
+
+  it("gives a clinic a home page for patients and clinicians, with its demo patient's case in the pictures", () => {
+    const clinic = { ...program("p1", "glp-1", "GLP-1 weight program"), careTeamReview: true }
+    const startedAt = new Date("2026-07-30T00:00:00Z")
+    const markers = caseMarkers(EXAMPLE_REPORT)
+    const preview: CasePreview = {
+      patientName: "Riley Lee",
+      details: "52 years",
+      programName: clinic.name,
+      startedAt,
+      followUpWeeks: 12,
+      timeline: caseTimeline({ program: clinic, startedAt, series: new Map(), report: EXAMPLE_REPORT }),
+      headline: headlineMarkers(markers),
+      measured: "68 proteins measured",
+      collection: null,
+      firstLabel: "Baseline",
+      lastLabel: "Week 12",
+      clinicianName: "Dr. Sam Okafor",
+      note: draftNote(markers),
+    }
+    const { rerender } = render(
+      <InstanceHome instance={{ ...instance, demoEnabled: true }} programs={[clinic]} joined={new Set()} preview={preview} />,
+    )
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/^Acme Proteomics$/)
+    // "For patients" in the hero and above the programs.
+    expect(screen.getAllByText("For patients")).toHaveLength(2)
+    expect(screen.getByText("For clinicians")).toBeInTheDocument()
+    expect(screen.getByRole("button", { name: "Try it as a patient" })).toBeInTheDocument()
+    expect(screen.getByRole("button", { name: "Try it as a clinician" })).toBeInTheDocument()
+    const steps = screen.getByRole("region", { name: "One case, from both sides" })
+    expect(within(steps).getAllByRole("heading", { level: 3 }).map((heading) => heading.textContent)).toEqual([
+      "Before the first dose",
+      "What happens in between",
+      "The second sample",
+      "A clinician signs off",
+    ])
+    // Each picture is one image with its text: the case page's parts, filled with the demo patient.
+    expect(screen.getByRole("img", { name: /^A patient's case as the care team sees it: Riley Lee, GLP-1 weight program, with / })).toBeInTheDocument()
+    expect(screen.getByRole("img", { name: /^A clinician's note on the report: / })).toBeInTheDocument()
+    expect(screen.getByRole("link", { name: /GLP-1 weight program/ })).toHaveAttribute("href", "/programs/glp-1")
+    expect(screen.getByText(/its clinicians see your reports and what you log/)).toBeInTheDocument()
+
+    // Without the demo, a clinician signs in.
+    rerender(<InstanceHome instance={instance} programs={[clinic]} joined={new Set()} preview={preview} />)
+    expect(screen.queryByRole("button", { name: /Try it as/ })).not.toBeInTheDocument()
+    expect(screen.getByRole("link", { name: "Sign in" })).toHaveAttribute("href", "/login")
   })
 
   it("leaves out the programs part when there are no programs", () => {

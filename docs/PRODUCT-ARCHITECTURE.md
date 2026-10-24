@@ -169,6 +169,17 @@ email goes to a demo account. Turning the demo off removes the demo people from
 the site. The demo accounts' emails are at example.com and their password comes
 from the server's secret, so only the demo sign-in can use them.
 
+**Clinic home page, 2026-10-24:** a company site with a program in which its
+care team reviews the reports gets a home page for both of its audiences
+([`components/instance/ClinicHome.tsx`](../apps/web/components/instance/ClinicHome.tsx)):
+"For patients" (the programs) and "For clinicians" (sign-in, or the demo), then one
+case in four steps (Baseline, Track, Follow-up, Decide), each with what the patient
+does and what the clinician sees. The pictures are the case page's own parts,
+filled with the site's demo patient
+([`lib/instance/case-preview.ts`](../apps/web/lib/instance/case-preview.ts)), so
+the page reads nobody's data. Other company sites keep the home page for people
+who track a product.
+
 **Instance sites, 2026-10-11:** on an instance, the site is the company's own:
 its header, footer and home page, its programs at `/programs`, sign-in, a
 member's reminders, and the terms and privacy pages. The network's other pages

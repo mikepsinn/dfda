@@ -22,19 +22,16 @@ function MiniArc({ tone }: { tone: keyof typeof TONE_CLASSES }) {
   )
 }
 
-/** One marker's change as a card: first value → last value, the change in percent and the status. A link that selects it. */
-export function MarkerCard({ marker, href, selected }: { marker: CaseMarker; href: string; selected: boolean }) {
+/**
+ * One marker's change as a card: first value → last value, the change in
+ * percent and the status. With `href`, a link that selects it; without, a
+ * picture of the card (the company home page).
+ */
+export function MarkerCard({ marker, href, selected = false }: { marker: CaseMarker; href?: string; selected?: boolean }) {
   const tone = toneOf(marker.status)
   const decimals = decimalsFor(marker.values)
-  return (
-    <Link
-      href={href}
-      scroll={false}
-      aria-current={selected ? "true" : undefined}
-      className={`surface-raised block space-y-1 rounded-3xl border bg-card p-4 transition-colors hover:border-primary ${
-        selected ? "border-primary ring-1 ring-primary" : ""
-      }`}
-    >
+  const body = (
+    <>
       <Eyebrow className={`truncate ${TONE_CLASSES[tone].text}`}>{marker.panelName}</Eyebrow>
       <p className={`${SERIF} text-3xl`}>{marker.id}</p>
       <p className="truncate text-xs text-muted-foreground">{marker.name}</p>
@@ -56,6 +53,18 @@ export function MarkerCard({ marker, href, selected }: { marker: CaseMarker; hre
         )}
         <StatusBadge status={marker.status} />
       </p>
+    </>
+  )
+  const card = "surface-raised block space-y-1 rounded-3xl border bg-card p-4"
+  if (!href) return <div className={card}>{body}</div>
+  return (
+    <Link
+      href={href}
+      scroll={false}
+      aria-current={selected ? "true" : undefined}
+      className={`${card} transition-colors hover:border-primary ${selected ? "border-primary ring-1 ring-primary" : ""}`}
+    >
+      {body}
     </Link>
   )
 }

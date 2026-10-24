@@ -11,8 +11,16 @@ const ROLES: { role: InstanceDemoRole; label: string }[] = [
   { role: "clinician", label: "Try it as a clinician" },
 ]
 
-/** The demo of a company's site (lib/demo/instance.ts): one button for each role. */
-export function DemoTryButtons({ className = "" }: { className?: string }) {
+/** The demo of a company's site (lib/demo/instance.ts): one button for each role, or for the given roles only. */
+export function DemoTryButtons({
+  className = "",
+  roles = ["patient", "clinician"],
+  variant = "outline",
+}: {
+  className?: string
+  roles?: InstanceDemoRole[]
+  variant?: "outline" | "default"
+}) {
   const [busy, setBusy] = useState<InstanceDemoRole | null>(null)
   const [error, setError] = useState<string | null>(null)
 
@@ -32,8 +40,8 @@ export function DemoTryButtons({ className = "" }: { className?: string }) {
   return (
     <div className={`space-y-2 ${className}`}>
       <div className="flex flex-wrap gap-2">
-        {ROLES.map(({ role, label }) => (
-          <Button key={role} type="button" variant="outline" disabled={busy !== null} onClick={() => open(role)} className="gap-2">
+        {ROLES.filter(({ role }) => roles.includes(role)).map(({ role, label }) => (
+          <Button key={role} type="button" variant={variant} disabled={busy !== null} onClick={() => open(role)} className="gap-2">
             {busy === role && <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />}
             {label}
           </Button>
