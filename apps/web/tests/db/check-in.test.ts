@@ -170,6 +170,28 @@ describe('the daily check-in email', () => {
     }
   })
 
+  it('stays due when a run reaches its time limit before it claims the email', async () => {
+    const counts = await sendCheckInEmails(atToday('20:30'), Date.now() - 1)
+    expect(counts).toMatchObject({ sent: 0, failed: 0 })
+    expect(counts.deferred).toBe(counts.due)
+    expect(await adminDb.check_in_emails.count({ where: { enrollment_id: enrollmentId } })).toBe(0)
+    expect(await mine(atToday('20:30'))).toHaveLength(1)
+  })
+
+  it('is due again when the run that claimed it stopped before it sent it, after 15 minutes', async () => {
+    const local_date = new Date(`${today}T00:00:00.000Z`)
+    const claimed = (minutesAgo: number) => new Date(atToday('20:30').getTime() - minutesAgo * 60_000)
+    await adminDb.check_in_emails.create({ data: { enrollment_id: enrollmentId, local_date, claimed_at: claimed(5) } })
+    try {
+      // Another run may still send it.
+      expect(await mine(atToday('20:30'))).toEqual([])
+      await adminDb.check_in_emails.updateMany({ where: { enrollment_id: enrollmentId }, data: { claimed_at: claimed(20) } })
+      expect(await mine(atToday('20:30'))).toHaveLength(1)
+    } finally {
+      await adminDb.check_in_emails.deleteMany({ where: { enrollment_id: enrollmentId } })
+    }
+  })
+
   it('is sent once a day, with a link that records the day without a sign-in', async () => {
     const before = await sendCheckInEmails(atToday('20:30'))
     expect(before.failed).toBe(0)
@@ -179,6 +201,8 @@ describe('the daily check-in email', () => {
     const link = /\/programs\/glp-1\/check-in\/([\w-]+\.[\w-]+)/.exec(sent[0].text)
     expect(link).not.toBeNull()
 
+    const row = await adminDb.check_in_emails.findFirstOrThrow({ where: { enrollment_id: enrollmentId } })
+    expect(row.sent_at).not.toBeNull()
     vi.mocked(sendEmail).mockReset()
     await sendCheckInEmails(atToday('21:30'))
     expect(vi.mocked(sendEmail).mock.calls.filter(([email]) => email.to === `check-in-member-${stamp}@example.com`)).toHaveLength(0)
