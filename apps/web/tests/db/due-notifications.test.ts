@@ -30,8 +30,8 @@ async function reminder(userId: string, globalVariableId: string, timeOfDay: str
   return reminder.id
 }
 
-function value(userId: string, globalVariableId: string, startTime: string, amount = 3) {
-  return withUserTransaction({ id: userId }, (tx) => recordMeasurement(tx, userId, { globalVariableId, value: amount, startTime }))
+function value(userId: string, globalVariableId: string, startTime: string, amount = 3, unitId?: string) {
+  return withUserTransaction({ id: userId }, (tx) => recordMeasurement(tx, userId, { globalVariableId, value: amount, startTime, unitId }))
 }
 
 const notifications = (userId: string) =>
@@ -118,6 +118,18 @@ describe('due notifications without the worker', () => {
       'nausea 2026-10-20T08:00:00.000Z completed',
       'nausea 2026-10-20T09:00:00.000Z completed',
     ])
+  })
+
+  it("store the answer in the person's unit: a weight in pounds answers a reminder in kilograms", async () => {
+    const userId = await person('units', 'UTC')
+    await reminder(userId, 'weight', '08:00')
+    const weight = await value(userId, 'weight', '2026-10-20T09:00:00.000Z', 180, 'pound')
+    await refreshDueNotifications(userId, now)
+    const [row] = await notifications(userId)
+    expect(row.status).toBe('completed')
+    const answer = row.log_details as { measurementId: string; loggedValue: number }
+    expect(answer.measurementId).toBe(weight.id)
+    expect(answer.loggedValue).toBeCloseTo(81.65, 2)
   })
 
   it('are in the due list of the MCP server and the REST API', async () => {

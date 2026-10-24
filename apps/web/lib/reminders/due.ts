@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
 import { adminDb } from '@/lib/db'
 import { timeOfDayToString } from '@/lib/time-of-day'
+import { valueInUnit } from '@/lib/units/convert'
 import { firesOn, zoneOf } from './schedule'
 
 /**
@@ -66,11 +67,22 @@ async function createFired(userId: string, zone: string, now: Date) {
  * answers: a measurement of the reminder's variable on the notification's day
  * that no other notification has as its answer. The earliest notifications of
  * a day get the earliest values, so two values answer two reminders of the
- * same day, and one value answers one.
+ * same day, and one value answers one. The answer's value is in the person's
+ * unit for the variable, as when they answer the reminder (a weight saved in
+ * pounds answers a reminder of a weight in kilograms with its kilograms).
  */
 async function closeAnswered(userId: string, zone: string, now: Date) {
   const since = new Date(now.getTime() - ANSWER_DAYS * DAY)
-  const variableOf = { reminder_schedules: { select: { user_variables: { select: { global_variable_id: true } } } } } as const
+  const unit = { select: { id: true, unit_category_id: true, conversion_factor: true, conversion_offset: true } } as const
+  const variableOf = {
+    reminder_schedules: {
+      select: {
+        user_variables: {
+          select: { global_variable_id: true, units: unit, global_variables: { select: { units: unit, molar_mass: true } } },
+        },
+      },
+    },
+  } as const
   const pending = await adminDb.reminder_notifications.findMany({
     where: { user_id: userId, status: 'pending', notification_trigger_at: { gte: since, lte: now } },
     select: { id: true, notification_trigger_at: true, ...variableOf },
@@ -87,7 +99,7 @@ async function closeAnswered(userId: string, zone: string, now: Date) {
         // A day in any time zone, and the noon UTC of a day's value, is within a day of its UTC date.
         start_at: { gte: new Date(since.getTime() - DAY), lte: new Date(now.getTime() + DAY) },
       },
-      select: { id: true, global_variable_id: true, start_at: true, value: true },
+      select: { id: true, global_variable_id: true, start_at: true, value: true, units: unit },
       orderBy: { start_at: 'asc' },
     }),
     adminDb.reminder_notifications.findMany({
@@ -105,17 +117,19 @@ async function closeAnswered(userId: string, zone: string, now: Date) {
     free.set(key, [...(free.get(key) ?? []), measurement])
   }
   for (const notification of pending) {
-    const variableId = notification.reminder_schedules.user_variables.global_variable_id
+    const variable = notification.reminder_schedules.user_variables
     const day = DateTime.fromJSDate(notification.notification_trigger_at).setZone(zone).toISODate()!
-    const measurement = free.get(`${variableId}:${day}`)?.shift()
+    const measurement = free.get(`${variable.global_variable_id}:${day}`)?.shift()
     if (!measurement) continue
+    const value = valueInUnit(measurement.value, measurement.units, variable.units ?? variable.global_variables.units, variable.global_variables.molar_mass)
+    if (value === null) continue
     // Only while it is still pending: an answer from the person at the same time wins.
     await adminDb.reminder_notifications.updateMany({
       where: { id: notification.id, status: 'pending' },
       data: {
         status: 'completed',
         completed_or_skipped_at: now,
-        log_details: { measurementId: measurement.id, loggedValue: measurement.value },
+        log_details: { measurementId: measurement.id, loggedValue: value },
         updated_at: now,
       },
     })

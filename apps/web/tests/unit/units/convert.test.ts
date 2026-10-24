@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest'
-import { convertibleCategories, convertValue, MASS_CONCENTRATION, MOLAR_CONCENTRATION } from '@/lib/units/convert'
+import { convertibleCategories, convertValue, MASS_CONCENTRATION, MOLAR_CONCENTRATION, valueInUnit } from '@/lib/units/convert'
 
 // The factors of db/seeds/03_units.sql, and the molar masses of
 // db/seeds/99_global_variable_molar_masses.sql. The expected values are the
@@ -42,5 +42,20 @@ describe('convertValue', () => {
     expect(convertibleCategories(MASS_CONCENTRATION, MOLAR_CONCENTRATION, 180.156)).toBe(true)
     expect(convertibleCategories(MASS_CONCENTRATION, MOLAR_CONCENTRATION, null)).toBe(false)
     expect(convertibleCategories('length', 'length')).toBe(true)
+  })
+})
+
+describe('valueInUnit', () => {
+  const unit = (id: string, unit_category_id: string, conversion_factor: number) => ({ id, unit_category_id, conversion_factor, conversion_offset: 0 })
+  const kilogram = unit('kilogram', 'weight', 1)
+  const pound = unit('pound', 'weight', 2.20462)
+
+  it('converts a value between two units of the same kind, and keeps it for the same unit', () => {
+    expect(valueInUnit(180, pound, kilogram)).toBeCloseTo(81.65, 2)
+    expect(valueInUnit(80, kilogram, kilogram)).toBe(80)
+  })
+
+  it('gives null for units that do not convert', () => {
+    expect(valueInUnit(3, unit('zero-to-ten-scale', 'scale', 1), kilogram)).toBeNull()
   })
 })

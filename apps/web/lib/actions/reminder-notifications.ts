@@ -4,12 +4,15 @@ import { Prisma } from "@/lib/db";
 import { getUserDb } from "@/lib/db/server";
 import { logger } from "@/lib/logger";
 import { refreshDueNotifications } from "@/lib/reminders/due";
+import { valueInUnit, type ConvertibleUnit } from "@/lib/units/convert";
 import { getServerUser } from "@/lib/server-auth";
 import { startOfDay, endOfDay } from 'date-fns'; 
 import type { ReminderNotificationDetails, ReminderNotificationStatus, VariableCategoryId } from "@/lib/database.types.custom";
 import { revalidatePath } from 'next/cache';
 
-const unitSelect = { select: { id: true, name: true, abbreviated_name: true } } as const;
+const unitSelect = {
+  select: { id: true, name: true, abbreviated_name: true, unit_category_id: true, conversion_factor: true, conversion_offset: true },
+} as const;
 
 /**
  * Creates the signed-in user's due notifications (lib/reminders/due.ts), so
@@ -84,6 +87,7 @@ export async function getTimelineNotificationsForDateAction(
                     description: true,
                     emoji: true,
                     default_unit_id: true,
+                    molar_mass: true,
                     units: unitSelect,
                     variable_categories: { select: { id: true, name: true } },
                   },
@@ -107,15 +111,15 @@ export async function getTimelineNotificationsForDateAction(
     .map(n => getLinkedMeasurementId(n.log_details))
     .filter((id): id is string => id !== null);
 
-  const linkedMeasurementsMap = new Map<string, number>();
+  const linkedMeasurementsMap = new Map<string, { value: number; units: ConvertibleUnit }>();
   if (completedMeasurementIds.length > 0) {
     try {
       const measurementsData = await db.measurements.findMany({
         where: { id: { in: completedMeasurementIds }, user_id: userId },
-        select: { id: true, value: true },
+        select: { id: true, value: true, units: unitSelect },
       });
       measurementsData.forEach(m => {
-        linkedMeasurementsMap.set(m.id, m.value);
+        linkedMeasurementsMap.set(m.id, m);
       });
     } catch (measurementsError) {
       logger.warn('Error fetching linked measurements for completed timeline items', { userId, date: dateStr, error: measurementsError });
@@ -133,9 +137,9 @@ export async function getTimelineNotificationsForDateAction(
     let displayValue: number | null = null;
     if (notification.status === 'completed') {
       const linkedMeasurementId = getLinkedMeasurementId(notification.log_details);
-      if (linkedMeasurementId && linkedMeasurementsMap.has(linkedMeasurementId)) {
-        displayValue = linkedMeasurementsMap.get(linkedMeasurementId)!;
-      }
+      const linked = linkedMeasurementId ? linkedMeasurementsMap.get(linkedMeasurementId) : undefined;
+      // In the unit that the timeline shows: a value can be saved in another unit (180 lb for a weight in kg).
+      if (linked) displayValue = valueInUnit(linked.value, linked.units, actualUnit, globalVar.molar_mass);
     }
 
     const variableCatId = category.id as VariableCategoryId;
