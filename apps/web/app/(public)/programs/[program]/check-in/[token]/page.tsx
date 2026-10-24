@@ -2,10 +2,12 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ProgramValuesForm } from "@/components/programs/ProgramValuesForm"
 import { recordCheckInAction } from "@/lib/actions/programs"
+import { adminDb } from "@/lib/db"
 import { findCheckIn } from "@/lib/programs/check-in"
 import { requireCurrentProgram } from "@/lib/programs/current"
-import { valueField } from "@/lib/programs/fields"
+import { valueFields } from "@/lib/programs/fields"
 import { formatDate } from "@/lib/programs/format"
+import { preferredUnits, unitChoices } from "@/lib/programs/units"
 
 export const metadata: Metadata = { title: "Your check-in", robots: { index: false, follow: false } }
 
@@ -41,6 +43,10 @@ export default async function CheckInPage({
     )
   }
 
+  // The link is the permission to this member's check-in, so their units are read on the server.
+  const units = await unitChoices(checkIn.items)
+  const preferred = await preferredUnits(adminDb, checkIn.userId, checkIn.items, units)
+
   // The answer from the email: one value, which the page shows as chosen.
   const initialValues: Record<string, number> = {}
   for (const item of checkIn.items) {
@@ -60,7 +66,7 @@ export default async function CheckInPage({
       <section aria-label="Check-in" className="surface-raised rounded-xl border p-6">
         <ProgramValuesForm
           action={recordCheckInAction.bind(null, token)}
-          fields={checkIn.items.map(valueField)}
+          fields={valueFields(checkIn.items, units, preferred)}
           defaultDate={checkIn.day}
           dateLabel="Date"
           submitLabel="Save"

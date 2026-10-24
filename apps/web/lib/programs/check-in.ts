@@ -16,7 +16,8 @@ import { enrollmentSideEffects } from './side-effects'
  *
  * Once a day, after the last of the day's reminders for a program's doses,
  * check-ins and side effects, the member gets one email for the program. It
- * has a row of number buttons for each rating and a "Took my dose" button.
+ * has a row of number buttons for each rating, and "Took it" and "Skipped"
+ * buttons for each dose.
  * A button opens the check-in page with that answer chosen; the member saves
  * there. The link only opens the page, because some email systems open the
  * links of an email to check them, and that must not record anything.

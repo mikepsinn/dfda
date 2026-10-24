@@ -115,7 +115,7 @@ describe('side effects', () => {
 
   it('are in the day form and in what the care team sees', async () => {
     const items = [...program.items, ...(await mySideEffects(member, program.id))]
-    await recordProgramValues(member, program, 'today', today, { [sideEffectItemId('headache')]: '6' }, items)
+    await recordProgramValues(member, program, 'today', today, { [sideEffectItemId('headache')]: '6' }, { items })
     const values = await adminDb.measurements.findMany({ where: { user_id: member.id, global_variable_id: 'headache' }, select: { value: true } })
     expect(values.map((row) => row.value).sort()).toEqual([4, 6])
 
@@ -187,7 +187,7 @@ describe('the daily check-in email', () => {
 
     const due = (await dueCheckIns(atToday('20:30'))).find((checkIn) => checkIn.enrollmentId === otherEnrollment)!
     const values = Object.fromEntries(due.items.map((item) => [item.id, '1']))
-    await recordProgramValues(other, program, 'today', today, values, due.items)
+    await recordProgramValues(other, program, 'today', today, values, { items: due.items })
     expect((await dueCheckIns(atToday('20:30'))).some((checkIn) => checkIn.enrollmentId === otherEnrollment)).toBe(false)
   })
 

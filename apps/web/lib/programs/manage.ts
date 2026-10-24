@@ -5,6 +5,7 @@ import { recordMeasurement } from '@/lib/tracking/measurements'
 import { ensureUserVariable } from '@/lib/tracking/variables'
 import { SCALE_RANGES, type ProgramInput } from './config'
 import type { Program, ProgramItem } from './data'
+import { unitChoices, type UnitChoice } from './units'
 
 /** Saves, joins and records values of programs, with the user's own permissions. Server only. */
 
@@ -168,11 +169,13 @@ export function itemValue(item: Pick<ProgramItem, 'name' | 'unitId'>, text: stri
 }
 
 /**
- * Records the values a user entered for a program on one day, in each
- * variable's default unit: lab results (`lab`), or doses and check-ins
- * (`today`). `values` maps item ids to the text of the form fields; empty
- * fields are skipped. `items` are the program's items, and for `today` also
- * the side effects that the user tracks (lib/programs/side-effects.ts).
+ * Records the values a user entered for a program on one day: lab results
+ * (`lab`), or doses and check-ins (`today`). `values` maps item ids to the
+ * text of the form fields; empty fields are skipped. `items` are the
+ * program's items, and for `today` also the side effects that the user tracks
+ * (lib/programs/side-effects.ts). `units` maps item ids to the unit that the
+ * user chose (lib/programs/units.ts); other values are in the item's unit.
+ * A chosen unit becomes the user's unit for the variable.
  */
 export async function recordProgramValues(
   user: DbUser,
@@ -180,23 +183,39 @@ export async function recordProgramValues(
   kind: 'lab' | 'today',
   date: string,
   values: Record<string, string>,
-  items: ProgramItem[] = program.items,
+  { items = program.items, units = {} }: { items?: ProgramItem[]; units?: Record<string, string> } = {},
 ) {
   const startTime = dayTime(date)
   const entries = items
     .filter((item) => (kind === 'lab' ? item.kind === 'lab' : item.kind !== 'lab') && values[item.id]?.trim())
     .map((item) => ({ item, value: itemValue(item, values[item.id]) }))
   if (entries.length === 0) throw new ProgramError('Enter at least one value.')
+  const choices = Object.keys(units).length ? await unitChoices(entries.map((entry) => entry.item)) : new Map()
+  const unitOf = (item: ProgramItem) => {
+    const chosen = units[item.id]
+    if (!chosen || chosen === item.unitId) return item.unitId
+    if (!choices.get(item.id)?.some((choice: UnitChoice) => choice.id === chosen)) {
+      throw new ProgramError(`${item.name}: choose a unit from the list.`)
+    }
+    return chosen
+  }
+  const withUnits = entries.map((entry) => ({ ...entry, unitId: unitOf(entry.item) }))
 
   await withUserTransaction(user, async (tx) => {
-    for (const { item, value } of entries) {
+    for (const { item, value, unitId } of withUnits) {
       await recordMeasurement(tx, user.id, {
         globalVariableId: item.variableId,
         value,
-        unitId: item.unitId,
+        unitId,
         startTime,
         note: kind === 'lab' ? `Lab result, ${program.name}` : undefined,
       })
+      if (units[item.id]) {
+        await tx.user_variables.updateMany({
+          where: { user_id: user.id, global_variable_id: item.variableId },
+          data: { preferred_unit_id: unitId === item.unitId ? null : unitId },
+        })
+      }
     }
   })
   return entries.length

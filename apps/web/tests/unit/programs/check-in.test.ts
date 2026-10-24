@@ -112,13 +112,15 @@ describe('the check-in email', () => {
     })
   })
 
-  it('has a button for each number of a rating, a dose button, and a link to the check-in', () => {
+  it('has a button for each number of a rating, dose buttons, and a link to the check-in', () => {
     for (let value = 0; value <= 10; value++) {
       expect(email.html).toContain(`href="https://acme.example/programs/glp-1/check-in/TOKEN?value-nausea=${value}"`)
     }
     expect(email.html).toContain('0 = None, 10 = Worst')
     expect(email.html).toContain('href="https://acme.example/programs/glp-1/check-in/TOKEN?value-dose=0.25"')
-    expect(email.html).toContain('Took my dose (0.25 mg)')
+    expect(email.html).toContain('Took it (0.25 mg)')
+    // A skipped dose is a 0.
+    expect(email.html).toMatch(/href="https:\/\/acme\.example\/programs\/glp-1\/check-in\/TOKEN\?value-dose=0"[^>]*>Skipped</)
     expect(email.html).toContain('Also on your check-in: Weight.')
     expect(email.html).toContain('href="https://acme.example/patient/reminders"')
     expect(email.text).toContain('Open your check-in: https://acme.example/programs/glp-1/check-in/TOKEN')

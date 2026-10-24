@@ -5,10 +5,13 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
+type Answer = "took" | "skipped" | null
+
 /**
- * A dose with a usual amount: one button records the usual amount, and
- * "Other amount" opens a number field. Off at first, so that a saved day has
- * a dose only when the person says that they took it.
+ * A dose with a usual amount, as "Took it" and "Skipped" buttons. "Took it"
+ * records the usual amount, or another amount; "Skipped" records 0, so that
+ * the care team can tell a skipped dose from a day that nobody recorded.
+ * Neither at first; tapping the chosen button again clears the answer.
  */
 export function DoseInput({
   id,
@@ -23,35 +26,47 @@ export function DoseInput({
   label: string
   unit: string
   usual: number
-  /** The amount to show as taken, from a check-in link. */
+  /** The amount to show as chosen, from a check-in link: 0 is skipped. */
   defaultValue?: number | null
 }) {
   const given = defaultValue ?? null
-  const [taken, setTaken] = useState(given !== null)
-  const [other, setOther] = useState(given !== null && given !== usual)
+  const [answer, setAnswer] = useState<Answer>(given === null ? null : given === 0 ? "skipped" : "took")
+  const [other, setOther] = useState(given !== null && given !== 0 && given !== usual)
+  const choose = (next: Exclude<Answer, null>) => setAnswer(answer === next ? null : next)
   return (
-    <fieldset className="space-y-2">
-      <legend className="text-sm font-medium">{label}</legend>
-      <div className="flex flex-wrap items-center gap-3">
+    <fieldset>
+      <legend className="mb-2 text-sm font-medium">{label}</legend>
+      <div className="flex flex-wrap items-center gap-2">
         <Button
           type="button"
-          variant={taken ? "default" : "outline"}
-          aria-pressed={taken}
-          onClick={() => setTaken(!taken)}
+          variant={answer === "took" ? "default" : "outline"}
+          aria-pressed={answer === "took"}
+          onClick={() => choose("took")}
           className="gap-2"
         >
-          {taken && <Check aria-hidden="true" className="h-4 w-4" />}
-          Took my dose{other ? "" : ` (${usual} ${unit})`}
+          {answer === "took" && <Check aria-hidden="true" className="h-4 w-4" />}
+          Took it{other ? "" : ` (${usual} ${unit})`}
         </Button>
-        {taken && !other && (
+        <Button
+          type="button"
+          variant={answer === "skipped" ? "default" : "outline"}
+          aria-pressed={answer === "skipped"}
+          onClick={() => choose("skipped")}
+          className="gap-2"
+        >
+          {answer === "skipped" && <Check aria-hidden="true" className="h-4 w-4" />}
+          Skipped
+        </Button>
+        {answer === "took" && !other && (
           <button type="button" onClick={() => setOther(true)} className="text-sm text-muted-foreground underline">
             Other amount
           </button>
         )}
       </div>
-      {taken && !other && <input type="hidden" name={name} value={usual} />}
-      {taken && other && (
-        <div className="flex items-center gap-2">
+      {answer === "skipped" && <input type="hidden" name={name} value={0} />}
+      {answer === "took" && !other && <input type="hidden" name={name} value={usual} />}
+      {answer === "took" && other && (
+        <div className="mt-2 flex items-center gap-2">
           <Input
             id={id}
             name={name}

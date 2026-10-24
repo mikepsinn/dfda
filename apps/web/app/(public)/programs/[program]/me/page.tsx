@@ -15,12 +15,14 @@ import {
   removeSideEffectAction,
 } from "@/lib/actions/programs"
 import { myReports, sharedSince } from "@/lib/care-team/data"
+import { withUserTransaction } from "@/lib/db"
 import { requireCurrentProgram } from "@/lib/programs/current"
 import { personalReport } from "@/lib/programs/data"
-import { valueField } from "@/lib/programs/fields"
+import { valueFields } from "@/lib/programs/fields"
 import { formatDate } from "@/lib/programs/format"
 import { CHECK_IN_REMINDER_TIME, DOSE_REMINDER_TIME } from "@/lib/programs/manage"
 import { mySideEffects, sideEffectOptions } from "@/lib/programs/side-effects"
+import { preferredUnits, unitChoices } from "@/lib/programs/units"
 import { getServerUser } from "@/lib/server-auth"
 
 export const metadata: Metadata = { title: "Your program" }
@@ -52,6 +54,8 @@ export default async function YourProgramPage({
   const followUpDays = program.followUpWeeks * 7
   const todayItems = [...program.items.filter((item) => item.kind !== "lab"), ...sideEffects]
   const labItems = program.items.filter((item) => item.kind === "lab")
+  const units = await unitChoices(program.items)
+  const preferred = await withUserTransaction(user, (tx) => preferredUnits(tx, user.id, program.items, units))
 
   return (
     <div className="mx-auto max-w-4xl space-y-10">
@@ -84,7 +88,7 @@ export default async function YourProgramPage({
           </h2>
           <ProgramValuesForm
             action={recordProgramValuesAction.bind(null, program.id, "today")}
-            fields={todayItems.map(valueField)}
+            fields={valueFields(todayItems, units, preferred)}
             defaultDate={today}
             dateLabel="Date"
             submitLabel="Save"
@@ -136,7 +140,7 @@ export default async function YourProgramPage({
           </div>
           <ProgramValuesForm
             action={recordProgramValuesAction.bind(null, program.id, "lab")}
-            fields={labItems.map(valueField)}
+            fields={valueFields(labItems, units, preferred)}
             defaultDate={today}
             dateLabel="Date of the blood draw"
             submitLabel="Save lab results"

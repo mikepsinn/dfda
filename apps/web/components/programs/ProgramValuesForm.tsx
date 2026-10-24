@@ -6,13 +6,18 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import type { ValuesFormState } from "@/lib/actions/programs"
+import type { UnitChoice } from "@/lib/programs/units"
 import { DoseInput } from "./DoseInput"
 import { RatingInput } from "./RatingInput"
 
+const selectClass =
+  "h-10 rounded-md border border-input bg-background px-3 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+
 /**
  * One field of the form. A rating (`scale`) shows a button for each number;
- * a dose with a usual amount (`usual`) shows a "Took my dose" button; other
- * values show a number field.
+ * a dose with a usual amount (`usual`) shows "Took it" and "Skipped" buttons;
+ * other values show a number field, with a unit menu when there are other
+ * units (`units`, the chosen one first selected is `unitId`).
  */
 export type ValueField = {
   id: string
@@ -21,6 +26,8 @@ export type ValueField = {
   kind: "dose" | "check_in" | "lab"
   usual?: number | null
   scale?: { min: number; max: number; words: [low: string, high: string] | null } | null
+  units?: UnitChoice[]
+  unitId?: string
 }
 
 /** A form for one day's values of a program: lab results, or doses and check-ins. */
@@ -109,20 +116,38 @@ export function ProgramValuesForm({
               </div>
             )
           }
+          const units = field.units ?? []
           return (
             <div key={field.id} className="space-y-2">
               <Label htmlFor={`value-${field.id}`}>
-                {field.name} <span className="font-normal text-muted-foreground">({field.unit})</span>
+                {field.name}
+                {units.length < 2 && <span className="font-normal text-muted-foreground"> ({field.unit})</span>}
               </Label>
-              <Input
-                id={`value-${field.id}`}
-                name={name}
-                type="number"
-                step="any"
-                inputMode="decimal"
-                min={field.kind === "dose" ? 0 : undefined}
-                defaultValue={initial}
-              />
+              <div className="flex gap-2">
+                <Input
+                  id={`value-${field.id}`}
+                  name={name}
+                  type="number"
+                  step="any"
+                  inputMode="decimal"
+                  min={field.kind === "dose" ? 0 : undefined}
+                  defaultValue={initial}
+                />
+                {units.length > 1 && (
+                  <select
+                    name={`unit-${field.id}`}
+                    aria-label={`${field.name} unit`}
+                    defaultValue={field.unitId ?? units[0].id}
+                    className={selectClass}
+                  >
+                    {units.map((unit) => (
+                      <option key={unit.id} value={unit.id}>
+                        {unit.unit}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              </div>
             </div>
           )
         })}

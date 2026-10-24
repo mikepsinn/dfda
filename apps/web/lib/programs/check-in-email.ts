@@ -53,9 +53,9 @@ const escape = (value: string) =>
   value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 /**
- * The check-in email: a row of number buttons for each rating, a "Took my
- * dose" button for each dose with a usual amount, and a button that opens
- * the check-in. Each button opens the check-in page (`pagePath` on the
+ * The check-in email: a row of number buttons for each rating, "Took it"
+ * and "Skipped" buttons for each dose with a usual amount, and a button that
+ * opens the check-in. Each button opens the check-in page (`pagePath` on the
  * company's site, through `url`) with its answer chosen. It holds no values.
  */
 export function checkInEmail(
@@ -68,6 +68,8 @@ export function checkInEmail(
   const answer = (item: ProgramItem, value: number) => url(`${pagePath}?value-${item.id}=${value}`)
   const button = (href: string, text: string) =>
     `<a href="${escape(href)}" style="display:inline-block;padding:10px 18px;border-radius:6px;background:${escape(brand.primaryColor)};color:${isDark(brand.primaryColor) ? '#ffffff' : '#171717'};text-decoration:none;font-weight:600">${escape(text)}</a>`
+  const outline = (href: string, text: string) =>
+    `<a href="${escape(href)}" style="display:inline-block;padding:9px 17px;border:1px solid #d4d4d4;border-radius:6px;color:#171717;text-decoration:none;font-weight:600">${escape(text)}</a>`
   const number = (href: string, value: number) =>
     `<a href="${escape(href)}" style="display:inline-block;min-width:22px;padding:8px 4px;margin:0 2px 4px 0;border:1px solid #d4d4d4;border-radius:6px;text-align:center;color:#171717;text-decoration:none;font-weight:600">${value}</a>`
 
@@ -89,7 +91,8 @@ export function checkInEmail(
     } else if (item.kind === 'dose' && item.defaultValue !== null) {
       parts.push(
         `<p style="margin:20px 0 4px;font-weight:600">${escape(item.name)}</p>` +
-          `<p style="margin:0">${button(answer(item, item.defaultValue), `Took my dose (${item.defaultValue} ${item.unit})`)}</p>`,
+          `<p style="margin:0">${button(answer(item, item.defaultValue), `Took it (${item.defaultValue} ${item.unit})`)} ` +
+          `${outline(answer(item, 0), 'Skipped')}</p>`,
       )
     } else {
       others.push(item.name)

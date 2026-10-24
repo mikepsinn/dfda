@@ -105,11 +105,16 @@ export async function leaveProgramAction(programId: string) {
 
 export type ValuesFormState = { error?: string; saved?: number }
 
-/** The values of the form's fields, by item id. */
-function formValues(items: ProgramItem[], formData: FormData): Record<string, string> {
+/** The values of the form's fields, and the units chosen for them, by item id. */
+function formValues(items: ProgramItem[], formData: FormData) {
   const values: Record<string, string> = {}
-  for (const item of items) values[item.id] = String(formData.get(`value-${item.id}`) ?? "")
-  return values
+  const units: Record<string, string> = {}
+  for (const item of items) {
+    values[item.id] = String(formData.get(`value-${item.id}`) ?? "")
+    const unit = formData.get(`unit-${item.id}`)
+    if (typeof unit === "string" && unit) units[item.id] = unit
+  }
+  return { values, units }
 }
 
 function valuesError(error: unknown, context: Record<string, unknown>): ValuesFormState {
@@ -135,7 +140,8 @@ export async function recordProgramValuesAction(
 
   try {
     const items = kind === "today" ? [...program.items, ...(await mySideEffects(user, program.id))] : program.items
-    const saved = await recordProgramValues(user, program, kind, String(formData.get("date") ?? ""), formValues(items, formData), items)
+    const { values, units } = formValues(items, formData)
+    const saved = await recordProgramValues(user, program, kind, String(formData.get("date") ?? ""), values, { items, units })
     revalidatePath(`/programs/${program.slug}/me`)
     return { saved }
   } catch (error) {
@@ -152,14 +158,11 @@ export async function recordCheckInAction(token: string, _state: ValuesFormState
   const checkIn = await findCheckIn(token)
   if (!checkIn) return { error: "This link is too old. Open your program to record the day." }
   try {
-    const saved = await recordProgramValues(
-      { id: checkIn.userId },
-      checkIn.program,
-      "today",
-      checkIn.day,
-      formValues(checkIn.items, formData),
-      checkIn.items,
-    )
+    const { values, units } = formValues(checkIn.items, formData)
+    const saved = await recordProgramValues({ id: checkIn.userId }, checkIn.program, "today", checkIn.day, values, {
+      items: checkIn.items,
+      units,
+    })
     return { saved }
   } catch (error) {
     return valuesError(error, { enrollmentId: checkIn.enrollmentId })

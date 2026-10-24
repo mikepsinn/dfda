@@ -241,16 +241,21 @@ pages say that a change after the start does not prove that the product caused i
 
 **The daily check-in, 2026-10-24 (`apps/web/lib/programs`):** a member records a day
 at `/programs/{slug}/me` with one button for each number of a rating (0 to 10 for
-most symptoms, with the words of the better direction at the two ends) and one
-"Took my dose" button with the program's usual amount; a saved day has a dose only
-when the person taps it. Other values, such as weight, are number fields. Under it,
+most symptoms, with the words of the better direction at the two ends), and "Took
+it" (the program's usual amount, or another amount) and "Skipped" (0) buttons for a
+dose: a skipped dose is a value, so the care team can tell it from a day that nobody
+recorded. Other values, such as weight, are number fields with a unit menu: units of
+the same kind whose size is near the program's unit, so kilograms and pounds but not
+milligrams (`units.ts`). The value is saved in the unit chosen; the member's own
+report shows the unit they chose last, and the care team and the company see the
+program's units. Under the day form,
 the member adds side effects: symptoms from the variables catalog that are rated on
 a scale (`side-effects.ts`, table `enrollment_side_effects`), with today's rating
 and a daily reminder if they want them. The day form then asks for each side
 effect, and in a program with care team review the care team sees them with the
 other logs. Once a day, after the last of the day's reminders in the member's time
 zone, the member gets one email for each program (`check-in.ts`): number buttons
-for each rating and a dose button. Four decisions:
+for each rating, and "Took it" and "Skipped" for each dose. Four decisions:
 
 1. A button in the email opens the check-in page with that answer chosen; the
    member saves there. Some email systems open each link of an email to check it,

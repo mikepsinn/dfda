@@ -50,7 +50,7 @@ test('a company creates a program; a person joins it and records values', async 
   await today.getByRole('group', { name: 'Energy' }).getByText('4', { exact: true }).click()
   await today.getByRole('button', { name: 'Save' }).click()
   await expect(today.getByRole('status')).toHaveText('Saved 2 values.')
-  await today.getByRole('button', { name: 'Took my dose (250 ug)' }).click()
+  await today.getByRole('button', { name: 'Took it (250 ug)' }).click()
   await today.getByRole('button', { name: 'Save' }).click()
   await expect(today.getByRole('status')).toHaveText('Saved 1 value.')
 
@@ -59,7 +59,8 @@ test('a company creates a program; a person joins it and records values', async 
   await sideEffects.getByLabel('Side effect', { exact: true }).fill('Headache')
   await sideEffects.getByRole('group', { name: 'Headache today' }).getByText('3', { exact: true }).click()
   await sideEffects.getByRole('button', { name: 'Add the side effect' }).click()
-  await expect(sideEffects.getByRole('status')).toHaveText('Added Headache. You get a reminder for it each day.')
+  // The reminder is new on a new database; a run before may have added it (tests/db/check-in.test.ts checks it).
+  await expect(sideEffects.getByRole('status')).toHaveText(/^Added Headache\./)
   await expect(today.getByRole('group', { name: 'Headache' })).toBeVisible()
   await sideEffects.getByRole('button', { name: 'Stop tracking Headache' }).click()
   await expect(today.getByRole('group', { name: 'Headache' })).toHaveCount(0)
@@ -70,7 +71,7 @@ test('a company creates a program; a person joins it and records values', async 
   await member.goto(onInstance(`/programs/${slug}/me`))
 
   const labs = member.getByRole('region', { name: 'Lab results' })
-  await labs.getByLabel(/^hs-CRP/).fill('2.5')
+  await labs.getByLabel('hs-CRP', { exact: true }).fill('2.5')
   await labs.getByRole('button', { name: 'Save lab results' }).click()
   await expect(labs.getByRole('status')).toHaveText('Saved 1 value.')
 

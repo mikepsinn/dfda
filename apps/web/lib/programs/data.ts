@@ -3,6 +3,7 @@ import { demoAccountIds } from '@/lib/demo/instance-accounts'
 import { convertValue } from '@/lib/units/convert'
 import type { Better, Frequency, ItemKind, VariableOption } from './config'
 import { buildPersonReport, LOOKBACK_DAYS, programTotals, type Point, type ReportItem } from './report'
+import { inPreferredUnits } from './units'
 
 /** Reads programs, their items and their values. Server only. */
 
@@ -204,7 +205,10 @@ export function lookbackStart(startedAt: Date) {
   return new Date(startedAt.getTime() - LOOKBACK_DAYS * DAY)
 }
 
-/** The user's enrollment and report, read with the user's own permissions. */
+/**
+ * The user's enrollment and report, read with the user's own permissions, in
+ * the units that the user chose for the values (lib/programs/units.ts).
+ */
 export async function personalReport(user: { id: string }, program: Program) {
   return withUserTransaction(user, async (tx) => {
     const enrollment = await tx.program_enrollments.findUnique({
@@ -212,8 +216,9 @@ export async function personalReport(user: { id: string }, program: Program) {
       select: { started_at: true },
     })
     if (!enrollment) return null
-    const series = (await loadSeries(tx, [user.id], program, lookbackStart(enrollment.started_at))).get(user.id)
-    return buildPersonReport(reportItems(program), series ?? new Map(), enrollment.started_at, program.followUpWeeks)
+    const theirs = await inPreferredUnits(tx, user.id, program)
+    const series = (await loadSeries(tx, [user.id], theirs, lookbackStart(enrollment.started_at))).get(user.id)
+    return buildPersonReport(reportItems(theirs), series ?? new Map(), enrollment.started_at, program.followUpWeeks)
   })
 }
 
