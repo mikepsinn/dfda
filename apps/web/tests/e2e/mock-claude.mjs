@@ -1,8 +1,11 @@
 /**
  * A stand-in for the Claude API in the browser tests, so that they contact no
- * outside service: it answers every streamed Messages request with the same
- * answer, which cites the report and one page of the literature. The app uses
- * it when ANTHROPIC_BASE_URL points here (playwright.config.ts, ci.yml).
+ * outside service. It answers every streamed Messages request (the report
+ * assistant) with the same answer, which cites the report and one page of the
+ * literature. It answers the check-in chat (lib/programs/chat.ts, not
+ * streamed) with a record_values call for the first rating of the program,
+ * and then with MOCK_CHAT.reply. The app uses it when ANTHROPIC_BASE_URL
+ * points here (playwright.config.ts, ci.yml).
  *
  * Usage: node tests/e2e/mock-claude.mjs [port]   (default 4010)
  */
@@ -13,6 +16,31 @@ export const MOCK_ANSWER = {
   literature: 'Studies of the program’s drug report the same direction of change.',
   sourceTitle: 'Example study of the program’s drug',
   sourceUrl: 'https://pubmed.ncbi.nlm.nih.gov/00000000/',
+}
+
+export const MOCK_CHAT = { value: 3, reply: 'Thank you. I saved it for today.' }
+
+/** The chat's answer: first a record_values call, then, after its result, a short text. */
+function chatMessage(body) {
+  const last = body.messages.at(-1)
+  const answered = Array.isArray(last?.content) && last.content.some((block) => block.type === 'tool_result')
+  const system = (body.system ?? []).map((block) => block.text).join('\n')
+  // A new id for each reply: the next turn of the thread continues from it.
+  // The first rating in the program's list of items, such as "- Nausea: rating 0 to 10".
+  const item = /^- (.+?): rating /m.exec(system)?.[1] ?? 'Energy'
+  const content = answered
+    ? [{ type: 'text', text: MOCK_CHAT.reply }]
+    : [{ type: 'tool_use', id: 'toolu_mock', name: 'record_values', input: { values: [{ item, value: MOCK_CHAT.value }] } }]
+  return {
+    id: `msg_mock_chat_${Date.now()}_${Math.random().toString(36).slice(2)}`,
+    type: 'message',
+    role: 'assistant',
+    model: body.model,
+    content,
+    stop_reason: answered ? 'end_turn' : 'tool_use',
+    stop_sequence: null,
+    usage: { input_tokens: 1, output_tokens: 1 },
+  }
 }
 
 function events() {
@@ -61,8 +89,16 @@ createServer((req, res) => {
     res.writeHead(404, { 'content-type': 'application/json' }).end(JSON.stringify({ type: 'error', error: { type: 'not_found_error', message: 'Not found' } }))
     return
   }
-  req.resume()
+  const chunks = []
+  req.on('data', (chunk) => chunks.push(chunk))
   req.on('end', () => {
+    const body = JSON.parse(Buffer.concat(chunks).toString('utf8') || '{}')
+    // The chat's tool runner sends its turns on a message thread: the turn after a tool call
+    // has only the tool's result, without the system prompt and the tools.
+    if (!body.stream) {
+      res.writeHead(200, { 'content-type': 'application/json' }).end(JSON.stringify(chatMessage(body)))
+      return
+    }
     res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' })
     for (const [name, data] of events()) res.write(`event: ${name}\ndata: ${JSON.stringify(data)}\n\n`)
     res.end()

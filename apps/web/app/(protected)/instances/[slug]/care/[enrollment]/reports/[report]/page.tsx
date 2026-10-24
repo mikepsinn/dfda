@@ -33,7 +33,7 @@ export default async function CareReportPage({
   const saved = await findReport(user, reportId)
   if (!saved || saved.userId !== patient.userId || saved.programId !== patient.program.id) notFound()
   const message = query.signed ? messages.signed : query.added ? messages.added : null
-  const questions = assistantAvailable(patient.program.instanceId) ? await questionsAbout(user, saved.id) : null
+  const questions = (await assistantAvailable(patient.program.instanceId, patient.userId)) ? await questionsAbout(user, saved.id) : null
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">

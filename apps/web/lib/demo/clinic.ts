@@ -8,6 +8,7 @@ import { findProgramById, reportItems, type Program } from '@/lib/programs/data'
 import { joinProgram } from '@/lib/programs/manage'
 import { buildPersonReport, type Point } from '@/lib/programs/report'
 import { sampleCohort, SAMPLE_SIZE } from '@/lib/programs/sample'
+import { symptomWhere } from '@/lib/programs/side-effects'
 
 /**
  * The demo clinic: a company instance (scripts/demo-data.json), its GLP-1
@@ -111,15 +112,19 @@ export async function ensureDemoClinic(): Promise<{ ownerId: string; program: Pr
 }
 
 /**
- * Removes the side effects that a visitor added as the demo patient
+ * Removes the side effects that a visitor added as the demo patient: the
+ * reminders of the patient's symptoms that are not items of the program
  * (lib/programs/side-effects.ts). Returns the variables whose values a reset
- * replaces: the program's, and those of the side effects.
+ * replaces: the program's, and those symptoms.
  */
 export async function clearDemoSideEffects(db: Db, program: Program, userId: string): Promise<string[]> {
-  const where = { program_enrollments: { program_id: program.id, user_id: userId } }
-  const rows = await db.enrollment_side_effects.findMany({ where, select: { global_variable_id: true } })
-  await db.enrollment_side_effects.deleteMany({ where })
-  return [...program.items.map((item) => item.variableId), ...rows.map((row) => row.global_variable_id)]
+  const own = program.items.map((item) => item.variableId)
+  const symptoms = await db.user_variables.findMany({
+    where: { user_id: userId, global_variable_id: { notIn: own }, global_variables: symptomWhere },
+    select: { id: true, global_variable_id: true },
+  })
+  await db.reminder_schedules.deleteMany({ where: { user_variable_id: { in: symptoms.map((row) => row.id) } } })
+  return [...own, ...symptoms.map((row) => row.global_variable_id)]
 }
 
 /** Writes made-up values of the program's variables for a user. */

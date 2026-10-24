@@ -72,10 +72,16 @@ afterAll(async () => {
 })
 
 describe('the report assistant', () => {
-  it('is available only with an API key, and only on the demo clinic until there is a business associate agreement', () => {
-    expect(assistantAvailable(demo.instance.id, 'a-key')).toBe(true)
-    expect(assistantAvailable(demo.instance.id, undefined)).toBe(false)
-    expect(assistantAvailable(instanceId, 'a-key')).toBe(false)
+  it('is available only with an API key, and only for made-up reports until there is a business associate agreement', async () => {
+    expect(await assistantAvailable(demo.instance.id, patient.id, 'a-key')).toBe(true)
+    expect(await assistantAvailable(demo.instance.id, patient.id, undefined)).toBe(false)
+    // A real patient of a company: no.
+    expect(await assistantAvailable(instanceId, patient.id, 'a-key')).toBe(false)
+    // The patient of the company site's demo: yes, there only.
+    await adminDb.instance_demo_accounts.create({ data: { instance_id: instanceId, user_id: stranger.id, role: 'patient' } })
+    expect(await assistantAvailable(instanceId, stranger.id, 'a-key')).toBe(true)
+    expect(await assistantAvailable(instanceId, stranger.id, undefined)).toBe(false)
+    await adminDb.instance_demo_accounts.deleteMany({ where: { instance_id: instanceId } })
   })
 
   it("keeps the care team's questions and answers, which only the care team reads", async () => {

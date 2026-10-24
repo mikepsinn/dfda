@@ -2,23 +2,26 @@ import { adminDb, dbAs, withUserTransaction, type DbUser, type Prisma } from '@/
 import { logger } from '@/lib/logger'
 import { recordMeasurement } from '@/lib/tracking/measurements'
 import { afterReminderSaved, upsertReminder } from '@/lib/tracking/reminders'
-import { ensureUserVariable } from '@/lib/tracking/variables'
 import { SCALE_RANGES } from './config'
 import type { Program, ProgramItem } from './data'
 import { CHECK_IN_REMINDER_TIME, dayTime, itemValue, ProgramError } from './manage'
 
 /**
- * The side effects that a member tracks in a program, beside the program's
- * own check-ins: symptoms from the variables catalog that are rated on a
- * scale, such as headache or dizziness. The member's daily check-in asks for
- * each one, and the care team sees them with the other logs. Server only.
+ * Side effects: symptoms that a person rates on a scale, such as headache or
+ * dizziness, beside their programs' own check-ins. Nothing about them is
+ * stored per program. A person tracks a symptom with a normal reminder for it
+ * (their reminders page shows it too), and its ratings are their normal
+ * measurements. So the daily check-in of each of their programs asks for each
+ * symptom that has an active reminder and is not a check-in of one of their
+ * programs, and the care team of a program with care team review sees the
+ * symptoms that the person rated. Server only.
  */
 
 /** The variable categories of symptoms. */
 const SYMPTOM_CATEGORIES = ['health-and-physiology', 'mental-and-emotional-state']
 
 /** A variable that can be a side effect: a symptom rated on a scale. */
-const symptomWhere = {
+export const symptomWhere = {
   deleted_at: null,
   variable_category_id: { in: SYMPTOM_CATEGORIES },
   default_unit_id: { in: Object.keys(SCALE_RANGES) },
@@ -57,10 +60,28 @@ function toItem(variable: VariableRow): ProgramItem {
   }
 }
 
-/** The symptoms that a member can add as side effects in `program`: those that are not items of the program. */
-export async function sideEffectOptions(program: Pick<Program, 'items'>): Promise<SideEffectOption[]> {
+type Db = Pick<Prisma.TransactionClient, 'reminder_schedules' | 'program_enrollments'>
+
+/** The variables of the items of each user's programs, by user id. */
+async function programVariables(db: Db, userIds: string[]): Promise<Map<string, Set<string>>> {
+  const rows = await db.program_enrollments.findMany({
+    where: { user_id: { in: userIds } },
+    select: { user_id: true, instance_programs: { select: { instance_program_items: { select: { global_variable_id: true } } } } },
+  })
+  const byUser = new Map<string, Set<string>>()
+  for (const row of rows) {
+    const ids = byUser.get(row.user_id) ?? new Set<string>()
+    for (const item of row.instance_programs.instance_program_items) ids.add(item.global_variable_id)
+    byUser.set(row.user_id, ids)
+  }
+  return byUser
+}
+
+/** The symptoms that `user` can add as side effects: those that are not items of their programs. */
+export async function sideEffectOptions(user: DbUser): Promise<SideEffectOption[]> {
+  const own = await withUserTransaction(user, (tx) => programVariables(tx, [user.id]))
   const rows = await dbAs(null).global_variables.findMany({
-    where: { ...symptomWhere, id: { notIn: program.items.map((item) => item.variableId) } },
+    where: { ...symptomWhere, id: { notIn: [...(own.get(user.id) ?? [])] } },
     select: { id: true, name: true, default_unit_id: true, global_variable_synonyms: { select: { name: true } } },
     orderBy: { name: 'asc' },
     take: 500,
@@ -75,48 +96,67 @@ export async function sideEffectOptions(program: Pick<Program, 'items'>): Promis
   }))
 }
 
-const sideEffectRows = {
-  select: { global_variables: { select: variableSelect } },
-  orderBy: { created_at: 'asc' },
-} satisfies Prisma.enrollment_side_effectsFindManyArgs
+/** A reminder that tracks a symptom: active, and not ended. */
+const trackingWhere = (now: Date) =>
+  ({ is_active: true, OR: [{ end_date: null }, { end_date: { gte: now } }] }) satisfies Prisma.reminder_schedulesWhereInput
 
-/** The side effects that `user` tracks in a program, in the order they added them; empty when they are not in it. */
-export async function mySideEffects(user: DbUser, programId: string): Promise<ProgramItem[]> {
-  const rows = await dbAs(user).enrollment_side_effects.findMany({
-    where: { program_enrollments: { program_id: programId, user_id: user.id } },
-    ...sideEffectRows,
+/**
+ * The side effects of each user, by user id: the symptoms with a reminder that
+ * tracks them, in the order of their first reminder, except the items of their
+ * programs. `db` is a transaction of the user for their pages, or the admin
+ * client for the check-in emails.
+ */
+export async function sideEffectsOf(db: Db, userIds: string[], now = new Date()): Promise<Map<string, ProgramItem[]>> {
+  const own = await programVariables(db, userIds)
+  const rows = await db.reminder_schedules.findMany({
+    where: {
+      ...trackingWhere(now),
+      user_id: { in: userIds },
+      user_variables: { deleted_at: null, global_variables: symptomWhere },
+    },
+    select: { user_id: true, user_variables: { select: { global_variables: { select: variableSelect } } } },
+    orderBy: [{ created_at: 'asc' }, { id: 'asc' }],
   })
-  return rows.map((row) => toItem(row.global_variables))
+  const byUser = new Map<string, ProgramItem[]>()
+  for (const row of rows) {
+    const items = byUser.get(row.user_id) ?? []
+    const variable = row.user_variables.global_variables
+    if (own.get(row.user_id)?.has(variable.id) || items.some((item) => item.variableId === variable.id)) continue
+    byUser.set(row.user_id, [...items, toItem(variable)])
+  }
+  return byUser
+}
+
+/** The side effects that `user` tracks. */
+export async function mySideEffects(user: DbUser): Promise<ProgramItem[]> {
+  const sideEffects = await withUserTransaction(user, (tx) => sideEffectsOf(tx, [user.id]))
+  return sideEffects.get(user.id) ?? []
 }
 
 /**
- * The side effects of enrollments, by enrollment id, read on the server: for the care team
- * after it checks the care team and the sharing (lib/care-team/data.ts), and
- * for the check-in emails and their page (lib/programs/check-in.ts).
+ * The side effects of `program` that a person rated since `since`, for the
+ * program's care team (lib/care-team/data.ts): read with the admin client,
+ * after the care team and the sharing are checked.
  */
-export async function enrollmentSideEffects(enrollmentIds: string[]): Promise<Map<string, ProgramItem[]>> {
-  const rows = await adminDb.enrollment_side_effects.findMany({
-    where: { enrollment_id: { in: enrollmentIds } },
-    select: { enrollment_id: true, ...sideEffectRows.select },
-    orderBy: sideEffectRows.orderBy,
+export async function ratedSideEffects(userId: string, program: Pick<Program, 'items'>, since: Date): Promise<ProgramItem[]> {
+  const rows = await adminDb.global_variables.findMany({
+    where: {
+      ...symptomWhere,
+      id: { notIn: program.items.map((item) => item.variableId) },
+      measurements: { some: { user_id: userId, deleted_at: null, start_at: { gte: since } } },
+    },
+    select: variableSelect,
+    orderBy: { name: 'asc' },
   })
-  const byEnrollment = new Map<string, ProgramItem[]>()
-  for (const row of rows) byEnrollment.set(row.enrollment_id, [...(byEnrollment.get(row.enrollment_id) ?? []), toItem(row.global_variables)])
-  return byEnrollment
+  return rows.map(toItem)
 }
 
 /**
- * Adds a side effect to the user's enrollment in `program`. With a `value`,
- * also records the rating of `date`. With `remind`, also adds a daily
- * reminder at the check-in time, when the user has no active reminder for
- * the symptom. Adding a side effect that is already there records the value
- * only.
+ * Starts to track a symptom for a member of `program`: a daily reminder at
+ * the check-in time, when the user has no reminder that tracks it, and the
+ * rating of `date` when they gave one.
  */
-export async function addSideEffect(
-  user: DbUser,
-  program: Program,
-  input: { variableId: string; value: string; date: string; remind: boolean },
-) {
+export async function addSideEffect(user: DbUser, program: Program, input: { variableId: string; value: string; date: string }) {
   const startTime = dayTime(input.date)
   const result = await withUserTransaction(user, async (tx) => {
     const enrollment = await tx.program_enrollments.findUnique({
@@ -125,28 +165,20 @@ export async function addSideEffect(
     })
     if (!enrollment) throw new ProgramError('Join the program first.')
     const variable = await tx.global_variables.findFirst({ where: { ...symptomWhere, id: input.variableId }, select: variableSelect })
-    if (!variable || program.items.some((item) => item.variableId === variable.id)) {
+    if (!variable || (await programVariables(tx, [user.id])).get(user.id)?.has(variable.id)) {
       throw new ProgramError('Choose a side effect from the list.')
     }
     const item = toItem(variable)
     const value = input.value.trim() ? itemValue(item, input.value) : null
 
-    await tx.enrollment_side_effects.upsert({
-      where: { enrollment_id_global_variable_id: { enrollment_id: enrollment.id, global_variable_id: variable.id } },
-      create: { enrollment_id: enrollment.id, global_variable_id: variable.id },
-      update: {},
-      select: { enrollment_id: true },
-    })
     if (value !== null) {
       await recordMeasurement(tx, user.id, { globalVariableId: variable.id, value, unitId: item.unitId, startTime })
     }
-    if (!input.remind) return { item, reminder: null }
-    const userVariable = await ensureUserVariable(tx, user.id, variable.id)
-    const active = await tx.reminder_schedules.findFirst({
-      where: { user_id: user.id, user_variable_id: userVariable.id, is_active: true },
+    const tracking = await tx.reminder_schedules.findFirst({
+      where: { ...trackingWhere(new Date()), user_id: user.id, user_variables: { global_variable_id: variable.id } },
       select: { id: true },
     })
-    if (active) return { item, reminder: null }
+    if (tracking) return { item, reminder: null }
     const { reminder } = await upsertReminder(tx, user.id, {
       globalVariableId: variable.id,
       timeOfDay: CHECK_IN_REMINDER_TIME,
@@ -166,13 +198,20 @@ export async function addSideEffect(
       })
     }
   }
-  return { item: result.item, reminderAdded: result.reminder !== null }
+  return result.item
 }
 
-/** Stops tracking a side effect in a program. Its values and reminders stay the user's. */
-export async function removeSideEffect(user: DbUser, programId: string, variableId: string) {
-  const { count } = await dbAs(user).enrollment_side_effects.deleteMany({
-    where: { global_variable_id: variableId, program_enrollments: { program_id: programId, user_id: user.id } },
+/**
+ * Stops tracking a side effect: deletes the user's reminders for it. Its
+ * ratings stay. Not for an item of one of their programs, whose reminder the
+ * program uses.
+ */
+export async function removeSideEffect(user: DbUser, variableId: string) {
+  return withUserTransaction(user, async (tx) => {
+    if ((await programVariables(tx, [user.id])).get(user.id)?.has(variableId)) return false
+    const { count } = await tx.reminder_schedules.deleteMany({
+      where: { user_id: user.id, user_variables: { global_variable_id: variableId, global_variables: symptomWhere } },
+    })
+    return count > 0
   })
-  return count > 0
 }

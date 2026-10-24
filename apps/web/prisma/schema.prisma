@@ -283,7 +283,6 @@ model global_variables {
   created_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
   updated_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
   molar_mass                   Float?
-  enrollment_side_effects      enrollment_side_effects[]
   global_conditions            global_conditions?
   global_foods                 global_foods?
   global_symptoms              global_symptoms?
@@ -701,6 +700,7 @@ model profiles {
   notifications              notifications[]
   patient_treatments         patient_treatments[]
   patients                   patients?
+  program_chat_turns         program_chat_turns[]
   program_enrollments        program_enrollments[]
   protocol_versions          protocol_versions[]
   providers                  providers?
@@ -1292,6 +1292,7 @@ model instances {
   instance_pages         instance_pages[]
   instance_programs      instance_programs[]
   profiles               profiles                 @relation(fields: [owner_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  program_chat_turns     program_chat_turns[]
   report_questions       report_questions[]
 
   @@index([owner_id], map: "idx_instances_owner_id")
@@ -1338,16 +1339,15 @@ model instance_programs {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model program_enrollments {
-  id                       String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  program_id               String                    @db.Uuid
-  user_id                  String                    @db.Uuid
-  started_at               DateTime                  @default(now()) @db.Timestamptz(6)
-  created_at               DateTime                  @default(now()) @db.Timestamptz(6)
-  shared_with_care_team_at DateTime?                 @db.Timestamptz(6)
+  id                       String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  program_id               String            @db.Uuid
+  user_id                  String            @db.Uuid
+  started_at               DateTime          @default(now()) @db.Timestamptz(6)
+  created_at               DateTime          @default(now()) @db.Timestamptz(6)
+  shared_with_care_team_at DateTime?         @db.Timestamptz(6)
   check_in_emails          check_in_emails[]
-  enrollment_side_effects  enrollment_side_effects[]
-  instance_programs        instance_programs         @relation(fields: [program_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  profiles                 profiles                  @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  instance_programs        instance_programs @relation(fields: [program_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profiles                 profiles          @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@unique([program_id, user_id])
   @@index([user_id], map: "idx_program_enrollments_user_id")
@@ -1506,14 +1506,15 @@ model check_in_emails {
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
-model enrollment_side_effects {
-  enrollment_id       String              @db.Uuid
-  global_variable_id  String
-  created_at          DateTime            @default(now()) @db.Timestamptz(6)
-  program_enrollments program_enrollments @relation(fields: [enrollment_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
-  global_variables    global_variables    @relation(fields: [global_variable_id], references: [id], onUpdate: NoAction)
+model program_chat_turns {
+  id          String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  instance_id String    @db.Uuid
+  user_id     String    @db.Uuid
+  created_at  DateTime  @default(now()) @db.Timestamptz(6)
+  instances   instances @relation(fields: [instance_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  profiles    profiles  @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
-  @@id([enrollment_id, global_variable_id])
+  @@index([instance_id, created_at], map: "idx_program_chat_turns_instance_created")
 }
 
 view pending_actions {

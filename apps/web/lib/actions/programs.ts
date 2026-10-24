@@ -2,10 +2,13 @@
 
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+import Anthropic from "@anthropic-ai/sdk"
+import { z } from "zod"
 import { isUniqueViolation } from "@/lib/db"
 import { logger } from "@/lib/logger"
 import { fetchUserProfile } from "@/lib/profile"
 import { programInputSchema, type ProgramInput } from "@/lib/programs/config"
+import { chatAvailable, chatReply, logChatTurn, type ChatMessage } from "@/lib/programs/chat"
 import { findCheckIn } from "@/lib/programs/check-in"
 import { findProgramById, type ProgramItem } from "@/lib/programs/data"
 import { joinProgram, leaveProgram, ProgramError, recordProgramValues, saveProgram } from "@/lib/programs/manage"
@@ -139,7 +142,7 @@ export async function recordProgramValuesAction(
   if (!program) return { error: "This program does not exist." }
 
   try {
-    const items = kind === "today" ? [...program.items, ...(await mySideEffects(user, program.id))] : program.items
+    const items = kind === "today" ? [...program.items, ...(await mySideEffects(user))] : program.items
     const { values, units } = formValues(items, formData)
     const saved = await recordProgramValues(user, program, kind, String(formData.get("date") ?? ""), values, { items, units })
     revalidatePath(`/programs/${program.slug}/me`)
@@ -169,9 +172,9 @@ export async function recordCheckInAction(token: string, _state: ValuesFormState
   }
 }
 
-export type SideEffectFormState = { error?: string; added?: string; reminderAdded?: boolean }
+export type SideEffectFormState = { error?: string; added?: string }
 
-/** Adds a side effect to the user's program, with today's rating and a daily reminder when they ask for them. */
+/** Starts to track a side effect for a member of a program: a daily reminder, and today's rating when they gave one. */
 export async function addSideEffectAction(
   programId: string,
   _state: SideEffectFormState,
@@ -182,14 +185,13 @@ export async function addSideEffectAction(
   const program = await findProgramById(programId)
   if (!program) return { error: "This program does not exist." }
   try {
-    const { item, reminderAdded } = await addSideEffect(user, program, {
+    const item = await addSideEffect(user, program, {
       variableId: String(formData.get("variableId") ?? ""),
       value: String(formData.get("value") ?? ""),
       date: String(formData.get("date") ?? ""),
-      remind: formData.get("remind") === "on",
     })
     revalidatePath(`/programs/${program.slug}/me`)
-    return { added: item.name, reminderAdded }
+    return { added: item.name }
   } catch (error) {
     if (error instanceof ProgramError) return { error: error.message }
     logger.error("Could not add a side effect", {
@@ -201,12 +203,45 @@ export async function addSideEffectAction(
   }
 }
 
-/** Stops tracking a side effect in the user's program. */
+/** Stops tracking a side effect: deletes the user's reminders for it. */
 export async function removeSideEffectAction(programId: string, variableId: string) {
   const user = await getServerUser()
   if (!user) redirect("/login")
   const program = await findProgramById(programId)
   if (!program) return
-  await removeSideEffect(user, program.id, variableId)
+  await removeSideEffect(user, variableId)
   revalidatePath(`/programs/${program.slug}/me`)
+}
+
+const chatSchema = z
+  .array(z.object({ role: z.enum(["user", "assistant"]), text: z.string().trim().min(1).max(2000) }))
+  .min(1)
+  .max(40)
+  .refine((messages) => messages[0].role === "user" && messages.at(-1)!.role === "user", "The chat starts and ends with a message of the member.")
+
+export type ChatActionResult = { reply?: string; actions?: string[]; error?: string }
+
+/** The check-in chat's answer to the member's last message (lib/programs/chat.ts), for a demo patient only. */
+export async function checkInChatAction(programId: string, messages: ChatMessage[]): Promise<ChatActionResult> {
+  const user = await getServerUser()
+  if (!user) return { error: "Sign in to chat." }
+  const program = await findProgramById(programId)
+  if (!program || !(await chatAvailable(user, program))) return { error: "The chat is not available." }
+  const parsed = chatSchema.safeParse(messages)
+  if (!parsed.success) return { error: "Write a shorter message, or start a new chat." }
+  if ((await logChatTurn(user, program.instanceId)).limited) return { error: "The chat answered the most messages for today. Try again tomorrow." }
+
+  try {
+    const { text, actions } = await chatReply(user, program, parsed.data)
+    if (actions.length) revalidatePath(`/programs/${program.slug}/me`)
+    return { reply: text, actions }
+  } catch (error) {
+    logger.error("The check-in chat could not answer", {
+      userId: user.id,
+      programId,
+      status: error instanceof Anthropic.APIError ? error.status : undefined,
+      error: error instanceof Error ? error.message : String(error),
+    })
+    return { error: "The chat could not answer. Try again." }
+  }
 }

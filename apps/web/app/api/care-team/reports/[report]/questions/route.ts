@@ -36,7 +36,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ report:
   const program = saved && (await findProgramById(saved.programId))
   const onCareTeam =
     program && (await dbAs(user).instance_clinicians.findFirst({ where: { user_id: user.id, instance_id: program.instanceId }, select: { user_id: true } }))
-  if (!saved || !program || !onCareTeam || !assistantAvailable(program.instanceId)) {
+  if (!saved || !program || !onCareTeam || !(await assistantAvailable(program.instanceId, saved.userId))) {
     return error(404, 'The assistant is not available for this report.')
   }
   const logged = await logQuestion({ user, reportId, instanceId: program.instanceId, question })

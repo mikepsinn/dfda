@@ -8,16 +8,16 @@ import { firesOn } from '@/lib/reminders/schedule'
 import { timeOfDayToString } from '@/lib/time-of-day'
 import { checkInEmail, checkInToken, readCheckInToken } from './check-in-email'
 import { findProgramById, type Program, type ProgramItem } from './data'
-import { enrollmentSideEffects } from './side-effects'
+import { sideEffectsOf } from './side-effects'
 
 /**
  * The daily check-in email of a program member, and the link that opens the
  * day's check-in without a sign-in.
  *
- * Once a day, after the last of the day's reminders for a program's doses,
- * check-ins and side effects, the member gets one email for the program. It
- * has a row of number buttons for each rating, and "Took it" and "Skipped"
- * buttons for each dose.
+ * Once a day, after the last of the day's reminders for a program's doses
+ * and check-ins and the member's side effects (./side-effects.ts), the
+ * member gets one email for the program. It has a row of number buttons for
+ * each rating, and "Took it" and "Skipped" buttons for each dose.
  * A button opens the check-in page with that answer chosen; the member saves
  * there. The link only opens the page, because some email systems open the
  * links of an email to check them, and that must not record anything.
@@ -56,7 +56,7 @@ export async function findCheckIn(token: string, now = new Date()): Promise<Chec
   if (!enrollment) return null
   const [program, sideEffects] = await Promise.all([
     findProgramById(enrollment.program_id),
-    enrollmentSideEffects([read.enrollmentId]),
+    sideEffectsOf(adminDb, [enrollment.user_id], now),
   ])
   if (!program) return null
   return {
@@ -64,7 +64,7 @@ export async function findCheckIn(token: string, now = new Date()): Promise<Chec
     userId: enrollment.user_id,
     day: read.day,
     program,
-    items: dailyItems(program, sideEffects.get(read.enrollmentId)),
+    items: dailyItems(program, sideEffects.get(enrollment.user_id)),
   }
 }
 
@@ -88,10 +88,10 @@ export type DueCheckIn = {
 /**
  * The check-in emails that are due at `now`: for each member and program,
  * when the member's time is after the last of the day's reminders for the
- * program's doses, check-ins and side effects. The email of the day before is
- * still due for 3 hours after its last reminder, so that a reminder late in
- * the evening, or a failed email of the day's last run, is not lost at
- * midnight. None when no such reminder fires that day (for example, the
+ * program's doses and check-ins and the member's side effects. The email of the
+ * day before is still due for 3 hours after its last reminder, so that a
+ * reminder late in the evening, or a failed email of the day's last run, is
+ * not lost at midnight. None when no such reminder fires that day (for example, the
  * member turned them off), when the member already has a value of each of
  * those items that day, when the email of the day was sent, or for the demo
  * accounts of a site.
@@ -127,7 +127,7 @@ export async function dueCheckIns(now = new Date()): Promise<DueCheckIn[]> {
         user_variables: { select: { global_variable_id: true } },
       },
     }),
-    enrollmentSideEffects(members.map((enrollment) => enrollment.id)),
+    sideEffectsOf(adminDb, userIds, now),
     // The member's day is at most a day from UTC's.
     // Sent, or claimed by a run that may still send it.
     adminDb.check_in_emails.findMany({
@@ -150,7 +150,7 @@ export async function dueCheckIns(now = new Date()): Promise<DueCheckIn[]> {
     if (!program) continue
     const zone = zoneOf(enrollment.profiles.timezone)
     const today = DateTime.fromJSDate(now).setZone(zone)
-    const items = dailyItems(program, sideEffects.get(enrollment.id))
+    const items = dailyItems(program, sideEffects.get(enrollment.user_id))
 
     // Today, and the day before: a reminder late in the evening can come after the scheduler's last run of its day.
     for (const day of [today.toISODate()!, today.minus({ days: 1 }).toISODate()!]) {

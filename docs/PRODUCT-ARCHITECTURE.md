@@ -239,6 +239,41 @@ before/after report at `/programs/{slug}/me`. Three decisions for this demo:
 A before/after change in one person or one program is not a treatment effect; the
 pages say that a change after the start does not prove that the product caused it.
 
+**How the company tables fit the older schema, 2026-10-24:** company sites and programs
+build on the tracking core: a program item is a catalog variable, a value is a
+measurement, and a dose, a check-in or a side effect is a reminder. They do not use the
+older clinical tables. Decisions:
+
+1. A program is not a trial. `trials` needs one condition and one research partner,
+   `trial_enrollments` needs a provider for each enrollment, and both are made to
+   recruit people into controlled trials (phase, payment, entry criteria). A company's
+   program has a product, items and a follow-up week, and its care team is the
+   company's. So programs have their own tables (`instance_programs`,
+   `instance_program_items`, `program_enrollments`).
+2. Company sites do not use Better Auth's organizations. `instances` holds a site's
+   brand, domain, demo and pages, `instance_clinicians` its care team, and
+   `care_team_invitations` the invitations by email, each with row-level security. The
+   organization plugin is on in `lib/auth.ts`, but no page uses its tables.
+3. `providers` and `research_partners` hold a person's credentials; a membership of a
+   care team is a separate row. Programs do not use `patients` (date of birth, sex) yet.
+
+Links to add when they are needed:
+
+- Close the day's reminder notifications when a program saves a value. Not needed
+  while the reminder worker does not run in production; the measurements API does not
+  close them either.
+- Save the markers of an imported biomarker report as measurements, matched by LOINC
+  code (`global_variable_codes`), so that the before/after report uses them. First
+  decide whether a value counts before a clinician reviews the report.
+- Record the program's treatment (`patient_treatments`) while a member is in the
+  program, so that treatment ratings and Outcome Labels can use program data. The text
+  at join must then say so.
+- Remove the tables that are empty in production and that no app code queries:
+  `patient_symptoms`, `global_symptoms`, `protocol_versions`, `prescriptions`,
+  `pharmacies`, `product_sellers`, `product_listings`, `regulatory_approvals`, and the
+  organization tables with the plugin. `patient_side_effects` is empty too; only the
+  older treatments page uses it.
+
 **The daily check-in, 2026-10-24 (`apps/web/lib/programs`):** a member records a day
 at `/programs/{slug}/me` with one button for each number of a rating (0 to 10 for
 most symptoms, with the words of the better direction at the two ends), and "Took
@@ -250,10 +285,14 @@ milligrams (`units.ts`). The value is saved in the unit chosen; the member's own
 report shows the unit they chose last, and the care team and the company see the
 program's units. Under the day form,
 the member adds side effects: symptoms from the variables catalog that are rated on
-a scale (`side-effects.ts`, table `enrollment_side_effects`), with today's rating
-and a daily reminder if they want them. The day form then asks for each side
-effect, and in a program with care team review the care team sees them with the
-other logs. Once a day, after the last of the day's reminders in the member's time
+a scale (`side-effects.ts`), with today's rating. A side effect is not stored per
+program: it is the member's normal daily reminder for the symptom, and its ratings
+are their normal measurements. So the day form of each of their programs asks for
+each symptom that has an active reminder, also one added on the reminders page,
+unless it is a check-in of one of their programs; stopping a side effect deletes its
+reminder, and the ratings stay. In a program with
+care team review, the care team sees the symptoms that the member rated, from the
+same lookback start as the other logs, and the text at join says so. Once a day, after the last of the day's reminders in the member's time
 zone, the member gets one email for each program (`check-in.ts`): number buttons
 for each rating, and "Took it" and "Skipped" for each dose. Four decisions:
 
@@ -269,6 +308,23 @@ for each rating, and "Took it" and "Skipped" for each dose. Four decisions:
    day is sent once (table `check_in_emails`).
 4. No email when the member turned the reminders off, already recorded each item
    of the day, or is a demo account of a site.
+
+**The check-in chat, 2026-10-24 (`apps/web/lib/programs/chat.ts`):** on their program page, a
+demo patient can check in by chat. They write how they are; Claude records the values
+(`record_values`, by item name, in another unit, a skipped dose as 0), adds side effects
+from the symptom list (`add_side_effect`) and sets reminder times (`set_reminder`). The
+tools run on the server with the member's own permissions and the same checks as the forms,
+and a value that cannot be saved goes back to Claude as a message, so that it asks again.
+Claude gets the program's items, the side effects, which items have a value today and the
+member's before/after verdict; the chat itself is not stored. Decisions:
+
+1. Health data goes to the Claude API only under a business associate agreement, so the
+   chat is on only for demo patients, whose values are made up (the demo clinic's patient
+   and each company site's demo patient). Real members do not see it.
+2. Every visitor of a demo shares its patient's account, so a company's demo answers 300
+   messages a day (table `program_chat_turns`, which holds no text).
+3. The model is the report assistant's (`claude-opus-5-5`), at low effort for a short
+   chat, with the server-side fallback for a declined request.
 
 Biomarker reports (`lib/biomarker-report`, `components/biomarker-report`, the example
 at `/reports/example`) show one person's blood markers at several timepoints, read
@@ -365,8 +421,9 @@ are the care team's record, which the person does not see, and a company can ask
 questions a day
 ([`20261023040000_table_report_questions.sql`](../apps/web/db/migrations/20261023040000_table_report_questions.sql)).
 Decision 2026-10-23: health data goes to the Claude API only under a business associate
-agreement, so until there is one the assistant works only on the demo clinic, whose values
-are made up. Row-level security enforces each of
+agreement, so until there is one the assistant works only on made-up reports: those of the
+demo clinic, and, since 2026-10-24, those of a company site's demo patient
+([`lib/demo/patient.ts`](../apps/web/lib/demo/patient.ts)). Row-level security enforces each of
 these rules
 ([`20261021050000_table_care_teams_and_biomarker_reports.sql`](../apps/web/db/migrations/20261021050000_table_care_teams_and_biomarker_reports.sql),
 [`20261023010000_alter_biomarker_reports_review_decision.sql`](../apps/web/db/migrations/20261023010000_alter_biomarker_reports_review_decision.sql)).
