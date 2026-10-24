@@ -39,11 +39,11 @@ async function journey(browser: Browser, device: typeof PHONE, testInfo: TestInf
 
 const reviewNote = 'Your markers moved the way the program intends. Keep the dose, add resistance training, and recheck at week 16.'
 
-/** Signs in with a demo clinic button on the main site's sign-in page. */
+/** Signs in with a demo button on the clinic's own sign-in page. */
 async function signInAs(page: Page, role: 'patient' | 'clinician' | 'owner') {
-  // As a new visitor, from the network's site.
+  // As a new visitor.
   await page.context().clearCookies()
-  await page.goto('/login')
+  await page.goto(onInstance('/login'))
   await page.getByRole('button', { name: `Demo clinic ${role}` }).click()
 }
 

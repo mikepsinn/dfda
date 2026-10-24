@@ -6,8 +6,8 @@ import { hash, seededRandom } from '@/lib/seeded-random'
  * Made-up people for a program, to show what the report and the company
  * dashboard look like before real people join. The numbers are invented
  * (rough, illustrative sizes), never stored, and never used as evidence: the
- * pages that show them say "Sample data". The same program always gets the
- * same people, so the page does not change on each load.
+ * company's dashboard shows them under "Sample data". The same program always
+ * gets the same people, so the page does not change on each load.
  */
 
 export const SAMPLE_SIZE = 30

@@ -28,7 +28,7 @@ export default async function NewProgramPage({ params }: { params: Promise<{ slu
       </header>
       <ProgramForm
         action={createProgramAction.bind(null, instance.slug)}
-        initial={templates[0]}
+        initial={{ ...templates[0], careTeamReview: true }}
         templates={templates}
         variables={variables}
         submitLabel="Create program"

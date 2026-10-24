@@ -207,8 +207,8 @@ export function ProgramForm({
         <span>
           <span className="block font-medium">The care team reviews each member&rsquo;s biomarker reports</span>
           <span className="block text-muted-foreground">
-            For a treatment program of a clinic. People agree to it when they join, and stop by leaving the program.
-            Without it, each person chooses whether to share their reports.
+            People agree to it when they join, and stop by leaving the program. Turn it off if each person should
+            choose whether to share their reports with the care team.
           </span>
         </span>
       </label>

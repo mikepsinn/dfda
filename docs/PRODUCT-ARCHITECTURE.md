@@ -188,8 +188,10 @@ before/after report at `/programs/{slug}/me`. Three decisions for this demo:
 2. A person's values count in a company's totals only while they are in its
    program. Joining says so; they can leave at any time.
 3. Sample data (30 made-up people per program, and an example report) is generated
-   in memory, labeled "Sample data", never stored, and never used by Outcome
-   Labels, rankings or other evidence.
+   in memory, never stored, and never used by Outcome Labels, rankings or other
+   evidence. The company's dashboard shows it under its "Sample data" tab; the
+   pages carry no warning box about it (decision 2026-10-24: demo data is plainly
+   demo data).
 
 A before/after change in one person or one program is not a treatment effect; the
 pages say that a change after the start does not prove that the product caused it.
@@ -228,6 +230,10 @@ adds and reviews the person's reports, joining shares them, and the person stops
 leaving the program (decision 2026-10-23: in a clinic, the care team treats the person
 and orders the tests, so a separate share step only added a step;
 [`20261023020000_alter_instance_programs_care_team_review.sql`](../apps/web/db/migrations/20261023020000_alter_instance_programs_care_team_review.sql)).
+Care team review is on for a new program; the owner turns it off in the program form
+(decision 2026-10-24: most programs are a clinic's treatment programs). Programs that
+nobody had joined took the new default; a program with members keeps its setting
+([`20261024010000_alter_instance_programs_care_team_review_default.sql`](../apps/web/db/migrations/20261024010000_alter_instance_programs_care_team_review_default.sql)).
 The care team, at `/instances/{slug}/care`, sees
 the people who share and their reports, adds a report file (checked against the report
 format), and signs a report off with a decision for the care plan (continue, adjust,

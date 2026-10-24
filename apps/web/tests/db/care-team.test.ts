@@ -66,6 +66,8 @@ const input = programInputSchema.parse({
   slug: 'glp-1',
   summary: glp1.summary,
   followUpWeeks: '12',
+  // Each person chooses whether to share.
+  careTeamReview: false,
   items: JSON.stringify(glp1.items),
 })
 
