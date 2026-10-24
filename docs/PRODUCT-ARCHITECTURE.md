@@ -158,12 +158,16 @@ a clinician" on the home and sign-in pages sign the visitor in as the site's own
 demo patient, with the example report in the first program with care team
 review, or as a demo clinician of its care team, who opens that patient's case
 ([`lib/demo/instance.ts`](../apps/web/lib/demo/instance.ts)). Any visitor can use
-these accounts, so they must never see a real person: the owner can turn the demo
-on only while nobody has joined the company's programs, and the first person who
-joins ends it before their enrollment is saved, which removes the demo people from
-the site (decision 2026-10-24: a company shows its product before launch; the
-network's demo clinic stays for the network itself). The demo accounts' password
-comes from the server's secret, so only the demo sign-in can use them.
+these accounts, so they must never see a real person. The demo stays on beside
+real members (decision 2026-10-24, the same day: a clinic shows its product on its
+live site; the network's demo clinic stays for the network itself):
+`care_team_can_see()` and `care_team_patients()` give the demo clinician the demo
+patient only, and never give the demo patient to the real care team
+([`20261024030000_alter_care_team_functions_demo_accounts.sql`](../apps/web/db/migrations/20261024030000_alter_care_team_functions_demo_accounts.sql)).
+The company totals and the report emails also leave the demo patient out, and no
+email goes to a demo account. Turning the demo off removes the demo people from
+the site. The demo accounts' emails are at example.com and their password comes
+from the server's secret, so only the demo sign-in can use them.
 
 **Instance sites, 2026-10-11:** on an instance, the site is the company's own:
 its header, footer and home page, its programs at `/programs`, sign-in, a

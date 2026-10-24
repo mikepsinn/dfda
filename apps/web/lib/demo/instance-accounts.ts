@@ -4,15 +4,19 @@ import { env } from '@/lib/env'
 
 /**
  * The accounts of a company site's demo mode (lib/demo/instance.ts), and how
- * the demo ends. In a module of their own, so that joining a program
- * (lib/programs/manage.ts) can end a demo without importing the demo's data.
+ * the demo ends. In a module of their own, so that the company totals and the
+ * report emails can leave the demo patient out without importing the demo's
+ * data. The database knows the same emails (instance_demo_email() in
+ * db/migrations/20261024030000_alter_care_team_functions_demo_accounts.sql):
+ * the demo clinician sees the demo patient only, and the real care team never
+ * sees the demo patient.
  */
 
 /**
- * The key of the advisory lock that orders every change of a site's demo: its
- * start, a demo sign-in, its end, and a real person's enrollment. Each holds it
- * until its transaction ends, so a demo never starts beside a real person, and
- * a sign-in in progress cannot put the demo clinician back after the demo ended.
+ * The key of the advisory lock that orders the changes of a site's demo: its
+ * start, a demo sign-in and its end. Each holds it until its transaction ends,
+ * so that a sign-in in progress cannot put the demo people back after the demo
+ * ended.
  */
 export const demoLockKey = (instanceId: string) => `instance-demo:${instanceId}`
 
@@ -43,14 +47,4 @@ export async function endInstanceDemo(instanceId: string) {
     await tx.program_enrollments.deleteMany({ where })
     await tx.measurements.deleteMany({ where: { user_id: { in: ids } } })
   })
-}
-
-/**
- * Before a person joins a program: when the program's site shows a demo, the
- * demo ends first, so that the demo clinician, whose account any visitor can
- * use, never sees a real person. The demo patient never joins this way.
- */
-export async function endDemoBeforeJoin(instanceId: string) {
-  const instance = await adminDb.instances.findUnique({ where: { id: instanceId }, select: { demo_enabled: true } })
-  if (instance?.demo_enabled) await endInstanceDemo(instanceId)
 }
