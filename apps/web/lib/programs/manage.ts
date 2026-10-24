@@ -1,8 +1,9 @@
 import { logger } from '@/lib/logger'
-import { dbAs, withUserTransaction, type DbUser } from '@/lib/db'
+import { dbAs, withUserTransaction, type DbUser, type Prisma } from '@/lib/db'
 import { afterReminderSaved, upsertReminder } from '@/lib/tracking/reminders'
 import { recordMeasurement } from '@/lib/tracking/measurements'
 import { ensureUserVariable } from '@/lib/tracking/variables'
+import { demoLockKey, endDemoBeforeJoin } from '@/lib/demo/instance-accounts'
 import { SCALE_RANGES, type ProgramInput } from './config'
 import type { Program } from './data'
 
@@ -70,6 +71,27 @@ export const DOSE_REMINDER_TIME = '09:00'
 export const CHECK_IN_REMINDER_TIME = '20:00'
 
 /**
+ * Saves an enrollment (`save`) on a site without a demo: a site that shows a
+ * demo ends it first, because its demo clinician, whose account any visitor
+ * can use, must never see a real person. The enrollment is saved under the
+ * demo's lock (lib/demo/instance-accounts.ts), so no demo starts meanwhile; if
+ * the owner turned the demo on between the two steps, it ends and the save
+ * runs again.
+ */
+async function enrollWithoutDemo<Result>(user: DbUser, save: (tx: Prisma.TransactionClient) => Promise<Result>, instanceId: string): Promise<Result> {
+  for (let attempt = 1; ; attempt++) {
+    await endDemoBeforeJoin(instanceId)
+    const saved = await withUserTransaction(user, async (tx) => {
+      await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${demoLockKey(instanceId)}))`
+      const site = await tx.instances.findUnique({ where: { id: instanceId }, select: { demo_enabled: true } })
+      return site?.demo_enabled ? null : { value: await save(tx) }
+    })
+    if (saved) return saved.value
+    if (attempt === 3) throw new Error('The site keeps starting its demo; try joining again.')
+  }
+}
+
+/**
  * Joins `program`: records the start and creates a reminder for each dose and
  * check-in that the user does not already have a reminder for. A user with no
  * role becomes a patient, because they now track their own health.
@@ -83,7 +105,7 @@ export async function joinProgram(
   program: Program,
   { scheduleNotifications = true, shareWithCareTeam = false } = {},
 ) {
-  const result = await withUserTransaction(user, async (tx) => {
+  const result = await enrollWithoutDemo(user, async (tx) => {
     const existing = await tx.program_enrollments.findUnique({
       where: { program_id_user_id: { program_id: program.id, user_id: user.id } },
       select: { id: true },
@@ -118,7 +140,7 @@ export async function joinProgram(
       reminders.push({ id: reminder.id, isActive: reminder.isActive })
     }
     return { joined: true, reminders }
-  })
+  }, program.instanceId)
 
   // After the commit: the worker makes each reminder's first notification.
   for (const reminder of scheduleNotifications ? result.reminders : []) {

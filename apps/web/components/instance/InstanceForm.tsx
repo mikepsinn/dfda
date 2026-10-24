@@ -21,6 +21,7 @@ import {
 
 type Values = {
   name: string
+  byline: string
   slug: string
   tagline: string
   logoUrl: string
@@ -36,6 +37,7 @@ type Values = {
 function toValues(instance?: InstanceBranding | null): Values {
   return {
     name: instance?.name ?? "",
+    byline: instance?.byline ?? "",
     slug: instance?.slug ?? "",
     tagline: instance?.tagline ?? "",
     logoUrl: instance?.logoUrl ?? "",
@@ -109,6 +111,14 @@ export function InstanceForm({
           <Label htmlFor="name">Company name</Label>
           <Input id="name" name="name" value={values.name} onChange={set("name")} placeholder="Acme Proteomics" required />
           <FieldError message={errors.name} />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="byline">Byline (optional)</Label>
+          <Input id="byline" name="byline" value={values.byline} onChange={set("byline")} placeholder="by Acme Health" maxLength={60} />
+          <p className="text-sm text-muted-foreground">
+            Shown under the name on the home page and after the name in the footer. Everywhere else the site uses the name only.
+          </p>
+          <FieldError message={errors.byline} />
         </div>
         <div className="space-y-2">
           <Label htmlFor="slug">Address</Label>
@@ -247,6 +257,26 @@ export function InstanceForm({
           </p>
           <FieldError message={errors.supportEmail} />
         </div>
+        {instance && (
+          <div className="space-y-2">
+            <label className="flex items-start gap-3 text-sm">
+              <input
+                type="checkbox"
+                name="demoEnabled"
+                defaultChecked={instance.demoEnabled}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+              />
+              <span>
+                <span className="block font-medium">Show a demo on this site</span>
+                <span className="block text-muted-foreground">
+                  Visitors can try the site as a demo patient with an example report, and as a clinician of your care team
+                  who reviews it. The demo turns off when the first person joins one of your programs.
+                </span>
+              </span>
+            </label>
+            <FieldError message={errors.demoEnabled} />
+          </div>
+        )}
         <Button type="submit" size="lg" disabled={pending} className="gap-2">
           {pending && <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />}
           {submitLabel}

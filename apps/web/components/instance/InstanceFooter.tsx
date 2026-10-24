@@ -8,7 +8,7 @@ import { SiteLogo } from "./SiteLogo"
  * legal pages (the company's own when it has them). The site is the company's
  * own, so it names no one else.
  */
-export function InstanceFooter({ brand, pages }: { brand: { name: string; logoUrl: string | null }; pages: PageLink[] }) {
+export function InstanceFooter({ brand, pages }: { brand: { name: string; byline?: string | null; logoUrl: string | null }; pages: PageLink[] }) {
   const title = (slug: string, fallback: string) => pages.find((page) => page.slug === slug)?.title ?? fallback
   return (
     <footer className="w-full border-t py-6">
@@ -34,7 +34,8 @@ export function InstanceFooter({ brand, pages }: { brand: { name: string; logoUr
         <div className="flex items-center gap-2">
           <SiteLogo brand={brand} className="flex h-6 w-6 text-xs" />
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {brand.name}. All rights reserved.
+            © {new Date().getFullYear()} {brand.name}
+            {brand.byline ? ` ${brand.byline}` : ""}. All rights reserved.
           </p>
         </div>
       </div>

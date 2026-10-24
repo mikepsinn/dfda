@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { DemoLoginButton } from "@/components/demo-login-button"
+import { DemoTryButtons } from "@/components/instance/DemoTryButtons"
 import { MailCheck, AlertCircle, Info } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { InternalLink } from '@/components/internal-link'
@@ -189,7 +190,8 @@ export function SignInCard({ mode, googleEnabled, demoButtons = 'network', helpE
           </>
         )}
 
-        {demoButtons && (
+        {demoButtons === 'site' && <DemoTryButtons className="pb-2" />}
+        {(demoButtons === 'network' || demoButtons === 'clinic') && (
           <DemoLoginButton
             showAll={true}
             clinicOnly={demoButtons === 'clinic'}

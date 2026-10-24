@@ -15,6 +15,7 @@ const select = {
   id: true,
   slug: true,
   name: true,
+  byline: true,
   tagline: true,
   logo_url: true,
   primary_color: true,
@@ -24,12 +25,14 @@ const select = {
   products: true,
   custom_domain: true,
   support_email: true,
+  demo_enabled: true,
 } as const
 
 type InstanceRow = {
   id: string
   slug: string
   name: string
+  byline: string | null
   tagline: string | null
   logo_url: string | null
   primary_color: string
@@ -39,6 +42,7 @@ type InstanceRow = {
   products: string[]
   custom_domain: string | null
   support_email: string | null
+  demo_enabled: boolean
 }
 
 /** The branding of an instances row. The table's checks allow only the fonts and corner sizes of lib/instance/theme.ts. */
@@ -47,6 +51,7 @@ export function toBranding(row: InstanceRow): InstanceBranding {
     id: row.id,
     slug: row.slug,
     name: row.name,
+    byline: row.byline,
     tagline: row.tagline,
     logoUrl: row.logo_url,
     primaryColor: row.primary_color,
@@ -56,6 +61,7 @@ export function toBranding(row: InstanceRow): InstanceBranding {
     products: row.products,
     customDomain: row.custom_domain,
     supportEmail: row.support_email,
+    demoEnabled: row.demo_enabled,
   }
 }
 
