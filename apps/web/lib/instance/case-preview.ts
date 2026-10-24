@@ -22,6 +22,8 @@ export type CasePreview = {
   collection: string | null
   firstLabel: string
   lastLabel: string
+  /** The week of the last sample. */
+  lastWeek: number
   note: string
 }
 
@@ -44,6 +46,7 @@ export function casePreview(instanceName: string, programs: Program[], now = new
     collection: report.collection ?? null,
     firstLabel: report.timepoints[0].label,
     lastLabel: report.timepoints.at(-1)?.label ?? `Week ${program.followUpWeeks}`,
+    lastWeek: report.timepoints.at(-1)?.week ?? program.followUpWeeks,
     note: draftNote(markers),
   }
 }

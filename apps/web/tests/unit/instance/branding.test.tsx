@@ -76,6 +76,7 @@ describe("a company instance's own site", () => {
       collection: null,
       firstLabel: "Baseline",
       lastLabel: "Week 12",
+      lastWeek: 12,
       note: draftNote(markers),
     }
     const { rerender } = render(
