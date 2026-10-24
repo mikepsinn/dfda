@@ -13,12 +13,18 @@ import dotenv from 'dotenv'
  *   `pnpm exec playwright install chromium` downloads.
  * - DEMO_VIDEO=1: the tour (tests/e2e/tour.test.ts) records the demo videos,
  *   slowly enough to follow (`pnpm demo:video`).
+ * - The report assistant calls the Claude API. When Playwright starts the app
+ *   and ANTHROPIC_API_KEY is not set, it also starts a mock of the API
+ *   (tests/e2e/mock-claude.mjs) and points the app at it. With E2E_BASE_URL,
+ *   the app's own settings decide; CI uses the mock.
  */
 dotenv.config({ path: '.env.test' })
 
 const TEST_PORT = 3001
+const MOCK_CLAUDE_PORT = 4010
 const appUrl = process.env.E2E_BASE_URL
 const baseURL = appUrl ?? `http://localhost:${TEST_PORT}`
+const mockClaude = !appUrl && !process.env.ANTHROPIC_API_KEY
 
 if (!appUrl) {
   for (const key of ['DATABASE_URL', 'BETTER_AUTH_SECRET']) {
@@ -53,12 +59,18 @@ export default defineConfig({
   ],
   webServer: appUrl
     ? undefined
-    : {
-        command: `pnpm dev --port ${TEST_PORT}`,
-        url: baseURL,
-        timeout: 120_000,
-        reuseExistingServer: !process.env.CI,
-        stdout: 'pipe',
-        stderr: 'pipe',
-      },
+    : [
+        ...(mockClaude
+          ? [{ command: `node tests/e2e/mock-claude.mjs ${MOCK_CLAUDE_PORT}`, port: MOCK_CLAUDE_PORT, reuseExistingServer: !process.env.CI }]
+          : []),
+        {
+          command: `pnpm dev --port ${TEST_PORT}`,
+          url: baseURL,
+          timeout: 120_000,
+          reuseExistingServer: !process.env.CI,
+          stdout: 'pipe',
+          stderr: 'pipe',
+          env: mockClaude ? { ANTHROPIC_API_KEY: 'test-anthropic-key', ANTHROPIC_BASE_URL: `http://127.0.0.1:${MOCK_CLAUDE_PORT}` } : {},
+        },
+      ],
 })

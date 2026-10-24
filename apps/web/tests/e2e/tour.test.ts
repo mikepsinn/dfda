@@ -153,6 +153,21 @@ test.describe('the clinician', () => {
       })
 
       await step(page, 'clinician-4', async () => {
+        const assistant = page.getByRole('region', { name: 'Ask about this report' })
+        await show(assistant)
+        await assistant.getByRole('button', { name: 'Which changes should I look at first, and why?' }).click()
+        await assistant.getByRole('button', { name: 'Ask', exact: true }).click()
+        // With the real Claude API (pnpm demo:video), a literature search can take a minute.
+        const answer = assistant
+          .getByRole('list', { name: 'Questions' })
+          .getByRole('listitem')
+          .filter({ hasText: 'Which changes should I look at first, and why?' })
+          .last()
+        await expect(answer.getByRole('list', { name: 'Sources' })).toBeVisible({ timeout: 120_000 })
+        await show(answer)
+      })
+
+      await step(page, 'clinician-5', async () => {
         const decision = page.getByRole('group', { name: 'Decision for the care plan' })
         await show(decision)
         await decision.getByRole('radio', { name: /^Continue/ }).check()
