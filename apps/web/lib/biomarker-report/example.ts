@@ -1,5 +1,8 @@
-import { hash, seededRandom } from '@/lib/seeded-random'
+import { BPC_157_EXAMPLE_REPORT } from './example-bpc-157'
+import { exampleMarker, notMeasuredBetween, type MarkerSpec } from './example-parts'
 import { biomarkerReportSchema, type BiomarkerReport, type ClinicalValue, type Marker } from './schema'
+
+export { fillTimepoints } from './example-parts'
 
 /**
  * A made-up clinician report of a made-up patient and clinic, for the demo
@@ -11,44 +14,6 @@ import { biomarkerReportSchema, type BiomarkerReport, type ClinicalValue, type M
  * every panel verdict of rules.ts.
  */
 
-/** The share of a marker's noise by which a value between the first and the last timepoint may wobble. */
-const WOBBLE = 0.3
-
-function decimalsOf(value: number) {
-  return (String(value).split('.')[1] ?? '').length
-}
-
-function round(value: number, decimals: number) {
-  const factor = 10 ** decimals
-  return Math.round(value * factor) / factor
-}
-
-/**
- * Values for every timepoint from the first and the last one: most of the
- * change comes early (as with a drug that acts within weeks), plus a small
- * wobble within the noise. The same seed always gives the same values, rounded
- * to as many decimals as the first and last values have.
- */
-export function fillTimepoints(options: { first: number; last: number; weeks: number[]; noise: number; seed: string }): number[] {
-  const { first, last, weeks, noise } = options
-  const random = seededRandom(hash(options.seed))
-  const decimals = Math.max(decimalsOf(first), decimalsOf(last))
-  const span = weeks[weeks.length - 1] - weeks[0]
-  return weeks.map((week, index) => {
-    if (index === 0) return first
-    if (index === weeks.length - 1) return last
-    const share = 1 - (1 - (week - weeks[0]) / span) ** 2
-    const wobble = (random() * 2 - 1) * WOBBLE * noise
-    return round(first + (last - first) * share + wobble, decimals)
-  })
-}
-
-/**
- * A marker with its first and last values and its change in multiples of the
- * noise; null values when the assay never quantified it.
- */
-type MarkerSpec = Omit<Marker, 'values' | 'noise'> & { first: number | null; last: number | null; multiple: number }
-
 const TIMEPOINTS = [
   { label: 'Baseline', week: 0 },
   { label: 'Week 4', week: 4 },
@@ -56,17 +21,8 @@ const TIMEPOINTS = [
   { label: 'Week 12', week: 12 },
 ]
 const WEEKS = TIMEPOINTS.map((timepoint) => timepoint.week)
-const notMeasured = (first: number | null, last: number | null) => [first, null, null, last]
-
-function marker(panelId: string, { first, last, multiple, ...spec }: MarkerSpec): Marker {
-  // The noise that makes the change this many times the noise, to 4 significant digits as a data file gives it.
-  const noise = first === null || last === null ? 1 : Number((Math.abs(last - first) / multiple).toPrecision(4))
-  const values =
-    first === null || last === null
-      ? WEEKS.map(() => null)
-      : fillTimepoints({ first, last, weeks: WEEKS, noise, seed: `example:${panelId}:${spec.id}` })
-  return { ...spec, noise, values }
-}
+const notMeasured = (first: number | null, last: number | null) => notMeasuredBetween(first, last, WEEKS.length)
+const marker = (panelId: string, spec: MarkerSpec): Marker => exampleMarker(panelId, spec, WEEKS)
 
 const PANELS: { id: string; name: string; summary: string; markers: MarkerSpec[] }[] = [
   {
@@ -387,10 +343,18 @@ export const EXAMPLE_REPORT: BiomarkerReport = biomarkerReportSchema.parse({
   },
 })
 
+/** The example reports by the program's dose: one for each program template (lib/programs/config.ts). */
+const EXAMPLE_REPORTS: Record<string, BiomarkerReport> = {
+  semaglutide: EXAMPLE_REPORT,
+  'bpc-157': BPC_157_EXAMPLE_REPORT,
+}
+
 /**
- * The example report for a program, when there is one: the semaglutide
- * report for a program whose dose is semaglutide (the GLP-1 template).
+ * The example report for a program, when there is one: the report of the
+ * program's dose (the semaglutide report for the GLP-1 template, the BPC-157
+ * report for the BPC-157 template); null for any other program.
  */
 export function exampleReportFor(program: { items: { kind: string; variableId: string }[] }): BiomarkerReport | null {
-  return program.items.some((item) => item.kind === 'dose' && item.variableId === 'semaglutide') ? EXAMPLE_REPORT : null
+  const dose = program.items.find((item) => item.kind === 'dose' && item.variableId in EXAMPLE_REPORTS)
+  return dose ? EXAMPLE_REPORTS[dose.variableId] : null
 }

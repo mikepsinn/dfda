@@ -1,7 +1,7 @@
 import demo from '@/scripts/demo-data.json'
 import { adminDb, Prisma } from '@/lib/db'
 import { ensurePasswordUser } from '@/lib/auth-users'
-import { EXAMPLE_REPORT } from '@/lib/biomarker-report/example'
+import { EXAMPLE_REPORT, exampleReportFor } from '@/lib/biomarker-report/example'
 import type { BiomarkerReport } from '@/lib/biomarker-report/schema'
 import { PROGRAM_TEMPLATES } from '@/lib/programs/config'
 import { findProgramById, reportItems, type Program } from '@/lib/programs/data'
@@ -183,26 +183,33 @@ function demoEmails() {
 }
 
 /**
- * The demo patient's week-12 report: the example report (lib/biomarker-report/example.ts)
- * with their name, the program and the clinic, dated at their follow-up.
+ * The demo patient's report before their name and dates: the program's example
+ * report (lib/biomarker-report/example.ts), or the semaglutide report for a
+ * program without one.
  */
-/**
- * The weeks from the demo patient's start to their last sample: the program's
- * follow-up, or the example report's last sample when that comes later (a
- * program with an 8-week follow-up still gets the report's week-12 sample).
- */
-function demoWeeks(program: Program): number {
-  return Math.max(program.followUpWeeks, ...EXAMPLE_REPORT.timepoints.map((timepoint) => timepoint.week))
+function demoReportBase(program: Program): BiomarkerReport {
+  return exampleReportFor(program) ?? EXAMPLE_REPORT
 }
 
+/**
+ * The weeks from the demo patient's start to their last sample: the program's
+ * follow-up, or the report's last sample when that comes later (a program
+ * with an 8-week follow-up and a 12-week report still gets the week-12 sample).
+ */
+function demoWeeks(program: Program): number {
+  return Math.max(program.followUpWeeks, ...demoReportBase(program).timepoints.map((timepoint) => timepoint.week))
+}
+
+/** The demo patient's report: the program's example report with their name, the program and the clinic, dated at their last sample. */
 export function demoPatientReport(program: Program, startedAt: Date, clinicName: string): BiomarkerReport {
+  const base = demoReportBase(program)
   const followUp = new Date(startedAt.getTime() + demoWeeks(program) * 7 * DAY)
   return {
-    ...EXAMPLE_REPORT,
+    ...base,
     reportDate: followUp.toISOString().slice(0, 10),
-    person: { name: demo.patient.name, code: demo.report.code, age: EXAMPLE_REPORT.person.age },
-    program: { ...EXAMPLE_REPORT.program, name: program.name },
-    clinician: { name: demo.clinician.name, organization: clinicName, location: EXAMPLE_REPORT.clinician?.location },
+    person: { name: demo.patient.name, code: demo.report.code, age: base.person.age },
+    program: { ...base.program, name: program.name },
+    clinician: { name: demo.clinician.name, organization: clinicName, location: base.clinician?.location },
   }
 }
 

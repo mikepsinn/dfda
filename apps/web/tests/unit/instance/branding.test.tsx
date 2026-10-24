@@ -113,16 +113,37 @@ describe("a company instance's own site", () => {
     expect(screen.queryByRole("link", { name: /See the programs/ })).not.toBeInTheDocument()
   })
 
-  it("has a header with the company's name, its programs and sign-in", () => {
-    render(<InstanceHeader brand={{ name: "Acme Proteomics", logoUrl: null }} pages={[]} initialUser={null} initialProfile={null} />)
+  it("has a header with the company's name, the visitor's menu and sign-in", () => {
+    const links = [
+      { href: "/programs", label: "Programs" },
+      { href: "/#how", label: "How it works" },
+      { href: "/programs/glp-1/example", label: "Example report" },
+    ]
+    render(<InstanceHeader brand={{ name: "Acme Proteomics", logoUrl: null }} links={links} pages={[]} initialUser={null} initialProfile={null} />)
     const header = screen.getByRole("banner")
     // Without a logo, the name stands alone: no letter badge in its place.
     expect(within(header).getByRole("link", { name: /Acme Proteomics/ })).toHaveAttribute("href", "/")
     expect(within(header).getByRole("link", { name: /Acme Proteomics/ })).toHaveTextContent(/^Acme Proteomics$/)
     expect(header.querySelector("img, [aria-hidden='true'].bg-primary")).toBeNull()
     expect(within(header).getByRole("link", { name: "Programs" })).toHaveAttribute("href", "/programs")
+    expect(within(header).getByRole("link", { name: "Example report" })).toHaveAttribute("href", "/programs/glp-1/example")
     expect(within(header).getByRole("link", { name: "Sign in" })).toHaveAttribute("href", "/login")
-    expect(within(header).getAllByRole("link")).toHaveLength(3)
+    expect(within(header).getAllByRole("link")).toHaveLength(5)
+    // On a phone the same links are in one list behind "Menu".
+    expect(within(header).getByRole("button", { name: "Menu" })).toBeInTheDocument()
+  })
+
+  it("shows a clinician the patients with the number of reports to review", () => {
+    render(
+      <InstanceHeader
+        brand={{ name: "Acme Proteomics", logoUrl: null }}
+        links={[{ href: "/instances/acme/care", label: "Patients", count: 3 }]}
+        pages={[]}
+        initialUser={null}
+        initialProfile={null}
+      />,
+    )
+    expect(within(screen.getByRole("banner")).getByRole("link", { name: "Patients 3 to review" })).toHaveAttribute("href", "/instances/acme/care")
   })
 
   it("has a footer with the company's logo when it has one, and no word of the network that runs it", () => {
@@ -145,8 +166,8 @@ describe("a company instance's own site", () => {
     ]
     render(
       <>
-        <InstanceHeader brand={{ name: "Acme Proteomics", logoUrl: null }} pages={pages} initialUser={null} initialProfile={null} />
-        <InstanceFooter brand={{ name: "Acme Proteomics", logoUrl: null }} pages={pages} />
+        <InstanceHeader brand={{ name: "Acme Proteomics", logoUrl: null }} links={[]} pages={pages} initialUser={null} initialProfile={null} />
+        <InstanceFooter brand={{ name: "Acme Proteomics", logoUrl: null }} pages={pages} exampleHref="/programs/glp-1/example" />
       </>,
     )
     const header = screen.getByRole("banner")
@@ -157,6 +178,7 @@ describe("a company instance's own site", () => {
     expect(within(footer).getByRole("link", { name: "FAQ" })).toHaveAttribute("href", "/pages/faq")
     expect(within(footer).getByRole("link", { name: "Terms of Use" })).toHaveAttribute("href", "/terms")
     expect(within(footer).getByRole("link", { name: "Privacy Policy" })).toHaveAttribute("href", "/privacy")
+    expect(within(footer).getByRole("link", { name: "Example report" })).toHaveAttribute("href", "/programs/glp-1/example")
     expect(within(footer).getAllByRole("link", { name: "Terms of Use" })).toHaveLength(1)
   })
 })

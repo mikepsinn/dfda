@@ -1,6 +1,8 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest'
-import { EXAMPLE_REPORT, fillTimepoints } from '@/lib/biomarker-report/example'
+import { EXAMPLE_REPORT, exampleReportFor, fillTimepoints } from '@/lib/biomarker-report/example'
+import { BPC_157_EXAMPLE_REPORT } from '@/lib/biomarker-report/example-bpc-157'
+import { PROGRAM_TEMPLATES } from '@/lib/programs/config'
 import { summarizeReport } from '@/lib/biomarker-report/rules'
 
 describe('fillTimepoints', () => {
@@ -52,6 +54,33 @@ describe('the example report', () => {
           id: marker.id,
           changed: marker.status !== 'unchanged',
         })
+      }
+    }
+  })
+})
+
+describe('the example report of each program template', () => {
+  const template = (key: string) => PROGRAM_TEMPLATES.find((candidate) => candidate.key === key)!
+
+  it("is chosen by the program's dose, and a program of another drug has none", () => {
+    expect(exampleReportFor(template('glp-1'))).toBe(EXAMPLE_REPORT)
+    expect(exampleReportFor(template('bpc-157'))).toBe(BPC_157_EXAMPLE_REPORT)
+    expect(exampleReportFor({ items: [{ kind: 'dose', variableId: 'metformin' }] })).toBeNull()
+    expect(exampleReportFor({ items: [{ kind: 'lab', variableId: 'bpc-157' }] })).toBeNull()
+  })
+
+  it('gives BPC-157 its own 8-week report: three timepoints, the dose in µg, and every status', () => {
+    expect(BPC_157_EXAMPLE_REPORT.timepoints.map((timepoint) => timepoint.week)).toEqual([0, 4, 8])
+    expect(BPC_157_EXAMPLE_REPORT.dose?.unit).toBe('µg')
+    const summary = summarizeReport(BPC_157_EXAMPLE_REPORT)
+    expect(summary.counts).toEqual({ intended: 8, unchanged: 35, review: 1, 'below-limit': 0, total: 44 })
+    expect(summary.panels.find((panel) => panel.id === 'matrix')?.verdict).toBe('review')
+    for (const panel of summary.panels) {
+      for (const marker of panel.markers) {
+        expect(marker.values).toHaveLength(3)
+        if (marker.noiseMultiple === null) continue
+        const shown = Math.round(marker.noiseMultiple * 10) / 10
+        expect({ id: marker.id, changed: shown >= BPC_157_EXAMPLE_REPORT.threshold }).toEqual({ id: marker.id, changed: marker.status !== 'unchanged' })
       }
     }
   })
