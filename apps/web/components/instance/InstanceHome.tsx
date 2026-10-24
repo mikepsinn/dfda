@@ -38,13 +38,16 @@ export function InstanceHome({
   programs,
   joined,
   preview = null,
+  exampleHref = null,
 }: {
   instance: Pick<InstanceBranding, "name" | "byline" | "tagline" | "products" | "demoEnabled">
   programs: Program[]
   joined: Set<string>
   preview?: CasePreview | null
+  /** The site's example report (lib/instance/menu.ts). */
+  exampleHref?: string | null
 }) {
-  if (preview) return <ClinicHome instance={instance} programs={programs} joined={joined} preview={preview} />
+  if (preview) return <ClinicHome instance={instance} programs={programs} joined={joined} preview={preview} exampleHref={exampleHref} />
   return (
     <div className="mx-auto max-w-5xl space-y-14">
       <section className="brand-panel space-y-6 rounded-[calc(var(--radius)*2.5)] border p-6 sm:p-10">
@@ -68,14 +71,21 @@ export function InstanceHome({
           </div>
         )}
         {programs.length > 0 && (
-          <Button asChild size="lg" className="primary-glow gap-1">
-            <Link href="#programs">
-              See the programs <ArrowRight aria-hidden="true" className="h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button asChild size="lg" className="primary-glow gap-1">
+              <Link href="#programs">
+                See the programs <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Link>
+            </Button>
+            {exampleHref && (
+              <Link href={exampleHref} className="text-sm font-medium text-primary underline">
+                See an example report
+              </Link>
+            )}
+          </div>
         )}
         {instance.demoEnabled && (
-          <div className="space-y-2 border-t pt-6">
+          <div id="try" className="scroll-mt-24 space-y-2 border-t pt-6">
             <p className="font-medium">See how it works with a demo patient</p>
             <DemoTryButtons />
           </div>
@@ -91,7 +101,7 @@ export function InstanceHome({
         </section>
       )}
 
-      <section aria-labelledby="how-heading" className="space-y-6">
+      <section id="how" aria-labelledby="how-heading" className="scroll-mt-24 space-y-6">
         <h2 id="how-heading" className="text-2xl font-bold tracking-tight sm:text-3xl">
           How a program works
         </h2>

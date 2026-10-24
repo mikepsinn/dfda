@@ -55,11 +55,14 @@ export function ClinicHome({
   programs,
   joined,
   preview,
+  exampleHref = null,
 }: {
   instance: Pick<InstanceBranding, "name" | "byline" | "tagline" | "demoEnabled">
   programs: Program[]
   joined: Set<string>
   preview: CasePreview
+  /** The site's example report (lib/instance/menu.ts). */
+  exampleHref?: string | null
 }) {
   const { name } = instance
   const hero = preview.headline.slice(0, 2)
@@ -153,7 +156,7 @@ export function ClinicHome({
               as it is ready, and a clinician of {name}&rsquo;s care team reviews it.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div id="try" className="grid scroll-mt-24 gap-4 sm:grid-cols-2">
             <Audience eyebrow="For patients" text="Join the program for your treatment. You log your doses and how you feel, and your reports come to you.">
               {programs.length > 0 && (
                 <Button asChild className="gap-1">
@@ -163,6 +166,11 @@ export function ClinicHome({
                 </Button>
               )}
               {instance.demoEnabled && <DemoTryButtons roles={["patient"]} />}
+              {exampleHref && (
+                <Link href={exampleHref} className="basis-full text-sm font-medium text-primary underline">
+                  See an example report
+                </Link>
+              )}
             </Audience>
             <Audience eyebrow="For clinicians" text="Each patient is a case: the baseline, what they logged, the follow-up by pathway, and your note.">
               {instance.demoEnabled ? (
@@ -197,7 +205,7 @@ export function ClinicHome({
         </Picture>
       </section>
 
-      <section aria-labelledby="how-heading" className="space-y-12">
+      <section id="how" aria-labelledby="how-heading" className="scroll-mt-24 space-y-12">
         <div className="max-w-2xl space-y-3">
           <Eyebrow>How it works</Eyebrow>
           <h2 id="how-heading" className={`${SERIF} text-4xl`}>

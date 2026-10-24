@@ -183,6 +183,14 @@ filled with the site's demo patient
 the page reads nobody's data. Other company sites keep the home page for people
 who track a product.
 
+**Menus by role, 2026-10-24 ([`lib/instance/menu.ts`](../apps/web/lib/instance/menu.ts)):**
+the header of a company site links what the person does there. A visitor gets the
+programs, how it works, the example report and, with the demo on, the demo; a member,
+their program and their reminders; a clinician of the care team, the patients with the
+number of reports that wait for review; the owner, the site's settings. A person with
+several roles gets the links of each. On a phone the links are in one "Menu" list. The
+footer and the home page also link the example report.
+
 **Instance sites, 2026-10-11:** on an instance, the site is the company's own:
 its header, footer and home page, its programs at `/programs`, sign-in, a
 member's reminders, and the terms and privacy pages. The network's other pages
@@ -241,9 +249,14 @@ like a PDF viewer). A report file
 may leave out the panel summaries and the summary-page card texts: the upload writes
 them from the file's numbers in fixed sentences (`lib/biomarker-report/text.ts`),
 facts only, with no advice. They are written once, so a report does not change after
-sign-off. Advice and the other texts (the visit, the methods) come from the file. A program whose
-dose is semaglutide (the GLP-1 template) also shows the example at
-`/programs/{slug}/example`. The data
+sign-off. Advice and the other texts (the visit, the methods) come from the file. Each
+program template has its own example report, chosen by the program's dose and shown at
+`/programs/{slug}/example`: semaglutide for the GLP-1 template (12 weeks), and BPC-157 for
+the BPC-157 template (8 weeks, a tendon recovery, with its expected directions given as
+the program's aims, because human studies of BPC-157 are few;
+[`example-bpc-157.ts`](../apps/web/lib/biomarker-report/example-bpc-157.ts)). A site's demo
+patient gets the report of their program. A program of another drug shows the short
+before-and-after table. The data
 file holds only values and text; the rules calculate every status, index and count.
 The example report uses made-up values. By the owner's decision, it carries no
 "Sample data" label on the page, so that a company can show its product as it will

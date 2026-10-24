@@ -4,11 +4,20 @@ import { isLegalPage, pagePath, type PageLink } from "@/lib/instance/pages"
 import { SiteLogo } from "./SiteLogo"
 
 /**
- * The footer of a company instance: its programs, its content pages and the
- * legal pages (the company's own when it has them). The site is the company's
+ * The footer of a company instance: its programs, its example report, its
+ * content pages and the legal pages (the company's own when it has them). The site is the company's
  * own, so it names no one else.
  */
-export function InstanceFooter({ brand, pages }: { brand: { name: string; byline?: string | null; logoUrl: string | null }; pages: PageLink[] }) {
+export function InstanceFooter({
+  brand,
+  pages,
+  exampleHref = null,
+}: {
+  brand: { name: string; byline?: string | null; logoUrl: string | null }
+  pages: PageLink[]
+  /** The site's example report (lib/instance/menu.ts). */
+  exampleHref?: string | null
+}) {
   const title = (slug: string, fallback: string) => pages.find((page) => page.slug === slug)?.title ?? fallback
   return (
     <footer className="w-full border-t py-6">
@@ -17,6 +26,11 @@ export function InstanceFooter({ brand, pages }: { brand: { name: string; byline
           <Link href="/programs" className="text-sm font-medium hover:underline">
             Programs
           </Link>
+          {exampleHref && (
+            <Link href={exampleHref} className="text-sm font-medium hover:underline">
+              Example report
+            </Link>
+          )}
           {pages
             .filter((page) => !isLegalPage(page.slug))
             .map((page) => (

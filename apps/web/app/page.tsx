@@ -8,6 +8,7 @@ import { InstanceHome } from "@/components/instance/InstanceHome";
 import { conditionCatalog } from "@/lib/demo/treatment-estimates";
 import { getLandingOutcomeLabel, getRankingsPreview } from "@/lib/demo/landing-preview";
 import { casePreview } from "@/lib/instance/case-preview";
+import { exampleHrefFor } from "@/lib/instance/menu";
 import { resolveInstance } from "@/lib/instance/resolve";
 import { logger } from "@/lib/logger";
 import { joinedProgramIds, listPrograms, type Program } from "@/lib/programs/data";
@@ -45,7 +46,15 @@ export default async function Home() {
   const instance = await resolveInstance();
   if (instance) {
     const { programs, joined } = await instancePrograms(instance.slug);
-    return <InstanceHome instance={instance} programs={programs} joined={joined} preview={clinicPreview(instance.name, programs)} />;
+    return (
+      <InstanceHome
+        instance={instance}
+        programs={programs}
+        joined={joined}
+        preview={clinicPreview(instance.name, programs)}
+        exampleHref={exampleHrefFor(programs)}
+      />
+    );
   }
 
   // The previews read local snapshot files; neither makes a database or model call.

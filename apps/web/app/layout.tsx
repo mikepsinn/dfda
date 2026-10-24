@@ -16,6 +16,8 @@ import { InstanceTheme } from "@/components/instance/InstanceTheme"
 import { InstanceHeader } from "@/components/instance/InstanceHeader"
 import { InstanceFooter } from "@/components/instance/InstanceFooter"
 import { PreviewBar } from "@/components/instance/PreviewBar"
+import { logger } from "@/lib/logger"
+import { instanceMenu, type InstanceMenu } from "@/lib/instance/menu"
 import { listPages } from "@/lib/instance/page-data"
 import { requestSiteOrigin, resolveInstance } from "@/lib/instance/resolve"
 import { DARK_CLASS, isDark } from "@/lib/instance/theme"
@@ -120,6 +122,18 @@ export default async function RootLayout({
   const instance = await resolveInstance()
   // Its content pages, linked in its header and footer.
   const pages = instance ? (await listPages(instance.slug)).map(({ slug, title, inMenu }) => ({ slug, title, inMenu })) : []
+  // Its menu for this person's roles there; a failed read leaves the programs only.
+  let menu: InstanceMenu = { links: [{ href: "/programs", label: "Programs" }], exampleHref: null }
+  if (instance) {
+    try {
+      menu = await instanceMenu(user ? { id: user.id, email: user.email } : null, instance)
+    } catch (error) {
+      logger.error("Could not read the menu of the instance", {
+        instanceSlug: instance.slug,
+        error: error instanceof Error ? error.message : String(error),
+      })
+    }
+  }
 
   return (
     <html lang="en" className={cn(inter.variable, reportSerif.variable, instance && isDark(instance.backgroundColor) && DARK_CLASS)}>
@@ -132,14 +146,14 @@ export default async function RootLayout({
           <SiteChrome
             header={
               instance ? (
-                <InstanceHeader brand={instance} pages={pages} initialUser={user} initialProfile={profile} />
+                <InstanceHeader brand={instance} links={menu.links} pages={pages} initialUser={user} initialProfile={profile} />
               ) : (
                 <Header initialUser={user} initialProfile={profile} siteName={env.NEXT_PUBLIC_SITE_NAME} />
               )
             }
             footer={
               instance ? (
-                <InstanceFooter brand={instance} pages={pages} />
+                <InstanceFooter brand={instance} pages={pages} exampleHref={menu.exampleHref} />
               ) : (
                 <Footer siteName={env.NEXT_PUBLIC_SITE_NAME} />
               )
