@@ -23,13 +23,16 @@ function dashboardPathFor(role: UserTypeEnum): string {
   return `/${role.replace(/_/g, '-')}`
 }
 
+/** The roles that a user can choose; the admin role is never one (the database refuses it too). */
+const CHOOSABLE_ROLES: readonly UserTypeEnum[] = ['patient', 'provider', 'research_partner', 'developer']
+
 // Server Action to set user role
 async function setUserType(formData: FormData) {
   'use server'
 
-  const role = formData.get('user_type') as UserTypeEnum
+  const role = CHOOSABLE_ROLES.find((choice) => choice === formData.get('user_type'))
   if (!role) {
-    // Handle missing role error
+    // No role chosen, or one that the form does not offer
     return; // Just return without redirecting if no role selected
   }
 

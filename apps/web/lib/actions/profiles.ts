@@ -1,15 +1,29 @@
 "use server"
 
+import { z } from "zod"
 import { getUserDb } from "@/lib/db/server"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
-import { getUserProfile, createUserProfile, updateUserProfile } from "@/lib/profile"
+import { getUserProfile, updateUserProfile } from "@/lib/profile"
 import { getServerUser } from "@/lib/server-auth"
 
 export type Profile = Database["public"]["Tables"]["profiles"]["Row"]
-export type ProfileInsert = Database["public"]["Tables"]["profiles"]["Insert"]
-export type ProfileUpdate = Database["public"]["Tables"]["profiles"]["Update"]
 type UserTypeEnum = Database["public"]["Enums"]["user_type_enum"]
+
+const optionalName = z.string().trim().max(100).nullable().transform((value) => value || null)
+
+/**
+ * The fields of the profile form. Other keys are dropped: the email, the role
+ * and the dates are not the user's to change here (and the database refuses
+ * them, db/migrations/20261024040000_alter_profiles_user_updates.sql).
+ */
+const profileFormSchema = z.object({
+  first_name: optionalName.optional(),
+  last_name: optionalName.optional(),
+  timezone: z.string().trim().max(100).nullable().optional(),
+})
+
+export type ProfileFormUpdate = z.input<typeof profileFormSchema>
 
 export async function getProfileByIdAction(id: string): Promise<Profile | null> {
   try {
@@ -34,31 +48,17 @@ export async function getProfilesByTypeAction(type: UserTypeEnum): Promise<Profi
   }
 }
 
-export async function createProfileAction(profile: ProfileInsert): Promise<Profile | null> {
-  const newProfile = await createUserProfile(profile);
-  if (!newProfile) {
-      throw new Error("Failed to create profile")
-  }
-  return newProfile;
-}
-
-export async function updateProfileAction(id: string, updates: ProfileUpdate): Promise<Profile | null> {
-  const updatesWithTimestamp = { ...updates, updated_at: new Date() };
-  const updatedProfile = await updateUserProfile(id, updatesWithTimestamp);
+/** Saves the profile form of the signed-in user. */
+export async function updateProfileAction(updates: ProfileFormUpdate): Promise<Profile | null> {
+  const user = await getServerUser()
+  if (!user) throw new Error("Sign in to change your profile.")
+  const parsed = profileFormSchema.safeParse(updates)
+  if (!parsed.success) throw new Error("Check the name and the time zone.")
+  const updatedProfile = await updateUserProfile(user.id, { ...parsed.data, updated_at: new Date() })
   if (!updatedProfile) {
       throw new Error("Failed to update profile")
   }
   return updatedProfile;
-}
-
-export async function deleteProfileAction(id: string): Promise<void> {
-  try {
-    const db = await getUserDb()
-    await db.profiles.deleteMany({ where: { id } })
-  } catch (error) {
-    logger.error("Error deleting profile:", error)
-    throw new Error("Failed to delete profile")
-  }
 }
 
 export async function getCurrentUserProfileAction(): Promise<Profile | null> {
