@@ -268,8 +268,10 @@ Links to add when they are needed:
 - Remove the tables that are empty in production and that no app code queries:
   `global_symptoms`, `protocol_versions`, `prescriptions`, `pharmacies`,
   `product_sellers`, `product_listings`, `regulatory_approvals`, and the organization
-  tables with the plugin. `patient_symptoms` and `patient_side_effects` are removed
-  (2026-10-25): a symptom or a side effect is a symptom reminder and its ratings.
+  tables with the plugin. No code uses `patient_symptoms` and `patient_side_effects`
+  now (2026-10-25): a symptom or a side effect is a symptom reminder and its ratings.
+  A migration in a later deployment drops them, because a migration must work with
+  the code that is live.
 
 **AI apps and due reminders, 2026-10-24 (`apps/web/lib/reminders/due.ts`,
 `apps/web/lib/instance/oauth.ts`):** a person connects an AI app (Claude, ChatGPT or

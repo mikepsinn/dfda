@@ -198,6 +198,9 @@ describe('side effects', () => {
     const rated = await mySymptomRatings(treated, new Date(Date.now() - 3 * DAY))
     expect(rated.map(({ item, ratings }) => [item.name, ratings.map((rating) => rating.value)])).toEqual([['Headache', [3, 5]]])
     expect(rated[0].ratings[0].unit).toBe('0-10')
+    // A treatment started late today keeps today's rating, which is saved at noon UTC.
+    const lateToday = await mySymptomRatings(treated, atToday('23:00'))
+    expect(lateToday.map(({ item, ratings }) => [item.name, ratings.map((rating) => rating.value)])).toEqual([['Headache', [3]]])
     // Row-level security: another person's ratings are not in it.
     expect((await mySymptomRatings(other, new Date(Date.now() - 3 * DAY))).map(({ item }) => item.name)).not.toContain('Headache')
   })

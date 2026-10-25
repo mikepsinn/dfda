@@ -213,14 +213,18 @@ export async function addSideEffect(
 export type RatedSymptom = { item: ProgramItem; ratings: { value: number; unit: string; at: Date }[] }
 
 /**
- * The symptoms that `user` rated since `since`, each with its ratings, the
- * newest first, for the side effects page of a treatment that they started
- * then. The check-ins of their programs are symptoms too, so they are in it.
+ * The symptoms that `user` rated from the day of `since` (UTC), each with its
+ * ratings, the newest first, for the side effects page of a treatment that
+ * they started then. From the start of the day, because the rating of a whole
+ * day is saved at noon UTC (dayTime): a treatment started in the afternoon
+ * keeps that day's rating. The check-ins of their programs are symptoms too,
+ * so they are in it.
  */
 export async function mySymptomRatings(user: DbUser, since: Date): Promise<RatedSymptom[]> {
+  const day = new Date(Date.UTC(since.getUTCFullYear(), since.getUTCMonth(), since.getUTCDate()))
   const rows = await withUserTransaction(user, (tx) =>
     tx.measurements.findMany({
-      where: { user_id: user.id, deleted_at: null, start_at: { gte: since }, global_variables: symptomWhere },
+      where: { user_id: user.id, deleted_at: null, start_at: { gte: day }, global_variables: symptomWhere },
       select: { value: true, start_at: true, units: { select: { abbreviated_name: true } }, global_variables: { select: variableSelect } },
       orderBy: [{ start_at: 'desc' }, { id: 'asc' }],
     }),
