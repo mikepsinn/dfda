@@ -14,7 +14,8 @@ import { CHECK_IN_REMINDER_TIME, dayTime, itemValue, ProgramError } from './mana
  * measurements. So the daily check-in of each of their programs asks for each
  * symptom that has an active reminder and is not a check-in of one of their
  * programs, and the care team of a program with care team review sees the
- * symptoms that the person rated. Server only.
+ * symptoms that the person rated. A treatment's side effects page shows the
+ * symptoms that the person rated since they started the treatment. Server only.
  */
 
 /** The variable categories of symptoms. */
@@ -152,18 +153,25 @@ export async function ratedSideEffects(userId: string, program: Pick<Program, 'i
 }
 
 /**
- * Starts to track a symptom for a member of `program`: a daily reminder at
- * the check-in time, when the user has no reminder that tracks it, and the
- * rating of `date` when they gave one.
+ * Starts to track a symptom: a daily reminder at the check-in time, when the
+ * user has no reminder that tracks it, and the rating of `date` when they gave
+ * one. From a program's pages the user must be a member of `program`; a
+ * treatment's page gives no program.
  */
-export async function addSideEffect(user: DbUser, program: Program, input: { variableId: string; value: string; date: string }) {
+export async function addSideEffect(
+  user: DbUser,
+  program: Pick<Program, 'id'> | null,
+  input: { variableId: string; value: string; date: string },
+) {
   const startTime = dayTime(input.date)
   const result = await withUserTransaction(user, async (tx) => {
-    const enrollment = await tx.program_enrollments.findUnique({
-      where: { program_id_user_id: { program_id: program.id, user_id: user.id } },
-      select: { id: true },
-    })
-    if (!enrollment) throw new ProgramError('Join the program first.')
+    if (program) {
+      const enrollment = await tx.program_enrollments.findUnique({
+        where: { program_id_user_id: { program_id: program.id, user_id: user.id } },
+        select: { id: true },
+      })
+      if (!enrollment) throw new ProgramError('Join the program first.')
+    }
     const variable = await tx.global_variables.findFirst({ where: { ...symptomWhere, id: input.variableId }, select: variableSelect })
     if (!variable || (await programVariables(tx, [user.id])).get(user.id)?.has(variable.id)) {
       throw new ProgramError('Choose a side effect from the list.')
@@ -199,6 +207,31 @@ export async function addSideEffect(user: DbUser, program: Program, input: { var
     }
   }
   return result.item
+}
+
+/** A symptom that a person rated, with their ratings, the newest first. */
+export type RatedSymptom = { item: ProgramItem; ratings: { value: number; unit: string; at: Date }[] }
+
+/**
+ * The symptoms that `user` rated since `since`, each with its ratings, the
+ * newest first, for the side effects page of a treatment that they started
+ * then. The check-ins of their programs are symptoms too, so they are in it.
+ */
+export async function mySymptomRatings(user: DbUser, since: Date): Promise<RatedSymptom[]> {
+  const rows = await withUserTransaction(user, (tx) =>
+    tx.measurements.findMany({
+      where: { user_id: user.id, deleted_at: null, start_at: { gte: since }, global_variables: symptomWhere },
+      select: { value: true, start_at: true, units: { select: { abbreviated_name: true } }, global_variables: { select: variableSelect } },
+      orderBy: [{ start_at: 'desc' }, { id: 'asc' }],
+    }),
+  )
+  const byVariable = new Map<string, RatedSymptom>()
+  for (const row of rows) {
+    const symptom = byVariable.get(row.global_variables.id) ?? { item: toItem(row.global_variables), ratings: [] }
+    symptom.ratings.push({ value: row.value, unit: row.units.abbreviated_name, at: row.start_at })
+    byVariable.set(row.global_variables.id, symptom)
+  }
+  return [...byVariable.values()].sort((a, b) => a.item.name.localeCompare(b.item.name))
 }
 
 /**

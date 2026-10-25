@@ -21,11 +21,6 @@ export type FullPatientTreatmentDetail =
           patient_conditions: { 
               global_conditions: { global_variables: { name: string } } | null 
           } | null;
-      })[] }
-    & { patient_side_effects: ({ 
-          id: string; 
-          description: string; 
-          severity_out_of_ten: number | null; 
       })[] };
 
 // Type for patient conditions passed from server

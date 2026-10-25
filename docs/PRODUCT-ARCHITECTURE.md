@@ -266,10 +266,10 @@ Links to add when they are needed:
   program, so that treatment ratings and Outcome Labels can use program data. The text
   at join must then say so.
 - Remove the tables that are empty in production and that no app code queries:
-  `patient_symptoms`, `global_symptoms`, `protocol_versions`, `prescriptions`,
-  `pharmacies`, `product_sellers`, `product_listings`, `regulatory_approvals`, and the
-  organization tables with the plugin. `patient_side_effects` is empty too; only the
-  older treatments page uses it.
+  `global_symptoms`, `protocol_versions`, `prescriptions`, `pharmacies`,
+  `product_sellers`, `product_listings`, `regulatory_approvals`, and the organization
+  tables with the plugin. `patient_symptoms` and `patient_side_effects` are removed
+  (2026-10-25): a symptom or a side effect is a symptom reminder and its ratings.
 
 **AI apps and due reminders, 2026-10-24 (`apps/web/lib/reminders/due.ts`,
 `apps/web/lib/instance/oauth.ts`):** a person connects an AI app (Claude, ChatGPT or
@@ -311,7 +311,10 @@ each symptom that has an active reminder, also one added on the reminders page,
 unless it is a check-in of one of their programs; stopping a side effect deletes its
 reminder, and the ratings stay. In a program with
 care team review, the care team sees the symptoms that the member rated, from the
-same lookback start as the other logs, and the text at join says so. Once a day, after the last of the day's reminders in the member's time
+same lookback start as the other logs, and the text at join says so. A treatment's
+side effects page (`/patient/treatments/<id>/side-effects`) uses the same model: it
+shows the symptoms that the person rated since the treatment's start and adds side
+effects in the same way, without a program. Once a day, after the last of the day's reminders in the member's time
 zone, the member gets one email for each program (`check-in.ts`): number buttons
 for each rating, and "Took it" and "Skipped" for each dose. Four decisions:
 

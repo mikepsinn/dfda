@@ -114,7 +114,6 @@ export async function getPatientTreatmentDetailAction(patientTreatmentId: string
                         },
                     },
                 },
-                patient_side_effects: { select: { id: true, description: true, severity_out_of_ten: true } },
             },
         });
     } catch (error) {
