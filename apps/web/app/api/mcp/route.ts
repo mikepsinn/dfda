@@ -17,7 +17,7 @@ async function handle(req: Request): Promise<Response> {
   if (token instanceof Response) return token
   // Without a tracking scope there are no tools to offer.
   if (!token.scopes.some((scope) => (trackingScopes as readonly string[]).includes(scope))) {
-    return insufficientScopeResponse('mcp', TRACKING_READ_SCOPE)
+    return insufficientScopeResponse('mcp', TRACKING_READ_SCOPE, token.origin)
   }
   try {
     // Stateless: a new server and transport for each request, no session id.

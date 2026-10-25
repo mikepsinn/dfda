@@ -18,6 +18,7 @@ import {
 } from "@/lib/actions/programs"
 import { myReports, sharedSince } from "@/lib/care-team/data"
 import { withUserTransaction } from "@/lib/db"
+import { requestSiteOrigin } from "@/lib/instance/resolve"
 import { chatAvailable } from "@/lib/programs/chat"
 import { SCALE_RANGES } from "@/lib/programs/config"
 import { requireCurrentProgram } from "@/lib/programs/current"
@@ -72,6 +73,8 @@ export default async function YourProgramPage({
   const labItems = program.items.filter((item) => item.kind === "lab")
   const units = await unitChoices(program.items)
   const preferred = await withUserTransaction(user, (tx) => preferredUnits(tx, user.id, program.items, units))
+  // The MCP server on this site's address, with sign-in on this site (lib/instance/oauth.ts).
+  const mcpAddress = `${await requestSiteOrigin()}/api/mcp`
 
   return (
     <div className="mx-auto max-w-4xl space-y-10">
@@ -214,6 +217,20 @@ export default async function YourProgramPage({
             </form>
           )}
         </div>
+      </section>
+
+      <section aria-labelledby="ai-app-heading" className="surface-raised space-y-3 rounded-xl border p-6">
+        <h2 id="ai-app-heading" className="text-xl font-semibold">
+          Use your AI app
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          In Claude, ChatGPT or another app with MCP connectors, add a custom connector with this address, and sign in
+          with your {instance.name} account. Then ask the app to record your values, answer your reminders or change
+          their times.
+        </p>
+        <p>
+          <code className="break-all rounded bg-muted px-2 py-1 text-sm">{mcpAddress}</code>
+        </p>
       </section>
 
       <section aria-label="More" className="flex flex-col gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">

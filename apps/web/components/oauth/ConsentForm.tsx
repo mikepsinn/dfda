@@ -34,6 +34,8 @@ export interface ConsentFormProps {
     icon?: string | null;
     uri?: string | null;
   };
+  /** The site whose account the application wants: the main site, or a company's site. */
+  siteName: string;
   user: {
     email?: string | null;
   };
@@ -44,7 +46,7 @@ export interface ConsentFormProps {
   userInfoClaims: string[];
 }
 
-export function ConsentForm({ client, user, scopes, claimsRequest, userInfoClaims }: ConsentFormProps) {
+export function ConsentForm({ client, siteName, user, scopes, claimsRequest, userInfoClaims }: ConsentFormProps) {
   const [isLoading, setIsLoading] = useState<'approve' | 'deny' | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -72,7 +74,7 @@ export function ConsentForm({ client, user, scopes, claimsRequest, userInfoClaim
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 p-4">
+    <div className="flex items-center justify-center px-4 py-12">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           {client.icon ? (
@@ -89,7 +91,7 @@ export function ConsentForm({ client, user, scopes, claimsRequest, userInfoClaim
           )}
           <CardTitle className="text-xl">Authorize Application</CardTitle>
           <CardDescription>
-            <span className="font-semibold">{client.name}</span> wants to access your account
+            <span className="font-semibold">{client.name}</span> wants to access your {siteName} account
             ({user.email}).
             {client.uri && <span className="block mt-1 text-xs">{client.uri}</span>}
           </CardDescription>

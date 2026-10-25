@@ -259,9 +259,6 @@ older clinical tables. Decisions:
 
 Links to add when they are needed:
 
-- Close the day's reminder notifications when a program saves a value. Not needed
-  while the reminder worker does not run in production; the measurements API does not
-  close them either.
 - Save the markers of an imported biomarker report as measurements, matched by LOINC
   code (`global_variable_codes`), so that the before/after report uses them. First
   decide whether a value counts before a clinician reviews the report.
@@ -273,6 +270,28 @@ Links to add when they are needed:
   `pharmacies`, `product_sellers`, `product_listings`, `regulatory_approvals`, and the
   organization tables with the plugin. `patient_side_effects` is empty too; only the
   older treatments page uses it.
+
+**AI apps and due reminders, 2026-10-24 (`apps/web/lib/reminders/due.ts`,
+`apps/web/lib/instance/oauth.ts`):** a person connects an AI app (Claude, ChatGPT or
+another MCP client) to `/api/mcp` and records values, and lists and answers the
+reminders that are due. Two decisions:
+
+1. Due reminder notifications do not need the reminder worker, which does not run in
+   every deployment. Before the inbox, the timeline, the REST API or the MCP server lists
+   what is due, the server creates a pending notification for each time that one of the
+   person's reminders fired in the last day, at its time of day in their time zone, and
+   closes each pending notification of the last week that a value of its day answers (a
+   dose from a program's page or a check-in email). One value answers one notification,
+   so two values answer two reminders of the same day.
+2. A company's site serves the MCP server, the REST API and the OAuth server on its own
+   address, so that its members connect `https://{company}/api/mcp`, and sign in and
+   approve the app on the company's site with its brand. There is one OAuth server: on
+   a company's address its metadata names that address as the issuer and has its
+   endpoints there, the authorization response names that issuer, and the company's
+   APIs are OAuth resources of their own (rows of `oauth_resources`, added when a client
+   reads the metadata). A token works only on the address that it was issued for. The
+   access tokens carry the main site's issuer, which only this app checks. The member's
+   program page shows the address.
 
 **The daily check-in, 2026-10-24 (`apps/web/lib/programs`):** a member records a day
 at `/programs/{slug}/me` with one button for each number of a rating (0 to 10 for

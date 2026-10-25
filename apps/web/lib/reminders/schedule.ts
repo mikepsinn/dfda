@@ -62,6 +62,11 @@ export function buildRruleString(parts: string, startDate: Date, timeZone: strin
   }).toString()
 }
 
+/** A person's time zone, or UTC when it is missing or not valid. */
+export function zoneOf(timezone: string | null | undefined): string {
+  return timezone && DateTime.local().setZone(timezone).isValid ? timezone : 'UTC'
+}
+
 /**
  * Whether a schedule fires on `day` (YYYY-MM-DD) in `timeZone`: the day is
  * between its start and end dates there (the end date, or the UNTIL of its

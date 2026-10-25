@@ -4,7 +4,7 @@ import { companyOf } from '@/lib/care-team/notify'
 import { adminDb, isUniqueViolation } from '@/lib/db'
 import { sendEmail, type EmailBrand } from '@/lib/email'
 import { logger } from '@/lib/logger'
-import { firesOn } from '@/lib/reminders/schedule'
+import { firesOn, zoneOf } from '@/lib/reminders/schedule'
 import { timeOfDayToString } from '@/lib/time-of-day'
 import { checkInEmail, checkInToken, readCheckInToken } from './check-in-email'
 import { findProgramById, type Program, type ProgramItem } from './data'
@@ -66,11 +66,6 @@ export async function findCheckIn(token: string, now = new Date()): Promise<Chec
     program,
     items: dailyItems(program, sideEffects.get(enrollment.user_id)),
   }
-}
-
-/** The member's time zone, or UTC when it is missing or not valid. */
-function zoneOf(timezone: string | null): string {
-  return timezone && DateTime.local().setZone(timezone).isValid ? timezone : 'UTC'
 }
 
 export type DueCheckIn = {

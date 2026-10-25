@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation';
 import { verifyOAuthQueryParams } from '@better-auth/oauth-provider';
 import { auth } from '@/lib/auth';
 import { adminDb } from '@/lib/db';
+import { env } from '@/lib/env';
+import { resolveInstance } from '@/lib/instance/resolve';
 import { getServerUser } from '@/lib/server-auth';
 import { logger } from '@/lib/logger';
 import { ConsentForm } from '@/components/oauth/ConsentForm';
@@ -77,9 +79,13 @@ export default async function ConsentPage({
   const claimsRequest = parseClaimsRequest(query.get('claims'));
   const userInfoClaims = Object.keys(claimsRequest?.userinfo ?? {});
 
+  // On a company's address, the company's account (lib/instance/oauth.ts).
+  const siteName = (await resolveInstance())?.name ?? env.NEXT_PUBLIC_SITE_NAME;
+
   return (
     <ConsentForm
       client={{ name: client.name || 'Unknown Application', icon: client.icon, uri: client.uri }}
+      siteName={siteName}
       user={{ email: user.email }}
       scopes={scopes}
       claimsRequest={claimsRequest}

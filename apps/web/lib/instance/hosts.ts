@@ -65,9 +65,12 @@ export function toBranding(row: InstanceRow): InstanceBranding {
   }
 }
 
-/** The host of a request (with its port) and the origin that the browser used. */
+/** The host of a request (with its port) and the origin that the browser used; the URL's host when no header names one. */
 export function requestOrigin(request: Request): { host: string; origin: string } {
-  const hostHeader = (request.headers.get('x-forwarded-host') ?? request.headers.get('host') ?? '').split(',')[0].trim().toLowerCase()
+  const hostHeader = (request.headers.get('x-forwarded-host') ?? request.headers.get('host') ?? new URL(request.url).host)
+    .split(',')[0]
+    .trim()
+    .toLowerCase()
   const protocol = request.headers.get('x-forwarded-proto')?.split(',')[0].trim() ?? new URL(request.url).protocol.replace(':', '')
   return { host: hostName(hostHeader), origin: `${protocol}://${hostHeader}` }
 }

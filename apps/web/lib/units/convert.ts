@@ -39,3 +39,20 @@ export function convertValue(value: number, from: UnitFactors, to: UnitFactors, 
   }
   return base * to.factor + to.offset
 }
+
+/** A unit row with what a conversion needs. */
+export type ConvertibleUnit = { id: string; unit_category_id: string; conversion_factor: number; conversion_offset: number }
+
+/**
+ * A value in unit `from` as a value in unit `to`: the same value for the same
+ * unit, and null when the units do not convert.
+ */
+export function valueInUnit(value: number, from: ConvertibleUnit, to: ConvertibleUnit, molarMass?: number | null): number | null {
+  if (from.id === to.id) return value
+  const factors = (unit: ConvertibleUnit): UnitFactors => ({
+    factor: unit.conversion_factor,
+    offset: unit.conversion_offset,
+    category: unit.unit_category_id,
+  })
+  return convertValue(value, factors(from), factors(to), molarMass)
+}

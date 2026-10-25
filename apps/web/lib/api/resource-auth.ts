@@ -1,3 +1,4 @@
+import { apiOrigin } from '@/lib/instance/oauth'
 import { logger } from '@/lib/logger'
 import { protectedResourceMetadataUrl, resourceUrl, type ApiResource, type TrackingScope } from '@/lib/oauth-resources'
 import { TrackingError } from '@/lib/tracking/errors'
@@ -28,11 +29,13 @@ export function errorResponse(status: number, code: string, message: string, ext
 
 /**
  * A 401 or 403 response. WWW-Authenticate points at the protected-resource
- * metadata (RFC 9728), from which MCP clients find the OAuth server.
+ * metadata (RFC 9728) on the address of the request (`origin`: the main
+ * site's or a company's, lib/instance/oauth.ts), from which MCP clients find
+ * the OAuth server.
  */
-function authErrorResponse(resource: ApiResource, status: 401 | 403, error: string | null, message: string, scope?: string) {
+function authErrorResponse(resource: ApiResource, origin: string, status: 401 | 403, error: string | null, message: string, scope?: string) {
   const params = [
-    `resource_metadata="${protectedResourceMetadataUrl(resource)}"`,
+    `resource_metadata="${protectedResourceMetadataUrl(resource, origin)}"`,
     ...(error ? [`error="${error}"`, `error_description="${message.replace(/"/g, "'")}"`] : []),
     ...(scope ? [`scope="${scope}"`] : []),
   ]
@@ -42,27 +45,33 @@ function authErrorResponse(resource: ApiResource, status: 401 | 403, error: stri
 }
 
 /**
- * The verified token of a request to `resource`, or the 401 response to send.
+ * The verified token of a request to `resource`, with the address of the
+ * request, or the 401 response to send. A token is valid only for the API
+ * on the address that it was issued for.
  */
-export async function authenticateRequest(req: Request, resource: ApiResource): Promise<VerifiedAccessToken | Response> {
+export async function authenticateRequest(
+  req: Request,
+  resource: ApiResource,
+): Promise<(VerifiedAccessToken & { origin: string }) | Response> {
+  const origin = await apiOrigin(req)
   const header = req.headers.get('authorization')
   const token = header?.match(/^Bearer\s+(\S+)$/i)?.[1]
   if (!token) {
-    return authErrorResponse(resource, 401, null, `Send an access token for ${resourceUrl(resource)} in the Authorization header.`)
+    return authErrorResponse(resource, origin, 401, null, `Send an access token for ${resourceUrl(resource, origin)} in the Authorization header.`)
   }
   try {
-    return await verifyAccessToken(token, resourceUrl(resource))
+    return { ...(await verifyAccessToken(token, resourceUrl(resource, origin))), origin }
   } catch (error) {
     if (error instanceof AccessTokenError) {
-      return authErrorResponse(resource, 401, 'invalid_token', error.message)
+      return authErrorResponse(resource, origin, 401, 'invalid_token', error.message)
     }
     throw error
   }
 }
 
-/** The 403 response for a token without the scope an operation needs. */
-export function insufficientScopeResponse(resource: ApiResource, scope: TrackingScope) {
-  return authErrorResponse(resource, 403, 'insufficient_scope', `This needs the ${scope} scope.`, scope)
+/** The 403 response for a token without the scope an operation needs, on the address of the request. */
+export function insufficientScopeResponse(resource: ApiResource, scope: TrackingScope, origin: string) {
+  return authErrorResponse(resource, origin, 403, 'insufficient_scope', `This needs the ${scope} scope.`, scope)
 }
 
 /** The response for an error from a tracking operation. */
