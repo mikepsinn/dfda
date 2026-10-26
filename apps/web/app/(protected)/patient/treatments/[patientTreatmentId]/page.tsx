@@ -10,7 +10,7 @@ import { logger } from "@/lib/logger"
 // import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Removed unused import
 import { getPatientConditionsAction } from "@/lib/actions/patient-conditions"
 import { getPatientTreatmentDetailAction } from '@/lib/actions/patient-treatments'
-import { mySymptomRatings } from '@/lib/programs/side-effects'
+import { treatmentSideEffects } from '@/lib/programs/side-effects'
 import { Button } from '@/components/ui/button'
 // Import Breadcrumb components
 import { 
@@ -57,8 +57,10 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
   
   // Count for badges
   const ratingsCount = treatmentDetails.treatment_ratings.length;
-  // The side effects are the symptoms that the user rated since the start (lib/programs/side-effects.ts).
-  const sideEffectsCount = (await mySymptomRatings(user, treatmentDetails.start_date ?? treatmentDetails.created_at ?? new Date())).length;
+  // The symptoms that the user thinks this treatment causes (lib/programs/side-effects.ts).
+  const sideEffectsCount = (
+    await treatmentSideEffects(user, patientTreatmentId, treatmentDetails.start_date ?? treatmentDetails.created_at ?? new Date())
+  ).length;
 
   return (
     <div className="container mx-auto px-4 py-6 space-y-6">
@@ -155,15 +157,15 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
       <Card>
         <CardHeader>
           <CardTitle>Side Effects</CardTitle>
-          <CardDescription>The symptoms that you rated while taking this treatment.</CardDescription>
+          <CardDescription>The symptoms that you think this treatment causes.</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex justify-between items-center">
             <div>
               {sideEffectsCount > 0 ? (
-                <p className="text-sm mb-4">You rated {sideEffectsCount} symptom{sideEffectsCount !== 1 ? 's' : ''} since you started this treatment.</p>
+                <p className="text-sm mb-4">You added {sideEffectsCount} side effect{sideEffectsCount !== 1 ? 's' : ''} of this treatment.</p>
               ) : (
-                <p className="text-sm text-muted-foreground mb-4">You did not rate a symptom since you started this treatment.</p>
+                <p className="text-sm text-muted-foreground mb-4">You did not add a side effect of this treatment.</p>
               )}
             </div>
             <Badge variant="secondary" className="ml-auto">{sideEffectsCount}</Badge>

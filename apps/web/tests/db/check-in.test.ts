@@ -9,14 +9,7 @@ import { checkInToken } from '@/lib/programs/check-in-email'
 import { PROGRAM_TEMPLATES, programInputSchema } from '@/lib/programs/config'
 import { findProgram, type Program } from '@/lib/programs/data'
 import { joinProgram, recordProgramValues, saveProgram } from '@/lib/programs/manage'
-import {
-  addSideEffect,
-  mySideEffects,
-  mySymptomRatings,
-  removeSideEffect,
-  sideEffectItemId,
-  sideEffectOptions,
-} from '@/lib/programs/side-effects'
+import { addSideEffect, mySideEffects, removeSideEffect, sideEffectItemId, sideEffectOptions } from '@/lib/programs/side-effects'
 import { upsertReminder } from '@/lib/tracking/reminders'
 
 // Side effects (the member's symptom reminders), the daily check-in emails and
@@ -183,26 +176,6 @@ describe('side effects', () => {
     // The program's own check-ins cannot be removed as side effects.
     expect(await removeSideEffect(member, 'nausea')).toBe(false)
     expect(await adminDb.reminder_schedules.count({ where: { user_id: member.id, user_variables: { global_variable_id: 'nausea' } } })).toBe(1)
-  })
-
-  it("of a treatment: added without a program, and the symptoms rated since the treatment's start", async () => {
-    const treated = { id: await ensurePasswordUser(`check-in-treated-${stamp}@example.com`, 'Treated', password) }
-    userIds.push(treated.id)
-    const daysAgo = (days: number) => new Date(Date.now() - days * DAY).toISOString().slice(0, 10)
-    await addSideEffect(treated, null, { variableId: 'headache', value: '5', date: daysAgo(1) })
-    await addSideEffect(treated, null, { variableId: 'headache', value: '3', date: today })
-    // Before the treatment's start.
-    await addSideEffect(treated, null, { variableId: 'dizziness', value: '2', date: daysAgo(10) })
-    expect((await mySideEffects(treated)).map((sideEffect) => sideEffect.name)).toEqual(['Headache', 'Dizziness'])
-
-    const rated = await mySymptomRatings(treated, new Date(Date.now() - 3 * DAY))
-    expect(rated.map(({ item, ratings }) => [item.name, ratings.map((rating) => rating.value)])).toEqual([['Headache', [3, 5]]])
-    expect(rated[0].ratings[0].unit).toBe('0-10')
-    // A treatment started late today keeps today's rating, which is saved at noon UTC.
-    const lateToday = await mySymptomRatings(treated, atToday('23:00'))
-    expect(lateToday.map(({ item, ratings }) => [item.name, ratings.map((rating) => rating.value)])).toEqual([['Headache', [3]]])
-    // Row-level security: another person's ratings are not in it.
-    expect((await mySymptomRatings(other, new Date(Date.now() - 3 * DAY))).map(({ item }) => item.name)).not.toContain('Headache')
   })
 })
 

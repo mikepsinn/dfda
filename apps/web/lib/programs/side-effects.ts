@@ -2,30 +2,33 @@ import { adminDb, dbAs, withUserTransaction, type DbUser, type Prisma } from '@/
 import { logger } from '@/lib/logger'
 import { recordMeasurement } from '@/lib/tracking/measurements'
 import { afterReminderSaved, upsertReminder } from '@/lib/tracking/reminders'
+import { ensureUserVariable } from '@/lib/tracking/variables'
 import { SCALE_RANGES } from './config'
 import type { Program, ProgramItem } from './data'
 import { CHECK_IN_REMINDER_TIME, dayTime, itemValue, ProgramError } from './manage'
 
 /**
- * Side effects: symptoms that a person rates on a scale, such as headache or
- * dizziness, beside their programs' own check-ins. Nothing about them is
- * stored per program. A person tracks a symptom with a normal reminder for it
- * (their reminders page shows it too), and its ratings are their normal
- * measurements. So the daily check-in of each of their programs asks for each
- * symptom that has an active reminder and is not a check-in of one of their
- * programs, and the care team of a program with care team review sees the
- * symptoms that the person rated. A treatment's side effects page shows the
- * symptoms that the person rated since they started the treatment. Server only.
+ * Symptoms that a person rates on a scale, such as headache or dizziness, as
+ * on CureTogether: the side effects of a program or a treatment, and the
+ * symptoms of a condition. A symptom is a catalog variable that
+ * global_symptoms marks, so that the same symptom counts across people. A
+ * person tracks a symptom with a normal reminder for it (their reminders page
+ * shows it too), and its ratings are their normal measurements. A link says
+ * why: patient_side_effects links a symptom to one of their treatments, and
+ * patient_symptoms to one of their conditions. The ratings say how bad, over
+ * time.
+ *
+ * So the daily check-in of each of their programs asks for each symptom that
+ * has an active reminder and is not a check-in of one of their programs, and
+ * the care team of a program with care team review sees the symptoms that the
+ * person rated. Server only.
  */
 
-/** The variable categories of symptoms. */
-const SYMPTOM_CATEGORIES = ['health-and-physiology', 'mental-and-emotional-state']
-
-/** A variable that can be a side effect: a symptom rated on a scale. */
+/** A symptom: a variable that global_symptoms marks, rated on a scale. */
 export const symptomWhere = {
   deleted_at: null,
-  variable_category_id: { in: SYMPTOM_CATEGORIES },
   default_unit_id: { in: Object.keys(SCALE_RANGES) },
+  global_symptoms: { is: { deleted_at: null } },
 } satisfies Prisma.global_variablesWhereInput
 
 const variableSelect = {
@@ -78,11 +81,9 @@ async function programVariables(db: Db, userIds: string[]): Promise<Map<string, 
   return byUser
 }
 
-/** The symptoms that `user` can add as side effects: those that are not items of their programs. */
-export async function sideEffectOptions(user: DbUser): Promise<SideEffectOption[]> {
-  const own = await withUserTransaction(user, (tx) => programVariables(tx, [user.id]))
+async function optionsExcept(excluded: Iterable<string>): Promise<SideEffectOption[]> {
   const rows = await dbAs(null).global_variables.findMany({
-    where: { ...symptomWhere, id: { notIn: [...(own.get(user.id) ?? [])] } },
+    where: { ...symptomWhere, id: { notIn: [...excluded] } },
     select: { id: true, name: true, default_unit_id: true, global_variable_synonyms: { select: { name: true } } },
     orderBy: { name: 'asc' },
     take: 500,
@@ -95,6 +96,20 @@ export async function sideEffectOptions(user: DbUser): Promise<SideEffectOption[
       .map((synonym) => synonym.name)
       .filter((name) => name.toLowerCase() !== row.name.toLowerCase()),
   }))
+}
+
+/** The symptoms that `user` can add as side effects of a program: those that are not items of their programs. */
+export async function sideEffectOptions(user: DbUser): Promise<SideEffectOption[]> {
+  const own = await withUserTransaction(user, (tx) => programVariables(tx, [user.id]))
+  return optionsExcept(own.get(user.id) ?? [])
+}
+
+/**
+ * All the symptoms, for the side effects of a treatment and the symptoms of a
+ * condition: a check-in of a program (such as nausea) can be either.
+ */
+export function symptomOptions(): Promise<SideEffectOption[]> {
+  return optionsExcept([])
 }
 
 /** A reminder that tracks a symptom: active, and not ended. */
@@ -153,34 +168,58 @@ export async function ratedSideEffects(userId: string, program: Pick<Program, 'i
 }
 
 /**
+ * Where a person adds a symptom: a program's pages (a side effect, for a
+ * member), one of their treatments (a side effect that they think it causes)
+ * or one of their conditions (a symptom of it).
+ */
+export type SymptomTarget = { program: Pick<Program, 'id'> } | { patientTreatmentId: string } | { patientConditionId: string }
+
+/**
  * Starts to track a symptom: a daily reminder at the check-in time, when the
  * user has no reminder that tracks it, and the rating of `date` when they gave
- * one. From a program's pages the user must be a member of `program`; a
- * treatment's page gives no program.
+ * one. For a treatment or a condition, it also links the symptom to it.
  */
-export async function addSideEffect(
-  user: DbUser,
-  program: Pick<Program, 'id'> | null,
-  input: { variableId: string; value: string; date: string },
-) {
+export async function trackSymptom(user: DbUser, target: SymptomTarget, input: { variableId: string; value: string; date: string }) {
   const startTime = dayTime(input.date)
   const result = await withUserTransaction(user, async (tx) => {
-    if (program) {
+    if ('program' in target) {
       const enrollment = await tx.program_enrollments.findUnique({
-        where: { program_id_user_id: { program_id: program.id, user_id: user.id } },
+        where: { program_id_user_id: { program_id: target.program.id, user_id: user.id } },
         select: { id: true },
       })
       if (!enrollment) throw new ProgramError('Join the program first.')
+    } else if ('patientTreatmentId' in target) {
+      const treatment = await tx.patient_treatments.findFirst({ where: { id: target.patientTreatmentId, patient_id: user.id }, select: { id: true } })
+      if (!treatment) throw new ProgramError('This treatment is not in your list.')
+    } else {
+      const condition = await tx.patient_conditions.findFirst({
+        where: { id: target.patientConditionId, patient_id: user.id, deleted_at: null },
+        select: { id: true },
+      })
+      if (!condition) throw new ProgramError('This condition is not in your list.')
     }
     const variable = await tx.global_variables.findFirst({ where: { ...symptomWhere, id: input.variableId }, select: variableSelect })
-    if (!variable || (await programVariables(tx, [user.id])).get(user.id)?.has(variable.id)) {
-      throw new ProgramError('Choose a side effect from the list.')
+    // In a program, its own check-ins are not side effects; a treatment or a condition can have them.
+    if (!variable || ('program' in target && (await programVariables(tx, [user.id])).get(user.id)?.has(variable.id))) {
+      throw new ProgramError(`Choose a ${'patientConditionId' in target ? 'symptom' : 'side effect'} from the list.`)
     }
     const item = toItem(variable)
     const value = input.value.trim() ? itemValue(item, input.value) : null
 
     if (value !== null) {
       await recordMeasurement(tx, user.id, { globalVariableId: variable.id, value, unitId: item.unitId, startTime })
+    }
+    if ('patientTreatmentId' in target) {
+      await tx.patient_side_effects.createMany({
+        data: [{ patient_treatment_id: target.patientTreatmentId, symptom_id: variable.id }],
+        skipDuplicates: true,
+      })
+    } else if ('patientConditionId' in target) {
+      const userVariable = await ensureUserVariable(tx, user.id, variable.id)
+      await tx.patient_symptoms.createMany({
+        data: [{ patient_id: user.id, patient_condition_id: target.patientConditionId, symptom_id: variable.id, user_variable_id: userVariable.id }],
+        skipDuplicates: true,
+      })
     }
     const tracking = await tx.reminder_schedules.findFirst({
       where: { ...trackingWhere(new Date()), user_id: user.id, user_variables: { global_variable_id: variable.id } },
@@ -200,7 +239,7 @@ export async function addSideEffect(
     try {
       await afterReminderSaved(user.id, result.reminder, true)
     } catch (error) {
-      logger.warn('Could not schedule the first notification of a side effect reminder', {
+      logger.warn('Could not schedule the first notification of a symptom reminder', {
         reminderId: result.reminder.id,
         error: error instanceof Error ? error.message : String(error),
       })
@@ -209,33 +248,111 @@ export async function addSideEffect(
   return result.item
 }
 
-/** A symptom that a person rated, with their ratings, the newest first. */
+/** Starts to track a side effect for a member of `program` (trackSymptom). */
+export function addSideEffect(user: DbUser, program: Pick<Program, 'id'>, input: { variableId: string; value: string; date: string }) {
+  return trackSymptom(user, { program }, input)
+}
+
+/** A symptom with the person's ratings of it, the newest first. */
 export type RatedSymptom = { item: ProgramItem; ratings: { value: number; unit: string; at: Date }[] }
 
 /**
+ * The start of the day of `at` (UTC). The rating of a whole day is saved at
+ * noon UTC (dayTime), so a treatment started in the afternoon keeps that
+ * day's rating.
+ */
+function dayStart(at: Date): Date {
+  return new Date(Date.UTC(at.getUTCFullYear(), at.getUTCMonth(), at.getUTCDate()))
+}
+
+type RatingsDb = Pick<Prisma.TransactionClient, 'measurements'>
+
+/** `variables` with the user's ratings of each, from the day of `since` when given, sorted by name. */
+async function withRatings(db: RatingsDb, userId: string, variables: VariableRow[], since: Date | null): Promise<RatedSymptom[]> {
+  const rows = await db.measurements.findMany({
+    where: {
+      user_id: userId,
+      deleted_at: null,
+      global_variable_id: { in: variables.map((variable) => variable.id) },
+      ...(since ? { start_at: { gte: dayStart(since) } } : {}),
+    },
+    select: { global_variable_id: true, value: true, start_at: true, units: { select: { abbreviated_name: true } } },
+    orderBy: [{ start_at: 'desc' }, { id: 'asc' }],
+  })
+  return variables
+    .map((variable) => ({
+      item: toItem(variable),
+      ratings: rows
+        .filter((row) => row.global_variable_id === variable.id)
+        .map((row) => ({ value: row.value, unit: row.units.abbreviated_name, at: row.start_at })),
+    }))
+    .sort((a, b) => a.item.name.localeCompare(b.item.name))
+}
+
+/** The side effects that `user` links to one of their treatments, with their ratings from the day that it started. */
+export async function treatmentSideEffects(user: DbUser, patientTreatmentId: string, startedAt: Date): Promise<RatedSymptom[]> {
+  return withUserTransaction(user, async (tx) => {
+    const rows = await tx.patient_side_effects.findMany({
+      where: { patient_treatment_id: patientTreatmentId, deleted_at: null, patient_treatments: { patient_id: user.id } },
+      select: { global_symptoms: { select: { global_variables: { select: variableSelect } } } },
+    })
+    const variables = rows.flatMap((row) => (row.global_symptoms ? [row.global_symptoms.global_variables] : []))
+    return withRatings(tx, user.id, variables, startedAt)
+  })
+}
+
+/** The symptoms that `user` links to one of their conditions, with all their ratings. */
+export async function conditionSymptoms(user: DbUser, patientConditionId: string): Promise<RatedSymptom[]> {
+  return withUserTransaction(user, async (tx) => {
+    const rows = await tx.patient_symptoms.findMany({
+      where: { patient_condition_id: patientConditionId, patient_id: user.id, deleted_at: null },
+      select: { global_symptoms: { select: { global_variables: { select: variableSelect } } } },
+    })
+    return withRatings(
+      tx,
+      user.id,
+      rows.map((row) => row.global_symptoms.global_variables),
+      null,
+    )
+  })
+}
+
+/**
  * The symptoms that `user` rated from the day of `since` (UTC), each with its
- * ratings, the newest first, for the side effects page of a treatment that
- * they started then. From the start of the day, because the rating of a whole
- * day is saved at noon UTC (dayTime): a treatment started in the afternoon
- * keeps that day's rating. The check-ins of their programs are symptoms too,
- * so they are in it.
+ * ratings, the newest first: on a treatment's page, the symptoms that they
+ * rated since they started it and may add as its side effects.
  */
 export async function mySymptomRatings(user: DbUser, since: Date): Promise<RatedSymptom[]> {
-  const day = new Date(Date.UTC(since.getUTCFullYear(), since.getUTCMonth(), since.getUTCDate()))
-  const rows = await withUserTransaction(user, (tx) =>
-    tx.measurements.findMany({
-      where: { user_id: user.id, deleted_at: null, start_at: { gte: day }, global_variables: symptomWhere },
-      select: { value: true, start_at: true, units: { select: { abbreviated_name: true } }, global_variables: { select: variableSelect } },
-      orderBy: [{ start_at: 'desc' }, { id: 'asc' }],
-    }),
-  )
-  const byVariable = new Map<string, RatedSymptom>()
-  for (const row of rows) {
-    const symptom = byVariable.get(row.global_variables.id) ?? { item: toItem(row.global_variables), ratings: [] }
-    symptom.ratings.push({ value: row.value, unit: row.units.abbreviated_name, at: row.start_at })
-    byVariable.set(row.global_variables.id, symptom)
-  }
-  return [...byVariable.values()].sort((a, b) => a.item.name.localeCompare(b.item.name))
+  return withUserTransaction(user, async (tx) => {
+    const variables = await tx.global_variables.findMany({
+      where: { ...symptomWhere, measurements: { some: { user_id: user.id, deleted_at: null, start_at: { gte: dayStart(since) } } } },
+      select: variableSelect,
+    })
+    return withRatings(tx, user.id, variables, since)
+  })
+}
+
+/**
+ * Removes the link of a symptom to one of the user's treatments or conditions.
+ * Its ratings and its reminder stay: another treatment, a condition or a
+ * program can use them, and the reminders page stops the reminder.
+ */
+export async function unlinkSymptom(
+  user: DbUser,
+  target: { patientTreatmentId: string } | { patientConditionId: string },
+  variableId: string,
+): Promise<boolean> {
+  return withUserTransaction(user, async (tx) => {
+    const { count } =
+      'patientTreatmentId' in target
+        ? await tx.patient_side_effects.deleteMany({
+            where: { patient_treatment_id: target.patientTreatmentId, symptom_id: variableId, patient_treatments: { patient_id: user.id } },
+          })
+        : await tx.patient_symptoms.deleteMany({
+            where: { patient_condition_id: target.patientConditionId, symptom_id: variableId, patient_id: user.id },
+          })
+    return count > 0
+  })
 }
 
 /**

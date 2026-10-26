@@ -33,6 +33,10 @@ import { EditNotesDialog } from "./components/edit-notes-dialog"
 
 // Import List Components
 import { RatingsList } from "./components/ratings-list"
+import { AddSideEffectForm } from "@/components/programs/AddSideEffectForm"
+import { RatedSymptomList } from "@/components/symptoms/RatedSymptomList"
+import { trackConditionSymptomAction, unlinkConditionSymptomAction } from "@/lib/actions/condition-symptoms"
+import { conditionSymptoms, symptomOptions } from "@/lib/programs/side-effects"
 
 const logger = createLogger("patient-condition-detail-page")
 
@@ -68,6 +72,10 @@ export default async function PatientConditionDetailPage({ params }: { params: P
 
   // Fetch associated ratings for this patient condition
   const conditionRatings = await getRatingsForPatientConditionAction(patientConditionId);
+  // The symptoms that the user has with this condition, as on CureTogether (lib/programs/side-effects.ts).
+  const [symptoms, options] = await Promise.all([conditionSymptoms(user, patientConditionId), symptomOptions()]);
+  const linkedSymptoms = new Set(symptoms.map(({ item }) => item.variableId));
+  const conditionName = condition.condition_name || "this condition";
 
 
   return (
@@ -187,6 +195,41 @@ export default async function PatientConditionDetailPage({ params }: { params: P
             </CardContent>
         </Card>
 
+
+        {/* Symptoms Card */}
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Symptoms</CardTitle>
+            <CardDescription>
+              The symptoms that you have with {conditionName}, with your ratings. Each one gets a daily reminder to rate
+              it, which you can change on{" "}
+              <Link href="/patient/reminders" className="font-medium underline">
+                your reminders page
+              </Link>
+              . Removing a symptom keeps its ratings and its reminder.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {symptoms.length > 0 ? (
+              <RatedSymptomList
+                label={`Symptoms of ${conditionName}`}
+                symptoms={symptoms}
+                action={{
+                  label: (name) => `Remove ${name} from the symptoms of ${conditionName}`,
+                  form: (variableId) => unlinkConditionSymptomAction.bind(null, patientConditionId, variableId),
+                }}
+              />
+            ) : (
+              <p className="text-sm text-muted-foreground">You did not add a symptom of {conditionName}.</p>
+            )}
+            <AddSideEffectForm
+              action={trackConditionSymptomAction.bind(null, patientConditionId)}
+              options={options.filter((option) => !linkedSymptoms.has(option.id))}
+              date={new Date().toISOString().slice(0, 10)}
+              noun="symptom"
+            />
+          </CardContent>
+        </Card>
 
         {/* Notes Card - Only shown if notes exist */}
         {condition.notes && (

@@ -266,12 +266,39 @@ Links to add when they are needed:
   program, so that treatment ratings and Outcome Labels can use program data. The text
   at join must then say so.
 - Remove the tables that are empty in production and that no app code queries:
-  `global_symptoms`, `protocol_versions`, `prescriptions`, `pharmacies`,
-  `product_sellers`, `product_listings`, `regulatory_approvals`, and the organization
-  tables with the plugin. No code uses `patient_symptoms` and `patient_side_effects`
-  now (2026-10-25): a symptom or a side effect is a symptom reminder and its ratings.
-  A migration in a later deployment drops them, because a migration must work with
-  the code that is live.
+  `protocol_versions`, `prescriptions`, `pharmacies`, `product_sellers`,
+  `product_listings`, `regulatory_approvals`, and the organization tables with the
+  plugin. A later deployment drops the free-text `description` and
+  `severity_out_of_ten` columns of `patient_side_effects` (see below).
+
+**Symptoms of conditions and side effects of treatments, 2026-10-26
+(`apps/web/lib/programs/side-effects.ts`):** as on CureTogether, a person says which
+symptoms they have with each of their conditions, and which symptoms they think each
+of their treatments causes. CureTogether's own totals (condition–treatment,
+treatment–side effect, condition–symptom and condition–cause) are in
+`apps/web/data/crowdsourcing-cures-ratings/`. Three decisions:
+
+1. A symptom is a catalog variable that `global_symptoms` marks, rated on a scale, so
+   that the same symptom counts across people; there are no free-text names. The
+   first list has the 14 rating-scale variables that are symptoms (headache, nausea,
+   pain and others), not diseases such as COPD or scores such as "Side Effects
+   Severity". A variable can be both a condition and a symptom (headache, pain).
+2. A link says why, and the ratings say how bad. `patient_side_effects` links a symptom
+   to one of the person's treatments (`symptom_id`), and `patient_symptoms` links a
+   symptom to one of their conditions (`patient_condition_id`). A rating is a normal
+   measurement of the symptom, and each linked symptom has the normal daily reminder,
+   so the before/after values, the care team and the AI apps use the same data.
+   Removing a link keeps the ratings and the reminder, because another treatment, a
+   condition or a program can use them. One symptom can belong to more than one
+   treatment or condition.
+3. The treatment's side effects page lists its linked symptoms with the ratings from
+   its first day (UTC, as the rating of a whole day is saved at noon UTC), and the
+   other symptoms rated since then, which the person can add. The condition page lists
+   its linked symptoms with all their ratings.
+
+Next: seed `global_variables` and `global_symptoms` from a cleaned list of the
+CureTogether symptom and side effect names (3,063 and 850 names, with duplicates),
+and show totals per treatment and per condition, kept apart from the imported totals.
 
 **AI apps and due reminders, 2026-10-24 (`apps/web/lib/reminders/due.ts`,
 `apps/web/lib/instance/oauth.ts`):** a person connects an AI app (Claude, ChatGPT or
@@ -305,18 +332,15 @@ the same kind whose size is near the program's unit, so kilograms and pounds but
 milligrams (`units.ts`). The value is saved in the unit chosen; the member's own
 report shows the unit they chose last, and the care team and the company see the
 program's units. Under the day form,
-the member adds side effects: symptoms from the variables catalog that are rated on
-a scale (`side-effects.ts`), with today's rating. A side effect is not stored per
+the member adds side effects: symptoms from the variables catalog that `global_symptoms`
+marks and that are rated on a scale (`side-effects.ts`), with today's rating. A side effect is not stored per
 program: it is the member's normal daily reminder for the symptom, and its ratings
 are their normal measurements. So the day form of each of their programs asks for
 each symptom that has an active reminder, also one added on the reminders page,
 unless it is a check-in of one of their programs; stopping a side effect deletes its
 reminder, and the ratings stay. In a program with
 care team review, the care team sees the symptoms that the member rated, from the
-same lookback start as the other logs, and the text at join says so. A treatment's
-side effects page (`/patient/treatments/<id>/side-effects`) uses the same model: it
-shows the symptoms that the person rated since the treatment's start and adds side
-effects in the same way, without a program. Once a day, after the last of the day's reminders in the member's time
+same lookback start as the other logs, and the text at join says so. Once a day, after the last of the day's reminders in the member's time
 zone, the member gets one email for each program (`check-in.ts`): number buttons
 for each rating, and "Took it" and "Skipped" for each dose. Four decisions:
 
