@@ -45,6 +45,26 @@ async function isInstanceRequest(request: NextRequest) {
   }
 }
 
+/**
+ * The signed-in user of the request. A failed session read counts as no user,
+ * as a failed profile read counts as an unknown role: the middleware then
+ * skips the role check, and the page reads the session itself. Routing
+ * Middleware runs in the Vercel region nearest to the visitor, not in the
+ * region of the pages, and a database read can fail there.
+ */
+async function sessionUser(request: NextRequest) {
+  // Visitors without a session cookie are not signed in; skip the database.
+  if (!getSessionCookie(request.headers)) return null
+  try {
+    return (await auth.api.getSession({ headers: request.headers }))?.user ?? null
+  } catch (error) {
+    logger.error('Could not read the session in middleware', {
+      error: error instanceof Error ? error.message : error,
+    })
+    return null
+  }
+}
+
 // No route has this path, so a rewrite to it gives the 404 page.
 const NOT_FOUND_PATH = '/instance-page-not-found'
 
@@ -59,9 +79,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL(NOT_FOUND_PATH, request.url))
   }
 
-  // Visitors without a session cookie are not signed in; skip the database.
-  const session = getSessionCookie(request.headers) ? await auth.api.getSession({ headers: request.headers }) : null
-  const user = session?.user ?? null
+  const user = await sessionUser(request)
 
   // Read the profile of a signed-in user. When the database read fails, the
   // role is unknown, not missing: do not send the user to /select-role,
