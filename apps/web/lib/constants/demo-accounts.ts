@@ -15,7 +15,6 @@ type TrialEnrollmentInsert = Database['public']['Tables']['trial_enrollments']['
 type DataSubmissionInsert = Database['public']['Tables']['data_submissions']['Insert'];
 type NotificationInsert = Database['public']['Tables']['notifications']['Insert'];
 type TreatmentRatingInsert = Database['public']['Tables']['treatment_ratings']['Insert'];
-type ReportedSideEffectInsert = Database['public']['Tables']['patient_side_effects']['Insert'];
 
 // --- Data Structures for Seeding --- 
 
@@ -28,7 +27,6 @@ interface DemoPatientSeedData {
   submissions?: (Omit<DataSubmissionInsert, 'patient_id' | 'enrollment_id' | 'id'> & { trial_id_for_linking: string })[]; 
   notifications: Omit<NotificationInsert, 'user_id' | 'id'>[];
   ratings?: Omit<TreatmentRatingInsert, 'user_id' | 'id'>[];
-  sideEffects?: Omit<ReportedSideEffectInsert, 'user_id' | 'id'>[];
 }
 
 // Added for Research Partner
@@ -68,7 +66,6 @@ export const DEMO_ACCOUNTS = {
         { title: 'Trial Information Updated', message: 'New information about the Semaglutide trial is available.', type: 'info', read_at: new Date().toISOString(), emoji: '📣' },
       ],
       // ratings: [...] // Keep commented/removed as intended
-      // sideEffects: [...] // Keep commented/removed as intended
     } satisfies DemoPatientSeedData // This should now satisfy the updated (optional) interface
   },
   provider: {

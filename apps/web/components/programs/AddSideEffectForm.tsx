@@ -11,19 +11,22 @@ import type { SideEffectOption } from "@/lib/programs/side-effects"
 import { RatingInput } from "./RatingInput"
 
 /**
- * Starts to track a side effect: a symptom from the list (its name or another
- * name) gets a daily reminder, and today's rating when the member gives one.
- * Then the daily check-in asks for it.
+ * Starts to track a side effect, or a symptom of a condition: a symptom from
+ * the list (its name or another name) gets a daily reminder, and today's
+ * rating when the person gives one. Then the daily check-in asks for it.
  */
 export function AddSideEffectForm({
   action,
   options,
   date,
+  noun = "side effect",
 }: {
   action: (state: SideEffectFormState, formData: FormData) => Promise<SideEffectFormState>
   options: SideEffectOption[]
   /** Today, for the rating. */
   date: string
+  /** What the form adds. */
+  noun?: "side effect" | "symptom"
 }) {
   const [state, dispatch, pending] = useActionState(action, {})
   const [name, setName] = useState("")
@@ -65,7 +68,7 @@ export function AddSideEffectForm({
       <input type="hidden" hidden name="date" value={date} />
       <input type="hidden" hidden name="variableId" value={match?.id ?? ""} />
       <div className="max-w-md space-y-2">
-        <Label htmlFor="side-effect-name">Side effect</Label>
+        <Label htmlFor="side-effect-name">{noun === "symptom" ? "Symptom" : "Side effect"}</Label>
         <Input
           id="side-effect-name"
           list="side-effect-options"
@@ -82,7 +85,7 @@ export function AddSideEffectForm({
             option.synonyms.map((synonym) => <option key={`${option.id}:${synonym}`} value={synonym} label={option.name} />),
           )}
         </datalist>
-        {name.trim() && !match && <p className="text-sm text-muted-foreground">Choose a side effect from the list.</p>}
+        {name.trim() && !match && <p className="text-sm text-muted-foreground">Choose a {noun} from the list.</p>}
       </div>
       {match && (
         <RatingInput
@@ -96,7 +99,7 @@ export function AddSideEffectForm({
       )}
       <Button type="submit" variant="outline" disabled={pending || !match} className="gap-2">
         {pending && <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />}
-        Add the side effect
+        Add the {noun}
       </Button>
     </form>
   )
