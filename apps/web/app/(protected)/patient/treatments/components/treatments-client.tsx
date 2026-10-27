@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/componen
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { AddTreatmentDialog } from "./add-treatment-dialog"
-import { SideEffectsDialog } from "./side-effects-dialog"
 import { TreatmentRatingDialog } from "./treatment-rating-dialog"
 import type { Database } from '@/lib/database.types'
 import Link from 'next/link'
@@ -44,7 +43,6 @@ export function TreatmentsClient({
   const [treatmentsError, setTreatmentsError] = useState<string | null>(null)
   const [selectedTreatmentForDialog, setSelectedTreatmentForDialog] = useState<PatientTreatmentWithDetails | null>(null)
   const [isRatingDialogOpen, setIsRatingDialogOpen] = useState(false)
-  const [isSideEffectsDialogOpen, setIsSideEffectsDialogOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState("");
 
   const fetchUserTreatments = useCallback(async (triggeredBy?: string) => {
@@ -90,11 +88,6 @@ export function TreatmentsClient({
   const openRatingDialog = (treatment: PatientTreatmentWithDetails) => {
     setSelectedTreatmentForDialog(treatment);
     setIsRatingDialogOpen(true);
-  }
-
-  const openSideEffectsDialog = (treatment: PatientTreatmentWithDetails) => {
-    setSelectedTreatmentForDialog(treatment);
-    setIsSideEffectsDialogOpen(true);
   }
 
   if (conditionsError) {
@@ -174,8 +167,10 @@ export function TreatmentsClient({
                       <Button variant="outline" size="sm" onClick={() => openRatingDialog(treatment)}>
                           <Edit className="mr-1 h-4 w-4" /> Rate
                       </Button>
-                      <Button variant="outline" size="sm" onClick={() => openSideEffectsDialog(treatment)}>
+                      <Button asChild variant="outline" size="sm">
+                        <Link href={`/patient/treatments/${treatment.id}/side-effects`}>
                           <AlertTriangle className="mr-1 h-4 w-4" /> Effects
+                        </Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -216,15 +211,6 @@ export function TreatmentsClient({
            onSuccess={fetchUserTreatments}
         />
       )}
-      {selectedTreatmentForDialog && (
-        <SideEffectsDialog 
-           open={isSideEffectsDialogOpen} 
-           onOpenChange={setIsSideEffectsDialogOpen} 
-           patientTreatmentId={selectedTreatmentForDialog.id}
-           treatmentName={selectedTreatmentForDialog.treatment_name}
-           onSuccess={fetchUserTreatments}
-         />
-       )}
     </>
   )
 } 

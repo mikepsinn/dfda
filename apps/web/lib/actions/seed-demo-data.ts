@@ -25,7 +25,6 @@ async function clearExistingDemoData(db: AdminDb, userId: string, userType: Demo
   // IMPORTANT: Don't delete the patients record here if the trigger creates it.
   // Instead, we will upsert patient details later.
   await db.treatment_ratings.deleteMany({ where: { patient_treatments: { patient_id: userId } } });
-  await db.patient_side_effects.deleteMany({ where: { patient_treatments: { patient_id: userId } } });
   await db.notifications.deleteMany({ where: { user_id: userId } });
 
   // Data linked to providers
@@ -153,12 +152,6 @@ export async function setupDemoUserData(
          logger.info("Seeding treatment ratings", { userId, count: seedData.ratings.length });
          const ratingsToInsert = seedData.ratings.map((r: any) => ({ ...r, user_id: userId }));
          await db.treatment_ratings.createMany({ data: ratingsToInsert });
-      }
-
-      if (seedData.sideEffects && seedData.sideEffects.length > 0) {
-          logger.info("Seeding side effects", { userId, count: seedData.sideEffects.length });
-          const sideEffectsToInsert = seedData.sideEffects.map((se: any) => ({ ...se, user_id: userId }));
-          await db.patient_side_effects.createMany({ data: sideEffectsToInsert });
       }
     }
 
