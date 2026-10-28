@@ -8,6 +8,9 @@
       "port": 3005,
       "env": {
         "DATABASE_URL": "postgresql://postgres:postgres@127.0.0.1:54322/postgres",
+        "BETTER_AUTH_SECRET": "test-better-auth-secret-with-at-least-32-characters",
+        "SMTP_URL": "smtp://127.0.0.1:1025",
+        "EMAIL_FROM": "test@example.com",
         "GOOGLE_GENERATIVE_AI_API_KEY": "test-google-generative-ai-key",
         "SUPABASE_SERVICE_ROLE_KEY": "test-service-role-key",
         "SUPABASE_JWT_SECRET": "test-jwt-secret-with-at-least-32-characters",
