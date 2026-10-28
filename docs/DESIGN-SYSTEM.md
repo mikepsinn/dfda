@@ -127,7 +127,8 @@ and this guide in the same change instead of creating a one-off competing patter
   condition's estimates, one list per source condition under its own name. Each row
   shows the five vote counts and their total; the stacked bar is decorative. The
   first ten rows are visible and the rest expand in place. Never average the
-  categories into a score.
+  categories into a score. One collapsed "About these ratings" line gives the
+  review status, known limitations, ordering method and a link to the data notes.
 
 The working examples are `/treatment-rankings?condition=insomnia`,
 `/outcome-labels/demo/insomnia/suvorexant`, and the landing page's existing label.

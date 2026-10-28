@@ -1,7 +1,8 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { conditionCatalog } from "@/lib/demo/treatment-estimates";
+import manifest from "@/data/crowdsourcing-cures-ratings/manifest.json";
+import { conditionCatalog, medicalSnapshot } from "@/lib/demo/treatment-estimates";
 
 const count = z.number().int().nonnegative();
 // Only the fields this view uses; averageEffect is dropped because its meaning is unknown
@@ -18,6 +19,13 @@ const ratingSchema = z.object({
   popularity: count,
 }).refine(r => r.popularity === r.majorImprovement + r.moderateImprovement + r.noEffect + r.worse + r.muchWorse,
   "popularity must equal the total of the five vote counts");
+
+// Review status and the data notes (README with the source, unknowns and method), for the page's
+// disclosure.
+export const patientRatingSnapshot = {
+  reviewed: manifest.reviewStatus !== "unverified-import",
+  notesHref: `https://github.com/${medicalSnapshot.repository}/blob/${medicalSnapshot.ref}/apps/web/data/crowdsourcing-cures-ratings/README.md`,
+};
 
 export const ratingLevels = [
   { key: "majorImprovement", label: "Major improvement", short: "Major" },

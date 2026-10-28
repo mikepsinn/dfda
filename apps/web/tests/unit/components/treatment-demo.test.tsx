@@ -39,6 +39,19 @@ describe("imported treatment demo pages", () => {
       screen.queryByRole("link", { name: /View Outcome Label/ }),
     ).not.toBeInTheDocument();
   });
+  it("shows patient ratings separately, with their review status and limitations", async () => {
+    render(await RankingsPage({ searchParams: Promise.resolve({ condition: "insomnia" }) }));
+    expect(screen.getByRole("heading", { name: "Patient ratings" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Rated for Insomnia/ })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /See patient ratings for \d+ treatments/ }))
+      .toHaveAttribute("href", "#patient-ratings");
+    expect(screen.getByText("About these ratings")).toBeInTheDocument();
+    expect(screen.getByText(/not yet reviewed/)).toBeInTheDocument();
+    expect(screen.getByText(/counts are ratings, not people/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Data notes and files/ }).getAttribute("href"))
+      .toMatch(/\/apps\/web\/data\/crowdsourcing-cures-ratings\/README\.md$/);
+    expect(screen.queryByText(/Crowdsourcing Cures/)).not.toBeInTheDocument();
+  });
   it("shows outcome and side-effect estimates separately from trial discovery", async () => {
     const condition = (await getConditionEstimate("depression"))!;
     const treatment = condition.treatments[0];

@@ -1,5 +1,6 @@
+import { ArrowUpRight } from "lucide-react";
 import {
-  ratingLevels, type PatientRating, type PatientRatingGroup, type RatingLevel,
+  patientRatingSnapshot, ratingLevels, type PatientRating, type PatientRatingGroup, type RatingLevel,
 } from "@/lib/evidence/patient-ratings";
 
 const visibleCount = 10;
@@ -92,6 +93,24 @@ export function PatientRatings({ groups }: { groups: PatientRatingGroup[] }) {
             </li>
           ))}
         </ul>
+        <details className="max-w-3xl pt-1 text-sm">
+          <summary className="cursor-pointer font-medium">About these ratings</summary>
+          <div className="mt-2 space-y-2 text-muted-foreground">
+            <p>
+              {!patientRatingSnapshot.reviewed && "Imported as recorded and not yet reviewed. "}
+              When and how the ratings were collected isn’t recorded, and one person may have rated a
+              treatment more than once, so counts are ratings, not people.
+            </p>
+            <p>
+              Reported improvement counts major and moderate improvement. Treatments are ordered by the
+              lower end of the 95% Wilson interval for that share, so a share based on few ratings ranks lower.
+            </p>
+            <a href={patientRatingSnapshot.notesHref} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-medium text-primary underline-offset-4 hover:underline">
+              Data notes and files <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+            </a>
+          </div>
+        </details>
       </div>
       {groups.map(group => <RatingGroup key={group.condition} group={group} />)}
     </section>
