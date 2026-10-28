@@ -45,17 +45,30 @@ Not recorded anywhere in the source:
 - when and how the ratings were collected;
 - whether one person could rate a treatment more than once, so counts are ratings,
   not unique patients;
-- the denominators behind `votesPercent`;
-- permission to republish the data.
+- the denominators behind `votesPercent`.
+
+Permission to republish the data was confirmed on 2026-10-13.
 
 The data has known clean-up needs, left untouched here: 211 treatment pairs have
 no votes, and 43 groups of treatment names differ only in case, spacing or
 punctuation (for example `Omega 3 fatty acids ` and `Omega-3 fatty acids`).
 
 These are patient-reported counts on their original five-point scale. Show them
-as counts with their total. Don't convert them into an effect size or a percent
-benefit, or pool them with model estimates or trial results
+as counts with their total. A share such as "reported improvement" is a share of
+ratings, not the chance a treatment works. Don't turn the counts into an effect
+size, or pool them with model estimates or trial results
 ([rules for published numbers](../../../../docs/MIGRATION.md#rules-for-published-numbers)).
+
+## Where it's shown
+
+`lib/evidence/patient-ratings.ts` reads `treatment-ratings.jsonl` for
+`/treatment-rankings`. A source condition appears on a catalog condition's page
+when its name matches that condition's name or one of its synonyms: 44 source
+conditions on 42 pages. Each is shown under its own name (for example "Rated for
+Heartburn" on the GERD page), and differently named conditions are never merged.
+Treatments are ordered by the lower bound of the 95% Wilson interval for the share
+of ratings reporting major or moderate improvement; pairs with no votes are left
+out. The other 118 source conditions, such as Lower Back Pain, have no page yet.
 
 ## Reproduce
 

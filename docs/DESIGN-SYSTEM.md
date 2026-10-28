@@ -123,6 +123,11 @@ and this guide in the same change instead of creating a one-off competing patter
 - `components/demo/trial-result.tsx`: separately sourced posted results, with an
   original-results action and expandable endpoint/analysis detail. Never relabel
   copied trial/participant counts as verified evidence.
+- `components/demo/patient-ratings.tsx`: aggregated patient ratings below a
+  condition's estimates, one list per source condition under its own name. Each row
+  shows the five vote counts and their total; the stacked bar is decorative. The
+  first ten rows are visible and the rest expand in place. Never average the
+  categories into a score.
 
 The working examples are `/treatment-rankings?condition=insomnia`,
 `/outcome-labels/demo/insomnia/suvorexant`, and the landing page's existing label.
