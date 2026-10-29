@@ -1,15 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ConditionPicker } from "@/components/demo/condition-picker";
 import { EstimateNotice } from "@/components/demo/estimate-notice";
+import { PatientRatings } from "@/components/demo/patient-ratings";
 import { TreatmentRankingCard } from "@/components/demo/treatment-ranking-card";
 import { rankTreatments, conditionCatalog, getConditionEstimate } from "@/lib/demo/treatment-estimates";
+import { getPatientRatings } from "@/lib/evidence/patient-ratings";
 
 export const metadata: Metadata = {
   title: "Treatment Rankings Demo | Open Treatment Evidence Network",
-  description: "Compare treatment estimates, explore benefits and side effects, and find related trials.",
+  description: "Compare treatment estimates and patient ratings, explore benefits and side effects, and find related trials.",
 };
 
 export default async function TreatmentRankingsPage({ searchParams }: {
@@ -18,6 +20,8 @@ export default async function TreatmentRankingsPage({ searchParams }: {
   const query = await searchParams;
   const condition = await getConditionEstimate(query.condition ?? "depression");
   const sort = query.sort === "safety" ? "safety" : "effectiveness";
+  const patientRatings = condition ? getPatientRatings(condition.slug) : [];
+  const ratedTreatments = patientRatings.reduce((sum, group) => sum + group.treatments.length, 0);
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-4 rounded-2xl bg-gradient-to-br from-primary/5 to-muted/50 p-6 sm:p-8">
@@ -50,6 +54,13 @@ export default async function TreatmentRankingsPage({ searchParams }: {
               Sorted by {sort} score, highest first.
               Scores use a 0–100 scale, not response percentages.
             </p>
+            {ratedTreatments > 0 && (
+              <Button asChild variant="ghost" size="sm" className="-ml-3 gap-2 text-primary">
+                <a href="#patient-ratings">
+                  See patient ratings for {ratedTreatments} treatments <ArrowDown aria-hidden="true" className="h-4 w-4" />
+                </a>
+              </Button>
+            )}
           </div>
           <ol className="grid gap-5 md:grid-cols-2">
             {rankTreatments(condition.treatments, sort).map((treatment, index) => (
@@ -64,6 +75,7 @@ export default async function TreatmentRankingsPage({ searchParams }: {
           No imported estimates for that condition. Choose one of the available conditions above.
         </p>
       )}
+      {patientRatings.length > 0 && <PatientRatings groups={patientRatings} />}
       <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-muted/50 p-6 sm:flex-row sm:items-center">
         <div><h2 className="font-semibold">Ready to explore the research?</h2><p className="mt-1 text-sm text-muted-foreground">Browse study details, eligibility and contact information.</p></div>
         <Button asChild variant="outline" className="gap-2"><Link href="/conditions">Find clinical trials <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link></Button>
