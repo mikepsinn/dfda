@@ -141,30 +141,49 @@ tracking screens or by the planned tracking MCP migration.
 ### Extraction checklist
 
 Unchecked items below are planned or awaiting acceptance, not confirmed complete.
+Paths starting with `apps/web` are in this repository; the others point to the
+earlier implementation in the named repository: Optimitron at
+commit `81ab703bc2033bc1a564122ddf9ca054d4aa266d` (2026-10-20), Crowdsourcing Cures
+at `94ab3911e13a394da6b33b4641d8061f30922bbf` (2026-10-07), and curedao-api at the
+[baseline commit](MIGRATION.md#what-comes-from-curedao-api) `47ea2bcc`. Items
+marked *added 2026-11-20* came from a code comparison of those commits with this
+app; the old plan did not mention them.
 
 From Optimitron:
 
-- [ ] Port the dFDA MCP measurement, reminder, and notification tools into `/api/mcp` over this app's data layer. **Implemented, awaiting acceptance:** 14 tools in `apps/web/lib/tracking`, with database tests.
-- [ ] Port the tracking REST API for measurements, reminders, notifications, and variables, with its OpenAPI document. **Implemented, awaiting acceptance:** `/api/v1` and `/api/v1/openapi.json`.
-- [ ] Extract the tested ClinicalTrials.gov search client into `packages/trials` and connect the existing trial-search page.
-- [ ] Evaluate/extract TypeScript N-of-1 analysis into `packages/analysis` against the curedao-api reference baseline. Recheck and resolve reported small-sample p-value and effect-direction problems; this library alone does not prove feature or numerical parity.
-- [ ] Extract wearable/app export parsers into `packages/importers`.
-- [ ] Use condition names and ICD-10 codes in `packages/health-vocabulary`.
-- [ ] Adapt useful condition/treatment content and AI estimates, retaining available generation/source metadata and explicit current-best-estimate labels; improve them incrementally.
-- [ ] Adapt selected landing/about/FAQ content and bring relevant tests with the moved features.
+- [x] Port the dFDA MCP measurement, reminder, and notification tools into `/api/mcp` over this app's data layer: 14 tools in `apps/web/lib/tracking`, with database tests.
+- [x] Port the tracking REST API for measurements, reminders, notifications, and variables, with its OpenAPI document: `/api/v1` and `/api/v1/openapi.json`.
+- [x] Connect the tested ClinicalTrials.gov search client to trial search: copied with its tests to `apps/web/lib/trials/clinical-trials-gov.ts` and used by `/find-trials` and `/conditions/{id}/trials`.
+- [ ] Move that client into `packages/trials` when the posted-results parser joins it.
+- [ ] Evaluate/extract TypeScript N-of-1 analysis (`packages/optimizer`) into `packages/analysis` against the curedao-api reference baseline. Recheck and resolve reported small-sample p-value and effect-direction problems; this library alone does not prove feature or numerical parity.
+- [ ] Extract wearable/app export parsers (`packages/data/src/importers`: Apple Health, Fitbit, Oura, Google Fit, Withings, Strava, Cronometer, MyFitnessPal, CSV) and value plausibility checks (`packages/data/src/measurement-validation.ts`) into `packages/importers`.
+- [ ] Use condition names and ICD-10 codes in `packages/health-vocabulary`. The codes are in the copied `conditions.json` but not yet displayed or mapped.
+- [x] Adapt useful condition/treatment content and AI estimates with explicit current-best-estimate labels: all 216 conditions and 1,214 treatment comparisons on `/treatment-rankings` and `/outcome-labels/demo`, with edits logged in `apps/web/data/optimitron/corrections.json`.
+- [ ] Add the cross-condition treatment pages and the references page (`apps/dfda/app/treatments`, `apps/dfda/app/references`; no page uses the copied `treatments.json` and `references.json` yet), show the remaining metadata (response/remission, access) and keep improving the estimates.
+- [ ] Adapt selected landing/about/FAQ content (`apps/dfda/app/about`, `apps/dfda/app/faq`) and bring relevant tests with the moved features.
+- [ ] *Added 2026-11-20:* let measurement logging create a variable from a name, category and unit, as Optimitron's tools do (`packages/tracking/src/core.ts`, `tool-definitions.ts`). This app's tools reject unknown names (`apps/web/lib/tracking/variables.ts`), so an AI app cannot log anything outside the catalog.
+- [ ] *Added 2026-11-20:* an MCP setup page with copy-paste setup for Claude Code, Codex and other clients and example prompts (`apps/dfda/app/mcp/page.tsx`). `/developers` lists only the address and tool names.
+- [ ] *Added 2026-11-20:* recruiting trials on each condition–treatment Outcome Label (`apps/dfda/app/conditions/[conditionSlug]/treatments/[treatmentSlug]/components/treatment-trials.tsx`), using the existing trial client.
+- [ ] *Added 2026-11-20:* before the dfda.earth move, redirects for its old paths (`/conditions/{slug}`, `/treatments/{slug}`, `/mcp`, `/about`, `/faq`), the OpenAPI document at its old address (`apps/dfda/app/openapi.json`) and a sitemap of condition and treatment pages (`apps/dfda/app/sitemap.xml`).
 
 From Crowdsourcing Cures and the legacy API:
 
-- [ ] Add the patient-rating dataset and corresponding ranking views alongside labeled demo/model estimates; progressively improve coverage without conflating ratings, examples and effect estimates.
-- [ ] Adapt selected AI-written analyses/articles as labeled demo drafts, verify supporting citations, and improve their estimates; do not describe unreviewed generated text as a completed meta-analysis.
-- [ ] Port text-to-measurement logging alongside the existing image capture actions.
+- [x] Add the patient-rating dataset and a ranking view alongside the labeled estimates: `apps/web/data/crowdsourcing-cures-ratings`, shown on `/treatment-rankings` for the 42 catalog conditions that match a rated condition.
+- [ ] Show a treatment's ratings across conditions (Crowdsourcing Cures `app/treatments/[treatmentName]/ratings`, `app/conditions/[conditionName]/treatment-reviews`) and give the other 118 of the 162 rated conditions a page. Don't conflate ratings, examples and effect estimates.
+- [ ] Adapt selected AI-written analyses/articles as labeled demo drafts (Crowdsourcing Cures `app/conditions/[conditionName]/meta-analysis`, `app/treatments/[treatmentName]/cba`, `app/articles`), verify supporting citations, and improve their estimates; do not describe unreviewed generated text as a completed meta-analysis.
+- [ ] Port text-to-measurement logging alongside the existing image capture actions (Crowdsourcing Cures `lib/text2measurements.ts`, `app/measurements/text2measurements`), including logging from a conversation (`app/api/conversation2measurements`). The old code saves to curedao-api; save to this app's tables.
 - [ ] Map legacy variables, app seeds, and condition codes into the shared health vocabulary.
 - [ ] Implement consent and migration for personal measurements held by curedao-api or Optimitron.
 - [ ] Complete the curedao-api workflow/route/consumer inventory and capture a versioned reference baseline; record explicit reproduce/improve/defer/retire decisions rather than silently dropping features.
 - [ ] Import eligible personal/population study results with source links, counts, methods and unknowns; distinguish historical imports from reproduced or corrected analyses using `TimeSeriesAnalysis`.
 - [ ] Port/reimplement the reference pairing, lag/duration, correlation, baseline/follow-up and population aggregation behavior in `packages/analysis`; add private authorized replay fixtures and public synthetic known-answer tests, with reviewed numerical differences.
-- [ ] Reproduce variable charts, predictor/outcome search and generated study reports, including permitted sharing/export and stable legacy-link mappings. Reconcile conflicting statistics and derive cards, narrative and charts from one result version.
-- [ ] Verify measurement history/edit/delete/export, reminders/inbox/log/skip/snooze, and selected connectors/reconnection/sync end to end; disclose remaining gaps and keep working legacy routes until replacements or exceptions are accepted.
+- [ ] Reproduce variable charts, predictor/outcome search and generated study reports, including permitted sharing/export and stable legacy-link mappings. Reconcile conflicting statistics and derive cards, narrative and charts from one result version. Starting points beyond the [curedao-api baseline](MIGRATION.md#what-comes-from-curedao-api): curedao-api's predictor MCP tools (`topPredictors`, `variableRelationship` in `app/Http/Controllers/API/McpToolService.php`) and root-cause and physician reports (`app/Reports`), and Optimitron's study browsing (`apps/dfda/app/mega-studies`, `apps/dfda/app/observational-studies`).
+- [ ] Verify measurement history/edit/delete/export, reminders/inbox/log/skip/snooze, and selected connectors/reconnection/sync end to end; disclose remaining gaps and keep working legacy routes until replacements or exceptions are accepted. The curedao-api inbox also had track-all, skip-all and favorites (`public/app/public/js/controllers/remindersInboxCtrl.js`); its CSV export is `measurements/csv` in `routes/api.php`.
+- [ ] *Added 2026-11-20:* account deletion, removing or anonymizing the person's records (`user/delete` in curedao-api `routes/api.php`). This app has none, and people now store health data through its MCP server and API.
+- [ ] *Added 2026-11-20:* reminders delivered by email or push, with preferences such as the earliest and latest reminder time (curedao-api `app/Mail/TrackingReminderNotificationEmail.php`, `public/app/public/js/controllers/settingsCtrl.js`). This app's reminders only appear in the inbox, and the notification card on `/user/settings` is commented out; it already sends program check-in emails.
+- [ ] *Added 2026-11-20:* sharing a person's tracking data with a clinician or caregiver who can then view it (curedao-api `shares` routes in `routes/api.php`, `public/app/public/js/controllers/dataSharingCtrl.js`). Care teams here see clinic program reports only.
+- [ ] *Added 2026-11-20:* per-variable analysis settings: onset delay, duration of action, filler value for missing days, minimum and maximum, sum or mean (curedao-api `public/app/public/js/controllers/variableSettingsCtrl.js`). The analysis needs them; `user_variables` here stores only a preferred unit.
+- [ ] *Added 2026-11-20:* decide whether personal tags, ingredients and joined variables (curedao-api `userTags` and `variables/join` routes in `routes/api.php`) are needed for the analysis or can be retired.
 
 From `fda-gov-v2` (review complete; checked means a decision, not a completed port):
 
@@ -223,6 +242,17 @@ boundary for source ingestion or public publication.
 - Optimitron keeps shared `tracking`, `db`, and `data` packages used by its other sites, its own MCP server, and economic-model constants. Extract the selected functionality rather than moving those entire packages.
 - Crowdsourcing Cures keeps its organization pages. Legacy-data proxy code is not copied wholesale, but its tracking, charts, predictor search and population-study behavior is part of the replacement baseline; redirect/remove routes only after equivalent behavior or explicit exceptions are accepted. Selected AI-written analyses are eligible demo content to improve; drug registration and the muscle-mass cost-benefit page remain outside the extraction scope.
 - Referendum voting is optional public advocacy functionality, not a required clinic module. The landing page's "Sign to Support" button and its thank-you page were removed, because the button only wrote a log line and stored no signature.
+
+**Proposed for retirement, awaiting the product owner's decision** (*added 2026-11-20*, listed so they are not dropped silently; source paths as in the [extraction checklist](#extraction-checklist)):
+
+- Digital Twin Safe (Crowdsourcing Cures `app/safe`, a redirect to the legacy safe).
+- Web3, NFT, IPFS and "data gems" features, paid subscriptions and upgrades, voice and Messenger bots (Dialogflow, Recast, Facebook Messenger), and public scientist profiles with following (curedao-api).
+- The legacy app builder and `connect.js` embed (curedao-api app settings and applications). White labeling here uses company instances and the app's OAuth server.
+- Petition sign and share buttons (Crowdsourcing Cures `components/petitions`). They only appear on organization pages that stay on crowdsourcingcures.org.
+- Newsletter settings (Crowdsourcing Cures `app/settings/newsletter`), which belong with the organization site's newsletter.
+- The AI researcher that writes articles on demand (Crowdsourcing Cures `app/researcher`, `lib/agents/researcher`). Selected existing articles can still be adapted.
+- Health-economics simulators (Crowdsourcing Cures `lib/health-econ-simulation`). This app has its own `/impact` model.
+- The reaction-time test (Crowdsourcing Cures `app/cognition/reaction-test`), which never saved results: keep, defer or retire.
 
 ## Sequence and migration dependencies
 
