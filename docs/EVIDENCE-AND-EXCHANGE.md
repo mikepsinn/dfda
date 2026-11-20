@@ -80,8 +80,8 @@ recruitment and private-data workflows retain the separate gates below.
 | ClinicalTrials.gov registry and posted results | `packages/trials` API v2 adapter and new arm/outcome parser; AACT bulk adapter when useful | Registry/study/effect records; existing trial search and public evidence pages | Trial-reported results, separated further by study design |
 | Published papers and existing systematic reviews/meta-analyses | Evidence source adapter and reviewed extraction into `StudyEffect` or cited review records | Bibliography, underlying-study links, inclusion/exclusion decisions, and published analysis versions | Published research; reviews are not additional independent participants |
 | dFDA patient treatment ratings and longitudinal reports | Existing rating/measurement actions extended by app evidence modules; `PatientReport` contract | Private patient records; explicitly authorized public reports or privacy-reviewed aggregate views | Patient-reported observations |
-| Legacy ratings from curedao-api / Crowdsourcing Cures | `packages/legacy-import` migration mapped into the same patient-report model | Preserve original scale, provenance, permissions, collection context, and unknowns | Legacy patient-reported dataset, never relabeled trial evidence |
-| Personal and population time-series studies from curedao-api, including studies.crowdsourcingcures.org | `packages/legacy-import` plus app evidence import/review; planned `TimeSeriesAnalysis` contract and `packages/analysis` reproduction | Private personal results; authorized historical/reproduced/corrected study reports, predictor search, charts and public evidence views | Source-backed observational analyses; distinguish within-person from population aggregation, not fictional data or automatically randomized trials |
+| Legacy ratings from QuantiModo / Crowdsourcing Cures | `packages/legacy-import` migration mapped into the same patient-report model | Preserve original scale, provenance, permissions, collection context, and unknowns | Legacy patient-reported dataset, never relabeled trial evidence |
+| Personal and population time-series studies from QuantiModo, including studies.crowdsourcingcures.org | `packages/legacy-import` plus app evidence import/review; planned `TimeSeriesAnalysis` contract and `packages/analysis` reproduction | Private personal results; authorized historical/reproduced/corrected study reports, predictor search, charts and public evidence views | Source-backed observational analyses; distinguish within-person from population aggregation, not fictional data or automatically randomized trials |
 | Wearables, app exports, and patient-authorized clinical records | `packages/importers` plus receiving app authorization; future provider-specific adapters | Receiving personal/clinic workspace only; analysis outputs require separate publication authorization | Private measurements; not public evidence by default |
 | Independent clinic installations | Local analysis and privacy release gate; `packages/clinic-aggregates` validation at sender and receiver | Accepted clinic aggregate submissions and published analysis versions; raw records remain at source | Clinic observational evidence, separate from trials and casual ratings |
 | Studies created in dFDA | `apps/web/lib/studies`, existing trial/enrollment actions, `StudyProtocol` contract | Public approved protocol/discovery page; private consent, enrollment, and measurements | Design-specific prospective evidence after analysis/review |
@@ -97,8 +97,8 @@ an unverified headline count of studies with results.
 
 ## Time-series studies from recorded data
 
-Reproducing the useful curedao-api app and study generator is an explicit product
-goal; see the [functional baseline and acceptance plan](MIGRATION.md#what-comes-from-curedao-api).
+Reproducing the useful QuantiModo app and study generator is an explicit product
+goal; see the [functional baseline and acceptance plan](MIGRATION.md#what-comes-from-quantimodo).
 The old studies are eligible inputs to the new product, not archive-only material.
 Import permitted historical results first, then reproduce and improve the methods,
 charts and explanations. Do not replace useful observed-data analyses with AI
