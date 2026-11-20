@@ -29,7 +29,8 @@ jobs:
   visual-preview:
     name: Before/after screenshots
     if: github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: ubuntu-latest
+    # Ubuntu 24.04 until Playwright supports ubuntu-latest's 26.04 (see ci.yml).
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     services:
       postgres:
