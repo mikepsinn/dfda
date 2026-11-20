@@ -12,7 +12,8 @@ permissions:
 jobs:
   record:
     name: Record the demo videos
-    runs-on: ubuntu-latest
+    # Ubuntu 24.04 until Playwright supports ubuntu-latest's 26.04 (see ci.yml).
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     defaults:
       run:

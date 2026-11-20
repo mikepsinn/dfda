@@ -139,6 +139,7 @@ async function screenshot(browser, lab, url, viewport, outDir, file, storageStat
     await page.evaluate(() => document.fonts.ready);
     // A video's loading spinner turns while the screenshot is taken; without controls it is not drawn.
     await page.evaluate(() => document.querySelectorAll("video[controls]").forEach(video => video.removeAttribute("controls")));
+    await hideServerPort(page);
     await page.screenshot({ type: "jpeg", quality: 80, animations: "disabled", path: join(outDir, `${file}.jpg`) });
     // The whole page in strips joined by the browser (see stitchStrips), lossless so JPEG noise is
     // not mistaken for changes; pages are cut off at 32,000 pixels, the most a canvas can hold.
@@ -160,6 +161,18 @@ async function screenshot(browser, lab, url, viewport, outDir, file, storageStat
   } finally {
     await context.close();
   }
+}
+
+// A page that shows its own address, such as the member page's MCP address, would differ only by
+// the before and after servers' ports (3001 and 3002). Show that address without the port on both.
+async function hideServerPort(page) {
+  const { origin, protocol, hostname } = new URL(page.url());
+  await page.evaluate(({ origin, plain }) => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      if (node.nodeValue.includes(origin)) node.nodeValue = node.nodeValue.replaceAll(origin, plain);
+    }
+  }, { origin, plain: `${protocol}//${hostname}` });
 }
 
 // Where a page changed: an overview of the whole "after" page with each change boxed and numbered,
