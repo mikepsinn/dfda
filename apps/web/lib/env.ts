@@ -33,7 +33,8 @@ export const env = createEnv({
     SMTP_URL: z.string().url(),
     EMAIL_FROM: z.string().min(3),
     // The scheduler that sends the daily check-in emails (app/api/cron/check-in-emails)
-    // sends it as `Authorization: Bearer <CRON_SECRET>`. Without it the emails are off.
+    // and recomputes relationships (app/api/cron/relationships) sends it as
+    // `Authorization: Bearer <CRON_SECRET>`. Without it both are off.
     CRON_SECRET: z.string().min(16).optional(),
     // Google sign-in. Optional: without both values the Google button is hidden.
     GOOGLE_CLIENT_ID: z.string().min(1).optional(),
