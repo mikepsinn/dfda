@@ -82,7 +82,7 @@ export function InboxCard({ item, sameVariable, zone, recent, disabled, actions 
               </>
             )}
             <DropdownMenuItem asChild>
-              <Link href={`/patient/user-variables/${item.userVariableId}`}><History aria-hidden="true" className="mr-2 h-4 w-4" />History</Link>
+              <Link href={`/patient/history?variableId=${encodeURIComponent(item.globalVariableId)}`}><History aria-hidden="true" className="mr-2 h-4 w-4" />History</Link>
             </DropdownMenuItem>
             <DropdownMenuItem onSelect={() => actions.toggleFavorite(item)}>
               <Star aria-hidden="true" className="mr-2 h-4 w-4" />

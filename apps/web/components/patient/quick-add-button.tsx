@@ -1,20 +1,19 @@
 'use client'
 
-import { useRef } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Bell, PencilLine, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 
 /**
- * The "+" button of QuantiModo's patient app: record a measurement, or add and
- * change reminders. On wider screens it sits above the toasts (bottom right),
- * so an Undo toast never covers it.
+ * The "+" button of QuantiModo's patient app, on each of its pages: record a
+ * measurement, or add a reminder. On wider screens it sits above the toasts
+ * (bottom right), so an Undo toast never covers it.
  */
-export function QuickAddButton({ onRecord }: { onRecord: () => void }) {
-  // The record dialog opens once the menu has closed: focus returning to this
-  // button while the dialog opens would close the dialog at once.
-  const recordAfterClose = useRef(false)
+export function QuickAddButton() {
+  // Onboarding is a guided flow, as for the menu (patient-nav.tsx).
+  if (usePathname().startsWith('/patient/onboarding')) return null
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -23,17 +22,12 @@ export function QuickAddButton({ onRecord }: { onRecord: () => void }) {
           <Plus aria-hidden="true" className="h-6 w-6" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" side="top" className="w-60" onCloseAutoFocus={(event) => {
-        if (!recordAfterClose.current) return
-        recordAfterClose.current = false
-        event.preventDefault()
-        onRecord()
-      }}>
-        <DropdownMenuItem onSelect={() => { recordAfterClose.current = true }}>
-          <PencilLine aria-hidden="true" className="mr-2 h-4 w-4" />Record a measurement
+      <DropdownMenuContent align="end" side="top" className="w-60">
+        <DropdownMenuItem asChild>
+          <Link href="/patient/measurements/new"><PencilLine aria-hidden="true" className="mr-2 h-4 w-4" />Record a measurement</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href="/patient/reminders"><Bell aria-hidden="true" className="mr-2 h-4 w-4" />Add or change reminders</Link>
+          <Link href="/patient/reminders/new"><Bell aria-hidden="true" className="mr-2 h-4 w-4" />Add a reminder</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

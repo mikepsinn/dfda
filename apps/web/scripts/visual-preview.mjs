@@ -47,6 +47,11 @@ const demoRoutes = [
   { name: "company-program-new", label: `${company}/programs/new`, path: `${company}/programs/new`, as: "company" },
   // The patient app's inbox, with the program's reminders due yesterday (resetDemoPatientInbox in lib/demo/clinic.ts).
   { name: "patient-inbox", label: "/patient (patient)", path: "/patient", as: "patient" },
+  // Its variables with their reminders, its history, and the recording and reminder forms.
+  { name: "patient-variables", label: "/patient/user-variables (patient)", path: "/patient/user-variables", as: "patient" },
+  { name: "patient-history", label: "/patient/history (patient)", path: "/patient/history", as: "patient" },
+  { name: "patient-record", label: "/patient/measurements/new (patient)", path: "/patient/measurements/new", as: "patient" },
+  { name: "patient-reminder", label: "/patient/reminders/new?variableId=energy-level (patient)", path: "/patient/reminders/new?variableId=energy-level", as: "patient" },
 ];
 const accounts = {
   company: demo.company.email,

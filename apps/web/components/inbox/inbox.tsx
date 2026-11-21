@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState, useTransition } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Bell, ListChecks, Star, Sun } from 'lucide-react'
+import { History, ListChecks, Star, Sun } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { ToastAction } from '@/components/ui/toast'
@@ -157,7 +157,7 @@ function AllCaughtUp() {
       </div>
       <div className="flex flex-wrap gap-2">
         <Button asChild variant="outline" size="sm" className="gap-1.5">
-          <Link href="/patient/reminders"><Bell aria-hidden="true" className="h-4 w-4" />Reminders</Link>
+          <Link href="/patient/history"><History aria-hidden="true" className="h-4 w-4" />History</Link>
         </Button>
         <Button asChild variant="outline" size="sm" className="gap-1.5">
           <Link href="/patient/user-variables"><ListChecks aria-hidden="true" className="h-4 w-4" />My variables</Link>
