@@ -2,16 +2,17 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Bell, FlaskConical, HeartPulse, Inbox, ListChecks, Pill, Settings } from 'lucide-react'
+import { FlaskConical, HeartPulse, History, Inbox, ListChecks, Pill, Settings } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 // The patient app's menu, modeled on QuantiModo's side menu (docs/MIGRATION.md,
 // "Patient app modeled on QuantiModo"): the inbox first, then the person's
-// variables and reminders, then this app's own conditions, treatments and trials.
+// variables (with their reminders) and history, then this app's own conditions,
+// treatments and trials.
 const items = [
   { href: '/patient', label: 'Inbox', icon: Inbox, exact: true },
   { href: '/patient/user-variables', label: 'My variables', icon: ListChecks },
-  { href: '/patient/reminders', label: 'Reminders', icon: Bell },
+  { href: '/patient/history', label: 'History', icon: History },
   { href: '/patient/conditions', label: 'Conditions', icon: HeartPulse },
   { href: '/patient/treatments', label: 'Treatments', icon: Pill },
   { href: '/find-trials', label: 'Find trials', icon: FlaskConical },

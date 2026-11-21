@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
 import { logger } from "@/lib/logger";
 import { ImageAnalysisCapture } from '@/components/shared/ImageAnalysisCapture';
-import { QuickAddButton } from './quick-add-button';
 import { UniversalTimeline, type FilterableVariableCategoryId } from '@/components/universal-timeline';
 import { MeasurementAddDialog } from './MeasurementAddDialog';
 import type { MeasurementCardData } from "@/components/measurement-card";
@@ -237,7 +236,6 @@ export default function PatientDashboardDisplay({
           />
       </section>
 
-      <QuickAddButton onRecord={() => { setDialogCategory(null); setDialogOpen(true); }} />
     </>
   );
 } 
