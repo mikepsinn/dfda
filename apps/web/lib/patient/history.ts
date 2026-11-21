@@ -1,5 +1,5 @@
 import { zoneOf } from '@/lib/reminders/schedule'
-import { decodeCursor, encodeCursor } from '@/lib/tracking/measurements'
+import { invalidArgument } from '@/lib/tracking/errors'
 import type { TrackingDb } from '@/lib/tracking/variables'
 
 /**
@@ -27,6 +27,28 @@ export type HistoryItem = {
 
 export type HistoryPage = { items: HistoryItem[]; nextCursor: string | null }
 
+/**
+ * The page cursor: the time, variable and id of the last row. Measurements of
+ * the same time (a day's lab results) are in variable order, so that the list
+ * reads the same each time; the id only separates two of one variable.
+ */
+type Cursor = { startAt: Date; variableId: string; id: string }
+
+function encodeCursor(row: { start_at: Date; global_variable_id: string; id: string }) {
+  return Buffer.from(JSON.stringify([row.start_at.toISOString(), row.global_variable_id, row.id])).toString('base64url')
+}
+
+function decodeCursor(cursor: string): Cursor {
+  try {
+    const [time, variableId, id] = JSON.parse(Buffer.from(cursor, 'base64url').toString()) as string[]
+    const startAt = new Date(time)
+    if (typeof variableId === 'string' && typeof id === 'string' && !Number.isNaN(startAt.getTime())) return { startAt, variableId, id }
+  } catch {
+    // Not a cursor of this list.
+  }
+  throw invalidArgument('The page cursor is not valid. Start again without it.')
+}
+
 export async function loadHistory(tx: TrackingDb, userId: string, filter: HistoryFilter, cursor?: string | null): Promise<HistoryPage> {
   const after = cursor ? decodeCursor(cursor) : null
   const rows = await tx.measurements.findMany({
@@ -35,17 +57,26 @@ export async function loadHistory(tx: TrackingDb, userId: string, filter: Histor
       deleted_at: null,
       ...(filter.globalVariableId ? { global_variable_id: filter.globalVariableId } : {}),
       ...(filter.categoryId ? { global_variables: { variable_category_id: filter.categoryId } } : {}),
-      ...(after ? { OR: [{ start_at: { lt: after.startAt } }, { start_at: after.startAt, id: { lt: after.id } }] } : {}),
+      ...(after
+        ? {
+            OR: [
+              { start_at: { lt: after.startAt } },
+              { start_at: after.startAt, global_variable_id: { gt: after.variableId } },
+              { start_at: after.startAt, global_variable_id: after.variableId, id: { lt: after.id } },
+            ],
+          }
+        : {}),
     },
     select: {
       id: true,
+      global_variable_id: true,
       value: true,
       start_at: true,
       notes: true,
       global_variables: { select: { id: true, name: true, emoji: true } },
       units: { select: { id: true, abbreviated_name: true } },
     },
-    orderBy: [{ start_at: 'desc' }, { id: 'desc' }],
+    orderBy: [{ start_at: 'desc' }, { global_variable_id: 'asc' }, { id: 'desc' }],
     take: HISTORY_PAGE_SIZE + 1,
   })
   const page = rows.slice(0, HISTORY_PAGE_SIZE)

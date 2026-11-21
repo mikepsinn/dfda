@@ -28,7 +28,7 @@ const ANSWER_DAYS = 7
  * form, a check-in email) is saved at noon UTC of that day
  * (lib/programs/manage.ts dayTime), so its day is the UTC date.
  */
-function dayOf(at: Date, zone: string): string {
+export function dayOf(at: Date, zone: string): string {
   if (at.getUTCHours() === 12 && at.getUTCMinutes() === 0 && at.getUTCSeconds() === 0 && at.getUTCMilliseconds() === 0) {
     return at.toISOString().slice(0, 10)
   }
