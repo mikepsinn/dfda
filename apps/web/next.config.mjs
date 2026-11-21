@@ -17,6 +17,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   typedRoutes: true,
+  // Workspace packages that ship TypeScript source.
+  transpilePackages: ['analysis'],
   images: {
     unoptimized: true,
   },

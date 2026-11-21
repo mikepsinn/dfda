@@ -3,9 +3,10 @@ import { dayOf } from '@/lib/reminders/due'
 import { zoneOf } from '@/lib/reminders/schedule'
 import type { TrackingDb } from '@/lib/tracking/variables'
 import { valueInUnit } from '@/lib/units/convert'
+import { dailyValues, type DailyRules, type DailyValue, type DayValue } from 'analysis'
 import {
-  dailyRulesFor, dailyStats, dailyValues, distribution, weekdayAverages,
-  type DailyRules, type DailyStats, type DailyValue, type DistributionBin, type DayValue, type WeekdayAverage,
+  dailyRulesFor, dailyStats, distribution, weekdayAverages,
+  type DailyStats, type DistributionBin, type WeekdayAverage,
 } from './variable-stats'
 
 /**

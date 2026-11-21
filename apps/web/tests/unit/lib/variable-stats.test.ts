@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { aggregateText, formatNumber, valueText } from '@/lib/patient/value-text'
-import {
-  dailyRulesFor, dailyStats, dailyValues, distribution, weekdayAverages, type DailyValue,
-} from '@/lib/patient/variable-stats'
+import type { DailyValue } from 'analysis'
+import { dailyRulesFor, dailyStats, distribution, weekdayAverages } from '@/lib/patient/variable-stats'
 
 const day = (d: string, value: number): DailyValue => ({ day: d, value, filled: false })
 
@@ -13,34 +12,6 @@ describe('dailyRulesFor', () => {
     expect(dailyRulesFor({ categoryId: 'intake-and-interventions', unitId: 'milligram' })).toEqual({ combination: 'SUM', fillingType: 'zero' })
     expect(dailyRulesFor({ categoryId: 'activity-and-behavior', unitId: 'count' })).toEqual({ combination: 'SUM', fillingType: 'none' })
     expect(dailyRulesFor({ categoryId: 'health-and-physiology', unitId: 'kilogram' })).toEqual({ combination: 'MEAN', fillingType: 'none' })
-  })
-})
-
-describe('dailyValues', () => {
-  const values = [
-    { day: '2026-11-03', value: 2 },
-    { day: '2026-11-01', value: 4 },
-    { day: '2026-11-01', value: 6 },
-  ]
-
-  it('keeps full precision, so small converted amounts stay distinct', () => {
-    expect(dailyValues([{ day: '2026-11-01', value: 0.081 }, { day: '2026-11-02', value: 0.0405 }], { combination: 'SUM', fillingType: 'none' })
-      .map((d) => d.value)).toEqual([0.081, 0.0405])
-    expect(dailyValues([{ day: '2026-11-01', value: 1 }, { day: '2026-11-01', value: 0 }, { day: '2026-11-01', value: 0 }], { combination: 'MEAN', fillingType: 'none' })[0].value)
-      .toBeCloseTo(1 / 3, 10)
-  })
-
-  it('makes one value a day, by sum or mean, oldest first', () => {
-    expect(dailyValues(values, { combination: 'SUM', fillingType: 'none' })).toEqual([day('2026-11-01', 10), day('2026-11-03', 2)])
-    expect(dailyValues(values, { combination: 'MEAN', fillingType: 'none' })).toEqual([day('2026-11-01', 5), day('2026-11-03', 2)])
-  })
-
-  it('counts the days between the first and last measured day as zero when a missing day means none', () => {
-    expect(dailyValues(values, { combination: 'SUM', fillingType: 'zero' })).toEqual([
-      day('2026-11-01', 10),
-      { day: '2026-11-02', value: 0, filled: true },
-      day('2026-11-03', 2),
-    ])
   })
 })
 

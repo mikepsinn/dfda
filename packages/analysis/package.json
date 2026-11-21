@@ -1,0 +1,19 @@
+{
+  "name": "analysis",
+  "version": "0.0.0",
+  "description": "Deterministic calculations for time-series studies from recorded data: daily values, predictor and outcome pairing, and their statistics.",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5",
+    "vitest": "^3.1.3"
+  }
+}

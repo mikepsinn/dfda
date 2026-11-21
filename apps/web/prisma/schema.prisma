@@ -272,36 +272,38 @@ model global_variable_synonyms {
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model global_variables {
-  id                           String                          @id
-  variable_category_id         String
-  name                         String
-  description                  String?
-  emoji                        String?
-  image_url                    String?
-  default_unit_id              String
-  canonical_global_variable_id String?
-  deleted_at                   DateTime?                       @db.Timestamptz(6)
-  created_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
-  updated_at                   DateTime?                       @default(now()) @db.Timestamptz(6)
-  molar_mass                   Float?
-  global_conditions            global_conditions?
-  global_foods                 global_foods?
-  global_symptoms              global_symptoms?
-  global_treatments            global_treatments?
-  global_variable_codes        global_variable_codes[]
-  relationships_as_outcome     global_variable_relationships[] @relation("global_variable_relationships_outcome_global_variable_idToglobal_variables")
-  relationships_as_predictor   global_variable_relationships[] @relation("global_variable_relationships_predictor_global_variable_idToglobal_variables")
-  global_variable_synonyms     global_variable_synonyms[]
-  canonical_global_variable    global_variables?               @relation("global_variablesToglobal_variables", fields: [canonical_global_variable_id], references: [id], onUpdate: NoAction)
-  alias_global_variables       global_variables[]              @relation("global_variablesToglobal_variables")
-  units                        units                           @relation(fields: [default_unit_id], references: [id], onUpdate: NoAction)
-  variable_categories          variable_categories             @relation(fields: [variable_category_id], references: [id], onUpdate: NoAction)
-  instance_program_items       instance_program_items[]
-  measurements                 measurements[]
-  products                     products?
-  user_variables               user_variables[]
-  ingredient_of                variable_ingredients[]          @relation("variable_ingredients_ingredient_global_variable_idToglobal_variables")
-  ingredients                  variable_ingredients[]          @relation("variable_ingredients_parent_global_variable_idToglobal_variables")
+  id                              String                          @id
+  variable_category_id            String
+  name                            String
+  description                     String?
+  emoji                           String?
+  image_url                       String?
+  default_unit_id                 String
+  canonical_global_variable_id    String?
+  deleted_at                      DateTime?                       @db.Timestamptz(6)
+  created_at                      DateTime?                       @default(now()) @db.Timestamptz(6)
+  updated_at                      DateTime?                       @default(now()) @db.Timestamptz(6)
+  molar_mass                      Float?
+  global_conditions               global_conditions?
+  global_foods                    global_foods?
+  global_symptoms                 global_symptoms?
+  global_treatments               global_treatments?
+  global_variable_codes           global_variable_codes[]
+  relationships_as_outcome        global_variable_relationships[] @relation("global_variable_relationships_outcome_global_variable_idToglobal_variables")
+  relationships_as_predictor      global_variable_relationships[] @relation("global_variable_relationships_predictor_global_variable_idToglobal_variables")
+  global_variable_synonyms        global_variable_synonyms[]
+  canonical_global_variable       global_variables?               @relation("global_variablesToglobal_variables", fields: [canonical_global_variable_id], references: [id], onUpdate: NoAction)
+  alias_global_variables          global_variables[]              @relation("global_variablesToglobal_variables")
+  units                           units                           @relation(fields: [default_unit_id], references: [id], onUpdate: NoAction)
+  variable_categories             variable_categories             @relation(fields: [variable_category_id], references: [id], onUpdate: NoAction)
+  instance_program_items          instance_program_items[]
+  measurements                    measurements[]
+  products                        products?
+  user_relationships_as_outcome   user_variable_relationships[]   @relation("user_variable_relationships_outcome_global_variable_idToglobal_variables")
+  user_relationships_as_predictor user_variable_relationships[]   @relation("user_variable_relationships_predictor_global_variable_idToglobal_variables")
+  user_variables                  user_variables[]
+  ingredient_of                   variable_ingredients[]          @relation("variable_ingredients_ingredient_global_variable_idToglobal_variables")
+  ingredients                     variable_ingredients[]          @relation("variable_ingredients_parent_global_variable_idToglobal_variables")
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
@@ -682,45 +684,47 @@ model products {
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model profiles {
-  id                         String                   @id @db.Uuid
-  email                      String                   @unique
-  first_name                 String?
-  last_name                  String?
-  user_type                  user_type_enum?
-  avatar_url                 String?
-  deleted_at                 DateTime?                @db.Timestamptz(6)
-  created_at                 DateTime?                @default(now()) @db.Timestamptz(6)
-  updated_at                 DateTime?                @default(now()) @db.Timestamptz(6)
-  timezone                   String?
-  reviewed_biomarker_reports biomarker_reports[]      @relation("biomarker_reports_reviewed_byToprofiles")
-  uploaded_biomarker_reports biomarker_reports[]      @relation("biomarker_reports_uploaded_byToprofiles")
-  biomarker_reports          biomarker_reports[]      @relation("biomarker_reports_user_idToprofiles")
-  care_team_invitations      care_team_invitations[]
-  contact_messages           contact_messages[]
-  data_submissions           data_submissions[]
-  forms                      forms[]
-  instance_clinicians        instance_clinicians[]
-  instance_demo_accounts     instance_demo_accounts[]
-  instance_import_keys       instance_import_keys[]
-  instances                  instances[]
-  measurements               measurements[]
-  notifications              notifications[]
-  patient_treatments         patient_treatments[]
-  patients                   patients?
-  program_chat_turns         program_chat_turns[]
-  program_enrollments        program_enrollments[]
-  protocol_versions          protocol_versions[]
-  providers                  providers?
-  reminder_notifications     reminder_notifications[]
-  reminder_schedules         reminder_schedules[]
-  report_questions           report_questions[]
-  research_partners          research_partners?
-  cancelled_trial_actions    trial_actions[]          @relation("trial_actions_cancelled_byToprofiles")
-  completed_trial_actions    trial_actions[]          @relation("trial_actions_completed_byToprofiles")
-  trial_enrollments          trial_enrollments[]
-  trials                     trials[]
-  uploaded_files             uploaded_files[]
-  user_variables             user_variables[]
+  id                          String                        @id @db.Uuid
+  email                       String                        @unique
+  first_name                  String?
+  last_name                   String?
+  user_type                   user_type_enum?
+  avatar_url                  String?
+  deleted_at                  DateTime?                     @db.Timestamptz(6)
+  created_at                  DateTime?                     @default(now()) @db.Timestamptz(6)
+  updated_at                  DateTime?                     @default(now()) @db.Timestamptz(6)
+  timezone                    String?
+  reviewed_biomarker_reports  biomarker_reports[]           @relation("biomarker_reports_reviewed_byToprofiles")
+  uploaded_biomarker_reports  biomarker_reports[]           @relation("biomarker_reports_uploaded_byToprofiles")
+  biomarker_reports           biomarker_reports[]           @relation("biomarker_reports_user_idToprofiles")
+  care_team_invitations       care_team_invitations[]
+  contact_messages            contact_messages[]
+  data_submissions            data_submissions[]
+  forms                       forms[]
+  instance_clinicians         instance_clinicians[]
+  instance_demo_accounts      instance_demo_accounts[]
+  instance_import_keys        instance_import_keys[]
+  instances                   instances[]
+  measurements                measurements[]
+  notifications               notifications[]
+  patient_treatments          patient_treatments[]
+  patients                    patients?
+  program_chat_turns          program_chat_turns[]
+  program_enrollments         program_enrollments[]
+  protocol_versions           protocol_versions[]
+  providers                   providers?
+  relationship_analysis_due   relationship_analysis_due?
+  reminder_notifications      reminder_notifications[]
+  reminder_schedules          reminder_schedules[]
+  report_questions            report_questions[]
+  research_partners           research_partners?
+  cancelled_trial_actions     trial_actions[]               @relation("trial_actions_cancelled_byToprofiles")
+  completed_trial_actions     trial_actions[]               @relation("trial_actions_completed_byToprofiles")
+  trial_enrollments           trial_enrollments[]
+  trials                      trials[]
+  uploaded_files              uploaded_files[]
+  user_variable_relationships user_variable_relationships[]
+  user_variables              user_variables[]
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
@@ -981,25 +985,27 @@ model unit_categories {
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model units {
-  id                            String                          @id
-  unit_category_id              String
-  name                          String
-  abbreviated_name              String
-  ucum_code                     String?
-  conversion_factor             Float
-  conversion_offset             Float                           @default(0)
-  emoji                         String?
-  image_url                     String?
-  created_at                    DateTime?                       @default(now()) @db.Timestamptz(6)
-  updated_at                    DateTime?                       @default(now()) @db.Timestamptz(6)
-  global_foods                  global_foods[]
-  global_variable_relationships global_variable_relationships[]
-  global_variables              global_variables[]
-  measurements                  measurements[]
-  base_unit_of_categories       unit_categories[]               @relation("unit_categories_base_unit_idTounits")
-  unit_categories               unit_categories                 @relation("units_unit_category_idTounit_categories", fields: [unit_category_id], references: [id], onUpdate: NoAction)
-  user_variables                user_variables[]
-  variable_ingredients          variable_ingredients[]
+  id                                   String                          @id
+  unit_category_id                     String
+  name                                 String
+  abbreviated_name                     String
+  ucum_code                            String?
+  conversion_factor                    Float
+  conversion_offset                    Float                           @default(0)
+  emoji                                String?
+  image_url                            String?
+  created_at                           DateTime?                       @default(now()) @db.Timestamptz(6)
+  updated_at                           DateTime?                       @default(now()) @db.Timestamptz(6)
+  global_foods                         global_foods[]
+  global_variable_relationships        global_variable_relationships[]
+  global_variables                     global_variables[]
+  measurements                         measurements[]
+  base_unit_of_categories              unit_categories[]               @relation("unit_categories_base_unit_idTounits")
+  unit_categories                      unit_categories                 @relation("units_unit_category_idTounit_categories", fields: [unit_category_id], references: [id], onUpdate: NoAction)
+  user_relationships_in_outcome_unit   user_variable_relationships[]   @relation("user_variable_relationships_outcome_unit_idTounits")
+  user_relationships_in_predictor_unit user_variable_relationships[]   @relation("user_variable_relationships_predictor_unit_idTounits")
+  user_variables                       user_variables[]
+  variable_ingredients                 variable_ingredients[]
 
   @@unique([unit_category_id, ucum_code])
 }
@@ -1524,6 +1530,58 @@ model program_chat_turns {
   profiles    profiles  @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
 
   @@index([instance_id, created_at], map: "idx_program_chat_turns_instance_created")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model relationship_analysis_due {
+  user_id  String   @id @db.Uuid
+  due_at   DateTime @default(dbgenerated("date_trunc('milliseconds'::text, now())")) @db.Timestamptz(6)
+  profiles profiles @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model user_variable_relationships {
+  id                            String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  user_id                       String           @db.Uuid
+  predictor_global_variable_id  String
+  outcome_global_variable_id    String
+  method_version                String
+  onset_delay_days              Int
+  duration_of_action_days       Int
+  windows_tried                 Int
+  windows                       Json
+  effective_windows             Float
+  number_of_pairs               Int
+  effective_pairs               Float
+  first_pair_date               DateTime         @db.Date
+  last_pair_date                DateTime         @db.Date
+  predictor_measurements        Int
+  outcome_measurements          Int
+  predictor_days                Int
+  outcome_days                  Int
+  correlation                   Float
+  trend_adjusted_correlation    Float
+  reverse_correlation           Float?
+  p_value                       Float
+  predictor_unit_id             String
+  outcome_unit_id               String
+  low_predictor_pairs           Int
+  high_predictor_pairs          Int
+  predictor_low_average         Float
+  predictor_high_average        Float
+  outcome_with_low_predictor    Float
+  outcome_with_high_predictor   Float
+  value_predicting_high_outcome Float?
+  value_predicting_low_outcome  Float?
+  analyzed_at                   DateTime         @default(now()) @db.Timestamptz(6)
+  outcome_variable              global_variables @relation("user_variable_relationships_outcome_global_variable_idToglobal_variables", fields: [outcome_global_variable_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  outcome_unit                  units            @relation("user_variable_relationships_outcome_unit_idTounits", fields: [outcome_unit_id], references: [id], onUpdate: NoAction)
+  predictor_variable            global_variables @relation("user_variable_relationships_predictor_global_variable_idToglobal_variables", fields: [predictor_global_variable_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  predictor_unit                units            @relation("user_variable_relationships_predictor_unit_idTounits", fields: [predictor_unit_id], references: [id], onUpdate: NoAction)
+  profiles                      profiles         @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([user_id, predictor_global_variable_id, outcome_global_variable_id], map: "user_variable_relationships_pair")
+  @@index([user_id, outcome_global_variable_id], map: "idx_user_variable_relationships_outcome")
 }
 
 view pending_actions {

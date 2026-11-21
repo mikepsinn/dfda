@@ -3,7 +3,8 @@
 import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis, YAxis } from 'recharts'
 import { Card } from '@/components/ui/card'
 import { ChartContainer, ChartTooltip, type ChartConfig } from '@/components/ui/chart'
-import type { DailyValue, DistributionBin, WeekdayAverage } from '@/lib/patient/variable-stats'
+import type { DailyValue } from 'analysis'
+import type { DistributionBin, WeekdayAverage } from '@/lib/patient/variable-stats'
 import { aggregateText } from '@/lib/patient/value-text'
 import { getRatingRange, getVariableInputType } from '@/lib/variable-helpers'
 

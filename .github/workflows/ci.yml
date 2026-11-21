@@ -6,6 +6,7 @@ on:
     branches: [master]
     paths:
       - 'apps/web/**'
+      - 'packages/analysis/**'
       - 'package.json'
       - 'pnpm-lock.yaml'
       - 'pnpm-workspace.yaml'
@@ -13,6 +14,7 @@ on:
   pull_request:
     paths:
       - 'apps/web/**'
+      - 'packages/analysis/**'
       - 'package.json'
       - 'pnpm-lock.yaml'
       - 'pnpm-workspace.yaml'
@@ -51,6 +53,10 @@ jobs:
 
       - name: Run unit tests
         run: pnpm test:unit
+
+      - name: Check and test the analysis package
+        working-directory: packages/analysis
+        run: pnpm type-check && pnpm test
 
       - name: Build
         run: pnpm build

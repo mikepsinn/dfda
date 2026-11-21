@@ -1,0 +1,32 @@
+name: Relationships
+
+# Every hour, asks the site to recompute the predictor and outcome
+# relationships of the people whose measurements changed
+# (apps/web/app/api/cron/relationships). Off until the repository has the
+# Actions secret CRON_SECRET (the same value as the site's CRON_SECRET) and
+# the Actions variable APP_URL (the site's address, without a final slash).
+on:
+  schedule:
+    - cron: '47 * * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  analyze:
+    name: Analyze the people whose measurements changed
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Call the site
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          APP_URL: ${{ vars.APP_URL }}
+        run: |
+          if [ -z "$CRON_SECRET" ] || [ -z "$APP_URL" ]; then
+            echo "The relationship analysis is off: set the CRON_SECRET secret and the APP_URL variable."
+            exit 0
+          fi
+          curl --fail-with-body --silent --show-error --max-time 240 \
+            --header "Authorization: Bearer $CRON_SECRET" \
+            "$APP_URL/api/cron/relationships"
