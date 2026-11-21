@@ -15,7 +15,7 @@ import {
   // TreatmentSchema, // Removed unused import
   // SupplementSchema, // Removed unused import
   IngredientSchema
-} from '@/lib/actions/analyze-image'; // Adjust path if necessary
+} from '@/lib/image-analysis-schemas';
 import { z } from 'zod';
 
 // Define types based on imported schemas

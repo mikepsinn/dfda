@@ -3,7 +3,7 @@ name: Visual Preview
 # Posts before/after screenshots of key pages as one comment on each pull request.
 # "Before" is the base branch and "after" is the pull request; both are built here, each with
 # its own PostgreSQL database built from its own migrations and filled with the demo data of
-# `pnpm db:seed:demo`, so signed-in company and program pages can be captured too. Images are
+# `pnpm db:seed:demo`, so signed-in company, program and patient pages can be captured too. Images are
 # committed to the visual-previews branch, which is only an image store: deleting it removes
 # the images from old comments.
 # Pull requests from forks are skipped, because their token cannot push or comment.

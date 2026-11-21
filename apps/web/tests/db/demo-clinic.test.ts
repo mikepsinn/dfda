@@ -9,8 +9,10 @@ import {
   ensureDemoMembers,
   prepareDemoClinic,
   resetDemoPatient,
+  resetDemoPatientInbox,
   resetDemoReview,
 } from '@/lib/demo/clinic'
+import { loadInbox } from '@/lib/inbox/load'
 import { personalReport } from '@/lib/programs/data'
 import { addSideEffect, mySideEffects } from '@/lib/programs/side-effects'
 
@@ -120,6 +122,33 @@ describe('the demo clinic', () => {
 
     await resetDemoReview()
     expect(await findReport({ id: patientId }, demo.report.id)).toMatchObject({ reviewedAt: null, reviewerName: null, reviewNote: null, reviewDecision: null })
+  })
+
+  it("gives the demo patient a condition and each of their reminders due yesterday, the same after each run", async () => {
+    const { program, patientId } = await prepareDemoClinic()
+    await resetDemoPatient(program, patientId, now)
+    await resetDemoPatientInbox(patientId, now)
+    expect(await adminDb.patient_conditions.count({ where: { patient_id: patientId, condition_id: 'type-2-diabetes', deleted_at: null } })).toBe(1)
+    const due = async () => (await loadInbox(patientId, now)).items.map((item) => [item.name, item.dueAt]).sort()
+    // The weekly reminders fire on yesterday's weekday; the daily ones have not fired yet today (20:00).
+    const expected = [
+      ['Energy', '2026-10-20T20:00:00.000Z'],
+      ['Nausea', '2026-10-20T20:00:00.000Z'],
+      ['Semaglutide', '2026-10-20T09:00:00.000Z'],
+      ['Weight', '2026-10-20T20:00:00.000Z'],
+    ]
+    expect(await due()).toEqual(expected)
+
+    // A visitor skips a reminder and changes the time zone; the next run makes it due again, in UTC.
+    await adminDb.reminder_notifications.updateMany({
+      where: { user_id: patientId, reminder_schedules: { user_variables: { global_variable_id: 'weight' } } },
+      data: { status: 'skipped', completed_or_skipped_at: now },
+    })
+    expect(await due()).toHaveLength(3)
+    await adminDb.profiles.update({ where: { id: patientId }, data: { timezone: 'America/Chicago' } })
+    await resetDemoPatientInbox(patientId, now)
+    expect(await due()).toEqual(expected)
+    expect(await adminDb.patient_conditions.count({ where: { patient_id: patientId } })).toBe(1)
   })
 
   it('adds the care team and the current colors to a demo clinic that was created before them', async () => {

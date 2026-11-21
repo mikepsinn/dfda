@@ -60,7 +60,7 @@ export async function getReminder(db: TrackingDb, userId: string, reminderId: st
 }
 
 /** The recurrence rule parts of a stored rule string, without DTSTART and UNTIL. */
-function ruleParts(rruleString: string) {
+export function ruleParts(rruleString: string) {
   const line = rruleString.split('\n').find((part) => part.startsWith('RRULE:')) ?? rruleString
   return line
     .replace(/^RRULE:/, '')

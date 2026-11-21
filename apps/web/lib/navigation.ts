@@ -9,11 +9,10 @@ type UserType = Database["public"]["Enums"]["user_type_enum"]
 
 
 // Logged-in Primary Items per Role (Using generated objects directly)
+// The patient app has its own menu (components/patient/patient-nav.tsx), as
+// QuantiModo's did; the header only links to its inbox.
 const patientNavItems: NavItem[] = [
-  navigationTreeObject.patient, // Uses generated title (e.g., "Patient") and href
-  navigationTreeObject.patient_conditions,
-  navigationTreeObject.patient_treatments,
-  navigationTreeObject.patient_reminders,
+  { ...navigationTreeObject.patient, title: 'Inbox', emoji: '📥' },
 ]
 
 const providerNavItems: NavItem[] = [

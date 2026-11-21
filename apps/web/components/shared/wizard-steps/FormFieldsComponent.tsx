@@ -13,7 +13,7 @@ import {
   // TreatmentSchema, // Removed unused import
   // SupplementSchema, // Removed unused import
   IngredientSchema
-} from '@/lib/actions/analyze-image';
+} from '@/lib/image-analysis-schemas';
 import { z } from 'zod';
 
 // Define types based on imported schemas
