@@ -7,7 +7,7 @@ import { createLogger } from '@/lib/logger'
 import { getServerUser } from '@/lib/server-auth'
 import { TrackingError } from '@/lib/tracking/errors'
 import { recordMeasurement } from '@/lib/tracking/measurements'
-import { respondToNotifications, snoozeNotifications, undoNotifications } from '@/lib/tracking/notifications'
+import { reopenNotificationsAnsweredBy, respondToNotifications, snoozeNotifications, undoNotifications } from '@/lib/tracking/notifications'
 
 /**
  * The patient inbox's actions (components/inbox), over the tracking layer
@@ -96,13 +96,17 @@ export async function recordFavoriteAction(globalVariableId: string, recorded: n
   return result.ok ? { ok: true, measurementId } : result
 }
 
-/** Deletes a measurement recorded from a favorite, for undo. */
+/**
+ * Deletes a measurement recorded from a favorite, for undo. A reminder that the
+ * value answered meanwhile (when the inbox refreshed) is due again.
+ */
 export async function deleteFavoriteRecordAction(measurementId: string): Promise<{ ok: true } | { ok: false; error: string }> {
   const result = await run('delete-favorite-record', async (userId) => {
     const id = z.string().uuid().parse(measurementId)
-    await withUserTransaction({ id: userId }, (tx) =>
-      tx.measurements.updateMany({ where: { id, user_id: userId, deleted_at: null }, data: { deleted_at: new Date(), updated_at: new Date() } }),
-    )
+    await withUserTransaction({ id: userId }, async (tx) => {
+      await tx.measurements.updateMany({ where: { id, user_id: userId, deleted_at: null }, data: { deleted_at: new Date(), updated_at: new Date() } })
+      await reopenNotificationsAnsweredBy(tx, userId, id)
+    })
     return []
   })
   return result.ok ? { ok: true } : result

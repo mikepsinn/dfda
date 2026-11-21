@@ -95,7 +95,7 @@ export const listDueRemindersInput = z.object({
 
 const answer = {
   action: z.enum(['track', 'skip'])
-    .describe('track records a measurement and completes the notification; skip marks it skipped.'),
+    .describe("track records a measurement at the notification's time and completes the notification; skip marks it skipped."),
   value: z.number().optional().describe("The value to record. Default: the reminder's default value."),
   note: z.string().max(2000).optional(),
 }

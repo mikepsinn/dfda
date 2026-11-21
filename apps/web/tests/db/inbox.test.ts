@@ -4,11 +4,17 @@ import { adminDb, withUserTransaction } from '@/lib/db'
 import { loadInbox } from '@/lib/inbox/load'
 import { refreshDueNotifications } from '@/lib/reminders/due'
 import { recordMeasurement } from '@/lib/tracking/measurements'
-import { listDueNotifications, respondToNotifications, snoozeNotifications, undoNotifications } from '@/lib/tracking/notifications'
+import {
+  listDueNotifications,
+  reopenNotificationsAnsweredBy,
+  respondToNotifications,
+  snoozeNotifications,
+  undoNotifications,
+} from '@/lib/tracking/notifications'
 import { upsertReminder } from '@/lib/tracking/reminders'
 
-// The patient inbox (lib/inbox, lib/actions/inbox.ts): snooze, undo and
-// favorites, as the signed-in person with row-level security. See `pnpm test:db`.
+// The patient inbox (lib/inbox, lib/actions/inbox.ts): answers, snooze, undo
+// and favorites, as the signed-in person with row-level security. See `pnpm test:db`.
 
 const stamp = Date.now()
 const password = 'correct horse battery staple'
@@ -71,6 +77,30 @@ describe('inbox snooze', () => {
   })
 })
 
+describe('inbox answers', () => {
+  it("records a tracked value at its notification's time, also for several days answered at once", async () => {
+    const userId = await person('answer-times')
+    const today = await dueNotification(userId, 'fatigue')
+    const { reminder_schedule_id, notification_trigger_at } = await adminDb.reminder_notifications.findUniqueOrThrow({
+      where: { id: today },
+      select: { reminder_schedule_id: true, notification_trigger_at: true },
+    })
+    const twoDaysAgo = new Date(notification_trigger_at.getTime() - 48 * HOUR)
+    const older = await adminDb.reminder_notifications.create({
+      data: { reminder_schedule_id, user_id: userId, notification_trigger_at: twoDaysAgo, status: 'pending' },
+      select: { id: true },
+    })
+
+    const answered = await as(userId, (tx) => respondToNotifications(tx, userId, { notificationIds: [today, older.id], action: 'track', value: 3 }))
+    const measurements = await adminDb.measurements.findMany({
+      where: { id: { in: answered.notifications.map((n) => n.measurementId!) } },
+      select: { start_at: true },
+      orderBy: { start_at: 'asc' },
+    })
+    expect(measurements.map((m) => m.start_at.toISOString())).toEqual([twoDaysAgo.toISOString(), notification_trigger_at.toISOString()])
+  })
+})
+
 describe('inbox undo', () => {
   it('puts a tracked notification back to pending and deletes its measurement', async () => {
     const userId = await person('undo-track')
@@ -126,5 +156,23 @@ describe('inbox favorites', () => {
     expect(favorites.map((f) => f.globalVariableId)).toEqual(['weight'])
     expect(favorites[0].isFavorite).toBe(true)
     expect(favorites[0].presets).toEqual([70, 71.5])
+  })
+
+  it('reopens the reminder that a favorite value answered when the value is undone', async () => {
+    const userId = await person('favorite-undo')
+    const id = await dueNotification(userId, 'headache')
+    // Recorded from the favorites, the value answers the reminder of its day when the inbox refreshes.
+    const measurement = await as(userId, (tx) => recordMeasurement(tx, userId, { globalVariableId: 'headache', value: 2 }))
+    await refreshDueNotifications(userId)
+    expect(await notification(id)).toMatchObject({ status: 'completed', log_details: { measurementId: measurement.id } })
+
+    // Undo, as deleteFavoriteRecordAction does it.
+    const reopened = await as(userId, async (tx) => {
+      await tx.measurements.updateMany({ where: { id: measurement.id, user_id: userId }, data: { deleted_at: new Date() } })
+      return reopenNotificationsAnsweredBy(tx, userId, measurement.id)
+    })
+    expect(reopened).toBe(1)
+    expect(await notification(id)).toEqual({ status: 'pending', log_details: null, snoozed_until: null })
+    expect((await loadInbox(userId)).items.map((item) => item.notificationId)).toContain(id)
   })
 })

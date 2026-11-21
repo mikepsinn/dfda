@@ -93,10 +93,13 @@ async function answer(
     if (value === null || value === undefined) {
       throw invalidArgument(`Give a value for "${row.reminder_schedules.user_variables.global_variables.name}": its reminder has no default value.`)
     }
+    // The answer is about the notification's time, also when it is given later (yesterday's reminder, or
+    // several days answered at once), so that the value lands on its own day.
     const measurement = await recordMeasurement(tx, userId, {
       globalVariableId: row.reminder_schedules.user_variables.global_variables.id,
       value,
       note: input.note,
+      startTime: row.notification_trigger_at.toISOString(),
     })
     details = { measurementId: measurement.id, loggedValue: value }
   }
@@ -155,6 +158,20 @@ export async function snoozeNotifications(tx: TrackingDb, userId: string, input:
     data: { snoozed_until: input.until, updated_at: new Date() },
   })
   return { notificationIds: rows.map((row) => row.id), snoozedUntil: input.until.toISOString() }
+}
+
+/**
+ * Puts the notifications that a measurement answered back to pending, when the
+ * measurement is undone. A value recorded outside the inbox (a favorite, a
+ * program's day form) can answer a reminder of its day too
+ * (refreshDueNotifications in lib/reminders/due.ts). Returns how many were reopened.
+ */
+export async function reopenNotificationsAnsweredBy(tx: TrackingDb, userId: string, measurementId: string) {
+  const { count } = await tx.reminder_notifications.updateMany({
+    where: { user_id: userId, status: 'completed', log_details: { path: ['measurementId'], equals: measurementId } },
+    data: { status: 'pending', completed_or_skipped_at: null, log_details: Prisma.DbNull, updated_at: new Date() },
+  })
+  return count
 }
 
 /**
