@@ -1,6 +1,5 @@
 import { RRule, rrulestr } from 'rrule'
 import { DateTime } from 'luxon'
-import { toZonedTime } from 'date-fns-tz'
 import { quickAddJob } from 'graphile-worker'
 import { logger } from '@/lib/logger'
 
@@ -10,37 +9,32 @@ import { logger } from '@/lib/logger'
  * the same way.
  */
 
+/** How many days ahead computeNextTriggerAt looks: a year covers every rule the app saves. */
+const NEXT_TRIGGER_DAYS = 366
+
 /**
- * The next time a schedule fires after now, in UTC, or null when it is
- * inactive or has no later occurrence. `timeOfDay` is 'HH:mm' in `timeZone`.
+ * The next time a schedule fires after `now`, in UTC, or null when it is
+ * inactive or has no later occurrence in the next year. `timeOfDay` is
+ * 'HH:mm' in `timeZone`. The days are those of firesOn, which the inbox
+ * uses too (lib/reminders/due.ts), so both agree.
  */
 export function computeNextTriggerAt(
   schedule: { rruleString: string; timeOfDay: string; startDate: Date; isActive: boolean },
   timeZone: string,
+  now: Date = new Date(),
 ): Date | null {
   if (!schedule.isActive) return null
-  try {
-    const rule = rrulestr(schedule.rruleString) as RRule
-    const [hours, minutes] = schedule.timeOfDay.split(':').map(Number)
-
-    // Prefer the rule's own DTSTART; otherwise the schedule's start date.
-    const dtstartSource = rule.options.dtstart instanceof Date ? rule.options.dtstart : schedule.startDate
-    const dtstartWithTime = new Date(dtstartSource)
-    dtstartWithTime.setHours(hours, minutes, 0, 0)
-
-    const calculationRule = new RRule({
-      ...rule.options,
-      dtstart: toZonedTime(dtstartWithTime, timeZone),
-      tzid: timeZone,
-    })
-    const nextOccurrence = calculationRule.after(toZonedTime(new Date(), timeZone), true)
-    if (!nextOccurrence) return null
-    const iso = DateTime.fromJSDate(nextOccurrence).setZone(timeZone).toUTC().toISO()
-    return iso ? new Date(iso) : null
-  } catch (error) {
-    logger.error('Error calculating the next reminder time', { rruleString: schedule.rruleString, error })
-    return null
+  const zone = zoneOf(timeZone)
+  const [hour, minute] = schedule.timeOfDay.split(':').map(Number)
+  if (!Number.isInteger(hour) || !Number.isInteger(minute)) return null
+  const today = DateTime.fromJSDate(now).setZone(zone).startOf('day')
+  for (let offset = 0; offset <= NEXT_TRIGGER_DAYS; offset++) {
+    const day = today.plus({ days: offset })
+    if (!firesOn({ rruleString: schedule.rruleString, startDate: schedule.startDate, endDate: null }, day.toISODate()!, zone)) continue
+    const at = day.set({ hour, minute, second: 0, millisecond: 0 }).toJSDate()
+    if (at > now && at >= schedule.startDate) return at
   }
+  return null
 }
 
 /**
