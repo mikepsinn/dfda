@@ -109,7 +109,14 @@ export type ReminderSettings = {
   defaultValue: number | null
   startDate: string | null
   endDate: string | null
+  /**
+   * Which of the above differ between the schedules (made elsewhere): the form then
+   * leaves each schedule's own value as it is unless the person changes it.
+   */
+  varies: { isActive: boolean; defaultValue: boolean; endDate: boolean }
 }
+
+const NO_VARIES = { isActive: false, defaultValue: false, endDate: false }
 
 /**
  * The settings that a variable's schedules (oldest first) were saved from:
@@ -121,7 +128,7 @@ export type ReminderSettings = {
 export function settingsOf(schedules: StoredSchedule[], isFavorite: boolean): ReminderSettings | null {
   if (schedules.length === 0) {
     return isFavorite
-      ? { frequency: 'as-needed', times: [], isActive: true, defaultValue: null, startDate: null, endDate: null }
+      ? { frequency: 'as-needed', times: [], isActive: true, defaultValue: null, startDate: null, endDate: null, varies: NO_VARIES }
       : null
   }
   const [first] = schedules
@@ -130,6 +137,11 @@ export function settingsOf(schedules: StoredSchedule[], isFavorite: boolean): Re
     defaultValue: first.defaultValue,
     startDate: first.startDate,
     endDate: first.endDate,
+    varies: {
+      isActive: schedules.some((schedule) => schedule.isActive !== first.isActive),
+      defaultValue: schedules.some((schedule) => schedule.defaultValue !== first.defaultValue),
+      endDate: schedules.some((schedule) => schedule.endDate !== first.endDate),
+    },
   }
   const times = schedules.map((schedule) => schedule.timeOfDay)
   const rules = new Set(schedules.map((schedule) => normalRule(schedule.rule)))
@@ -177,4 +189,33 @@ export function describeSettings(settings: ReminderSettings, zone: string, now: 
   const weekly = 'rule' in frequency && frequency.rule.startsWith('FREQ=WEEKLY') && settings.startDate
   const day = weekly ? ` on ${DateTime.fromISO(settings.startDate!).setZone(zone).toFormat('cccc')}` : ''
   return `${frequency.label}${day} at ${times}`
+}
+
+/** Days between the repeats of a rule's start: a daily rule's interval, seven times a weekly one's, else null. */
+function cycleDays(rule: string): number | null {
+  const parts = new Map(normalRule(rule).split(';').map((part) => part.split('=') as [string, string]))
+  const interval = Number(parts.get('INTERVAL') ?? 1)
+  if (!Number.isInteger(interval) || interval < 1) return null
+  if (parts.get('FREQ') === 'DAILY') return interval
+  if (parts.get('FREQ') === 'WEEKLY') return 7 * interval
+  return null
+}
+
+/**
+ * The start of a schedule whose recurrence is anchored on `day` (YYYY-MM-DD in
+ * `zone`). A weekly reminder fires on the weekday of its start, and one every
+ * other day on the days counted from it (firesOn in lib/reminders/schedule.ts),
+ * so a past day moves forward by whole cycles of the rule to the first day that
+ * is not past, and that day starts no earlier than now: the rule keeps its days,
+ * and no reminder is due at once for a time already past. A rule of another
+ * frequency keeps the day itself.
+ */
+export function anchoredStart(day: string, rule: string, zone: string, now: Date = new Date()): Date {
+  const anchor = DateTime.fromISO(day, { zone }).startOf('day')
+  const today = DateTime.fromJSDate(now).setZone(zone).startOf('day')
+  if (anchor >= today) return DateTime.max(anchor, DateTime.fromJSDate(now)).toJSDate()
+  const cycle = cycleDays(rule)
+  if (cycle === null) return anchor.toJSDate()
+  const cycles = Math.ceil(Math.round(today.diff(anchor, 'days').days) / cycle)
+  return DateTime.max(anchor.plus({ days: cycles * cycle }), DateTime.fromJSDate(now)).toJSDate()
 }

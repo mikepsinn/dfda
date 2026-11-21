@@ -1,3 +1,4 @@
+import { DateTime } from 'luxon'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { ensurePasswordUser } from '@/lib/auth-users'
 import { adminDb, withUserTransaction } from '@/lib/db'
@@ -61,8 +62,9 @@ describe('saveReminderSettings', () => {
     expect(loaded?.settings).toMatchObject({ frequency: 'daily', times: ['09:00', '21:00'], isActive: true })
   })
 
-  it('keeps the start of a weekly reminder when it is saved again, and starts a new time with it', async () => {
+  it('keeps the weekday of a weekly reminder when it is saved again or given a past start, and starts a new time on it', async () => {
     const userId = await person('weekly')
+    const weekday = (at: Date) => DateTime.fromJSDate(at).setZone('America/Chicago').weekday
     await as(userId, (tx) =>
       upsertReminder(tx, userId, { globalVariableId: 'aspirin', timeOfDay: '09:00', rrule: 'FREQ=WEEKLY', startDate: '2026-11-02T15:00:00.000Z' }),
     )
@@ -71,8 +73,49 @@ describe('saveReminderSettings', () => {
     await as(userId, (tx) =>
       saveReminderSettings(tx, userId, { ...base, globalVariableId: 'aspirin', frequency: 'weekly', times: ['09:00', '18:00'], startDate: '2026-11-02' }),
     )
-    const weekly = await schedules(userId, 'aspirin')
-    expect(weekly.map((s) => s.start_date.toISOString())).toEqual(['2026-11-02T15:00:00.000Z', '2026-11-02T15:00:00.000Z'])
+    const [kept, added] = await schedules(userId, 'aspirin')
+    expect(kept.start_date.toISOString()).toBe('2026-11-02T15:00:00.000Z')
+    // 2026-11-02 is a Monday; the new time starts on a coming Monday, not in the past.
+    expect(weekday(added.start_date)).toBe(1)
+    expect(added.start_date.getTime()).toBeGreaterThan(Date.now() - 60_000)
+
+    // A new weekly reminder with a past Monday as its start fires on Mondays.
+    await as(userId, (tx) =>
+      saveReminderSettings(tx, userId, { ...base, globalVariableId: 'headache', frequency: 'weekly', times: ['09:00'], startDate: '2026-10-05' }),
+    )
+    const [headache] = await schedules(userId, 'headache')
+    expect(weekday(headache.start_date)).toBe(1)
+    expect(headache.start_date.getTime()).toBeGreaterThan(Date.now() - 60_000)
+  })
+
+  it('keeps the values that differ between existing schedules unless the form changes them', async () => {
+    const userId = await person('differing')
+    await as(userId, async (tx) => {
+      await upsertReminder(tx, userId, { globalVariableId: 'aspirin', timeOfDay: '08:00', defaultValue: 10, isActive: true })
+      await upsertReminder(tx, userId, { globalVariableId: 'aspirin', timeOfDay: '20:00', defaultValue: 5, isActive: false })
+    })
+    const loaded = await as(userId, (tx) => loadReminderVariable(tx, userId, { globalVariableId: 'aspirin' }))
+    expect(loaded?.settings?.varies).toEqual({ defaultValue: true, isActive: true, endDate: false })
+
+    const unchanged = { defaultValue: true, isActive: true, endDate: true }
+    await as(userId, (tx) =>
+      saveReminderSettings(tx, userId, {
+        ...base, globalVariableId: 'aspirin', frequency: 'daily', times: ['07:00', '21:00', '13:00'], defaultValue: null, unchanged,
+      }),
+    )
+    expect((await schedules(userId, 'aspirin')).map((s) => [s.time, s.default_value, s.is_active])).toEqual([
+      ['07:00', 10, true],
+      ['21:00', 5, false],
+      // A new schedule gets the form's values.
+      ['13:00', null, true],
+    ])
+
+    await as(userId, (tx) =>
+      saveReminderSettings(tx, userId, {
+        ...base, globalVariableId: 'aspirin', frequency: 'daily', times: ['07:00', '21:00'], defaultValue: 2, unchanged: { ...unchanged, defaultValue: false },
+      }),
+    )
+    expect((await schedules(userId, 'aspirin')).map((s) => s.default_value)).toEqual([2, 2])
   })
 
   it('makes an as-needed variable a favorite without schedules, and deletes the reminders on request', async () => {

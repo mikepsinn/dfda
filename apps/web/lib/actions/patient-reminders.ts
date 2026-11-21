@@ -45,6 +45,7 @@ const settingsInput = z.object({
   isActive: z.boolean(),
   startDate: day,
   endDate: day,
+  unchanged: z.object({ defaultValue: z.boolean(), isActive: z.boolean(), endDate: z.boolean() }).partial().optional(),
 })
 
 export async function saveReminderSettingsAction(input: z.input<typeof settingsInput>): Promise<ActionResult<{ userVariableId: string }>> {

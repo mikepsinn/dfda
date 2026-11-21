@@ -50,7 +50,12 @@ export function ReminderForm({ variable, returnTo }: { variable: ReminderVariabl
   const saved = variable.settings
   const [frequency, setFrequency] = useState<FrequencyId | 'custom'>(saved?.frequency ?? 'daily')
   const [times, setTimes] = useState<string[]>(saved?.times.length ? saved.times : [DEFAULT_TIME])
-  const [defaultValue, setDefaultValue] = useState(saved?.defaultValue === null || saved?.defaultValue === undefined ? '' : String(saved.defaultValue))
+  // Reminders made elsewhere can differ in these; each keeps its own unless the person changes the field.
+  const varies = saved?.varies ?? { defaultValue: false, isActive: false, endDate: false }
+  const [changed, setChanged] = useState({ defaultValue: false, isActive: false, endDate: false })
+  const [defaultValue, setDefaultValue] = useState(
+    saved?.defaultValue === null || saved?.defaultValue === undefined || varies.defaultValue ? '' : String(saved.defaultValue),
+  )
   const [isActive, setIsActive] = useState(saved?.isActive ?? true)
   const [startDate, setStartDate] = useState(localDate(saved?.startDate ?? null, variable.timezone))
   const [endDate, setEndDate] = useState(localDate(saved?.endDate ?? null, variable.timezone))
@@ -82,6 +87,7 @@ export function ReminderForm({ variable, returnTo }: { variable: ReminderVariabl
         isActive,
         startDate: startDate || null,
         endDate: endDate || null,
+        unchanged: { defaultValue: !changed.defaultValue, isActive: !changed.isActive, endDate: !changed.endDate },
       })
       if (!result.ok) {
         setError(result.error)
@@ -176,18 +182,27 @@ export function ReminderForm({ variable, returnTo }: { variable: ReminderVariabl
             <Label htmlFor="reminder-default">Default value</Label>
             <div className="flex items-center gap-2">
               <Input id="reminder-default" type="number" inputMode="decimal" step="any" value={defaultValue} className="h-11 max-w-40"
-                onChange={(event) => setDefaultValue(event.target.value)} placeholder="Typical value" aria-describedby="reminder-default-help" />
+                onChange={(event) => { setDefaultValue(event.target.value); setChanged((c) => ({ ...c, defaultValue: true })) }}
+                placeholder={varies.defaultValue && !changed.defaultValue ? 'Differs' : 'Typical value'} aria-describedby="reminder-default-help" />
               <span className="text-sm text-muted-foreground">{variable.unit}</span>
             </div>
-            <p id="reminder-default-help" className="text-sm text-muted-foreground">The inbox offers it first. Leave it empty to choose each time.</p>
+            <p id="reminder-default-help" className="text-sm text-muted-foreground">
+              {varies.defaultValue && !changed.defaultValue
+                ? 'Your reminders have different default values, which stay as they are unless you enter one here.'
+                : 'The inbox offers it first. Leave it empty to choose each time.'}
+            </p>
             {!defaultValid && <p className="text-sm text-destructive">Enter a number, or leave it empty.</p>}
           </div>
         )}
 
         {!asNeeded && hasSchedule && (
-          <div className="flex items-center gap-3">
-            <Switch id="reminder-active" checked={isActive} onCheckedChange={setIsActive} />
+          <div className="flex flex-wrap items-center gap-3">
+            <Switch id="reminder-active" checked={isActive} aria-describedby={varies.isActive ? 'reminder-active-help' : undefined}
+              onCheckedChange={(checked) => { setIsActive(checked); setChanged((c) => ({ ...c, isActive: true })) }} />
             <Label htmlFor="reminder-active">{isActive ? 'Inbox notifications on' : 'Inbox notifications paused'}</Label>
+            {varies.isActive && !changed.isActive && (
+              <p id="reminder-active-help" className="basis-full text-sm text-muted-foreground">Some of these reminders are paused, and stay so unless you switch this.</p>
+            )}
           </div>
         )}
 
@@ -206,8 +221,11 @@ export function ReminderForm({ variable, returnTo }: { variable: ReminderVariabl
               <div className="space-y-2">
                 <Label htmlFor="reminder-end">End date</Label>
                 <Input id="reminder-end" type="date" value={endDate} min={startDate || undefined}
-                  onChange={(event) => setEndDate(event.target.value)} className="h-11" />
+                  onChange={(event) => { setEndDate(event.target.value); setChanged((c) => ({ ...c, endDate: true })) }} className="h-11" />
               </div>
+              {varies.endDate && !changed.endDate && (
+                <p className="col-span-2 text-sm text-muted-foreground">Your reminders have different end dates, which stay as they are unless you change this.</p>
+              )}
             </CollapsibleContent>
           </Collapsible>
         )}

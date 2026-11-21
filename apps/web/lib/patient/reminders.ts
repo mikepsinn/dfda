@@ -5,7 +5,7 @@ import { invalidArgument } from '@/lib/tracking/errors'
 import { deleteReminder, ruleParts, upsertReminder } from '@/lib/tracking/reminders'
 import { ensureUserVariable, type TrackingDb } from '@/lib/tracking/variables'
 import {
-  describeSettings, ruleOf, scheduleTimes, settingsOf, type FrequencyId, type ReminderSettings, type StoredSchedule,
+  anchoredStart, describeSettings, ruleOf, scheduleTimes, settingsOf, type FrequencyId, type ReminderSettings, type StoredSchedule,
 } from './reminder-settings'
 
 /**
@@ -101,6 +101,12 @@ export type SaveReminderInput = {
   /** Local dates (YYYY-MM-DD) in the person's time zone, or null. */
   startDate: string | null
   endDate: string | null
+  /**
+   * The fields the person left as the form showed them. Existing schedules then keep
+   * their own value of each, which may differ between them; new schedules get the
+   * form's value.
+   */
+  unchanged?: { defaultValue?: boolean; isActive?: boolean; endDate?: boolean }
 }
 
 /** A saved schedule, for afterReminderSaved once the transaction has committed. */
@@ -123,7 +129,7 @@ export async function saveReminderSettings(tx: TrackingDb, userId: string, input
   const userVariable = await ensureUserVariable(tx, userId, input.globalVariableId)
   const existing = await tx.reminder_schedules.findMany({
     where: { user_variable_id: userVariable.id, user_id: userId },
-    select: { id: true, start_date: true },
+    select: { id: true, start_date: true, rrule: true },
     orderBy: { created_at: 'asc' },
   })
   const saved: SavedSchedule[] = []
@@ -134,35 +140,43 @@ export async function saveReminderSettings(tx: TrackingDb, userId: string, input
   }
 
   const zone = await zoneFor(tx, userId)
-  // The start date stays as it is unless the form changed its day: a weekly reminder fires on the
-  // weekday of its start, and one every other day on the days counted from it. So a new schedule
-  // beside existing ones starts with them, except a daily one, which starts now. A start date of
-  // today also starts now, so that a new reminder is not due at once for a time already past.
+  // The start date stays as it is unless the form changed its day. A new schedule beside existing
+  // ones is anchored on their start. anchoredStart keeps the weekday of a weekly rule and the days
+  // of one every other day, and does not start in the past.
   const savedStart = existing[0]?.start_date
-  const changedStart =
-    input.startDate && (!savedStart || DateTime.fromJSDate(savedStart).setZone(zone).toISODate() !== input.startDate)
-      ? DateTime.max(localDay(input.startDate, zone).startOf('day'), DateTime.now()).toUTC().toISO()!
-      : undefined
+  const savedDay = savedStart ? DateTime.fromJSDate(savedStart).setZone(zone).toISODate()! : null
+  const startDay = input.startDate && input.startDate !== savedDay ? localDay(input.startDate, zone).toISODate()! : null
+  const startFor = (rule: string, isNew: boolean) => {
+    const day = startDay ?? (isNew ? savedDay : null)
+    return day ? anchoredStart(day, rule, zone).toISOString() : undefined
+  }
   const endDate = input.endDate ? localDay(input.endDate, zone).endOf('day').toUTC().toISO()! : null
-  const common = { isActive: input.isActive, defaultValue: input.defaultValue, endDate }
-  const save = async (fields: { trackingReminderId?: string; timeOfDay: string; rrule?: string }) => {
+  const keep = input.unchanged ?? {}
+  const save = async (fields: { trackingReminderId?: string; timeOfDay: string; rrule: string; rruleChanged: boolean }) => {
+    const isNew = !fields.trackingReminderId
     const { reminder, created } = await upsertReminder(tx, userId, {
-      ...common,
-      ...fields,
-      startDate: changedStart ?? (fields.trackingReminderId || fields.rrule === 'FREQ=DAILY' ? undefined : savedStart?.toISOString()),
-      ...(fields.trackingReminderId ? {} : { globalVariableId: input.globalVariableId }),
+      trackingReminderId: fields.trackingReminderId,
+      timeOfDay: fields.timeOfDay,
+      ...(fields.rruleChanged ? { rrule: fields.rrule } : {}),
+      startDate: startFor(fields.rrule, isNew),
+      defaultValue: keep.defaultValue && !isNew ? undefined : input.defaultValue,
+      isActive: keep.isActive && !isNew ? undefined : input.isActive,
+      endDate: keep.endDate && !isNew ? undefined : endDate,
+      ...(isNew ? { globalVariableId: input.globalVariableId } : {}),
     })
     saved.push({ id: reminder.id, isActive: reminder.isActive, created })
   }
 
   if (input.frequency === 'custom') {
     if (input.times.length !== existing.length) throw invalidArgument('Give one time for each reminder.')
-    for (const [i, schedule] of existing.entries()) await save({ trackingReminderId: schedule.id, timeOfDay: input.times[i] })
+    for (const [i, schedule] of existing.entries()) {
+      await save({ trackingReminderId: schedule.id, timeOfDay: input.times[i], rrule: ruleParts(schedule.rrule), rruleChanged: false })
+    }
   } else {
     const times = scheduleTimes(input.frequency, input.times)
     if (times.length === 0) throw invalidArgument('Choose a time for the reminder.')
     const rrule = ruleOf(input.frequency)!
-    for (const [i, timeOfDay] of times.entries()) await save({ trackingReminderId: existing[i]?.id, timeOfDay, rrule })
+    for (const [i, timeOfDay] of times.entries()) await save({ trackingReminderId: existing[i]?.id, timeOfDay, rrule, rruleChanged: true })
     for (const schedule of existing.slice(times.length)) await deleteReminder(tx, userId, schedule.id)
   }
   return { userVariableId: userVariable.id, saved }

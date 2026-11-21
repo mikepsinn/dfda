@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
-  describeSettings, normalRule, ruleOf, scheduleTimes, settingsOf, type StoredSchedule,
+  anchoredStart, describeSettings, normalRule, ruleOf, scheduleTimes, settingsOf, type StoredSchedule,
 } from '@/lib/patient/reminder-settings'
 
 const schedule = (timeOfDay: string, rule = 'FREQ=DAILY', extra: Partial<StoredSchedule> = {}): StoredSchedule => ({
@@ -86,3 +86,37 @@ describe('normalRule', () => {
     expect(normalRule('INTERVAL=2;FREQ=WEEKLY')).toBe('FREQ=WEEKLY;INTERVAL=2')
   })
 })
+
+describe('settingsOf varies', () => {
+  it('notes the values that differ between schedules', () => {
+    const settings = settingsOf([schedule('08:00', 'FREQ=DAILY', { defaultValue: 10 }), schedule('20:00', 'FREQ=DAILY', { defaultValue: 5 })], false)
+    expect(settings?.varies).toEqual({ defaultValue: true, isActive: false, endDate: false })
+  })
+})
+
+describe('anchoredStart', () => {
+  // Saturday 2026-11-21, 10:27 AM in Chicago.
+  const now = new Date('2026-11-21T16:27:04.000Z')
+  const start = (day: string, rule: string) => anchoredStart(day, rule, 'America/Chicago', now).toISOString()
+
+  it('moves a past day forward by whole cycles, keeping the weekday or the days of the rule', () => {
+    // Monday 2026-11-16 → the coming Monday, at midnight in Chicago.
+    expect(start('2026-11-16', 'FREQ=WEEKLY')).toBe('2026-11-23T06:00:00.000Z')
+    // Every 2 weeks from Monday 2026-11-02 → Monday 2026-11-30.
+    expect(start('2026-11-02', 'FREQ=WEEKLY;INTERVAL=2')).toBe('2026-11-30T06:00:00.000Z')
+    // Every other day from Wednesday 2026-11-18 → 20th was past, so Sunday the 22nd.
+    expect(start('2026-11-18', 'FREQ=DAILY;INTERVAL=2')).toBe('2026-11-22T06:00:00.000Z')
+  })
+
+  it('starts now on a day that the rule fires today, or that is today, and keeps a future day', () => {
+    expect(start('2026-11-14', 'FREQ=WEEKLY')).toBe(now.toISOString())
+    expect(start('2026-11-01', 'FREQ=DAILY')).toBe(now.toISOString())
+    expect(start('2026-11-21', 'FREQ=WEEKLY')).toBe(now.toISOString())
+    expect(start('2026-12-01', 'FREQ=WEEKLY')).toBe('2026-12-01T06:00:00.000Z')
+  })
+
+  it('keeps a past day for a rule of another frequency', () => {
+    expect(start('2026-10-15', 'FREQ=MONTHLY')).toBe('2026-10-15T05:00:00.000Z')
+  })
+})
+
