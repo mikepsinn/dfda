@@ -183,7 +183,7 @@ export async function getPendingReminderNotificationsAction(
   try {
     const db = await getUserDb();
     notifications = await db.reminder_notifications.findMany({
-      where: { user_id: userId, status: 'pending' },
+      where: { user_id: userId, status: 'pending', OR: [{ snoozed_until: null }, { snoozed_until: { lte: new Date() } }] },
       orderBy: { notification_trigger_at: 'asc' },
       select: {
         id: true,

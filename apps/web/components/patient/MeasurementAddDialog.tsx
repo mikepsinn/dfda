@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
@@ -27,18 +27,23 @@ export function MeasurementAddDialog({ isOpen, onClose, userVariables, onSubmit 
   // Find the selected variable object
   const selectedVariable = useMemo(() => userVariables.find(v => v.id === selectedVariableId), [userVariables, selectedVariableId]);
 
-  // Get unit options for the selected variable
+  // The selected variable's units: its preferred unit, then its default. The
+  // value is the unit's id, which onSubmit passes on; the label is its abbreviation.
   const unitOptions = useMemo(() => {
     if (!selectedVariable) return [];
-    const preferred = selectedVariable.units?.abbreviated_name;
-    const defaultUnit = selectedVariable.global_variables?.units?.abbreviated_name;
-    // Only show unique, non-empty units
-    return [preferred, defaultUnit].filter((u, i, arr) => u && arr.indexOf(u) === i) as string[];
+    const options = [
+      { id: selectedVariable.preferred_unit_id, label: selectedVariable.units?.abbreviated_name },
+      { id: selectedVariable.global_variables?.default_unit_id, label: selectedVariable.global_variables?.units?.abbreviated_name },
+    ];
+    return options
+      .filter((option, i): option is { id: string; label: string | null | undefined } =>
+        !!option.id && options.findIndex((o) => o.id === option.id) === i)
+      .map((option) => ({ id: option.id, label: option.label || option.id }));
   }, [selectedVariable]);
 
-  // Set default unit when variable changes
-  useMemo(() => {
-    if (unitOptions.length > 0) setUnit(unitOptions[0]!);
+  // Select the first unit when the variable changes.
+  useEffect(() => {
+    setUnit(unitOptions[0]?.id ?? "");
   }, [unitOptions]);
 
   const handleSubmit = async () => {
@@ -114,13 +119,9 @@ export function MeasurementAddDialog({ isOpen, onClose, userVariables, onSubmit 
                 <SelectValue placeholder="Select unit" />
               </SelectTrigger>
               <SelectContent>
-                {unitOptions.length === 0 ? (
-                  <SelectItem value="" disabled>No units</SelectItem>
-                ) : (
-                  unitOptions.map(u => (
-                    <SelectItem key={u} value={u}>{u}</SelectItem>
-                  ))
-                )}
+                {unitOptions.map(u => (
+                  <SelectItem key={u.id} value={u.id}>{u.label}</SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>

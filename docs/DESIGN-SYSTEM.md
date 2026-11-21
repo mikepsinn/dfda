@@ -163,6 +163,32 @@ These render local files without model calls. No dependency or theme reset is ne
   layout of the page on screen. A sheet whose content is taller than A4 adds a page; the browser test
   `tests/e2e/biomarker-report.test.ts` checks the page count of the example report.
 
+## Patient app
+
+The patient app follows QuantiModo's app: its menu, its inbox and its interactions,
+in this app's theme.
+
+- `components/patient/patient-nav.tsx`: the patient menu, beside the content on large
+  screens and a scrolling row under the header on small ones. The inbox comes first,
+  then the person's variables and reminders, then conditions, treatments, trials and
+  settings. It is hidden during onboarding. The site header links only to the inbox.
+- `components/inbox/inbox.tsx`: the patient home page. Due reminders sit under day
+  dividers (Today, Yesterday, Last 7 days, Last 30 days, Older; `lib/inbox/view.ts`),
+  newest first. An answer removes its card at once and shows a toast with Undo for
+  ten seconds; Undo puts the card back at once and works after the answer is saved.
+  When nothing is due, "All caught up!" offers the reminders and variables pages.
+  Favorites follow, recorded in one tap.
+- `components/inbox/inbox-card.tsx`: one due reminder, with Skip, Snooze (one hour),
+  Edit reminder and a menu that records a value for, or skips, all of the variable's
+  due reminders.
+- `components/inbox/value-input.tsx`: the value controls by kind of variable. A 1–5
+  rating shows five faces, which run from happy to sad for a symptom, where 5 is
+  worst; other ratings show number buttons; yes/no shows two buttons; a number shows
+  the reminder's default and recent values as one-tap buttons, then a field with the
+  unit. Toasts say values in words ("4 of 5", "Yes", "500 mg").
+- `components/patient/quick-add-button.tsx`: the "+" button. It sits above the toasts
+  on wider screens, and opens its dialog only after its menu has closed.
+
 ## Presentations
 
 Slide decks are web app pages under `/present/<deck>`, such as

@@ -5,6 +5,8 @@ import { getPendingReminderNotificationsAction } from "@/lib/actions/reminder-no
 import { logger } from "@/lib/logger";
 // Import the new display component
 import PatientDashboardDisplay from "@/components/patient/PatientDashboardDisplay";
+import { Inbox } from "@/components/inbox/inbox";
+import { loadInbox } from "@/lib/inbox/load";
 // Import the timeline/variable fetch functions
 import { getAllUserVariablesAction } from "@/lib/actions/user-variables";
 import { getMeasurementsForDateAction } from '@/lib/actions/measurements';
@@ -37,8 +39,10 @@ export default async function PatientDashboardPage() {
     getAllUserVariablesAction(user.id),         // results[0]
     getConditionsByUserAction(user.id),                 // results[1]
     getPendingReminderNotificationsAction(user.id),     // results[2]
-    getMeasurementsForDateAction(user.id, serverToday) // results[3] - Use serverToday
+    getMeasurementsForDateAction(user.id, serverToday), // results[3] - Use serverToday
+    loadInbox(user.id),                                 // results[4]
   ]);
+  const inbox = results[4];
 
   // Helper function to process results from Promise.all
   // Handles results that are raw data arrays OR objects like { success: boolean, data: ... }
@@ -91,17 +95,19 @@ export default async function PatientDashboardPage() {
     redirect("/patient/onboarding");
   }
 
-  // Render the single Client Component with all resolved data
+  // The inbox is the patient home page, as in QuantiModo's app; the timeline follows it.
   return (
+    <div className="container max-w-4xl space-y-12 pb-28 pt-8">
+    <Inbox inbox={inbox} />
     <PatientDashboardDisplay
       initialUser={user} 
       initialConditions={initialConditionsResult} 
-      initialPendingNotifications={initialPendingNotificationsData} // This is for TrackingInbox (expects PendingNotificationTask[])
       // Pass distinct data for UniversalTimeline
       initialMeasurements={initialMeasurementsData} 
       initialTimelineNotifications={initialPendingNotificationsData} // UPDATED: Pass ReminderNotificationDetails[] directly
       initialUserVariables={initialUserVariables} 
       initialDateForTimeline={serverToday.toISOString()} // Pass serverToday as ISO string
     />
+    </div>
   )
 }

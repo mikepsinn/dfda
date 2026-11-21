@@ -3,12 +3,9 @@
 import React, { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { HeartPulse, Pill } from "lucide-react";
 import { logger } from "@/lib/logger";
 import { ImageAnalysisCapture } from '@/components/shared/ImageAnalysisCapture';
-import { TrackingInbox } from "@/components/patient/TrackingInbox";
+import { QuickAddButton } from './quick-add-button';
 import { UniversalTimeline, type FilterableVariableCategoryId } from '@/components/universal-timeline';
 import { MeasurementAddDialog } from './MeasurementAddDialog';
 import type { MeasurementCardData } from "@/components/measurement-card";
@@ -32,7 +29,6 @@ type PatientConditionRow = Tables<'patient_conditions_view'>;
 
 interface PatientDashboardDisplayProps {
   initialUser: User;
-  initialPendingNotifications: ReminderNotificationDetails[];
   initialMeasurements: MeasurementCardData[];
   initialTimelineNotifications: ReminderNotificationDetails[];
   initialUserVariables: UserVariableWithDetails[];
@@ -42,7 +38,6 @@ interface PatientDashboardDisplayProps {
 
 export default function PatientDashboardDisplay({
   initialUser,
-  initialPendingNotifications,
   initialMeasurements,
   initialTimelineNotifications,
   initialUserVariables,
@@ -55,7 +50,6 @@ export default function PatientDashboardDisplay({
 
   // State for components originally in PatientDashboardClient
   const user = initialUser; // Use prop directly
-  const notifications = initialPendingNotifications; // Use prop directly
   // TODO: Use initialConditions to display patient conditions information
   if (process.env.NODE_ENV === 'development') {
     logger.info('PatientDashboardDisplay: initialConditions received', { count: initialConditions?.length });
@@ -211,16 +205,13 @@ export default function PatientDashboardDisplay({
   };
 
   return (
-    <div className="container space-y-8 py-8">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-semibold">Patient Dashboard</h1>
-        <ImageAnalysisCapture userId={user.id} onSaveSuccess={handleSaveSuccess} />
-      </div>
-
-      {/* Timeline Section */}
-      <section>
-          <h2 className="text-xl font-semibold mb-4 border-b pb-2">Daily Timeline</h2>
+    <>
+      {/* Timeline Section, below the inbox on the patient home page */}
+      <section aria-labelledby="timeline-heading">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b pb-2">
+            <h2 id="timeline-heading" className="text-xl font-semibold">Timeline</h2>
+            <ImageAnalysisCapture userId={user.id} onSaveSuccess={handleSaveSuccess} />
+          </div>
           <UniversalTimeline
               rawMeasurements={measurementsForTimeline}
               rawNotifications={initialTimelineNotifications}
@@ -246,30 +237,7 @@ export default function PatientDashboardDisplay({
           />
       </section>
 
-      {/* Tracking Inbox */}
-      {notifications && notifications.length > 0 && (
-        <section>
-          <h2 className="text-xl font-semibold mb-4 border-b pb-2">Tracking Inbox</h2>
-          <TrackingInbox userId={user.id} initialNotifications={notifications} />
-        </section>
-      )}
-
-      {/* Conditions/Treatments Links */}
-       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <Link href="/patient/conditions">
-              <Button variant="outline" size="lg" className="w-full h-24 flex flex-col justify-center items-center gap-2">
-                <HeartPulse className="h-6 w-6" />
-                <span>Conditions</span>
-              </Button>
-            </Link>
-            <Link href="/patient/treatments">
-              <Button variant="outline" size="lg" className="w-full h-24 flex flex-col justify-center items-center gap-2">
-                <Pill className="h-6 w-6" />
-                <span>Treatments</span>
-              </Button>
-            </Link>
-        </div>
-
-    </div>
+      <QuickAddButton onRecord={() => { setDialogCategory(null); setDialogOpen(true); }} />
+    </>
   );
 } 

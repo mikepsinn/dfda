@@ -1,4 +1,4 @@
-import type { Prisma } from '@/lib/db'
+import { Prisma } from '@/lib/db'
 import { invalidArgument, notFound } from './errors'
 import { recordMeasurement } from './measurements'
 import type { ListNotificationsInput, RespondToNotificationInput, RespondToNotificationsInput } from './schemas'
@@ -60,10 +60,20 @@ export async function listNotifications(db: TrackingDb, userId: string, input: L
   return { notifications: rows.map(toNotification) }
 }
 
-/** Pending notifications whose time has come, oldest first. */
+/** Pending notifications whose time has come and that are not snoozed (snoozeNotifications). */
+export function dueNotificationsWhere(userId: string, now = new Date()) {
+  return {
+    user_id: userId,
+    status: 'pending' as const,
+    notification_trigger_at: { lte: now },
+    OR: [{ snoozed_until: null }, { snoozed_until: { lte: now } }],
+  }
+}
+
+/** Due notifications, oldest first. */
 export async function listDueNotifications(db: TrackingDb, userId: string, input: { limit?: number }) {
   const rows = await db.reminder_notifications.findMany({
-    where: { user_id: userId, status: 'pending', notification_trigger_at: { lte: new Date() } },
+    where: dueNotificationsWhere(userId),
     select: notificationSelect,
     orderBy: { notification_trigger_at: 'asc' },
     take: input.limit ?? 50,
@@ -125,7 +135,7 @@ export async function respondToNotifications(tx: TrackingDb, userId: string, inp
     input.notificationIds ??
     (
       await tx.reminder_notifications.findMany({
-        where: { user_id: userId, status: 'pending', notification_trigger_at: { lte: new Date() } },
+        where: dueNotificationsWhere(userId),
         select: { id: true },
         orderBy: { notification_trigger_at: 'asc' },
         take: 200,
@@ -135,4 +145,48 @@ export async function respondToNotifications(tx: TrackingDb, userId: string, inp
   const notifications = []
   for (const row of rows) notifications.push(await answer(tx, userId, row, input))
   return { notifications }
+}
+
+/** Hides pending notifications from the inbox and the due lists until `until`, as QuantiModo's snooze did. */
+export async function snoozeNotifications(tx: TrackingDb, userId: string, input: { notificationIds: string[]; until: Date }) {
+  const rows = await findPending(tx, userId, [...new Set(input.notificationIds)])
+  await tx.reminder_notifications.updateMany({
+    where: { id: { in: rows.map((row) => row.id) }, user_id: userId },
+    data: { snoozed_until: input.until, updated_at: new Date() },
+  })
+  return { notificationIds: rows.map((row) => row.id), snoozedUntil: input.until.toISOString() }
+}
+
+/**
+ * Puts answered or snoozed notifications back to pending, as they were before
+ * the answer: a tracked notification's measurement is deleted. All or none.
+ */
+export async function undoNotifications(tx: TrackingDb, userId: string, input: { notificationIds: string[] }) {
+  const ids = [...new Set(input.notificationIds)]
+  const rows = await tx.reminder_notifications.findMany({
+    where: { id: { in: ids }, user_id: userId },
+    select: { id: true, status: true, log_details: true },
+  })
+  const missing = ids.filter((id) => !rows.some((row) => row.id === id))
+  if (missing.length > 0) throw notFound(`No notification with id ${missing.map((id) => `"${id}"`).join(', ')}.`)
+  for (const row of rows) {
+    const { measurementId } = answerDetails(row.log_details)
+    if (row.status === 'completed' && measurementId) {
+      await tx.measurements.updateMany({
+        where: { id: measurementId, user_id: userId, deleted_at: null },
+        data: { deleted_at: new Date(), updated_at: new Date() },
+      })
+    }
+    await tx.reminder_notifications.update({
+      where: { id: row.id },
+      data: {
+        status: 'pending',
+        completed_or_skipped_at: null,
+        log_details: Prisma.DbNull,
+        snoozed_until: null,
+        updated_at: new Date(),
+      },
+    })
+  }
+  return { notificationIds: rows.map((row) => row.id) }
 }

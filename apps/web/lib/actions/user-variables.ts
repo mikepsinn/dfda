@@ -66,7 +66,12 @@ export async function getAllUserVariablesAction(userId: string): Promise<any[]> 
             select: {
                 id: true,
                 global_variable_id: true,
-                global_variables: { select: { id: true, name: true, variable_category_id: true } },
+                global_variables: {
+                    select: {
+                        id: true, name: true, emoji: true, variable_category_id: true, default_unit_id: true,
+                        units: { select: { id: true, abbreviated_name: true } }, // Default unit
+                    },
+                },
                 preferred_unit_id: true,
                 units: { select: { id: true, abbreviated_name: true } }, // Preferred unit
             },
