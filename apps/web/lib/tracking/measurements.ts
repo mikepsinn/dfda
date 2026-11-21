@@ -30,11 +30,11 @@ export function toMeasurement(row: MeasurementRow) {
 }
 
 // The page cursor: the start time and id of the last row, newest first.
-function encodeCursor(row: { start_at: Date; id: string }) {
+export function encodeCursor(row: { start_at: Date; id: string }) {
   return Buffer.from(`${row.start_at.toISOString()}|${row.id}`).toString('base64url')
 }
 
-function decodeCursor(cursor: string) {
+export function decodeCursor(cursor: string) {
   const [time, id] = Buffer.from(cursor, 'base64url').toString().split('|')
   const startAt = new Date(time)
   if (!id || Number.isNaN(startAt.getTime())) throw invalidArgument('The cursor is not valid. Start again without it.')

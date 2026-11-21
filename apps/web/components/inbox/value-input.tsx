@@ -9,7 +9,7 @@ import type { InboxVariable } from '@/lib/inbox/load'
 
 // Faces for a 1–5 rating where 5 is best, as on QuantiModo's cards. For a
 // symptom, where 5 is worst, they run the other way.
-const FACES = ['😞', '🙁', '😐', '🙂', '😀']
+export const FACES = ['😞', '🙁', '😐', '🙂', '😀']
 
 export function formatValue(value: number, unit: string) {
   return unit ? `${value} ${unit}` : String(value)
