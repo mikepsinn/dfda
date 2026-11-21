@@ -36,7 +36,7 @@ Columns that were empty in every row (`description`, `content`, `featuredImage`,
 ## Source and what isn't known
 
 Exported from the Crowdsourcing Cures Postgres database (Neon project `wishonia`,
-`Dfda*` tables). Those tables were filled on 2024-09-04 from curedao-api's `ct_*`
+`Dfda*` tables). Those tables were filled on 2024-09-04 from QuantiModo's `ct_*`
 MySQL tables ([migration plan](../../../../docs/MIGRATION.md#data)) and haven't
 changed since; the site's own tables for new reports are empty.
 

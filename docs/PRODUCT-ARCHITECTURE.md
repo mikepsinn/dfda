@@ -14,11 +14,11 @@ validation is not a prerequisite for showing the demo. The
 [estimate policy](EVIDENCE-AND-EXCHANGE.md#demo-estimates-and-progressive-improvement)
 separates provisional best estimates, example data and source-backed results.
 
-**Functional target:** reproduce the useful app powered by curedao-api, including
+**Functional target:** reproduce the useful app powered by QuantiModo, including
 tracking/imports, reminders, predictor search, personal/population time-series
 analyses, charts and generated study reports, then improve it. These data-derived
 studies belong in the product as observational findings, not just a separate
-archive. The [reference baseline](MIGRATION.md#what-comes-from-curedao-api) owns
+archive. The [reference baseline](MIGRATION.md#what-comes-from-quantimodo) owns
 parity requirements, numerical corrections and legacy continuity gates.
 
 ## Naming guide
@@ -522,7 +522,7 @@ create empty packages just to match this table.
 | `packages/health-vocabulary` | Versioned IDs, terminology mappings, units, outcome direction, and mapping review status |
 | `packages/evidence` | Source/report/time-series-analysis/effect/model-estimate/demo-example/published-analysis-version contracts, validators, provenance and deduplication primitives; no credentials or database access |
 | `packages/trials` | ClinicalTrials.gov/AACT adapters and parsing, trial discovery, public study-protocol contract |
-| `packages/analysis` | Deterministic personal/population time-series calculations, descriptive scores, study-effect estimation, compatible meta-analysis and uncertainty; curedao-api reference methods plus reviewed TypeScript ports/improvements, tested independently of source fetching |
+| `packages/analysis` | Deterministic personal/population time-series calculations, descriptive scores, study-effect estimation, compatible meta-analysis and uncertainty; QuantiModo reference methods plus reviewed TypeScript ports/improvements, tested independently of source fetching |
 | `packages/importers` | Wearable/app export parsing and personal-data export contract, not a central OAuth token store |
 | `packages/clinic-aggregates` | Clinic aggregate exchange contract and validators; never the format for public comments or personal record transfer |
 

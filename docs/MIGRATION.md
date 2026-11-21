@@ -7,9 +7,9 @@ below remain planned unless the inventory marks specific code present.
 dFDA code and data are spread across four repositories. The plan: [`apps/web`](../apps/web) in this repo (formerly `apps/dfda-node`) is the base. It takes over dfda.earth, and the dfda features in optimitron's `apps/dfda` move into it. This document lists where things are, what moves, what happens to each dataset, and the order of the work. Each step can ship on its own.
 
 **Product goal:** reproduce the useful workflows and analyses of the app powered
-by `curedao-api` in `apps/web`, then improve them. This includes the time-series
+by QuantiModo in `apps/web`, then improve them. This includes the time-series
 studies at studies.crowdsourcingcures.org, not just tracking screens or new evidence
-pages. The [legacy feature baseline](#what-comes-from-curedao-api) defines what must
+pages. The [legacy feature baseline](#what-comes-from-quantimodo) defines what must
 be accounted for before claiming the new app replaces the old one.
 
 Documentation ownership:
@@ -61,7 +61,7 @@ The general-purpose importer and MCP tools remain unimplemented.
 | `mikepsinn/dfda` (this repo) | [`apps/web`](../apps/web): Next.js app on PostgreSQL for patients, providers and research partners. [`packages/legacy-import`](../packages/legacy-import): tools for moving data out of the legacy MySQL database. | prototype.dfda.earth |
 | `mikepsinn/crowdsourcing-cures` (private) | Organization homepage, patient-rating Treatment Rankings, trial search, articles | crowdsourcingcures.org |
 | [`mikepsinn/optimitron`](https://github.com/mikepsinn/optimitron) | `apps/dfda`: condition and treatment pages (the numbers are AI estimates), trial search, and an MCP server and REST API for personal tracking. It shares optimitron.com's database and sign-in. `packages/optimizer`: N-of-1 analysis. `packages/tracking`: measurements and reminders. `packages/data`: wearable importers, a ClinicalTrials.gov client, a condition list. | dfda.earth |
-| `mikepsinn/curedao-api` (private) | Functional reference: PHP/AngularJS tracking app, accounts/OAuth, connectors, reminders, MySQL records, personal and population time-series analyses, charts and generated study reports | app.dfda.earth, studies.crowdsourcingcures.org |
+| QuantiModo, `mikepsinn/curedao-api` (private) | Functional reference: PHP/AngularJS tracking app, accounts/OAuth, connectors, reminders, MySQL records, personal and population time-series analyses, charts and generated study reports | app.dfda.earth, studies.crowdsourcingcures.org |
 
 ## The base: apps/web
 
@@ -178,7 +178,7 @@ migrations or a new audit of every dependency:
    still open.
 4. **Health imports and analysis:** reuse selected `packages/data/src/importers/`
    parsers, unit conversion/validation and their tests, followed by selected
-   `packages/optimizer` calculations under the curedao-api parity baseline below.
+   `packages/optimizer` calculations under the QuantiModo parity baseline below.
    Keep shared packages in Optimitron for its other apps; extract only the dependencies
    needed by each working dFDA flow.
 
@@ -200,16 +200,16 @@ datasets or the old trial-percentage aggregation algorithm wholesale.
 3. **Email.** Every optimitron site sends email from `no-reply@updates.dfda.earth`. optimitron needs its own sending address before dfda.earth leaves.
 4. **Cleanup in optimitron** after the move: `apps/dfda` itself, the dfda site variants in site-kit and `apps/optimitron`, dfda.earth in optimitron.com's list of MCP hosts, the CI build entry, the `pnpm copy` and visual-test scripts, the Vercel project scripts, and the docs that mention `apps/dfda`. optimitron.com's redirects of `/conditions`, `/treatments` and `/find-trials` to dfda.earth can stay.
 
-**Cutover.** Switch dfda.earth after the relevant [cutover gates](#order) pass, including working MCP/REST access or tested temporary forwarding. If the pages are ready first, the web app can forward `/api/mcp`, `/api/v1/*`, `/.well-known/oauth-protected-resource/mcp` and `/openapi.json` to the old optimitron deployment on a Vercel address until then. This domain change does not retire unreplaced curedao-api workflows or the studies site.
+**Cutover.** Switch dfda.earth after the relevant [cutover gates](#order) pass, including working MCP/REST access or tested temporary forwarding. If the pages are ready first, the web app can forward `/api/mcp`, `/api/v1/*`, `/.well-known/oauth-protected-resource/mcp` and `/openapi.json` to the old optimitron deployment on a Vercel address until then. This domain change does not retire unreplaced QuantiModo workflows or the studies site.
 
-## What comes from curedao-api
+## What comes from QuantiModo
 
 Reproduce capabilities, not the PHP/AngularJS architecture. Existing app screens,
 Optimitron's TypeScript analysis code, and legacy import tools are starting points;
 none establishes full behavioral or numerical parity. New Reddit/trial evidence
 and create/join workflows extend this foundation rather than displacing it.
 
-This initial baseline comes from targeted inspection of local `curedao-api` commit
+This initial baseline comes from targeted inspection of local QuantiModo repository (`curedao-api`) at commit
 `47ea2bcc91e71e49fb70eb3c2a88867487377399` on 2026-09-26. Reference paths below
 are relative to that private repository. This is not a complete route inventory,
 a live connector audit, or a run of the legacy tests. Before implementation, pin
@@ -227,6 +227,38 @@ retire with the product owner's agreement. Unlisted features are not silently re
 | Personal time-series studies | `app/Correlations/QMUserCorrelation.php`, `app/Studies/QMUserStudy.php`, correlation property calculators | `packages/analysis` plus app-owned jobs/private results: pairing, onset delay, duration of action, correlations and baseline/follow-up comparisons with explicit method settings. |
 | Population analyses | `app/Correlations/QMAggregateCorrelation.php`, `app/Studies/QMPopulationStudy.php`, aggregate property calculators | Reviewed aggregation of eligible personal analyses, with weights, cohort lineage and distinct-person/paired-observation counts kept separate. No automatic independence or causal claim. |
 | Generated study pages, search, sharing and exports | `app/Studies/StudyText.php`, `StudyHtml.php`, `app/Services/StaticExportService.php` | `apps/web` study reports and evidence views backed by versioned results. Reproduce useful statistics, scatter/time-series/lag charts, readable explanations and permitted sharing/export; preserve old study/variable links through verified mappings/redirects. |
+
+*Added 2026-11-20:* a code comparison with this app found four more workflows to
+reproduce or decide on: account deletion, reminder delivery by email or push with
+timing preferences, sharing tracking data with a clinician or caregiver, and
+per-variable analysis settings (onset delay, duration of action, missing-value
+filler). They are in the [extraction checklist](APPS-AND-FEATURES.md#extraction-checklist)
+with their QuantiModo paths. Features proposed for retirement are listed under
+[excluded or retired](APPS-AND-FEATURES.md#features-excluded-or-retired).
+
+### Patient app modeled on QuantiModo
+
+Decided 2026-11-20: the patient app follows QuantiModo's app, its screens,
+navigation and interactions, not only its capabilities. It keeps this app's theme
+and components ([UI conventions](DESIGN-SYSTEM.md)) unless the product owner
+chooses to bring over QuantiModo's look, and it keeps this app's own sections
+(conditions, treatments, trials). Screens build on the tracking layer
+(`apps/web/lib/tracking`) that the MCP server and `/api/v1` already use. Source
+paths are in `public/app/public` of the QuantiModo repository at the baseline
+commit above, except the snooze rule.
+
+| Phase | Screens and behavior | QuantiModo source |
+| --- | --- | --- |
+| 1. App shell and inbox | A side menu (Inbox, My Variables, History, Settings, plus Conditions, Treatments and Trials) and a "+" button to add a reminder or record a measurement. The inbox becomes the patient home page: cards grouped Today, Yesterday, Last 7 days and Older; ratings as five faces, yes/no buttons, numbers with recent-value buttons and the unit; Skip, Snooze (one hour) and Settings; a menu with Edit reminder, History, "*value* for all" and Skip all; undo after every action; and an "All caught up" state with shortcuts and one-tap favorites. Snooze needs a snoozed-until time on notifications, and favorites an as-needed flag. | `data/qmStates.js`, `data/appSettings.js` (menu), `templates/menu.html`, `templates/reminders-inbox.html`, `templates/items/notification-item.html`, `templates/items/notification-value-input-buttons.html`, `templates/fragments/all-caught-up-card.html`, `templates/items/favorite-item.html`, `js/controllers/remindersInboxCtrl.js`; snooze in `app/Slim/Model/Reminders/QMTrackingReminderNotification.php` |
+| 2. Recording and variables | Variable search with category filters; recording a measurement with value, time and note; My Variables by category (as-needed, scheduled, archived); adding and editing reminders with QuantiModo's frequencies; History by category with edit, delete and paging | `templates/variable-search.html`, `templates/measurement-add.html`, `templates/reminders-list.html`, `templates/reminder-add.html`, `js/controllers/reminderAddCtrl.js`, `templates/history-all.html` |
+| 3. Charts and variable settings | Charts for each variable (trend, distribution, weekday) and its analysis settings (onset delay, duration of action, missing-value fill, minimum and maximum, sum or mean) | `templates/charts-page.html`, `templates/variable-settings.html` |
+| 4. Discoveries | Predictor and outcome search, personal studies and creating a study, once the analysis engine exists | `templates/studies-list-page.html`, `templates/study-page.html`, `templates/study-creation-page.html` |
+| 5. Import, settings and onboarding | Connected apps, notification preferences with email reminders, sharing, export and account deletion; onboarding that asks which kinds of data to track | `templates/import-data.html`, `templates/settings.html`, `templates/data-sharing-page.html`, `templates/onboarding-page.html` |
+
+Not carried over: three QuantiModo bugs. Its skip-all on long-press calls an
+undefined function, its predictor and outcome links on inbox cards have no target,
+and its undo only works until the batch upload ten seconds later. Here undo works
+after an action is saved.
 
 ### Import results, then reproduce and improve them
 
@@ -282,18 +314,18 @@ or unavailable source data/methods remain explicit. See the
 
 ## What comes from crowdsourcing-cures
 
-crowdsourcingcures.org keeps the organization pages (home, initiatives, docs). Treatment rankings and text logging move into the base app; redundant health-data pages redirect only after equivalent workflows are accepted. Useful AI-written demonstration content can be adapted incrementally rather than excluded by origin.
+crowdsourcingcures.org keeps the organization pages (home, initiatives, docs). Treatment rankings and text logging move into the base app; redundant health-data pages redirect only after equivalent workflows are accepted. Useful AI-written demonstration content can be adapted incrementally rather than excluded by origin. Source paths below are in `mikepsinn/crowdsourcing-cures` at commit `94ab3911e1` (2026-10-07).
 
 | Feature in crowdsourcing-cures | In the base app | Notes |
 | --- | --- | --- |
-| Patient-rating Treatment Rankings: the treatments ranked for each condition, and each treatment's ratings across conditions | The existing condition and treatment pages, which have a ranking component but show demo data | The ratings data moves too (see Data). Rankings follow the rules for published numbers below. **Local progress:** the snapshot is in `apps/web/data/crowdsourcing-cures-ratings/`, and `/treatment-rankings` shows the ratings below the estimates for the 42 catalog conditions whose name or synonym matches one of the 162 rated conditions. The other rated conditions and each treatment's ratings across conditions still need pages. |
-| Logging measurements by typing: a person writes something like "took 200 mg magnesium, slept badly" and an AI turns it into measurements | Next to the existing photo-to-measurements action | The AI only reads the person's own words and produces no evidence numbers. It saves to the old app today, so it is rewired to the base app's own tables. |
-| Trial search | `/find-trials` | Its search behavior is ported: condition, treatment and status, name suggestions, and cursor paging. Its own ClinicalTrials.gov client is not moved; the web app uses optimitron's. |
-| AI-written condition analyses, cost-benefit explanations and research articles | Select useful content for the existing public/demo pages | Retain and improve as labeled AI-generated drafts or modeled estimates, check citations, and distinguish illustrative synthesis from a completed systematic review/meta-analysis. Not a requirement to port every article before cutover. |
+| Patient-rating Treatment Rankings: the treatments ranked for each condition, and each treatment's ratings across conditions | The existing condition and treatment pages, which have a ranking component but show demo data | The ratings data moves too (see Data). Rankings follow the rules for published numbers below. **Local progress:** the snapshot is in `apps/web/data/crowdsourcing-cures-ratings/`, and `/treatment-rankings` shows the ratings below the estimates for the 42 catalog conditions whose name or synonym matches one of the 162 rated conditions. The other rated conditions and each treatment's ratings across conditions still need pages. Source: `app/conditions/[conditionName]/treatments`, `app/treatments/[treatmentName]/ratings`, `lib/dfda/treatments.ts`. |
+| Logging measurements by typing: a person writes something like "took 200 mg magnesium, slept badly" and an AI turns it into measurements | Next to the existing photo-to-measurements action | The AI only reads the person's own words and produces no evidence numbers. It saves to the old app today, so it is rewired to the base app's own tables. Source: `lib/text2measurements.ts`, `app/measurements/text2measurements`; logging from a conversation: `app/api/conversation2measurements`. |
+| Trial search | `/find-trials` | Its search behavior is ported: condition, treatment and status, name suggestions, and cursor paging. Its own ClinicalTrials.gov client is not moved; the web app uses optimitron's. Source: `app/trials/search`. |
+| AI-written condition analyses, cost-benefit explanations and research articles | Select useful content for the existing public/demo pages | Retain and improve as labeled AI-generated drafts or modeled estimates, check citations, and distinguish illustrative synthesis from a completed systematic review/meta-analysis. Not a requirement to port every article before cutover. Source: `app/conditions/[conditionName]/meta-analysis`, `app/treatments/[treatmentName]/cba`, `app/articles`, `lib/meta-analysis`. |
 
 **Not moved**
 
-- Legacy-data proxy implementations are not copied wholesale. Their measurement history, variable charts, predictor search, population studies, reminder inbox, connector and personal-workspace behavior belongs to the curedao-api parity baseline above. Keep working links/routes until replacements are accepted; inventory ancillary tools such as the reaction-time test for an explicit reproduce/defer/retire decision.
+- Legacy-data proxy implementations are not copied wholesale. Their measurement history, variable charts, predictor search, population studies, reminder inbox, connector and personal-workspace behavior belongs to the QuantiModo parity baseline above. Keep working links/routes until replacements are accepted; inventory ancillary tools such as the reaction-time test for an explicit reproduce/defer/retire decision. These are now listed under [proposed retirements](APPS-AND-FEATURES.md#features-excluded-or-retired).
 - The drug-registration form and the muscle-mass cost-benefit page.
 
 ## ClinicalTrials.gov results
@@ -363,11 +395,11 @@ path; dFDA cannot enroll someone merely by recording their interest.
 | Package | Contents | Built from |
 | --- | --- | --- |
 | `trials` | ClinicalTrials.gov/AACT search and results adapters; study-protocol contract | Search: optimitron's `packages/data` fetcher, which is documented and tested. The results parser and protocol contract are new. |
-| `analysis` | Personal/population time-series calculations, descriptive report scores, study-effect estimation and compatible meta-analysis | curedao-api reference behavior/calculators/tests plus selected Optimitron `packages/optimizer` TypeScript code. Verify feature/numerical parity, document corrections, and recheck reported small-sample p-value and outcome-direction bugs before adoption; known-answer tests cover new and ported methods. |
-| `health-vocabulary` | Shared names and IDs for conditions, treatments, outcomes and units | The curedao-api variables table, the `apps/web` seeds, and optimitron's condition list with ICD-10 codes |
+| `analysis` | Personal/population time-series calculations, descriptive report scores, study-effect estimation and compatible meta-analysis | QuantiModo reference behavior/calculators/tests plus selected Optimitron `packages/optimizer` TypeScript code. Verify feature/numerical parity, document corrections, and recheck reported small-sample p-value and outcome-direction bugs before adoption; known-answer tests cover new and ported methods. |
+| `health-vocabulary` | Shared names and IDs for conditions, treatments, outcomes and units | The QuantiModo variables table, the `apps/web` seeds, and optimitron's condition list with ICD-10 codes |
 | `evidence` | Shared source/report/time-series-analysis/effect/model-estimate/demo-example/published-analysis-version/withdrawal contracts, provenance and deduplication primitives | New; adapters, estimate generation and persistence remain app-owned |
 | `clinic-aggregates` | Aggregate-only `ClinicSummary` format and validators, shared by independent installations and clinic data exchanges | New; not the format for comments or personal-data transfer |
-| `importers` | Wearable/app export parsers and the personal-data export contract | optimitron `packages/data/src/importers`, which were ported from curedao-api's PHP connectors; export contract is new |
+| `importers` | Wearable/app export parsers and the personal-data export contract | optimitron `packages/data/src/importers`, which were ported from QuantiModo's PHP connectors; export contract is new |
 
 `packages/legacy-import` holds the tools for moving the legacy data. It is retired once the move is done.
 
@@ -380,14 +412,14 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 
 | Data | Where it is | Plan |
 | --- | --- | --- |
-| Patient ratings: historically 162 conditions and ~3,900 treatments; recount at migration | curedao-api `ct_*` tables, copied into crowdsourcing-cures | Reconcile duplicates, scale and publication permissions; first eligible Data Release stays patient-reported and separate from clinic data. |
+| Patient ratings: historically 162 conditions and ~3,900 treatments; recount at migration | QuantiModo `ct_*` tables, copied into crowdsourcing-cures | Reconcile duplicates, scale and publication permissions; first eligible Data Release stays patient-reported and separate from clinic data. |
 | ClinicalTrials.gov registry and posted results | Public (AACT or API v2) | Registry supports discovery; reviewed posted results support trial-reported evidence and derived analyses. |
 | Reddit / other permitted public reports | External source, access and processing approval required | Source-linked community reports; retained only as permitted; never silently converted into patient records or enrollment. |
 | Published papers, systematic reviews and meta-analyses | Cited publications and permitted full text | Reviewed extraction; connect to underlying study/cohort IDs and avoid double-counting reviews and their studies. |
 | New patient ratings, observations and study outcomes | App's private patient/trial tables | Structured context, consent, provenance and protocol versions; publish only authorized reports or reviewed aggregates. |
-| Legacy measurements: about 13 million, with per-user and population analyses | curedao-api MySQL | Move a person's data into their personal health workspace only if they choose to (see Open decisions). |
+| Legacy measurements: about 13 million, with per-user and population analyses | QuantiModo MySQL | Move a person's data into their personal health workspace only if they choose to (see Open decisions). |
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
-| Automated personal and population time-series studies (historically ~15,800 published analyses; recount and reconcile at migration) | curedao-api analysis records and generated static site | Integrate eligible historical results as source-backed observational findings; preserve provenance and unknowns, then reproduce/improve calculations, charts and reports. Separate imported, reproduced and corrected versions; keep old links usable until continuity is tested. |
+| Automated personal and population time-series studies (historically ~15,800 published analyses; recount and reconcile at migration) | QuantiModo analysis records and generated static site | Integrate eligible historical results as source-backed observational findings; preserve provenance and unknowns, then reproduce/improve calculations, charts and reports. Separate imported, reproduced and corrected versions; keep old links usable until continuity is tested. |
 | AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the health vocabulary. |
 | `apps/web` demo data | Existing seeds in `apps/web/db/seeds`; complete source-pinned Optimitron medical directory under `apps/web/data/optimitron/` | Forked copy with a recorded origin, a sourced corrections log and tests that every edit is logged. General-purpose database contracts/importer remain planned; preserve labels, source permissions and separation from live records. Do not clear the demo or patient tables. |
 
@@ -469,7 +501,7 @@ before/after report and company totals (`apps/web/lib/programs`, see
 This thin slice uses the existing measurements and reminders. It does not replace
 the reference-study reproduction below, and step 1 keeps its open items.
 
-- [ ] Capture one authorized curedao-api reference study with inputs, method
+- [ ] Capture one authorized QuantiModo reference study with inputs, method
   settings and expected outputs; use synthetic known-answer fixtures in Git.
 - [ ] Verify measurement entry/import -> history/chart -> personal analysis ->
   report/export -> reminder logging. Reproduce the selected reference calculation
@@ -507,20 +539,20 @@ not additional maintained applications and must not be deleted as part of this w
 ### Delivery milestones
 
 This is the single delivery roadmap, not a list of completed milestones. Start
-with a small working slice of step 1, then grow the curedao-api replacement and
+with a small working slice of step 1, then grow the QuantiModo replacement and
 evidence workflows incrementally. The [inventory](APPS-AND-FEATURES.md) tracks
 present code separately from these acceptance gates.
 
 | Step | Deliverable | Exit gate |
 | --- | --- | --- |
-| 1. Populated demo, shared importer and legacy baseline | Keep useful content; add versioned labeled data packs, minimum record schemas and a CLI importer with preview/replay protection; inventory curedao-api workflows, capture reference fixtures and import eligible historical results with explicit status | One bounded public view reads validated imported records; labels/links survive charts and exports; reruns preserve edits and avoid duplicates; source/permission checks, private/public isolation and demo/source-backed separation pass; reference scope and unknowns are recorded |
+| 1. Populated demo, shared importer and legacy baseline | Keep useful content; add versioned labeled data packs, minimum record schemas and a CLI importer with preview/replay protection; inventory QuantiModo workflows, capture reference fixtures and import eligible historical results with explicit status | One bounded public view reads validated imported records; labels/links survive charts and exports; reruns preserve edits and avoid duplicates; source/permission checks, private/public isolation and demo/source-backed separation pass; reference scope and unknowns are recorded |
 | 2. Reproduce the core loop and enable agent curation | Implement tracking/import -> history/chart -> predictor search -> personal/population study -> report/export, reminders and selected connectors; add ratings/trial discovery and scoped MCP/admin adapters over the same importer | End-to-end workflow and numerical comparisons pass for the selected scope; reviewed differences remain explicit; adapters enforce the same validation, access and publication rules; broader parity checklist remains open until verified |
 | 3. Participation and community pilot | Structured patient reports, observational protocol wizard and reviewed join flow; approved community-source ingestion, reviewed extraction, separate scores and source-linked drill-down | Consent/protocol versioning, source approval, duplicate handling, withdrawal and deletion tests pass; users can inspect summary -> report -> source and follow report/track -> discover/propose/join without treating interest as external enrollment |
-| 4. dfda.earth cutover | Tracking MCP, REST, trial search and text logging in the base app; migrate the domain and accepted replacement surfaces incrementally | Auth/account migration and user-directed data transfer tested; Optimitron email dependency removed; redirects, connector reconnection and rollback verified; unreplaced legacy workflows remain reachable and are not claimed complete |
+| 4. dfda.earth cutover | Tracking MCP, REST, trial search and text logging in the base app; migrate the domain and accepted replacement surfaces incrementally | Auth/account migration and user-directed data transfer tested; Optimitron email dependency removed; redirects for the [old dfda.earth paths](APPS-AND-FEATURES.md#extraction-checklist), connector reconnection and rollback verified; unreplaced legacy workflows remain reachable and are not claimed complete |
 | 5. Living analyses | Reviewed compatible study synthesis and source-refresh/review pipeline, building on step 2 | Included/excluded study table, overlap handling, bias review, uncertainty, known-answer tests and versioned publication/retraction work; not dependent on clinic federation |
 | 6. Independent installation pilot | Same release with configurable branding and supported deployment packaging | One independent clinic can install, operate, export, back up/restore and upgrade without a fork; cross-operator isolation tested; no federation required |
 | 7. Optional clinic data exchange | `ClinicSummary`, installation identity, authenticated submissions, review and publication; reuse the evidence pipeline's compatible analysis methods | Sender/receiver privacy threat-model review and adversarial release tests pass, plus replay/revocation/overlap/withdrawal tests; no raw records sent |
-| 8. Legacy retirement | Complete the agreed curedao-api feature baseline, move only authorized records and retire superseded legacy services | Every inventoried workflow is accepted or explicitly deferred/retired by the product owner; study/variable links and clients have a tested continuity path; user choice/export, reconciliation, retention/nonresponse policy and rollback/archive plan approved |
+| 8. Legacy retirement | Complete the agreed QuantiModo feature baseline, move only authorized records and retire superseded legacy services | Every inventoried workflow is accepted or explicitly deferred/retired by the product owner; study/variable links and clients have a tested continuity path; user choice/export, reconciliation, retention/nonresponse policy and rollback/archive plan approved |
 
 MCP/admin adapters follow the importer once scoped authentication is ready; they
 do not block the first demo or numerical reproduction work. Steps 3 and 5 can
@@ -546,7 +578,7 @@ Implement only the required contracts and the shared
 importer's validate/preview/apply/status path; and render imported publication
 records with persistent origin labels and source links. Test replay, conflicting
 revisions, private-data rejection and preservation of existing user records.
-Capture one representative curedao-api study's reference inputs/settings/results
+Capture one representative QuantiModo study's reference inputs/settings/results
 in parallel, subject to data access, so the next slice can reproduce its calculation
 and report. Unavailable private inputs do not block the demo-pack slice.
 
@@ -579,7 +611,7 @@ The following remain new work:
 - Reviewed clinic privacy controls before anything leaves an installation, including cross-release and overlapping-cohort protection
 - Installation registration and identity, authenticated clinic aggregate submission, and clinic data exchange administration
 - Reviewed compatible meta-analysis, provenance-linked releases and retraction/recomputation
-- Reproduction of curedao-api's personal/population analyses, predictor search, charts and generated reports, including lineage, parity fixtures and reviewed corrections
+- Reproduction of QuantiModo's personal/population analyses, predictor search, charts and generated reports, including lineage, parity fixtures and reviewed corrections
 - Reviewed treatment-effect estimation for clinical records. Legacy code already includes within-person correlations, descriptive baseline/follow-up comparisons and population aggregation; those capabilities do not by themselves establish causal effects or replace a design-specific estimator.
 - Packaging for an independent installation that a clinic can operate itself
 
