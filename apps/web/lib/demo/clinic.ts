@@ -1,3 +1,4 @@
+import { DateTime } from 'luxon'
 import demo from '@/scripts/demo-data.json'
 import { adminDb, Prisma } from '@/lib/db'
 import { ensurePasswordUser } from '@/lib/auth-users'
@@ -9,6 +10,9 @@ import { joinProgram } from '@/lib/programs/manage'
 import { buildPersonReport, type Point } from '@/lib/programs/report'
 import { sampleCohort, SAMPLE_SIZE } from '@/lib/programs/sample'
 import { symptomWhere } from '@/lib/programs/side-effects'
+import { buildRruleString } from '@/lib/reminders/schedule'
+import { timeOfDayToString } from '@/lib/time-of-day'
+import { ruleParts } from '@/lib/tracking/reminders'
 
 /**
  * The demo clinic: a company instance (scripts/demo-data.json), its GLP-1
@@ -192,6 +196,70 @@ export async function ensureDemoPatient(program: Program): Promise<string> {
   // The first time, this also creates the dose and check-in reminders.
   await joinProgram(user, program, { scheduleNotifications: false, shareWithCareTeam: true })
   return user.id
+}
+
+/** The demo patient's condition, which the patient app needs before it shows their inbox. */
+const DEMO_PATIENT_CONDITION = 'type-2-diabetes'
+/**
+ * The demo patient's time zone. With a time zone in the profile, the app does
+ * not save the browser's time zone, which would change what is due.
+ */
+const DEMO_PATIENT_ZONE = 'UTC'
+
+/**
+ * The demo patient's own app (/patient) for the local seed, so the Visual
+ * Preview workflow can capture it. The patient gets a condition, so the
+ * patient app opens their inbox instead of onboarding. Each of their reminders
+ * gets one notification due at its time of day yesterday. The reminders start
+ * eight days ago, so the weekly ones fire on yesterday's weekday too.
+ * Notifications from earlier runs are removed, answered or not. The patient's
+ * time zone is UTC. Because the times are counted in whole days, two runs on
+ * the same day give the same inbox, wherever the browser is.
+ */
+export async function resetDemoPatientInbox(patientId: string, now = new Date()): Promise<void> {
+  const zone = DEMO_PATIENT_ZONE
+  const yesterday = DateTime.fromJSDate(now).setZone(zone).startOf('day').minus({ days: 1 })
+  await adminDb.$transaction(async (tx) => {
+    await tx.profiles.update({ where: { id: patientId }, data: { timezone: zone }, select: { id: true } })
+    await tx.patients.upsert({ where: { id: patientId }, create: { id: patientId }, update: {}, select: { id: true } })
+    const condition = await tx.user_variables.upsert({
+      where: { user_id_global_variable_id: { user_id: patientId, global_variable_id: DEMO_PATIENT_CONDITION } },
+      create: { user_id: patientId, global_variable_id: DEMO_PATIENT_CONDITION },
+      update: {},
+      select: { id: true },
+    })
+    await tx.patient_conditions.upsert({
+      where: { patient_id_user_variable_id: { patient_id: patientId, user_variable_id: condition.id } },
+      create: { patient_id: patientId, condition_id: DEMO_PATIENT_CONDITION, user_variable_id: condition.id, status: 'active' },
+      update: { deleted_at: null },
+      select: { id: true },
+    })
+    const start = yesterday.minus({ days: 7 }).toJSDate()
+    const schedules = await tx.reminder_schedules.findMany({
+      where: { user_id: patientId, is_active: true },
+      select: { id: true, rrule: true, time_of_day: true },
+    })
+    for (const schedule of schedules) {
+      // The rule's DTSTART moves with the start date, as when the reminder is saved (lib/tracking/reminders.ts).
+      await tx.reminder_schedules.update({
+        where: { id: schedule.id },
+        data: { start_date: start, rrule: buildRruleString(ruleParts(schedule.rrule), start, zone) },
+        select: { id: true },
+      })
+    }
+    await tx.reminder_notifications.deleteMany({ where: { user_id: patientId } })
+    await tx.reminder_notifications.createMany({
+      data: schedules.map((schedule) => ({
+        reminder_schedule_id: schedule.id,
+        user_id: patientId,
+        notification_trigger_at: DateTime.fromISO(
+          `${yesterday.toISODate()}T${timeOfDayToString(schedule.time_of_day).slice(0, 5)}`,
+          { zone },
+        ).toJSDate(),
+        status: 'pending' as const,
+      })),
+    })
+  })
 }
 
 /** The demo accounts that joined the program. */

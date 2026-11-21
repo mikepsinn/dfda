@@ -1,10 +1,11 @@
 /**
  * Fills a local or CI database with the demo clinic (lib/demo/clinic.ts): a
  * company instance, its GLP-1 program, people who joined it, the demo
- * patient with their report and the clinician on the care team, so the
- * company and program pages have something to show. The Visual Preview
- * workflow screenshots them, and the browser tests (tests/e2e) use them. A
- * deployment gets the same clinic on its first demo sign-in instead.
+ * patient with their report, inbox and the clinician on the care team, so
+ * the company, program and patient pages have something to show. The Visual
+ * Preview workflow screenshots them, and the browser tests (tests/e2e) use
+ * them. A deployment gets the same clinic on its first demo sign-in instead,
+ * without the patient's inbox.
  *
  * The accounts and names are in demo-data.json. The people's values come from
  * the sample generator (lib/programs/sample.ts): they are made up. Fixed ids
@@ -22,6 +23,7 @@ import {
   ensureDemoMembers,
   ensureDemoPatient,
   resetDemoPatient,
+  resetDemoPatientInbox,
 } from '@/lib/demo/clinic'
 
 function requireLocalDatabase() {
@@ -40,6 +42,7 @@ async function main() {
   const patientId = await ensureDemoPatient(program)
   await ensureDemoCareTeam(program, patientId)
   await resetDemoPatient(program, patientId)
+  await resetDemoPatientInbox(patientId)
   console.log(
     `Demo data: ${demo.instance.name} (/i/${demo.instance.slug}), program "${program.name}", ${joined} people joined now, the demo patient ${demo.patient.email} and the clinician ${demo.clinician.email}.`,
   )
