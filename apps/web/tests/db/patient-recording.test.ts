@@ -85,4 +85,20 @@ describe('loadHistory', () => {
     const headaches = await as(userId, (tx) => loadHistory(tx, userId, { globalVariableId: 'headache' }))
     expect(headaches.items).toHaveLength(28)
   })
+
+  it('lists measurements of the same time in variable order, the same on every database, across pages', async () => {
+    const userId = await person('history-ties')
+    const at = '2026-10-01T12:00:00.000Z'
+    await as(userId, async (tx) => {
+      for (const globalVariableId of ['headache', 'aspirin', 'energy-level']) await recordMeasurement(tx, userId, { globalVariableId, value: 1, startTime: at })
+      for (let i = 0; i < 49; i++) await recordMeasurement(tx, userId, { globalVariableId: 'body-weight', value: 70, startTime: `2026-10-02T${String(i % 24).padStart(2, '0')}:00:00.000Z` })
+    })
+    const first = await as(userId, (tx) => loadHistory(tx, userId, {}))
+    const second = await as(userId, (tx) => loadHistory(tx, userId, {}, first.nextCursor))
+    // The 50th row is the first of the three; the page breaks between them.
+    expect([...first.items, ...second.items].filter((item) => item.startAt === at).map((item) => item.globalVariableId))
+      .toEqual(['aspirin', 'energy-level', 'headache'])
+    expect(first.items.at(-1)?.globalVariableId).toBe('aspirin')
+    expect(second.items.map((item) => item.globalVariableId)).toEqual(['energy-level', 'headache'])
+  })
 })
