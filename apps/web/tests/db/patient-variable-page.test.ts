@@ -48,13 +48,12 @@ describe('loadVariablePage', () => {
     const page = await as(userId, (tx) => loadVariablePage(tx, userId, { globalVariableId: 'aspirin' }, '30d', now))
     expect(page?.rules).toEqual({ combination: 'SUM', fillingType: 'zero' })
     expect(page?.unit.abbreviatedName).toBe('mg')
-    expect(page?.daily).toEqual([
-      { day: '2026-11-18', value: 825, filled: false },
-      { day: '2026-11-19', value: 0, filled: true },
-      { day: '2026-11-20', value: 325, filled: false },
-    ])
+    expect(page?.daily.map((d) => [d.day, d.filled])).toEqual([['2026-11-18', false], ['2026-11-19', true], ['2026-11-20', false]])
+    expect(page?.daily.map((d) => d.value)[0]).toBeCloseTo(825, 6)
+    expect(page?.daily.map((d) => d.value).slice(1)).toEqual([0, 325])
     expect(page).toMatchObject({ measurementCount: 3, hasReminder: true, allTime: { count: 4, firstAt: '2026-09-01T15:00:00.000Z' } })
-    expect(page?.stats).toMatchObject({ days: 3, maximum: 825, minimum: 0 })
+    expect(page?.stats).toMatchObject({ days: 3, minimum: 0 })
+    expect(page?.stats?.maximum).toBeCloseTo(825, 6)
 
     const all = await as(userId, (tx) => loadVariablePage(tx, userId, { userVariableId: page!.userVariableId }, 'all', now))
     expect(all?.measurementCount).toBe(4)

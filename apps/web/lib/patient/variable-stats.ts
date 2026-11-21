@@ -1,12 +1,14 @@
 import { DateTime } from 'luxon'
 import { getRatingRange, getVariableInputType } from '@/lib/variable-helpers'
+import { formatNumber } from './value-text'
 
 /**
  * Daily values and their statistics for the patient app's variable page
  * (docs/MIGRATION.md, "Patient app modeled on QuantiModo", phase 3), as
  * QuantiModo computed them for its charts: a day's measurements make one daily
  * value, by their sum or their mean, and days without a measurement are left
- * out or counted as zero. Pure, so the server and tests share it.
+ * out or counted as zero. Values keep their full precision; only their display
+ * is rounded (lib/patient/value-text.ts). Pure, so the server and tests share it.
  */
 
 export type CombinationOperation = 'SUM' | 'MEAN'
@@ -38,8 +40,6 @@ export type DayValue = { day: string; value: number }
 
 export type DailyValue = { day: string; value: number; /** True for a day without a measurement, counted as zero. */ filled: boolean }
 
-const round = (value: number, digits = 2) => Number(value.toFixed(digits))
-
 /**
  * The daily values, oldest first. Filling covers the days between the first
  * and the last measured day, so a day not yet recorded is not counted.
@@ -53,7 +53,7 @@ export function dailyValues(values: DayValue[], rules: DailyRules): DailyValue[]
   const measured = [...byDay.entries()]
     .map(([day, dayValues]) => {
       const sum = dayValues.reduce((total, value) => total + value, 0)
-      return { day, value: round(rules.combination === 'SUM' ? sum : sum / dayValues.length), filled: false }
+      return { day, value: rules.combination === 'SUM' ? sum : sum / dayValues.length, filled: false }
     })
     .sort((a, b) => a.day.localeCompare(b.day))
   if (rules.fillingType === 'none' || measured.length < 2) return measured
@@ -92,10 +92,10 @@ export function dailyStats(daily: DailyValue[]): DailyStats | null {
   const variance = values.length > 1 ? values.reduce((total, value) => total + (value - mean) ** 2, 0) / (values.length - 1) : 0
   return {
     days: values.length,
-    mean: round(mean),
-    median: round(median),
+    mean,
+    median,
     mostCommon,
-    standardDeviation: round(Math.sqrt(variance)),
+    standardDeviation: Math.sqrt(variance),
     minimum: values[0],
     maximum: values[values.length - 1],
   }
@@ -116,16 +116,16 @@ export function distribution(daily: DailyValue[]): DistributionBin[] {
   const values = daily.map((d) => d.value)
   const distinct = [...new Set(values)].sort((a, b) => a - b)
   if (distinct.length <= MAX_BINS) {
-    return distinct.map((value) => ({ label: String(value), from: value, to: value, days: values.filter((v) => v === value).length }))
+    return distinct.map((value) => ({ label: formatNumber(value), from: value, to: value, days: values.filter((v) => v === value).length }))
   }
   const low = distinct[0]
   const width = (distinct[distinct.length - 1] - low) / MAX_BINS
   return Array.from({ length: MAX_BINS }, (_, i) => {
-    const from = round(low + i * width, 2)
-    const to = round(low + (i + 1) * width, 2)
+    const from = low + i * width
+    const to = low + (i + 1) * width
     const last = i === MAX_BINS - 1
-    const days = values.filter((v) => v >= low + i * width && (last ? v <= low + (i + 1) * width : v < low + (i + 1) * width)).length
-    return { label: `${from}–${to}`, from, to, days }
+    const days = values.filter((v) => v >= from && (last ? v <= to : v < to)).length
+    return { label: `${formatNumber(from)}–${formatNumber(to)}`, from, to, days }
   })
 }
 
@@ -139,7 +139,7 @@ export function weekdayAverages(daily: DailyValue[]): WeekdayAverage[] {
     const values = daily.filter((d) => DateTime.fromISO(d.day, { zone: 'UTC' }).weekday === index + 1).map((d) => d.value)
     return {
       weekday,
-      average: values.length ? round(values.reduce((total, value) => total + value, 0) / values.length) : null,
+      average: values.length ? values.reduce((total, value) => total + value, 0) / values.length : null,
       days: values.length,
     }
   })

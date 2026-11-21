@@ -4,14 +4,18 @@ import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis, YAxis } from 'rec
 import { Card } from '@/components/ui/card'
 import { ChartContainer, ChartTooltip, type ChartConfig } from '@/components/ui/chart'
 import type { DailyValue, DistributionBin, WeekdayAverage } from '@/lib/patient/variable-stats'
-import { valueText } from '@/lib/patient/value-text'
+import { aggregateText } from '@/lib/patient/value-text'
+import { getRatingRange, getVariableInputType } from '@/lib/variable-helpers'
 
 const config = { value: { label: 'Value', color: 'hsl(var(--primary))' } } satisfies ChartConfig
 
 type Unit = { id: string; abbreviatedName: string }
 
-const dayLabel = (day: string, options: Intl.DateTimeFormatOptions) =>
-  new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', ...options }).format(new Date(`${day}T12:00:00Z`))
+const DAY_MS = 86_400_000
+/** A local day (YYYY-MM-DD) as a time on the chart's axis, so that days are spaced by the time between them. */
+const timeOf = (day: string) => Date.parse(`${day}T00:00:00Z`)
+const dayLabel = (day: string | number, options: Intl.DateTimeFormatOptions) =>
+  new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', ...options }).format(typeof day === 'number' ? new Date(day) : new Date(`${day}T12:00:00Z`))
 
 function Tip({ title, lines }: { title: string; lines: string[] }) {
   return (
@@ -67,8 +71,15 @@ export function VariableCharts({ name, unit, daily, distribution, weekdays }: {
   distribution: DistributionBin[]
   weekdays: WeekdayAverage[]
 }) {
-  const shown = (value: number) => valueText(value, unit)
+  const shown = (value: number) => aggregateText(value, unit)
   const dots = daily.length <= 45
+  // A rating's axis keeps to whole points of its scale.
+  const rating = getRatingRange(getVariableInputType({ unitId: unit.id, variableCategory: null })) !== null
+  // Days without a measurement are left out of ratings and readings, so the axis is time, not the list of days.
+  const points = daily.map((d) => ({ ...d, t: timeOf(d.day) }))
+  const first = points[0]?.t ?? 0
+  const last = points[points.length - 1]?.t ?? 0
+  const domain = first === last ? [first - DAY_MS, last + DAY_MS] : [first, last]
   const measuredWeekdays = weekdays.filter((w) => w.average !== null)
   return (
     <div className="space-y-6">
@@ -79,10 +90,11 @@ export function VariableCharts({ name, unit, daily, distribution, weekdays }: {
         table={<Table head={['Day', name]} rows={[...daily].reverse().map((d) => [dayLabel(d.day, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }), `${shown(d.value)}${d.filled ? ' (no measurement)' : ''}`])} />}
       >
         <ChartContainer config={config} className="aspect-auto h-64 w-full">
-          <LineChart data={daily} margin={{ left: 4, right: 12, top: 8 }}>
+          <LineChart data={points} margin={{ left: 4, right: 12, top: 8 }}>
             <CartesianGrid vertical={false} />
-            <XAxis dataKey="day" {...axis} minTickGap={32} tickFormatter={(day: string) => dayLabel(day, { month: 'short', day: 'numeric' })} />
-            <YAxis {...axis} width={44} domain={['auto', 'auto']} />
+            <XAxis dataKey="t" type="number" scale="time" domain={domain} {...axis} minTickGap={32}
+              tickFormatter={(t: number) => dayLabel(t, { month: 'short', day: 'numeric' })} />
+            <YAxis {...axis} width={44} domain={['auto', 'auto']} allowDecimals={!rating} />
             <ChartTooltip
               cursor={{ strokeWidth: 1 }}
               content={({ active, payload }) => {

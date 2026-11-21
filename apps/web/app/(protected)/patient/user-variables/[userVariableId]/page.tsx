@@ -5,7 +5,7 @@ import { VariableCharts } from '@/components/patient/variable-charts'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { withUserTransaction } from '@/lib/db'
-import { valueText } from '@/lib/patient/value-text'
+import { aggregateText, formatNumber } from '@/lib/patient/value-text'
 import { loadVariablePage, rangeOf, RANGES, type VariablePageData } from '@/lib/patient/variable-page'
 import { getServerUser } from '@/lib/server-auth'
 import { cn } from '@/lib/utils'
@@ -26,7 +26,7 @@ function rulesText(data: VariablePageData) {
 function Statistics({ data }: { data: VariablePageData }) {
   const { stats } = data
   if (!stats) return null
-  const shown = (value: number) => valueText(value, data.unit)
+  const shown = (value: number) => aggregateText(value, data.unit)
   const items: [string, string][] = [
     ['Measurements', String(data.measurementCount)],
     ['Days with a value', String(stats.days)],
@@ -35,7 +35,7 @@ function Statistics({ data }: { data: VariablePageData }) {
     ['Most common', shown(stats.mostCommon)],
     ['Lowest', shown(stats.minimum)],
     ['Highest', shown(stats.maximum)],
-    ['Standard deviation', String(stats.standardDeviation)],
+    ['Standard deviation', formatNumber(stats.standardDeviation)],
     ['First recorded', when(data.allTime.firstAt, data.timezone)],
     ['Last recorded', when(data.allTime.latestAt, data.timezone)],
   ]
