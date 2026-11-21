@@ -52,6 +52,8 @@ const demoRoutes = [
   { name: "patient-history", label: "/patient/history (patient)", path: "/patient/history", as: "patient" },
   { name: "patient-record", label: "/patient/measurements/new (patient)", path: "/patient/measurements/new", as: "patient" },
   { name: "patient-reminder", label: "/patient/reminders/new?variableId=energy-level (patient)", path: "/patient/reminders/new?variableId=energy-level", as: "patient" },
+  // A variable's page with its statistics and charts, by the variable's own id.
+  { name: "patient-variable", label: "/patient/user-variables/energy-level (patient)", path: "/patient/user-variables/energy-level", as: "patient" },
 ];
 const accounts = {
   company: demo.company.email,

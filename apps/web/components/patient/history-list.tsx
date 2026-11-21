@@ -11,7 +11,7 @@ import { ToastAction } from '@/components/ui/toast'
 import { useToast } from '@/components/ui/use-toast'
 import { deleteMeasurementAction, loadHistoryPageAction, restoreMeasurementAction } from '@/lib/actions/recording'
 import type { HistoryFilter, HistoryItem, HistoryPage } from '@/lib/patient/history'
-import { valueText } from './measurement-form'
+import { valueText } from '@/lib/patient/value-text'
 
 /** How long a deletion's toast offers Undo. */
 const UNDO_MS = 10_000

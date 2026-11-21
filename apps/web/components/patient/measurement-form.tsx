@@ -15,20 +15,12 @@ import { useToast } from '@/components/ui/use-toast'
 import {
   deleteMeasurementAction, recordMeasurementAction, restoreMeasurementAction, updateMeasurementAction,
 } from '@/lib/actions/recording'
+import { valueText } from '@/lib/patient/value-text'
 import type { EditableMeasurement, RecordingVariable } from '@/lib/patient/variables'
 import { getRatingRange, getVariableInputType } from '@/lib/variable-helpers'
 
 /** How long a deletion's toast offers Undo. */
 const UNDO_MS = 10_000
-
-/** A value in words for the button and the toast: "Yes", "4 of 5", or the number with its unit. */
-export function valueText(value: number, unit: { id: string; abbreviatedName: string }) {
-  const inputType = getVariableInputType({ unitId: unit.id, variableCategory: null })
-  if (inputType === 'boolean_yes_no') return value ? 'Yes' : 'No'
-  const range = getRatingRange(inputType)
-  if (range) return `${value} of ${range[1]}`
-  return unit.abbreviatedName ? `${value} ${unit.abbreviatedName}` : String(value)
-}
 
 function Choice({ selected, onClick, label, children, className }: {
   selected: boolean
