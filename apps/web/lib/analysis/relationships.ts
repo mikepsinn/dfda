@@ -11,9 +11,10 @@ import { valueInUnit } from '@/lib/units/convert'
  * A person's predictor and outcome relationships (docs/MIGRATION.md, "Patient
  * app modeled on QuantiModo", phase 4): the calculation of packages/analysis on
  * their daily values, stored in user_variable_relationships so that lists can
- * rank and filter them. A trigger on measurements marks the person's analysis
- * due (relationship_analysis_due), and analyzeDuePeople, run every hour by
- * app/api/cron/relationships, recomputes all of the person's relationships.
+ * rank and filter them. Triggers mark a person's analysis due
+ * (relationship_analysis_due) when their measurements or time zone change, and
+ * analyzeDuePeople, run every hour by app/api/cron/relationships, recomputes
+ * their relationships one outcome at a time.
  */
 
 /**
@@ -96,13 +97,13 @@ export type PersonRelationship = Relationship & {
   outcome: PersonVariable
 }
 
-/** Every relationship the person's data supports: each outcome with each of their other variables as its predictor. */
-export function relationshipsOf(variables: PersonVariable[]): PersonRelationship[] {
-  return variables.filter((v) => v.isOutcome).flatMap((outcome) => variables.flatMap((predictor) => {
+/** The relationships of one outcome that the person's data supports: each of their other variables as its predictor. */
+export function relationshipsOf(variables: PersonVariable[], outcome: PersonVariable): PersonRelationship[] {
+  return variables.flatMap((predictor) => {
     if (predictor === outcome) return []
     const relationship = analyzeRelationship(predictor, outcome)
     return relationship ? [{ ...relationship, predictor, outcome }] : []
-  }))
+  })
 }
 
 function rowOf(userId: string, r: PersonRelationship, analyzedAt: Date): Prisma.user_variable_relationshipsCreateManyInput {
@@ -142,37 +143,79 @@ function rowOf(userId: string, r: PersonRelationship, analyzedAt: Date): Prisma.
   }
 }
 
-/** Recomputes the person's relationships and replaces their stored ones. Returns how many there are. */
-export async function analyzePerson(userId: string, now: Date = new Date()): Promise<number> {
-  const relationships = relationshipsOf(await loadPersonVariables(adminDb, userId))
+/** Recomputes one outcome's relationships and replaces its stored ones. Returns how many there are. */
+async function analyzeOutcome(userId: string, variables: PersonVariable[], outcome: PersonVariable, now: Date): Promise<number> {
+  const relationships = relationshipsOf(variables, outcome)
   await adminDb.$transaction([
-    adminDb.user_variable_relationships.deleteMany({ where: { user_id: userId } }),
+    adminDb.user_variable_relationships.deleteMany({ where: { user_id: userId, outcome_global_variable_id: outcome.globalVariableId } }),
     adminDb.user_variable_relationships.createMany({ data: relationships.map((r) => rowOf(userId, r, now)) }),
   ])
   return relationships.length
 }
 
-export type DueRun = { due: number; analyzed: number; failed: number }
+/** Removes the stored relationships of outcomes the person no longer has. */
+async function removeGoneOutcomes(userId: string, variables: PersonVariable[]): Promise<void> {
+  const outcomes = variables.filter((v) => v.isOutcome).map((v) => v.globalVariableId)
+  await adminDb.user_variable_relationships.deleteMany({ where: { user_id: userId, outcome_global_variable_id: { notIn: outcomes } } })
+}
+
+/** Recomputes all of the person's relationships. Returns how many there are. */
+export async function analyzePerson(userId: string, now: Date = new Date()): Promise<number> {
+  const variables = await loadPersonVariables(adminDb, userId)
+  let count = 0
+  for (const outcome of variables.filter((v) => v.isOutcome)) count += await analyzeOutcome(userId, variables, outcome, now)
+  await removeGoneOutcomes(userId, variables)
+  return count
+}
+
+export type DueRun = { due: number; analyzed: number; unfinished: number; failed: number }
 
 /**
- * Recomputes the relationships of the people whose measurements changed, the
- * longest waiting first, until `deadline` (ms since 1970). A person stays due
- * when their measurements change again meanwhile; one whose analysis fails
- * goes to the back of the queue.
+ * Recomputes the relationships of the people whose data changed until
+ * `deadline` (ms since 1970), one outcome at a time, so that a person with
+ * much data continues where the last run stopped. People not started yet come
+ * first, then the longest waiting; a run that is cut off, or fails, leaves its
+ * person behind the others. A person whose data changed during the work starts
+ * over.
  */
-export async function analyzeDuePeople({ deadline, limit = 100 }: { deadline: number; limit?: number }): Promise<DueRun> {
-  const due = await adminDb.relationship_analysis_due.findMany({ orderBy: { due_at: 'asc' }, take: limit })
-  const run: DueRun = { due: due.length, analyzed: 0, failed: 0 }
-  for (const { user_id: userId, due_at: dueAt } of due) {
-    if (Date.now() > deadline) break
+export async function analyzeDuePeople({ deadline, limit = 100, clock = Date.now }: {
+  deadline: number
+  limit?: number
+  /** The time in ms, checked before each person and each outcome; tests replace it. */
+  clock?: () => number
+}): Promise<DueRun> {
+  const due = await adminDb.relationship_analysis_due.findMany({
+    orderBy: [{ started_at: { sort: 'asc', nulls: 'first' } }, { due_at: 'asc' }],
+    take: limit,
+  })
+  const run: DueRun = { due: due.length, analyzed: 0, unfinished: 0, failed: 0 }
+  for (const person of due) {
+    if (clock() > deadline) break
+    const userId = person.user_id
+    const now = new Date()
+    await adminDb.relationship_analysis_due.updateMany({ where: { user_id: userId }, data: { started_at: now } })
     try {
-      await analyzePerson(userId)
-      await adminDb.relationship_analysis_due.deleteMany({ where: { user_id: userId, due_at: dueAt } })
+      const variables = await loadPersonVariables(adminDb, userId)
+      const remaining = variables.filter((v) => v.isOutcome && !person.outcomes_done.includes(v.globalVariableId))
+      for (const outcome of remaining) {
+        if (clock() > deadline) break
+        await analyzeOutcome(userId, variables, outcome, now)
+        await adminDb.relationship_analysis_due.updateMany({ where: { user_id: userId }, data: { outcomes_done: { push: outcome.globalVariableId } } })
+        person.outcomes_done.push(outcome.globalVariableId)
+      }
+      if (remaining.some((v) => !person.outcomes_done.includes(v.globalVariableId))) {
+        run.unfinished++
+        break
+      }
+      await removeGoneOutcomes(userId, variables)
+      const done = await adminDb.relationship_analysis_due.deleteMany({ where: { user_id: userId, due_at: person.due_at } })
+      if (done.count === 0) {
+        await adminDb.relationship_analysis_due.updateMany({ where: { user_id: userId }, data: { outcomes_done: [] } })
+      }
       run.analyzed++
     } catch (error) {
       run.failed++
-      logger.error('Could not analyze a person\'s relationships', { userId, error: error instanceof Error ? error.message : String(error) })
-      await adminDb.relationship_analysis_due.updateMany({ where: { user_id: userId, due_at: dueAt }, data: { due_at: new Date() } })
+      logger.error("Could not analyze a person's relationships", { userId, error: error instanceof Error ? error.message : String(error) })
     }
   }
   return run

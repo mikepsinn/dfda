@@ -124,6 +124,53 @@ describe('relationship analysis', () => {
     expect(await adminDb.user_variable_relationships.count({ where: { user_id: userId } })).toBe(0)
   })
 
+  it('marks a person due when they change their time zone, if they have measurements', async () => {
+    const userId = await person('zone')
+    const empty = await person('zone-empty')
+    await as(userId, (tx) => recordMeasurement(tx, userId, { globalVariableId: 'energy-level', value: 5, startTime: day(0) }))
+    await adminDb.relationship_analysis_due.deleteMany({ where: { user_id: { in: [userId, empty] } } })
+    for (const id of [userId, empty]) await as(id, (tx) => tx.profiles.update({ where: { id }, data: { timezone: 'Europe/Berlin' } }))
+    expect(await adminDb.relationship_analysis_due.findUnique({ where: { user_id: userId } })).not.toBeNull()
+    expect(await adminDb.relationship_analysis_due.findUnique({ where: { user_id: empty } })).toBeNull()
+    // Saving the same time zone again changes nothing.
+    await adminDb.relationship_analysis_due.deleteMany({ where: { user_id: userId } })
+    await as(userId, (tx) => tx.profiles.update({ where: { id: userId }, data: { timezone: 'Europe/Berlin' } }))
+    expect(await adminDb.relationship_analysis_due.findUnique({ where: { user_id: userId } })).toBeNull()
+  })
+
+  it('continues a person with much data in the next run, and does not let a cut-off run hold up others', async () => {
+    const userId = await person('resume')
+    await recordAspirinAndEnergy(userId)
+    await as(userId, async (tx) => {
+      for (let i = 0; i < 60; i++) await recordMeasurement(tx, userId, { globalVariableId: 'headache', value: (i * 7) % 5, startTime: day(i) })
+    })
+    const first = new Date('2000-01-01T00:00:00.000Z')
+    await adminDb.relationship_analysis_due.update({ where: { user_id: userId }, data: { due_at: first } })
+
+    // Time runs out after the first of the two outcomes: the clock is read
+    // before the person, before the first outcome and before the second.
+    const times = [0, 0, 2]
+    const cut = await analyzeDuePeople({ deadline: 1, limit: 1, clock: () => times.shift() ?? 2 })
+    expect(cut).toMatchObject({ due: 1, analyzed: 0, unfinished: 1 })
+    const progress = await adminDb.relationship_analysis_due.findUnique({ where: { user_id: userId } })
+    expect(progress?.outcomes_done).toHaveLength(1)
+    expect(progress?.started_at).not.toBeNull()
+
+    // Someone newly due comes before the person whose run was cut off.
+    const other = await person('newly-due')
+    await as(other, (tx) => recordMeasurement(tx, other, { globalVariableId: 'energy-level', value: 5, startTime: day(0) }))
+    await adminDb.relationship_analysis_due.update({ where: { user_id: other }, data: { due_at: first } })
+    expect(await analyzeDuePeople({ deadline: Date.now() + 60_000, limit: 1 })).toMatchObject({ analyzed: 1 })
+    expect(await adminDb.relationship_analysis_due.findUnique({ where: { user_id: other } })).toBeNull()
+
+    // The next run on the person does the other outcome and finishes.
+    await adminDb.relationship_analysis_due.update({ where: { user_id: userId }, data: { started_at: null } })
+    expect(await analyzeDuePeople({ deadline: Date.now() + 60_000, limit: 1 })).toMatchObject({ analyzed: 1, unfinished: 0 })
+    expect(await adminDb.relationship_analysis_due.findUnique({ where: { user_id: userId } })).toBeNull()
+    const outcomes = await adminDb.user_variable_relationships.findMany({ where: { user_id: userId }, distinct: ['outcome_global_variable_id'] })
+    expect(outcomes.map((r) => r.outcome_global_variable_id).sort()).toEqual(['energy-level', 'headache'])
+  })
+
   it('lets a person with measurements and results be deleted', async () => {
     const userId = await person('deleted')
     await recordAspirinAndEnergy(userId)

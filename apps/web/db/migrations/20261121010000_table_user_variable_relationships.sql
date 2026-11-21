@@ -70,22 +70,30 @@ CREATE POLICY "Users read their own relationships" ON public.user_variable_relat
   FOR SELECT
   USING (user_id = auth.uid());
 
--- The people whose measurements changed since their relationships were last
--- computed. A trigger on measurements adds or refreshes the row; the job removes
--- it when it has computed the person's relationships, unless due_at changed
--- meanwhile. Only the server reads and writes it (no policies).
+-- The people whose relationships need computing again: their measurements or
+-- their time zone (which decides the local day of each measurement) changed.
+-- Triggers add or refresh the row. The job computes one outcome at a time and
+-- records it in outcomes_done, so that a person with much data continues in the
+-- next run; it removes the row when all outcomes are done, unless due_at
+-- changed meanwhile, and then starts the person over. started_at is when a run
+-- last started on the person: people not started yet come first, so that one
+-- whose run did not finish cannot hold up the others. Only the server reads
+-- and writes it (no policies).
 CREATE TABLE IF NOT EXISTS public.relationship_analysis_due (
   user_id UUID PRIMARY KEY REFERENCES public.profiles(id) ON DELETE CASCADE,
-  due_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT date_trunc('milliseconds', now())
+  due_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT date_trunc('milliseconds', now()),
+  started_at TIMESTAMP WITH TIME ZONE,
+  outcomes_done TEXT[] NOT NULL DEFAULT '{}'
 );
 
 ALTER TABLE public.relationship_analysis_due ENABLE ROW LEVEL SECURITY;
 
--- Runs as its owner, because the person whose measurement changed cannot write
--- the table. Within one transaction now() does not change, so a batch of
+-- Runs as its owner, because the person whose data changed cannot write the
+-- table. Within one transaction now() does not change, so a batch of
 -- measurements updates the row once. Milliseconds, so that the job can compare
 -- the time it read (a JavaScript Date) with the row's. Deleting a profile
--- deletes its measurements, and then there is no one to analyze.
+-- deletes its measurements, and then there is no one to analyze; a person
+-- without measurements has nothing to analyze when their time zone changes.
 CREATE OR REPLACE FUNCTION public.mark_relationship_analysis_due()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -93,8 +101,18 @@ SECURITY DEFINER
 SET search_path = public, pg_temp
 AS $$
 DECLARE
-  changed_user UUID := CASE WHEN TG_OP = 'DELETE' THEN OLD.user_id ELSE NEW.user_id END;
+  changed_user UUID;
 BEGIN
+  IF TG_TABLE_NAME = 'profiles' THEN
+    changed_user := NEW.id;
+    IF NOT EXISTS (SELECT 1 FROM public.measurements WHERE user_id = changed_user AND deleted_at IS NULL) THEN
+      RETURN NULL;
+    END IF;
+  ELSIF TG_OP = 'DELETE' THEN
+    changed_user := OLD.user_id;
+  ELSE
+    changed_user := NEW.user_id;
+  END IF;
   INSERT INTO public.relationship_analysis_due (user_id, due_at)
   SELECT changed_user, date_trunc('milliseconds', now())
   WHERE EXISTS (SELECT 1 FROM public.profiles WHERE id = changed_user)
@@ -108,6 +126,12 @@ DROP TRIGGER IF EXISTS mark_relationship_analysis_due ON public.measurements;
 CREATE TRIGGER mark_relationship_analysis_due
   AFTER INSERT OR UPDATE OR DELETE ON public.measurements
   FOR EACH ROW EXECUTE FUNCTION public.mark_relationship_analysis_due();
+
+DROP TRIGGER IF EXISTS mark_relationship_analysis_due ON public.profiles;
+CREATE TRIGGER mark_relationship_analysis_due
+  AFTER UPDATE OF timezone ON public.profiles
+  FOR EACH ROW WHEN (OLD.timezone IS DISTINCT FROM NEW.timezone)
+  EXECUTE FUNCTION public.mark_relationship_analysis_due();
 
 -- People who already have measurements.
 INSERT INTO public.relationship_analysis_due (user_id)
